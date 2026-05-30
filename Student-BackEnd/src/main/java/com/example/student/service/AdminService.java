@@ -23,19 +23,22 @@ public class AdminService {
     private final RoadmapRepository roadmapRepository;
     private final RoadmapSubjectRepository roadmapSubjectRepository;
     private final UserConceptProgressRepository progressRepository;
+    private final QuestionRepository questionRepository;
 
     public AdminService(UserRepository userRepository,
                         SubjectRepository subjectRepository,
                         ConceptRepository conceptRepository,
                         RoadmapRepository roadmapRepository,
                         RoadmapSubjectRepository roadmapSubjectRepository,
-                        UserConceptProgressRepository progressRepository) {
+                        UserConceptProgressRepository progressRepository,
+                        QuestionRepository questionRepository) {
         this.userRepository = userRepository;
         this.subjectRepository = subjectRepository;
         this.conceptRepository = conceptRepository;
         this.roadmapRepository = roadmapRepository;
         this.roadmapSubjectRepository = roadmapSubjectRepository;
         this.progressRepository = progressRepository;
+        this.questionRepository = questionRepository;
     }
 
     // ─── STATS ───────────────────────────────────────────────────────────────
@@ -255,6 +258,41 @@ public class AdminService {
 
     public void removeSubjectFromRoadmap(String roadmapId, String subjectId) {
         roadmapSubjectRepository.deleteByRoadmapIdAndSubjectId(roadmapId, subjectId);
+    }
+
+    // ─── QUESTIONS ───────────────────────────────────────────────────────────
+
+    public List<Question> getQuestionsByConceptId(String conceptId) {
+        return questionRepository.findByConceptId(conceptId);
+    }
+
+    public Question createQuestion(AdminQuestionRequest req) {
+        Question q = new Question();
+        q.setConceptId(req.getConceptId());
+        q.setSubjectId(req.getSubjectId());
+        q.setText(req.getText());
+        q.setOptions(req.getOptions());
+        q.setCorrectIndex(req.getCorrectIndex());
+        q.setExplanation(req.getExplanation());
+        q.setDifficulty(req.getDifficulty() != null ? req.getDifficulty() : "MEDIUM");
+        return questionRepository.save(q);
+    }
+
+    public Question updateQuestion(String id, AdminQuestionRequest req) {
+        Question q = questionRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Question not found"));
+        if (req.getText() != null) q.setText(req.getText());
+        if (req.getOptions() != null) q.setOptions(req.getOptions());
+        if (req.getCorrectIndex() >= 0) q.setCorrectIndex(req.getCorrectIndex());
+        if (req.getExplanation() != null) q.setExplanation(req.getExplanation());
+        if (req.getDifficulty() != null) q.setDifficulty(req.getDifficulty());
+        return questionRepository.save(q);
+    }
+
+    public void deleteQuestion(String id) {
+        if (!questionRepository.existsById(id))
+            throw new ResourceNotFoundException("Question not found");
+        questionRepository.deleteById(id);
     }
 
     public RoadmapSubject reorderSubjectInRoadmap(String roadmapId, String subjectId, int newOrderIndex) {

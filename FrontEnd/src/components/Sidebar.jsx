@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, Settings, ChevronRight, Layers
+  Users, ChevronRight, Layers, HelpCircle
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -21,6 +21,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/admin/subjects', icon: <BookOpen size={18} />, label: 'Subjects' },
     { to: '/admin/concepts', icon: <Layers size={18} />, label: 'Concepts' },
     { to: '/admin/roadmaps', icon: <Map size={18} />, label: 'Roadmaps' },
+    { to: '/admin/questions', icon: <HelpCircle size={18} />, label: 'Questions' },
   ]
 
   const links = isAdmin ? adminLinks : studentLinks

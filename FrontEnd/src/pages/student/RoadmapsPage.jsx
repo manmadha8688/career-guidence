@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Clock, BookOpen, CheckCircle } from 'lucide-react'
+import { Clock, BookOpen, CheckCircle, Trophy } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getRoadmaps, enrollRoadmap } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -32,6 +32,14 @@ export default function RoadmapsPage() {
     }
   }
 
+  const handleFinalTest = (e) => {
+    e.stopPropagation()
+    toast('Complete all subjects in this roadmap to unlock the Final Test', {
+      icon: '🔒',
+      duration: 3000,
+    })
+  }
+
   return (
     <AppLayout title="Roadmaps">
       <div className="page-header">
@@ -48,6 +56,7 @@ export default function RoadmapsPage() {
           {roadmaps.map(r => (
             <div key={r.id} className="card card-hover" style={{ cursor: 'pointer', borderTop: `4px solid ${r.color}` }}
               onClick={() => navigate(`/roadmaps/${r.id}`)}>
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', marginBottom: '1rem' }}>
                 <div style={{ width: 52, height: 52, background: r.color + '22', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>
                   {r.icon}
@@ -69,26 +78,48 @@ export default function RoadmapsPage() {
                 </span>
               </div>
 
-              {r.enrolled ? (
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <span className="badge badge-success" style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}>
-                    <CheckCircle size={12} style={{ marginRight: 4 }} /> Enrolled
-                  </span>
-                  <button className="btn btn-ghost btn-sm" onClick={e => { e.stopPropagation(); navigate(`/roadmaps/${r.id}`) }}>
-                    View Path
+              {/* Enroll / enrolled row */}
+              <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.625rem' }} onClick={e => e.stopPropagation()}>
+                {r.enrolled ? (
+                  <>
+                    <span className="badge badge-success" style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}>
+                      <CheckCircle size={12} style={{ marginRight: 4 }} /> Enrolled
+                    </span>
+                    <button className="btn btn-ghost btn-sm" onClick={e => { e.stopPropagation(); navigate(`/roadmaps/${r.id}`) }}>
+                      View Path
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    className="btn btn-primary btn-sm w-full"
+                    style={{ justifyContent: 'center' }}
+                    onClick={e => handleEnroll(e, r.id)}
+                    disabled={enrolling[r.id]}
+                  >
+                    {enrolling[r.id] ? <span className="loading-spinner" /> : null}
+                    {enrolling[r.id] ? 'Enrolling…' : 'Enroll & Start'}
                   </button>
-                </div>
-              ) : (
+                )}
+              </div>
+
+              {/* Final Test button — always visible, locked until all subjects done */}
+              <div onClick={e => e.stopPropagation()}>
                 <button
-                  className="btn btn-primary btn-sm w-full"
-                  style={{ justifyContent: 'center' }}
-                  onClick={e => handleEnroll(e, r.id)}
-                  disabled={enrolling[r.id]}
+                  className="btn btn-sm w-full"
+                  style={{
+                    justifyContent: 'center',
+                    background: 'transparent',
+                    color: 'var(--text-muted)',
+                    border: '1.5px dashed var(--border)',
+                    fontWeight: 500,
+                    cursor: 'not-allowed',
+                  }}
+                  onClick={handleFinalTest}
                 >
-                  {enrolling[r.id] ? <span className="loading-spinner" /> : null}
-                  {enrolling[r.id] ? 'Enrolling…' : 'Enroll & Start'}
+                  <Trophy size={14} /> Final Test — Coming Soon
                 </button>
-              )}
+              </div>
+
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 package com.example.student.controller;
 
 import com.example.student.dto.AdminConceptRequest;
+import com.example.student.dto.AdminQuestionRequest;
 import com.example.student.dto.AdminRoadmapRequest;
 import com.example.student.dto.AdminSubjectRequest;
 import com.example.student.service.AdminService;
@@ -136,5 +137,29 @@ public class AdminController {
                                              @RequestBody Map<String, Integer> body) {
         return ResponseEntity.ok(adminService.reorderSubjectInRoadmap(
                 roadmapId, subjectId, body.get("newOrderIndex")));
+    }
+
+    // ─── QUESTIONS ───────────────────────────────────────────────────────────
+
+    @GetMapping("/questions/concept/{conceptId}")
+    public ResponseEntity<?> getQuestions(@PathVariable String conceptId) {
+        return ResponseEntity.ok(adminService.getQuestionsByConceptId(conceptId));
+    }
+
+    @PostMapping("/questions")
+    public ResponseEntity<?> createQuestion(@RequestBody AdminQuestionRequest req) {
+        return ResponseEntity.ok(adminService.createQuestion(req));
+    }
+
+    @PutMapping("/questions/{id}")
+    public ResponseEntity<?> updateQuestion(@PathVariable String id,
+                                             @RequestBody AdminQuestionRequest req) {
+        return ResponseEntity.ok(adminService.updateQuestion(id, req));
+    }
+
+    @DeleteMapping("/questions/{id}")
+    public ResponseEntity<?> deleteQuestion(@PathVariable String id) {
+        adminService.deleteQuestion(id);
+        return ResponseEntity.ok(Map.of("message", "Question deleted"));
     }
 }

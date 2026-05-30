@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { ArrowLeft, Clock, CheckCircle, PlayCircle, Lock } from 'lucide-react'
+import { ArrowLeft, Clock, CheckCircle, PlayCircle, Trophy } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import ProgressBar from '../../components/ProgressBar'
-import { getRoadmap, enrollRoadmap } from '../../api/api'
+import { getRoadmap, enrollRoadmap, getRoadmapStatus } from '../../api/api'
 import toast from 'react-hot-toast'
 
 export default function RoadmapDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [roadmap, setRoadmap] = useState(null)
+  const [roadmapStatus, setRoadmapStatus] = useState(null)
   const [loading, setLoading] = useState(true)
   const [enrolling, setEnrolling] = useState(false)
 
   useEffect(() => {
-    getRoadmap(id)
-      .then(r => setRoadmap(r.data))
+    Promise.all([
+      getRoadmap(id),
+      getRoadmapStatus(id).catch(() => null)
+    ])
+      .then(([r, rs]) => {
+        setRoadmap(r.data)
+        if (rs) setRoadmapStatus(rs.data)
+      })
       .catch(() => toast.error('Failed to load roadmap'))
       .finally(() => setLoading(false))
   }, [id])
@@ -95,6 +102,20 @@ export default function RoadmapDetailPage() {
         </div>
         <ProgressBar value={roadmap.overallPercentage} />
       </div>
+
+      {/* Final test banner */}
+      {roadmapStatus?.allSubjectsDone && (
+        <div className="final-test-banner">
+          <div>
+            <h3>🏆 All Subjects Complete!</h3>
+            <p style={{ opacity: 0.85, fontSize: '0.8125rem' }}>Take the Roadmap Final Test (50 questions · 90 min)</p>
+          </div>
+          <button className="btn btn-sm" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', whiteSpace: 'nowrap' }}
+            onClick={() => navigate(`/quiz/roadmap/${id}`)}>
+            <Trophy size={14} /> Start Final Test
+          </button>
+        </div>
+      )}
 
       {/* Visual roadmap flow */}
       <div className="roadmap-flow">

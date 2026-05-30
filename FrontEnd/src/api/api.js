@@ -71,4 +71,20 @@ export const getRoadmapSubjects = (id)      => api.get(`/admin/roadmaps/${id}/su
 export const addSubjectToRoadmap   = (rid,d)      => api.post(`/admin/roadmaps/${rid}/subjects`, d)
 export const removeSubjectFromRoadmap = (rid,sid) => api.delete(`/admin/roadmaps/${rid}/subjects/${sid}`)
 
+// ─── ADMIN QUESTIONS ─────────────────────────────
+export const getConceptQuestions = (conceptId)    => api.get(`/admin/questions/concept/${conceptId}`)
+export const createQuestion      = (d)            => api.post('/admin/questions', d)
+export const updateQuestion      = (id, d)        => api.put(`/admin/questions/${id}`, d)
+export const deleteQuestion      = (id)           => api.delete(`/admin/questions/${id}`)
+
+// ─── QUIZ ─────────────────────────────────────────
+export const startConceptQuiz  = (conceptId)       => api.post(`/quiz/concept/${conceptId}/start`)
+export const startSubjectQuiz  = (subjectId)       => api.post(`/quiz/subject/${subjectId}/start`)
+export const startRoadmapQuiz  = (roadmapId)       => api.post(`/quiz/roadmap/${roadmapId}/start`)
+export const submitQuiz        = (data)            => api.post('/quiz/submit', data)
+export const getAttemptResult  = (attemptId)       => api.get(`/quiz/attempt/${attemptId}`)
+export const getQuizStatus     = (type, refId)     => api.get(`/quiz/${type}/${refId}/status`)
+export const getSubjectStatus  = (subjectId)       => api.get(`/quiz/subject/${subjectId}/status`)
+export const getRoadmapStatus  = (roadmapId)       => api.get(`/quiz/roadmap/${roadmapId}/status`)
+
 export default api
