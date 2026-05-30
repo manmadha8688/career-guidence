@@ -1,0 +1,74 @@
+import axios from 'axios'
+
+const BASE_URL = 'http://localhost:8080/api'
+
+const api = axios.create({ baseURL: BASE_URL })
+
+api.interceptors.request.use(config => {
+  const token = localStorage.getItem('token')
+  if (token) config.headers.Authorization = `Bearer ${token}`
+  return config
+})
+
+api.interceptors.response.use(
+  res => res,
+  err => {
+    if (err.response?.status === 401 && window.location.pathname !== '/login') {
+      localStorage.clear()
+      window.location.href = '/login'
+    }
+    return Promise.reject(err)
+  }
+)
+
+// ─── AUTH ────────────────────────────────────
+export const registerUser     = (data)      => api.post('/auth/register', data)
+export const loginUser        = (data)      => api.post('/auth/login', data)
+export const getMe            = ()          => api.get('/auth/me')
+
+// ─── SUBJECTS ────────────────────────────────
+export const getSubjects      = ()          => api.get('/subjects')
+export const getSubject       = (id)        => api.get(`/subjects/${id}`)
+export const searchSubjects   = (q)         => api.get(`/subjects/search?q=${encodeURIComponent(q)}`)
+
+// ─── CONCEPTS ────────────────────────────────
+export const getConcepts      = (subId)     => api.get(`/subjects/${subId}/concepts`)
+export const getConcept       = (id)        => api.get(`/concepts/${id}`)
+export const searchConcepts   = (q)         => api.get(`/concepts/search?q=${encodeURIComponent(q)}`)
+
+// ─── PROGRESS ────────────────────────────────
+export const completeConcept    = (id)      => api.post(`/progress/concept/${id}/complete`)
+export const uncompleteConcept  = (id)      => api.delete(`/progress/concept/${id}/uncomplete`)
+export const getProgressSummary = ()        => api.get('/progress/summary')
+
+// ─── ROADMAPS ────────────────────────────────
+export const getRoadmaps        = ()        => api.get('/roadmaps')
+export const getRoadmap         = (id)      => api.get(`/roadmaps/${id}`)
+export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`)
+export const getEnrolledRoadmaps = ()       => api.get('/roadmaps/enrolled')
+
+// ─── ADMIN ───────────────────────────────────
+export const getAdminStats      = ()        => api.get('/admin/stats')
+export const getAdminUsers      = (p,s,q)   => api.get(`/admin/users?page=${p}&size=${s}&search=${q||''}`)
+export const deleteUser         = (id)      => api.delete(`/admin/users/${id}`)
+export const getUserProgress    = (id)      => api.get(`/admin/users/${id}/progress`)
+
+export const getAdminSubjects   = ()        => api.get('/admin/subjects')
+export const createSubject      = (d)       => api.post('/admin/subjects', d)
+export const updateSubject      = (id,d)    => api.put(`/admin/subjects/${id}`, d)
+export const deleteSubject      = (id)      => api.delete(`/admin/subjects/${id}`)
+
+export const getAdminConcepts   = (subId)   => api.get(`/admin/concepts?subjectId=${subId}`)
+export const createConcept      = (d)       => api.post('/admin/concepts', d)
+export const updateConcept      = (id,d)    => api.put(`/admin/concepts/${id}`, d)
+export const deleteConcept      = (id)      => api.delete(`/admin/concepts/${id}`)
+
+export const getAdminRoadmaps   = ()        => api.get('/admin/roadmaps')
+export const createRoadmap      = (d)       => api.post('/admin/roadmaps', d)
+export const updateRoadmap      = (id,d)    => api.put(`/admin/roadmaps/${id}`, d)
+export const deleteRoadmap      = (id)      => api.delete(`/admin/roadmaps/${id}`)
+export const getRoadmapSubjects = (id)      => api.get(`/admin/roadmaps/${id}/subjects`)
+export const addSubjectToRoadmap   = (rid,d)      => api.post(`/admin/roadmaps/${rid}/subjects`, d)
+export const removeSubjectFromRoadmap = (rid,sid) => api.delete(`/admin/roadmaps/${rid}/subjects/${sid}`)
+
+export default api

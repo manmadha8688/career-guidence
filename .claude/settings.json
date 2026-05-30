@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(c:/manmadha/Student-project/**)",
+      "Write(c:/manmadha/Student-project/**)",
+      "Edit(c:/manmadha/Student-project/**)",
+      "Bash(cd c:/manmadha/Student-project/**)",
+      "Bash(npm *)",
+      "Bash(node *)"
+    ],
+    "deny": []
+  }
+}
