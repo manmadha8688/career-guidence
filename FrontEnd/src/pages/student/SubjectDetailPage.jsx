@@ -1,20 +1,27 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Clock, CheckCircle, Circle, ArrowLeft } from 'lucide-react'
+import { Clock, CheckCircle, ArrowLeft, Brain, Trophy } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import ProgressBar from '../../components/ProgressBar'
-import { getSubject } from '../../api/api'
+import { getSubject, getSubjectStatus } from '../../api/api'
 import toast from 'react-hot-toast'
 
 export default function SubjectDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [subject, setSubject] = useState(null)
+  const [subjectStatus, setSubjectStatus] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getSubject(id)
-      .then(r => setSubject(r.data))
+    Promise.all([
+      getSubject(id),
+      getSubjectStatus(id).catch(() => null)
+    ])
+      .then(([s, st]) => {
+        setSubject(s.data)
+        if (st) setSubjectStatus(st.data)
+      })
       .catch(() => toast.error('Failed to load subject'))
       .finally(() => setLoading(false))
   }, [id])
@@ -51,6 +58,53 @@ export default function SubjectDetailPage() {
         </div>
         <ProgressBar value={pct} />
       </div>
+
+      {/* Subject test banner — always shown when subject has concepts */}
+      {subject.totalConcepts > 0 && (
+        subjectStatus?.hasBadge ? (
+          <div className="badge-earned-banner" style={{ marginBottom: '1.25rem' }}>
+            <Trophy size={24} />
+            <div>
+              <div className="font-semibold">Subject Badge Earned!</div>
+              <div className="text-sm" style={{ opacity: 0.85 }}>
+                Score: {subjectStatus.badgeScore}/{subjectStatus.badgeTotal} · {Math.round(subjectStatus.badgeScore / subjectStatus.badgeTotal * 100)}%
+              </div>
+            </div>
+            <button
+              className="btn btn-sm"
+              style={{ marginLeft: 'auto', background: 'rgba(255,255,255,0.2)', color: 'white' }}
+              onClick={() => navigate(`/quiz/subject/${id}`)}
+            >
+              Retake
+            </button>
+          </div>
+        ) : (
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            flexWrap: 'wrap', gap: '0.75rem',
+            padding: '1rem 1.25rem', marginBottom: '1.25rem',
+            background: 'var(--bg-card)', border: '1.5px solid var(--primary)',
+            borderRadius: 'var(--radius-lg)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Brain size={20} color="var(--primary)" />
+              <div>
+                <div className="font-semibold text-sm">Subject Test</div>
+                <div className="text-xs text-muted">25 questions · Pass 19/25 to earn badge</div>
+              </div>
+            </div>
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={() => navigate(`/quiz/subject/${id}`)}
+            >
+              <Brain size={14} />
+              {subjectStatus?.attemptCount > 0
+                ? `Retry Test · Best ${subjectStatus.bestScore}/25`
+                : 'Take Subject Test →'}
+            </button>
+          </div>
+        )
+      )}
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         {subject.concepts?.map((c, i) => (

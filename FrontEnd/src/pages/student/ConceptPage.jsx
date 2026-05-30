@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { CheckCircle, Circle, Clock, ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react'
+import { CheckCircle, Circle, Clock, ChevronRight, Brain, Trophy } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import ProgressBar from '../../components/ProgressBar'
-import { getConcept, completeConcept, uncompleteConcept } from '../../api/api'
+import { getConcept, completeConcept, getQuizStatus } from '../../api/api'
 import toast from 'react-hot-toast'
 
 export default function ConceptPage() {
@@ -11,12 +11,19 @@ export default function ConceptPage() {
   const navigate = useNavigate()
   const [concept, setConcept] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [toggling, setToggling] = useState(false)
+  const [marking, setMarking] = useState(false)
+  const [quizStatus, setQuizStatus] = useState(null)
 
   const load = useCallback(() => {
     setLoading(true)
-    getConcept(id)
-      .then(r => setConcept(r.data))
+    Promise.all([
+      getConcept(id),
+      getQuizStatus('concept', id).catch(() => null)
+    ])
+      .then(([c, qs]) => {
+        setConcept(c.data)
+        if (qs) setQuizStatus(qs.data)
+      })
       .catch(() => toast.error('Failed to load concept'))
       .finally(() => setLoading(false))
   }, [id])
@@ -32,21 +39,17 @@ export default function ConceptPage() {
     return () => window.removeEventListener('keydown', handler)
   }, [concept, navigate])
 
-  const handleToggle = async () => {
-    setToggling(true)
+  const handleMarkDone = async () => {
+    if (concept.completed) return
+    setMarking(true)
     try {
-      if (concept.completed) {
-        await uncompleteConcept(concept.id)
-        toast.success('Marked as incomplete')
-      } else {
-        await completeConcept(concept.id)
-        toast.success('Concept completed! 🎉')
-      }
-      setConcept(c => ({ ...c, completed: !c.completed }))
+      await completeConcept(concept.id)
+      setConcept(c => ({ ...c, completed: true }))
+      toast.success('Concept marked as done! 🎉')
     } catch {
-      toast.error('Failed to update progress')
+      toast.error('Failed to mark as done')
     } finally {
-      setToggling(false)
+      setMarking(false)
     }
   }
 
@@ -60,14 +63,15 @@ export default function ConceptPage() {
 
   const position = concept.orderIndex
   const total = concept.totalInSubject
+  const isMastered = quizStatus?.hasPassed
+  const hasTried = quizStatus?.attemptCount > 0
 
   return (
     <AppLayout title={concept.title}>
       <div className="concept-layout">
-        {/* Sidebar: concept list */}
+        {/* Sidebar */}
         <aside className="concept-sidebar">
           <div className="concept-sidebar-title">{concept.subjectTitle}</div>
-          {/* We'll just show prev/next context since we don't have the full list loaded */}
           <div style={{ padding: '0.5rem 0', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center' }}>
             Concept {position} of {total}
           </div>
@@ -161,6 +165,63 @@ export default function ConceptPage() {
             </section>
           )}
 
+          {/* Quiz / Done section */}
+          <section style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+            {isMastered ? (
+              /* Passed quiz — show mastered + Mark Done */
+              <div style={{ border: '1.5px solid var(--success)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', background: '#F0FDF4' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <Trophy size={22} color="#065F46" />
+                  <div>
+                    <div className="font-semibold" style={{ color: '#065F46' }}>Concept Mastered!</div>
+                    <div className="text-xs" style={{ color: '#047857' }}>
+                      Best score: {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''}
+                    </div>
+                  </div>
+                  <button className="btn btn-ghost btn-sm" style={{ marginLeft: 'auto' }}
+                    onClick={() => navigate(`/quiz/concept/${id}`)}>
+                    Retake
+                  </button>
+                </div>
+                {concept.completed ? (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#065F46', fontSize: '0.875rem', fontWeight: 500 }}>
+                    <CheckCircle size={16} /> Done — concept completed
+                  </div>
+                ) : (
+                  <button
+                    className="btn btn-success w-full"
+                    onClick={handleMarkDone}
+                    disabled={marking}
+                    style={{ justifyContent: 'center' }}
+                  >
+                    {marking ? <span className="loading-spinner" /> : <CheckCircle size={16} />}
+                    {marking ? 'Saving…' : 'Mark Done ✓'}
+                  </button>
+                )}
+              </div>
+            ) : (
+              /* Not yet passed — single "Ready for Test" card */
+              <div className="quiz-cta-card">
+                <Brain size={28} color="var(--primary)" style={{ marginBottom: '0.5rem' }} />
+                <h3>Ready for the test?</h3>
+                <p>10 questions · Need 8/10 to master · Mark Done unlocks after passing</p>
+                <button
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', marginTop: '0.25rem' }}
+                  onClick={() => navigate(`/quiz/concept/${id}`)}
+                >
+                  <Brain size={15} /> Ready for Test →
+                </button>
+                {hasTried && (
+                  <div className="text-xs text-muted" style={{ marginTop: '0.75rem' }}>
+                    Previous best: {quizStatus.bestScore}/{quizStatus.bestTotal}
+                    {quizStatus.nextRetryAt && ' · Cooldown active'}
+                  </div>
+                )}
+              </div>
+            )}
+          </section>
+
           {/* Prev / Next navigation */}
           <div className="concept-prev-next">
             {concept.prevConcept ? (
@@ -179,20 +240,7 @@ export default function ConceptPage() {
           </div>
         </article>
       </div>
-
-      {/* Sticky complete bar */}
-      <div className="complete-btn-bar">
-        <span className="text-sm text-muted">
-          {concept.completed ? '✅ You completed this concept' : '📌 Mark this concept when you understand it'}
-        </span>
-        <button
-          className={`btn ${concept.completed ? 'btn-ghost' : 'btn-success'}`}
-          onClick={handleToggle}
-          disabled={toggling}
-        >
-          {toggling ? <span className="loading-spinner" /> : concept.completed ? <><Circle size={15} /> Mark Incomplete</> : <><CheckCircle size={15} /> Mark Complete</>}
-        </button>
-      </div>
+      {/* sticky bar removed */}
     </AppLayout>
   )
 }
