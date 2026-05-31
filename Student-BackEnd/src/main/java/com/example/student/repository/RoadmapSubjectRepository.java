@@ -10,4 +10,5 @@ public interface RoadmapSubjectRepository extends MongoRepository<RoadmapSubject
     List<RoadmapSubject> findByRoadmapIdOrderByOrderIndex(String roadmapId);
     Optional<RoadmapSubject> findByRoadmapIdAndSubjectId(String roadmapId, String subjectId);
     void deleteByRoadmapIdAndSubjectId(String roadmapId, String subjectId);
+    void deleteBySubjectId(String subjectId);
 }

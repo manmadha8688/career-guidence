@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Clock, BookOpen, CheckCircle, Trophy } from 'lucide-react'
+import { Clock, BookOpen, CheckCircle, Trophy, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getRoadmaps, enrollRoadmap } from '../../api/api'
 import toast from 'react-hot-toast'
 
 export default function RoadmapsPage() {
   const [roadmaps, setRoadmaps] = useState([])
+  const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [enrolling, setEnrolling] = useState({})
   const navigate = useNavigate()
@@ -40,6 +41,11 @@ export default function RoadmapsPage() {
     })
   }
 
+  const filtered = roadmaps.filter(r =>
+    r.title.toLowerCase().includes(search.toLowerCase()) ||
+    (r.roleTarget || '').toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <AppLayout title="Roadmaps">
       <div className="page-header">
@@ -47,13 +53,28 @@ export default function RoadmapsPage() {
           <h1 className="page-title">Career Roadmaps</h1>
           <p className="page-subtitle">Choose your career path and follow a structured learning journey</p>
         </div>
+        <div style={{ position: 'relative' }}>
+          <Search size={14} style={{ position: 'absolute', left: '0.7rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
+          <input
+            className="form-input"
+            style={{ paddingLeft: '2.1rem', width: 230, fontSize: '0.875rem' }}
+            placeholder="Search by title or role…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </div>
       </div>
 
       {loading ? (
         <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div>
+      ) : filtered.length === 0 ? (
+        <div className="empty-state">
+          <div className="empty-state-icon">🔍</div>
+          <div className="empty-state-text">No roadmaps match "{search}"</div>
+        </div>
       ) : (
         <div className="grid-auto">
-          {roadmaps.map(r => (
+          {filtered.map(r => (
             <div key={r.id} className="card card-hover" style={{ cursor: 'pointer', borderTop: `4px solid ${r.color}` }}
               onClick={() => navigate(`/roadmaps/${r.id}`)}>
 

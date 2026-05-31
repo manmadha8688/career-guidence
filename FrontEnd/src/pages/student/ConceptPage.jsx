@@ -70,6 +70,8 @@ export default function ConceptPage() {
     <AppLayout title={concept.title}>
       <div className="concept-layout">
         {/* Sidebar */}
+
+        {/*
         <aside className="concept-sidebar">
           <div className="concept-sidebar-title">{concept.subjectTitle}</div>
           <div style={{ padding: '0.5rem 0', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center' }}>
@@ -100,6 +102,8 @@ export default function ConceptPage() {
             ← → arrow keys to navigate
           </div>
         </aside>
+
+        */}
 
         {/* Main content */}
         <article className="concept-body">

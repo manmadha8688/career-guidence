@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Plus, Pencil, Trash2, X } from 'lucide-react'
+import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, createSubject, updateSubject, deleteSubject } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -7,6 +7,11 @@ import toast from 'react-hot-toast'
 function SubjectModal({ subject, onClose, onSave }) {
   const [form, setForm] = useState(subject || { title: '', description: '', icon: '📚', color: '#4F46E5' })
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -66,6 +71,7 @@ function SubjectModal({ subject, onClose, onSave }) {
 
 export default function AdminSubjects() {
   const [subjects, setSubjects] = useState([])
+  const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(null)
   const [deleting, setDeleting] = useState({})
@@ -91,6 +97,11 @@ export default function AdminSubjects() {
     finally { setDeleting(p => ({ ...p, [id]: false })) }
   }
 
+  const filtered = subjects.filter(s =>
+    s.title.toLowerCase().includes(search.toLowerCase()) ||
+    (s.description || '').toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <AppLayout title="Subjects">
       <div className="page-header">
@@ -98,9 +109,21 @@ export default function AdminSubjects() {
           <h1 className="page-title">Subjects</h1>
           <p className="page-subtitle">{subjects.length} subjects in the platform</p>
         </div>
-        <button className="btn btn-primary" onClick={() => setModal('new')}>
-          <Plus size={15} /> New Subject
-        </button>
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <div style={{ position: 'relative' }}>
+            <Search size={15} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
+            <input
+              className="form-input"
+              style={{ paddingLeft: '2.25rem', width: 220 }}
+              placeholder="Search subjects…"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary" onClick={() => setModal('new')}>
+            <Plus size={15} /> New Subject
+          </button>
+        </div>
       </div>
 
       {loading ? (
@@ -112,7 +135,9 @@ export default function AdminSubjects() {
               <tr><th>Subject</th><th>Concepts</th><th>Color</th><th></th></tr>
             </thead>
             <tbody>
-              {subjects.map(s => (
+              {filtered.length === 0 ? (
+                <tr><td colSpan={4} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No subjects match "{search}"</td></tr>
+              ) : filtered.map(s => (
                 <tr key={s.id}>
                   <td>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>

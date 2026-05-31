@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Clock, CheckCircle, ArrowLeft, Brain, Trophy } from 'lucide-react'
+import { Clock, CheckCircle, ArrowLeft, Brain, Trophy, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import ProgressBar from '../../components/ProgressBar'
 import { getSubject, getSubjectStatus } from '../../api/api'
@@ -12,6 +12,7 @@ export default function SubjectDetailPage() {
   const [subject, setSubject] = useState(null)
   const [subjectStatus, setSubjectStatus] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     Promise.all([
@@ -38,9 +39,21 @@ export default function SubjectDetailPage() {
 
   return (
     <AppLayout title={subject.title}>
-      <button className="btn btn-ghost btn-sm mb-3" onClick={() => navigate(-1)}>
-        <ArrowLeft size={15} /> Back
-      </button>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <button className="btn btn-ghost btn-sm" onClick={() => navigate(-1)}>
+          <ArrowLeft size={15} /> Back
+        </button>
+        <div style={{ position: 'relative' }}>
+          <Search size={14} style={{ position: 'absolute', left: '0.7rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
+          <input
+            className="form-input"
+            style={{ paddingLeft: '2.1rem', width: 220, fontSize: '0.875rem' }}
+            placeholder="Filter concepts…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </div>
+      </div>
 
       <div className="card mb-3">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
@@ -107,7 +120,13 @@ export default function SubjectDetailPage() {
       )}
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-        {subject.concepts?.map((c, i) => (
+        {subject.concepts?.filter(c => c.title.toLowerCase().includes(search.toLowerCase())).length === 0 && search ? (
+          <div className="empty-state">
+            <div className="empty-state-icon">🔍</div>
+            <div className="empty-state-text">No concepts match "{search}"</div>
+          </div>
+        ) : null}
+        {subject.concepts?.filter(c => c.title.toLowerCase().includes(search.toLowerCase())).map((c, i) => (
           <div
             key={c.id}
             className="card card-hover"

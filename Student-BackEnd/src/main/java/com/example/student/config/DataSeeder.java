@@ -45,6 +45,9 @@ public class DataSeeder implements CommandLineRunner {
         if (questionRepository.count() == 0) {
             seedQuestions();
         }
+        if (subjectRepository.findAll().stream().noneMatch(s -> s.getTitle().equals("Python Fundamentals"))) {
+            seedPythonFullStack();
+        }
     }
 
     private void seedAdmin() {
@@ -441,5 +444,139 @@ public class DataSeeder implements CommandLineRunner {
             {"ResponseEntity.ok() sets status code?","201","200","204","400",1,"ResponseEntity.ok() creates a 200 OK response","EASY"},
             {"Custom app exceptions typically extend?","Throwable","Error","RuntimeException","Object",2,"RuntimeException → unchecked, no try-catch required for callers","EASY"}
         };
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // PYTHON FULL STACK ROADMAP
+    // ═══════════════════════════════════════════════════════════
+
+    private void seedPythonFullStack() {
+        Roadmap pyRoadmap = new Roadmap();
+        pyRoadmap.setTitle("Python Full Stack Developer");
+        pyRoadmap.setDescription("Master Python, Django, React and deployment to build complete web applications from scratch");
+        pyRoadmap.setRoleTarget("Python Full Stack");
+        pyRoadmap.setIcon("🐍");
+        pyRoadmap.setColor("#84CC16");
+        pyRoadmap.setEstimatedWeeks(28);
+        pyRoadmap.setPublished(true);
+        pyRoadmap = roadmapRepository.save(pyRoadmap);
+
+        Subject pyFundamentals = subjectRepository.save(pySub("Python Fundamentals",       "Core Python concepts — the foundation of everything you will build",                              "🐍","#84CC16",10));
+        Subject pyOop          = subjectRepository.save(pySub("OOP in Python",              "Object Oriented Programming principles that make your Python code scalable and maintainable",    "🧩","#8B5CF6", 8));
+        Subject pyAdvanced     = subjectRepository.save(pySub("Advanced Python",            "Powerful Python features that separate beginners from professional developers",                  "⚡","#F59E0B", 8));
+        Subject pyHtmlCss      = subjectRepository.save(pySub("HTML & CSS",                 "Build and style web pages — the visual layer of every web application",                         "🎨","#F97316", 8));
+        Subject pyJs           = subjectRepository.save(pySub("JavaScript Basics",          "Client-side scripting to make web pages interactive and dynamic",                               "⚡","#EAB308", 7));
+        Subject pyGit          = subjectRepository.save(pySub("Git & GitHub",               "Version control system every developer must know before writing a single line of project code", "🐙","#64748B", 7));
+        Subject pySql          = subjectRepository.save(pySub("SQL & PostgreSQL",           "Relational database skills used in every Django production application",                         "🐘","#0EA5E9", 7));
+        Subject pyDjango       = subjectRepository.save(pySub("Django Framework",           "Python's most powerful web framework — build full web apps with batteries included",            "🌿","#10B981",10));
+        Subject pyDrf          = subjectRepository.save(pySub("Django REST Framework",      "Build professional REST APIs with Django — the backend for your React frontend",                "🔗","#059669", 8));
+        Subject pyReact        = subjectRepository.save(pySub("React Basics",               "Build modern, reactive user interfaces with the most popular frontend library",                  "⚛️","#06B6D4", 8));
+        Subject pyIntegration  = subjectRepository.save(pySub("React + Django Integration", "Connect your React frontend to your Django API — build a complete full stack application",       "🔄","#8B5CF6", 6));
+        Subject pyDeploy       = subjectRepository.save(pySub("Deployment",                 "Take your application live — host frontend, backend, and database on real servers",             "🚀","#EF4444", 6));
+
+        int ord = 1;
+        for (Subject s : List.of(pyFundamentals, pyOop, pyAdvanced, pyHtmlCss, pyJs, pyGit, pySql, pyDjango, pyDrf, pyReact, pyIntegration, pyDeploy)) {
+            RoadmapSubject rs = new RoadmapSubject();
+            rs.setRoadmapId(pyRoadmap.getId());
+            rs.setSubjectId(s.getId());
+            rs.setSubject(s);
+            rs.setOrderIndex(ord++);
+            roadmapSubjectRepository.save(rs);
+        }
+
+        conceptRepository.saveAll(List.of(
+            concept(pyFundamentals, "Variables and Data Types",
+                "Python has dynamic typing — you don't declare types. Key types: int, float, str, bool, NoneType. Use type() to check. Variables are just labels pointing to objects in memory.",
+                "Every Python program stores and processes data. Understanding types prevents TypeErrors that crash production code. Dynamic typing is Python's power — and its main source of bugs if misunderstood.",
+                "age = 25\nname = 'Alice'\nsalary = 75000.50\nis_active = True\nnull_value = None\n\nprint(type(age))      # <class 'int'>\nprint(type(name))     # <class 'str'>\nprint(type(is_active))# <class 'bool'>",
+                20, 1),
+            concept(pyFundamentals, "Control Flow",
+                "if/elif/else for decisions. for loops iterate over sequences. while loops run until condition is False. break exits a loop. continue skips to next iteration. pass is a no-op placeholder.",
+                "Without control flow your code runs top-to-bottom once and stops. Control flow is what makes programs actually solve problems — every real application is built on decisions and repetition.",
+                "score = 85\n\nif score >= 90:\n    print('A Grade')\nelif score >= 80:\n    print('B Grade')\nelse:\n    print('Try harder')\n\n# Loop\nfor i in range(5):\n    if i == 3:\n        break\n    print(i)  # 0, 1, 2",
+                20, 2),
+            concept(pyFundamentals, "Functions",
+                "def keyword defines a function. Parameters are inputs. return sends output back. Default parameters, *args (multiple positional), **kwargs (keyword arguments). Functions are first-class objects in Python.",
+                "Functions prevent duplication. Every time you write the same code twice, it should be a function. Clean functions with single responsibilities are what professional Python code looks like.",
+                "def greet(name, greeting='Hello'):\n    return f'{greeting}, {name}!'\n\nprint(greet('Alice'))          # Hello, Alice!\nprint(greet('Bob', 'Hi'))      # Hi, Bob!\n\ndef add_all(*args):\n    return sum(args)\n\nprint(add_all(1, 2, 3, 4))    # 10",
+                20, 3),
+            concept(pyFundamentals, "Lists and Tuples",
+                "List: ordered, mutable, allows duplicates. [1, 2, 3]. Tuple: ordered, immutable. (1, 2, 3). Key list methods: append(), extend(), insert(), remove(), pop(), sort(), reverse(), index(), count().",
+                "Lists are Python's most-used data structure. Almost every Django queryset, API response, and data processing operation returns or uses a list. Mastering list methods is non-negotiable.",
+                "fruits = ['apple', 'banana', 'cherry']\nfruits.append('date')         # add to end\nfruits.insert(1, 'avocado')   # insert at index\nfruits.remove('banana')       # remove by value\n\nprint(fruits[0])              # apple\nprint(fruits[-1])             # date\nprint(fruits[1:3])            # slice",
+                20, 4),
+            concept(pyFundamentals, "Dictionaries",
+                "Key-value pairs. Keys must be unique and immutable. Values can be anything. Methods: keys(), values(), items(), get(), update(), pop(). Dictionary comprehensions. Nested dicts for JSON-like data.",
+                "Dictionaries are how Python represents JSON data — every API response you receive or send is a dictionary. Django models use dicts. Understanding dicts is understanding how data flows in web apps.",
+                "student = {\n    'name': 'Alice',\n    'age': 22,\n    'grades': [85, 92, 78]\n}\n\nprint(student['name'])        # Alice\nprint(student.get('phone', 'N/A'))  # N/A (safe)\n\nstudent['email'] = 'alice@mail.com'\nstudent.update({'age': 23, 'city': 'Delhi'})\n\nfor key, value in student.items():\n    print(f'{key}: {value}')",
+                20, 5),
+            concept(pyFundamentals, "String Methods",
+                "Strings are immutable sequences. Key methods: strip(), split(), join(), replace(), upper(), lower(), startswith(), endswith(), format(), f-strings. String slicing. in operator for membership.",
+                "String manipulation appears in every real application — processing user input, parsing API data, formatting output. f-strings are modern Python's most readable way to build strings.",
+                "text = '  Hello, World!  '\n\nprint(text.strip())           # 'Hello, World!'\nprint(text.lower())           # '  hello, world!  '\nprint(text.replace('World', 'Python'))\n\n# f-string (best practice)\nname = 'Alice'\nage = 22\nprint(f'Name: {name}, Age: {age}')\n\n# Split and join\nwords = 'python is great'.split()\nprint(' | '.join(words))      # python | is | great",
+                20, 6),
+            concept(pyFundamentals, "Exception Handling",
+                "try/except/else/finally blocks. Catch specific exceptions (ValueError, TypeError, FileNotFoundError). raise to throw exceptions. Custom exception classes. The bare except is bad practice.",
+                "Production code always encounters unexpected situations. Exception handling is what separates code that crashes from code that recovers gracefully. Every Django view needs proper error handling.",
+                "try:\n    number = int(input('Enter a number: '))\n    result = 100 / number\nexcept ValueError:\n    print('Not a valid number')\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')\nelse:\n    print(f'Result: {result}')   # runs if no exception\nfinally:\n    print('This always runs')    # cleanup code",
+                20, 7),
+            concept(pyFundamentals, "File Handling",
+                "open() with modes: 'r' (read), 'w' (write), 'a' (append), 'rb'/'wb' (binary). Always use with statement (context manager) to auto-close files. Reading: read(), readline(), readlines(). JSON files with json module.",
+                "Reading config files, processing CSVs, writing logs, handling uploads — file I/O is everywhere in backend development. The with statement is best practice because it guarantees file closure.",
+                "# Reading a file\nwith open('data.txt', 'r') as f:\n    content = f.read()\n    print(content)\n\n# Writing a file\nwith open('output.txt', 'w') as f:\n    f.write('Hello from Python!\\n')\n\n# Working with JSON\nimport json\ndata = {'name': 'Alice', 'age': 22}\n\nwith open('data.json', 'w') as f:\n    json.dump(data, f, indent=2)\n\nwith open('data.json', 'r') as f:\n    loaded = json.load(f)\n    print(loaded['name'])  # Alice",
+                20, 8),
+            concept(pyFundamentals, "List Comprehensions",
+                "Compact syntax to create lists: [expression for item in iterable if condition]. More readable and faster than equivalent for loops. Dict and set comprehensions follow the same pattern.",
+                "Comprehensions are one of Python's most loved features. They appear constantly in Django querysets, data processing, and API response building. Code that uses comprehensions reads as Python — code that doesn't reads like Java.",
+                "# Instead of this\nsquares = []\nfor x in range(10):\n    squares.append(x**2)\n\n# Write this\nsquares = [x**2 for x in range(10)]\nprint(squares)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# With condition\nevens = [x for x in range(20) if x % 2 == 0]\n\n# Dict comprehension\nstudents = ['Alice', 'Bob', 'Charlie']\ngrades = {name: 0 for name in students}",
+                15, 9),
+            concept(pyFundamentals, "Modules and Packages",
+                "import module_name. from module import specific_function. Python Standard Library: os, sys, datetime, math, random, re, json, collections. pip installs third-party packages. virtual environments isolate dependencies.",
+                "Every serious Python project uses external packages — Django, requests, pandas, etc. Understanding how imports work and how pip manages packages is essential before starting any framework.",
+                "# Standard library\nimport os\nimport datetime\n\nprint(os.getcwd())            # current directory\nprint(datetime.date.today())  # today's date\n\n# Specific import\nfrom math import sqrt, pi\nprint(sqrt(16))   # 4.0\nprint(pi)         # 3.14159...\n\n# Virtual environment (terminal)\n# python -m venv venv\n# venv\\\\Scripts\\\\activate  (Windows)\n# source venv/bin/activate  (Mac/Linux)\n# pip install django",
+                15, 10)
+        ));
+
+        conceptRepository.saveAll(List.of(
+            concept(pyDjango, "Django Project Structure (MVT)",
+                "Django follows MVT — Model (data), View (logic), Template (presentation). manage.py is the CLI tool. settings.py configures everything. urls.py routes requests. apps are modular components. INSTALLED_APPS registers them.",
+                "Understanding the project structure is the first thing every Django developer must do. Without this, the framework feels like magic. With it, you can navigate any Django codebase in minutes.",
+                "# Create project\ndjango-admin startproject mysite\ncd mysite\npython manage.py startapp students\n\n# Project structure\nmysite/\n├── manage.py\n├── mysite/\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n└── students/\n    ├── models.py\n    ├── views.py\n    ├── urls.py\n    └── templates/",
+                20, 1),
+            concept(pyDjango, "Models and ORM",
+                "Models are Python classes that map to database tables. ORM (Object Relational Mapper) lets you query the database using Python instead of SQL. Field types: CharField, IntegerField, ForeignKey, DateTimeField, BooleanField.",
+                "The Django ORM is one of the most productive database tools ever built. Writing Student.objects.filter(grade__gte=80) instead of SQL means faster development and fewer bugs.",
+                "from django.db import models\n\nclass Student(models.Model):\n    name = models.CharField(max_length=100)\n    email = models.EmailField(unique=True)\n    grade = models.IntegerField(default=0)\n    enrolled_at = models.DateTimeField(auto_now_add=True)\n    is_active = models.BooleanField(default=True)\n\n    def __str__(self):\n        return self.name\n\n# Querying\nall_students = Student.objects.all()\ngood_students = Student.objects.filter(grade__gte=80)\nalice = Student.objects.get(email='alice@test.com')",
+                30, 2),
+            concept(pyDjango, "Migrations",
+                "Migrations are Django's way of syncing your model changes to the database. makemigrations creates migration files. migrate applies them. showmigrations lists status. Never edit migration files manually.",
+                "Migrations solve the problem of keeping your database schema in sync with your code across multiple environments and team members. Without migrations, database changes are manual and error-prone.",
+                "# After creating or changing models:\n\n# Step 1: Generate migration file\npython manage.py makemigrations\n# Creates: students/migrations/0001_initial.py\n\n# Step 2: Apply to database\npython manage.py migrate\n\n# Check status\npython manage.py showmigrations\n\n# If you add a field to Student:\n# grade = models.IntegerField(default=0)\n# Run makemigrations again → 0002_student_grade.py",
+                20, 3),
+            concept(pyDjango, "Views and URL Patterns",
+                "Views are Python functions (or classes) that receive an HTTP request and return an HTTP response. URL patterns in urls.py map URLs to views using path(). Each app has its own urls.py included in the main one.",
+                "Views are where your application logic lives. Every page a user sees, every API endpoint a frontend calls — it starts with a view. Clean URL design is a mark of professional Django development.",
+                "# students/views.py\nfrom django.http import JsonResponse\nfrom .models import Student\n\ndef student_list(request):\n    students = Student.objects.all().values()\n    return JsonResponse(list(students), safe=False)\n\ndef student_detail(request, pk):\n    student = Student.objects.get(pk=pk)\n    return JsonResponse({'name': student.name, 'grade': student.grade})\n\n# students/urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('students/', views.student_list),\n    path('students/<int:pk>/', views.student_detail),\n]",
+                25, 4),
+            concept(pyDjango, "Django Admin Panel",
+                "Django auto-generates a full admin interface for your models. Register models in admin.py. Customise list display, search fields, filters. Create superuser with createsuperuser command.",
+                "The Django admin is one of Django's killer features. In hours, not days, you get a complete content management system. Most real Django projects use it for internal operations and content management.",
+                "# students/admin.py\nfrom django.contrib import admin\nfrom .models import Student\n\n@admin.register(Student)\nclass StudentAdmin(admin.ModelAdmin):\n    list_display = ['name', 'email', 'grade', 'is_active']\n    list_filter = ['is_active']\n    search_fields = ['name', 'email']\n    ordering = ['-grade']\n\n# Terminal:\n# python manage.py createsuperuser\n# python manage.py runserver\n# Visit: http://127.0.0.1:8000/admin",
+                20, 5),
+            concept(pyDjango, "Django REST Framework Setup",
+                "DRF (Django REST Framework) turns Django into a powerful API server. Install with pip. Add to INSTALLED_APPS. APIView for class-based API views. Response object returns JSON. status module for HTTP codes.",
+                "Most modern Django projects use DRF to build APIs consumed by React, mobile apps, or third parties. Understanding how to set up DRF is the gateway from web pages to professional API development.",
+                "# Install\npip install djangorestframework\npip install djangorestframework-simplejwt\n\n# settings.py\nINSTALLED_APPS = [\n    ...  \n    'rest_framework',\n]\n\nREST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ]\n}\n\n# views.py\nfrom rest_framework.views import APIView\nfrom rest_framework.response import Response\nfrom rest_framework import status\n\nclass StudentListView(APIView):\n    def get(self, request):\n        students = Student.objects.all()\n        return Response({'count': students.count()}, status=status.HTTP_200_OK)",
+                25, 6)
+        ));
+
+        System.out.println("✅ Python Full Stack roadmap seeded — 12 subjects, 16 concepts");
+    }
+
+    private Subject pySub(String title, String desc, String icon, String color, int totalConcepts) {
+        Subject s = new Subject();
+        s.setTitle(title); s.setDescription(desc); s.setIcon(icon); s.setColor(color);
+        s.setTotalConcepts(totalConcepts);
+        return s;
     }
 }

@@ -70,6 +70,7 @@ export const deleteRoadmap      = (id)      => api.delete(`/admin/roadmaps/${id}
 export const getRoadmapSubjects = (id)      => api.get(`/admin/roadmaps/${id}/subjects`)
 export const addSubjectToRoadmap   = (rid,d)      => api.post(`/admin/roadmaps/${rid}/subjects`, d)
 export const removeSubjectFromRoadmap = (rid,sid) => api.delete(`/admin/roadmaps/${rid}/subjects/${sid}`)
+export const reorderSubjectInRoadmap  = (rid,sid,newOrderIndex) => api.put(`/admin/roadmaps/${rid}/subjects/${sid}/reorder`, { newOrderIndex })
 
 // ─── ADMIN QUESTIONS ─────────────────────────────
 export const getConceptQuestions = (conceptId)    => api.get(`/admin/questions/concept/${conceptId}`)

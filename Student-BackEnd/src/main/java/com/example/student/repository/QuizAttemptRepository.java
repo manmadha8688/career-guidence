@@ -11,4 +11,6 @@ public interface QuizAttemptRepository extends MongoRepository<QuizAttempt, Stri
     Optional<QuizAttempt> findTopByUserIdAndTypeAndRefIdOrderByTakenAtDesc(String userId, String type, String refId);
     boolean existsByUserIdAndTypeAndRefIdAndPassedTrue(String userId, String type, String refId);
     long countByUserIdAndTypeAndRefId(String userId, String type, String refId);
+    void deleteByTypeAndRefId(String type, String refId);
+    void deleteByTypeAndRefIdIn(String type, java.util.List<String> refIds);
 }

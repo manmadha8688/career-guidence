@@ -10,4 +10,5 @@ public interface UserSubjectBadgeRepository extends MongoRepository<UserSubjectB
     Optional<UserSubjectBadge> findByUserIdAndSubjectId(String userId, String subjectId);
     boolean existsByUserIdAndSubjectId(String userId, String subjectId);
     List<UserSubjectBadge> findByUserId(String userId);
+    void deleteBySubjectId(String subjectId);
 }
