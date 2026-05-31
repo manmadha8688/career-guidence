@@ -11,4 +11,5 @@ public interface ConceptRepository extends MongoRepository<Concept, String> {
     List<Concept> findByTitleContainingIgnoreCase(String title);
     long countBySubjectId(String subjectId);
     Optional<Concept> findBySubjectIdAndOrderIndex(String subjectId, int orderIndex);
+    void deleteBySubjectId(String subjectId);
 }

@@ -24,6 +24,8 @@ public class AdminService {
     private final RoadmapSubjectRepository roadmapSubjectRepository;
     private final UserConceptProgressRepository progressRepository;
     private final QuestionRepository questionRepository;
+    private final QuizAttemptRepository quizAttemptRepository;
+    private final UserSubjectBadgeRepository badgeRepository;
 
     public AdminService(UserRepository userRepository,
                         SubjectRepository subjectRepository,
@@ -31,7 +33,9 @@ public class AdminService {
                         RoadmapRepository roadmapRepository,
                         RoadmapSubjectRepository roadmapSubjectRepository,
                         UserConceptProgressRepository progressRepository,
-                        QuestionRepository questionRepository) {
+                        QuestionRepository questionRepository,
+                        QuizAttemptRepository quizAttemptRepository,
+                        UserSubjectBadgeRepository badgeRepository) {
         this.userRepository = userRepository;
         this.subjectRepository = subjectRepository;
         this.conceptRepository = conceptRepository;
@@ -39,6 +43,8 @@ public class AdminService {
         this.roadmapSubjectRepository = roadmapSubjectRepository;
         this.progressRepository = progressRepository;
         this.questionRepository = questionRepository;
+        this.quizAttemptRepository = quizAttemptRepository;
+        this.badgeRepository = badgeRepository;
     }
 
     // ─── STATS ───────────────────────────────────────────────────────────────
@@ -152,6 +158,20 @@ public class AdminService {
     public void deleteSubject(String id) {
         if (!subjectRepository.existsById(id))
             throw new ResourceNotFoundException("Subject not found");
+
+        // Collect concept IDs for bulk quiz-attempt cleanup
+        List<String> conceptIds = conceptRepository.findBySubjectIdOrderByOrderIndex(id)
+                .stream().map(c -> c.getId()).collect(Collectors.toList());
+
+        if (!conceptIds.isEmpty()) {
+            quizAttemptRepository.deleteByTypeAndRefIdIn("CONCEPT", conceptIds);
+        }
+        quizAttemptRepository.deleteByTypeAndRefId("SUBJECT", id);
+        progressRepository.deleteBySubjectId(id);
+        questionRepository.deleteBySubjectId(id);
+        badgeRepository.deleteBySubjectId(id);
+        roadmapSubjectRepository.deleteBySubjectId(id);
+        conceptRepository.deleteBySubjectId(id);
         subjectRepository.deleteById(id);
     }
 
@@ -164,6 +184,17 @@ public class AdminService {
     public Concept createConcept(AdminConceptRequest req) {
         Subject subject = subjectRepository.findById(req.getSubjectId())
                 .orElseThrow(() -> new ResourceNotFoundException("Subject not found"));
+
+        int newIdx = req.getOrderIndex();
+        if (newIdx > 0) {
+            List<Concept> toShift = conceptRepository.findBySubjectIdOrderByOrderIndex(subject.getId())
+                    .stream()
+                    .filter(x -> x.getOrderIndex() >= newIdx)
+                    .collect(Collectors.toList());
+            toShift.forEach(x -> x.setOrderIndex(x.getOrderIndex() + 1));
+            conceptRepository.saveAll(toShift);
+        }
+
         Concept c = new Concept();
         c.setSubjectId(subject.getId());
         c.setSubjectTitle(subject.getTitle());
@@ -173,7 +204,7 @@ public class AdminService {
         c.setWhyItMatters(req.getWhyItMatters());
         c.setCodeExample(req.getCodeExample());
         c.setEstimatedMinutes(req.getEstimatedMinutes() > 0 ? req.getEstimatedMinutes() : 15);
-        c.setOrderIndex(req.getOrderIndex());
+        c.setOrderIndex(newIdx);
         Concept saved = conceptRepository.save(c);
         subject.setTotalConcepts((int) conceptRepository.countBySubjectId(subject.getId()));
         subjectRepository.save(subject);
@@ -183,12 +214,36 @@ public class AdminService {
     public Concept updateConcept(String id, AdminConceptRequest req) {
         Concept c = conceptRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Concept not found"));
+
         if (req.getTitle() != null) c.setTitle(req.getTitle());
         if (req.getWhatItIs() != null) c.setWhatItIs(req.getWhatItIs());
         if (req.getWhyItMatters() != null) c.setWhyItMatters(req.getWhyItMatters());
         if (req.getCodeExample() != null) c.setCodeExample(req.getCodeExample());
         if (req.getEstimatedMinutes() > 0) c.setEstimatedMinutes(req.getEstimatedMinutes());
-        if (req.getOrderIndex() > 0) c.setOrderIndex(req.getOrderIndex());
+
+        int newIdx = req.getOrderIndex();
+        int oldIdx = c.getOrderIndex();
+        if (newIdx > 0 && newIdx != oldIdx) {
+            List<Concept> siblings = conceptRepository.findBySubjectIdOrderByOrderIndex(c.getSubjectId())
+                    .stream()
+                    .filter(s -> !s.getId().equals(id))
+                    .collect(Collectors.toList());
+
+            if (newIdx < oldIdx) {
+                // Moving to a lower slot: push concepts between newIdx..oldIdx-1 down by 1
+                siblings.stream()
+                        .filter(s -> s.getOrderIndex() >= newIdx && s.getOrderIndex() < oldIdx)
+                        .forEach(s -> s.setOrderIndex(s.getOrderIndex() + 1));
+            } else {
+                // Moving to a higher slot: pull concepts between oldIdx+1..newIdx up by 1
+                siblings.stream()
+                        .filter(s -> s.getOrderIndex() > oldIdx && s.getOrderIndex() <= newIdx)
+                        .forEach(s -> s.setOrderIndex(s.getOrderIndex() - 1));
+            }
+            conceptRepository.saveAll(siblings);
+            c.setOrderIndex(newIdx);
+        }
+
         return conceptRepository.save(c);
     }
 
@@ -196,7 +251,12 @@ public class AdminService {
         Concept c = conceptRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Concept not found"));
         String subjectId = c.getSubjectId();
+
+        quizAttemptRepository.deleteByTypeAndRefId("CONCEPT", id);
+        progressRepository.deleteByConceptId(id);
+        questionRepository.deleteByConceptId(id);
         conceptRepository.deleteById(id);
+
         subjectRepository.findById(subjectId).ifPresent(subject -> {
             subject.setTotalConcepts((int) conceptRepository.countBySubjectId(subjectId));
             subjectRepository.save(subject);
@@ -248,6 +308,16 @@ public class AdminService {
             throw new ResourceNotFoundException("Roadmap not found");
         Subject subject = subjectRepository.findById(subjectId)
                 .orElseThrow(() -> new ResourceNotFoundException("Subject not found"));
+
+        if (orderIndex > 0) {
+            List<RoadmapSubject> toShift = roadmapSubjectRepository.findByRoadmapIdOrderByOrderIndex(roadmapId)
+                    .stream()
+                    .filter(x -> x.getOrderIndex() >= orderIndex)
+                    .collect(Collectors.toList());
+            toShift.forEach(x -> x.setOrderIndex(x.getOrderIndex() + 1));
+            roadmapSubjectRepository.saveAll(toShift);
+        }
+
         RoadmapSubject rs = new RoadmapSubject();
         rs.setRoadmapId(roadmapId);
         rs.setSubjectId(subjectId);
@@ -298,7 +368,27 @@ public class AdminService {
     public RoadmapSubject reorderSubjectInRoadmap(String roadmapId, String subjectId, int newOrderIndex) {
         RoadmapSubject rs = roadmapSubjectRepository.findByRoadmapIdAndSubjectId(roadmapId, subjectId)
                 .orElseThrow(() -> new ResourceNotFoundException("Not found"));
-        rs.setOrderIndex(newOrderIndex);
+
+        int oldIdx = rs.getOrderIndex();
+        if (newOrderIndex > 0 && newOrderIndex != oldIdx) {
+            List<RoadmapSubject> siblings = roadmapSubjectRepository.findByRoadmapIdOrderByOrderIndex(roadmapId)
+                    .stream()
+                    .filter(x -> !x.getSubjectId().equals(subjectId))
+                    .collect(Collectors.toList());
+
+            if (newOrderIndex < oldIdx) {
+                siblings.stream()
+                        .filter(x -> x.getOrderIndex() >= newOrderIndex && x.getOrderIndex() < oldIdx)
+                        .forEach(x -> x.setOrderIndex(x.getOrderIndex() + 1));
+            } else {
+                siblings.stream()
+                        .filter(x -> x.getOrderIndex() > oldIdx && x.getOrderIndex() <= newOrderIndex)
+                        .forEach(x -> x.setOrderIndex(x.getOrderIndex() - 1));
+            }
+            roadmapSubjectRepository.saveAll(siblings);
+            rs.setOrderIndex(newOrderIndex);
+        }
+
         return roadmapSubjectRepository.save(rs);
     }
 }

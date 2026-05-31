@@ -1,14 +1,67 @@
-import { useState, useEffect } from 'react'
-import { Plus, Pencil, Trash2, X, ChevronUp, ChevronDown } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Plus, Pencil, Trash2, X, ChevronUp, ChevronDown, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, deleteConcept } from '../../api/api'
 import toast from 'react-hot-toast'
+
+function SearchableSelect({ items, value, onChange, placeholder = 'Select…' }) {
+  const [open, setOpen] = useState(false)
+  const [query, setQuery] = useState('')
+  const ref = useRef(null)
+  const selected = items.find(s => s.id === value)
+  const filtered = items.filter(s => s.title.toLowerCase().includes(query.toLowerCase()))
+
+  useEffect(() => {
+    const handler = e => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  return (
+    <div ref={ref} style={{ position: 'relative', minWidth: 220 }}>
+      <div className="form-input" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', userSelect: 'none' }}
+        onClick={() => { setOpen(o => !o); setQuery('') }}>
+        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {selected ? `${selected.icon} ${selected.title}` : placeholder}
+        </span>
+        <ChevronDown size={14} style={{ flexShrink: 0, color: 'var(--text-muted)', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }} />
+      </div>
+      {open && (
+        <div style={{ position: 'absolute', top: 'calc(100% + 4px)', left: 0, right: 0, background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)', zIndex: 400 }}>
+          <div style={{ padding: '0.5rem' }}>
+            <input autoFocus className="form-input" style={{ fontSize: '0.875rem' }} placeholder="Type to filter…"
+              value={query} onChange={e => setQuery(e.target.value)} onClick={e => e.stopPropagation()} />
+          </div>
+          <div style={{ maxHeight: 220, overflowY: 'auto' }}>
+            {filtered.length === 0
+              ? <div style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.875rem', textAlign: 'center' }}>No matches</div>
+              : filtered.map(s => (
+                <div key={s.id}
+                  onClick={() => { onChange(s.id); setOpen(false); setQuery('') }}
+                  style={{ padding: '0.5rem 0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', background: s.id === value ? 'var(--primary-bg)' : 'transparent', color: s.id === value ? 'var(--primary)' : 'var(--text-primary)' }}
+                  onMouseEnter={e => { if (s.id !== value) e.currentTarget.style.background = 'var(--bg-tertiary)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = s.id === value ? 'var(--primary-bg)' : 'transparent' }}>
+                  <span>{s.icon}</span> {s.title}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
 
 function ConceptModal({ concept, subjects, onClose, onSave }) {
   const [form, setForm] = useState(concept
     ? { subjectId: concept.subject?.id, title: concept.title, whatItIs: concept.whatItIs || '', whyItMatters: concept.whyItMatters || '', codeExample: concept.codeExample || '', estimatedMinutes: concept.estimatedMinutes || 15, orderIndex: concept.orderIndex || 0 }
     : { subjectId: subjects[0]?.id || '', title: '', whatItIs: '', whyItMatters: '', codeExample: '', estimatedMinutes: 15, orderIndex: 0 })
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -81,6 +134,7 @@ export default function AdminConcepts() {
   const [subjects, setSubjects] = useState([])
   const [concepts, setConcepts] = useState([])
   const [selectedSubject, setSelectedSubject] = useState('')
+  const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
   const [modal, setModal] = useState(null)
   const [deleting, setDeleting] = useState({})
@@ -120,6 +174,8 @@ export default function AdminConcepts() {
     finally { setDeleting(p => ({ ...p, [id]: false })) }
   }
 
+  const filtered = concepts.filter(c => c.title.toLowerCase().includes(search.toLowerCase()))
+
   return (
     <AppLayout title="Concepts">
       <div className="page-header">
@@ -127,16 +183,22 @@ export default function AdminConcepts() {
           <h1 className="page-title">Concepts</h1>
           <p className="page-subtitle">Manage learning content by subject</p>
         </div>
-        <button className="btn btn-primary" onClick={() => setModal('new')}>
-          <Plus size={15} /> New Concept
-        </button>
-      </div>
-
-      <div className="form-group" style={{ maxWidth: 320, marginBottom: '1.5rem' }}>
-        <label className="form-label">Filter by Subject</label>
-        <select className="form-input" value={selectedSubject} onChange={e => setSelectedSubject(Number(e.target.value))}>
-          {subjects.map(s => <option key={s.id} value={s.id}>{s.icon} {s.title}</option>)}
-        </select>
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+          <SearchableSelect items={subjects} value={selectedSubject} onChange={setSelectedSubject} placeholder="Select subject…" />
+          <div style={{ position: 'relative' }}>
+            <Search size={15} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
+            <input
+              className="form-input"
+              style={{ paddingLeft: '2.25rem', width: 200 }}
+              placeholder="Search concepts…"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary" onClick={() => setModal('new')}>
+            <Plus size={15} /> New Concept
+          </button>
+        </div>
       </div>
 
       {loading ? (
@@ -154,7 +216,9 @@ export default function AdminConcepts() {
               <tr><th>#</th><th>Concept</th><th>Est. Time</th><th></th></tr>
             </thead>
             <tbody>
-              {concepts.map(c => (
+              {filtered.length === 0 ? (
+                <tr><td colSpan={4} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No concepts match "{search}"</td></tr>
+              ) : filtered.map(c => (
                 <tr key={c.id}>
                   <td className="text-muted text-sm" style={{ width: 40 }}>{c.orderIndex}</td>
                   <td>
