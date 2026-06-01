@@ -144,6 +144,7 @@ public class AdminService {
         s.setDescription(req.getDescription());
         s.setIcon(req.getIcon() != null ? req.getIcon() : "📚");
         s.setColor(req.getColor() != null ? req.getColor() : "#4F46E5");
+        s.setRank(req.getRank() != null ? req.getRank() : "E");
         s.setTotalConcepts(0);
         return subjectRepository.save(s);
     }
@@ -155,6 +156,7 @@ public class AdminService {
         if (req.getDescription() != null) s.setDescription(req.getDescription());
         if (req.getIcon() != null) s.setIcon(req.getIcon());
         if (req.getColor() != null) s.setColor(req.getColor());
+        if (req.getRank() != null) s.setRank(req.getRank());
         return subjectRepository.save(s);
     }
 
@@ -214,6 +216,7 @@ public class AdminService {
         c.setKeyPoints(req.getKeyPoints());
         c.setTip(req.getTip());
         c.setCommonMistakes(req.getCommonMistakes());
+        c.setRank(req.getRank() != null ? req.getRank() : "E");
         c.setEstimatedMinutes(req.getEstimatedMinutes() > 0 ? req.getEstimatedMinutes() : 15);
         c.setOrderIndex(newIdx);
         Concept saved = conceptRepository.save(c);
@@ -238,6 +241,7 @@ public class AdminService {
         if (req.getKeyPoints() != null) c.setKeyPoints(req.getKeyPoints());
         if (req.getTip() != null) c.setTip(req.getTip());
         if (req.getCommonMistakes() != null) c.setCommonMistakes(req.getCommonMistakes());
+        if (req.getRank() != null) c.setRank(req.getRank());
         if (req.getEstimatedMinutes() > 0) c.setEstimatedMinutes(req.getEstimatedMinutes());
 
         int newIdx = req.getOrderIndex();

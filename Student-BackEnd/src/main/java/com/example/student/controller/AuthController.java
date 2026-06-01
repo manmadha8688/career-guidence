@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
@@ -34,14 +35,17 @@ public class AuthController {
 
     @GetMapping("/me")
     public ResponseEntity<?> me(@AuthenticationPrincipal User user) {
-        return ResponseEntity.ok(Map.of(
-                "id", user.getId(),
-                "fullName", user.getFullName(),
-                "email", user.getEmail(),
-                "role", user.getRole(),
-                "collegeName", user.getCollegeName() != null ? user.getCollegeName() : "",
-                "avatarColor", user.getAvatarColor() != null ? user.getAvatarColor() : "#4F46E5",
-                "createdAt", user.getCreatedAt() != null ? user.getCreatedAt().toString() : ""
-        ));
+        Map<String, Object> res = new LinkedHashMap<>();
+        res.put("id",          user.getId());
+        res.put("fullName",    user.getFullName());
+        res.put("email",       user.getEmail());
+        res.put("role",        user.getRole());
+        res.put("collegeName", user.getCollegeName() != null ? user.getCollegeName() : "");
+        res.put("avatarColor", user.getAvatarColor() != null ? user.getAvatarColor() : "#4F46E5");
+        res.put("xp",          user.getXp());
+        res.put("level",       user.getLevel());
+        res.put("rank",        user.getRank() != null ? user.getRank() : "E");
+        res.put("createdAt",   user.getCreatedAt() != null ? user.getCreatedAt().toString() : "");
+        return ResponseEntity.ok(res);
     }
 }

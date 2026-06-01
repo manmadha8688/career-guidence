@@ -1,21 +1,16 @@
 import { Menu } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
-import { useEffect, useState } from 'react'
-import { getStoredXp, getRank } from '../utils/slRank'
+import { getRank } from '../utils/slRank'
 
 export default function Navbar({ onMenuClick, title = '' }) {
   const { user } = useAuth()
   const isAdmin = user?.role === 'ADMIN'
-  const [xp, setXp] = useState(() => getStoredXp())
 
-  useEffect(() => {
-    const refresh = () => setXp(getStoredXp())
-    window.addEventListener('sl:xp', refresh)
-    return () => window.removeEventListener('sl:xp', refresh)
-  }, [])
+  // Use xp/level/rank from user object (set by /api/auth/me which includes DB values)
+  const xp   = user?.xp   ?? 0
+  const rank = getRank(xp)
 
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
-  const rank = getRank(xp)
 
   return (
     <header className="navbar">

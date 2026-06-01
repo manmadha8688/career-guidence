@@ -42,6 +42,9 @@ public class Concept {
     private List<String> commonMistakes;
 
     @Builder.Default
+    private String rank = "E";
+
+    @Builder.Default
     private int estimatedMinutes = 15;
 
     @Builder.Default

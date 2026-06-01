@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { CheckCircle, XCircle, ArrowLeft, RotateCcw, Trophy, Zap } from 'lucide-react'
 import { getAttemptResult } from '../../api/api'
-import { getStoredXp, getRank } from '../../utils/slRank'
+import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 
@@ -29,7 +29,7 @@ export default function QuizResultPage() {
   const [loading, setLoading] = useState(true)
   const [showAll, setShowAll] = useState(false)
 
-  const xp       = getStoredXp()
+  const xp       = user?.xp ?? 0
   const rank     = getRank(xp)
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 

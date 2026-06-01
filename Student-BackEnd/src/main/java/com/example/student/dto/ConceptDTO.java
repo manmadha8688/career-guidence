@@ -26,6 +26,7 @@ public class ConceptDTO {
     private String tip;
     private List<String> commonMistakes;
 
+    private String rank;
     private int orderIndex;
     private int estimatedMinutes;
     private boolean completed;

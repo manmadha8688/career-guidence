@@ -1,3 +1,4 @@
+// ── Rank lookup from XP (used by Navbar/QuizPage which don't have summary) ──
 export const calcXp = (completedConcepts) => (completedConcepts || 0) * 50
 
 export const getRank = (xp = 0) => {
@@ -9,8 +10,11 @@ export const getRank = (xp = 0) => {
   return               { label: 'E', cls: 'rank-e', color: '#888888', next: 500,   min: 0,     progress: Math.round(xp / 500 * 100) }
 }
 
-export const getStoredXp  = () => parseInt(localStorage.getItem('sl_completed') || '0', 10) * 50
-export const saveCompleted = (n) => localStorage.setItem('sl_completed', String(n))
+// ── localStorage fallback (for pages that haven't loaded summary yet) ──
+export const getStoredXp   = () => parseInt(localStorage.getItem('sl_xp') || '0', 10)
+export const setStoredXp   = (xp) => localStorage.setItem('sl_xp', String(xp))
+// kept for compat
+export const saveCompleted = (n) => setStoredXp(calcXp(n))
 
 export const getGateRank = (pct, hasContent) => {
   if (!hasContent) return { label: 'E', cls: 'rank-e', color: '#555555', status: 'GATE SEALED' }

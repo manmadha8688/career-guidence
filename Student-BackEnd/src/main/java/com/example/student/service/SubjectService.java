@@ -45,15 +45,16 @@ public class SubjectService {
         long total = concepts.size();
         long completed = concepts.stream().filter(ConceptDTO::isCompleted).count();
 
-        return Map.of(
-                "id", subject.getId(),
-                "title", subject.getTitle(),
-                "description", subject.getDescription() != null ? subject.getDescription() : "",
-                "icon", subject.getIcon(),
-                "color", subject.getColor(),
-                "totalConcepts", total,
-                "completedCount", completed,
-                "concepts", concepts
+        return java.util.Map.ofEntries(
+                java.util.Map.entry("id", subject.getId()),
+                java.util.Map.entry("title", subject.getTitle()),
+                java.util.Map.entry("description", subject.getDescription() != null ? subject.getDescription() : ""),
+                java.util.Map.entry("icon", subject.getIcon()),
+                java.util.Map.entry("color", subject.getColor()),
+                java.util.Map.entry("rank", subject.getRank() != null ? subject.getRank() : "E"),
+                java.util.Map.entry("totalConcepts", total),
+                java.util.Map.entry("completedCount", completed),
+                java.util.Map.entry("concepts", concepts)
         );
     }
 
@@ -65,8 +66,10 @@ public class SubjectService {
     private SubjectDTO toDTO(Subject s, String userId) {
         long total = conceptRepository.countBySubjectId(s.getId());
         long completed = progressRepository.countByUserIdAndSubjectId(userId, s.getId());
-        return new SubjectDTO(s.getId(), s.getTitle(), s.getDescription(),
-                s.getIcon(), s.getColor(), (int) total, completed);
+        SubjectDTO dto = new SubjectDTO(s.getId(), s.getTitle(), s.getDescription(),
+                s.getIcon(), s.getColor(), (int) total, completed,
+                s.getRank() != null ? s.getRank() : "E");
+        return dto;
     }
 
     private ConceptDTO toConceptDTO(Concept c, String userId) {
@@ -78,6 +81,7 @@ public class SubjectService {
         dto.setWhyItMatters(c.getWhyItMatters());
         dto.setCodeExample(c.getCodeExample());
         dto.setIntroduction(c.getIntroduction());
+        dto.setRank(c.getRank() != null ? c.getRank() : "E");
         dto.setOrderIndex(c.getOrderIndex());
         dto.setEstimatedMinutes(c.getEstimatedMinutes());
         dto.setCompleted(done);

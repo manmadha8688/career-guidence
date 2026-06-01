@@ -40,6 +40,15 @@ public class User implements UserDetails {
     @Builder.Default
     private Boolean isActive = true;
 
+    @Builder.Default
+    private long xp = 0L;
+
+    @Builder.Default
+    private int level = 1;
+
+    @Builder.Default
+    private String rank = "E";
+
     @CreatedDate
     private LocalDateTime createdAt;
 

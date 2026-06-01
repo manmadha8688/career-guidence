@@ -4,8 +4,13 @@ import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, createSubject, updateSubject, deleteSubject } from '../../api/api'
 import toast from 'react-hot-toast'
 
+const RANKS = ['E', 'D', 'C', 'B', 'A', 'S']
+const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
+
 function SubjectModal({ subject, onClose, onSave }) {
-  const [form, setForm] = useState(subject || { title: '', description: '', icon: '📚', color: '#4F46E5' })
+  const [form, setForm] = useState(subject
+    ? { title: subject.title, description: subject.description || '', icon: subject.icon, color: subject.color, rank: subject.rank || 'E' }
+    : { title: '', description: '', icon: '📚', color: '#4F46E5', rank: 'E' })
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -54,6 +59,18 @@ function SubjectModal({ subject, onClose, onSave }) {
                 <input type="color" value={form.color} onChange={e => setForm({ ...form, color: e.target.value })} style={{ width: 40, height: 38, border: 'none', background: 'none', cursor: 'pointer' }} />
                 <input className="form-input" value={form.color} onChange={e => setForm({ ...form, color: e.target.value })} />
               </div>
+            </div>
+          </div>
+          <div className="form-group">
+            <label className="form-label">Rank</label>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              {RANKS.map(r => (
+                <button key={r} type="button"
+                  onClick={() => setForm({ ...form, rank: r })}
+                  style={{ padding: '0.35rem 0.875rem', borderRadius: 6, cursor: 'pointer', fontWeight: 700, fontSize: '0.8125rem', fontFamily: "'Orbitron', sans-serif", letterSpacing: '0.06em', border: `1.5px solid ${RANK_COLORS[r]}`, background: form.rank === r ? RANK_COLORS[r] : 'transparent', color: form.rank === r ? '#fff' : RANK_COLORS[r], transition: 'all 0.15s' }}>
+                  {r}
+                </button>
+              ))}
             </div>
           </div>
           <div className="modal-actions">
@@ -132,7 +149,7 @@ export default function AdminSubjects() {
         <div className="table-container">
           <table className="table">
             <thead>
-              <tr><th>Subject</th><th>Concepts</th><th>Color</th><th></th></tr>
+              <tr><th>Subject</th><th>Rank</th><th>Concepts</th><th>Color</th><th></th></tr>
             </thead>
             <tbody>
               {filtered.length === 0 ? (
@@ -149,6 +166,11 @@ export default function AdminSubjects() {
                         <div className="text-xs text-muted truncate" style={{ maxWidth: 300 }}>{s.description}</div>
                       </div>
                     </div>
+                  </td>
+                  <td>
+                    <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.7rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: 4, border: `1.5px solid ${RANK_COLORS[s.rank] || '#888'}`, color: RANK_COLORS[s.rank] || '#888', background: (RANK_COLORS[s.rank] || '#888') + '18' }}>
+                      {s.rank || 'E'}
+                    </span>
                   </td>
                   <td className="text-sm text-muted">{s.totalConcepts}</td>
                   <td><div style={{ width: 24, height: 24, background: s.color, borderRadius: 4 }} /></td>

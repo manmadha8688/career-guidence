@@ -27,6 +27,9 @@ public class Subject {
     @Builder.Default
     private int totalConcepts = 0;
 
+    @Builder.Default
+    private String rank = "E";
+
     @CreatedDate
     private LocalDateTime createdAt;
 
