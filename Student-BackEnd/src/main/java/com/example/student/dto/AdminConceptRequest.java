@@ -25,6 +25,7 @@ public class AdminConceptRequest {
     private String tip;
     private List<String> commonMistakes;
 
+    private String rank;
     private int estimatedMinutes;
     private int orderIndex;
 }

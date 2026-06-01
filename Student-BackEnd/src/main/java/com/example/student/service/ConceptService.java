@@ -70,6 +70,7 @@ public class ConceptService {
         dto.setKeyPoints(concept.getKeyPoints());
         dto.setTip(concept.getTip());
         dto.setCommonMistakes(concept.getCommonMistakes());
+        dto.setRank(concept.getRank() != null ? concept.getRank() : "E");
         dto.setOrderIndex(concept.getOrderIndex());
         dto.setEstimatedMinutes(concept.getEstimatedMinutes());
         dto.setCompleted(done);
@@ -107,6 +108,7 @@ public class ConceptService {
         dto.setKeyPoints(c.getKeyPoints());
         dto.setTip(c.getTip());
         dto.setCommonMistakes(c.getCommonMistakes());
+        dto.setRank(c.getRank() != null ? c.getRank() : "E");
         dto.setOrderIndex(c.getOrderIndex());
         dto.setEstimatedMinutes(c.getEstimatedMinutes());
         dto.setCompleted(done);

@@ -79,6 +79,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     whatItIs: concept.whatItIs || '',
     whyItMatters: concept.whyItMatters || '',
     codeExample: concept.codeExample || '',
+    rank: concept.rank || 'E',
     estimatedMinutes: concept.estimatedMinutes || 15,
     orderIndex: concept.orderIndex || 0
   } : {
@@ -95,6 +96,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     whatItIs: '',
     whyItMatters: '',
     codeExample: '',
+    rank: 'E',
     estimatedMinutes: 15,
     orderIndex: 0
   })
@@ -174,6 +176,21 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
           <div className="form-group">
             <label className="form-label">Title *</label>
             <input className="form-input" value={form.title} onChange={e => set('title', e.target.value)} required placeholder="e.g. Variables and Data Types" />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Rank</label>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              {['E','D','C','B','A','S'].map(r => {
+                const colors = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
+                const c = colors[r]
+                return (
+                  <button key={r} type="button" onClick={() => set('rank', r)}
+                    style={{ padding: '0.3rem 0.75rem', borderRadius: 6, cursor: 'pointer', fontWeight: 700, fontSize: '0.78rem', fontFamily: "'Orbitron', sans-serif", letterSpacing: '0.06em', border: `1.5px solid ${c}`, background: form.rank === r ? c : 'transparent', color: form.rank === r ? '#fff' : c, transition: 'all 0.15s' }}>
+                    {r}
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           {/* ── Content ── */}
@@ -382,7 +399,14 @@ export default function AdminConcepts() {
                 <tr key={c.id}>
                   <td className="text-muted text-sm" style={{ width: 40 }}>{c.orderIndex}</td>
                   <td>
-                    <div className="table-name">{c.title}</div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <div className="table-name">{c.title}</div>
+                      {c.rank && (() => {
+                        const colors = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
+                        const col = colors[c.rank] || '#888'
+                        return <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700, padding: '0.1rem 0.35rem', borderRadius: 3, border: `1px solid ${col}`, color: col, background: col + '18', flexShrink: 0 }}>{c.rank}</span>
+                      })()}
+                    </div>
                     {(c.introduction || c.whatItIs) && <div className="text-xs text-muted truncate" style={{ maxWidth: 400 }}>{(c.introduction || c.whatItIs).substring(0, 80)}…</div>}
                   </td>
                   <td className="text-sm text-muted">{c.estimatedMinutes}m</td>

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle } from 'lucide-react'
+import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap } from 'lucide-react'
 import {
-  getProgressSummary, getEnrolledRoadmaps, getRoadmap,
+  getProgressSummary, getRoadmap, getRoadmapStatus,
   getSubjects, getSubject, getConcept, getQuizStatus, completeConcept,
   getRoadmaps, enrollRoadmap,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
-import { calcXp, getRank, saveCompleted, getStoredXp } from '../../utils/slRank'
+import { getRank } from '../../utils/slRank'
 import ProgressBar from '../../components/ProgressBar'
 import toast from 'react-hot-toast'
 
@@ -52,12 +52,19 @@ const gateRankByOrder = (idx) => {
   return            { label: 'S', cls: 'rank-s', color: '#EF4444' }
 }
 
-const subjectGateRank = (n) => {
-  if (!n)    return { label: 'E', cls: 'rank-e', color: '#888888' }
-  if (n <= 4)  return { label: 'D', cls: 'rank-d', color: '#4ADE80' }
-  if (n <= 7)  return { label: 'C', cls: 'rank-c', color: '#60A5FA' }
-  if (n <= 10) return { label: 'B', cls: 'rank-b', color: '#9B6ED4' }
-  return           { label: 'A', cls: 'rank-a', color: '#F59E0B' }
+const RANK_META = {
+  S: { cls: 'rank-s', color: '#EF4444' },
+  A: { cls: 'rank-a', color: '#F59E0B' },
+  B: { cls: 'rank-b', color: '#9B6ED4' },
+  C: { cls: 'rank-c', color: '#60A5FA' },
+  D: { cls: 'rank-d', color: '#4ADE80' },
+  E: { cls: 'rank-e', color: '#888888' },
+}
+
+// Uses rank from API; falls back to E if missing
+const subjectGateRank = (s) => {
+  const r = RANK_META[s?.rank] || RANK_META['E']
+  return { label: s?.rank || 'E', ...r }
 }
 
 const computeStats = (sp = []) =>
@@ -347,6 +354,167 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
   )
 }
 
+// ─── Roadmap Panel (right overlay, shows gates list) ─────
+function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
+  const [roadmap, setRoadmap]   = useState(null)
+  const [status, setStatus]     = useState(null)
+  const [loading, setLoading]   = useState(true)
+  const [enrolling, setEnrolling] = useState(false)
+
+  useEffect(() => {
+    setLoading(true); setRoadmap(null)
+    Promise.all([
+      getRoadmap(roadmapId),
+      getRoadmapStatus(roadmapId).catch(() => null),
+    ]).then(([r, rs]) => {
+      setRoadmap(r.data)
+      if (rs) setStatus(rs.data)
+    }).finally(() => setLoading(false))
+  }, [roadmapId])
+
+  const handleEnroll = async (e) => {
+    e.stopPropagation()
+    setEnrolling(true)
+    try {
+      await enrollRoadmap(roadmapId)
+      setRoadmap(r => ({ ...r, enrolled: true }))
+      toast.success('⚔️ Path registered!')
+    } catch { toast.error('Failed to register') }
+    finally { setEnrolling(false) }
+  }
+
+  const subjectRankColor = (s) => {
+    const map = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
+    return map[s?.rank] || '#888888'
+  }
+
+  const pct      = roadmap?.overallPercentage ?? 0
+  const subjects = roadmap?.subjects ?? []
+
+  return (
+    <div className="sl-subject-panel">
+      {/* Header */}
+      <div className="sl-subject-panel-header">
+        <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: '#9B6ED4' }}>
+          [ HUNTER PATH ]
+        </span>
+        <button className="sl-subject-panel-close" onClick={onClose}>✕</button>
+      </div>
+
+      {loading ? (
+        <div className="flex-center" style={{ flex: 1 }}><div className="loading-spinner-lg" /></div>
+      ) : !roadmap ? null : (
+        <div className="sl-subject-panel-body">
+
+          {/* Path header */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+            <div style={{ width: 38, height: 38, borderRadius: 8, background: roadmap.color + '22', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', flexShrink: 0 }}>
+              {roadmap.icon}
+            </div>
+            <div style={{ minWidth: 0 }}>
+              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: 1.2 }}>{roadmap.title}</div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: roadmap.color, letterSpacing: '0.06em' }}>{roadmap.roleTarget}</div>
+            </div>
+          </div>
+
+          {/* Progress */}
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: 'var(--text-muted)', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
+              <span>{roadmap.completedSubjects ?? 0}/{roadmap.totalSubjects ?? subjects.length} gates cleared</span>
+              <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.65rem', color: roadmap.color, fontWeight: 700 }}>{pct}%</span>
+            </div>
+            <div style={{ height: 5, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
+              <div style={{ height: '100%', width: `${pct}%`, background: `linear-gradient(90deg, ${roadmap.color}88, ${roadmap.color})`, borderRadius: 3, transition: 'width 0.8s ease' }} />
+            </div>
+          </div>
+
+          {/* Enroll / path trial button */}
+          {!roadmap.enrolled ? (
+            <button
+              onClick={handleEnroll} disabled={enrolling}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: `linear-gradient(135deg, ${roadmap.color}CC, ${roadmap.color})`, border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}
+            >
+              {enrolling ? <span className="loading-spinner" style={{ borderTopColor: '#fff' }} /> : '⚔️'}
+              {enrolling ? 'Registering…' : 'Begin Hunt'}
+            </button>
+          ) : status?.allSubjectsDone ? (
+            <button
+              onClick={() => navigate(`/skill-arena/quiz/roadmap/${roadmapId}`)}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: 'linear-gradient(135deg, #F59E0B, #FBBF24)', border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#1A0F00', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}
+            >
+              <Trophy size={14} /> Begin Path Trial
+            </button>
+          ) : null}
+
+          {/* Divider */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+            <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>GATES</span>
+            <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+          </div>
+
+          {/* Gates list */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+            {subjects.map((s, i) => {
+              const p       = s.percentage ?? 0
+              const cleared = p >= 100
+              const active  = p > 0 && p < 100
+              const sColor  = subjectRankColor(s)
+              return (
+                <div
+                  key={s.id}
+                  onClick={() => s.totalConcepts > 0 && onGateClick(s.id)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: '0.5rem',
+                    padding: '0.5rem 0.625rem',
+                    background: 'var(--bg-secondary)',
+                    border: `1px solid ${cleared ? 'rgba(74,222,128,0.2)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)'}`,
+                    borderLeft: `3px solid ${cleared ? '#4ADE80' : active ? '#9B6ED4' : 'var(--border)'}`,
+                    borderRadius: 'var(--radius-sm)',
+                    cursor: s.totalConcepts > 0 ? 'pointer' : 'default',
+                    opacity: s.totalConcepts > 0 ? 1 : 0.45,
+                    transition: 'all 0.15s',
+                  }}
+                  onMouseEnter={e => { if (s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = cleared ? 'rgba(74,222,128,0.2)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)' }}
+                >
+                  {/* Step circle */}
+                  <div style={{ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700, background: cleared ? 'rgba(74,222,128,0.15)' : 'var(--bg-tertiary)', border: `1.5px solid ${cleared ? '#4ADE8055' : 'var(--border)'}`, color: cleared ? '#4ADE80' : 'var(--text-muted)' }}>
+                    {cleared ? <CheckCircle size={11} color="#4ADE80" /> : s.totalConcepts > 0 ? i + 1 : <Lock size={10} />}
+                  </div>
+
+                  {/* Icon + title */}
+                  <span style={{ fontSize: '0.875rem', flexShrink: 0 }}>{s.icon}</span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.title}</div>
+                    {active ? (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.15rem' }}>
+                        <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                          <div style={{ height: '100%', width: `${p}%`, background: '#9B6ED4', borderRadius: 2 }} />
+                        </div>
+                        <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700 }}>{p}%</span>
+                      </div>
+                    ) : (
+                      <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.03em' }}>
+                        {s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'sealed'}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Status pill */}
+                  <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.06em', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0, background: cleared ? 'rgba(74,222,128,0.1)' : active ? 'rgba(155,110,212,0.1)' : 'rgba(136,136,136,0.07)', color: cleared ? '#4ADE80' : active ? '#B48AE8' : '#555' }}>
+                    {cleared ? 'DONE' : active ? 'HUNT' : 'SEALED'}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ─── Subject Panel (overlay-right OR in-grid-left) ────────
 function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, navigate, mode = 'overlay' }) {
   const [subject, setSubject]       = useState(null)
@@ -459,6 +627,11 @@ function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, nav
                     <Clock size={9} style={{ display: 'inline', marginRight: 3 }} />{c.estimatedMinutes}m
                   </div>
                 </div>
+                {c.rank && (() => {
+                  const rc = { S:'#EF4444',A:'#F59E0B',B:'#9B6ED4',C:'#60A5FA',D:'#4ADE80',E:'#888888' }
+                  const col = rc[c.rank] || '#888888'
+                  return <span style={{ fontFamily:"'Orbitron',sans-serif", fontSize:'0.55rem', fontWeight:700, padding:'0.1rem 0.3rem', borderRadius:3, border:`1px solid ${col}40`, color:col, background:col+'15', flexShrink:0 }}>{c.rank}</span>
+                })()}
                 <span className={`sl-skill-badge ${c.completed ? 'cleared' : 'enter'}`}>
                   {c.completed ? 'CLEARED' : 'ENTER'}
                 </span>
@@ -483,7 +656,6 @@ export default function DashboardPage() {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [summary, setSummary]         = useState(null)
-  const [enrolled, setEnrolled]       = useState([])
   const [activeRoadmap, setActiveRoadmap] = useState(null)
   const [loading, setLoading]         = useState(true)
 
@@ -491,9 +663,9 @@ export default function DashboardPage() {
   const [selectedSubjectId, setSelectedSubjectId] = useState(() => searchParams.get('subject') || null)
   const [selectedConceptId, setSelectedConceptId] = useState(null)
   const [conceptNavList, setConceptNavList] = useState([])
+  const [selectedRoadmapId, setSelectedRoadmapId] = useState(null)
 
   const [quests, setQuests]           = useState(loadQuestState)
-  const [xp, setXp]                   = useState(() => getStoredXp())
   const [avatarOpen, setAvatarOpen]   = useState(false)
 
   const [subjects, setSubjects]       = useState([])
@@ -508,18 +680,11 @@ export default function DashboardPage() {
   const [enrolling, setEnrolling]     = useState({})
 
   useEffect(() => {
-    Promise.all([getProgressSummary(), getEnrolledRoadmaps()])
-      .then(([s, r]) => {
+    getProgressSummary()
+      .then(s => {
         setSummary(s.data)
-        setEnrolled(r.data)
-        const completed = s.data.completedConcepts || 0
-        saveCompleted(completed)
-        const newXp = calcXp(completed)
-        setXp(newXp)
+        // XP and rank now come from the API — persist to localStorage for Navbar fallback
         window.dispatchEvent(new CustomEvent('sl:xp'))
-        if (r.data.length > 0) {
-          getRoadmap(r.data[0].id).then(rm => setActiveRoadmap(rm.data)).catch(() => {})
-        }
       })
       .catch(() => toast.error('Failed to load status window'))
       .finally(() => setLoading(false))
@@ -562,6 +727,7 @@ export default function DashboardPage() {
     setActiveView(view)
     setGateSearch(''); setGateFilter('All'); setPathSearch('')
     setSelectedSubjectId(null); setSelectedConceptId(null); setConceptNavList([])
+    setSelectedRoadmapId(null)
     setSearchParams(view === 'arena' ? {} : { view })
     if (view === 'gates') loadGates()
     if (view === 'paths') loadPaths()
@@ -570,6 +736,7 @@ export default function DashboardPage() {
   const openSubjectPanel = (id) => {
     setSelectedSubjectId(id)
     setSelectedConceptId(null); setConceptNavList([])
+    // keep roadmap panel open so user can still navigate between gates
     const params = activeView === 'arena' ? {} : { view: activeView }
     setSearchParams({ ...params, subject: id })
   }
@@ -578,6 +745,13 @@ export default function DashboardPage() {
     setSelectedSubjectId(null); setSelectedConceptId(null); setConceptNavList([])
     setSearchParams(activeView === 'arena' ? {} : { view: activeView })
   }
+
+  const openRoadmapPanel = (id) => {
+    setSelectedRoadmapId(id)
+    setSelectedSubjectId(null); setSelectedConceptId(null); setConceptNavList([])
+  }
+
+  const closeRoadmapPanel = () => setSelectedRoadmapId(null)
 
   const openConcept = (conceptId, navList) => {
     setSelectedConceptId(conceptId)
@@ -608,8 +782,9 @@ export default function DashboardPage() {
     setQuests(next); saveQuestState(next)
   }
 
+  const xp             = summary?.xp    ?? user?.xp    ?? 0
   const rank           = getRank(xp)
-  const level          = Math.max(1, Math.floor(xp / 200))
+  const level          = summary?.level ?? user?.level ?? 1
   const stats          = computeStats(summary?.subjectProgress)
   const initials       = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
   const doneCount      = DAILY_QUESTS.filter(q => quests[q.id]).length
@@ -618,7 +793,7 @@ export default function DashboardPage() {
   const completedGates = arenaSubjects.filter(s => s.percentage >= 100).length
   const totalGates     = arenaSubjects.length
   const nextGate       = arenaSubjects.find(s => s.percentage < 100)
-  const overallPct     = activeRoadmap?.overallPercentage ?? enrolled[0]?.overallPercentage ?? 0
+  const overallPct     = activeRoadmap?.overallPercentage ?? 0
 
   const filteredSubjects = subjects.filter(s => {
     const sp = s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0
@@ -636,7 +811,7 @@ export default function DashboardPage() {
 
   const GateCard = ({ s, pOvr }) => {
     const p = pOvr !== undefined ? pOvr : (s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0))
-    const gr = subjectGateRank(s.totalConcepts)
+    const gr = subjectGateRank(s)
     const cleared = p >= 100, sealed = p === 0
     return (
       <div className="sl-gate-card" style={{ cursor: s.totalConcepts > 0 ? 'pointer' : 'default', opacity: s.totalConcepts > 0 ? 1 : 0.5 }}
@@ -677,7 +852,7 @@ export default function DashboardPage() {
             <div className="sl-gates-grid">
               {display.slice(0, 6).map((s, i) => {
                 const p = s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedConcepts / s.totalConcepts) * 100) : 0)
-                const gr = gateRankByOrder(i + 1)
+                const gr = subjectGateRank(s)
                 const cleared = p >= 100, sealed = p === 0
                 return (
                   <div key={s.id} className="sl-gate-card" onClick={() => s.totalConcepts > 0 && openSubjectPanel(s.id)}>
@@ -700,12 +875,12 @@ export default function DashboardPage() {
               <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>NO ACTIVE PATH — SWITCH TO HUNTER PATH TO ENROLL</div>
             </div>
           )}
-          {enrolled.length > 0 && (
+          {activeRoadmap && (
             <div className="sl-panel sl-path-footer" style={{ marginTop: '0.75rem', cursor: 'pointer' }}
-              onClick={() => navigate(activeRoadmap ? `/skill-arena/roadmaps/${activeRoadmap.id}` : '/skill-arena/dashboard?view=paths')}>
+              onClick={() => navigate(`/skill-arena/roadmaps/${activeRoadmap.id}`)}>
               <div>
-                <div className="sl-path-title">ACTIVE HUNTER PATH — {(activeRoadmap?.title || enrolled[0]?.title || '').toUpperCase()}</div>
-                <div className="sl-path-meta">{activeRoadmap ? `${completedGates} of ${totalGates} gates cleared · Est. ${activeRoadmap.estimatedWeeks ?? enrolled[0]?.estimatedWeeks ?? '?'} weeks` : `${enrolled[0]?.totalSubjects ?? 0} total gates`}</div>
+                <div className="sl-path-title">ACTIVE HUNTER PATH — {activeRoadmap.title.toUpperCase()}</div>
+                <div className="sl-path-meta">{completedGates} of {totalGates} gates cleared · Est. {activeRoadmap.estimatedWeeks ?? '?'} weeks</div>
               </div>
               <div>
                 <div className="sl-path-pct">{overallPct}%</div>
@@ -760,8 +935,9 @@ export default function DashboardPage() {
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
               {filteredRoadmaps.map(r => (
-                <div key={r.id} className="sl-gate-card" style={{ cursor: 'pointer', borderTop: `3px solid ${r.color}` }}
-                  onClick={() => navigate(`/skill-arena/roadmaps/${r.id}`)}>
+                <div key={r.id} className="sl-gate-card"
+                  style={{ cursor: 'pointer', borderTop: `3px solid ${r.color}`, outline: selectedRoadmapId === r.id ? `1px solid ${r.color}` : 'none' }}
+                  onClick={() => openRoadmapPanel(r.id)}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.375rem' }}>
                     <div style={{ width: 28, height: 28, background: r.color + '22', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', flexShrink: 0 }}>{r.icon}</div>
                     <div className="sl-gate-title" style={{ marginBottom: 0, fontSize: '0.875rem' }}>{r.title}</div>
@@ -937,12 +1113,25 @@ export default function DashboardPage() {
         )}
       </div>
 
-      {/* ══ SUBJECT PANEL: fixed right overlay only when no concept open ══ */}
+      {/* ══ ROADMAP PANEL: right overlay on path card click ══ */}
+      {selectedRoadmapId && !selectedSubjectId && !selectedConceptId && (
+        <RoadmapPanel
+          roadmapId={selectedRoadmapId}
+          onClose={closeRoadmapPanel}
+          onGateClick={openSubjectPanel}
+          navigate={navigate}
+        />
+      )}
+
+      {/* ══ SUBJECT PANEL: right overlay when gate clicked (closes roadmap panel) ══ */}
       {selectedSubjectId && !selectedConceptId && (
         <SubjectPanel
           mode="overlay"
           subjectId={selectedSubjectId}
-          onClose={closeSubjectPanel}
+          onClose={() => {
+            closeSubjectPanel()
+            // keep roadmap panel open if we came from one
+          }}
           onSkillClick={openConcept}
           selectedConceptId={selectedConceptId}
           navigate={navigate}

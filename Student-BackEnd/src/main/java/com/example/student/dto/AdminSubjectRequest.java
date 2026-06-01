@@ -8,4 +8,5 @@ public class AdminSubjectRequest {
     private String description;
     private String icon;
     private String color;
+    private String rank;
 }

@@ -13,4 +13,5 @@ public class SubjectDTO {
     private String color;
     private int totalConcepts;
     private long completedCount;
+    private String rank;
 }
