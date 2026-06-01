@@ -13,7 +13,7 @@ export default function ProtectedRoute({ children, adminOnly = false }) {
   }
 
   if (!user) return <Navigate to="/login" replace />
-  if (adminOnly && user.role !== 'ADMIN') return <Navigate to="/dashboard" replace />
+  if (adminOnly && user.role !== 'ADMIN') return <Navigate to="/skill-arena/dashboard" replace />
 
   return children
 }

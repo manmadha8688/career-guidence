@@ -62,6 +62,7 @@ export const getAdminConcepts   = (subId)   => api.get(`/admin/concepts?subjectI
 export const createConcept      = (d)       => api.post('/admin/concepts', d)
 export const updateConcept      = (id,d)    => api.put(`/admin/concepts/${id}`, d)
 export const deleteConcept      = (id)      => api.delete(`/admin/concepts/${id}`)
+export const migrateRichContent = ()        => api.post('/admin/migrate/rich-content')
 
 export const getAdminRoadmaps   = ()        => api.get('/admin/roadmaps')
 export const createRoadmap      = (d)       => api.post('/admin/roadmaps', d)

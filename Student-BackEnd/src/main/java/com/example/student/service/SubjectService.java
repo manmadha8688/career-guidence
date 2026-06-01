@@ -71,7 +71,16 @@ public class SubjectService {
 
     private ConceptDTO toConceptDTO(Concept c, String userId) {
         boolean done = progressRepository.existsByUserIdAndConceptId(userId, c.getId());
-        return new ConceptDTO(c.getId(), c.getTitle(), c.getWhatItIs(), c.getWhyItMatters(),
-                c.getCodeExample(), c.getOrderIndex(), c.getEstimatedMinutes(), done);
+        ConceptDTO dto = new ConceptDTO();
+        dto.setId(c.getId());
+        dto.setTitle(c.getTitle());
+        dto.setWhatItIs(c.getWhatItIs());
+        dto.setWhyItMatters(c.getWhyItMatters());
+        dto.setCodeExample(c.getCodeExample());
+        dto.setIntroduction(c.getIntroduction());
+        dto.setOrderIndex(c.getOrderIndex());
+        dto.setEstimatedMinutes(c.getEstimatedMinutes());
+        dto.setCompleted(done);
+        return dto;
     }
 }

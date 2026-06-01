@@ -10,18 +10,18 @@ export default function Sidebar({ open, onClose }) {
   const isAdmin = user?.role === 'ADMIN'
 
   const studentLinks = [
-    { to: '/dashboard', icon: <LayoutDashboard size={18} />, label: 'Dashboard' },
-    { to: '/subjects', icon: <BookOpen size={18} />, label: 'Subjects' },
-    { to: '/roadmaps', icon: <Map size={18} />, label: 'Roadmaps' },
+    { to: '/skill-arena/dashboard',           icon: <LayoutDashboard size={18} />, label: 'Status Window' },
+    { to: '/skill-arena/dashboard?view=gates', icon: <BookOpen size={18} />,        label: 'Dungeon Gates' },
+    { to: '/skill-arena/dashboard?view=paths', icon: <Map size={18} />,             label: 'Hunter Paths' },
   ]
 
   const adminLinks = [
-    { to: '/admin', icon: <LayoutDashboard size={18} />, label: 'Overview' },
-    { to: '/admin/users', icon: <Users size={18} />, label: 'Users' },
-    { to: '/admin/subjects', icon: <BookOpen size={18} />, label: 'Subjects' },
-    { to: '/admin/concepts', icon: <Layers size={18} />, label: 'Concepts' },
-    { to: '/admin/roadmaps', icon: <Map size={18} />, label: 'Roadmaps' },
-    { to: '/admin/questions', icon: <HelpCircle size={18} />, label: 'Questions' },
+    { to: '/admin-skill-arena',           icon: <LayoutDashboard size={18} />, label: 'Overview' },
+    { to: '/admin-skill-arena/users',     icon: <Users size={18} />,           label: 'Users' },
+    { to: '/admin-skill-arena/subjects',  icon: <BookOpen size={18} />,        label: 'Subjects' },
+    { to: '/admin-skill-arena/concepts',  icon: <Layers size={18} />,          label: 'Concepts' },
+    { to: '/admin-skill-arena/roadmaps',  icon: <Map size={18} />,             label: 'Roadmaps' },
+    { to: '/admin-skill-arena/questions', icon: <HelpCircle size={18} />,      label: 'Questions' },
   ]
 
   const links = isAdmin ? adminLinks : studentLinks
@@ -30,18 +30,20 @@ export default function Sidebar({ open, onClose }) {
     <>
       {open && <div className="sidebar-backdrop" onClick={onClose} />}
       <aside className={`sidebar${open ? ' open' : ''}`}>
-        <NavLink to={isAdmin ? '/admin' : '/dashboard'} className="sidebar-brand">
-          <div className="sidebar-brand-icon">🎓</div>
-          <span className="sidebar-brand-text">LearnPath</span>
+        <NavLink to={isAdmin ? '/admin-skill-arena' : '/skill-arena/dashboard'} className="sidebar-brand">
+          <div className="sidebar-brand-icon" style={{ background: 'transparent', fontSize: '1.25rem' }}>⚔️</div>
+          <span className="sidebar-brand-text" style={{ fontFamily: isAdmin ? 'inherit' : "'Orbitron', sans-serif", fontSize: '0.875rem', letterSpacing: '0.06em' }}>
+            {isAdmin ? 'SHADOW PANEL' : 'ARISE'}
+          </span>
         </NavLink>
 
         <nav className="sidebar-nav">
-          <div className="sidebar-section-label">{isAdmin ? 'Admin Panel' : 'Learning'}</div>
+          <div className="sidebar-section-label">{isAdmin ? 'Admin Panel' : 'Hunter Menu'}</div>
           {links.map(link => (
             <NavLink
               key={link.to}
               to={link.to}
-              end={link.to === '/admin' || link.to === '/dashboard'}
+              end={link.to === '/admin-skill-arena'}
               className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}
               onClick={onClose}
             >
@@ -52,10 +54,10 @@ export default function Sidebar({ open, onClose }) {
 
           {isAdmin && (
             <>
-              <div className="sidebar-section-label" style={{ marginTop: '1rem' }}>Student View</div>
-              <NavLink to="/dashboard" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+              <div className="sidebar-section-label" style={{ marginTop: '1rem' }}>Hunter View</div>
+              <NavLink to="/skill-arena/dashboard" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><ChevronRight size={18} /></span>
-                Student Dashboard
+                Status Window
               </NavLink>
             </>
           )}

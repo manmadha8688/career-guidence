@@ -1,17 +1,21 @@
-import { Menu, Sun, Moon } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useEffect, useState } from 'react'
+import { getStoredXp, getRank } from '../utils/slRank'
 
 export default function Navbar({ onMenuClick, title = '' }) {
   const { user } = useAuth()
-  const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark')
+  const isAdmin = user?.role === 'ADMIN'
+  const [xp, setXp] = useState(() => getStoredXp())
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
-  }, [dark])
+    const refresh = () => setXp(getStoredXp())
+    window.addEventListener('sl:xp', refresh)
+    return () => window.removeEventListener('sl:xp', refresh)
+  }, [])
 
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+  const rank = getRank(xp)
 
   return (
     <header className="navbar">
@@ -21,17 +25,32 @@ export default function Navbar({ onMenuClick, title = '' }) {
         </button>
         {title && <span className="navbar-title">{title}</span>}
       </div>
+
       <div className="navbar-right">
-        <button className="theme-toggle" onClick={() => setDark(d => !d)} title="Toggle theme">
-          {dark ? <Sun size={17} /> : <Moon size={17} />}
-        </button>
+        {!isAdmin && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+            <span className={`rank-badge ${rank.cls}`}>{rank.label}</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', minWidth: 56 }}>
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', color: 'var(--text-muted)', letterSpacing: '0.03em' }}>
+                {xp.toLocaleString()} XP
+              </span>
+              <div className="xp-bar-track" style={{ height: 5 }}>
+                <div className="xp-bar-fill" style={{ width: `${rank.progress}%`, background: `linear-gradient(90deg, ${rank.color}99, ${rank.color})` }} />
+              </div>
+            </div>
+          </div>
+        )}
         <div className="navbar-user">
-          <div className="navbar-avatar" style={{ background: user?.avatarColor || '#4F46E5' }}>
+          <div className="navbar-avatar" style={{ background: user?.avatarColor || '#9B6ED4', border: isAdmin ? 'none' : `2px solid ${rank.color}55` }}>
             {initials}
           </div>
           <div>
-            <div className="navbar-name">{user?.fullName}</div>
-            <div className="text-xs text-muted">{user?.role}</div>
+            <div className="navbar-name" style={{ fontFamily: isAdmin ? 'inherit' : "'Rajdhani', sans-serif", fontWeight: 700 }}>
+              {user?.fullName}
+            </div>
+            <div className="text-xs text-muted" style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.05em' }}>
+              {isAdmin ? 'SHADOW MONARCH' : `${rank.label}-RANK HUNTER`}
+            </div>
           </div>
         </div>
       </div>

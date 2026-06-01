@@ -48,6 +48,252 @@ public class DataSeeder implements CommandLineRunner {
         if (subjectRepository.findAll().stream().noneMatch(s -> s.getTitle().equals("Python Fundamentals"))) {
             seedPythonFullStack();
         }
+        reconcileTotalConcepts();
+        reconcileRichContent();
+    }
+
+    private void reconcileTotalConcepts() {
+        subjectRepository.findAll().forEach(s -> {
+            int actual = (int) conceptRepository.countBySubjectId(s.getId());
+            if (s.getTotalConcepts() != actual) {
+                s.setTotalConcepts(actual);
+                subjectRepository.save(s);
+            }
+        });
+    }
+
+    // ─── RICH CONTENT SEED ───────────────────────────────────────────────────
+
+    public void reconcileRichContent() {
+        enrichJava("Variables and Data Types",
+            "Variables are containers for storing data — Java requires you to declare the type before use.",
+            "Think of a variable like a labeled box. The label is the name (age, name, price), and the box type tells Java what kind of data fits inside. Once you declare int age = 25, only whole numbers can go in that box. You can change the value later, but you cannot change the type. Java is strict about this — it checks types at compile time before your code even runs.",
+            "Java is statically typed — variable types are resolved at compile time, not runtime. Primitive types (int, long, double, float, char, boolean, byte, short) are stored directly on the JVM stack as raw bit patterns. Reference types (String, arrays, objects) store a pointer on the stack that points to heap-allocated memory. Java 10+ introduced local variable type inference via 'var', but this is purely syntactic sugar — the compiler still resolves the concrete type at compile time and emits the same bytecode.",
+            "// Declare and assign in one line\ntype variableName = value;\n\n// Declare first, assign later\ntype variableName;\nvariableName = value;\n\n// Java 10+ type inference (local variables only)\nvar variableName = value;  // type inferred at compile time\n\n// Examples\nint age = 25;\nString name = \"Alice\";\ndouble price = 9.99;\nboolean active = true;\nvar count = 10;        // inferred as int\nvar text = \"Hello\";   // inferred as String",
+            List.of(
+                new Concept.ConceptExample("Primitive Types",
+                    "Java's 8 primitive types cover integers, decimals, booleans, and single characters.",
+                    "int age = 25;\nlong population = 8_000_000_000L;  // L suffix for long\ndouble price = 19.99;\nfloat rating = 4.5f;               // f suffix for float\nboolean isActive = true;\nchar grade = 'A';\nbyte level = 127;\nshort year = 2024;\n\nSystem.out.println(\"Age: \" + age);\nSystem.out.println(\"Grade: \" + grade);\nSystem.out.println(\"Active: \" + isActive);",
+                    "Age: 25\nGrade: A\nActive: true"),
+                new Concept.ConceptExample("String Operations",
+                    "String is a reference type with built-in methods. Never compare Strings with == — use .equals().",
+                    "String name = \"Alice Johnson\";\nString upper = name.toUpperCase();\nint len = name.length();\nboolean hasAlice = name.contains(\"Alice\");\nString first = name.substring(0, 5);\n\nSystem.out.println(upper);\nSystem.out.println(\"Length: \" + len);\nSystem.out.println(\"Contains Alice: \" + hasAlice);\nSystem.out.println(\"First name: \" + first);\n\nString a = \"hello\"; String b = \"hello\";\nSystem.out.println(a.equals(b));  // true (content check)",
+                    "ALICE JOHNSON\nLength: 13\nContains Alice: true\nFirst name: Alice\ntrue"),
+                new Concept.ConceptExample("Type Casting",
+                    "Widening conversions happen automatically. Narrowing requires an explicit cast and may lose data.",
+                    "// Widening — automatic, no data loss\nint intVal = 100;\nlong longVal = intVal;      // int to long\ndouble doubleVal = intVal;  // int to double\n\n// Narrowing — explicit cast required\ndouble pi = 3.14159;\nint truncated = (int) pi;   // decimal part lost\n\n// Integer vs floating-point division\nint a = 7, b = 2;\nSystem.out.println(a / b);           // integer division\nSystem.out.println((double) a / b);  // cast first",
+                    "3\n3.5")
+            ),
+            List.of(
+                "Java has 8 primitive types: int, long, double, float, char, boolean, byte, short",
+                "String is a reference type (an object on the heap), not a primitive",
+                "Always declare the type: int x = 5; or declare then assign: int x; x = 5;",
+                "var (Java 10+) infers the type at compile time — still statically typed, not dynamic",
+                "Class-field primitives get default values (int=0, boolean=false) but local variables do not"
+            ),
+            "Always use .equals() to compare String values — never ==. The == operator compares memory addresses, not text content. Two Strings holding \"hello\" might be at different addresses and == returns false.",
+            List.of(
+                "Using == to compare Strings: (str1 == str2) checks references, not content. Use str1.equals(str2)",
+                "Integer overflow: int holds ~2.1 billion max. Use long and add the L suffix for larger numbers",
+                "Integer division truncates silently: 7/2 = 3, not 3.5. Cast first: (double)7/2 = 3.5",
+                "Forgetting the f suffix for float literals: float x = 3.14 is a compile error — write float x = 3.14f"
+            )
+        );
+
+        enrichJava("Control Flow",
+            "Control flow structures determine which code runs and how many times — the decision-making and looping backbone of every Java program.",
+            "Imagine your code is a robot following instructions. Without control flow, it does every instruction once from top to bottom. With control flow you can say: IF the light is red, STOP. ELSE, GO. Or: WHILE the tank has fuel, KEEP DRIVING. FOR each passenger, check their ticket. Control flow lets your program make decisions and repeat work.",
+            "Java control flow compiles to JVM bytecode branch instructions (IFEQ, IFNE, GOTO). The switch statement is compiled to a tableswitch or lookupswitch bytecode instruction depending on case density. Java 14 introduced switch expressions with arrow syntax and the ability to yield a value. The enhanced for-each desugars to an Iterator loop for Iterable types and an index-based loop for arrays. The JIT compiler applies branch prediction and loop unrolling on hot paths.",
+            "// if / else if / else\nif (condition) { ... }\nelse if (otherCondition) { ... }\nelse { ... }\n\n// switch expression (Java 14+)\nString label = switch (day) {\n    case MONDAY, TUESDAY -> \"Weekday\";\n    case SATURDAY, SUNDAY -> \"Weekend\";\n    default -> \"Other\";\n};\n\n// classic for loop\nfor (int i = 0; i < 5; i++) { ... }\n\n// enhanced for-each\nfor (String item : list) { ... }\n\n// while\nwhile (condition) { ... }\n\n// do-while (runs at least once)\ndo { ... } while (condition);",
+            List.of(
+                new Concept.ConceptExample("if / else + ternary",
+                    "Grade a score with if/else, then simplify a two-way decision using the ternary operator.",
+                    "int score = 85;\n\nif (score >= 90) {\n    System.out.println(\"Grade: A\");\n} else if (score >= 80) {\n    System.out.println(\"Grade: B\");\n} else if (score >= 70) {\n    System.out.println(\"Grade: C\");\n} else {\n    System.out.println(\"Grade: F\");\n}\n\n// Ternary: condition ? valueIfTrue : valueIfFalse\nString result = score >= 60 ? \"Pass\" : \"Fail\";\nSystem.out.println(result);",
+                    "Grade: B\nPass"),
+                new Concept.ConceptExample("for loop + enhanced for-each",
+                    "Classic indexed loop to build output; then a for-each loop to iterate an array cleanly.",
+                    "// Classic for — use when you need the index\nfor (int i = 1; i <= 5; i++) {\n    System.out.print(i + \" \");\n}\nSystem.out.println();\n\n// Enhanced for-each — preferred for collections/arrays\nString[] fruits = {\"Apple\", \"Banana\", \"Cherry\"};\nfor (String fruit : fruits) {\n    System.out.println(fruit);\n}\n\n// Sum using for-each\nint[] numbers = {10, 20, 30, 40, 50};\nint total = 0;\nfor (int n : numbers) total += n;\nSystem.out.println(\"Total: \" + total);",
+                    "1 2 3 4 5 \nApple\nBanana\nCherry\nTotal: 150"),
+                new Concept.ConceptExample("while + break / continue",
+                    "A while loop with break to exit early and continue to skip specific iterations.",
+                    "// while with break\nint i = 0;\nwhile (true) {\n    if (i == 5) break;  // exit loop when i reaches 5\n    System.out.print(i + \" \");\n    i++;\n}\nSystem.out.println();\n\n// while with continue (skip even numbers)\nint j = 0;\nwhile (j < 10) {\n    j++;\n    if (j % 2 == 0) continue;  // skip even\n    System.out.print(j + \" \");\n}\nSystem.out.println();",
+                    "0 1 2 3 4 \n1 3 5 7 9 ")
+            ),
+            List.of(
+                "if/else evaluates conditions top to bottom — the first matching branch runs, the rest are skipped",
+                "switch is cleaner than long if/else chains when checking a single variable against fixed values",
+                "for loop: initialise once → check condition → run body → run update → repeat",
+                "for-each is preferred for iterating collections — it's safer and avoids off-by-one errors",
+                "break exits the loop immediately; continue skips the rest of the current iteration and moves to the next"
+            ),
+            "Prefer enhanced for-each (for (String s : list)) over index-based for loops when you do not need the index. It is cleaner and eliminates off-by-one bugs. Use the classic for loop only when you explicitly need the index or must iterate backwards.",
+            List.of(
+                "Missing break in switch cases: without break, execution falls through into the next case automatically",
+                "Off-by-one error: for (int i = 0; i <= arr.length; i++) — use < not <=, or you will get ArrayIndexOutOfBoundsException",
+                "Infinite loop: a while or for loop whose condition never becomes false will run forever and freeze the program",
+                "Modifying a collection inside for-each throws ConcurrentModificationException — use Iterator.remove() or removeIf() instead"
+            )
+        );
+
+        enrichJava("Methods",
+            "A method is a named, reusable block of code that takes inputs (parameters), performs a task, and optionally returns a result.",
+            "Think of a method like a recipe on a card. You give the recipe a name (makeCoffee), list what it needs (coffeeType, sugarAmount), and write the steps. Whenever you want coffee you just call makeCoffee(\"espresso\", 2) — you do not rewrite the steps each time. Methods prevent duplication: write once, call from anywhere.",
+            "Every Java method is declared inside a class. The JVM stores bytecode in the method area and creates a new stack frame for each call containing local variables, the operand stack, and a reference to the constant pool. Method overloading is resolved at compile time (static dispatch) based on parameter count and types. Overriding uses invokevirtual (instance) or invokeinterface (interface) — both resolved at runtime via the vtable. Java is strictly pass-by-value: primitives copy the value; objects copy the reference (the original reference is not changed, but the object's state can be mutated).",
+            "// Declaration syntax\naccessModifier returnType methodName(type param1, type param2) {\n    // body\n    return value;  // required unless returnType is void\n}\n\n// Examples\npublic int add(int a, int b) { return a + b; }\npublic void printGreeting(String name) {\n    System.out.println(\"Hello, \" + name);\n}\npublic static double square(double n) { return n * n; }\n\n// Overloading — same name, different parameters\npublic int multiply(int a, int b)       { return a * b; }\npublic double multiply(double a, double b) { return a * b; }",
+            List.of(
+                new Concept.ConceptExample("Basic method with return value",
+                    "Declare and call a method that takes parameters and returns a computed result.",
+                    "public class Calculator {\n\n    public int add(int a, int b) {\n        return a + b;\n    }\n\n    public double average(int[] nums) {\n        int sum = 0;\n        for (int n : nums) sum += n;\n        return (double) sum / nums.length;\n    }\n\n    public static void main(String[] args) {\n        Calculator calc = new Calculator();\n        System.out.println(calc.add(5, 3));\n        System.out.println(calc.average(new int[]{80, 90, 70, 100}));\n    }\n}",
+                    "8\n85.0"),
+                new Concept.ConceptExample("Method overloading",
+                    "Multiple methods with the same name but different parameter types — Java picks the right one at compile time.",
+                    "public class Printer {\n\n    public void print(int value) {\n        System.out.println(\"int: \" + value);\n    }\n    public void print(double value) {\n        System.out.println(\"double: \" + value);\n    }\n    public void print(String value) {\n        System.out.println(\"String: \" + value);\n    }\n\n    public static void main(String[] args) {\n        Printer p = new Printer();\n        p.print(42);\n        p.print(3.14);\n        p.print(\"Hello\");\n    }\n}",
+                    "int: 42\ndouble: 3.14\nString: Hello"),
+                new Concept.ConceptExample("Recursive method",
+                    "A method that calls itself. Must have a base case to stop — otherwise it causes a StackOverflowError.",
+                    "public class MathUtils {\n\n    // factorial: n! = n * (n-1) * ... * 1\n    public int factorial(int n) {\n        if (n <= 1) return 1;       // base case\n        return n * factorial(n - 1); // recursive call\n    }\n\n    // fibonacci: fib(n) = fib(n-1) + fib(n-2)\n    public int fibonacci(int n) {\n        if (n <= 1) return n;         // base cases: 0,1\n        return fibonacci(n-1) + fibonacci(n-2);\n    }\n\n    public static void main(String[] args) {\n        MathUtils m = new MathUtils();\n        System.out.println(m.factorial(5));\n        System.out.println(m.fibonacci(7));\n    }\n}",
+                    "120\n13")
+            ),
+            List.of(
+                "A method signature is its name + parameter types — the return type is NOT part of the signature",
+                "void means the method returns nothing; all other return types require a return statement on every code path",
+                "Method overloading: same name, different parameter list — resolved at compile time (not runtime)",
+                "static methods belong to the class; instance methods need an object instance to be called",
+                "Java is pass-by-value: primitives copy the value; objects copy the reference, not the object itself"
+            ),
+            "Keep methods short and focused on one task. If you cannot describe what a method does in one sentence, it is doing too much — split it. A good target is 10-20 lines per method. This makes code easier to read, test, and reuse.",
+            List.of(
+                "Missing return statement: if a method declares a non-void return type, every code path must return a value",
+                "Confusing overloading with overriding: overloading is same class, different params (compile time); overriding is subclass, same signature (runtime)",
+                "Forgetting that Java is pass-by-value: reassigning the parameter variable inside the method does not change the caller's variable",
+                "Infinite recursion: a recursive method without a correct base case will throw StackOverflowError"
+            )
+        );
+
+        enrichJava("Arrays",
+            "An array is a fixed-size, ordered container that holds multiple values of the same type, accessed using a zero-based index.",
+            "Imagine a row of numbered mailboxes: box 0, box 1, box 2… An array is exactly that. You declare int[] scores = new int[5] to create 5 integer slots. Each slot holds one value. You get them back by number: scores[0] is the first, scores[4] is the last. The size is fixed — once you create a 5-slot array you cannot add a 6th slot without creating a brand new array.",
+            "Arrays in Java are heap-allocated objects. int[] arr = new int[5] allocates a contiguous block of memory for 5 ints (20 bytes) plus object header. Multi-dimensional arrays are arrays of arrays — each row is a separate heap object. All arrays extend Object and implement Cloneable and Serializable. The .length field is baked in at allocation time. For dynamic sizing use ArrayList. The java.util.Arrays class provides sort, binarySearch, fill, copyOf, and toString utilities.",
+            "// Declare and allocate (default values: 0 / false / null)\nint[] arr = new int[5];\n\n// Declare and initialise with values\nint[] scores = {85, 92, 78, 95, 88};\nString[] names = {\"Alice\", \"Bob\", \"Carol\"};\n\n// Access and modify\nint first = scores[0];          // 85\nscores[2] = 100;                // update index 2\nint len = scores.length;        // 5\n\n// 2D array\nint[][] matrix = new int[3][4]; // 3 rows, 4 cols\nint[][] grid = {{1,2,3},{4,5,6}};\n\n// Iterate\nfor (int i = 0; i < arr.length; i++) { ... }\nfor (int val : arr) { ... }  // enhanced for-each",
+            List.of(
+                new Concept.ConceptExample("Declare, initialise, and iterate",
+                    "Create an array with values, access individual elements, and loop through it two ways.",
+                    "int[] scores = {85, 92, 78, 95, 88};\n\nSystem.out.println(\"First: \" + scores[0]);\nSystem.out.println(\"Last:  \" + scores[scores.length - 1]);\nSystem.out.println(\"Count: \" + scores.length);\n\n// Enhanced for-each\nint total = 0;\nfor (int s : scores) total += s;\nSystem.out.println(\"Total: \" + total);\nSystem.out.println(\"Avg:   \" + (double) total / scores.length);\n\n// Utility: print all, sort, binary search\nSystem.out.println(java.util.Arrays.toString(scores));\njava.util.Arrays.sort(scores);\nSystem.out.println(java.util.Arrays.toString(scores));",
+                    "First: 85\nLast:  88\nCount: 5\nTotal: 438\nAvg:   87.6\n[85, 92, 78, 95, 88]\n[78, 85, 88, 92, 95]"),
+                new Concept.ConceptExample("Find min and max",
+                    "Classic pattern: iterate the array, tracking the smallest and largest values seen so far.",
+                    "int[] numbers = {34, 7, 23, 32, 5, 62, 18};\n\nint min = numbers[0];\nint max = numbers[0];\n\nfor (int n : numbers) {\n    if (n < min) min = n;\n    if (n > max) max = n;\n}\n\nSystem.out.println(\"Min: \" + min);\nSystem.out.println(\"Max: \" + max);\nSystem.out.println(\"Range: \" + (max - min));",
+                    "Min: 5\nMax: 62\nRange: 57"),
+                new Concept.ConceptExample("2D array (matrix)",
+                    "A 2D array stores rows and columns. Access with two indexes: [row][column].",
+                    "int[][] matrix = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n\n// Print with nested loops\nfor (int row = 0; row < matrix.length; row++) {\n    for (int col = 0; col < matrix[row].length; col++) {\n        System.out.print(matrix[row][col] + \" \");\n    }\n    System.out.println();\n}\n\n// Diagonal sum\nint diagSum = 0;\nfor (int i = 0; i < matrix.length; i++) {\n    diagSum += matrix[i][i];\n}\nSystem.out.println(\"Diagonal sum: \" + diagSum);",
+                    "1 2 3 \n4 5 6 \n7 8 9 \nDiagonal sum: 15")
+            ),
+            List.of(
+                "Arrays are zero-indexed: first element is at index 0, last is at index length-1",
+                "Array size is fixed after creation — use ArrayList<T> for a resizable list",
+                "Accessing an out-of-range index throws ArrayIndexOutOfBoundsException at runtime",
+                "new int[5] initialises all elements to 0; boolean[] to false; Object[] to null",
+                "Arrays.toString(arr) prints the values; Arrays.sort(arr) sorts in place; Arrays.copyOf(arr, n) returns a new array"
+            ),
+            "When you need a collection that grows and shrinks dynamically, use ArrayList<Integer> instead of int[]. Arrays are best when the size is known upfront. For printing, always use Arrays.toString(arr) — printing the array reference directly gives a useless memory address.",
+            List.of(
+                "Off-by-one: arr[arr.length] throws ArrayIndexOutOfBoundsException — the last valid index is arr.length-1",
+                "Arrays don't print usefully: System.out.println(arr) prints a memory address. Use Arrays.toString(arr)",
+                "Array assignment copies the reference: int[] b = a means b and a point to the same array. Use Arrays.copyOf(a, a.length) for an independent copy",
+                "Declaring but not initialising: int[] arr; arr[0] = 5; — you must allocate first: arr = new int[5];"
+            )
+        );
+
+        enrichJava("Exception Handling",
+            "Exceptions are unexpected runtime events — exception handling lets your program detect, report, and recover from them gracefully instead of crashing.",
+            "Imagine you are a cashier. Normally a customer pays, you make change, done. But what if they hand you a fake bill? You do not freeze — you handle it: call the manager, apologise, ask for another payment. In Java, the try block is the normal transaction. A catch block is the something-went-wrong handler. The finally block always runs — it is the always-clean-up-after-yourself step, regardless of what happened.",
+            "Java exceptions are objects extending Throwable. The two main branches are Error (non-recoverable JVM problems) and Exception (recoverable application issues). Checked exceptions (extend Exception but not RuntimeException) must be caught or declared with throws — enforced at compile time. Unchecked exceptions (extend RuntimeException) require no explicit handling. The JVM uses an exception table in the bytecode to map PC ranges to handler addresses. The try-with-resources construct (Java 7+) calls close() on AutoCloseable objects automatically, preventing resource leaks even if an exception is thrown.",
+            "// Basic structure\ntry {\n    // code that might throw\n} catch (SpecificException e) {\n    // handle specific case\n} catch (Exception e) {\n    // catch-all (most general last)\n} finally {\n    // always runs — cleanup goes here\n}\n\n// Multiple exceptions in one catch (Java 7+)\ncatch (IOException | SQLException e) { ... }\n\n// Try-with-resources — auto-closes AutoCloseable\ntry (FileReader fr = new FileReader(\"data.txt\")) {\n    // fr.close() called automatically\n} catch (IOException e) { ... }\n\n// Throw an exception\nthrow new IllegalArgumentException(\"age must be positive\");\n\n// Declare a checked exception\npublic void readFile(String path) throws IOException { ... }",
+            List.of(
+                new Concept.ConceptExample("try / catch / finally",
+                    "Catch a specific exception, show the message, and run cleanup in finally.",
+                    "public class Division {\n    public static void main(String[] args) {\n        int[] numbers = {10, 0, 5};\n\n        for (int divisor : numbers) {\n            try {\n                int result = 100 / divisor;\n                System.out.println(\"100 / \" + divisor + \" = \" + result);\n            } catch (ArithmeticException e) {\n                System.out.println(\"Error: \" + e.getMessage());\n            } finally {\n                System.out.println(\"(attempt done)\");\n            }\n        }\n    }\n}",
+                    "100 / 10 = 10\n(attempt done)\nError: / by zero\n(attempt done)\n100 / 5 = 20\n(attempt done)"),
+                new Concept.ConceptExample("Custom exception",
+                    "Extend RuntimeException to create a domain-specific exception with a meaningful message.",
+                    "class InsufficientFundsException extends RuntimeException {\n    public InsufficientFundsException(double amount) {\n        super(\"Need $\" + amount + \" more to complete transaction\");\n    }\n}\n\nclass BankAccount {\n    private double balance = 100.0;\n\n    public void withdraw(double amount) {\n        if (amount > balance) {\n            throw new InsufficientFundsException(amount - balance);\n        }\n        balance -= amount;\n        System.out.println(\"Withdrawn: $\" + amount + \". Balance: $\" + balance);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        BankAccount acc = new BankAccount();\n        try {\n            acc.withdraw(60);\n            acc.withdraw(80); // this will throw\n        } catch (InsufficientFundsException e) {\n            System.out.println(\"Caught: \" + e.getMessage());\n        }\n    }\n}",
+                    "Withdrawn: $60.0. Balance: $40.0\nCaught: Need $40.0 more to complete transaction"),
+                new Concept.ConceptExample("Multiple catch blocks",
+                    "Handle different exception types with separate catch blocks — most specific first, most general last.",
+                    "public class Parser {\n    public static int parseAndDivide(String input, int divisor) {\n        try {\n            int value = Integer.parseInt(input); // may throw NumberFormatException\n            return value / divisor;              // may throw ArithmeticException\n        } catch (NumberFormatException e) {\n            System.out.println(\"Not a number: \" + input);\n        } catch (ArithmeticException e) {\n            System.out.println(\"Cannot divide by zero\");\n        } catch (Exception e) {\n            System.out.println(\"Unexpected: \" + e.getMessage());\n        }\n        return -1;\n    }\n    public static void main(String[] args) {\n        System.out.println(parseAndDivide(\"42\", 7));\n        System.out.println(parseAndDivide(\"abc\", 2));\n        System.out.println(parseAndDivide(\"10\", 0));\n    }\n}",
+                    "6\nNot a number: abc\n-1\nCannot divide by zero\n-1")
+            ),
+            List.of(
+                "Checked exceptions must be caught or declared with throws — the compiler enforces this",
+                "Unchecked exceptions (RuntimeException subclasses) do not require explicit handling but can still be caught",
+                "finally always runs — even if an exception is thrown inside catch or a return statement is hit inside try",
+                "throw creates and throws an exception; throws on a method signature declares it may throw a checked exception",
+                "Use try-with-resources for anything that implements AutoCloseable (files, database connections, streams)"
+            ),
+            "Catch the most specific exception type first — never put catch(Exception e) before catch(IOException e) or the IOException branch becomes unreachable. Also, never swallow exceptions silently with an empty catch block. At minimum print or log the stack trace.",
+            List.of(
+                "Catching Exception or Throwable as the only catch block hides the real problem and makes debugging very hard",
+                "Empty catch block: catch (Exception e) {} silently swallows the error — always at least log e.getMessage()",
+                "Confusing throw (creates and throws) with throws (method signature declaration for checked exceptions)",
+                "Not closing resources in finally — always close files and connections, or use try-with-resources to do it automatically"
+            )
+        );
+
+        enrichJava("String Methods",
+            "String is Java's most-used class — immutable text with a rich built-in method library for searching, transforming, and comparing text.",
+            "A String is a sequence of characters. In Java it is immutable — once created it cannot be changed. When you write name = name.toUpperCase(), you are not modifying the original. You are creating a brand-new uppercase String and storing it in name. Think of it like a printed photograph: you can make an enlarged copy but you cannot alter the original print. This immutability makes Strings safe to share across the program without copying them defensively.",
+            "String in Java is a final class backed by a private byte[] array (Java 9+ compact strings). String literals are interned in the String Pool on the heap — identical literals share the same reference, which is why == sometimes returns true for literals but not for new String(). Concatenation with + inside loops compiles to repeated StringBuilder.append() + toString() calls, creating many intermediate objects — use StringBuilder explicitly in loops. String.format() and the newer formatted() use printf-style specifiers.",
+            "// Length and access\nstr.length()                     // character count\nstr.charAt(i)                    // char at index i\nstr.isEmpty()                    // length == 0\nstr.isBlank()                    // empty or only whitespace (Java 11+)\n\n// Search\nstr.contains(\"text\")\nstr.startsWith(\"prefix\")\nstr.endsWith(\"suffix\")\nstr.indexOf(\"text\")              // first position, -1 if absent\n\n// Transform (returns new String)\nstr.toUpperCase() / toLowerCase()\nstr.trim()                       // remove leading/trailing whitespace\nstr.replace(\"old\", \"new\")        // replace all occurrences\nstr.substring(start, end)        // [start, end)\n\n// Split and join\nstr.split(\",\")                   // returns String[]\nString.join(\", \", \"a\", \"b\")     // \"a, b\"\n\n// Comparison\nstr.equals(other)\nstr.equalsIgnoreCase(other)\n\n// Format\nString.format(\"Hi %s, age %d\", name, age)",
+            List.of(
+                new Concept.ConceptExample("Core string methods",
+                    "The most-used String methods: length, charAt, substring, contains, indexOf, replace.",
+                    "String text = \"  Hello, World!  \";\n\nSystem.out.println(text.trim());                   // strip whitespace\nSystem.out.println(text.trim().toUpperCase());\nSystem.out.println(text.trim().length());\nSystem.out.println(text.trim().charAt(0));         // first char\nSystem.out.println(text.trim().contains(\"World\")); // true/false\nSystem.out.println(text.trim().indexOf(\"World\"));  // position\nSystem.out.println(text.trim().replace(\"World\", \"Java\")); // swap",
+                    "Hello, World!\nHELLO, WORLD!\n13\nH\ntrue\n7\nHello, Java!"),
+                new Concept.ConceptExample("split, join, and format",
+                    "Split a CSV line into parts, process them, then join back and format a message.",
+                    "String csv = \"Alice,30,Engineer\";\nString[] parts = csv.split(\",\");\n\nString name = parts[0];\nint age = Integer.parseInt(parts[1]);\nString role = parts[2];\n\n// Join\nString joined = String.join(\" | \", name, String.valueOf(age), role);\nSystem.out.println(joined);\n\n// Format\nString message = String.format(\"Name: %-10s Age: %3d Role: %s\", name, age, role);\nSystem.out.println(message);\n\n// Check and transform\nSystem.out.println(name.startsWith(\"Al\"));\nSystem.out.println(role.toLowerCase());",
+                    "Alice | 30 | Engineer\nName: Alice      Age:  30 Role: Engineer\ntrue\nengineer"),
+                new Concept.ConceptExample("StringBuilder for efficient concatenation",
+                    "Use StringBuilder when building strings in loops — it avoids creating many intermediate String objects.",
+                    "// Slow: creates a new String on every +\nString slow = \"\";\nfor (int i = 1; i <= 5; i++) {\n    slow += i;  // bad in large loops\n}\nSystem.out.println(slow);\n\n// Fast: mutate a single buffer\nStringBuilder sb = new StringBuilder();\nfor (int i = 1; i <= 5; i++) {\n    sb.append(i);\n    if (i < 5) sb.append(\"-\");\n}\nSystem.out.println(sb.toString());\n\n// Useful StringBuilder methods\nStringBuilder b = new StringBuilder(\"Hello\");\nb.append(\" World\");\nb.insert(5, \",\");\nb.reverse();\nSystem.out.println(b);",
+                    "12345\n1-2-3-4-5\ndlroW ,olleH")
+            ),
+            List.of(
+                "Strings are immutable — every 'modifying' method returns a new String; the original is unchanged",
+                "Always use .equals() for content comparison, never == (which checks reference equality)",
+                "isEmpty() checks length == 0; isBlank() (Java 11+) also returns true for whitespace-only strings",
+                "Use StringBuilder for string building in loops — + concatenation in a loop creates a new object each iteration",
+                "String.split() accepts a regex — special characters like . * + must be escaped: split(\"\\\\.\")"
+            ),
+            "In loops, never build a String with + like result += word. Each + creates a new String object on the heap. Use StringBuilder: StringBuilder sb = new StringBuilder(); loop { sb.append(word); } String result = sb.toString(). For a handful of concatenations outside loops, + is fine.",
+            List.of(
+                "Using == to compare Strings: works for literals (String Pool) but fails for new String(\"hello\") — always use .equals()",
+                "str.replace() does not modify str — it returns a new String. Always capture: str = str.replace(\"a\", \"b\")",
+                "String.split(\".\") splits on every character because . is regex for any char. Use split(\"\\\\.\") for a literal dot",
+                "NullPointerException when calling methods on a null String — null-check first: if (str != null && str.contains(...))"
+            )
+        );
+    }
+
+    private void enrichJava(String title, String intro, String simple, String technical,
+            String syntax, List<Concept.ConceptExample> examples, List<String> keyPoints,
+            String tip, List<String> mistakes) {
+        conceptRepository.findByTitleContainingIgnoreCase(title)
+            .stream()
+            .filter(c -> "Java Fundamentals".equals(c.getSubjectTitle()) && c.getIntroduction() == null)
+            .findFirst()
+            .ifPresent(c -> {
+                c.setIntroduction(intro);
+                c.setExplanationSimple(simple);
+                c.setExplanationTechnical(technical);
+                c.setSyntax(syntax);
+                c.setExamples(examples);
+                c.setKeyPoints(keyPoints);
+                c.setTip(tip);
+                c.setCommonMistakes(mistakes);
+                conceptRepository.save(c);
+            });
     }
 
     private void seedAdmin() {
