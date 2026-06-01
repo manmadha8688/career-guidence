@@ -18,7 +18,7 @@ export default function LoginPage() {
     try {
       const { data } = await loginUser(form)
       login(data.token, data.user)
-      data.user.role === 'ADMIN' ? navigate('/admin') : navigate('/dashboard')
+      data.user.role === 'ADMIN' ? navigate('/admin-skill-arena') : navigate('/skill-arena/dashboard')
     } catch (err) {
       toast.error(err.response?.data?.error || 'Login failed')
     } finally {

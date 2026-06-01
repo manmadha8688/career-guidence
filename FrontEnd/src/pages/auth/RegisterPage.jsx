@@ -33,7 +33,7 @@ export default function RegisterPage() {
       const { fullName, email, password, collegeName } = form
       const { data } = await registerUser({ fullName, email, password, collegeName })
       login(data.token, data.user)
-      navigate('/dashboard')
+      navigate('/skill-arena/dashboard')
     } catch (err) {
       toast.error(err.response?.data?.error || 'Registration failed')
     } finally {

@@ -1,5 +1,6 @@
 package com.example.student.controller;
 
+import com.example.student.config.DataSeeder;
 import com.example.student.dto.AdminConceptRequest;
 import com.example.student.dto.AdminQuestionRequest;
 import com.example.student.dto.AdminRoadmapRequest;
@@ -17,9 +18,17 @@ import java.util.Map;
 public class AdminController {
 
     private final AdminService adminService;
+    private final DataSeeder dataSeeder;
 
-    public AdminController(AdminService adminService) {
+    public AdminController(AdminService adminService, DataSeeder dataSeeder) {
         this.adminService = adminService;
+        this.dataSeeder = dataSeeder;
+    }
+
+    @PostMapping("/migrate/rich-content")
+    public ResponseEntity<?> migrateRichContent() {
+        dataSeeder.reconcileRichContent();
+        return ResponseEntity.ok(Map.of("message", "Rich content migration complete"));
     }
 
     @GetMapping("/stats")

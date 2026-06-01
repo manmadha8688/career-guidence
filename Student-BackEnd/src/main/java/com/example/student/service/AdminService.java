@@ -26,6 +26,7 @@ public class AdminService {
     private final QuestionRepository questionRepository;
     private final QuizAttemptRepository quizAttemptRepository;
     private final UserSubjectBadgeRepository badgeRepository;
+    private final UserRoadmapEnrollmentRepository enrollmentRepository;
 
     public AdminService(UserRepository userRepository,
                         SubjectRepository subjectRepository,
@@ -35,7 +36,8 @@ public class AdminService {
                         UserConceptProgressRepository progressRepository,
                         QuestionRepository questionRepository,
                         QuizAttemptRepository quizAttemptRepository,
-                        UserSubjectBadgeRepository badgeRepository) {
+                        UserSubjectBadgeRepository badgeRepository,
+                        UserRoadmapEnrollmentRepository enrollmentRepository) {
         this.userRepository = userRepository;
         this.subjectRepository = subjectRepository;
         this.conceptRepository = conceptRepository;
@@ -45,6 +47,7 @@ public class AdminService {
         this.questionRepository = questionRepository;
         this.quizAttemptRepository = quizAttemptRepository;
         this.badgeRepository = badgeRepository;
+        this.enrollmentRepository = enrollmentRepository;
     }
 
     // ─── STATS ───────────────────────────────────────────────────────────────
@@ -203,6 +206,14 @@ public class AdminService {
         c.setWhatItIs(req.getWhatItIs());
         c.setWhyItMatters(req.getWhyItMatters());
         c.setCodeExample(req.getCodeExample());
+        c.setIntroduction(req.getIntroduction());
+        c.setExplanationSimple(req.getExplanationSimple());
+        c.setExplanationTechnical(req.getExplanationTechnical());
+        c.setSyntax(req.getSyntax());
+        c.setExamples(req.getExamples());
+        c.setKeyPoints(req.getKeyPoints());
+        c.setTip(req.getTip());
+        c.setCommonMistakes(req.getCommonMistakes());
         c.setEstimatedMinutes(req.getEstimatedMinutes() > 0 ? req.getEstimatedMinutes() : 15);
         c.setOrderIndex(newIdx);
         Concept saved = conceptRepository.save(c);
@@ -219,6 +230,14 @@ public class AdminService {
         if (req.getWhatItIs() != null) c.setWhatItIs(req.getWhatItIs());
         if (req.getWhyItMatters() != null) c.setWhyItMatters(req.getWhyItMatters());
         if (req.getCodeExample() != null) c.setCodeExample(req.getCodeExample());
+        if (req.getIntroduction() != null) c.setIntroduction(req.getIntroduction());
+        if (req.getExplanationSimple() != null) c.setExplanationSimple(req.getExplanationSimple());
+        if (req.getExplanationTechnical() != null) c.setExplanationTechnical(req.getExplanationTechnical());
+        if (req.getSyntax() != null) c.setSyntax(req.getSyntax());
+        if (req.getExamples() != null) c.setExamples(req.getExamples());
+        if (req.getKeyPoints() != null) c.setKeyPoints(req.getKeyPoints());
+        if (req.getTip() != null) c.setTip(req.getTip());
+        if (req.getCommonMistakes() != null) c.setCommonMistakes(req.getCommonMistakes());
         if (req.getEstimatedMinutes() > 0) c.setEstimatedMinutes(req.getEstimatedMinutes());
 
         int newIdx = req.getOrderIndex();
@@ -296,6 +315,9 @@ public class AdminService {
     public void deleteRoadmap(String id) {
         if (!roadmapRepository.existsById(id))
             throw new ResourceNotFoundException("Roadmap not found");
+        quizAttemptRepository.deleteByTypeAndRefId("ROADMAP", id);
+        enrollmentRepository.deleteByRoadmapId(id);
+        roadmapSubjectRepository.deleteByRoadmapId(id);
         roadmapRepository.deleteById(id);
     }
 

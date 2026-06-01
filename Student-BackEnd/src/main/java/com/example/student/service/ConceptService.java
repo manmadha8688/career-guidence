@@ -56,13 +56,29 @@ public class ConceptService {
 
         boolean done = progressRepository.existsByUserIdAndConceptId(userId, conceptId);
 
-        return new ConceptDetailDTO(
-                concept.getId(), concept.getTitle(), concept.getWhatItIs(),
-                concept.getWhyItMatters(), concept.getCodeExample(),
-                concept.getOrderIndex(), concept.getEstimatedMinutes(), done,
-                concept.getSubjectId(), concept.getSubjectTitle(),
-                siblings.size(), prev, next
-        );
+        ConceptDetailDTO dto = new ConceptDetailDTO();
+        dto.setId(concept.getId());
+        dto.setTitle(concept.getTitle());
+        dto.setWhatItIs(concept.getWhatItIs());
+        dto.setWhyItMatters(concept.getWhyItMatters());
+        dto.setCodeExample(concept.getCodeExample());
+        dto.setIntroduction(concept.getIntroduction());
+        dto.setExplanationSimple(concept.getExplanationSimple());
+        dto.setExplanationTechnical(concept.getExplanationTechnical());
+        dto.setSyntax(concept.getSyntax());
+        dto.setExamples(concept.getExamples());
+        dto.setKeyPoints(concept.getKeyPoints());
+        dto.setTip(concept.getTip());
+        dto.setCommonMistakes(concept.getCommonMistakes());
+        dto.setOrderIndex(concept.getOrderIndex());
+        dto.setEstimatedMinutes(concept.getEstimatedMinutes());
+        dto.setCompleted(done);
+        dto.setSubjectId(concept.getSubjectId());
+        dto.setSubjectTitle(concept.getSubjectTitle());
+        dto.setTotalInSubject(siblings.size());
+        dto.setPrevConcept(prev);
+        dto.setNextConcept(next);
+        return dto;
     }
 
     public List<ConceptSearchDTO> search(String query) {
@@ -77,7 +93,23 @@ public class ConceptService {
 
     private ConceptDTO toDTO(Concept c, String userId) {
         boolean done = progressRepository.existsByUserIdAndConceptId(userId, c.getId());
-        return new ConceptDTO(c.getId(), c.getTitle(), c.getWhatItIs(), c.getWhyItMatters(),
-                c.getCodeExample(), c.getOrderIndex(), c.getEstimatedMinutes(), done);
+        ConceptDTO dto = new ConceptDTO();
+        dto.setId(c.getId());
+        dto.setTitle(c.getTitle());
+        dto.setWhatItIs(c.getWhatItIs());
+        dto.setWhyItMatters(c.getWhyItMatters());
+        dto.setCodeExample(c.getCodeExample());
+        dto.setIntroduction(c.getIntroduction());
+        dto.setExplanationSimple(c.getExplanationSimple());
+        dto.setExplanationTechnical(c.getExplanationTechnical());
+        dto.setSyntax(c.getSyntax());
+        dto.setExamples(c.getExamples());
+        dto.setKeyPoints(c.getKeyPoints());
+        dto.setTip(c.getTip());
+        dto.setCommonMistakes(c.getCommonMistakes());
+        dto.setOrderIndex(c.getOrderIndex());
+        dto.setEstimatedMinutes(c.getEstimatedMinutes());
+        dto.setCompleted(done);
+        return dto;
     }
 }
