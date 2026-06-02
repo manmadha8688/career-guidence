@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap } from 'lucide-react'
+import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus,
-  getSubjects, getSubject, getConcept, getQuizStatus, completeConcept,
-  getRoadmaps, enrollRoadmap,
+  getSubjects, getSubject, getConcept, getQuizStatus,
+  getRoadmaps, enrollRoadmap, pauseRoadmap, resumeRoadmap,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
 import { getRank } from '../../utils/slRank'
@@ -21,8 +21,6 @@ const NAV_ITEMS = [
 const DAILY_QUESTS = [
   { id: 'q1', label: 'Complete 1 concept',    xp: 50 },
   { id: 'q2', label: 'Study for 20 min',      xp: 30 },
-  { id: 'q3', label: 'Pass a quiz 8/10',      xp: 100 },
-  { id: 'q4', label: 'Clear next gate skill', xp: 80 },
 ]
 
 const RANK_LADDER = [
@@ -74,25 +72,136 @@ const computeStats = (sp = []) =>
     return { ...def, value: Math.min(100, 10 + Math.round(avg * 0.9)) }
   })
 
-const loadQuestState = () => {
+const questKey = (userId) => `sl_quests_${userId}`
+
+const loadQuestState = (userId) => {
   try {
-    const s = localStorage.getItem('sl_quests')
+    const s = localStorage.getItem(questKey(userId))
     if (!s) return {}
     const { date, state } = JSON.parse(s)
     if (date !== new Date().toDateString()) return {}
     return state
   } catch { return {} }
 }
-const saveQuestState = (state) =>
-  localStorage.setItem('sl_quests', JSON.stringify({ date: new Date().toDateString(), state }))
+const saveQuestState = (state, userId) =>
+  localStorage.setItem(questKey(userId), JSON.stringify({ date: new Date().toDateString(), state }))
+
+// ─── About Gate Modal ─────────────────────────────────────
+function AboutGateModal({ subject, onClose }) {
+  const RANK_COLOR = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
+  const rc = RANK_COLOR[subject?.rank] || '#888888'
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  const Section = ({ label, children }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+      <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>{label}</div>
+      {children}
+    </div>
+  )
+
+  const ListItems = ({ items }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      {(items || []).map((item, i) => (
+        <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+          <span style={{ color: rc, flexShrink: 0, marginTop: '0.1rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem' }}>›</span>
+          <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{item}</span>
+        </div>
+      ))}
+    </div>
+  )
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.65)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}
+      onClick={e => e.target === e.currentTarget && onClose()}>
+      <div style={{ background: 'var(--bg-card)', border: `1px solid ${rc}33`, borderTop: `3px solid ${rc}`, borderRadius: 'var(--radius-lg)', width: 'clamp(340px, 62vw, 860px)', maxHeight: '88vh', display: 'flex', flexDirection: 'column', boxShadow: `0 0 40px ${rc}18` }}>
+
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 1.25rem', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
+          <div style={{ width: 40, height: 40, background: subject.color + '22', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
+            {subject.icon}
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)' }}>{subject.title}</div>
+            <div style={{ display: 'flex', gap: '0.625rem', marginTop: '0.2rem', flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700, padding: '0.1rem 0.4rem', borderRadius: 3, border: `1.5px solid ${rc}`, color: rc, background: rc + '15' }}>{subject.rank || 'E'}-RANK</span>
+              {subject.difficulty && <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', background: 'var(--bg-tertiary)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>{subject.difficulty}</span>}
+              {subject.estimatedHours > 0 && <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', background: 'var(--bg-tertiary)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>{subject.estimatedHours}h</span>}
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', background: 'var(--bg-tertiary)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>{subject.totalConcepts} skills</span>
+            </div>
+          </div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.25rem', borderRadius: 4, flexShrink: 0 }}><X size={16} /></button>
+        </div>
+
+        {/* Body — 2-col grid on wide screens, single col on narrow */}
+        <div style={{ overflowY: 'auto', flex: 1, padding: '1.25rem 1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', alignContent: 'start' }}>
+
+          {subject.overview && (
+            <div style={{ gridColumn: '1 / -1' }}>
+              <Section label="Overview">
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, padding: '0.625rem 0.875rem', background: rc + '08', borderLeft: `3px solid ${rc}`, borderRadius: '0 var(--radius-sm) var(--radius-sm) 0' }}>{subject.overview}</p>
+              </Section>
+            </div>
+          )}
+
+          {subject.whyLearn && (
+            <Section label="Why Learn This?">
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>{subject.whyLearn}</p>
+            </Section>
+          )}
+
+          {subject.forWho && (
+            <Section label="Who Is This For?">
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>{subject.forWho}</p>
+            </Section>
+          )}
+
+          {subject.prerequisites?.length > 0 && (
+            <Section label="What you need to know first">
+              <ListItems items={subject.prerequisites} />
+            </Section>
+          )}
+
+          {subject.outcomes?.length > 0 && (
+            <Section label="What You'll Be Able To Do">
+              <ListItems items={subject.outcomes} />
+            </Section>
+          )}
+
+          {subject.whatYouWillBuild?.length > 0 && (
+            <Section label="What You'll Build">
+              <ListItems items={subject.whatYouWillBuild} />
+            </Section>
+          )}
+
+          {subject.careerUse && (
+            <div style={{ gridColumn: '1 / -1' }}>
+              <Section label="Career Use">
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>{subject.careerUse}</p>
+              </Section>
+            </div>
+          )}
+
+          {!subject.overview && !subject.whyLearn && !subject.outcomes?.length && (
+            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '2rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
+              NO GATE INTEL AVAILABLE YET
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 // ─── Concept Inline Panel ─────────────────────────────────
 function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
   const [concept, setConcept]       = useState(null)
   const [quizStatus, setQuizStatus] = useState(null)
-  const [loading, setLoading]       = useState(true)
-  const [tab, setTab]               = useState('simple')
-  const [marking, setMarking]       = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [tab, setTab]         = useState('simple')
 
   useEffect(() => {
     setLoading(true); setTab('simple')
@@ -104,17 +213,6 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
       if (qs) setQuizStatus(qs.data)
     }).finally(() => setLoading(false))
   }, [conceptId])
-
-  const handleMarkDone = async () => {
-    if (!concept || concept.completed) return
-    setMarking(true)
-    try {
-      await completeConcept(concept.id)
-      setConcept(c => ({ ...c, completed: true }))
-      toast.success('⚔️ Skill cleared!')
-    } catch { toast.error('Failed to clear skill') }
-    finally { setMarking(false) }
-  }
 
   const navIdx   = navList.findIndex(c => c.id === conceptId)
   const prevC    = navIdx > 0 ? navList[navIdx - 1] : null
@@ -285,32 +383,23 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
           </div>
         )}
 
-        {/* Quiz / Mark Done */}
+        {/* Quiz status — auto-cleared after passing, no manual button needed */}
         <div style={{ marginTop: '0.25rem' }}>
           {isMastered ? (
             <div style={{ border: '1.5px solid #4ADE8055', borderRadius: 'var(--radius-md)', padding: '1rem', background: 'rgba(74,222,128,0.05)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
                 <Trophy size={18} color="#4ADE80" />
-                <div>
-                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, color: '#4ADE80', fontSize: '0.9rem' }}>Skill Mastered!</div>
-                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#4ADE80', opacity: 0.7 }}>
-                    {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''}
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, color: '#4ADE80', fontSize: '0.9rem' }}>
+                    ⚔️ Skill Cleared!
+                  </div>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: '#4ADE80', opacity: 0.75, marginTop: 2 }}>
+                    {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''} · +{quizStatus.bestScore * 10} XP earned
                   </div>
                 </div>
-                <button className="btn btn-ghost btn-sm" style={{ marginLeft: 'auto', fontSize: '0.72rem' }}
+                <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.72rem', flexShrink: 0 }}
                   onClick={() => navigate(`/skill-arena/quiz/concept/${conceptId}`)}>Retry</button>
               </div>
-              {concept.completed ? (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4ADE80', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-                  <CheckCircle size={14} /> SKILL CLEARED
-                </div>
-              ) : (
-                <button className="btn w-full" onClick={handleMarkDone} disabled={marking}
-                  style={{ justifyContent: 'center', background: 'rgba(74,222,128,0.12)', color: '#4ADE80', border: '1.5px solid #4ADE8055', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, letterSpacing: '0.06em' }}>
-                  {marking ? <span className="loading-spinner" /> : '⚔️'}
-                  {marking ? 'Saving…' : 'Clear This Skill'}
-                </button>
-              )}
             </div>
           ) : (
             <div style={{ border: '1.5px solid rgba(155,110,212,0.25)', borderRadius: 'var(--radius-md)', padding: '1rem', textAlign: 'center', background: 'rgba(155,110,212,0.04)' }}>
@@ -360,6 +449,7 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
   const [status, setStatus]     = useState(null)
   const [loading, setLoading]   = useState(true)
   const [enrolling, setEnrolling] = useState(false)
+  const [pausing, setPausing]   = useState(false)
 
   useEffect(() => {
     setLoading(true); setRoadmap(null)
@@ -377,19 +467,41 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
     setEnrolling(true)
     try {
       await enrollRoadmap(roadmapId)
-      setRoadmap(r => ({ ...r, enrolled: true }))
+      setRoadmap(r => ({ ...r, enrolled: true, paused: false }))
       toast.success('⚔️ Path registered!')
     } catch { toast.error('Failed to register') }
     finally { setEnrolling(false) }
   }
 
-  const subjectRankColor = (s) => {
-    const map = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
-    return map[s?.rank] || '#888888'
+  const handlePause = async (e) => {
+    e.stopPropagation()
+    setPausing(true)
+    try {
+      await pauseRoadmap(roadmapId)
+      setRoadmap(r => ({ ...r, paused: true }))
+      toast.success('Hunt paused')
+    } catch { toast.error('Failed to pause') }
+    finally { setPausing(false) }
+  }
+
+  const handleResume = async (e) => {
+    e.stopPropagation()
+    setPausing(true)
+    try {
+      await resumeRoadmap(roadmapId)
+      setRoadmap(r => ({ ...r, paused: false }))
+      toast.success('⚔️ Hunt resumed!')
+    } catch { toast.error('Failed to resume') }
+    finally { setPausing(false) }
   }
 
   const pct      = roadmap?.overallPercentage ?? 0
   const subjects = roadmap?.subjects ?? []
+  const isEnrolled = roadmap?.enrolled
+  const isPaused   = roadmap?.paused
+
+  // Show progress only when enrolled AND not paused
+  const showProgress = isEnrolled && !isPaused
 
   return (
     <div className="sl-subject-panel">
@@ -417,34 +529,54 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
             </div>
           </div>
 
-          {/* Progress */}
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: 'var(--text-muted)', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
-              <span>{roadmap.completedSubjects ?? 0}/{roadmap.totalSubjects ?? subjects.length} gates cleared</span>
-              <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.65rem', color: roadmap.color, fontWeight: 700 }}>{pct}%</span>
+          {/* Progress bar — only when enrolled + active */}
+          {showProgress && (
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: 'var(--text-muted)', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
+                <span>{roadmap.completedSubjects ?? 0}/{roadmap.totalSubjects ?? subjects.length} gates cleared</span>
+                <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.65rem', color: roadmap.color, fontWeight: 700 }}>{pct}%</span>
+              </div>
+              <div style={{ height: 5, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
+                <div style={{ height: '100%', width: `${pct}%`, background: `linear-gradient(90deg, ${roadmap.color}88, ${roadmap.color})`, borderRadius: 3, transition: 'width 0.8s ease' }} />
+              </div>
             </div>
-            <div style={{ height: 5, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
-              <div style={{ height: '100%', width: `${pct}%`, background: `linear-gradient(90deg, ${roadmap.color}88, ${roadmap.color})`, borderRadius: 3, transition: 'width 0.8s ease' }} />
-            </div>
-          </div>
+          )}
 
-          {/* Enroll / path trial button */}
-          {!roadmap.enrolled ? (
-            <button
-              onClick={handleEnroll} disabled={enrolling}
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: `linear-gradient(135deg, ${roadmap.color}CC, ${roadmap.color})`, border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}
-            >
+          {/* Action button row */}
+          {!isEnrolled ? (
+            /* Not enrolled → Begin Hunt */
+            <button onClick={handleEnroll} disabled={enrolling}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: `linear-gradient(135deg, ${roadmap.color}CC, ${roadmap.color})`, border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
               {enrolling ? <span className="loading-spinner" style={{ borderTopColor: '#fff' }} /> : '⚔️'}
               {enrolling ? 'Registering…' : 'Begin Hunt'}
             </button>
-          ) : status?.allSubjectsDone ? (
-            <button
-              onClick={() => navigate(`/skill-arena/quiz/roadmap/${roadmapId}`)}
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: 'linear-gradient(135deg, #F59E0B, #FBBF24)', border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#1A0F00', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}
-            >
-              <Trophy size={14} /> Begin Path Trial
+          ) : isPaused ? (
+            /* Paused → Resume Hunt */
+            <button onClick={handleResume} disabled={pausing}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: `linear-gradient(135deg, ${roadmap.color}CC, ${roadmap.color})`, border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
+              {pausing ? <span className="loading-spinner" style={{ borderTopColor: '#fff' }} /> : '▶'}
+              {pausing ? 'Resuming…' : 'Resume Hunt'}
             </button>
-          ) : null}
+          ) : status?.allSubjectsDone ? (
+            /* All done → Path Trial */
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <button onClick={() => navigate(`/skill-arena/quiz/roadmap/${roadmapId}`)}
+                style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: 'linear-gradient(135deg, #F59E0B, #FBBF24)', border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#1A0F00', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
+                <Trophy size={14} /> Begin Path Trial
+              </button>
+              <button onClick={handlePause} disabled={pausing}
+                style={{ padding: '0.5rem 0.75rem', background: 'rgba(136,136,136,0.12)', border: '1px solid var(--border)', borderRadius: 6, cursor: 'pointer', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.06em' }}>
+                {pausing ? '…' : '⏸ Pause'}
+              </button>
+            </div>
+          ) : (
+            /* Enrolled + active → Pause Hunt */
+            <button onClick={handlePause} disabled={pausing}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: 'rgba(136,136,136,0.1)', border: '1px solid var(--border)', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
+              {pausing ? <span className="loading-spinner" /> : '⏸'}
+              {pausing ? 'Pausing…' : 'Pause Hunt'}
+            </button>
+          )}
 
           {/* Divider */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -453,17 +585,16 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
             <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
           </div>
 
-          {/* Gates list */}
+          {/* Gates list — always visible, but progress hidden when paused/not enrolled */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             {subjects.map((s, i) => {
-              const p       = s.percentage ?? 0
-              const cleared = p >= 100
-              const active  = p > 0 && p < 100
-              const sColor  = subjectRankColor(s)
+              const p       = showProgress ? (s.percentage ?? 0) : 0
+              const cleared = showProgress && (s.percentage ?? 0) >= 100
+              const active  = showProgress && (s.percentage ?? 0) > 0 && (s.percentage ?? 0) < 100
               return (
                 <div
                   key={s.id}
-                  onClick={() => s.totalConcepts > 0 && onGateClick(s.id)}
+                  onClick={() => isEnrolled && s.totalConcepts > 0 && onGateClick(s.id)}
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.5rem',
                     padding: '0.5rem 0.625rem',
@@ -471,19 +602,16 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
                     border: `1px solid ${cleared ? 'rgba(74,222,128,0.2)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)'}`,
                     borderLeft: `3px solid ${cleared ? '#4ADE80' : active ? '#9B6ED4' : 'var(--border)'}`,
                     borderRadius: 'var(--radius-sm)',
-                    cursor: s.totalConcepts > 0 ? 'pointer' : 'default',
+                    cursor: isEnrolled && s.totalConcepts > 0 ? 'pointer' : 'default',
                     opacity: s.totalConcepts > 0 ? 1 : 0.45,
                     transition: 'all 0.15s',
                   }}
-                  onMouseEnter={e => { if (s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
+                  onMouseEnter={e => { if (isEnrolled && s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = cleared ? 'rgba(74,222,128,0.2)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)' }}
                 >
-                  {/* Step circle */}
                   <div style={{ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700, background: cleared ? 'rgba(74,222,128,0.15)' : 'var(--bg-tertiary)', border: `1.5px solid ${cleared ? '#4ADE8055' : 'var(--border)'}`, color: cleared ? '#4ADE80' : 'var(--text-muted)' }}>
                     {cleared ? <CheckCircle size={11} color="#4ADE80" /> : s.totalConcepts > 0 ? i + 1 : <Lock size={10} />}
                   </div>
-
-                  {/* Icon + title */}
                   <span style={{ fontSize: '0.875rem', flexShrink: 0 }}>{s.icon}</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.title}</div>
@@ -500,10 +628,8 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
                       </div>
                     )}
                   </div>
-
-                  {/* Status pill */}
                   <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.06em', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0, background: cleared ? 'rgba(74,222,128,0.1)' : active ? 'rgba(155,110,212,0.1)' : 'rgba(136,136,136,0.07)', color: cleared ? '#4ADE80' : active ? '#B48AE8' : '#555' }}>
-                    {cleared ? 'DONE' : active ? 'HUNT' : 'SEALED'}
+                    {cleared ? 'DONE' : active ? 'HUNT' : 'Enter'}
                   </span>
                 </div>
               )
@@ -665,8 +791,11 @@ export default function DashboardPage() {
   const [conceptNavList, setConceptNavList] = useState([])
   const [selectedRoadmapId, setSelectedRoadmapId] = useState(null)
 
-  const [quests, setQuests]           = useState(loadQuestState)
+  const [quests, setQuests]           = useState(() => loadQuestState(user?.id))
+  const [aboutGate, setAboutGate]     = useState(null)  // subject object for About Gate modal
   const [avatarOpen, setAvatarOpen]   = useState(false)
+  const [panelRefreshKey, setPanelRefreshKey] = useState(0)
+  const [studySeconds, setStudySeconds] = useState(0)
 
   const [subjects, setSubjects]       = useState([])
   const [quizStatuses, setQuizStatuses] = useState({})
@@ -679,15 +808,40 @@ export default function DashboardPage() {
   const [pathSearch, setPathSearch]   = useState('')
   const [enrolling, setEnrolling]     = useState({})
 
+  // Sync q1 quest from server (source of truth, works across devices)
+  const syncQuestsFromSummary = (summaryData, uid) => {
+    if (summaryData?.completedConceptToday) {
+      const current = loadQuestState(uid)
+      if (!current.q1) {
+        const updated = { ...current, q1: true }
+        setQuests(updated)
+        saveQuestState(updated, uid)
+      }
+    }
+  }
+
   useEffect(() => {
     getProgressSummary()
       .then(s => {
         setSummary(s.data)
-        // XP and rank now come from the API — persist to localStorage for Navbar fallback
-        window.dispatchEvent(new CustomEvent('sl:xp'))
+        syncQuestsFromSummary(s.data, user?.id)
       })
       .catch(() => toast.error('Failed to load status window'))
       .finally(() => setLoading(false))
+  }, []) // eslint-disable-line
+
+  // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
+  useEffect(() => {
+    const refresh = () => {
+      getProgressSummary().then(s => {
+        setSummary(s.data)
+        syncQuestsFromSummary(s.data, user?.id)
+      }).catch(() => {})
+      setGatesLoaded(false)                 // force gate cards to reload
+      setPanelRefreshKey(k => k + 1)        // force SubjectPanel to re-fetch
+    }
+    window.addEventListener('sl:refresh', refresh)
+    return () => window.removeEventListener('sl:refresh', refresh)
   }, [])
 
   useEffect(() => {
@@ -704,6 +858,24 @@ export default function DashboardPage() {
     document.addEventListener('click', handler)
     return () => document.removeEventListener('click', handler)
   }, [avatarOpen])
+
+  // Auto-check "Study for 20 min" quest after 20 minutes on the dashboard
+  useEffect(() => {
+    if (loadQuestState(user?.id).q2) return  // already earned today
+    const t = setInterval(() => {
+      setStudySeconds(s => {
+        const next = s + 1
+        if (next >= 1200) {  // 20 minutes = 1200 seconds
+          clearInterval(t)
+          const updated = { ...loadQuestState(user?.id), q2: true }
+          setQuests(updated)
+          saveQuestState(updated, user?.id)
+        }
+        return next
+      })
+    }, 1000)
+    return () => clearInterval(t)
+  }, []) // eslint-disable-line
 
   const loadGates = () => {
     if (gatesLoaded) return
@@ -722,6 +894,9 @@ export default function DashboardPage() {
     if (pathsLoaded) return
     getRoadmaps().then(r => { setAllRoadmaps(r.data); setPathsLoaded(true) })
   }
+
+  // Load roadmaps eagerly so Skill Arena can show active path
+  useEffect(() => { loadPaths() }, []) // eslint-disable-line
 
   const switchView = (view) => {
     setActiveView(view)
@@ -777,10 +952,6 @@ export default function DashboardPage() {
     finally { setEnrolling(p => ({ ...p, [id]: false })) }
   }
 
-  const toggleQuest = (id) => {
-    const next = { ...quests, [id]: !quests[id] }
-    setQuests(next); saveQuestState(next)
-  }
 
   const xp             = summary?.xp    ?? user?.xp    ?? 0
   const rank           = getRank(xp)
@@ -816,17 +987,29 @@ export default function DashboardPage() {
     return (
       <div className="sl-gate-card" style={{ cursor: s.totalConcepts > 0 ? 'pointer' : 'default', opacity: s.totalConcepts > 0 ? 1 : 0.5 }}
         onClick={() => s.totalConcepts > 0 && openSubjectPanel(s.id)}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
-          <span className={`rank-badge ${gr.cls}`}>{gr.label} RANK</span>
-          {quizStatuses[s.id]?.hasPassed && <Trophy size={11} color="#4ADE80" />}
+        {/* Top row: title left, rank + about right */}
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.25rem' }}>
+          <div className="sl-gate-title" style={{ marginBottom: 0, flex: 1 }}>{s.title}</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', flexShrink: 0 }}>
+            {quizStatuses[s.id]?.hasPassed && <Trophy size={11} color="#4ADE80" />}
+            <span className={`rank-badge ${gr.cls}`} style={{ fontSize: '0.58rem', padding: '0.1rem 0.35rem' }}>{gr.label}</span>
+            <button
+              onClick={e => { e.stopPropagation(); setAboutGate(s) }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.1rem', display: 'flex', alignItems: 'center', borderRadius: 3, transition: 'color 0.15s' }}
+              onMouseEnter={e => e.currentTarget.style.color = gr.color}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+              title="About this gate"
+            >
+              <Info size={18} />
+            </button>
+          </div>
         </div>
-        <div className="sl-gate-title">{s.title}</div>
         <div className="sl-gate-meta">{s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'Coming soon'}</div>
         <div className="sl-gate-bar-track">
           <div className="sl-gate-bar-fill" style={{ width: `${p}%`, background: cleared ? gr.color : `${gr.color}88` }} />
         </div>
-        <div className="sl-gate-status" style={{ color: cleared ? gr.color : sealed ? '#2A3A65' : `${gr.color}BB` }}>
-          {cleared ? 'GATE CLEARED' : sealed ? 'GATE SEALED' : `IN PROGRESS ${p}%`}
+        <div className="sl-gate-status" style={{ color: cleared ? gr.color : sealed ? '#0cbd09' : `${gr.color}BB` }}>
+          {cleared ? 'GATE CLEARED' : sealed ? 'NEW GATE OPEN' : `IN PROGRESS ${p}%`}
         </div>
       </div>
     )
@@ -834,61 +1017,122 @@ export default function DashboardPage() {
 
   const renderMiddle = () => {
     if (activeView === 'arena') {
-      const display = arenaSubjects.length > 0
-        ? arenaSubjects
-        : (summary?.subjectProgress ?? []).map(sp => ({
-            id: sp.subjectId, title: sp.title, icon: sp.icon,
-            totalConcepts: sp.total, completedConcepts: sp.completed,
-            percentage: sp.percentage,
-          }))
+      const sp = summary?.subjectProgress ?? []
+      const inProgress = sp.filter(s => s.percentage > 0 && s.percentage < 100)
+      const cleared    = sp.filter(s => s.percentage >= 100)
+      const totalConceptsDone = summary?.completedConcepts ?? 0
+      const totalConceptsAll  = summary?.totalConcepts ?? 0
+      const overallPct = totalConceptsAll > 0 ? Math.round((totalConceptsDone / totalConceptsAll) * 100) : 0
+      const streak = summary?.streak ?? 0
+
+      // Active enrolled roadmaps from allRoadmaps (loaded lazily)
+      const enrolledPaths = allRoadmaps.filter(r => r.enrolled && !r.paused)
+      const activePath    = enrolledPaths[0] ?? null
+
+      // Next gate to tackle: first in-progress, else first sealed
+      const nextGateSp = inProgress[0] ?? sp.find(s => s.percentage === 0) ?? null
 
       return (
-        <>
-          <div className="sl-panel-title">
-            Active Dungeon Gates
-            {activeRoadmap && <span style={{ color: '#9B6ED4', fontFamily: "'Rajdhani', sans-serif", fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}> — {activeRoadmap.title}</span>}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+
+          {/* ── Hunter overview strip ── */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.5rem' }}>
+            {[
+              { label: 'SKILLS CLEARED', value: totalConceptsDone, suffix: `/ ${totalConceptsAll}`, color: '#9B6ED4' },
+              { label: 'GATES CLEARED',  value: cleared.length,    suffix: `/ ${sp.length}`,        color: '#4ADE80' },
+              { label: 'DAY STREAK',     value: streak,            suffix: streak === 1 ? 'day' : 'days', color: '#F59E0B' },
+            ].map(stat => (
+              <div key={stat.label} style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.625rem 0.75rem', textAlign: 'center' }}>
+                <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '1.25rem', fontWeight: 900, color: stat.color, lineHeight: 1 }}>{stat.value}</div>
+                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.08em', marginTop: '0.2rem' }}>{stat.suffix}</div>
+                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.52rem', color: 'var(--text-muted)', letterSpacing: '0.1em', marginTop: '0.1rem' }}>{stat.label}</div>
+              </div>
+            ))}
           </div>
-          {display.length > 0 ? (
-            <div className="sl-gates-grid">
-              {display.slice(0, 6).map((s, i) => {
-                const p = s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedConcepts / s.totalConcepts) * 100) : 0)
-                const gr = subjectGateRank(s)
-                const cleared = p >= 100, sealed = p === 0
-                return (
-                  <div key={s.id} className="sl-gate-card" onClick={() => s.totalConcepts > 0 && openSubjectPanel(s.id)}>
-                    <span className={`rank-badge ${gr.cls}`}>{gr.label} RANK</span>
-                    <div className="sl-gate-title">{s.title}</div>
-                    <div className="sl-gate-meta">{s.totalConcepts} skills · {Math.max(1, Math.ceil(s.totalConcepts / 3))}w</div>
-                    <div className="sl-gate-bar-track">
-                      <div className="sl-gate-bar-fill" style={{ width: `${p}%`, background: cleared ? gr.color : `${gr.color}88` }} />
-                    </div>
-                    <div className="sl-gate-status" style={{ color: cleared ? gr.color : sealed ? '#2A3A65' : `${gr.color}BB` }}>
-                      {cleared ? 'GATE CLEARED' : sealed ? 'GATE SEALED' : `IN PROGRESS ${p}%`}
-                    </div>
-                  </div>
-                )
-              })}
+
+          {/* ── Active hunter path ── */}
+          {activePath ? (
+            <div style={{ background: 'var(--bg-secondary)', border: `1px solid ${activePath.color}33`, borderLeft: `3px solid ${activePath.color}`, borderRadius: 'var(--radius-sm)', padding: '0.75rem 0.875rem', cursor: 'pointer' }}
+              onClick={() => { switchView('paths'); openRoadmapPanel(activePath.id) }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <span style={{ fontSize: '1.1rem' }}>{activePath.icon}</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{activePath.title}</div>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: activePath.color, letterSpacing: '0.06em' }}>ACTIVE HUNTER PATH</div>
+                </div>
+                <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.7rem', fontWeight: 700, color: activePath.color }}>{activePath.overallPercentage ?? 0}%</span>
+              </div>
+              <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                <div style={{ height: '100%', width: `${activePath.overallPercentage ?? 0}%`, background: `linear-gradient(90deg, ${activePath.color}77, ${activePath.color})`, borderRadius: 2, transition: 'width 0.8s ease' }} />
+              </div>
             </div>
           ) : (
-            <div style={{ textAlign: 'center', padding: '2.5rem 1rem' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🚪</div>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>NO ACTIVE PATH — SWITCH TO HUNTER PATH TO ENROLL</div>
+            <div style={{ background: 'var(--bg-secondary)', border: '1px dashed var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.75rem', textAlign: 'center', cursor: 'pointer' }}
+              onClick={() => switchView('paths')}>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>NO ACTIVE PATH</div>
+              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '0.8rem', color: '#9B6ED4', marginTop: '0.25rem', fontWeight: 600 }}>→ Go to Hunter Path to Strt Hunting </div>
             </div>
           )}
-          {activeRoadmap && (
-            <div className="sl-panel sl-path-footer" style={{ marginTop: '0.75rem', cursor: 'pointer' }}
-              onClick={() => navigate(`/skill-arena/roadmaps/${activeRoadmap.id}`)}>
-              <div>
-                <div className="sl-path-title">ACTIVE HUNTER PATH — {activeRoadmap.title.toUpperCase()}</div>
-                <div className="sl-path-meta">{completedGates} of {totalGates} gates cleared · Est. {activeRoadmap.estimatedWeeks ?? '?'} weeks</div>
-              </div>
-              <div>
-                <div className="sl-path-pct">{overallPct}%</div>
-                <div className="sl-path-pct-label">PATH CLEAR</div>
+
+          {/* ── In-progress gates ── */}
+          {inProgress.length > 0 && (
+            <div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>ACTIVE HUNTS</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                {inProgress.map(s => {
+                  const gr = RANK_META[s.rank] || RANK_META['E']
+                  return (
+                    <div key={s.subjectId} onClick={() => openSubjectPanel(s.subjectId)}
+                      style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.5rem 0.75rem', background: 'var(--bg-secondary)', border: `1px solid rgba(155,110,212,0.18)`, borderLeft: '3px solid #9B6ED4', borderRadius: 'var(--radius-sm)', cursor: 'pointer', transition: 'border-color 0.15s' }}
+                      onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(155,110,212,0.45)'}
+                      onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(155,110,212,0.18)'}>
+                      <span style={{ fontSize: '1rem', flexShrink: 0 }}>{s.icon}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)' }}>{s.title}</div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginTop: '0.2rem' }}>
+                          <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                            <div style={{ height: '100%', width: `${s.percentage}%`, background: '#9B6ED4', borderRadius: 2 }} />
+                          </div>
+                          <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700, flexShrink: 0 }}>{s.percentage}%</span>
+                        </div>
+                      </div>
+                      <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#9B6ED4', background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.2)', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0 }}>HUNT</span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )}
-        </>
+
+          {/* ── Next recommended gate (if nothing in progress) ── */}
+          {inProgress.length === 0 && nextGateSp && (
+            <div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>RECOMMENDED NEXT GATE</div>
+              <div onClick={() => openSubjectPanel(nextGateSp.subjectId)}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.625rem 0.875rem', background: 'var(--bg-secondary)', border: '1px solid rgba(74,222,128,0.2)', borderLeft: '3px solid #4ADE80', borderRadius: 'var(--radius-sm)', cursor: 'pointer' }}>
+                <span style={{ fontSize: '1.1rem' }}>{nextGateSp.icon}</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{nextGateSp.title}</div>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80', letterSpacing: '0.06em' }}>{nextGateSp.total} skills · Enter to begin</div>
+                </div>
+                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80' }}>→</span>
+              </div>
+            </div>
+          )}
+
+          {/* ── Cleared gates summary ── */}
+          {cleared.length > 0 && (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem', alignItems: 'center' }}>
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.08em', marginRight: '0.25rem' }}>CLEARED:</span>
+              {cleared.map(s => (
+                <span key={s.subjectId} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', padding: '0.15rem 0.5rem', borderRadius: 3 }}>
+                  <CheckCircle size={9} /> {s.title}
+                </span>
+              ))}
+            </div>
+          )}
+
+        </div>
       )
     }
 
@@ -943,17 +1187,7 @@ export default function DashboardPage() {
                     <div className="sl-gate-title" style={{ marginBottom: 0, fontSize: '0.875rem' }}>{r.title}</div>
                   </div>
                   <div className="sl-gate-meta">{r.subjectCount ?? '?'} gates · {r.estimatedWeeks}w · {r.roleTarget}</div>
-                  {r.enrolled ? (
-                    <>
-                      <div className="sl-gate-bar-track"><div className="sl-gate-bar-fill" style={{ width: `${r.overallPercentage}%`, background: `${r.color}AA` }} /></div>
-                      <div className="sl-gate-status" style={{ color: r.color, marginTop: '0.25rem' }}>ACTIVE — {r.overallPercentage}%</div>
-                    </>
-                  ) : (
-                    <button className="btn btn-primary btn-sm w-full" style={{ justifyContent: 'center', marginTop: '0.4rem', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, letterSpacing: '0.05em', fontSize: '0.8rem' }}
-                      onClick={e => handleEnrollPath(e, r.id)} disabled={enrolling[r.id]}>
-                      {enrolling[r.id] ? <span className="loading-spinner" /> : '⚔️'} {enrolling[r.id] ? 'Registering…' : 'Begin Hunt'}
-                    </button>
-                  )}
+                  
                 </div>
               ))}
             </div>
@@ -1029,6 +1263,7 @@ export default function DashboardPage() {
           /* ══ CONCEPT MODE: 2-col (skills | concept), quests hidden ══ */
           <div className="sl-dashboard-grid sl-grid-concept">
             <SubjectPanel
+              key={`${selectedSubjectId}-${panelRefreshKey}`}
               mode="grid"
               subjectId={selectedSubjectId}
               onClose={closeSubjectPanel}
@@ -1126,16 +1361,19 @@ export default function DashboardPage() {
       {/* ══ SUBJECT PANEL: right overlay when gate clicked (closes roadmap panel) ══ */}
       {selectedSubjectId && !selectedConceptId && (
         <SubjectPanel
+          key={`${selectedSubjectId}-${panelRefreshKey}`}
           mode="overlay"
           subjectId={selectedSubjectId}
-          onClose={() => {
-            closeSubjectPanel()
-            // keep roadmap panel open if we came from one
-          }}
+          onClose={closeSubjectPanel}
           onSkillClick={openConcept}
           selectedConceptId={selectedConceptId}
           navigate={navigate}
         />
+      )}
+
+      {/* ══ ABOUT GATE MODAL ══ */}
+      {aboutGate && (
+        <AboutGateModal subject={aboutGate} onClose={() => setAboutGate(null)} />
       )}
     </div>
   )

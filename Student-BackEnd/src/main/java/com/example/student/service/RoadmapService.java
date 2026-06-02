@@ -36,10 +36,13 @@ public class RoadmapService {
         return roadmapRepository.findByIsPublishedTrue().stream().map(r -> {
             int subjectCount = roadmapSubjectRepository
                     .findByRoadmapIdOrderByOrderIndex(r.getId()).size();
-            boolean enrolled = enrollmentRepository.existsByUserIdAndRoadmapId(userId, r.getId());
+            java.util.Optional<UserRoadmapEnrollment> enr =
+                    enrollmentRepository.findByUserIdAndRoadmapId(userId, r.getId());
+            boolean enrolled = enr.isPresent();
+            boolean paused   = enr.map(UserRoadmapEnrollment::isPaused).orElse(false);
             return new RoadmapListDTO(r.getId(), r.getTitle(), r.getDescription(),
                     r.getRoleTarget(), r.getIcon(), r.getColor(),
-                    r.getEstimatedWeeks(), subjectCount, enrolled);
+                    r.getEstimatedWeeks(), subjectCount, enrolled, paused);
         }).collect(Collectors.toList());
     }
 
@@ -70,11 +73,14 @@ public class RoadmapService {
                         .mapToDouble(RoadmapDetailDTO.SubjectProgress::getPercentage)
                         .average().orElse(0)
                 : 0;
-        boolean enrolled = enrollmentRepository.existsByUserIdAndRoadmapId(userId, roadmapId);
+        java.util.Optional<UserRoadmapEnrollment> enr =
+                enrollmentRepository.findByUserIdAndRoadmapId(userId, roadmapId);
+        boolean enrolled = enr.isPresent();
+        boolean paused   = enr.map(UserRoadmapEnrollment::isPaused).orElse(false);
 
         return new RoadmapDetailDTO(roadmap.getId(), roadmap.getTitle(), roadmap.getDescription(),
                 roadmap.getIcon(), roadmap.getColor(), subjects, totalSubjects, completedSubjects,
-                Math.round(overall * 10) / 10.0, enrolled);
+                Math.round(overall * 10) / 10.0, enrolled, paused);
     }
 
     public void enroll(String roadmapId, String userId) {
@@ -87,6 +93,20 @@ public class RoadmapService {
         enrollment.setRoadmapId(roadmapId);
         enrollment.setEnrolledAt(LocalDateTime.now());
         enrollmentRepository.save(enrollment);
+    }
+
+    public void pauseHunt(String roadmapId, String userId) {
+        enrollmentRepository.findByUserIdAndRoadmapId(userId, roadmapId).ifPresent(e -> {
+            e.setPaused(true);
+            enrollmentRepository.save(e);
+        });
+    }
+
+    public void resumeHunt(String roadmapId, String userId) {
+        enrollmentRepository.findByUserIdAndRoadmapId(userId, roadmapId).ifPresent(e -> {
+            e.setPaused(false);
+            enrollmentRepository.save(e);
+        });
     }
 
     public List<RoadmapDetailDTO> getEnrolledRoadmaps(String userId) {

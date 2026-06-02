@@ -19,6 +19,16 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
+  // Listen for sl:refresh — re-fetch /me to get latest xp/level/rank
+  useEffect(() => {
+    const refresh = () => {
+      if (!localStorage.getItem('token')) return
+      getMe().then(res => setUser(res.data)).catch(() => {})
+    }
+    window.addEventListener('sl:refresh', refresh)
+    return () => window.removeEventListener('sl:refresh', refresh)
+  }, [])
+
   const login = (token, userData) => {
     localStorage.setItem('token', token)
     setUser(userData)

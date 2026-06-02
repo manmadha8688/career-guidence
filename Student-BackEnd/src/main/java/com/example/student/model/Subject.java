@@ -7,6 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Document(collection = "subjects")
 @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor
@@ -29,6 +30,17 @@ public class Subject {
 
     @Builder.Default
     private String rank = "E";
+
+    // ── Rich subject info ─────────────────────────────
+    private String overview;
+    private String whyLearn;
+    private String forWho;
+    private List<String> prerequisites;
+    private List<String> outcomes;
+    private List<String> whatYouWillBuild;
+    private String difficulty;
+    private int estimatedHours;
+    private String careerUse;
 
     @CreatedDate
     private LocalDateTime createdAt;

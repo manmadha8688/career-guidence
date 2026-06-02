@@ -6,12 +6,14 @@ import com.example.student.model.Concept;
 import com.example.student.model.User;
 import com.example.student.model.UserConceptProgress;
 import com.example.student.repository.ConceptRepository;
+import com.example.student.repository.QuizAttemptRepository;
 import com.example.student.repository.SubjectRepository;
 import com.example.student.repository.UserConceptProgressRepository;
 import com.example.student.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,15 +26,18 @@ public class ProgressService {
     private final ConceptRepository conceptRepository;
     private final SubjectRepository subjectRepository;
     private final UserRepository userRepository;
+    private final QuizAttemptRepository quizAttemptRepository;
 
     public ProgressService(UserConceptProgressRepository progressRepository,
                            ConceptRepository conceptRepository,
                            SubjectRepository subjectRepository,
-                           UserRepository userRepository) {
+                           UserRepository userRepository,
+                           QuizAttemptRepository quizAttemptRepository) {
         this.progressRepository = progressRepository;
         this.conceptRepository = conceptRepository;
         this.subjectRepository = subjectRepository;
         this.userRepository = userRepository;
+        this.quizAttemptRepository = quizAttemptRepository;
     }
 
     private static String computeRank(long xp) {
@@ -44,9 +49,15 @@ public class ProgressService {
         return "E";
     }
 
-    public Map<String, Object> completeConcept(String conceptId, String userId) {
+    /**
+     * Marks a concept complete and awards XP.
+     * @param quizScore the raw quiz score (e.g. 8 for 8/10). Pass 0 for non-quiz completions.
+     * @return map with xpEarned and dailyBonusEarned keys
+     */
+    public Map<String, Object> completeConcept(String conceptId, String userId, int quizScore) {
         if (progressRepository.existsByUserIdAndConceptId(userId, conceptId)) {
-            return Map.of("message", "Already completed", "conceptId", conceptId);
+            return Map.of("message", "Already completed", "conceptId", conceptId,
+                    "xpEarned", 0, "dailyBonusEarned", false);
         }
         Concept concept = conceptRepository.findById(conceptId)
                 .orElseThrow(() -> new ResourceNotFoundException("Concept not found"));
@@ -57,11 +68,25 @@ public class ProgressService {
         progress.setSubjectId(concept.getSubjectId());
         progress.setSubjectTitle(concept.getSubjectTitle());
         progress.setSubjectIcon(concept.getSubjectIcon());
-        UserConceptProgress saved = progressRepository.save(progress);
+        progress.setCompletedAt(LocalDateTime.now());
+        progressRepository.save(progress);
 
-        // Update XP, level, rank on the User document
+        // XP from quiz score: score * 10 (8/10 → 80, 9/10 → 90, 10/10 → 100)
+        int conceptXp = quizScore * 10;
+
+        // Daily bonus: +50 XP if this is the FIRST concept passed today.
+        // Uses QuizAttempt.takenAt (reliable timestamp set at submission time)
+        // rather than completedAt (which could be corrupted by DataSeeder repairs).
+        LocalDateTime startOfToday = LocalDate.now().atStartOfDay();
+        boolean isFirstToday = !quizAttemptRepository
+                .existsByUserIdAndTypeAndPassedTrueAndTakenAtAfterAndRefIdNot(
+                        userId, "CONCEPT", startOfToday, conceptId);
+        int dailyBonus = isFirstToday ? 50 : 0;
+        int totalXp = conceptXp + dailyBonus;
+
+        // Update User document
         userRepository.findById(userId).ifPresent(user -> {
-            long newXp = user.getXp() + 50L;
+            long newXp = user.getXp() + totalXp;
             user.setXp(newXp);
             user.setLevel(Math.max(1, (int)(newXp / 200)));
             user.setRank(computeRank(newXp));
@@ -69,7 +94,12 @@ public class ProgressService {
         });
 
         return Map.of("message", "Completed", "conceptId", conceptId,
-                "completedAt", saved.getCompletedAt() != null ? saved.getCompletedAt().toString() : "");
+                "xpEarned", totalXp, "dailyBonusEarned", isFirstToday);
+    }
+
+    /** Backward-compat overload for non-quiz completions (admin etc.) */
+    public Map<String, Object> completeConcept(String conceptId, String userId) {
+        return completeConcept(conceptId, userId, 0);
     }
 
     public Map<String, Object> uncompleteConcept(String conceptId, String userId) {
@@ -118,7 +148,13 @@ public class ProgressService {
                 })
                 .collect(Collectors.toList());
 
-        return new ProgressSummaryDTO(totalConcepts, completedConcepts, percentage,
-                streak, xp, level, rank, subjectProgress);
+        // ── Today's concept completion (cross-device quest sync) ────────────
+        boolean completedConceptToday = quizAttemptRepository
+                .existsByUserIdAndTypeAndPassedTrueAndTakenAtAfter(
+                        userId, "CONCEPT", LocalDate.now().atStartOfDay());
+
+        ProgressSummaryDTO dto = new ProgressSummaryDTO(totalConcepts, completedConcepts, percentage,
+                streak, xp, level, rank, completedConceptToday, subjectProgress);
+        return dto;
     }
 }

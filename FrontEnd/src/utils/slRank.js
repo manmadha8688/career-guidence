@@ -1,5 +1,7 @@
 // ── Rank lookup from XP (used by Navbar/QuizPage which don't have summary) ──
+
 export const calcXp = (completedConcepts) => (completedConcepts || 0) * 50
+
 
 export const getRank = (xp = 0) => {
   if (xp >= 10000) return { label: 'S', cls: 'rank-s', color: '#EF4444', next: null,  min: 10000, progress: 100 }

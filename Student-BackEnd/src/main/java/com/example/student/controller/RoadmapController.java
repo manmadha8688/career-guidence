@@ -39,4 +39,16 @@ public class RoadmapController {
         roadmapService.enroll(id, user.getId());
         return ResponseEntity.ok(Map.of("message", "Enrolled"));
     }
+
+    @PostMapping("/{id}/pause")
+    public ResponseEntity<?> pause(@PathVariable String id, @AuthenticationPrincipal User user) {
+        roadmapService.pauseHunt(id, user.getId());
+        return ResponseEntity.ok(Map.of("message", "Paused"));
+    }
+
+    @PostMapping("/{id}/resume")
+    public ResponseEntity<?> resume(@PathVariable String id, @AuthenticationPrincipal User user) {
+        roadmapService.resumeHunt(id, user.getId());
+        return ResponseEntity.ok(Map.of("message", "Resumed"));
+    }
 }

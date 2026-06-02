@@ -1958,6 +1958,8 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
+
+  white-space: pre-line;
 }
 .sl-concept-prev-next {
   display: flex;

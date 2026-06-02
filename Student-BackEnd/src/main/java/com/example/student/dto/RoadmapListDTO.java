@@ -15,4 +15,5 @@ public class RoadmapListDTO {
     private int estimatedWeeks;
     private int subjectCount;
     private boolean enrolled;
+    private boolean paused;
 }

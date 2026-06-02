@@ -18,6 +18,7 @@ public class RoadmapDetailDTO {
     private int completedSubjects;
     private double overallPercentage;
     private boolean enrolled;
+    private boolean paused;
 
     @Data @AllArgsConstructor @NoArgsConstructor
     public static class SubjectProgress {

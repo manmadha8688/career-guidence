@@ -35,7 +35,27 @@ export default function QuizResultPage() {
 
   useEffect(() => {
     getAttemptResult(attemptId)
-      .then(r => setResult(r.data))
+      .then(r => {
+        setResult(r.data)
+        // Auto-mark daily quests when concept is cleared
+        if (r.data.passed) {
+          // Auto-mark daily quests in localStorage — only when bonus was actually earned
+          // (daily bonus = first concept of the day). Quest check stays in sync with XP.
+          if (r.data.dailyBonusEarned) {
+            const today = new Date().toDateString()
+            const key = `sl_quests_${user?.id}`
+            try {
+              const saved = localStorage.getItem(key)
+              const parsed = saved ? JSON.parse(saved) : null
+              const state = (parsed?.date === today) ? { ...parsed.state } : {}
+              state['q1'] = true  // Complete 1 concept
+              localStorage.setItem(key, JSON.stringify({ date: today, state }))
+            } catch {}
+          }
+          // Trigger dashboard + navbar to re-fetch fresh data
+          window.dispatchEvent(new CustomEvent('sl:refresh'))
+        }
+      })
       .catch(() => { toast.error('Failed to load result'); navigate(-1) })
       .finally(() => setLoading(false))
   }, [attemptId])
@@ -138,9 +158,16 @@ export default function QuizResultPage() {
             </div>
 
             {/* XP earned */}
-            {result.passed && (
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', marginTop: '1rem', padding: '0.375rem 1rem', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 99, fontFamily: "'Orbitron', sans-serif", fontSize: '0.75rem', color: '#4ADE80', fontWeight: 700 }}>
-                <Zap size={14} /> +{result.score * 10} XP EARNED
+            {result.passed && result.xpEarned > 0 && (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.375rem', marginTop: '1rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.375rem 1rem', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 99, fontFamily: "'Orbitron', sans-serif", fontSize: '0.75rem', color: '#4ADE80', fontWeight: 700 }}>
+                  <Zap size={14} /> +{result.xpEarned} XP EARNED
+                </div>
+                {result.dailyBonusEarned && (
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.3rem 0.875rem', background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: 99, fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', color: '#F59E0B', letterSpacing: '0.04em' }}>
+                    ⭐ DAILY BONUS +50 XP — First skill today!
+                  </div>
+                )}
               </div>
             )}
 
