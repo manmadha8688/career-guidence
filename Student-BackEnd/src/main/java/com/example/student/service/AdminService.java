@@ -146,6 +146,15 @@ public class AdminService {
         s.setColor(req.getColor() != null ? req.getColor() : "#4F46E5");
         s.setRank(req.getRank() != null ? req.getRank() : "E");
         s.setTotalConcepts(0);
+        s.setOverview(req.getOverview());
+        s.setWhyLearn(req.getWhyLearn());
+        s.setForWho(req.getForWho());
+        s.setPrerequisites(req.getPrerequisites());
+        s.setOutcomes(req.getOutcomes());
+        s.setWhatYouWillBuild(req.getWhatYouWillBuild());
+        s.setDifficulty(req.getDifficulty());
+        s.setEstimatedHours(req.getEstimatedHours());
+        s.setCareerUse(req.getCareerUse());
         return subjectRepository.save(s);
     }
 
@@ -157,6 +166,15 @@ public class AdminService {
         if (req.getIcon() != null) s.setIcon(req.getIcon());
         if (req.getColor() != null) s.setColor(req.getColor());
         if (req.getRank() != null) s.setRank(req.getRank());
+        if (req.getOverview() != null) s.setOverview(req.getOverview());
+        if (req.getWhyLearn() != null) s.setWhyLearn(req.getWhyLearn());
+        if (req.getForWho() != null) s.setForWho(req.getForWho());
+        if (req.getPrerequisites() != null) s.setPrerequisites(req.getPrerequisites());
+        if (req.getOutcomes() != null) s.setOutcomes(req.getOutcomes());
+        if (req.getWhatYouWillBuild() != null) s.setWhatYouWillBuild(req.getWhatYouWillBuild());
+        if (req.getDifficulty() != null) s.setDifficulty(req.getDifficulty());
+        if (req.getEstimatedHours() > 0) s.setEstimatedHours(req.getEstimatedHours());
+        if (req.getCareerUse() != null) s.setCareerUse(req.getCareerUse());
         return subjectRepository.save(s);
     }
 

@@ -18,4 +18,5 @@ public class UserRoadmapEnrollment {
     private String userId;
     private String roadmapId;
     private LocalDateTime enrolledAt;
+    private boolean paused;
 }

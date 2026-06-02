@@ -16,4 +16,7 @@ public class QuizResultResponse {
     private String badge;
     private LocalDateTime nextRetryAt;
     private List<QuizAnswerResult> results;
+    // XP awarded on this submission (concept quiz only)
+    private int  xpEarned;
+    private boolean dailyBonusEarned;
 }

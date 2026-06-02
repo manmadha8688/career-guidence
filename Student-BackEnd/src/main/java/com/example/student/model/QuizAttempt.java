@@ -27,6 +27,9 @@ public class QuizAttempt {
     private int total;
     private boolean passed;
 
+    private int xpEarned;
+    private boolean dailyBonusEarned;
+
     private LocalDateTime takenAt;
     private LocalDateTime nextRetryAt;
 }

@@ -67,7 +67,7 @@ export default function QuizPage() {
         questionIds: quiz.questions.map(q => q.id),
         answers: currentAnswers || answers,
       })
-      navigate(`/skill-arena/quiz/result/${res.data.attemptId}?type=${type}&refId=${refId}`)
+      navigate(`/skill-arena/quiz/result/${res.data.attemptId}?type=${type}&refId=${refId}`, { replace: true })
     } catch {
       toast.error('Failed to submit trial')
       setSubmitting(false)

@@ -14,3 +14,7 @@ When you start a new chat:
 2. You say "continue LearnPath"
 3. I read the memory → full context in one shot
 4. Ready to code
+
+
+
+ Next session just say "ready for project" and I'll pick up from here.

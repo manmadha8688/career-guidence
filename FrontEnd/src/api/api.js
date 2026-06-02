@@ -45,6 +45,8 @@ export const getProgressSummary = ()        => api.get('/progress/summary')
 export const getRoadmaps        = ()        => api.get('/roadmaps')
 export const getRoadmap         = (id)      => api.get(`/roadmaps/${id}`)
 export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`)
+export const pauseRoadmap       = (id)      => api.post(`/roadmaps/${id}/pause`)
+export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`)
 export const getEnrolledRoadmaps = ()       => api.get('/roadmaps/enrolled')
 
 // ─── ADMIN ───────────────────────────────────

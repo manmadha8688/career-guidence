@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -19,17 +20,20 @@ public class DataSeeder implements CommandLineRunner {
     private final ConceptRepository conceptRepository;
     private final QuestionRepository questionRepository;
     private final com.example.student.repository.UserConceptProgressRepository progressRepository;
+    private final com.example.student.repository.QuizAttemptRepository attemptRepository;
 
     public DataSeeder(UserRepository userRepository, PasswordEncoder passwordEncoder,
                       SubjectRepository subjectRepository, ConceptRepository conceptRepository,
                       QuestionRepository questionRepository,
-                      com.example.student.repository.UserConceptProgressRepository progressRepository) {
+                      com.example.student.repository.UserConceptProgressRepository progressRepository,
+                      com.example.student.repository.QuizAttemptRepository attemptRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.subjectRepository = subjectRepository;
         this.conceptRepository = conceptRepository;
         this.questionRepository = questionRepository;
         this.progressRepository = progressRepository;
+        this.attemptRepository = attemptRepository;
     }
 
     @Override
@@ -39,9 +43,43 @@ public class DataSeeder implements CommandLineRunner {
             seedCssFundamentals();
         }
         reconcile();
+        repairConceptProgress();
         backfillUserStats();
         if (questionRepository.count() == 0) {
             seedQuestions();
+        }
+    }
+
+    // ─── PUBLIC API (called by AdminController) ───────────────────────────────
+    public void reconcileRichContent() {
+        reconcile();
+    }
+
+    // ─── REPAIR ──────────────────────────────────────────────────────────────
+    // Creates missing UserConceptProgress entries for any passed concept quiz attempts.
+    // Fixes data where attempt.passed=true but no progress entry was created.
+    private void repairConceptProgress() {
+        List<com.example.student.model.QuizAttempt> passedAttempts = attemptRepository.findAll()
+            .stream()
+            .filter(a -> "CONCEPT".equals(a.getType()) && a.isPassed())
+            .collect(Collectors.toList());
+
+        for (com.example.student.model.QuizAttempt attempt : passedAttempts) {
+            if (!progressRepository.existsByUserIdAndConceptId(attempt.getUserId(), attempt.getRefId())) {
+                Optional<Concept> conceptOpt = conceptRepository.findById(attempt.getRefId());
+                if (conceptOpt.isPresent()) {
+                    Concept concept = conceptOpt.get();
+                    UserConceptProgress progress = new UserConceptProgress();
+                    progress.setUserId(attempt.getUserId());
+                    progress.setConceptId(attempt.getRefId());
+                    progress.setSubjectId(concept.getSubjectId());
+                    progress.setSubjectTitle(concept.getSubjectTitle());
+                    progress.setSubjectIcon(concept.getSubjectIcon());
+                    // Use the actual quiz completion time so isFirstToday works correctly
+                    progress.setCompletedAt(attempt.getTakenAt());
+                    progressRepository.save(progress);
+                }
+            }
         }
     }
 
@@ -123,10 +161,13 @@ public class DataSeeder implements CommandLineRunner {
 
     // ─── BACKFILL USER STATS ─────────────────────────────────────────────────
     private void backfillUserStats() {
+        // Preserve quiz-score XP (score*10 + daily bonus). Only use the 50-per-concept
+        // baseline for users who have never earned any XP (new installs / fresh docs).
+        List<com.example.student.model.User> toSave = new java.util.ArrayList<>();
         userRepository.findAll().forEach(user -> {
-            if ("ADMIN".equals(user.getRole())) return; // skip admin
+            if ("ADMIN".equals(user.getRole())) return;
             long completed = progressRepository.countByUserId(user.getId());
-            long xp    = completed * 50L;
+            long xp = (user.getXp() > 0) ? user.getXp() : completed * 50L;
             int  level = Math.max(1, (int)(xp / 200));
             String rank;
             if      (xp >= 10000) rank = "S";
@@ -135,15 +176,12 @@ public class DataSeeder implements CommandLineRunner {
             else if (xp >= 1500)  rank = "C";
             else if (xp >= 500)   rank = "D";
             else                  rank = "E";
-            boolean changed = user.getXp() != xp || user.getLevel() != level
-                    || !rank.equals(user.getRank());
-            if (changed) {
-                user.setXp(xp);
-                user.setLevel(level);
-                user.setRank(rank);
-                userRepository.save(user);
-            }
+            user.setXp(xp);
+            user.setLevel(level);
+            user.setRank(rank);
+            toSave.add(user);
         });
+        if (!toSave.isEmpty()) userRepository.saveAll(toSave);
     }
 
     // ─── HELPERS ─────────────────────────────────────────────────────────────

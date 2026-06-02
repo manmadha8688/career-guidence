@@ -1,7 +1,6 @@
 package com.example.student.model;
 
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,6 +21,6 @@ public class UserConceptProgress {
     private String subjectTitle;
     private String subjectIcon;
 
-    @CreatedDate
+    // Set manually — not @CreatedDate so we control the exact timestamp
     private LocalDateTime completedAt;
 }

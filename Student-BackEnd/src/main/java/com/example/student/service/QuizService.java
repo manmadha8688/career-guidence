@@ -20,19 +20,22 @@ public class QuizService {
     private final ConceptRepository conceptRepo;
     private final SubjectRepository subjectRepo;
     private final RoadmapSubjectRepository roadmapSubjectRepo;
+    private final ProgressService progressService;
 
     public QuizService(QuestionRepository questionRepo,
                        QuizAttemptRepository attemptRepo,
                        UserSubjectBadgeRepository badgeRepo,
                        ConceptRepository conceptRepo,
                        SubjectRepository subjectRepo,
-                       RoadmapSubjectRepository roadmapSubjectRepo) {
+                       RoadmapSubjectRepository roadmapSubjectRepo,
+                       ProgressService progressService) {
         this.questionRepo = questionRepo;
         this.attemptRepo = attemptRepo;
         this.badgeRepo = badgeRepo;
         this.conceptRepo = conceptRepo;
         this.subjectRepo = subjectRepo;
         this.roadmapSubjectRepo = roadmapSubjectRepo;
+        this.progressService = progressService;
     }
 
     // ─── START ────────────────────────────────────────────────────────────────
@@ -129,11 +132,18 @@ public class QuizService {
         attempt.setPassed(passed);
         attempt.setTakenAt(LocalDateTime.now());
         attempt.setNextRetryAt(nextRetryAt);
-        QuizAttempt saved = attemptRepo.save(attempt);
-
+        // Complete concept BEFORE saving attempt so that if completeConcept fails,
+        // the attempt is not recorded (user can retry). This prevents the inconsistency
+        // where attempt.passed=true but UserConceptProgress is missing.
+        int xpEarned = 0;
+        boolean dailyBonus = false;
         String badge = null;
         if (passed) {
-            if ("SUBJECT".equals(type)) {
+            if ("CONCEPT".equals(type)) {
+                Map<String, Object> result = progressService.completeConcept(refId, userId, score);
+                xpEarned   = (int) result.getOrDefault("xpEarned", 0);
+                dailyBonus = (boolean) result.getOrDefault("dailyBonusEarned", false);
+            } else if ("SUBJECT".equals(type)) {
                 badge = "SUBJECT_MASTERED";
                 UserSubjectBadge b = badgeRepo.findByUserIdAndSubjectId(userId, refId)
                         .orElse(new UserSubjectBadge(null, userId, refId, score, total, null));
@@ -148,7 +158,11 @@ public class QuizService {
             }
         }
 
-        return new QuizResultResponse(saved.getId(), score, total, passed, badge, nextRetryAt, results);
+        attempt.setXpEarned(xpEarned);
+        attempt.setDailyBonusEarned(dailyBonus);
+        QuizAttempt saved = attemptRepo.save(attempt);
+
+        return new QuizResultResponse(saved.getId(), score, total, passed, badge, nextRetryAt, results, xpEarned, dailyBonus);
     }
 
     // ─── GET ATTEMPT RESULT ───────────────────────────────────────────────────
@@ -181,7 +195,8 @@ public class QuizService {
         }
 
         return new QuizResultResponse(attempt.getId(), attempt.getScore(), attempt.getTotal(),
-                attempt.isPassed(), badge, attempt.getNextRetryAt(), results);
+                attempt.isPassed(), badge, attempt.getNextRetryAt(), results,
+                attempt.getXpEarned(), attempt.isDailyBonusEarned());
     }
 
     // ─── CAN RETRY ────────────────────────────────────────────────────────────
