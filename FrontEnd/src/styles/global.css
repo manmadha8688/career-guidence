@@ -1493,6 +1493,10 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
   50%  { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
 
 /* ═══════════════════════════════════════════════════════
    SL DASHBOARD — 3-COLUMN LAYOUT
