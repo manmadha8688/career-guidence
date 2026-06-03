@@ -284,6 +284,18 @@ export default function QuizPage() {
                 >
                   NEXT →
                 </button>
+              ) : answered === -1 ? (
+                <button
+                  disabled
+                  style={{
+                    background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.2)',
+                    borderRadius: 8, padding: '0.5rem 1.5rem', cursor: 'not-allowed',
+                    color: '#6B5F8F', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700,
+                    fontSize: '0.875rem', letterSpacing: '0.06em',
+                  }}
+                >
+                  ANSWER TO SUBMIT
+                </button>
               ) : (
                 <button
                   onClick={() => handleSubmit(answers)}
