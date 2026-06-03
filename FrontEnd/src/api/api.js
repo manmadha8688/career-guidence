@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8080/api'
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
 const api = axios.create({ baseURL: BASE_URL })
 
@@ -24,6 +24,7 @@ api.interceptors.response.use(
 // ─── AUTH ────────────────────────────────────
 export const registerUser     = (data)      => api.post('/auth/register', data)
 export const loginUser        = (data)      => api.post('/auth/login', data)
+export const guestLogin       = (guestId)   => api.post('/auth/guest', guestId ? { guestId } : {})
 export const getMe            = ()          => api.get('/auth/me')
 
 // ─── SUBJECTS ────────────────────────────────

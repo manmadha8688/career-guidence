@@ -35,7 +35,10 @@ export function AuthProvider({ children }) {
   }
 
   const logout = () => {
+    // Preserve guest device ID so the same guest account is reused on next visit
+    const guestDeviceId = localStorage.getItem('guest_device_id')
     localStorage.clear()
+    if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
     setUser(null)
     window.location.href = '/login'
   }
