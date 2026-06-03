@@ -33,6 +33,12 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(req));
     }
 
+    @PostMapping("/guest")
+    public ResponseEntity<AuthResponse> guest(@RequestBody(required = false) java.util.Map<String, String> body) {
+        String guestId = body != null ? body.get("guestId") : null;
+        return ResponseEntity.ok(authService.guestLogin(guestId));
+    }
+
     @GetMapping("/me")
     public ResponseEntity<?> me(@AuthenticationPrincipal User user) {
         Map<String, Object> res = new LinkedHashMap<>();

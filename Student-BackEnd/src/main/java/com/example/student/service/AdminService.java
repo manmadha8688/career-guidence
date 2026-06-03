@@ -55,6 +55,7 @@ public class AdminService {
     public AdminStatsDTO getStats() {
         long totalUsers = userRepository.count();
         long totalStudents = userRepository.countByRole("STUDENT");
+        long totalGuests = userRepository.countByRole("GUEST");
         long totalSubjects = subjectRepository.count();
         long totalConcepts = conceptRepository.count();
         long totalRoadmaps = roadmapRepository.count();
@@ -77,7 +78,7 @@ public class AdminService {
                         "completionCount", r.getCount()
                 )).collect(Collectors.toList());
 
-        return new AdminStatsDTO(totalUsers, totalStudents, totalSubjects,
+        return new AdminStatsDTO(totalUsers, totalStudents, totalGuests, totalSubjects,
                 totalConcepts, totalRoadmaps, recentUsers, topSubjects);
     }
 

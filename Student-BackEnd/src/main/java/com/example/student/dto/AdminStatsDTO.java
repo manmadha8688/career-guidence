@@ -11,6 +11,7 @@ import java.util.Map;
 public class AdminStatsDTO {
     private long totalUsers;
     private long totalStudents;
+    private long totalGuests;
     private long totalSubjects;
     private long totalConcepts;
     private long totalRoadmaps;

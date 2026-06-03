@@ -56,6 +56,37 @@ public class AuthService {
                 new AuthResponse.UserDto(user.getId(), user.getFullName(), user.getEmail(), user.getRole()));
     }
 
+    public AuthResponse guestLogin(String guestId) {
+        // Reuse the same guest account for this device if it still exists
+        if (guestId != null && !guestId.isBlank()) {
+            java.util.Optional<User> existing = userRepository.findById(guestId);
+            if (existing.isPresent() && "GUEST".equals(existing.get().getRole())) {
+                User guest = existing.get();
+                String token = jwtUtil.generateToken(guest.getEmail(), guest.getRole());
+                return new AuthResponse(token,
+                        new AuthResponse.UserDto(guest.getId(), guest.getFullName(), guest.getEmail(), guest.getRole()));
+            }
+        }
+
+        // First visit on this device — create a new guest account
+        long ts = System.currentTimeMillis();
+        String guestEmail = "guest_" + ts + "@guest.local";
+        String guestName  = "Guest#" + ((ts % 9000) + 1000);
+
+        User guest = new User();
+        guest.setFullName(guestName);
+        guest.setEmail(guestEmail);
+        guest.setPassword(passwordEncoder.encode(java.util.UUID.randomUUID().toString()));
+        guest.setRole("GUEST");
+        guest.setAvatarColor("#64748B");
+        guest.setIsActive(true);
+
+        User saved = userRepository.save(guest);
+        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
+        return new AuthResponse(token,
+                new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
+    }
+
     public User getMe(String email) {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
