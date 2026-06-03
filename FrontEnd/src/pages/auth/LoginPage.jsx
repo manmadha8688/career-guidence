@@ -297,14 +297,7 @@ export default function LoginPage() {
         </p>
 
         {/* Admin hint */}
-        <div style={{
-          marginTop: '2rem', padding: '0.875rem 1rem',
-          background: 'rgba(255,255,255,0.02)',
-          border: '1px solid rgba(255,255,255,0.06)',
-          borderRadius: 8, fontSize: '0.8rem', color: C.muted,
-        }}>
-          <span style={{ color: C.sub, fontWeight: 600 }}>Demo admin:</span> admin@demo.com / ***REMOVED***
-        </div>
+        
       </div>
     </div>
   )

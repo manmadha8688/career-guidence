@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info } from 'lucide-react'
+import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2 } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus,
   getSubjects, getSubject, getConcept, getQuizStatus,
   getRoadmaps, enrollRoadmap, pauseRoadmap, resumeRoadmap,
+  getHunterStats,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
 import { getRank } from '../../utils/slRank'
@@ -33,13 +34,23 @@ const RANK_LADDER = [
 ]
 
 const STAT_DEFS = [
-  { key: 'INT', label: 'INTELLIGENCE', tags: 'Java · Spring',   color: '#9B6ED4', match: t => /java|spring|python|oop|data.struct|mongodb|django|node|backend/.test(t) },
-  { key: 'AGI', label: 'AGILITY',      tags: 'React · JS',      color: '#4ADE80', match: t => /react|javascript|html|css|frontend/.test(t) },
-  { key: 'END', label: 'ENDURANCE',    tags: 'SQL · Deploy',    color: '#60A5FA', match: t => /sql|postgres|mysql|docker|git|deploy|database/.test(t) },
-  { key: 'PER', label: 'PERCEPTION',   tags: 'Problem Solving', color: '#F59E0B', match: t => /security|jwt|rest|api|design|algorithm|boot|express/.test(t) },
+  { key: 'INT', label: 'INTELLIGENCE', domain: 'Backend',          color: '#9B6ED4', hint: 'Java · Python · Spring · Node', match: t => /java|spring|python|oop|data.struct|mongodb|django|node|backend/.test(t) },
+  { key: 'AGI', label: 'AGILITY',      domain: 'Frontend',         color: '#4ADE80', hint: 'HTML · CSS · React · JS',       match: t => /react|javascript|html|css|frontend/.test(t) },
+  { key: 'END', label: 'ENDURANCE',    domain: 'Databases & Ops',  color: '#60A5FA', hint: 'SQL · Docker · Git · Deploy',   match: t => /sql|postgres|mysql|docker|git|deploy|database/.test(t) },
+  { key: 'PER', label: 'PERCEPTION',   domain: 'Problem Solving',  color: '#F59E0B', hint: 'APIs · Security · Algorithms',  match: t => /security|jwt|rest|api|design|algorithm|boot|express/.test(t) },
 ]
 
-const GATE_FILTERS = ['All', 'Active Hunt', 'Cleared', 'Not Started']
+// Stat rank from 0-100 pct — independent per category
+const statRank = (pct) => {
+  if (pct >= 95) return { label: 'S', color: '#EF4444' }
+  if (pct >= 80) return { label: 'A', color: '#F59E0B' }
+  if (pct >= 60) return { label: 'B', color: '#9B6ED4' }
+  if (pct >= 40) return { label: 'C', color: '#60A5FA' }
+  if (pct >= 20) return { label: 'D', color: '#4ADE80' }
+  return              { label: 'E', color: '#888888' }
+}
+
+const GATE_FILTERS = ['All GATES', 'ENTERED', 'CLOSED', 'Not ENTERED']
 
 // ─── Helpers ──────────────────────────────────────────────
 const gateRankByOrder = (idx) => {
@@ -67,9 +78,16 @@ const subjectGateRank = (s) => {
 
 const computeStats = (sp = []) =>
   STAT_DEFS.map(def => {
-    const m = sp.filter(s => def.match(s.title.toLowerCase()))
-    const avg = m.length ? Math.round(m.reduce((a, s) => a + s.percentage, 0) / m.length) : 0
-    return { ...def, value: Math.min(100, 10 + Math.round(avg * 0.9)) }
+    const matched   = sp.filter(s => def.match(s.title.toLowerCase()))
+    // Real totals across all matched subjects — works for any level
+    const totalDone = matched.reduce((a, s) => a + (s.completedConcepts ?? 0), 0)
+    const totalAll  = matched.reduce((a, s) => a + (s.totalConcepts   ?? 0), 0)
+    const pct       = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) : 0
+    const cleared   = matched.filter(s => (s.percentage ?? 0) >= 100).map(s => s.title)
+    const inProgress= matched.filter(s => (s.percentage ?? 0) > 0 && (s.percentage ?? 0) < 100)
+    const next      = matched.find(s => (s.percentage ?? 0) === 0)
+    const sRank     = statRank(pct)
+    return { ...def, pct, totalDone, totalAll, cleared, inProgress, next, sRank }
   })
 
 const questKey = (userId) => `sl_quests_${userId}`
@@ -197,7 +215,7 @@ function AboutGateModal({ subject, onClose }) {
 }
 
 // ─── Concept Inline Panel ─────────────────────────────────
-function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
+function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }) {
   const [concept, setConcept]       = useState(null)
   const [quizStatus, setQuizStatus] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -398,7 +416,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
                   </div>
                 </div>
                 <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.72rem', flexShrink: 0 }}
-                  onClick={() => navigate(`/skill-arena/quiz/concept/${conceptId}`)}>Retry</button>
+                  onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>Retry</button>
               </div>
             </div>
           ) : (
@@ -409,7 +427,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
                 10 trials · Need 8/10 to master
               </div>
               <button className="btn btn-primary w-full" style={{ justifyContent: 'center', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, letterSpacing: '0.06em', fontSize: '0.875rem' }}
-                onClick={() => navigate(`/skill-arena/quiz/concept/${conceptId}`)}>
+                onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>
                 <Brain size={14} /> Begin Skill Trial →
               </button>
               {quizStatus?.attemptCount > 0 && (
@@ -444,7 +462,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate }) {
 }
 
 // ─── Roadmap Panel (right overlay, shows gates list) ─────
-function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
+function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate, startQuiz }) {
   const [roadmap, setRoadmap]   = useState(null)
   const [status, setStatus]     = useState(null)
   const [loading, setLoading]   = useState(true)
@@ -523,10 +541,18 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
             <div style={{ width: 38, height: 38, borderRadius: 8, background: roadmap.color + '22', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', flexShrink: 0 }}>
               {roadmap.icon}
             </div>
-            <div style={{ minWidth: 0 }}>
+            <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: 1.2 }}>{roadmap.title}</div>
               <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: roadmap.color, letterSpacing: '0.06em' }}>{roadmap.roleTarget}</div>
             </div>
+            {/* Pause / Resume beside title */}
+            {isEnrolled && (
+              <button onClick={isPaused ? handleResume : handlePause} disabled={pausing}
+                title={isPaused ? 'Resume Hunt' : 'Pause Hunt'}
+                style={{ flexShrink: 0, padding: '0.35rem 0.6rem', background: 'rgba(136,136,136,0.1)', border: '1px solid var(--border)', borderRadius: 6, cursor: pausing ? 'not-allowed' : 'pointer', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.06em', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                {pausing ? <span className="loading-spinner" style={{ width: 12, height: 12 }} /> : isPaused ? '▶' : '⏸'}
+              </button>
+            )}
           </div>
 
           {/* Progress bar — only when enrolled + active */}
@@ -542,7 +568,7 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
             </div>
           )}
 
-          {/* Action button row */}
+          {/* Action button */}
           {!isEnrolled ? (
             /* Not enrolled → Begin Hunt */
             <button onClick={handleEnroll} disabled={enrolling}
@@ -550,33 +576,21 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
               {enrolling ? <span className="loading-spinner" style={{ borderTopColor: '#fff' }} /> : '⚔️'}
               {enrolling ? 'Registering…' : 'Begin Hunt'}
             </button>
-          ) : isPaused ? (
-            /* Paused → Resume Hunt */
-            <button onClick={handleResume} disabled={pausing}
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: `linear-gradient(135deg, ${roadmap.color}CC, ${roadmap.color})`, border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
-              {pausing ? <span className="loading-spinner" style={{ borderTopColor: '#fff' }} /> : '▶'}
-              {pausing ? 'Resuming…' : 'Resume Hunt'}
-            </button>
           ) : status?.allSubjectsDone ? (
-            /* All done → Path Trial */
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <button onClick={() => navigate(`/skill-arena/quiz/roadmap/${roadmapId}`)}
-                style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: 'linear-gradient(135deg, #F59E0B, #FBBF24)', border: 'none', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: '#1A0F00', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
-                <Trophy size={14} /> Begin Path Trial
-              </button>
-              <button onClick={handlePause} disabled={pausing}
-                style={{ padding: '0.5rem 0.75rem', background: 'rgba(136,136,136,0.12)', border: '1px solid var(--border)', borderRadius: 6, cursor: 'pointer', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.06em' }}>
-                {pausing ? '…' : '⏸ Pause'}
-              </button>
-            </div>
-          ) : (
-            /* Enrolled + active → Pause Hunt */
-            <button onClick={handlePause} disabled={pausing}
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: 'rgba(136,136,136,0.1)', border: '1px solid var(--border)', borderRadius: 6, padding: '0.5rem', cursor: 'pointer', color: 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em' }}>
-              {pausing ? <span className="loading-spinner" /> : '⏸'}
-              {pausing ? 'Pausing…' : 'Pause Hunt'}
+            /* All gates badged → Path Final Test */
+            <button onClick={() => startQuiz('roadmap', roadmapId, roadmap?.title ?? 'Path Final Trial', roadmap?.icon)}
+              style={{ width: '100%', padding: '0.625rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.08em', textAlign: 'center', boxShadow: '0 0 12px rgba(245,158,11,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+              <Trophy size={15} /> TAKE PATH FINAL TEST
             </button>
-          )}
+          ) : isEnrolled ? (
+            /* Enrolled but gates not all done → locked banner */
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', padding: '0.625rem 0.875rem', background: 'rgba(136,136,136,0.06)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 6 }}>
+              <Lock size={13} color="var(--text-muted)" style={{ flexShrink: 0, marginTop: 1 }} />
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', letterSpacing: '0.05em', lineHeight: 1.6 }}>
+                PATH FINAL TEST LOCKED · Earn badges for all {subjects.length} gates to unlock
+              </span>
+            </div>
+          ) : null}
 
           {/* Divider */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -588,49 +602,63 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
           {/* Gates list — always visible, but progress hidden when paused/not enrolled */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             {subjects.map((s, i) => {
-              const p       = showProgress ? (s.percentage ?? 0) : 0
-              const cleared = showProgress && (s.percentage ?? 0) >= 100
-              const active  = showProgress && (s.percentage ?? 0) > 0 && (s.percentage ?? 0) < 100
+              const p          = showProgress ? (s.percentage ?? 0) : 0
+              const hasBadge   = s.hasBadge ?? false
+              const allLearned = showProgress && p >= 100
+              const gateClosed = allLearned && hasBadge
+              const active     = showProgress && p > 0 && !gateClosed
+              const borderCol  = gateClosed ? 'rgba(74,222,128,0.2)' : allLearned ? 'rgba(245,158,11,0.3)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)'
+              const accentCol  = gateClosed ? '#4ADE80' : allLearned ? '#F59E0B' : active ? '#9B6ED4' : 'var(--border)'
               return (
-                <div
-                  key={s.id}
-                  onClick={() => isEnrolled && s.totalConcepts > 0 && onGateClick(s.id)}
-                  style={{
-                    display: 'flex', alignItems: 'center', gap: '0.5rem',
-                    padding: '0.5rem 0.625rem',
-                    background: 'var(--bg-secondary)',
-                    border: `1px solid ${cleared ? 'rgba(74,222,128,0.2)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)'}`,
-                    borderLeft: `3px solid ${cleared ? '#4ADE80' : active ? '#9B6ED4' : 'var(--border)'}`,
-                    borderRadius: 'var(--radius-sm)',
-                    cursor: isEnrolled && s.totalConcepts > 0 ? 'pointer' : 'default',
-                    opacity: s.totalConcepts > 0 ? 1 : 0.45,
-                    transition: 'all 0.15s',
-                  }}
-                  onMouseEnter={e => { if (isEnrolled && s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = cleared ? 'rgba(74,222,128,0.2)' : active ? 'rgba(155,110,212,0.2)' : 'var(--border)' }}
-                >
-                  <div style={{ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700, background: cleared ? 'rgba(74,222,128,0.15)' : 'var(--bg-tertiary)', border: `1.5px solid ${cleared ? '#4ADE8055' : 'var(--border)'}`, color: cleared ? '#4ADE80' : 'var(--text-muted)' }}>
-                    {cleared ? <CheckCircle size={11} color="#4ADE80" /> : s.totalConcepts > 0 ? i + 1 : <Lock size={10} />}
-                  </div>
-                  <span style={{ fontSize: '0.875rem', flexShrink: 0 }}>{s.icon}</span>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.title}</div>
-                    {active ? (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.15rem' }}>
-                        <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
-                          <div style={{ height: '100%', width: `${p}%`, background: '#9B6ED4', borderRadius: 2 }} />
+                <div key={s.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                  <div
+                    onClick={() => isEnrolled && s.totalConcepts > 0 && onGateClick(s.id)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '0.5rem',
+                      padding: '0.5rem 0.625rem',
+                      background: 'var(--bg-secondary)',
+                      border: `1px solid ${borderCol}`,
+                      borderLeft: `3px solid ${accentCol}`,
+                      borderRadius: 'var(--radius-sm)',
+                      cursor: isEnrolled && s.totalConcepts > 0 ? 'pointer' : 'default',
+                      opacity: s.totalConcepts > 0 ? 1 : 0.45,
+                      transition: 'all 0.15s',
+                    }}
+                    onMouseEnter={e => { if (isEnrolled && s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = borderCol }}
+                  >
+                    <div style={{ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700, background: gateClosed ? 'rgba(74,222,128,0.15)' : 'var(--bg-tertiary)', border: `1.5px solid ${gateClosed ? '#4ADE8055' : 'var(--border)'}`, color: gateClosed ? '#4ADE80' : 'var(--text-muted)' }}>
+                      {gateClosed ? <CheckCircle size={11} color="#4ADE80" /> : s.totalConcepts > 0 ? i + 1 : <Lock size={10} />}
+                    </div>
+                    <span style={{ fontSize: '0.875rem', flexShrink: 0 }}>{s.icon}</span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.title}</div>
+                      {active && !allLearned ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.15rem' }}>
+                          <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                            <div style={{ height: '100%', width: `${p}%`, background: '#9B6ED4', borderRadius: 2 }} />
+                          </div>
+                          <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700 }}>{p}%</span>
                         </div>
-                        <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700 }}>{p}%</span>
-                      </div>
-                    ) : (
-                      <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.03em' }}>
-                        {s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'sealed'}
-                      </div>
-                    )}
+                      ) : (
+                        <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: gateClosed ? '#4ADE80' : allLearned ? '#F59E0B' : 'var(--text-muted)', letterSpacing: '0.03em' }}>
+                          {gateClosed ? 'GATE CLOSED' : allLearned ? 'SKILLS LEARNED' : s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'sealed'}
+                        </div>
+                      )}
+                    </div>
+                    <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.06em', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0, background: gateClosed ? 'rgba(74,222,128,0.1)' : allLearned ? 'rgba(245,158,11,0.1)' : active ? 'rgba(155,110,212,0.1)' : 'rgba(136,136,136,0.07)', color: gateClosed ? '#4ADE80' : allLearned ? '#F59E0B' : active ? '#B48AE8' : '#555' }}>
+                      {gateClosed ? 'DONE' : allLearned ? 'TEST' : active ? 'HUNT' : 'Enter'}
+                    </span>
                   </div>
-                  <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.06em', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0, background: cleared ? 'rgba(74,222,128,0.1)' : active ? 'rgba(155,110,212,0.1)' : 'rgba(136,136,136,0.07)', color: cleared ? '#4ADE80' : active ? '#B48AE8' : '#555' }}>
-                    {cleared ? 'DONE' : active ? 'HUNT' : 'Enter'}
-                  </span>
+                  {/* Final test button for this gate — shown inline when skills learned but no badge */}
+                  {allLearned && !hasBadge && (
+                    <button
+                      onClick={e => { e.stopPropagation(); startQuiz('subject', s.id, s.title, s.icon) }}
+                      style={{ width: '100%', padding: '0.35rem 0.625rem', background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.3)', borderRadius: 'var(--radius-sm)', cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.08em', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem' }}
+                    >
+                      <Trophy size={11} /> TAKE GATE FINAL TEST →
+                    </button>
+                  )}
                 </div>
               )
             })}
@@ -642,7 +670,7 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate }) {
 }
 
 // ─── Subject Panel (overlay-right OR in-grid-left) ────────
-function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, navigate, mode = 'overlay' }) {
+function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, navigate, startQuiz, mode = 'overlay' }) {
   const [subject, setSubject]       = useState(null)
   const [quizStatus, setQuizStatus] = useState(null)
   const [loading, setLoading]       = useState(true)
@@ -706,22 +734,32 @@ function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, nav
 
           {/* Gate Trial button — only in overlay (right) mode */}
           {!isGrid && (
-            quizStatus?.hasPassed ? (
+            quizStatus?.hasBadge ? (
+              /* Badge earned — gate closed */
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: 'var(--radius-sm)' }}>
                 <Trophy size={13} color="#4ADE80" />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80', letterSpacing: '0.08em' }}>CLEARANCE EARNED</div>
-                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)' }}>{quizStatus.bestScore}/{quizStatus.bestTotal}</div>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80', letterSpacing: '0.08em' }}>GATE CLOSED · BADGE EARNED</div>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)' }}>{quizStatus.badgeScore}/{quizStatus.badgeTotal}</div>
                 </div>
                 <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.7rem', padding: '0.15rem 0.4rem' }}
-                  onClick={() => navigate(`/skill-arena/quiz/subject/${subjectId}`)}>Retry</button>
+                  onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>Retry</button>
               </div>
-            ) : (
-              <button className="btn btn-primary w-full" style={{ justifyContent: 'center', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, letterSpacing: '0.06em', fontSize: '0.85rem' }}
-                onClick={() => navigate(`/skill-arena/quiz/subject/${subjectId}`)}>
-                <Brain size={13} />
-                {quizStatus?.attemptCount > 0 ? `Retry Trial · ${quizStatus.bestScore}/25` : 'Begin Gate Trial →'}
+            ) : pct >= 100 ? (
+              /* All skills learned — unlock final test */
+              <button style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.45)', borderRadius: 'var(--radius-sm)', padding: '0.625rem', cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.06em', boxShadow: '0 0 16px rgba(245,158,11,0.12)' }}
+                onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>
+                <Trophy size={14} />
+                {quizStatus?.badgeScore > 0 ? `Retry Final Test · ${quizStatus.badgeScore}/25` : 'Take Final Test to Close Gate →'}
               </button>
+            ) : (
+              /* Skills not all cleared — locked */
+              <div style={{ display: 'flex', align: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 'var(--radius-sm)' }}>
+                <Lock size={12} color="var(--text-muted)" style={{ flexShrink: 0, marginTop: 1 }} />
+                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', letterSpacing: '0.06em', lineHeight: 1.5 }}>
+                  FINAL TEST LOCKED · Clear all {subject.totalConcepts} skills to unlock
+                </div>
+              </div>
             )
           )}
 
@@ -876,6 +914,51 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
             </div>
           </div>
 
+          {/* ── How to Earn Badges ── */}
+          <div>
+            <SectionTitle>HOW TO EARN BADGES</SectionTitle>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+              {[
+                {
+                  icon: '🏆',
+                  color: '#F59E0B',
+                  title: 'Gate Badge',
+                  steps: [
+                    'Enter a Dungeon Gate and clear all skills inside it',
+                    'Once all skills are learned, the "Take Final Test" button unlocks',
+                    'Pass the gate final test (19/25) to earn the subject badge',
+                  ],
+                },
+                {
+                  icon: '🎖️',
+                  color: '#9B6ED4',
+                  title: 'Hunter Path Badge',
+                  steps: [
+                    'Enroll in a Hunter Path from the HUNTER PATH tab',
+                    'Earn gate badges for every subject in the path',
+                    'Once all gates are closed, the Path Final Trial unlocks',
+                    'Pass the roadmap final test to earn the path badge',
+                  ],
+                },
+              ].map(b => (
+                <div key={b.title} style={{ padding: '0.875rem', background: `${b.color}0A`, border: `1px solid ${b.color}25`, borderRadius: 10 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.625rem' }}>
+                    <span style={{ fontSize: '1.1rem' }}>{b.icon}</span>
+                    <span style={{ fontWeight: 700, fontSize: '0.875rem', color: b.color }}>{b.title}</span>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    {b.steps.map((step, i) => (
+                      <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+                        <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.52rem', fontWeight: 800, color: b.color, flexShrink: 0, marginTop: '0.2rem', minWidth: 14 }}>0{i + 1}</span>
+                        <span style={{ fontSize: '0.775rem', color: '#8B9AB8', lineHeight: 1.6 }}>{step}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* ── Rank Progression Guide ── */}
           <div>
             <SectionTitle>RANK PROGRESSION GUIDE</SectionTitle>
@@ -911,8 +994,8 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
             <SectionTitle>ABOUT LEARNTOEARN</SectionTitle>
             <div style={{ padding: '0.875rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10 }}>
               <p style={{ fontSize: '0.8125rem', color: '#8B9AB8', lineHeight: 1.75, margin: '0 0 0.625rem' }}>
-                LearnToEarn is a Solo Leveling-themed learning platform built for Indian graduates. Master tech skills concept by concept, earn XP and badges as proof, and follow structured career roadmaps from zero to job-ready.
-              </p>
+                LearnToEarn is a Solo Leveling–inspired learning platform where you level up your tech skills like a player. Learn concept by concept, earn XP and badges as proof, and follow structured roadmaps to go from beginner to job-ready.
+                </p>
               <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#64748B', letterSpacing: '0.06em' }}>
                 Skills Arena · Resume · AI · Jobs
               </div>
@@ -928,6 +1011,12 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
               <span style={{ color: '#C4B5FD', fontWeight: 600 }}>Guest session</span> — create a free account to save your XP and progress permanently.
             </div>
           )}
+          <button onClick={onClose} style={{ width: '100%', marginBottom: '0.5rem', padding: '0.65rem', borderRadius: 8, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'background 0.15s' }}
+            onClick={() => { window.location.href = '/' }}
+            onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.07)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
+            ← EXIT ARENA
+          </button>
           <button onClick={onLogout} style={{ width: '100%', padding: '0.75rem', borderRadius: 8, background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.22)', color: '#EF4444', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.1em', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'background 0.15s' }}
             onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,0.16)'}
             onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,0.08)'}>
@@ -936,6 +1025,124 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
         </div>
       </div>
     </>
+  )
+}
+
+// ─── Quiz Instructions Modal ──────────────────────────────
+const QUIZ_META = {
+  concept: {
+    label: 'SKILL TRIAL', color: '#9B6ED4',
+    questions: 10, time: null, passNum: 8, reward: 'XP + Daily Bonus', rewardColor: '#9B6ED4',
+    rules: [
+      'No time limit — read each question at your own pace',
+      'Select one answer per question; you can navigate back freely',
+      'Score 8 / 10 or above to clear the skill and earn XP',
+      'Your first cleared concept of the day earns +50 bonus XP',
+      'Failed? A 10-minute cooldown applies before you can retry',
+    ],
+  },
+  subject: {
+    label: 'GATE ASSESSMENT', color: '#F59E0B',
+    questions: 25, time: '30 min', passNum: 19, reward: 'Subject Badge', rewardColor: '#F59E0B',
+    rules: [
+      'Questions are drawn randomly from all skills inside this gate',
+      'Timer starts when you begin — 30 minutes total',
+      'Score 19 / 25 or above to earn the gate badge and close the gate',
+      'You can navigate between questions freely before submitting',
+      'Failed? A 24-hour cooldown applies before you can retry',
+    ],
+  },
+  roadmap: {
+    label: 'PATH FINAL TRIAL', color: '#EF4444',
+    questions: 50, time: '90 min', passNum: 35, reward: 'Path Badge', rewardColor: '#4ADE80',
+    rules: [
+      'Questions span all subjects and all skills across this path',
+      'Timer starts when you begin — 90 minutes total',
+      'Score 35 / 50 → Interview Ready Badge',
+      'Score 42 / 50 → Job Ready Badge (higher tier)',
+      'Failed? A 48-hour cooldown applies before you can retry',
+    ],
+  },
+}
+
+function InstructionsModal({ intent, onClose, onConfirm }) {
+  const meta = QUIZ_META[intent.type]
+  if (!meta) return null
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  return (
+    <div onClick={e => e.target === e.currentTarget && onClose()}
+      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.78)', zIndex: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backdropFilter: 'blur(4px)' }}>
+      <div style={{ background: '#090E1C', border: `1px solid ${meta.color}33`, borderTop: `3px solid ${meta.color}`, borderRadius: 16, width: '100%', maxWidth: 560, maxHeight: '90vh', overflowY: 'auto', boxShadow: `0 0 60px ${meta.color}20`, animation: 'slideUp 0.2s ease' }}>
+
+        {/* Header */}
+        <div style={{ padding: '1rem 1.25rem', borderBottom: `1px solid ${meta.color}1A`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.14em', color: meta.color }}>[ {meta.label} PROTOCOL ]</span>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#64748B', cursor: 'pointer', display: 'flex', padding: '0.2rem' }}><X size={15} /></button>
+        </div>
+
+        <div style={{ padding: '1.375rem 1.5rem' }}>
+
+          {/* Title */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.375rem' }}>
+            {intent.icon && <span style={{ fontSize: '1.75rem', flexShrink: 0 }}>{intent.icon}</span>}
+            <div>
+              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '1.175rem', color: '#E2E8F0', lineHeight: 1.2 }}>{intent.title}</div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: meta.color, letterSpacing: '0.08em', marginTop: '0.2rem' }}>{meta.label}</div>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0.5rem', marginBottom: '1.375rem' }}>
+            {[
+              { label: 'QUESTIONS', value: meta.questions, color: '#60A5FA', big: true },
+              { label: 'TIME LIMIT', value: meta.time ?? 'NONE', color: '#F59E0B', big: true },
+              { label: 'PASS MARK', value: `${meta.passNum}/${meta.questions}`, color: meta.color, big: true },
+              { label: 'REWARD', value: meta.reward, color: meta.rewardColor, big: false },
+            ].map(s => (
+              <div key={s.label} style={{ textAlign: 'center', padding: '0.75rem 0.375rem', background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10 }}>
+                <div style={{ fontFamily: s.big ? "'Orbitron', sans-serif" : "'Rajdhani', sans-serif", fontSize: s.big ? '1.1rem' : '0.72rem', fontWeight: 800, color: s.color, lineHeight: 1.2 }}>{s.value}</div>
+                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.5rem', color: '#64748B', letterSpacing: '0.07em', marginTop: '0.3rem' }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Rules */}
+          <div style={{ marginBottom: '1.5rem', padding: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: 10 }}>
+            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.12em', color: '#64748B', marginBottom: '0.75rem' }}>[ TRIAL RULES ]</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+              {meta.rules.map((rule, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start' }}>
+                  <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.5rem', fontWeight: 800, color: meta.color, flexShrink: 0, marginTop: '0.28rem', minWidth: 16 }}>0{i + 1}</span>
+                  <span style={{ fontSize: '0.8rem', color: '#8B9AB8', lineHeight: 1.65 }}>{rule}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Actions */}
+          <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <button onClick={onClose}
+              style={{ flex: '0 0 100px', padding: '0.75rem', borderRadius: 8, background: 'transparent', border: '1px solid rgba(255,255,255,0.08)', color: '#64748B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.06em', cursor: 'pointer' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.color = '#8B9AB8' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#64748B' }}>
+              CANCEL
+            </button>
+            <button onClick={onConfirm}
+              style={{ flex: 1, padding: '0.875rem', borderRadius: 8, background: `linear-gradient(135deg, ${meta.color}BB, ${meta.color})`, border: 'none', color: intent.type === 'subject' ? '#1A0F00' : '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '1rem', letterSpacing: '0.08em', cursor: 'pointer', boxShadow: `0 0 24px ${meta.color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+              onMouseEnter={e => e.currentTarget.style.boxShadow = `0 0 40px ${meta.color}60`}
+              onMouseLeave={e => e.currentTarget.style.boxShadow = `0 0 24px ${meta.color}40`}>
+              ⚔ BEGIN {meta.label}
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -956,8 +1163,18 @@ export default function DashboardPage() {
   const [selectedRoadmapId, setSelectedRoadmapId] = useState(null)
 
   const [quests, setQuests]           = useState(() => loadQuestState(user?.id))
-  const [aboutGate, setAboutGate]     = useState(null)  // subject object for About Gate modal
+  const [aboutGate, setAboutGate]     = useState(null)
+  const [hunterStats, setHunterStats] = useState(null)
   const [avatarOpen, setAvatarOpen]   = useState(false)
+  const [quizIntent, setQuizIntent]   = useState(null)
+
+  const startQuiz = (type, refId, title, icon) =>
+    setQuizIntent({ type, refId, title, icon: icon ?? null })
+  const confirmQuiz = () => {
+    if (!quizIntent) return
+    navigate(`/skill-arena/quiz/${quizIntent.type}/${quizIntent.refId}`)
+    setQuizIntent(null)
+  }
   const [panelRefreshKey, setPanelRefreshKey] = useState(0)
   const [studySeconds, setStudySeconds] = useState(0)
 
@@ -992,6 +1209,7 @@ export default function DashboardPage() {
       })
       .catch(() => toast.error('Failed to load status window'))
       .finally(() => setLoading(false))
+    getHunterStats().then(r => setHunterStats(r.data)).catch(() => {})
   }, []) // eslint-disable-line
 
   // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
@@ -1001,8 +1219,20 @@ export default function DashboardPage() {
         setSummary(s.data)
         syncQuestsFromSummary(s.data, user?.id)
       }).catch(() => {})
-      setGatesLoaded(false)                 // force gate cards to reload
-      setPanelRefreshKey(k => k + 1)        // force SubjectPanel to re-fetch
+      getHunterStats().then(r => setHunterStats(r.data)).catch(() => {})
+      setPanelRefreshKey(k => k + 1)
+      // Reload gate cards + badge statuses directly (bypasses gatesLoaded guard)
+      getSubjects().then(r => {
+        setSubjects(r.data)
+        setGatesLoaded(true)
+        r.data.forEach(s => {
+          getQuizStatus('subject', s.id)
+            .then(qs => setQuizStatuses(prev => ({ ...prev, [s.id]: qs.data })))
+            .catch(() => {})
+        })
+      }).catch(() => {})
+      // Reload roadmap cards with fresh allSubjectsDone
+      getRoadmaps().then(r => { setAllRoadmaps(r.data); setPathsLoaded(true) }).catch(() => {})
     }
     window.addEventListener('sl:refresh', refresh)
     return () => window.removeEventListener('sl:refresh', refresh)
@@ -1119,16 +1349,16 @@ export default function DashboardPage() {
   const doneCount      = DAILY_QUESTS.filter(q => quests[q.id]).length
   const earnedXp       = DAILY_QUESTS.filter(q => quests[q.id]).reduce((s, q) => s + q.xp, 0)
   const arenaSubjects  = activeRoadmap?.subjects ?? []
-  const completedGates = arenaSubjects.filter(s => s.percentage >= 100).length
+  const completedGates = arenaSubjects.filter(s => s.hasBadge).length
   const totalGates     = arenaSubjects.length
-  const nextGate       = arenaSubjects.find(s => s.percentage < 100)
+  const nextGate       = arenaSubjects.find(s => !s.hasBadge)
   const overallPct     = activeRoadmap?.overallPercentage ?? 0
 
   const filteredSubjects = subjects.filter(s => {
     const sp = s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0
     if (!s.title.toLowerCase().includes(gateSearch.toLowerCase())) return false
-    if (gateFilter === 'Cleared')     return sp === 100
-    if (gateFilter === 'Active Hunt') return sp > 0 && sp < 100
+    if (gateFilter === 'Cleared')     return quizStatuses[s.id]?.hasBadge ?? false
+    if (gateFilter === 'Active Hunt') return sp > 0 && !(quizStatuses[s.id]?.hasBadge)
     if (gateFilter === 'Not Started') return sp === 0
     return true
   })
@@ -1140,8 +1370,11 @@ export default function DashboardPage() {
 
   const GateCard = ({ s, pOvr }) => {
     const p = pOvr !== undefined ? pOvr : (s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0))
-    const gr = subjectGateRank(s)
-    const cleared = p >= 100, sealed = p === 0
+    const gr        = subjectGateRank(s)
+    const allLearned = p >= 100
+    const hasBadge  = s.hasBadge ?? quizStatuses[s.id]?.hasBadge ?? false
+    const gateClosed = allLearned && hasBadge
+    const sealed    = p === 0
     return (
       <div className="sl-gate-card" style={{ cursor: s.totalConcepts > 0 ? 'pointer' : 'default', opacity: s.totalConcepts > 0 ? 1 : 0.5 }}
         onClick={() => s.totalConcepts > 0 && openSubjectPanel(s.id)}>
@@ -1149,7 +1382,7 @@ export default function DashboardPage() {
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.25rem' }}>
           <div className="sl-gate-title" style={{ marginBottom: 0, flex: 1 }}>{s.title}</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', flexShrink: 0 }}>
-            {quizStatuses[s.id]?.hasPassed && <Trophy size={11} color="#4ADE80" />}
+            {gateClosed && <Trophy size={11} color="#4ADE80" />}
             <span className={`rank-badge ${gr.cls}`} style={{ fontSize: '0.58rem', padding: '0.1rem 0.35rem' }}>{gr.label}</span>
             <button
               onClick={e => { e.stopPropagation(); setAboutGate(s) }}
@@ -1163,12 +1396,25 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className="sl-gate-meta">{s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'Coming soon'}</div>
-        <div className="sl-gate-bar-track">
-          <div className="sl-gate-bar-fill" style={{ width: `${p}%`, background: cleared ? gr.color : `${gr.color}88` }} />
-        </div>
-        <div className="sl-gate-status" style={{ color: cleared ? gr.color : sealed ? '#0cbd09' : `${gr.color}BB` }}>
-          {cleared ? 'GATE CLEARED' : sealed ? 'NEW GATE OPEN' : `IN PROGRESS ${p}%`}
-        </div>
+        {!allLearned && (
+          <div className="sl-gate-bar-track">
+            <div className="sl-gate-bar-fill" style={{ width: `${p}%`, background: gateClosed ? gr.color : `${gr.color}88` }} />
+          </div>
+        )}
+        {gateClosed ? (
+          <div className="sl-gate-status" style={{ color: gr.color }}>GATE CLOSED SUCCESSFULLY</div>
+        ) : allLearned ? (
+          <button
+            onClick={e => { e.stopPropagation(); startQuiz('subject', s.id, s.title, s.icon) }}
+            style={{ width: '100%', marginTop: '0.25rem', padding: '0.5rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textAlign: 'center', boxShadow: '0 0 12px rgba(245,158,11,0.15)' }}
+          >
+            ⚔ TAKE FINAL TEST
+          </button>
+        ) : (
+          <div className="sl-gate-status" style={{ color: sealed ? '#0cbd09' : `${gr.color}BB` }}>
+            {sealed ? 'NEW GATE ACTIVATED' : `IN PROGRESS ${p}%`}
+          </div>
+        )}
       </div>
     )
   }
@@ -1176,8 +1422,8 @@ export default function DashboardPage() {
   const renderMiddle = () => {
     if (activeView === 'arena') {
       const sp = summary?.subjectProgress ?? []
-      const inProgress = sp.filter(s => s.percentage > 0 && s.percentage < 100)
-      const cleared    = sp.filter(s => s.percentage >= 100)
+      const cleared    = sp.filter(s => s.hasBadge)
+      const inProgress = sp.filter(s => s.percentage > 0 && !s.hasBadge)
       const totalConceptsDone = summary?.completedConcepts ?? 0
       const totalConceptsAll  = summary?.totalConcepts ?? 0
       const overallPct = totalConceptsAll > 0 ? Math.round((totalConceptsDone / totalConceptsAll) * 100) : 0
@@ -1196,8 +1442,8 @@ export default function DashboardPage() {
           {/* ── Hunter overview strip ── */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.5rem' }}>
             {[
-              { label: 'SKILLS CLEARED', value: totalConceptsDone, suffix: `/ ${totalConceptsAll}`, color: '#9B6ED4' },
-              { label: 'GATES CLEARED',  value: cleared.length,    suffix: `/ ${sp.length}`,        color: '#4ADE80' },
+              { label: 'SKILLS LEARNED', value: totalConceptsDone, suffix: `/ ${totalConceptsAll}`, color: '#9B6ED4' },
+              { label: 'GATES CLOSED',  value: cleared.length,    suffix: `/ ${sp.length}`,        color: '#4ADE80' },
               { label: 'DAY STREAK',     value: streak,            suffix: streak === 1 ? 'day' : 'days', color: '#F59E0B' },
             ].map(stat => (
               <div key={stat.label} style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.625rem 0.75rem', textAlign: 'center' }}>
@@ -1238,23 +1484,42 @@ export default function DashboardPage() {
               <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>ACTIVE HUNTS</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                 {inProgress.map(s => {
-                  const gr = RANK_META[s.rank] || RANK_META['E']
+                  const allLearned = s.percentage >= 100
+                  const borderCol  = allLearned ? 'rgba(245,158,11,0.3)' : 'rgba(155,110,212,0.18)'
+                  const accentCol  = allLearned ? '#F59E0B' : '#9B6ED4'
                   return (
-                    <div key={s.subjectId} onClick={() => openSubjectPanel(s.subjectId)}
-                      style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.5rem 0.75rem', background: 'var(--bg-secondary)', border: `1px solid rgba(155,110,212,0.18)`, borderLeft: '3px solid #9B6ED4', borderRadius: 'var(--radius-sm)', cursor: 'pointer', transition: 'border-color 0.15s' }}
-                      onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(155,110,212,0.45)'}
-                      onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(155,110,212,0.18)'}>
-                      <span style={{ fontSize: '1rem', flexShrink: 0 }}>{s.icon}</span>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)' }}>{s.title}</div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginTop: '0.2rem' }}>
-                          <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${s.percentage}%`, background: '#9B6ED4', borderRadius: 2 }} />
-                          </div>
-                          <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700, flexShrink: 0 }}>{s.percentage}%</span>
+                    <div key={s.subjectId} style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                      <div onClick={() => openSubjectPanel(s.subjectId)}
+                        style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.5rem 0.75rem', background: 'var(--bg-secondary)', border: `1px solid ${borderCol}`, borderLeft: `3px solid ${accentCol}`, borderRadius: 'var(--radius-sm)', cursor: 'pointer', transition: 'border-color 0.15s' }}
+                        onMouseEnter={e => e.currentTarget.style.borderColor = allLearned ? 'rgba(245,158,11,0.5)' : 'rgba(155,110,212,0.45)'}
+                        onMouseLeave={e => e.currentTarget.style.borderColor = borderCol}>
+                        <span style={{ fontSize: '1rem', flexShrink: 0 }}>{s.icon}</span>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)' }}>{s.title}</div>
+                          {allLearned ? (
+                            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: '#F59E0B', letterSpacing: '0.04em', marginTop: '0.15rem' }}>SKILLS LEARNED</div>
+                          ) : (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginTop: '0.2rem' }}>
+                              <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                                <div style={{ height: '100%', width: `${s.percentage}%`, background: '#9B6ED4', borderRadius: 2 }} />
+                              </div>
+                              <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700, flexShrink: 0 }}>{s.percentage}%</span>
+                            </div>
+                          )}
                         </div>
+                        {allLearned ? (
+                          <button
+                            onClick={e => { e.stopPropagation(); startQuiz('subject', s.subjectId, s.title, s.icon) }}
+                            style={{ padding: '0.25rem 0.6rem', background: 'rgba(245,158,11,0.12)', border: '1.5px solid rgba(245,158,11,0.45)', borderRadius: 5, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.06em', display: 'flex', alignItems: 'center', gap: '0.3rem', flexShrink: 0, whiteSpace: 'nowrap' }}
+                          >
+                            <Trophy size={10} /> TAKE FINAL TEST
+                          </button>
+                        ) : (
+                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#9B6ED4', background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.2)', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0 }}>
+                            HUNT
+                          </span>
+                        )}
                       </div>
-                      <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#9B6ED4', background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.2)', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0 }}>HUNT</span>
                     </div>
                   )
                 })}
@@ -1345,7 +1610,14 @@ export default function DashboardPage() {
                     <div className="sl-gate-title" style={{ marginBottom: 0, fontSize: '0.875rem' }}>{r.title}</div>
                   </div>
                   <div className="sl-gate-meta">{r.subjectCount ?? '?'} gates · {r.estimatedWeeks}w · {r.roleTarget}</div>
-                  
+                  {r.allSubjectsDone && (
+                    <button
+                      onClick={e => { e.stopPropagation(); startQuiz('roadmap', r.id, r.title, r.icon) }}
+                      style={{ width: '100%', marginTop: '0.375rem', padding: '0.45rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.08em', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem' }}
+                    >
+                      <Trophy size={12} /> TAKE PATH FINAL TEST
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -1366,6 +1638,15 @@ export default function DashboardPage() {
 
   return (
     <div className="sl-dashboard-wrapper">
+      {/* ══ QUIZ INSTRUCTIONS MODAL ══ */}
+      {quizIntent && (
+        <InstructionsModal
+          intent={quizIntent}
+          onClose={() => setQuizIntent(null)}
+          onConfirm={confirmQuiz}
+        />
+      )}
+
       {/* ══ HUNTER PROFILE DRAWER ══ */}
       {avatarOpen && (
         <HunterProfileDrawer
@@ -1409,7 +1690,7 @@ export default function DashboardPage() {
           <span className="sl-alert-tag">[ SYSTEM ]</span>
           <span className="sl-alert-msg">
             {selectedConceptId
-              ? <>Skill detail loaded — complete the gate trial to master this skill.</>
+              ? <>Skill detail loaded — complete the Skill trial to master this skill.</>
               : activeView === 'gates'
               ? <>Scout mode active — <strong>{filteredSubjects.length} gates</strong> detected.</>
               : activeView === 'paths'
@@ -1431,6 +1712,7 @@ export default function DashboardPage() {
               onSkillClick={openConcept}
               selectedConceptId={selectedConceptId}
               navigate={navigate}
+              startQuiz={startQuiz}
             />
             <div className="sl-panel" style={{ overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
               <ConceptInlinePanel
@@ -1438,6 +1720,7 @@ export default function DashboardPage() {
                 navList={conceptNavList}
                 onClose={handleConceptClose}
                 navigate={navigate}
+                startQuiz={startQuiz}
               />
             </div>
           </div>
@@ -1450,18 +1733,100 @@ export default function DashboardPage() {
               <div className="sl-hunter-level-num">{level}</div>
               <div className="sl-hunter-level-label">HUNTER LEVEL</div>
               <div className="sl-power-xp">POWER: {xp.toLocaleString()} XP</div>
-              {stats.map(stat => (
-                <div key={stat.key} className="sl-stat-row">
-                  <div className="sl-stat-header">
-                    <span className="sl-stat-name">{stat.label}</span>
-                    <span className="sl-stat-value">{stat.value}</span>
+
+              {stats.map(stat => {
+                const isUntouched = stat.totalAll === 0
+                return (
+                  <div key={stat.key} className="sl-stat-row">
+                    {/* Header row: name + rank badge + pct */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.15rem' }}>
+                      <span className="sl-stat-name">{stat.label}</span>
+                      {!isUntouched && (
+                        <span className="sl-stat-value" style={{ color: stat.color }}>{stat.pct}%</span>
+                      )}
+                    </div>
+
+                    {/* Dynamic subject tags — cleared ones highlighted */}
+                    <div className="sl-stat-tags" style={{ lineHeight: 1.5 }}>
+                      {isUntouched ? (
+                        <span style={{ color: '#404860', fontSize: '0.68rem' }}>{stat.hint}</span>
+                      ) : stat.cleared.length > 0 ? (
+                        <span style={{ color: stat.color, opacity: 0.85 }}>{stat.cleared.slice(0, 2).join(' · ')}{stat.cleared.length > 2 ? ` +${stat.cleared.length - 2}` : ''}</span>
+                      ) : stat.inProgress.length > 0 ? (
+                        <span style={{ color: '#8B9AB8' }}>{stat.inProgress[0].title}</span>
+                      ) : (
+                        <span style={{ color: '#404860' }}>{stat.hint}</span>
+                      )}
+                    </div>
+
+                    {/* Progress bar */}
+                    <div className="sl-stat-track" style={{ marginBottom: isUntouched ? 0 : '0.2rem' }}>
+                      <div className="sl-stat-fill" style={{
+                        width: `${isUntouched ? 0 : stat.pct}%`,
+                        background: `linear-gradient(90deg, ${stat.color}50, ${stat.color})`,
+                        boxShadow: stat.pct > 0 ? `0 0 6px ${stat.color}55` : 'none',
+                      }} />
+                    </div>
+
+                    {/* Concepts count + next gate nudge */}
+                    {!isUntouched && (
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.56rem', color: '#404860', letterSpacing: '0.04em' }}>
+                          {stat.totalDone}/{stat.totalAll} skills
+                        </span>
+                        {stat.next && stat.pct < 100 && (
+                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: stat.color, opacity: 0.7, letterSpacing: '0.04em', cursor: 'pointer' }}
+                            onClick={() => { switchView('gates') }}>
+                            → {stat.next.title.split(' ')[0]}
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
-                  <div className="sl-stat-tags">{stat.tags}</div>
-                  <div className="sl-stat-track">
-                    <div className="sl-stat-fill" style={{ width: `${stat.value}%`, background: `linear-gradient(90deg, ${stat.color}55, ${stat.color})` }} />
-                  </div>
+                )
+              })}
+
+              {/* ── Subject Badges ── */}
+              <div style={{ marginTop: '0.875rem', paddingTop: '0.875rem', borderTop: '1px solid var(--border)' }}>
+                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '0.625rem' }}>
+                  — BADGES —
                 </div>
-              ))}
+                {!hunterStats ? (
+                  <div style={{ display: 'flex', justifyContent: 'center', padding: '0.5rem' }}><div className="loading-spinner" style={{ width: 14, height: 14 }} /></div>
+                ) : (hunterStats.badges.length === 0 && (hunterStats.roadmapBadges ?? []).length === 0) ? (
+                  <div style={{ textAlign: 'center', padding: '0.5rem 0' }}>
+                    <div style={{ fontSize: '1rem', marginBottom: '0.2rem' }}>🔒</div>
+                    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#30384A', letterSpacing: '0.06em' }}>NO BADGES YET</div>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                    {[...hunterStats.badges, ...(hunterStats.roadmapBadges ?? [])].map(b => {
+                      const key = b.subjectId ?? b.roadmapId
+                      const scorePct = b.total > 0 ? Math.round((b.score / b.total) * 100) : 0
+                      const isRoadmap = b.type === 'ROADMAP'
+                      const badgeLabel = isRoadmap
+                        ? (b.badge === 'JOB_READY' ? 'JOB READY' : 'INTERVIEW READY')
+                        : null
+                      return (
+                        <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.5rem', background: `${b.color || '#9B6ED4'}0D`, border: `1px solid ${b.color || '#9B6ED4'}25`, borderRadius: 7 }}>
+                          <div style={{ fontSize: '0.95rem', flexShrink: 0 }}>{b.icon || (isRoadmap ? '🗺️' : '📚')}</div>
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.72rem', color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{b.title}</div>
+                            {isRoadmap ? (
+                              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: b.badge === 'JOB_READY' ? '#F59E0B' : '#60A5FA', letterSpacing: '0.04em', marginTop: '0.15rem' }}>{badgeLabel}</div>
+                            ) : (
+                              <div style={{ height: 3, background: 'rgba(255,255,255,0.05)', borderRadius: 2, marginTop: '0.2rem', overflow: 'hidden' }}>
+                                <div style={{ height: '100%', width: `${scorePct}%`, background: b.color || '#9B6ED4', borderRadius: 2 }} />
+                              </div>
+                            )}
+                          </div>
+                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: b.color || '#9B6ED4', flexShrink: 0 }}>{b.score}/{b.total}</span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* ═ MIDDLE: gate views ═ */}
@@ -1484,26 +1849,7 @@ export default function DashboardPage() {
                 ))}
                 <div className="sl-quest-summary">{doneCount} / {DAILY_QUESTS.length} QUESTS DONE · +{earnedXp} XP</div>
               </div>
-              <div className="sl-panel" style={{ flex: 1 }}>
-                <div className="sl-panel-title">Rank Progression</div>
-                {RANK_LADDER.map((r, i) => {
-                  const isCurrent = r.label === `${rank.label}-RANK`
-                  const isPast    = xp >= r.min && !isCurrent
-                  return (
-                    <div key={r.label} className={`sl-rank-item${isCurrent ? ' current' : ''}`}>
-                      <div className="sl-rank-item-letter" style={{ background: r.bg, border: `1.5px solid ${r.color}40` }}>
-                        <span style={{ color: r.color }}>{r.letter}</span>
-                      </div>
-                      <div className="sl-rank-item-info">
-                        <div className="sl-rank-item-name" style={{ color: isCurrent ? r.color : isPast ? 'var(--text-muted)' : 'var(--text-secondary)' }}>{r.label}</div>
-                        <div className="sl-rank-item-xp">{isCurrent ? `${xp.toLocaleString()} / ${RANK_LADDER[i+1]?.min.toLocaleString() ?? '∞'} XP` : `${r.min.toLocaleString()} XP`}</div>
-                      </div>
-                      {isCurrent && <span className="sl-rank-now">NOW</span>}
-                      {isPast    && <CheckCircle size={13} color="#4ADE80" />}
-                    </div>
-                  )
-                })}
-              </div>
+              
             </div>
           </div>
         )}
@@ -1516,6 +1862,7 @@ export default function DashboardPage() {
           onClose={closeRoadmapPanel}
           onGateClick={openSubjectPanel}
           navigate={navigate}
+          startQuiz={startQuiz}
         />
       )}
 
@@ -1529,6 +1876,7 @@ export default function DashboardPage() {
           onSkillClick={openConcept}
           selectedConceptId={selectedConceptId}
           navigate={navigate}
+          startQuiz={startQuiz}
         />
       )}
 

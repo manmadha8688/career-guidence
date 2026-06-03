@@ -41,6 +41,7 @@ export const searchConcepts   = (q)         => api.get(`/concepts/search?q=${enc
 export const completeConcept    = (id)      => api.post(`/progress/concept/${id}/complete`)
 export const uncompleteConcept  = (id)      => api.delete(`/progress/concept/${id}/uncomplete`)
 export const getProgressSummary = ()        => api.get('/progress/summary')
+export const getHunterStats     = ()        => api.get('/progress/hunter-stats')
 
 // ─── ROADMAPS ────────────────────────────────
 export const getRoadmaps        = ()        => api.get('/roadmaps')

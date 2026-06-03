@@ -227,12 +227,21 @@ export default function LandingPage() {
               }}
             >
               {link.label}
-              {link.live && (
+              {link.live ? (
                 <span style={{
                   width: 5, height: 5, borderRadius: '50%',
                   background: '#4ADE80', boxShadow: '0 0 6px #4ADE80',
                   display: 'inline-block',
                 }} />
+              ) : (
+                <span style={{
+                  fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.04em',
+                  color: '#64748B', background: 'rgba(100,116,139,0.12)',
+                  border: '1px solid rgba(100,116,139,0.2)',
+                  padding: '0.05rem 0.35rem', borderRadius: 3,
+                }}>
+                  SOON
+                </span>
               )}
             </div>
           ))}
