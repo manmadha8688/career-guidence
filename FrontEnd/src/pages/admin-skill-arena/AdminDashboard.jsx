@@ -38,9 +38,11 @@ export default function AdminDashboard() {
 
   const cards = [
     { icon: <Users size={22} />, label: 'Total Users', value: stats?.totalUsers ?? 0, bg: '#EEF2FF', color: '#4F46E5', link: '/admin-skill-arena/users' },
-    { icon: <BookOpen size={22} />, label: 'Subjects', value: stats?.totalSubjects ?? 0, bg: '#D1FAE5', color: '#059669', link: '/admin-skill-arena/subjects' },
+    { icon: <TrendingUp size={22} />, label: 'Registered Students', value: stats?.totalStudents ?? 0, bg: '#D1FAE5', color: '#059669', link: '/admin-skill-arena/users' },
+    { icon: <Users size={22} />, label: 'Guest Visits', value: stats?.totalGuests ?? 0, bg: '#FEF9C3', color: '#CA8A04', link: '/admin-skill-arena/users' },
+    { icon: <BookOpen size={22} />, label: 'Subjects', value: stats?.totalSubjects ?? 0, bg: '#F3E8FF', color: '#7C3AED', link: '/admin-skill-arena/subjects' },
     { icon: <Layers size={22} />, label: 'Concepts', value: stats?.totalConcepts ?? 0, bg: '#FEF3C7', color: '#D97706', link: '/admin-skill-arena/concepts' },
-    { icon: <Map size={22} />, label: 'Roadmaps', value: stats?.totalRoadmaps ?? 0, bg: '#F3E8FF', color: '#7C3AED', link: '/admin-skill-arena/roadmaps' },
+    { icon: <Map size={22} />, label: 'Roadmaps', value: stats?.totalRoadmaps ?? 0, bg: '#DBEAFE', color: '#1D4ED8', link: '/admin-skill-arena/roadmaps' },
   ]
 
   return (
@@ -87,7 +89,11 @@ export default function AdminDashboard() {
                       <div className="table-name">{u.fullName}</div>
                       <div className="text-xs text-muted">{u.email}</div>
                     </td>
-                    <td><span className={`badge ${u.role === 'ADMIN' ? 'badge-admin' : 'badge-student'}`}>{u.role}</span></td>
+                    <td>
+                      <span className={`badge ${u.role === 'ADMIN' ? 'badge-admin' : u.role === 'GUEST' ? 'badge-warning' : 'badge-student'}`}>
+                        {u.role}
+                      </span>
+                    </td>
                     <td className="text-muted text-sm">{u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—'}</td>
                   </tr>
                 ))}
