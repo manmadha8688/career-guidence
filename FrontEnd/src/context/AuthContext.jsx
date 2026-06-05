@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
     localStorage.clear()
     if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
     setUser(null)
-    window.location.href = '/login'
+    window.location.href = '/'
   }
 
   return (

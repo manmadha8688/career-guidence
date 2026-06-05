@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { guestLogin } from '../api/api'
+import { guestLogin, submitFeedback } from '../api/api'
 import toast from 'react-hot-toast'
 import {
   Swords, BookOpen, Brain, Briefcase,
   ChevronRight, Trophy, Target,
-  CheckCircle, ArrowRight, Zap, Ghost,
+  CheckCircle, ArrowRight, Zap, Ghost, Menu, X as XIcon,
 } from 'lucide-react'
 
 const C = {
@@ -157,12 +157,19 @@ const PROOF_POINTS = [
 ]
 
 export default function LandingPage() {
-  const { user } = useAuth()
+  const { user, login, logout } = useAuth()
   const navigate = useNavigate()
   const [hoveredStep, setHoveredStep] = useState(null)
   const [guestLoading, setGuestLoading] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const handleEnter = () => navigate(user ? '/skill-arena/dashboard' : '/login')
+  // Feedback state
+  const [fb, setFb] = useState({ rating: 0, experience: '', category: '', categoryNote: '', isUseful: null })
+  const [fbHover, setFbHover] = useState(0)
+  const [fbLoading, setFbLoading] = useState(false)
+  const [fbDone, setFbDone] = useState(false)
+
+  const handleEnter = () => navigate(user ? '/skill-arena/dashboard' : '/login?redirect=/skill-arena/dashboard')
   const scrollToHow = () => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })
 
   const handleGuest = async () => {
@@ -188,7 +195,7 @@ export default function LandingPage() {
     }}>
 
       {/* ── Navbar ─────────────────────────────────────────── */}
-      <nav style={{
+      <nav className="lp-navbar" style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '0 2rem', height: 64,
@@ -212,7 +219,7 @@ export default function LandingPage() {
         </div>
 
         {/* Section links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.125rem' }}>
+        <div className="lp-nav-links" style={{ display: 'flex', alignItems: 'center', gap: '0.125rem' }}>
           {NAV_LINKS.map(link => (
             <div
               key={link.label}
@@ -247,28 +254,99 @@ export default function LandingPage() {
           ))}
         </div>
 
-        {/* Auth */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        {/* Desktop auth */}
+        <div className="lp-nav-auth" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           {user ? (
-            <button
-              onClick={handleEnter}
-              style={{ ...primaryBtn, padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}
-            >
-              Enter Arena <ChevronRight size={14} />
-            </button>
+            <>
+              <button
+                onClick={logout}
+                className="lp-signout-btn"
+                style={{ ...ghostBtn, fontSize: '0.8125rem', color: '#EF4444', borderColor: 'rgba(239,68,68,0.25)' }}
+              >
+                Sign Out
+              </button>
+              <button onClick={handleEnter} style={{ ...primaryBtn, padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}>
+                Enter Arena <ChevronRight size={14} />
+              </button>
+            </>
           ) : (
             <>
-              <Link to="/login" style={ghostBtn}>Sign In</Link>
-              <button
-                onClick={handleEnter}
-                style={{ ...primaryBtn, padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}
-              >
+              <Link to="/login?redirect=/" style={ghostBtn}>Sign In</Link>
+              <button onClick={handleEnter} style={{ ...primaryBtn, padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}>
                 Get Started Free <ChevronRight size={14} />
               </button>
             </>
           )}
         </div>
+
+        {/* Mobile: hamburger button (CSS shows only on mobile) */}
+        <button
+          className="lp-mob-menu-btn"
+          onClick={() => setMobileMenuOpen(o => !o)}
+          style={{ background: 'transparent', border: '1px solid rgba(155,110,212,0.3)', borderRadius: 8, color: '#C4B5FD', width: 38, height: 38, alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
+        >
+          {mobileMenuOpen ? <XIcon size={18} /> : <Menu size={18} />}
+        </button>
       </nav>
+
+      {/* Mobile nav dropdown */}
+      {mobileMenuOpen && (
+        <>
+          <div onClick={() => setMobileMenuOpen(false)}
+            style={{ position: 'fixed', inset: 0, zIndex: 98, background: 'rgba(0,0,0,0.5)' }} />
+          <div style={{ position: 'fixed', top: 64, left: 0, right: 0, zIndex: 99, background: 'rgba(9,14,28,0.98)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(155,110,212,0.2)', padding: '0.75rem 1rem 1.25rem' }}>
+            {/* Nav links */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', marginBottom: '1rem' }}>
+              {NAV_LINKS.map(link => (
+                <button key={link.label}
+                  onClick={() => { if (link.live) { handleEnter(); setMobileMenuOpen(false) } }}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '0.875rem 1rem', background: 'transparent', border: 'none', borderRadius: 10, color: link.live ? '#C4B5FD' : '#64748B', fontWeight: link.live ? 700 : 400, fontSize: '1rem', cursor: link.live ? 'pointer' : 'default', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                  <span>{link.label}</span>
+                  {link.live ? (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.72rem', color: '#4ADE80', fontWeight: 700 }}>
+                      <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#4ADE80', boxShadow: '0 0 6px #4ADE80', display: 'inline-block' }} /> LIVE
+                    </span>
+                  ) : (
+                    <span style={{ fontSize: '0.62rem', color: '#64748B', background: 'rgba(100,116,139,0.12)', border: '1px solid rgba(100,116,139,0.2)', padding: '0.1rem 0.45rem', borderRadius: 4, letterSpacing: '0.04em', fontWeight: 700 }}>SOON</span>
+                  )}
+                </button>
+              ))}
+            </div>
+            {/* Auth buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+              {user ? (
+                <>
+                  <button onClick={() => { handleEnter(); setMobileMenuOpen(false) }}
+                    style={{ ...primaryBtn, width: '100%', justifyContent: 'center', padding: '0.875rem' }}>
+                    <Swords size={16} /> Enter Arena
+                  </button>
+                  <button onClick={logout}
+                    style={{ ...ghostBtn, width: '100%', justifyContent: 'center', padding: '0.75rem', color: '#EF4444', borderColor: 'rgba(239,68,68,0.25)' }}>
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button onClick={() => { handleEnter(); setMobileMenuOpen(false) }}
+                    style={{ ...primaryBtn, width: '100%', justifyContent: 'center', padding: '0.875rem' }}>
+                    <Swords size={16} /> Get Started Free
+                  </button>
+                  <Link to="/login?redirect=/"
+                    style={{ ...ghostBtn, width: '100%', justifyContent: 'center', padding: '0.75rem', textAlign: 'center' }}
+                    onClick={() => setMobileMenuOpen(false)}>
+                    Sign In
+                  </Link>
+                  <button onClick={() => { handleGuest(); setMobileMenuOpen(false) }}
+                    disabled={guestLoading}
+                    style={{ ...ghostBtn, width: '100%', justifyContent: 'center', padding: '0.75rem' }}>
+                    <Ghost size={14} /> {guestLoading ? 'Starting…' : 'Try as Guest'}
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </>
+      )}
 
       {/* ── Hero ───────────────────────────────────────────── */}
       <section style={{
@@ -377,7 +455,7 @@ export default function LandingPage() {
           </div>
 
           {/* Stats strip */}
-          <div style={{
+          <div className="lp-stats-strip" style={{
             display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
             marginTop: '4rem',
             background: C.bgCard, borderRadius: 16,
@@ -676,8 +754,134 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ── Feedback ───────────────────────────────────────── */}
+      <section id="feedback" style={{ padding: '4rem 1.5rem', background: 'linear-gradient(180deg, transparent, rgba(155,110,212,0.04) 50%, transparent)' }}>
+        <div style={{ maxWidth: 560, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <p style={{ color: C.primary, fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Your Voice</p>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2rem)', fontWeight: 800, letterSpacing: '-0.02em', color: C.text, margin: '0 0 0.5rem' }}>Share Your Experience</h2>
+            <p style={{ color: C.sub, fontSize: '0.9rem', margin: 0 }}>Help us improve LearnToEarn for every student.</p>
+          </div>
+
+          {fbDone ? (
+            <div style={{ textAlign: 'center', padding: '2.5rem', background: C.bgCard, border: '1px solid rgba(74,222,128,0.25)', borderRadius: 20 }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🎉</div>
+              <div style={{ fontWeight: 700, fontSize: '1.125rem', color: '#4ADE80', marginBottom: '0.375rem' }}>Thank you for your feedback!</div>
+              <div style={{ color: C.muted, fontSize: '0.875rem' }}>Your response helps us build a better platform.</div>
+            </div>
+          ) : (
+            <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 20, padding: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
+
+              {/* Star Rating */}
+              <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, marginBottom: '0.625rem' }}>Overall Rating</div>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  {[1,2,3,4,5].map(star => (
+                    <button key={star}
+                      onClick={() => setFb(p => ({ ...p, rating: star }))}
+                      onMouseEnter={() => setFbHover(star)}
+                      onMouseLeave={() => setFbHover(0)}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.25rem', fontSize: '2rem', lineHeight: 1, transition: 'transform 0.1s', transform: (fbHover || fb.rating) >= star ? 'scale(1.15)' : 'scale(1)' }}>
+                      <span style={{ color: (fbHover || fb.rating) >= star ? '#F59E0B' : 'rgba(255,255,255,0.15)' }}>★</span>
+                    </button>
+                  ))}
+                  {fb.rating > 0 && (
+                    <span style={{ alignSelf: 'center', marginLeft: '0.5rem', fontSize: '0.8rem', color: C.muted }}>
+                      {['','Poor','Fair','Good','Great','Excellent'][fb.rating]}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Your Experience */}
+              <div style={{ marginBottom: '1.25rem' }}>
+                <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, marginBottom: '0.5rem' }}>Your Experience</div>
+                <textarea
+                  placeholder="Tell us what you loved, what was confusing, or what you'd like to see improved…"
+                  value={fb.experience}
+                  onChange={e => setFb(p => ({ ...p, experience: e.target.value }))}
+                  rows={4}
+                  style={{ width: '100%', padding: '0.75rem 1rem', background: '#080D1A', border: `1.5px solid ${C.border}`, borderRadius: 10, color: C.text, fontSize: '0.9rem', outline: 'none', resize: 'vertical', fontFamily: 'inherit', lineHeight: 1.65, boxSizing: 'border-box' }}
+                  onFocus={e => e.target.style.borderColor = 'rgba(155,110,212,0.55)'}
+                  onBlur={e => e.target.style.borderColor = C.border}
+                />
+              </div>
+
+              {/* Category dropdown (optional) → opens specific textarea on select */}
+              <div style={{ marginBottom: '1.25rem' }}>
+                <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, marginBottom: '0.5rem' }}>
+                  Category <span style={{ color: C.muted, fontWeight: 400 }}>(optional)</span>
+                </div>
+                <select
+                  value={fb.category}
+                  onChange={e => setFb(p => ({ ...p, category: e.target.value, categoryNote: '' }))}
+                  style={{ width: '100%', padding: '0.75rem 1rem', background: '#080D1A', border: `1.5px solid ${C.border}`, borderRadius: 10, color: fb.category ? C.text : C.muted, fontSize: '0.9rem', outline: 'none', fontFamily: 'inherit', cursor: 'pointer', appearance: 'none', WebkitAppearance: 'none' }}
+                  onFocus={e => e.target.style.borderColor = 'rgba(155,110,212,0.55)'}
+                  onBlur={e => e.target.style.borderColor = C.border}
+                >
+                  <option value="" style={{ background: '#080D1A', color: C.muted }}>— Select a category —</option>
+                  <option value="Bug"        style={{ background: '#080D1A', color: C.text }}>🐛 Bug</option>
+                  <option value="Suggestion" style={{ background: '#080D1A', color: C.text }}>💡 Suggestion</option>
+                  <option value="Content"    style={{ background: '#080D1A', color: C.text }}>📚 Content</option>
+                  <option value="Other"      style={{ background: '#080D1A', color: C.text }}>💬 Other</option>
+                </select>
+
+                {/* Specific textarea appears after category selection */}
+                {fb.category && (
+                  <textarea
+                    autoFocus
+                    placeholder={
+                      fb.category === 'Bug'        ? 'Describe the bug — what happened and how to reproduce it…' :
+                      fb.category === 'Suggestion' ? 'What would you like us to add or improve?…' :
+                      fb.category === 'Content'    ? 'Which concept, quiz, or roadmap needs improvement?…' :
+                                                     'Anything else you would like to share…'
+                    }
+                    value={fb.categoryNote || ''}
+                    onChange={e => setFb(p => ({ ...p, categoryNote: e.target.value }))}
+                    rows={3}
+                    style={{ width: '100%', marginTop: '0.625rem', padding: '0.75rem 1rem', background: '#080D1A', border: `1.5px solid rgba(155,110,212,0.4)`, borderRadius: 10, color: C.text, fontSize: '0.875rem', outline: 'none', resize: 'vertical', fontFamily: 'inherit', lineHeight: 1.65, boxSizing: 'border-box' }}
+                    onFocus={e => e.target.style.borderColor = 'rgba(155,110,212,0.65)'}
+                    onBlur={e => e.target.style.borderColor = 'rgba(155,110,212,0.4)'}
+                  />
+                )}
+              </div>
+
+              {/* Useful? */}
+              <div style={{ marginBottom: '1.75rem' }}>
+                <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, marginBottom: '0.625rem' }}>Was LearnToEarn useful to you?</div>
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  {[{ val: true, label: '👍 Yes, definitely', color: '#4ADE80' }, { val: false, label: '👎 Not really', color: '#EF4444' }].map(opt => (
+                    <button key={String(opt.val)}
+                      onClick={() => setFb(p => ({ ...p, isUseful: p.isUseful === opt.val ? null : opt.val }))}
+                      style={{ flex: 1, padding: '0.7rem', borderRadius: 10, border: `1.5px solid ${fb.isUseful === opt.val ? opt.color + '80' : C.border}`, background: fb.isUseful === opt.val ? opt.color + '12' : 'transparent', color: fb.isUseful === opt.val ? opt.color : C.muted, fontSize: '0.875rem', fontWeight: fb.isUseful === opt.val ? 700 : 400, cursor: 'pointer', transition: 'all 0.15s' }}>
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Submit */}
+              <button
+                disabled={fbLoading || fb.rating === 0}
+                onClick={async () => {
+                  if (fb.rating === 0) { toast.error('Please give a star rating'); return }
+                  setFbLoading(true)
+                  try {
+                    await submitFeedback({ rating: fb.rating, experience: fb.experience, category: fb.category || null, categoryNote: fb.categoryNote || null, isUseful: fb.isUseful })
+                    setFbDone(true)
+                  } catch { toast.error('Could not submit feedback. Try again.') }
+                  finally { setFbLoading(false) }
+                }}
+                style={{ width: '100%', padding: '0.9rem', borderRadius: 10, border: 'none', background: fb.rating === 0 ? 'rgba(155,110,212,0.2)' : 'linear-gradient(135deg, #7C3AED, #9B6ED4)', color: fb.rating === 0 ? C.muted : '#fff', fontSize: '1rem', fontWeight: 700, cursor: fb.rating === 0 ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'opacity 0.15s', opacity: fbLoading ? 0.75 : 1, fontFamily: 'inherit' }}>
+                {fbLoading ? <><span className="loading-spinner" style={{ width: 18, height: 18 }} /> Submitting…</> : 'Submit Feedback'}
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* ── Footer ─────────────────────────────────────────── */}
-      <footer style={{
+      <footer className="lp-footer" style={{
         borderTop: '1px solid rgba(255,255,255,0.05)',
         padding: '1.75rem 2rem',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',

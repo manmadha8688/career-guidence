@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, ChevronRight, Layers, HelpCircle
+  Users, ChevronRight, Layers, HelpCircle, MessageSquare
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -22,6 +22,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/admin-skill-arena/concepts',  icon: <Layers size={18} />,          label: 'Concepts' },
     { to: '/admin-skill-arena/roadmaps',  icon: <Map size={18} />,             label: 'Roadmaps' },
     { to: '/admin-skill-arena/questions', icon: <HelpCircle size={18} />,      label: 'Questions' },
+    { to: '/admin-skill-arena/feedbacks', icon: <MessageSquare size={18} />,   label: 'Feedbacks' },
   ]
 
   const links = isAdmin ? adminLinks : studentLinks
