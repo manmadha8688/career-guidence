@@ -18,12 +18,15 @@ import AdminSubjects from './pages/admin-skill-arena/AdminSubjects'
 import AdminConcepts from './pages/admin-skill-arena/AdminConcepts'
 import AdminRoadmaps from './pages/admin-skill-arena/AdminRoadmaps'
 import AdminQuestions from './pages/admin-skill-arena/AdminQuestions'
+import AdminFeedbacks from './pages/admin-skill-arena/AdminFeedbacks'
+import FeedbackNudge from './components/FeedbackNudge'
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+        <FeedbackNudge />
         <Routes>
           {/* Landing */}
           <Route path="/" element={<LandingPage />} />
@@ -51,6 +54,7 @@ function App() {
           <Route path="/admin-skill-arena/concepts"     element={<ProtectedRoute adminOnly><AdminConcepts /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/roadmaps"     element={<ProtectedRoute adminOnly><AdminRoadmaps /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/questions"    element={<ProtectedRoute adminOnly><AdminQuestions /></ProtectedRoute>} />
+          <Route path="/admin-skill-arena/feedbacks"    element={<ProtectedRoute adminOnly><AdminFeedbacks /></ProtectedRoute>} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

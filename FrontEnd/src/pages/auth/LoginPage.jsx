@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Swords, Target, Zap, Trophy } from 'lucide-react'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Eye, EyeOff, Swords, Target, Zap, Trophy, ChevronLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { loginUser, guestLogin } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -46,6 +46,8 @@ export default function LoginPage() {
   const [focused, setFocused] = useState(null)
   const { login } = useAuth()
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const redirectTo = searchParams.get('redirect') || '/skill-arena/dashboard'
 
   const handleGuest = async () => {
     setGuestLoading(true)
@@ -68,7 +70,8 @@ export default function LoginPage() {
     try {
       const { data } = await loginUser(form)
       login(data.token, data.user)
-      data.user.role === 'ADMIN' ? navigate('/admin-skill-arena') : navigate('/skill-arena/dashboard')
+      if (data.user.role === 'ADMIN') navigate('/admin-skill-arena')
+      else navigate(redirectTo)
     } catch (err) {
       toast.error(err.response?.data?.error || 'Login failed')
     } finally {
@@ -99,7 +102,7 @@ export default function LoginPage() {
     }}>
 
       {/* ── Left panel ──────────────────────────────────── */}
-      <div style={{
+      <div className="ap-left" style={{
         flex: 1, display: 'flex', flexDirection: 'column',
         justifyContent: 'center', alignItems: 'center',
         padding: '3rem 2.5rem',
@@ -117,7 +120,7 @@ export default function LoginPage() {
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 420, width: '100%' }}>
 
           {/* Logo */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '2.5rem' }}>
+          <div onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '2.5rem', cursor: 'pointer' }}>
             <div style={{
               width: 42, height: 42, borderRadius: 10,
               background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)',
@@ -186,13 +189,26 @@ export default function LoginPage() {
       </div>
 
       {/* ── Right panel / Form ──────────────────────────── */}
-      <div style={{
+      <div className="ap-right" style={{
         width: 480, flexShrink: 0,
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: '3rem 2.5rem',
         background: C.bgCard,
         borderLeft: '1px solid rgba(155,110,212,0.08)',
       }}>
+        {/* Back button */}
+        <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', background: 'none', border: 'none', color: C.muted, fontSize: '0.8125rem', cursor: 'pointer', padding: 0, marginBottom: '1.75rem' }}>
+          <ChevronLeft size={15} /> Back to home
+        </button>
+
+        {/* Mobile-only logo */}
+        <div className="ap-mobile-logo" onClick={() => navigate('/')} style={{ display: 'none', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', cursor: 'pointer' }}>
+          <div style={{ width: 36, height: 36, borderRadius: 9, background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px rgba(155,110,212,0.4)' }}>
+            <Swords size={18} color="#fff" />
+          </div>
+          <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.03em', ...gradText }}>LearnToEarn</span>
+        </div>
+
         <h1 style={{ fontSize: '1.875rem', fontWeight: 800, color: C.text, marginBottom: '0.375rem', letterSpacing: '-0.025em' }}>
           Welcome back
         </h1>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase } from 'lucide-react'
+import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { registerUser } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -96,7 +96,7 @@ export default function RegisterPage() {
     }}>
 
       {/* ── Left panel ──────────────────────────────────── */}
-      <div style={{
+      <div className="ap-left" style={{
         flex: 1, display: 'flex', flexDirection: 'column',
         justifyContent: 'center', alignItems: 'center',
         padding: '3rem 2.5rem',
@@ -114,7 +114,7 @@ export default function RegisterPage() {
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 420, width: '100%' }}>
 
           {/* Logo */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '2.5rem' }}>
+          <div onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '2.5rem', cursor: 'pointer' }}>
             <div style={{
               width: 42, height: 42, borderRadius: 10,
               background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)',
@@ -169,7 +169,7 @@ export default function RegisterPage() {
       </div>
 
       {/* ── Right panel / Form ──────────────────────────── */}
-      <div style={{
+      <div className="ap-right" style={{
         width: 500, flexShrink: 0,
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: '2.5rem',
@@ -177,6 +177,19 @@ export default function RegisterPage() {
         borderLeft: '1px solid rgba(155,110,212,0.08)',
         overflowY: 'auto',
       }}>
+        {/* Back button */}
+        <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', background: 'none', border: 'none', color: C.muted, fontSize: '0.8125rem', cursor: 'pointer', padding: 0, marginBottom: '1.75rem' }}>
+          <ChevronLeft size={15} /> Back to home
+        </button>
+
+        {/* Mobile-only logo */}
+        <div className="ap-mobile-logo" onClick={() => navigate('/')} style={{ display: 'none', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', cursor: 'pointer' }}>
+          <div style={{ width: 36, height: 36, borderRadius: 9, background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px rgba(155,110,212,0.4)' }}>
+            <Swords size={18} color="#fff" />
+          </div>
+          <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.03em', ...gradText }}>LearnToEarn</span>
+        </div>
+
         <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: C.text, marginBottom: '0.375rem', letterSpacing: '-0.025em' }}>
           Create your account
         </h1>

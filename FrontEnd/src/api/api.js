@@ -93,4 +93,8 @@ export const getQuizStatus     = (type, refId)     => api.get(`/quiz/${type}/${r
 export const getSubjectStatus  = (subjectId)       => api.get(`/quiz/subject/${subjectId}/status`)
 export const getRoadmapStatus  = (roadmapId)       => api.get(`/quiz/roadmap/${roadmapId}/status`)
 
+// ─── FEEDBACK ─────────────────────────────────────────
+export const submitFeedback = (data) => api.post('/feedback', data)
+export const getAllFeedbacks = ()     => api.get('/feedback')
+
 export default api

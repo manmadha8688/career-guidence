@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2 } from 'lucide-react'
+import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2, Menu } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus,
   getSubjects, getSubject, getConcept, getQuizStatus,
@@ -220,6 +220,11 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
   const [quizStatus, setQuizStatus] = useState(null)
   const [loading, setLoading] = useState(true)
   const [tab, setTab]         = useState('simple')
+  const tipRef      = useRef(null)
+  const mistakesRef = useRef(null)
+  const quizRef     = useRef(null)
+
+  const scrollTo = (ref) => ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   useEffect(() => {
     setLoading(true); setTab('simple')
@@ -258,16 +263,40 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
         <div style={{ flex: 1, minWidth: 0 }}>
           <div className="sl-concept-inline-title">{concept.title}</div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexShrink: 0 }}>
-          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: 'var(--text-muted)' }}>
-            <Clock size={11} style={{ display: 'inline', marginRight: 3 }} />
-            {concept.estimatedMinutes}m
-          </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          
+          
+          {concept.tip && (
+            <button onClick={() => scrollTo(tipRef)} style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.80rem', letterSpacing: '0.07em', padding: '0.18rem 0.55rem', borderRadius: 20, border: '1px solid rgba(245,158,11,0.35)', background: 'rgba(245,158,11,0.07)', color: '#F59E0B', cursor: 'pointer', transition: 'background 0.15s' }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(245,158,11,0.22)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'rgba(245,158,11,0.07)'}>
+              ⚡ TIP
+            </button>
+          )}
+          {concept.commonMistakes?.length > 0 && (
+            <button onClick={() => scrollTo(mistakesRef)} style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', letterSpacing: '0.07em', padding: '0.18rem 0.55rem', borderRadius: 20, border: '1px solid rgba(239,68,68,0.35)', background: 'rgba(239,68,68,0.07)', color: '#EF4444', cursor: 'pointer', transition: 'background 0.15s' }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,0.22)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,0.07)'}>
+              ⚠ MISTAKES
+            </button>
+          )}
+          <button onClick={() => scrollTo(quizRef)} style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', letterSpacing: '0.07em', padding: '0.18rem 0.55rem', borderRadius: 20, border: '1px solid rgba(155,110,212,0.35)', background: 'rgba(155,110,212,0.07)', color: 'var(--primary)', cursor: 'pointer', transition: 'background 0.15s' }}
+            onMouseEnter={e => e.currentTarget.style.background = 'rgba(155,110,212,0.22)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'rgba(155,110,212,0.07)'}>
+            ⚔ TEST
+          </button>
+
           {concept.completed && (
-            <span className="badge badge-cleared" style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.06em' }}>
+            <span className="badge badge-cleared" style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.06em' }}>
               <CheckCircle size={9} style={{ marginRight: 3 }} /> CLEARED
             </span>
           )}
+
+
+          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '1rem', color: 'var(--text-muted)' }}>
+            <Clock size={11} style={{ display: 'inline', marginRight: 3 }} />
+            {concept.estimatedMinutes}m
+          </span>
         </div>
       </div>
 
@@ -362,7 +391,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
 
         {/* Tip */}
         {concept.tip && (
-          <div className="concept-tip-box">
+          <div ref={tipRef} className="concept-tip-box">
             <div className="concept-tip-label">⚡ Hunter Tip</div>
             <p className="concept-tip-text">{concept.tip}</p>
           </div>
@@ -370,7 +399,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
 
         {/* Common Mistakes */}
         {concept.commonMistakes?.length > 0 && (
-          <div>
+          <div ref={mistakesRef}>
             <div className="concept-section-heading" style={{ marginBottom: '0.5rem' }}>Common Mistakes</div>
             <div className="concept-mistakes-list">
               {concept.commonMistakes.map((m, i) => (
@@ -402,7 +431,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
         )}
 
         {/* Quiz status — auto-cleared after passing, no manual button needed */}
-        <div style={{ marginTop: '0.25rem' }}>
+        <div ref={quizRef} style={{ marginTop: '0.25rem' }}>
           {isMastered ? (
             <div style={{ border: '1.5px solid #4ADE8055', borderRadius: 'var(--radius-md)', padding: '1rem', background: 'rgba(74,222,128,0.05)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
@@ -861,7 +890,7 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
 
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 1.25rem', borderBottom: '1px solid rgba(155,110,212,0.15)', position: 'sticky', top: 0, background: '#090E1C', zIndex: 1 }}>
-          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.14em', color: '#9B6ED4' }}>[ HUNTER PROFILE ]</span>
+          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.14em', color: '#9B6ED4' }}>[ HUNTER INSTRUCTIONS ]</span>
           <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#64748B', cursor: 'pointer', padding: '0.25rem', display: 'flex', borderRadius: 4 }}>
             <X size={16} />
           </button>
@@ -869,34 +898,19 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
 
         <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '1.75rem', flex: 1 }}>
 
-          {/* ── Hunter Card ── */}
-          <div style={{ background: 'rgba(155,110,212,0.07)', border: '1px solid rgba(155,110,212,0.2)', borderRadius: 12, padding: '1.125rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', marginBottom: '1rem' }}>
-              <div style={{ width: 52, height: 52, borderRadius: '50%', background: user?.avatarColor || '#9B6ED4', border: `2.5px solid ${rank.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '1.1rem', color: '#fff', flexShrink: 0, boxShadow: `0 0 16px ${rank.color}44` }}>
-                {initials}
+          {/* ── About ── */}
+          <div>
+            <SectionTitle>ABOUT LEARNTOEARN</SectionTitle>
+            <div style={{ padding: '0.875rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10 }}>
+              <p style={{ fontSize: '0.8125rem', color: '#8B9AB8', lineHeight: 1.75, margin: '0 0 0.625rem' }}>
+                LearnToEarn is a Solo Leveling–inspired learning platform where you level up your tech skills like a player. Learn concept by concept, earn XP and badges as proof, and follow structured roadmaps to go from beginner to job-ready.
+                </p>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#64748B', letterSpacing: '0.06em' }}>
+                Skills Arena · Resume · AI · Jobs
               </div>
-              <div>
-                <div style={{ fontWeight: 700, fontSize: '1rem', color: '#E2E8F0', marginBottom: '0.25rem' }}>{user?.fullName}</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.62rem' }}>{rank.label}-RANK</span>
-                  {user?.role === 'GUEST' && (
-                    <span style={{ fontSize: '0.6rem', fontWeight: 700, color: '#64748B', background: 'rgba(100,116,139,0.15)', padding: '0.1rem 0.45rem', borderRadius: 4, letterSpacing: '0.05em', border: '1px solid rgba(100,116,139,0.25)' }}>GUEST</span>
-                  )}
-                </div>
-              </div>
-            </div>
-            {/* XP bar */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.375rem' }}>
-              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: '#F59E0B' }}>POWER: {xp.toLocaleString()} XP</span>
-              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: '#64748B' }}>LVL {level}</span>
-            </div>
-            <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
-              <div style={{ height: '100%', width: `${rank.progress}%`, background: `linear-gradient(90deg, ${rank.color}80, ${rank.color})`, borderRadius: 3, transition: 'width 1s ease' }} />
-            </div>
-            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.67rem', color: '#64748B', marginTop: '0.375rem' }}>
-              {xpToNext != null ? `${xpToNext.toLocaleString()} XP to next rank` : 'MAX RANK — S CLASS ACHIEVED'}
             </div>
           </div>
+
 
           {/* ── How ARISE Works ── */}
           <div>
@@ -989,35 +1003,27 @@ function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
             </div>
           </div>
 
-          {/* ── About ── */}
-          <div>
-            <SectionTitle>ABOUT LEARNTOEARN</SectionTitle>
-            <div style={{ padding: '0.875rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10 }}>
-              <p style={{ fontSize: '0.8125rem', color: '#8B9AB8', lineHeight: 1.75, margin: '0 0 0.625rem' }}>
-                LearnToEarn is a Solo Leveling–inspired learning platform where you level up your tech skills like a player. Learn concept by concept, earn XP and badges as proof, and follow structured roadmaps to go from beginner to job-ready.
-                </p>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#64748B', letterSpacing: '0.06em' }}>
-                Skills Arena · Resume · AI · Jobs
-              </div>
-            </div>
-          </div>
+          
 
         </div>
 
-        {/* ── Sticky footer — logout ── */}
-        <div style={{ padding: '1rem 1.25rem', borderTop: '1px solid rgba(155,110,212,0.12)', background: '#090E1C', position: 'sticky', bottom: 0 }}>
+        {/* ── Sticky footer — exit buttons (desktop only) ── */}
+        <div className="sl-drawer-exit-footer" style={{ padding: '1rem 1.25rem', borderTop: '1px solid rgba(155,110,212,0.12)', background: '#090E1C', position: 'sticky', bottom: 0 }}>
           {user?.role === 'GUEST' && (
             <div style={{ marginBottom: '0.75rem', padding: '0.625rem 0.875rem', background: 'rgba(155,110,212,0.08)', border: '1px solid rgba(155,110,212,0.2)', borderRadius: 8, fontSize: '0.75rem', color: '#8B9AB8', lineHeight: 1.6 }}>
               <span style={{ color: '#C4B5FD', fontWeight: 600 }}>Guest session</span> — create a free account to save your XP and progress permanently.
             </div>
           )}
-          <button onClick={onClose} style={{ width: '100%', marginBottom: '0.5rem', padding: '0.65rem', borderRadius: 8, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'background 0.15s' }}
+          <button
             onClick={() => { window.location.href = '/' }}
+            style={{ width: '100%', marginBottom: '0.5rem', padding: '0.65rem', borderRadius: 8, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'background 0.15s' }}
             onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.07)'}
             onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
             ← EXIT ARENA
           </button>
-          <button onClick={onLogout} style={{ width: '100%', padding: '0.75rem', borderRadius: 8, background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.22)', color: '#EF4444', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.1em', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'background 0.15s' }}
+          <button
+            onClick={onLogout}
+            style={{ width: '100%', padding: '0.75rem', borderRadius: 8, background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.22)', color: '#EF4444', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.1em', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', transition: 'background 0.15s' }}
             onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,0.16)'}
             onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,0.08)'}>
             <LogOut size={13} /> EXIT SYSTEM
@@ -1146,6 +1152,190 @@ function InstructionsModal({ intent, onClose, onConfirm }) {
   )
 }
 
+// ─── Mobile: Avatar action sheet ──────────────────────────
+function MobileAvatarMenu({ rank, user, initials, level, xp, onClose, onStatsOpen, onQuestsOpen, onProfileOpen, onLogout }) {
+  const xpToNext = rank.next ? rank.next - xp : null
+  const MENU_ITEMS = [
+    { icon: '⚡', label: 'Stats & Badges',  color: '#9B6ED4', onClick: onStatsOpen },
+    { icon: '📋', label: 'Daily Quests',    color: '#4ADE80', onClick: onQuestsOpen },
+    { icon: '📖', label: 'Instructions',    color: '#60A5FA', onClick: onProfileOpen },
+  ]
+  return (
+    <>
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, zIndex: 310, background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(3px)' }} />
+      <div style={{ position: 'fixed', top: 62, right: 12, zIndex: 311, width: 260, background: '#0D1322', border: '1px solid rgba(155,110,212,0.3)', borderRadius: 14, boxShadow: '0 8px 32px rgba(0,0,0,0.7)', overflow: 'hidden', animation: 'slideUp 0.15s ease' }}>
+
+        {/* Hunter card header */}
+        <div style={{ padding: '1rem', borderBottom: '1px solid rgba(155,110,212,0.14)', background: 'rgba(155,110,212,0.07)' }}>
+          {/* Row: avatar + name | rank on far right */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            <div style={{ width: 44, height: 44, borderRadius: '50%', background: user?.avatarColor || '#9B6ED4', border: `2.5px solid ${rank.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', fontWeight: 700, color: '#fff', flexShrink: 0, boxShadow: `0 0 12px ${rank.color}44` }}>{initials}</div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: '#E2E8F0' }}>{user?.fullName}</div>
+              {user?.role === 'GUEST' && <span style={{ fontSize: '0.58rem', fontWeight: 700, color: '#64748B', background: 'rgba(100,116,139,0.15)', padding: '0.1rem 0.4rem', borderRadius: 3, border: '1px solid rgba(100,116,139,0.2)' }}>GUEST</span>}
+            </div>
+            {/* Rank badge on the RIGHT */}
+            <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.62rem', flexShrink: 0 }}>{rank.label}-RANK</span>
+          </div>
+          {/* XP bar */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
+            <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', color: '#F59E0B' }}>POWER: {xp.toLocaleString()} XP</span>
+            <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', color: '#64748B' }}>LVL {level}</span>
+          </div>
+          <div style={{ height: 5, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
+            <div style={{ height: '100%', width: `${rank.progress}%`, background: `linear-gradient(90deg, ${rank.color}80, ${rank.color})`, borderRadius: 3, transition: 'width 1s ease' }} />
+          </div>
+          <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#64748B', marginTop: '0.3rem' }}>
+            {xpToNext != null ? `${xpToNext.toLocaleString()} XP to next rank` : 'MAX RANK — S CLASS ACHIEVED'}
+          </div>
+        </div>
+
+        {/* Action buttons */}
+        {MENU_ITEMS.map((item, i) => (
+          <button key={item.label} onClick={() => { onClose(); item.onClick() }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', width: '100%', padding: '0.875rem 1rem', background: 'transparent', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)', cursor: 'pointer', transition: 'background 0.12s' }}
+            onMouseEnter={e => e.currentTarget.style.background = `${item.color}12`}
+            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
+            <span style={{ fontSize: '1.15rem', width: 26, textAlign: 'center', flexShrink: 0 }}>{item.icon}</span>
+            <span style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9375rem', color: item.color, letterSpacing: '0.02em' }}>{item.label}</span>
+          </button>
+        ))}
+
+        {/* Exit buttons */}
+        {user?.role === 'GUEST' && (
+          <div style={{ padding: '0.625rem 1rem', background: 'rgba(155,110,212,0.06)', borderTop: '1px solid rgba(155,110,212,0.12)', fontSize: '0.72rem', color: '#8B9AB8', lineHeight: 1.5 }}>
+            <span style={{ color: '#C4B5FD', fontWeight: 600 }}>Guest session</span> — register to save XP permanently.
+          </div>
+        )}
+        <div style={{ display: 'flex', gap: '0.5rem', padding: '0.75rem 1rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <button onClick={() => { window.location.href = '/' }}
+            style={{ flex: 1, padding: '0.55rem', borderRadius: 7, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.08em', cursor: 'pointer' }}>
+            ← Exit Arena
+          </button>
+          <button onClick={() => { onClose(); onLogout() }}
+            style={{ flex: 1, padding: '0.55rem', borderRadius: 7, background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)', color: '#EF4444', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.08em', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem' }}>
+            <LogOut size={11} /> Exit System
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}
+
+// ─── Mobile: Stats & Badges combined popup ────────────────
+function MobileStatsPopup({ user, rank, level, xp, stats, hunterStats, onClose }) {
+  const xpToNext = rank.next ? rank.next - xp : null
+  const allBadges = hunterStats ? [...(hunterStats.badges || []), ...(hunterStats.roadmapBadges || [])] : []
+  useEffect(() => { document.body.style.overflow = 'hidden'; return () => { document.body.style.overflow = '' } }, [])
+  return (
+    <>
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, zIndex: 320, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(2px)' }} />
+      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 321, maxHeight: '82vh', background: '#090E1C', borderTop: '2px solid rgba(155,110,212,0.4)', borderRadius: '20px 20px 0 0', boxShadow: '0 -8px 48px rgba(0,0,0,0.7)', display: 'flex', flexDirection: 'column', animation: 'slideUp 0.22s ease' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.875rem 1.25rem', borderBottom: '1px solid rgba(155,110,212,0.12)', flexShrink: 0 }}>
+          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.14em', color: '#9B6ED4' }}>[ STATUS WINDOW ]</span>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#64748B', cursor: 'pointer', display: 'flex' }}><X size={16} /></button>
+        </div>
+        <div style={{ overflowY: 'auto', flex: 1, padding: '1rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {/* Level + XP */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.875rem', background: 'rgba(155,110,212,0.07)', border: '1px solid rgba(155,110,212,0.18)', borderRadius: 12 }}>
+            <div style={{ textAlign: 'center', flexShrink: 0 }}>
+              <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '2.5rem', fontWeight: 900, color: '#B48AE8', lineHeight: 1 }}>{level}</div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.5rem', color: 'var(--text-muted)', letterSpacing: '0.14em', marginTop: 2 }}>HUNTER LEVEL</div>
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.375rem' }}>
+                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: '#F59E0B' }}>{xp.toLocaleString()} XP</span>
+                <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.6rem' }}>{rank.label}</span>
+              </div>
+              <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
+                <div style={{ height: '100%', width: `${rank.progress}%`, background: `linear-gradient(90deg, ${rank.color}80, ${rank.color})`, borderRadius: 3, transition: 'width 1s ease' }} />
+              </div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#64748B', marginTop: 4 }}>
+                {xpToNext != null ? `${xpToNext.toLocaleString()} XP to next rank` : 'MAX RANK ACHIEVED'}
+              </div>
+            </div>
+          </div>
+          {/* Stat bars */}
+          <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.12em', color: 'var(--text-muted)', textAlign: 'center' }}>— COMBAT STATS —</div>
+          {stats.map(stat => {
+            const isUntouched = stat.totalAll === 0
+            return (
+              <div key={stat.key} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: 8, padding: '0.625rem 0.875rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                  <div>
+                    <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: stat.color }}>{stat.key}</span>
+                    <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: '#64748B', marginLeft: '0.4rem' }}>{stat.label}</span>
+                  </div>
+                  <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.68rem', fontWeight: 700, color: stat.color }}>{isUntouched ? '0%' : `${stat.pct}%`}</span>
+                </div>
+                <div style={{ height: 5, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
+                  <div style={{ height: '100%', width: `${isUntouched ? 0 : stat.pct}%`, background: `linear-gradient(90deg, ${stat.color}50, ${stat.color})`, borderRadius: 3, transition: 'width 1.2s ease' }} />
+                </div>
+                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: '#404860', marginTop: 4 }}>{stat.totalDone}/{stat.totalAll} skills · {stat.domain}</div>
+              </div>
+            )
+          })}
+
+          {/* Badges section */}
+          <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.12em', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem' }}>— BADGES —</div>
+          {allBadges.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '1rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: '#404860', letterSpacing: '0.08em' }}>
+              🔒 NO BADGES YET
+            </div>
+          ) : allBadges.map(b => {
+            const key = b.subjectId ?? b.roadmapId
+            const scorePct = b.total > 0 ? Math.round((b.score / b.total) * 100) : 0
+            const isRoadmap = b.type === 'ROADMAP'
+            return (
+              <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.625rem 0.875rem', background: `${b.color || '#9B6ED4'}0D`, border: `1px solid ${b.color || '#9B6ED4'}28`, borderRadius: 8 }}>
+                <div style={{ fontSize: '1.25rem', flexShrink: 0 }}>{b.icon || (isRoadmap ? '🗺️' : '📚')}</div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.825rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{b.title}</div>
+                  <div style={{ height: 3, background: 'rgba(255,255,255,0.05)', borderRadius: 2, marginTop: 3, overflow: 'hidden' }}>
+                    <div style={{ height: '100%', width: `${scorePct}%`, background: b.color || '#9B6ED4', borderRadius: 2 }} />
+                  </div>
+                </div>
+                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: b.color || '#9B6ED4', flexShrink: 0 }}>{b.score}/{b.total}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </>
+  )
+}
+
+// ─── Mobile: Daily Quests popup ───────────────────────────
+function MobileQuestsPopup({ quests, doneCount, earnedXp, onClose }) {
+  useEffect(() => { document.body.style.overflow = 'hidden'; return () => { document.body.style.overflow = '' } }, [])
+  return (
+    <>
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, zIndex: 320, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(2px)' }} />
+      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 321, background: '#090E1C', borderTop: '2px solid rgba(74,222,128,0.4)', borderRadius: '20px 20px 0 0', boxShadow: '0 -8px 48px rgba(0,0,0,0.7)', display: 'flex', flexDirection: 'column', animation: 'slideUp 0.22s ease' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.875rem 1.25rem', borderBottom: '1px solid rgba(74,222,128,0.12)', flexShrink: 0 }}>
+          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.14em', color: '#4ADE80' }}>[ DAILY QUESTS ]</span>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#64748B', cursor: 'pointer', display: 'flex' }}><X size={16} /></button>
+        </div>
+        <div style={{ padding: '1rem 1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+          {DAILY_QUESTS.map(q => (
+            <div key={q.id} style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '0.875rem 1rem', background: quests[q.id] ? 'rgba(74,222,128,0.06)' : 'rgba(255,255,255,0.02)', border: `1px solid ${quests[q.id] ? 'rgba(74,222,128,0.22)' : 'rgba(255,255,255,0.06)'}`, borderRadius: 10 }}>
+              <div style={{ width: 22, height: 22, border: `2px solid ${quests[q.id] ? '#4ADE80' : 'var(--border-hover)'}`, borderRadius: 5, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: quests[q.id] ? 'rgba(74,222,128,0.15)' : 'transparent' }}>
+                {quests[q.id] && <CheckCircle size={12} color="#4ADE80" />}
+              </div>
+              <span style={{ flex: 1, fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.9375rem', color: quests[q.id] ? 'var(--text-muted)' : 'var(--text-secondary)', textDecoration: quests[q.id] ? 'line-through' : 'none' }}>{q.label}</span>
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', color: quests[q.id] ? '#4ADE80' : '#F59E0B', fontWeight: 700 }}>+{q.xp} XP</span>
+            </div>
+          ))}
+          <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.25rem', letterSpacing: '0.08em' }}>
+            {doneCount}/{DAILY_QUESTS.length} completed · +{earnedXp} XP earned today
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+
 // ─── Main Component ───────────────────────────────────────
 export default function DashboardPage() {
   const { user, logout } = useAuth()
@@ -1163,10 +1353,21 @@ export default function DashboardPage() {
   const [selectedRoadmapId, setSelectedRoadmapId] = useState(null)
 
   const [quests, setQuests]           = useState(() => loadQuestState(user?.id))
-  const [aboutGate, setAboutGate]     = useState(null)
-  const [hunterStats, setHunterStats] = useState(null)
-  const [avatarOpen, setAvatarOpen]   = useState(false)
-  const [quizIntent, setQuizIntent]   = useState(null)
+  const [aboutGate, setAboutGate]           = useState(null)
+  const [hunterStats, setHunterStats]       = useState(null)
+  const [avatarOpen, setAvatarOpen]         = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileAvatarMenu, setMobileAvatarMenu] = useState(false)
+  const [mobilePopup, setMobilePopup]       = useState(null) // 'status' | 'badges' | null
+  const [quizIntent, setQuizIntent]         = useState(null)
+
+  const handleAvatarClick = () => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      setMobileAvatarMenu(o => !o)
+    } else {
+      setAvatarOpen(o => !o)
+    }
+  }
 
   const startQuiz = (type, refId, title, icon) =>
     setQuizIntent({ type, refId, title, icon: icon ?? null })
@@ -1580,7 +1781,7 @@ export default function DashboardPage() {
           ) : filteredSubjects.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em' }}>NO GATES MATCH</div>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
+            <div className="sl-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
               {filteredSubjects.map((s, i) => <GateCard key={s.id} s={s} />)}
             </div>
           )}
@@ -1600,7 +1801,7 @@ export default function DashboardPage() {
           {!pathsLoaded ? (
             <div className="flex-center" style={{ height: '200px' }}><div className="loading-spinner-lg" /></div>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
+            <div className="sl-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
               {filteredRoadmaps.map(r => (
                 <div key={r.id} className="sl-gate-card"
                   style={{ cursor: 'pointer', borderTop: `3px solid ${r.color}`, outline: selectedRoadmapId === r.id ? `1px solid ${r.color}` : 'none' }}
@@ -1647,28 +1848,65 @@ export default function DashboardPage() {
         />
       )}
 
-      {/* ══ HUNTER PROFILE DRAWER ══ */}
+      {/* ══ HUNTER PROFILE DRAWER (desktop + mobile Hunter Profile button) ══ */}
       {avatarOpen && (
-        <HunterProfileDrawer
-          user={user}
-          rank={rank}
-          level={level}
-          xp={xp}
-          onClose={() => setAvatarOpen(false)}
+        <HunterProfileDrawer user={user} rank={rank} level={level} xp={xp}
+          onClose={() => setAvatarOpen(false)} onLogout={logout} />
+      )}
+
+      {/* ══ MOBILE: avatar action sheet ══ */}
+      {mobileAvatarMenu && (
+        <MobileAvatarMenu
+          rank={rank} user={user} initials={initials} level={level} xp={xp}
+          onClose={() => setMobileAvatarMenu(false)}
+          onStatsOpen={() => setMobilePopup('stats')}
+          onQuestsOpen={() => setMobilePopup('quests')}
+          onProfileOpen={() => setAvatarOpen(true)}
           onLogout={logout}
         />
       )}
 
+      {/* ══ MOBILE: Stats & Badges popup ══ */}
+      {mobilePopup === 'stats' && (
+        <MobileStatsPopup user={user} rank={rank} level={level} xp={xp} stats={stats} hunterStats={hunterStats}
+          onClose={() => setMobilePopup(null)} />
+      )}
+
+      {/* ══ MOBILE: Daily Quests popup ══ */}
+      {mobilePopup === 'quests' && (
+        <MobileQuestsPopup quests={quests} doneCount={doneCount} earnedXp={earnedXp}
+          onClose={() => setMobilePopup(null)} />
+      )}
+
       {/* ══ NAVBAR ══ */}
       <nav className="sl-dash-nav">
+
+        {/* Mobile: hamburger on LEFT */}
+        <button className="sl-mob-menu-btn"
+          onClick={() => setMobileMenuOpen(o => !o)}
+          style={{ background: mobileMenuOpen ? 'rgba(155,110,212,0.15)' : 'rgba(255,255,255,0.04)', border: `1px solid ${mobileMenuOpen ? 'rgba(155,110,212,0.4)' : 'rgba(255,255,255,0.08)'}`, borderRadius: 8, color: mobileMenuOpen ? '#B48AE8' : 'var(--text-secondary)', width: 36, height: 36, alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.15s', flexShrink: 0 }}>
+          <Menu size={18} />
+        </button>
+
+        {/* Desktop: ARISE logo */}
         <div className="sl-dash-nav-logo" onClick={() => navigate('/')}>ARISE</div>
+
+        {/* Mobile: current section name (center) */}
+        <div className="sl-mob-section-title">
+          {NAV_ITEMS.find(i => i.view === activeView)?.label || 'ARISE'}
+        </div>
+
+        {/* Desktop nav links */}
         <div className="sl-dash-nav-links">
           {NAV_ITEMS.map(item => (
-            <button key={item.label} className={`sl-nav-link${activeView === item.view ? ' active' : ''}`} onClick={() => switchView(item.view)}>
+            <button key={item.label} className={`sl-nav-link${activeView === item.view ? ' active' : ''}`}
+              onClick={() => switchView(item.view)}>
               {item.label}
             </button>
           ))}
         </div>
+
+        {/* Desktop right */}
         <div className="sl-dash-nav-right">
           <div className="sl-nav-xp">
             <span className="sl-nav-xp-label">XP → LVL {level}</span>
@@ -1678,11 +1916,39 @@ export default function DashboardPage() {
           </div>
           <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.72rem', padding: '0.25rem 0.625rem' }}>{rank.label}-RANK</span>
           <div className="sl-nav-avatar" style={{ background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}` }}
-            onClick={() => setAvatarOpen(o => !o)}>
-            {initials}
-          </div>
+            onClick={handleAvatarClick}>{initials}</div>
         </div>
+
+        {/* Mobile: avatar on RIGHT */}
+        <div className="sl-mob-avatar" style={{ background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}` }}
+          onClick={handleAvatarClick}>{initials}</div>
       </nav>
+
+      {/* ══ MOBILE NAV DROPDOWN (slides down from LEFT-anchored hamburger) ══ */}
+      {mobileMenuOpen && (
+        <>
+          <div onClick={() => setMobileMenuOpen(false)}
+            style={{ position: 'fixed', inset: 0, zIndex: 150, background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(2px)' }} />
+          <div style={{ position: 'fixed', top: 56, left: 0, width: 260, bottom: 0, zIndex: 151, background: '#0D1322', borderRight: '1px solid rgba(155,110,212,0.3)', boxShadow: '8px 0 32px rgba(0,0,0,0.6)', animation: 'slideIn 0.2s ease', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ padding: '0.875rem 1.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.14em', color: '#9B6ED4', borderBottom: '1px solid rgba(155,110,212,0.12)', background: 'rgba(155,110,212,0.05)' }}>
+              [ SELECT SECTION ]
+            </div>
+            {NAV_ITEMS.map(item => (
+              <button key={item.label}
+                onClick={() => { switchView(item.view); setMobileMenuOpen(false) }}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', width: '100%', padding: '1.125rem 1.25rem', background: activeView === item.view ? 'rgba(155,110,212,0.1)' : 'transparent', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: activeView === item.view ? '3px solid #9B6ED4' : '3px solid transparent', color: activeView === item.view ? '#B48AE8' : 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1.0625rem', letterSpacing: '0.08em', cursor: 'pointer', textAlign: 'left', transition: 'background 0.15s', textTransform: 'uppercase' }}>
+                <span style={{ fontSize: '1.25rem', width: 24, textAlign: 'center', flexShrink: 0 }}>
+                  {item.view === 'arena' ? '⚔️' : item.view === 'gates' ? '🚪' : '🗺️'}
+                </span>
+                <span style={{ flex: 1 }}>{item.label}</span>
+                {activeView === item.view && (
+                  <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#9B6ED4', background: 'rgba(155,110,212,0.12)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>NOW</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
 
       {/* ══ BODY ══ */}
       <div className="sl-dashboard-body">
@@ -1727,8 +1993,8 @@ export default function DashboardPage() {
         ) : (
           /* ══ NORMAL MODE: 3-col (status | gates | quests+rank) ══ */
           <div className="sl-dashboard-grid">
-            {/* ═ LEFT: STATUS WINDOW ═ */}
-            <div className="sl-panel">
+            {/* ═ LEFT: STATUS WINDOW — hidden on mobile (access via avatar) ═ */}
+            <div className="sl-panel sl-dash-left-panel">
               <div className="sl-panel-title">Status Window</div>
               <div className="sl-hunter-level-num">{level}</div>
               <div className="sl-hunter-level-label">HUNTER LEVEL</div>
@@ -1834,8 +2100,8 @@ export default function DashboardPage() {
               {renderMiddle()}
             </div>
 
-            {/* ═ RIGHT: DAILY QUESTS + RANK ═ */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            {/* ═ RIGHT: DAILY QUESTS + RANK — hidden on mobile (access via avatar) ═ */}
+            <div className="sl-dash-right-panel" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div className="sl-panel">
                 <div className="sl-panel-title">Daily Quests</div>
                 {DAILY_QUESTS.map(q => (
