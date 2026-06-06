@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { getMe } from '../api/api'
+import { getMe, clearUserCache } from '../api/api'
 
 const AuthContext = createContext(null)
 
@@ -30,11 +30,13 @@ export function AuthProvider({ children }) {
   }, [])
 
   const login = (token, userData) => {
+    clearUserCache()          // wipe previous user's progress/scores before loading new user
     localStorage.setItem('token', token)
     setUser(userData)
   }
 
   const logout = () => {
+    clearUserCache()          // wipe user-specific cache; roadmap content is kept
     // Preserve guest device ID so the same guest account is reused on next visit
     const guestDeviceId = localStorage.getItem('guest_device_id')
     localStorage.clear()
