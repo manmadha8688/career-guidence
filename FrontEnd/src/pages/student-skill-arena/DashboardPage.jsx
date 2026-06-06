@@ -5,7 +5,7 @@ import {
   getProgressSummary, getRoadmap, getRoadmapStatus,
   getSubjects, getSubject, getConcept, getQuizStatus,
   getRoadmaps, enrollRoadmap, pauseRoadmap, resumeRoadmap,
-  getHunterStats,
+  getHunterStats, clearApiCache,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
 import { getRank } from '../../utils/slRank'
@@ -1416,6 +1416,7 @@ export default function DashboardPage() {
   // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
   useEffect(() => {
     const refresh = () => {
+      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*')
       getProgressSummary().then(s => {
         setSummary(s.data)
         syncQuestsFromSummary(s.data, user?.id)

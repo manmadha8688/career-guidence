@@ -48,10 +48,9 @@ export default function FeedbackNudge() {
         aria-label="Close"
       >✕</button>
 
-      <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>💬</div>
 
       <div style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '0.85rem', color: '#9B6ED4', marginBottom: '0.5rem', letterSpacing: 1 }}>
-        QUICK QUESTION
+        💬 QUICK QUESTION
       </div>
 
       <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: '#CBD5E1', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
