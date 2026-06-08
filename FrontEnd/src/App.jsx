@@ -1,12 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './context/AuthContext'
+import { ThemeProvider } from './context/ThemeContext'
 import ProtectedRoute from './components/ProtectedRoute'
 
 import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/auth/LoginPage'
 import RegisterPage from './pages/auth/RegisterPage'
 
+import MissionsPage from './pages/MissionsPage'
+import MissionDetailPage from './pages/MissionDetailPage'
+import ProblemSolvingPage from './pages/problem-solving/ProblemSolvingPage'
+import TrackPage from './pages/problem-solving/TrackPage'
+import ProblemDetailPage from './pages/problem-solving/ProblemDetailPage'
 import DashboardPage from './pages/student-skill-arena/DashboardPage'
 import RoadmapDetailPage from './pages/student-skill-arena/RoadmapDetailPage'
 import QuizPage from './pages/student-skill-arena/QuizPage'
@@ -19,10 +25,13 @@ import AdminConcepts from './pages/admin-skill-arena/AdminConcepts'
 import AdminRoadmaps from './pages/admin-skill-arena/AdminRoadmaps'
 import AdminQuestions from './pages/admin-skill-arena/AdminQuestions'
 import AdminFeedbacks from './pages/admin-skill-arena/AdminFeedbacks'
+import AdminMissions from './pages/admin-skill-arena/AdminMissions'
+import AdminProblems from './pages/admin-skill-arena/AdminProblems'
 import FeedbackNudge from './components/FeedbackNudge'
 
 function App() {
   return (
+    <ThemeProvider>
     <AuthProvider>
       <BrowserRouter>
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
@@ -34,6 +43,16 @@ function App() {
           {/* Public */}
           <Route path="/login"    element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/missions" element={<MissionsPage />} />
+          <Route path="/problem-solving" element={<ProblemSolvingPage />} />
+          <Route path="/problem-solving/start-coding"   element={<TrackPage />} />
+          <Route path="/problem-solving/logic-building" element={<TrackPage />} />
+          <Route path="/problem-solving/skill-up"       element={<TrackPage />} />
+          <Route path="/problem-solving/interview-prep" element={<TrackPage />} />
+          <Route path="/problem-solving/:id"            element={<ProblemDetailPage />} />
+
+          {/* Missions detail — requires login */}
+          <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
 
           {/* ── Student: skill-arena ── */}
           <Route path="/skill-arena/dashboard"              element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
@@ -55,11 +74,14 @@ function App() {
           <Route path="/admin-skill-arena/roadmaps"     element={<ProtectedRoute adminOnly><AdminRoadmaps /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/questions"    element={<ProtectedRoute adminOnly><AdminQuestions /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/feedbacks"    element={<ProtectedRoute adminOnly><AdminFeedbacks /></ProtectedRoute>} />
+          <Route path="/admin-skill-arena/missions"     element={<ProtectedRoute adminOnly><AdminMissions /></ProtectedRoute>} />
+          <Route path="/admin-skill-arena/problems"     element={<ProtectedRoute adminOnly><AdminProblems /></ProtectedRoute>} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+    </ThemeProvider>
   )
 }
 

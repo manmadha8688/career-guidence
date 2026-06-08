@@ -33,9 +33,9 @@ export default function FeedbackNudge() {
     <div className="feedback-nudge" style={{
       position: 'fixed', bottom: '1rem', right: '1rem', left: '1rem', zIndex: 9999,
       width: 'auto', maxWidth: 340, marginLeft: 'auto',
-      background: '#151C2E', border: '1px solid #9B6ED4',
+      background: 'var(--bg-card)', border: '1px solid var(--primary)',
       borderRadius: 16, padding: '1.25rem',
-      boxShadow: '0 8px 40px rgba(155,110,212,0.3)',
+      boxShadow: '0 8px 40px rgba(0,0,0,0.18)',
       animation: 'nudgeIn 0.35s cubic-bezier(0.34,1.56,0.64,1)',
     }}>
       <button
@@ -43,20 +43,19 @@ export default function FeedbackNudge() {
         style={{
           position: 'absolute', top: '0.75rem', right: '0.75rem',
           background: 'none', border: 'none', cursor: 'pointer',
-          color: '#888', fontSize: '1.1rem', lineHeight: 1,
+          color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1,
         }}
         aria-label="Close"
-      >✕</button>
+      >x</button>
 
-
-      <div style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '0.85rem', color: '#9B6ED4', marginBottom: '0.5rem', letterSpacing: 1 }}>
-        💬 QUICK QUESTION
+      <div style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '0.85rem', color: 'var(--primary)', marginBottom: '0.5rem', letterSpacing: 1 }}>
+        QUICK QUESTION
       </div>
 
-      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: '#CBD5E1', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
-      I’m building LearnToEarn to help students enter the right learning path, level up their skills, and become job-ready. 
+      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: 'var(--text-primary)', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
+        I am building LearnToEarn to help students enter the right learning path, level up their skills, and become job-ready.
       </p>
-      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '0.9rem', color: '#94A3B8', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
+      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '0.9rem', color: 'var(--text-secondary)', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
         Your feedback helps shape the next version. Takes just 30 seconds.
       </p>
 
@@ -70,7 +69,7 @@ export default function FeedbackNudge() {
           color: '#fff', letterSpacing: 1, fontWeight: 700,
         }}
       >
-        GIVE FEEDBACK →
+        GIVE FEEDBACK
       </button>
 
       <style>{`

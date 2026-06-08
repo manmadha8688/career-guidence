@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
+import { useTheme } from '../../context/ThemeContext'
 import { registerUser } from '../../api/api'
 import toast from 'react-hot-toast'
 
-const C = {
+const DARK_C = {
   bg:     '#090E1C',
   bgCard: '#0D1424',
   bgInput:'#080D1A',
@@ -15,19 +16,23 @@ const C = {
   sub:    '#8B9AB8',
   muted:  '#64748B',
 }
-
-const gradText = {
-  background: 'linear-gradient(135deg, #C4B5FD 0%, #9B6ED4 45%, #60A5FA 100%)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
+const LIGHT_C = {
+  bg:     'var(--bg-secondary)',
+  bgCard: 'var(--bg-card)',
+  bgInput:'var(--bg-secondary)',
+  border: 'rgba(124,93,187,0.2)',
+  primary:'#7C5DBB',
+  text:   '#18244A',
+  sub:    '#384470',
+  muted:  '#6B7FA3',
 }
 
+// Left panel benefits — always on dark background, neon colors are fine
 const BENEFITS = [
-  { icon: <Map size={15} color="#60A5FA" />, text: 'Clear roadmaps — Java, MERN, Python, Frontend', color: '#60A5FA' },
-  { icon: <CheckCircle size={15} color="#4ADE80" />, text: 'Quiz every concept to prove you learned it', color: '#4ADE80' },
-  { icon: <Award size={15} color="#F59E0B" />, text: 'Earn XP, rank up from E → S class hunter', color: '#F59E0B' },
-  { icon: <Briefcase size={15} color="#9B6ED4" />, text: 'Resume + Jobs board coming soon', color: '#9B6ED4' },
+  { icon: <Map        size={15} color="#60A5FA" />, text: 'Clear roadmaps — Java, MERN, Python, Frontend', color: '#60A5FA' },
+  { icon: <CheckCircle size={15} color="#4ADE80" />, text: 'Quiz every concept to prove you learned it',   color: '#4ADE80' },
+  { icon: <Award      size={15} color="#F59E0B" />, text: 'Earn XP, rank up from E → S class hunter',  color: '#F59E0B' },
+  { icon: <Briefcase  size={15} color="#9B6ED4" />, text: 'Resume + Jobs board coming soon',               color: '#9B6ED4' },
 ]
 
 function getStrength(pw) {
@@ -43,6 +48,8 @@ const strengthLabel  = ['', 'Weak', 'Fair', 'Good', 'Strong']
 const strengthColors = ['', 'weak', 'medium', 'medium', 'strong']
 
 export default function RegisterPage() {
+  const { theme } = useTheme()
+  const C = theme === 'light' ? LIGHT_C : DARK_C
   const [form, setForm] = useState({ fullName: '', email: '', password: '', confirmPassword: '', collegeName: '' })
   const [loading, setLoading] = useState(false)
   const [showPass, setShowPass] = useState(false)
@@ -70,10 +77,10 @@ export default function RegisterPage() {
   const inp = name => ({
     width: '100%',
     padding: '0.7rem 1rem',
-    background: C.bgInput,
-    border: `1.5px solid ${focused === name ? 'rgba(155,110,212,0.55)' : C.border}`,
+    background: 'var(--bg-secondary)',
+    border: `1.5px solid ${focused === name ? 'rgba(155,110,212,0.55)' : 'var(--border)'}`,
     borderRadius: 8,
-    color: C.text,
+    color: 'var(--text-primary)',
     fontSize: '0.9rem',
     outline: 'none',
     transition: 'border-color 0.15s, box-shadow 0.15s',
@@ -82,7 +89,7 @@ export default function RegisterPage() {
   })
 
   const label = text => (
-    <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, display: 'block', marginBottom: '0.35rem' }}>
+    <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.35rem' }}>
       {text}
     </label>
   )
@@ -90,9 +97,9 @@ export default function RegisterPage() {
   return (
     <div style={{
       display: 'flex', minHeight: '100vh',
-      background: C.bg,
+      background: 'var(--bg-secondary)',
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-      color: C.text,
+      color: 'var(--text-primary)',
     }}>
 
       {/* ── Left panel ──────────────────────────────────── */}
@@ -123,13 +130,13 @@ export default function RegisterPage() {
             }}>
               <Swords size={21} color="#fff" />
             </div>
-            <span style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.03em', ...gradText }}>LearnToEarn</span>
+            <span className="lp-grad-text" style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.03em' }}>LearnToEarn</span>
           </div>
 
-          <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.125rem)', fontWeight: 800, letterSpacing: '-0.02em', color: C.text, lineHeight: 1.2, marginBottom: '0.625rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.125rem)', fontWeight: 800, letterSpacing: '-0.02em', color: '#E2E8F0', lineHeight: 1.2, marginBottom: '0.625rem' }}>
             Your journey starts here.
           </h2>
-          <p style={{ color: C.sub, fontSize: '0.9375rem', lineHeight: 1.75, marginBottom: '2.25rem' }}>
+          <p style={{ color: '#8B9AB8', fontSize: '0.9375rem', lineHeight: 1.75, marginBottom: '2.25rem' }}>
             Free forever. No credit card. Just skills, roadmaps, and a clear path to your first job offer.
           </p>
 
@@ -146,7 +153,7 @@ export default function RegisterPage() {
                 <div style={{ width: 30, height: 30, borderRadius: 7, background: `${b.color}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                   {b.icon}
                 </div>
-                <span style={{ fontSize: '0.875rem', color: C.sub, lineHeight: 1.55, paddingTop: '0.25rem' }}>{b.text}</span>
+                <span style={{ fontSize: '0.875rem', color: '#8B9AB8', lineHeight: 1.55, paddingTop: '0.25rem' }}>{b.text}</span>
               </div>
             ))}
           </div>
@@ -161,7 +168,7 @@ export default function RegisterPage() {
             {[['3', 'Career Paths', '#9B6ED4'], ['30+', 'Subjects', '#60A5FA'], ['100+', 'Concepts', '#4ADE80']].map(([val, lbl, color], i) => (
               <div key={lbl} style={{ textAlign: 'center', padding: '0.875rem 0.5rem', borderRight: i < 2 ? '1px solid rgba(155,110,212,0.1)' : 'none' }}>
                 <div style={{ fontSize: '1.375rem', fontWeight: 800, color, fontFamily: "'Orbitron', sans-serif" }}>{val}</div>
-                <div style={{ fontSize: '0.68rem', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 2 }}>{lbl}</div>
+                <div style={{ fontSize: '0.68rem', color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 2 }}>{lbl}</div>
               </div>
             ))}
           </div>
@@ -173,12 +180,12 @@ export default function RegisterPage() {
         width: 500, flexShrink: 0,
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: '2.5rem',
-        background: C.bgCard,
+        background: 'var(--bg-card)',
         borderLeft: '1px solid rgba(155,110,212,0.08)',
         overflowY: 'auto',
       }}>
         {/* Back button */}
-        <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', background: 'none', border: 'none', color: C.muted, fontSize: '0.8125rem', cursor: 'pointer', padding: 0, marginBottom: '1.75rem' }}>
+        <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.8125rem', cursor: 'pointer', padding: 0, marginBottom: '1.75rem' }}>
           <ChevronLeft size={15} /> Back to home
         </button>
 
@@ -187,13 +194,13 @@ export default function RegisterPage() {
           <div style={{ width: 36, height: 36, borderRadius: 9, background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px rgba(155,110,212,0.4)' }}>
             <Swords size={18} color="#fff" />
           </div>
-          <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.03em', ...gradText }}>LearnToEarn</span>
+          <span className="lp-grad-text" style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.03em' }}>LearnToEarn</span>
         </div>
 
-        <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: C.text, marginBottom: '0.375rem', letterSpacing: '-0.025em' }}>
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.375rem', letterSpacing: '-0.025em' }}>
           Create your account
         </h1>
-        <p style={{ fontSize: '0.9rem', color: C.muted, marginBottom: '1.75rem' }}>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1.75rem' }}>
           Start learning for free today
         </p>
 
@@ -240,7 +247,7 @@ export default function RegisterPage() {
               <button
                 type="button"
                 onClick={() => setShowPass(p => !p)}
-                style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: C.muted, cursor: 'pointer', padding: '0.25rem', display: 'flex' }}
+                style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '0.25rem', display: 'flex' }}
               >
                 {showPass ? <EyeOff size={17} /> : <Eye size={17} />}
               </button>
@@ -252,7 +259,7 @@ export default function RegisterPage() {
                     <div key={i} className={`strength-bar ${i <= strength ? strengthColors[strength] : ''}`} />
                   ))}
                 </div>
-                <div style={{ fontSize: '0.75rem', color: C.muted, marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
                   {strengthLabel[strength]} password
                 </div>
               </>
@@ -267,7 +274,7 @@ export default function RegisterPage() {
               onChange={e => setForm({ ...form, confirmPassword: e.target.value })}
               onFocus={() => setFocused('confirm')}
               onBlur={() => setFocused(null)}
-              style={{ ...inp('confirm'), borderColor: form.confirmPassword && form.password !== form.confirmPassword ? 'rgba(239,68,68,0.5)' : (focused === 'confirm' ? 'rgba(155,110,212,0.55)' : C.border) }}
+              style={{ ...inp('confirm'), borderColor: form.confirmPassword && form.password !== form.confirmPassword ? 'rgba(239,68,68,0.5)' : (focused === 'confirm' ? 'rgba(155,110,212,0.55)' : 'var(--border)') }}
             />
             {form.confirmPassword && form.password !== form.confirmPassword && (
               <div style={{ fontSize: '0.775rem', color: '#EF4444', marginTop: '0.25rem' }}>
@@ -277,8 +284,8 @@ export default function RegisterPage() {
           </div>
 
           <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, display: 'block', marginBottom: '0.35rem' }}>
-              College Name <span style={{ color: C.muted, fontWeight: 400 }}>(optional)</span>
+            <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.35rem' }}>
+              College Name <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional)</span>
             </label>
             <input
               type="text" placeholder="Your college or university"
@@ -306,7 +313,7 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.875rem', color: C.sub }}>
+        <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
           Already have an account?{' '}
           <Link to="/login" style={{ color: '#B48AE8', fontWeight: 600, textDecoration: 'none' }}>
             Sign in

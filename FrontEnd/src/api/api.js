@@ -146,4 +146,24 @@ export const getRoadmapStatus  = (roadmapId)       => withCache(`roadmapStatus:$
 export const submitFeedback = (data) => api.post('/feedback', data)
 export const getAllFeedbacks = ()     => api.get('/feedback')
 
+// ─── MISSIONS ─────────────────────────────────────────
+export const getMissions  = ()     => api.get('/missions')
+export const getMission   = (id)   => api.get(`/missions/${id}`)
+
+// ─── PROBLEMS (public) ────────────────────────────────────────
+export const getProblems    = (track)  => api.get('/problems' + (track ? `?track=${track}` : ''))
+export const getProblem     = (id)     => api.get(`/problems/${id}`)
+
+// ─── ADMIN PROBLEMS ───────────────────────────────────────────
+export const getAdminProblems  = ()       => api.get('/admin/problems')
+export const createProblem     = (d)      => api.post('/admin/problems', d)
+export const updateProblemQ    = (id, d)  => api.put(`/admin/problems/${id}`, d)
+export const deleteProblemQ    = (id)     => api.delete(`/admin/problems/${id}`)
+
+// ─── ADMIN MISSIONS ───────────────────────────────────────────
+export const getAdminMissions = ()       => api.get('/admin/missions')
+export const createMission    = (d)      => api.post('/admin/missions', d)
+export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d)
+export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)
+
 export default api

@@ -34,13 +34,14 @@ function SubjectModal({ subject, onClose, onSave }) {
     prerequisites:    listToText(subject.prerequisites),
     outcomes:         listToText(subject.outcomes),
     whatYouWillBuild: listToText(subject.whatYouWillBuild),
+    toolsRequired:    listToText(subject.toolsRequired),
     difficulty:       subject.difficulty || 'Beginner',
     estimatedHours:   subject.estimatedHours || '',
     careerUse:        subject.careerUse || '',
   } : {
     title: '', description: '', icon: '📚', color: '#4F46E5', rank: 'E',
     overview: '', whyLearn: '', forWho: '',
-    prerequisites: '', outcomes: '', whatYouWillBuild: '',
+    prerequisites: '', outcomes: '', whatYouWillBuild: '', toolsRequired: '',
     difficulty: 'Beginner', estimatedHours: '', careerUse: '',
   })
   const [loading, setLoading] = useState(false)
@@ -61,6 +62,7 @@ function SubjectModal({ subject, onClose, onSave }) {
         prerequisites:    textToList(form.prerequisites),
         outcomes:         textToList(form.outcomes),
         whatYouWillBuild: textToList(form.whatYouWillBuild),
+        toolsRequired:    textToList(form.toolsRequired),
         estimatedHours:   parseInt(form.estimatedHours) || 0,
       }
       subject ? await updateSubject(subject.id, payload) : await createSubject(payload)
@@ -162,6 +164,11 @@ function SubjectModal({ subject, onClose, onSave }) {
           <div className="form-group">
             <label className="form-label">What You Will Build</label>
             <textarea className="form-input" rows={3} value={form.whatYouWillBuild} onChange={e => set('whatYouWillBuild', e.target.value)} placeholder="Personal profile page with photo and bio&#10;Restaurant menu page with tables and images&#10;Multi-section blog post" style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Tools Required</label>
+            <textarea className="form-input" rows={3} value={form.toolsRequired} onChange={e => set('toolsRequired', e.target.value)} placeholder="VS Code&#10;Node.js v18+&#10;Git" style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
           </div>
 
           <div className="modal-actions" style={{ paddingTop: '0.5rem', borderTop: '1px solid var(--border)', marginTop: '0.5rem' }}>

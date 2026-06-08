@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Eye, EyeOff, Swords, Target, Zap, Trophy, ChevronLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
+import { useTheme } from '../../context/ThemeContext'
 import { loginUser, guestLogin } from '../../api/api'
 import toast from 'react-hot-toast'
 
-const C = {
+const DARK_C = {
   bg:     '#090E1C',
   bgCard: '#0D1424',
   bgInput:'#080D1A',
@@ -15,30 +16,38 @@ const C = {
   sub:    '#8B9AB8',
   muted:  '#64748B',
 }
-
-const gradText = {
-  background: 'linear-gradient(135deg, #C4B5FD 0%, #9B6ED4 45%, #60A5FA 100%)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
+const LIGHT_C = {
+  bg:     'var(--bg-secondary)',
+  bgCard: 'var(--bg-card)',
+  bgInput:'var(--bg-secondary)',
+  border: 'rgba(124,93,187,0.2)',
+  primary:'#7C5DBB',
+  text:   '#18244A',
+  sub:    '#384470',
+  muted:  '#6B7FA3',
 }
 
 const RANKS = [
-  { r: 'E', color: '#888888' },
-  { r: 'D', color: '#4ADE80' },
-  { r: 'C', color: '#60A5FA' },
-  { r: 'B', color: '#9B6ED4' },
-  { r: 'A', color: '#F59E0B' },
-  { r: 'S', color: '#EF4444' },
+  { r: 'E', dark: '#888888', light: '#6B7FA3' },
+  { r: 'D', dark: '#4ADE80', light: '#15803D' },
+  { r: 'C', dark: '#60A5FA', light: '#1D4ED8' },
+  { r: 'B', dark: '#9B6ED4', light: '#7C5DBB' },
+  { r: 'A', dark: '#F59E0B', light: '#B45309' },
+  { r: 'S', dark: '#EF4444', light: '#DC2626' },
 ]
 
+// Left panel features — always on dark background, neon colors are fine
 const FEATURES = [
   { icon: <Target size={15} color="#9B6ED4" />, title: 'Structured career roadmaps', sub: 'Know exactly what to learn next' },
-  { icon: <Zap size={15} color="#60A5FA" />, title: 'Learn concept by concept', sub: 'Examples, syntax, real code' },
-  { icon: <Trophy size={15} color="#F59E0B" />, title: 'Earn XP and rise in rank', sub: 'Prove your skills with badges' },
+  { icon: <Zap    size={15} color="#60A5FA" />, title: 'Learn concept by concept',   sub: 'Examples, syntax, real code' },
+  { icon: <Trophy size={15} color="#F59E0B" />, title: 'Earn XP and rise in rank',   sub: 'Prove your skills with badges' },
 ]
 
 export default function LoginPage() {
+  const { theme } = useTheme()
+  const C = theme === 'light' ? LIGHT_C : DARK_C
+  const rankColor = (rank) => theme === 'light' ? rank.light : rank.dark
+
   const [form, setForm] = useState({ email: '', password: '' })
   const [loading, setLoading] = useState(false)
   const [guestLoading, setGuestLoading] = useState(false)
@@ -56,7 +65,7 @@ export default function LoginPage() {
       const { data } = await guestLogin(storedGuestId)
       localStorage.setItem('guest_device_id', data.user.id)
       login(data.token, data.user)
-      navigate('/skill-arena/dashboard')
+      navigate(redirectTo)
     } catch {
       toast.error('Could not start guest session. Try again.')
     } finally {
@@ -82,10 +91,10 @@ export default function LoginPage() {
   const inp = name => ({
     width: '100%',
     padding: '0.75rem 1rem',
-    background: C.bgInput,
-    border: `1.5px solid ${focused === name ? 'rgba(155,110,212,0.55)' : C.border}`,
+    background: 'var(--bg-secondary)',
+    border: `1.5px solid ${focused === name ? 'rgba(155,110,212,0.55)' : 'var(--border)'}`,
     borderRadius: 8,
-    color: C.text,
+    color: 'var(--text-primary)',
     fontSize: '0.9375rem',
     outline: 'none',
     transition: 'border-color 0.15s, box-shadow 0.15s',
@@ -96,9 +105,9 @@ export default function LoginPage() {
   return (
     <div style={{
       display: 'flex', minHeight: '100vh',
-      background: C.bg,
+      background: 'var(--bg-secondary)',
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-      color: C.text,
+      color: 'var(--text-primary)',
     }}>
 
       {/* ── Left panel ──────────────────────────────────── */}
@@ -129,13 +138,13 @@ export default function LoginPage() {
             }}>
               <Swords size={21} color="#fff" />
             </div>
-            <span style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.03em', ...gradText }}>LearnToEarn</span>
+            <span className="lp-grad-text" style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.03em' }}>LearnToEarn</span>
           </div>
 
-          <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.125rem)', fontWeight: 800, letterSpacing: '-0.02em', color: C.text, lineHeight: 1.2, marginBottom: '0.625rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.125rem)', fontWeight: 800, letterSpacing: '-0.02em', color: '#E2E8F0', lineHeight: 1.2, marginBottom: '0.625rem' }}>
             Level up your career.
           </h2>
-          <p style={{ color: C.sub, fontSize: '0.9375rem', lineHeight: 1.75, marginBottom: '2.25rem' }}>
+          <p style={{ color: '#8B9AB8', fontSize: '0.9375rem', lineHeight: 1.75, marginBottom: '2.25rem' }}>
             Follow skill roadmaps, earn XP, and unlock your dream job — one concept at a time.
           </p>
 
@@ -153,8 +162,8 @@ export default function LoginPage() {
                   {f.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.875rem', fontWeight: 600, color: C.text }}>{f.title}</div>
-                  <div style={{ fontSize: '0.725rem', color: C.muted, marginTop: 1 }}>{f.sub}</div>
+                  <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#E2E8F0' }}>{f.title}</div>
+                  <div style={{ fontSize: '0.725rem', color: '#64748B', marginTop: 1 }}>{f.sub}</div>
                 </div>
               </div>
             ))}
@@ -162,7 +171,7 @@ export default function LoginPage() {
 
           {/* Rank ladder */}
           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(155,110,212,0.1)', borderRadius: 10, padding: '0.875rem 1rem' }}>
-            <div style={{ fontSize: '0.62rem', color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: "'Share Tech Mono', monospace", marginBottom: '0.625rem' }}>
+            <div style={{ fontSize: '0.62rem', color: '#64748B', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: "'Share Tech Mono', monospace", marginBottom: '0.625rem' }}>
               RANK PROGRESSION — EARN XP TO ADVANCE
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -171,10 +180,10 @@ export default function LoginPage() {
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.2rem', flex: 1 }}>
                     <div style={{
                       width: 30, height: 30, borderRadius: 6,
-                      border: `1.5px solid ${r.color}`,
+                      border: `1.5px solid ${rankColor(r)}`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '0.62rem', fontWeight: 800, color: r.color,
-                      background: `${r.color}18`,
+                      fontSize: '0.62rem', fontWeight: 800, color: rankColor(r),
+                      background: `${rankColor(r)}18`,
                       fontFamily: "'Orbitron', sans-serif",
                     }}>
                       {r.r}
@@ -193,11 +202,11 @@ export default function LoginPage() {
         width: 480, flexShrink: 0,
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: '3rem 2.5rem',
-        background: C.bgCard,
+        background: 'var(--bg-card)',
         borderLeft: '1px solid rgba(155,110,212,0.08)',
       }}>
         {/* Back button */}
-        <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', background: 'none', border: 'none', color: C.muted, fontSize: '0.8125rem', cursor: 'pointer', padding: 0, marginBottom: '1.75rem' }}>
+        <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.8125rem', cursor: 'pointer', padding: 0, marginBottom: '1.75rem' }}>
           <ChevronLeft size={15} /> Back to home
         </button>
 
@@ -206,19 +215,19 @@ export default function LoginPage() {
           <div style={{ width: 36, height: 36, borderRadius: 9, background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px rgba(155,110,212,0.4)' }}>
             <Swords size={18} color="#fff" />
           </div>
-          <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.03em', ...gradText }}>LearnToEarn</span>
+          <span className="lp-grad-text" style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.03em' }}>LearnToEarn</span>
         </div>
 
-        <h1 style={{ fontSize: '1.875rem', fontWeight: 800, color: C.text, marginBottom: '0.375rem', letterSpacing: '-0.025em' }}>
+        <h1 style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.375rem', letterSpacing: '-0.025em' }}>
           Welcome back
         </h1>
-        <p style={{ fontSize: '0.9rem', color: C.muted, marginBottom: '2rem' }}>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
           Sign in to continue your learning journey
         </p>
 
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1.125rem' }}>
-            <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, display: 'block', marginBottom: '0.4rem' }}>
+            <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.4rem' }}>
               Email address
             </label>
             <input
@@ -234,7 +243,7 @@ export default function LoginPage() {
           </div>
 
           <div style={{ marginBottom: '1.75rem' }}>
-            <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: C.sub, display: 'block', marginBottom: '0.4rem' }}>
+            <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.4rem' }}>
               Password
             </label>
             <div style={{ position: 'relative' }}>
@@ -251,7 +260,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setShowPass(p => !p)}
-                style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: C.muted, cursor: 'pointer', padding: '0.25rem', display: 'flex' }}
+                style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '0.25rem', display: 'flex' }}
               >
                 {showPass ? <EyeOff size={17} /> : <Eye size={17} />}
               </button>
@@ -274,7 +283,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.875rem', color: C.sub }}>
+        <p style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
           Don't have an account?{' '}
           <Link to="/register" style={{ color: '#B48AE8', fontWeight: 600, textDecoration: 'none' }}>
             Create one free
@@ -284,7 +293,7 @@ export default function LoginPage() {
         {/* Divider */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '1.25rem 0' }}>
           <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.06)' }} />
-          <span style={{ fontSize: '0.75rem', color: C.muted }}>or</span>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>or</span>
           <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.06)' }} />
         </div>
 
@@ -295,20 +304,20 @@ export default function LoginPage() {
           style={{
             width: '100%', padding: '0.8rem', borderRadius: 8,
             background: 'transparent',
-            border: `1.5px solid ${C.border}`,
-            color: C.sub, fontSize: '0.9375rem', fontWeight: 600,
+            border: `1.5px solid ${'var(--border)'}`,
+            color: 'var(--text-secondary)', fontSize: '0.9375rem', fontWeight: 600,
             cursor: guestLoading ? 'not-allowed' : 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
             transition: 'border-color 0.15s, color 0.15s',
             fontFamily: 'inherit',
           }}
           onMouseEnter={e => { if (!guestLoading) { e.currentTarget.style.borderColor = 'rgba(155,110,212,0.45)'; e.currentTarget.style.color = C.text } }}
-          onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; e.currentTarget.style.color = C.sub }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = C.sub }}
         >
           {guestLoading && <span className="loading-spinner" style={{ width: 16, height: 16 }} />}
           {guestLoading ? 'Setting up…' : 'Continue as Guest'}
         </button>
-        <p style={{ fontSize: '0.725rem', color: C.muted, textAlign: 'center', marginTop: '0.5rem' }}>
+        <p style={{ fontSize: '0.725rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem' }}>
           No account needed — explore the full platform instantly
         </p>
 
