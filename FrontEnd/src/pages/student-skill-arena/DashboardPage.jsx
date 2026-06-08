@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2, Menu } from 'lucide-react'
+import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2, Menu, Sun, Moon } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus,
   getSubjects, getSubject, getConcept, getQuizStatus,
@@ -8,6 +8,7 @@ import {
   getHunterStats, clearApiCache,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
+import { useTheme } from '../../context/ThemeContext'
 import { getRank } from '../../utils/slRank'
 import ProgressBar from '../../components/ProgressBar'
 import toast from 'react-hot-toast'
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
   { label: 'SKILL ARENA',  view: 'arena' },
   { label: 'DUNGEON GATE', view: 'gates' },
   { label: 'HUNTER PATH',  view: 'paths' },
+  { label: 'CHALLANGES',   view: null, href: '/problem-solving' },
 ]
 
 const DAILY_QUESTS = [
@@ -34,31 +36,37 @@ const RANK_LADDER = [
 ]
 
 const STAT_DEFS = [
-  { key: 'INT', label: 'INTELLIGENCE', domain: 'Backend',          color: '#9B6ED4', hint: 'Java · Python · Spring · Node', match: t => /java|spring|python|oop|data.struct|mongodb|django|node|backend/.test(t) },
-  { key: 'AGI', label: 'AGILITY',      domain: 'Frontend',         color: '#4ADE80', hint: 'HTML · CSS · React · JS',       match: t => /react|javascript|html|css|frontend/.test(t) },
-  { key: 'END', label: 'ENDURANCE',    domain: 'Databases & Ops',  color: '#60A5FA', hint: 'SQL · Docker · Git · Deploy',   match: t => /sql|postgres|mysql|docker|git|deploy|database/.test(t) },
-  { key: 'PER', label: 'PERCEPTION',   domain: 'Problem Solving',  color: '#F59E0B', hint: 'APIs · Security · Algorithms',  match: t => /security|jwt|rest|api|design|algorithm|boot|express/.test(t) },
+  { key: 'INT', label: 'INTELLIGENCE', domain: 'Backend',          color: '#9B6ED4', lightColor: '#7C5DBB', hint: 'Java · Python · Spring · Node', match: t => /java|spring|python|oop|data.struct|mongodb|django|node|backend/.test(t) },
+  { key: 'AGI', label: 'AGILITY',      domain: 'Frontend',         color: '#4ADE80', lightColor: '#15803D', hint: 'HTML · CSS · React · JS',       match: t => /react|javascript|html|css|frontend/.test(t) },
+  { key: 'END', label: 'ENDURANCE',    domain: 'Databases & Ops',  color: '#60A5FA', lightColor: '#1D4ED8', hint: 'SQL · Docker · Git · Deploy',   match: t => /sql|postgres|mysql|docker|git|deploy|database/.test(t) },
+  { key: 'PER', label: 'PERCEPTION',   domain: 'Problem Solving',  color: '#F59E0B', lightColor: '#B45309', hint: 'APIs · Security · Algorithms',  match: t => /security|jwt|rest|api|design|algorithm|boot|express/.test(t) },
 ]
+
+const _SR_D = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
+const _SR_L = { S: '#DC2626', A: '#B45309', B: '#7C5DBB', C: '#1D4ED8', D: '#15803D', E: '#6B7FA3' }
+const _sr   = () => document.documentElement.getAttribute('data-theme') === 'light' ? _SR_L : _SR_D
 
 // Stat rank from 0-100 pct — independent per category
 const statRank = (pct) => {
-  if (pct >= 95) return { label: 'S', color: '#EF4444' }
-  if (pct >= 80) return { label: 'A', color: '#F59E0B' }
-  if (pct >= 60) return { label: 'B', color: '#9B6ED4' }
-  if (pct >= 40) return { label: 'C', color: '#60A5FA' }
-  if (pct >= 20) return { label: 'D', color: '#4ADE80' }
-  return              { label: 'E', color: '#888888' }
+  const r = _sr()
+  if (pct >= 95) return { label: 'S', color: r.S }
+  if (pct >= 80) return { label: 'A', color: r.A }
+  if (pct >= 60) return { label: 'B', color: r.B }
+  if (pct >= 40) return { label: 'C', color: r.C }
+  if (pct >= 20) return { label: 'D', color: r.D }
+  return              { label: 'E', color: r.E }
 }
 
 const GATE_FILTERS = ['All GATES', 'ENTERED', 'CLOSED', 'Not ENTERED']
 
 // ─── Helpers ──────────────────────────────────────────────
 const gateRankByOrder = (idx) => {
-  if (idx <= 1) return { label: 'D', cls: 'rank-d', color: '#4ADE80' }
-  if (idx <= 3) return { label: 'C', cls: 'rank-c', color: '#60A5FA' }
-  if (idx <= 6) return { label: 'B', cls: 'rank-b', color: '#9B6ED4' }
-  if (idx <= 9) return { label: 'A', cls: 'rank-a', color: '#F59E0B' }
-  return            { label: 'S', cls: 'rank-s', color: '#EF4444' }
+  const r = _sr()
+  if (idx <= 1) return { label: 'D', cls: 'rank-d', color: r.D }
+  if (idx <= 3) return { label: 'C', cls: 'rank-c', color: r.C }
+  if (idx <= 6) return { label: 'B', cls: 'rank-b', color: r.B }
+  if (idx <= 9) return { label: 'A', cls: 'rank-a', color: r.A }
+  return            { label: 'S', cls: 'rank-s', color: r.S }
 }
 
 const RANK_META = {
@@ -87,7 +95,9 @@ const computeStats = (sp = []) =>
     const inProgress= matched.filter(s => (s.percentage ?? 0) > 0 && (s.percentage ?? 0) < 100)
     const next      = matched.find(s => (s.percentage ?? 0) === 0)
     const sRank     = statRank(pct)
-    return { ...def, pct, totalDone, totalAll, cleared, inProgress, next, sRank }
+    const light     = document.documentElement.getAttribute('data-theme') === 'light'
+    const statColor = light ? def.lightColor : def.color
+    return { ...def, pct, totalDone, totalAll, cleared, inProgress, next, sRank, statColor }
   })
 
 const questKey = (userId) => `sl_quests_${userId}`
@@ -116,7 +126,7 @@ function AboutGateModal({ subject, onClose }) {
 
   const Section = ({ label, children }) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
-      <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>{label}</div>
+      <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.12em', color: 'var(--text-secondary)', textTransform: 'uppercase', fontWeight: 700 }}>{label}</div>
       {children}
     </div>
   )
@@ -180,6 +190,12 @@ function AboutGateModal({ subject, onClose }) {
           {subject.prerequisites?.length > 0 && (
             <Section label="What you need to know first">
               <ListItems items={subject.prerequisites} />
+            </Section>
+          )}
+
+          {subject.toolsRequired?.length > 0 && (
+            <Section label="Tools Required">
+              <ListItems items={subject.toolsRequired} />
             </Section>
           )}
 
@@ -1263,13 +1279,13 @@ function MobileStatsPopup({ user, rank, level, xp, stats, hunterStats, onClose }
               <div key={stat.key} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: 8, padding: '0.625rem 0.875rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                   <div>
-                    <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: stat.color }}>{stat.key}</span>
+                    <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: stat.statColor }}>{stat.key}</span>
                     <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: '#64748B', marginLeft: '0.4rem' }}>{stat.label}</span>
                   </div>
-                  <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.68rem', fontWeight: 700, color: stat.color }}>{isUntouched ? '0%' : `${stat.pct}%`}</span>
+                  <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.68rem', fontWeight: 700, color: stat.statColor }}>{isUntouched ? '0%' : `${stat.pct}%`}</span>
                 </div>
                 <div style={{ height: 5, background: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' }}>
-                  <div style={{ height: '100%', width: `${isUntouched ? 0 : stat.pct}%`, background: `linear-gradient(90deg, ${stat.color}50, ${stat.color})`, borderRadius: 3, transition: 'width 1.2s ease' }} />
+                  <div style={{ height: '100%', width: `${isUntouched ? 0 : stat.pct}%`, background: `linear-gradient(90deg, ${stat.statColor}50, ${stat.statColor})`, borderRadius: 3, transition: 'width 1.2s ease' }} />
                 </div>
                 <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: '#404860', marginTop: 4 }}>{stat.totalDone}/{stat.totalAll} skills · {stat.domain}</div>
               </div>
@@ -1339,6 +1355,7 @@ function MobileQuestsPopup({ quests, doneCount, earnedXp, onClose }) {
 // ─── Main Component ───────────────────────────────────────
 export default function DashboardPage() {
   const { user, logout } = useAuth()
+  const { theme, toggleTheme } = useTheme()
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -1649,7 +1666,7 @@ export default function DashboardPage() {
               { label: 'DAY STREAK',     value: streak,            suffix: streak === 1 ? 'day' : 'days', color: '#F59E0B' },
             ].map(stat => (
               <div key={stat.label} style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.625rem 0.75rem', textAlign: 'center' }}>
-                <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '1.25rem', fontWeight: 900, color: stat.color, lineHeight: 1 }}>{stat.value}</div>
+                <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '1.25rem', fontWeight: 900, color: stat.statColor, lineHeight: 1 }}>{stat.value}</div>
                 <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.08em', marginTop: '0.2rem' }}>{stat.suffix}</div>
                 <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.52rem', color: 'var(--text-muted)', letterSpacing: '0.1em', marginTop: '0.1rem' }}>{stat.label}</div>
               </div>
@@ -1901,7 +1918,7 @@ export default function DashboardPage() {
         <div className="sl-dash-nav-links">
           {NAV_ITEMS.map(item => (
             <button key={item.label} className={`sl-nav-link${activeView === item.view ? ' active' : ''}`}
-              onClick={() => switchView(item.view)}>
+              onClick={() => item.href ? navigate(item.href) : switchView(item.view)}>
               {item.label}
             </button>
           ))}
@@ -1909,6 +1926,9 @@ export default function DashboardPage() {
 
         {/* Desktop right */}
         <div className="sl-dash-nav-right">
+          <button className="theme-icon-btn" onClick={toggleTheme} title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+          </button>
           <div className="sl-nav-xp">
             <span className="sl-nav-xp-label">XP → LVL {level}</span>
             <div className="xp-bar-track" style={{ height: 4, width: 84 }}>
@@ -1920,7 +1940,11 @@ export default function DashboardPage() {
             onClick={handleAvatarClick}>{initials}</div>
         </div>
 
-        {/* Mobile: avatar on RIGHT */}
+        {/* Mobile: theme toggle + avatar on RIGHT */}
+        <button className="sl-mob-theme-btn" onClick={toggleTheme}
+          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, color: 'var(--text-secondary)', width: 34, height: 34, alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
+          {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+        </button>
         <div className="sl-mob-avatar" style={{ background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}` }}
           onClick={handleAvatarClick}>{initials}</div>
       </nav>
@@ -1930,16 +1954,16 @@ export default function DashboardPage() {
         <>
           <div onClick={() => setMobileMenuOpen(false)}
             style={{ position: 'fixed', inset: 0, zIndex: 150, background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(2px)' }} />
-          <div style={{ position: 'fixed', top: 56, left: 0, width: 260, bottom: 0, zIndex: 151, background: '#0D1322', borderRight: '1px solid rgba(155,110,212,0.3)', boxShadow: '8px 0 32px rgba(0,0,0,0.6)', animation: 'slideIn 0.2s ease', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ position: 'fixed', top: 56, left: 0, width: 260, bottom: 0, zIndex: 151, background: 'var(--bg-card)', borderRight: '1px solid rgba(155,110,212,0.3)', boxShadow: '8px 0 32px rgba(0,0,0,0.6)', animation: 'slideIn 0.2s ease', display: 'flex', flexDirection: 'column' }}>
             <div style={{ padding: '0.875rem 1.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.14em', color: '#9B6ED4', borderBottom: '1px solid rgba(155,110,212,0.12)', background: 'rgba(155,110,212,0.05)' }}>
               [ SELECT SECTION ]
             </div>
             {NAV_ITEMS.map(item => (
               <button key={item.label}
-                onClick={() => { switchView(item.view); setMobileMenuOpen(false) }}
+                onClick={() => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}
                 style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', width: '100%', padding: '1.125rem 1.25rem', background: activeView === item.view ? 'rgba(155,110,212,0.1)' : 'transparent', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: activeView === item.view ? '3px solid #9B6ED4' : '3px solid transparent', color: activeView === item.view ? '#B48AE8' : 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1.0625rem', letterSpacing: '0.08em', cursor: 'pointer', textAlign: 'left', transition: 'background 0.15s', textTransform: 'uppercase' }}>
                 <span style={{ fontSize: '1.25rem', width: 24, textAlign: 'center', flexShrink: 0 }}>
-                  {item.view === 'arena' ? '⚔️' : item.view === 'gates' ? '🚪' : '🗺️'}
+                  {item.view === 'arena' ? '⚔️' : item.view === 'gates' ? '🚪' : item.view === 'paths' ? '🗺️' : '💻'}
                 </span>
                 <span style={{ flex: 1 }}>{item.label}</span>
                 {activeView === item.view && (
@@ -2009,7 +2033,7 @@ export default function DashboardPage() {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.15rem' }}>
                       <span className="sl-stat-name">{stat.label}</span>
                       {!isUntouched && (
-                        <span className="sl-stat-value" style={{ color: stat.color }}>{stat.pct}%</span>
+                        <span className="sl-stat-value" style={{ color: stat.statColor }}>{stat.pct}%</span>
                       )}
                     </div>
 
@@ -2018,7 +2042,7 @@ export default function DashboardPage() {
                       {isUntouched ? (
                         <span style={{ color: '#404860', fontSize: '0.68rem' }}>{stat.hint}</span>
                       ) : stat.cleared.length > 0 ? (
-                        <span style={{ color: stat.color, opacity: 0.85 }}>{stat.cleared.slice(0, 2).join(' · ')}{stat.cleared.length > 2 ? ` +${stat.cleared.length - 2}` : ''}</span>
+                        <span style={{ color: stat.statColor, opacity: 0.85 }}>{stat.cleared.slice(0, 2).join(' · ')}{stat.cleared.length > 2 ? ` +${stat.cleared.length - 2}` : ''}</span>
                       ) : stat.inProgress.length > 0 ? (
                         <span style={{ color: '#8B9AB8' }}>{stat.inProgress[0].title}</span>
                       ) : (
@@ -2030,8 +2054,8 @@ export default function DashboardPage() {
                     <div className="sl-stat-track" style={{ marginBottom: isUntouched ? 0 : '0.2rem' }}>
                       <div className="sl-stat-fill" style={{
                         width: `${isUntouched ? 0 : stat.pct}%`,
-                        background: `linear-gradient(90deg, ${stat.color}50, ${stat.color})`,
-                        boxShadow: stat.pct > 0 ? `0 0 6px ${stat.color}55` : 'none',
+                        background: `linear-gradient(90deg, ${stat.statColor}50, ${stat.statColor})`,
+                        boxShadow: stat.pct > 0 ? `0 0 6px ${stat.statColor}55` : 'none',
                       }} />
                     </div>
 
@@ -2042,7 +2066,7 @@ export default function DashboardPage() {
                           {stat.totalDone}/{stat.totalAll} skills
                         </span>
                         {stat.next && stat.pct < 100 && (
-                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: stat.color, opacity: 0.7, letterSpacing: '0.04em', cursor: 'pointer' }}
+                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: stat.statColor, opacity: 0.7, letterSpacing: '0.04em', cursor: 'pointer' }}
                             onClick={() => { switchView('gates') }}>
                             → {stat.next.title.split(' ')[0]}
                           </span>

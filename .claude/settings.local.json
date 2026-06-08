@@ -21,7 +21,12 @@
       "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"Set-Location 'C:\\\\manmadha\\\\Student-project\\\\FrontEnd'; npm run dev\" -WindowStyle Normal; Write-Host \"Frontend window launched\")",
       "PowerShell($env:JAVA_HOME = \"C:\\\\Users\\\\ManmadhaJayamangala\\\\.p2\\\\pool\\\\plugins\\\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.11.v20260515-1531\\\\jre\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"C:\\\\manmadha\\\\Student-project\\\\Student-BackEnd\"; .\\\\mvnw.cmd spring-boot:run 2>&1)",
       "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"Set-Location 'C:\\\\manmadha\\\\Student-project\\\\FrontEnd'; npm run dev\" -WindowStyle Normal; Write-Host \"Frontend launched\")",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "WebFetch(domain:learntoearn-wnpp.onrender.com)",
+      "Bash(Get-ChildItem -Path \"C:\\\\manmadha\\\\Student-project\\\\FrontEnd\\\\src\\\\components\" -File -Recurse)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(mongosh \"mongodb+srv://manmadhajayamangala777_db_user:manmadhA%2C8688@free-database.lfnuahd.mongodb.net/learnData_db?retryWrites=true&w=majority&appName=Free-Database\" --eval \"db.concepts.findOne\\({subjectTitle: 'HTML Fundamentals'}, {title:1, introduction:1, explanationSimple:1, explanationTechnical:1, syntax:1, examples:1, keyPoints:1, tip:1, commonMistakes:1, estimatedMinutes:1, rank:1, orderIndex:1}\\)\" --quiet)",
+      "Bash(python *)"
     ]
   }
 }

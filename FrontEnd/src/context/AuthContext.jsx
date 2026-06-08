@@ -12,7 +12,12 @@ export function AuthProvider({ children }) {
     if (token) {
       getMe()
         .then(res => setUser(res.data))
-        .catch(() => { localStorage.clear(); setUser(null) })
+        .catch(() => {
+          const theme = localStorage.getItem('theme')
+          localStorage.clear()
+          if (theme) localStorage.setItem('theme', theme)
+          setUser(null)
+        })
         .finally(() => setLoading(false))
     } else {
       setLoading(false)
@@ -37,10 +42,11 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     clearUserCache()          // wipe user-specific cache; roadmap content is kept
-    // Preserve guest device ID so the same guest account is reused on next visit
     const guestDeviceId = localStorage.getItem('guest_device_id')
+    const theme = localStorage.getItem('theme')
     localStorage.clear()
     if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
+    if (theme) localStorage.setItem('theme', theme)
     setUser(null)
     window.location.href = '/'
   }

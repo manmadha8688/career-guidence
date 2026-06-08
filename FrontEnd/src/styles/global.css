@@ -38,6 +38,10 @@
   --sidebar-width: 260px;
   --navbar-height: 64px;
 
+  /* ── Landing page glass nav background ── */
+  --lp-bg:     #090E1C;
+  --lp-nav-bg: rgba(9,14,28,0.92);
+
   /* ── Transitions ── */
   --transition: all 0.2s ease;
   --transition-slow: all 0.35s ease;
@@ -77,6 +81,58 @@
   --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
 }
+
+[data-theme="light"] {
+  --primary:       #7C5DBB;
+  --primary-light: #9B6ED4;
+  --primary-dark:  #6448A3;
+  --primary-bg:    #F0EAFF;
+
+  --success: #15803D;
+  --warning: #B45309;
+  --danger:  #DC2626;
+  --info:    #1D4ED8;
+
+  --bg-primary:   #E8EDF7;
+  --bg-secondary: #E0E8F5;
+  --bg-tertiary:  #D5DFEE;
+  --bg-card:      #F4F7FF;
+  --bg-hover:     #E0E8F5;
+
+  --text-primary:   #18244A;
+  --text-secondary: #384470;
+  --text-muted:     #6B7FA3;
+
+  --border:       #C4D0E8;
+  --border-light: #D8E2F0;
+  --border-hover: #8FA3C8;
+
+  --shadow-sm: 0 1px 4px rgba(24,36,74,0.08);
+  --shadow-md: 0 4px 16px rgba(24,36,74,0.1);
+  --shadow-lg: 0 8px 32px rgba(24,36,74,0.14);
+
+  --accent:       #7C5DBB;
+  --accent-light: #9B6ED4;
+  --accent-dark:  #6448A3;
+  --accent-bg:    #F0EAFF;
+
+  --lp-bg:     #E8EDF7;
+  --lp-nav-bg: rgba(232,237,247,0.95);
+  --lp-grad:   linear-gradient(135deg, #7C5DBB 0%, #5B3FA0 45%, #1D4ED8 100%);
+
+  /* Rank colors — darker for light backgrounds */
+  --rank-s: #DC2626;
+  --rank-a: #B45309;
+  --rank-b: #7C5DBB;
+  --rank-c: #1D4ED8;
+  --rank-d: #15803D;
+  --rank-e: #6B7FA3;
+}
+
+/* Auth page left panel always stays dark */
+[data-theme="light"] .ap-left { background: #090E1C !important; }
+/* Mobile section title hardcoded color */
+[data-theme="light"] .sl-mob-section-title { color: var(--text-secondary); }
 
 /* ─── RESET ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1851,6 +1907,7 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
 
 /* ── Mobile nav elements — hidden on desktop ── */
 .sl-mob-menu-btn    { display: none; align-items: center; justify-content: center; }
+.sl-mob-theme-btn   { display: none; align-items: center; justify-content: center; }
 .sl-mob-section-title {
   display: none;
   font-family: 'Rajdhani', sans-serif;
@@ -1886,7 +1943,8 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
   .sl-dash-nav         { justify-content: flex-start; gap: 0; padding: 0 0.75rem; }
   .sl-mob-menu-btn     { display: flex; margin-right: 0.625rem; }
   .sl-mob-section-title{ display: block; }
-  .sl-mob-avatar       { display: flex; margin-left: 0.625rem; }
+  .sl-mob-theme-btn    { display: flex; margin-right: 0.375rem; }
+  .sl-mob-avatar       { display: flex; }
   .sl-dash-nav-logo    { display: none; }   /* ARISE logo hidden — replaced by section name */
   .sl-dash-nav-links   { display: none; }
   .sl-dash-nav-right   { display: none; }
@@ -2520,4 +2578,296 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+}
+
+/* ─── LIGHT THEME OVERRIDES ─── */
+/* Restore light-friendly base styles overridden by the SL dark-theme rules */
+[data-theme="light"] .quiz-timer.warning { background: #FEF3C7; color: #92400E; animation: none; }
+[data-theme="light"] .quiz-timer.danger  { background: #FEE2E2; color: #991B1B; }
+[data-theme="light"] .option-correct { background: #DCFCE7; color: #166534; }
+[data-theme="light"] .option-wrong   { background: #FEE2E2; color: #991B1B; }
+[data-theme="light"] .option-neutral { background: var(--bg-tertiary); color: var(--text-muted); }
+[data-theme="light"] .mastered-badge { background: #DCFCE7; color: #166534; }
+[data-theme="light"] .xp-bar-track   { background: #C4D0E8; }
+[data-theme="light"] .sl-gate-bar-track { background: rgba(0,0,0,0.12); }
+[data-theme="light"] .sl-stat-track  { background: rgba(0,0,0,0.1); }
+[data-theme="light"] .sl-quest-item  { border-bottom-color: var(--border); }
+[data-theme="light"] .sl-quest-check.done { background: rgba(124,93,187,0.15); border-color: #7C5DBB; }
+
+/* Code blocks stay dark in light mode */
+[data-theme="light"] .code-block { background: #1E1E2E; color: #CDD6F4; }
+[data-theme="light"] .code-block-header { background: #070B18; }
+
+/* Alert / system banners */
+[data-theme="light"] .sl-alert-banner {
+  background: rgba(124,93,187,0.07);
+  border-color: rgba(124,93,187,0.22);
+  border-left-color: #7C5DBB;
+}
+[data-theme="light"] .sl-system-banner {
+  background: rgba(124,93,187,0.06);
+  border-color: rgba(124,93,187,0.2);
+  border-left-color: #7C5DBB;
+}
+[data-theme="light"] .sl-alert-tag { color: #7C5DBB; }
+[data-theme="light"] .sl-tag       { color: #7C5DBB; }
+
+/* Gate cards */
+[data-theme="light"] .sl-gate-card { background: var(--bg-tertiary); }
+[data-theme="light"] .sl-gate-card:hover { box-shadow: 0 4px 16px rgba(24,36,74,0.12); }
+
+/* Rank item current highlight */
+[data-theme="light"] .sl-rank-item.current { background: rgba(124,93,187,0.08); border-color: rgba(124,93,187,0.25); }
+[data-theme="light"] .sl-rank-now { color: #7C5DBB; }
+
+/* Rank D green — neon #4ADE80 has poor contrast on light bg */
+[data-theme="light"] .rank-d { color: #15803D; background: rgba(21,128,61,0.12); }
+
+/* Arena gate/skill status badges */
+[data-theme="light"] .badge-cleared { color: #15803D; border-color: rgba(21,128,61,0.3); background: rgba(21,128,61,0.1); }
+[data-theme="light"] .badge-hunt    { color: #7C5DBB; border-color: rgba(124,93,187,0.3); background: rgba(124,93,187,0.1); }
+[data-theme="light"] .badge-sealed  { color: #6B7FA3; border-color: rgba(107,127,163,0.25); background: rgba(107,127,163,0.08); }
+[data-theme="light"] .sl-skill-badge.cleared { background: rgba(21,128,61,0.1); color: #15803D; }
+[data-theme="light"] .sl-gate-status { color: var(--text-muted); }
+
+/* Success/cleared colors in light */
+[data-theme="light"] .roadmap-step-number.completed { background: #15803D; }
+[data-theme="light"] .roadmap-step-connector.completed { background: #15803D; }
+
+/* Alert message strong text */
+[data-theme="light"] .sl-alert-msg strong { color: var(--text-primary); }
+
+/* Quest XP color */
+[data-theme="light"] .sl-quest-xp { color: #B45309; }
+
+/* Roadmap in-progress card */
+[data-theme="light"] .roadmap-step-card.in-progress { background: #F0EAFF; border-color: rgba(124,93,187,0.3); }
+
+/* SL dashboard accent adjustments */
+[data-theme="light"] .sl-hunter-level-num { color: #7C5DBB; text-shadow: none; }
+[data-theme="light"] .sl-dash-nav-logo    { color: #7C5DBB; }
+[data-theme="light"] .sl-power-xp        { color: #B45309; }
+[data-theme="light"] .sl-nav-link        { color: var(--text-muted); }
+[data-theme="light"] .sl-nav-link:hover  { color: var(--text-primary); }
+[data-theme="light"] .sl-nav-link.active { color: #7C5DBB; border-bottom-color: #7C5DBB; }
+[data-theme="light"] .sl-concept-nav-title { color: #7C5DBB; }
+[data-theme="light"] .sidebar-link.active { background: #F0EAFF; color: #7C5DBB; border-left-color: #7C5DBB; }
+[data-theme="light"] .sidebar-link:hover  { background: var(--bg-tertiary); color: var(--text-primary); }
+[data-theme="light"] .sidebar-brand-icon  { background: #7C5DBB; }
+[data-theme="light"] .sidebar-brand-text  { color: #7C5DBB; }
+
+/* Skill items */
+[data-theme="light"] .sl-skill-item { background: var(--bg-secondary); }
+[data-theme="light"] .sl-skill-item:hover { background: rgba(124,93,187,0.06); }
+[data-theme="light"] .sl-skill-badge.enter { background: rgba(124,93,187,0.1); color: #7C5DBB; }
+
+/* Concept tabs */
+[data-theme="light"] .sl-concept-tab { background: var(--bg-tertiary); color: var(--text-muted); }
+[data-theme="light"] .sl-concept-tab.active { background: #7C5DBB; color: #fff; }
+[data-theme="light"] .concept-tab-btn.active { background: #7C5DBB; color: #fff; }
+
+/* Gate trial banner */
+[data-theme="light"] .gate-trial-banner {
+  background: rgba(124,93,187,0.05);
+  border-bottom-color: rgba(124,93,187,0.18);
+  color: #7C5DBB;
+}
+
+/* Subject card glow */
+[data-theme="light"] .subject-card:hover {
+  box-shadow: 0 0 0 1px var(--gate-color, #7C5DBB), 0 6px 24px rgba(24,36,74,0.12);
+}
+
+/* Panel title decorators */
+[data-theme="light"] .sl-panel-title { color: var(--text-muted); }
+[data-theme="light"] .sl-panel-title::before,
+[data-theme="light"] .sl-panel-title::after { background: var(--border); }
+
+/* Theme toggle button */
+.theme-icon-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.theme-icon-btn:hover { color: var(--text-primary); background: var(--border); }
+
+/* Gradient text — responds to data-theme instantly, no React needed */
+.lp-grad-text {
+  background: linear-gradient(135deg, #C4B5FD 0%, #9B6ED4 45%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="light"] .lp-grad-text {
+  background: linear-gradient(135deg, #7C5DBB 0%, #5B3FA0 45%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ══════════════════════════════════════════════════════
+   MISSION BOARD — NARUTO THEME
+══════════════════════════════════════════════════════ */
+
+/* ── Keyframe Animations ── */
+@keyframes shurikenSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes missionCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) rotate(-0.4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes stampPress {
+  0%   { transform: scale(0.4) rotate(-15deg); opacity: 0; }
+  55%  { transform: scale(1.1) rotate(3deg);   opacity: 1; }
+  75%  { transform: scale(0.96) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg);     opacity: 1; }
+}
+
+@keyframes missionTitleGlow {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(255,127,42,0.35)); }
+  50%       { filter: drop-shadow(0 0 28px rgba(255,127,42,0.7)); }
+}
+
+@keyframes scrollUnroll {
+  from { opacity: 0; transform: scaleY(0.9) translateY(-8px); }
+  to   { opacity: 1; transform: scaleY(1)   translateY(0); }
+}
+
+/* ── Mission Card ── */
+.mission-card {
+  animation: missionCardReveal 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ── Rank Stamp ── */
+.rank-stamp {
+  animation: stampPress 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.rank-stamp-lg {
+  animation: stampPress 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+/* ── Mission Detail scroll reveal ── */
+.mission-detail-content {
+  animation: scrollUnroll 0.35s ease-out both;
+}
+
+/* ── Shuriken ── */
+.shuriken-spinner {
+  animation: shurikenSpin 0.8s linear infinite;
+}
+
+/* ── Mission CSS Variables ── */
+:root {
+  --mission-page-bg:      linear-gradient(135deg, #070B18 0%, #0A0F22 50%, #080B1A 100%);
+  --mission-nav-bg:       rgba(7,11,24,0.95);
+  --mission-nav-border:   rgba(255,127,42,0.08);
+  --mission-card-bg:      #0D1120;
+  --mission-card-border:  rgba(255,127,42,0.1);
+  --mission-section-bg:   rgba(13,17,32,0.8);
+  --mission-section-bdr:  rgba(255,127,42,0.1);
+  --mission-hero-sub:     #A0824A;
+  --mission-divider:      rgba(255,127,42,0.15);
+  --mission-footer-text:  #6B5020;
+  --mission-footer-bdr:   rgba(255,127,42,0.1);
+}
+[data-theme="light"] {
+  --mission-page-bg:      linear-gradient(135deg, #F2F0EC 0%, #EBE8E0 100%);
+  --mission-nav-bg:       rgba(245,240,232,0.95);
+  --mission-nav-border:   rgba(100,40,0,0.12);
+  --mission-card-bg:      #FDFAF5;
+  --mission-card-border:  rgba(100,40,0,0.12);
+  --mission-section-bg:   rgba(252,250,246,0.95);
+  --mission-section-bdr:  rgba(100,40,0,0.15);
+  --mission-hero-sub:     #6B4C2A;
+  --mission-divider:      rgba(100,40,0,0.18);
+  --mission-footer-text:  #6B4820;
+  --mission-footer-bdr:   rgba(100,40,0,0.15);
+}
+
+/* ── Light theme overrides ── */
+[data-theme="light"] .mission-card {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .mission-card:hover {
+  box-shadow: 0 8px 32px rgba(100,40,0,0.1) !important;
+}
+
+/* ── Mission title gradient text ── */
+.mission-title-grad {
+  background: linear-gradient(135deg, #FF6B00, #FF7F2A, #FFB347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: missionTitleGlow 3s ease-in-out infinite;
+}
+[data-theme="light"] .mission-title-grad {
+  background: linear-gradient(135deg, #5A2200, #8C4200, #B06020);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Responsive — hide labels on small screens ── */
+@media (hover: none) {
+  /* Touch devices — disable card hover lift so tap navigates cleanly */
+  .mission-card {
+    transition: none !important;
+  }
+  .mission-card:active {
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-nav-title { display: none; }
+  .mission-arena-label { display: none; }
+  .mission-detail-hours { display: none; }
+}
+
+/* ── Problem Solving CSS Variables ── */
+:root {
+  --ps-bg:            #050D1A;
+  --ps-nav-bg:        rgba(5,13,26,0.95);
+  --ps-nav-border:    rgba(14,165,233,0.1);
+  --ps-card-bg:       #0A1628;
+  --ps-card-border:   rgba(14,165,233,0.12);
+  --ps-accent:        #0EA5E9;
+  --ps-accent-dim:    rgba(14,165,233,0.15);
+  --ps-code-bg:       #020810;
+  --ps-code-border:   rgba(14,165,233,0.15);
+  --ps-hint-bg:       rgba(14,165,233,0.06);
+  --ps-muted:         #3A5070;
+}
+[data-theme="light"] {
+  --ps-bg:            #EFF6FF;
+  --ps-nav-bg:        rgba(239,246,255,0.97);
+  --ps-nav-border:    rgba(2,132,199,0.15);
+  --ps-card-bg:       #FFFFFF;
+  --ps-card-border:   rgba(2,132,199,0.18);
+  --ps-accent:        #0284C7;
+  --ps-accent-dim:    rgba(2,132,199,0.1);
+  --ps-code-bg:       #F0F9FF;
+  --ps-code-border:   rgba(2,132,199,0.2);
+  --ps-hint-bg:       rgba(2,132,199,0.06);
+  --ps-muted:         #64748B;
 }

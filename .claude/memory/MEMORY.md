@@ -15,6 +15,6 @@ When you start a new chat:
 3. I read the memory → full context in one shot
 4. Ready to code
 
-
+70419d65-f0a6-4ae1-9172-ba0cc28b6651
 
  Next session just say "ready for project" and I'll pick up from here.
