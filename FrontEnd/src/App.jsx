@@ -9,6 +9,7 @@ import LoginPage from './pages/auth/LoginPage'
 import RegisterPage from './pages/auth/RegisterPage'
 
 import MissionsPage from './pages/MissionsPage'
+import FresherInstructionsPage from './pages/FresherInstructionsPage'
 import MissionDetailPage from './pages/MissionDetailPage'
 import ProblemSolvingPage from './pages/problem-solving/ProblemSolvingPage'
 import TrackPage from './pages/problem-solving/TrackPage'
@@ -44,12 +45,13 @@ function App() {
           <Route path="/login"    element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/missions" element={<MissionsPage />} />
+          <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />
           <Route path="/problem-solving" element={<ProblemSolvingPage />} />
-          <Route path="/problem-solving/start-coding"   element={<TrackPage />} />
-          <Route path="/problem-solving/logic-building" element={<TrackPage />} />
-          <Route path="/problem-solving/skill-up"       element={<TrackPage />} />
-          <Route path="/problem-solving/interview-prep" element={<TrackPage />} />
-          <Route path="/problem-solving/:id"            element={<ProblemDetailPage />} />
+          <Route path="/problem-solving/start-coding"   element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/logic-building" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/skill-up"       element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/interview-prep" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/:id"            element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
 
           {/* Missions detail — requires login */}
           <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
