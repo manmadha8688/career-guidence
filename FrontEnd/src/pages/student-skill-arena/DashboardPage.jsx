@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2, Menu, Sun, Moon } from 'lucide-react'
 import {
-  getProgressSummary, getRoadmap, getRoadmapStatus,
+  getProgressSummary, getRoadmap, getRoadmapStatus, getBulkSubjectStatus,
   getSubjects, getSubject, getConcept, getQuizStatus,
   getRoadmaps, enrollRoadmap, pauseRoadmap, resumeRoadmap,
   getHunterStats, clearApiCache,
@@ -1433,7 +1433,7 @@ export default function DashboardPage() {
   // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
   useEffect(() => {
     const refresh = () => {
-      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*')
+      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*', 'enrolledRoadmaps')
       getProgressSummary().then(s => {
         setSummary(s.data)
         syncQuestsFromSummary(s.data, user?.id)
@@ -1444,11 +1444,12 @@ export default function DashboardPage() {
       getSubjects().then(r => {
         setSubjects(r.data)
         setGatesLoaded(true)
-        r.data.forEach(s => {
-          getQuizStatus('subject', s.id)
-            .then(qs => setQuizStatuses(prev => ({ ...prev, [s.id]: qs.data })))
+        const ids = r.data.map(s => s.id)
+        if (ids.length > 0) {
+          getBulkSubjectStatus(ids)
+            .then(res => setQuizStatuses(res.data))
             .catch(() => {})
-        })
+        }
       }).catch(() => {})
       // Reload roadmap cards with fresh allSubjectsDone
       getRoadmaps().then(r => { setAllRoadmaps(r.data); setPathsLoaded(true) }).catch(() => {})
@@ -1489,11 +1490,12 @@ export default function DashboardPage() {
     getSubjects().then(r => {
       setSubjects(r.data)
       setGatesLoaded(true)
-      r.data.forEach(s => {
-        getQuizStatus('subject', s.id)
-          .then(qs => setQuizStatuses(prev => ({ ...prev, [s.id]: qs.data })))
+      const ids = r.data.map(s => s.id)
+      if (ids.length > 0) {
+        getBulkSubjectStatus(ids)
+          .then(res => setQuizStatuses(res.data))
           .catch(() => {})
-      })
+      }
     })
   }
 

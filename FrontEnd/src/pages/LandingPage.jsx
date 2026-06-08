@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { guestLogin, submitFeedback } from '../api/api'
+import axios from 'axios'
 import toast from 'react-hot-toast'
 import {
   Swords, BookOpen, Code2, Briefcase,
@@ -124,6 +125,21 @@ export default function LandingPage() {
   const [hoveredStep, setHoveredStep] = useState(null)
   const [guestLoading, setGuestLoading] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [platformStats, setPlatformStats] = useState({ subjects: '9', concepts: '130+', paths: '3' })
+
+  useEffect(() => {
+    const base = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
+    axios.get(`${base}/public-stats`)
+      .then(r => {
+        const { subjectCount, conceptCount, roadmapCount } = r.data
+        if (subjectCount > 0) setPlatformStats({
+          subjects: String(subjectCount),
+          concepts: `${conceptCount}+`,
+          paths:    String(roadmapCount),
+        })
+      })
+      .catch(() => {})
+  }, [])
 
   // Feedback state
   const [fb, setFb] = useState({ rating: 0, experience: '', category: '', categoryNote: '', isUseful: null })
@@ -403,6 +419,19 @@ export default function LandingPage() {
               <Swords size={18} />
               {user ? 'Go to Dashboard' : 'Enter Skills Arena'}
             </button>
+            <button
+              onClick={() => navigate('/fresher-instructions')}
+              style={{
+                ...ghostBtn,
+                border: '1px solid rgba(99,102,241,0.35)',
+                color: lt ? '#6366F1' : '#818CF8',
+                fontWeight: 600,
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(99,102,241,0.7)'; e.currentTarget.style.background = 'rgba(99,102,241,0.08)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(99,102,241,0.35)'; e.currentTarget.style.background = 'transparent' }}
+            >
+              🎓 Are you a fresher? Read this
+            </button>
             {!user && (
               <button
                 onClick={handleGuest}
@@ -435,10 +464,10 @@ export default function LandingPage() {
             border: `1px solid ${C.border}`, overflow: 'hidden',
           }}>
             {[
-              ['3', 'Career Paths', C.primary],
-              ['30+', 'Subjects', C.blue],
-              ['100+', 'Concepts', C.green],
-              ['XP', 'Rank System', C.gold],
+              [platformStats.paths,    'Career Paths', C.primary],
+              [platformStats.subjects, 'Subjects',     C.blue],
+              [platformStats.concepts, 'Concepts',     C.green],
+              ['XP',                   'Rank System',  C.gold],
             ].map(([val, label, color], i) => (
               <div key={label} style={{
                 textAlign: 'center',
