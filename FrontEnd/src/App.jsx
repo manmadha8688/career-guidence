@@ -10,6 +10,7 @@ import RegisterPage from './pages/auth/RegisterPage'
 
 import MissionsPage from './pages/MissionsPage'
 import FresherInstructionsPage from './pages/FresherInstructionsPage'
+import CareerGuidancePage from './pages/CareerGuidancePage'
 import MissionDetailPage from './pages/MissionDetailPage'
 import ProblemSolvingPage from './pages/problem-solving/ProblemSolvingPage'
 import TrackPage from './pages/problem-solving/TrackPage'
@@ -26,6 +27,7 @@ import AdminConcepts from './pages/admin-skill-arena/AdminConcepts'
 import AdminRoadmaps from './pages/admin-skill-arena/AdminRoadmaps'
 import AdminQuestions from './pages/admin-skill-arena/AdminQuestions'
 import AdminFeedbacks from './pages/admin-skill-arena/AdminFeedbacks'
+import AdminReports from './pages/admin-skill-arena/AdminReports'
 import AdminMissions from './pages/admin-skill-arena/AdminMissions'
 import AdminProblems from './pages/admin-skill-arena/AdminProblems'
 import FeedbackNudge from './components/FeedbackNudge'
@@ -46,6 +48,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/missions" element={<MissionsPage />} />
           <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />
+          <Route path="/fresher-instructions/career-guidance" element={<CareerGuidancePage />} />
           <Route path="/problem-solving" element={<ProblemSolvingPage />} />
           <Route path="/problem-solving/start-coding"   element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
           <Route path="/problem-solving/logic-building" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
@@ -76,6 +79,7 @@ function App() {
           <Route path="/admin-skill-arena/roadmaps"     element={<ProtectedRoute adminOnly><AdminRoadmaps /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/questions"    element={<ProtectedRoute adminOnly><AdminQuestions /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/feedbacks"    element={<ProtectedRoute adminOnly><AdminFeedbacks /></ProtectedRoute>} />
+          <Route path="/admin-skill-arena/reports"      element={<ProtectedRoute adminOnly><AdminReports /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/missions"     element={<ProtectedRoute adminOnly><AdminMissions /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/problems"     element={<ProtectedRoute adminOnly><AdminProblems /></ProtectedRoute>} />
 

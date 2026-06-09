@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Sun, Moon, Search, X, ChevronRight } from 'lucide-react'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblems } from '../../api/api'
+import ReportButton from '../../components/ReportButton'
 
 const SLUG_TO_TRACK = {
   'start-coding':   'START_CODING',
@@ -565,6 +566,7 @@ function SkillUpView({ questions, categories, selectedCategory, onCategoryChange
           ))}
         </div>
       )}
+      <ReportButton variant="floating" pageTitle="Code GYM — Track" />
     </div>
   )
 }

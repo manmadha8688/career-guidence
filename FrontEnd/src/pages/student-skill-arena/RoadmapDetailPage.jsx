@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, PlayCircle, Trophy, Zap, Lock } from 'lucide-react'
 import { getRoadmap, enrollRoadmap, getRoadmapStatus } from '../../api/api'
+import ReportButton from '../../components/ReportButton'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
@@ -311,6 +312,7 @@ export default function RoadmapDetailPage() {
 
         </div>
       </div>
+      <ReportButton variant="floating" pageTitle={`Hunter Path — ${roadmap?.title || ''}`} />
     </div>
   )
 }

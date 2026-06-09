@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { CheckCircle, XCircle, ArrowLeft, RotateCcw, Trophy, Zap } from 'lucide-react'
 import { getAttemptResult } from '../../api/api'
+import ReportButton from '../../components/ReportButton'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
@@ -286,6 +287,7 @@ export default function QuizResultPage() {
 
         </div>
       </div>
+      <ReportButton variant="floating" pageTitle="Quiz Result" />
     </div>
   )
 }

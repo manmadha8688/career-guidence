@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import ReportButton from '../../components/ReportButton'
 import { startConceptQuiz, startSubjectQuiz, startRoadmapQuiz, submitQuiz } from '../../api/api'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
@@ -116,6 +117,7 @@ export default function QuizPage() {
       flexDirection: 'column',
       fontFamily: "'Rajdhani', sans-serif",
     }}>
+      <ReportButton variant="floating" pageTitle={`Quiz — ${type} / ${refId}`} />
 
       {/* ── Header (fixed 52px) ── */}
       <header style={{
