@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
+import ReportButton from '../components/ReportButton'
 import {
   Sun, Moon, X,
   TrendingUp, MessageCircle, Building2, BookOpen,
@@ -559,6 +560,39 @@ export default function FresherInstructionsPage() {
           Click any card to read the full section.
         </p>
 
+        {/* Career Guidance CTA */}
+        <div style={{
+          display: 'inline-flex', flexDirection: 'column', alignItems: 'center',
+          gap: '0.5rem', marginBottom: '2.5rem',
+        }}>
+          <button
+            onClick={() => navigate('/fresher-instructions/career-guidance')}
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.625rem',
+              background: 'linear-gradient(135deg, #7C3AED, #9B6ED4, #6366F1)',
+              border: 'none', borderRadius: 12,
+              padding: '0.875rem 2rem',
+              color: '#fff', fontWeight: 700,
+              fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
+              cursor: 'pointer',
+              boxShadow: '0 4px 24px rgba(155,110,212,0.4)',
+              transition: 'transform 0.15s, box-shadow 0.15s',
+              fontFamily: "'Rajdhani', sans-serif",
+              letterSpacing: '0.03em',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(155,110,212,0.55)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(155,110,212,0.4)' }}
+          >
+            🧭 Career Guidance — Which Path Should I Take?
+          </button>
+          <span style={{
+            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem',
+            letterSpacing: '0.1em', color: light ? '#94A3B8' : '#475569',
+          }}>
+            ROLE GUIDE · ROADMAP · MENTOR ADVICE
+          </span>
+        </div>
+
         {/* Stats */}
         <div style={{
           display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px',
@@ -715,6 +749,7 @@ export default function FresherInstructionsPage() {
           .fi-nav-center { display: none !important; }
         }
       `}</style>
+      <ReportButton variant="floating" pageTitle="Fresher Guide" />
     </div>
   )
 }

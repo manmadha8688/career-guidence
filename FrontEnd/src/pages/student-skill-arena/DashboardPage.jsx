@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import ReportButton from '../../components/ReportButton'
 import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2, Menu, Sun, Moon } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus, getBulkSubjectStatus,
@@ -405,7 +406,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
         <div style={{ flex: 1, minWidth: 0 }}>
           <div className="sl-concept-inline-title">{concept.title}</div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexWrap: 'wrap', justifyContent: 'flex-end', minWidth: 0 }}>
           
           
           {concept.tip && (
@@ -427,6 +428,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz }
             onMouseLeave={e => e.currentTarget.style.background = 'rgba(155,110,212,0.07)'}>
             ⚔ TEST
           </button>
+          <ReportButton variant="inline" pageTitle={`Concept — ${concept.title}`} />
 
           {concept.completed && (
             <span className="badge badge-cleared" style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.06em' }}>
@@ -2363,6 +2365,7 @@ export default function DashboardPage() {
       {aboutGate && (
         <AboutGateModal subject={aboutGate} onClose={() => setAboutGate(null)} />
       )}
+      <ReportButton variant="floating" pageTitle="Skill Arena Dashboard" />
     </div>
   )
 }

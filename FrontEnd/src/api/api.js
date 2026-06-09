@@ -167,4 +167,10 @@ export const createMission    = (d)      => api.post('/admin/missions', d)      
 export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d) .then(r => { clearApiCache('missions', `mission:${id}`); return r })
 export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)  .then(r => { clearApiCache('missions', `mission:${id}`); return r })
 
+// ─── REPORTS ──────────────────────────────────────────
+export const getAdminReports    = (p=0,s=20) => api.get(`/reports?page=${p}&size=${s}`)
+export const updateReport       = (id, d)    => api.put(`/reports/${id}`, d)
+export const deleteReport       = (id)       => api.delete(`/reports/${id}`)
+export const getReportStats     = ()         => api.get('/reports/stats')
+
 export default api
