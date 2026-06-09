@@ -55,9 +55,36 @@ function SearchableSelect({ items, value, onChange, placeholder = 'Select…' })
   )
 }
 
+const listToText = arr => (arr || []).join('\n')
+const textToList = str => str.split('\n').map(s => s.trim()).filter(Boolean)
+
+function SectionLabel({ children }) {
+  return (
+    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: 'var(--warning)', textTransform: 'uppercase', borderBottom: '1px solid var(--border)', paddingBottom: '0.35rem', marginBottom: '0.75rem', marginTop: '0.25rem' }}>
+      {children}
+    </div>
+  )
+}
+
 function RoadmapModal({ roadmap, onClose, onSave }) {
-  const [form, setForm] = useState(roadmap || { title: '', description: '', roleTarget: '', icon: '🗺️', color: '#7C3AED', estimatedWeeks: 12 })
+  const initForm = () => roadmap ? {
+    title: roadmap.title || '', description: roadmap.description || '',
+    roleTarget: roadmap.roleTarget || '', icon: roadmap.icon || '🗺️',
+    color: roadmap.color || '#7C3AED', estimatedWeeks: roadmap.estimatedWeeks || 12,
+    overview: roadmap.overview || '', whyLearn: roadmap.whyLearn || '',
+    forWho: roadmap.forWho || '',
+    roleTargets: listToText(roadmap.roleTargets),
+    prerequisites: listToText(roadmap.prerequisites),
+    toolsRequired: listToText(roadmap.toolsRequired),
+    outcomes: listToText(roadmap.outcomes),
+  } : {
+    title: '', description: '', roleTarget: '', icon: '🗺️', color: '#7C3AED', estimatedWeeks: 12,
+    overview: '', whyLearn: '', forWho: '', roleTargets: '', prerequisites: '', toolsRequired: '', outcomes: '',
+  }
+
+  const [form, setForm] = useState(initForm)
   const [loading, setLoading] = useState(false)
+  const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -67,49 +94,92 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
   const handleSubmit = async e => {
     e.preventDefault(); setLoading(true)
     try {
-      roadmap ? await updateRoadmap(roadmap.id, form) : await createRoadmap(form)
+      const payload = {
+        ...form,
+        roleTargets:   textToList(form.roleTargets),
+        prerequisites: textToList(form.prerequisites),
+        toolsRequired: textToList(form.toolsRequired),
+        outcomes:      textToList(form.outcomes),
+      }
+      roadmap ? await updateRoadmap(roadmap.id, payload) : await createRoadmap(payload)
       toast.success(roadmap ? 'Updated' : 'Created'); onSave()
     } catch { toast.error('Failed to save') } finally { setLoading(false) }
   }
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal">
-        <div className="modal-header">
+      <div className="modal" style={{ maxWidth: 680, maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
+        <div className="modal-header" style={{ flexShrink: 0 }}>
           <h3 className="modal-title">{roadmap ? 'Edit Roadmap' : 'New Roadmap'}</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ overflowY: 'auto', flex: 1, padding: '0 1.5rem 1.5rem' }}>
+
+          <SectionLabel>Basic Info</SectionLabel>
           <div className="form-group">
             <label className="form-label">Title *</label>
-            <input className="form-input" value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required />
+            <input className="form-input" value={form.title} onChange={e => set('title', e.target.value)} required />
           </div>
           <div className="form-group">
-            <label className="form-label">Description</label>
-            <textarea className="form-input" rows={2} value={form.description || ''} onChange={e => setForm({ ...form, description: e.target.value })} />
+            <label className="form-label">Description <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one-line)</span></label>
+            <input className="form-input" value={form.description} onChange={e => set('description', e.target.value)} />
           </div>
           <div className="form-group">
             <label className="form-label">Role Target</label>
-            <input className="form-input" value={form.roleTarget || ''} onChange={e => setForm({ ...form, roleTarget: e.target.value })} placeholder="e.g. Java Full Stack" />
+            <input className="form-input" value={form.roleTarget} onChange={e => set('roleTarget', e.target.value)} placeholder="e.g. Java Full Stack Developer" />
           </div>
           <div className="grid-2">
             <div className="form-group">
               <label className="form-label">Icon (emoji)</label>
-              <input className="form-input" value={form.icon} onChange={e => setForm({ ...form, icon: e.target.value })} />
+              <input className="form-input" value={form.icon} onChange={e => set('icon', e.target.value)} />
             </div>
             <div className="form-group">
               <label className="form-label">Estimated Weeks</label>
-              <input type="number" className="form-input" value={form.estimatedWeeks} onChange={e => setForm({ ...form, estimatedWeeks: Number(e.target.value) })} />
+              <input type="number" className="form-input" value={form.estimatedWeeks} onChange={e => set('estimatedWeeks', Number(e.target.value))} />
             </div>
           </div>
           <div className="form-group">
             <label className="form-label">Color</label>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <input type="color" value={form.color} onChange={e => setForm({ ...form, color: e.target.value })} style={{ width: 40, height: 38, border: 'none', background: 'none', cursor: 'pointer' }} />
-              <input className="form-input" value={form.color} onChange={e => setForm({ ...form, color: e.target.value })} />
+              <input type="color" value={form.color} onChange={e => set('color', e.target.value)} style={{ width: 40, height: 38, border: 'none', background: 'none', cursor: 'pointer' }} />
+              <input className="form-input" value={form.color} onChange={e => set('color', e.target.value)} />
             </div>
           </div>
-          <div className="modal-actions">
+
+          <SectionLabel>Rich Info (shown in About popup)</SectionLabel>
+          <div className="form-group">
+            <label className="form-label">Overview</label>
+            <textarea className="form-input" rows={3} value={form.overview} onChange={e => set('overview', e.target.value)} placeholder="What is this roadmap? Beginner-friendly intro..." />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Why This Path?</label>
+            <textarea className="form-input" rows={2} value={form.whyLearn} onChange={e => set('whyLearn', e.target.value)} placeholder="Why should a student pick this path?..." />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Who Is This For?</label>
+            <textarea className="form-input" rows={2} value={form.forWho} onChange={e => set('forWho', e.target.value)} placeholder="Students who want to become...?" />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Target Roles (one per line)</label>
+            <textarea className="form-input" rows={4} value={form.roleTargets} onChange={e => set('roleTargets', e.target.value)} placeholder={'Java Full Stack Developer\nSpring Boot Developer\nBackend Java Developer'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+          </div>
+
+          <SectionLabel>Lists (one item per line)</SectionLabel>
+          <div className="form-group">
+            <label className="form-label">What You Need First</label>
+            <textarea className="form-input" rows={3} value={form.prerequisites} onChange={e => set('prerequisites', e.target.value)} placeholder={'Basic computer usage\nHTML + CSS fundamentals'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Tools Required</label>
+            <textarea className="form-input" rows={3} value={form.toolsRequired} onChange={e => set('toolsRequired', e.target.value)} placeholder={'VS Code\nNode.js v18+\nGit'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+          </div>
+          <div className="form-group">
+            <label className="form-label">What You Will Achieve</label>
+            <textarea className="form-input" rows={3} value={form.outcomes} onChange={e => set('outcomes', e.target.value)} placeholder={'Build full-stack applications\nDeploy to cloud\nClear Java interviews'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+          </div>
+
+          <div className="modal-actions" style={{ paddingTop: '0.5rem', borderTop: '1px solid var(--border)', marginTop: '0.5rem' }}>
             <button type="button" className="btn btn-ghost" onClick={onClose}>Cancel</button>
             <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? <span className="loading-spinner" /> : null} {roadmap ? 'Update' : 'Create'}

@@ -115,6 +115,132 @@ const saveQuestState = (state, userId) =>
   localStorage.setItem(questKey(userId), JSON.stringify({ date: new Date().toDateString(), state }))
 
 // ─── About Gate Modal ─────────────────────────────────────
+function AboutRoadmapModal({ roadmap: r, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  const Section = ({ label, children }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+      <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.12em', color: 'var(--text-secondary)', textTransform: 'uppercase', fontWeight: 700 }}>{label}</div>
+      {children}
+    </div>
+  )
+
+  const ListItems = ({ items }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      {(items || []).map((item, i) => (
+        <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+          <span style={{ color: r.color, flexShrink: 0, marginTop: '0.1rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem' }}>›</span>
+          <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{item}</span>
+        </div>
+      ))}
+    </div>
+  )
+
+  const hasRichContent = r.overview || r.whyLearn || r.forWho ||
+    (r.roleTargets || []).length > 0 ||
+    (r.prerequisites || []).length > 0 || (r.toolsRequired || []).length > 0 || (r.outcomes || []).length > 0
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.65)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}
+      onClick={e => e.target === e.currentTarget && onClose()}>
+      <div style={{ background: 'var(--bg-card)', border: `1px solid ${r.color}33`, borderTop: `3px solid ${r.color}`, borderRadius: 'var(--radius-lg)', width: 'clamp(340px, 62vw, 860px)', maxHeight: '88vh', display: 'flex', flexDirection: 'column', boxShadow: `0 0 40px ${r.color}18` }}>
+
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 1.25rem', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
+          <div style={{ width: 40, height: 40, background: r.color + '22', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
+            {r.icon}
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)' }}>{r.title}</div>
+            <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.2rem', flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', background: 'var(--bg-tertiary)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>
+                {r.totalSubjects ?? r.subjectCount ?? '?'} gates
+              </span>
+              {r.estimatedWeeks > 0 && (
+                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', background: 'var(--bg-tertiary)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>
+                  {r.estimatedWeeks}w
+                </span>
+              )}
+            </div>
+          </div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.25rem', borderRadius: 4, flexShrink: 0 }}><X size={16} /></button>
+        </div>
+
+        {/* Body */}
+        <div style={{ overflowY: 'auto', flex: 1, padding: '1.25rem 1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', alignContent: 'start' }}>
+
+          {!hasRichContent && (
+            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '2rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em' }}>
+              No detailed info added yet. Admin can add overview, tools, and outcomes.
+            </div>
+          )}
+
+          {(r.roleTargets || []).length > 0 && (
+            <div style={{ gridColumn: '1 / -1' }}>
+              <Section label="Career Roles This Path Prepares You For">
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  {r.roleTargets.map((role, i) => (
+                    <span key={i} style={{
+                      fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem',
+                      padding: '0.3rem 0.75rem', borderRadius: 20,
+                      color: r.color, background: r.color + '15',
+                      border: `1px solid ${r.color}35`,
+                      letterSpacing: '0.03em',
+                    }}>
+                      {role}
+                    </span>
+                  ))}
+                </div>
+              </Section>
+            </div>
+          )}
+
+          {r.overview && (
+            <div style={{ gridColumn: '1 / -1' }}>
+              <Section label="Overview">
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, padding: '0.625rem 0.875rem', background: r.color + '08', borderLeft: `3px solid ${r.color}`, borderRadius: '0 var(--radius-sm) var(--radius-sm) 0' }}>{r.overview}</p>
+              </Section>
+            </div>
+          )}
+
+          {r.whyLearn && (
+            <Section label="Why This Path?">
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>{r.whyLearn}</p>
+            </Section>
+          )}
+
+          {r.forWho && (
+            <Section label="Who Is This For?">
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>{r.forWho}</p>
+            </Section>
+          )}
+
+          {(r.prerequisites || []).length > 0 && (
+            <Section label="What You Need First">
+              <ListItems items={r.prerequisites} />
+            </Section>
+          )}
+
+          {(r.toolsRequired || []).length > 0 && (
+            <Section label="Tools Required">
+              <ListItems items={r.toolsRequired} />
+            </Section>
+          )}
+
+          {(r.outcomes || []).length > 0 && (
+            <Section label="What You Will Achieve">
+              <ListItems items={r.outcomes} />
+            </Section>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function AboutGateModal({ subject, onClose }) {
   const RANK_COLOR = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
   const rc = RANK_COLOR[subject?.rank] || '#888888'
@@ -1371,6 +1497,7 @@ export default function DashboardPage() {
 
   const [quests, setQuests]           = useState(() => loadQuestState(user?.id))
   const [aboutGate, setAboutGate]           = useState(null)
+  const [aboutRoadmap, setAboutRoadmap]     = useState(null)
   const [hunterStats, setHunterStats]       = useState(null)
   const [avatarOpen, setAvatarOpen]         = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -1633,7 +1760,7 @@ export default function DashboardPage() {
           </button>
         ) : (
           <div className="sl-gate-status" style={{ color: sealed ? '#0cbd09' : `${gr.color}BB` }}>
-            {sealed ? 'NEW GATE ACTIVATED' : `IN PROGRESS ${p}%`}
+            {sealed ? '' : `IN PROGRESS ${p}%`}
           </div>
         )}
       </div>
@@ -1822,25 +1949,81 @@ export default function DashboardPage() {
             <div className="flex-center" style={{ height: '200px' }}><div className="loading-spinner-lg" /></div>
           ) : (
             <div className="sl-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
-              {filteredRoadmaps.map(r => (
-                <div key={r.id} className="sl-gate-card"
-                  style={{ cursor: 'pointer', borderTop: `3px solid ${r.color}`, outline: selectedRoadmapId === r.id ? `1px solid ${r.color}` : 'none' }}
-                  onClick={() => openRoadmapPanel(r.id)}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.375rem' }}>
-                    <div style={{ width: 28, height: 28, background: r.color + '22', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', flexShrink: 0 }}>{r.icon}</div>
-                    <div className="sl-gate-title" style={{ marginBottom: 0, fontSize: '0.875rem' }}>{r.title}</div>
+              {filteredRoadmaps.map(r => {
+                const pct = r.overallPercentage ?? 0
+                const isActive   = r.enrolled && !r.paused
+                const isPaused   = r.enrolled && r.paused
+                const isComplete = r.allSubjectsDone
+                return (
+                  <div key={r.id} className="sl-gate-card"
+                    style={{ cursor: 'pointer', borderTop: `3px solid ${r.color}`, outline: selectedRoadmapId === r.id ? `1px solid ${r.color}` : 'none' }}
+                    onClick={() => openRoadmapPanel(r.id)}>
+
+                    {/* Title row */}
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.375rem', marginBottom: '0.2rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: 0 }}>
+                        <div style={{ width: 26, height: 26, background: r.color + '22', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', flexShrink: 0 }}>{r.icon}</div>
+                        <div className="sl-gate-title" style={{ marginBottom: 0, fontSize: '0.8rem' }}>{r.title}</div>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0, marginTop: 2 }}>
+                        {r.enrolled && (
+                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.05em', color: isPaused ? 'var(--text-muted)' : r.color, background: isPaused ? 'rgba(136,136,136,0.1)' : r.color + '18', border: `1px solid ${isPaused ? 'var(--border)' : r.color + '40'}`, padding: '0.1rem 0.3rem', borderRadius: 3 }}>
+                            {isPaused ? 'PAUSED' : 'ACTIVE'}
+                          </span>
+                        )}
+                        <button
+                          onClick={async e => {
+                            e.stopPropagation()
+                            // If rich data already loaded, use instantly — no network call
+                            const hasRich = r.overview || (r.roleTargets && r.roleTargets.length > 0)
+                              || (r.outcomes && r.outcomes.length > 0)
+                            if (hasRich) { setAboutRoadmap(r); return }
+                            // First time only: fetch detail to get rich fields
+                            const fresh = await getRoadmap(r.id).catch(() => null)
+                            setAboutRoadmap(fresh ? fresh.data : r)
+                          }}
+                          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.1rem', display: 'flex', alignItems: 'center', borderRadius: 3, transition: 'color 0.15s' }}
+                          onMouseEnter={e => e.currentTarget.style.color = r.color}
+                          onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                          title="About this path"
+                        >
+                          <Info size={18} />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Role target */}
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', marginBottom: '0.25rem', fontStyle: 'italic' }}>
+                      {r.roleTarget}
+                    </div>
+
+                    {/* Meta */}
+                    <div className="sl-gate-meta">{r.subjectCount ?? '?'} gates · {r.estimatedWeeks}w</div>
+
+                    {/* Progress bar */}
+                    {isActive && pct > 0 && (
+                      <div className="sl-gate-bar-track" style={{ marginTop: '0.3rem' }}>
+                        <div className="sl-gate-bar-fill" style={{ width: `${pct}%`, background: isComplete ? r.color : `${r.color}88` }} />
+                      </div>
+                    )}
+
+                    {/* Status line */}
+                    <div className="sl-gate-status" style={{ color: isComplete ? r.color : isPaused ? 'var(--text-muted)' : isActive ? `${r.color}BB` : '#0cbd09' }}>
+                      {isComplete ? 'ALL GATES CLEARED' : isPaused ? 'PATH PAUSED' : isActive ? (pct > 0 ? `IN PROGRESS ${pct}%` : 'PATH ACTIVE') : 'BEGIN YOUR PATH'}
+                    </div>
+
+                    {/* Final test button */}
+                    {isComplete && (
+                      <button
+                        onClick={e => { e.stopPropagation(); startQuiz('roadmap', r.id, r.title, r.icon) }}
+                        style={{ width: '100%', marginTop: '0.25rem', padding: '0.45rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.08em', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem' }}
+                      >
+                        <Trophy size={12} /> TAKE PATH FINAL TEST
+                      </button>
+                    )}
                   </div>
-                  <div className="sl-gate-meta">{r.subjectCount ?? '?'} gates · {r.estimatedWeeks}w · {r.roleTarget}</div>
-                  {r.allSubjectsDone && (
-                    <button
-                      onClick={e => { e.stopPropagation(); startQuiz('roadmap', r.id, r.title, r.icon) }}
-                      style={{ width: '100%', marginTop: '0.375rem', padding: '0.45rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.08em', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem' }}
-                    >
-                      <Trophy size={12} /> TAKE PATH FINAL TEST
-                    </button>
-                  )}
-                </div>
-              ))}
+                )
+              })}
             </div>
           )}
         </>
@@ -2174,6 +2357,9 @@ export default function DashboardPage() {
       )}
 
       {/* ══ ABOUT GATE MODAL ══ */}
+      {aboutRoadmap && (
+        <AboutRoadmapModal roadmap={aboutRoadmap} onClose={() => setAboutRoadmap(null)} />
+      )}
       {aboutGate && (
         <AboutGateModal subject={aboutGate} onClose={() => setAboutGate(null)} />
       )}

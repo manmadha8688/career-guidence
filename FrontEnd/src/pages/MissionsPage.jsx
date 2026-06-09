@@ -35,6 +35,8 @@ export default function MissionsPage() {
   const [missions, setMissions]   = useState([])
   const [loading, setLoading]     = useState(true)
   const [filter, setFilter]       = useState('')
+  const [category, setCategory]   = useState('')   // '' | 'subject' | 'real_world' | 'academic' | 'role_based'
+  const [subFilter, setSubFilter] = useState('')   // subject title OR role name
   const { user }                  = useAuth()
   const { theme, toggleTheme }    = useTheme()
   const navigate                  = useNavigate()
@@ -47,9 +49,34 @@ export default function MissionsPage() {
       .finally(() => setLoading(false))
   }, [])
 
+  // Derived options for second dropdown
+  const subjectOptions = [...new Set(
+    missions.filter(m => m.category === 'SUBJECT_PRACTICE').flatMap(m => m.subjectTitles || [])
+  )].sort()
+  const roleOptions = [...new Set(
+    missions.filter(m => m.category === 'ROLE_BASED').flatMap(m => m.targetRoles || [])
+  )].sort()
+
+  const handleCategoryChange = (val) => {
+    setCategory(val)
+    setSubFilter('')  // reset sub-filter when type changes
+  }
+
+  // Apply both category filter and text search
+  const byCategoryAndSearch = missions.filter(m => {
+    // Category filter
+    if (category === 'subject')
+      return m.category === 'SUBJECT_PRACTICE' && (!subFilter || m.subjectTitles?.includes(subFilter))
+    if (category === 'real_world')  return m.category === 'REAL_WORLD'
+    if (category === 'academic')    return m.category === 'ACADEMIC'
+    if (category === 'role_based')
+      return m.category === 'ROLE_BASED' && (!subFilter || m.targetRoles?.includes(subFilter))
+    return true  // no category selected — show all
+  })
+
   const filtered = filter.trim() === ''
-    ? missions
-    : missions.filter(m => {
+    ? byCategoryAndSearch
+    : byCategoryAndSearch.filter(m => {
         const q = filter.toLowerCase()
         return (
           m.title?.toLowerCase().includes(q) ||
@@ -77,7 +104,7 @@ export default function MissionsPage() {
     },
     hero: {
       textAlign: 'center',
-      padding: 'clamp(2rem, 6vw, 4rem) 1.25rem clamp(1.5rem, 4vw, 2.5rem)',
+      padding: 'clamp(1.75rem, 5vw, 3rem) 1.25rem 1.5rem',
       position: 'relative',
       overflow: 'hidden',
     },
@@ -202,7 +229,7 @@ export default function MissionsPage() {
             border: '1px solid rgba(155,110,212,0.4)',
             borderRadius: 6, padding: '0.3rem 0.75rem', cursor: 'pointer',
             fontFamily: "'Share Tech Mono', monospace",
-            fontSize: 'clamp(1.1rem, 2vw, 1.2rem)',
+            fontSize: '0.7rem',
             letterSpacing: '0.07em',
             color: '#B48AE8', transition: 'all 0.15s',
             display: 'flex', alignItems: 'center', gap: '0.3rem',
@@ -224,48 +251,159 @@ export default function MissionsPage() {
 
       </div>
 
-      {/* ── Search ───────────────────────────────────────────── */}
-      <div style={{ maxWidth: 560, margin: '0 auto', padding: '0 1.5rem 2rem' }}>
-        <div style={{ position: 'relative' }}>
+      {/* ── Filters + Search ────────────────────────────────── */}
+      <div style={{ maxWidth: 940, margin: '0 auto', padding: '0 1.25rem 2rem' }}>
+
+        {/* Panel label */}
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: '0.625rem',
+          marginBottom: '0.625rem',
+        }}>
           <span style={{
-            position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)',
-            color: light ? '#8B6040' : '#6B5030', pointerEvents: 'none', fontSize: '0.85rem',
-          }}>🔍</span>
-          <input
-            type="text"
-            value={filter}
-            onChange={e => setFilter(e.target.value)}
-            placeholder="Search by subject, title or tech..."
-            style={{
-              width: '100%', boxSizing: 'border-box',
-              padding: '0.65rem 2.5rem 0.65rem 2.25rem',
-              borderRadius: 8,
-              border: `1.5px solid ${light ? 'rgba(100,40,0,0.2)' : 'rgba(255,127,42,0.15)'}`,
-              background: light ? 'rgba(252,250,246,0.95)' : 'rgba(13,17,32,0.8)',
-              color: light ? '#1A1A2E' : '#E2E8F0',
-              fontFamily: "'Rajdhani', sans-serif", fontSize: '0.95rem',
-              outline: 'none', transition: 'border-color 0.2s',
-            }}
-            onFocus={e => { e.target.style.borderColor = light ? 'rgba(100,40,0,0.5)' : 'rgba(255,127,42,0.4)' }}
-            onBlur={e => { e.target.style.borderColor = light ? 'rgba(100,40,0,0.2)' : 'rgba(255,127,42,0.15)' }}
-          />
-          {filter && (
-            <button onClick={() => setFilter('')} style={{
-              position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)',
-              background: 'none', border: 'none', cursor: 'pointer',
-              color: light ? '#8B6040' : '#6B5030', fontSize: '1rem', lineHeight: 1,
-              padding: '0.1rem',
-            }}>✕</button>
+            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
+            letterSpacing: '0.18em', color: light ? '#7C3500' : '#FF7F2A',
+            textTransform: 'uppercase', opacity: 0.75,
+          }}>◈ FILTER MISSIONS</span>
+          <div style={{ flex: 1, height: '1px', background: light ? 'rgba(100,40,0,0.15)' : 'rgba(255,127,42,0.1)' }} />
+          {(category || subFilter || filter) && (
+            <span style={{
+              fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
+              letterSpacing: '0.1em', color: light ? '#7C3500' : '#FF7F2A',
+              opacity: 0.8,
+            }}>
+              {filtered.length} FOUND
+            </span>
           )}
         </div>
+
+        {/* Controls panel */}
         <div style={{
-          marginTop: '0.5rem', textAlign: 'center',
-          fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem',
-          letterSpacing: '0.08em', color: light ? '#6B4820' : '#6B5020',
+          display: 'flex', gap: '0.5rem', alignItems: 'stretch', flexWrap: 'wrap',
+          background: light ? 'rgba(255,250,242,0.85)' : 'rgba(10,15,28,0.75)',
+          border: `1px solid ${light ? 'rgba(100,40,0,0.18)' : 'rgba(255,127,42,0.14)'}`,
+          borderRadius: 10, padding: '0.5rem',
+          backdropFilter: 'blur(8px)',
+          boxShadow: light
+            ? '0 2px 12px rgba(100,40,0,0.07), inset 0 1px 0 rgba(255,255,255,0.6)'
+            : '0 2px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
         }}>
-          {filter
+          {/* Dropdown 1 — Project Type */}
+          <MissionSelect value={category} onChange={e => handleCategoryChange(e.target.value)} light={light} active={!!category}>
+            <option value="">All Project Types</option>
+            <option value="subject">Subject Practice</option>
+            <option value="real_world">Real World Projects</option>
+            <option value="academic">Academic Projects</option>
+            <option value="role_based">Role Based Projects</option>
+          </MissionSelect>
+
+          {/* Dropdown 2 — always reserved, populated based on category */}
+          <MissionSelect
+            value={subFilter}
+            onChange={e => setSubFilter(e.target.value)}
+            light={light}
+            active={!!subFilter}
+            disabled={!category || (category !== 'subject' && category !== 'role_based')}
+            accentColor={category === 'role_based' ? 'rgba(245,158,11,0.5)' : 'rgba(34,197,94,0.5)'}
+          >
+            {!category || (category !== 'subject' && category !== 'role_based')
+              ? <option value="">— Select Type First —</option>
+              : category === 'subject'
+                ? <>
+                    <option value="">All Subjects</option>
+                    {subjectOptions.map(s => <option key={s} value={s}>{s}</option>)}
+                  </>
+                : <>
+                    <option value="">All Roles</option>
+                    {roleOptions.map(r => <option key={r} value={r}>{r}</option>)}
+                  </>
+            }
+          </MissionSelect>
+
+          {/* Divider */}
+          <div style={{
+            width: 1, alignSelf: 'stretch', margin: '0 0.125rem',
+            background: light ? 'rgba(100,40,0,0.12)' : 'rgba(255,127,42,0.1)',
+            flexShrink: 0,
+          }} />
+
+          {/* Search */}
+          <div style={{ position: 'relative', flex: '1 1 160px', minWidth: 150 }}>
+            <svg style={{
+              position: 'absolute', left: '0.65rem', top: '50%', transform: 'translateY(-50%)',
+              pointerEvents: 'none', opacity: 0.45,
+            }} width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <circle cx="6.5" cy="6.5" r="5" stroke={light ? '#7C3500' : '#FF7F2A'} strokeWidth="1.5"/>
+              <path d="M10.5 10.5L14 14" stroke={light ? '#7C3500' : '#FF7F2A'} strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            <input
+              type="text"
+              value={filter}
+              onChange={e => setFilter(e.target.value)}
+              placeholder="Search title, subject, tech..."
+              style={{
+                width: '100%', boxSizing: 'border-box',
+                padding: '0 1.75rem 0 1.875rem', height: 36,
+                borderRadius: 6,
+                border: `1.5px solid ${filter
+                  ? (light ? 'rgba(100,40,0,0.55)' : 'rgba(255,127,42,0.55)')
+                  : (light ? 'rgba(100,40,0,0.45)' : 'rgba(255,127,42,0.38)')}`,
+                background: light ? 'rgba(255,251,244,0.95)' : 'rgba(20,26,44,0.9)',
+                color: light ? '#1A0C00' : '#C8A878',
+                fontFamily: "'Rajdhani', sans-serif", fontSize: '0.875rem',
+                outline: 'none', transition: 'all 0.2s',
+                boxShadow: filter
+                  ? `0 0 0 3px ${light ? 'rgba(100,40,0,0.08)' : 'rgba(255,127,42,0.08)'}`
+                  : 'none',
+              }}
+              onFocus={e => {
+                e.target.style.borderColor = light ? 'rgba(100,40,0,0.65)' : 'rgba(255,127,42,0.6)'
+                e.target.style.boxShadow = `0 0 0 3px ${light ? 'rgba(100,40,0,0.1)' : 'rgba(255,127,42,0.1)'}`
+              }}
+              onBlur={e => {
+                e.target.style.borderColor = light ? 'rgba(100,40,0,0.45)' : 'rgba(255,127,42,0.38)'
+                e.target.style.boxShadow = 'none'
+              }}
+            />
+            {filter && (
+              <button onClick={() => setFilter('')} style={{
+                position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)',
+                background: light ? 'rgba(100,40,0,0.08)' : 'rgba(255,127,42,0.1)',
+                border: 'none', borderRadius: 4, cursor: 'pointer', width: 18, height: 18,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: light ? '#7C3500' : '#FF7F2A', fontSize: '0.65rem', lineHeight: 1, padding: 0,
+              }}>✕</button>
+            )}
+          </div>
+
+          {/* Clear all */}
+          {(category || subFilter || filter) && (
+            <button
+              onClick={() => { setCategory(''); setSubFilter(''); setFilter('') }}
+              style={{
+                background: light ? 'rgba(100,40,0,0.07)' : 'rgba(255,127,42,0.07)',
+                border: `1px solid ${light ? 'rgba(100,40,0,0.2)' : 'rgba(255,127,42,0.2)'}`,
+                borderRadius: 6, padding: '0 0.75rem', cursor: 'pointer', height: 36,
+                fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.08em',
+                color: light ? '#7C3500' : '#FF7F2A', whiteSpace: 'nowrap', transition: 'all 0.15s', flexShrink: 0,
+                animation: 'fadeIn 0.15s ease',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = light ? 'rgba(100,40,0,0.14)' : 'rgba(255,127,42,0.14)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = light ? 'rgba(100,40,0,0.07)' : 'rgba(255,127,42,0.07)' }}
+            >
+              ✕ CLEAR
+            </button>
+          )}
+        </div>
+
+        <div style={{
+          marginTop: '0.4rem',
+          fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem',
+          letterSpacing: '0.07em', color: light ? '#8B6040' : '#5A4020',
+          paddingLeft: '0.25rem',
+        }}>
+          {(category || filter)
             ? `${filtered.length} MISSION${filtered.length !== 1 ? 'S' : ''} FOUND`
-            : `SHOWING ALL ${missions.length} MISSIONS`
+            : `${missions.length} MISSIONS AVAILABLE`
           }
         </div>
       </div>
@@ -301,6 +439,53 @@ export default function MissionsPage() {
           </div>
         )}
       </div>
+    </div>
+  )
+}
+
+// ── Mission Select (reusable styled dropdown) ────────────────────────────────
+function MissionSelect({ value, onChange, light, active, accentColor, disabled, children }) {
+  const activeAccent = accentColor || (light ? 'rgba(100,40,0,0.5)' : 'rgba(255,127,42,0.5)')
+  const border = disabled
+    ? `1.5px solid ${light ? 'rgba(100,40,0,0.08)' : 'rgba(255,127,42,0.08)'}`
+    : active
+      ? `1.5px solid ${activeAccent}`
+      : `1.5px solid ${light ? 'rgba(100,40,0,0.45)' : 'rgba(255,127,42,0.38)'}`
+  return (
+    <div style={{ position: 'relative', flex: '1 1 170px', minWidth: 155 }}>
+      <select
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+        style={{
+          width: '100%', height: 36,
+          appearance: 'none', WebkitAppearance: 'none',
+          padding: '0 1.75rem 0 0.75rem',
+          borderRadius: 6, border,
+          background: disabled
+            ? (light ? 'rgba(240,238,234,0.4)' : 'rgba(10,14,24,0.25)')
+            : light ? 'rgba(255,251,244,0.95)' : 'rgba(20,26,44,0.9)',
+          color: disabled
+            ? (light ? 'rgba(100,60,20,0.25)' : 'rgba(255,127,42,0.18)')
+            : active
+              ? (light ? '#1A0C00' : '#F0E0C0')
+              : (light ? '#3A1A00' : '#C8A878'),
+          fontFamily: "'Rajdhani', sans-serif", fontSize: '0.875rem', fontWeight: 500,
+          cursor: disabled ? 'not-allowed' : 'pointer', outline: 'none', transition: 'all 0.2s',
+          boxShadow: active ? `0 0 0 3px ${activeAccent.replace('0.5', '0.12')}` : 'none',
+          opacity: disabled ? 0.45 : 1,
+        }}
+      >
+        {children}
+      </select>
+      <span style={{
+        position: 'absolute', right: '0.55rem', top: '50%', transform: 'translateY(-50%)',
+        pointerEvents: 'none',
+        color: disabled
+          ? (light ? 'rgba(100,60,20,0.18)' : 'rgba(255,127,42,0.15)')
+          : (light ? '#7C3500' : '#FF9F4A'),
+        fontSize: '0.65rem',
+      }}>▾</span>
     </div>
   )
 }

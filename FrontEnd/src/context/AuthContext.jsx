@@ -1,11 +1,15 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import { getMe, clearUserCache } from '../api/api'
+import api from '../api/api'
+import LoadingOverlay from '../components/LoadingOverlay'
 
 const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [logoutOverlay, setLogoutOverlay] = useState(false)
+  const [logoutDone, setLogoutDone] = useState(false)
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -40,19 +44,25 @@ export function AuthProvider({ children }) {
     setUser(userData)
   }
 
-  const logout = () => {
-    clearUserCache()          // wipe user-specific cache; roadmap content is kept
+  const logout = async () => {
+    setLogoutOverlay(true)
+    setLogoutDone(false)
+    try { await api.post('/auth/logout') } catch {}
+    clearUserCache()
     const guestDeviceId = localStorage.getItem('guest_device_id')
     const theme = localStorage.getItem('theme')
     localStorage.clear()
     if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
     if (theme) localStorage.setItem('theme', theme)
+    setLogoutDone(true)
+    await new Promise(r => setTimeout(r, 800))
     setUser(null)
     window.location.href = '/'
   }
 
   return (
     <AuthContext.Provider value={{ user, login, logout, isAuthenticated: !!user, loading }}>
+      {logoutOverlay && <LoadingOverlay type="logout" completing={logoutDone} />}
       {children}
     </AuthContext.Provider>
   )

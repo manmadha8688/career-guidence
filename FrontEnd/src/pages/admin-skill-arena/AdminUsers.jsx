@@ -1,8 +1,16 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Search, Trash2, Eye } from 'lucide-react'
+import { Search, Trash2 } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminUsers, deleteUser } from '../../api/api'
 import toast from 'react-hot-toast'
+
+const fmtDate = (d) => d ? new Date(d).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: '2-digit' }) : '—'
+const fmtDateTime = (d) => {
+  if (!d) return '—'
+  const dt = new Date(d)
+  return dt.toLocaleDateString('en-IN', { day: '2-digit', month: 'short' })
+    + ' ' + dt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })
+}
 
 function debounce(fn, d) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d) } }
 
@@ -74,10 +82,12 @@ export default function AdminUsers() {
               <thead>
                 <tr>
                   <th>User</th>
-                  <th>College</th>
                   <th>Role</th>
                   <th>Status</th>
                   <th>Joined</th>
+                  <th>Last Login</th>
+                  <th>Last Logout</th>
+                  <th style={{ textAlign: 'center' }}>Logins</th>
                   <th></th>
                 </tr>
               </thead>
@@ -95,10 +105,23 @@ export default function AdminUsers() {
                         </div>
                       </div>
                     </td>
-                    <td className="text-sm text-muted">{u.collegeName || '—'}</td>
-                    <td><span className={`badge ${u.role === 'ADMIN' ? 'badge-admin' : 'badge-student'}`}>{u.role}</span></td>
+                    <td><span className={`badge ${u.role === 'ADMIN' ? 'badge-admin' : u.role === 'GUEST' ? 'badge-warning' : 'badge-student'}`}>{u.role}</span></td>
                     <td><span className={`badge ${u.isActive ? 'badge-success' : 'badge-danger'}`}>{u.isActive ? 'Active' : 'Inactive'}</span></td>
-                    <td className="text-sm text-muted">{u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—'}</td>
+                    <td className="text-sm text-muted">{fmtDate(u.createdAt)}</td>
+                    <td className="text-sm text-muted" title={u.lastLoginAt ? new Date(u.lastLoginAt).toLocaleString() : ''}>
+                      {fmtDateTime(u.lastLoginAt)}
+                    </td>
+                    <td className="text-sm text-muted" title={u.lastLogoutAt ? new Date(u.lastLogoutAt).toLocaleString() : ''}>
+                      {fmtDateTime(u.lastLogoutAt)}
+                    </td>
+                    <td style={{ textAlign: 'center' }}>
+                      <span style={{
+                        fontFamily: "'Orbitron', monospace", fontSize: '0.75rem', fontWeight: 700,
+                        color: u.loginCount > 0 ? 'var(--primary)' : 'var(--text-muted)',
+                      }}>
+                        {u.loginCount ?? 0}
+                      </span>
+                    </td>
                     <td>
                       <button className="btn btn-danger btn-sm" onClick={() => handleDelete(u.id, u.fullName)} disabled={deleting[u.id]}>
                         {deleting[u.id] ? <span className="loading-spinner" /> : <Trash2 size={13} />}
