@@ -148,8 +148,8 @@ export const submitFeedback = (data) => api.post('/feedback', data)
 export const getAllFeedbacks = ()     => api.get('/feedback')
 
 // ─── MISSIONS ─────────────────────────────────────────
-export const getMissions  = ()     => withCache('missions',       5*60_000, () => api.get('/missions'))
-export const getMission   = (id)   => withCache(`mission:${id}`,  5*60_000, () => api.get(`/missions/${id}`))
+export const getMissions  = ()     => withCache('missions',      30_000, () => api.get('/missions'))
+export const getMission   = (id)   => withCache(`mission:${id}`, 30_000, () => api.get(`/missions/${id}`))
 
 // ─── PROBLEMS (public) ────────────────────────────────────────
 export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*60_000, () => api.get('/problems' + (track ? `?track=${track}` : '')))
@@ -163,8 +163,8 @@ export const deleteProblemQ    = (id)     => api.delete(`/admin/problems/${id}`)
 
 // ─── ADMIN MISSIONS ───────────────────────────────────────────
 export const getAdminMissions = ()       => api.get('/admin/missions')
-export const createMission    = (d)      => api.post('/admin/missions', d)       .then(r => { clearApiCache('missions', 'mission:*');                    return r })
-export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d)  .then(r => { clearApiCache('missions', `mission:${id}`);                return r })
-export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)  .then(r => { clearApiCache('missions', `mission:${id}`);                return r })
+export const createMission    = (d)      => api.post('/admin/missions', d)      .then(r => { clearApiCache('missions', 'mission:*'); return r })
+export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d) .then(r => { clearApiCache('missions', `mission:${id}`); return r })
+export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)  .then(r => { clearApiCache('missions', `mission:${id}`); return r })
 
 export default api

@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { registerUser } from '../../api/api'
 import toast from 'react-hot-toast'
+import LoadingOverlay from '../../components/LoadingOverlay'
+
+const REG_MESSAGES = ['Registering...', 'Creating Hunter License...', 'Generating your ID...', 'Setting up arena...']
+function useCyclingText(messages, active) {
+  const [idx, setIdx] = useState(0)
+  useEffect(() => {
+    if (!active) { setIdx(0); return }
+    const t = setInterval(() => setIdx(i => (i + 1) % messages.length), 1500)
+    return () => clearInterval(t)
+  }, [active])
+  return messages[idx]
+}
 
 const DARK_C = {
   bg:     '#090E1C',
@@ -52,19 +64,24 @@ export default function RegisterPage() {
   const C = theme === 'light' ? LIGHT_C : DARK_C
   const [form, setForm] = useState({ fullName: '', email: '', password: '', confirmPassword: '', collegeName: '' })
   const [loading, setLoading] = useState(false)
+  const [overlayDone, setOverlayDone] = useState(false)
   const [showPass, setShowPass] = useState(false)
   const [focused, setFocused] = useState(null)
   const { login } = useAuth()
   const navigate = useNavigate()
   const strength = getStrength(form.password)
+  const btnText = useCyclingText(REG_MESSAGES, loading)
 
   const handleSubmit = async e => {
     e.preventDefault()
     if (form.password !== form.confirmPassword) { toast.error('Passwords do not match'); return }
     setLoading(true)
+    setOverlayDone(false)
     try {
       const { fullName, email, password, collegeName } = form
       const { data } = await registerUser({ fullName, email, password, collegeName })
+      setOverlayDone(true)
+      await new Promise(r => setTimeout(r, 700))
       login(data.token, data.user)
       navigate('/skill-arena/dashboard')
     } catch (err) {
@@ -95,6 +112,8 @@ export default function RegisterPage() {
   )
 
   return (
+    <>
+    {loading && <LoadingOverlay type="register" completing={overlayDone} />}
     <div style={{
       display: 'flex', minHeight: '100vh',
       background: 'var(--bg-secondary)',
@@ -309,7 +328,7 @@ export default function RegisterPage() {
             fontFamily: 'inherit',
           }}>
             {loading && <span className="loading-spinner" style={{ width: 18, height: 18 }} />}
-            {loading ? 'Creating account…' : 'Create account'}
+            {loading ? btnText : 'Create account'}
           </button>
         </form>
 
@@ -321,5 +340,6 @@ export default function RegisterPage() {
         </p>
       </div>
     </div>
+    </>
   )
 }

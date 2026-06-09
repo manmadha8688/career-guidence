@@ -23,6 +23,8 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
     title:           mission.title || '',
     missionBrief:    mission.missionBrief || '',
     rank:            mission.rank || 'D',
+    category:        mission.category || '',
+    targetRoles:     listToText(mission.targetRoles),
     techStack:       listToText(mission.techStack),
     estimatedHours:  mission.estimatedHours || '',
     subjectIds:      mission.subjectIds || [],
@@ -34,9 +36,10 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
     published:       mission.published !== false,
     orderIndex:      mission.orderIndex ?? 0,
   } : {
-    title: '', missionBrief: '', rank: 'D', techStack: '', estimatedHours: '',
-    subjectIds: [], subjectTitles: [], objectives: '', bonusObjectives: '',
-    approachSteps: '', hints: '', published: true, orderIndex: 0,
+    title: '', missionBrief: '', rank: 'D', category: '', targetRoles: '',
+    techStack: '', estimatedHours: '', subjectIds: [], subjectTitles: [],
+    objectives: '', bonusObjectives: '', approachSteps: '', hints: '',
+    published: true, orderIndex: 0,
   })
   const [loading, setLoading] = useState(false)
 
@@ -65,6 +68,7 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
       const payload = {
         ...form,
         techStack:       textToList(form.techStack),
+        targetRoles:     textToList(form.targetRoles),
         objectives:      textToList(form.objectives),
         bonusObjectives: textToList(form.bonusObjectives),
         approachSteps:   textToList(form.approachSteps),
@@ -126,6 +130,25 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
               <input type="checkbox" id="pub" checked={form.published} onChange={e => set('published', e.target.checked)} style={{ width: 16, height: 16, cursor: 'pointer', accentColor: 'var(--primary)' }} />
               <label htmlFor="pub" style={{ cursor: 'pointer', fontSize: '0.82rem', color: 'var(--text-secondary)', fontFamily: "'Share Tech Mono', monospace" }}>Published (visible to students)</label>
             </div>
+          </div>
+
+          <div className="grid-2">
+            <div className="form-group">
+              <label className="form-label">Project Category</label>
+              <select className="form-input" value={form.category} onChange={e => set('category', e.target.value)}>
+                <option value="">— Not set —</option>
+                <option value="SUBJECT_PRACTICE">Subject Practice</option>
+                <option value="REAL_WORLD">Real World Projects</option>
+                <option value="ACADEMIC">Academic Projects</option>
+                <option value="ROLE_BASED">Role Based Projects</option>
+              </select>
+            </div>
+            {form.category === 'ROLE_BASED' && (
+              <div className="form-group">
+                <label className="form-label">Target Roles (one per line)</label>
+                <textarea className="form-input" rows={3} value={form.targetRoles} onChange={e => set('targetRoles', e.target.value)} placeholder={'Python Full Stack\nFrontend Developer\nData Analyst'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+              </div>
+            )}
           </div>
 
           <SectionLabel>Tech Stack (one per line)</SectionLabel>

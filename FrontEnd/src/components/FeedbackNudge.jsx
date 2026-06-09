@@ -55,6 +55,11 @@ export default function FeedbackNudge() {
       <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: 'var(--text-primary)', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
         I am building LearnToEarn to help students enter the right learning path, level up their skills, and become job-ready.
       </p>
+
+      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: 'orange', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
+      The platform is still being updated, and your suggestions will help me understand what students really need.
+      </p>
+
       <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '0.9rem', color: 'var(--text-secondary)', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
         Your feedback helps shape the next version. Takes just 30 seconds.
       </p>

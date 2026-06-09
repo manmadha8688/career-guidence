@@ -1,10 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Eye, EyeOff, Swords, Target, Zap, Trophy, ChevronLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { loginUser, guestLogin } from '../../api/api'
 import toast from 'react-hot-toast'
+import LoadingOverlay from '../../components/LoadingOverlay'
+
+const BTN_MESSAGES = {
+  login: ['Verifying credentials...', 'Loading profile...', 'Syncing records...', 'Almost there...'],
+  guest: ['Issuing guest license...', 'Generating Hunter ID...', 'Preparing access...', 'Almost there...'],
+}
+function useCyclingText(messages, active) {
+  const [idx, setIdx] = useState(0)
+  useEffect(() => {
+    if (!active) { setIdx(0); return }
+    const t = setInterval(() => setIdx(i => (i + 1) % messages.length), 1500)
+    return () => clearInterval(t)
+  }, [active, messages])
+  return messages[idx]
+}
 
 const DARK_C = {
   bg:     '#090E1C',
@@ -51,6 +66,8 @@ export default function LoginPage() {
   const [form, setForm] = useState({ email: '', password: '' })
   const [loading, setLoading] = useState(false)
   const [guestLoading, setGuestLoading] = useState(false)
+  const [overlayType, setOverlayType] = useState(null)   // 'login' | 'guest' | null
+  const [overlayDone, setOverlayDone] = useState(false)
   const [showPass, setShowPass] = useState(false)
   const [focused, setFocused] = useState(null)
   const { login } = useAuth()
@@ -58,15 +75,23 @@ export default function LoginPage() {
   const [searchParams] = useSearchParams()
   const redirectTo = searchParams.get('redirect') || '/skill-arena/dashboard'
 
+  const loginBtnText  = useCyclingText(BTN_MESSAGES.login, loading)
+  const guestBtnText  = useCyclingText(BTN_MESSAGES.guest, guestLoading)
+
   const handleGuest = async () => {
     setGuestLoading(true)
+    setOverlayType('guest')
+    setOverlayDone(false)
     try {
       const storedGuestId = localStorage.getItem('guest_device_id')
       const { data } = await guestLogin(storedGuestId)
       localStorage.setItem('guest_device_id', data.user.id)
+      setOverlayDone(true)
+      await new Promise(r => setTimeout(r, 600))
       login(data.token, data.user)
       navigate(redirectTo)
     } catch {
+      setOverlayType(null)
       toast.error('Could not start guest session. Try again.')
     } finally {
       setGuestLoading(false)
@@ -76,12 +101,17 @@ export default function LoginPage() {
   const handleSubmit = async e => {
     e.preventDefault()
     setLoading(true)
+    setOverlayType('login')
+    setOverlayDone(false)
     try {
       const { data } = await loginUser(form)
+      setOverlayDone(true)
+      await new Promise(r => setTimeout(r, 600))
       login(data.token, data.user)
       if (data.user.role === 'ADMIN') navigate('/admin-skill-arena')
       else navigate(redirectTo)
     } catch (err) {
+      setOverlayType(null)
       toast.error(err.response?.data?.error || 'Login failed')
     } finally {
       setLoading(false)
@@ -103,6 +133,8 @@ export default function LoginPage() {
   })
 
   return (
+    <>
+    {overlayType && <LoadingOverlay type={overlayType} completing={overlayDone} />}
     <div style={{
       display: 'flex', minHeight: '100vh',
       background: 'var(--bg-secondary)',
@@ -279,7 +311,7 @@ export default function LoginPage() {
             fontFamily: 'inherit',
           }}>
             {loading && <span className="loading-spinner" style={{ width: 18, height: 18 }} />}
-            {loading ? 'Signing in…' : 'Sign in'}
+            {loading ? loginBtnText : 'Sign in'}
           </button>
         </form>
 
@@ -315,7 +347,7 @@ export default function LoginPage() {
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = C.sub }}
         >
           {guestLoading && <span className="loading-spinner" style={{ width: 16, height: 16 }} />}
-          {guestLoading ? 'Setting up…' : 'Continue as Guest'}
+          {guestLoading ? guestBtnText : 'Continue as Guest'}
         </button>
         <p style={{ fontSize: '0.725rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem' }}>
           No account needed — explore the full platform instantly
@@ -325,5 +357,6 @@ export default function LoginPage() {
         
       </div>
     </div>
+    </>
   )
 }
