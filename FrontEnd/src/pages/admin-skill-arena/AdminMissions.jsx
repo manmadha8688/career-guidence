@@ -20,25 +20,30 @@ function SectionLabel({ children }) {
 
 function MissionModal({ mission, subjects, onClose, onSave }) {
   const [form, setForm] = useState(() => mission ? {
-    title:           mission.title || '',
-    missionBrief:    mission.missionBrief || '',
-    rank:            mission.rank || 'D',
-    category:        mission.category || '',
-    targetRoles:     listToText(mission.targetRoles),
-    techStack:       listToText(mission.techStack),
-    estimatedHours:  mission.estimatedHours || '',
-    subjectIds:      mission.subjectIds || [],
-    subjectTitles:   mission.subjectTitles || [],
-    objectives:      listToText(mission.objectives),
-    bonusObjectives: listToText(mission.bonusObjectives),
-    approachSteps:   listToText(mission.approachSteps),
-    hints:           listToText(mission.hints),
-    published:       mission.published !== false,
-    orderIndex:      mission.orderIndex ?? 0,
+    title:            mission.title || '',
+    missionBrief:     mission.missionBrief || '',
+    rank:             mission.rank || 'D',
+    category:         mission.category || '',
+    targetRoles:      listToText(mission.targetRoles),
+    techStack:        listToText(mission.techStack),
+    estimatedHours:   mission.estimatedHours || '',
+    subjectIds:       mission.subjectIds || [],
+    subjectTitles:    mission.subjectTitles || [],
+    objectives:       listToText(mission.objectives),
+    bonusObjectives:  listToText(mission.bonusObjectives),
+    approachSteps:    listToText(mission.approachSteps),
+    hints:            listToText(mission.hints),
+    learningOutcome:  mission.learningOutcome || '',
+    prerequisites:    listToText(mission.prerequisites),
+    conceptsCovered:  listToText(mission.conceptsCovered),
+    commonMistakes:   listToText(mission.commonMistakes),
+    published:        mission.published !== false,
+    orderIndex:       mission.orderIndex ?? 0,
   } : {
     title: '', missionBrief: '', rank: 'D', category: '', targetRoles: '',
     techStack: '', estimatedHours: '', subjectIds: [], subjectTitles: [],
     objectives: '', bonusObjectives: '', approachSteps: '', hints: '',
+    learningOutcome: '', prerequisites: '', conceptsCovered: '', commonMistakes: '',
     published: true, orderIndex: 0,
   })
   const [loading, setLoading] = useState(false)
@@ -73,6 +78,10 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
         bonusObjectives: textToList(form.bonusObjectives),
         approachSteps:   textToList(form.approachSteps),
         hints:           textToList(form.hints),
+        learningOutcome: form.learningOutcome,
+        prerequisites:   textToList(form.prerequisites),
+        conceptsCovered: textToList(form.conceptsCovered),
+        commonMistakes:  textToList(form.commonMistakes),
         estimatedHours:  parseInt(form.estimatedHours) || 0,
         orderIndex:      parseInt(form.orderIndex) || 0,
       }
@@ -138,7 +147,6 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
               <select className="form-input" value={form.category} onChange={e => set('category', e.target.value)}>
                 <option value="">— Not set —</option>
                 <option value="SUBJECT_PRACTICE">Subject Practice</option>
-                <option value="REAL_WORLD">Real World Projects</option>
                 <option value="ACADEMIC">Academic Projects</option>
                 <option value="ROLE_BASED">Role Based Projects</option>
               </select>
@@ -168,6 +176,26 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
                 </button>
               )
             })}
+          </div>
+
+          <SectionLabel>Guidance (Student-Facing)</SectionLabel>
+          <div className="form-group">
+            <label className="form-label">🎯 Learning Outcome <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(1 sentence — what student achieves)</span></label>
+            <input className="form-input" value={form.learningOutcome} onChange={e => set('learningOutcome', e.target.value)} placeholder="After this, you can build a responsive grid layout without guidance." />
+          </div>
+          <div className="grid-2">
+            <div className="form-group">
+              <label className="form-label">⚡ Prerequisites <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one per line)</span></label>
+              <textarea className="form-input" rows={3} value={form.prerequisites} onChange={e => set('prerequisites', e.target.value)} placeholder={'Flexbox\nCSS Grid\nMedia Queries'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            </div>
+            <div className="form-group">
+              <label className="form-label">📚 Concepts Covered <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one per line)</span></label>
+              <textarea className="form-input" rows={3} value={form.conceptsCovered} onChange={e => set('conceptsCovered', e.target.value)} placeholder={'CSS Grid\nResponsive Design\nCSS Variables'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            </div>
+          </div>
+          <div className="form-group">
+            <label className="form-label">⚠ Common Mistakes <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one per line)</span></label>
+            <textarea className="form-input" rows={3} value={form.commonMistakes} onChange={e => set('commonMistakes', e.target.value)} placeholder={'Forgetting box-sizing: border-box\nNot testing on mobile viewport'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
           </div>
 
           <SectionLabel>Content (one item per line)</SectionLabel>

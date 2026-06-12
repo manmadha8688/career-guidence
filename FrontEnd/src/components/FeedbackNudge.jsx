@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const STORAGE_KEY = 'feedback_nudge_dismissed'
-const DELAY_MS    =  50 * 1000   // 2 minutes
+const DELAY_MS    =  90 * 1000   // 2 minutes
 
 export default function FeedbackNudge() {
   const [visible, setVisible] = useState(false)

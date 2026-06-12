@@ -12,9 +12,9 @@ const LANGS = [
   { key: 'cpp',    label: 'C++'    },
 ]
 const VARIANTS = [
-  { key: 'brute',     label: 'Brute Force', color: '#EF4444' },
-  { key: 'normal',    label: 'Normal',      color: '#F59E0B' },
-  { key: 'optimized', label: 'Optimized',   color: '#22C55E' },
+  { key: 'brute',     label: 'Brute Force',      color: '#EF4444' },
+  { key: 'normal',    label: 'Better Approach',  color: '#F59E0B' },
+  { key: 'optimized', label: 'Optimal Solution', color: '#22C55E' },
 ]
 const LEVEL_META = {
   BEGINNER:     { label: 'Beginner',     color: '#22C55E' },
@@ -29,10 +29,11 @@ const TYPE_META = {
   CONCEPTUAL: { label: 'Conceptual',   color: '#94A3B8' },
 }
 const TRACK_LABELS = {
-  START_CODING:   'Start Coding',
-  LOGIC_BUILDING: 'Logic Building',
-  SKILL_UP:       'Skill Up',
-  INTERVIEW_PREP: 'Interview Prep',
+  START_CODING:    'Start Coding',
+  LOGIC_BUILDING:  'Logic Building',
+  SKILL_UP:        'Skill Up',
+  INTERVIEW_PREP:  'Interview Prep',
+  SCENARIO_CODING: 'Scenario Coding',
 }
 
 export default function ProblemDetailPage() {
@@ -49,7 +50,8 @@ export default function ProblemDetailPage() {
   const [variant, setVariant] = useState('normal')
   const [revealedHints, setRevealedHints] = useState(0)
   const [approachOpen, setApproachOpen] = useState(false)
-  const [solutionOpen, setSolutionOpen] = useState(true)
+  const [solutionOpen, setSolutionOpen] = useState(false)
+  const [explanationOpen, setExplanationOpen] = useState(false)
   const [tipOpen, setTipOpen] = useState(false)
 
   useEffect(() => {
@@ -167,30 +169,69 @@ export default function ProblemDetailPage() {
               <SectionLabel label="Input / Output" color="var(--ps-accent)" />
               {problem.inputFormat && (
                 <div style={{ marginBottom: '0.75rem' }}>
-                  <Label>Input</Label>
+                  <Label>Input Format</Label>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: '0.25rem 0 0' }}>{problem.inputFormat}</p>
                 </div>
               )}
               {problem.outputFormat && (
-                <div style={{ marginBottom: '0.75rem' }}>
-                  <Label>Output</Label>
+                <div style={{ marginBottom: '0.875rem' }}>
+                  <Label>Output Format</Label>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: '0.25rem 0 0' }}>{problem.outputFormat}</p>
                 </div>
               )}
+
+              {/* Example 1 */}
               {problem.sampleInput && (
-                <div className="ps-io-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                  <div>
-                    <Label>Sample Input</Label>
-                    <CodeBlock code={problem.sampleInput} light={light} />
+                <div style={{ marginBottom: problem.sampleInput2 ? '1rem' : '0' }}>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--ps-accent)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
+                    Example 1
                   </div>
-                  <div>
-                    <Label>Sample Output</Label>
-                    <CodeBlock code={problem.sampleOutput} light={light} />
+                  <div className="ps-io-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                    <div>
+                      <Label>Input</Label>
+                      <CodeBlock code={problem.sampleInput} light={light} />
+                    </div>
+                    <div>
+                      <Label>Output</Label>
+                      <CodeBlock code={problem.sampleOutput} light={light} />
+                    </div>
                   </div>
+                  {problem.example1Explanation && (
+                    <div style={{ marginTop: '0.5rem', padding: '0.5rem 0.75rem', background: 'var(--ps-hint-bg)', borderRadius: 6, fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                      <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--ps-accent)', textTransform: 'uppercase', letterSpacing: '0.08em', marginRight: '0.4rem' }}>Explanation:</span>
+                      {problem.example1Explanation}
+                    </div>
+                  )}
                 </div>
               )}
+
+              {/* Example 2 */}
+              {problem.sampleInput2 && (
+                <div style={{ marginBottom: '0' }}>
+                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--ps-accent)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
+                    Example 2
+                  </div>
+                  <div className="ps-io-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                    <div>
+                      <Label>Input</Label>
+                      <CodeBlock code={problem.sampleInput2} light={light} />
+                    </div>
+                    <div>
+                      <Label>Output</Label>
+                      <CodeBlock code={problem.sampleOutput2} light={light} />
+                    </div>
+                  </div>
+                  {problem.example2Explanation && (
+                    <div style={{ marginTop: '0.5rem', padding: '0.5rem 0.75rem', background: 'var(--ps-hint-bg)', borderRadius: 6, fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                      <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--ps-accent)', textTransform: 'uppercase', letterSpacing: '0.08em', marginRight: '0.4rem' }}>Explanation:</span>
+                      {problem.example2Explanation}
+                    </div>
+                  )}
+                </div>
+              )}
+
               {problem.constraints && (
-                <div style={{ marginTop: '0.75rem' }}>
+                <div style={{ marginTop: '0.875rem', paddingTop: '0.75rem', borderTop: '1px solid var(--ps-card-border)' }}>
                   <Label>Constraints</Label>
                   <p style={{ fontSize: '0.82rem', color: 'var(--ps-muted)', margin: '0.25rem 0 0', fontFamily: "'Share Tech Mono', monospace" }}>{problem.constraints}</p>
                 </div>
@@ -326,15 +367,15 @@ export default function ProblemDetailPage() {
                   </div>
                 )}
 
-                {/* Logic */}
+                {/* Logic — approach name for this solution variant */}
                 {sol?.logic && (
                   <div style={{
                     padding: '0.65rem 0.875rem', borderRadius: 7,
-                    background: 'var(--ps-hint-bg)', border: '1px solid var(--ps-card-border)',
+                    background: `${varMeta?.color}10`, border: `1px solid ${varMeta?.color}30`,
                     marginBottom: '0.875rem',
                   }}>
-                    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--ps-accent)', letterSpacing: '0.1em', marginBottom: '0.35rem' }}>LOGIC</div>
-                    <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.55 }}>{sol.logic}</p>
+                    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: varMeta?.color, letterSpacing: '0.1em', marginBottom: '0.35rem' }}>APPROACH NAME</div>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-primary)', margin: 0, lineHeight: 1.55, fontWeight: 600 }}>{sol.logic}</p>
                   </div>
                 )}
 
@@ -377,8 +418,8 @@ export default function ProblemDetailPage() {
 
           {/* Explanation */}
           {problem.explanation && (
-            <Accordion open={false} onToggle={() => {}} label="Explanation" accentColor="var(--ps-accent)" defaultOpen>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.65, margin: 0 }}>
+            <Accordion open={explanationOpen} onToggle={() => setExplanationOpen(o => !o)} label="Explanation" accentColor="var(--ps-accent)">
+              <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.65, margin: 0, whiteSpace: 'pre-wrap' }}>
                 {problem.explanation}
               </p>
             </Accordion>

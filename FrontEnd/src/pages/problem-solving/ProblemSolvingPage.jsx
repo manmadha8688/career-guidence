@@ -48,6 +48,17 @@ const TRACKS = [
     border: 'rgba(239,68,68,0.22)',
     tag: 'GET HIRED',
   },
+  {
+    key: 'scenario-coding',
+    icon: '🏗️',
+    title: 'Scenario Coding',
+    subtitle: 'Can you build real systems?',
+    desc: 'real-world problems. Implement functions for shopping carts, banks, parking lots, booking systems — scenario first, you code the logic.',
+    color: '#8B5CF6',
+    bg: 'rgba(139,92,246,0.08)',
+    border: 'rgba(139,92,246,0.22)',
+    tag: 'REAL WORLD',
+  },
 ]
 
 export default function ProblemSolvingPage() {
@@ -128,7 +139,7 @@ export default function ProblemSolvingPage() {
             fontFamily: "'Share Tech Mono', monospace", fontSize: '0.78rem',
             color: 'var(--ps-muted)', letterSpacing: '0.08em',
           }}>
-            Four tracks. One goal — write code that works and gets you hired.
+            Five tracks. One goal — write code that works and gets you hired.
           </p>
         </div>
 

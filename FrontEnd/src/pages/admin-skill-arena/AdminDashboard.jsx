@@ -1,27 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Users, BookOpen, Layers, Map, TrendingUp, RefreshCw } from 'lucide-react'
+import { Users, BookOpen, Layers, Map, TrendingUp, Swords, Code2, HelpCircle, Flag } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
-import { getAdminStats, migrateRichContent } from '../../api/api'
+import { getAdminStats } from '../../api/api'
 import toast from 'react-hot-toast'
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [migrating, setMigrating] = useState(false)
   const navigate = useNavigate()
-
-  const handleMigrate = async () => {
-    setMigrating(true)
-    try {
-      await migrateRichContent()
-      toast.success('Rich content migration complete! Refresh a concept page to see updates.')
-    } catch {
-      toast.error('Migration failed — check backend logs')
-    } finally {
-      setMigrating(false)
-    }
-  }
 
   useEffect(() => {
     getAdminStats()
@@ -37,12 +24,16 @@ export default function AdminDashboard() {
   )
 
   const cards = [
-    { icon: <Users size={22} />, label: 'Total Users', value: stats?.totalUsers ?? 0, bg: '#EEF2FF', color: '#4F46E5', link: '/admin-skill-arena/users' },
-    { icon: <TrendingUp size={22} />, label: 'Registered Students', value: stats?.totalStudents ?? 0, bg: '#D1FAE5', color: '#059669', link: '/admin-skill-arena/users' },
-    { icon: <Users size={22} />, label: 'Guest Visits', value: stats?.totalGuests ?? 0, bg: '#FEF9C3', color: '#CA8A04', link: '/admin-skill-arena/users' },
-    { icon: <BookOpen size={22} />, label: 'Subjects', value: stats?.totalSubjects ?? 0, bg: '#F3E8FF', color: '#7C3AED', link: '/admin-skill-arena/subjects' },
-    { icon: <Layers size={22} />, label: 'Concepts', value: stats?.totalConcepts ?? 0, bg: '#FEF3C7', color: '#D97706', link: '/admin-skill-arena/concepts' },
-    { icon: <Map size={22} />, label: 'Roadmaps', value: stats?.totalRoadmaps ?? 0, bg: '#DBEAFE', color: '#1D4ED8', link: '/admin-skill-arena/roadmaps' },
+    { icon: <Users size={22} />,      label: 'Total Users',          value: stats?.totalUsers ?? 0,     bg: '#EEF2FF', color: '#4F46E5', link: '/admin-skill-arena/users' },
+    { icon: <TrendingUp size={22} />, label: 'Registered Students',  value: stats?.totalStudents ?? 0,  bg: '#D1FAE5', color: '#059669', link: '/admin-skill-arena/users' },
+    { icon: <Users size={22} />,      label: 'Guest Visits',         value: stats?.totalGuests ?? 0,    bg: '#FEF9C3', color: '#CA8A04', link: '/admin-skill-arena/users' },
+    { icon: <BookOpen size={22} />,   label: 'Subjects',             value: stats?.totalSubjects ?? 0,  bg: '#F3E8FF', color: '#7C3AED', link: '/admin-skill-arena/subjects' },
+    { icon: <Layers size={22} />,     label: 'Concepts',             value: stats?.totalConcepts ?? 0,  bg: '#FEF3C7', color: '#D97706', link: '/admin-skill-arena/concepts' },
+    { icon: <HelpCircle size={22} />, label: 'Questions',            value: stats?.totalQuestions ?? 0, bg: '#ECFDF5', color: '#059669', link: '/admin-skill-arena/questions' },
+    { icon: <Map size={22} />,        label: 'Roadmaps',             value: stats?.totalRoadmaps ?? 0,  bg: '#DBEAFE', color: '#1D4ED8', link: '/admin-skill-arena/roadmaps' },
+    { icon: <Swords size={22} />,     label: 'Missions',             value: stats?.totalMissions ?? 0,  bg: '#FFF7ED', color: '#EA580C', link: '/admin-skill-arena/missions' },
+    { icon: <Code2 size={22} />,      label: 'Problems',             value: stats?.totalProblems ?? 0,  bg: '#F0FDF4', color: '#16A34A', link: '/admin-skill-arena/problems' },
+    { icon: <Flag size={22} />,       label: 'Open Reports',         value: stats?.totalReports ?? 0,   bg: '#FEF2F2', color: '#DC2626', link: '/admin-skill-arena/reports' },
   ]
 
   return (
@@ -130,28 +121,6 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Quick actions */}
-      <div style={{ marginTop: '2rem' }}>
-        <h2 className="font-bold mb-2" style={{ fontSize: '1rem' }}>Quick Actions</h2>
-        <div className="flex" style={{ gap: '0.75rem', flexWrap: 'wrap' }}>
-          <button className="btn btn-secondary" onClick={() => navigate('/admin-skill-arena/subjects')}>
-            <BookOpen size={15} /> Manage Subjects
-          </button>
-          <button className="btn btn-secondary" onClick={() => navigate('/admin-skill-arena/concepts')}>
-            <Layers size={15} /> Manage Concepts
-          </button>
-          <button className="btn btn-secondary" onClick={() => navigate('/admin-skill-arena/roadmaps')}>
-            <Map size={15} /> Manage Roadmaps
-          </button>
-          <button className="btn btn-secondary" onClick={() => navigate('/admin-skill-arena/users')}>
-            <Users size={15} /> Manage Users
-          </button>
-          <button className="btn btn-primary" onClick={handleMigrate} disabled={migrating} style={{ marginLeft: 'auto' }}>
-            {migrating ? <span className="loading-spinner" /> : <RefreshCw size={15} />}
-            {migrating ? 'Migrating…' : 'Seed Rich Content'}
-          </button>
-        </div>
-      </div>
     </AppLayout>
   )
 }

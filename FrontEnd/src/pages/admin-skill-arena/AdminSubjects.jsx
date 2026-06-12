@@ -247,7 +247,6 @@ export default function AdminSubjects() {
                 <th>Difficulty</th>
                 <th>Hours</th>
                 <th>Concepts</th>
-                <th>Rich Info</th>
                 <th></th>
               </tr>
             </thead>
@@ -278,17 +277,7 @@ export default function AdminSubjects() {
                     <td className="text-sm text-muted">{s.difficulty || <span style={{ color: 'var(--border)' }}>—</span>}</td>
                     <td className="text-sm text-muted">{s.estimatedHours > 0 ? `${s.estimatedHours}h` : <span style={{ color: 'var(--border)' }}>—</span>}</td>
                     <td className="text-sm text-muted">{s.totalConcepts}</td>
-                    <td>
-                      {richCount + listCount > 0 ? (
-                        <span style={{ fontSize: '0.7rem', fontFamily: "'Share Tech Mono', monospace", color: '#4ADE80', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)', padding: '0.15rem 0.5rem', borderRadius: 4 }}>
-                          {richCount} fields · {listCount} items
-                        </span>
-                      ) : (
-                        <span style={{ fontSize: '0.7rem', fontFamily: "'Share Tech Mono', monospace", color: 'var(--text-muted)', background: 'rgba(136,136,136,0.08)', border: '1px solid var(--border)', padding: '0.15rem 0.5rem', borderRadius: 4 }}>
-                          empty
-                        </span>
-                      )}
-                    </td>
+                    
                     <td>
                       <div style={{ display: 'flex', gap: '0.5rem' }}>
                         <button className="btn btn-ghost btn-sm" onClick={() => setModal(s)}><Pencil size={13} /></button>
