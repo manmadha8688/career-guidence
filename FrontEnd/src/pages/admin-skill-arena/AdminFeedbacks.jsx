@@ -27,14 +27,28 @@ function formatDate(iso) {
 }
 
 export default function AdminFeedbacks() {
-  const [feedbacks, setFeedbacks] = useState([])
-  const [loading, setLoading]     = useState(true)
-  const [filter, setFilter]       = useState('All')
+  const [feedbacks, setFeedbacks]   = useState([])
+  const [loading, setLoading]       = useState(true)
+  const [filter, setFilter]         = useState('All')
+  const [page, setPage]             = useState(0)
+  const [totalPages, setTotalPages] = useState(0)
+  const [totalCount, setTotalCount] = useState(0)
+  // summary stats accumulated from current page only (approximation) — kept in state from first load
+  const [summary, setSummary]       = useState({ avg: '—', useful: 0, notUseful: 0 })
 
-  const load = () => {
+  const load = (p = 0) => {
     setLoading(true)
-    getAllFeedbacks()
-      .then(r => setFeedbacks(r.data))
+    getAllFeedbacks(p)
+      .then(r => {
+        const items = r.data.content
+        setFeedbacks(items)
+        setPage(r.data.number)
+        setTotalPages(r.data.totalPages)
+        setTotalCount(r.data.totalElements)
+        // recalc summary on every page load
+        const avg = items.length ? (items.reduce((s, f) => s + f.rating, 0) / items.length).toFixed(1) : '—'
+        setSummary({ avg, useful: items.filter(f => f.isUseful === true).length, notUseful: items.filter(f => f.isUseful === false).length })
+      })
       .catch(() => toast.error('Failed to load feedbacks'))
       .finally(() => setLoading(false))
   }
@@ -48,17 +62,12 @@ export default function AdminFeedbacks() {
     return f.category === filter
   })
 
-  // Summary stats
-  const avgRating   = feedbacks.length ? (feedbacks.reduce((s, f) => s + f.rating, 0) / feedbacks.length).toFixed(1) : '—'
-  const usefulCount = feedbacks.filter(f => f.isUseful === true).length
-  const notUseful   = feedbacks.filter(f => f.isUseful === false).length
-
   return (
     <AppLayout title="User Feedback">
       <div className="page-header">
         <div>
           <h1 className="page-title">User Feedback</h1>
-          <p className="page-subtitle">{feedbacks.length} response{feedbacks.length !== 1 ? 's' : ''} collected</p>
+          <p className="page-subtitle">{totalCount} response{totalCount !== 1 ? 's' : ''} collected</p>
         </div>
         <button className="btn btn-ghost btn-sm" onClick={load} disabled={loading}>
           <RefreshCw size={14} className={loading ? 'spin' : ''} /> Refresh
@@ -70,28 +79,28 @@ export default function AdminFeedbacks() {
         <div className="stat-card">
           <div className="stat-icon" style={{ background: '#FEF3C7', color: '#D97706' }}><Star size={20} /></div>
           <div className="stat-info">
-            <div className="stat-value">{avgRating}</div>
-            <div className="stat-label">Avg Rating</div>
+            <div className="stat-value">{summary.avg}</div>
+            <div className="stat-label">Avg Rating (page)</div>
           </div>
         </div>
         <div className="stat-card">
           <div className="stat-icon" style={{ background: '#D1FAE5', color: '#059669' }}><ThumbsUp size={20} /></div>
           <div className="stat-info">
-            <div className="stat-value">{usefulCount}</div>
-            <div className="stat-label">Found Useful</div>
+            <div className="stat-value">{summary.useful}</div>
+            <div className="stat-label">Found Useful (page)</div>
           </div>
         </div>
         <div className="stat-card">
           <div className="stat-icon" style={{ background: '#FEE2E2', color: '#DC2626' }}><ThumbsDown size={20} /></div>
           <div className="stat-info">
-            <div className="stat-value">{notUseful}</div>
-            <div className="stat-label">Not Useful</div>
+            <div className="stat-value">{summary.notUseful}</div>
+            <div className="stat-label">Not Useful (page)</div>
           </div>
         </div>
         <div className="stat-card">
           <div className="stat-icon" style={{ background: '#EEF2FF', color: '#4F46E5' }}><MessageSquare size={20} /></div>
           <div className="stat-info">
-            <div className="stat-value">{feedbacks.length}</div>
+            <div className="stat-value">{totalCount}</div>
             <div className="stat-label">Total Responses</div>
           </div>
         </div>
@@ -157,6 +166,17 @@ export default function AdminFeedbacks() {
               </div>
             )
           })}
+        </div>
+      )}
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex-center" style={{ gap: '0.5rem', marginTop: '1.5rem' }}>
+          <button className="btn btn-ghost btn-sm" disabled={page === 0} onClick={() => load(page - 1)}>← Prev</button>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button key={i} className={`btn btn-sm ${page === i ? 'btn-primary' : 'btn-ghost'}`} onClick={() => load(i)}>{i + 1}</button>
+          ))}
+          <button className="btn btn-ghost btn-sm" disabled={page === totalPages - 1} onClick={() => load(page + 1)}>Next →</button>
         </div>
       )}
     </AppLayout>

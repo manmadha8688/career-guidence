@@ -80,7 +80,6 @@ const steps = [
 ]
 
 const NAV_LINKS = [
-  { label: 'Skills Arena', live: true },
   { label: 'Missions',     live: true, href: '/missions' },
   { label: 'Code GYM',    live: true, href: '/problem-solving' },
   { label: 'Resume', live: false },

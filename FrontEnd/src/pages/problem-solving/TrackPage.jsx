@@ -6,16 +6,18 @@ import { getProblems } from '../../api/api'
 import ReportButton from '../../components/ReportButton'
 
 const SLUG_TO_TRACK = {
-  'start-coding':   'START_CODING',
-  'logic-building': 'LOGIC_BUILDING',
-  'skill-up':       'SKILL_UP',
-  'interview-prep': 'INTERVIEW_PREP',
+  'start-coding':    'START_CODING',
+  'logic-building':  'LOGIC_BUILDING',
+  'skill-up':        'SKILL_UP',
+  'interview-prep':  'INTERVIEW_PREP',
+  'scenario-coding': 'SCENARIO_CODING',
 }
 const TRACK_META = {
-  START_CODING:   { title: 'Start Coding',   color: '#22C55E' },
-  LOGIC_BUILDING: { title: 'Logic Building', color: '#F59E0B' },
-  SKILL_UP:       { title: 'Skill Up',       color: '#0EA5E9' },
-  INTERVIEW_PREP: { title: 'Interview Prep', color: '#EF4444' },
+  START_CODING:    { title: 'Start Coding',    color: '#22C55E' },
+  LOGIC_BUILDING:  { title: 'Logic Building',  color: '#F59E0B' },
+  SKILL_UP:        { title: 'Skill Up',        color: '#0EA5E9' },
+  INTERVIEW_PREP:  { title: 'Interview Prep',  color: '#EF4444' },
+  SCENARIO_CODING: { title: 'Scenario Coding', color: '#8B5CF6' },
 }
 const LEVEL_META = {
   BEGINNER:     { label: 'Beginner',     color: '#22C55E' },
@@ -122,7 +124,7 @@ export default function TrackPage() {
       if (skillTopic !== 'All')    qs = qs.filter(p => (p.topics || []).includes(skillTopic))
     }
 
-    if (track === 'INTERVIEW_PREP' && interviewLevel !== 'All')
+    if ((track === 'INTERVIEW_PREP' || track === 'SCENARIO_CODING') && interviewLevel !== 'All')
       qs = qs.filter(p => p.level === interviewLevel)
 
     return qs
@@ -206,6 +208,13 @@ export default function TrackPage() {
           level={interviewLevel} onLevelChange={setInterviewLevel}
           search={search} onSearch={setSearch}
           navigate={navigate}
+        />
+      ) : track === 'SCENARIO_CODING' ? (
+        <ScenarioView
+          questions={filtered}
+          level={interviewLevel} onLevelChange={setInterviewLevel}
+          search={search} onSearch={setSearch}
+          light={light} navigate={navigate}
         />
       ) : (
         <LinearView
@@ -601,6 +610,90 @@ function InterviewPrepView({ questions, level, onLevelChange, search, onSearch, 
             <InterviewCard key={q.id} problem={q} index={i}
               onClick={() => navigate(`/problem-solving/${q.id}`)} />
           ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ScenarioView({ questions, level, onLevelChange, search, onSearch, light, navigate }) {
+  const CATEGORY_COLORS = {
+    Transport: '#22C55E', Healthcare: '#EF4444', Banking: '#F59E0B',
+    Education: '#0EA5E9', 'Food Delivery': '#F97316', Gaming: '#8B5CF6',
+    'HR System': '#06B6D4', Inventory: '#84CC16', Library: '#A78BFA',
+    Infrastructure: '#64748B',
+  }
+
+  return (
+    <div className="ps-view-container" style={{ maxWidth: 900, margin: '0 auto', padding: '1.5rem', boxSizing: 'border-box', width: '100%' }}>
+
+      {/* Header banner */}
+      <div style={{
+        background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.2)',
+        borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '1.25rem',
+      }}>
+        <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.65rem', letterSpacing: '0.12em', color: '#8B5CF6', marginBottom: '0.3rem' }}>REAL WORLD</div>
+        <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)', marginBottom: '0.3rem' }}>Scenario Coding</div>
+        <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+          Story-based problems from company placement exams. Each problem gives a real-world scenario with clear rules — you implement the logic.
+        </div>
+      </div>
+
+      {/* Filter row */}
+      <div className="ps-filter-row" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-end', marginBottom: '1rem', flexWrap: 'wrap' }}>
+        <SearchBar value={search} onChange={onSearch} placeholder="Search scenario problems..." />
+        <FilterSelect
+          label="Level"
+          value={level}
+          onChange={onLevelChange}
+          options={LEVELS.map(l => l)}
+          accentColor="#8B5CF6"
+          renderLabel={l => LEVEL_LABELS[l] || l}
+        />
+      </div>
+
+      <div style={{ marginBottom: '1rem' }}>
+        <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
+      </div>
+
+      {questions.length === 0 ? <Empty /> : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(380px,100%), 1fr))', gap: '0.75rem' }}>
+          {questions.map((q) => {
+            const lm = LEVEL_META[q.level] || LEVEL_META.BEGINNER
+            const catColor = CATEGORY_COLORS[q.category] || '#8B5CF6'
+            return (
+              <button
+                key={q.id}
+                onClick={() => navigate(`/problem-solving/${q.id}`)}
+                style={{
+                  background: 'var(--ps-card-bg)', border: '1px solid var(--ps-card-border)',
+                  borderLeft: `3px solid ${catColor}`,
+                  borderRadius: 10, padding: '1rem 1.125rem',
+                  cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = `${catColor}66`; e.currentTarget.style.transform = 'translateY(-2px)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--ps-card-border)'; e.currentTarget.style.borderLeftColor = catColor; e.currentTarget.style.transform = 'translateY(0)' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+                  <span style={{ fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.12rem 0.45rem', borderRadius: 3, background: `${catColor}15`, color: catColor, border: `1px solid ${catColor}30` }}>
+                    {q.category}
+                  </span>
+                  <span style={{ fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.12rem 0.45rem', borderRadius: 3, background: `${lm.color}12`, color: lm.color, border: `1px solid ${lm.color}25` }}>
+                    {lm.label}
+                  </span>
+                </div>
+                <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: 1.3 }}>
+                  {q.title}
+                </div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  {q.description?.split('\n')[0]}
+                </div>
+                {q.isInterview && (
+                  <div style={{ marginTop: '0.5rem', fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", color: '#EF4444' }}>★ ASKED IN PLACEMENT EXAMS</div>
+                )}
+              </button>
+            )
+          })}
         </div>
       )}
     </div>

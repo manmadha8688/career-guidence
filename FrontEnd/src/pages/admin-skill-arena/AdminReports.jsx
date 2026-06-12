@@ -29,11 +29,12 @@ export default function AdminReports() {
   const [expanded, setExpanded] = useState(null)
   const [editing, setEditing]   = useState({})   // { [id]: { note, status } }
   const [saving, setSaving]     = useState({})
+  const [statusFilter, setStatusFilter] = useState('')  // '' | 'OPEN' | 'IN_PROGRESS' | 'RESOLVED'
 
-  const load = async (p = 0) => {
+  const load = async (p = 0, sf = statusFilter) => {
     setLoading(true)
     try {
-      const [r, s] = await Promise.all([getAdminReports(p), getReportStats()])
+      const [r, s] = await Promise.all([getAdminReports(p, 20, sf), getReportStats()])
       setReports(r.data.content)
       setTotalPages(r.data.totalPages)
       setPage(p)
@@ -42,7 +43,12 @@ export default function AdminReports() {
     finally { setLoading(false) }
   }
 
-  useEffect(() => { load() }, [])
+  useEffect(() => { load(0, statusFilter) }, [statusFilter])
+
+  const handleFilterChange = (sf) => {
+    setStatusFilter(sf)
+    setExpanded(null)
+  }
 
   const handleUpdate = async (id) => {
     const changes = editing[id] || {}
@@ -97,12 +103,30 @@ export default function AdminReports() {
         ))}
       </div>
 
+      {/* Status filter tabs */}
+      <div className="filter-chips" style={{ marginBottom: '1.25rem' }}>
+        {[
+          { key: '',            label: 'All' },
+          { key: 'OPEN',        label: `Open (${stats.open || 0})` },
+          { key: 'IN_PROGRESS', label: `In Progress (${stats.inProgress || 0})` },
+          { key: 'RESOLVED',    label: `Resolved (${stats.resolved || 0})` },
+        ].map(f => (
+          <button
+            key={f.key}
+            className={`filter-chip${statusFilter === f.key ? ' active' : ''}`}
+            onClick={() => handleFilterChange(f.key)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
       {loading ? (
         <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div>
       ) : reports.length === 0 ? (
         <div className="flex-center" style={{ height: '20vh', color: 'var(--text-muted)', flexDirection: 'column', gap: '0.5rem' }}>
           <Flag size={32} opacity={0.3} />
-          <span>No reports yet</span>
+          <span>{statusFilter ? `No ${STATUS_META[statusFilter]?.label.toLowerCase()} reports` : 'No reports yet'}</span>
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>

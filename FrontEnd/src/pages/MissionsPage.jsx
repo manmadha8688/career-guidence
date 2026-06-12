@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Sun, Moon } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
@@ -36,12 +36,25 @@ export default function MissionsPage() {
   const [missions, setMissions]   = useState([])
   const [loading, setLoading]     = useState(true)
   const [filter, setFilter]       = useState('')
-  const [category, setCategory]   = useState('')   // '' | 'subject' | 'real_world' | 'academic' | 'role_based'
+  const [category, setCategory]   = useState('')   // '' | 'subject' | 'academic' | 'role_based'
   const [subFilter, setSubFilter] = useState('')   // subject title OR role name
   const { user }                  = useAuth()
   const { theme, toggleTheme }    = useTheme()
   const navigate                  = useNavigate()
+  const [searchParams]            = useSearchParams()
   const light                     = theme === 'light'
+
+  // Pre-apply filter when arriving from Skill Arena subject or roadmap button
+  useEffect(() => {
+    const subjectFromUrl  = searchParams.get('subjectTitle')
+    const categoryFromUrl = searchParams.get('category')
+    if (subjectFromUrl) {
+      setCategory('subject')
+      setSubFilter(subjectFromUrl)
+    } else if (categoryFromUrl === 'role_based') {
+      setCategory('role_based')
+    }
+  }, [])
 
   useEffect(() => {
     getMissions()
@@ -68,7 +81,6 @@ export default function MissionsPage() {
     // Category filter
     if (category === 'subject')
       return m.category === 'SUBJECT_PRACTICE' && (!subFilter || m.subjectTitles?.includes(subFilter))
-    if (category === 'real_world')  return m.category === 'REAL_WORLD'
     if (category === 'academic')    return m.category === 'ACADEMIC'
     if (category === 'role_based')
       return m.category === 'ROLE_BASED' && (!subFilter || m.targetRoles?.includes(subFilter))
@@ -292,7 +304,6 @@ export default function MissionsPage() {
           <MissionSelect value={category} onChange={e => handleCategoryChange(e.target.value)} light={light} active={!!category}>
             <option value="">All Project Types</option>
             <option value="subject">Subject Practice</option>
-            <option value="real_world">Real World Projects</option>
             <option value="academic">Academic Projects</option>
             <option value="role_based">Role Based Projects</option>
           </MissionSelect>

@@ -21,6 +21,8 @@ export default function MissionDetailPage() {
   const [mission, setMission] = useState(null)
   const [loading, setLoading] = useState(true)
   const [hintsOpen, setHintsOpen] = useState(false)
+  const [approachOpen, setApproachOpen] = useState(false)
+  const [mistakesOpen, setMistakesOpen] = useState(false)
 
   useEffect(() => {
     getMission(id)
@@ -203,6 +205,21 @@ export default function MissionDetailPage() {
         <div style={S.section}>
           <span style={S.sectionLabel}>◆ MISSION BRIEF</span>
           <p style={S.body}>{mission.missionBrief}</p>
+
+          {/* Learning Outcome */}
+          {mission.learningOutcome && (
+            <div style={{
+              marginTop: '1rem', padding: '0.75rem 1rem', borderRadius: 7,
+              background: light ? `${m.color}14` : `${m.color}10`,
+              border: `1px solid ${m.color}35`,
+            }}>
+              <span style={{ ...S.sectionLabel, color: m.color, marginBottom: '0.35rem' }}>🎯 WHAT YOU WILL ACHIEVE</span>
+              <p style={{ ...S.body, margin: 0, color: light ? '#1A1A2E' : '#D0DCF0', fontStyle: 'italic' }}>
+                {mission.learningOutcome}
+              </p>
+            </div>
+          )}
+
           {/* Related subjects */}
           {mission.subjectTitles?.length > 0 && (
             <div style={{ marginTop: '1rem', paddingTop: '1rem',
@@ -223,6 +240,33 @@ export default function MissionDetailPage() {
             </div>
           )}
         </div>
+
+        {/* Prerequisites */}
+        {mission.prerequisites?.length > 0 && (
+          <div style={{
+            ...S.section,
+            borderColor: light ? 'rgba(251,191,36,0.3)' : 'rgba(251,191,36,0.2)',
+            background: light ? 'rgba(255,251,235,0.9)' : 'rgba(20,15,5,0.7)',
+          }}>
+            <span style={{ ...S.sectionLabel, color: '#F59E0B' }}>⚡ BEFORE YOU START — PREREQUISITES</span>
+            <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '0.75rem', color: light ? '#6B4A00' : '#A08030' }}>
+              Make sure you are comfortable with these concepts before attempting this mission.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+              {mission.prerequisites.map((pre, i) => (
+                <span key={i} style={{
+                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
+                  color: light ? '#7C4F00' : '#D4A030',
+                  background: light ? 'rgba(245,158,11,0.1)' : 'rgba(245,158,11,0.08)',
+                  border: '1px solid rgba(245,158,11,0.35)',
+                  borderRadius: 5, padding: '0.25rem 0.65rem', letterSpacing: '0.03em',
+                }}>
+                  {pre}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Objectives */}
         <div style={S.section}>
@@ -254,27 +298,125 @@ export default function MissionDetailPage() {
           </div>
         )}
 
-        {/* Approach Steps */}
-        {mission.approachSteps?.length > 0 && (
-          <div style={S.section}>
-            <span style={S.sectionLabel}>◆ APPROACH GUIDE</span>
-            <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '1rem', color: light ? '#5A3A18' : '#6B5030' }}>
-              High-level steps to get you started. No code — your implementation is your own.
+        {/* Concepts Covered */}
+        {mission.conceptsCovered?.length > 0 && (
+          <div style={{ ...S.section, borderColor: light ? 'rgba(96,165,250,0.25)' : 'rgba(96,165,250,0.18)' }}>
+            <span style={{ ...S.sectionLabel, color: '#60A5FA' }}>📚 CONCEPTS PRACTICED IN THIS MISSION</span>
+            <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '0.75rem', color: light ? '#1A3050' : '#6090B0' }}>
+              These concepts from your Skill Arena subjects are actively used in this build.
             </p>
-            {mission.approachSteps.map((step, i) => (
-              <div key={i} style={{ ...S.listItem, marginBottom: '0.75rem' }}>
-                <div style={{
-                  width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
-                  background: `${m.color}18`, border: `1.5px solid ${m.color}50`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem',
-                  fontWeight: 700, color: m.color,
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+              {mission.conceptsCovered.map((concept, i) => (
+                <span key={i} style={{
+                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
+                  color: light ? '#1A3A6A' : '#80B8E8',
+                  background: light ? 'rgba(96,165,250,0.1)' : 'rgba(96,165,250,0.08)',
+                  border: '1px solid rgba(96,165,250,0.3)',
+                  borderRadius: 5, padding: '0.25rem 0.65rem', letterSpacing: '0.03em',
                 }}>
-                  {i + 1}
-                </div>
-                <span>{step}</span>
+                  {concept}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Approach Steps — accordion */}
+        {mission.approachSteps?.length > 0 && (
+          <div style={{
+            ...S.section,
+            borderColor: approachOpen
+              ? (light ? `${m.color}40` : `${m.color}30`)
+              : (light ? 'rgba(100,40,0,0.15)' : 'rgba(255,127,42,0.1)'),
+          }}>
+            <button
+              onClick={() => setApproachOpen(o => !o)}
+              style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 0 }}
+            >
+              <span style={{ ...S.sectionLabel, margin: 0, color: m.color }}>
+                ◆ APPROACH GUIDE
+                <span style={{
+                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
+                  color: light ? '#6B4820' : '#6B5030', marginLeft: '0.75rem', fontWeight: 400,
+                }}>
+                 
+                </span>
+              </span>
+              {approachOpen
+                ? <ChevronUp size={16} color={m.color} />
+                : <ChevronDown size={16} color={light ? '#6B4820' : '#6B5030'} />}
+            </button>
+
+            {approachOpen && (
+              <div style={{ marginTop: '1rem' }}>
+                <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '1rem', color: light ? '#5A3A18' : '#6B5030' }}>
+                  High-level steps to get you started. No code — your implementation is your own.
+                </p>
+                {mission.approachSteps.map((step, i) => (
+                  <div key={i} style={{ ...S.listItem, marginBottom: '0.75rem' }}>
+                    <div style={{
+                      width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
+                      background: `${m.color}18`, border: `1.5px solid ${m.color}50`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem',
+                      fontWeight: 700, color: m.color,
+                    }}>
+                      {i + 1}
+                    </div>
+                    <span>{step}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
+          </div>
+        )}
+
+        {/* Common Mistakes — accordion */}
+        {mission.commonMistakes?.length > 0 && (
+          <div style={{
+            ...S.section,
+            borderColor: mistakesOpen
+              ? (light ? 'rgba(239,68,68,0.3)' : 'rgba(239,68,68,0.25)')
+              : (light ? 'rgba(100,40,0,0.15)' : 'rgba(255,127,42,0.1)'),
+            background: mistakesOpen
+              ? (light ? 'rgba(255,245,245,0.9)' : 'rgba(20,5,5,0.7)')
+              : (light ? 'rgba(252,250,246,0.95)' : 'rgba(13,17,32,0.8)'),
+          }}>
+            <button
+              onClick={() => setMistakesOpen(o => !o)}
+              style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 0 }}
+            >
+              <span style={{ ...S.sectionLabel, margin: 0, color: mistakesOpen ? '#EF4444' : (light ? '#7C3500' : '#FF7F2A') }}>
+                ⚠ COMMON MISTAKES
+                <span style={{
+                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
+                  color: light ? '#6B4820' : '#6B5030', marginLeft: '0.75rem', fontWeight: 400,
+                }}>
+                
+                </span>
+              </span>
+              {mistakesOpen
+                ? <ChevronUp size={16} color="#EF4444" />
+                : <ChevronDown size={16} color={light ? '#6B4820' : '#6B5030'} />}
+            </button>
+
+            {mistakesOpen && (
+              <div style={{ marginTop: '1rem' }}>
+                {mission.commonMistakes.map((mistake, i) => (
+                  <div key={i} style={{
+                    ...S.listItem,
+                    background: light ? 'rgba(239,68,68,0.05)' : 'rgba(239,68,68,0.06)',
+                    border: '1px solid rgba(239,68,68,0.2)',
+                    borderRadius: 6, padding: '0.6rem 0.75rem', marginBottom: '0.5rem',
+                  }}>
+                    <span style={{ ...S.bullet, background: '#EF4444', marginTop: '0.35rem', flexShrink: 0 }} />
+                    <span style={{ color: light ? '#5A1A1A' : '#D08080', fontSize: '0.85rem' }}>{mistake}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -301,7 +443,7 @@ export default function MissionDetailPage() {
                   color: light ? '#6B4820' : '#6B5020',
                   marginLeft: '0.75rem', fontWeight: 400,
                 }}>
-                  {hintsOpen ? 'HIDE' : `${mission.hints.length} HINTS — CLICK TO REVEAL`}
+                 
                 </span>
               </span>
               {hintsOpen
@@ -343,7 +485,7 @@ export default function MissionDetailPage() {
           >
             <ArrowLeft size={14} /> BACK TO MISSION BOARD
           </button>
-          <ReportButton variant="inline" pageTitle={`Mission — ${mission?.title}`} />
+          <ReportButton variant="floating" pageTitle={`Mission — ${mission?.title}`} />
         </div>
       </div>
     </div>

@@ -6,9 +6,9 @@ import toast from 'react-hot-toast'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const TRACK_OPTIONS = ['START_CODING', 'LOGIC_BUILDING', 'SKILL_UP', 'INTERVIEW_PREP']
-const TRACK_LABELS  = { START_CODING: 'Start Coding', LOGIC_BUILDING: 'Logic Building', SKILL_UP: 'Skill Up', INTERVIEW_PREP: 'Interview Prep' }
-const TRACK_COLORS  = { START_CODING: '#22C55E', LOGIC_BUILDING: '#F59E0B', SKILL_UP: '#0EA5E9', INTERVIEW_PREP: '#EF4444' }
+const TRACK_OPTIONS = ['START_CODING', 'LOGIC_BUILDING', 'SKILL_UP', 'INTERVIEW_PREP', 'SCENARIO_CODING']
+const TRACK_LABELS  = { START_CODING: 'Start Coding', LOGIC_BUILDING: 'Logic Building', SKILL_UP: 'Skill Up', INTERVIEW_PREP: 'Interview Prep', SCENARIO_CODING: 'Scenario Coding' }
+const TRACK_COLORS  = { START_CODING: '#22C55E', LOGIC_BUILDING: '#F59E0B', SKILL_UP: '#0EA5E9', INTERVIEW_PREP: '#EF4444', SCENARIO_CODING: '#8B5CF6' }
 const LEVELS  = ['BEGINNER', 'INTERMEDIATE', 'ADVANCED']
 const TYPES   = ['WRITE', 'PATTERN', 'OUTPUT', 'DEBUG', 'CONCEPTUAL']
 const LANGS   = ['python', 'java', 'c', 'cpp']

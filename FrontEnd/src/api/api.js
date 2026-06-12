@@ -145,7 +145,7 @@ export const getRoadmapStatus  = (roadmapId)       => withCache(`roadmapStatus:$
 
 // ─── FEEDBACK ─────────────────────────────────────────
 export const submitFeedback = (data) => api.post('/feedback', data)
-export const getAllFeedbacks = ()     => api.get('/feedback')
+export const getAllFeedbacks = (p=0,s=15) => api.get(`/feedback?page=${p}&size=${s}`)
 
 // ─── MISSIONS ─────────────────────────────────────────
 export const getMissions  = ()     => withCache('missions',      30_000, () => api.get('/missions'))
@@ -168,7 +168,7 @@ export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d) 
 export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)  .then(r => { clearApiCache('missions', `mission:${id}`); return r })
 
 // ─── REPORTS ──────────────────────────────────────────
-export const getAdminReports    = (p=0,s=20) => api.get(`/reports?page=${p}&size=${s}`)
+export const getAdminReports    = (p=0,s=20,status='') => api.get(`/reports?page=${p}&size=${s}${status ? `&status=${status}` : ''}`)
 export const updateReport       = (id, d)    => api.put(`/reports/${id}`, d)
 export const deleteReport       = (id)       => api.delete(`/reports/${id}`)
 export const getReportStats     = ()         => api.get('/reports/stats')

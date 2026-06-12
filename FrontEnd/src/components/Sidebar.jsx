@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, ChevronRight, Layers, HelpCircle, MessageSquare, Sword, Code2, Brain, GraduationCap, Flag
+  Users, ChevronRight, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -10,7 +10,7 @@ export default function Sidebar({ open, onClose }) {
   const isAdmin = user?.role === 'ADMIN'
 
   const studentLinks = [
-    { to: '/skill-arena/dashboard',           icon: <LayoutDashboard size={18} />, label: 'Status Window' },
+    { to: '/skill-arena/dashboard',           icon: <LayoutDashboard size={18} />, label: 'Skill Arena' },
     { to: '/skill-arena/dashboard?view=gates', icon: <BookOpen size={18} />,        label: 'Dungeon Gates' },
     { to: '/skill-arena/dashboard?view=paths', icon: <Map size={18} />,             label: 'Hunter Paths' },
     { to: '/problem-solving',                  icon: <Code2 size={18} />,           label: 'Problem Solving' },
@@ -62,8 +62,16 @@ export default function Sidebar({ open, onClose }) {
             <>
               <div className="sidebar-section-label" style={{ marginTop: '1rem' }}>Hunter View</div>
               <NavLink to="/skill-arena/dashboard" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
-                <span className="sidebar-link-icon"><ChevronRight size={18} /></span>
-                Status Window
+                <span className="sidebar-link-icon"><LayoutDashboard size={18} /></span>
+                Skill Arena
+              </NavLink>
+              <NavLink to="/problem-solving" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><Code2 size={18} /></span>
+                Coding
+              </NavLink>
+              <NavLink to="/missions" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><Sword size={18} /></span>
+                Missions
               </NavLink>
             </>
           )}

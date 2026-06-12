@@ -50,11 +50,12 @@ function App() {
           <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />
           <Route path="/fresher-instructions/career-guidance" element={<CareerGuidancePage />} />
           <Route path="/problem-solving" element={<ProblemSolvingPage />} />
-          <Route path="/problem-solving/start-coding"   element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-          <Route path="/problem-solving/logic-building" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-          <Route path="/problem-solving/skill-up"       element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-          <Route path="/problem-solving/interview-prep" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-          <Route path="/problem-solving/:id"            element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/start-coding"    element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/logic-building"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/skill-up"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/interview-prep"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/scenario-coding" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+          <Route path="/problem-solving/:id"             element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
 
           {/* Missions detail — requires login */}
           <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
