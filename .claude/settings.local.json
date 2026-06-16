@@ -26,7 +26,20 @@
       "Bash(Get-ChildItem -Path \"C:\\\\manmadha\\\\Student-project\\\\FrontEnd\\\\src\\\\components\" -File -Recurse)",
       "Bash(Select-Object Name, FullName)",
       "Bash(mongosh \"mongodb+srv://manmadhajayamangala777_db_user:manmadhA%2C8688@free-database.lfnuahd.mongodb.net/learnData_db?retryWrites=true&w=majority&appName=Free-Database\" --eval \"db.concepts.findOne\\({subjectTitle: 'HTML Fundamentals'}, {title:1, introduction:1, explanationSimple:1, explanationTechnical:1, syntax:1, examples:1, keyPoints:1, tip:1, commonMistakes:1, estimatedMinutes:1, rank:1, orderIndex:1}\\)\" --quiet)",
-      "Bash(python *)"
+      "Bash(python *)",
+      "Bash(Get-ChildItem \"C:\\\\manmadha\\\\Student-project\\\\Student-BackEnd\\\\src\\\\main\\\\java\\\\com\\\\example\\\\student\\\\config\")",
+      "Bash(Select-Object Name)",
+      "Bash(curl -s \"https://learntoearn-wnpp.onrender.com/api/missions\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s \"https://learntoearn-wnpp.onrender.com/api/missions\" -o /tmp/missions.json)",
+      "Read(//tmp/**)",
+      "Bash(python3 *)",
+      "Bash(curl -s -X POST https://learntoearn-wnpp.onrender.com/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@demo.com\",\"password\":\"Admin@123\"}')",
+      "Bash(curl -s \"http://localhost:8080/api/missions\")",
+      "Bash(curl -s -X POST http://localhost:8080/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@demo.com\",\"password\":\"Admin@123\"}')",
+      "Bash(curl -s -X POST \"http://localhost:8080/api/auth/login\" -H \"Content-Type: application/json\" -d '{\"email\":\"admin@demo.com\",\"password\":\"Admin@123\"}')",
+      "Skill(update-config)"
     ]
   }
 }

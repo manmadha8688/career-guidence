@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Sun, Moon, ChevronDown, ChevronUp, Eye, EyeOff } from 'lucide-react'
+import GlitchBreachLoader from '../../components/loaders/GlitchBreachLoader'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblem } from '../../api/api'
-import ReportButton from '../../components/ReportButton'
 
 const LANGS = [
   { key: 'python', label: 'Python' },
@@ -58,14 +59,10 @@ export default function ProblemDetailPage() {
     getProblem(id)
       .then(r => setProblem(r.data))
       .catch(() => setNotFound(true))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [id])
 
-  if (loading) return (
-    <div style={{ minHeight: '100vh', background: 'var(--ps-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ width: 40, height: 40, border: '3px solid var(--ps-accent-dim)', borderTopColor: 'var(--ps-accent)', borderRadius: '50%', animation: 'spin 0.7s linear infinite' }} />
-    </div>
-  )
+  if (loading) return <GlitchBreachLoader accentColor="#f97316" label="LOADING PROBLEM" />
 
   if (notFound) return (
     <div style={{ minHeight: '100vh', background: 'var(--ps-bg)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
@@ -446,7 +443,6 @@ export default function ProblemDetailPage() {
           .ps-io-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
-      <ReportButton variant="floating" pageTitle={`Code GYM — Problem`} />
     </div>
   )
 }

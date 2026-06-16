@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import { useNavigate } from 'react-router-dom'
-import { Users, BookOpen, Layers, Map, TrendingUp, Swords, Code2, HelpCircle, Flag } from 'lucide-react'
+import { Users, BookOpen, Layers, Map, TrendingUp, Swords, Code2, HelpCircle, Flag, Briefcase } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminStats } from '../../api/api'
 import toast from 'react-hot-toast'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null)
@@ -14,12 +16,12 @@ export default function AdminDashboard() {
     getAdminStats()
       .then(r => setStats(r.data))
       .catch(() => toast.error('Failed to load stats'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [])
 
   if (loading) return (
     <AppLayout title="Admin Overview">
-      <div className="flex-center" style={{ height: '60vh' }}><div className="loading-spinner-lg" /></div>
+      <AdminSkeleton rows={5} />
     </AppLayout>
   )
 
@@ -34,6 +36,7 @@ export default function AdminDashboard() {
     { icon: <Swords size={22} />,     label: 'Missions',             value: stats?.totalMissions ?? 0,  bg: '#FFF7ED', color: '#EA580C', link: '/admin-skill-arena/missions' },
     { icon: <Code2 size={22} />,      label: 'Problems',             value: stats?.totalProblems ?? 0,  bg: '#F0FDF4', color: '#16A34A', link: '/admin-skill-arena/problems' },
     { icon: <Flag size={22} />,       label: 'Open Reports',         value: stats?.totalReports ?? 0,   bg: '#FEF2F2', color: '#DC2626', link: '/admin-skill-arena/reports' },
+    { icon: <Briefcase size={22} />, label: 'Walk-In Posts',         value: stats?.totalWalkIns ?? 0,   bg: '#ECFDF5', color: '#059669', link: '/admin-skill-arena/walk-ins' },
   ]
 
   return (

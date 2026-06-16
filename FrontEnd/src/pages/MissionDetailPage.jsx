@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS, PAGE_MIN_MS } from '../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, ChevronDown, ChevronUp, Sun, Moon } from 'lucide-react'
+import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
 import { getMission } from '../api/api'
 import { useTheme } from '../context/ThemeContext'
-import ReportButton from '../components/ReportButton'
 
 const RANK_META = {
   D: { color: '#4ADE80', bg: 'rgba(74,222,128,0.12)',   label: 'D-RANK', desc: 'Academy Level' },
@@ -28,15 +29,10 @@ export default function MissionDetailPage() {
     getMission(id)
       .then(r => setMission(r.data))
       .catch(() => navigate('/missions'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [id])
 
-  if (loading) return (
-    <div style={{ minHeight: '100vh', background: 'var(--mission-page-bg)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <ShurikenSpinner />
-    </div>
-  )
+  if (loading) return <SmokeBladeLoader />
 
   if (!mission) return null
 
@@ -97,7 +93,7 @@ export default function MissionDetailPage() {
       {/* ── Top bar ────────────────────────────────────────── */}
       <div style={S.topBar}>
         {/* Back to missions */}
-        <button onClick={() => navigate('/missions')} style={{
+        <button onClick={() => navigate(-1)} style={{
           background: 'none', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', gap: '0.375rem',
           color: light ? '#8B6040' : '#8B9AB8',
@@ -472,7 +468,7 @@ export default function MissionDetailPage() {
 
         {/* Bottom nav */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-          <button onClick={() => navigate('/missions')} style={{
+          <button onClick={() => navigate(-1)} style={{
             display: 'flex', alignItems: 'center', gap: '0.5rem',
             background: 'none', border: light ? '1px solid rgba(230,80,0,0.3)' : '1px solid rgba(255,127,42,0.2)',
             borderRadius: 8, padding: '0.625rem 1.5rem', cursor: 'pointer',
@@ -485,20 +481,9 @@ export default function MissionDetailPage() {
           >
             <ArrowLeft size={14} /> BACK TO MISSION BOARD
           </button>
-          <ReportButton variant="floating" pageTitle={`Mission — ${mission?.title}`} />
         </div>
       </div>
     </div>
   )
 }
 
-function ShurikenSpinner() {
-  return (
-    <div style={{ width: 48, height: 48, animation: 'shurikenSpin 0.8s linear infinite' }}>
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4 L28 20 L44 24 L28 28 L24 44 L20 28 L4 24 L20 20 Z" fill="#FF7F2A" opacity="0.9"/>
-        <circle cx="24" cy="24" r="4" fill="#FF7F2A"/>
-      </svg>
-    </div>
-  )
-}

@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, ChevronRight, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag
+  Users, ChevronRight, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -15,6 +15,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/skill-arena/dashboard?view=paths', icon: <Map size={18} />,             label: 'Hunter Paths' },
     { to: '/problem-solving',                  icon: <Code2 size={18} />,           label: 'Problem Solving' },
     { to: '/fresher-instructions',             icon: <GraduationCap size={18} />,   label: 'Fresher Guide' },
+    { to: '/ai-lab',                           icon: <Zap size={18} />,             label: 'AI Lab' },
   ]
 
   const adminLinks = [
@@ -28,6 +29,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/admin-skill-arena/reports',  icon: <Flag size={18} />,             label: 'Reports' },
     { to: '/admin-skill-arena/missions',  icon: <Sword size={18} />,           label: 'Missions' },
     { to: '/admin-skill-arena/problems',  icon: <Code2 size={18} />,           label: 'Problems' },
+    { to: '/admin-skill-arena/walk-ins',  icon: <Briefcase size={18} />,       label: 'Walk-Ins' },
   ]
 
   const links = isAdmin ? adminLinks : studentLinks
@@ -72,6 +74,14 @@ export default function Sidebar({ open, onClose }) {
               <NavLink to="/missions" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><Sword size={18} /></span>
                 Missions
+              </NavLink>
+              <NavLink to="/walk-ins" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><Briefcase size={18} /></span>
+                Walk-Ins
+              </NavLink>
+              <NavLink to="/ai-lab" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><Zap size={18} /></span>
+                AI Lab
               </NavLink>
             </>
           )}

@@ -5,11 +5,15 @@ import { ThemeProvider } from './context/ThemeContext'
 import ProtectedRoute from './components/ProtectedRoute'
 
 import LandingPage from './pages/LandingPage'
+import LoaderDemo from './pages/LoaderDemo'
 import LoginPage from './pages/auth/LoginPage'
 import RegisterPage from './pages/auth/RegisterPage'
 
 import MissionsPage from './pages/MissionsPage'
+import JobsPage from './pages/JobsPage'
 import FresherInstructionsPage from './pages/FresherInstructionsPage'
+import AILabPage from './pages/ailab/AILabPage'
+import AIToolPage from './pages/ailab/AIToolPage'
 import CareerGuidancePage from './pages/CareerGuidancePage'
 import MissionDetailPage from './pages/MissionDetailPage'
 import ProblemSolvingPage from './pages/problem-solving/ProblemSolvingPage'
@@ -30,7 +34,18 @@ import AdminFeedbacks from './pages/admin-skill-arena/AdminFeedbacks'
 import AdminReports from './pages/admin-skill-arena/AdminReports'
 import AdminMissions from './pages/admin-skill-arena/AdminMissions'
 import AdminProblems from './pages/admin-skill-arena/AdminProblems'
+import AdminWalkIns from './pages/admin-skill-arena/AdminWalkIns'
 import FeedbackNudge from './components/FeedbackNudge'
+import ScrollToTop from './components/ScrollToTop'
+import ReportButton from './components/ReportButton'
+import { useLocation } from 'react-router-dom'
+
+function GlobalReportButton() {
+  const { pathname } = useLocation()
+  const hide = pathname.startsWith('/admin') || pathname === '/login' || pathname === '/register' || pathname === '/loader-demo'
+  if (hide) return null
+  return <ReportButton variant="floating" />
+}
 
 function App() {
   return (
@@ -39,15 +54,21 @@ function App() {
       <BrowserRouter>
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         <FeedbackNudge />
+        <ScrollToTop />
+        <GlobalReportButton />
         <Routes>
           {/* Landing */}
           <Route path="/" element={<LandingPage />} />
+          <Route path="/loader-demo" element={<LoaderDemo />} />
 
           {/* Public */}
           <Route path="/login"    element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/missions" element={<MissionsPage />} />
+          <Route path="/walk-ins" element={<JobsPage />} />
           <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />
+          <Route path="/ai-lab" element={<AILabPage />} />
+          <Route path="/ai-lab/:category/:toolId" element={<AIToolPage />} />
           <Route path="/fresher-instructions/career-guidance" element={<CareerGuidancePage />} />
           <Route path="/problem-solving" element={<ProblemSolvingPage />} />
           <Route path="/problem-solving/start-coding"    element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
@@ -83,6 +104,7 @@ function App() {
           <Route path="/admin-skill-arena/reports"      element={<ProtectedRoute adminOnly><AdminReports /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/missions"     element={<ProtectedRoute adminOnly><AdminMissions /></ProtectedRoute>} />
           <Route path="/admin-skill-arena/problems"     element={<ProtectedRoute adminOnly><AdminProblems /></ProtectedRoute>} />
+          <Route path="/admin-skill-arena/walk-ins"    element={<ProtectedRoute adminOnly><AdminWalkIns /></ProtectedRoute>} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

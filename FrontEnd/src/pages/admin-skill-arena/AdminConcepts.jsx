@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, Trash2, X, ChevronUp, ChevronDown, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, deleteConcept } from '../../api/api'
@@ -140,7 +143,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to save')
     } finally {
-      setLoading(false)
+      setTimeout(() => setLoading(false), TEST_DELAY_MS)
     }
   }
 
@@ -329,7 +332,7 @@ export default function AdminConcepts() {
     getAdminConcepts(selectedSubject)
       .then(r => setConcepts(r.data))
       .catch(() => toast.error('Failed to load'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [selectedSubject])
 
   const reload = () => {
@@ -337,7 +340,7 @@ export default function AdminConcepts() {
     setLoading(true)
     getAdminConcepts(selectedSubject)
       .then(r => setConcepts(r.data))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
   const handleDelete = async (id, title) => {
@@ -379,7 +382,7 @@ export default function AdminConcepts() {
       </div>
 
       {loading ? (
-        <div className="flex-center" style={{ height: '30vh' }}><div className="loading-spinner-lg" /></div>
+        <RadarLoader height={220} />
       ) : concepts.length === 0 ? (
         <div className="empty-state">
           <div className="empty-state-icon">📝</div>

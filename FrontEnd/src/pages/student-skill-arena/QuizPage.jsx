@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
+import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
-import ReportButton from '../../components/ReportButton'
+import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
 import { startConceptQuiz, startSubjectQuiz, startRoadmapQuiz, submitQuiz } from '../../api/api'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
@@ -56,7 +57,7 @@ export default function QuizPage() {
         }
       })
       .catch(err => { toast.error(err.response?.data?.error || 'Failed to start trial'); navigate(-1) })
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [type, refId])
 
   const handleSubmit = useCallback(async (currentAnswers) => {
@@ -88,16 +89,7 @@ export default function QuizPage() {
   const prev = () => current > 0 && setCurrent(c => c - 1)
 
   // ── Loading ──────────────────────────────────────────
-  if (loading) return (
-    <div style={{ height: '100vh', background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ height: 52, background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', padding: '0 1.5rem' }}>
-        <span style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '1rem', color: '#B48AE8', letterSpacing: '0.12em' }}>ARISE</span>
-      </div>
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div className="loading-spinner-lg" />
-      </div>
-    </div>
-  )
+  if (loading) return <SystemAwakeningLoader subtitle="LOADING QUIZ" />
 
   if (!quiz) return null
 
@@ -117,7 +109,6 @@ export default function QuizPage() {
       flexDirection: 'column',
       fontFamily: "'Rajdhani', sans-serif",
     }}>
-      <ReportButton variant="floating" pageTitle={`Quiz — ${type} / ${refId}`} />
 
       {/* ── Header (fixed 52px) ── */}
       <header style={{
@@ -128,7 +119,7 @@ export default function QuizPage() {
         padding: '0 1.25rem', gap: '0.875rem',
       }}>
         <button
-          onClick={() => navigate('/skill-arena/dashboard?view=gates')}
+          onClick={() => navigate(-1)}
           style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.06em', flexShrink: 0 }}
         >
           <ArrowLeft size={13} /> GATES

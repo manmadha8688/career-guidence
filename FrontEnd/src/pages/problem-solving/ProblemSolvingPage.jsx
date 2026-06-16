@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Sun, Moon, ChevronRight } from 'lucide-react'
 import { useTheme } from '../../context/ThemeContext'
-import ReportButton from '../../components/ReportButton'
 
 const TRACKS = [
   {
@@ -83,7 +82,7 @@ export default function ProblemSolvingPage() {
         borderBottom: '1px solid var(--ps-nav-border)',
         position: 'sticky', top: 0, zIndex: 50,
       }}>
-        <button onClick={() => navigate('/')} style={{
+        <button onClick={() => navigate(-1)} style={{
           background: 'none', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', gap: '0.4rem',
           fontFamily: "'Orbitron', sans-serif", fontWeight: 900,
@@ -197,7 +196,6 @@ export default function ProblemSolvingPage() {
           ))}
         </div>
       </div>
-      <ReportButton variant="floating" pageTitle="Code GYM — Problem Solving" />
     </div>
   )
 }

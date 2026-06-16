@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import RadarLoader from '../../components/loaders/RadarLoader'
 import { Flag, Trash2, CheckCircle, Clock, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminReports, updateReport, deleteReport, getReportStats } from '../../api/api'
@@ -40,7 +43,7 @@ export default function AdminReports() {
       setPage(p)
       setStats(s.data)
     } catch { toast.error('Failed to load reports') }
-    finally { setLoading(false) }
+    finally { setTimeout(() => setLoading(false), TEST_DELAY_MS) }
   }
 
   useEffect(() => { load(0, statusFilter) }, [statusFilter])
@@ -122,7 +125,7 @@ export default function AdminReports() {
       </div>
 
       {loading ? (
-        <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div>
+        <RadarLoader height={220} />
       ) : reports.length === 0 ? (
         <div className="flex-center" style={{ height: '20vh', color: 'var(--text-muted)', flexDirection: 'column', gap: '0.5rem' }}>
           <Flag size={32} opacity={0.3} />

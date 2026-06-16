@@ -1,4 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import RadarLoader from '../../components/loaders/RadarLoader'
 import { Search, Trash2 } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminUsers, deleteUser } from '../../api/api'
@@ -34,7 +37,7 @@ export default function AdminUsers() {
         setPage(p)
       })
       .catch(() => toast.error('Failed to load users'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [search])
 
   useEffect(() => { load(0) }, [])
@@ -74,7 +77,7 @@ export default function AdminUsers() {
       </div>
 
       {loading ? (
-        <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div>
+        <RadarLoader height={220} />
       ) : (
         <>
           <div className="table-container">
