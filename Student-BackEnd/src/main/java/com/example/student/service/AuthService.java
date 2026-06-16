@@ -18,22 +18,27 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final AuthenticationManager authenticationManager;
+    private final OtpService otpService;
 
     public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
-                       JwtUtil jwtUtil, AuthenticationManager authenticationManager) {
+                       JwtUtil jwtUtil, AuthenticationManager authenticationManager,
+                       OtpService otpService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
         this.authenticationManager = authenticationManager;
+        this.otpService = otpService;
     }
 
     public AuthResponse register(RegisterRequest req) {
-        if (userRepository.existsByEmail(req.getEmail())) {
+        String email = req.getEmail().trim().toLowerCase();
+        if (!otpService.isVerified(email))
+            throw new RuntimeException("Email not verified. Please verify your email with OTP first.");
+        if (userRepository.existsByEmail(email))
             throw new RuntimeException("Email already registered");
-        }
         User user = new User();
         user.setFullName(req.getFullName());
-        user.setEmail(req.getEmail());
+        user.setEmail(email);
         user.setPassword(passwordEncoder.encode(req.getPassword()));
         user.setRole("STUDENT");
         user.setCollegeName(req.getCollegeName());
@@ -41,6 +46,7 @@ public class AuthService {
         user.setIsActive(true);
 
         User saved = userRepository.save(user);
+        otpService.clear(email); // clean up OTP entry after successful registration
         String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
@@ -51,7 +57,7 @@ public class AuthService {
                 new UsernamePasswordAuthenticationToken(req.getEmail(), req.getPassword()));
         User user = userRepository.findByEmail(req.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        user.setLastLoginAt(java.time.LocalDateTime.now());
+        user.setLastLoginAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
         user.setLoginCount(user.getLoginCount() + 1);
         userRepository.save(user);
         String token = jwtUtil.generateToken(user.getEmail(), user.getRole());
@@ -65,7 +71,7 @@ public class AuthService {
             java.util.Optional<User> existing = userRepository.findById(guestId);
             if (existing.isPresent() && "GUEST".equals(existing.get().getRole())) {
                 User guest = existing.get();
-                guest.setLastLoginAt(java.time.LocalDateTime.now());
+                guest.setLastLoginAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
                 guest.setLoginCount(guest.getLoginCount() + 1);
                 userRepository.save(guest);
                 String token = jwtUtil.generateToken(guest.getEmail(), guest.getRole());
@@ -86,7 +92,7 @@ public class AuthService {
         guest.setRole("GUEST");
         guest.setAvatarColor("#64748B");
         guest.setIsActive(true);
-        guest.setLastLoginAt(java.time.LocalDateTime.now());
+        guest.setLastLoginAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
         guest.setLoginCount(1);
 
         User saved = userRepository.save(guest);
@@ -97,7 +103,7 @@ public class AuthService {
 
     public void logout(String email) {
         userRepository.findByEmail(email).ifPresent(user -> {
-            user.setLastLogoutAt(java.time.LocalDateTime.now());
+            user.setLastLogoutAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
             userRepository.save(user);
         });
     }

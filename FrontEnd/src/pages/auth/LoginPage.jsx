@@ -73,7 +73,7 @@ export default function LoginPage() {
   const { login } = useAuth()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const redirectTo = searchParams.get('redirect') || '/skill-arena/dashboard'
+  const redirectTo = searchParams.get('redirect') || '/'
 
   const loginBtnText  = useCyclingText(BTN_MESSAGES.login, loading)
   const guestBtnText  = useCyclingText(BTN_MESSAGES.guest, guestLoading)

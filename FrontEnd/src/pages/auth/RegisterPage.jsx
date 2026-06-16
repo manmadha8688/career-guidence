@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft } from 'lucide-react'
+import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft, Mail, ShieldCheck, RefreshCw } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
-import { registerUser } from '../../api/api'
+import { registerUser, sendOtp, verifyOtp } from '../../api/api'
 import toast from 'react-hot-toast'
 import LoadingOverlay from '../../components/LoadingOverlay'
 
@@ -72,8 +72,109 @@ export default function RegisterPage() {
   const strength = getStrength(form.password)
   const btnText = useCyclingText(REG_MESSAGES, loading)
 
+  // OTP state
+  const [otpSent, setOtpSent] = useState(false)
+  const [otp, setOtp] = useState('')
+  const [emailVerified, setEmailVerified] = useState(false)
+  const [emailError, setEmailError] = useState('')
+  const [sendingOtp, setSendingOtp] = useState(false)
+  const [verifyingOtp, setVerifyingOtp] = useState(false)
+  const cooldownRef = useRef(null)
+
+  // Restore cooldown from localStorage on mount
+  const getInitialCooldown = () => {
+    const sent = parseInt(localStorage.getItem('otp_sent_at') || '0', 10)
+    if (!sent) return 0
+    const remaining = Math.ceil((sent + 60000 - Date.now()) / 1000)
+    return remaining > 0 ? remaining : 0
+  }
+  const [resendCooldown, setResendCooldown] = useState(getInitialCooldown)
+  const [otpSentForEmail, setOtpSentForEmail] = useState(localStorage.getItem('otp_email') || '')
+
+  const startCooldown = (secs = 60) => {
+    localStorage.setItem('otp_sent_at', String(Date.now()))
+    setResendCooldown(secs)
+    clearInterval(cooldownRef.current)
+    cooldownRef.current = setInterval(() => {
+      setResendCooldown(s => {
+        if (s <= 1) { clearInterval(cooldownRef.current); localStorage.removeItem('otp_sent_at'); return 0 }
+        return s - 1
+      })
+    }, 1000)
+  }
+
+  // Start timer on mount if cooldown is active
+  useEffect(() => {
+    const initial = getInitialCooldown()
+    if (initial > 0) {
+      setResendCooldown(initial)
+      cooldownRef.current = setInterval(() => {
+        setResendCooldown(s => {
+          if (s <= 1) { clearInterval(cooldownRef.current); localStorage.removeItem('otp_sent_at'); return 0 }
+          return s - 1
+        })
+      }, 1000)
+    }
+    return () => clearInterval(cooldownRef.current)
+  }, [])
+
+  // Restore otpSent state on mount if email matches
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('otp_email')
+    if (savedEmail && getInitialCooldown() > 0) {
+      setOtpSent(true)
+      setForm(f => ({ ...f, email: savedEmail }))
+    }
+  }, [])
+
+  const handleSendOtp = async () => {
+    if (!form.email) { toast.error('Enter your email first'); return }
+    setEmailError('')
+    setSendingOtp(true)
+    try {
+      await sendOtp(form.email)
+      setOtpSent(true)
+      setOtp('')
+      startCooldown(60)
+      localStorage.setItem('otp_email', form.email)
+      toast.success('OTP sent! Check your inbox.')
+    } catch (err) {
+      const status = err.response?.status
+      const msg = err.response?.data?.error || 'Failed to send OTP'
+      const retryAfter = err.response?.data?.retryAfter
+      if (status === 409) {
+        setEmailError(msg)  // show inline under email field
+      } else if (retryAfter) {
+        startCooldown(retryAfter)
+        toast.error(`Wait ${retryAfter}s before resending.`)
+      } else {
+        toast.error(msg)
+      }
+    } finally {
+      setSendingOtp(false)
+    }
+  }
+
+  const handleVerifyOtp = async () => {
+    if (otp.length !== 6) { toast.error('Enter the 6-digit OTP'); return }
+    setVerifyingOtp(true)
+    try {
+      await verifyOtp(form.email, otp)
+      setEmailVerified(true)
+      setOtpSent(false)
+      localStorage.removeItem('otp_email')
+      localStorage.removeItem('otp_sent_at')
+      toast.success('Email verified successfully!')
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Invalid OTP. Try again.')
+    } finally {
+      setVerifyingOtp(false)
+    }
+  }
+
   const handleSubmit = async e => {
     e.preventDefault()
+    if (!emailVerified) { toast.error('Please verify your email first'); return }
     if (form.password !== form.confirmPassword) { toast.error('Passwords do not match'); return }
     setLoading(true)
     setOverlayDone(false)
@@ -239,15 +340,61 @@ export default function RegisterPage() {
 
           <div style={{ marginBottom: '1rem' }}>
             {label('Email address')}
-            <input
-              type="email" placeholder="XXXX@gmail.com"
-              value={form.email}
-              onChange={e => setForm({ ...form, email: e.target.value })}
-              onFocus={() => setFocused('email')}
-              onBlur={() => setFocused(null)}
-              style={inp('email')}
-              required
-            />
+            {/* Email row */}
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <input
+                type="email" placeholder="XXXX@gmail.com"
+                value={form.email}
+                onChange={e => { setForm({ ...form, email: e.target.value }); setEmailVerified(false); setOtpSent(false); setEmailError(''); localStorage.removeItem('otp_email'); localStorage.removeItem('otp_sent_at') }}
+                onFocus={() => setFocused('email')}
+                onBlur={() => setFocused(null)}
+                style={{ ...inp('email'), flex: 1, borderColor: emailVerified ? 'rgba(74,222,128,0.5)' : emailError ? 'rgba(239,68,68,0.5)' : undefined }}
+                disabled={emailVerified}
+                required
+              />
+              {!emailVerified && (
+                <button type="button" onClick={handleSendOtp} disabled={sendingOtp || resendCooldown > 0}
+                  style={{ padding: '0 1rem', borderRadius: 8, border: '1px solid rgba(155,110,212,0.4)', background: 'rgba(155,110,212,0.1)', color: '#C4B5FD', fontSize: '0.8rem', fontWeight: 700, cursor: sendingOtp || resendCooldown > 0 ? 'not-allowed' : 'pointer', whiteSpace: 'nowrap', opacity: sendingOtp || resendCooldown > 0 ? 0.6 : 1, fontFamily: 'inherit', flexShrink: 0 }}>
+                  {sendingOtp ? '...' : otpSent && resendCooldown > 0 ? `Resend (${resendCooldown}s)` : otpSent ? 'Resend' : 'Verify'}
+                </button>
+              )}
+              {emailVerified && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#4ADE80', fontSize: '0.8rem', fontWeight: 700, flexShrink: 0 }}>
+                  <ShieldCheck size={16} /> Verified
+                </div>
+              )}
+            </div>
+
+            {/* Email already exists error */}
+            {emailError && (
+              <div style={{ fontSize: '0.775rem', color: '#EF4444', marginTop: '0.3rem' }}>
+                {emailError} <a href="/login" style={{ color: '#B48AE8', fontWeight: 600, textDecoration: 'none' }}>Sign in instead?</a>
+              </div>
+            )}
+
+            {/* OTP input */}
+            {otpSent && !emailVerified && (
+              <div style={{ marginTop: '0.625rem' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.375rem' }}>
+                  Enter the 6-digit OTP sent to your email
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <input
+                    type="text" inputMode="numeric" maxLength={6}
+                    placeholder="000000"
+                    value={otp}
+                    onChange={e => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                    onFocus={() => setFocused('otp')}
+                    onBlur={() => setFocused(null)}
+                    style={{ ...inp('otp'), flex: 1, letterSpacing: '0.2em', fontFamily: 'monospace', fontSize: '1.1rem', textAlign: 'center' }}
+                  />
+                  <button type="button" onClick={handleVerifyOtp} disabled={verifyingOtp || otp.length !== 6}
+                    style={{ padding: '0 1.25rem', borderRadius: 8, border: 'none', background: otp.length === 6 ? 'linear-gradient(135deg,#16A34A,#4ADE80)' : 'rgba(74,222,128,0.15)', color: otp.length === 6 ? '#fff' : '#4ADE80', fontSize: '0.85rem', fontWeight: 700, cursor: verifyingOtp || otp.length !== 6 ? 'not-allowed' : 'pointer', opacity: verifyingOtp ? 0.7 : 1, fontFamily: 'inherit', flexShrink: 0 }}>
+                    {verifyingOtp ? '...' : 'Confirm'}
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           <div style={{ marginBottom: '1rem' }}>

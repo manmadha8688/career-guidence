@@ -72,6 +72,8 @@ export function clearUserCache() {
 
 // ─── AUTH ────────────────────────────────────
 export const registerUser     = (data)      => api.post('/auth/register', data)
+export const sendOtp          = (email)     => api.post('/auth/send-otp', { email })
+export const verifyOtp        = (email, otp) => api.post('/auth/verify-otp', { email, otp })
 export const loginUser        = (data)      => api.post('/auth/login', data)
 export const guestLogin       = (guestId)   => api.post('/auth/guest', guestId ? { guestId } : {})
 export const getMe            = ()          => api.get('/auth/me')
@@ -101,9 +103,9 @@ export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`
 export const getEnrolledRoadmaps = ()       => withCache('enrolledRoadmaps', 60_000, () => api.get('/roadmaps/enrolled'))
 
 // ─── ADMIN ───────────────────────────────────
-export const getAdminStats      = ()        => api.get('/admin/stats')
+export const getAdminStats      = ()        => withCache('adminStats', 2*60_000, () => api.get('/admin/stats'))
 export const getAdminUsers      = (p,s,q)   => api.get(`/admin/users?page=${p}&size=${s}&search=${q||''}`)
-export const deleteUser         = (id)      => api.delete(`/admin/users/${id}`)
+export const deleteUser         = (id)      => api.delete(`/admin/users/${id}`).then(r => { clearApiCache('adminStats'); return r })
 export const getUserProgress    = (id)      => api.get(`/admin/users/${id}/progress`)
 
 export const getAdminSubjects   = ()        => api.get('/admin/subjects')
@@ -166,6 +168,12 @@ export const getAdminMissions = ()       => api.get('/admin/missions')
 export const createMission    = (d)      => api.post('/admin/missions', d)      .then(r => { clearApiCache('missions', 'mission:*'); return r })
 export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d) .then(r => { clearApiCache('missions', `mission:${id}`); return r })
 export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)  .then(r => { clearApiCache('missions', `mission:${id}`); return r })
+
+// ─── WALK-INS ─────────────────────────────────────────
+export const getAdminWalkIns   = ()       => withCache('adminWalkIns', 2*60_000, () => api.get('/admin/walkins'))
+export const createWalkIn      = (d)      => api.post('/walkins', d)             .then(r => { clearApiCache('adminWalkIns', 'adminStats'); return r })
+export const updateAdminWalkIn = (id, d)  => api.put(`/admin/walkins/${id}`, d)  .then(r => { clearApiCache('adminWalkIns'); return r })
+export const deleteWalkIn      = (id)     => api.delete(`/walkins/${id}`)        .then(r => { clearApiCache('adminWalkIns', 'adminStats'); return r })
 
 // ─── REPORTS ──────────────────────────────────────────
 export const getAdminReports    = (p=0,s=20,status='') => api.get(`/reports?page=${p}&size=${s}${status ? `&status=${status}` : ''}`)

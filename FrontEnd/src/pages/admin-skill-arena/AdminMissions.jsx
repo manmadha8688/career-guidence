@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminMissions, createMission, updateMission, deleteMission, getAdminSubjects } from '../../api/api'
@@ -91,7 +94,7 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to save')
     } finally {
-      setLoading(false)
+      setTimeout(() => setLoading(false), TEST_DELAY_MS)
     }
   }
 
@@ -242,7 +245,7 @@ export default function AdminMissions() {
     Promise.all([getAdminMissions(), getAdminSubjects()])
       .then(([m, s]) => { setMissions(m.data); setSubjects(s.data) })
       .catch(() => toast.error('Failed to load'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
   useEffect(() => { load() }, [])
@@ -288,7 +291,7 @@ export default function AdminMissions() {
       </div>
 
       {loading ? (
-        <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div>
+        <RadarLoader height={220} />
       ) : (
         <div className="table-container">
           <table className="table">

@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo } from 'react'
+import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Sun, Moon, Search, X, ChevronRight } from 'lucide-react'
+import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblems } from '../../api/api'
-import ReportButton from '../../components/ReportButton'
 
 const SLUG_TO_TRACK = {
   'start-coding':    'START_CODING',
@@ -67,7 +68,7 @@ export default function TrackPage() {
     getProblems(track)
       .then(r => setQuestions(r.data))
       .catch(() => setQuestions([]))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [track])
 
   // ── Derived filter options ──────────────────────────────────────────────────
@@ -143,7 +144,7 @@ export default function TrackPage() {
         borderBottom: '1px solid var(--ps-nav-border)',
         position: 'sticky', top: 0, zIndex: 50,
       }}>
-        <button onClick={() => navigate('/problem-solving')} style={{
+        <button onClick={() => navigate(-1)} style={{
           background: 'none', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', gap: '0.4rem',
           fontFamily: "'Orbitron', sans-serif", fontWeight: 900,
@@ -187,13 +188,7 @@ export default function TrackPage() {
 
       {/* Content */}
       {loading ? (
-        <div style={{ display: 'flex', justifyContent: 'center', padding: '6rem 0' }}>
-          <div style={{
-            width: 36, height: 36,
-            border: '3px solid var(--ps-accent-dim)', borderTopColor: meta.color,
-            borderRadius: '50%', animation: 'spin 0.7s linear infinite',
-          }} />
-        </div>
+        <MatrixRainLoader accentColor={meta.color} fullPage label={`LOADING ${meta.label || 'TRACK'}`} />
       ) : track === 'SKILL_UP' ? (
         <SkillUpView
           questions={filtered}
@@ -575,7 +570,6 @@ function SkillUpView({ questions, categories, selectedCategory, onCategoryChange
           ))}
         </div>
       )}
-      <ReportButton variant="floating" pageTitle="Code GYM — Track" />
     </div>
   )
 }

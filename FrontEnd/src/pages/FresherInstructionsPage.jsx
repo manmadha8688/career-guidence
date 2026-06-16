@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
-import ReportButton from '../components/ReportButton'
+import '../styles/pages-animations.css'
 import {
   Sun, Moon, X,
   TrendingUp, MessageCircle, Building2, BookOpen,
@@ -16,152 +16,166 @@ import {
 const SECTIONS = [
   {
     id: 1, icon: TrendingUp, color: '#EF4444', bg: 'rgba(239,68,68,0.09)',
-    title: 'Present IT Market Situation',
-    brief: 'Market is competitive — but the real problem is the skills gap, not a job gap.',
-    content: 'Today\'s IT market is more competitive than before. Many students are applying for the same jobs, and companies have many options to choose from.\n\nBecause of AI and automation, companies are not expecting freshers to know everything. But they do expect freshers to understand technical concepts clearly.\n\nCompanies are not looking only for certificates or copied projects. They want students who can explain what they learned, how they built something, and how they solve problems.\n\nThe main problem is not always lack of jobs. The problem is lack of matching skills.',
+    title: 'The Real IT Market Situation',
+    brief: 'Hiring has genuinely slowed at large companies — but new doors have opened elsewhere.',
+    content: 'This is the honest picture — not filtered for comfort.\n\nBetween 2022 and 2025, major IT service companies reduced fresher hiring significantly. TCS, Infosys, Wipro, and Cognizant — who once hired 30,000–50,000 freshers per year — cut batch sizes by 40–60%. This happened for real reasons:\n• Post-COVID over-hiring correction\n• AI and automation handling work that previously needed entry-level developers\n• Global economic slowdown reducing client budgets\n\nAt the same time, FAANG and big tech companies globally laid off over 300,000 employees in 2022–2024. Tech is no longer immune to economic cycles.\n\nBUT — here is what is also growing:\n• Global Capability Centers (GCCs): 1,700+ GCCs in India now, adding lakhs of quality jobs. Companies like Goldman Sachs, JPMorgan, Boeing, and Google have major India engineering centers.\n• AI/ML, Cloud, Cybersecurity, and DevOps roles are in shortage — and paying 30–50% more than regular dev roles.\n• Product startups, SaaS companies, and D2C tech companies are still actively hiring.\n• Demand for engineers who can work with AI tools is growing faster than supply.\n\nThe conclusion: the era of mass bulk hiring at service companies is slowing. The era of quality hiring is growing. Fewer seats, but the seats that exist are going to freshers who actually stand out.',
     keyPoints: [
-      'Market is competitive, but not closed',
-      'Companies want concept clarity, not just certificates',
-      'Skills gap — not job gap — is the real issue',
-      'AI changed expectations, not eliminated opportunities',
+      'Service company bulk hiring slowed 40–60% from 2022 peak — this is real',
+      'GCCs, startups, AI/ML roles are growing and actively hiring',
+      'Global tech layoffs proved tech is not a safe bubble — skills matter more',
+      'Fewer seats, higher bar — quality matters more than quantity now',
     ],
   },
   {
     id: 2, icon: MessageCircle, color: '#3B82F6', bg: 'rgba(59,130,246,0.09)',
-    title: 'What Students Are Thinking',
-    brief: 'Most fears freshers have about the market are misunderstandings — not reality.',
-    content: 'Many students are thinking:\n• "There is no hiring."\n• "Placements are not happening."\n• "Freshers don\'t have opportunities."\n• "AI will replace jobs."\n• "I need to master everything before applying."\n\nBut this thinking is not completely correct.\n\nThere are opportunities, but students need to prepare in the right way. Instead of learning randomly, students need structured learning, strong basics, real-world projects, and interview preparation.\n\nStudents should not compare themselves with others. Focus on improving step by step.',
+    title: 'What Is True vs What Is a Myth',
+    brief: 'Some fears are valid. Some are panic. Know the difference — then act on facts.',
+    content: 'Let us be direct about what is real and what is not.\n\nPARTIALLY TRUE (do not ignore these):\n• "Service companies are not hiring as many freshers" — TRUE. Volume has genuinely dropped.\n• "Competition is very high" — TRUE. More engineering graduates, fewer seats at top companies.\n• "AI is affecting entry-level jobs" — TRUE. Basic coding tasks, manual testing, and data entry are being automated right now.\n• "Getting placed is harder than it was in 2019–2022" — TRUE. That period was unusual. This period is the new normal.\n\nACTUAL MYTHS:\n• "All IT hiring has completely stopped" — Wrong. Different companies and different roles are actively hiring.\n• "Only top college students get placed" — Wrong. Skills and real projects matter more than college brand in most companies.\n• "AI will replace all developers soon" — Wrong. AI replaces tasks, not roles that require judgment, design, and problem-solving.\n• "I need to master everything before applying" — Wrong. Apply when you have solid basics + real projects. Waiting for perfection is a trap.\n• "Certifications alone will get me a job" — Wrong. Certificates with no applied knowledge impress nobody.\n\nThe right mindset: acknowledge what is hard about the market, then prepare specifically for what companies are actually hiring for today — not for the market of five years ago.',
     keyPoints: [
-      '"No hiring" is a myth — there is a skills mismatch',
-      'Structured learning beats random tutorial watching',
-      'Stop waiting for "perfect knowledge" to apply',
-      'This platform exists to bridge exactly this gap',
+      'Service hiring is down — stop comparing to 2019–2022 batch outcomes',
+      'AI is automating specific tasks — not ending the entire profession',
+      'Skills + projects get jobs, not certificates + hope',
+      'Acknowledge the hard reality — then prepare smarter, not harder',
     ],
-    highlight: 'This platform exists to give you the structured path from confusion to job-ready.',
+    highlight: 'Facing reality clearly is the first step. Preparing specifically for that reality is the second.',
     highlightColor: '#3B82F6',
   },
   {
     id: 3, icon: Building2, color: '#8B5CF6', bg: 'rgba(139,92,246,0.09)',
-    title: 'What Companies Expect',
-    brief: 'Companies don\'t expect everything — but they expect you to think clearly.',
-    content: 'Companies do not expect freshers to know everything like experienced developers.\n\nBut they do expect:\n• Strong fundamentals\n• Basic to intermediate technical knowledge\n• Problem-solving ability\n• Clear understanding of your own projects\n• Communication skills\n• Willingness to learn\n• Ability to use tools and AI properly\n• Basic knowledge of real-world development\n\nFor example, if a student says they know React, Java, Python, or SQL — they should be able to explain basic concepts and apply them.\n\nKnowing only definitions is not enough. Students should know how to apply concepts.',
+    title: 'What Companies Actually Expect',
+    brief: 'The bar has gone up. Companies want freshers who can think — not freshers who can memorize.',
+    content: 'The fresher bar has shifted. Here is what companies actually look for today:\n\nNON-NEGOTIABLES (every company):\n• You can explain your own project — every part of it, why you made choices\n• You know the fundamentals of your chosen language, not just syntax\n• You have used Git and GitHub — your code is visible\n• You understand how a real application works end-to-end\n• You communicate clearly about what you know and what you do not\n\nWHAT MOST FRESHERS MISS:\n• AI tools: can you actually use GitHub Copilot, Claude, or ChatGPT to develop? Companies now expect this.\n• Debugging ability: can you find a bug you did not create? This is rare and valued.\n• Deployment: did you actually host your project? Vercel, Render, Railway — this shows you built something real.\n• Understanding over memorization: interviewers now ask "why did you use this approach?" not just "what is this?"\n\nWHAT COMPANIES NO LONGER CARE ABOUT:\n• CGPA above 8 (unless it is a filter for shortlisting)\n• Knowing 5+ programming languages at surface level\n• Certificates from online platforms without applied work\n• Resumes padded with buzzwords but no real projects\n\nBottom line: a fresher with 2 well-built, deployed, explainable projects will always outperform a fresher with 10 certifications and no code.',
     keyPoints: [
-      'Strong fundamentals over a wide but shallow skillset',
-      'Can you explain your own project clearly?',
-      'Willingness to learn matters as much as current knowledge',
-      'Applying concepts beats memorising definitions',
+      'AI tool proficiency is now expected, not optional',
+      'Your project must be deployed and you must explain every decision',
+      'Debugging ability is rare — it makes you stand out immediately',
+      'Communication about what you know clearly > pretending to know more',
     ],
   },
   {
     id: 4, icon: BookOpen, color: '#10B981', bg: 'rgba(16,185,129,0.09)',
-    title: 'Importance of Fundamentals',
-    brief: 'One strong foundation beats ten half-learned technologies.',
-    content: 'Students do not need to master every skill in the beginning.\n\nFirst, they should become strong in fundamentals.\n\nImportant fundamentals include:\n• Programming basics — variables, loops, functions\n• Data structures basics\n• Object-oriented programming\n• Database basics (SQL + NoSQL)\n• Web basics (HTTP, request/response)\n• Git and GitHub\n• APIs (REST)\n• Debugging mindset\n• Problem-solving approach\n\nIf fundamentals are strong, learning any new technology becomes easier.\n\nDo not run behind too many technologies at once. First understand one skill properly, then slowly expand.',
+    title: 'Why Fundamentals Are More Important Than Ever',
+    brief: 'AI writes code. Only you can understand it, verify it, and fix it. That requires fundamentals.',
+    content: 'Here is something most students do not realize:\n\nAI tools like GitHub Copilot, Claude, and ChatGPT can generate code in seconds. Any fresher can generate a working React app or a REST API by prompting an AI.\n\nSo if everyone can generate code — what makes YOU valuable?\n\nThe answer is: understanding what the code is doing, knowing when it is wrong, and being able to fix it.\n\nAI is confidently wrong. It generates code that looks correct but has hidden bugs, security vulnerabilities, or logic errors. The fresher who understands fundamentals can catch this. The fresher who does not — cannot.\n\nCritical fundamentals you must own:\n• Programming logic — control flow, recursion, edge cases\n• Data structures — arrays, linked lists, hashmaps, trees\n• Object-oriented programming — classes, inheritance, polymorphism, SOLID basics\n• Databases — write real SQL queries, understand indexes, know NoSQL basics\n• HTTP and APIs — understand request/response, status codes, authentication\n• Git — commit, branch, merge, resolve conflicts\n• Debugging — use breakpoints, read stack traces, isolate problems\n• System thinking — what happens when a user clicks a button, end to end\n\nWith strong fundamentals, you can work with any framework, in any company, with or without AI assistance. Without them, you will be exposed in any real interview.',
     keyPoints: [
-      'Strong fundamentals = learn any technology faster',
-      'One skill done well beats three skills half-done',
-      'Git + GitHub + APIs are non-negotiable basics',
-      'OOP + DSA basics open most interview doors',
+      'AI generates code — you must be able to read, verify, and fix it',
+      'Fundamentals let you catch AI mistakes before they reach production',
+      'Debugging is a superpower that AI cannot fully replace',
+      'Framework knowledge fades; fundamentals compound over time',
     ],
   },
   {
     id: 5, icon: Cpu, color: '#06B6D4', bg: 'rgba(6,182,212,0.09)',
-    title: 'AI in Today\'s IT Market',
-    brief: 'AI won\'t replace you — but someone using AI right will do the work of three people.',
-    content: 'AI is now part of the software industry. Students should not fear AI. They should learn how to use AI smartly.\n\nAI can help with:\n• Understanding concepts faster\n• Writing sample code\n• Debugging errors\n• Generating project ideas\n• Explaining difficult topics\n• Improving resumes\n• Practising mock interviews\n\nBut AI is not always correct. AI can make mistakes — wrong code, wrong logic, incomplete answers.\n\nThat is why students should learn the concept first, then use AI as a helper.\n\nAI should be used like an assistant, not like a replacement for your brain.',
+    title: 'The Real Impact of AI on IT Jobs',
+    brief: 'AI is replacing tasks, not roles. Know exactly which tasks — so you build skills above them.',
+    content: 'This is the most important section. Read it carefully.\n\nWhat AI is genuinely replacing right now:\n• Writing boilerplate CRUD code (GitHub Copilot does this faster than any fresher)\n• Simple manual test case writing and basic test execution\n• Data entry, basic reporting, simple dashboards\n• Documentation writing and code commenting\n• Basic customer support and FAQ responses\n• Copy-paste integration of known APIs\n\nThis means: if your only skill is writing tutorial-level code, you are in direct competition with a free AI tool. That is a competition you will lose.\n\nWhat AI cannot replace:\n• Understanding what to build and why (requirements, product thinking)\n• System design and architecture — choosing the right approach for the right problem\n• Debugging complex, real-world issues in production systems\n• Understanding a client\'s actual business problem and translating it to technical solutions\n• Reviewing AI\'s own code and knowing when it is subtly wrong\n• Working with teams, building trust, communicating trade-offs\n• Making decisions under uncertainty with incomplete information\n\nThe honest insight:\nAI has raised the floor — even bad developers can now produce working code. But it has also raised the ceiling on what a skilled developer can accomplish. A good developer with AI tools does 3–5x the work.\n\nYour goal is not to compete with AI. Your goal is to become the person who directs AI, verifies its output, and delivers value that goes beyond what AI alone can produce.',
     keyPoints: [
-      'AI is a tool — learn to wield it, not fear it',
-      'AI makes mistakes — you need knowledge to verify',
-      'Use AI to learn faster, not to skip learning',
-      'The real skill is knowing how to instruct AI correctly',
+      'Boilerplate coding, basic testing, data entry — AI is doing this now',
+      'System design, debugging, product thinking — AI cannot replace these',
+      'AI raised the floor AND the ceiling — skilled developers get more done',
+      'Your goal: direct AI and verify it, not just use it blindly',
     ],
-    highlight: 'AI cannot replace humans — but a human with the right skills can replace multiple humans.',
+    highlight: 'AI does not replace engineers. It replaces engineers who only do what AI can already do.',
     highlightColor: '#06B6D4',
   },
   {
     id: 6, icon: Bot, color: '#F59E0B', bg: 'rgba(245,158,11,0.09)',
-    title: 'How to Use AI Correctly',
-    brief: 'There is a big difference between prompting AI and instructing AI intelligently.',
-    content: 'Students should use AI in this way:\n\n1. First understand the concept yourself.\n2. Try to solve the problem on your own.\n3. Use AI when you are stuck.\n4. Ask AI to explain step by step.\n5. Check whether the answer is correct.\n6. Modify the answer based on your understanding.\n7. Learn from the process.\n\nWRONG way:\n"AI, give me full project code."\n\nRIGHT way:\n"I am building a student task management app. I completed login and dashboard. Now I want to add task filtering. Explain the logic and give me a simple approach."\n\nAI works better when you give clear context and instructions.',
+    title: 'How to Use AI Without Becoming Dependent',
+    brief: 'There is a thin line between using AI as a tool and becoming unable to work without it.',
+    content: 'Many students use AI the wrong way and create a hidden problem for themselves: they can generate code, but they cannot explain or fix it in interviews.\n\nThe right approach:\n\nStep 1: Understand the concept first — at least enough to know what you need\nStep 2: Attempt the problem yourself, even partially\nStep 3: Use AI to get unstuck, to explore, or to speed up known work\nStep 4: Read the AI output carefully — do not just copy-paste\nStep 5: Test it, break it, understand why it works\nStep 6: Be ready to explain every line in an interview\n\nWRONG use of AI:\n"Give me the complete project code for a student management system"\n\nRIGHT use of AI:\n"I am building a REST API in Spring Boot for student login. I have set up the User model and UserRepository. Now I want to implement JWT authentication. Explain the flow and show me the JwtFilter class."\n\nThe difference: in the right approach, you understand what you already built, you know what you need next, and you use AI for a specific, bounded task.\n\nPractical rule: If a recruiter asks you to explain any part of your project and you cannot — that project should not be on your resume. Every line you submit for evaluation must be something you can own.',
     keyPoints: [
-      'We should instruct AI, not just prompt AI',
-      'Context-rich questions get far better AI answers',
-      'Verify every AI output — especially code',
-      'AI assistance + your understanding = unstoppable combination',
+      'Cannot explain what AI wrote for you? Do not put it on your resume.',
+      'Use AI for speed on things you understand — not to skip understanding',
+      'Specific, context-rich prompts get far better and more accurate AI output',
+      'AI dependency is invisible until an interview — then it is very visible',
     ],
   },
   {
-    id: 7, icon: FolderGit2, color: '#F97316', bg: 'rgba(249,115,22,0.09)',
-    title: 'Real-World Projects',
-    brief: 'Projects are proof that you can actually build something — not just talk about it.',
-    content: 'Only learning theory is not enough.\n\nStudents should build real-world projects because projects show practical skills.\n\nA good project proves that the student can:\n• Understand requirements\n• Design a solution\n• Write real code\n• Use a database\n• Connect frontend and backend\n• Fix bugs and errors\n• Deploy the project\n• Explain the project in interviews\n\nProject ideas:\n• Portfolio website\n• Student notes app\n• Resume builder\n• Job application tracker\n• Expense tracker\n• Quiz application\n• Task management app\n• College event management system\n• Full-stack blog\n\nDo not just copy projects. Understand them. Add your own features. Be able to explain every part.',
+    id: 7, icon: Zap, color: '#A855F7', bg: 'rgba(168,85,247,0.09)',
+    title: 'Vibe Coding — What It Is and How to Use It Right',
+    brief: 'The new way to build fast. Powerful when used right, dangerous when used blindly.',
+    content: 'Vibe coding is a term coined by AI researcher Andrej Karpathy in early 2025. The idea: instead of writing every line of code yourself, you describe what you want in plain English, let AI generate it, and iterate by adjusting your description until the result is right. You are directing the AI like a product manager, not writing syntax like a programmer.\n\nThis approach is real and genuinely useful. Startups are using it to build prototypes in hours. Developers are shipping features 3–5x faster. Non-developers are building functional tools they could not have built before.\n\nWHEN VIBE CODING WORKS WELL:\n• Prototyping a new feature quickly to test an idea\n• Building small tools, scripts, or automations\n• Exploring an unfamiliar framework to see how it works\n• Generating boilerplate and standard patterns you already understand\n• Rapid iteration on UI layouts and designs\n\nWHEN IT GOES WRONG:\n• Using it to build your entire fresher project without understanding any of it\n• Skipping the step of reading and understanding the generated code\n• Vibe coding authentication, payment systems, or anything security-critical\n• Building on top of code you cannot explain when something breaks in production\n• Submitting vibe-coded projects to interviews without being able to explain them\n\nTHE RIGHT MINDSET FOR FRESHERS:\nVibe coding is a multiplier — it multiplies whatever skills you already have. With strong fundamentals, it makes you significantly more productive. Without fundamentals, it produces code you cannot maintain, debug, or explain.\n\nUse vibe coding to go faster on things you understand. Not to skip understanding things.\n\nPRACTICAL RULE: Before adding any AI-generated code to a project on your resume, read every file it produced, understand what it does, and be able to explain it in an interview. If you cannot — rewrite it yourself until you can. The portfolio project is for you to learn, not for AI to impress.',
     keyPoints: [
-      'At least 2–3 deployed projects on GitHub',
-      'Can you explain every line you wrote? You should.',
-      'Add your own feature to every tutorial project you follow',
-      'Deployment = extra points in every interview',
+      'Vibe coding is legitimate and growing — knowing it is an actual skill advantage',
+      'It multiplies existing skills — not a substitute for having skills',
+      'Always read and understand AI-generated code before using it in your projects',
+      'Security, auth, and payment code should never be vibe coded blindly',
+    ],
+    highlight: 'The best vibe coders are the ones who also understand what the code is doing.',
+    highlightColor: '#A855F7',
+  },
+  {
+    id: 8, icon: FolderGit2, color: '#F97316', bg: 'rgba(249,115,22,0.09)',
+    title: 'What Makes a Project Actually Impressive',
+    brief: 'Most fresher projects look the same. Here is what makes yours stand out.',
+    content: 'The hard truth: most fresher GitHub profiles look identical — to-do apps, weather apps, calculator apps. Interviewers have seen hundreds of these. They are not impressed by the app idea. They are impressed by how you built it and whether you can explain your choices.\n\nWhat makes a project genuinely stand out:\n\n1. It is deployed and accessible — not "works on my machine"\n   Use: Vercel (frontend), Render / Railway (backend), MongoDB Atlas (database)\n\n2. It solves a real problem — even a small one\n   "Track my college assignments with deadlines and reminders" is more interesting than "CRUD todo app"\n\n3. It has real authentication — not fake login with hardcoded passwords\n   JWT, session handling, protected routes\n\n4. You can explain every decision:\n   Why did you use this database? Why this framework? What would you change if you had more time?\n\n5. You added something your own — not just followed a YouTube tutorial line by line\n   One original feature, one improvement, one thing that came from your own thinking\n\n6. The README is clean — setup instructions, tech stack, what it does, screenshots\n\nMinimum target: 2 deployed full-stack projects where you can explain every part. That is worth more than 10 certificates.',
+    keyPoints: [
+      'Deployed > localhost. A link in your resume proves it is real.',
+      'Explain every design decision — "I used MongoDB because..." shows thinking',
+      'One original feature per project separates you from tutorial followers',
+      'A clean GitHub README signals professionalism before the interview starts',
     ],
   },
   {
-    id: 8, icon: Brain, color: '#EC4899', bg: 'rgba(236,72,153,0.09)',
-    title: 'Problem Solving vs Technical',
-    brief: 'Different companies test differently — prepare both and never be closed out.',
-    content: 'Different companies hire in different ways.\n\nSome companies focus on technical knowledge:\n• Programming language concepts\n• Database queries\n• Web development\n• Frameworks\n• Projects\n• APIs\n\nSome companies focus on problem-solving:\n• Data structures and algorithms\n• Logical thinking\n• Coding problems\n• Time and space complexity\n• Pattern-based questions\n\nSome companies hire students with good problem-solving skills and train them in required technologies later.\n\nSo students should prepare both:\n• Technical concepts (what you know)\n• Problem-solving skills (how you think)\n\nBoth are important. Neither alone is enough.',
+    id: 9, icon: Brain, color: '#EC4899', bg: 'rgba(236,72,153,0.09)',
+    title: 'Problem Solving, Technical Depth, and AI Skills',
+    brief: 'Three different skill sets — different companies test different ones.',
+    content: 'The hiring landscape now has three separate preparation tracks:\n\nTRACK 1 — Problem Solving (DSA)\nFor: Product companies, MAANG, funded startups\nWhat: Arrays, linked lists, trees, graphs, dynamic programming, time/space complexity\nReality: These companies want to know how you think under pressure. A 6–12 month preparation is needed to be competitive. Not for everyone, but highest paying.\n\nTRACK 2 — Technical Depth\nFor: Service companies (TCS, Infosys, Wipro), GCCs, mid-size companies\nWhat: Programming fundamentals, DBMS, OS, networking basics, REST APIs, your projects\nReality: They want someone they can train and deploy. Strong basics + real project experience is enough. This is the most accessible path for most freshers.\n\nTRACK 3 — AI-Augmented Engineering (NEW and growing fast)\nFor: Startups, product companies, AI companies\nWhat: Using Copilot, Claude, GPT-4 as daily development tools. Building with AI APIs. Prompt engineering. Knowing how to review and deploy AI-generated code safely.\nReality: This track did not exist 3 years ago. It is growing the fastest. Freshers who learn this early have a significant advantage.\n\nMost freshers only prepare for Track 2 and ignore 1 and 3. That is fine for service companies. But if you want to future-proof yourself, add at least the basics of Track 3 to your skillset.',
     keyPoints: [
-      'Product companies (Google, Amazon) = DSA heavy',
-      'Service companies (TCS, Infosys) = technical + project',
-      'Startups = can you build and deploy something?',
-      'Prepare both — technical depth + logical thinking',
+      'Product companies: DSA — 6–12 months dedicated prep needed',
+      'Service/GCC companies: fundamentals + projects is the entry bar',
+      'AI-augmented dev is the fastest growing track — start learning it now',
+      'Know which track matches your target company before you start preparing',
     ],
   },
   {
-    id: 9, icon: Target, color: '#22C55E', bg: 'rgba(34,197,94,0.09)',
-    title: 'What Freshers Should Focus On',
-    brief: 'A clear priority list — so you always know exactly what to do next.',
-    content: 'Freshers should focus on these areas in order:\n\n1. One programming language — Java, Python, or JavaScript. Pick one, go deep.\n\n2. Fundamentals — Programming basics, OOP, DBMS, OS basics, networking basics.\n\n3. Web or software development basics — Frontend, backend, database, APIs.\n\n4. Real-world projects — At least 2 to 3 good, complete, deployed projects.\n\n5. GitHub and portfolio — Upload projects with good README files.\n\n6. Resume preparation — Simple, clean, project-focused. No fluff.\n\n7. Interview preparation — Technical questions, HR questions, project walkthroughs.\n\n8. AI usage — Use AI to learn faster, but always verify what it gives you.',
+    id: 10, icon: Target, color: '#22C55E', bg: 'rgba(34,197,94,0.09)',
+    title: 'Which Skills Are Actually Growing',
+    brief: 'Not all tech skills are equal right now. Focus on what the market is actually paying for.',
+    content: 'Based on current hiring trends (2025–2026), here are the skills with the highest fresher demand:\n\nHIGH DEMAND (learn these):\n• Cloud basics — AWS or Azure fundamentals. Even basic knowledge of EC2, S3, Lambda, and deployment pipelines makes you more hireable.\n• DevOps basics — Docker, basic CI/CD with GitHub Actions. Companies want developers who can ship code, not just write it.\n• AI integration — Using OpenAI, Anthropic, or Gemini APIs to build features. Connecting AI capabilities to real applications.\n• Full-stack JavaScript — React + Node.js + MongoDB is still the fastest path to building complete applications.\n• Python for data/AI — If you are interested in data roles, Python with Pandas, NumPy, and basic ML concepts is valuable.\n• Cybersecurity basics — Every company needs people who understand secure coding, OWASP Top 10, and basic threat awareness.\n\nDECLINING DEMAND (do not over-invest):\n• Manual QA testing without automation skills\n• Basic data entry and reporting roles\n• Simple frontend without any backend knowledge\n\nSAME AS ALWAYS (non-negotiable everywhere):\n• Java or Python fundamentals — one of these is required for most backend roles\n• SQL — database querying is a basic skill for almost every tech role\n• Git and GitHub — if you cannot version control your work, you are not hireable\n\nYou do not need to learn everything. Pick one stack, go deep, add one cloud or AI skill on top.',
     keyPoints: [
-      '1 language done well > 5 languages half-done',
-      'GitHub with real projects = your visible portfolio to companies',
-      'Projects on resume without explanation = red flag in interviews',
-      'Interview prep is a skill — practise it, do not just hope for it',
+      'Cloud basics (AWS/Azure) now expected even for fresher roles at many companies',
+      'Docker + CI/CD basics separate you from 90% of freshers',
+      'AI API integration is a skill gap — most freshers have not built with it yet',
+      'Manual QA without automation is shrinking fast — add Selenium or Playwright',
     ],
   },
   {
-    id: 10, icon: AlertTriangle, color: '#EF4444', bg: 'rgba(239,68,68,0.09)',
-    title: 'Common Mistakes to Avoid',
-    brief: 'Recognise these mistakes now — so you stop making them today.',
-    content: 'Many students make these mistakes:\n\n• Learning randomly without a roadmap\n• Watching tutorials but not writing code\n• Copying projects without understanding them\n• Depending completely on AI for answers\n• Ignoring fundamentals and jumping to frameworks\n• Not using GitHub\n• Not building real projects\n• Not preparing for interviews until it is too late\n• Waiting for "perfect knowledge" before applying\n• Comparing themselves with others and losing confidence\n• Learning 10 technologies surface-level instead of 2 deeply',
+    id: 11, icon: AlertTriangle, color: '#EF4444', bg: 'rgba(239,68,68,0.09)',
+    title: 'Mistakes That Are Costing Students Jobs',
+    brief: 'These are not small mistakes. These are the exact reasons good students do not get placed.',
+    content: 'These mistakes are extremely common — and each one is costing students real opportunities.\n\nMISTAKE 1: Tutorial hell without building\nWatching 200 hours of YouTube tutorials and building zero projects. Tutorials feel productive. They are not. Build something after every tutorial.\n\nMISTAKE 2: Copying projects without understanding\nCloning a GitHub repo, changing the name, putting it on your resume. Interviewers ask "how does your authentication work?" and the answer is silence. This ends interviews immediately.\n\nMISTAKE 3: Using AI as a replacement for thinking\nGenerating entire projects with AI, submitting them, and hoping interviewers do not ask questions. They always ask questions. This backfires 100% of the time.\n\nMISTAKE 4: Learning 10 technologies at surface level\nOne week of React, one week of Angular, one week of Vue. You know none of them properly. Pick one and go deep enough to build real things.\n\nMISTAKE 5: Resume lies\nListing "Machine Learning" and "Cloud" as skills based on watching two YouTube videos. Interviewers can probe this in 30 seconds. A lie on a resume destroys your credibility for the entire interview.\n\nMISTAKE 6: Waiting until placement season to start\nPreparation that starts 2 months before placement is not preparation — it is panic. Real skills take 6–12 months of consistent building.\n\nMISTAKE 7: No deployed projects\nEverything "works on my machine" but nothing is live. Deploy your projects. A live link in your resume is proof of work.',
     keyPoints: [
-      'Tutorial hell is real — build things, do not just watch',
-      'AI dependency without understanding = disaster in interviews',
-      'Frameworks without fundamentals = a shaky, falling foundation',
-      'Progress > perfection. Apply before you feel ready.',
+      'Copying projects is immediately visible in interviews — do not do it',
+      'AI-generated code you cannot explain should not be on your resume',
+      'Depth in one stack beats surface knowledge in five stacks every time',
+      'Start 12 months before placement, not 2 months before',
     ],
   },
   {
-    id: 11, icon: Map, color: '#6366F1', bg: 'rgba(99,102,241,0.09)',
-    title: 'Structured Learning Is the Answer',
-    brief: 'Confusion comes from not knowing where to start. A roadmap fixes that completely.',
-    content: 'Many students are confused because they do not know:\n• Where to start\n• What to learn first\n• Which skill is actually useful\n• How to build projects\n• How to prepare for jobs\n• How to use AI correctly\n• How to become industry-ready\n\nA structured learning platform helps students step by step.\n\nThe learning path should be:\n1. Understand career options\n2. Learn fundamentals\n3. Learn one technical skill\n4. Practice small tasks\n5. Build real-world projects\n6. Use AI as a learning assistant\n7. Prepare resume and GitHub\n8. Practice interviews\n9. Apply for internships and jobs\n\nFollow this path. Do not skip steps.',
+    id: 12, icon: Map, color: '#6366F1', bg: 'rgba(99,102,241,0.09)',
+    title: 'The Realistic Path to Getting Placed',
+    brief: 'A clear 12-month plan — not motivational fluff, but an actual sequence that works.',
+    content: 'This is the honest timeline for a fresher who starts from basics:\n\nMONTHS 1–3: Foundation\n• Pick ONE language: Java (backend), Python (data/AI), or JavaScript (full-stack). Commit fully.\n• Learn programming fundamentals: control flow, functions, OOP, debugging.\n• Complete at least 50 small coding challenges — not theory, actual code.\n• Set up Git and GitHub. Push code from day one.\n\nMONTHS 3–6: Building\n• Learn your tech stack: database, backend framework or frontend framework.\n• Build 1 complete project from scratch — no tutorial copy. Struggle with it.\n• Deploy it. Get it live on a real URL.\n• Start using AI tools (Claude, Copilot) as coding assistants — not as replacements.\n\nMONTHS 6–9: Depth + Interview Prep\n• Build a second, more complex project. Add authentication, real data, a real use case.\n• Start solving DSA problems — 150+ problems minimum for product companies.\n• Practice explaining your projects out loud. Record yourself. It feels uncomfortable. Do it anyway.\n• Learn one cloud or DevOps tool: basic AWS, or Docker, or CI/CD with GitHub Actions.\n\nMONTHS 9–12: Applications\n• Resume must have: 2 deployed projects, GitHub link, tech stack, clear descriptions.\n• Apply broadly — not just big companies. GCCs, startups, mid-size companies.\n• Do mock interviews. Real practice, not just reading interview questions.\n• Follow up. Respond fast. Show up on time. These things matter more than students think.\n\nThis path is hard. It is also the one that works.',
     keyPoints: [
-      'Confusion = missing roadmap. Roadmap = complete clarity.',
-      'This platform follows exactly this structured path',
-      'Each step builds on the previous — do not skip any',
-      'Internship applications should happen at step 8–9, not step 2',
+      '12 months of consistent work beats 3 months of panic preparation',
+      'Deploy at month 6 — not after placement. Live projects change everything.',
+      'Mock interviews out loud are uncomfortable and absolutely essential',
+      'Apply to GCCs and mid-size companies — not just Infosys and Google',
     ],
   },
   {
-    id: 12, icon: Rocket, color: '#F59E0B', bg: 'rgba(245,158,11,0.09)',
-    title: 'Final Message',
-    brief: 'The IT market is tough but not closed. Your preparation is what opens the door.',
-    content: 'The IT market is tough, but it is not closed.\n\nFreshers still have opportunities if they prepare properly.\n\nDo not think there is no hiring. Think about how to improve your skills to match company expectations.\n\nYou do not need to master everything at once. Start with fundamentals. Build projects. Learn how to solve problems. Use AI wisely.\n\nAI can help you — but your understanding is more important.\n\nIf you know the concept, you can use AI better.\nIf you do not know the concept, you cannot correct AI mistakes.\n\nSo learn step by step. Build consistently. Improve every day.\n\nEven if one student gets clarity and starts learning in the right direction, this effort is worth it.\n\nStart today.',
+    id: 13, icon: Rocket, color: '#F59E0B', bg: 'rgba(245,158,11,0.09)',
+    title: 'The Unfiltered Truth — And the Real Opportunity',
+    brief: 'The honest picture: harder than it was. Still very much possible. Here is why.',
+    content: 'Here is the truth without softening.\n\nTHE HARD PART:\nThe era of bulk hiring at service companies is shrinking. The market you heard about from 2019–2022 seniors is not the market you are entering. AI tools are changing what junior developers do. Competition has increased. Salaries for freshers have not grown proportionally to the effort required.\n\nTHESE ARE FACTS. Do not let anyone tell you the market is the same as before.\n\nTHE REAL OPPORTUNITY:\nAt the same time — India\'s digital economy is expanding. There are 1,700+ GCCs (Global Capability Centers) hiring quality engineers. Startups are building real products. AI companies need engineers who understand AI, not just engineers who fear it. Cybersecurity roles are understaffed. Cloud engineers are in demand. Every company in every industry now needs technology.\n\nThe opportunity is not gone. It has shifted.\n\nWHO IS GETTING PLACED RIGHT NOW:\nNot the students who memorized the most. The ones getting placed can explain their projects clearly. They built and deployed something real. They know their fundamentals well enough to catch AI mistakes. They applied broadly, not just to the top 5 companies. They showed up prepared, communicated honestly, and demonstrated they could learn.\n\nTHE HONEST ADVICE:\nDo not study for the market of 2020. Study for the market of 2026. Learn to work with AI, not against it. Build real things. Deploy them. Go deep on one skill instead of shallow on ten. Apply before you feel ready — you will never feel fully ready.\n\nThis path is harder than it looked from the outside. It is also yours to take.',
     keyPoints: [
-      'You do not need to be perfect to start — you start to become better',
-      'Every senior developer was once a confused fresher',
-      'Build in public. Learn in public. Grow in public.',
-      'One step every day beats one big leap every month',
+      'The 2019–2022 market is gone — stop comparing to those batches',
+      'GCCs, AI companies, startups — new doors exist, different from old ones',
+      'Students getting placed today build real things and explain them clearly',
+      'The path is harder. It is still yours to take.',
     ],
-    highlight: 'The market does not need perfect freshers. It needs freshers who are willing to learn, build, and grow.',
+    highlight: 'The market does not owe you a job. Skills, real projects, and honest effort still open doors — just different ones than before.',
     highlightColor: '#F59E0B',
   },
 ]
@@ -169,38 +183,38 @@ const SECTIONS = [
 const HIRING_TYPES = [
   {
     icon: Code2, color: '#6366F1', bg: 'rgba(99,102,241,0.09)',
-    type: 'Product Companies', examples: 'Google, Amazon, Microsoft, Flipkart',
-    focus: 'DSA Heavy',
+    type: 'Product Companies', examples: 'Google, Amazon, Microsoft, Flipkart, Swiggy',
+    focus: 'DSA Heavy — Needs 6–12 months prep',
     rounds: ['Online Coding Test', 'DSA Rounds (2–3)', 'System Design', 'HR Round'],
-    tip: 'Practice LeetCode, GeeksForGeeks. Focus on arrays, trees, graphs, dynamic programming.',
+    tip: 'LeetCode medium/hard is the standard. Arrays, trees, graphs, DP. Optimal solutions, not just working code. Start early — this cannot be crammed.',
   },
   {
     icon: Server, color: '#10B981', bg: 'rgba(16,185,129,0.09)',
     type: 'Service Companies', examples: 'TCS, Infosys, Wipro, Cognizant, Capgemini',
-    focus: 'Technical + Aptitude',
+    focus: 'Technical + Aptitude — Volume down, quality bar up',
     rounds: ['Aptitude Test', 'Technical Round', 'HR Round'],
-    tip: 'Focus on verbal, logical reasoning, basic programming, DBMS, OS, and project explanation.',
+    tip: 'Hiring volumes are lower than before — fewer seats per campus. Strong fundamentals, clear project explanation, and good communication still get offers here.',
   },
   {
     icon: Zap, color: '#F97316', bg: 'rgba(249,115,22,0.09)',
-    type: 'Startups', examples: 'Early-stage and growth-stage product startups',
-    focus: 'Project + Practical',
-    rounds: ['Resume Shortlisting', 'Take-home Assignment', 'Technical Interview', 'Culture Fit'],
-    tip: 'Show deployed projects. Show GitHub activity. They want to see you can build, not just recite.',
+    type: 'Startups & Product SaaS', examples: 'Early-stage startups, B2B SaaS, D2C tech companies',
+    focus: 'Project + Build Ability — Most open to strong freshers',
+    rounds: ['Resume + GitHub Review', 'Take-home Assignment', 'Technical Interview', 'Culture Fit'],
+    tip: 'Deployed projects and GitHub activity matter most here. They want to see you can ship, not just interview. This is where strong freshers with real projects get their best opportunities.',
   },
   {
     icon: Briefcase, color: '#EC4899', bg: 'rgba(236,72,153,0.09)',
-    type: 'MAANG / Dream Companies', examples: 'Meta, Apple, Amazon, Netflix, Google',
-    focus: 'Highly Competitive DSA',
-    rounds: ['Online Assessment', 'Phone Screen', 'Multiple DSA Rounds', 'Behavioural', 'Bar Raiser'],
-    tip: 'Needs 6–12 months of dedicated DSA prep. Focus on optimal solutions, not just working code.',
+    type: 'GCCs (Global Capability Centers)', examples: 'Goldman Sachs, JPMorgan, Boeing, Cisco India',
+    focus: 'Quality Engineering — Growing fast in India',
+    rounds: ['Online Assessment', 'Technical Rounds (2)', 'Manager Round', 'HR Round'],
+    tip: 'GCCs pay better than most service companies and offer global-standard work. They expect solid fundamentals, system thinking, and clear communication. Often overlooked by freshers — do not ignore them.',
   },
   {
     icon: GraduationCap, color: '#06B6D4', bg: 'rgba(6,182,212,0.09)',
-    type: 'Campus / Mass Recruitment', examples: 'Campus drives, job fairs, hackathons',
-    focus: 'Aptitude + Basic Technical',
-    rounds: ['Group Discussion', 'Aptitude Exam', 'Technical Round', 'HR Round'],
-    tip: 'Strong verbal and quant skills help. Be confident in explaining your resume. Projects matter.',
+    type: 'AI & Cloud-First Companies', examples: 'AI startups, cloud providers, data platforms',
+    focus: 'AI Integration + Engineering — Fastest growing demand',
+    rounds: ['Portfolio/GitHub Review', 'Technical Build Task', 'AI Tool Proficiency', 'HR Round'],
+    tip: 'Build something with an AI API (OpenAI, Anthropic, Gemini). Know Docker basics. Know one cloud platform. These companies are hiring freshers who built AI-integrated applications — even simple ones.',
   },
 ]
 
@@ -296,7 +310,28 @@ function SectionModal({ section, onClose, light }) {
           {/* Content */}
           <div style={{ marginBottom: '1.25rem' }}>
             {section.content.split('\n').map((line, i) => {
-              if (!line.trim()) return <div key={i} style={{ height: '0.4rem' }} />
+              if (!line.trim()) return <div key={i} style={{ height: '0.5rem' }} />
+              // Detect ALL-CAPS subheading lines: e.g. "MISTAKE 1:", "HIGH DEMAND (learn these):", "THE HARD PART:"
+              const isSubheading = /^[A-Z][A-Z\s\d/()–:•\-]+[:\-—]/.test(line.trim()) && line.trim().length < 80
+              if (isSubheading) {
+                return (
+                  <div key={i} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                    margin: '0.875rem 0 0.3rem',
+                    padding: '0.2rem 0.7rem 0.2rem 0.5rem',
+                    borderRadius: 6,
+                    background: `${section.color}14`,
+                    border: `1px solid ${section.color}28`,
+                  }}>
+                    <span style={{ width: 4, height: 14, borderRadius: 2, background: section.color, flexShrink: 0, display: 'inline-block' }} />
+                    <span style={{
+                      fontFamily: "'Share Tech Mono', monospace",
+                      fontSize: '0.68rem', letterSpacing: '0.07em',
+                      color: section.color, fontWeight: 700,
+                    }}>{line.trim()}</span>
+                  </div>
+                )
+              }
               return (
                 <p key={i} style={{
                   fontSize: '0.875rem',
@@ -347,57 +382,52 @@ function SectionGridCard({ section, onClick, light }) {
     <div
       onClick={onClick}
       style={{
-        background: light ? '#ffffff' : '#0D1424',
+        background: light ? '#ffffff' : '#0a1020',
         border: `1px solid ${light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.06)'}`,
-        borderRadius: 14, padding: '1.25rem',
+        borderLeft: `3px solid ${section.color}`,
+        borderRadius: 14, padding: '1.375rem',
         cursor: 'pointer',
-        transition: 'transform 0.15s, box-shadow 0.15s, border-color 0.15s',
+        transition: 'transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease',
         display: 'flex', flexDirection: 'column', gap: '0.75rem',
+        position: 'relative', overflow: 'hidden',
       }}
       onMouseEnter={e => {
         e.currentTarget.style.transform = 'translateY(-4px)'
-        e.currentTarget.style.boxShadow = `0 8px 28px ${section.color}20`
-        e.currentTarget.style.borderColor = `${section.color}50`
+        e.currentTarget.style.boxShadow = `0 10px 32px ${section.color}22`
+        e.currentTarget.style.borderColor = `${section.color}55`
       }}
       onMouseLeave={e => {
-        e.currentTarget.style.transform = 'none'
-        e.currentTarget.style.boxShadow = 'none'
+        e.currentTarget.style.transform = ''
+        e.currentTarget.style.boxShadow = ''
         e.currentTarget.style.borderColor = light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.06)'
       }}
     >
-      {/* Icon */}
-      <div style={{
-        width: 44, height: 44, borderRadius: 12,
-        background: section.bg,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-      }}>
-        <Icon size={20} color={section.color} />
+      {/* Subtle bg glow on card */}
+      <div style={{ position: 'absolute', top: 0, right: 0, width: 80, height: 80, borderRadius: '50%', background: `radial-gradient(circle, ${section.color}12 0%, transparent 70%)`, pointerEvents: 'none' }} />
+
+      {/* Icon + number */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ width: 42, height: 42, borderRadius: 11, background: section.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Icon size={19} color={section.color} />
+        </div>
+        <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700, color: `${section.color}60`, letterSpacing: '0.05em' }}>
+          {String(section.id).padStart(2,'0')}
+        </span>
       </div>
 
       {/* Title */}
-      <div style={{
-        fontFamily: "'Rajdhani', sans-serif", fontWeight: 700,
-        fontSize: '0.95rem', color: light ? '#0F172A' : '#E2E8F0',
-        lineHeight: 1.3,
-      }}>
+      <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.95rem', color: light ? '#0F172A' : '#E2E8F0', lineHeight: 1.3 }}>
         {section.title}
       </div>
 
       {/* Brief */}
-      <div style={{
-        fontSize: '0.78rem', color: light ? '#64748B' : '#64748B',
-        lineHeight: 1.6, flex: 1,
-      }}>
+      <div style={{ fontSize: '0.78rem', color: light ? '#64748B' : '#64748B', lineHeight: 1.6, flex: 1 }}>
         {section.brief}
       </div>
 
       {/* Read more */}
-      <div style={{
-        display: 'flex', alignItems: 'center', gap: '0.25rem',
-        fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-        color: section.color, letterSpacing: '0.06em', marginTop: 'auto',
-      }}>
-        READ MORE <ChevronRight size={13} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: section.color, letterSpacing: '0.06em', marginTop: 'auto' }}>
+        READ MORE <ChevronRight size={12} />
       </div>
     </div>
   )
@@ -474,8 +504,19 @@ export default function FresherInstructionsPage() {
 
   const bg = light ? '#F1F5F9' : '#060D1A'
 
+  // Scroll reveal
+  useEffect(() => {
+    const els = document.querySelectorAll('.pg-reveal, .pg-reveal-left, .pg-reveal-right')
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('pg-visible'); io.unobserve(e.target) } }),
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    )
+    els.forEach(el => io.observe(el))
+    return () => io.disconnect()
+  }, [])
+
   return (
-    <div style={{ minHeight: '100vh', background: bg, fontFamily: "'Rajdhani', sans-serif", color: light ? '#1A1A2E' : '#E2E8F0', overflowX: 'hidden' }}>
+    <div style={{ minHeight: '100vh', background: bg, fontFamily: "'Rajdhani', sans-serif", color: light ? '#1A1A2E' : '#E2E8F0', overflowX: 'hidden', position: 'relative' }}>
 
       {/* ── Nav ──────────────────────────────────────────────── */}
       <div style={{
@@ -525,15 +566,22 @@ export default function FresherInstructionsPage() {
         </div>
       </div>
 
+      {/* Background glow */}
+      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-10%', left: '50%', transform: 'translateX(-50%)', width: 700, height: 500, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(99,102,241,0.07) 0%, transparent 65%)', filter: 'blur(40px)' }} />
+        <div style={{ position: 'absolute', bottom: '20%', right: '-10%', width: 500, height: 400, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(155,110,212,0.05) 0%, transparent 65%)', filter: 'blur(40px)' }} />
+      </div>
+
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <div style={{ textAlign: 'center', padding: 'clamp(3rem,7vw,5rem) 1.5rem clamp(2rem,4vw,3rem)', maxWidth: 760, margin: '0 auto' }}>
-        <div style={{
+      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: 'clamp(3rem,7vw,5rem) 1.5rem clamp(2rem,4vw,3rem)', maxWidth: 760, margin: '0 auto' }}>
+        <div className="pg-hero-1" style={{
           display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
           padding: '0.35rem 1rem', borderRadius: 999,
           background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.28)',
           fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
           fontWeight: 700, color: '#6366F1', letterSpacing: '0.08em', marginBottom: '1.75rem',
         }}>
+          <span className="pg-pulse-dot" style={{ width:6, height:6, borderRadius:'50%', background:'#6366F1', color:'#6366F1', display:'inline-block', flexShrink:0 }} />
           <GraduationCap size={14} /> FOR FRESHERS ENTERING IT
         </div>
 
@@ -551,17 +599,17 @@ export default function FresherInstructionsPage() {
           </span>
         </h1>
 
-        <p style={{
+        <p className="pg-hero-3" style={{
           fontSize: 'clamp(0.9rem,2vw,1.05rem)', color: light ? '#475569' : '#94A3B8',
           lineHeight: 1.8, maxWidth: 560, margin: '0 auto 2rem',
         }}>
-          Many freshers feel lost about the IT job market. This guide covers the real situation,
-          what companies expect, how to use AI correctly, and how to prepare — step by step.
-          Click any card to read the full section.
+          The IT market has changed. This guide covers the real situation — not filtered for comfort.
+          What is actually happening with hiring, how AI is changing jobs, what companies genuinely
+          want, and the honest path from where you are to where you want to be.
         </p>
 
         {/* Career Guidance CTA */}
-        <div style={{
+        <div className="pg-hero-4" style={{
           display: 'inline-flex', flexDirection: 'column', alignItems: 'center',
           gap: '0.5rem', marginBottom: '2.5rem',
         }}>
@@ -594,7 +642,7 @@ export default function FresherInstructionsPage() {
         </div>
 
         {/* Stats */}
-        <div style={{
+        <div className="pg-hero-5" style={{
           display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px',
           background: light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.07)',
           borderRadius: 14, overflow: 'hidden', maxWidth: 460, margin: '0 auto',
@@ -609,8 +657,8 @@ export default function FresherInstructionsPage() {
       </div>
 
       {/* ── AI Banner ─────────────────────────────────────────── */}
-      <div style={{ maxWidth: 920, margin: '0 auto 2.5rem', padding: '0 1.25rem' }}>
-        <div style={{
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto 2.5rem', padding: '0 1.25rem' }}>
+        <div className="pg-reveal" style={{
           background: 'linear-gradient(135deg, rgba(6,182,212,0.1), rgba(99,102,241,0.07))',
           border: '1px solid rgba(6,182,212,0.22)', borderRadius: 14,
           padding: '1.125rem 1.375rem',
@@ -620,14 +668,14 @@ export default function FresherInstructionsPage() {
             <Cpu size={20} color="#06B6D4" />
           </div>
           <p style={{ flex: 1, margin: 0, fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: '#06B6D4', lineHeight: 1.5 }}>
-            AI cannot replace humans — but a human with the right skills can replace multiple humans.
+            AI does not replace engineers — it replaces engineers who only do what AI can already do. Build the skills that sit above what AI can automate.
           </p>
         </div>
       </div>
 
       {/* ── Section Grid ──────────────────────────────────────── */}
-      <div style={{ maxWidth: 920, margin: '0 auto', padding: '0 1.25rem 4rem' }}>
-        <div style={{ marginBottom: '1.5rem' }}>
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto', padding: '0 1.25rem 4rem' }}>
+        <div className="pg-reveal" style={{ marginBottom: '1.5rem' }}>
           <h2 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '1.25rem', color: light ? '#0F172A' : '#F1F5F9', margin: '0 0 0.25rem' }}>
             12 Things Every Fresher Must Understand
           </h2>
@@ -636,24 +684,71 @@ export default function FresherInstructionsPage() {
           </p>
         </div>
 
-        <div style={{
+        <div className="pg-stagger" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(min(260px, 100%), 1fr))',
           gap: '1rem',
         }}>
           {SECTIONS.map(section => (
-            <SectionGridCard
-              key={section.id}
-              section={section}
-              onClick={() => setActiveSection(section)}
-              light={light}
-            />
+            <div key={section.id} className="pg-reveal">
+              <SectionGridCard
+                section={section}
+                onClick={() => setActiveSection(section)}
+                light={light}
+              />
+            </div>
           ))}
+        </div>
+      </div>
+
+      {/* ── Today's Action Plan ──────────────────────────────── */}
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto 3rem', padding: '0 1.25rem' }}>
+        <div className="pg-reveal" style={{
+          background: light
+            ? 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(155,110,212,0.04))'
+            : 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(155,110,212,0.07))',
+          border: `1px solid ${light ? 'rgba(99,102,241,0.18)' : 'rgba(99,102,241,0.22)'}`,
+          borderRadius: 18, padding: 'clamp(1.5rem,4vw,2.5rem)',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+            <div style={{ width: 42, height: 42, borderRadius: 12, background: 'rgba(99,102,241,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <Target size={20} color="#6366F1" />
+            </div>
+            <div>
+              <h2 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '1.2rem', color: light ? '#0F172A' : '#F1F5F9', margin: 0 }}>
+                Your Action Plan — Start Today
+              </h2>
+              <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0 }}>5 things you can do right now to move forward</p>
+            </div>
+          </div>
+
+          <div className="pg-stagger" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            {[
+              { step: '01', text: 'Set up GitHub today — push any code, even basic. A blank profile loses opportunities before the interview starts.', color: '#6366F1' },
+              { step: '02', text: 'Pick ONE language (Python, Java, or JavaScript) and commit to it for 6 months. Depth beats breadth every time.', color: '#8B5CF6' },
+              { step: '03', text: 'Decide your track: Service company (fundamentals + project), Product company (DSA), or AI/Startup (build with AI tools).', color: '#EC4899' },
+              { step: '04', text: 'Build one project this month — not from a tutorial, from a problem you have seen around you. Deploy it.', color: '#10B981' },
+              { step: '05', text: 'Open the Career Guidance page — it gives you the exact role-by-role roadmap for what to learn and in what order.', color: '#F59E0B' },
+            ].map(({ step, text, color }, i) => (
+              <div key={i} className="pg-reveal pg-check-item" style={{
+                display: 'flex', alignItems: 'flex-start', gap: '0.875rem',
+                padding: '0.875rem 1.125rem',
+                background: light ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.03)',
+                border: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)'}`,
+                borderLeft: `3px solid ${color}`,
+                borderRadius: 10, cursor: 'default',
+              }}>
+                <div style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '0.6rem', color, minWidth: 24, paddingTop: 2 }}>{step}</div>
+                <span style={{ fontSize: '0.875rem', color: light ? '#374151' : '#CBD5E1', lineHeight: 1.6 }}>{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* ── Hiring Process ────────────────────────────────────── */}
       <div style={{
+        position: 'relative', zIndex: 1,
         padding: '3.5rem 1.25rem',
         background: light ? 'rgba(99,102,241,0.03)' : 'rgba(99,102,241,0.04)',
         borderTop: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)'}`,
@@ -665,21 +760,23 @@ export default function FresherInstructionsPage() {
               How Companies Actually Hire
             </div>
             <h2 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: 'clamp(1.4rem,3.5vw,2rem)', color: light ? '#0F172A' : '#F1F5F9', margin: '0 0 0.5rem' }}>
-              Know the Hiring Process Before You Apply
+              5 Hiring Paths — Know Which One You Are Targeting
             </h2>
             <p style={{ fontSize: '0.875rem', color: light ? '#475569' : '#94A3B8', maxWidth: 500, margin: 0, lineHeight: 1.7 }}>
-              Different companies hire very differently. Understanding each path helps you prepare the right way for the right company.
+              Each path requires different preparation. Preparing for the wrong one wastes months. Pick your target, then prepare specifically for it.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px,100%), 1fr))', gap: '1rem' }}>
-            {HIRING_TYPES.map((h, i) => <HiringCard key={i} h={h} light={light} />)}
+          <div className="pg-stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px,100%), 1fr))', gap: '1rem' }}>
+            {HIRING_TYPES.map((h, i) => (
+              <div key={i} className="pg-reveal"><HiringCard h={h} light={light} /></div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <div style={{ padding: '3.5rem 1.5rem 5rem', textAlign: 'center' }}>
+      <div style={{ position: 'relative', zIndex: 1, padding: '3.5rem 1.5rem 5rem', textAlign: 'center' }}>
         <div style={{
           maxWidth: 640, margin: '0 auto',
           background: light ? 'linear-gradient(135deg, rgba(99,102,241,0.07), rgba(155,110,212,0.05))' : 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(155,110,212,0.07))',
@@ -749,7 +846,6 @@ export default function FresherInstructionsPage() {
           .fi-nav-center { display: none !important; }
         }
       `}</style>
-      <ReportButton variant="floating" pageTitle="Fresher Guide" />
     </div>
   )
 }

@@ -1,0 +1,82 @@
+/* ═══════════════════════════════════════════════════════
+   PAGE ANIMATIONS — Fresher Instructions & Career Guidance
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Scroll reveal ── */
+.pg-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.2,0,0.4,1),
+              transform 0.65s cubic-bezier(0.2,0,0.4,1);
+}
+.pg-reveal.pg-visible { opacity: 1; transform: translateY(0); }
+
+.pg-reveal-left {
+  opacity: 0; transform: translateX(-32px);
+  transition: opacity 0.65s cubic-bezier(0.2,0,0.4,1), transform 0.65s cubic-bezier(0.2,0,0.4,1);
+}
+.pg-reveal-left.pg-visible { opacity: 1; transform: translateX(0); }
+
+.pg-reveal-right {
+  opacity: 0; transform: translateX(32px);
+  transition: opacity 0.65s cubic-bezier(0.2,0,0.4,1), transform 0.65s cubic-bezier(0.2,0,0.4,1);
+}
+.pg-reveal-right.pg-visible { opacity: 1; transform: translateX(0); }
+
+/* Stagger delays */
+.pg-stagger > *:nth-child(1)  { transition-delay: 0s; }
+.pg-stagger > *:nth-child(2)  { transition-delay: 0.08s; }
+.pg-stagger > *:nth-child(3)  { transition-delay: 0.16s; }
+.pg-stagger > *:nth-child(4)  { transition-delay: 0.24s; }
+.pg-stagger > *:nth-child(5)  { transition-delay: 0.32s; }
+.pg-stagger > *:nth-child(6)  { transition-delay: 0.40s; }
+.pg-stagger > *:nth-child(7)  { transition-delay: 0.48s; }
+.pg-stagger > *:nth-child(8)  { transition-delay: 0.56s; }
+.pg-stagger > *:nth-child(9)  { transition-delay: 0.64s; }
+.pg-stagger > *:nth-child(10) { transition-delay: 0.72s; }
+.pg-stagger > *:nth-child(11) { transition-delay: 0.80s; }
+.pg-stagger > *:nth-child(12) { transition-delay: 0.88s; }
+
+/* ── Hero entrance ── */
+@keyframes pgHeroUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pg-hero-1 { animation: pgHeroUp 0.7s cubic-bezier(0.2,0,0.3,1) 0.05s both; }
+.pg-hero-2 { animation: pgHeroUp 0.7s cubic-bezier(0.2,0,0.3,1) 0.18s both; }
+.pg-hero-3 { animation: pgHeroUp 0.7s cubic-bezier(0.2,0,0.3,1) 0.3s  both; }
+.pg-hero-4 { animation: pgHeroUp 0.7s cubic-bezier(0.2,0,0.3,1) 0.42s both; }
+.pg-hero-5 { animation: pgHeroUp 0.7s cubic-bezier(0.2,0,0.3,1) 0.54s both; }
+
+/* ── Counter number ── */
+.pg-countup { display: inline-block; }
+
+/* ── Checklist item hover ── */
+.pg-check-item {
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+}
+.pg-check-item:hover { transform: translateX(4px); }
+
+/* ── Role card ── */
+.pg-role-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.pg-role-card:hover { transform: translateY(-4px); }
+
+/* ── Pulse dot ── */
+@keyframes pgPulseDot {
+  0%,100% { box-shadow: 0 0 0 0 currentColor; opacity: 0.8; }
+  50%     { box-shadow: 0 0 0 6px transparent; opacity: 1; }
+}
+.pg-pulse-dot { animation: pgPulseDot 2.5s ease-in-out infinite; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .pg-reveal, .pg-reveal-left, .pg-reveal-right { transition-duration: 0.5s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-reveal, .pg-reveal-left, .pg-reveal-right,
+  .pg-hero-1, .pg-hero-2, .pg-hero-3, .pg-hero-4, .pg-hero-5 {
+    animation: none; transition: none; opacity: 1; transform: none;
+  }
+}

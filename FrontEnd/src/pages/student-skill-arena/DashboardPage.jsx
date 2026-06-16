@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import ReportButton from '../../components/ReportButton'
+import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
+import DungeonPortalLoader from '../../components/loaders/DungeonPortalLoader'
 import { CheckCircle, LogOut, Search, Brain, Trophy, X, Clock, ChevronLeft, ChevronRight, AlertTriangle, Lock, PlayCircle, Zap, Info, Award, BarChart2, Menu, Sun, Moon } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus, getBulkSubjectStatus,
@@ -546,18 +549,22 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz, 
   const tipRef      = useRef(null)
   const mistakesRef = useRef(null)
   const quizRef     = useRef(null)
+  const panelRef    = useRef(null)
 
   const scrollTo = (ref) => ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   useEffect(() => {
     setLoading(true); setTab('simple')
+    // Scroll panel container + window to top when switching concepts
+    panelRef.current?.parentElement?.scrollTo({ top: 0, behavior: 'instant' })
+    window.scrollTo({ top: 0, behavior: 'instant' })
     Promise.all([
       getConcept(conceptId),
       getQuizStatus('concept', conceptId).catch(() => null),
     ]).then(([c, qs]) => {
       setConcept(c.data)
       if (qs) setQuizStatus(qs.data)
-    }).finally(() => setLoading(false))
+    }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [conceptId])
 
   const navIdx   = navList.findIndex(c => c.id === conceptId)
@@ -568,7 +575,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz, 
   if (loading) return (
     <div className="sl-concept-inline">
       <div className="flex-center" style={{ flex: 1, height: '100%' }}>
-        <div className="loading-spinner-lg" />
+        <DungeonPortalLoader panel height={280} />
       </div>
     </div>
   )
@@ -576,7 +583,7 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz, 
   if (!concept) return null
 
   return (
-    <div className="sl-concept-inline">
+    <div className="sl-concept-inline" ref={panelRef}>
       {/* Header */}
       <div className="sl-concept-inline-header">
         <button className="btn btn-ghost btn-sm" style={{ padding: '0.2rem 0.5rem', fontSize: '0.78rem', fontFamily: "'Rajdhani', sans-serif", letterSpacing: '0.04em' }}
@@ -831,7 +838,7 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate, startQuiz }) 
     ]).then(([r, rs]) => {
       setRoadmap(r.data)
       if (rs) setStatus(rs.data)
-    }).finally(() => setLoading(false))
+    }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [roadmapId])
 
   const handleEnroll = async (e) => {
@@ -886,7 +893,7 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate, startQuiz }) 
       </div>
 
       {loading ? (
-        <div className="flex-center" style={{ flex: 1 }}><div className="loading-spinner-lg" /></div>
+        <div className="flex-center" style={{ flex: 1 }}><DungeonPortalLoader panel height={180} /></div>
       ) : !roadmap ? null : (
         <div className="sl-subject-panel-body">
 
@@ -984,7 +991,7 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate, startQuiz }) 
               return (
                 <div key={s.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                   <div
-                    onClick={() => isEnrolled && s.totalConcepts > 0 && onGateClick(s.id)}
+                    onClick={() => s.totalConcepts > 0 && onGateClick(s.id)}
                     style={{
                       display: 'flex', alignItems: 'center', gap: '0.5rem',
                       padding: '0.5rem 0.625rem',
@@ -992,11 +999,11 @@ function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate, startQuiz }) 
                       border: `1px solid ${borderCol}`,
                       borderLeft: `3px solid ${accentCol}`,
                       borderRadius: 'var(--radius-sm)',
-                      cursor: isEnrolled && s.totalConcepts > 0 ? 'pointer' : 'default',
+                      cursor: s.totalConcepts > 0 ? 'pointer' : 'default',
                       opacity: s.totalConcepts > 0 ? 1 : 0.45,
                       transition: 'all 0.15s',
                     }}
-                    onMouseEnter={e => { if (isEnrolled && s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
+                    onMouseEnter={e => { if (s.totalConcepts > 0) e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)' }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = borderCol }}
                   >
                     <div style={{ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700, background: gateClosed ? 'rgba(74,222,128,0.15)' : 'var(--bg-tertiary)', border: `1.5px solid ${gateClosed ? '#4ADE8055' : 'var(--border)'}`, color: gateClosed ? '#4ADE80' : 'var(--text-muted)' }}>
@@ -1057,7 +1064,7 @@ function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, nav
     ]).then(([s, qs]) => {
       setSubject(s.data)
       if (qs) setQuizStatus(qs.data)
-    }).finally(() => setLoading(false))
+    }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [subjectId])
 
   const pct = subject?.totalConcepts > 0
@@ -1081,7 +1088,7 @@ function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, nav
       </div>
 
       {loading ? (
-        <div className="flex-center" style={{ flex: 1, minHeight: 120 }}><div className="loading-spinner-lg" /></div>
+        <div className="flex-center" style={{ flex: 1, minHeight: 120 }}><DungeonPortalLoader panel height={120} /></div>
       ) : !subject ? null : (
         <div className={isGrid ? undefined : 'sl-subject-panel-body'} style={isGrid ? { flex: 1, overflowY: 'auto', padding: '0.875rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' } : undefined}>
 
@@ -1710,7 +1717,7 @@ export default function DashboardPage() {
 
   const [activeView, setActiveView]   = useState(() => searchParams.get('view') || 'arena')
   const [selectedSubjectId, setSelectedSubjectId] = useState(() => searchParams.get('subject') || null)
-  const [selectedConceptId, setSelectedConceptId] = useState(null)
+  const [selectedConceptId, setSelectedConceptId] = useState(() => searchParams.get('concept') || null)
   const [conceptNavList, setConceptNavList] = useState([])
   const [selectedRoadmapId, setSelectedRoadmapId] = useState(null)
 
@@ -1772,7 +1779,7 @@ export default function DashboardPage() {
         syncQuestsFromSummary(s.data, user?.id)
       })
       .catch(() => toast.error('Failed to load status window'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
     getHunterStats().then(r => setHunterStats(r.data)).catch(() => {})
   }, []) // eslint-disable-line
 
@@ -1789,7 +1796,7 @@ export default function DashboardPage() {
       // Reload gate cards + badge statuses directly (bypasses gatesLoaded guard)
       getSubjects().then(r => {
         setSubjects(r.data)
-        setGatesLoaded(true)
+        setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS)
         const ids = r.data.map(s => s.id)
         if (ids.length > 0) {
           getBulkSubjectStatus(ids)
@@ -1798,7 +1805,7 @@ export default function DashboardPage() {
         }
       }).catch(() => {})
       // Reload roadmap cards with fresh allSubjectsDone
-      getRoadmaps().then(r => { setAllRoadmaps(r.data); setPathsLoaded(true) }).catch(() => {})
+      getRoadmaps().then(r => { setAllRoadmaps(r.data); setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS) }).catch(() => {})
     }
     window.addEventListener('sl:refresh', refresh)
     return () => window.removeEventListener('sl:refresh', refresh)
@@ -1835,7 +1842,7 @@ export default function DashboardPage() {
     if (gatesLoaded) return
     getSubjects().then(r => {
       setSubjects(r.data)
-      setGatesLoaded(true)
+      setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS)
       const ids = r.data.map(s => s.id)
       if (ids.length > 0) {
         getBulkSubjectStatus(ids)
@@ -1847,7 +1854,7 @@ export default function DashboardPage() {
 
   const loadPaths = () => {
     if (pathsLoaded) return
-    getRoadmaps().then(r => { setAllRoadmaps(r.data); setPathsLoaded(true) })
+    getRoadmaps().then(r => { setAllRoadmaps(r.data); setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS) })
   }
 
   // Load roadmaps eagerly so Skill Arena can show active path
@@ -1866,7 +1873,6 @@ export default function DashboardPage() {
   const openSubjectPanel = (id) => {
     setSelectedSubjectId(id)
     setSelectedConceptId(null); setConceptNavList([])
-    // keep roadmap panel open so user can still navigate between gates
     const params = activeView === 'arena' ? {} : { view: activeView }
     setSearchParams({ ...params, subject: id })
   }
@@ -1886,13 +1892,24 @@ export default function DashboardPage() {
   const openConcept = (conceptId, navList) => {
     setSelectedConceptId(conceptId)
     setConceptNavList(navList)
+    const params = { ...(activeView !== 'arena' ? { view: activeView } : {}) }
+    if (selectedSubjectId) params.subject = selectedSubjectId
+    params.concept = conceptId
+    setSearchParams(params)
   }
 
   const handleConceptClose = (action, targetId) => {
     if (action === 'prev' || action === 'next') {
       setSelectedConceptId(targetId)
+      const params = { ...(activeView !== 'arena' ? { view: activeView } : {}) }
+      if (selectedSubjectId) params.subject = selectedSubjectId
+      params.concept = targetId
+      setSearchParams(params)
     } else {
       setSelectedConceptId(null); setConceptNavList([])
+      const params = { ...(activeView !== 'arena' ? { view: activeView } : {}) }
+      if (selectedSubjectId) params.subject = selectedSubjectId
+      setSearchParams(params)
     }
   }
 
@@ -2094,21 +2111,6 @@ export default function DashboardPage() {
             </div>
           )}
 
-          {/* ── Next recommended gate (if nothing in progress) ── */}
-          {inProgress.length === 0 && nextGateSp && (
-            <div>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>RECOMMENDED NEXT GATE</div>
-              <div onClick={() => openSubjectPanel(nextGateSp.subjectId)}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.625rem 0.875rem', background: 'var(--bg-secondary)', border: '1px solid rgba(74,222,128,0.2)', borderLeft: '3px solid #4ADE80', borderRadius: 'var(--radius-sm)', cursor: 'pointer' }}>
-                <span style={{ fontSize: '1.1rem' }}>{nextGateSp.icon}</span>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{nextGateSp.title}</div>
-                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80', letterSpacing: '0.06em' }}>{nextGateSp.total} skills · Enter to begin</div>
-                </div>
-                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80' }}>→</span>
-              </div>
-            </div>
-          )}
 
           {/* ── Cleared gates summary ── */}
           {cleared.length > 0 && (
@@ -2143,7 +2145,7 @@ export default function DashboardPage() {
             ))}
           </div>
           {!gatesLoaded ? (
-            <div className="flex-center" style={{ height: '200px' }}><div className="loading-spinner-lg" /></div>
+            <div className="flex-center" style={{ height: '200px' }}><DungeonPortalLoader panel height={200} /></div>
           ) : filteredSubjects.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em' }}>NO GATES MATCH</div>
           ) : (
@@ -2165,7 +2167,7 @@ export default function DashboardPage() {
               placeholder="Scout paths…" value={pathSearch} onChange={e => setPathSearch(e.target.value)} />
           </div>
           {!pathsLoaded ? (
-            <div className="flex-center" style={{ height: '200px' }}><div className="loading-spinner-lg" /></div>
+            <div className="flex-center" style={{ height: '200px' }}><DungeonPortalLoader panel height={200} /></div>
           ) : (
             <div className="sl-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
               {filteredRoadmaps.map(r => {
@@ -2250,14 +2252,7 @@ export default function DashboardPage() {
     }
   }
 
-  if (loading) return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column' }}>
-      <nav style={{ height: 56, background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', padding: '0 1.5rem' }}>
-        <span style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '1.1rem', color: '#B48AE8', letterSpacing: '0.12em' }}>ARISE</span>
-      </nav>
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div className="loading-spinner-lg" /></div>
-    </div>
-  )
+  if (loading) return <SystemAwakeningLoader subtitle="SKILL ARENA" />
 
   return (
     <div className="sl-dashboard-wrapper">
@@ -2488,7 +2483,9 @@ export default function DashboardPage() {
                   — BADGES —
                 </div>
                 {!hunterStats ? (
-                  <div style={{ display: 'flex', justifyContent: 'center', padding: '0.5rem' }}><div className="loading-spinner" style={{ width: 14, height: 14 }} /></div>
+                  <div style={{ display: 'flex', justifyContent: 'center', gap: 6, padding: '0.75rem', alignItems: 'center' }}>
+                    {[0,1,2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(155,110,212,0.6)', animation: `hlSectionDot 1s ${i*0.2}s ease-in-out infinite` }} />)}
+                  </div>
                 ) : (hunterStats.badges.length === 0 && (hunterStats.roadmapBadges ?? []).length === 0) ? (
                   <div style={{ textAlign: 'center', padding: '0.5rem 0' }}>
                     <div style={{ fontSize: '1rem', marginBottom: '0.2rem' }}>🔒</div>
@@ -2583,7 +2580,6 @@ export default function DashboardPage() {
       {aboutGate && (
         <AboutGateModal subject={aboutGate} onClose={() => setAboutGate(null)} />
       )}
-      <ReportButton variant="floating" pageTitle="Skill Arena Dashboard" />
     </div>
   )
 }

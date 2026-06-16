@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, Trash2, X, Settings, Search, ChevronDown, Check } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import {
@@ -103,7 +106,7 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
       }
       roadmap ? await updateRoadmap(roadmap.id, payload) : await createRoadmap(payload)
       toast.success(roadmap ? 'Updated' : 'Created'); onSave()
-    } catch { toast.error('Failed to save') } finally { setLoading(false) }
+    } catch { toast.error('Failed to save') } finally { setTimeout(() => setLoading(false), TEST_DELAY_MS) }
   }
 
   return (
@@ -211,7 +214,7 @@ function SubjectsPanel({ roadmap, onClose }) {
     Promise.all([getRoadmapSubjects(roadmap.id), getAdminSubjects()])
       .then(([rs, all]) => { setRsubs(rs.data); setAllSubs(all.data) })
       .catch(() => toast.error('Failed to load'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
   useEffect(() => { load() }, [])
@@ -249,7 +252,7 @@ function SubjectsPanel({ roadmap, onClose }) {
           <h3 className="modal-title">Subjects in "{roadmap.title}"</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
-        {loading ? <div className="flex-center" style={{ height: 200 }}><div className="loading-spinner-lg" /></div> : (
+        {loading ? <RadarLoader height={220} /> : (
           <>
             <div style={{ marginBottom: '1rem', padding: '1rem', background: 'var(--bg-tertiary)', borderRadius: 'var(--radius-md)' }}>
               <div className="form-label mb-1">Add Subject</div>
@@ -313,7 +316,7 @@ export default function AdminRoadmaps() {
 
   const load = () => {
     setLoading(true)
-    getAdminRoadmaps().then(r => setRoadmaps(r.data)).catch(() => toast.error('Failed to load')).finally(() => setLoading(false))
+    getAdminRoadmaps().then(r => setRoadmaps(r.data)).catch(() => toast.error('Failed to load')).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
   useEffect(() => { load() }, [])
@@ -353,7 +356,7 @@ export default function AdminRoadmaps() {
         </div>
       </div>
 
-      {loading ? <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div> : (
+      {loading ? <RadarLoader height={220} /> : (
         <div className="table-container">
           <table className="table">
             <thead><tr><th>Roadmap</th><th>Role</th><th>Weeks</th><th></th></tr></thead>

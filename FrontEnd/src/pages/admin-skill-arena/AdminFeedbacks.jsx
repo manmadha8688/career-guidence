@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
+import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import RadarLoader from '../../components/loaders/RadarLoader'
 import { MessageSquare, Star, ThumbsUp, ThumbsDown, RefreshCw } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAllFeedbacks } from '../../api/api'
@@ -50,7 +53,7 @@ export default function AdminFeedbacks() {
         setSummary({ avg, useful: items.filter(f => f.isUseful === true).length, notUseful: items.filter(f => f.isUseful === false).length })
       })
       .catch(() => toast.error('Failed to load feedbacks'))
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
   useEffect(() => { load() }, [])
@@ -115,7 +118,7 @@ export default function AdminFeedbacks() {
 
       {/* Feedback list */}
       {loading ? (
-        <div className="flex-center" style={{ height: '40vh' }}><div className="loading-spinner-lg" /></div>
+        <RadarLoader height={220} />
       ) : filtered.length === 0 ? (
         <div className="empty-state">
           <div className="empty-state-icon">💬</div>

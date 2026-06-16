@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { CheckCircle, XCircle, ArrowLeft, RotateCcw, Trophy, Zap } from 'lucide-react'
+import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
 import { getAttemptResult } from '../../api/api'
-import ReportButton from '../../components/ReportButton'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
@@ -58,20 +59,11 @@ export default function QuizResultPage() {
         }
       })
       .catch(() => { toast.error('Failed to load result'); navigate(-1) })
-      .finally(() => setLoading(false))
+      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [attemptId])
 
   // ─── Loading ───────────────────────────────────────────
-  if (loading) return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ height: 56, background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', padding: '0 1.5rem' }}>
-        <span style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '1.1rem', color: '#B48AE8', letterSpacing: '0.12em' }}>ARISE</span>
-      </div>
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div className="loading-spinner-lg" />
-      </div>
-    </div>
-  )
+  if (loading) return <SystemAwakeningLoader subtitle="LOADING RESULTS" />
 
   if (!result) return null
 
@@ -106,7 +98,7 @@ export default function QuizResultPage() {
       }}>
         <button
           style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.375rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.06em' }}
-          onClick={() => navigate('/skill-arena/dashboard?view=gates')}
+          onClick={() => navigate(-1)}
         >
           <ArrowLeft size={14} /> GATES
         </button>
@@ -278,7 +270,7 @@ export default function QuizResultPage() {
               </button>
             )}
             <button
-              onClick={() => navigate('/skill-arena/dashboard?view=gates')}
+              onClick={() => navigate(-1)}
               style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 8, padding: '0.75rem 1.75rem', cursor: 'pointer', color: 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.9375rem', letterSpacing: '0.05em' }}
             >
               ← BACK TO GATES
@@ -287,7 +279,6 @@ export default function QuizResultPage() {
 
         </div>
       </div>
-      <ReportButton variant="floating" pageTitle="Quiz Result" />
     </div>
   )
 }
