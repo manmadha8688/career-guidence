@@ -56,9 +56,9 @@ export default function N8NPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'n8n Tutorial for Beginners — Complete Guide 2024', url: 'https://www.youtube.com/watch?v=1MwSoB0gnM4', dur: '25 min', note: 'Full platform walkthrough' },
-            { label: 'n8n AI Workflows — Build LLM Automation Pipelines', url: 'https://www.youtube.com/watch?v=RM-GCLOTrWk', dur: '18 min', note: 'AI-specific features' },
-            { label: 'n8n Self-Hosting Setup — Docker Installation Guide', url: 'https://www.youtube.com/watch?v=0m_RX5y5FtI', dur: '12 min', note: 'Local setup with Docker' },
+            { label: 'n8n Masterclass: Build AI Agents & Automate Workflows — Nate Herk', url: 'https://www.youtube.com/watch?v=ZbIVOy_GPyQ', dur: '~90 min', note: '#1 n8n creator — beginner to pro, AI agents + real workflows' },
+            { label: 'N8N FULL COURSE — Build & Sell AI Automations + Agents', url: 'https://www.youtube.com/watch?v=2GZ2SNXWK-c', dur: '6 hrs', note: '19+ real-world agents — RAG, support bots, invoice processors, voice AI' },
+            { label: 'Build AI Agents with n8n — Complete Beginner Automation Course 2025', url: 'https://www.youtube.com/watch?v=UtXzdmpysmU', dur: '~3 hrs', note: 'JavaScript Mastery — core n8n + AI integrations + Inbox Manager project' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

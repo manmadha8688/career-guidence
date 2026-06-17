@@ -56,9 +56,9 @@ export default function CodeiumPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Codeium Tutorial — Free AI Coding Assistant Setup', url: 'https://www.youtube.com/watch?v=BNS0C-RuSnA', dur: '10 min', note: 'Setup and core features' },
-            { label: 'Codeium vs GitHub Copilot — Is Free Better?', url: 'https://www.youtube.com/watch?v=WnbXfLLnJZU', dur: '9 min', note: 'Head-to-head comparison' },
-            { label: 'Codeium in JetBrains IDEs — IntelliJ, PyCharm, WebStorm', url: 'https://www.youtube.com/watch?v=dBpJ4Fl5bGk', dur: '8 min', note: 'JetBrains setup and usage' },
+            { label: 'How to PROPERLY Use Codeium in VS Code — Full Guide', url: 'https://www.youtube.com/watch?v=XfH-3wg8i-8', dur: '~12 min', note: 'Install, configure, multiline suggestions, Codeium Chat — full guide' },
+            { label: 'How to Install and Use Codeium AI for Web Development', url: 'https://www.youtube.com/watch?v=fT9rNvvEFSQ', dur: '~12 min', note: 'Complete setup guide — web dev focused, VS Code + JetBrains' },
+            { label: 'Get Started with GitHub Copilot in VS Code (2025) — Official VS Code', url: 'https://www.youtube.com/watch?v=vdBxfFVXnc0', dur: '21 min', note: 'Compare Codeium free against Copilot — understand the difference' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

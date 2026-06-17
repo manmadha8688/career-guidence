@@ -56,9 +56,9 @@ export default function ChatGPTPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'ChatGPT Tutorial for Beginners — Dave\'s Tech Rescue', url: 'https://www.youtube.com/watch?v=JTxsNm9IdYU', dur: '15 min', note: 'Start here if you are completely new' },
-            { label: 'ChatGPT Complete Guide — How to Use ChatGPT', url: 'https://www.youtube.com/watch?v=AXn2XVLf7d0', dur: '22 min', note: 'Covers all major use cases and features' },
-            { label: 'ChatGPT Prompt Engineering — Build Better Prompts', url: 'https://www.youtube.com/watch?v=_ZvnD73m40o', dur: '10 min', note: 'How to get dramatically better results' },
+            { label: 'How to Use ChatGPT (2025) — Kevin Stratvert', url: 'https://www.youtube.com/watch?v=PDw3Uk9dN9k', dur: '~20 min', note: 'Best beginner guide — covers all features clearly' },
+            { label: 'ChatGPT Complete Guide — How to Use ChatGPT', url: 'https://www.youtube.com/watch?v=AXn2XVLf7d0', dur: '22 min', note: 'All major use cases and features in one video' },
+            { label: 'Prompt Engineering Full Course — freeCodeCamp', url: 'https://www.youtube.com/watch?v=_ZvnD73m40o', dur: '2 hrs', note: 'Get dramatically better results from ChatGPT' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

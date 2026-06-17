@@ -56,9 +56,9 @@ export default function CodeInterpreterPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'ChatGPT Code Interpreter Tutorial — Advanced Data Analysis', url: 'https://www.youtube.com/watch?v=pVPp4ldOzJU', dur: '18 min', note: 'Complete guide to all Code Interpreter features' },
-            { label: 'Code Interpreter for Data Analysis — Real Examples', url: 'https://www.youtube.com/watch?v=MfzHNNVdBKc', dur: '15 min', note: 'Practical data analysis walkthrough' },
-            { label: 'ChatGPT Code Interpreter vs Julius AI vs Gemini', url: 'https://www.youtube.com/watch?v=N8e3SBCdl_0', dur: '12 min', note: 'Comparison of AI data tools' },
+            { label: 'ChatGPT Data Analysis for Beginners 2024 — Full Guide', url: 'https://www.youtube.com/watch?v=DLpz6V_4SpA', dur: '~20 min', note: 'Most up-to-date beginner guide — upload, analyze, visualize, export code' },
+            { label: 'ChatGPT Code Interpreter (Advanced Data Analysis) Crash Course', url: 'https://www.youtube.com/watch?v=E2pOYk_9ZVs', dur: '~15 min', note: 'Prompt engineering for data + file uploads + chart generation' },
+            { label: 'How I Use ChatGPT Code Interpreter as a Data Analyst', url: 'https://www.youtube.com/watch?v=psXo54Av__w', dur: '~15 min', note: 'Real analyst workflow — see how professionals actually use this tool' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

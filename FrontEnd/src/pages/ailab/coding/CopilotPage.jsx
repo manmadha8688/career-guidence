@@ -56,9 +56,9 @@ export default function CopilotPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'GitHub Copilot Tutorial — Getting Started', url: 'https://www.youtube.com/watch?v=jXp5D5ZnxGM', dur: '14 min', note: 'Setup and core features walkthrough' },
-            { label: 'GitHub Copilot Tips and Tricks — Get More Out of It', url: 'https://www.youtube.com/watch?v=1qs6QKk0DVc', dur: '11 min', note: 'Advanced usage patterns' },
-            { label: 'GitHub Copilot vs Cursor vs Codeium — Which is Best?', url: 'https://www.youtube.com/watch?v=sZqBpSVjUXw', dur: '9 min', note: 'Comparison of coding AI tools' },
+            { label: 'Get Started with GitHub Copilot in VS Code (2025) — Official VS Code', url: 'https://www.youtube.com/watch?v=vdBxfFVXnc0', dur: '21 min', note: 'Official guide — setup, @workspace, Copilot Edits, slash commands' },
+            { label: 'How to Use GitHub Copilot in VS Code — Full Setup + Tips', url: 'https://www.youtube.com/watch?v=TI9TsuwpguM', dur: '10 min', note: 'Quick practical guide — get productive fast' },
+            { label: 'Cursor AI Tutorial For Beginners 2025 — Full Comparison with Copilot', url: 'https://www.youtube.com/watch?v=kbfdFlqzjcs', dur: '~20 min', note: 'How Cursor compares to Copilot — when to use each' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

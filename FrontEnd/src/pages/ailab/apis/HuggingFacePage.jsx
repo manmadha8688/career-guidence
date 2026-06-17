@@ -56,9 +56,9 @@ export default function HuggingFacePage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Hugging Face Tutorial for Beginners', url: 'https://www.youtube.com/watch?v=QEaBAZQCtwE', dur: '20 min', note: 'Complete introduction to the platform' },
-            { label: 'Hugging Face Transformers Library — Python Tutorial', url: 'https://www.youtube.com/watch?v=GSt00_-0ncQ', dur: '18 min', note: 'Hands-on with the Transformers library' },
-            { label: 'Hugging Face Inference API — No GPU Needed', url: 'https://www.youtube.com/watch?v=8D6vFYpjnlU', dur: '12 min', note: 'Using hosted inference without local setup' },
+            { label: 'Getting Started With Hugging Face in 15 Minutes — Transformers, Pipeline, Models', url: 'https://www.youtube.com/watch?v=QEaBAZQCtwE', dur: '15 min', note: 'Best intro — pipeline API, tokenizers, and model hub' },
+            { label: 'Hugging Face Tutorial (2024) — Sentiment Analysis, Text Generation, LLM', url: 'https://www.youtube.com/watch?v=cWpgaIeF8pU', dur: '~20 min', note: 'Hands-on tasks with Transformers library in Python' },
+            { label: 'Hugging Face 101: Your First Steps Coding with Transformers', url: 'https://www.youtube.com/watch?v=Mji39uWdhLU', dur: '~20 min', note: 'Beginner-friendly coding walkthrough from the Hub to inference' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

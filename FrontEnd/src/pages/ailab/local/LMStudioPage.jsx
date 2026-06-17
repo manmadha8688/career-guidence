@@ -56,9 +56,9 @@ export default function LMStudioPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'LM Studio Tutorial — Run AI Locally with No Code', url: 'https://www.youtube.com/watch?v=yBI1nPep72Q', dur: '16 min', note: 'Complete beginner guide' },
-            { label: 'LM Studio vs Ollama — Which is Better for Local AI?', url: 'https://www.youtube.com/watch?v=r1qGFm7iCUI', dur: '12 min', note: 'Direct comparison' },
-            { label: 'LM Studio Local Server — OpenAI-Compatible API Setup', url: 'https://www.youtube.com/watch?v=Bm2IFPFdHp0', dur: '10 min', note: 'Developer API setup' },
+            { label: 'LM Studio Tutorial & Review — The Best Way to Run AI Locally', url: 'https://www.youtube.com/watch?v=V5Qap-SNyLU', dur: '~20 min', note: 'Full review + tutorial — model browser, chat, local server explained' },
+            { label: 'Run Any AI Model Locally with LM Studio: Full Guide (Coding & Chat)', url: 'https://www.youtube.com/watch?v=PJZD3DbViH8', dur: '~25 min', note: 'Coding + chat use cases — API setup and VS Code integration' },
+            { label: 'LM Studio Is Getting Insane — Start Using It Now', url: 'https://www.youtube.com/watch?v=OOCioZC4tk0', dur: '~15 min', note: 'Latest features 2025 — what is new and why it matters' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

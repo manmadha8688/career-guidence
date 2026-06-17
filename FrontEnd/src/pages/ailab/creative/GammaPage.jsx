@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'gamma', category: 'creative', name: 'Gamma.app', tagline: 'AI creates beautiful presentations from your text', icon: '📊', color: '#7C3AED', free: true, freeTier: 'Free — 400 AI credits on signup', officialUrl: 'https://gamma.app' }
-const videos = [{ label: 'Gamma.app Full Tutorial — AI Presentations in Minutes', url: 'https://www.youtube.com/watch?v=8AxE7Z-OXgg', duration: '15 min', note: 'Complete walkthrough from prompt to finished presentation' }]
+const videos = [
+  { label: 'Full Gamma AI App Tutorial For Beginners (2024)', url: 'https://www.youtube.com/watch?v=FJGCaTjB5x4', duration: '~20 min', note: 'Best beginner tutorial — prompt to polished presentation end to end' },
+  { label: 'Forget PowerPoint! The BEST AI Tool for Stunning Presentations — Gamma.app', url: 'https://www.youtube.com/watch?v=sDUjoih6JgA', duration: '~15 min', note: 'Why Gamma beats PowerPoint + full feature walkthrough' },
+  { label: 'How to Use Gamma AI — Full Tutorial for Presentations, Websites & More', url: 'https://www.youtube.com/watch?v=KcbXKUR7-a0', duration: '~20 min', note: 'Presentations, websites, and docs — covers all output types in Gamma' },
+]
 const overview = `Gamma.app generates complete, visually polished presentations from a text prompt. Type "Create a 10-slide presentation about React hooks for a beginner audience", choose a design style, and Gamma builds the entire deck in 60 seconds — with slide content, design, layout, and images. Export to PowerPoint or PDF for submission. For students who spend hours making slides look professional, Gamma reduces this to minutes.`
 const sections = [{ content: `The generation process takes three inputs: your topic or outline, the design style you want, and the number of slides. Gamma drafts a complete presentation structure, then generates each slide with appropriate content. You can edit any slide afterward — change text, rearrange elements, add your own images, modify the design. The starting point is usually 80-90% usable, making this dramatically faster than starting from a blank slide.
 

@@ -66,10 +66,9 @@ export default function RAGPage() {
         <Section title="Watch first — understand the concept visually" color="#EF4444" dark={dark} border={border} card={card}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {[
-              { label: 'RAG in 10 Minutes — What it is and how it works (beginner)', url: 'https://www.youtube.com/watch?v=gweRh5Xtkq0', duration: '10 min', note: 'Start here — best conceptual overview' },
-              { label: 'Build a RAG App from Scratch — Python + LangChain + ChromaDB', url: 'https://www.youtube.com/watch?v=tcqEUSNCn8I', duration: '35 min', note: 'Hands-on implementation tutorial' },
-              { label: 'RAG vs Fine-tuning — Which to use and when', url: 'https://www.youtube.com/watch?v=00Q0G84kq3M', duration: '18 min', note: 'Clears up the biggest confusion' },
-              { label: 'Advanced RAG Techniques — Chunking, Reranking, Hybrid Search', url: 'https://www.youtube.com/watch?v=sVcwVQRHIc8', duration: '30 min', note: 'After you understand the basics' },
+              { label: 'RAG Explained for Beginners — KodeKloud', url: 'https://www.youtube.com/watch?v=_HQ2H_0Ayy0', duration: '10 min', note: 'Start here — clearest conceptual overview of how RAG works' },
+              { label: 'RAG Crash Course for Beginners — KodeKloud', url: 'https://www.youtube.com/watch?v=swvzKSOEluc', duration: '59 min', note: 'Theory + hands-on labs — practical production-ready RAG' },
+              { label: 'Learn RAG from Scratch — freeCodeCamp (LangChain Engineer)', url: 'https://www.youtube.com/watch?v=sVcwVQRHIc8', duration: '2.5 hrs', note: 'Advanced techniques: query translation, routing, RAPTOR — after basics' },
             ].map((v, i) => (
               <a key={i} href={v.url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.875rem 1.125rem', borderRadius: 12, textDecoration: 'none', background: dark ? 'rgba(239,68,68,0.07)' : 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.18)', transition: 'all 0.15s' }}
                 onMouseEnter={e => e.currentTarget.style.background = dark ? 'rgba(239,68,68,0.12)' : 'rgba(239,68,68,0.09)'}

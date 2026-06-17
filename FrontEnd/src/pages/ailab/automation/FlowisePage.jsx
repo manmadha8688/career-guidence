@@ -56,9 +56,9 @@ export default function FlowisePage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Flowise Tutorial — Build LLM Apps Without Code', url: 'https://www.youtube.com/watch?v=tD6fwQyUIJE', dur: '20 min', note: 'Complete platform walkthrough' },
-            { label: 'Flowise RAG Chatbot — Build from Scratch', url: 'https://www.youtube.com/watch?v=riXpu1tHzl0', dur: '18 min', note: 'Full RAG implementation visually' },
-            { label: 'Flowise Embed Chatbot on Any Website', url: 'https://www.youtube.com/watch?v=E_y47yVvzg0', dur: '10 min', note: 'Website integration tutorial' },
+            { label: 'FlowiseAI Masterclass: Build AI Agents (Beginner to Pro) — Leon van Zyl', url: 'https://www.youtube.com/watch?v=9TaRksXuLWY', dur: '~90 min', note: 'THE Flowise creator — official tutorial linked from Flowise docs' },
+            { label: 'Flowise v3 Complete Tutorial: Build AI Agents WITHOUT Coding — Leon van Zyl', url: 'https://www.youtube.com/watch?v=SLVVDUIbIBE', dur: '~60 min', note: 'Latest v3 — updated agent flows, tools, and RAG pipelines' },
+            { label: 'Flowise AI Tutorial #1: Build AI Apps With No Code — Leon van Zyl', url: 'https://www.youtube.com/watch?v=nqAK_L66sIQ', dur: '~35 min', note: 'Best starting point — install, setup, and first chatflow end to end' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

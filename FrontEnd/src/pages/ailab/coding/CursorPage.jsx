@@ -56,9 +56,9 @@ export default function CursorPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Cursor AI Tutorial — Full Beginner Guide', url: 'https://www.youtube.com/watch?v=gqUQbjsYZLQ', dur: '18 min', note: 'Complete walkthrough, start here' },
-            { label: 'Cursor AI Tips That Will Change How You Code', url: 'https://www.youtube.com/watch?v=yk9lXobFdKE', dur: '14 min', note: 'Advanced features and workflows' },
-            { label: 'Cursor vs GitHub Copilot — Detailed Comparison', url: 'https://www.youtube.com/watch?v=oOq1CmtPBIY', dur: '11 min', note: 'When to use each tool' },
+            { label: 'Cursor AI Tutorial For Beginners — Latest 2025 Edition', url: 'https://www.youtube.com/watch?v=kbfdFlqzjcs', dur: '~20 min', note: 'Chat, Agents, Cursor Rules, MCP servers — complete walkthrough' },
+            { label: 'How To Use Cursor AI — Full Tutorial For Beginners 2025', url: 'https://www.youtube.com/watch?v=cE84Q5IRR6U', dur: '~20 min', note: 'Composer, codebase indexing, and inline edits explained' },
+            { label: 'Cursor 2.0: Composer and New UX in 12 Minutes', url: 'https://www.youtube.com/watch?v=GS0mtpDiX08', dur: '12 min', note: 'Composer multi-file editing deep dive — the flagship feature' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'whisper', category: 'voice', name: 'OpenAI Whisper', tagline: 'Free speech-to-text — transcribe anything accurately', icon: '🎤', color: '#10B981', free: true, freeTier: '100% Free — open source', officialUrl: 'https://openai.com/research/whisper' }
-const videos = [{ label: 'OpenAI Whisper Tutorial — Speech to Text Python', url: 'https://www.youtube.com/watch?v=dg_TWk8Zfjk', duration: '20 min', note: 'Complete tutorial from installation to transcription' }]
+const videos = [
+  { label: 'Whisper AI Tutorial: Real-Time Speech-to-Text in Python', url: 'https://www.youtube.com/watch?v=JR_-KlC6Ges', duration: '~20 min', note: 'Real-time transcription — microphone input to text in Python' },
+  { label: 'OpenAI API Python Whisper TTS: Audio Transcription & Translation 2024', url: 'https://www.youtube.com/watch?v=wdWrftViFzQ', duration: '~20 min', note: 'Full API coverage — transcription, translation, and TTS in Python' },
+  { label: 'Automate Voice to Text & SRT Subtitles with OpenAI Whisper in Python', url: 'https://www.youtube.com/watch?v=xi8NqNLR3zM', duration: '~20 min', note: 'Subtitle generation use case — batch process audio to SRT files' },
+]
 const overview = `Whisper is OpenAI's free, open-source speech recognition model. It transcribes audio to text with high accuracy across 100 languages. Run it locally in Python with zero cost or use it via API. For students, practical applications include transcribing lecture recordings, building voice-input features for applications, creating subtitles for demo videos, and processing interview recordings. No API key needed for local use.`
 const sections = [{ content: `Installation and first use takes about 5 minutes. pip install openai-whisper, then one Python command to transcribe any audio file. The model downloads on first use (varies from 75MB for the tiny model to 3GB for the large model) and caches locally. The tiny and base models run fast on any hardware. The medium and large models provide significantly better accuracy, particularly for accented speech and technical vocabulary.
 

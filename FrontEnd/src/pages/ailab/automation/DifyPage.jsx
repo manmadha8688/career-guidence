@@ -56,9 +56,9 @@ export default function DifyPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Dify Tutorial — Build AI Applications Without Code', url: 'https://www.youtube.com/watch?v=tD6fwQyUIJE', dur: '22 min', note: 'Complete platform introduction' },
-            { label: 'Dify RAG Knowledge Base — Setup and Optimization', url: 'https://www.youtube.com/watch?v=Y0GKB4Uo-VQ', dur: '16 min', note: 'Knowledge base deep dive' },
-            { label: 'Dify vs Flowise — Which is Better for AI App Building?', url: 'https://www.youtube.com/watch?v=0lnCFTAmgaE', dur: '12 min', note: 'Clear comparison' },
+            { label: 'Master Dify AI Chatbot in 1 Hour: Complete Beginner\'s Guide 2025', url: 'https://www.youtube.com/watch?v=dHJictxN2ZU', dur: '~60 min', note: 'Full chatbot from zero — knowledge base, RAG, chatflow, deployment' },
+            { label: 'Dify AI Tutorial for Beginners 2025: How to Build AI Apps', url: 'https://www.youtube.com/watch?v=20mQSYJ1PlI', dur: '~30 min', note: 'Visual drag-and-drop workflows — models, pipelines, and live deployment' },
+            { label: 'Dify No Code E-commerce AI Agent Workflow in 20 Minutes', url: 'https://www.youtube.com/watch?v=oanFGdDkN-o', dur: '20 min', note: 'Endorsed by Dify official — real use case agent built end to end' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

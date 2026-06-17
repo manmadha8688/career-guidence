@@ -58,8 +58,7 @@ export default function EmbeddingsPage() {
           {[
             { label: 'Vector Embeddings Explained — Fireship', url: 'https://www.youtube.com/watch?v=yfHHvmeh7dM', dur: '8 min', note: 'Best visual explainer — start here, very clear' },
             { label: 'Vector Databases Simply Explained — Fireship', url: 'https://www.youtube.com/watch?v=klTvEwg3oJ4', dur: '6 min', note: 'What vector DBs are and why they exist' },
-            { label: 'Embeddings and Vector Databases — Full Python Tutorial', url: 'https://www.youtube.com/watch?v=4cBFCCELsFg', dur: '25 min', note: 'Hands-on implementation with code' },
-            { label: 'Word2Vec Explained — StatQuest with Josh Starmer', url: 'https://www.youtube.com/watch?v=viZrOnJclY0', dur: '16 min', note: 'Intuitive explanation of how embeddings actually learn meaning' },
+            { label: 'Vector Databases Full Tutorial — freeCodeCamp', url: 'https://www.youtube.com/watch?v=dN0lsF2cvm8', dur: '45 min', note: 'Build a semantic search system from scratch in Python — hands-on' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

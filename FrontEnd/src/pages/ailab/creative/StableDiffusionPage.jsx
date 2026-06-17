@@ -1,8 +1,9 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'stable-diffusion', category: 'creative', name: 'Stable Diffusion', tagline: 'Free unlimited image AI — runs on your own computer', icon: '🌈', color: '#8B5CF6', free: true, freeTier: '100% Free — open source, run locally', officialUrl: 'https://comfy.org' }
 const videos = [
-  { label: 'Stable Diffusion 3 — Run Locally with ComfyUI Tutorial', url: 'https://www.youtube.com/watch?v=-ujULh1aSHw', duration: '25 min', note: 'Complete local setup guide with ComfyUI interface' },
-  { label: 'Stable Diffusion Beginner Guide — AUTOMATIC1111', url: 'https://www.youtube.com/watch?v=8F0tPMGEJFk', duration: '30 min', note: 'Traditional interface, more beginner-friendly' },
+  { label: 'How to Use Stable Diffusion for Beginners in 2025 — Updated Guide', url: 'https://www.youtube.com/watch?v=Lf8QXyoqiNY', duration: '~30 min', note: 'Best 2025 guide — install, generate, prompt techniques, models' },
+  { label: 'Stable Diffusion Tutorial Text to Image: Beginner\'s Guide 2025', url: 'https://www.youtube.com/watch?v=TA6Yz7_-OCc', duration: '~25 min', note: 'Text-to-image focused — from zero to quality results step by step' },
+  { label: 'Getting Started with Stable Diffusion 2024 — Absolute Beginners', url: 'https://www.youtube.com/watch?v=mcqREz9xE74', duration: '~30 min', note: 'Absolute beginner starting point — AUTOMATIC1111 setup and first images' },
 ]
 const overview = `Stable Diffusion is an open-source image generation model that runs on your own computer, completely free, with no daily limits and no censorship. Unlike DALL-E or Midjourney, you own the software and generate images privately on your hardware. On a modern GPU (NVIDIA 6GB+ VRAM), image generation takes 5-30 seconds. On CPU (no GPU), it is slower but still works. With the right setup, the image quality matches and often exceeds DALL-E 3.`
 const sections = [{ content: `Two main interfaces exist for Stable Diffusion. AUTOMATIC1111 (also called Stable Diffusion Web UI) is the classic interface — feature-rich, widely documented, large community. ComfyUI is the newer, more powerful node-based interface favored by advanced users for precise control over the generation process. For beginners, AUTOMATIC1111 is easier to start with. For serious use, ComfyUI offers better results through its visual workflow builder.

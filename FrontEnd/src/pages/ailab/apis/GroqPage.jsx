@@ -56,9 +56,9 @@ export default function GroqPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Groq API Tutorial — Getting Started with the Fastest LLM API', url: 'https://www.youtube.com/watch?v=S53BanCP14c', dur: '12 min', note: 'Setup and first API call walkthrough' },
-            { label: 'Groq vs OpenAI API — Speed Comparison and Use Cases', url: 'https://www.youtube.com/watch?v=0JqNAYy6h7M', dur: '9 min', note: 'Real performance comparison' },
-            { label: 'Build a Real-Time AI App with Groq API', url: 'https://www.youtube.com/watch?v=XlGCEVtqvBc', dur: '18 min', note: 'Full project tutorial' },
+            { label: 'Getting Started With Groq API In Python', url: 'https://www.youtube.com/watch?v=jScpBCBoGdU', dur: '~12 min', note: 'First API call walkthrough — setup to streaming in Python' },
+            { label: 'Create Your Own Groq AI Chatbot In Python In Less than 10 Minutes', url: 'https://www.youtube.com/watch?v=ToONdnhpFBg', dur: '10 min', note: 'Build a streaming chatbot from scratch with Groq' },
+            { label: 'Build an AI Chatbot in 15 Minutes with Groq AI API', url: 'https://www.youtube.com/watch?v=hyY2RKb-qnM', dur: '15 min', note: 'Full project — real-time streaming Python app' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

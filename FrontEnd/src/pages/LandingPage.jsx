@@ -916,6 +916,116 @@ export default function LandingPage() {
 
       <div className="lp-glow-divider" />
 
+      {/* ── AI Lab Section ─────────────────────────────────── */}
+      <section style={{ padding: '5rem 1.5rem' }}>
+        <div style={{ maxWidth: 1060, margin: '0 auto' }}>
+
+          {/* Label */}
+          <div className="lp-reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              color: lt ? '#0284C7' : '#00D9FF', fontWeight: 700, fontSize: '0.78rem',
+              letterSpacing: '0.14em', textTransform: 'uppercase',
+              background: lt ? 'rgba(2,132,199,0.07)' : 'rgba(0,217,255,0.07)',
+              border: `1px solid ${lt ? 'rgba(2,132,199,0.2)' : 'rgba(0,217,255,0.2)'}`,
+              borderRadius: 20, padding: '0.3rem 0.9rem',
+            }}>
+              ⚡ AI Lab
+            </span>
+          </div>
+
+          {/* 2-col layout */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
+            gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem',
+          }}>
+            {/* Left — headline + CTA */}
+            <div className="lp-reveal-left">
+              <h2 style={{
+                fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800,
+                letterSpacing: '-0.025em', lineHeight: 1.15,
+                color: C.text, margin: '0 0 1.25rem',
+              }}>
+                Every AI tool.<br />
+                <span style={{ background: 'linear-gradient(135deg, #00D9FF, #7C3AED)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  One place to learn them.
+                </span>
+              </h2>
+              <p style={{ color: C.sub, fontSize: '1.0625rem', lineHeight: 1.8, margin: '0 0 1rem', maxWidth: 420 }}>
+                AI tools explained — what they are, how they work, what you can build.
+                From ChatGPT and Copilot to LangChain, CrewAI, RAG systems, and local models.
+              </p>
+              <p style={{ color: C.sub, fontSize: '0.9375rem', lineHeight: 1.75, margin: '0 0 2rem', maxWidth: 420 }}>
+                Each tool page includes free video tutorials, concept explanations, and a hands-on project to build. Most tools are completely free to use.
+              </p>
+              <button
+                onClick={() => navigate('/ai-lab')}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                  background: lt
+                    ? 'linear-gradient(135deg, #0284C7, #0369A1)'
+                    : 'linear-gradient(135deg, #00D9FF, #0EA5E9)',
+                  border: 'none', borderRadius: 8,
+                  padding: '0.75rem 1.75rem',
+                  color: lt ? '#fff' : '#020817', fontWeight: 700, fontSize: '0.9375rem',
+                  cursor: 'pointer',
+                  boxShadow: lt ? '0 4px 20px rgba(2,132,199,0.3)' : '0 4px 24px rgba(0,217,255,0.3)',
+                  transition: 'transform 0.15s, box-shadow 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = lt ? '0 8px 28px rgba(2,132,199,0.45)' : '0 8px 32px rgba(0,217,255,0.5)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = lt ? '0 4px 20px rgba(2,132,199,0.3)' : '0 4px 24px rgba(0,217,255,0.3)' }}
+              >
+                ⚡ Explore AI Lab — Free
+              </button>
+            </div>
+
+            {/* Right — category cards */}
+            <div className="lp-reveal-right" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
+              {[
+                { icon: '🤖', title: 'AI Chatbots',       color: '#8B5CF6', desc: 'ChatGPT, Claude, Gemini, Perplexity, NotebookLM' },
+                { icon: '💻', title: 'Coding Assistants', color: '#F59E0B', desc: 'Copilot, Cursor, Windsurf, Codeium' },
+                { icon: '🔗', title: 'AI Agents',         color: '#EC4899', desc: 'LangChain, CrewAI, AutoGen, LangGraph, MCP' },
+                { icon: '⚙️', title: 'Automation',        color: '#F97316', desc: 'n8n, Flowise, Dify, Zapier' },
+                { icon: '🦙', title: 'Local AI',          color: '#6366F1', desc: 'Ollama, LM Studio — run models free' },
+                { icon: '🎯', title: 'Vector Databases',  color: '#14B8A6', desc: 'ChromaDB, Pinecone — build RAG systems' },
+              ].map((cat, i) => (
+                <div key={i}
+                  onClick={() => navigate('/ai-lab')}
+                  style={{
+                    padding: '1rem',
+                    background: lt ? 'rgba(255,255,255,0.7)' : `${cat.color}08`,
+                    border: `1px solid ${lt ? `${cat.color}25` : `${cat.color}22`}`,
+                    borderLeft: `3px solid ${cat.color}`,
+                    borderRadius: 12, cursor: 'pointer',
+                    transition: 'transform 0.15s, box-shadow 0.15s',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = `0 6px 20px ${cat.color}20` }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}
+                >
+                  <div style={{ fontSize: '1.1rem', marginBottom: '0.35rem' }}>{cat.icon}</div>
+                  <div style={{ fontWeight: 700, fontSize: '0.8rem', color: cat.color, marginBottom: '0.25rem' }}>{cat.title}</div>
+                  <p style={{ color: C.muted, fontSize: '0.72rem', lineHeight: 1.5, margin: 0 }}>{cat.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats row */}
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '1px',
+            background: lt ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
+            borderRadius: 14, overflow: 'hidden',
+          }}>
+            
+          </div>
+
+        </div>
+      </section>
+
+      <div className="lp-glow-divider" />
+
       {/* ── How It Works ───────────────────────────────────── */}
       <section id="how-it-works" style={{
         padding: '5rem 1.5rem',

@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'notion-ai', category: 'career', name: 'Notion AI', tagline: 'AI writing assistant built directly into your notes', icon: '📝', color: '#475569', free: false, freeTier: '20 free AI responses, then $10/month', officialUrl: 'https://notion.so' }
-const videos = [{ label: 'Notion AI Complete Tutorial 2024 — All Features', url: 'https://www.youtube.com/watch?v=pIFUYFYEFeg', duration: '20 min', note: 'Full walkthrough of all AI features with real examples' }]
+const videos = [
+  { label: 'Notion AI (2024) — The Complete Tutorial & Guide', url: 'https://www.youtube.com/watch?v=Yg-rQcfJCIw', duration: '~25 min', note: 'Most comprehensive 2024 guide — every AI feature with real examples' },
+  { label: 'Notion AI: How To Use Notion AI For Beginners — Complete Tutorial 2024', url: 'https://www.youtube.com/watch?v=w9pFKJvRYfw', duration: '~20 min', note: 'Beginner-focused — writing, summarizing, Q&A from your notes explained' },
+  { label: 'Make with Notion 2024: Taking Notion AI to the Max', url: 'https://www.youtube.com/watch?v=UFim56QnE8g', duration: '~25 min', note: 'Advanced power-user level — AI connectors, database queries, workflows' },
+]
 const overview = `Notion AI adds AI writing, summarization, and editing capabilities directly inside Notion's note-taking and workspace platform. If you already use Notion for organizing your notes, tasks, and projects, AI features appear exactly where your content is — no switching tools. Summarize long meeting notes, improve your writing, draft first drafts, and get AI assistance without leaving your workspace.`
 const sections = [{ content: `The core value of Notion AI is integration. When you take notes on a lecture, meeting, or research session, AI features are available inline — not in a separate chat window. Select any text and choose "Improve writing", "Make shorter", "Fix spelling and grammar", "Change tone to professional", or ask AI to add more detail. The AI works on your specific selected text, in context, without requiring you to switch applications or re-explain the context.
 

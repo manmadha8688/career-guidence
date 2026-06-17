@@ -70,9 +70,9 @@ export default function OpenClawPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {[
               { label: 'OpenClaw Official Documentation', url: 'https://docs.openclaw.ai', duration: 'Official Docs', note: 'Setup guides, API reference, platform integration' },
-              { label: 'Build an AI Agent with Tool Execution — Python', url: 'https://www.youtube.com/watch?v=sPzc6hMg7So', duration: '45 min', note: 'Understand AI agents with real tool access (CrewAI — same concepts)' },
-              { label: 'Building Slack Bots with AI — Full Tutorial', url: 'https://www.youtube.com/watch?v=4Pp_JjGf9WM', duration: '30 min', note: 'Messaging platform + AI integration concepts' },
-              { label: 'Self-Hosted AI Automation — n8n + AI Agents', url: 'https://www.youtube.com/watch?v=Fy1UCBcgF2o', duration: '30 min', note: 'Self-hosted agent automation patterns similar to OpenClaw' },
+              { label: 'The Ultimate OpenClaw AI Agent Tutorial', url: 'https://www.youtube.com/watch?v=SSvR37V1Cf4', duration: '~30 min', note: 'Full OpenClaw walkthrough — setup, agents, messaging integrations' },
+              { label: 'OpenClaw Full Tutorial for Beginners — Setup Your First AI Agent', url: 'https://www.youtube.com/watch?v=BoC5MY_7aDk', duration: '~25 min', note: 'Step-by-step beginner guide to running OpenClaw locally' },
+              { label: 'Deploy Your Own AI Agent in 45 Minutes — OpenClaw Tutorial', url: 'https://www.youtube.com/watch?v=sO6NSSOWDO0', duration: '~45 min', note: 'Full deployment walkthrough — self-host and connect to messaging apps' },
             ].map((v, i) => (
               <a key={i} href={v.url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.875rem 1.125rem', borderRadius: 12, textDecoration: 'none', background: dark ? 'rgba(239,68,68,0.07)' : 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.18)', transition: 'all 0.15s' }}
                 onMouseEnter={e => e.currentTarget.style.background = dark ? 'rgba(239,68,68,0.12)' : 'rgba(239,68,68,0.09)'}

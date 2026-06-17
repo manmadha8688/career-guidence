@@ -56,9 +56,9 @@ export default function CrewAIPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'CrewAI Tutorial — Build Multi-Agent AI Systems', url: 'https://www.youtube.com/watch?v=sPzc6hMg7So', dur: '20 min', note: 'Complete introduction and first crew' },
-            { label: 'CrewAI Full Course — Agents, Tasks, Tools, and Flows', url: 'https://www.youtube.com/watch?v=kJvXT25LkwA', dur: '35 min', note: 'Comprehensive coverage' },
-            { label: 'CrewAI vs LangGraph — Which Multi-Agent Framework?', url: 'https://www.youtube.com/watch?v=pJwR5pv0_gs', dur: '12 min', note: 'Comparison for choosing the right tool' },
+            { label: 'CrewAI Tutorial: Multiple Agents Working Together in Python', url: 'https://www.youtube.com/watch?v=I90xJlzAUW0', dur: '~30 min', note: 'Best 2025 intro — agents, tasks, tools, and crews in Python' },
+            { label: 'Build a Multi-Agent System with CrewAI — Agentic AI Tutorial', url: 'https://www.youtube.com/watch?v=qsrl2DHYi1Y', dur: '~25 min', note: 'End-to-end build — researcher, analyst, writer crew from scratch' },
+            { label: 'Gen AI Project: Build an AI Research Assistant with CrewAI', url: 'https://www.youtube.com/watch?v=VXxge_ra3rM', dur: '~30 min', note: 'Real project — research crew with web search tools and output' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

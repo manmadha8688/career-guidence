@@ -56,9 +56,9 @@ export default function LangGraphPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'LangGraph Tutorial — Build AI Agents with Graphs', url: 'https://www.youtube.com/watch?v=nmDGKDgZcCk', dur: '22 min', note: 'Complete LangGraph introduction' },
-            { label: 'LangGraph Multi-Agent System — Build from Scratch', url: 'https://www.youtube.com/watch?v=hvAPnpSfSGo', dur: '28 min', note: 'Multi-agent implementation' },
-            { label: 'LangGraph vs LangChain — When to Use Each', url: 'https://www.youtube.com/watch?v=JqmJIFpwPh0', dur: '12 min', note: 'Clear comparison' },
+            { label: 'LangGraph Complete Course for Beginners — Complex AI Agents with Python', url: 'https://www.youtube.com/watch?v=jGg_1h0qzaM', dur: '~2 hrs', note: 'Full course — state, nodes, edges, cycles, checkpointing from scratch' },
+            { label: 'Build Powerful AI Agents with LangGraph — Beginner Masterclass 2025', url: 'https://www.youtube.com/watch?v=pTN95F3sZG0', dur: '~90 min', note: 'ReAct agents, multi-agent systems, human-in-the-loop — practical builds' },
+            { label: 'LangGraph Tutorial for Beginners: Build Your First AI Agent', url: 'https://www.youtube.com/watch?v=UklCxmEvz2w', dur: '~30 min', note: 'Shortest path to a working LangGraph agent — best quick start' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

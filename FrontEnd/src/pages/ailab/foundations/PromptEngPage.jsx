@@ -69,9 +69,9 @@ export default function PromptEngPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Prompt Engineering Full Course — FreeCodeCamp', url: 'https://www.youtube.com/watch?v=_ZvnD73m40o', dur: '2 hrs', note: 'Most complete free course available — covers all major techniques' },
-            { label: 'ChatGPT Prompt Engineering for Developers — Deeplearning.ai + OpenAI', url: 'https://www.youtube.com/watch?v=eTiLzWT5RXQ', dur: '1 hr', note: 'Official OpenAI course — best for coding use cases' },
-            { label: '10 Prompt Engineering Techniques with Before/After Examples', url: 'https://www.youtube.com/watch?v=wVzuvf9D9BU', dur: '18 min', note: 'Practical demonstrations — good quick reference after the full courses' },
+            { label: 'ChatGPT Prompt Engineering for Developers — DeepLearning.AI + OpenAI', url: 'https://www.youtube.com/watch?v=H4YK_7MAckk', dur: '93 min', note: 'Official course by Andrew Ng and Isa Fulford (OpenAI) — start here' },
+            { label: 'Prompt Engineering Full Course — freeCodeCamp', url: 'https://www.youtube.com/watch?v=_ZvnD73m40o', dur: '2 hrs', note: 'Most complete free course — zero-shot, few-shot, CoT, all techniques' },
+            { label: 'Prompt Engineering in 2025 — Sander Schulhoff (Learn Prompting)', url: 'https://www.youtube.com/watch?v=eKuFqQKYRrA', dur: '98 min', note: 'Advanced techniques from the author of the largest prompt engineering guide' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

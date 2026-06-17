@@ -56,9 +56,9 @@ export default function HermesPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Nous Hermes 3 — The Best Open Source Model for Agents?', url: 'https://www.youtube.com/watch?v=p_q6tDQgHSo', dur: '12 min', note: 'Overview of Hermes 3 capabilities' },
-            { label: 'Run Hermes Locally with Ollama — Function Calling Tutorial', url: 'https://www.youtube.com/watch?v=8Kq1_5y3Nkg', dur: '15 min', note: 'Local setup and function calling' },
-            { label: 'Hermes vs Llama 3 — Instruction Following Comparison', url: 'https://www.youtube.com/watch?v=wXpFAQFRt2E', dur: '10 min', note: 'Benchmark comparison' },
+            { label: 'Shockingly Accurate Function Calling with Hermes 2 Pro — Local AI', url: 'https://www.youtube.com/watch?v=ViXURxck-HM', dur: '~15 min', note: 'Best Hermes function calling demo — see exactly how tool calling works' },
+            { label: 'Fully Local Tool Calling with Ollama — Python Tutorial', url: 'https://www.youtube.com/watch?v=Nfk99Fz8H9k', dur: '~20 min', note: 'Run Hermes + Ollama locally — complete function calling implementation' },
+            { label: 'Hermes — The Self Improving AI Agent (Ollama + Nous Research)', url: 'https://www.youtube.com/watch?v=lbqysOjR8SU', dur: '~15 min', note: 'Hermes as an agent — Nous Research integration and capabilities overview' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 
