@@ -56,9 +56,9 @@ export default function JuliusPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Julius AI Tutorial — Analyze Data Without Code', url: 'https://www.youtube.com/watch?v=nVQIBBDpuGQ', dur: '14 min', note: 'Complete Julius walkthrough' },
-            { label: 'Julius AI vs ChatGPT Code Interpreter — Data Analysis', url: 'https://www.youtube.com/watch?v=N8e3SBCdl_0', dur: '11 min', note: 'Comparison with alternatives' },
-            { label: 'Julius AI for Students — Analyzing Survey and Research Data', url: 'https://www.youtube.com/watch?v=kTHHuJl3vXc', dur: '10 min', note: 'Academic use cases' },
+            { label: 'How to Use Julius AI for Data Analysis — Step-by-Step Guide', url: 'https://www.youtube.com/watch?v=rWoFcshWrTg', dur: '~15 min', note: 'Best full walkthrough — upload data, ask questions, get charts' },
+            { label: 'AI Tool That Will Analyse ANY Dataset in SECONDS — Julius AI (No Code)', url: 'https://www.youtube.com/watch?v=HfurQPa5jF8', dur: '~10 min', note: 'Fast demo — see what Julius can do on a real dataset in minutes' },
+            { label: 'Julius AI Tutorial: From Ideas to Data Analysis & Visualisation in a Click', url: 'https://www.youtube.com/watch?v=tm02Lf9WbWU', dur: '~15 min', note: 'Visualisation focus — charts, trends, and insight generation' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

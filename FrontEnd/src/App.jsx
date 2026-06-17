@@ -38,7 +38,8 @@ import AdminWalkIns from './pages/admin-skill-arena/AdminWalkIns'
 import FeedbackNudge from './components/FeedbackNudge'
 import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
-import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation, useNavigationType } from 'react-router-dom'
 
 function GlobalReportButton() {
   const { pathname } = useLocation()
@@ -47,11 +48,22 @@ function GlobalReportButton() {
   return <ReportButton variant="floating" />
 }
 
+function ScrollResetter() {
+  const { pathname } = useLocation()
+  const navType = useNavigationType()
+  useEffect(() => {
+    if (navType !== 'POP') window.scrollTo(0, 0)
+  }, [pathname, navType])
+  return null
+}
+
+
 function App() {
   return (
     <ThemeProvider>
     <AuthProvider>
       <BrowserRouter>
+        <ScrollResetter />
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         <FeedbackNudge />
         <ScrollToTop />

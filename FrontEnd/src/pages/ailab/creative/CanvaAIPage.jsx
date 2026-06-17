@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'canva-ai', category: 'creative', name: 'Canva AI', tagline: 'Design anything — AI-powered, no design skills needed', icon: '✨', color: '#00C4CC', free: true, freeTier: 'Free — Pro free for students via Canva for Education', officialUrl: 'https://canva.com' }
-const videos = [{ label: 'Canva AI Features Complete Tutorial 2024', url: 'https://www.youtube.com/watch?v=Z_R3gJFjExg', duration: '20 min', note: 'All AI features covered with real examples' }]
+const videos = [
+  { label: 'Ultimate Canva AI Tutorial — Everything You Can Do in 2025! (15+ AI Tools)', url: 'https://www.youtube.com/watch?v=ytaKk0nOFJ0', duration: '~30 min', note: 'Most comprehensive 2025 guide — Magic Studio, Dream Lab, and every AI feature' },
+  { label: 'How to Use Canva AI & Magic Studio — Full Tutorial for Beginners 2025', url: 'https://www.youtube.com/watch?v=6EIf2Hmia60', duration: '~25 min', note: 'Magic Studio deep-dive — Magic Media, Resize, Eraser, and Expand' },
+  { label: 'Learn Canva AI in 10 Minutes — Full Canva AI Tutorial 2024', url: 'https://www.youtube.com/watch?v=iee1gzvWvew', duration: '10 min', note: 'Quickest path to using Canva AI features — great if you already know Canva' },
+]
 const overview = `Canva is the most accessible design tool for non-designers, and its AI features make professional design genuinely possible without design training. Magic Media generates images and videos from text. Background Remover eliminates photo backgrounds in one click. Magic Resize adapts one design to every social media format instantly. For students building professional profiles, portfolios, and presentations, Canva AI removes the design skills barrier entirely. Apply for Canva for Education to get Pro access free with your college email.`
 const sections = [{ content: `The single most useful thing students can do with Canva AI is applying for Canva for Education (canva.com/education). With a college email or student ID, you get full Canva Pro access — 610,000+ premium templates, unlimited storage, Magic Resize, background remover, all AI features, and premium content. This is worth approximately ₹5,000/year and is completely free for verified students.
 

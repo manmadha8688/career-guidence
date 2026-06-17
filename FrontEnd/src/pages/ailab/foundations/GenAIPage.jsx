@@ -56,10 +56,9 @@ export default function GenAIPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Generative AI Explained — Google Cloud', url: 'https://www.youtube.com/watch?v=G2fqAlgmoPo', dur: '2 min', note: 'Best quick visual overview' },
-            { label: 'How Large Language Models Work — 3Blue1Brown', url: 'https://www.youtube.com/watch?v=wjZofJX0v4M', dur: '27 min', note: 'Deep visual explanation of the transformer architecture' },
-            { label: 'Intro to Large Language Models — Andrej Karpathy', url: 'https://www.youtube.com/watch?v=zjkBMFhNj_g', dur: '1 hr', note: 'Best technical introduction by the former OpenAI researcher' },
-            { label: 'Generative AI Full Course — Intellipaat', url: 'https://www.youtube.com/watch?v=nHpWFkluBOQ', dur: '10+ hrs', note: 'Complete structured course if you want full depth' },
+            { label: 'Intro to Large Language Models — Andrej Karpathy', url: 'https://www.youtube.com/watch?v=zjkBMFhNj_g', dur: '1 hr', note: 'Best overall LLM intro — clear, no hype, by former OpenAI researcher' },
+            { label: 'Attention in Transformers, Visually Explained — 3Blue1Brown', url: 'https://www.youtube.com/watch?v=eMlx5fFNoYc', dur: '26 min', note: 'How transformers actually work — stunning visual explanation' },
+            { label: 'Generative AI Full Course — freeCodeCamp', url: 'https://www.youtube.com/watch?v=mEsleV16qdo', dur: '6+ hrs', note: 'LLMs, RAG, LangChain, vector databases — complete hands-on course' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

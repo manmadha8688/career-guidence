@@ -56,9 +56,9 @@ export default function PineconePage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Pinecone Tutorial — Vector Database for AI Applications', url: 'https://www.youtube.com/watch?v=tp0bQNDtLPc', dur: '18 min', note: 'Complete Pinecone guide' },
-            { label: 'Pinecone Serverless — Getting Started in 2024', url: 'https://www.youtube.com/watch?v=HM2eY0QSA6w', dur: '12 min', note: 'Serverless index setup' },
-            { label: 'Pinecone + LangChain RAG — Full Production Setup', url: 'https://www.youtube.com/watch?v=cf01RW_MiSI', dur: '22 min', note: 'End-to-end RAG tutorial' },
+            { label: 'What is Pinecone Vector Database Explained + How to Use It (2025)', url: 'https://www.youtube.com/watch?v=Ab77M-k4dmc', dur: '~20 min', note: 'Concept + practical — serverless, upsert, query, metadata filtering' },
+            { label: 'Pinecone Full Tutorial: Vector DB Setup', url: 'https://www.youtube.com/watch?v=laLrSH8qEm0', dur: '~25 min', note: 'Full setup walkthrough — index creation, Python client, namespaces' },
+            { label: 'Pinecone Vector Database — Build Knowledgeable AI', url: 'https://www.youtube.com/watch?v=v4bye5Rfa3g', dur: '~20 min', note: 'End-to-end AI use case — embed documents, store, retrieve, generate' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

@@ -56,8 +56,8 @@ export default function GeminiPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Google Gemini Tutorial — Complete Guide for Beginners', url: 'https://www.youtube.com/watch?v=Q2SLQfgGEoA', dur: '14 min', note: 'Full walkthrough of Gemini features' },
-            { label: 'Gemini Advanced vs ChatGPT Plus — Full Comparison', url: 'https://www.youtube.com/watch?v=90LIZdFLh9U', dur: '12 min', note: 'Honest side-by-side comparison' },
+            { label: 'Google Gemini: PRO Tutorial for Beginners (2025) — Kevin Stratvert', url: 'https://www.youtube.com/watch?v=8aRJYpExTfs', dur: '~20 min', note: 'Best beginner guide — covers all Gemini features clearly' },
+            { label: 'Gemini Advanced vs ChatGPT Plus — Full Comparison', url: 'https://www.youtube.com/watch?v=90LIZdFLh9U', dur: '12 min', note: 'Honest side-by-side comparison of both tools' },
             { label: 'Gemini in Google Workspace — Docs, Gmail, Sheets', url: 'https://www.youtube.com/watch?v=3DHEzWNKgik', dur: '10 min', note: "How to use Gemini inside Google's tools" },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>

@@ -1,78 +1,20 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
-import { Sun, Moon, ArrowLeft, Search, ChevronRight, X, BookOpen } from 'lucide-react'
+import { Sun, Moon, ArrowLeft, Search, ChevronRight, Lock } from 'lucide-react'
 import ScrollToTop from '../../components/ScrollToTop'
 import { CATEGORIES, TOOLS } from './aiLabData'
 
 const CYAN = '#00D9FF'
 
-const PRIMER_SECTIONS = [
-  {
-    icon: '🧠',
-    title: 'What is AI, actually?',
-    color: '#00D9FF',
-    body: `AI stands for Artificial Intelligence — software that can perform tasks that normally require human thinking: understanding language, recognizing images, writing code, making decisions. Modern AI doesn't follow explicit rules. It learns patterns from massive amounts of data and uses those patterns to generate responses.
-
-The AI tools in this lab are mostly powered by Large Language Models (LLMs) — neural networks trained on billions of pages of text. They learned language, reasoning, and knowledge by predicting what word comes next, billions of times. The result is a system that can answer questions, write code, explain concepts, and hold conversations.`,
-  },
-  {
-    icon: '🔑',
-    title: 'Three concepts you must understand first',
-    color: '#7C3AED',
-    body: `Before using any AI tool effectively, understand these three ideas:
-
-1. Context is everything. AI models have no memory between sessions. Every conversation starts fresh. The quality of your output depends almost entirely on the quality of your input — what you tell the model, how much context you give, how specific you are. "Fix my code" produces worse results than "Fix this Python function that should return the top 3 items by price but currently returns all items unsorted."
-
-2. AI generates, it does not recall. The model is not searching a database for the correct answer. It is generating the most probable next token based on patterns learned during training. This means it can be confidently wrong. Always verify factual claims, especially for specific numbers, names, and dates.
-
-3. Models have a training cutoff. Everything an AI knows comes from data collected before a certain date — typically 6-18 months before you're using it. For current news, live prices, or recently released software versions, use tools with web access (Perplexity, Gemini) or verify independently.`,
-  },
-  {
-    icon: '⚡',
-    title: 'How to actually learn AI tools',
-    color: '#10B981',
-    body: `The wrong approach: watch a 45-minute tutorial, feel like you understand, never open the tool.
-
-The right approach:
-• Open the tool while watching or reading — do it in parallel, not after.
-• Build something small immediately. A chatbot, a script, a data analysis. Real use reveals real understanding.
-• Learn the concept first, then the tool. Knowing what a vector database is makes ChromaDB make sense. Knowing what an LLM is makes every chatbot tool make sense.
-• Use free tiers to experiment. Almost every tool here has a free tier. You do not need to spend money to build real projects.
-
-Start with the AI Foundations section — GenAI, Prompt Engineering, and RAG. These three concepts underpin everything else in this lab. Ten minutes on each before diving into tools will make everything click faster.`,
-  },
-  {
-    icon: '🗺️',
-    title: 'Suggested learning order',
-    color: '#F59E0B',
-    body: `Week 1 — Foundations: Start with Generative AI, then Prompt Engineering, then RAG. These are not optional prerequisites — they are the mental models that make every other tool in this lab understandable.
-
-Week 2 — Chatbots + Coding: Use ChatGPT, Claude, or Gemini daily for your actual work. Add Copilot or Codeium to your IDE. Get comfortable with AI in your existing workflow before learning new ones.
-
-Week 3 — APIs: Try Groq's free API. Make your first API call. Understand that the AI you've been chatting with is also a function you can call from code. This unlocks everything else.
-
-Week 4+ — Build: Pick one tool from Agents, Automation, or Local AI that solves a real problem you have. Build something with it. The project task in every tool page is designed for exactly this.
-
-There is no shortcut. The people who learn AI tools fastest are the ones who build with them immediately — not the ones who watch the most tutorials.`,
-  },
-  {
-    icon: '⚠️',
-    title: 'What AI cannot do (that people assume it can)',
-    color: '#EF4444',
-    body: `Know these limitations before you are surprised by them:
-
-• It cannot access the internet by default. Unless the tool explicitly has web browsing (Perplexity, Gemini, ChatGPT Plus browsing), its knowledge is frozen at its training cutoff.
-
-• It cannot run your code automatically. When ChatGPT gives you Python, it is not executing it — you are. Code Interpreter and Julius are exceptions.
-
-• It does not know your context unless you tell it. It does not know your project, your constraints, your codebase, or your audience unless you include that information in your message.
-
-• It can sound confident while being wrong. This is the most dangerous property. For any claim that matters — a statistic, a medical fact, a legal requirement, a specific API behavior — verify with a primary source.
-
-• It cannot replace deep understanding. AI can write a sorting algorithm for you. But if you do not understand sorting, you cannot evaluate whether the output is correct, debug it when it fails, or adapt it to your actual requirements.`,
-  },
-]
+const TAG_META = {
+  'trending':    { label: '🔥 Trending',    bg: 'rgba(249,115,22,0.13)',  color: '#F97316' },
+  'popular':     { label: '⭐ Popular',      bg: 'rgba(245,158,11,0.13)', color: '#F59E0B' },
+  'must-know':   { label: '✓ Must Know',    bg: 'rgba(16,185,129,0.13)', color: '#10B981' },
+  'enterprise':  { label: '🏢 Enterprise',  bg: 'rgba(59,130,246,0.13)', color: '#3B82F6' },
+  'open-source': { label: '⚡ Open Source', bg: 'rgba(139,92,246,0.13)', color: '#8B5CF6' },
+  'new':         { label: '✦ New',          bg: 'rgba(6,182,212,0.13)',  color: '#06B6D4' },
+}
 
 export default function AILabPage() {
   const navigate = useNavigate()
@@ -83,14 +25,17 @@ export default function AILabPage() {
   const [primerOpen, setPrimerOpen] = useState(false)
 
   const bg     = dark ? '#020817' : '#F0F4FF'
-  const border = dark ? 'rgba(0,217,255,0.09)' : 'rgba(79,70,229,0.11)'
+  const navBg  = dark ? 'rgba(2,8,23,0.93)' : 'rgba(240,244,255,0.95)'
+  const border = dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)'
+  const card   = dark ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.97)'
   const txt    = dark ? '#E2E8F0' : '#0F172A'
   const sub    = dark ? '#94A3B8' : '#475569'
+  const muted  = dark ? '#475569' : '#94A3B8'
 
   const filtered = TOOLS.filter(t => {
     const matchCat = activeCategory === 'all' || t.category === activeCategory
     const q = search.toLowerCase()
-    return matchCat && (!q || t.name.toLowerCase().includes(q) || t.tagline.toLowerCase().includes(q))
+    return matchCat && (!q || t.name.toLowerCase().includes(q) || t.tagline.toLowerCase().includes(q) || t.tags?.some(g => g.includes(q)))
   })
 
   const grouped = CATEGORIES.filter(c => c.id !== 'all').map(cat => ({
@@ -99,60 +44,47 @@ export default function AILabPage() {
   })).filter(g => g.tools.length > 0)
 
   const goToTool = tool => navigate(`/ai-lab/${tool.category}/${tool.id}`)
+  const totalTools = TOOLS.length
+  const freeTools  = TOOLS.filter(t => t.free).length
+  const doneTools  = TOOLS.filter(t => t.hasPage).length
 
   return (
     <div style={{ minHeight: '100vh', background: bg, color: txt, fontFamily: "'Rajdhani', sans-serif", overflowX: 'hidden' }}>
 
+      {/* Background glow */}
       <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
-        <div style={{ position: 'absolute', top: '-10%', left: '50%', transform: 'translateX(-50%)', width: 800, height: 600, borderRadius: '50%', background: `radial-gradient(ellipse, ${dark ? 'rgba(0,217,255,0.04)' : 'rgba(79,70,229,0.05)'} 0%, transparent 70%)`, filter: 'blur(60px)' }} />
+        <div style={{ position: 'absolute', top: '-10%', left: '50%', transform: 'translateX(-50%)', width: 900, height: 600, borderRadius: '50%', background: dark ? 'radial-gradient(ellipse, rgba(0,217,255,0.04) 0%, transparent 65%)' : 'radial-gradient(ellipse, rgba(79,70,229,0.05) 0%, transparent 65%)', filter: 'blur(60px)' }} />
       </div>
 
       {/* Primer Modal */}
       {primerOpen && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '1.5rem 1rem', background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(6px)', overflowY: 'auto' }}
-          onClick={e => { if (e.target === e.currentTarget) setPrimerOpen(false) }}>
-          <div style={{ width: '100%', maxWidth: 700, background: dark ? '#060E24' : '#FFFFFF', border: `1px solid ${border}`, borderTop: `3px solid ${CYAN}`, borderRadius: 18, overflow: 'hidden', position: 'relative', marginBottom: '1.5rem' }}>
-
-            {/* Modal header */}
-            <div style={{ padding: '1.5rem 1.5rem 1rem', borderBottom: `1px solid ${border}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.14em', color: CYAN, marginBottom: '0.3rem' }}>BEFORE YOU START</div>
-                <h2 style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: 'clamp(1rem,3vw,1.3rem)', color: txt, margin: 0 }}>What to Know Before Learning AI Tools</h2>
-              </div>
-              <button onClick={() => setPrimerOpen(false)} style={{ background: 'none', border: `1px solid ${border}`, borderRadius: 8, width: 34, height: 34, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: sub, flexShrink: 0, marginLeft: '1rem' }}>
-                <X size={15} />
-              </button>
+        <div onClick={e => e.target === e.currentTarget && setPrimerOpen(false)}
+          style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '2rem 1rem', background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(6px)', overflowY: 'auto' }}>
+          <div style={{ width: '100%', maxWidth: 600, background: dark ? '#0B1120' : '#fff', border: `1px solid ${border}`, borderTop: `3px solid ${CYAN}`, borderRadius: 18, overflow: 'hidden', marginBottom: '2rem' }}>
+            <div style={{ padding: '1.5rem', borderBottom: `1px solid ${border}` }}>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.14em', color: CYAN, marginBottom: '0.4rem' }}>BEFORE YOU START</div>
+              <h2 style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '1.1rem', fontWeight: 900, color: txt, margin: 0 }}>What to Know Before Using AI Tools</h2>
             </div>
-
-            {/* Intro strip */}
-            <div style={{ padding: '1rem 1.5rem', background: dark ? 'rgba(0,217,255,0.05)' : 'rgba(0,217,255,0.04)', borderBottom: `1px solid ${border}` }}>
-              <p style={{ fontSize: '0.875rem', color: sub, lineHeight: 1.75, margin: 0 }}>
-                This page lists AI tools — but using a tool without understanding the underlying concepts leads to frustration. Read this primer first. It takes 5 minutes and will make every tool in this lab make more sense.
-              </p>
-            </div>
-
-            {/* Sections */}
-            <div style={{ padding: '1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {PRIMER_SECTIONS.map((s, i) => (
-                <div key={i} style={{ borderRadius: 12, border: `1px solid ${border}`, overflow: 'hidden' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem 1rem', background: dark ? `${s.color}09` : `${s.color}07`, borderBottom: `1px solid ${s.color}20` }}>
-                    <span style={{ fontSize: '1.1rem', width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `${s.color}18`, borderRadius: 8, border: `1px solid ${s.color}28`, flexShrink: 0 }}>{s.icon}</span>
-                    <span style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '0.95rem', color: s.color }}>{s.title}</span>
-                  </div>
-                  <div style={{ padding: '1rem', background: dark ? 'rgba(255,255,255,0.015)' : 'rgba(0,0,0,0.015)' }}>
-                    {s.body.split('\n\n').map((para, j) => (
-                      <p key={j} style={{ fontSize: '0.85rem', color: sub, lineHeight: 1.8, margin: j < s.body.split('\n\n').length - 1 ? '0 0 0.75rem' : 0, whiteSpace: 'pre-line' }}>{para}</p>
-                    ))}
+            {[
+              { icon: '🧠', color: CYAN, title: 'AI generates, it does not recall', body: 'LLMs predict the next token — they can be confidently wrong. Always verify specific facts, numbers, and dates from a primary source.' },
+              { icon: '📝', color: '#10B981', title: 'Context is everything', body: 'Every session starts fresh. The quality of your output depends almost entirely on the quality of your input. Specific prompts beat vague ones every time.' },
+              { icon: '📅', color: '#F59E0B', title: 'Training cutoff matters', body: 'Every AI model has a knowledge cutoff. For current news, live prices, or recent releases — use tools with web access (Perplexity, Gemini) or verify independently.' },
+              { icon: '🗺️', title: 'Suggested order', color: '#EC4899', body: 'Start with AI Foundations → Chatbots → Coding Assistants → APIs. Learn the concepts first, then the tools. Everything clicks faster with the right mental model.' },
+            ].map((s, i) => (
+              <div key={i} style={{ padding: '1.125rem 1.5rem', borderBottom: `1px solid ${border}` }}>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>{s.icon}</span>
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: '0.9rem', color: s.color, marginBottom: '0.3rem' }}>{s.title}</div>
+                    <p style={{ fontSize: '0.83rem', color: sub, lineHeight: 1.7, margin: 0 }}>{s.body}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Footer CTA */}
-            <div style={{ padding: '1rem 1.5rem 1.5rem', borderTop: `1px solid ${border}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
-              <span style={{ fontSize: '0.8rem', color: sub }}>Start with <strong style={{ color: CYAN }}>AI Foundations</strong> — the first category below.</span>
+              </div>
+            ))}
+            <div style={{ padding: '1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.8rem', color: sub }}>Start with <strong style={{ color: CYAN }}>AI Foundations</strong> below.</span>
               <button onClick={() => { setPrimerOpen(false); setActiveCategory('foundations') }}
-                style={{ padding: '0.6rem 1.25rem', borderRadius: 10, border: 'none', cursor: 'pointer', background: `linear-gradient(135deg, ${CYAN}, #7C3AED)`, color: '#fff', fontFamily: "'Orbitron', sans-serif", fontWeight: 700, fontSize: '0.68rem', letterSpacing: '0.08em' }}>
+                style={{ padding: '0.55rem 1.125rem', borderRadius: 8, border: 'none', cursor: 'pointer', background: `linear-gradient(135deg, ${CYAN}, #7C3AED)`, color: '#fff', fontFamily: "'Orbitron', sans-serif", fontWeight: 700, fontSize: '0.65rem', letterSpacing: '0.07em' }}>
                 Go to Foundations →
               </button>
             </div>
@@ -161,12 +93,12 @@ export default function AILabPage() {
       )}
 
       {/* Nav */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', background: dark ? 'rgba(2,8,23,0.93)' : 'rgba(240,244,255,0.95)', backdropFilter: 'blur(16px)', borderBottom: `1px solid ${border}` }}>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 50, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', background: navBg, backdropFilter: 'blur(16px)', borderBottom: `1px solid ${border}` }}>
         <button onClick={() => navigate('/')} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '0.72rem', letterSpacing: '0.1em', color: CYAN, padding: 0 }}>
           <ArrowLeft size={14} /> LearnToEarn
         </button>
         <span style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '0.8rem', letterSpacing: '0.2em', color: CYAN }}>⚡ AI LAB</span>
-        <button onClick={toggleTheme} style={{ background: 'none', border: `1px solid ${border}`, borderRadius: 6, width: 32, height: 32, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: sub }}>
+        <button onClick={toggleTheme} style={{ background: 'none', border: `1px solid ${border}`, borderRadius: 6, width: 32, height: 32, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: muted }}>
           {dark ? <Sun size={14} /> : <Moon size={14} />}
         </button>
       </nav>
@@ -174,69 +106,79 @@ export default function AILabPage() {
       <div style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Hero */}
-        <div style={{ textAlign: 'center', padding: 'clamp(3rem,7vw,5rem) 1.5rem 2.5rem', maxWidth: 720, margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.35rem 1rem', borderRadius: 999, marginBottom: '1.5rem', background: dark ? 'rgba(0,217,255,0.07)' : 'rgba(79,70,229,0.07)', border: `1px solid ${dark ? 'rgba(0,217,255,0.2)' : 'rgba(79,70,229,0.18)'}`, fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.12em', color: CYAN }}>
-            <span style={{ width: 6, height: 6, borderRadius: '50%', background: CYAN, display: 'inline-block', boxShadow: `0 0 8px ${CYAN}` }} />
+        <div style={{ textAlign: 'center', padding: 'clamp(2.5rem,6vw,4.5rem) 1.5rem 2rem', maxWidth: 680, margin: '0 auto' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.3rem 0.875rem', borderRadius: 999, marginBottom: '1.25rem', background: dark ? 'rgba(0,217,255,0.07)' : 'rgba(79,70,229,0.07)', border: `1px solid ${dark ? 'rgba(0,217,255,0.2)' : 'rgba(79,70,229,0.18)'}`, fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.12em', color: CYAN }}>
+            <span style={{ width: 5, height: 5, borderRadius: '50%', background: CYAN, display: 'inline-block', boxShadow: dark ? `0 0 8px ${CYAN}` : 'none' }} />
             EXPLORE · LEARN · BUILD WITH AI
           </div>
-          <h1 style={{ fontSize: 'clamp(2rem,6vw,3.5rem)', fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.1, margin: '0 0 1.25rem', fontFamily: "'Orbitron', sans-serif" }}>
+          <h1 style={{ fontSize: 'clamp(1.75rem,5vw,3rem)', fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.1, margin: '0 0 1rem', fontFamily: "'Orbitron', sans-serif" }}>
             <span style={{ color: txt }}>The </span>
             <span style={{ background: `linear-gradient(135deg, ${CYAN}, #7C3AED)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>AI Tools</span>
             <span style={{ color: txt }}> Lab</span>
           </h1>
-          <p style={{ fontSize: 'clamp(0.9rem,2vw,1.05rem)', color: sub, lineHeight: 1.8, maxWidth: 540, margin: '0 auto 2rem' }}>
-            Every AI tool a developer and student needs — what it is, how it works, what you can build with it, and free tutorials to go deeper.
+          <p style={{ fontSize: 'clamp(0.875rem,2vw,1rem)', color: sub, lineHeight: 1.8, maxWidth: 500, margin: '0 auto 1.5rem' }}>
+            Every AI tool a developer needs — what it is, how it works, free tutorials and a hands-on project for each.
           </p>
 
-          {/* CTA Button */}
+         
+
+          {/* CTA */}
           <button onClick={() => setPrimerOpen(true)}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', borderRadius: 12, cursor: 'pointer', border: `1.5px solid ${CYAN}40`, background: dark ? 'rgba(0,217,255,0.07)' : 'rgba(0,217,255,0.06)', color: CYAN, fontFamily: "'Orbitron', sans-serif", fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.08em', transition: 'all 0.18s' }}
-            onMouseEnter={e => { e.currentTarget.style.background = dark ? 'rgba(0,217,255,0.13)' : 'rgba(0,217,255,0.1)'; e.currentTarget.style.borderColor = CYAN }}
-            onMouseLeave={e => { e.currentTarget.style.background = dark ? 'rgba(0,217,255,0.07)' : 'rgba(0,217,255,0.06)'; e.currentTarget.style.borderColor = `${CYAN}40` }}>
-            <BookOpen size={15} />
-            New to AI? Read this first
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.65rem 1.375rem', borderRadius: 10, cursor: 'pointer', border: `1.5px solid ${CYAN}35`, background: dark ? 'rgba(0,217,255,0.06)' : 'rgba(0,217,255,0.05)', color: CYAN, fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', transition: 'all 0.18s' }}
+            onMouseEnter={e => { e.currentTarget.style.background = dark ? 'rgba(0,217,255,0.12)' : 'rgba(0,217,255,0.09)'; e.currentTarget.style.borderColor = CYAN }}
+            onMouseLeave={e => { e.currentTarget.style.background = dark ? 'rgba(0,217,255,0.06)' : 'rgba(0,217,255,0.05)'; e.currentTarget.style.borderColor = `${CYAN}35` }}>
+            📖 New to AI? Read this first
           </button>
         </div>
 
         {/* Search + Filter */}
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 1.25rem 2.5rem' }}>
-          <div style={{ position: 'relative', maxWidth: 420, margin: '0 auto 1.5rem' }}>
-            <Search size={15} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: sub }} />
-            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search tools..."
-              style={{ width: '100%', boxSizing: 'border-box', paddingLeft: 36, paddingRight: 12, height: 42, borderRadius: 10, border: `1px solid ${border}`, background: dark ? 'rgba(6,14,36,0.7)' : 'rgba(255,255,255,0.9)', color: txt, fontSize: '0.9rem', fontFamily: 'inherit', outline: 'none' }} />
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 1.25rem 2.25rem' }}>
+          <div style={{ position: 'relative', maxWidth: 420, margin: '0 auto 1.375rem' }}>
+            <Search size={14} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: muted }} />
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search tools, categories, tags..."
+              style={{ width: '100%', boxSizing: 'border-box', paddingLeft: 34, paddingRight: 12, height: 40, borderRadius: 10, border: `1px solid ${border}`, background: dark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.9)', color: txt, fontSize: '0.875rem', fontFamily: 'inherit', outline: 'none', transition: 'border-color 0.15s' }}
+              onFocus={e => e.target.style.borderColor = `${CYAN}50`}
+              onBlur={e => e.target.style.borderColor = border}
+            />
           </div>
-          <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             {CATEGORIES.map(cat => (
               <button key={cat.id} onClick={() => setActiveCategory(cat.id)} style={{
-                padding: '0.35rem 0.875rem', borderRadius: 999, cursor: 'pointer',
-                fontFamily: "'Share Tech Mono', monospace", fontSize: '0.63rem', letterSpacing: '0.05em', transition: 'all 0.15s',
+                padding: '0.3rem 0.75rem', borderRadius: 999, cursor: 'pointer', fontFamily: "'Share Tech Mono', monospace",
+                fontSize: '0.6rem', letterSpacing: '0.04em', transition: 'all 0.15s',
                 border: activeCategory === cat.id ? `1px solid ${CYAN}` : `1px solid ${border}`,
-                background: activeCategory === cat.id ? (dark ? 'rgba(0,217,255,0.1)' : 'rgba(79,70,229,0.08)') : 'transparent',
+                background: activeCategory === cat.id ? (dark ? 'rgba(0,217,255,0.1)' : 'rgba(0,217,255,0.08)') : 'transparent',
                 color: activeCategory === cat.id ? CYAN : sub,
               }}>{cat.label}</button>
             ))}
           </div>
         </div>
 
+
         {/* Grid */}
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 1.25rem 6rem' }}>
           {search || activeCategory !== 'all' ? (
             <>
-              <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: sub, marginBottom: '1.25rem', letterSpacing: '0.06em' }}>{filtered.length} tool{filtered.length !== 1 ? 's' : ''}</p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px,100%),1fr))', gap: '1rem' }}>
-                {filtered.map(tool => <ToolCard key={tool.id} tool={tool} onClick={() => goToTool(tool)} dark={dark} border={border} txt={txt} sub={sub} />)}
+              <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: muted, marginBottom: '1.25rem', letterSpacing: '0.05em' }}>{filtered.length} tool{filtered.length !== 1 ? 's' : ''}</p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px,100%),1fr))', gap: '0.875rem' }}>
+                {filtered.map(tool => <ToolCard key={tool.id} tool={tool} onClick={() => goToTool(tool)} dark={dark} border={border} card={card} txt={txt} sub={sub} muted={muted} />)}
               </div>
-              {filtered.length === 0 && <div style={{ textAlign: 'center', padding: '4rem', color: sub }}>No tools found for "{search}"</div>}
+              {filtered.length === 0 && (
+                <div style={{ textAlign: 'center', padding: '4rem', color: sub }}>
+                  <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🔍</div>
+                  <p>No tools found for "{search}"</p>
+                </div>
+              )}
             </>
           ) : (
             grouped.map(group => (
               <div key={group.id} style={{ marginBottom: '3rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', paddingBottom: '0.75rem', borderBottom: `1px solid ${border}` }}>
-                  <h2 style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', color: CYAN, margin: 0 }}>{group.label}</h2>
-                  <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: sub }}>{group.tools.length}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.125rem', paddingBottom: '0.75rem', borderBottom: `1px solid ${border}` }}>
+                  <h2 style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 800, fontSize: '0.82rem', letterSpacing: '0.1em', color: CYAN, margin: 0 }}>{group.label}</h2>
+                  <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: muted, padding: '0.15rem 0.45rem', borderRadius: 4, background: dark ? 'rgba(0,217,255,0.07)' : 'rgba(0,217,255,0.05)', color: CYAN }}>{group.tools.length} tools</span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(270px,100%),1fr))', gap: '0.875rem' }}>
-                  {group.tools.map(tool => <ToolCard key={tool.id} tool={tool} onClick={() => goToTool(tool)} dark={dark} border={border} txt={txt} sub={sub} />)}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(270px,100%),1fr))', gap: '0.75rem' }}>
+                  {group.tools.map(tool => <ToolCard key={tool.id} tool={tool} onClick={() => goToTool(tool)} dark={dark} border={border} card={card} txt={txt} sub={sub} muted={muted} />)}
                 </div>
               </div>
             ))
@@ -248,27 +190,86 @@ export default function AILabPage() {
   )
 }
 
-function ToolCard({ tool, onClick, dark, border, txt, sub }) {
+function ToolCard({ tool, onClick, dark, border, card, txt, sub, muted }) {
+  const freeColor = '#4ADE80'
+  const paidColor = '#FB923C'
+  const soon = !tool.hasPage
+
   return (
-    <div onClick={onClick} style={{ background: dark ? 'rgba(6,14,36,0.75)' : 'rgba(255,255,255,0.92)', border: `1px solid ${border}`, borderLeft: `3px solid ${tool.color}`, borderRadius: 13, padding: '1.125rem', cursor: 'pointer', transition: 'transform 0.17s, box-shadow 0.17s' }}
-      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = `0 8px 24px ${tool.color}1a` }}
-      onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
+    <div
+      onClick={onClick}
+      style={{
+        background: card,
+        border: `1px solid ${border}`,
+        borderRadius: 14,
+        padding: '1rem 1.125rem',
+        cursor: 'pointer',
+        transition: 'all 0.18s',
+        position: 'relative',
+        opacity: soon ? 0.72 : 1,
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = soon ? border : `${tool.color}40`
+        e.currentTarget.style.boxShadow = soon ? 'none' : `0 4px 24px ${tool.color}18`
+        e.currentTarget.style.transform = soon ? 'none' : 'translateY(-2px)'
+        e.currentTarget.style.opacity = '1'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = border
+        e.currentTarget.style.boxShadow = 'none'
+        e.currentTarget.style.transform = 'none'
+        e.currentTarget.style.opacity = soon ? '0.72' : '1'
+      }}
     >
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '0.625rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-          <span style={{ fontSize: '1.3rem', width: 34, height: 34, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `${tool.color}15`, borderRadius: 8, border: `1px solid ${tool.color}22`, flexShrink: 0 }}>{tool.icon}</span>
-          <div>
-            <div style={{ fontWeight: 800, fontSize: '0.9rem', color: txt }}>{tool.name}</div>
-            <div style={{ fontSize: '0.68rem', color: sub, lineHeight: 1.4 }}>{tool.tagline}</div>
-          </div>
+      {/* Coming soon badge */}
+      {soon && (
+        <div style={{ position: 'absolute', top: 10, right: 10, display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.55rem', fontFamily: "'Share Tech Mono', monospace", color: muted, background: dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)', padding: '0.15rem 0.45rem', borderRadius: 4 }}>
+          <Lock size={9} /> Soon
         </div>
-        <span style={{ fontSize: '0.55rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.12rem 0.4rem', borderRadius: 4, flexShrink: 0, background: tool.free ? 'rgba(74,222,128,0.1)' : 'rgba(251,146,60,0.1)', color: tool.free ? '#4ADE80' : '#FB923C', border: `1px solid ${tool.free ? 'rgba(74,222,128,0.2)' : 'rgba(251,146,60,0.2)'}` }}>
+      )}
+
+      {/* Header row: icon + name + free/paid */}
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '0.625rem' }}>
+        {/* Icon */}
+        <div style={{ width: 40, height: 40, borderRadius: 10, background: `${tool.color}15`, border: `1px solid ${tool.color}25`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', flexShrink: 0 }}>
+          {tool.icon}
+        </div>
+        {/* Name + tagline */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontWeight: 800, fontSize: '0.9rem', color: txt, lineHeight: 1.2, marginBottom: '0.2rem', paddingRight: soon ? '2.5rem' : 0 }}>{tool.name}</div>
+          <div style={{ fontSize: '0.72rem', color: sub, lineHeight: 1.45 }}>{tool.tagline}</div>
+        </div>
+      </div>
+
+      {/* Free tier */}
+      <div style={{ fontSize: '0.65rem', color: muted, fontFamily: "'Share Tech Mono', monospace", marginBottom: '0.625rem', lineHeight: 1.4 }}>
+        {tool.freeTier}
+      </div>
+
+      {/* Footer: tags + free badge + arrow */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', flexWrap: 'wrap' }}>
+        {/* FREE / PAID badge */}
+        <span style={{ fontSize: '0.55rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.15rem 0.45rem', borderRadius: 4, flexShrink: 0, background: tool.free ? `${freeColor}12` : `${paidColor}12`, color: tool.free ? freeColor : paidColor, border: `1px solid ${tool.free ? freeColor : paidColor}25` }}>
           {tool.free ? 'FREE' : 'PAID'}
         </span>
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.5rem' }}>
-        <span style={{ fontSize: '0.62rem', color: sub, fontFamily: "'Share Tech Mono', monospace" }}>{tool.freeTier}</span>
-        <span style={{ fontSize: '0.65rem', color: tool.color, fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.2rem' }}>Learn <ChevronRight size={11} /></span>
+
+        {/* Tags */}
+        {(tool.tags || []).slice(0, 2).map(tag => {
+          const meta = TAG_META[tag]
+          if (!meta) return null
+          return (
+            <span key={tag} style={{ fontSize: '0.55rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.15rem 0.45rem', borderRadius: 4, background: meta.bg, color: meta.color, flexShrink: 0 }}>
+              {meta.label}
+            </span>
+          )
+        })}
+
+        {/* Spacer + learn arrow */}
+        {!soon && (
+          <span style={{ marginLeft: 'auto', fontSize: '0.65rem', color: tool.color, fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.2rem', flexShrink: 0 }}>
+            Learn <ChevronRight size={11} />
+          </span>
+        )}
       </div>
     </div>
   )

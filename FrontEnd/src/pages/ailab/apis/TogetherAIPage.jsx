@@ -56,9 +56,9 @@ export default function TogetherAIPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Together AI Tutorial — Open Source Models via API', url: 'https://www.youtube.com/watch?v=kgRRNBFvRoE', dur: '12 min', note: 'Setup and first API calls' },
-            { label: 'Together AI vs OpenAI — Cost and Quality Comparison', url: 'https://www.youtube.com/watch?v=QUc9IXPYBOA', dur: '10 min', note: 'Honest comparison' },
-            { label: 'Run Llama 3 with Together AI — Python Tutorial', url: 'https://www.youtube.com/watch?v=Gqm5LR8KZCI', dur: '15 min', note: 'Full project with Llama 3' },
+            { label: 'Open Source AI Inference API with Together AI', url: 'https://www.youtube.com/watch?v=_GQfj3jhXVM', dur: '~12 min', note: 'How Together AI works — setup and first API calls' },
+            { label: 'Together AI — The Cloud Platform for Generative AI Models', url: 'https://www.youtube.com/watch?v=79gB2Jkrtnw', dur: '~10 min', note: 'Platform walkthrough, model catalog, and pricing explained' },
+            { label: 'Getting Started with OpenAI API and GPT Models in Python', url: 'https://www.youtube.com/watch?v=TWiCf2uEKZg', dur: '~20 min', note: 'OpenAI-compatible SDK pattern — works directly with Together AI' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

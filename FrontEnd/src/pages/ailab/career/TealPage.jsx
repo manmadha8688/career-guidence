@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'teal', category: 'career', name: 'Teal', tagline: 'AI-powered resume builder and job search tracker', icon: '📄', color: '#14B8A6', free: true, freeTier: 'Free — all core features', officialUrl: 'https://tealhq.com' }
-const videos = [{ label: 'Teal Resume Builder — Free AI Resume Tutorial', url: 'https://www.youtube.com/watch?v=iXtP_-7Ha70', duration: '15 min', note: 'Complete walkthrough of resume builder and job tracker features' }]
+const videos = [
+  { label: 'The TEAL Method: How to Tailor Your Resume (& Get the Job You Want)', url: 'https://www.youtube.com/watch?v=hmfxWjbnV-k', duration: '~20 min', note: 'Strategy + tool walkthrough — how to tailor for each job application' },
+  { label: 'Use AI to Tailor Your Resume in 5 Minutes with Teal', url: 'https://www.youtube.com/watch?v=dhlE1Jd97qU', duration: '~10 min', note: 'Fast practical tutorial — AI resume tailoring feature step by step' },
+  { label: 'Level Up Your Job Search with AI Resume Builder — Teal Webinar 2025', url: 'https://www.youtube.com/watch?v=XkS026NvDVk', duration: '~45 min', note: 'Full demo with Q&A — resume builder, job tracker, match score explained' },
+]
 const overview = `Teal is an AI-powered job search platform with three core tools: a resume builder that produces ATS-optimized resumes, a job tracker to organize all your applications, and a resume-job match score that shows exactly how well your resume fits a specific job description. For students actively applying for placements and internships, Teal gives you AI-powered feedback on your resume and a systematic approach to tracking applications.`
 const sections = [{ content: `ATS (Applicant Tracking System) optimization is why the resume builder matters. Most companies use software that scans resumes for keywords before a human reads them. A poorly formatted resume — wrong headers, unusual section names, missing keywords from the job description — gets filtered out before any person sees it. Teal formats your resume in a clean, ATS-readable structure and highlights when you are missing important keywords from the roles you are targeting.
 

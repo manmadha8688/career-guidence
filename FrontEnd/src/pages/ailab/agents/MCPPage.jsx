@@ -56,9 +56,9 @@ export default function MCPPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'MCP Explained — Model Context Protocol by Anthropic', url: 'https://www.youtube.com/watch?v=7j_NE6Pjv-E', dur: '12 min', note: 'Clear explanation of what MCP is and why it matters' },
-            { label: 'Build Your First MCP Server — Python Tutorial', url: 'https://www.youtube.com/watch?v=Mha5bRxntiE', dur: '20 min', note: 'Hands-on server building' },
-            { label: 'MCP in Cursor and Claude Desktop — Setup Guide', url: 'https://www.youtube.com/watch?v=Do_J5p9lHEk', dur: '15 min', note: 'Connecting MCP servers to AI clients' },
+            { label: 'You Need to Learn MCP Right Now!! (Model Context Protocol)', url: 'https://www.youtube.com/watch?v=GuTcle5edjk', dur: '~15 min', note: 'Best conceptual intro — what MCP is and why it matters, clear and fast' },
+            { label: 'Building Agents with Model Context Protocol — Full Workshop (Anthropic)', url: 'https://www.youtube.com/watch?v=kQmXtrmQ5Zg', dur: '~60 min', note: 'Official Anthropic workshop — build MCP servers and clients end to end' },
+            { label: 'Model Context Protocol Tutorial — Build Your First MCP Server in 6 Steps', url: 'https://www.youtube.com/watch?v=xuhmyPaHKe8', dur: '~20 min', note: 'Hands-on Python server build — tools, resources, Claude Desktop setup' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

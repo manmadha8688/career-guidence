@@ -56,9 +56,9 @@ export default function PerplexityPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Perplexity AI Tutorial — The AI Search Engine Explained', url: 'https://www.youtube.com/watch?v=P68yv5Hj7g8', dur: '10 min', note: 'Full overview of how Perplexity works' },
-            { label: 'Perplexity vs Google — Which Should You Use?', url: 'https://www.youtube.com/watch?v=tOkCuUP7Ufg', dur: '8 min', note: 'Clear comparison of use cases' },
-            { label: 'Perplexity AI Advanced Features — Spaces and Collections', url: 'https://www.youtube.com/watch?v=Y_Tqrjt_l0E', dur: '12 min', note: 'Pro features walkthrough' },
+            { label: 'How to Use Perplexity AI For Beginners — Complete Tutorial 2024', url: 'https://www.youtube.com/watch?v=iH-vz8hsa-M', dur: '~15 min', note: 'Best beginner walkthrough of all Perplexity features' },
+            { label: 'Perplexity AI Tutorial For Beginners — How To Use Perplexity 2025', url: 'https://www.youtube.com/watch?v=e-uA4UOPlIU', dur: '~15 min', note: 'Updated 2025 guide with Focus modes and Spaces' },
+            { label: 'How to Use Perplexity AI 2025 (Step by Step for Beginners)', url: 'https://www.youtube.com/watch?v=Yxpr1i-oC7E', dur: '~12 min', note: 'Clear step-by-step guide for research workflows' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

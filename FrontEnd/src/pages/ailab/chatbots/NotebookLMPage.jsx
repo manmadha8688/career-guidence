@@ -56,9 +56,9 @@ export default function NotebookLMPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Google NotebookLM Tutorial — Complete Guide', url: 'https://www.youtube.com/watch?v=I_INtFNv-Is', dur: '15 min', note: 'Start here, covers everything including Audio Overview' },
-            { label: 'NotebookLM for Students — How to Study Smarter', url: 'https://www.youtube.com/watch?v=xU2xPNfTuvE', dur: '12 min', note: 'Student-specific use cases' },
-            { label: 'NotebookLM Audio Overview — AI Podcast from Your Documents', url: 'https://www.youtube.com/watch?v=pP8Ij7CaWtE', dur: '8 min', note: 'The Audio Overview feature explained' },
+            { label: 'NotebookLM Tutorial: 6 Use Cases You Haven\'t Thought Of — Kevin Stratvert', url: 'https://www.youtube.com/watch?v=HqWm0mStCG8', dur: '~15 min', note: 'Best practical guide — real use cases including Audio Overview' },
+            { label: 'NotebookLM Full Tutorial 2025 — Kevin Stratvert', url: 'https://www.youtube.com/watch?v=Z-frzvXhGJ0', dur: '~20 min', note: 'Updated 2025 guide covering all new features' },
+            { label: 'How to Use Google NotebookLM — Full Tutorial', url: 'https://www.youtube.com/watch?v=uSVBfyHBiDU', dur: '~15 min', note: 'Complete walkthrough including study and research workflows' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

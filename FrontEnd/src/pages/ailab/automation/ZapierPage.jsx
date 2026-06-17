@@ -56,9 +56,9 @@ export default function ZapierPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Zapier Tutorial for Beginners — 2024 Complete Guide', url: 'https://www.youtube.com/watch?v=aXBAfcHILKo', dur: '20 min', note: 'Full Zapier walkthrough for beginners' },
-            { label: 'Zapier AI Steps — Add ChatGPT to Any Automation', url: 'https://www.youtube.com/watch?v=gJqKnX0h0yc', dur: '14 min', note: 'AI integration tutorial' },
-            { label: 'Zapier Free Plan — What You Can Do and Its Limits', url: 'https://www.youtube.com/watch?v=9BO4PnCp2KA', dur: '10 min', note: 'Free tier guide' },
+            { label: 'Zapier Agents: The Only Tutorial You\'ll Ever Need — Liam Ottley', url: 'https://www.youtube.com/watch?v=VVQoGo0hYss', dur: '~30 min', note: 'Morningside AI founder — Zapier AI Agents complete walkthrough 2025' },
+            { label: 'How to Automate Work With AI Agents and Workflows in Zapier', url: 'https://www.youtube.com/watch?v=dwhEdN51PZU', dur: '~20 min', note: 'AI Agents vs AI Workflows — when to use each and how to build both' },
+            { label: 'Automate Your Life — Complete Zapier Agent & Automation Course', url: 'https://www.youtube.com/watch?v=-leIp449qXA', dur: '4 hrs', note: 'freeCodeCamp — zero to advanced, AI automations + MCP server integration' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

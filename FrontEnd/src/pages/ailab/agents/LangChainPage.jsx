@@ -56,9 +56,9 @@ export default function LangChainPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: "LangChain Explained — Complete Beginner's Guide 2024", url: 'https://www.youtube.com/watch?v=1bUy-1hGZpI', dur: '20 min', note: 'Best intro, covers v0.3 LCEL' },
-            { label: 'LangChain RAG Tutorial — Build a Document Q&A System', url: 'https://www.youtube.com/watch?v=tcqEUSNCn8I', dur: '25 min', note: 'Full RAG implementation walkthrough' },
-            { label: 'LangChain Agents Tutorial — Tools and Function Calling', url: 'https://www.youtube.com/watch?v=DWUdGFCpvDI', dur: '18 min', note: 'Agent building with tools' },
+            { label: 'LangChain Master Class For Beginners 2024 — 20 Examples, LangChain v0.2', url: 'https://www.youtube.com/watch?v=yF9kGeSAi3M', dur: '~90 min', note: 'Most comprehensive beginner masterclass — LCEL, chains, agents, RAG' },
+            { label: 'LangChain Crash Course for Beginners — freeCodeCamp', url: 'https://www.youtube.com/watch?v=lG7Uxts9SXs', dur: '~60 min', note: 'Full hands-on course — chains, agents, memory, and tools in Python' },
+            { label: 'LangChain Full Crash Course — AI Agents in Python', url: 'https://www.youtube.com/watch?v=J7j5tCB_y4w', dur: '~60 min', note: 'Latest 2025 version — covers LCEL and agent patterns end to end' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

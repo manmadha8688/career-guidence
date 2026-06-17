@@ -56,9 +56,9 @@ export default function ClaudePage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Claude AI Tutorial — Complete Beginner\'s Guide', url: 'https://www.youtube.com/watch?v=Bkk4z8BIklM', dur: '12 min', note: 'Start here for a full walkthrough' },
-            { label: 'Claude vs ChatGPT — Which is Actually Better?', url: 'https://www.youtube.com/watch?v=wM4nHQJAjW0', dur: '10 min', note: 'Honest comparison of both tools' },
-            { label: 'Claude\'s 200K Context Window Explained', url: 'https://www.youtube.com/watch?v=2kFhloXNlF8', dur: '8 min', note: 'How the long context makes Claude different' },
+            { label: 'Full Claude Tutorial: Beginner to Advanced in 19 Minutes', url: 'https://www.youtube.com/watch?v=WSPChlfxJyA', dur: '19 min', note: 'Best quick start — covers everything you need to know' },
+            { label: 'Full Claude Tutorial for Beginners — Become A Pro in 30 Minutes', url: 'https://www.youtube.com/watch?v=iLyDaoqO784', dur: '30 min', note: 'Deeper walkthrough with all features including Projects' },
+            { label: '36 Claude Tips for Beginners in 2024', url: 'https://www.youtube.com/watch?v=vPpb_0Ie-QU', dur: '~20 min', note: 'Practical tips to get dramatically better results from Claude' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

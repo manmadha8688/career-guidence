@@ -1,76 +1,140 @@
-// AI Lab — Minimal hub card data only
-// Rich content lives in each tool's dedicated page file
+// AI Lab — Hub card data for all 89 tools
+// Rich page content lives in each tool's dedicated page file
+// tags: 'trending' | 'popular' | 'must-know' | 'enterprise' | 'open-source' | 'new'
+// hasPage: true = rich page exists | false = shows "Coming Soon" fallback
 
 export const CATEGORIES = [
-  { id: 'all',        label: 'All Tools' },
-  { id: 'foundations',label: 'AI Foundations' },
-  { id: 'chatbots',   label: 'AI Chatbots' },
-  { id: 'coding',     label: 'Coding Assistants' },
-  { id: 'apis',       label: 'Build with AI' },
-  { id: 'agents',     label: 'AI Agents' },
-  { id: 'automation', label: 'Automation' },
-  { id: 'local',      label: 'Local & Open Source' },
-  { id: 'vector',     label: 'Vector Databases' },
-  { id: 'data',       label: 'Data & Analysis' },
-  { id: 'creative',   label: 'Creative & Media' },
-  { id: 'voice',      label: 'Voice & Audio' },
-  { id: 'career',     label: 'Career & Productivity' },
+  { id: 'all',         label: 'All Tools' },
+  { id: 'foundations', label: 'AI Foundations' },
+  { id: 'chatbots',    label: 'AI Chatbots' },
+  { id: 'builders',    label: 'AI App Builders' },
+  { id: 'coding',      label: 'Coding Assistants' },
+  { id: 'apis',        label: 'Build with AI APIs' },
+  { id: 'agents',      label: 'AI Agents & Orchestration' },
+  { id: 'automation',  label: 'Automation & Workflows' },
+  { id: 'local',       label: 'Local & Open Source AI' },
+  { id: 'vector',      label: 'Vector Databases' },
+  { id: 'data',        label: 'Data & Analysis' },
+  { id: 'security',    label: 'Security & Code Review' },
+  { id: 'creative',    label: 'Creative & Media AI' },
+  { id: 'voice',       label: 'Voice & Audio AI' },
+  { id: 'career',      label: 'Career & Productivity' },
 ]
 
 export const TOOLS = [
-  // ── FOUNDATIONS ───────────────────────────────────────────
-  { id: 'gen-ai',           category: 'foundations', name: 'Generative AI',             tagline: 'What AI actually is — before using any tool',           icon: '🧬', color: '#8B5CF6', free: true,  freeTier: 'Concept — no signup needed' },
-  { id: 'prompt-eng',       category: 'foundations', name: 'Prompt Engineering',        tagline: 'The skill that works across every AI tool',               icon: '✍️', color: '#EC4899', free: true,  freeTier: 'Works with any AI tool' },
-  { id: 'rag',              category: 'foundations', name: 'RAG',                       tagline: 'How AI reads your own documents to answer accurately',     icon: '📚', color: '#06B6D4', free: true,  freeTier: 'Free open-source tools' },
-  { id: 'embeddings',       category: 'foundations', name: 'Embeddings & Vectors',      tagline: 'How AI stores and searches knowledge by meaning',          icon: '🔢', color: '#10B981', free: true,  freeTier: 'Concept — free tools available' },
-  // ── CHATBOTS ──────────────────────────────────────────────
-  { id: 'chatgpt',          category: 'chatbots',    name: 'ChatGPT',                   tagline: 'Your AI tutor and coding assistant available 24/7',        icon: '🤖', color: '#10B981', free: true,  freeTier: 'Free — GPT-4o with daily limits' },
-  { id: 'claude',           category: 'chatbots',    name: 'Claude',                    tagline: 'Better at reasoning, code review, and long documents',     icon: '🎯', color: '#D97706', free: true,  freeTier: 'Free — Claude 3.5 Sonnet' },
-  { id: 'gemini',           category: 'chatbots',    name: 'Google Gemini',             tagline: 'Google\'s AI — free, real-time search, Google tools',      icon: '✨', color: '#4285F4', free: true,  freeTier: 'Free — Gemini 2.0 Flash' },
-  { id: 'perplexity',       category: 'chatbots',    name: 'Perplexity AI',             tagline: 'AI search that cites every source',                        icon: '🔍', color: '#06B6D4', free: true,  freeTier: 'Free — unlimited basic searches' },
-  { id: 'notebooklm',       category: 'chatbots',    name: 'Google NotebookLM',         tagline: 'Chat with your own notes, PDFs, and documents',            icon: '📓', color: '#4F46E5', free: true,  freeTier: '100% Free — Google account' },
-  // ── CODING ────────────────────────────────────────────────
-  { id: 'copilot',          category: 'coding',      name: 'GitHub Copilot',            tagline: 'AI that writes code alongside you in VS Code',             icon: '🐙', color: '#10B981', free: true,  freeTier: 'Free for students — GitHub Pack' },
-  { id: 'cursor',           category: 'coding',      name: 'Cursor',                    tagline: 'VS Code rebuilt for AI-first development',                 icon: '⚡', color: '#F59E0B', free: true,  freeTier: 'Free — 2000 AI completions/month' },
-  { id: 'windsurf',         category: 'coding',      name: 'Windsurf',                  tagline: 'Agentic AI editor — builds features autonomously',          icon: '🌊', color: '#0EA5E9', free: true,  freeTier: 'Free tier available' },
-  { id: 'codeium',          category: 'coding',      name: 'Codeium',                   tagline: 'Free AI coding — unlimited, no subscription ever',          icon: '🚀', color: '#06B6D4', free: true,  freeTier: '100% Free — unlimited' },
-  // ── BUILD WITH AI ─────────────────────────────────────────
-  { id: 'groq',             category: 'apis',        name: 'Groq API',                  tagline: 'Free + fastest LLM API — perfect for learning',            icon: '⚡', color: '#EF4444', free: true,  freeTier: 'Free API key — generous limits' },
-  { id: 'openai-api',       category: 'apis',        name: 'OpenAI API',                tagline: 'Add GPT-4 to your own applications',                       icon: '🔌', color: '#10B981', free: false, freeTier: '$5 lasts months for learning' },
-  { id: 'together-ai',      category: 'apis',        name: 'Together AI',               tagline: 'Free credits, 200+ open-source models via API',            icon: '🤝', color: '#8B5CF6', free: true,  freeTier: 'Free $25 credits on signup' },
-  { id: 'huggingface',      category: 'apis',        name: 'Hugging Face',              tagline: 'The GitHub of AI — 500,000+ free models',                  icon: '🤗', color: '#F59E0B', free: true,  freeTier: 'Free Inference API included' },
-  // ── AI AGENTS ─────────────────────────────────────────────
-  { id: 'langchain',        category: 'agents',      name: 'LangChain',                 tagline: 'The framework for building LLM-powered applications',      icon: '🦜', color: '#10B981', free: true,  freeTier: 'Free — open source' },
-  { id: 'langgraph',        category: 'agents',      name: 'LangGraph',                 tagline: 'Build complex multi-step agents with state management',     icon: '🕸️', color: '#8B5CF6', free: true,  freeTier: 'Free — open source' },
-  { id: 'crewai',           category: 'agents',      name: 'CrewAI',                    tagline: 'Multiple AI agents collaborating as a team',               icon: '👥', color: '#EC4899', free: true,  freeTier: 'Free — open source' },
-  { id: 'autogen',          category: 'agents',      name: 'AutoGen',                   tagline: 'Microsoft\'s multi-agent conversational AI framework',      icon: '🔄', color: '#0078D4', free: true,  freeTier: 'Free — open source (Microsoft)' },
-  { id: 'openclaw',         category: 'agents',      name: 'OpenClaw',                  tagline: 'AI agent gateway — connect AI to any messaging platform',   icon: '🦀', color: '#F97316', free: true,  freeTier: 'Free — open source, self-hosted' },
-  { id: 'hermes',           category: 'agents',      name: 'Nous-Hermes',               tagline: 'Self-improving open-source agent — free GPT-4 alternative', icon: '⚗️', color: '#D97706', free: true,  freeTier: 'Free via OpenRouter and Ollama' },
-  { id: 'mcp',              category: 'agents',      name: 'MCP Protocol',              tagline: 'Standard for connecting AI to any tool or data source',     icon: '🔗', color: '#D97706', free: true,  freeTier: 'Free — open standard by Anthropic' },
-  // ── AUTOMATION ────────────────────────────────────────────
-  { id: 'n8n',              category: 'automation',  name: 'n8n',                       tagline: 'Free open-source workflow automation with AI nodes',        icon: '⚙️', color: '#F97316', free: true,  freeTier: 'Free — open source, self-host' },
-  { id: 'flowise',          category: 'automation',  name: 'Flowise',                   tagline: 'Build AI chatbots and agents visually — no code',           icon: '🌊', color: '#06B6D4', free: true,  freeTier: 'Free — open source' },
-  { id: 'dify',             category: 'automation',  name: 'Dify',                      tagline: 'Open-source LLM app platform — build and deploy AI apps',   icon: '🎯', color: '#8B5CF6', free: true,  freeTier: 'Free cloud tier + open source' },
-  { id: 'zapier',           category: 'automation',  name: 'Zapier',                    tagline: 'Connect 6000+ apps without code',                           icon: '⚡', color: '#FF4A00', free: true,  freeTier: 'Free — 5 Zaps, 100 tasks/month' },
-  // ── LOCAL AI ──────────────────────────────────────────────
-  { id: 'ollama',           category: 'local',       name: 'Ollama',                    tagline: 'Run any LLM on your laptop — free, offline, private',       icon: '🦙', color: '#10B981', free: true,  freeTier: '100% Free — runs on your machine' },
-  { id: 'lmstudio',         category: 'local',       name: 'LM Studio',                 tagline: 'Run AI models locally with a friendly desktop GUI',          icon: '🖥️', color: '#6366F1', free: true,  freeTier: '100% Free desktop application' },
-  // ── VECTOR DATABASES ──────────────────────────────────────
-  { id: 'chromadb',         category: 'vector',      name: 'ChromaDB',                  tagline: 'Free open-source vector database — start RAG in minutes',   icon: '🗄️', color: '#F59E0B', free: true,  freeTier: '100% Free — runs locally' },
-  { id: 'pinecone',         category: 'vector',      name: 'Pinecone',                  tagline: 'Managed vector database for production AI apps',             icon: '🌲', color: '#10B981', free: true,  freeTier: 'Free tier — 100k vectors' },
-  // ── DATA ──────────────────────────────────────────────────
-  { id: 'julius',           category: 'data',        name: 'Julius AI',                 tagline: 'Chat with your data — AI data analyst',                     icon: '📊', color: '#3B82F6', free: true,  freeTier: 'Free tier available' },
-  { id: 'code-interpreter', category: 'data',        name: 'ChatGPT Code Interpreter',  tagline: 'Upload data and let ChatGPT analyze it with real Python',    icon: '🐍', color: '#10B981', free: true,  freeTier: 'Free with GPT-4o — daily limits' },
-  // ── CREATIVE ──────────────────────────────────────────────
-  { id: 'dalle-free',       category: 'creative',    name: 'Bing Image Creator',        tagline: 'DALL-E 3 image generation — completely free',                icon: '🎨', color: '#EC4899', free: true,  freeTier: '100% Free — Microsoft account' },
-  { id: 'stable-diffusion', category: 'creative',    name: 'Stable Diffusion',          tagline: 'Free unlimited image AI — runs on your computer',           icon: '🌈', color: '#8B5CF6', free: true,  freeTier: '100% Free — open source' },
-  { id: 'gamma',            category: 'creative',    name: 'Gamma.app',                 tagline: 'AI creates beautiful presentations from your text',          icon: '📊', color: '#7C3AED', free: true,  freeTier: 'Free — 400 AI credits on signup' },
-  { id: 'canva-ai',         category: 'creative',    name: 'Canva AI',                  tagline: 'Design anything — AI-powered, no design skills needed',      icon: '✨', color: '#00C4CC', free: true,  freeTier: 'Free — Pro free for students' },
-  // ── VOICE ─────────────────────────────────────────────────
-  { id: 'whisper',          category: 'voice',       name: 'OpenAI Whisper',            tagline: 'Free speech-to-text — transcribe anything accurately',       icon: '🎤', color: '#10B981', free: true,  freeTier: '100% Free — open source' },
-  { id: 'elevenlabs',       category: 'voice',       name: 'ElevenLabs',                tagline: 'Realistic AI voice generation and voice cloning',             icon: '🎙️', color: '#F59E0B', free: true,  freeTier: 'Free — 10,000 chars/month' },
-  // ── CAREER ────────────────────────────────────────────────
-  { id: 'teal',             category: 'career',      name: 'Teal',                      tagline: 'AI-powered resume builder and job search tracker',           icon: '📄', color: '#14B8A6', free: true,  freeTier: 'Free — all core features' },
-  { id: 'notion-ai',        category: 'career',      name: 'Notion AI',                 tagline: 'AI writing assistant built into your notes',                 icon: '📝', color: '#475569', free: false, freeTier: '20 free responses then $10/month' },
-  { id: 'grammarly',        category: 'career',      name: 'Grammarly AI',              tagline: 'AI writing assistant for professional communication',        icon: '✏️', color: '#15C39A', free: true,  freeTier: 'Free — basic AI features' },
+  // ── AI FOUNDATIONS ────────────────────────────────────────────────────────
+  { id: 'gen-ai',           category: 'foundations', hasPage: true,  name: 'Generative AI',         tagline: 'What AI is and how LLMs actually work',                  icon: '🧬', color: '#8B5CF6', free: true,  freeTier: 'Concept — no signup needed',            tags: ['must-know'] },
+  { id: 'prompt-eng',       category: 'foundations', hasPage: true,  name: 'Prompt Engineering',    tagline: 'The skill that works across every AI tool',               icon: '✍️', color: '#EC4899', free: true,  freeTier: 'Works with any AI tool',                tags: ['must-know', 'trending'] },
+  { id: 'rag',              category: 'foundations', hasPage: true,  name: 'RAG',                   tagline: 'How AI reads your own documents to answer accurately',     icon: '📚', color: '#06B6D4', free: true,  freeTier: 'Free open-source tools',                tags: ['must-know', 'trending'] },
+  { id: 'embeddings',       category: 'foundations', hasPage: true,  name: 'Embeddings & Vectors',  tagline: 'How AI stores and searches knowledge by meaning',          icon: '🔢', color: '#10B981', free: true,  freeTier: 'Concept — free tools available',        tags: ['must-know'] },
+  { id: 'fine-tuning',      category: 'foundations', hasPage: true,  name: 'Fine-Tuning',           tagline: 'Adapt any LLM to your domain — free on Google Colab',     icon: '🎯', color: '#F97316', free: true,  freeTier: 'Free on Colab — Lambda Labs, HuggingFace', tags: ['popular'] },
+  { id: 'model-training',   category: 'foundations', hasPage: true,  name: 'Model Training',        tagline: 'Hugging Face Trainer + Weights & Biases workflow',         icon: '🏋️', color: '#8B5CF6', free: true,  freeTier: 'Free — Colab T4 GPU + W&B free tier',   tags: ['popular'] },
+  { id: 'benchmark-evals',  category: 'foundations', hasPage: true,  name: 'Benchmarks & Evals',    tagline: 'HELM, LMSYS — how to measure AI model quality',            icon: '📏', color: '#F59E0B', free: true,  freeTier: 'Free — open research tools',            tags: [], officialUrl: 'https://crfm.stanford.edu/helm/' },
+
+  // ── AI CHATBOTS ───────────────────────────────────────────────────────────
+  { id: 'chatgpt',          category: 'chatbots',    hasPage: true,  name: 'ChatGPT',               tagline: 'The AI that started it all — GPT-4o for everyone',        icon: '🤖', color: '#10B981', free: true,  freeTier: 'Free — GPT-4o mini, limited GPT-4o',    tags: ['must-know', 'popular'] },
+  { id: 'claude',           category: 'chatbots',    hasPage: true,  name: 'Claude',                tagline: 'Best for reasoning, long documents, and code review',     icon: '🎯', color: '#D97706', free: true,  freeTier: 'Free — Claude 3.5 Sonnet',              tags: ['trending', 'popular'] },
+  { id: 'gemini',           category: 'chatbots',    hasPage: true,  name: 'Google Gemini',         tagline: 'Real-time web search + Google Workspace integration',      icon: '✨', color: '#4285F4', free: true,  freeTier: 'Free — Gemini 2.0 Flash',               tags: ['popular', 'trending'] },
+  { id: 'perplexity',       category: 'chatbots',    hasPage: true,  name: 'Perplexity AI',         tagline: 'AI search that cites every source — replace Google',       icon: '🔍', color: '#06B6D4', free: true,  freeTier: 'Free — unlimited searches',             tags: ['trending', 'popular'] },
+  { id: 'ms-copilot',       category: 'chatbots',    hasPage: true,  name: 'Microsoft Copilot',     tagline: 'Free GPT-4o with web search + DALL-E 3 images',           icon: '🪟', color: '#0078D4', free: true,  freeTier: 'Free — web search + 15 images/day',     tags: ['popular', 'enterprise'] },
+  { id: 'notebooklm',       category: 'chatbots',    hasPage: true,  name: 'Google NotebookLM',     tagline: 'Chat with your notes, PDFs — AI podcast from your docs',   icon: '📓', color: '#4F46E5', free: true,  freeTier: '100% Free — Google account',            tags: ['trending', 'popular'] },
+  { id: 'youcom',           category: 'chatbots',    hasPage: true,  name: 'You.com',               tagline: 'AI search + chat with built-in tools and apps',           icon: '🌐', color: '#6366F1', free: true,  freeTier: 'Free tier available',                   tags: [], officialUrl: 'https://you.com' },
+  { id: 'huggingchat',      category: 'chatbots',    hasPage: true,  name: 'HuggingChat',           tagline: 'Free open-source chatbot — run Llama, Mistral, Qwen',     icon: '🤗', color: '#F59E0B', free: true,  freeTier: '100% Free — no API key needed',         tags: ['open-source'], officialUrl: 'https://huggingface.co/chat' },
+
+  // ── AI APP BUILDERS ───────────────────────────────────────────────────────
+  { id: 'bolt-new',         category: 'builders',    hasPage: true, name: 'Bolt.new',              tagline: 'Type a prompt — get a full deployed app in seconds',       icon: '⚡', color: '#F59E0B', free: true,  freeTier: 'Free tier — credits per month',         tags: ['trending', 'popular'], officialUrl: 'https://bolt.new' },
+  { id: 'v0',               category: 'builders',    hasPage: true,  name: 'v0 by Vercel',          tagline: 'Generate React UI components from text — instantly',       icon: '🎨', color: '#6366F1', free: true,  freeTier: 'Free tier — $5 credits/month',          tags: ['trending', 'popular'], officialUrl: 'https://v0.dev' },
+  { id: 'replit',           category: 'builders',    hasPage: true,  name: 'Replit',                tagline: 'Build + deploy apps in browser — AI agent included',       icon: '🔁', color: '#F26207', free: true,  freeTier: 'Free — Replit Core $25/month',          tags: ['popular', 'trending'], officialUrl: 'https://replit.com' },
+  { id: 'lovable',          category: 'builders',    hasPage: true,  name: 'Lovable',               tagline: 'AI builds full-stack apps from your description',          icon: '💜', color: '#EC4899', free: true,  freeTier: 'Free trial — credits included',         tags: ['trending', 'new'], officialUrl: 'https://lovable.dev' },
+  { id: 'streamlit',        category: 'builders',    hasPage: true,  name: 'Streamlit',             tagline: 'Turn Python scripts into shareable web apps in minutes',   icon: '🌊', color: '#FF4B4B', free: true,  freeTier: '100% Free — open source',               tags: ['popular', 'must-know'], officialUrl: 'https://streamlit.io' },
+  { id: 'gradio',           category: 'builders',    hasPage: true,  name: 'Gradio',                tagline: 'Build AI demos with a web UI in 3 lines of Python',        icon: '🎛️', color: '#F97316', free: true,  freeTier: '100% Free — open source',               tags: ['popular'], officialUrl: 'https://gradio.app' },
+  { id: 'vercel-ai-sdk',    category: 'builders',    hasPage: true,  name: 'Vercel AI SDK',         tagline: 'Standard library for building AI-powered Next.js apps',    icon: '▲',  color: '#6366F1', free: true,  freeTier: '100% Free — open source',               tags: ['popular', 'must-know'], officialUrl: 'https://sdk.vercel.ai' },
+
+  // ── CODING ASSISTANTS ─────────────────────────────────────────────────────
+  { id: 'claude-code',      category: 'coding',      hasPage: true,  name: 'Claude Code',           tagline: 'Terminal AI agent — SWE-bench #1, 1M token context',       icon: '🤖', color: '#D97706', free: true,  freeTier: 'Free tier — Pro $20/month',             tags: ['trending', 'popular'] },
+  { id: 'cursor',           category: 'coding',      hasPage: true,  name: 'Cursor',                tagline: 'VS Code rebuilt with full codebase AI — the dev favorite',  icon: '⚡', color: '#F59E0B', free: true,  freeTier: 'Free — 500 fast uses/month',            tags: ['trending', 'popular', 'must-know'] },
+  { id: 'copilot',          category: 'coding',      hasPage: true,  name: 'GitHub Copilot',        tagline: 'Microsoft\'s AI coding assistant — free for students',      icon: '🐙', color: '#10B981', free: true,  freeTier: 'Free for students via GitHub Education', tags: ['popular', 'must-know', 'enterprise'] },
+  { id: 'windsurf',         category: 'coding',      hasPage: true,  name: 'Windsurf',              tagline: 'Agentic AI editor by Codeium — Cascade builds autonomously', icon: '🌊', color: '#0EA5E9', free: true,  freeTier: 'Free tier — generous limits',           tags: ['trending', 'popular'] },
+  { id: 'gemini-cli',       category: 'coding',      hasPage: true,  name: 'Gemini CLI',            tagline: 'Google\'s free terminal AI — Claude Code competitor',        icon: '🌟', color: '#4285F4', free: true,  freeTier: '100% Free — 1M tokens/min',             tags: ['trending', 'new'], officialUrl: 'https://github.com/google-gemini/gemini-cli' },
+  { id: 'codeium',          category: 'coding',      hasPage: true,  name: 'Codeium',               tagline: 'Free AI coding forever — unlimited, 70+ editors',          icon: '🚀', color: '#06B6D4', free: true,  freeTier: '100% Free — unlimited completions',     tags: ['popular'] },
+  { id: 'cline',            category: 'coding',      hasPage: true,  name: 'Cline',                 tagline: 'Free open-source agentic AI in VS Code — like Claude Code',  icon: '🔧', color: '#10B981', free: true,  freeTier: '100% Free — open source extension',    tags: ['trending', 'open-source'], officialUrl: 'https://cline.bot' },
+  { id: 'amazon-q',         category: 'coding',      hasPage: true,  name: 'Amazon Q Developer',    tagline: 'AWS\'s AI coding assistant — free, enterprise-grade',       icon: '☁️', color: '#FF9900', free: true,  freeTier: 'Free Individual tier available',        tags: ['enterprise', 'popular'], officialUrl: 'https://aws.amazon.com/q/developer' },
+  { id: 'continue-dev',     category: 'coding',      hasPage: true,  name: 'Continue.dev',          tagline: 'Free open-source Copilot for VS Code + JetBrains',         icon: '🔄', color: '#8B5CF6', free: true,  freeTier: '100% Free — open source',               tags: ['open-source'], officialUrl: 'https://continue.dev' },
+  { id: 'aider',            category: 'coding',      hasPage: true,  name: 'Aider',                 tagline: 'Terminal AI pair programmer — edit code with git commits',  icon: '🤝', color: '#EC4899', free: true,  freeTier: 'Free — bring your own API key',         tags: ['open-source'], officialUrl: 'https://aider.chat' },
+  { id: 'tabnine',          category: 'coding',      hasPage: true,  name: 'Tabnine',               tagline: 'AI code completion — privacy-first, runs locally',          icon: '💎', color: '#6366F1', free: true,  freeTier: 'Free basic tier available',             tags: ['popular'], officialUrl: 'https://tabnine.com' },
+
+  // ── BUILD WITH AI / APIs ──────────────────────────────────────────────────
+  { id: 'openai-api',       category: 'apis',        hasPage: true,  name: 'OpenAI API',            tagline: 'GPT-4o, DALL-E, Whisper — the industry standard API',      icon: '🔌', color: '#10B981', free: false, freeTier: '$5 free credits on signup',             tags: ['must-know', 'popular'] },
+  { id: 'gemini-api',       category: 'apis',        hasPage: true,  name: 'Gemini API',            tagline: '2M token context, multimodal — free tier, no card needed',  icon: '🌟', color: '#4285F4', free: true,  freeTier: 'Free tier — no credit card',            tags: ['trending', 'popular'] },
+  { id: 'groq',             category: 'apis',        hasPage: true,  name: 'Groq API',              tagline: '10x faster than OpenAI — free tier, open-source models',   icon: '⚡', color: '#EF4444', free: true,  freeTier: 'Free API key — 14,400 req/day',         tags: ['trending', 'popular'] },
+  { id: 'anthropic-api',    category: 'apis',        hasPage: true,  name: 'Anthropic API',         tagline: 'Claude API — best for reasoning and long context',          icon: '🎯', color: '#D97706', free: false, freeTier: '$5 free credits on signup',             tags: ['popular'], officialUrl: 'https://console.anthropic.com' },
+  { id: 'together-ai',      category: 'apis',        hasPage: true,  name: 'Together AI',           tagline: 'Free credits — 100+ open-source models via one API',       icon: '🤝', color: '#8B5CF6', free: true,  freeTier: 'Free $25 credits on signup',            tags: ['popular'] },
+  { id: 'huggingface',      category: 'apis',        hasPage: true,  name: 'Hugging Face',          tagline: 'GitHub of AI — 200K+ free models, datasets, demos',        icon: '🤗', color: '#F59E0B', free: true,  freeTier: 'Free Inference API included',           tags: ['must-know', 'popular', 'open-source'] },
+  { id: 'openrouter',       category: 'apis',        hasPage: true,  name: 'OpenRouter',            tagline: 'One API to access 200+ models — best routing & pricing',   icon: '🛣️', color: '#6366F1', free: true,  freeTier: 'Free models available',                 tags: ['trending', 'popular'], officialUrl: 'https://openrouter.ai' },
+  { id: 'aws-bedrock',      category: 'apis',        hasPage: true,  name: 'AWS Bedrock',           tagline: 'Enterprise AI on AWS — Claude, Llama, Titan in one place', icon: '☁️', color: '#FF9900', free: false, freeTier: 'Free trial credits on new AWS account',  tags: ['enterprise', 'popular'], officialUrl: 'https://aws.amazon.com/bedrock' },
+  { id: 'azure-openai',     category: 'apis',        hasPage: true,  name: 'Azure OpenAI',          tagline: 'GPT-4o on Microsoft Azure — enterprise compliance',          icon: '🔷', color: '#0078D4', free: false, freeTier: 'Free trial with Azure account',         tags: ['enterprise', 'popular'], officialUrl: 'https://azure.microsoft.com/en-us/products/ai-services/openai-service' },
+  { id: 'mistral-api',      category: 'apis',        hasPage: true,  name: 'Mistral AI API',        tagline: 'European LLM — fast, affordable, strong on code',           icon: '🌪️', color: '#F97316', free: false, freeTier: 'Free tier with La Plateforme',           tags: ['popular'], officialUrl: 'https://mistral.ai' },
+  { id: 'replicate',        category: 'apis',        hasPage: true,  name: 'Replicate',             tagline: 'Run any ML model with one API call — pay per second',       icon: '🔁', color: '#EC4899', free: false, freeTier: 'Free credits on signup',                tags: ['popular'], officialUrl: 'https://replicate.com' },
+
+  // ── AI AGENTS ─────────────────────────────────────────────────────────────
+  { id: 'langchain',        category: 'agents',      hasPage: true,  name: 'LangChain',             tagline: 'The standard framework for building LLM applications',     icon: '🦜', color: '#10B981', free: true,  freeTier: 'Free — open source',                    tags: ['must-know', 'popular'] },
+  { id: 'langgraph',        category: 'agents',      hasPage: true,  name: 'LangGraph',             tagline: 'Build stateful multi-step agents — loops, branches, memory', icon: '🕸️', color: '#8B5CF6', free: true,  freeTier: 'Free — open source',                    tags: ['trending', 'popular'] },
+  { id: 'crewai',           category: 'agents',      hasPage: true,  name: 'CrewAI',                tagline: 'Role-based multi-agent teams — researcher, analyst, writer', icon: '👥', color: '#EC4899', free: true,  freeTier: 'Free — open source',                    tags: ['trending', 'popular'] },
+  { id: 'mcp',              category: 'agents',      hasPage: true,  name: 'MCP Protocol',          tagline: 'Anthropic\'s open standard — connect AI to any tool',       icon: '🔗', color: '#D97706', free: true,  freeTier: 'Free — open standard',                  tags: ['trending', 'must-know'] },
+  { id: 'autogen',          category: 'agents',      hasPage: true,  name: 'AutoGen',               tagline: 'Microsoft multi-agent — conversation loops + code execution', icon: '🔄', color: '#0078D4', free: true,  freeTier: 'Free — open source (Microsoft)',         tags: ['popular'] },
+  { id: 'metagpt',          category: 'agents',      hasPage: true,  name: 'MetaGPT',               tagline: 'Agent that acts as an entire software team',                icon: '🏢', color: '#6366F1', free: true,  freeTier: 'Free — open source',                    tags: ['trending', 'open-source'], officialUrl: 'https://github.com/geekan/MetaGPT' },
+  { id: 'openclaw',         category: 'agents',      hasPage: true,  name: 'OpenClaw',              tagline: 'Connect AI agents to WhatsApp, Telegram, Slack',           icon: '🦀', color: '#F97316', free: true,  freeTier: 'Free — open source, self-hosted',       tags: ['open-source'] },
+  { id: 'hermes',           category: 'agents',      hasPage: true,  name: 'Nous Hermes',           tagline: 'Fine-tuned open-source model — best function calling',      icon: '⚗️', color: '#D97706', free: true,  freeTier: 'Free via Ollama and OpenRouter',         tags: ['open-source'] },
+
+  // ── AUTOMATION ────────────────────────────────────────────────────────────
+  { id: 'n8n',              category: 'automation',  hasPage: true,  name: 'n8n',                   tagline: 'Free open-source automation + built-in AI agent nodes',     icon: '⚙️', color: '#F97316', free: true,  freeTier: 'Free self-hosted — Cloud $24/month',    tags: ['trending', 'popular', 'open-source'] },
+  { id: 'flowise',          category: 'automation',  hasPage: true,  name: 'Flowise',               tagline: 'Visual LangChain — drag-and-drop RAG and agent builder',    icon: '🌊', color: '#06B6D4', free: true,  freeTier: 'Free — open source self-hosted',        tags: ['popular', 'open-source'] },
+  { id: 'dify',             category: 'automation',  hasPage: true,  name: 'Dify',                  tagline: 'LLMOps platform — build, test, deploy AI apps visually',    icon: '🎯', color: '#8B5CF6', free: true,  freeTier: 'Free cloud tier + open source',         tags: ['trending', 'popular'] },
+  { id: 'make',             category: 'automation',  hasPage: true,  name: 'Make',                  tagline: 'Visual automation — 13x cheaper than Zapier, 1K free ops',   icon: '🔄', color: '#9B59B6', free: true,  freeTier: 'Free — 1,000 operations/month',         tags: ['popular'] },
+  { id: 'zapier',           category: 'automation',  hasPage: true,  name: 'Zapier',                tagline: '7,000+ app integrations — the easiest no-code automation',   icon: '⚡', color: '#FF4A00', free: true,  freeTier: 'Free — 5 Zaps, 100 tasks/month',        tags: ['popular', 'must-know'] },
+  { id: 'ifttt',            category: 'automation',  hasPage: true,  name: 'IFTTT',                 tagline: 'Simplest automation — if this, then that triggers',          icon: '🔀', color: '#00AFF0', free: true,  freeTier: 'Free — 5 applets',                      tags: [], officialUrl: 'https://ifttt.com' },
+
+  // ── LOCAL & OPEN SOURCE ───────────────────────────────────────────────────
+  { id: 'ollama',           category: 'local',       hasPage: true,  name: 'Ollama',                tagline: 'Run Llama, Gemma, Mistral locally — free, offline, private', icon: '🦙', color: '#10B981', free: true,  freeTier: '100% Free — runs on your machine',      tags: ['trending', 'popular', 'must-know'] },
+  { id: 'lmstudio',         category: 'local',       hasPage: true,  name: 'LM Studio',             tagline: 'Desktop app — browse, download, run any LLM locally',       icon: '🖥️', color: '#6366F1', free: true,  freeTier: '100% Free — desktop application',       tags: ['popular'] },
+  { id: 'oobabooga',        category: 'local',       hasPage: true,  name: 'text-gen-webui',        tagline: 'Web UI for running any model — the power-user choice',      icon: '🌐', color: '#F59E0B', free: true,  freeTier: '100% Free — open source',               tags: ['open-source'], officialUrl: 'https://github.com/oobabooga/text-generation-webui' },
+  { id: 'litelllm',         category: 'local',       hasPage: true,  name: 'LiteLLM',               tagline: 'One API for 100+ LLM providers — unified interface',         icon: '🔧', color: '#EC4899', free: true,  freeTier: '100% Free — open source',               tags: ['open-source', 'popular'], officialUrl: 'https://litellm.ai' },
+  { id: 'localai',          category: 'local',       hasPage: true,  name: 'LocalAI',               tagline: 'Self-hosted OpenAI-compatible API — runs any model',        icon: '🏠', color: '#06B6D4', free: true,  freeTier: '100% Free — open source, self-host',    tags: ['open-source'], officialUrl: 'https://localai.io' },
+
+  // ── VECTOR DATABASES ──────────────────────────────────────────────────────
+  { id: 'chromadb',         category: 'vector',      hasPage: true,  name: 'ChromaDB',              tagline: 'Easiest vector DB — start RAG in 3 lines of Python',        icon: '🗄️', color: '#F59E0B', free: true,  freeTier: '100% Free — runs locally',              tags: ['popular', 'open-source', 'must-know'] },
+  { id: 'pinecone',         category: 'vector',      hasPage: true,  name: 'Pinecone',              tagline: 'Managed cloud vector DB — production-grade, scales easily',  icon: '🌲', color: '#10B981', free: true,  freeTier: 'Free tier — 100K vectors',              tags: ['popular'] },
+  { id: 'qdrant',           category: 'vector',      hasPage: true,  name: 'Qdrant',                tagline: 'Fastest vector DB — Rust-powered, best performance',         icon: '🎯', color: '#EC4899', free: true,  freeTier: 'Free — open source + cloud tier',       tags: ['trending', 'open-source'], officialUrl: 'https://qdrant.tech' },
+  { id: 'weaviate',         category: 'vector',      hasPage: true,  name: 'Weaviate',              tagline: 'Vector DB + knowledge graph — hybrid search built in',       icon: '🕸️', color: '#8B5CF6', free: true,  freeTier: 'Free — open source + Sandbox cloud',    tags: ['popular', 'open-source'] },
+  { id: 'supabase-vector',  category: 'vector',      hasPage: true,  name: 'Supabase',              tagline: 'Postgres + pgvector — add vector search to your SQL DB',    icon: '⚡', color: '#3ECF8E', free: true,  freeTier: 'Free tier — 500MB DB, unlimited reads',  tags: ['popular', 'trending'], officialUrl: 'https://supabase.com' },
+
+  // ── DATA & ANALYSIS ───────────────────────────────────────────────────────
+  { id: 'julius',           category: 'data',        hasPage: true,  name: 'Julius AI',             tagline: 'Chat with your data — AI analyst, no Python needed',        icon: '📊', color: '#3B82F6', free: true,  freeTier: 'Free tier available',                   tags: ['popular', 'trending'] },
+  { id: 'code-interpreter', category: 'data',        hasPage: true,  name: 'Code Interpreter',      tagline: 'ChatGPT runs real Python on your files — charts, analysis',  icon: '🐍', color: '#10B981', free: false, freeTier: 'Requires ChatGPT Plus ($20/month)',      tags: ['popular', 'must-know'] },
+  { id: 'langfuse',         category: 'data',        hasPage: true,  name: 'Langfuse',              tagline: 'LLM observability — trace, debug, monitor AI in production', icon: '📡', color: '#6366F1', free: true,  freeTier: 'Free — open source + cloud tier',       tags: ['trending', 'popular', 'open-source'], officialUrl: 'https://langfuse.com' },
+  { id: 'modal',            category: 'data',        hasPage: true,  name: 'Modal',                 tagline: 'Serverless GPU compute — deploy AI models with one command', icon: '🚀', color: '#EC4899', free: true,  freeTier: 'Free $30/month credit',                 tags: ['trending', 'popular'], officialUrl: 'https://modal.com' },
+
+  // ── SECURITY & CODE REVIEW ────────────────────────────────────────────────
+  { id: 'snyk',             category: 'security',    hasPage: true,  name: 'Snyk',                  tagline: 'Find and fix vulnerabilities in code, deps, containers',     icon: '🛡️', color: '#4C4A99', free: true,  freeTier: 'Free — unlimited open source scans',    tags: ['popular', 'must-know'], officialUrl: 'https://snyk.io' },
+  { id: 'sonarqube',        category: 'security',    hasPage: true,  name: 'SonarQube',             tagline: 'Code quality + security analysis — 25 languages supported',  icon: '🔍', color: '#CB1F36', free: true,  freeTier: 'Free Community Edition — self-hosted',  tags: ['popular', 'enterprise'], officialUrl: 'https://www.sonarsource.com/products/sonarqube' },
+  { id: 'github-adv-sec',   category: 'security',    hasPage: true,  name: 'GitHub Adv Security',   tagline: 'Code scanning, secret detection — free for public repos',    icon: '🐙', color: '#10B981', free: true,  freeTier: 'Free for public repos — paid for private', tags: ['popular', 'enterprise'], officialUrl: 'https://github.com/features/security' },
+  { id: 'gitguardian',      category: 'security',    hasPage: true,  name: 'GitGuardian',           tagline: 'Detect secrets and credentials in your code in real-time',   icon: '🔑', color: '#F59E0B', free: true,  freeTier: 'Free for individual developers',        tags: ['popular'], officialUrl: 'https://gitguardian.com' },
+  { id: 'wiz',              category: 'security',    hasPage: true,  name: 'Wiz',                   tagline: 'Cloud security platform — used by 40% of Fortune 100',       icon: '🌀', color: '#06B6D4', free: false, freeTier: 'Free trial available',                  tags: ['enterprise'], officialUrl: 'https://wiz.io' },
+
+  // ── CREATIVE & MEDIA ──────────────────────────────────────────────────────
+  { id: 'midjourney',       category: 'creative',    hasPage: true,  name: 'Midjourney',            tagline: 'Best AI image quality — professionals\' first choice',       icon: '🎨', color: '#F59E0B', free: false, freeTier: 'Paid only — from $10/month',            tags: ['popular', 'must-know'], officialUrl: 'https://midjourney.com' },
+  { id: 'flux',             category: 'creative',    hasPage: true,  name: 'FLUX',                  tagline: 'Best open-source image model — beating Stable Diffusion',   icon: '⚡', color: '#8B5CF6', free: true,  freeTier: 'Free via ComfyUI or Hugging Face',       tags: ['trending', 'open-source'], officialUrl: 'https://blackforestlabs.ai' },
+  { id: 'stable-diffusion', category: 'creative',    hasPage: true,  name: 'Stable Diffusion',      tagline: 'Free unlimited image AI — runs on your computer',           icon: '🌈', color: '#EC4899', free: true,  freeTier: '100% Free — open source',               tags: ['popular', 'open-source'] },
+  { id: 'dalle-free',       category: 'creative',    hasPage: true,  name: 'Bing Image Creator',    tagline: 'DALL-E 3 for free — 15 images/day via Microsoft',           icon: '🖼️', color: '#0078D4', free: true,  freeTier: '100% Free — Microsoft account',         tags: ['popular'] },
+  { id: 'gamma',            category: 'creative',    hasPage: true,  name: 'Gamma.app',             tagline: 'AI makes stunning presentations from your text in 60 sec',   icon: '📊', color: '#7C3AED', free: true,  freeTier: 'Free — 400 AI credits on signup',       tags: ['popular', 'trending'] },
+  { id: 'canva-ai',         category: 'creative',    hasPage: true,  name: 'Canva AI',              tagline: 'Design anything with AI — free Pro for students',            icon: '✨', color: '#00C4CC', free: true,  freeTier: 'Free — Pro free via Canva for Education', tags: ['popular', 'must-know'] },
+
+  // ── VOICE & AUDIO ─────────────────────────────────────────────────────────
+  { id: 'whisper',          category: 'voice',       hasPage: true,  name: 'OpenAI Whisper',        tagline: 'Best free speech-to-text — 100 languages, open source',     icon: '🎤', color: '#10B981', free: true,  freeTier: '100% Free — open source',               tags: ['popular', 'must-know', 'open-source'] },
+  { id: 'elevenlabs',       category: 'voice',       hasPage: true,  name: 'ElevenLabs',            tagline: 'Realistic AI voice cloning — indistinguishable from human',  icon: '🎙️', color: '#F59E0B', free: true,  freeTier: 'Free — 10,000 characters/month',        tags: ['popular', 'trending'] },
+
+  // ── CAREER & PRODUCTIVITY ─────────────────────────────────────────────────
+  { id: 'teal',             category: 'career',      hasPage: true,  name: 'Teal',                  tagline: 'AI resume builder + job tracker — ATS-optimized',          icon: '📄', color: '#14B8A6', free: true,  freeTier: 'Free — all core features',              tags: ['popular'] },
+  { id: 'notion-ai',        category: 'career',      hasPage: true,  name: 'Notion AI',             tagline: 'AI writing built into your notes and workspace',            icon: '📝', color: '#475569', free: false, freeTier: '20 free responses — then $10/month',    tags: ['popular'] },
+  { id: 'grammarly',        category: 'career',      hasPage: true,  name: 'Grammarly AI',          tagline: 'AI writing assistant — works in Gmail, Docs, LinkedIn',     icon: '✏️', color: '#15C39A', free: true,  freeTier: 'Free — core grammar + AI features',     tags: ['popular', 'must-know'] },
 ]

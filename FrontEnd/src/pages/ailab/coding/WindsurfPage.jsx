@@ -56,9 +56,9 @@ export default function WindsurfPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Windsurf AI Tutorial — Complete Guide for Beginners', url: 'https://www.youtube.com/watch?v=lkPkh_q3tO4', dur: '16 min', note: 'Full overview and Cascade walkthrough' },
-            { label: 'Windsurf vs Cursor — Which AI Editor Is Better in 2025?', url: 'https://www.youtube.com/watch?v=4LLvlWJe7oA', dur: '12 min', note: 'Detailed comparison' },
-            { label: 'Windsurf Cascade — Agentic AI Coding Explained', url: 'https://www.youtube.com/watch?v=FLkDj6LKTRE', dur: '10 min', note: 'Cascade deep dive' },
+            { label: 'Windsurf Tutorial for Beginners — Better than Cursor?? — Tech with Tim', url: 'https://www.youtube.com/watch?v=8TcWGk1DJVs', dur: '~20 min', note: 'Best beginner guide — Cascade, Chat, Write mode all covered' },
+            { label: 'Windsurf AI Tutorial: Building Apps with Cascade', url: 'https://www.youtube.com/watch?v=DXazEf7ZmGs', dur: '~15 min', note: 'Build a real app using Cascade — agentic AI in action' },
+            { label: 'Windsurf Cascade — AI Coding Tool Easy Enough for Beginners', url: 'https://www.youtube.com/watch?v=RptkOLELyas', dur: '~12 min', note: 'Cascade deep dive — how the agent loop actually works' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

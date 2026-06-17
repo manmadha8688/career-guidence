@@ -56,9 +56,9 @@ export default function ChromaDBPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'ChromaDB Tutorial — Vector Database for AI Applications', url: 'https://www.youtube.com/watch?v=KCcBFh7R07A', dur: '18 min', note: 'Complete ChromaDB guide' },
-            { label: 'ChromaDB with LangChain — Build RAG from Scratch', url: 'https://www.youtube.com/watch?v=3yPBVii7Ct0', dur: '22 min', note: 'Full RAG implementation' },
-            { label: 'ChromaDB Persistent Storage and Server Mode', url: 'https://www.youtube.com/watch?v=e1ZbFGvTfA8', dur: '12 min', note: 'Production setup' },
+            { label: 'ChromaDB Crash Course in 20 Minutes — Python Vector Database', url: 'https://www.youtube.com/watch?v=cm2Ze2n9lxw', dur: '20 min', note: 'Best quick start — create, add, query, persist with Python' },
+            { label: 'ChromaDB Tutorial for Beginners — Create, Store & Query Vectors', url: 'https://www.youtube.com/watch?v=_Ci1tLMafQs', dur: '~20 min', note: 'Beginner-friendly — embeddings, metadata filtering, persistence' },
+            { label: 'ChromaDB Tutorial: Store & Query Document Embeddings (OpenAI + Python)', url: 'https://www.youtube.com/watch?v=5_BuuBJSyOc', dur: '~20 min', note: 'OpenAI embeddings + ChromaDB — full RAG retrieval pipeline' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

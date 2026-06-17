@@ -56,9 +56,9 @@ export default function OpenAIAPIPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'OpenAI API Tutorial for Beginners — Python', url: 'https://www.youtube.com/watch?v=OB99E7Y1cMA', dur: '20 min', note: 'Complete beginner guide with Python' },
-            { label: 'OpenAI API Crash Course — All Features Explained', url: 'https://www.youtube.com/watch?v=UyJCGXcNqEs', dur: '25 min', note: 'Full API coverage including function calling' },
-            { label: 'OpenAI Function Calling Tutorial — Build Structured AI', url: 'https://www.youtube.com/watch?v=aqdWSYWC_LI', dur: '14 min', note: 'Function calling deep dive' },
+            { label: 'OpenAI with Python: A Step-by-Step Guide for Beginners', url: 'https://www.youtube.com/watch?v=-A7njXsJl5M', dur: '~20 min', note: 'Best beginner guide — setup to first API call in Python' },
+            { label: 'Getting Started with OpenAI API and GPT Models in Python', url: 'https://www.youtube.com/watch?v=TWiCf2uEKZg', dur: '~20 min', note: 'Chat completions, function calling, streaming explained clearly' },
+            { label: 'OpenAI Assistants API — Course for Beginners', url: 'https://www.youtube.com/watch?v=qHPonmSX4Ms', dur: '~60 min', note: 'Full course covering Assistants API with threads and tools' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'dalle-free', category: 'creative', name: 'Bing Image Creator', tagline: 'DALL-E 3 image generation — completely free', icon: '🎨', color: '#EC4899', free: true, freeTier: '100% Free — Microsoft account required', officialUrl: 'https://www.bing.com/images/create' }
-const videos = [{ label: 'Bing Image Creator Tutorial — Free DALL-E 3', url: 'https://www.youtube.com/watch?v=CyoFxu7WGQQ', duration: '20 min', note: 'Full guide with prompt techniques for better results' }]
+const videos = [
+  { label: 'How to Use OpenAI\'s DALL-E 3 AI Image Generator for FREE — Bing Image Creator', url: 'https://www.youtube.com/watch?v=Suwl5w_PfjA', duration: '~12 min', note: 'Best guide — free access via Bing, prompts, quality settings explained' },
+  { label: 'DALL-E 3 in Microsoft Bing Image Creator — Full Walkthrough', url: 'https://www.youtube.com/watch?v=mL7R23aG7lQ', duration: '~15 min', note: 'All features, prompt tips, and creative styles covered' },
+  { label: 'Bing Image Creator Tutorial — FREE AI Image Generator 2024', url: 'https://www.youtube.com/watch?v=uVqTlioHeFU', duration: '~12 min', note: 'Beginner-friendly — from signup to first generation in minutes' },
+]
 const overview = `Bing Image Creator uses DALL-E 3 — the same model powering ChatGPT's paid image generation — completely free. Sign in with a Microsoft account and you get 15 fast generations per day, then unlimited slower generations. For students who need professional visuals for projects, presentations, and portfolios, this is the best free option available. Quality matches paid DALL-E 3 exactly.`
 const sections = [{ content: `DALL-E 3 produces significantly better results than older image AI models at following specific instructions and producing coherent, photorealistic or stylized images. The key to good results is specific, detailed prompts — not "a developer", but "a focused software developer at a modern standing desk in a dark-themed home office, dual monitors with code visible, soft neon lighting, photorealistic, professional photography style, 4K".
 

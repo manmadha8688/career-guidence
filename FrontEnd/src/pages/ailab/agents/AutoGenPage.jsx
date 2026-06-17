@@ -56,9 +56,9 @@ export default function AutoGenPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'AutoGen Tutorial — Build Multi-Agent AI Systems', url: 'https://www.youtube.com/watch?v=vU2S6dVf79M', dur: '18 min', note: "Introduction to AutoGen's core concepts" },
-            { label: 'Microsoft AutoGen v0.4 — Complete Guide', url: 'https://www.youtube.com/watch?v=pJwR5pv0_gs', dur: '22 min', note: 'v0.4 AgentChat API walkthrough' },
-            { label: 'AutoGen Code Execution Agent — Build and Debug Code Automatically', url: 'https://www.youtube.com/watch?v=ZFkFRuSxnK4', dur: '16 min', note: 'Code execution use case' },
+            { label: 'AutoGen FULL Tutorial with Python — Build AI Agent Teams!', url: 'https://www.youtube.com/watch?v=V2qZ_lgxTzg', dur: '~45 min', note: 'Most comprehensive step-by-step — AssistantAgent, UserProxy, GroupChat' },
+            { label: 'Master AI Agents & AutoGen in Python — 6 Step-by-Step Projects 2025', url: 'https://www.youtube.com/watch?v=YeJG_H-sw84', dur: '~90 min', note: 'AutoGen 0.5 — six real projects covering all major patterns' },
+            { label: 'Autogen Full Beginner Course', url: 'https://www.youtube.com/watch?v=JmjxwTEJSE8', dur: '~60 min', note: 'Beginner-friendly deep dive — conversation loops, code execution, tools' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

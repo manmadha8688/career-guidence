@@ -56,9 +56,9 @@ export default function OllamaPage() {
         {/* Videos */}
         <Block title="Watch first" titleColor="#EF4444" dark={dark} border={border} card={card}>
           {[
-            { label: 'Ollama Tutorial — Run LLMs Locally for Free', url: 'https://www.youtube.com/watch?v=Wjrdr0NU4Sk', dur: '14 min', note: 'Complete setup and usage guide' },
-            { label: 'Ollama + Open WebUI — ChatGPT Interface for Local Models', url: 'https://www.youtube.com/watch?v=dDmPvLO4Yz4', dur: '12 min', note: 'Web UI setup' },
-            { label: 'Best Ollama Models for Coding, Writing, and Chat in 2025', url: 'https://www.youtube.com/watch?v=RGfcakXKi0c', dur: '10 min', note: 'Model comparison guide' },
+            { label: 'Learn Ollama in 15 Minutes — Run LLM Models Locally for FREE', url: 'https://www.youtube.com/watch?v=UtSSMs6ObqY', dur: '15 min', note: 'Best quick start — install, pull, run, API usage in 15 minutes' },
+            { label: 'How to Run & Train LLMs Locally with Ollama — Beginner to Pro', url: 'https://www.youtube.com/watch?v=bRsAMtNfShk', dur: '~40 min', note: 'Complete guide — setup, models, Python integration, fine-tuning' },
+            { label: 'How to Run Local LLMs with Ollama: A Step-by-Step Guide', url: 'https://www.youtube.com/watch?v=N4haIG4kWN8', dur: '~25 min', note: 'Step-by-step 2025 — covers latest models and Open WebUI setup' },
           ].map((v, i) => <VideoCard key={i} v={v} dark={dark} txt={txt} muted={muted} />)}
         </Block>
 

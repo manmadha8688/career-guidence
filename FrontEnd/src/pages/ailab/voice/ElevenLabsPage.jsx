@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'elevenlabs', category: 'voice', name: 'ElevenLabs', tagline: 'Realistic AI voice generation and voice cloning', icon: '🎙️', color: '#F59E0B', free: true, freeTier: 'Free — 10,000 characters/month', officialUrl: 'https://elevenlabs.io' }
-const videos = [{ label: 'ElevenLabs Free Course for Beginners 2024', url: 'https://www.youtube.com/watch?v=rP7rBuHEv_Q', duration: '45 min', note: 'Complete course covering all features including voice cloning' }]
+const videos = [
+  { label: 'How to Use ElevenLabs — Best AI Voice Cloning/Dubbing FULL GUIDE 2024', url: 'https://www.youtube.com/watch?v=81LbbGE29Do', duration: '~25 min', note: 'Most complete guide — TTS, voice cloning, dubbing, all features' },
+  { label: 'How To Use ElevenLabs Professional Voice Cloning — Complete Tutorial 2024', url: 'https://www.youtube.com/watch?v=nbRm2EuFpZU', duration: '~20 min', note: 'Professional voice cloning walkthrough — training data, quality, settings' },
+  { label: 'ElevenLabs Full Tutorial — Voice Cloning, Dubbing, Speech-to-Text & More!', url: 'https://www.youtube.com/watch?v=hzyx0JkiAt4', duration: '~30 min', note: 'Every feature covered — great for understanding the full platform' },
+]
 const overview = `ElevenLabs produces the most realistic AI-generated voices available. Text becomes natural-sounding speech in seconds. Voice cloning lets you create a custom AI voice from a 30-second recording — your own voice, a presenter's voice, or any speaker. For students creating demo videos, portfolio presentations, or building voice-enabled applications, ElevenLabs produces professional audio quality that is difficult to distinguish from real speech.`
 const sections = [{ content: `The text-to-speech quality from ElevenLabs is in a different category from Google Text-to-Speech or Amazon Polly. It handles natural pacing, intonation variation, emotional expression, and the subtle characteristics that make speech sound human. For demo videos, tutorial narrations, and presentations, the difference is immediately noticeable.
 

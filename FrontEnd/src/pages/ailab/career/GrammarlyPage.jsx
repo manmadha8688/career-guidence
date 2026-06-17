@@ -1,6 +1,10 @@
 import ToolPageLayout from '../ToolPageLayout'
 const tool = { id: 'grammarly', category: 'career', name: 'Grammarly AI', tagline: 'AI writing assistant for professional communication', icon: '✏️', color: '#15C39A', free: true, freeTier: 'Free — core grammar and AI features included', officialUrl: 'https://grammarly.com' }
-const videos = [{ label: 'Grammarly AI Features Tutorial — All Key Features Explained', url: 'https://www.youtube.com/watch?v=3LUiWJHB8zg', duration: '15 min', note: 'Overview of all features with practical examples' }]
+const videos = [
+  { label: 'How to Use Generative AI in Grammarly — Enhance Writing with AI (2024)', url: 'https://www.youtube.com/watch?v=weZ9i_78TLM', duration: '~15 min', note: 'Best 2024 guide — generative AI features, rewrites, tone adjustment' },
+  { label: 'Level Up Your Writing with Grammarly AI — 2024 Full Tutorial', url: 'https://www.youtube.com/watch?v=9kyxkwU6K5A', duration: '~20 min', note: 'Full feature walkthrough — browser extension, Gmail, Docs integration' },
+  { label: 'How to Use Grammarly AI in 2024 (Quick & Easy!)', url: 'https://www.youtube.com/watch?v=8GcRvOyvVT4', duration: '~10 min', note: 'Quick practical intro — get started with Grammarly AI in under 10 minutes' },
+]
 const overview = `Grammarly checks grammar, improves clarity, adjusts tone, and rewrites sentences as you type — in Gmail, LinkedIn, Google Docs, and any website in your browser. For students writing job applications, LinkedIn messages, project documentation, and professional emails, Grammarly ensures everything is polished and error-free. The free tier includes the core grammar checking and basic AI suggestions that cover most student use cases.`
 const sections = [{ content: `Install the Grammarly browser extension and it works everywhere you type online. No copy-pasting required — corrections appear inline as you type, similar to spell check but significantly more sophisticated. It catches not just spelling errors but grammatical mistakes, unclear phrasing, wordiness, and tone inconsistencies that spell check misses entirely.
 
