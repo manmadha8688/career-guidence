@@ -15,6 +15,21 @@ import FresherInstructionsPage from './pages/FresherInstructionsPage'
 import AILabPage from './pages/ailab/AILabPage'
 import AIToolPage from './pages/ailab/AIToolPage'
 import CareerGuidancePage from './pages/CareerGuidancePage'
+import DeploymentGuidePage from './pages/DeploymentGuidePage'
+import ReactDeployPage from './pages/deployment/ReactDeployPage'
+import DjangoDeployPage from './pages/deployment/DjangoDeployPage'
+import HtmlStaticDeployPage from './pages/deployment/HtmlStaticDeployPage'
+import DjangoFullstackDeployPage from './pages/deployment/DjangoFullstackDeployPage'
+import SpringBootDeployPage from './pages/deployment/SpringBootDeployPage'
+import NodeJsDeployPage from './pages/deployment/NodeJsDeployPage'
+import MongoAtlasPage from './pages/deployment/MongoAtlasPage'
+import NeonPostgresPage from './pages/deployment/NeonPostgresPage'
+import SupabasePage from './pages/deployment/SupabasePage'
+import RenderPostgresPage from './pages/deployment/RenderPostgresPage'
+import MernDeployPage from './pages/deployment/MernDeployPage'
+import NextJsDeployPage from './pages/deployment/NextJsDeployPage'
+import FastApiDeployPage from './pages/deployment/FastApiDeployPage'
+import FlaskDeployPage from './pages/deployment/FlaskDeployPage'
 import MissionDetailPage from './pages/MissionDetailPage'
 import ProblemSolvingPage from './pages/problem-solving/ProblemSolvingPage'
 import TrackPage from './pages/problem-solving/TrackPage'
@@ -82,6 +97,21 @@ function App() {
           <Route path="/ai-lab" element={<AILabPage />} />
           <Route path="/ai-lab/:category/:toolId" element={<AIToolPage />} />
           <Route path="/fresher-instructions/career-guidance" element={<CareerGuidancePage />} />
+          <Route path="/deployment" element={<DeploymentGuidePage />} />
+          <Route path="/deployment/react"            element={<ReactDeployPage />} />
+          <Route path="/deployment/django"           element={<DjangoDeployPage />} />
+          <Route path="/deployment/html-static"      element={<HtmlStaticDeployPage />} />
+          <Route path="/deployment/django-fullstack" element={<DjangoFullstackDeployPage />} />
+          <Route path="/deployment/springboot"       element={<SpringBootDeployPage />} />
+          <Route path="/deployment/nodejs"           element={<NodeJsDeployPage />} />
+          <Route path="/deployment/mern"             element={<MernDeployPage />} />
+          <Route path="/deployment/nextjs"           element={<NextJsDeployPage />} />
+          <Route path="/deployment/fastapi"          element={<FastApiDeployPage />} />
+          <Route path="/deployment/flask"            element={<FlaskDeployPage />} />
+          <Route path="/deployment/mongodb-atlas"    element={<MongoAtlasPage />} />
+          <Route path="/deployment/neon-postgres"    element={<NeonPostgresPage />} />
+          <Route path="/deployment/supabase"         element={<SupabasePage />} />
+          <Route path="/deployment/render-postgres"  element={<RenderPostgresPage />} />
           <Route path="/problem-solving" element={<ProblemSolvingPage />} />
           <Route path="/problem-solving/start-coding"    element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
           <Route path="/problem-solving/logic-building"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />

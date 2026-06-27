@@ -7,11 +7,9 @@ import {
   ChevronDown, ChevronUp, Sun, Moon, ChevronLeft,
   Filter, RefreshCw, Calendar, Building2, Layers
 } from 'lucide-react'
-import axios from 'axios'
+import api from '../api/api'
 import toast from 'react-hot-toast'
 import ScrollToTop from '../components/ScrollToTop'
-
-const API = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
 const CITIES = ['Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Mumbai', 'Noida', 'Delhi', 'Kolkata', 'Ahmedabad', 'Gurugram']
 const DATE_OPTS = [
@@ -155,8 +153,7 @@ function PostModal({ onClose, onSuccess, light }) {
     if (!form.companyName || !form.role || !form.walkInDate || !form.city) { toast.error('Company, Role, Date, City are required'); return }
     setSaving(true)
     try {
-      const token = localStorage.getItem('token')
-      await axios.post(`${API}/walkins`, { ...form, skills }, { headers: { Authorization: `Bearer ${token}` } })
+      await api.post('/walkins', { ...form, skills })
       toast.success('Walk-in posted!'); onSuccess()
     } catch (e) { toast.error(e?.response?.data?.error || 'Failed to post') }
     finally { setSaving(false) }
@@ -262,7 +259,7 @@ export default function JobsPage() {
   const load = async () => {
     setLoading(true)
     try {
-      const { data } = await axios.get(`${API}/walkins`)
+      const { data } = await api.get('/walkins')
       setJobs(data)
     } catch { toast.error('Failed to load walk-ins') }
     finally { setLoading(false) }
@@ -272,8 +269,7 @@ export default function JobsPage() {
   const handleDelete = async (id) => {
     if (!confirm('Delete this walk-in?')) return
     try {
-      const token = localStorage.getItem('token')
-      await axios.delete(`${API}/walkins/${id}`, { headers: { Authorization: `Bearer ${token}` } })
+      await api.delete(`/walkins/${id}`)
       toast.success('Deleted'); load()
     } catch { toast.error('Failed to delete') }
   }

@@ -11,36 +11,26 @@ export function AuthProvider({ children }) {
   const [logoutOverlay, setLogoutOverlay] = useState(false)
   const [logoutDone, setLogoutDone] = useState(false)
 
+  // On mount — call /me with credentials. httpOnly cookie is sent automatically.
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      getMe()
-        .then(res => setUser(res.data))
-        .catch(() => {
-          const theme = localStorage.getItem('theme')
-          localStorage.clear()
-          if (theme) localStorage.setItem('theme', theme)
-          setUser(null)
-        })
-        .finally(() => setLoading(false))
-    } else {
-      setLoading(false)
-    }
+    getMe()
+      .then(res => setUser(res.data))
+      .catch(() => setUser(null))
+      .finally(() => setLoading(false))
   }, [])
 
   // Listen for sl:refresh — re-fetch /me to get latest xp/level/rank
   useEffect(() => {
     const refresh = () => {
-      if (!localStorage.getItem('token')) return
       getMe().then(res => setUser(res.data)).catch(() => {})
     }
     window.addEventListener('sl:refresh', refresh)
     return () => window.removeEventListener('sl:refresh', refresh)
   }, [])
 
-  const login = (token, userData) => {
-    clearUserCache()          // wipe previous user's progress/scores before loading new user
-    localStorage.setItem('token', token)
+  const login = (_token, userData) => {
+    clearUserCache()
+    // Cookie is set by the backend response — no localStorage needed
     setUser(userData)
   }
 

@@ -5,11 +5,17 @@ import com.example.student.dto.LoginRequest;
 import com.example.student.dto.RegisterRequest;
 import com.example.student.model.User;
 import com.example.student.service.AuthService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -19,31 +25,65 @@ public class AuthController {
 
     private final AuthService authService;
 
+    @Value("${app.cookie.secure:true}")
+    private boolean secureCookie;
+
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
 
+    private void setJwtCookie(HttpServletResponse response, String token) {
+        ResponseCookie cookie = ResponseCookie.from("jwt", token)
+                .httpOnly(true)
+                .secure(secureCookie)
+                .path("/")
+                .maxAge(86400)
+                // SameSite=None required for cross-origin (Vercel frontend + Render backend)
+                // SameSite=Lax for local HTTP dev (secure=false)
+                .sameSite(secureCookie ? "None" : "Lax")
+                .build();
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
+    }
+
+    private void clearJwtCookie(HttpServletResponse response) {
+        ResponseCookie cookie = ResponseCookie.from("jwt", "")
+                .httpOnly(true)
+                .secure(secureCookie)
+                .path("/")
+                .maxAge(0)
+                .sameSite(secureCookie ? "None" : "Lax")
+                .build();
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
+    }
+
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest req) {
-        return ResponseEntity.ok(authService.register(req));
+    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest req, HttpServletResponse response) {
+        AuthResponse auth = authService.register(req);
+        setJwtCookie(response, auth.getToken());
+        return ResponseEntity.ok(auth);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest req) {
-        return ResponseEntity.ok(authService.login(req));
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest req, HttpServletResponse response) {
+        AuthResponse auth = authService.login(req);
+        setJwtCookie(response, auth.getToken());
+        return ResponseEntity.ok(auth);
     }
 
     @PostMapping("/guest")
-    public ResponseEntity<AuthResponse> guest(@RequestBody(required = false) java.util.Map<String, String> body) {
+    public ResponseEntity<AuthResponse> guest(@RequestBody(required = false) java.util.Map<String, String> body, HttpServletResponse response) {
         String guestId = body != null ? body.get("guestId") : null;
-        return ResponseEntity.ok(authService.guestLogin(guestId));
+        AuthResponse auth = authService.guestLogin(guestId);
+        setJwtCookie(response, auth.getToken());
+        return ResponseEntity.ok(auth);
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<Void> logout(@AuthenticationPrincipal User user) {
+    public ResponseEntity<Void> logout(@AuthenticationPrincipal User user, HttpServletResponse response) {
         if (user != null) {
             authService.logout(user.getEmail());
         }
+        clearJwtCookie(response);
         return ResponseEntity.ok().build();
     }
 
