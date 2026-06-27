@@ -17,6 +17,8 @@ When you start a new chat:
 
 claude --resume 70419d65-f0a6-4ae1-9172-ba0cc28b6651
 
+
+
  14fc600b-dd28-4da0-9a20-46dfab3df846
 
  I am building a learning platform for Indian graduate/fresher students called LearnToEarn (ARISE in-app). Before creating anything, read my memory file at C:\Users\ManmadhaJayamangala\.claude\projects\C--manmadha-Student-project\memory\feedback_concept_creation.md — it has the full rules, API structure, and quality standards I expect.

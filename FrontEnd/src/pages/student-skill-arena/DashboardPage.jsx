@@ -373,6 +373,48 @@ const CSS_SCAFFOLD = `
   <input type="text" placeholder="Input field" class="input" />
 </div>`
 
+function ConceptVideo({ videoUrl, videoTitle, title }) {
+  if (!videoUrl) return null
+  return (
+    <a
+      href={videoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'flex', alignItems: 'center', gap: '0.875rem',
+        padding: '0.75rem 1rem', borderRadius: '10px', textDecoration: 'none',
+        background: 'rgba(239,68,68,0.07)', border: '1px solid rgba(239,68,68,0.18)',
+        marginBottom: '1rem', transition: 'background 0.15s', cursor: 'pointer',
+      }}
+      onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,0.13)'}
+      onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,0.07)'}
+    >
+      {/* Red play button */}
+      <div style={{
+        width: 36, height: 36, borderRadius: 8, background: '#EF4444',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+      }}>
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="#fff">
+          <path d="M4 2.5l10 5.5-10 5.5V2.5z" />
+        </svg>
+      </div>
+      {/* Label + title */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', color: '#EF4444', fontFamily: 'var(--font-mono)', marginBottom: '0.2rem' }}>▶ WATCH ON YOUTUBE</div>
+        <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {videoTitle || title || 'Watch video'}
+        </div>
+      </div>
+      {/* External link icon */}
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        <polyline points="15 3 21 3 21 9" />
+        <line x1="10" y1="14" x2="21" y2="3" />
+      </svg>
+    </a>
+  )
+}
+
 function LivePreview({ code, subjectType, demoHtml }) {
   const [runKey, setRunKey] = useState(0)
   let doc
@@ -402,10 +444,12 @@ ${jsBody}
 <script>
 const _out=document.getElementById('output');
 const _log=console.log,_err=console.error,_warn=console.warn;
-console.log=(...a)=>{_out.innerHTML+='<div>'+a.map(x=>typeof x==='object'?JSON.stringify(x,null,2):String(x)).join(' ')+'</div>';_log(...a);};
-console.error=(...a)=>{_out.innerHTML+='<div class="err">'+a.join(' ')+'</div>';_err(...a);};
-console.warn=(...a)=>{_out.innerHTML+='<div style="color:#F59E0B">'+a.join(' ')+'</div>';_warn(...a);};
-window.onerror=(msg)=>{_out.innerHTML+='<div class="err">Error: '+msg+'</div>';return true;};
+const _esc=(s)=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const _fmt=(x)=>typeof x==='object'?_esc(JSON.stringify(x,null,2)):_esc(String(x));
+console.log=(...a)=>{_out.innerHTML+='<div>'+a.map(_fmt).join(' ')+'</div>';_log(...a);};
+console.error=(...a)=>{_out.innerHTML+='<div class="err">'+a.map(_fmt).join(' ')+'</div>';_err(...a);};
+console.warn=(...a)=>{_out.innerHTML+='<div style="color:#F59E0B">'+a.map(_fmt).join(' ')+'</div>';_warn(...a);};
+window.onerror=(msg)=>{_out.innerHTML+='<div class="err">Error: '+_esc(String(msg))+'</div>';return true;};
 ${code}
 </script></body></html>`
   } else if (subjectType === 'react') {
@@ -486,7 +530,8 @@ try {
   const _rootEl = document.getElementById('root');
   ReactDOM.createRoot(_rootEl).render(React.createElement(${rootComponent}));
 } catch(e) {
-  document.getElementById('root').innerHTML = '<div style="color:#EF4444;font-family:monospace;font-size:12px;padding:8px;background:#FEF2F2;border-radius:4px;">Error: ' + e.message + '</div>';
+  const _escMsg = String(e.message).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  document.getElementById('root').innerHTML = '<div style="color:#EF4444;font-family:monospace;font-size:12px;padding:8px;background:#FEF2F2;border-radius:4px;">Error: ' + _escMsg + '</div>';
 }
 <\/script>
 </body></html>`
@@ -640,6 +685,9 @@ function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz, 
             {concept.introduction}
           </p>
         )}
+
+        {/* Video */}
+        <ConceptVideo videoUrl={concept.videoUrl} videoTitle={concept.videoTitle} title={concept.title} />
 
         {/* Explanation tabs */}
         {(concept.explanationSimple || concept.explanationTechnical) && (

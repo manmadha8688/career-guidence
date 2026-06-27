@@ -275,6 +275,8 @@ public class AdminService {
         c.setRank(req.getRank() != null ? req.getRank() : "E");
         c.setEstimatedMinutes(req.getEstimatedMinutes() > 0 ? req.getEstimatedMinutes() : 15);
         c.setOrderIndex(newIdx);
+        c.setVideoUrl(req.getVideoUrl());
+        c.setVideoTitle(req.getVideoTitle());
         Concept saved = conceptRepository.save(c);
         subject.setTotalConcepts((int) conceptRepository.countBySubjectId(subject.getId()));
         subjectRepository.save(subject);
@@ -303,6 +305,8 @@ public class AdminService {
         if (req.getTip() != null) c.setTip(req.getTip());
         if (req.getCommonMistakes() != null) c.setCommonMistakes(req.getCommonMistakes());
         if (req.getRank() != null) c.setRank(req.getRank());
+        if (req.getVideoUrl() != null) c.setVideoUrl(req.getVideoUrl());
+        if (req.getVideoTitle() != null) c.setVideoTitle(req.getVideoTitle());
         if (req.getEstimatedMinutes() > 0) c.setEstimatedMinutes(req.getEstimatedMinutes());
 
         int newIdx = req.getOrderIndex();
