@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { MERN_GUIDE, STACKS } from './guideData'
+import { MERN_GUIDE } from './guides/mernGuide'
+ import { STACKS } from './guideIndex'
 
 export default function MernDeployPage() {
   const navigate = useNavigate()

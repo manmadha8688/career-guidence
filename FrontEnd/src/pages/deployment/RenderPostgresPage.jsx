@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { RENDER_POSTGRES_GUIDE, STACKS } from './guideData'
+import { RENDER_POSTGRES_GUIDE } from './guides/renderPostgresGuide'
+ import { STACKS } from './guideIndex'
 
 export default function RenderPostgresPage() {
   const navigate = useNavigate()

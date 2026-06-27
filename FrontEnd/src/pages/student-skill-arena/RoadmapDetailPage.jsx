@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
+import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, PlayCircle, Trophy, Zap, Lock } from 'lucide-react'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'

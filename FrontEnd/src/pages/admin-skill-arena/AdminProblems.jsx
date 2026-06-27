@@ -6,6 +6,7 @@ import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminProblems, createProblem, updateProblemQ, deleteProblemQ } from '../../api/api'
 import toast from 'react-hot-toast'
+import useBodyLock from '../../hooks/useBodyLock'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -84,10 +85,7 @@ function ProblemModal({ problem, onClose, onSave }) {
   const [activeLang, setActiveLang] = useState('python')
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+  useBodyLock()
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }))
 

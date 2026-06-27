@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft, Mail, ShieldCheck, RefreshCw } from 'lucide-react'
+import { Eye, EyeOff, Swords, CheckCircle, Map, Award, Briefcase, ChevronLeft, ShieldCheck } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { registerUser, sendOtp, verifyOtp } from '../../api/api'
@@ -416,6 +416,7 @@ export default function RegisterPage() {
               />
               <button
                 type="button"
+                aria-label={showPass ? 'Hide password' : 'Show password'}
                 onClick={() => setShowPass(p => !p)}
                 style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '0.25rem', display: 'flex' }}
               >

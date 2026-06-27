@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense, lazy } from 'react'
+import { useState, useEffect, useRef, Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import { Sun, Moon, ArrowLeft, Search, ChevronRight, Lock, Zap } from 'lucide-react'
@@ -54,14 +54,15 @@ const G = `
 .spline-loaded { animation: splineLoad 1.2s ease forwards; }
 `
 
-if (typeof document !== 'undefined' && !document.getElementById('ailab-gs')) {
-  const s = document.createElement('style')
-  s.id = 'ailab-gs'
-  s.textContent = G
-  document.head.appendChild(s)
-}
-
 export default function AILabPage() {
+  useEffect(() => {
+    if (!document.getElementById('ailab-gs')) {
+      const s = document.createElement('style')
+      s.id = 'ailab-gs'
+      s.textContent = G
+      document.head.appendChild(s)
+    }
+  }, [])
   const navigate  = useNavigate()
   const { theme, toggleTheme } = useTheme()
   const dark = theme !== 'light'

@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { FLASK_GUIDE, STACKS } from './guideData'
+import { FLASK_GUIDE } from './guides/flaskGuide'
+ import { STACKS } from './guideIndex'
 
 export default function FlaskDeployPage() {
   const navigate = useNavigate()

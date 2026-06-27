@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
-import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, createSubject, updateSubject, deleteSubject } from '../../api/api'
 import toast from 'react-hot-toast'
+import useBodyLock from '../../hooks/useBodyLock'
 
 const RANKS = ['E', 'D', 'C', 'B', 'A', 'S']
 const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
@@ -49,10 +49,7 @@ function SubjectModal({ subject, onClose, onSave }) {
   })
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+  useBodyLock()
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }))
 

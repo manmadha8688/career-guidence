@@ -1,17 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const STORAGE_KEY = 'feedback_nudge_dismissed'
-const DELAY_MS    =  90 * 1000   // 2 minutes
+const DELAY_MS    =  90 * 1000   // 1.5 minutes
 
 export default function FeedbackNudge() {
   const [visible, setVisible] = useState(false)
   const navigate = useNavigate()
+  const scrollTimer = useRef(null)
 
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return
     const t = setTimeout(() => setVisible(true), DELAY_MS)
     return () => clearTimeout(t)
+  }, [])
+
+  useEffect(() => {
+    return () => { if (scrollTimer.current) clearTimeout(scrollTimer.current) }
   }, [])
 
   function dismiss() {
@@ -22,7 +27,7 @@ export default function FeedbackNudge() {
   function goFeedback() {
     dismiss()
     navigate('/')
-    setTimeout(() => {
+    scrollTimer.current = setTimeout(() => {
       document.getElementById('feedback')?.scrollIntoView({ behavior: 'smooth' })
     }, 100)
   }
@@ -66,6 +71,7 @@ export default function FeedbackNudge() {
 
       <button
         onClick={goFeedback}
+        aria-label="Give feedback about the platform"
         style={{
           width: '100%', padding: '0.65rem 1rem',
           background: 'linear-gradient(135deg, #9B6ED4, #7C3AED)',

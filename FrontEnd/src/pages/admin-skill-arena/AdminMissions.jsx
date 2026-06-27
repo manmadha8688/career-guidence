@@ -6,6 +6,7 @@ import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminMissions, createMission, updateMission, deleteMission, getAdminSubjects } from '../../api/api'
 import toast from 'react-hot-toast'
+import useBodyLock from '../../hooks/useBodyLock'
 
 const RANKS = ['D', 'C', 'B', 'A', 'S']
 const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#22C55E' }
@@ -51,10 +52,7 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
   })
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+  useBodyLock()
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }))
 

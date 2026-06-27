@@ -291,6 +291,7 @@ export default function LoginPage() {
               />
               <button
                 type="button"
+                aria-label={showPass ? 'Hide password' : 'Show password'}
                 onClick={() => setShowPass(p => !p)}
                 style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '0.25rem', display: 'flex' }}
               >

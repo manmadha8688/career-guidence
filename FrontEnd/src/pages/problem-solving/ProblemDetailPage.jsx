@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Sun, Moon, ChevronDown, ChevronUp, Eye, EyeOff } from 'lucide-react'
@@ -524,10 +524,12 @@ function Accordion({ open: externalOpen, onToggle, label, accentColor, children,
 
 function CopyButton({ code }) {
   const [copied, setCopied] = useState(false)
+  const timerRef = useRef(null)
+  useEffect(() => () => clearTimeout(timerRef.current), [])
   const copy = () => {
     navigator.clipboard?.writeText(code).then(() => {
       setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      timerRef.current = setTimeout(() => setCopied(false), 1500)
     })
   }
   return (

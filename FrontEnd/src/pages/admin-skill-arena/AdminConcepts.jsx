@@ -6,6 +6,7 @@ import { Plus, Pencil, Trash2, X, ChevronUp, ChevronDown, Search } from 'lucide-
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, deleteConcept } from '../../api/api'
 import toast from 'react-hot-toast'
+import useBodyLock from '../../hooks/useBodyLock'
 
 function SearchableSelect({ items, value, onChange, placeholder = 'Select…' }) {
   const [open, setOpen] = useState(false)
@@ -105,10 +106,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
   })
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+  useBodyLock()
 
   const set = (field, val) => setForm(f => ({ ...f, [field]: val }))
 

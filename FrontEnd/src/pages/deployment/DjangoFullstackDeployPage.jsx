@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { DJANGO_FULLSTACK_GUIDE, STACKS } from './guideData'
+import { DJANGO_FULLSTACK_GUIDE } from './guides/djangoFullstackGuide'
+ import { STACKS } from './guideIndex'
 
 export default function DjangoFullstackDeployPage() {
   const navigate = useNavigate()

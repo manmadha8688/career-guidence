@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
-import { guestLogin } from '../api/api'
-import axios from 'axios'
+import { guestLogin, getPublicStats } from '../api/api'
 import toast from 'react-hot-toast'
 import '../styles/landing-animations.css'
 import {
@@ -163,6 +162,7 @@ export default function LandingPage() {
   const countedRef = useRef(false)
   useEffect(() => {
     if (!countUpRef.current || countedRef.current) return
+    const timers = []
     const io = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return
       countedRef.current = true
@@ -181,16 +181,16 @@ export default function LandingPage() {
           item.textContent = start + (item.dataset.suffix || '')
           if (start >= end) clearInterval(timer)
         }, 16)
+        timers.push(timer)
       })
     }, { threshold: 0.3 })
     io.observe(countUpRef.current)
-    return () => io.disconnect()
+    return () => { io.disconnect(); timers.forEach(clearInterval) }
   }, [platformStats])
 
 
   useEffect(() => {
-    const base = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
-    axios.get(`${base}/public-stats`)
+    getPublicStats()
       .then(r => {
         const { subjectCount, conceptCount, roadmapCount } = r.data
         if (subjectCount > 0) setPlatformStats({
@@ -1011,6 +1011,134 @@ export default function LandingPage() {
             borderRadius: 14, overflow: 'hidden',
           }}>
             
+          </div>
+
+        </div>
+      </section>
+
+      <div className="lp-glow-divider" />
+
+      {/* ── Deploy Guidance Section ────────────────────────── */}
+      <section style={{ padding: '5rem 1.5rem' }}>
+        <div style={{ maxWidth: 1060, margin: '0 auto' }}>
+
+          {/* Label */}
+          <div className="lp-reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              color: lt ? '#7C5DBB' : '#9B6ED4', fontWeight: 700, fontSize: '0.78rem',
+              letterSpacing: '0.14em', textTransform: 'uppercase',
+              background: lt ? 'rgba(124,93,187,0.07)' : 'rgba(155,110,212,0.07)',
+              border: `1px solid ${lt ? 'rgba(124,93,187,0.2)' : 'rgba(155,110,212,0.2)'}`,
+              borderRadius: 20, padding: '0.3rem 0.9rem',
+            }}>
+              🚀 Deploy Guidance
+            </span>
+          </div>
+
+          {/* 2-col layout */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
+            gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem',
+          }}>
+            {/* Left — headline + CTA */}
+            <div className="lp-reveal-left">
+              <h2 style={{
+                fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800,
+                letterSpacing: '-0.025em', lineHeight: 1.15,
+                color: C.text, margin: '0 0 1.25rem',
+              }}>
+                Build it locally.<br />
+                <span style={{ background: 'linear-gradient(135deg, #9B6ED4, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  Ship it live. For free.
+                </span>
+              </h2>
+              <p style={{ color: C.sub, fontSize: '1.0625rem', lineHeight: 1.8, margin: '0 0 1rem', maxWidth: 420 }}>
+                Step-by-step deployment guides for every major tech stack —
+                React, Django, Node.js, FastAPI, Spring Boot, and more.
+              </p>
+              <p style={{ color: C.sub, fontSize: '0.9375rem', lineHeight: 1.75, margin: '0 0 1rem', maxWidth: 420 }}>
+                Includes free database setup (MongoDB Atlas, Neon, Supabase),
+                environment variable security, Git safety, and live URL in under 30 minutes.
+              </p>
+              <p style={{ color: lt ? '#7C5DBB' : '#9B6ED4', fontSize: '0.875rem', fontWeight: 600, margin: '0 0 2rem', maxWidth: 420 }}>
+                A live URL on your resume is 10× more impressive than code that only runs on localhost.
+              </p>
+              <button
+                onClick={() => navigate('/deployment')}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                  background: lt
+                    ? 'linear-gradient(135deg, #7C3AED, #9B6ED4)'
+                    : 'linear-gradient(135deg, #9B6ED4, #7C3AED)',
+                  border: 'none', borderRadius: 8,
+                  padding: '0.75rem 1.75rem',
+                  color: '#fff', fontWeight: 700, fontSize: '0.9375rem',
+                  cursor: 'pointer',
+                  boxShadow: lt ? '0 4px 16px rgba(124,58,237,0.3)' : '0 4px 16px rgba(155,110,212,0.35)',
+                  transition: 'transform 0.15s, box-shadow 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = lt ? '0 8px 24px rgba(124,58,237,0.4)' : '0 8px 24px rgba(155,110,212,0.5)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = lt ? '0 4px 16px rgba(124,58,237,0.3)' : '0 4px 16px rgba(155,110,212,0.35)' }}
+              >
+                🚀 Open Deploy Guide — Free
+              </button>
+            </div>
+
+            {/* Right — stack cards */}
+            <div className="lp-reveal-right" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
+              {[
+                { icon: '⚛️', title: 'React / Vite',       color: '#60A5FA', desc: 'Deploy to Vercel — free HTTPS, auto-redeploy, custom domain' },
+                { icon: '🐍', title: 'Django / FastAPI',   color: '#4ADE80', desc: 'Deploy to Render — free PostgreSQL, environment variables' },
+                { icon: '🟢', title: 'Node.js / MERN',     color: '#68A063', desc: 'Express on Render + React on Vercel + MongoDB Atlas free' },
+                { icon: '📊', title: 'Streamlit ML Apps',  color: '#FF4B4B', desc: 'Train model → save → app.py → Streamlit Cloud. No web framework needed' },
+                { icon: '🤗', title: 'HF Spaces — NLP · LLM · RAG · CV', color: '#FF9D00', desc: 'Deploy NLP, chatbots, RAG apps, image classifiers as Gradio demos — 16GB RAM free' },
+                { icon: '🗄️', title: 'Free Databases',     color: '#A78BFA', desc: 'MongoDB Atlas, Neon, Supabase — setup + connection guide' },
+              ].map((item, i) => (
+                <div key={i}
+                  onClick={() => navigate('/deployment')}
+                  style={{
+                    padding: '1rem',
+                    background: lt ? 'rgba(255,255,255,0.7)' : `${item.color}08`,
+                    border: `1px solid ${lt ? `${item.color}25` : `${item.color}22`}`,
+                    borderLeft: `3px solid ${item.color}`,
+                    borderRadius: 12, cursor: 'pointer',
+                    transition: 'transform 0.15s, box-shadow 0.15s',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = `0 6px 20px ${item.color}20` }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}
+                >
+                  <div style={{ fontSize: '1.1rem', marginBottom: '0.35rem' }}>{item.icon}</div>
+                  <div style={{ fontWeight: 700, fontSize: '0.8rem', color: item.color, marginBottom: '0.25rem' }}>{item.title}</div>
+                  <p style={{ color: C.muted, fontSize: '0.72rem', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats row */}
+          <div className="lp-reveal" style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+            gap: '1px',
+            background: lt ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)',
+            borderRadius: 16, overflow: 'hidden',
+            border: `1px solid ${lt ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.07)'}`,
+          }}>
+            {[
+              { value: '10+', label: 'Deployment guides', color: '#9B6ED4' },
+              { value: '4',   label: 'Free databases',    color: '#00ED64' },
+              { value: '0',   label: 'Credit card needed', color: '#60A5FA' },
+              { value: '30m', label: 'To go live',        color: '#F59E0B' },
+            ].map((stat, i) => (
+              <div key={i} style={{
+                padding: '1.5rem 1.25rem', textAlign: 'center',
+                background: lt ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.02)',
+              }}>
+                <div style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: stat.color, lineHeight: 1 }}>{stat.value}</div>
+                <div style={{ fontSize: '0.75rem', color: C.muted, marginTop: '0.4rem', lineHeight: 1.4 }}>{stat.label}</div>
+              </div>
+            ))}
           </div>
 
         </div>

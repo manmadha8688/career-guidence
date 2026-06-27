@@ -4,6 +4,7 @@ import AppLayout from '../../components/AppLayout'
 import { getAdminWalkIns, createWalkIn, updateAdminWalkIn, deleteWalkIn } from '../../api/api'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import toast from 'react-hot-toast'
+import useBodyLock from '../../hooks/useBodyLock'
 
 const CITIES = ['Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Mumbai', 'Noida', 'Delhi', 'Kolkata', 'Ahmedabad', 'Gurugram']
 const STATUSES = ['ACTIVE', 'EXPIRED']
@@ -18,10 +19,7 @@ function PostModal({ onClose, onSuccess, existing }) {
   )
   const [saving, setSaving] = useState(false)
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+  useBodyLock()
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 

@@ -19,7 +19,7 @@ export default function Navbar({ onMenuClick, title = '' }) {
   return (
     <header className="navbar">
       <div className="navbar-left">
-        <button className="theme-toggle" onClick={onMenuClick} title="Toggle menu">
+        <button className="theme-toggle" onClick={onMenuClick} title="Toggle menu" aria-label="Toggle sidebar menu">
           <Menu size={18} />
         </button>
         {title && <span className="navbar-title">{title}</span>}
@@ -40,6 +40,7 @@ export default function Navbar({ onMenuClick, title = '' }) {
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(14,165,233,0.12)'; e.currentTarget.style.borderColor = 'rgba(14,165,233,0.6)' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.borderColor = 'rgba(14,165,233,0.3)' }}
               title="Problem Solving"
+              aria-label="Problem Solving"
             >
               Coding
             </button>
@@ -54,12 +55,13 @@ export default function Navbar({ onMenuClick, title = '' }) {
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,127,42,0.12)'; e.currentTarget.style.borderColor = 'rgba(255,127,42,0.6)' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.borderColor = 'rgba(255,127,42,0.3)' }}
               title="Mission Board"
+              aria-label="Mission Board"
             >
               ◆ MISSIONS
             </button>
           </>
         )}
-<button className="theme-icon-btn" onClick={toggleTheme} title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+<button className="theme-icon-btn" onClick={toggleTheme} title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'} aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
           {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
         </button>
         {!isAdmin && (
