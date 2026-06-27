@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Flag, X, Send, ChevronDown } from 'lucide-react'
+import { Flag, X, Send } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate, useLocation } from 'react-router-dom'
 import api from '../api/api'
@@ -80,6 +80,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
         <button
           onClick={handleOpen}
           title="Report an issue on this page"
+          aria-label="Report an issue on this page"
           style={{
             position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 90,
             display: 'flex', alignItems: 'center', gap: '0.4rem',
@@ -99,6 +100,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
       ) : (
         <button
           onClick={handleOpen}
+          aria-label="Report an issue"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
             background: 'none', border: '1px solid rgba(239,68,68,0.25)',
@@ -118,7 +120,11 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
           style={{ position: 'fixed', inset: 0, zIndex: 999, background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}
           onClick={e => e.target === e.currentTarget && close()}
         >
-          <div style={{
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Report an issue"
+            style={{
             background: 'var(--bg-card)', border: '1px solid var(--border)',
             borderTop: '3px solid #EF4444', borderRadius: 16,
             width: 'min(480px, 100%)', maxHeight: '90vh', overflow: 'auto',
@@ -137,7 +143,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
                   </div>
                 </div>
               </div>
-              <button onClick={close} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.25rem', borderRadius: 4 }}>
+              <button onClick={close} aria-label="Close report dialog" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.25rem', borderRadius: 4 }}>
                 <X size={16} />
               </button>
             </div>

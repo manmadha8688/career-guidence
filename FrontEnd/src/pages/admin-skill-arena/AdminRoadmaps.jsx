@@ -9,6 +9,7 @@ import {
   getRoadmapSubjects, getAdminSubjects, addSubjectToRoadmap, removeSubjectFromRoadmap, reorderSubjectInRoadmap
 } from '../../api/api'
 import toast from 'react-hot-toast'
+import useBodyLock from '../../hooks/useBodyLock'
 
 function SearchableSelect({ items, value, onChange, placeholder = 'Select…' }) {
   const [open, setOpen] = useState(false)
@@ -89,10 +90,7 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
   const [loading, setLoading] = useState(false)
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
-  }, [])
+  useBodyLock()
 
   const handleSubmit = async e => {
     e.preventDefault(); setLoading(true)

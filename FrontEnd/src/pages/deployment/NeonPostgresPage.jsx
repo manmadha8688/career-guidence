@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { NEON_POSTGRES_GUIDE, STACKS } from './guideData'
+import { NEON_POSTGRES_GUIDE } from './guides/neonPostgresGuide'
+ import { STACKS } from './guideIndex'
 
 export default function NeonPostgresPage() {
   const navigate = useNavigate()

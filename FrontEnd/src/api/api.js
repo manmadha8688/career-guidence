@@ -26,7 +26,9 @@ function _read() {
   try { return JSON.parse(sessionStorage.getItem(CACHE_NS) || '{}') } catch { return {} }
 }
 function _write(store) {
-  try { sessionStorage.setItem(CACHE_NS, JSON.stringify(store)) } catch {}
+  try { sessionStorage.setItem(CACHE_NS, JSON.stringify(store)) } catch (e) {
+    if (import.meta.env.DEV) console.warn('[api] cache write failed:', e.message)
+  }
 }
 
 function withCache(key, ttlMs, fn) {
@@ -64,6 +66,9 @@ export function clearUserCache() {
   )
 }
 
+// ─── PUBLIC ──────────────────────────────────
+export const getPublicStats = () => withCache('publicStats', 5*60_000, () => api.get('/public-stats'))
+
 // ─── AUTH ────────────────────────────────────
 export const registerUser     = (data)      => api.post('/auth/register', data)
 export const sendOtp          = (email)     => api.post('/auth/send-otp', { email })
@@ -75,12 +80,8 @@ export const getMe            = ()          => api.get('/auth/me')
 // ─── SUBJECTS ────────────────────────────────
 export const getSubjects      = ()          => withCache('subjects',          2*60_000, () => api.get('/subjects'))
 export const getSubject       = (id)        => withCache(`subject:${id}`,     2*60_000, () => api.get(`/subjects/${id}`))
-export const searchSubjects   = (q)         => api.get(`/subjects/search?q=${encodeURIComponent(q)}`)
-
 // ─── CONCEPTS ────────────────────────────────
-export const getConcepts      = (subId)     => api.get(`/subjects/${subId}/concepts`)
 export const getConcept       = (id)        => withCache(`concept:${id}`,     2*60_000, () => api.get(`/concepts/${id}`))
-export const searchConcepts   = (q)         => api.get(`/concepts/search?q=${encodeURIComponent(q)}`)
 
 // ─── PROGRESS ────────────────────────────────
 export const completeConcept    = (id)      => api.post(`/progress/concept/${id}/complete`)
@@ -94,13 +95,11 @@ export const getRoadmap         = (id)      => withCache(`roadmap:${id}`,     5*
 export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'enrolledRoadmaps'); return r })
 export const pauseRoadmap       = (id)      => api.post(`/roadmaps/${id}/pause`)  .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'enrolledRoadmaps'); return r })
 export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'enrolledRoadmaps'); return r })
-export const getEnrolledRoadmaps = ()       => withCache('enrolledRoadmaps', 60_000, () => api.get('/roadmaps/enrolled'))
 
 // ─── ADMIN ───────────────────────────────────
 export const getAdminStats      = ()        => withCache('adminStats', 2*60_000, () => api.get('/admin/stats'))
 export const getAdminUsers      = (p,s,q)   => api.get(`/admin/users?page=${p}&size=${s}&search=${q||''}`)
 export const deleteUser         = (id)      => api.delete(`/admin/users/${id}`).then(r => { clearApiCache('adminStats'); return r })
-export const getUserProgress    = (id)      => api.get(`/admin/users/${id}/progress`)
 
 export const getAdminSubjects   = ()        => api.get('/admin/subjects')
 export const createSubject      = (d)       => api.post('/admin/subjects', d)      .then(r => { clearApiCache('subjects', 'subject:*');                    return r })
@@ -111,8 +110,6 @@ export const getAdminConcepts   = (subId)   => api.get(`/admin/concepts?subjectI
 export const createConcept      = (d)       => api.post('/admin/concepts', d)      .then(r => { clearApiCache('subjects', 'subject:*');                    return r })
 export const updateConcept      = (id,d)    => api.put(`/admin/concepts/${id}`, d) .then(r => { clearApiCache(`concept:${id}`, 'subjects', 'subject:*');   return r })
 export const deleteConcept      = (id)      => api.delete(`/admin/concepts/${id}`) .then(r => { clearApiCache('subjects', 'subject:*', 'concept:*');       return r })
-export const migrateRichContent = ()        => api.post('/admin/migrate/rich-content')
-
 export const getAdminRoadmaps   = ()        => api.get('/admin/roadmaps')
 export const createRoadmap      = (d)       => api.post('/admin/roadmaps', d)      .then(r => { clearApiCache('roadmaps');                                 return r })
 export const updateRoadmap      = (id,d)    => api.put(`/admin/roadmaps/${id}`, d) .then(r => { clearApiCache('roadmaps', `roadmap:${id}`);                return r })
@@ -136,7 +133,6 @@ export const submitQuiz        = (data)            => api.post('/quiz/submit', d
 export const getAttemptResult  = (attemptId)       => api.get(`/quiz/attempt/${attemptId}`)
 export const getQuizStatus          = (type, refId) => withCache(`quizStatus:${type}:${refId}`, 2*60_000, () => api.get(`/quiz/${type}/${refId}/status`))
 export const getBulkSubjectStatus   = (ids)         => withCache(`quizStatus:bulk:${ids.join(',')}`, 2*60_000, () => api.get(`/quiz/subjects/bulk-status?ids=${ids.join(',')}`))
-export const getSubjectStatus  = (subjectId)       => withCache(`quizStatus:subject:${subjectId}`, 2*60_000, () => api.get(`/quiz/subject/${subjectId}/status`))
 export const getRoadmapStatus  = (roadmapId)       => withCache(`roadmapStatus:${roadmapId}`, 2*60_000, () => api.get(`/quiz/roadmap/${roadmapId}/status`))
 
 // ─── FEEDBACK ─────────────────────────────────────────

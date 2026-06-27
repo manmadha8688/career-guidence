@@ -234,7 +234,6 @@ function JobsComingSoon() {
 // ── Main Page ──────────────────────────────────────────────────────
 export default function JobsPage() {
   const { user } = useAuth()
-  const { theme, toggleTheme } = useNavigate ? [{ theme: 'dark' }] : []
   const { theme: th, toggleTheme: tog } = useTheme()
   const navigate = useNavigate()
   const light = th === 'light'

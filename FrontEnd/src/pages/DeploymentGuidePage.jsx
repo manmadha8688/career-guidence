@@ -2,17 +2,19 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import { ArrowLeft, Sun, Moon, Search, X, ExternalLink } from 'lucide-react'
-import { STACKS, PLATFORMS } from './deployment/guideData'
+import { STACKS, PLATFORMS } from './deployment/guideIndex'
 
 // ── Platform visibility per filter ────────────────────────────────────────────
-const DB_TAGS = ['database', 'mongodb', 'nosql', 'sql', 'postgresql', 'neon', 'supabase', 'atlas', 'storage', 'cloudinary']
+const DB_TAGS  = ['database', 'mongodb', 'nosql', 'sql', 'postgresql', 'neon', 'supabase', 'atlas', 'storage', 'cloudinary']
+const ML_TAGS  = ['machine learning', 'ml', 'data science', 'streamlit', 'hugging face', 'gradio', 'nlp', 'transformers', 'ai', 'free']
 
 const isPlatformVisible = (platform, filter) => {
-  if (filter === 'all') return true
+  if (filter === 'all')      return true
   if (filter === 'frontend') return platform.stackType === 'frontend' || platform.stackType === 'all'
   if (filter === 'backend')  return platform.stackType === 'backend'  || platform.stackType === 'all'
-  if (filter === 'fullstack') return true // full stack needs every platform
+  if (filter === 'fullstack') return true
   if (filter === 'database') return platform.tags?.some(t => DB_TAGS.includes(t))
+  if (filter === 'mldata')   return platform.stackType === 'mldata'   || platform.tags?.some(t => ML_TAGS.includes(t))
   return true
 }
 
@@ -84,11 +86,12 @@ export default function DeploymentGuidePage() {
   const clearFilters = () => { setFilter('all'); search && setSearch !== '' && setSearch('') }
 
   const FILTER_OPTIONS = [
-    { key: 'all',       label: 'All',       icon: '🌐' },
-    { key: 'frontend',  label: 'Frontend',  icon: '⚛️' },
-    { key: 'backend',   label: 'Backend',   icon: '🖥' },
-    { key: 'fullstack', label: 'Full Stack', icon: '🔷' },
-    { key: 'database',  label: 'Database',  icon: '🗄️' },
+    { key: 'all',       label: 'All',        icon: '🌐' },
+    { key: 'frontend',  label: 'Frontend',   icon: '⚛️' },
+    { key: 'backend',   label: 'Backend',    icon: '🖥' },
+    { key: 'fullstack', label: 'Full Stack',  icon: '🔷' },
+    { key: 'database',  label: 'Database',   icon: '🗄️' },
+    { key: 'mldata',    label: 'AI & ML',     icon: '🤖' },
   ]
 
   return (
@@ -142,17 +145,130 @@ export default function DeploymentGuidePage() {
         {/* ── MIDDLE: Guides ── */}
         <main style={{ flex: 1, minWidth: 0, padding: '1.5rem 1.75rem' }}>
 
-          {/* Page title + search */}
+          {/* Page title + search — changes based on active filter */}
           <div style={{ marginBottom: '1.5rem' }}>
-            <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1.1rem,2.5vw,1.45rem)', margin: '0 0 0.3rem' }}>
-              <span style={{ background: 'linear-gradient(135deg,#9B6ED4,#60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Deploy Your Project</span>
-              <span style={{ color: text }}>{' — Go Live Free'}</span>
-            </h1>
-            <p style={{ color: muted, fontSize: '0.82rem', margin: '0 0 1rem' }}>Step-by-step guides · Free hosting · No credit card needed</p>
+            {filterStack === 'mldata' ? (
+              <div style={{
+                borderLeft: '4px solid #FF4B4B',
+                borderRadius: '0 12px 12px 0',
+                padding: '1rem 1.25rem',
+                marginBottom: '1rem',
+                background: dark ? 'rgba(255,75,75,0.07)' : 'rgba(255,75,75,0.07)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '1.2rem' }}>🤖</span>
+                  <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1rem,2.5vw,1.35rem)', margin: 0, color: '#FF4B4B' }}>
+                    Deploy AI & ML Projects Online
+                  </h1>
+                </div>
+                <p style={{ color: muted, fontSize: '0.82rem', margin: '0 0 0.7rem' }}>Streamlit, Gradio, HF Spaces — ML models, AI demos, chatbots, NLP, image AI — all free</p>
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                  {['1. Train model', '2. joblib.dump()', '3. Write app.py', '4. Push to GitHub', '✅ Live demo URL'].map((step, i) => (
+                    <span key={i} style={{ fontSize: '0.63rem', fontFamily: 'monospace', background: dark ? 'rgba(255,75,75,0.12)' : 'rgba(255,75,75,0.1)', color: '#FF4B4B', border: '1px solid rgba(255,75,75,0.25)', borderRadius: 20, padding: '0.12rem 0.5rem' }}>
+                      {step}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : filterStack === 'database' ? (
+              <div style={{
+                borderLeft: '4px solid #A78BFA',
+                borderRadius: '0 12px 12px 0',
+                padding: '1rem 1.25rem',
+                marginBottom: '1rem',
+                background: dark ? 'rgba(167,139,250,0.07)' : 'rgba(167,139,250,0.07)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '1.2rem' }}>🗄️</span>
+                  <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1rem,2.5vw,1.35rem)', margin: 0, color: '#A78BFA' }}>
+                    Free Database Setup
+                  </h1>
+                </div>
+                <p style={{ color: muted, fontSize: '0.82rem', margin: 0 }}>MongoDB Atlas · Neon PostgreSQL · Supabase · Render PostgreSQL — connect to any framework</p>
+              </div>
+            ) : filterStack === 'frontend' ? (
+              <div style={{
+                borderLeft: '4px solid #60A5FA',
+                borderRadius: '0 12px 12px 0',
+                padding: '1rem 1.25rem',
+                marginBottom: '1rem',
+                background: dark ? 'rgba(96,165,250,0.06)' : 'rgba(96,165,250,0.07)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '1.2rem' }}>⚛️</span>
+                  <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1rem,2.5vw,1.35rem)', margin: 0, color: '#60A5FA' }}>
+                    Frontend Deployment
+                  </h1>
+                </div>
+                <p style={{ color: muted, fontSize: '0.82rem', margin: '0 0 0.7rem' }}>HTML/CSS/JS, React, and Next.js — push to GitHub and go live in minutes for free</p>
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                  {['HTML/CSS/JS → GitHub Pages', 'React/Vite → Vercel', 'Next.js → Vercel'].map((t, i) => (
+                    <span key={i} style={{ fontSize: '0.63rem', fontFamily: 'monospace', background: dark ? 'rgba(96,165,250,0.12)' : 'rgba(96,165,250,0.1)', color: '#60A5FA', border: '1px solid rgba(96,165,250,0.3)', borderRadius: 20, padding: '0.12rem 0.5rem' }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            ) : filterStack === 'backend' ? (
+              <div style={{
+                borderLeft: '4px solid #4ADE80',
+                borderRadius: '0 12px 12px 0',
+                padding: '1rem 1.25rem',
+                marginBottom: '1rem',
+                background: dark ? 'rgba(74,222,128,0.06)' : 'rgba(74,222,128,0.07)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '1.2rem' }}>🖥</span>
+                  <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1rem,2.5vw,1.35rem)', margin: 0, color: '#4ADE80' }}>
+                    Backend API Deployment
+                  </h1>
+                </div>
+                <p style={{ color: muted, fontSize: '0.82rem', margin: '0 0 0.7rem' }}>Django, FastAPI, Flask, Node.js, Spring Boot — deploy REST APIs to Render for free</p>
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                  {['Python → Render', 'Node.js → Render', 'Spring Boot → Docker + Render'].map((t, i) => (
+                    <span key={i} style={{ fontSize: '0.63rem', fontFamily: 'monospace', background: dark ? 'rgba(74,222,128,0.12)' : 'rgba(74,222,128,0.1)', color: '#4ADE80', border: '1px solid rgba(74,222,128,0.3)', borderRadius: 20, padding: '0.12rem 0.5rem' }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            ) : filterStack === 'fullstack' ? (
+              <div style={{
+                borderLeft: '4px solid #61DAFB',
+                borderRadius: '0 12px 12px 0',
+                padding: '1rem 1.25rem',
+                marginBottom: '1rem',
+                background: dark ? 'rgba(97,218,251,0.06)' : 'rgba(97,218,251,0.07)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                  <span style={{ fontSize: '1.2rem' }}>🔷</span>
+                  <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1rem,2.5vw,1.35rem)', margin: 0, color: '#61DAFB' }}>
+                    Full Stack Deployment
+                  </h1>
+                </div>
+                <p style={{ color: muted, fontSize: '0.82rem', margin: '0 0 0.7rem' }}>MERN, Next.js, Django Full Stack — frontend + backend + database, all connected free</p>
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                  {['MERN → Vercel + Render + Atlas', 'Next.js → Vercel', 'Django Full Stack → Render'].map((t, i) => (
+                    <span key={i} style={{ fontSize: '0.63rem', fontFamily: 'monospace', background: dark ? 'rgba(97,218,251,0.12)' : 'rgba(97,218,251,0.1)', color: '#61DAFB', border: '1px solid rgba(97,218,251,0.3)', borderRadius: 20, padding: '0.12rem 0.5rem' }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <>
+                <h1 style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 900, fontSize: 'clamp(1.1rem,2.5vw,1.45rem)', margin: '0 0 0.3rem' }}>
+                  <span style={{ background: 'linear-gradient(135deg,#9B6ED4,#60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Deploy Your Project</span>
+                  <span style={{ color: text }}>{' — Go Live Free'}</span>
+                </h1>
+                <p style={{ color: muted, fontSize: '0.82rem', margin: '0 0 1rem' }}>Step-by-step guides · Free hosting · No credit card needed</p>
+              </>
+            )}
             <div style={{ position: 'relative' }}>
               <Search size={14} color={muted} style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
               <input type="text" value={search} onChange={e => setSearch(e.target.value)}
-                placeholder='Search — "react", "django", "mongodb", "postgres"…'
+                placeholder={
+                  filterStack === 'mldata'    ? 'Search — "chatbot", "nlp", "image ai", "rag", "streamlit", "gradio"…'
+                : filterStack === 'database'  ? 'Search — "mongodb", "postgresql", "neon", "supabase"…'
+                : filterStack === 'frontend'  ? 'Search — "react", "html", "next.js", "vercel"…'
+                : filterStack === 'backend'   ? 'Search — "django", "node.js", "flask", "fastapi", "spring boot"…'
+                : filterStack === 'fullstack' ? 'Search — "mern", "next.js", "django full stack", "react"…'
+                : 'Search — "react", "django", "mongodb", "postgres"…'
+                }
                 style={{ width: '100%', background: card, border: `1px solid ${bdr}`, borderRadius: 10, padding: '0.65rem 2.4rem 0.65rem 2.3rem', fontSize: '0.83rem', color: text, outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit', boxShadow: dark ? 'none' : '0 1px 6px rgba(0,0,0,0.07)' }}
               />
               {search && (
@@ -167,9 +283,9 @@ export default function DeploymentGuidePage() {
           {visibleStacks.length > 0 && (
             <div style={{ marginBottom: '2rem' }}>
               <div style={{ fontSize: '0.62rem', fontFamily: 'monospace', fontWeight: 700, color: muted, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.85rem' }}>
-                {filterStack === 'database' ? '🗄️' : '📦'} {filterStack === 'database' ? 'Database' : 'Deployment'} Guides ({visibleStacks.length})
+                {filterStack === 'database' ? '🗄️' : filterStack === 'mldata' ? '🤖' : '📦'} {filterStack === 'database' ? 'Database' : filterStack === 'mldata' ? 'AI & ML' : 'Deployment'} Guides ({visibleStacks.length})
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: filterStack === 'frontend' ? 'repeat(2,1fr)' : 'repeat(auto-fill,minmax(240px,1fr))', gap: '1rem' }}>
                 {visibleStacks.map(stack => (
                   <button type="button" key={stack.id} onClick={() => navigate(stack.route)}
                     style={{ background: card, border: `1px solid ${bdr}`, borderRadius: 16, padding: '1.3rem 1.15rem', cursor: 'pointer', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.65rem', transition: 'border-color 0.18s, box-shadow 0.18s, transform 0.18s', boxShadow: dark ? 'none' : '0 2px 10px rgba(0,0,0,0.07)', overflow: 'hidden', position: 'relative' }}

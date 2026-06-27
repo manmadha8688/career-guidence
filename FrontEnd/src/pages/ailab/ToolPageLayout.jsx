@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
-import { ArrowLeft, Sun, Moon, Play, ExternalLink, Copy, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Sun, Moon, ExternalLink, Copy, ChevronRight } from 'lucide-react'
 import ScrollToTop from '../../components/ScrollToTop'
 import { TOOLS, CATEGORIES } from './aiLabData'
 import toast from 'react-hot-toast'

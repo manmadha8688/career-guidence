@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { FASTAPI_GUIDE, STACKS } from './guideData'
+import { FASTAPI_GUIDE } from './guides/fastapiGuide'
+ import { STACKS } from './guideIndex'
 
 export default function FastApiDeployPage() {
   const navigate = useNavigate()

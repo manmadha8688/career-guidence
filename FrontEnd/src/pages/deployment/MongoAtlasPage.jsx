@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { MONGODB_ATLAS_GUIDE, STACKS } from './guideData'
+import { MONGODB_ATLAS_GUIDE } from './guides/mongoAtlasGuide'
+ import { STACKS } from './guideIndex'
 
 export default function MongoAtlasPage() {
   const navigate = useNavigate()

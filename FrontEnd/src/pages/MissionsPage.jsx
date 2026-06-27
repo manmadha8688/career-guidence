@@ -6,6 +6,7 @@ import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { getMissions } from '../api/api'
+import toast from 'react-hot-toast'
 
 const RANK_META = {
   D: { color: '#22C55E', bg: 'rgba(34,197,94,0.12)', label: 'D-RANK', desc: 'Academy Level' },
@@ -55,12 +56,12 @@ export default function MissionsPage() {
     } else if (categoryFromUrl === 'role_based') {
       setCategory('role_based')
     }
-  }, [])
+  }, [searchParams])
 
   useEffect(() => {
     getMissions()
       .then(r => setMissions(r.data))
-      .catch(() => {})
+      .catch(() => toast.error('Failed to load missions. Please refresh.'))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [])
 

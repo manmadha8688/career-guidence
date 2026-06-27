@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import GuidePageWrapper from './GuideLayout'
-import { HTML_STATIC_GUIDE, STACKS } from './guideData'
+import { HTML_STATIC_GUIDE } from './guides/htmlStaticGuide'
+ import { STACKS } from './guideIndex'
 
 export default function HtmlStaticDeployPage() {
   const navigate = useNavigate()
