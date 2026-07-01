@@ -148,7 +148,7 @@ spring.h2.console.enabled=false
 jwt.secret=\${JWT_SECRET:local-dev-secret-only}
 jwt.expiration=\${JWT_EXPIRATION:86400000}`,
         ],
-        note: 'The \${VAR:default} syntax reads from environment variables with a fallback. Locally it uses H2. On Render, set SPRING_DATASOURCE_URL to your PostgreSQL URL and it switches automatically.',
+        note: 'The ${VAR:default} syntax reads from environment variables with a fallback. Locally it uses H2. On Render, set SPRING_DATASOURCE_URL to your PostgreSQL URL and it switches automatically.',
       },
       {
         label: 'application.properties for MongoDB',
@@ -583,7 +583,7 @@ docker stop $(docker ps -q --filter "ancestor=my-spring-app")`,
           '   Check if controllers use @RequestMapping("/api") prefix.',
           '',
           'Cause 2: server.port is wrong.',
-          '   Must be: server.port=\${PORT:8080}',
+          '   Must be: server.port=${PORT:8080}',
           '   Render injects PORT — do NOT hardcode 8080.',
           '',
           'Cause 3: Component scan not finding controllers.',

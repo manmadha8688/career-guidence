@@ -26,7 +26,7 @@ export default function CodeInterpreterPage() {
         </Block>
         <Block>
           <SubHead label="What Code Interpreter actually does" color={color} />
-          <InfoBox color={color}>Code Interpreter runs a sandboxed Python environment inside ChatGPT. When you upload a file and ask a question, GPT-4o writes Python code (using pandas, matplotlib, numpy, sklearn, and many other libraries), executes it in the sandbox, sees the output or error, and responds with results. If the code produces an error, the model automatically rewrites and retries — you never see the failure, just the final correct result.</InfoBox>
+          <InfoBox color={color}>Code Interpreter runs a sandboxed Python environment inside ChatGPT. When you upload a file and ask a question, GPT-5.5 writes Python code (using pandas, matplotlib, numpy, sklearn, and many other libraries), executes it in the sandbox, sees the output or error, and responds with results. If the code produces an error, the model automatically rewrites and retries — you never see the failure, just the final correct result.</InfoBox>
           <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The key insight is the feedback loop. A regular LLM generates code based on what it thinks will work. Code Interpreter generates code, runs it, and sees what actually happened. This is the difference between guessing and verifying. For data analysis tasks where the exact format of your data matters (column names, data types, missing values), the ability to run and see real results makes Code Interpreter dramatically more reliable than asking for code that you run elsewhere.</p>
         </Block>
         <Block>
@@ -47,7 +47,7 @@ export default function CodeInterpreterPage() {
             { n: '2', title: 'Describe the output format explicitly', body: "'Create a bar chart with: title Revenue by Region, x-axis labels rotated 45 degrees, bars colored by category, y-axis in thousands (₹000s), save as PNG with 300 DPI.' Specific output specifications produce professional results." },
             { n: '3', title: 'Ask for the code', body: "'Show me the Python code you used for this analysis.' Code Interpreter provides the full code. Copy it to Jupyter or a .py file. Now you have working Python code customized for your data." },
             { n: '4', title: 'Iterate on results', body: "'Now filter that to only rows where category is Electronics and redo the chart.' Code Interpreter remembers the context and modifies its approach. Each follow-up builds on the previous result without restarting." },
-            { n: '5', title: 'Ask for interpretation', body: "After a chart or statistical result: 'What does this tell us? What are the 3 most important insights from this analysis?' Code Interpreter combines execution capability with GPT-4o's reasoning to provide interpretation, not just numbers." },
+            { n: '5', title: 'Ask for interpretation', body: "After a chart or statistical result: 'What does this tell us? What are the 3 most important insights from this analysis?' Code Interpreter combines execution capability with GPT-5.5's reasoning to provide interpretation, not just numbers." },
           ]} />
         </Block>
         <Block>

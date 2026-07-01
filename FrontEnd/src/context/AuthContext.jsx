@@ -52,7 +52,7 @@ export function AuthProvider({ children }) {
   const logout = async () => {
     setLogoutOverlay(true)
     setLogoutDone(false)
-    try { await api.post('/auth/logout') } catch {}
+    try { await api.post('/auth/logout') } catch { /* best-effort: proceed with local cleanup */ }
     clearUserCache()
     clearBrowserSessionPreservingPrefs()
     setLogoutDone(true)

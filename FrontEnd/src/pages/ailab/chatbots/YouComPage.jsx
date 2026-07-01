@@ -14,7 +14,7 @@ export default function YouComPage() {
         title="You.com — AI Search That Cites Every Source"
         tagline="Research, write, and code with multiple AI models in one privacy-first platform"
         badges={[['✓ FREE TIER', '#4ADE80'], ['you.com', color], ['Multi-model AI', 'var(--text-muted)']]}
-        overview={"You.com is an AI-powered search engine and productivity platform that combines real-time web search with conversational AI. Founded in 2020 by Richard Socher (former Chief Scientist at Salesforce), it is built around one idea: instead of giving you ten links, it reads multiple sources, synthesizes the answer, and shows you numbered citations you can verify. The difference from Perplexity: You.com is a full platform — it also gives you access to GPT-4o, Claude, Gemini, and Llama 3 in one place, plus AI writing tools and image generation. Students on a tight budget get significant value from the free tier, and the YouPro Education plan at $6.99/month (with a school email) unlocks everything including all premium models."}
+        overview={"You.com is an AI-powered search engine and productivity platform that combines real-time web search with conversational AI. Founded in 2020 by Richard Socher (former Chief Scientist at Salesforce), it is built around one idea: instead of giving you ten links, it reads multiple sources, synthesizes the answer, and shows you numbered citations you can verify. The difference from Perplexity: You.com is a full platform — it also gives you access to leading models like GPT-5.5, Claude, Gemini, and Llama in one place, plus AI writing tools and image generation. Students on a tight budget get significant value from the free tier, and the YouPro Education plan at $6.99/month (with a school email) unlocks everything including all premium models."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -37,9 +37,9 @@ export default function YouComPage() {
         <Block>
           <SubHead label="Multi-model access" color={color} />
           <CardGrid color={color} items={[
-            { name: 'GPT-4o', desc: "OpenAI's flagship — strong across all tasks. Available on You.com Pro without paying OpenAI separately." },
-            { name: 'Claude 3.5 Sonnet', desc: "Anthropic's best reasoning model — excellent for long documents, code review, and nuanced analysis." },
-            { name: 'Gemini 1.5 Pro', desc: "Google's model — 1M token context, strong on multimodal tasks and factual questions." },
+            { name: 'GPT-5.5', desc: "OpenAI's flagship — strong across all tasks. Available on You.com Pro without paying OpenAI separately." },
+            { name: 'Claude Sonnet 5', desc: "Anthropic's fast frontier model — excellent for long documents (1M context), code review, and nuanced analysis." },
+            { name: 'Gemini 3.1 Pro', desc: "Google's flagship — huge context window, strong on multimodal tasks and factual questions." },
             { name: 'Llama 3 (Meta)', desc: 'Open-source model — available free on You.com. Strong for general tasks without API cost.' },
             { name: 'YouChat (native)', desc: "You.com's own model with real-time web access. Fast, cited, and always current. Default for Smart Mode." },
             { name: 'Switch per conversation', desc: 'Change model mid-session. Compare how different models handle the same prompt without switching tabs or platforms.' },
@@ -57,8 +57,8 @@ export default function YouComPage() {
           <SubHead label="For students specifically" color={color} />
           <Steps color={color} items={[
             { n: '1', title: 'Research Mode for essays and papers', body: 'Use Research Mode when writing academic content. It synthesizes multiple sources and provides numbered citations. Paste the citations into your notes, verify each one, and you have a properly sourced starting point — faster than manually reading 10 articles.' },
-            { n: '2', title: 'Genius Mode for coding problems', body: 'For complex programming problems that require multi-step thinking: use Genius Mode with Claude or GPT-4o. It can run through the logic, generate code, explain it step by step, and help you debug — all in one conversation.' },
-            { n: '3', title: 'YouPro Education plan — $6.99/month', body: 'If you have a school email (.edu or college domain): check you.com/support for the Education plan. Full access to all premium models (GPT-4o, Claude, Gemini) for $6.99/month — more than 50% off regular pricing. Worth it if you use AI tools daily.' },
+            { n: '2', title: 'Genius Mode for coding problems', body: 'For complex programming problems that require multi-step thinking: use Genius Mode with Claude or GPT-5.5. It can run through the logic, generate code, explain it step by step, and help you debug — all in one conversation.' },
+            { n: '3', title: 'YouPro Education plan — $6.99/month', body: 'If you have a school email (.edu or college domain): check you.com/support for the Education plan. Full access to all premium models (GPT-5.5, Claude, Gemini) for $6.99/month — more than 50% off regular pricing. Worth it if you use AI tools daily.' },
             { n: '4', title: 'Private mode for sensitive research', body: 'You.com does not track your queries or sell your data. For research on sensitive personal or academic topics, this matters. Private mode stores no query history.' },
             { n: '5', title: 'Source control for targeted research', body: 'Constrain searches to specific domains — academic sites only, specific news outlets, official documentation. This narrows results to authoritative sources and reduces the chance of picking up misinformation from low-quality sites.' },
           ]} />
@@ -66,7 +66,7 @@ export default function YouComPage() {
         <Block title="What you can do" titleColor={color}>
         <CanDoList items={[
           'Research any topic with multi-source cited answers — without manually checking 10 browser tabs',
-            'Access GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro in one place without separate subscriptions',
+            'Access GPT-5.5, Claude Sonnet 5, and Gemini 3.1 Pro in one place without separate subscriptions',
             'Use Research Mode to generate properly cited source lists as starting points for essays and papers',
             'Generate AI images for presentations and projects without leaving the platform',
             'Get the full platform at student pricing ($6.99/month with school email) vs. paying separately for multiple AI tools',

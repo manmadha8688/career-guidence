@@ -13,7 +13,7 @@ export default function GeminiPage() {
         icon="✨"
         title="Gemini — Google's AI with Real-Time Knowledge"
         tagline="Search-integrated AI that knows what happened yesterday"
-        badges={[['✓ FREE', '#4ADE80'], ['Gemini 1.5 Flash free', color], ['Google', 'var(--text-muted)']]}
+        badges={[['✓ FREE', '#4ADE80'], ['Gemini 3.5 Flash free', color], ['Google', 'var(--text-muted)']]}
         overview={"Gemini is Google's answer to ChatGPT, and its biggest advantage is obvious: Google built the world's most powerful search engine before building this AI. Gemini has real-time access to the web, can search Google, and pulls in current information by default. When someone asks about a news event from last week, a newly released package version, or today's job market — Gemini answers from live search results, not from training data that's months old. It also integrates deeply with Google's ecosystem: Gmail, Drive, Docs, Sheets, Slides. If you already live in Google's tools, Gemini is the AI that works with your actual files. For students, Gemini's web grounding and Google Workspace integration make it uniquely useful for research and document work."}
       />
 
@@ -32,9 +32,9 @@ export default function GeminiPage() {
         <Block>
           <SubHead label="Gemini model tiers" color={color} />
           <Compare color={color} items={[
-            { label: 'Gemini 1.5 Flash', badge: 'Free, very fast', body: "Google's fastest model. Best for quick questions, summarization, basic research. Free with no rate limits for most use. Excellent for students doing high-volume question-answering or research tasks." },
-            { label: 'Gemini 1.5 Pro', badge: 'Free with limits, most capable', body: "Google's flagship model. Handles complex reasoning, detailed analysis, and long documents (1M token context window). Free tier has usage limits. The go-to for serious tasks — code review, research synthesis, long document analysis." },
-            { label: 'Gemini Advanced (Google One AI Premium)', badge: '$20/month', body: 'Access to Gemini Ultra, the most powerful model. Also includes Gemini in all Google Workspace apps, extended context, and better image generation. Worth it if you heavily use Google Docs/Gmail and want AI integrated directly.' },
+            { label: 'Gemini 3.5 Flash', badge: 'Free default, very fast', body: "Google's fast everyday model and the default in the free Gemini app. Best for quick questions, summarization, and research. Genuinely capable for most student tasks, and the free tier also includes Deep Research, Canvas, and Gems." },
+            { label: 'Gemini 3.1 Pro', badge: 'Most capable (paid / limited free)', body: "Google's flagship reasoning model with a huge context window. Handles complex reasoning, detailed analysis, and long documents. The free app gives limited access; paid Google One AI plans unlock much higher limits." },
+            { label: 'Google One AI plans', badge: 'AI Plus $7.99 · AI Pro $19.99 · AI Ultra', body: 'Paid tiers add higher limits, expanded access to Gemini 3.1 Pro (and Deep Think on Ultra), more storage, and Gemini across Workspace apps (Gmail, Docs, Sheets). Worth it if you live in Google\'s tools and want AI integrated directly.' },
           ]} />
         </Block>
         <Block>
@@ -54,17 +54,17 @@ export default function GeminiPage() {
             { n: '1', title: "Let Gemini search, don't pre-research", body: "Ask your question directly. Gemini will search Google and give you a grounded answer with citations. Check the 'Google it' sources shown below responses for verification." },
             { n: '2', title: 'Use Gemini in Google Docs', body: 'Open a Google Doc. Click the Gemini icon. Ask it to write, expand, or summarize directly in your document. Combine AI drafting with your own editing — never paste between tools.' },
             { n: '3', title: 'Analyze YouTube lectures', body: 'Find a relevant lecture on YouTube. Paste the URL into Gemini. Ask for a structured summary with key concepts. More efficient than watching 45 minutes to find the 5 minutes that matter.' },
-            { n: '4', title: 'Research current tools and technologies', body: "Ask 'What is the current state of X technology? What are people saying about it in 2025?' Gemini finds recent blog posts, discussions, and documentation — not outdated training data." },
+            { n: '4', title: 'Research current tools and technologies', body: "Ask 'What is the current state of X technology? What are people saying about it in 2026?' Gemini finds recent blog posts, discussions, and documentation — not outdated training data." },
             { n: '5', title: 'Cross-reference claims', body: "When reading something important, paste the claim into Gemini and ask 'is this accurate and what does current evidence say?'. The web grounding helps verify factual claims with live sources." },
           ]} />
         </Block>
         <Block>
           <SubHead label="Gemini vs ChatGPT vs Claude" color={color} />
           <Compare color={color} items={[
-            { label: 'Real-time information', badge: 'Gemini wins clearly', body: 'Gemini searches Google by default. ChatGPT free: knowledge cutoff, no browsing. Claude: no web browsing. For anything requiring current information, Gemini is the right tool.' },
+            { label: 'Real-time information', badge: 'Gemini leads', body: 'All three can search the web now, but Gemini has the deepest, default Google Search grounding with inline source citations. For fast, current answers with sources, Gemini is still the smoothest.' },
             { label: 'Google Workspace integration', badge: 'Gemini wins', body: "Gemini works directly inside Gmail, Docs, Sheets, Slides, and Drive. No other AI model integrates with Google's tools this deeply. If your study and work life is in Google's ecosystem, this is a major advantage." },
-            { label: 'Pure reasoning and coding', badge: 'ChatGPT/Claude often better', body: "For complex multi-step reasoning, debugging difficult code, or nuanced analysis not requiring current information, Claude 3.5 Sonnet and GPT-4o often outperform Gemini. Gemini's strength is breadth and integration, not depth of reasoning." },
-            { label: 'Context window', badge: 'Gemini Pro wins', body: 'Gemini 1.5 Pro has a 1 million token context window — the largest of any major model. This is experimental but means it can theoretically handle entire codebases or book-length documents in one conversation.' },
+            { label: 'Pure reasoning and coding', badge: 'Very close', body: "For the hardest multi-step reasoning, agentic coding, or nuanced analysis, Claude Sonnet 5 and GPT-5.5 are top-tier — but Gemini 3.1 Pro is now firmly competitive. Gemini's standout strengths remain breadth, multimodality, and Google integration." },
+            { label: 'Context window', badge: 'Gemini leads', body: 'Gemini 3.1 Pro offers around a 1 million token context window — among the largest of any major model — so it can handle entire codebases or book-length documents in one conversation.' },
           ]} />
         </Block>
         <Block title="What you can do" titleColor={color}>
@@ -78,7 +78,7 @@ export default function GeminiPage() {
       </Block>
         <ProjectTask
         title={"Current Tech Research Report"}
-        description={"Use Gemini to research a technology you want to learn this year. Ask Gemini: 'What is the current state of [technology] in 2025? What are its main use cases, who is hiring for it, and what should someone learn to get started?' Ask three follow-up questions about areas you don't understand. Then compare the same question in ChatGPT free tier. Document: which tool gave more accurate, more current, and more useful information and why."}
+        description={"Use Gemini to research a technology you want to learn this year. Ask Gemini: 'What is the current state of [technology] in 2026? What are its main use cases, who is hiring for it, and what should someone learn to get started?' Ask three follow-up questions about areas you don't understand. Then compare the same question in ChatGPT free tier. Document: which tool gave more accurate, more current, and more useful information and why."}
         costNote={"TOTAL COST: ₹0 — Gemini free tier, sign in with your Google account"}
       >
         <Steps color={color} items={[

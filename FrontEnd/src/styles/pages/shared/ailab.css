@@ -506,6 +506,20 @@
   transition: opacity 1s ease;
 }
 
+/* Lightweight fallback shown when the 3D scene is skipped (mobile / reduced-motion / data-saver) */
+.ailab-hero__spline-static {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(5rem, 22vw, 12rem);
+  line-height: 1;
+  filter: drop-shadow(0 0 32px rgba(0, 217, 255, 0.35));
+  opacity: 0.9;
+  z-index: 3;
+}
+
 .ailab-hero__hud-tr {
   position: absolute;
   top: 20px;
@@ -1456,4 +1470,84 @@
   color: var(--ailab-cyan);
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.65rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — tablet & mobile
+   The hero is a split layout (content + 3D robot) on desktop. On
+   tablet it compresses; on phones the robot visual is removed
+   entirely and the content is centered over the animated grid
+   background for a fast, clean, focused mobile experience.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tablet / small laptop */
+@media (max-width: 900px) {
+  .ailab-hero { min-height: 88vh; }
+  .ailab-hero__content { width: 60%; padding-right: 1.25rem; }
+  .ailab-hero__spline { width: 48%; opacity: 0.8; }
+  .ailab-hero__desc { max-width: 340px; }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  /* Mobile hero — content only, centered over the grid background.
+     The 3D robot and the emoji fallback are removed on phones. */
+  .ailab-hero {
+    min-height: auto;
+    padding: 5.5rem 0 2.5rem;
+    text-align: center;
+  }
+  .ailab-hero__content {
+    width: 100%;
+    padding: 1.25rem 1.25rem 0.25rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .ailab-hero__desc {
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.75rem;
+  }
+  .ailab-hero__divider {
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ailab-hero__cta-row { justify-content: center; }
+  .ailab-hero__cta-outline,
+  .ailab-hero__cta-solid {
+    flex: 1 1 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+  }
+
+  /* Remove the robot visual + fallback on phones (content + bg only) */
+  .ailab-hero__spline,
+  .ailab-hero__spline-static { display: none; }
+
+  /* Trim the corner HUD clutter on small screens */
+  .ailab-hero__hud-tr,
+  .ailab-hero__hud-bl { display: none; }
+
+  /* Stronger background presence so the content sits on something */
+  .ailab-hero__grid { background-size: 36px 36px; opacity: 0.9; }
+
+  /* Single-column card grids */
+  .ailab-tools__grid,
+  .ailab-category__grid { grid-template-columns: 1fr; }
+
+  .ailab-tools__filters { padding: 2rem 1rem 1.5rem; }
+  .ailab-tools__grid-wrap { padding: 0 1rem 4.5rem; }
+  .ailab-category { margin-bottom: 2.5rem; }
+  .ailab-category__banner { gap: 0.75rem; padding: 0.75rem 0.9rem; }
+
+  /* Comfortable tap target for category pills */
+  .ailab-tools__cat-btn { padding: 0.45rem 0.9rem; font-size: 0.62rem; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .ailab-hero__content { padding-left: 1rem; padding-right: 1rem; }
+  .ailab-nav { padding-left: 0.75rem; padding-right: 0.75rem; }
 }

@@ -8,6 +8,7 @@ import {
   Filter, RefreshCw, Calendar, Layers
 } from 'lucide-react'
 import { getWalkIns, postWalkIn, removeWalkIn } from '../api/api'
+import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import ScrollToTop from '../components/ScrollToTop'
 
@@ -44,7 +45,7 @@ function FilterSection({ title, icon: Icon, children, defaultOpen = true }) {
   )
 }
 
-function WalkInCard({ job, onDelete, userId, isAdmin }) {
+function WalkInCard({ job, onDelete, userId, isAdmin, index = 0 }) {
   const [expanded, setExpanded] = useState(false)
   const days = daysUntil(job.walkInDate)
   const canDelete = isAdmin || job.postedById === userId
@@ -58,7 +59,13 @@ function WalkInCard({ job, onDelete, userId, isAdmin }) {
     : { bg: 'rgba(148,163,184,0.08)', color: '#94A3B8', border: 'rgba(148,163,184,0.15)', label: fmtDate(job.walkInDate) }
 
   return (
-    <div className="jobs-card">
+    <motion.div
+      className="jobs-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45, delay: Math.min(index * 0.05, 0.4), ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="jobs-card__accent" />
       <div className="jobs-card__body">
         <div className="jobs-card__header">
@@ -114,7 +121,7 @@ function WalkInCard({ job, onDelete, userId, isAdmin }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -438,8 +445,8 @@ export default function JobsPage() {
                     <span className="jobs-section__count jobs-section__count--today">{todayJobs.length}</span>
                   </div>
                   <div className="jobs-grid">
-                    {todayJobs.map(j => (
-                      <WalkInCard key={j.id} job={j} onDelete={handleDelete} userId={user?.id} isAdmin={user?.role === 'ADMIN'} />
+                    {todayJobs.map((j, i) => (
+                      <WalkInCard key={j.id} job={j} index={i} onDelete={handleDelete} userId={user?.id} isAdmin={user?.role === 'ADMIN'} />
                     ))}
                   </div>
                 </div>
@@ -453,8 +460,8 @@ export default function JobsPage() {
                     <span className="jobs-section__count jobs-section__count--upcoming">{upcomingJobs.length}</span>
                   </div>
                   <div className="jobs-grid">
-                    {upcomingJobs.map(j => (
-                      <WalkInCard key={j.id} job={j} onDelete={handleDelete} userId={user?.id} isAdmin={user?.role === 'ADMIN'} />
+                    {upcomingJobs.map((j, i) => (
+                      <WalkInCard key={j.id} job={j} index={i} onDelete={handleDelete} userId={user?.id} isAdmin={user?.role === 'ADMIN'} />
                     ))}
                   </div>
                 </div>

@@ -6,7 +6,7 @@ import DungeonPortalLoader from '../../components/loaders/DungeonPortalLoader'
 import { CheckCircle, Search, Trophy, Info, Menu, Sun, Moon } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getBulkSubjectStatus,
-  getSubjects, getRoadmaps, enrollRoadmap,
+  getSubjects, getRoadmaps,
   getHunterStats, clearApiCache,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
@@ -15,7 +15,7 @@ import { getRank } from '../../utils/slRank'
 import toast from 'react-hot-toast'
 import { logApiError } from '../../utils/devLog'
 import {
-  NAV_ITEMS, DAILY_QUESTS, RANK_LADDER, GATE_FILTERS,
+  NAV_ITEMS, DAILY_QUESTS, GATE_FILTERS,
   computeStats, subjectGateRank, loadQuestState, saveQuestState,
 } from './dashboard/dashboardUtils'
 
@@ -40,7 +40,7 @@ export default function DashboardPage() {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [summary, setSummary]         = useState(null)
-  const [activeRoadmap, setActiveRoadmap] = useState(null)
+  const [activeRoadmap] = useState(null)
   const [loading, setLoading]         = useState(true)
 
   const [activeView, setActiveView]   = useState(() => searchParams.get('view') || 'arena')
@@ -75,7 +75,7 @@ export default function DashboardPage() {
     setQuizIntent(null)
   }
   const [panelRefreshKey, setPanelRefreshKey] = useState(0)
-  const [studySeconds, setStudySeconds] = useState(0)
+  const [, setStudySeconds] = useState(0)
 
   const [subjects, setSubjects]       = useState([])
   const [quizStatuses, setQuizStatuses] = useState({})
@@ -86,7 +86,6 @@ export default function DashboardPage() {
   const [allRoadmaps, setAllRoadmaps] = useState([])
   const [pathsLoaded, setPathsLoaded] = useState(false)
   const [pathSearch, setPathSearch]   = useState('')
-  const [enrolling, setEnrolling]     = useState({})
 
   // Sync q1 quest from server (source of truth, works across devices)
   const syncQuestsFromSummary = (summaryData, uid) => {
@@ -268,18 +267,6 @@ export default function DashboardPage() {
     }
   }
 
-  const handleEnrollPath = async (e, id) => {
-    e.stopPropagation()
-    setEnrolling(p => ({ ...p, [id]: true }))
-    try {
-      await enrollRoadmap(id)
-      setAllRoadmaps(rs => rs.map(r => r.id === id ? { ...r, enrolled: true } : r))
-      toast.success('⚔️ Path registered!')
-    } catch { toast.error('Failed to register') }
-    finally { setEnrolling(p => ({ ...p, [id]: false })) }
-  }
-
-
   const xp             = summary?.xp    ?? user?.xp    ?? 0
   const rank           = getRank(xp)
   const level          = summary?.level ?? user?.level ?? 1
@@ -288,10 +275,7 @@ export default function DashboardPage() {
   const doneCount      = DAILY_QUESTS.filter(q => quests[q.id]).length
   const earnedXp       = DAILY_QUESTS.filter(q => quests[q.id]).reduce((s, q) => s + q.xp, 0)
   const arenaSubjects  = activeRoadmap?.subjects ?? []
-  const completedGates = arenaSubjects.filter(s => s.hasBadge).length
-  const totalGates     = arenaSubjects.length
   const nextGate       = arenaSubjects.find(s => !s.hasBadge)
-  const overallPct     = activeRoadmap?.overallPercentage ?? 0
 
   const filteredSubjects = subjects.filter(s => {
     const sp = s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0
@@ -373,15 +357,11 @@ export default function DashboardPage() {
       const inProgress = sp.filter(s => s.percentage > 0 && !s.hasBadge)
       const totalConceptsDone = summary?.completedConcepts ?? 0
       const totalConceptsAll  = summary?.totalConcepts ?? 0
-      const overallPct = totalConceptsAll > 0 ? Math.round((totalConceptsDone / totalConceptsAll) * 100) : 0
       const streak = summary?.streak ?? 0
 
       // Active enrolled roadmaps from allRoadmaps (loaded lazily)
       const enrolledPaths = allRoadmaps.filter(r => r.enrolled && !r.paused)
       const activePath    = enrolledPaths[0] ?? null
-
-      // Next gate to tackle: first in-progress, else first sealed
-      const nextGateSp = inProgress[0] ?? sp.find(s => s.percentage === 0) ?? null
 
       return (
         <div className="dash-arena-view">
@@ -509,7 +489,7 @@ export default function DashboardPage() {
             <div className="dash-no-match">NO GATES MATCH</div>
           ) : (
             <div className="sl-cards-grid dash-cards-grid-2">
-              {filteredSubjects.map((s, i) => <GateCard key={s.id} s={s} />)}
+              {filteredSubjects.map((s) => <GateCard key={s.id} s={s} />)}
             </div>
           )}
         </>

@@ -4,18 +4,18 @@ import {
 } from 'lucide-react'
 
 export const features = [
-  { Icon: Swords,   iconD: '#C4B5FD', iconL: '#7C5DBB', label: 'Skills Arena',    status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Structured career roadmaps with concept-by-concept learning, real code examples, quizzes, and XP progression.', glow: 'rgba(155,110,212,0.15)', activeBorder: 'rgba(155,110,212,0.4)', isLive: true },
-  { Icon: Code2,    iconD: '#0EA5E9', iconL: '#0284C7', label: 'Problem Solving', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Five learning tracks — Start Coding, Logic Building, Skill Up, Interview Prep, and Scenario Coding — with solutions in C, Python, Java, and C++.', glow: 'rgba(14,165,233,0.1)', activeBorder: 'rgba(14,165,233,0.25)', isLive: true, href: '/problem-solving', cta: 'Start Solving' },
-  { Icon: Trophy,   iconD: '#FF7F2A', iconL: '#B45309', label: 'Mission Board',   status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Real-world project missions with clear objectives, hints, and proof-of-skill builds — not drills, actual portfolio pieces.', glow: 'rgba(255,127,42,0.12)', activeBorder: 'rgba(255,127,42,0.35)', isLive: true, href: '/missions', cta: 'Explore Missions' },
-  { Icon: Rocket,   iconD: '#9B6ED4', iconL: '#7C5DBB', label: 'Deploy Guidance', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Step-by-step guides to ship React, Django, Node, FastAPI, Spring Boot, and ML demos live — free hosting, databases, and env setup included.', glow: 'rgba(155,110,212,0.12)', activeBorder: 'rgba(155,110,212,0.35)', isLive: true, href: '/deployment', cta: 'Open Deploy Guide' },
-  { Icon: Briefcase,iconD: '#4ADE80', iconL: '#15803D', label: 'Walk-In Jobs',    status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Live walk-in interview updates posted by students and community. Find opportunities near you.', glow: 'rgba(74,222,128,0.12)', activeBorder: 'rgba(74,222,128,0.3)', isLive: true, href: '/walk-ins', cta: 'View Walk-Ins' },
-  { Icon: Zap,      iconD: '#00D9FF', iconL: '#0284C7', label: 'AI Lab',          status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Explore every AI tool a developer needs — ChatGPT, Copilot, LangChain, CrewAI, automation, and more. With free tutorials.', glow: 'rgba(0,217,255,0.1)', activeBorder: 'rgba(0,217,255,0.35)', isLive: true, href: '/ai-lab', cta: 'Explore AI Tools' },
+  { Icon: Swords,   iconD: '#C4B5FD', iconL: '#7C5DBB', label: 'Skills Arena',    status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Career roadmaps that tell you exactly what to learn and in what order. Every concept comes with a plain-English explanation, the technical detail, real code, and a quiz that confirms you actually understood it.', glow: 'rgba(155,110,212,0.15)', activeBorder: 'rgba(155,110,212,0.4)', isLive: true },
+  { Icon: Code2,    iconD: '#0EA5E9', iconL: '#0284C7', label: 'Problem Solving', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Five tracks that take you from your very first line of code to interview-level DSA. Each problem shows the brute-force idea first, then the optimized approach — in C, Python, Java, and C++.', glow: 'rgba(14,165,233,0.1)', activeBorder: 'rgba(14,165,233,0.25)', isLive: true, href: '/problem-solving', cta: 'Start Solving' },
+  { Icon: Trophy,   iconD: '#FF7F2A', iconL: '#B45309', label: 'Mission Board',   status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Real project briefs you build end to end. Finish one and you walk away with a portfolio piece to show recruiters — not just another tutorial you followed along with.', glow: 'rgba(255,127,42,0.12)', activeBorder: 'rgba(255,127,42,0.35)', isLive: true, href: '/missions', cta: 'Explore Missions' },
+  { Icon: Rocket,   iconD: '#9B6ED4', iconL: '#7C5DBB', label: 'Deploy Guidance', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Get your project off localhost and onto a live URL. Copy-paste-ready guides for React, Django, Node, FastAPI, Spring Boot, and ML demos — free hosting, database, and env setup included.', glow: 'rgba(155,110,212,0.12)', activeBorder: 'rgba(155,110,212,0.35)', isLive: true, href: '/deployment', cta: 'Open Deploy Guide' },
+  { Icon: Briefcase,iconD: '#4ADE80', iconL: '#15803D', label: 'Walk-In Jobs',    status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Real walk-in interview drives shared by the community. Filter by city, see the role and skills needed, and show up prepared.', glow: 'rgba(74,222,128,0.12)', activeBorder: 'rgba(74,222,128,0.3)', isLive: true, href: '/walk-ins', cta: 'View Walk-Ins' },
+  { Icon: Zap,      iconD: '#00D9FF', iconL: '#0284C7', label: 'AI Lab',          status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Learn the AI tools every developer is now expected to know — chatbots, coding copilots, agents, and automation — with beginner-friendly guides and a hands-on project for each.', glow: 'rgba(0,217,255,0.1)', activeBorder: 'rgba(0,217,255,0.35)', isLive: true, href: '/ai-lab', cta: 'Explore AI Tools' },
 ]
 
 export const steps = [
-  { num: '01', Icon: Target, iconD: '#C4B5FD', iconL: '#7C5DBB', title: 'Pick Your Roadmap',          colorD: '#9B6ED4', colorL: '#7C5DBB', desc: 'Choose a career path — Java Full Stack, MERN, Python, Frontend, Backend. Each is a structured sequence of subjects built around real job requirements.' },
-  { num: '02', Icon: Zap,    iconD: '#60A5FA', iconL: '#1D4ED8', title: 'Learn Concept by Concept',  colorD: '#60A5FA', colorL: '#1D4ED8', desc: 'Each concept has simple + technical explanations, syntax breakdowns, real code examples, and common mistakes. Learn at your own pace.' },
-  { num: '03', Icon: Trophy, iconD: '#F59E0B', iconL: '#B45309', title: 'Earn XP. Prove Your Skills.', colorD: '#F59E0B', colorL: '#B45309', desc: 'Pass quizzes to earn XP and unlock badges. Your rank rises as you progress. Completed subjects become proof of skill on your resume.' },
+  { num: '01', Icon: Target, iconD: '#C4B5FD', iconL: '#7C5DBB', title: 'Pick Your Roadmap',          colorD: '#9B6ED4', colorL: '#7C5DBB', desc: 'Choose a career goal — Full Stack, MERN, Python, Frontend, or Backend. Each roadmap is an ordered path of subjects mapped to what employers actually hire for, so you never wonder what to learn next.' },
+  { num: '02', Icon: Zap,    iconD: '#60A5FA', iconL: '#1D4ED8', title: 'Learn Concept by Concept',  colorD: '#60A5FA', colorL: '#1D4ED8', desc: 'No overwhelm. Each concept gives you a simple explanation, the technical depth, clean syntax, real examples, and the mistakes beginners make — so you learn it once, properly, at your own pace.' },
+  { num: '03', Icon: Trophy, iconD: '#F59E0B', iconL: '#B45309', title: 'Earn XP. Prove Your Skills.', colorD: '#F59E0B', colorL: '#B45309', desc: 'Clear each quiz to earn XP, climb the ranks, and unlock badges. Every subject you finish becomes verifiable proof of skill you can put on your resume and talk about in interviews.' },
 ]
 
 export const NAV_LINKS = [
@@ -33,10 +33,10 @@ export const PAIN_POINTS = [
 ]
 
 export const PROOF_POINTS = [
-  'Roadmaps built around real job requirements',
-  'Learn concepts with examples, not just theory',
-  'Quizzes prove you understand — not just watched',
-  'XP + badges = proof of skill for your resume',
+  'Roadmaps modeled on real job descriptions — not random syllabi',
+  'Every concept taught with examples and common mistakes',
+  'Quizzes that confirm understanding — watching isn\'t learning',
+  'XP, ranks, and badges you can actually show recruiters',
 ]
 
 export const HERO_SKILL_BADGES = [

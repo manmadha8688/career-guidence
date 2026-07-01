@@ -1,7 +1,7 @@
 import { X } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
 
-export default function MobileStatsPopup({ user, rank, level, xp, stats, hunterStats, onClose }) {
+export default function MobileStatsPopup({ rank, level, xp, stats, hunterStats, onClose }) {
   const xpToNext = rank.next ? rank.next - xp : null
   const allBadges = hunterStats ? [...(hunterStats.badges || []), ...(hunterStats.roadmapBadges || [])] : []
   useBodyLock()

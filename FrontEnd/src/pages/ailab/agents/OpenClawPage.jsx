@@ -1,4 +1,4 @@
-import { InfoBox, Steps, Compare, SubHead, CardGrid } from '../helpers'
+import { InfoBox, Steps, Compare, CardGrid } from '../helpers'
 import {
   ToolPageShell, ToolHeader, Block, VideoCard, CanDoList,
   ProjectTask, ProTip, PageNavRow,

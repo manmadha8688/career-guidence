@@ -44,8 +44,8 @@ export default function AnthropicAPIPage() {
               </thead>
               <tbody>
                 {[
-                  ['claude-opus-4', '200K', '$15.00', '$75.00', 'Most demanding tasks — complex coding, research, nuanced analysis'],
-                  ['claude-sonnet-4-6', '200K', '$3.00', '$15.00', 'Balanced — excellent quality at reasonable cost, most production apps'],
+                  ['claude-opus-4-8', '1M', '$5.00', '$25.00', 'Most demanding tasks — complex coding, research, nuanced analysis'],
+                  ['claude-sonnet-5', '1M', '$3.00', '$15.00', 'Balanced — excellent quality at reasonable cost, most production apps'],
                   ['claude-haiku-4-5', '200K', '$1.00', '$5.00', 'High-volume, cost-sensitive tasks — fast, lightweight, cheap'],
                 ].map((row, i) => (
                   <tr key={i}>
@@ -58,7 +58,7 @@ export default function AnthropicAPIPage() {
             </table>
           </div>
           <Compare color={color} items={[
-            { label: 'Which model to start with', badge: 'Sonnet for most things', body: 'Claude Sonnet 4.6 is the workhorse. It handles complex reasoning, long-context analysis, and nuanced instruction-following at $3/$15 per million tokens — roughly 40-60% cheaper than comparable GPT-4o usage for typical workloads. Start with Sonnet. Only move to Opus when Sonnet measurably falls short on a specific task.' },
+            { label: 'Which model to start with', badge: 'Sonnet for most things', body: 'Claude Sonnet 5 is the workhorse. It handles complex reasoning, long-context analysis (1M tokens), and nuanced instruction-following at $3/$15 per million tokens (with lower introductory pricing at launch) — competitive with, and often cheaper than, comparable GPT-5.5 usage. Start with Sonnet. Only move to Opus 4.8 when Sonnet measurably falls short on a specific task.' },
             { label: 'Haiku is faster and much cheaper', badge: 'Use for high-volume tasks', body: 'Claude Haiku 4.5 at $1/$5 per million tokens is ideal for classification, tagging, summarization, and any task you run thousands of times per day. Test your prompt on Sonnet to get it right, then switch to Haiku for production volume.' },
             { label: 'Output tokens cost 5x input', badge: 'Control response length', body: 'Like all Claude models, output tokens cost 5x more than input tokens. Explicitly set max_tokens in every API call to prevent unexpectedly long responses. For classification tasks: max_tokens=5. For summaries: max_tokens=200. For code generation: set a reasonable ceiling.' },
           ]} />
@@ -68,8 +68,8 @@ export default function AnthropicAPIPage() {
           <Steps color={color} items={[
             { n: '1', title: 'Get your API key', body: 'Go to console.anthropic.com → Sign up → Settings → API Keys → Create Key. New accounts get $5 in free credits valid for 14 days. No credit card required to start. Save the key immediately — it is shown only once.' },
             { n: '2', title: 'Install the SDK', body: 'pip install anthropic\n\nThen set your key as an environment variable:\nexport ANTHROPIC_API_KEY=sk-ant-...\n\nOr use python-dotenv for local development:\npip install python-dotenv\n# add ANTHROPIC_API_KEY=sk-ant-... to a .env file' },
-            { n: '3', title: 'Make your first call', body: "import anthropic\n\nclient = anthropic.Anthropic()\n\nmessage = client.messages.create(\n    model='claude-sonnet-4-6-20251001',\n    max_tokens=1024,\n    messages=[\n        {'role': 'user', 'content': 'Explain recursion in 3 sentences.'}\n    ]\n)\n\nprint(message.content[0].text)" },
-            { n: '4', title: 'Add a system prompt', body: "message = client.messages.create(\n    model='claude-sonnet-4-6-20251001',\n    max_tokens=512,\n    system='You are a strict code reviewer. Only respond with specific issues. Never explain what works. Be concise.',\n    messages=[\n        {'role': 'user', 'content': 'Review this Python function:\\n\\ndef add(a, b):\\n    return a + b'}\n    ]\n)\nprint(message.content[0].text)" },
+            { n: '3', title: 'Make your first call', body: "import anthropic\n\nclient = anthropic.Anthropic()\n\nmessage = client.messages.create(\n    model='claude-sonnet-5',\n    max_tokens=1024,\n    messages=[\n        {'role': 'user', 'content': 'Explain recursion in 3 sentences.'}\n    ]\n)\n\nprint(message.content[0].text)" },
+            { n: '4', title: 'Add a system prompt', body: "message = client.messages.create(\n    model='claude-sonnet-5',\n    max_tokens=512,\n    system='You are a strict code reviewer. Only respond with specific issues. Never explain what works. Be concise.',\n    messages=[\n        {'role': 'user', 'content': 'Review this Python function:\\n\\ndef add(a, b):\\n    return a + b'}\n    ]\n)\nprint(message.content[0].text)" },
             { n: '5', title: 'Check usage and cost', body: 'console.anthropic.com → Usage shows token counts and cost per day. Set a monthly spending limit at Settings → Billing to avoid surprise charges during development. During development with Sonnet, $5 free credits cover hundreds of test calls.' },
           ]} />
         </Block>
@@ -81,7 +81,7 @@ export default function AnthropicAPIPage() {
           <p className="tool-layout-block__para">Extended thinking is available on Claude Sonnet and Opus models. You enable it by setting the thinking parameter in your API call and specifying a budget_tokens value — how many tokens Claude is allowed to spend thinking. Higher budget = more thorough reasoning = higher cost. For most tasks, a budget of 5,000-10,000 thinking tokens is sufficient. For very difficult problems, 16,000+ may be warranted.</p>
           <div className="tool-code-block" style={{ '--tool-color': color }}>
             <div className="tool-code-block__label">EXTENDED THINKING EXAMPLE</div>
-            {`response = client.messages.create(\n    model='claude-sonnet-4-6-20251001',\n    max_tokens=8000,\n    thinking={\n        'type': 'enabled',\n        'budget_tokens': 5000\n    },\n    messages=[{\n        'role': 'user',\n        'content': 'Design a database schema for a multi-tenant SaaS app with billing.'\n    }]\n)\n\n# Access thinking and final answer separately\nfor block in response.content:\n    if block.type == 'thinking':\n        print('Reasoning:', block.thinking)\n    elif block.type == 'text':\n        print('Answer:', block.text)`}
+            {`response = client.messages.create(\n    model='claude-sonnet-5',\n    max_tokens=8000,\n    thinking={\n        'type': 'enabled',\n        'budget_tokens': 5000\n    },\n    messages=[{\n        'role': 'user',\n        'content': 'Design a database schema for a multi-tenant SaaS app with billing.'\n    }]\n)\n\n# Access thinking and final answer separately\nfor block in response.content:\n    if block.type == 'thinking':\n        print('Reasoning:', block.thinking)\n    elif block.type == 'text':\n        print('Answer:', block.text)`}
           </div>
         </Block>
         <Block>
@@ -91,9 +91,9 @@ export default function AnthropicAPIPage() {
           </InfoBox>
           <Steps color={color} items={[
             { n: '1', title: 'Define your tools', body: 'Describe each tool with a name, description, and input_schema in JSON Schema. The description is critical — Claude uses it to decide when and how to call the tool. Write it as if explaining to a smart person when to use this function.' },
-            { n: '2', title: 'Pass tools to the API', body: "tools = [{\n    'name': 'get_weather',\n    'description': 'Get current weather for a city. Call when user asks about weather.',\n    'input_schema': {\n        'type': 'object',\n        'properties': {\n            'city': {'type': 'string', 'description': 'City name'}\n        },\n        'required': ['city']\n    }\n}]\nresponse = client.messages.create(model='claude-sonnet-4-6-20251001', max_tokens=1024, tools=tools, messages=messages)" },
+            { n: '2', title: 'Pass tools to the API', body: "tools = [{\n    'name': 'get_weather',\n    'description': 'Get current weather for a city. Call when user asks about weather.',\n    'input_schema': {\n        'type': 'object',\n        'properties': {\n            'city': {'type': 'string', 'description': 'City name'}\n        },\n        'required': ['city']\n    }\n}]\nresponse = client.messages.create(model='claude-sonnet-5', max_tokens=1024, tools=tools, messages=messages)" },
             { n: '3', title: 'Handle tool calls', body: "if response.stop_reason == 'tool_use':\n    tool_block = next(b for b in response.content if b.type == 'tool_use')\n    tool_name = tool_block.name\n    tool_input = tool_block.input\n    # Call your actual function with these arguments\n    result = call_my_function(tool_name, tool_input)" },
-            { n: '4', title: 'Return results and get final answer', body: "# Add tool result to conversation\nmessages.append({'role': 'assistant', 'content': response.content})\nmessages.append({\n    'role': 'user',\n    'content': [{'type': 'tool_result', 'tool_use_id': tool_block.id, 'content': str(result)}]\n})\n# Send back for final response\nfinal = client.messages.create(model='claude-sonnet-4-6-20251001', max_tokens=1024, tools=tools, messages=messages)\nprint(final.content[0].text)" },
+            { n: '4', title: 'Return results and get final answer', body: "# Add tool result to conversation\nmessages.append({'role': 'assistant', 'content': response.content})\nmessages.append({\n    'role': 'user',\n    'content': [{'type': 'tool_result', 'tool_use_id': tool_block.id, 'content': str(result)}]\n})\n# Send back for final response\nfinal = client.messages.create(model='claude-sonnet-5', max_tokens=1024, tools=tools, messages=messages)\nprint(final.content[0].text)" },
           ]} />
         </Block>
         <Block>
@@ -132,8 +132,8 @@ export default function AnthropicAPIPage() {
               </thead>
               <tbody>
                 {[
-                  ['Context window', 'Up to 200K tokens', '128K tokens (GPT-4o)'],
-                  ['Flagship pricing', '$3–$15 / 1M (Sonnet)', '$2.50–$10 / 1M (GPT-4o)'],
+                  ['Context window', 'Up to 1M tokens (Sonnet 5)', '~256K tokens (GPT-5.5)'],
+                  ['Flagship pricing', '$3–$15 / 1M (Sonnet)', '$2.50–$10 / 1M (GPT-5.5)'],
                   ['Image generation', 'Not available', 'DALL-E 3 included'],
                   ['Audio / voice', 'Not available', 'Whisper + real-time voice API'],
                   ['Reasoning / thinking', 'Extended thinking (visible trace)', 'o1 / o3 reasoning models'],
@@ -155,7 +155,7 @@ export default function AnthropicAPIPage() {
           <Compare color={color} items={[
             { label: 'When to choose Anthropic', badge: 'Long context + safety', body: 'Choose the Anthropic API when you need to process very long documents, need highly consistent instruction-following behavior, are building a production system where predictable refusals matter, or want native MCP support for agent tool integration. Claude also excels at nuanced writing and analysis tasks.' },
             { label: 'When to choose OpenAI', badge: 'Multimodal + ecosystem', body: 'Choose OpenAI when you need image generation (DALL-E), audio transcription (Whisper), real-time voice, fine-tuning on custom data, or the broadest ecosystem of third-party integrations. OpenAI also has the most extensive developer community and Stack Overflow coverage.' },
-            { label: 'The practical reality', badge: 'Use both', body: "Most production apps eventually use both APIs for different tasks. Anthropic for long-document analysis, complex reasoning, and MCP-based agents. OpenAI for multimodal features and tasks where GPT-4o's specific behavior is preferable. The SDKs are similar enough that switching is straightforward." },
+            { label: 'The practical reality', badge: 'Use both', body: "Most production apps eventually use both APIs for different tasks. Anthropic for long-document analysis, complex reasoning, and MCP-based agents. OpenAI for multimodal features and tasks where GPT-5.5's specific behavior is preferable. The SDKs are similar enough that switching is straightforward." },
           ]} />
         </Block>
         <ProjectTask

@@ -32,8 +32,6 @@ export default function CircuitLoader({ accentColor = '#f97316', height = 220 })
     { x: 125, y: 165 }, { x: 75, y: 165 }, { x: 145, y: 170 }, { x: 55, y: 170 },
   ]
 
-  const totalLen = (d) => 300 // approximation for stroke-dasharray
-
   return (
     <div className="crl-root" style={{ height }}>
       {/* Grid background dots */}

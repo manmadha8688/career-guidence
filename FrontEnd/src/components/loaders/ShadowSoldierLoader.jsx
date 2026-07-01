@@ -1,8 +1,6 @@
 // Section loader for Skill Arena panels
 // Three shadow soldier silhouettes rising from the ground with purple energy
 
-import { useEffect, useRef } from 'react'
-
 // SVG soldier silhouette path (simple humanoid)
 const SOLDIER = `M12 2 C12 2 14 3 14 5 C14 7 12 8 12 8 C12 8 10 7 10 5 C10 3 12 2 12 2Z
   M9 9 L7 18 L10 18 L11 14 L12 14 L13 14 L14 18 L17 18 L15 9

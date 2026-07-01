@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { ArrowLeft, Sun, Moon, Search, X, ExternalLink } from 'lucide-react'
 import { STACKS, PLATFORMS } from './deployment/guideIndex'
@@ -95,6 +96,7 @@ function FilterBanner({ filterKey }) {
 
 export default function DeploymentGuidePage() {
   const navigate = useNavigate()
+  const { user } = useAuth()
   const { theme, toggleTheme } = useTheme()
   const dark = theme === 'dark'
   const [search, setSearch] = useState('')
@@ -139,6 +141,11 @@ export default function DeploymentGuidePage() {
 
   const hasFilters = filterStack !== 'all' || !!search
   const clearFilters = () => { setFilter('all'); if (search) setSearch('') }
+
+  const openGuide = (route) => {
+    if (!user) { navigate(`/login?redirect=${encodeURIComponent(route)}`); return }
+    navigate(route)
+  }
 
   const sectionIcon = filterStack === 'database' ? '🗄️' : filterStack === 'mldata' ? '🤖' : '📦'
   const sectionLabel = filterStack === 'database' ? 'Database' : filterStack === 'mldata' ? 'AI & ML' : 'Deployment'
@@ -223,7 +230,7 @@ export default function DeploymentGuidePage() {
                   <button
                     type="button"
                     key={stack.id}
-                    onClick={() => navigate(stack.route)}
+                    onClick={() => openGuide(stack.route)}
                     className="deploy-stack-card"
                     style={{ '--stack-color': stack.color }}
                   >

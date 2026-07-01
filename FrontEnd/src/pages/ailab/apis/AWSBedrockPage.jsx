@@ -27,10 +27,10 @@ export default function AWSBedrockPage() {
         <Block>
           <SubHead label="Foundation models available on Bedrock" color={color} />
           <CardGrid color={color} items={[
-            { name: 'Claude (Anthropic)', desc: 'Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Haiku. Best for complex reasoning, long-document analysis, and code. Anthropic\'s Constitutional AI training makes Claude particularly strong for enterprise use cases that require nuanced, instruction-following behavior.' },
+            { name: 'Claude (Anthropic)', desc: 'Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 4.5. Best for complex reasoning, long-document analysis (up to 1M context), and agentic coding. Anthropic\'s Constitutional AI training makes Claude particularly strong for enterprise use cases that require nuanced, instruction-following behavior.' },
             { name: 'Llama 3 (Meta)', desc: 'Llama 3 8B, 70B, and 405B. Fully open-weights model — you can fine-tune it on your own data directly within Bedrock. Best for cost-sensitive production workloads and teams that want to customize model behavior without proprietary model lock-in.' },
             { name: 'Amazon Titan & Nova', desc: 'Amazon\'s own foundation models. Titan for text generation and embeddings. Nova Pro, Nova Lite, Nova Micro — AWS\'s newest generation, optimized for speed and cost at AWS scale. Native integration with the AWS ecosystem, competitive pricing for high-volume workloads.' },
-            { name: 'Mistral', desc: 'Mistral 7B, Mixtral 8x7B, Mistral Large. European LLM provider with strong code and reasoning capability. Mixture-of-Experts architecture in Mixtral gives GPT-4 class performance at fraction of the cost. Good for structured extraction and classification tasks.' },
+            { name: 'Mistral', desc: 'Mistral 7B, Mixtral 8x7B, Mistral Large. European LLM provider with strong code and reasoning capability. Mixture-of-Experts architecture in Mixtral gives GPT-5 class performance at fraction of the cost. Good for structured extraction and classification tasks.' },
             { name: 'Stable Diffusion (Stability AI)', desc: 'Stable Diffusion XL and newer Stability AI models for image generation. Generate product images, design mockups, and visual content programmatically. Integrate into applications that need custom image creation without external image APIs.' },
             { name: 'Cohere & AI21 Labs', desc: 'Cohere Command for text generation, Embed for embeddings. AI21 Jamba for long-context workloads. Specialized models for specific enterprise tasks — Cohere is particularly strong for search and retrieval, AI21 for structured document processing.' },
           ]} />
@@ -40,7 +40,7 @@ export default function AWSBedrockPage() {
           <Steps color={color} items={[
             { n: '1', title: 'Create an AWS account and enable model access', body: 'aws.amazon.com → Create account → Sign in to AWS Console → Search "Bedrock" → Model access (left sidebar) → Enable the models you want (Claude, Llama, Titan). Model access is free to enable — you pay only when you call the API. New AWS accounts get free tier credits.' },
             { n: '2', title: 'Set up IAM permissions', body: 'Create an IAM user or role with the AmazonBedrockFullAccess policy (or the custom policy: bedrock:InvokeModel + bedrock:InvokeModelWithResponseStream for production). For local development: aws configure — enter your Access Key ID, Secret Access Key, and region (us-east-1 has the most models).' },
-            { n: '3', title: 'Install boto3 and call the Converse API', body: "pip install boto3\n\nimport boto3, json\nclient = boto3.client('bedrock-runtime', region_name='us-east-1')\n\nresponse = client.converse(\n  modelId='anthropic.claude-3-5-sonnet-20241022-v2:0',\n  messages=[{\n    'role': 'user',\n    'content': [{'text': 'Explain AWS Bedrock in 3 sentences.'}]\n  }]\n)\nprint(response['output']['message']['content'][0]['text'])" },
+            { n: '3', title: 'Install boto3 and call the Converse API', body: "pip install boto3\n\nimport boto3, json\nclient = boto3.client('bedrock-runtime', region_name='us-east-1')\n\nresponse = client.converse(\n  modelId='anthropic.claude-sonnet-5-v2:0',\n  messages=[{\n    'role': 'user',\n    'content': [{'text': 'Explain AWS Bedrock in 3 sentences.'}]\n  }]\n)\nprint(response['output']['message']['content'][0]['text'])" },
             { n: '4', title: 'Use the Converse API for all models', body: 'The Converse API is the unified interface — the same code structure works for Claude, Llama, Mistral, and Titan. Just change the modelId. This is Bedrock\'s biggest ergonomic advantage: one API format, all models. No per-model SDK differences to manage.' },
             { n: '5', title: 'Monitor with CloudWatch', body: 'Bedrock automatically sends metrics to CloudWatch: invocation count, latency, input tokens, output tokens, throttle count. Set up a CloudWatch dashboard and billing alerts from day one. Enable model invocation logging in Bedrock settings to log every prompt and response to S3 for audit purposes.' },
           ]} />
@@ -65,7 +65,7 @@ export default function AWSBedrockPage() {
           <Steps color={color} items={[
             { n: '1', title: 'Connect a data source', body: 'Supported sources: S3 buckets (PDF, Word, HTML, Markdown, CSV), Confluence, SharePoint, Salesforce, web crawl, and custom connectors. Documents are automatically chunked and embedded. Sync on a schedule or trigger manually when content changes.' },
             { n: '2', title: 'Bedrock handles vectorization', body: 'Bedrock automatically generates embeddings using Titan Embeddings (or your choice of embedding model) and stores them in a managed vector store — OpenSearch Serverless, Pinecone, Aurora PostgreSQL, MongoDB Atlas, or Redis. You select the vector store; Bedrock manages the index.' },
-            { n: '3', title: 'Query with RetrieveAndGenerate', body: "response = client.retrieve_and_generate(\n  input={'text': 'What is our refund policy?'},\n  retrieveAndGenerateConfiguration={\n    'type': 'KNOWLEDGE_BASE',\n    'knowledgeBaseConfiguration': {\n      'knowledgeBaseId': 'YOUR_KB_ID',\n      'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0'\n    }\n  }\n)" },
+            { n: '3', title: 'Query with RetrieveAndGenerate', body: "response = client.retrieve_and_generate(\n  input={'text': 'What is our refund policy?'},\n  retrieveAndGenerateConfiguration={\n    'type': 'KNOWLEDGE_BASE',\n    'knowledgeBaseConfiguration': {\n      'knowledgeBaseId': 'YOUR_KB_ID',\n      'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-v1:0'\n    }\n  }\n)" },
             { n: '4', title: 'Citations included automatically', body: 'Every response from RetrieveAndGenerate includes the source document chunks that were retrieved. The model\'s answer is grounded in your actual documents. Show citations in your UI to build user trust — users can see exactly which documents the answer came from.' },
           ]} />
         </Block>
@@ -94,14 +94,14 @@ export default function AWSBedrockPage() {
               </thead>
               <tbody>
                 {[
-                  ['Model variety', '50+ from Anthropic, Meta, Mistral, Amazon, Stability AI', 'OpenAI models only (GPT-4o, DALL-E, Whisper)', 'Google models (Gemini) + Llama via Model Garden'],
+                  ['Model variety', '50+ from Anthropic, Meta, Mistral, Amazon, Stability AI', 'OpenAI models only (GPT-5.5, image + audio models)', 'Google models (Gemini) + Llama via Model Garden'],
                   ['Data residency', 'Stays in AWS — FedRAMP High, HIPAA eligible', 'Sent to OpenAI servers', 'Stays in GCP — similar enterprise controls'],
-                  ['Best for', 'AWS shops, compliance-heavy industries, multi-model needs', 'Fastest path to GPT-4o, general developer use', 'Google Cloud shops, BigQuery integration, Gemini 1.5 Pro long context'],
+                  ['Best for', 'AWS shops, compliance-heavy industries, multi-model needs', 'Fastest path to GPT-5.5, general developer use', 'Google Cloud shops, BigQuery integration, Gemini long context'],
                   ['Pricing model', 'Pay per token, no subscription', 'Pay per token, no subscription', 'Pay per token, sustained use discounts'],
                   ['Setup complexity', 'Higher — IAM, boto3, region selection', 'Lowest — one API key, one SDK', 'Medium — GCP account, service account'],
                   ['Ecosystem lock-in', 'AWS services (Lambda, S3, CloudWatch)', 'OpenAI only', 'Google Cloud (BigQuery, Vertex Pipelines)'],
                   ['Agent framework', 'Bedrock Agents (managed, no-code setup)', 'Assistants API (beta, improving)', 'Vertex AI Agent Builder + Dialogflow'],
-                  ['Long context', 'Up to 200K (Claude 3.5)', 'Up to 128K (GPT-4o)', 'Up to 2M tokens (Gemini 1.5 Pro)'],
+                  ['Long context', 'Up to 1M (Claude Sonnet 5)', 'Up to ~256K (GPT-5.5)', 'Up to ~1M tokens (Gemini 3.1 Pro)'],
                 ].map((row, i) => (
                   <tr key={i}>
                     {row.map((cell, j) => (
@@ -114,8 +114,8 @@ export default function AWSBedrockPage() {
           </div>
           <Compare color={color} items={[
             { label: 'When to choose Bedrock', badge: 'Enterprise AWS workloads', body: 'Your team already runs on AWS, you have strict data residency requirements, you need to benchmark multiple models for the same task, or you are in a regulated industry (healthcare, finance, government). Bedrock is not the easiest onramp but it is the most defensible long-term for enterprise production systems.' },
-            { label: 'When to choose OpenAI API', badge: 'Fastest developer path', body: 'You want to build and ship something quickly. One API key, excellent documentation, the most community resources, and GPT-4o remains a top-tier model. If you are a startup or individual developer without AWS infrastructure, OpenAI API is the right starting point. Add enterprise controls later if needed.' },
-            { label: 'When to choose Vertex AI', badge: 'Google Cloud shops', body: 'Your data is already in BigQuery, you want Gemini 1.5 Pro\'s 1 million token context for very long document processing, or you are building MLOps pipelines that connect to Vertex Pipelines and data warehouses. Vertex has the best native data pipeline integration of the three.' },
+            { label: 'When to choose OpenAI API', badge: 'Fastest developer path', body: 'You want to build and ship something quickly. One API key, excellent documentation, the most community resources, and GPT-5.5 remains a top-tier model. If you are a startup or individual developer without AWS infrastructure, OpenAI API is the right starting point. Add enterprise controls later if needed.' },
+            { label: 'When to choose Vertex AI', badge: 'Google Cloud shops', body: 'Your data is already in BigQuery, you want Gemini 3.1 Pro\'s roughly 1 million token context for very long document processing, or you are building MLOps pipelines that connect to Vertex Pipelines and data warehouses. Vertex has the best native data pipeline integration of the three.' },
           ]} />
         </Block>
         <Block title="Enterprise use cases" titleColor={color}>

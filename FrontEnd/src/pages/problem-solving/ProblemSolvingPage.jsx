@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Sun, Moon, ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { useTheme } from '../../context/ThemeContext'
 
 const TRACKS = [
@@ -8,7 +9,7 @@ const TRACKS = [
     icon: '💻',
     title: 'Start Coding',
     subtitle: 'Never written code before?',
-    desc: 'Step-by-step guided path from zero. Variables, loops, functions — in order. Cannot skip steps.',
+    desc: 'A guided path from absolute zero — variables, loops, and functions in the right order. Steps unlock one at a time so you build a foundation that actually holds.',
     color: '#22C55E',
     bg: 'rgba(34,197,94,0.08)',
     border: 'rgba(34,197,94,0.22)',
@@ -19,7 +20,7 @@ const TRACKS = [
     icon: '🧠',
     title: 'Logic Building',
     subtitle: 'Can code but cannot solve problems?',
-    desc: 'Train your problem-solving mind. Patterns, number problems, array and string challenges.',
+    desc: 'Train the problem-solving muscle most tutorials skip — patterns, number problems, and array/string challenges that teach you how to think, not just what to type.',
     color: '#F59E0B',
     bg: 'rgba(245,158,11,0.08)',
     border: 'rgba(245,158,11,0.22)',
@@ -30,7 +31,7 @@ const TRACKS = [
     icon: '⚡',
     title: 'Skill Up',
     subtitle: 'Want to improve problem solving?',
-    desc: 'Filter by topic. Same problem, four languages. Learn brute force to optimized approach.',
+    desc: 'Filter by topic and see the same problem solved in four languages — walking from the brute-force idea to the optimized solution, with the trade-offs explained.',
     color: '#0EA5E9',
     bg: 'rgba(14,165,233,0.08)',
     border: 'rgba(14,165,233,0.22)',
@@ -41,7 +42,7 @@ const TRACKS = [
     icon: '💼',
     title: 'Interview Prep',
     subtitle: 'Preparing for job interviews?',
-    desc: 'Pick a 7, 30, or 90-day plan. Most-asked questions with output, debug, write and conceptual types.',
+    desc: 'Follow a 7, 30, or 90-day plan built from the most-asked questions — output prediction, debugging, code-writing, and conceptual rounds, just like the real thing.',
     color: '#EF4444',
     bg: 'rgba(239,68,68,0.08)',
     border: 'rgba(239,68,68,0.22)',
@@ -52,7 +53,7 @@ const TRACKS = [
     icon: '🏗️',
     title: 'Scenario Coding',
     subtitle: 'Can you build real systems?',
-    desc: 'real-world problems. Implement functions for shopping carts, banks, parking lots, booking systems — scenario first, you code the logic.',
+    desc: 'Build the logic behind real systems — shopping carts, banking, parking lots, and booking engines. You get the scenario; you write the code that makes it work.',
     color: '#8B5CF6',
     bg: 'rgba(139,92,246,0.08)',
     border: 'rgba(139,92,246,0.22)',
@@ -90,20 +91,34 @@ export default function ProblemSolvingPage() {
       </div>
 
       <div className="ps-tracks-wrap">
-        <div className="ps-tracks-header">
+        <motion.div
+          className="ps-tracks-header"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+        >
           <h1 className="ps-tracks-title">WHERE DO YOU START?</h1>
           <p className="ps-tracks-subtitle">
             Five tracks. One goal — write code that works and gets you hired.
           </p>
-        </div>
+          <p className="ps-tracks-tip">
+            <strong>Tip:</strong> be honest about your level and pick one track lower than you think.
+            Solid basics beat rushed gaps every single time — and consistency beats intensity.
+          </p>
+        </motion.div>
 
         <div className="ps-tracks-grid">
-          {TRACKS.map(t => (
-            <button
+          {TRACKS.map((t, i) => (
+            <motion.button
               key={t.key}
               type="button"
               onClick={() => navigate(`/problem-solving/${t.key}`)}
               className="ps-track-card"
+              initial={{ opacity: 0, y: 26 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.98 }}
               style={{
                 '--track-color': t.color,
                 '--track-bg': t.bg,
@@ -118,7 +133,7 @@ export default function ProblemSolvingPage() {
               <div className="ps-track-card__enter">
                 ENTER <ChevronRight size={13} />
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>

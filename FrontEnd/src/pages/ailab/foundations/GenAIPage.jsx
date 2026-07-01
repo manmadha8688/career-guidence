@@ -53,12 +53,12 @@ export default function GenAIPage() {
               </thead>
               <tbody>
                 {[
-                  { model: 'GPT-4o', ctx: '128k', cost: '$5', speed: 'Fast', cutoff: 'Apr 2023', best: 'Coding, reasoning, general tasks' },
-                  { model: 'Claude 3.5 Sonnet', ctx: '200k', cost: '$3', speed: 'Fast', cutoff: 'Apr 2024', best: 'Long docs, nuanced analysis, writing' },
-                  { model: 'Gemini 1.5 Pro', ctx: '1M', cost: '$1.25', speed: 'Moderate', cutoff: 'Nov 2023', best: 'Massive context, real-time search' },
-                  { model: 'Llama 3 70B', ctx: '128k', cost: 'FREE (Groq)', speed: 'Very fast', cutoff: 'Dec 2023', best: 'Privacy, free API, local use' },
-                  { model: 'Mistral Large', ctx: '128k', cost: '$2', speed: 'Fast', cutoff: 'Early 2024', best: 'European compliance, multilingual' },
-                  { model: 'GPT-3.5 Turbo', ctx: '16k', cost: '$0.50', speed: 'Fastest', cutoff: 'Sep 2021', best: 'Simple tasks, lowest cost' },
+                  { model: 'GPT-5.5', ctx: '256k', cost: '$2.50', speed: 'Fast', cutoff: '2025', best: 'Coding, reasoning, general tasks' },
+                  { model: 'Claude Sonnet 5', ctx: '1M', cost: '$3', speed: 'Fast', cutoff: 'Jan 2026', best: 'Long docs, agentic coding, writing' },
+                  { model: 'Gemini 3.1 Pro', ctx: '1M', cost: '$2', speed: 'Moderate', cutoff: '2025', best: 'Massive context, real-time search' },
+                  { model: 'Llama (open source)', ctx: '128k', cost: 'FREE (Groq)', speed: 'Very fast', cutoff: '2025', best: 'Privacy, free API, local use' },
+                  { model: 'Mistral Large', ctx: '128k', cost: '$2', speed: 'Fast', cutoff: '2025', best: 'European compliance, multilingual' },
+                  { model: 'Claude Haiku 4.5', ctx: '200k', cost: '$1', speed: 'Fastest', cutoff: '2025', best: 'Simple tasks, high volume, low cost' },
                 ].map((row, i) => (
                   <tr key={i}>
                     <td className="tool-table__cell--accent">{row.model}</td>
@@ -76,8 +76,8 @@ export default function GenAIPage() {
         </Block>
         <Block>
           <SubHead label="Knowledge cutoff — why AI does not know last month's news" color={color} />
-          <p className="tool-layout-block__para">Every LLM is trained on data up to a specific date, after which it knows nothing about new events. GPT-4o was trained on data through April 2023. Claude 3.5 through April 2024. This means these models genuinely do not know about events, releases, or developments that happened after their cutoff — and they may confidently generate incorrect information when asked about things that changed after training.</p>
-          <InfoBox color="#EF4444">If you ask GPT-4o about a React API change from late 2024, it may give you the old behavior confidently. If you ask about a company announcement from last month, it will either say it does not know or — worse — make something up that sounds plausible. Knowledge cutoff is one of the most common sources of hallucination in technical contexts.</InfoBox>
+          <p className="tool-layout-block__para">Every LLM is trained on data up to a specific date, after which it knows nothing about new events. Each model has its own cutoff — for example, recent flagships like Claude Sonnet 5 report a cutoff around early 2026, while others land in 2025. This means models genuinely do not know about events, releases, or developments that happened after their cutoff — and they may confidently generate incorrect information when asked about things that changed after training.</p>
+          <InfoBox color="#EF4444">If you ask a model about a library API change that shipped after its cutoff, it may give you the old behavior confidently. If you ask about a company announcement from last week, it will either say it does not know or — worse — make something up that sounds plausible. Knowledge cutoff is one of the most common sources of hallucination in technical contexts.</InfoBox>
           <p className="tool-layout-block__para tool-layout-block__para--flush">The practical solution: use Perplexity or Gemini (with real-time search) for time-sensitive information. Before asking any LLM about a library, framework, or technology, verify the version you are asking about matches what it was trained on. For recent changes, check the official docs directly rather than relying on AI.</p>
         </Block>
         <Block>
@@ -96,7 +96,7 @@ export default function GenAIPage() {
           <div className="tool-example-grid" style={{ '--tool-color': color }}>
             {[
               { icon: '📝→', label: 'Text to Text', desc: 'The original. Chat, Q&A, summarization, translation, code generation.' },
-              { icon: '🖼️', label: 'Image Understanding', desc: 'GPT-4o and Gemini read images: describe a diagram, debug a screenshot, analyze a photo.' },
+              { icon: '🖼️', label: 'Image Understanding', desc: 'GPT-5.5 and Gemini read images: describe a diagram, debug a screenshot, analyze a photo.' },
               { icon: '🎨', label: 'Text to Image', desc: 'DALL-E 3, Midjourney, Stable Diffusion. Generate any image from a text description.' },
               { icon: '🎤', label: 'Speech to Text', desc: 'Whisper (OpenAI, free). Transcribe any audio or video with high accuracy.' },
               { icon: '🔊', label: 'Text to Speech', desc: 'ElevenLabs, OpenAI TTS. Generate realistic speech from text. Voice cloning in seconds.' },
@@ -113,7 +113,7 @@ export default function GenAIPage() {
           <SubHead label="Costs — what tokens actually cost you" color={color} />
           <p className="tool-layout-block__para">AI APIs are priced per token — both for input (what you send) and output (what the model generates). One token ≈ 0.75 words. A typical conversation turn with a short code snippet might be 500 input tokens + 300 output tokens.</p>
           <Compare color={color} items={[
-            { label: 'What does $5 actually buy?', body: 'GPT-4o costs $5 per million input tokens, $15 per million output tokens. $5 credit = roughly 1 million input tokens = about 750,000 words sent to the model. For a student building a portfolio project with occasional API calls, $5 lasts 2-4 months of casual use.' },
+            { label: 'What does $5 actually buy?', body: 'GPT-5.5 costs $5 per million input tokens, $15 per million output tokens. $5 credit = roughly 1 million input tokens = about 750,000 words sent to the model. For a student building a portfolio project with occasional API calls, $5 lasts 2-4 months of casual use.' },
             { label: 'Why free tiers exist', body: 'ChatGPT free tier (browser), Claude free tier, Gemini free tier — these are loss leaders for consumer acquisition. The companies are paying significant compute costs for every free conversation. They exist because free users eventually become paid API customers.' },
             { label: 'Groq — the free API alternative', body: 'Groq provides a free API key for Llama 3 70B with generous rate limits. OpenAI-compatible format. For students building AI projects, Groq eliminates API costs entirely during development. Quality is very close to GPT-4 for most tasks.' },
             { label: 'Token cost vs inference cost', body: 'Token pricing is for cloud inference. Training a model from scratch costs millions of dollars in GPU compute. Running inference (one API call) costs fractions of a cent. This is why API access is cheap — you are using an already-trained model, not training a new one.' },
@@ -137,11 +137,11 @@ export default function GenAIPage() {
         </Block>
         <Block>
           <SubHead label="Context window — practical guidance" color={color} />
-          <p className="tool-layout-block__para">The context window is how much text the model can process at once — input + conversation history + output all together. GPT-4o: 128,000 tokens (~100,000 words). Claude 3.5: 200,000 tokens. Gemini 1.5 Pro: 1 million tokens.</p>
+          <p className="tool-layout-block__para">The context window is how much text the model can process at once — input + conversation history + output all together. GPT-5.5: ~256,000 tokens. Claude Sonnet 5: 1 million tokens. Gemini 3.1 Pro: ~1 million tokens.</p>
           <Compare color={color} items={[
             { label: 'What happens when you hit the limit?', body: 'The oldest content in the conversation gets dropped. In a long chat, the model forgets what you said at the beginning. You notice this when it starts giving inconsistent answers or asking you to clarify things you already explained. Solution: start a new conversation with a fresh context, summarizing only the essential points.' },
             { label: 'The "lost in the middle" problem', body: 'Research shows models are better at remembering content at the beginning and end of their context than in the middle. If you paste a 10,000 word document and the answer is in the middle, the model is more likely to miss it or get it wrong than if it is at the start or end. Chunk your documents and ask specific questions about specific sections.' },
-            { label: 'Practical tip', body: 'For important long-context work, use Claude (200k context) or Gemini (1M context). For most coding and Q&A tasks, the context is well within GPT-4o\'s 128k limit. Monitor the token count in long conversations and start fresh when it approaches the limit.' },
+            { label: 'Practical tip', body: 'For important long-context work, use Claude Sonnet 5 (1M context) or Gemini 3.1 Pro (~1M context). For most coding and Q&A tasks, any modern flagship has plenty of room. Monitor the token count in long conversations and start fresh when it approaches the limit.' },
           ]} />
         </Block>
         <Block>
@@ -173,7 +173,7 @@ export default function GenAIPage() {
               { name: 'MMLU', desc: 'Massive Multitask Language Understanding. 57 subjects including math, science, history, law. Tests knowledge breadth. A student\'s equivalent of a broad GK test.' },
               { name: 'HumanEval', desc: 'Python coding problems. Model writes code that must pass unit tests. Measures actual programming ability, not just code appearance.' },
               { name: 'LMSYS Chatbot Arena', desc: 'Humans compare outputs of two anonymous models side by side and vote for the better one. Closest measure of real-world helpfulness because it captures what humans actually prefer, not what benchmarks reward.' },
-              { name: 'MATH', desc: 'Competition mathematics problems. Measures multi-step mathematical reasoning. GPT-4 class models score 50-70% where a strong student scores 90%+.' },
+              { name: 'MATH', desc: 'Competition mathematics problems. Measures multi-step mathematical reasoning. GPT-5 class models score 50-70% where a strong student scores 90%+.' },
             ].map((item, i) => (
               <div key={i} className="tool-benchmark-row">
                 <span className="tool-benchmark-row__name">{item.name}</span>
@@ -191,11 +191,11 @@ export default function GenAIPage() {
         <Block>
           <SubHead label="How students actually access these models" color={color} />
           <Steps color={color} items={[
-            { n: '1', title: 'ChatGPT free — immediate, no setup', body: 'chat.openai.com — free account gives GPT-4o with daily limits. Best for: learning, coding help, interview prep, writing. Good enough for 90% of student tasks.' },
-            { n: '2', title: 'Claude free — same as ChatGPT', body: 'claude.ai — free account gives Claude 3.5 Sonnet. Better for: long documents, code review, nuanced analysis. Use alongside ChatGPT, not instead of.' },
+            { n: '1', title: 'ChatGPT free — immediate, no setup', body: 'chat.openai.com — free account gives GPT-5.5 with daily limits. Best for: learning, coding help, interview prep, writing. Good enough for 90% of student tasks.' },
+            { n: '2', title: 'Claude free — same as ChatGPT', body: 'claude.ai — free account gives Claude Sonnet 5. Better for: long documents, code review, nuanced analysis. Use alongside ChatGPT, not instead of.' },
             { n: '3', title: 'Groq API — free, for building projects', body: 'console.groq.com — free API key, Llama 3 70B, OpenAI-compatible format. When you want to add AI to your own application without paying. Best starting point for any AI-powered project.' },
             { n: '4', title: 'Ollama — run models locally', body: 'ollama.com — download and run Llama 3 or Mistral on your laptop. Completely free, offline, private. Requires 8GB+ RAM. For: sensitive data, unlimited free use, learning without API limits.' },
-            { n: '5', title: 'OpenAI / Anthropic API — for serious projects', body: 'platform.openai.com — add $5 credit, get API key. For: portfolio projects that use GPT-4o specifically, or production applications. Use Groq first to test, switch to OpenAI if you need GPT-4o quality.' },
+            { n: '5', title: 'OpenAI / Anthropic API — for serious projects', body: 'platform.openai.com — add $5 credit, get API key. For: portfolio projects that use GPT-5.5 specifically, or production applications. Use Groq first to test, switch to OpenAI if you need GPT-5.5 quality.' },
           ]} />
         </Block>
         <Block title="What you can do after understanding this" titleColor={color}>

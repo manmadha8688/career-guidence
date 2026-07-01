@@ -32,6 +32,14 @@ const TYPE_META = {
   DEBUG:      { label: 'Debug',        color: '#FB923C' },
   CONCEPTUAL: { label: 'Conceptual',   color: '#94A3B8' },
 }
+// Short, experience-based tip shown at the top of each track.
+const TRACK_TIPS = {
+  START_CODING:    'Type every example yourself — never copy-paste. Syntax sticks through your fingers, not your eyes.',
+  LOGIC_BUILDING:  'Stuck? Solve it on paper with one small example first, then turn that into code. A dry-run beats guessing.',
+  SKILL_UP:        'Get the brute-force version working first, then optimize. A slow answer that runs beats a clever one that does not.',
+  INTERVIEW_PREP:  'Say your approach out loud before you code. In real interviews, how you think is scored as much as the answer.',
+  SCENARIO_CODING: 'Read the rules twice and list the edge cases before writing a line. Scenario problems are won on the details.',
+}
 
 export default function TrackPage() {
   const location = useLocation()
@@ -346,6 +354,12 @@ function LinearView({ track, questions, topics, selectedTopic, onTopicChange, se
         </div>
       )}
 
+      {TRACK_TIPS[track] && (
+        <div className="ps-hint-banner ps-hint-banner--tip">
+          💡 Tip: {TRACK_TIPS[track]}
+        </div>
+      )}
+
       {Object.keys(grouped).length === 0 ? <Empty /> : (
         Object.entries(grouped).map(([cat, qs]) => (
           <div key={cat} className="ps-category-group" style={{ '--track-color': meta.color }}>
@@ -401,6 +415,10 @@ function SkillUpView({ questions, categories, selectedCategory, onCategoryChange
         <ResultCount count={questions.length} filters={activeFilters || null} />
       </div>
 
+      <div className="ps-hint-banner ps-hint-banner--tip">
+        💡 Tip: {TRACK_TIPS.SKILL_UP}
+      </div>
+
       {questions.length === 0 ? <Empty /> : (
         <div className="ps-problem-list">
           {questions.map((q, i) => (
@@ -433,6 +451,10 @@ function InterviewPrepView({ questions, level, onLevelChange, search, onSearch, 
 
       <div className="ps-result-wrap">
         <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
+      </div>
+
+      <div className="ps-hint-banner ps-hint-banner--tip">
+        💡 Tip: {TRACK_TIPS.INTERVIEW_PREP}
       </div>
 
       {questions.length === 0 ? <Empty /> : (
@@ -479,6 +501,10 @@ function ScenarioView({ questions, level, onLevelChange, search, onSearch, navig
 
       <div className="ps-result-wrap">
         <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
+      </div>
+
+      <div className="ps-hint-banner ps-hint-banner--tip">
+        💡 Tip: {TRACK_TIPS.SCENARIO_CODING}
       </div>
 
       {questions.length === 0 ? <Empty /> : (

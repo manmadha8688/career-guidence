@@ -13,8 +13,8 @@ export default function OpenAIAPIPage() {
         icon="🔑"
         title="OpenAI API — Build AI Features Into Your Applications"
         tagline="The API powering thousands of AI products worldwide"
-        badges={[['$5 Free Credit', '#4ADE80'], ['Pay as you go after', color], ['GPT-4o access', 'var(--text-muted)']]}
-        overview={"The OpenAI API is how developers add GPT-4o, DALL-E, Whisper, and embeddings to their own applications. When you use a product that says \"powered by AI\" — a writing tool, a customer support bot, a code review tool, a resume analyzer — there is often an OpenAI API call happening in the background. Learning to use the API directly (not through ChatGPT's interface) is the skill that separates people who use AI tools from people who build AI tools. The API is straightforward: send a POST request with your messages and model choice, get a response. New accounts receive $5 in free credits to start. After that, pricing is per-token — a typical conversation costs less than a fraction of a rupee."}
+        badges={[['$5 Free Credit', '#4ADE80'], ['Pay as you go after', color], ['GPT-5.5 access', 'var(--text-muted)']]}
+        overview={"The OpenAI API is how developers add GPT-5.5, DALL-E, Whisper, and embeddings to their own applications. When you use a product that says \"powered by AI\" — a writing tool, a customer support bot, a code review tool, a resume analyzer — there is often an OpenAI API call happening in the background. Learning to use the API directly (not through ChatGPT's interface) is the skill that separates people who use AI tools from people who build AI tools. The API is straightforward: send a POST request with your messages and model choice, get a response. New accounts receive $5 in free credits to start. After that, pricing is per-token — a typical conversation costs less than a fraction of a rupee."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -47,7 +47,7 @@ export default function OpenAIAPIPage() {
             { n: '2', title: 'Install the SDK', body: 'pip install openai (Python) or npm install openai (Node.js). Set your key: export OPENAI_API_KEY=sk-... (or use .env + python-dotenv).' },
             { n: '3', title: 'Write a chat completion', body: "from openai import OpenAI\nclient = OpenAI()\nresponse = client.chat.completions.create(\n  model='gpt-4o-mini',\n  messages=[\n    {'role': 'system', 'content': 'You are a helpful assistant.'},\n    {'role': 'user', 'content': 'Explain recursion briefly.'}\n  ]\n)\nprint(response.choices[0].message.content)" },
             { n: '4', title: 'Monitor your usage', body: 'platform.openai.com/usage shows token counts and cost per day. Set a monthly spending limit in Settings → Billing → Usage limits to avoid surprise bills during development.' },
-            { n: '5', title: 'Use gpt-4o-mini for development', body: 'gpt-4o-mini costs ~20x less than gpt-4o and is excellent for most tasks. Develop and test with mini, switch to gpt-4o only for the specific prompts that need better quality.' },
+            { n: '5', title: 'Use gpt-4o-mini for development', body: 'gpt-4o-mini costs ~20x less than gpt-5.5 and is excellent for most tasks. Develop and test with mini, switch to gpt-5.5 only for the specific prompts that need better quality.' },
           ]} />
         </Block>
         <Block>
@@ -64,8 +64,8 @@ export default function OpenAIAPIPage() {
               <tbody>
                 {[
                   ['gpt-4o-mini', '128K', '$0.15/1M', '$0.60/1M', 'Development, most production tasks, cost-sensitive apps'],
-                  ['gpt-4o', '128K', '$2.50/1M', '$10.00/1M', 'Complex reasoning, difficult code, nuanced tasks'],
-                  ['gpt-4o (with vision)', '128K', '$2.50/1M', '$10.00/1M', 'Image analysis, screenshot understanding, visual tasks'],
+                  ['gpt-5.5', '128K', '$2.50/1M', '$10.00/1M', 'Complex reasoning, difficult code, nuanced tasks'],
+                  ['gpt-5.5 (with vision)', '128K', '$2.50/1M', '$10.00/1M', 'Image analysis, screenshot understanding, visual tasks'],
                   ['text-embedding-3-small', '8K', '$0.02/1M', 'N/A', 'Embeddings for RAG, semantic search'],
                 ].map((row, i) => (
                   <tr key={i}>
@@ -78,7 +78,7 @@ export default function OpenAIAPIPage() {
             </table>
           </div>
           <Compare color={color} items={[
-            { label: 'The mini vs full-size decision', badge: 'Use mini by default', body: "GPT-4o mini handles 80-90% of tasks nearly as well as GPT-4o at 1/20th the cost. Start with mini for everything. Only upgrade specific prompts to full GPT-4o when mini's quality is measurably insufficient for that task." },
+            { label: 'The mini vs full-size decision', badge: 'Use mini by default', body: "GPT-5.5 handles 80-90% of tasks nearly as well as GPT-5.5 at 1/20th the cost. Start with mini for everything. Only upgrade specific prompts to full GPT-5.5 when mini's quality is measurably insufficient for that task." },
             { label: 'Context window', badge: '128K for both', body: 'Both models support 128K token context windows. This is enough for about 100 pages of text. In practice, longer contexts cost more — always trim conversation history and only include context that is actually needed.' },
             { label: 'Temperature control', badge: 'Use 0 for determinism', body: 'Temperature 0 = deterministic, consistent outputs (best for extraction, classification, coding). Temperature 0.7-1.0 = creative, varied outputs (best for writing, brainstorming). Default is 1.0 — explicitly set 0 for any task where consistency matters.' },
           ]} />

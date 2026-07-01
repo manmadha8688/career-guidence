@@ -49,7 +49,7 @@ export const NODEJS_GUIDE = [
           '✅ npm run dev or node server.js starts without errors',
           '✅ API endpoints tested in browser or Postman',
           '✅ package.json has a "start" script',
-          '✅ engines field set: "node": ">=18.0.0"',
+          '✅ engines field set: "node": ">=20.0.0"',
           '✅ No passwords, secrets, or connection strings in JS files',
           '✅ .env file exists locally with your secrets',
           '✅ .gitignore excludes node_modules/ and .env',
@@ -135,7 +135,7 @@ export const NODEJS_GUIDE = [
     "dev":   "nodemon server.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "cors":               "^2.8.5",
@@ -150,7 +150,7 @@ export const NODEJS_GUIDE = [
   }
 }`,
         ],
-        note: 'Render runs "npm start" to launch your app. The engines field tells Render to use Node.js 18+. Replace server.js if your main file has a different name.',
+        note: 'Render runs "npm start" to launch your app. The engines field tells Render to use Node.js 20+. Replace server.js if your main file has a different name.',
       },
     ],
   },
@@ -966,7 +966,7 @@ Thumbs.db`,
           '   Fix: Verify "start" script in package.json matches your main file',
           '',
           '5. Node version mismatch',
-          '   Fix: Add "engines": { "node": ">=18.0.0" } to package.json',
+          '   Fix: Add "engines": { "node": ">=20.0.0" } to package.json',
         ],
         note: 'Always check the Render Logs tab first — the error message usually tells you exactly what went wrong and which file/line caused it.',
       },
@@ -984,7 +984,7 @@ Thumbs.db`,
         text: [
           '── package.json ─────────────────────────────────────',
           '  "start" script exists: "node server.js"',
-          '  "engines": { "node": ">=18.0.0" } is set',
+          '  "engines": { "node": ">=20.0.0" } is set',
           '  All packages are in dependencies (not devDependencies)',
           '',
           '── server.js ────────────────────────────────────────',

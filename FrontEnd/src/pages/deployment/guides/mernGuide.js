@@ -289,7 +289,7 @@ export const MERN_GUIDE = [
     "dev":   "nodemon server.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "bcryptjs":           "^2.4.3",
@@ -306,7 +306,7 @@ export const MERN_GUIDE = [
   }
 }`,
         ],
-        note: 'Render uses "npm start" to run your app. The "engines" field tells Render to use Node.js 18+. Replace server.js if your entry file has a different name.',
+        note: 'Render uses "npm start" to run your app. The "engines" field tells Render to use Node.js 20+. Replace server.js if your entry file has a different name.',
       },
     ],
   },

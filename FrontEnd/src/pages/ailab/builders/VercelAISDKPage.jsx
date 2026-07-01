@@ -29,7 +29,7 @@ export default function VercelAISDKPage() {
           <InfoBox color={color}>
             Streaming AI responses requires a persistent connection from the browser to the server. Without a library, you must manually create a ReadableStream, encode tokens, handle backpressure, and manage React state on every update — plus write completely different code for each AI provider. The AI SDK abstracts all of this into two lines.
           </InfoBox>
-          <p className="tool-layout-block__para">The second problem the SDK solves is provider lock-in. Companies that built directly on the OpenAI API found themselves unable to switch providers without rewriting all their AI integration code. The AI SDK introduces a unified interface where streamText, generateText, and generateObject work identically across 15+ providers. Switching from GPT-4o to Claude 3.5 is a one-line change.</p>
+          <p className="tool-layout-block__para">The second problem the SDK solves is provider lock-in. Companies that built directly on the OpenAI API found themselves unable to switch providers without rewriting all their AI integration code. The AI SDK introduces a unified interface where streamText, generateText, and generateObject work identically across 15+ providers. Switching from GPT-5.5 to Claude Sonnet 5 is a one-line change.</p>
           <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The SDK is MIT licensed, fully open source at github.com/vercel/ai, and maintained by Vercel — the company that also created Next.js. This means first-class integration with Next.js App Router, Edge Runtime, and Vercel deployment, making it the natural choice for Next.js AI projects.</p>
         </Block>
         <Block>
@@ -70,9 +70,9 @@ export default function VercelAISDKPage() {
             streamText, generateText, and generateObject are fully provider-agnostic. You swap providers by changing the model parameter. Your API route, React hooks, and all other code stays identical.
           </InfoBox>
           <Compare color={color} items={[
-            { label: "openai('gpt-4o-mini')", badge: '@ai-sdk/openai', body: "Fast, cheap, reliable. GPT-4o mini is the default for most applications. GPT-4o for more complex reasoning. Requires OPENAI_API_KEY. The most common choice for production apps." },
-            { label: "anthropic('claude-3-5-haiku-20241022')", badge: '@ai-sdk/anthropic', body: "Claude models excel at coding, analysis, and following complex instructions. Haiku is fast and affordable. Sonnet is the production workhorse. Requires ANTHROPIC_API_KEY." },
-            { label: "google('gemini-2.0-flash')", badge: '@ai-sdk/google', body: "Free tier available via Google AI Studio — no credit card. 1M+ token context window. Strong multimodal support. Best free option for development. Requires GOOGLE_GENERATIVE_AI_API_KEY." },
+            { label: "openai('gpt-4o-mini')", badge: '@ai-sdk/openai', body: "Fast, cheap, reliable. GPT-5.5 is the default for most applications. GPT-5.5 for more complex reasoning. Requires OPENAI_API_KEY. The most common choice for production apps." },
+            { label: "anthropic('claude-haiku-4-5')", badge: '@ai-sdk/anthropic', body: "Claude models excel at coding, analysis, and following complex instructions. Haiku is fast and affordable. Sonnet is the production workhorse. Requires ANTHROPIC_API_KEY." },
+            { label: "google('gemini-3.5-flash')", badge: '@ai-sdk/google', body: "Free tier available via Google AI Studio — no credit card. 1M+ token context window. Strong multimodal support. Best free option for development. Requires GOOGLE_GENERATIVE_AI_API_KEY." },
             { label: "groq('llama-3.1-70b-versatile')", badge: '@ai-sdk/groq', body: "Fastest inference — 500+ tokens/second. Free tier with generous limits. Best for latency-sensitive applications. Uses open-source Llama models. Requires GROQ_API_KEY." },
           ]} />
         </Block>

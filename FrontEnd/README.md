@@ -11,7 +11,7 @@ A Solo Leveling–inspired learning platform helping freshers and college studen
 - **Hunter Paths** — Full career roadmaps (Full Stack, MERN, Python, Frontend). Structured gate sequences.
 - **Code GYM** — LeetCode-style coding problems across 5 tracks: Start Coding, Logic Building, Skill Up, Interview Prep, Scenario Coding.
 - **Mission Board** — Real-world project missions with objectives, hints, and approach guidance.
-- **AI Lab** — Curated directory of 89 AI/ML tools across 14 categories with usage guides.
+- **AI Lab** — Curated directory of 88 AI/ML tools across 14 categories, each with its own dedicated guide page.
 - **Deployment Guides** — Step-by-step free-tier deployment for 20+ stacks (React, Django, Node, MERN, FastAPI, Flask, Spring Boot, ML models, databases).
 - **Fresher Guide** — Honest career guidance: market realities, role comparisons, AI impact, learning paths.
 - **Walk-Ins** — Community job board for walk-in interview postings.
@@ -53,6 +53,10 @@ A Solo Leveling–inspired learning platform helping freshers and college studen
 **Component extraction** — `DashboardPage.jsx` was split from 2,600+ lines into 12 focused components under `panels/`, `modals/`, and `mobile/` subdirectories.
 
 **httpOnly cookies** — Auth tokens never touch localStorage or sessionStorage. The backend sets an httpOnly cookie; React uses `withCredentials: true` on all requests.
+
+**SEO & social** — `index.html` ships full meta (description, keywords, canonical), Open Graph, and Twitter Card tags. `public/robots.txt`, `public/sitemap.xml`, and `public/site.webmanifest` are served as static files (before the SPA rewrite). Per-route `<title>` is set from a small map in `App.jsx` so browser tabs and history entries are meaningful.
+
+**Accessibility** — Global `:focus-visible` ring for keyboard users (never shown on mouse/touch), a skip-to-content link in `AppLayout`, `.sr-only` / `.sr-only-focusable` utilities, semantic `<main>` landmark, and a `prefers-reduced-motion` safety net that neutralises CSS animation/transition for users who request it.
 
 ---
 
@@ -117,7 +121,7 @@ src/
   hooks/            ← useSkyTransition (theme animation), useBodyLock (modal scroll)
   pages/
     auth/           ← LoginPage, RegisterPage (OTP email verification)
-    ailab/          ← 89 AI tool pages across 14 categories
+    ailab/          ← 88 AI tool pages across 14 categories
     deployment/
       guides/       ← 20 per-guide data files (split from original 15k-line file)
     student-skill-arena/
@@ -143,10 +147,16 @@ src/
 2. Set root directory: `FrontEnd`
 3. Build command: `npm run build` | Output directory: `dist`
 4. Add environment variable: `VITE_API_URL` → your backend URL
-5. Deploy — `vercel.json` SPA rewrite is pre-configured:
+5. Deploy — `vercel.json` is pre-configured with:
+   - **SPA rewrite** so client-side routes (e.g. `/ai-lab`) resolve on refresh/deep-link.
+   - **Security headers** (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`).
+   - **Immutable long-cache** (`max-age=31536000, immutable`) for hashed `/assets/*` bundles.
 
 ```json
-{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "headers": [ /* security + asset caching — see vercel.json */ ]
+}
 ```
 
 ### Backend (Spring Boot on Render)

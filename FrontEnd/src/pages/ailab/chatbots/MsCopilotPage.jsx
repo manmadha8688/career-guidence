@@ -11,10 +11,10 @@ export default function MsCopilotPage() {
     <ToolPageShell toolColor={color} categoryLabel="Chatbots">
       <ToolHeader
         icon="🪟"
-        title="Microsoft Copilot — GPT-4o Free With Web Search and Image Generation"
+        title="Microsoft Copilot — GPT-5.5 Free With Web Search and Image Generation"
         tagline="Microsoft's AI assistant built into Windows, Edge, and your browser"
         badges={[['✓ FREE', '#4ADE80'], ['copilot.microsoft.com', color], ['Microsoft + OpenAI', 'var(--text-muted)']]}
-        overview={"Microsoft Copilot is Microsoft's free AI assistant powered by GPT-4o — available at copilot.microsoft.com, built into Windows 11, and embedded in the Edge browser sidebar. Its biggest advantage over ChatGPT's free tier: web search is always on by default (no plugins needed) and you get free DALL-E 3 image generation with 15 boosts per day. If you use Windows 11, Copilot requires no separate signup — it is already there. For students working in Microsoft's ecosystem (Word, PowerPoint, Excel, Outlook), Copilot Pro unlocks AI assistance directly inside those applications. Free users get the same GPT-4o quality as ChatGPT Plus during non-peak hours, plus capabilities that require a paid ChatGPT subscription."}
+        overview={"Microsoft Copilot is Microsoft's free AI assistant powered by GPT-5.5 — available at copilot.microsoft.com, built into Windows 11, and embedded in the Edge browser sidebar. Its biggest advantage over ChatGPT's free tier: web search is always on by default (no plugins needed) and you get free DALL-E 3 image generation with 15 boosts per day. If you use Windows 11, Copilot requires no separate signup — it is already there. For students working in Microsoft's ecosystem (Word, PowerPoint, Excel, Outlook), Copilot Pro unlocks AI assistance directly inside those applications. Free users get the same GPT-5.5 quality as ChatGPT Plus during non-peak hours, plus capabilities that require a paid ChatGPT subscription."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -27,12 +27,12 @@ export default function MsCopilotPage() {
         <Block>
           <SubHead label="What makes Copilot different from ChatGPT" color={color} />
           <InfoBox color={color}>Copilot's three differentiators over ChatGPT free: (1) Web search is always active — answers cite live sources by default, not training data alone. (2) Free image generation — DALL-E 3 produces 15 images per day without any paid subscription. (3) Native Microsoft integration — works inside Windows 11, Edge, and Microsoft 365 apps without extra setup.</InfoBox>
-          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The model underneath Copilot is GPT-4o — the same foundation as ChatGPT Plus. The difference is what Microsoft layered on top. Every Copilot response can pull from the live web, which makes it more accurate on current topics, recent events, and real-time information. For a student who needs to research something from the last month, Copilot's grounded answers are more reliable than asking a model with a training cutoff.</p>
+          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The model underneath Copilot is GPT-5.5 — the same foundation as ChatGPT Plus. The difference is what Microsoft layered on top. Every Copilot response can pull from the live web, which makes it more accurate on current topics, recent events, and real-time information. For a student who needs to research something from the last month, Copilot's grounded answers are more reliable than asking a model with a training cutoff.</p>
         </Block>
         <Block>
           <SubHead label="Free vs Copilot Pro — what you actually get" color={color} />
           <Compare color={color} items={[
-            { label: 'Copilot Free', badge: 'More than most know', body: 'GPT-4o quality during non-peak hours, always-on web search with citations, 15 DALL-E 3 image boosts per day, voice conversations, file uploads (PDF/Word/Excel), image analysis. This is the ChatGPT Plus feature set — free. No credit card needed.' },
+            { label: 'Copilot Free', badge: 'More than most know', body: 'GPT-5.5 quality during non-peak hours, always-on web search with citations, 15 DALL-E 3 image boosts per day, voice conversations, file uploads (PDF/Word/Excel), image analysis. This is the ChatGPT Plus feature set — free. No credit card needed.' },
             { label: 'Copilot Pro — $20/month', badge: 'Worth it for Office users', body: 'Priority access at peak times (no slowdowns when Microsoft\'s servers are busy), 100 image boosts/day in landscape format, and crucially: Copilot inside Word, Excel, PowerPoint, and Outlook. If you live in Microsoft Office for work or college, Pro pays for itself quickly.' },
             { label: 'Microsoft 365 Copilot (Enterprise/Education)', badge: 'For institutions', body: 'Full Copilot integrated across all M365 apps — available to institutions and companies on E3/E5 plans. Many Indian engineering colleges and companies provide M365 licenses — check if your institution gives you access. It is free for you if your college has a Microsoft agreement.' },
           ]} />
@@ -69,7 +69,7 @@ export default function MsCopilotPage() {
         </Block>
         <Block title="What you can do" titleColor={color}>
         <CanDoList items={[
-          'Get GPT-4o quality AI responses with always-on web search — completely free',
+          'Get GPT-5.5 quality AI responses with always-on web search — completely free',
             'Generate up to 15 DALL-E 3 images per day for presentations, projects, and creative work',
             'Upload documents and ask questions about them without paying for any subscription',
             'Use Copilot in the Edge browser sidebar while reading any web page for instant context-aware help',

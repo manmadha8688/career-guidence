@@ -14,7 +14,7 @@ export default function GeminiAPIPage() {
         title="Gemini API — Google's Most Generous Free AI API"
         tagline="Multimodal AI with 2M context window — free tier, no credit card"
         badges={[['✓ FREE TIER', '#4ADE80'], ['Google AI Studio', color], ['2M Token Context', 'var(--text-muted)']]}
-        overview={"The Gemini API gives developers access to Google DeepMind's Gemini models — including Gemini 2.0 Flash, which outperforms GPT-3.5 Turbo and GPT-4 on many benchmarks at a fraction of the cost. The free tier at Google AI Studio requires no credit card and provides generous daily limits for learning and prototyping. The defining technical advantage is Gemini's 2 million token context window — 15x larger than GPT-4o's 128K. In practice, this means you can send an entire codebase, a full book, or a 90-minute audio recording in one API call and have Gemini analyze the entire thing. For students building their first AI-powered applications, the free Gemini API with Python is the most accessible entry point into production AI development."}
+        overview={"The Gemini API gives developers access to Google DeepMind's Gemini models — including Gemini 3.5 Flash, which outperforms GPT-3.5 Turbo and GPT-4 on many benchmarks at a fraction of the cost. The free tier at Google AI Studio requires no credit card and provides generous daily limits for learning and prototyping. The defining technical advantage is Gemini's very large context window — the Pro models handle roughly 1 million tokens, far more than most competing models. In practice, this means you can send an entire codebase, a full book, or a long audio recording in one API call and have Gemini analyze the entire thing. For students building their first AI-powered applications, the free Gemini API with Python is the most accessible entry point into production AI development."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -29,23 +29,23 @@ export default function GeminiAPIPage() {
           <InfoBox color={color}>Google AI Studio (ai.google.dev) is for individual developers and students. No credit card required. Vertex AI is Google's enterprise cloud product — requires a GCP project and billing setup. For learning and personal projects, always start with AI Studio.</InfoBox>
           <Steps color={color} items={[
             { n: '1', title: 'Go to Google AI Studio', body: 'Open ai.google.dev → click "Get API key" → "Create API key in new project" → copy your key. Takes 60 seconds. Save it immediately — you will use it in every project.' },
-            { n: '2', title: 'Install the SDK and make your first call', body: 'pip install google-generativeai\n\nimport google.generativeai as genai\ngenai.configure(api_key=\'YOUR_KEY\')\n\nmodel = genai.GenerativeModel(\'gemini-2.0-flash\')\nresponse = model.generate_content(\'Explain recursion in simple terms\')\nprint(response.text)' },
+            { n: '2', title: 'Install the SDK and make your first call', body: 'pip install google-generativeai\n\nimport google.generativeai as genai\ngenai.configure(api_key=\'YOUR_KEY\')\n\nmodel = genai.GenerativeModel(\'gemini-3.5-flash\')\nresponse = model.generate_content(\'Explain recursion in simple terms\')\nprint(response.text)' },
             { n: '3', title: 'Set your key as an environment variable', body: 'Never hardcode API keys. Create a .env file: GEMINI_API_KEY=your_key_here. Access with: import os; api_key = os.getenv(\'GEMINI_API_KEY\'). Add .env to .gitignore immediately. Push code without the key.' },
           ]} />
         </Block>
         <Block>
           <SubHead label="Model lineup — which to use" color={color} />
           <Compare color={color} items={[
-            { label: 'Gemini 2.5 Flash-Lite', badge: 'Highest free limits', body: 'Fastest, cheapest model. 15 RPM, 1000 requests/day free. Use for high-volume simple tasks: text classification, quick Q&A, summarization pipelines where you make many calls. Best for learning and testing.' },
-            { label: 'Gemini 2.0 Flash', badge: 'Best all-rounder', body: 'Outperforms Gemini 1.5 Pro on coding tasks (Python, Java, SQL) while running at Flash speed. Paid: ~$0.10/1M input tokens. The default choice for most production applications. Better code generation than same-tier OpenAI models.' },
-            { label: 'Gemini 2.5 Flash', badge: 'Current best speed/cost', body: 'Latest generation Flash model. Strongest reasoning at fast inference speed. ~$0.0007/K output tokens. Use this for most new projects — best balance of capability, speed, and cost in 2025.' },
-            { label: 'Gemini 2.5 Pro', badge: 'Most capable', body: '$1.25/M input tokens — 50% cheaper than GPT-4o ($2.50/M). Use for the hardest tasks: complex reasoning, long document analysis, difficult code generation. Best when quality matters more than speed.' },
+            { label: 'Gemini 3.5 Flash-Lite', badge: 'Highest free limits', body: 'Fastest, cheapest model. 15 RPM, 1000 requests/day free. Use for high-volume simple tasks: text classification, quick Q&A, summarization pipelines where you make many calls. Best for learning and testing.' },
+            { label: 'Gemini 3.5 Flash', badge: 'Best all-rounder', body: 'Outperforms Gemini 3.1 Pro on coding tasks (Python, Java, SQL) while running at Flash speed. Paid: ~$0.10/1M input tokens. The default choice for most production applications. Better code generation than same-tier OpenAI models.' },
+            { label: 'Gemini 3.5 Flash', badge: 'Current best speed/cost', body: 'Latest generation Flash model. Strongest reasoning at fast inference speed. ~$0.0007/K output tokens. Use this for most new projects — best balance of capability, speed, and cost in 2025.' },
+            { label: 'Gemini 3.1 Pro', badge: 'Most capable', body: '$1.25/M input tokens — 50% cheaper than GPT-5.5 ($2.50/M). Use for the hardest tasks: complex reasoning, long document analysis, difficult code generation. Best when quality matters more than speed.' },
           ]} />
         </Block>
         <Block>
           <SubHead label="The 2M token context window" color={color} />
-          <p className="tool-layout-block__para" style={{ marginBottom: '1rem'}}>Gemini's 2 million token context window is its most practically significant feature. GPT-4o supports 128K tokens — roughly 100 pages of text. Gemini 2.0 Flash supports 2 million tokens — roughly 1,500 pages, or an entire codebase, or a 90-minute audio recording. This is not a marginal improvement: it changes what categories of tasks are possible in a single API call.</p>
-          <InfoBox color={color}>Practical examples of what fits in 2M tokens: all of Python's standard library documentation, an entire university course's lecture notes, 10 full research papers simultaneously, a 2-hour video transcript, your entire GitHub repository including all source files. For students building RAG systems, the 2M window means some documents don't need chunking at all — just send the whole thing.</InfoBox>
+          <p className="tool-layout-block__para" style={{ marginBottom: '1rem'}}>Gemini's very large context window is one of its most practically significant features. The Gemini 3.1 Pro model handles roughly 1 million tokens — on the order of 750,000 words, or an entire codebase, or a long audio recording — in a single request. This is not a marginal improvement: it changes what categories of tasks are possible in one API call.</p>
+          <InfoBox color={color}>Practical examples of what fits in a ~1M-token window: large chunks of a library's documentation, an entire university course's lecture notes, several full research papers simultaneously, a long video transcript, or most of a source repository. For students building RAG systems, a window this large means some documents don't need chunking at all — just send the whole thing.</InfoBox>
         </Block>
         <Block>
           <SubHead label="Multimodal capabilities" color={color} />
@@ -62,8 +62,8 @@ export default function GeminiAPIPage() {
           <SubHead label="Gemini API vs OpenAI API" color={color} />
           <Compare color={color} items={[
             { label: 'Free tier', badge: 'Gemini wins clearly', body: 'Gemini: ongoing free tier, no credit card, generous daily limits. OpenAI: $5 starter credits with 3-month expiry, then pay-per-token. For students building projects over months, Gemini\'s free tier is dramatically more practical.' },
-            { label: 'Context window', badge: 'Gemini wins (15x larger)', body: 'Gemini 2.0+: 2M tokens. GPT-4o: 128K tokens. For applications that need to process large documents, entire codebases, or long conversations — Gemini\'s advantage is decisive.' },
-            { label: 'Cost at paid tiers', badge: 'Gemini 40-50% cheaper', body: 'Gemini 2.5 Pro: $1.25/M input. GPT-4o: $2.50/M input. Gemini 2.0 Flash: ~$0.10/M input. GPT-4o mini: $0.15/M. For equivalent model tiers, Gemini is consistently less expensive.' },
+            { label: 'Context window', badge: 'Gemini leads', body: 'Gemini 3.1 Pro: ~1M tokens. Most other flagships land lower. For applications that need to process large documents, entire codebases, or long conversations, Gemini\'s context advantage is a real differentiator.' },
+            { label: 'Cost at paid tiers', badge: 'Gemini 40-50% cheaper', body: 'Gemini 3.1 Pro: $1.25/M input. GPT-5.5: $2.50/M input. Gemini 3.5 Flash: ~$0.10/M input. GPT-5.5: $0.15/M. For equivalent model tiers, Gemini is consistently less expensive.' },
             { label: 'Ecosystem and reliability', badge: 'OpenAI ahead', body: 'OpenAI has a larger developer ecosystem, more third-party library support (LangChain integrations, tooling), and a more stable free tier history. Google cut free-tier limits without notice in Dec 2025 causing 429 errors. For production, OpenAI\'s reliability has been better.' },
           ]} />
         </Block>
@@ -83,13 +83,13 @@ export default function GeminiAPIPage() {
       >
         <Steps color={color} items={[
             { n: '1', title: 'Get API key and install SDK', body: 'ai.google.dev → Get API key. pip install google-generativeai python-dotenv. Create .env with GEMINI_API_KEY=your_key. This takes 3 minutes total.' },
-            { n: '2', title: 'Upload and analyze a PDF', body: "from pathlib import Path\nimport google.generativeai as genai\n\ngenai.configure(api_key=os.getenv('GEMINI_API_KEY'))\nmodel = genai.GenerativeModel('gemini-2.0-flash')\n\npdf_data = Path('document.pdf').read_bytes()\nresponse = model.generate_content([\n    {'mime_type': 'application/pdf', 'data': pdf_data},\n    'Summarize the 3 most important points in this document'\n])\nprint(response.text)" },
+            { n: '2', title: 'Upload and analyze a PDF', body: "from pathlib import Path\nimport google.generativeai as genai\n\ngenai.configure(api_key=os.getenv('GEMINI_API_KEY'))\nmodel = genai.GenerativeModel('gemini-3.5-flash')\n\npdf_data = Path('document.pdf').read_bytes()\nresponse = model.generate_content([\n    {'mime_type': 'application/pdf', 'data': pdf_data},\n    'Summarize the 3 most important points in this document'\n])\nprint(response.text)" },
             { n: '3', title: 'Add image analysis', body: "from PIL import Image\nimage = Image.open('screenshot.png')\nresponse = model.generate_content(['What data does this chart show? What is the main trend?', image])\nGemini reads the image as visual input — no OCR or preprocessing needed." },
             { n: '4', title: 'Build the interactive version', body: 'Add a simple input loop: ask the user for a file path and a question. Load the file. Send to Gemini with the question. Print the answer. This is a working multimodal Q&A tool in ~30 lines of code.' },
           ]} />
       </ProjectTask>
         <ProTip>
-        Use <code className="tool-inline-code">gemini-2.0-flash</code> as your default model for almost everything during development. Switch to <code className="tool-inline-code">gemini-2.5-pro</code> only for specific prompts where 2.0 Flash gives insufficient quality. The cost difference between Flash and Pro is 10-15x — running your entire development cycle on Flash and only using Pro for final output review will keep your costs near zero while still benefiting from the best model where it matters.
+        Use <code className="tool-inline-code">gemini-3.5-flash</code> as your default model for almost everything during development. Switch to <code className="tool-inline-code">gemini-3.1-pro</code> only for specific prompts where 2.0 Flash gives insufficient quality. The cost difference between Flash and Pro is 10-15x — running your entire development cycle on Flash and only using Pro for final output review will keep your costs near zero while still benefiting from the best model where it matters.
       </ProTip>
       <PageNavRow
         prev={{ path: '/ai-lab/apis/huggingface', label: 'Hugging Face' }}

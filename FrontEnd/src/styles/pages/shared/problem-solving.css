@@ -151,6 +151,22 @@
   letter-spacing: 0.08em;
 }
 
+.ps-tracks-tip {
+  max-width: 640px;
+  margin: 0.9rem auto 0;
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--ps-muted);
+  background: rgba(139, 92, 246, 0.07);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+}
+
+.ps-tracks-tip strong {
+  color: var(--ps-text, #c4b5fd);
+}
+
 .ps-tracks-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
@@ -412,6 +428,15 @@
   font-size: 0.68rem;
   color: var(--ps-muted);
   letter-spacing: 0.05em;
+}
+
+/* Readable, experience-tip variant — accented with the active track colour. */
+.ps-hint-banner--tip {
+  font-family: inherit;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  border-left: 3px solid var(--track-color, #8B5CF6);
 }
 
 .ps-category-group {
@@ -1283,5 +1308,24 @@
 
   .ps-io-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Card mount animation — gentle fade/slide as lists render ── */
+@keyframes psCardIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ps-problem-card,
+.ps-interview-card,
+.ps-scenario-card {
+  animation: psCardIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-problem-card,
+  .ps-interview-card,
+  .ps-scenario-card {
+    animation: none;
   }
 }

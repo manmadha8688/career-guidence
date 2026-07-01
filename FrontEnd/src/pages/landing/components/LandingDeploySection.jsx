@@ -1,4 +1,4 @@
-import { DEPLOY_STACKS, DEPLOY_STATS } from '../landingData'
+import { DEPLOY_STACKS } from '../landingData'
 import { useLanding } from '../context/LandingPageContext'
 
 export default function LandingDeploySection() {
@@ -47,15 +47,6 @@ export default function LandingDeploySection() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="lp-stats-row-auto lp-reveal">
-          {DEPLOY_STATS.map((stat, i) => (
-            <div key={i} className="lp-deploy-stat">
-              <div className={`lp-deploy-stat__value lp-deploy-stat__value--${stat.tone}`}>{stat.value}</div>
-              <div className="lp-deploy-stat__label">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

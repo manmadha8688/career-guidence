@@ -13,8 +13,8 @@ export default function GeminiCLIPage() {
         icon="🌟"
         title="Gemini CLI — Google's Free Terminal AI Agent"
         tagline="Claude Code's free competitor — 1M context, 1000 free requests/day"
-        badges={[['✓ 100% FREE', '#4ADE80'], ['Gemini 2.5 Pro', color], ['Google', 'var(--text-muted)']]}
-        overview={"Gemini CLI is Google's open-source terminal AI agent, released in June 2025. It brings Gemini 2.5 Pro — one of the most capable AI models available — directly into your terminal, completely free with a personal Google account. Think of it as the free alternative to Claude Code: you type natural language commands, it reads your codebase, edits files, runs shell commands, and builds features autonomously. The free tier gives you 60 requests per minute and 1,000 requests per day, which is enough to use it as a primary coding assistant without ever thinking about limits. For students, this is significant — you get access to an agentic AI with a 1M token context window (capable of reading an entire large project at once) at zero cost."}
+        badges={[['✓ 100% FREE', '#4ADE80'], ['Gemini 3.1 Pro', color], ['Google', 'var(--text-muted)']]}
+        overview={"Gemini CLI is Google's open-source terminal AI agent, released in June 2025. It brings Gemini 3.1 Pro — one of the most capable AI models available — directly into your terminal, completely free with a personal Google account. Think of it as the free alternative to Claude Code: you type natural language commands, it reads your codebase, edits files, runs shell commands, and builds features autonomously. The free tier gives you 60 requests per minute and 1,000 requests per day, which is enough to use it as a primary coding assistant without ever thinking about limits. For students, this is significant — you get access to an agentic AI with a 1M token context window (capable of reading an entire large project at once) at zero cost."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -34,7 +34,7 @@ export default function GeminiCLIPage() {
           <Steps color={color} items={[
             { n: '1', title: 'Install Node.js 20+ (if not already installed)', body: "Gemini CLI requires Node.js version 20 or higher. Check your version with: node --version. If you need to install or upgrade, download from nodejs.org. The LTS version is always the safe choice." },
             { n: '2', title: 'Install Gemini CLI globally via npm', body: "Run: npm install -g @google/gemini-cli — This installs the gemini command globally so you can run it from any directory. After installation, verify with: gemini --version" },
-            { n: '3', title: 'Authenticate with your Google account', body: "Run: gemini auth — A browser window opens. Sign in with your personal Google account (Gmail works). Once authenticated, you get the free tier: 60 requests/minute and 1,000 requests/day using Gemini 2.5 Pro. No credit card, no API key needed." },
+            { n: '3', title: 'Authenticate with your Google account', body: "Run: gemini auth — A browser window opens. Sign in with your personal Google account (Gmail works). Once authenticated, you get the free tier: 60 requests/minute and 1,000 requests/day using Gemini 3.1 Pro. No credit card, no API key needed." },
           ]} />
           <div className="tool-helper-highlight" style={{ marginTop: '0.875rem' }}>
             <div className="tool-quick-start__label">QUICK START — 3 commands to get running</div>
@@ -58,7 +58,7 @@ export default function GeminiCLIPage() {
           <SubHead label="Gemini CLI vs Claude Code" color={color} />
           <Compare color={color} items={[
             { label: 'Cost', badge: 'Gemini CLI wins for free use', body: 'Gemini CLI is 100% free with a Google account — 1,000 requests/day, 60/minute. Claude Code requires either API usage billing (can add up fast) or a $20/month Claude Max subscription. For students, Gemini CLI is the obvious starting point.' },
-            { label: 'Context window', badge: 'Both support 1M tokens', body: 'Gemini CLI launched with a 1M token context window and has maintained it. Claude Code now also supports 1M tokens on Claude Sonnet 4.6+. Both can theoretically load an entire large codebase — Gemini CLI was first to make this the default.' },
+            { label: 'Context window', badge: 'Both support 1M tokens', body: 'Gemini CLI launched with a 1M token context window and has maintained it. Claude Code now also supports 1M tokens on Claude Sonnet 5. Both can theoretically load an entire large codebase — Gemini CLI was first to make this the default.' },
             { label: 'Code quality & accuracy', badge: 'Claude Code wins currently', body: 'On SWE-bench Verified (the standard coding benchmark), Claude Code scores ~80.9% vs Gemini CLI\'s ~63.8%. Claude Code produces more accurate multi-file changes with fewer errors. For complex refactors and tricky bugs, Claude Code has an edge in precision.' },
             { label: 'Open source', badge: 'Gemini CLI wins', body: 'Gemini CLI is fully open source (Apache 2.0 license) — you can inspect the code, modify it, and contribute on GitHub. Claude Code is closed source. For trust, customization, and learning how it works, Gemini CLI is more transparent.' },
           ]} />

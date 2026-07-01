@@ -1,0 +1,13 @@
+# LearnToEarn (ARISE) — robots policy
+User-agent: *
+Allow: /
+
+# Private / authenticated areas — not useful to index
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /skill-arena/
+Disallow: /admin-skill-arena/
+Disallow: /loader-demo
+
+Sitemap: https://learn-to-earn-omega.vercel.app/sitemap.xml

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
+import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
@@ -39,10 +39,6 @@ export default function QuizPage() {
   const xp      = user?.xp ?? 0
   const rank    = getRank(xp)
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
-  const typeLabel = type === 'concept' ? 'Skill Gate Trial'
-                  : type === 'subject' ? 'Gate Assessment'
-                  : 'Path Final Trial'
-
   useEffect(() => {
     const fn = type === 'concept' ? startConceptQuiz
              : type === 'subject' ? startSubjectQuiz
