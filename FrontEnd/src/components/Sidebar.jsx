@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
@@ -39,8 +39,8 @@ export default function Sidebar({ open, onClose }) {
       {open && <div className="sidebar-backdrop" onClick={onClose} />}
       <aside className={`sidebar${open ? ' open' : ''}`}>
         <NavLink to={isAdmin ? '/admin-skill-arena' : '/skill-arena/dashboard'} className="sidebar-brand">
-          <div className="sidebar-brand-icon" style={{ background: 'transparent', fontSize: '1.25rem' }}>⚔️</div>
-          <span className="sidebar-brand-text" style={{ fontFamily: isAdmin ? 'inherit' : "'Orbitron', sans-serif", fontSize: '0.875rem', letterSpacing: '0.06em' }}>
+          <div className="sidebar-brand-icon sidebar-brand-icon--emoji">⚔️</div>
+          <span className={`sidebar-brand-text${!isAdmin ? ' sidebar-brand-text--hunter' : ''}`}>
             {isAdmin ? 'SHADOW PANEL' : 'ARISE'}
           </span>
         </NavLink>
@@ -62,7 +62,7 @@ export default function Sidebar({ open, onClose }) {
 
           {isAdmin && (
             <>
-              <div className="sidebar-section-label" style={{ marginTop: '1rem' }}>Hunter View</div>
+              <div className="sidebar-section-label sidebar-section-label--spaced">Hunter View</div>
               <NavLink to="/skill-arena/dashboard" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><LayoutDashboard size={18} /></span>
                 Skill Arena
@@ -88,16 +88,19 @@ export default function Sidebar({ open, onClose }) {
         </nav>
 
         <div className="sidebar-footer">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-            <div className="navbar-avatar" style={{ background: user?.avatarColor || '#4F46E5', fontSize: '0.8rem' }}>
+          <div className="sidebar-footer-user">
+            <div
+              className="navbar-avatar sidebar-footer-avatar"
+              style={{ '--avatar-bg': user?.avatarColor || '#4F46E5' }}
+            >
               {user?.fullName?.charAt(0)?.toUpperCase()}
             </div>
-            <div style={{ minWidth: 0 }}>
+            <div className="sidebar-footer-user__meta">
               <div className="text-sm font-semibold truncate">{user?.fullName}</div>
               <div className="text-xs text-muted truncate">{user?.email}</div>
             </div>
           </div>
-          <button className="btn btn-ghost w-full btn-sm" onClick={logout}>
+          <button type="button" className="btn btn-ghost w-full btn-sm" onClick={logout}>
             <LogOut size={15} /> Sign out
           </button>
         </div>

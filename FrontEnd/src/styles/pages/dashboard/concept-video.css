@@ -1,0 +1,50 @@
+/* ConceptVideo panel link */
+
+.dash-concept-video {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  margin-bottom: 1rem;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.dash-concept-video:hover { background: rgba(239, 68, 68, 0.13); }
+
+.dash-concept-video__play {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #EF4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dash-concept-video__content { flex: 1; min-width: 0; }
+
+.dash-concept-video__label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #EF4444;
+  font-family: var(--font-mono);
+  margin-bottom: 0.2rem;
+}
+
+.dash-concept-video__title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dash-concept-video__external { flex-shrink: 0; }

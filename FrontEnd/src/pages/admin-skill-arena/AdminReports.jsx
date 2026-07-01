@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
-import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Flag, Trash2, CheckCircle, Clock, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
@@ -27,11 +26,11 @@ function ContextBlock({ context }) {
   if (!entries.length && !context.fullUrl) return null
   return (
     <div>
-      <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>AUTO CONTEXT</div>
-      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.7, background: 'var(--bg-secondary)', borderRadius: 7, padding: '0.75rem 0.875rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-        {context.fullUrl && <code style={{ fontSize: '0.72rem', wordBreak: 'break-all' }}>{context.fullUrl}</code>}
+      <div className="admin-report-field-label">AUTO CONTEXT</div>
+      <div className="admin-report-context-body">
+        {context.fullUrl && <code className="admin-report-context-url">{context.fullUrl}</code>}
         {entries.map(([k, v]) => (
-          <span key={k}><strong style={{ color: 'var(--text-muted)', fontWeight: 600 }}>{k}:</strong> {String(v)}</span>
+          <span key={k}><strong className="admin-report-context-key">{k}:</strong> {String(v)}</span>
         ))}
       </div>
     </div>
@@ -104,27 +103,21 @@ export default function AdminReports() {
         </div>
       </div>
 
-      {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+      <div className="admin-reports-stats">
         {[
           { label: 'Total',       value: stats.total || 0,      color: '#9B6ED4' },
           { label: 'Open',        value: stats.open || 0,       color: '#EF4444' },
           { label: 'In Progress', value: stats.inProgress || 0, color: '#F59E0B' },
           { label: 'Resolved',    value: stats.resolved || 0,   color: '#4ADE80' },
         ].map(s => (
-          <div key={s.label} style={{
-            background: 'var(--bg-card)', border: '1px solid var(--border)',
-            borderRadius: 10, padding: '1rem',
-            borderTop: `3px solid ${s.color}`,
-          }}>
-            <div style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '1.5rem', color: s.color }}>{s.value}</div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{s.label}</div>
+          <div key={s.label} className="admin-reports-stat-card" style={{ '--stat-accent': s.color }}>
+            <div className="admin-reports-stat-value">{s.value}</div>
+            <div className="admin-reports-stat-label">{s.label}</div>
           </div>
         ))}
       </div>
 
-      {/* Status filter tabs */}
-      <div className="filter-chips" style={{ marginBottom: '1.25rem' }}>
+      <div className="filter-chips admin-filter-chips-spaced">
         {[
           { key: '',            label: 'All' },
           { key: 'OPEN',        label: `Open (${stats.open || 0})` },
@@ -144,12 +137,12 @@ export default function AdminReports() {
       {loading ? (
         <RadarLoader height={220} />
       ) : reports.length === 0 ? (
-        <div className="flex-center" style={{ height: '20vh', color: 'var(--text-muted)', flexDirection: 'column', gap: '0.5rem' }}>
+        <div className="flex-center admin-reports-empty">
           <Flag size={32} opacity={0.3} />
           <span>{statusFilter ? `No ${STATUS_META[statusFilter]?.label.toLowerCase()} reports` : 'No reports yet'}</span>
         </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <div className="admin-reports-list">
           {reports.map(r => {
             const sm = STATUS_META[r.status] || STATUS_META.OPEN
             const SIcon = sm.icon
@@ -157,63 +150,42 @@ export default function AdminReports() {
             const ed = editing[r.id] || {}
 
             return (
-              <div key={r.id} style={{
-                background: 'var(--bg-card)', border: '1px solid var(--border)',
-                borderLeft: `4px solid ${sm.color}`,
-                borderRadius: 10, overflow: 'hidden',
-              }}>
-                {/* Row */}
-                <div
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.25rem', cursor: 'pointer' }}
-                  onClick={() => setExpanded(isOpen ? null : r.id)}
-                >
-                  {/* Status */}
-                  <span style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
-                    fontSize: '0.65rem', fontFamily: "'Share Tech Mono', monospace",
-                    letterSpacing: '0.06em', color: sm.color, background: sm.bg,
-                    border: `1px solid ${sm.color}30`, borderRadius: 5,
-                    padding: '0.15rem 0.5rem', flexShrink: 0,
-                  }}>
+              <div key={r.id} className="admin-report-card" style={{ '--report-accent': sm.color }}>
+                <div className="admin-report-row" onClick={() => setExpanded(isOpen ? null : r.id)}>
+                  <span className="admin-report-status" style={{ '--report-accent': sm.color, '--report-accent-bg': sm.bg }}>
                     <SIcon size={10} /> {sm.label.toUpperCase()}
                   </span>
 
-                  {/* Type */}
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', flexShrink: 0 }}>
+                  <span className="admin-report-type">
                     {TYPE_LABEL[r.type] || r.type}
                   </span>
 
-                  {/* Page */}
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <span className="admin-report-page">
                     {r.pageTitle || r.pageUrl}
                   </span>
 
-                  {/* User */}
-                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', flexShrink: 0 }}>{r.userName}</span>
+                  <span className="admin-report-user">{r.userName}</span>
 
-                  {/* Date */}
-                  <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', flexShrink: 0, fontFamily: "'Share Tech Mono', monospace" }}>{fmt(r.createdAt)}</span>
+                  <span className="admin-report-date">{fmt(r.createdAt)}</span>
 
                   {isOpen ? <ChevronUp size={14} color="var(--text-muted)" /> : <ChevronDown size={14} color="var(--text-muted)" />}
                 </div>
 
-                {/* Expanded */}
                 {isOpen && (
-                  <div style={{ padding: '0 1.25rem 1.25rem', borderTop: '1px solid var(--border)' }}>
-                    <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div className="admin-report-expanded">
+                    <div className="admin-report-expanded__inner">
 
-                      {/* Description */}
                       <div>
-                        <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>WHAT HAPPENED</div>
-                        <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.7, background: 'var(--bg-secondary)', borderRadius: 7, padding: '0.75rem 0.875rem' }}>
+                        <div className="admin-report-field-label">WHAT HAPPENED</div>
+                        <div className="admin-report-field-body">
                           {r.description}
                         </div>
                       </div>
 
                       {r.expectedBehavior && (
                         <div>
-                          <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>EXPECTED BEHAVIOR</div>
-                          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.7, background: 'var(--bg-secondary)', borderRadius: 7, padding: '0.75rem 0.875rem', borderLeft: '3px solid rgba(96,165,250,0.5)' }}>
+                          <div className="admin-report-field-label">EXPECTED BEHAVIOR</div>
+                          <div className="admin-report-field-body admin-report-field-body--expected">
                             {r.expectedBehavior}
                           </div>
                         </div>
@@ -221,28 +193,24 @@ export default function AdminReports() {
 
                       <ContextBlock context={parseContext(r.context)} />
 
-                      {/* User info */}
-                      <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                      <div className="admin-report-meta-row">
                         <div>
-                          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em' }}>USER</div>
-                          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>{r.userName} · {r.userEmail}</div>
+                          <div className="admin-report-meta-label">USER</div>
+                          <div className="admin-report-meta-value">{r.userName} · {r.userEmail}</div>
                         </div>
                         <div>
-                          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em' }}>PAGE URL</div>
-                          <div style={{ fontSize: '0.8rem', color: 'var(--primary)', marginTop: '0.2rem' }}>{r.pageUrl}</div>
+                          <div className="admin-report-meta-label">PAGE URL</div>
+                          <div className="admin-report-meta-url">{r.pageUrl}</div>
                         </div>
                       </div>
 
-                      {/* Admin controls */}
-                      <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', alignItems: 'flex-end' }}>
-                        {/* Status select */}
-                        <div style={{ flex: '1 1 160px' }}>
-                          <label style={{ display: 'block', fontSize: '0.65rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', marginBottom: '0.4rem' }}>STATUS</label>
+                      <div className="admin-report-controls">
+                        <div className="admin-report-control-field--status">
+                          <label className="admin-report-control-label">STATUS</label>
                           <select
                             value={ed.status ?? r.status}
                             onChange={e => setEdit(r.id, 'status', e.target.value)}
-                            className="form-input"
-                            style={{ fontSize: '0.85rem' }}
+                            className="form-input admin-report-control-input"
                           >
                             <option value="OPEN">Open</option>
                             <option value="IN_PROGRESS">In Progress</option>
@@ -250,20 +218,17 @@ export default function AdminReports() {
                           </select>
                         </div>
 
-                        {/* Admin note */}
-                        <div style={{ flex: '2 1 240px' }}>
-                          <label style={{ display: 'block', fontSize: '0.65rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', marginBottom: '0.4rem' }}>ADMIN NOTE</label>
+                        <div className="admin-report-control-field--note">
+                          <label className="admin-report-control-label">ADMIN NOTE</label>
                           <input
-                            className="form-input"
-                            style={{ fontSize: '0.85rem' }}
+                            className="form-input admin-report-control-input"
                             placeholder="Add a note..."
                             value={ed.adminNote ?? (r.adminNote || '')}
                             onChange={e => setEdit(r.id, 'adminNote', e.target.value)}
                           />
                         </div>
 
-                        {/* Actions */}
-                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <div className="admin-report-control-actions">
                           <button
                             className="btn btn-primary btn-sm"
                             onClick={() => handleUpdate(r.id)}
@@ -280,9 +245,8 @@ export default function AdminReports() {
                         </div>
                       </div>
 
-                      {/* Existing admin note */}
                       {r.adminNote && !ed.adminNote && (
-                        <div style={{ fontSize: '0.8rem', color: 'var(--warning)', background: 'rgba(245,158,11,0.07)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: 7, padding: '0.5rem 0.75rem' }}>
+                        <div className="admin-report-existing-note">
                           📝 {r.adminNote}
                         </div>
                       )}
@@ -295,9 +259,8 @@ export default function AdminReports() {
         </div>
       )}
 
-      {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex-center" style={{ gap: '0.5rem', marginTop: '1.5rem' }}>
+        <div className="flex-center admin-pagination">
           <button className="btn btn-ghost btn-sm" disabled={page === 0} onClick={() => load(page - 1)}>← Prev</button>
           {Array.from({ length: totalPages }, (_, i) => (
             <button key={i} className={`btn btn-sm ${page === i ? 'btn-primary' : 'btn-ghost'}`} onClick={() => load(i)}>{i + 1}</button>

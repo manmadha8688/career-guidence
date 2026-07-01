@@ -236,6 +236,57 @@ const MISTAKES = [
   },
 ]
 
+const QUIZ_ITEMS = [
+  { q: 'When I see a beautiful website, I want to know how they built it', a: '→ Frontend Development' },
+  { q: 'I enjoy figuring out why something does not work and fixing it', a: '→ Backend Development' },
+  { q: 'I want to build complete products end-to-end on my own', a: '→ Full Stack Development' },
+  { q: 'I enjoy working with numbers, spreadsheets, and finding patterns', a: '→ Data Analyst' },
+  { q: 'I want to understand how AI models actually work, not just use them', a: '→ Data Science / ML' },
+  { q: 'I think like someone trying to break things, not just build them', a: '→ QA / Automation Testing' },
+  { q: 'I enjoy systems, servers, and making things run reliably at scale', a: '→ DevOps / Cloud' },
+]
+
+const PATH_PICKS = [
+  {
+    rank: '1', title: 'Full Stack Web Dev', color: '#9B6ED4',
+    why: 'Highest job volume across all company types — startups, GCCs, product companies, and service companies. One path covers both frontend and backend, which gives you the most flexibility.',
+    honest: 'Takes 12–14 months of consistent work. Do not choose this just because demand is high — choose it because building full products excites you.',
+  },
+  {
+    rank: '2', title: 'Frontend Developer', color: '#60A5FA',
+    why: 'Fastest path to building something you can show people. React is the most in-demand frontend skill in India right now. Shorter learning curve than full stack.',
+    honest: 'If you love design + code and want visible results quickly, this is genuinely satisfying work.',
+  },
+  {
+    rank: '3', title: 'Data Analyst', color: '#F59E0B',
+    why: 'Lower coding barrier than development paths. Great for non-CS backgrounds. Excel + SQL + Python basics is enough to get started. Every company needs people who can read data.',
+    honest: 'This path suits people who enjoy business context and communication, not just coding. If numbers and insights excite you more than building features — this is your path.',
+  },
+  {
+    rank: '4', title: 'Backend Developer (Java)', color: '#4ADE80',
+    why: 'Java Spring Boot is the most stable enterprise tech stack in India. Banks, insurance companies, MNCs, and government tech projects all run on Java. Slower to learn, but very stable once you are in.',
+    honest: 'Choose this if you prefer deep logic over visual results and want a corporate, stable career track.',
+  },
+]
+
+const EXPECT_ITEMS = [
+  { icon: '🧠', title: 'Strong Fundamentals', desc: 'If your resume says Java or Python, you must be able to explain OOP, exceptions, data flow, and write code without AI help in an interview. "I watched tutorials" is not preparation.' },
+  { icon: '🔬', title: 'Own Your Projects', desc: 'They will ask "why did you choose this database?", "how does your authentication work?", "what would you do differently?". If you cannot answer, the project works against you, not for you.' },
+  { icon: '🗣️', title: 'Clear Communication', desc: 'Explaining what you built simply and confidently is a skill. Practice it. Record yourself. Most freshers know their work but cannot communicate it — and that costs them offers.' },
+  { icon: '🤖', title: 'AI Tool Awareness', desc: 'Companies now expect freshers to use Copilot, Claude, or ChatGPT as development tools. Saying "I never use AI" is not impressive. Show you can use it AND understand what it produces.' },
+  { icon: '📝', title: 'Basic Problem Solving', desc: 'You do not need FAANG-level DSA for most fresher roles. But you should be able to solve basic array, string, and logic problems without panicking. Consistent practice for 30 minutes daily adds up fast.' },
+  { icon: '🛠️', title: 'Deployed, Live Projects', desc: 'A deployed project with a real URL beats 10 local projects every time. Deployment shows you understand how real applications work end-to-end — most freshers skip this and it shows.' },
+]
+
+const ADVICE_ITEMS = [
+  { text: 'Spend 30 minutes on LinkedIn today. Search "fresher developer [your city] 2025". Look at 15 job postings. See what skills, what stacks, what company types are actually hiring near you. That is real data — more useful than any YouTube video.', color: '#9B6ED4' },
+  { text: 'Pick a path based on what genuinely interests you — not what someone said pays more. Interest is what keeps you going when the learning gets hard. And it will get hard.', color: '#60A5FA' },
+  { text: 'Start building something this week. Not a tutorial. Not watching someone else code. Open a code editor and build even a basic version of an idea. The confusion clears when you start building.', color: '#4ADE80' },
+  { text: 'Stop comparing your progress to others. Someone ahead of you started earlier or had more time or practiced more. The only comparison that matters is you today vs you last month.', color: '#F59E0B' },
+  { text: 'Use AI tools — Copilot, Claude, ChatGPT — as learning tools. Ask them to explain concepts. Use them to get unstuck. But always understand what you are submitting as your own work.', color: '#06B6D4' },
+  { text: 'Apply before you feel ready. You will never feel fully ready. 70% ready with real projects is good enough to start. Interviews show you exactly what to learn next.', color: '#EC4899' },
+]
+
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function CareerGuidancePage() {
@@ -243,9 +294,7 @@ export default function CareerGuidancePage() {
   const { theme, toggleTheme } = useTheme()
   const light = theme === 'light'
   const [openStep, setOpenStep] = useState(0)
-  const [activeTab, setActiveTab] = useState('roles')
 
-  // Scroll reveal
   useEffect(() => {
     const els = document.querySelectorAll('.pg-reveal, .pg-reveal-left, .pg-reveal-right')
     const io = new IntersectionObserver(
@@ -256,213 +305,108 @@ export default function CareerGuidancePage() {
     return () => io.disconnect()
   }, [])
 
-  const C = {
-    bg:      'var(--cg-bg)',
-    card:    'var(--cg-card)',
-    border:  'var(--cg-border)',
-    text:    light ? '#12103A' : '#E2E8F0',
-    sub:     light ? '#3D3460' : '#8B9AB8',
-    muted:   light ? '#7A6FA0' : '#5A5A7A',
-    accent:  '#9B6ED4',
-  }
-
   return (
-    <div style={{ minHeight: '100vh', background: C.bg, color: C.text, fontFamily: "'Rajdhani', sans-serif", position: 'relative' }}>
+    <div className="cg-page">
 
-      {/* Background glow orbs */}
-      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-5%', left: '40%', width: 600, height: 450, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(155,110,212,0.08) 0%, transparent 65%)', filter: 'blur(50px)' }} />
-        <div style={{ position: 'absolute', bottom: '30%', left: '-5%', width: 400, height: 350, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 65%)', filter: 'blur(40px)' }} />
-        <div style={{ position: 'absolute', top: '60%', right: '-5%', width: 450, height: 350, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(236,72,153,0.04) 0%, transparent 65%)', filter: 'blur(40px)' }} />
+      <div className="cg-bg-orbs">
+        <div className="cg-bg-orb cg-bg-orb--1" />
+        <div className="cg-bg-orb cg-bg-orb--2" />
+        <div className="cg-bg-orb cg-bg-orb--3" />
       </div>
 
-      {/* ── Nav ── */}
-      <div style={{
-        position: 'sticky', top: 0, zIndex: 51,
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 1.5rem', height: 54,
-        background: 'var(--cg-nav-bg)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: `1px solid ${C.border}`,
-      }}>
-        <button onClick={() => navigate(-1)} style={{
-          display: 'flex', alignItems: 'center', gap: '0.4rem',
-          background: 'none', border: 'none', cursor: 'pointer',
-          color: C.sub, fontFamily: "'Share Tech Mono', monospace",
-          fontSize: '0.7rem', letterSpacing: '0.08em',
-        }}>
+      <nav className="cg-nav">
+        <button type="button" onClick={() => navigate(-1)} className="cg-nav__back">
           <ArrowLeft size={14} /> FRESHER GUIDE
         </button>
-
-        <span style={{
-          fontFamily: "'Orbitron', sans-serif", fontWeight: 900,
-          fontSize: '0.8rem', letterSpacing: '0.12em',
-          color: C.accent,
-        }}>CAREER GUIDANCE</span>
-
-        <button onClick={toggleTheme} style={{
-          background: 'none', border: `1px solid ${C.border}`,
-          borderRadius: 6, width: 30, height: 30, cursor: 'pointer',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: C.sub,
-        }}>
+        <span className="cg-nav__title">CAREER GUIDANCE</span>
+        <button type="button" onClick={toggleTheme} className="cg-nav__theme">
           {light ? <Moon size={13} /> : <Sun size={13} />}
         </button>
-      </div>
+      </nav>
 
-      {/* ── Hero ── */}
-      <div style={{
-        position: 'relative', zIndex: 1,
-        textAlign: 'center',
-        padding: 'clamp(2.5rem, 6vw, 5rem) 1.5rem clamp(2rem, 4vw, 3rem)',
-        background: 'linear-gradient(180deg, rgba(155,110,212,0.07) 0%, transparent 100%)',
-      }}>
-        <div className="pg-hero-1" style={{
-          display: 'inline-block', fontFamily: "'Share Tech Mono', monospace",
-          fontSize: '0.65rem', letterSpacing: '0.18em',
-          color: C.accent, background: 'rgba(155,110,212,0.1)',
-          border: '1px solid rgba(155,110,212,0.25)', borderRadius: 20,
-          padding: '0.3rem 1rem', marginBottom: '1.25rem',
-        }}>
-          ◈ YOUR PATH — YOUR CHOICE — YOUR FUTURE
-        </div>
-
-        <h1 className="cg-hero-title pg-hero-2" style={{
-          fontFamily: "'Orbitron', sans-serif", fontWeight: 900,
-          fontSize: 'clamp(1.75rem, 5vw, 3rem)', letterSpacing: '0.05em',
-          lineHeight: 1.15, margin: '0 0 1.25rem',
-        }}>
-          Find Your Path.<br />Own Your Direction.
-        </h1>
-
-        <p className="pg-hero-3" style={{
-          fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', color: C.sub,
-          maxWidth: 600, margin: '0 auto 0',
-          lineHeight: 1.75,
-        }}>
+      <header className="cg-hero">
+        <div className="cg-hero__badge pg-hero-1">◈ YOUR PATH — YOUR CHOICE — YOUR FUTURE</div>
+        <h1 className="cg-hero-title pg-hero-2">Find Your Path.<br />Own Your Direction.</h1>
+        <p className="cg-hero__subtitle pg-hero-3">
           The biggest confusion for freshers is not the lack of options — it is too many options with no clarity.
           This guide helps you figure out what actually fits you, what the future of each role looks like,
           and how to research what companies in your city are actually hiring for right now.
         </p>
-      </div>
+      </header>
 
-      {/* ── Honest Intro ── */}
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 800, margin: '0 auto', padding: '0 1.25rem 2.5rem' }}>
-        <div style={{
-          background: C.card, border: `1px solid rgba(155,110,212,0.25)`,
-          borderLeft: '4px solid #9B6ED4', borderRadius: 12,
-          padding: '1.5rem 1.75rem',
-          boxShadow: light ? '0 4px 20px rgba(155,110,212,0.08)' : '0 4px 20px rgba(0,0,0,0.3)',
-        }}>
-          <div style={{ fontWeight: 700, fontSize: '0.8rem', color: '#9B6ED4', marginBottom: '0.875rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em' }}>
-            BEFORE YOU PICK A ROLE — READ THIS
-          </div>
-          <p style={{ color: C.sub, fontSize: '0.95rem', lineHeight: 1.8, margin: '0 0 0.75rem' }}>
+      <div className="cg-intro-wrap">
+        <div className="cg-intro">
+          <div className="cg-intro__label">BEFORE YOU PICK A ROLE — READ THIS</div>
+          <p className="cg-text cg-text--flush" style={{ marginBottom: '0.75rem', fontSize: '0.95rem' }}>
             Every year, freshers pick a tech stack for the wrong reasons — because a YouTube video made it look cool, because a friend is doing it, because someone said it pays well. They spend 12 months learning something, get a job, and hate the work within 6 months.
           </p>
-          <p style={{ color: C.sub, fontSize: '0.95rem', lineHeight: 1.8, margin: 0 }}>
-            The right path is the one that matches what you genuinely find interesting. Before reading further — ask yourself one honest question: <strong style={{ color: C.text }}>What kind of work could I do for 8 hours and not feel drained?</strong> That answer matters more than any salary figure on this page.
+          <p className="cg-text cg-text--flush" style={{ fontSize: '0.95rem' }}>
+            The right path is the one that matches what you genuinely find interesting. Before reading further — ask yourself one honest question: <strong className="cg-strong">What kind of work could I do for 8 hours and not feel drained?</strong> That answer matters more than any salary figure on this page.
           </p>
         </div>
       </div>
 
-      {/* ── Section 1: Choose Role First ── */}
-      <Section title="01 — Start With What Interests You, Not What Pays More" color="#EF4444" C={C}>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+      <Section title="01 — Start With What Interests You, Not What Pays More" color="#EF4444">
+        <p className="cg-text">
           The most common advice students get is wrong — "pick the highest paying role." That leads to choosing a path you do not enjoy, grinding through it, and burning out before you even reach a good salary.
         </p>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1rem' }}>
-          Here is the truth: <strong style={{ color: C.text }}>people who enjoy their work get better faster. People who get better faster get paid more.</strong> Passion is not just a nice feeling — it is a career advantage.
+        <p className="cg-text">
+          Here is the truth: <strong className="cg-strong">people who enjoy their work get better faster. People who get better faster get paid more.</strong> Passion is not just a nice feeling — it is a career advantage.
         </p>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+        <p className="cg-text" style={{ marginBottom: '1.5rem' }}>
           Answer these honestly. Do not answer what you think you should say — answer what is actually true for you:
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-          {[
-            { q: 'When I see a beautiful website, I want to know how they built it', a: '→ Frontend Development' },
-            { q: 'I enjoy figuring out why something does not work and fixing it', a: '→ Backend Development' },
-            { q: 'I want to build complete products end-to-end on my own', a: '→ Full Stack Development' },
-            { q: 'I enjoy working with numbers, spreadsheets, and finding patterns', a: '→ Data Analyst' },
-            { q: 'I want to understand how AI models actually work, not just use them', a: '→ Data Science / ML' },
-            { q: 'I think like someone trying to break things, not just build them', a: '→ QA / Automation Testing' },
-            { q: 'I enjoy systems, servers, and making things run reliably at scale', a: '→ DevOps / Cloud' },
-          ].map((item, i) => (
-            <div key={i} style={{
-              background: light ? 'rgba(155,110,212,0.05)' : 'rgba(155,110,212,0.07)',
-              border: `1px solid ${C.border}`, borderRadius: 10,
-              padding: '0.875rem 1rem',
-            }}>
-              <div style={{ fontSize: '0.85rem', color: C.sub, marginBottom: '0.5rem', lineHeight: 1.6 }}>{item.q}</div>
-              <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#9B6ED4' }}>{item.a}</div>
+        <div className="cg-quiz-grid">
+          {QUIZ_ITEMS.map((item, i) => (
+            <div key={i} className="cg-quiz-card">
+              <div className="cg-quiz-card__q">{item.q}</div>
+              <div className="cg-quiz-card__a">{item.a}</div>
             </div>
           ))}
         </div>
-        <div style={{
-          padding: '1rem 1.25rem', background: 'rgba(239,68,68,0.06)',
-          border: '1px solid rgba(239,68,68,0.2)', borderRadius: 10,
-        }}>
-          <p style={{ color: C.sub, fontSize: '0.9rem', lineHeight: 1.75, margin: 0 }}>
-            <strong style={{ color: '#EF4444' }}>Honest warning:</strong> Do not choose a role only because someone said "that's where AI won't replace you" or "that pays the most right now." Markets change. Technologies change. The one constant is your ability to grow — and you grow fastest in work that interests you.
+        <div className="cg-warning">
+          <p>
+            <strong>Honest warning:</strong> Do not choose a role only because someone said "that's where AI won't replace you" or "that pays the most right now." Markets change. Technologies change. The one constant is your ability to grow — and you grow fastest in work that interests you.
           </p>
         </div>
       </Section>
 
-      {/* ── Section 2: In-demand Roles ── */}
-      <Section title="02 — Every Role Explained Honestly" color="#3B82F6" C={C}>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-          For each role: what the work actually feels like, who it genuinely suits, how AI is changing it, and what the future looks like.
-        </p>
-        <p style={{ color: C.sub, fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.75rem', fontStyle: 'italic' }}>
+      <Section title="02 — Every Role Explained Honestly" color="#3B82F6">
+        <p className="cg-text">For each role: what the work actually feels like, who it genuinely suits, how AI is changing it, and what the future looks like.</p>
+        <p className="cg-text cg-text--sm">
           Also do your own research — open LinkedIn, search fresher jobs in your city, look at 10–15 real job postings for each role you are considering. See what skills they actually ask for. That data is more accurate than any guide.
         </p>
-
-        <div className="pg-stagger" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <div className="cg-role-list pg-stagger">
           {ROLES.map((role, i) => (
-            <div key={i} className="pg-reveal" style={{
-              background: C.card, border: `1px solid ${C.border}`,
-              borderLeft: `4px solid ${role.color}`,
-              borderRadius: 12, padding: '1.375rem',
-              boxShadow: light ? '0 2px 12px rgba(0,0,0,0.06)' : 'none',
-            }}>
-              {/* Header */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.875rem' }}>
-                <span style={{ fontSize: '1.6rem' }}>{role.emoji}</span>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: '1.05rem', color: C.text }}>{role.title}</div>
-                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.25rem' }}>
-                    <span style={{ fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: role.color, background: `${role.color}15`, border: `1px solid ${role.color}30`, borderRadius: 4, padding: '0.1rem 0.4rem' }}>
-                      {role.demand}
-                    </span>
-                    <span style={{ fontSize: '0.62rem', color: C.muted, fontFamily: "'Share Tech Mono', monospace" }}>
-                      💰 {role.salary} · ⏱ {role.timeToJob}
-                    </span>
+            <div key={i} className="cg-role-card pg-reveal" style={{ '--role-color': role.color }}>
+              <div className="cg-role-card__head">
+                <span className="cg-role-card__emoji">{role.emoji}</span>
+                <div className="cg-role-card__meta">
+                  <div className="cg-role-card__title">{role.title}</div>
+                  <div className="cg-role-card__badges">
+                    <span className="cg-role-card__demand">{role.demand}</span>
+                    <span className="cg-role-card__salary">💰 {role.salary} · ⏱ {role.timeToJob}</span>
                   </div>
                 </div>
               </div>
-
-              {/* Description */}
-              <p style={{ fontSize: '0.875rem', color: C.sub, lineHeight: 1.7, margin: '0 0 0.875rem' }}>{role.desc}</p>
-
-              {/* 3 columns */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,200px), 1fr))', gap: '0.75rem', marginBottom: '0.875rem' }}>
-                <div style={{ padding: '0.75rem', background: `${role.color}08`, border: `1px solid ${role.color}20`, borderRadius: 8 }}>
-                  <div style={{ fontSize: '0.6rem', fontFamily: "'Share Tech Mono', monospace", color: role.color, letterSpacing: '0.1em', marginBottom: '0.375rem' }}>WHO IT FITS</div>
-                  <p style={{ fontSize: '0.78rem', color: C.sub, lineHeight: 1.6, margin: 0 }}>{role.passion}</p>
+              <p className="cg-role-card__desc">{role.desc}</p>
+              <div className="cg-role-card__cols">
+                <div className="cg-role-card__col cg-role-card__col--fit">
+                  <div className="cg-role-card__col-label">WHO IT FITS</div>
+                  <p>{role.passion}</p>
                 </div>
-                <div style={{ padding: '0.75rem', background: 'rgba(6,182,212,0.06)', border: '1px solid rgba(6,182,212,0.15)', borderRadius: 8 }}>
-                  <div style={{ fontSize: '0.6rem', fontFamily: "'Share Tech Mono', monospace", color: '#06B6D4', letterSpacing: '0.1em', marginBottom: '0.375rem' }}>AI IMPACT</div>
-                  <p style={{ fontSize: '0.78rem', color: C.sub, lineHeight: 1.6, margin: 0 }}>{role.aiImpact}</p>
+                <div className="cg-role-card__col cg-role-card__col--ai">
+                  <div className="cg-role-card__col-label">AI IMPACT</div>
+                  <p>{role.aiImpact}</p>
                 </div>
-                <div style={{ padding: '0.75rem', background: 'rgba(34,197,94,0.06)', border: '1px solid rgba(34,197,94,0.15)', borderRadius: 8 }}>
-                  <div style={{ fontSize: '0.6rem', fontFamily: "'Share Tech Mono', monospace", color: '#22C55E', letterSpacing: '0.1em', marginBottom: '0.375rem' }}>FUTURE OUTLOOK</div>
-                  <p style={{ fontSize: '0.78rem', color: C.sub, lineHeight: 1.6, margin: 0 }}>{role.future}</p>
+                <div className="cg-role-card__col cg-role-card__col--future">
+                  <div className="cg-role-card__col-label">FUTURE OUTLOOK</div>
+                  <p>{role.future}</p>
                 </div>
               </div>
-
-              {/* Skills */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              <div className="cg-role-card__skills">
                 {role.skills.map(s => (
-                  <span key={s} style={{ fontSize: '0.7rem', background: `${role.color}12`, color: role.color, border: `1px solid ${role.color}25`, borderRadius: 5, padding: '0.15rem 0.5rem' }}>{s}</span>
+                  <span key={s} className="cg-role-card__skill">{s}</span>
                 ))}
               </div>
             </div>
@@ -470,147 +414,80 @@ export default function CareerGuidancePage() {
         </div>
       </Section>
 
-      {/* ── Section 3: Best Paths for Beginners ── */}
-      <Section title="03 — If You Are Still Unsure, Start Here" color="#8B5CF6" C={C}>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+      <Section title="03 — If You Are Still Unsure, Start Here" color="#8B5CF6">
+        <p className="cg-text" style={{ marginBottom: '1.5rem' }}>
           If after reading the roles above you are still genuinely unsure, here are the paths that give beginners the most clarity, the most job options, and the best chance of building confidence early. These are not the "best" paths for everyone — they are the best starting points for most.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,340px), 1fr))', gap: '1.25rem' }}>
-          {[
-            {
-              rank: '1', title: 'Full Stack Web Dev', color: '#9B6ED4',
-              why: 'Highest job volume across all company types — startups, GCCs, product companies, and service companies. One path covers both frontend and backend, which gives you the most flexibility.',
-              honest: 'Takes 12–14 months of consistent work. Do not choose this just because demand is high — choose it because building full products excites you.',
-            },
-            {
-              rank: '2', title: 'Frontend Developer', color: '#60A5FA',
-              why: 'Fastest path to building something you can show people. React is the most in-demand frontend skill in India right now. Shorter learning curve than full stack.',
-              honest: 'If you love design + code and want visible results quickly, this is genuinely satisfying work.',
-            },
-            {
-              rank: '3', title: 'Data Analyst', color: '#F59E0B',
-              why: 'Lower coding barrier than development paths. Great for non-CS backgrounds. Excel + SQL + Python basics is enough to get started. Every company needs people who can read data.',
-              honest: 'This path suits people who enjoy business context and communication, not just coding. If numbers and insights excite you more than building features — this is your path.',
-            },
-            {
-              rank: '4', title: 'Backend Developer (Java)', color: '#4ADE80',
-              why: 'Java Spring Boot is the most stable enterprise tech stack in India. Banks, insurance companies, MNCs, and government tech projects all run on Java. Slower to learn, but very stable once you are in.',
-              honest: 'Choose this if you prefer deep logic over visual results and want a corporate, stable career track.',
-            },
-          ].map((p, i) => (
-            <div key={i} style={{
-              background: C.card, border: `1px solid ${C.border}`,
-              borderRadius: 12, padding: '1.25rem',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.625rem' }}>
-                <div style={{ width: 28, height: 28, borderRadius: '50%', background: `${p.color}20`, border: `1.5px solid ${p.color}50`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700, color: p.color, flexShrink: 0 }}>{p.rank}</div>
-                <div style={{ fontWeight: 700, fontSize: '1.05rem', color: C.text }}>{p.title}</div>
+        <div className="cg-path-grid">
+          {PATH_PICKS.map((p, i) => (
+            <div key={i} className="cg-path-card" style={{ '--item-color': p.color }}>
+              <div className="cg-path-card__head">
+                <div className="cg-path-card__rank">{p.rank}</div>
+                <div className="cg-path-card__title">{p.title}</div>
               </div>
-              <p style={{ fontSize: '0.875rem', color: C.sub, lineHeight: 1.7, margin: '0 0 0.75rem' }}>{p.why}</p>
-              <div style={{ padding: '0.625rem 0.875rem', background: `${p.color}08`, border: `1px solid ${p.color}20`, borderRadius: 8 }}>
-                <p style={{ fontSize: '0.8rem', color: C.muted, lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>
-                  <strong style={{ color: p.color, fontStyle: 'normal' }}>Be honest with yourself:</strong> {p.honest}
-                </p>
+              <p className="cg-path-card__why">{p.why}</p>
+              <div className="cg-path-card__honest">
+                <p><strong>Be honest with yourself:</strong> {p.honest}</p>
               </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* ── Section 4: Language by Goal ── */}
-      <Section title="04 — Which Language to Choose Based on Your Goal" color="#F59E0B" C={C}>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+      <Section title="04 — Which Language to Choose Based on Your Goal" color="#F59E0B">
+        <p className="cg-text" style={{ marginBottom: '1.5rem' }}>
           Stop asking "which language is best?" Start asking "best for what?" Here's the honest answer by goal:
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,320px), 1fr))', gap: '1rem' }}>
+        <div className="cg-lang-grid">
           {LANGUAGES.map((l, i) => (
-            <div key={i} style={{
-              background: l.bg, border: `1px solid ${l.color}25`,
-              borderLeft: `3px solid ${l.color}`, borderRadius: 12,
-              padding: '1.25rem',
-            }}>
-              <div style={{ fontWeight: 700, fontSize: '1rem', color: l.color, marginBottom: '0.875rem' }}>{l.goal}</div>
+            <div key={i} className="cg-lang-card" style={{ '--lang-color': l.color, '--lang-bg': l.bg }}>
+              <div className="cg-lang-card__goal">{l.goal}</div>
               {l.picks.map((p, j) => (
-                <div key={j} style={{ marginBottom: j < l.picks.length - 1 ? '0.875rem' : 0 }}>
-                  <div style={{ fontWeight: 700, fontSize: '0.95rem', color: C.text, marginBottom: '0.25rem' }}>{p.lang}</div>
-                  <div style={{ fontSize: '0.82rem', color: C.sub, lineHeight: 1.6 }}>{p.reason}</div>
+                <div key={j} className="cg-lang-card__pick">
+                  <div className="cg-lang-card__lang">{p.lang}</div>
+                  <div className="cg-lang-card__reason">{p.reason}</div>
                 </div>
               ))}
             </div>
           ))}
         </div>
-        <div style={{
-          marginTop: '1.5rem', padding: '1rem 1.25rem',
-          background: 'rgba(155,110,212,0.07)', border: '1px solid rgba(155,110,212,0.2)',
-          borderRadius: 10,
-        }}>
-          <p style={{ color: C.sub, fontSize: '0.9rem', lineHeight: 1.7, margin: 0 }}>
-            <strong style={{ color: '#9B6ED4' }}>Bottom line:</strong> If you are confused, start with <strong style={{ color: C.text }}>Python or JavaScript</strong>. Both are beginner-friendly, both have massive job markets. Python is better for data + backend. JavaScript is better for web development.
+        <div className="cg-note">
+          <p>
+            <strong className="accent">Bottom line:</strong> If you are confused, start with <strong className="cg-strong">Python or JavaScript</strong>. Both are beginner-friendly, both have massive job markets. Python is better for data + backend. JavaScript is better for web development.
           </p>
         </div>
       </Section>
 
-      {/* ── Section 5: Roadmap ── */}
-      <Section title="05 — Step-by-Step Roadmap: Full Stack Developer" color="#9B6ED4" C={C}>
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap',
-          marginBottom: '1.5rem', padding: '0.875rem 1.25rem',
-          background: 'rgba(155,110,212,0.08)', border: '1px solid rgba(155,110,212,0.2)',
-          borderRadius: 10,
-        }}>
-          <span style={{ fontSize: '1.5rem' }}>🗺️</span>
-          <div>
-            <div style={{ fontWeight: 700, color: C.text }}>{ROADMAP.subtitle}</div>
-          </div>
+      <Section title="05 — Step-by-Step Roadmap: Full Stack Developer" color="#9B6ED4">
+        <div className="cg-roadmap-banner">
+          <span className="cg-roadmap-banner__emoji">🗺️</span>
+          <div className="cg-roadmap-banner__text">{ROADMAP.subtitle}</div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <div className="cg-steps">
           {ROADMAP.steps.map((step, i) => (
-            <div key={i} style={{
-              background: C.card, border: `1px solid ${C.border}`,
-              borderRadius: 12, overflow: 'hidden',
-            }}>
-              <button
-                onClick={() => setOpenStep(openStep === i ? -1 : i)}
-                style={{
-                  width: '100%', background: 'none', border: 'none', cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  padding: '1rem 1.25rem', textAlign: 'left',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-                  <div style={{
-                    width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
-                    background: openStep === i ? '#9B6ED4' : 'rgba(155,110,212,0.15)',
-                    border: '1.5px solid rgba(155,110,212,0.4)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem',
-                    fontWeight: 700, color: openStep === i ? '#fff' : '#9B6ED4',
-                  }}>
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
+            <div key={i} className={`cg-step${openStep === i ? ' cg-step--open' : ''}`}>
+              <button type="button" onClick={() => setOpenStep(openStep === i ? -1 : i)} className="cg-step__toggle">
+                <div className="cg-step__toggle-left">
+                  <div className="cg-step__num">{String(i + 1).padStart(2, '0')}</div>
                   <div>
-                    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#9B6ED4', letterSpacing: '0.1em', marginBottom: '0.15rem' }}>{step.phase}</div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem', color: C.text }}>{step.title}</div>
+                    <div className="cg-step__phase">{step.phase}</div>
+                    <div className="cg-step__title">{step.title}</div>
                   </div>
                 </div>
-                {openStep === i ? <ChevronUp size={16} color="#9B6ED4" /> : <ChevronDown size={16} color={C.muted} />}
+                {openStep === i ? <ChevronUp size={16} color="#9B6ED4" /> : <ChevronDown size={16} color="var(--cg-muted)" />}
               </button>
               {openStep === i && (
-                <div style={{ padding: '0 1.25rem 1.25rem', borderTop: `1px solid ${C.border}` }}>
-                  <div style={{ paddingTop: '1rem' }}>
+                <div className="cg-step__body">
+                  <div className="cg-step__items">
                     {step.items.map((item, j) => (
-                      <div key={j} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+                      <div key={j} className="cg-step__item">
                         <CheckCircle size={14} color="#9B6ED4" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
-                        <span style={{ fontSize: '0.875rem', color: C.sub, lineHeight: 1.6 }}>{item}</span>
+                        <span className="cg-step__item-text">{item}</span>
                       </div>
                     ))}
-                    <div style={{
-                      marginTop: '1rem', padding: '0.75rem 1rem',
-                      background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)',
-                      borderRadius: 8,
-                    }}>
-                      <span style={{ fontSize: '0.75rem', color: '#F59E0B', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em' }}>⚡ REALITY: </span>
-                      <span style={{ fontSize: '0.825rem', color: C.sub }}>{step.tip}</span>
+                    <div className="cg-step__tip">
+                      <span className="cg-step__tip-label">⚡ REALITY: </span>
+                      <span className="cg-step__tip-text">{step.tip}</span>
                     </div>
                   </div>
                 </div>
@@ -620,174 +497,82 @@ export default function CareerGuidancePage() {
         </div>
       </Section>
 
-      {/* ── Section 6: What Companies Expect ── */}
-      <Section title="06 — What Companies Actually Look For in Freshers" color="#4ADE80" C={C}>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1rem' }}>
+      <Section title="06 — What Companies Actually Look For in Freshers" color="#4ADE80">
+        <p className="cg-text">
           This has shifted. The companies hiring right now are not looking for perfect knowledge — they are looking for specific signals that tell them you can learn, build, and communicate.
         </p>
-        <p style={{ color: C.sub, fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.5rem', fontStyle: 'italic' }}>
+        <p className="cg-text cg-text--sm">
           A tip: before any interview, research that specific company. Check their LinkedIn, their job postings, their tech blog if they have one. Companies tell you exactly what they value — most candidates just do not bother to read it.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,300px), 1fr))', gap: '1rem' }}>
-          {[
-            { icon: '🧠', title: 'Strong Fundamentals', desc: 'If your resume says Java or Python, you must be able to explain OOP, exceptions, data flow, and write code without AI help in an interview. "I watched tutorials" is not preparation.' },
-            { icon: '🔬', title: 'Own Your Projects', desc: 'They will ask "why did you choose this database?", "how does your authentication work?", "what would you do differently?". If you cannot answer, the project works against you, not for you.' },
-            { icon: '🗣️', title: 'Clear Communication', desc: 'Explaining what you built simply and confidently is a skill. Practice it. Record yourself. Most freshers know their work but cannot communicate it — and that costs them offers.' },
-            { icon: '🤖', title: 'AI Tool Awareness', desc: 'Companies now expect freshers to use Copilot, Claude, or ChatGPT as development tools. Saying "I never use AI" is not impressive. Show you can use it AND understand what it produces.' },
-            { icon: '📝', title: 'Basic Problem Solving', desc: 'You do not need FAANG-level DSA for most fresher roles. But you should be able to solve basic array, string, and logic problems without panicking. Consistent practice for 30 minutes daily adds up fast.' },
-            { icon: '🛠️', title: 'Deployed, Live Projects', desc: 'A deployed project with a real URL beats 10 local projects every time. Deployment shows you understand how real applications work end-to-end — most freshers skip this and it shows.' },
-          ].map((item, i) => (
-            <div key={i} style={{
-              display: 'flex', gap: '0.875rem', alignItems: 'flex-start',
-              background: C.card, border: `1px solid ${C.border}`,
-              borderRadius: 12, padding: '1.125rem',
-            }}>
-              <span style={{ fontSize: '1.4rem', flexShrink: 0 }}>{item.icon}</span>
+        <div className="cg-expect-grid">
+          {EXPECT_ITEMS.map((item, i) => (
+            <div key={i} className="cg-expect-card">
+              <span className="cg-expect-card__icon">{item.icon}</span>
               <div>
-                <div style={{ fontWeight: 700, fontSize: '0.9375rem', color: C.text, marginBottom: '0.3rem' }}>{item.title}</div>
-                <p style={{ fontSize: '0.825rem', color: C.sub, lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <div className="cg-expect-card__title">{item.title}</div>
+                <p className="cg-expect-card__desc">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* ── Section 7: Common Mistakes ── */}
-      <Section title="07 — Mistakes That Are Costing Students Their Direction" color="#EF4444" C={C}>
-        <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+      <Section title="07 — Mistakes That Are Costing Students Their Direction" color="#EF4444">
+        <p className="cg-text" style={{ marginBottom: '1.5rem' }}>
           These are not small mistakes. They are patterns that keep students stuck for months or years. Read each one honestly and ask yourself if any of them apply to you right now:
         </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+        <div className="cg-mistake-list">
           {MISTAKES.map((m, i) => (
-            <div key={i} style={{
-              display: 'flex', gap: '1rem', alignItems: 'flex-start',
-              background: C.card, border: `1px solid rgba(239,68,68,0.15)`,
-              borderLeft: '3px solid rgba(239,68,68,0.5)',
-              borderRadius: 10, padding: '1rem 1.25rem',
-            }}>
-              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>{m.icon}</span>
+            <div key={i} className="cg-mistake-card">
+              <span className="cg-mistake-card__icon">{m.icon}</span>
               <div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#EF4444', marginBottom: '0.3rem' }}>
-                  Mistake: {m.mistake}
-                </div>
-                <div style={{ fontSize: '0.85rem', color: C.sub, lineHeight: 1.65 }}>
-                  <strong style={{ color: '#4ADE80' }}>Reality:</strong> {m.reality}
-                </div>
+                <div className="cg-mistake-card__title">Mistake: {m.mistake}</div>
+                <div className="cg-mistake-card__body"><strong>Reality:</strong> {m.reality}</div>
               </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* ── Section 8: Final Advice ── */}
-      <Section title="08 — What You Should Do Right Now" color="#9B6ED4" C={C}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-          {[
-            { text: 'Spend 30 minutes on LinkedIn today. Search "fresher developer [your city] 2025". Look at 15 job postings. See what skills, what stacks, what company types are actually hiring near you. That is real data — more useful than any YouTube video.', color: '#9B6ED4' },
-            { text: 'Pick a path based on what genuinely interests you — not what someone said pays more. Interest is what keeps you going when the learning gets hard. And it will get hard.', color: '#60A5FA' },
-            { text: 'Start building something this week. Not a tutorial. Not watching someone else code. Open a code editor and build even a basic version of an idea. The confusion clears when you start building.', color: '#4ADE80' },
-            { text: 'Stop comparing your progress to others. Someone ahead of you started earlier or had more time or practiced more. The only comparison that matters is you today vs you last month.', color: '#F59E0B' },
-            { text: 'Use AI tools — Copilot, Claude, ChatGPT — as learning tools. Ask them to explain concepts. Use them to get unstuck. But always understand what you are submitting as your own work.', color: '#06B6D4' },
-            { text: 'Apply before you feel ready. You will never feel fully ready. 70% ready with real projects is good enough to start. Interviews show you exactly what to learn next.', color: '#EC4899' },
-          ].map((advice, i) => (
-            <div key={i} style={{
-              display: 'flex', gap: '0.875rem', alignItems: 'flex-start',
-              padding: '0.875rem 1.125rem',
-              background: light ? 'rgba(155,110,212,0.05)' : 'rgba(155,110,212,0.07)',
-              borderLeft: `3px solid ${advice.color}`,
-              borderRadius: 10,
-            }}>
-              <div style={{
-                width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
-                background: `${advice.color}20`, border: `1px solid ${advice.color}50`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700, color: advice.color,
-              }}>
-                {i + 1}
-              </div>
-              <span style={{ fontSize: '0.9rem', color: C.sub, lineHeight: 1.75 }}>{advice.text}</span>
+      <Section title="08 — What You Should Do Right Now" color="#9B6ED4">
+        <div className="cg-advice-list">
+          {ADVICE_ITEMS.map((advice, i) => (
+            <div key={i} className="cg-advice-item" style={{ '--advice-color': advice.color }}>
+              <div className="cg-advice-item__num">{i + 1}</div>
+              <span className="cg-advice-item__text">{advice.text}</span>
             </div>
           ))}
         </div>
-
-        {/* Final CTA */}
-        <div style={{
-          textAlign: 'center',
-          background: 'linear-gradient(135deg, rgba(155,110,212,0.12), rgba(96,165,250,0.08))',
-          border: '1px solid rgba(155,110,212,0.25)',
-          borderRadius: 16, padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-        }}>
-          <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>⚔️</div>
-          <h3 style={{
-            fontFamily: "'Orbitron', sans-serif", fontWeight: 700,
-            fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', letterSpacing: '0.05em',
-            color: C.text, margin: '0 0 0.875rem',
-          }}>
-            Your Path Is Waiting — Start It Today
-          </h3>
-          <p style={{ color: C.sub, fontSize: '1rem', lineHeight: 1.8, maxWidth: 560, margin: '0 auto 1.75rem' }}>
+        <div className="cg-cta">
+          <div className="cg-cta__emoji">⚔️</div>
+          <h3 className="cg-cta__title">Your Path Is Waiting — Start It Today</h3>
+          <p className="cg-cta__desc">
             The gap between where you are and where you want to be is not talent. It is time + consistent work + the right direction. You now have the direction. The time is yours. Start building.
           </p>
-          <div style={{ display: 'flex', gap: '0.875rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => navigate('/skill-arena/dashboard')}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '0.5rem',
-                background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)',
-                border: 'none', borderRadius: 8, padding: '0.75rem 1.75rem',
-                color: '#fff', fontWeight: 700, fontSize: '0.9375rem', cursor: 'pointer',
-                boxShadow: '0 4px 20px rgba(155,110,212,0.35)',
-                transition: 'transform 0.15s, box-shadow 0.15s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(155,110,212,0.5)' }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(155,110,212,0.35)' }}
-            >
+          <div className="cg-cta__actions">
+            <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="cg-cta__btn-primary">
               ⚔ Start Learning Now
             </button>
-            <button
-              onClick={() => navigate(-1)}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '0.5rem',
-                background: 'none', border: `1px solid rgba(155,110,212,0.35)`,
-                borderRadius: 8, padding: '0.75rem 1.5rem',
-                color: '#9B6ED4', fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer',
-                transition: 'all 0.15s',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(155,110,212,0.1)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'none'}
-            >
+            <button type="button" onClick={() => navigate(-1)} className="cg-cta__btn-secondary">
               ← Back to Fresher Guide
             </button>
           </div>
         </div>
       </Section>
 
-      {/* Footer */}
-      <div style={{
-        textAlign: 'center', padding: '2rem 1.5rem',
-        fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-        letterSpacing: '0.1em', color: C.muted,
-        borderTop: `1px solid ${C.border}`,
-      }}>
-        ◈ ARISE — LEARN THE SKILLS. EARN THE JOB. ◈
-      </div>
+      <footer className="cg-footer">◈ ARISE — LEARN THE SKILLS. EARN THE JOB. ◈</footer>
     </div>
   )
 }
 
-// ── Section Wrapper ─────────────────────────────────────────────────────────
-function Section({ title, color, C, children }) {
+function Section({ title, color, children }) {
   return (
-    <div style={{ position: 'relative', zIndex: 1, maxWidth: 900, margin: '0 auto', padding: '0 1.25rem 3rem' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', marginBottom: '1.75rem', paddingBottom: '1rem', borderBottom: `1px solid ${color}22` }}>
-        <div style={{ width: 3, height: 28, borderRadius: 2, background: `linear-gradient(to bottom, ${color}, ${color}66)`, flexShrink: 0 }} />
-        <h2 style={{
-          fontFamily: "'Orbitron', sans-serif", fontWeight: 700,
-          fontSize: 'clamp(0.95rem, 2.5vw, 1.2rem)', letterSpacing: '0.04em',
-          color: C.text, margin: 0,
-        }}>{title}</h2>
+    <section className="cg-section">
+      <div className="cg-section__head" style={{ '--section-color': color }}>
+        <div className="cg-section__bar" />
+        <h2 className="cg-section__title">{title}</h2>
       </div>
       {children}
-    </div>
+    </section>
   )
 }

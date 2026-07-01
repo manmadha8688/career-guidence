@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import { getMe, clearUserCache } from '../api/api'
 import { logApiError } from '../utils/devLog'
+import { clearBrowserSessionPreservingPrefs } from '../utils/browserSession'
 import api from '../api/api'
 import LoadingOverlay from '../components/LoadingOverlay'
 
@@ -53,11 +54,7 @@ export function AuthProvider({ children }) {
     setLogoutDone(false)
     try { await api.post('/auth/logout') } catch {}
     clearUserCache()
-    const guestDeviceId = localStorage.getItem('guest_device_id')
-    const theme = localStorage.getItem('theme')
-    localStorage.clear()
-    if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
-    if (theme) localStorage.setItem('theme', theme)
+    clearBrowserSessionPreservingPrefs()
     setLogoutDone(true)
     await new Promise(r => setTimeout(r, 800))
     setUser(null)

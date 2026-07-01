@@ -59,14 +59,13 @@ export default function AdminDashboard() {
       <div className="admin-dash-hero">
         <div>
           <h2>Command Center</h2>
-          <p className="page-subtitle" style={{ margin: 0 }}>
+          <p className="page-subtitle admin-dash-subtitle">
             Monitor platform health, manage content, and respond to student feedback.
           </p>
           {openReports > 0 && (
             <button
               type="button"
-              className="btn btn-ghost btn-sm"
-              style={{ marginTop: '0.75rem', color: 'var(--danger)' }}
+              className="btn btn-ghost btn-sm admin-dash-alert-btn"
               onClick={() => navigate('/admin-skill-arena/reports')}
             >
               <AlertCircle size={14} /> {openReports} open report{openReports !== 1 ? 's' : ''} need attention
@@ -78,8 +77,8 @@ export default function AdminDashboard() {
             <button
               key={a.label}
               type="button"
-              className="btn btn-ghost btn-sm"
-              style={{ borderColor: `${a.accent}44`, color: a.accent }}
+              className="btn btn-ghost btn-sm admin-quick-action-btn"
+              style={{ '--accent-color': a.accent, '--accent-border': `${a.accent}44` }}
               onClick={() => navigate(a.path)}
             >
               <a.icon size={14} /> {a.label}
@@ -101,18 +100,17 @@ export default function AdminDashboard() {
           return (
             <div
               key={c.label}
-              className="stat-card card-hover"
-              style={{ cursor: 'pointer' }}
+              className="stat-card card-hover admin-stat-card-clickable"
               onClick={() => navigate(c.link)}
               onKeyDown={e => e.key === 'Enter' && navigate(c.link)}
               role="button"
               tabIndex={0}
             >
-              <div className="stat-icon" style={{ background: c.bg, color: c.color }}>
+              <div className="stat-icon admin-stat-icon-dynamic" style={{ '--stat-bg': c.bg, '--stat-color': c.color }}>
                 <Icon size={22} />
               </div>
               <div className="stat-info">
-                <div className="stat-value" style={{ color: c.color }}>{c.value}</div>
+                <div className="stat-value admin-stat-value-dynamic" style={{ '--stat-color': c.color }}>{c.value}</div>
                 <div className="stat-label">{c.label}</div>
               </div>
             </div>
@@ -123,7 +121,7 @@ export default function AdminDashboard() {
       <div className="grid-2">
         <div>
           <div className="flex-between mb-2">
-            <h2 className="font-bold" style={{ fontSize: '1rem' }}>Recent Registrations</h2>
+            <h2 className="font-bold admin-section-heading">Recent Registrations</h2>
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => navigate('/admin-skill-arena/users')}>
               View all
             </button>
@@ -140,7 +138,7 @@ export default function AdminDashboard() {
               <tbody>
                 {(stats?.recentUsers?.length ?? 0) === 0 ? (
                   <tr>
-                    <td colSpan={3} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
+                    <td colSpan={3} className="admin-table-empty">
                       No registrations yet
                     </td>
                   </tr>
@@ -167,29 +165,24 @@ export default function AdminDashboard() {
 
         <div>
           <div className="flex-between mb-2">
-            <h2 className="font-bold" style={{ fontSize: '1rem' }}>Top Subjects by Completion</h2>
+            <h2 className="font-bold admin-section-heading">Top Subjects by Completion</h2>
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => navigate('/admin-skill-arena/subjects')}>
               <Plus size={14} /> Manage
             </button>
           </div>
           {stats?.topSubjects?.length ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <div className="admin-top-subjects-list">
               {stats.topSubjects.map((s, i) => (
                 <div
                   key={s.subjectId}
-                  className="card card-hover"
-                  style={{ padding: '0.875rem 1.25rem', display: 'flex', alignItems: 'center', gap: '0.875rem', cursor: 'pointer' }}
+                  className="card card-hover admin-top-subject-card"
                   onClick={() => navigate('/admin-skill-arena/subjects')}
                 >
-                  <div style={{
-                    width: 28, height: 28, background: 'var(--primary-bg)', borderRadius: '50%',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontWeight: 700, fontSize: '0.8rem', color: 'var(--primary)', flexShrink: 0,
-                  }}>
+                  <div className="admin-top-subject-rank">
                     {i + 1}
                   </div>
-                  <span style={{ fontSize: '1.25rem' }}>{s.icon}</span>
-                  <div style={{ flex: 1, minWidth: 0 }}>
+                  <span className="admin-emoji-lg">{s.icon}</span>
+                  <div className="admin-flex-1-min">
                     <div className="text-sm font-semibold truncate">{s.title}</div>
                   </div>
                   <span className="badge badge-primary">{s.completionCount} done</span>
@@ -197,7 +190,7 @@ export default function AdminDashboard() {
               ))}
             </div>
           ) : (
-            <div className="card" style={{ textAlign: 'center', padding: '2rem' }}>
+            <div className="card admin-card-empty-center">
               <p className="text-muted text-sm">No completion data yet</p>
             </div>
           )}

@@ -1,25 +1,15 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, ShieldCheck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useAuth } from '../../context/AuthContext'
 import { registerUser, sendOtp, verifyOtp } from '../../api/api'
+import { buildAuthRedirectQuery, resolveAuthRedirect } from '../../utils/authRedirect'
+import { getPasswordStrength, strengthLabel, strengthColors } from '../../utils/passwordRules'
 import toast from 'react-hot-toast'
 import AuthSubmitButton from './components/AuthSubmitButton'
 import { useAuthForm } from './context/AuthFormContext'
 import useRegisterBotStory from './hooks/useRegisterBotStory'
-
-function getStrength(pw) {
-  let s = 0
-  if (pw.length >= 8)          s++
-  if (/[A-Z]/.test(pw))        s++
-  if (/[0-9]/.test(pw))        s++
-  if (/[^A-Za-z0-9]/.test(pw)) s++
-  return s
-}
-
-const strengthLabel  = ['', 'Weak', 'Fair', 'Good', 'Strong']
-const strengthColors = ['', 'weak', 'medium', 'medium', 'strong']
 
 export default function RegisterForm() {
   const [form, setForm] = useState({
@@ -30,13 +20,11 @@ export default function RegisterForm() {
 
   const { login, showAuthOverlay, completeAuthOverlay, hideAuthOverlay } = useAuth()
   const navigate       = useNavigate()
-  const [searchParams] = useSearchParams()
-  const redirectTo     = searchParams.get('redirect') || '/skill-arena/dashboard'
-  const loginQs        = searchParams.get('redirect')
-    ? `?redirect=${encodeURIComponent(searchParams.get('redirect'))}`
-    : ''
+  const location       = useLocation()
+  const redirectTo     = resolveAuthRedirect(location.search, '/skill-arena/dashboard')
+  const loginQs        = buildAuthRedirectQuery(redirectTo)
 
-  const strength = getStrength(form.password)
+  const strength = getPasswordStrength(form.password)
 
   const {
     focusedField, setFocusedField,

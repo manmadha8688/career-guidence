@@ -1,0 +1,199 @@
+/* InstructionsModal */
+
+.dash-instructions-modal {
+  background: #090E1C;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-top: 3px solid var(--accent);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 13%, transparent);
+  animation: slideUp 0.2s ease;
+}
+
+.dash-instructions-modal__header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dash-instructions-modal__tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.dash-instructions-modal__close {
+  background: none;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  display: flex;
+  padding: 0.2rem;
+}
+
+.dash-instructions-modal__body { padding: 1.375rem 1.5rem; }
+
+.dash-instructions-modal__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.375rem;
+}
+
+.dash-instructions-modal__icon { font-size: 1.75rem; flex-shrink: 0; }
+
+.dash-instructions-modal__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 1.175rem;
+  color: #E2E8F0;
+  line-height: 1.2;
+}
+
+.dash-instructions-modal__subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+.dash-instructions-modal__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.375rem;
+}
+
+.dash-instructions-stat {
+  text-align: center;
+  padding: 0.75rem 0.375rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.dash-instructions-stat__value {
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--stat-color);
+}
+
+.dash-instructions-stat__value--big {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+}
+
+.dash-instructions-stat__value--small {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.72rem;
+}
+
+.dash-instructions-stat__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  color: #64748B;
+  letter-spacing: 0.07em;
+  margin-top: 0.3rem;
+}
+
+.dash-instructions-modal__rules {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.dash-instructions-modal__rules-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: #64748B;
+  margin-bottom: 0.75rem;
+}
+
+.dash-instructions-modal__rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.dash-instructions-rule {
+  display: flex;
+  gap: 0.625rem;
+  align-items: flex-start;
+}
+
+.dash-instructions-rule__num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.28rem;
+  min-width: 16px;
+}
+
+.dash-instructions-rule__text {
+  font-size: 0.8rem;
+  color: #8B9AB8;
+  line-height: 1.65;
+}
+
+.dash-instructions-modal__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dash-instructions-cancel {
+  flex: 0 0 100px;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #64748B;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dash-instructions-cancel:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #8B9AB8;
+}
+
+.dash-instructions-confirm {
+  flex: 1;
+  padding: 0.875rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 73%, transparent), var(--accent));
+  border: none;
+  color: var(--confirm-text, #fff);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: box-shadow 0.15s;
+}
+
+.dash-instructions-confirm:hover {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 38%, transparent);
+}
+
+.dash-instructions-confirm--subject { --confirm-text: #1A0F00; }

@@ -110,7 +110,7 @@ export default function AdminUsers() {
             <table className="table">
               <thead>
                 <tr>
-                  <th style={{ width: 44 }}>
+                  <th className="admin-th-checkbox">
                     <input
                       type="checkbox"
                       className="table-checkbox"
@@ -126,7 +126,7 @@ export default function AdminUsers() {
                   <th>Joined</th>
                   <th>Last Login</th>
                   <th>Last Logout</th>
-                  <th style={{ textAlign: 'center' }}>Logins</th>
+                  <th className="admin-th-center">Logins</th>
                 </tr>
               </thead>
               <tbody>
@@ -146,8 +146,8 @@ export default function AdminUsers() {
                       )}
                     </td>
                     <td>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <div className="navbar-avatar" style={{ width: 34, height: 34, fontSize: '0.8rem', background: u.avatarColor || '#4F46E5', flexShrink: 0 }}>
+                      <div className="admin-row-flex">
+                        <div className="navbar-avatar admin-avatar-sm" style={{ '--avatar-bg': u.avatarColor || '#4F46E5' }}>
                           {u.fullName?.charAt(0)?.toUpperCase()}
                         </div>
                         <div>
@@ -165,11 +165,8 @@ export default function AdminUsers() {
                     <td className="text-sm text-muted" title={u.lastLogoutAt ? new Date(u.lastLogoutAt).toLocaleString() : ''}>
                       {fmtDateTime(u.lastLogoutAt)}
                     </td>
-                    <td style={{ textAlign: 'center' }}>
-                      <span style={{
-                        fontFamily: "'Orbitron', monospace", fontSize: '0.75rem', fontWeight: 700,
-                        color: u.loginCount > 0 ? 'var(--primary)' : 'var(--text-muted)',
-                      }}>
+                    <td className="admin-th-center">
+                      <span className={`admin-login-count ${u.loginCount > 0 ? 'admin-login-count--active' : 'admin-login-count--muted'}`}>
                         {u.loginCount ?? 0}
                       </span>
                     </td>
@@ -179,9 +176,8 @@ export default function AdminUsers() {
             </table>
           </div>
 
-          {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex-center" style={{ gap: '0.5rem', marginTop: '1.5rem' }}>
+            <div className="flex-center admin-pagination">
               <button className="btn btn-ghost btn-sm" disabled={page === 0} onClick={() => load(page - 1)}>← Prev</button>
               {Array.from({ length: totalPages }, (_, i) => (
                 <button key={i} className={`btn btn-sm ${page === i ? 'btn-primary' : 'btn-ghost'}`} onClick={() => load(i)}>{i + 1}</button>

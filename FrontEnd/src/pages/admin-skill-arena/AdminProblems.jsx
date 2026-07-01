@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
-import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
@@ -10,6 +9,8 @@ import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminProblems, createProblem, updateProblemQ, deleteProblemQ } from '../../api/api'
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
+import SectionLabel from '../../components/admin/SectionLabel'
+import { listToText, textToList } from '../../components/admin/adminFormUtils'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -24,9 +25,7 @@ const VARIANTS = ['brute', 'normal', 'optimized']
 const VARIANT_LABELS = { brute: 'Brute Force', normal: 'Normal', optimized: 'Optimized' }
 const VARIANT_COLORS = { brute: '#EF4444', normal: '#F59E0B', optimized: '#22C55E' }
 const MODAL_TABS = ['Basic', 'Content', 'Learning', 'Solutions']
-
-const listToText = (arr) => (arr || []).join('\n')
-const textToList = (str) => str.split('\n').map(s => s.trim()).filter(Boolean)
+const LEVEL_COLORS = { BEGINNER: '#22C55E', INTERMEDIATE: '#F59E0B', ADVANCED: '#EF4444' }
 
 const emptyVariant = () => ({ logic: '', timeComplexity: 'O(n)', spaceComplexity: 'O(1)', code: { c: '', python: '', java: '', cpp: '' } })
 const emptyForm = () => ({
@@ -38,16 +37,6 @@ const emptyForm = () => ({
   explanation: '', interviewTip: '', isInterview: false,
   companiesThatAsk: '', orderIndex: 0,
 })
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-function SectionLabel({ children }) {
-  return (
-    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: 'var(--warning)', textTransform: 'uppercase', borderBottom: '1px solid var(--border)', paddingBottom: '0.35rem', marginBottom: '0.75rem', marginTop: '0.25rem' }}>
-      {children}
-    </div>
-  )
-}
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
 
@@ -130,51 +119,37 @@ function ProblemModal({ problem, onClose, onSave }) {
     }
   }
 
-  const tabStyle = (t) => ({
-    padding: '0.5rem 1rem', border: 'none', cursor: 'pointer',
-    fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.08em',
-    fontWeight: 700, transition: 'all 0.12s',
-    background: activeTab === t ? 'var(--primary)' : 'transparent',
-    color: activeTab === t ? '#fff' : 'var(--text-muted)',
-    borderRadius: activeTab === t ? 6 : 0,
-  })
-
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal" style={{ maxWidth: 780, maxHeight: '92vh', display: 'flex', flexDirection: 'column' }}>
+      <div className="modal admin-form-modal--780-tall">
 
-        {/* Header */}
-        <div className="modal-header" style={{ flexShrink: 0 }}>
+        <div className="modal-header admin-form-modal__header">
           <h3 className="modal-title">{problem ? 'Edit Problem' : 'New Problem'}</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
 
-        {/* Tab bar */}
-        <div style={{ display: 'flex', gap: '0.25rem', padding: '0.5rem 1.5rem', borderBottom: '1px solid var(--border)', flexShrink: 0, background: 'var(--bg-secondary)' }}>
+        <div className="admin-tab-bar">
           {MODAL_TABS.map(t => (
-            <button key={t} style={tabStyle(t)} onClick={() => setActiveTab(t)}>{t.toUpperCase()}</button>
+            <button key={t} type="button"
+              className={`admin-tab-btn${activeTab === t ? ' is-active' : ''}`}
+              onClick={() => setActiveTab(t)}>
+              {t.toUpperCase()}
+            </button>
           ))}
         </div>
 
-        {/* Body */}
-        <form onSubmit={handleSubmit} style={{ overflowY: 'auto', flex: 1, padding: '1.25rem 1.5rem' }}>
+        <form onSubmit={handleSubmit} className="admin-form-modal__body admin-form-modal__body--padded">
 
-          {/* ── BASIC ── */}
           {activeTab === 'Basic' && (
             <>
               <SectionLabel>Tracks (select all that apply)</SectionLabel>
-              <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <div className="admin-toggle-row">
                 {TRACK_OPTIONS.map(t => {
                   const active = form.tracks.includes(t)
                   return (
-                    <button key={t} type="button" onClick={() => toggleTrack(t)} style={{
-                      padding: '0.3rem 0.75rem', borderRadius: 6, cursor: 'pointer',
-                      fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.05em',
-                      border: `1.5px solid ${active ? TRACK_COLORS[t] : 'var(--border)'}`,
-                      background: active ? TRACK_COLORS[t] + '22' : 'transparent',
-                      color: active ? TRACK_COLORS[t] : 'var(--text-muted)',
-                      transition: 'all 0.12s',
-                    }}>
+                    <button key={t} type="button" onClick={() => toggleTrack(t)}
+                      className={`admin-toggle-chip${active ? ' is-active' : ''}`}
+                      style={{ '--chip-accent': TRACK_COLORS[t], '--chip-accent-bg': TRACK_COLORS[t] + '22' }}>
                       {TRACK_LABELS[t]}
                     </button>
                   )
@@ -214,27 +189,26 @@ function ProblemModal({ problem, onClose, onSave }) {
 
               <div className="form-group">
                 <label className="form-label">Topics (one per line)</label>
-                <textarea className="form-input" rows={3} value={form.topics} onChange={e => set('topics', e.target.value)} placeholder={'Arrays\nTwo Pointers'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                <textarea className="form-input admin-textarea-mono" rows={3} value={form.topics} onChange={e => set('topics', e.target.value)} placeholder={'Arrays\nTwo Pointers'} />
               </div>
 
               <SectionLabel>Interview Settings</SectionLabel>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.875rem' }}>
-                <input type="checkbox" id="isInterview" checked={form.isInterview} onChange={e => set('isInterview', e.target.checked)} style={{ width: 16, height: 16, cursor: 'pointer', accentColor: 'var(--primary)' }} />
-                <label htmlFor="isInterview" style={{ cursor: 'pointer', fontSize: '0.85rem', color: 'var(--text-secondary)', fontFamily: "'Share Tech Mono', monospace" }}>Mark as Interview Question (shows ★ badge)</label>
+              <div className="admin-checkbox-row">
+                <input type="checkbox" id="isInterview" checked={form.isInterview} onChange={e => set('isInterview', e.target.checked)} className="admin-form-checkbox" />
+                <label htmlFor="isInterview" className="admin-form-checkbox-label admin-form-checkbox-label--md">Mark as Interview Question (shows ★ badge)</label>
               </div>
               <div className="form-group">
                 <label className="form-label">Companies that ask (one per line)</label>
-                <textarea className="form-input" rows={3} value={form.companiesThatAsk} onChange={e => set('companiesThatAsk', e.target.value)} placeholder={'Amazon\nGoogle\nMicrosoft'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                <textarea className="form-input admin-textarea-mono" rows={3} value={form.companiesThatAsk} onChange={e => set('companiesThatAsk', e.target.value)} placeholder={'Amazon\nGoogle\nMicrosoft'} />
               </div>
             </>
           )}
 
-          {/* ── CONTENT ── */}
           {activeTab === 'Content' && (
             <>
               <div className="form-group">
                 <label className="form-label">Description *</label>
-                <textarea className="form-input" rows={5} value={form.description} onChange={e => set('description', e.target.value)} placeholder="Full problem statement with examples..." style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                <textarea className="form-input admin-textarea-mono" rows={5} value={form.description} onChange={e => set('description', e.target.value)} placeholder="Full problem statement with examples..." />
               </div>
               <div className="grid-2">
                 <div className="form-group">
@@ -249,11 +223,11 @@ function ProblemModal({ problem, onClose, onSave }) {
               <div className="grid-2">
                 <div className="form-group">
                   <label className="form-label">Sample Input</label>
-                  <textarea className="form-input" rows={3} value={form.sampleInput} onChange={e => set('sampleInput', e.target.value)} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                  <textarea className="form-input admin-textarea-mono" rows={3} value={form.sampleInput} onChange={e => set('sampleInput', e.target.value)} />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Sample Output</label>
-                  <textarea className="form-input" rows={3} value={form.sampleOutput} onChange={e => set('sampleOutput', e.target.value)} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                  <textarea className="form-input admin-textarea-mono" rows={3} value={form.sampleOutput} onChange={e => set('sampleOutput', e.target.value)} />
                 </div>
               </div>
               <div className="form-group">
@@ -263,12 +237,11 @@ function ProblemModal({ problem, onClose, onSave }) {
             </>
           )}
 
-          {/* ── LEARNING ── */}
           {activeTab === 'Learning' && (
             <>
               <div className="form-group">
                 <label className="form-label">Hints (one per line — progressive, easiest first)</label>
-                <textarea className="form-input" rows={4} value={form.hints} onChange={e => set('hints', e.target.value)} placeholder={'Hint 1 — gentle nudge\nHint 2 — more specific\nHint 3 — almost the answer'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                <textarea className="form-input admin-textarea-mono" rows={4} value={form.hints} onChange={e => set('hints', e.target.value)} placeholder={'Hint 1 — gentle nudge\nHint 2 — more specific\nHint 3 — almost the answer'} />
               </div>
               <div className="form-group">
                 <label className="form-label">Approach</label>
@@ -285,26 +258,18 @@ function ProblemModal({ problem, onClose, onSave }) {
             </>
           )}
 
-          {/* ── SOLUTIONS ── */}
           {activeTab === 'Solutions' && (
             <>
-              {/* Variant selector */}
-              <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '1rem' }}>
+              <div className="admin-toggle-row admin-toggle-row--variant">
                 {VARIANTS.map(v => (
-                  <button key={v} type="button" onClick={() => setActiveVariant(v)} style={{
-                    padding: '0.35rem 0.875rem', borderRadius: 6, cursor: 'pointer',
-                    fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.05em',
-                    border: `1.5px solid ${activeVariant === v ? VARIANT_COLORS[v] + '80' : 'var(--border)'}`,
-                    background: activeVariant === v ? VARIANT_COLORS[v] + '18' : 'transparent',
-                    color: activeVariant === v ? VARIANT_COLORS[v] : 'var(--text-muted)',
-                    transition: 'all 0.12s',
-                  }}>
+                  <button key={v} type="button" onClick={() => setActiveVariant(v)}
+                    className={`admin-toggle-chip admin-toggle-chip--variant${activeVariant === v ? ' is-active' : ''}`}
+                    style={{ '--chip-accent': VARIANT_COLORS[v], '--chip-accent-bg': VARIANT_COLORS[v] + '18' }}>
                     {VARIANT_LABELS[v]}
                   </button>
                 ))}
               </div>
 
-              {/* Variant fields */}
               <div className="form-group">
                 <label className="form-label">Logic — plain English explanation</label>
                 <textarea className="form-input" rows={2} value={form.solutions[activeVariant].logic}
@@ -326,47 +291,33 @@ function ProblemModal({ problem, onClose, onSave }) {
                 </div>
               </div>
 
-              {/* Language tabs */}
               <SectionLabel>Code per Language</SectionLabel>
-              <div style={{ display: 'flex', gap: '0.35rem', marginBottom: '0.75rem' }}>
+              <div className="admin-toggle-row admin-toggle-row--lang">
                 {LANGS.map(l => (
-                  <button key={l} type="button" onClick={() => setActiveLang(l)} style={{
-                    padding: '0.28rem 0.7rem', borderRadius: 6, cursor: 'pointer',
-                    fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
-                    border: `1px solid ${activeLang === l ? 'var(--primary)' : 'var(--border)'}`,
-                    background: activeLang === l ? 'var(--primary)' : 'transparent',
-                    color: activeLang === l ? '#fff' : 'var(--text-muted)',
-                    transition: 'all 0.12s',
-                  }}>
+                  <button key={l} type="button" onClick={() => setActiveLang(l)}
+                    className={`admin-toggle-chip admin-toggle-chip--lang${activeLang === l ? ' is-active' : ''}`}>
                     {LANG_LABELS[l]}
                   </button>
                 ))}
               </div>
               <div className="form-group">
                 <textarea
-                  className="form-input"
+                  className="form-input admin-textarea-mono--code"
                   rows={12}
                   value={form.solutions[activeVariant].code[activeLang]}
                   onChange={e => setSolutionCode(activeVariant, activeLang, e.target.value)}
                   placeholder={`${LANG_LABELS[activeLang]} code for ${VARIANT_LABELS[activeVariant]} solution...`}
-                  style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.78rem', lineHeight: 1.6 }}
                 />
               </div>
-              <div style={{
-                padding: '0.6rem 0.875rem', borderRadius: 7,
-                background: 'var(--bg-tertiary)', border: '1px solid var(--border)',
-                fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-                color: 'var(--text-muted)', letterSpacing: '0.05em',
-              }}>
+              <div className="admin-solutions-hint">
                 💡 Fill all 3 variants × 4 languages. Switch variants above, then languages.
               </div>
             </>
           )}
 
-          {/* Footer */}
-          <div className="modal-actions" style={{ paddingTop: '1rem', borderTop: '1px solid var(--border)', marginTop: '1rem' }}>
+          <div className="modal-actions admin-modal-actions--bordered-lg">
             <button type="button" className="btn btn-ghost" onClick={onClose}>Cancel</button>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div className="admin-modal-footer-actions">
               {MODAL_TABS.indexOf(activeTab) > 0 && (
                 <button type="button" className="btn btn-ghost"
                   onClick={() => setActiveTab(MODAL_TABS[MODAL_TABS.indexOf(activeTab) - 1])}>
@@ -448,8 +399,6 @@ export default function AdminProblems() {
     }
   }
 
-  const LEVEL_COLORS = { BEGINNER: '#22C55E', INTERMEDIATE: '#F59E0B', ADVANCED: '#EF4444' }
-
   return (
     <AppLayout title="Problems">
       <div className="page-header">
@@ -457,22 +406,19 @@ export default function AdminProblems() {
           <h1 className="page-title">Problem Solving</h1>
           <p className="page-subtitle">{problems.length} problems across all tracks</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
-          {/* Track filter */}
+        <div className="admin-page-actions admin-page-actions--wrap">
           <select
             value={trackFilter}
             onChange={e => setTrackFilter(e.target.value)}
-            className="form-input"
-            style={{ width: 170, fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem' }}
+            className="form-input admin-track-filter"
           >
             <option value="ALL">All Tracks</option>
             {TRACK_OPTIONS.map(t => <option key={t} value={t}>{TRACK_LABELS[t]}</option>)}
           </select>
 
-          {/* Search */}
-          <div style={{ position: 'relative' }}>
-            <Search size={14} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
-            <input className="form-input" style={{ paddingLeft: '2.25rem', width: 220 }} placeholder="Search problems…" value={search} onChange={e => setSearch(e.target.value)} />
+          <div className="admin-search-wrap">
+            <Search size={14} className="admin-search-icon" />
+            <input className="form-input admin-search-input" placeholder="Search problems…" value={search} onChange={e => setSearch(e.target.value)} />
           </div>
 
           <button className="btn btn-primary" onClick={() => setModal('new')}>
@@ -496,7 +442,7 @@ export default function AdminProblems() {
           <table className="table">
             <thead>
               <tr>
-                <th style={{ width: 44 }}>
+                <th className="admin-th-checkbox">
                   <input
                     type="checkbox"
                     className="table-checkbox"
@@ -517,7 +463,7 @@ export default function AdminProblems() {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={9} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
+                <tr><td colSpan={9} className="admin-table-empty">
                   {search || trackFilter !== 'ALL' ? 'No problems match your filters.' : 'No problems yet — click New Problem.'}
                 </td></tr>
               ) : filtered.map(p => (
@@ -531,41 +477,45 @@ export default function AdminProblems() {
                       onChange={() => selection.toggle(p.id)}
                     />
                   </td>
-                  <td style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: 'var(--text-muted)', minWidth: 32 }}>
+                  <td className="admin-order-cell">
                     {p.orderIndex}
                   </td>
                   <td>
                     <div className="table-name">{p.title}</div>
-                    {p.description && <div className="text-xs text-muted truncate" style={{ maxWidth: 260 }}>{p.description.split('\n')[0]}</div>}
+                    {p.description && <div className="text-xs text-muted truncate admin-truncate-desc--260">{p.description.split('\n')[0]}</div>}
                   </td>
                   <td>
-                    <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap', maxWidth: 180 }}>
+                    <div className="admin-tag-wrap admin-tag-wrap--180">
                       {(p.tracks || []).map(t => (
-                        <span key={t} style={{
-                          fontSize: '0.58rem', fontFamily: "'Share Tech Mono', monospace",
-                          padding: '0.1rem 0.4rem', borderRadius: 3,
-                          background: TRACK_COLORS[t] + '18', color: TRACK_COLORS[t],
-                          border: `1px solid ${TRACK_COLORS[t]}30`,
-                        }}>
+                        <span key={t} className="admin-tag-chip--dynamic"
+                          style={{
+                            '--tag-bg': TRACK_COLORS[t] + '18',
+                            '--tag-color': TRACK_COLORS[t],
+                            '--tag-border': TRACK_COLORS[t] + '30',
+                            '--tag-font-size': '0.58rem',
+                            '--tag-radius': '3px',
+                          }}>
                           {TRACK_LABELS[t]}
                         </span>
                       ))}
                     </div>
                   </td>
                   <td>
-                    <span style={{
-                      fontSize: '0.65rem', fontFamily: "'Share Tech Mono', monospace",
-                      padding: '0.12rem 0.45rem', borderRadius: 4,
-                      background: (LEVEL_COLORS[p.level] || '#888') + '15',
-                      color: LEVEL_COLORS[p.level] || '#888',
-                      border: `1px solid ${(LEVEL_COLORS[p.level] || '#888')}30`,
-                    }}>
+                    <span className="admin-tag-chip--dynamic"
+                      style={{
+                        '--tag-bg': (LEVEL_COLORS[p.level] || '#888') + '15',
+                        '--tag-color': LEVEL_COLORS[p.level] || '#888',
+                        '--tag-border': (LEVEL_COLORS[p.level] || '#888') + '30',
+                        '--tag-font-size': '0.65rem',
+                        '--tag-padding': '0.12rem 0.45rem',
+                        '--tag-radius': '4px',
+                      }}>
                       {p.level ? p.level.charAt(0) + p.level.slice(1).toLowerCase() : '—'}
                     </span>
                   </td>
                   <td className="text-sm text-muted">{p.type || '—'}</td>
-                  <td className="text-sm text-muted">{p.category || <span style={{ color: 'var(--border)' }}>—</span>}</td>
-                  
+                  <td className="text-sm text-muted">{p.category || <span className="admin-em-dash">—</span>}</td>
+
                   <td>
                     <button type="button" className="btn btn-ghost btn-sm" onClick={() => setModal(p)} aria-label={`Edit ${p.title}`}>
                       <Pencil size={13} />

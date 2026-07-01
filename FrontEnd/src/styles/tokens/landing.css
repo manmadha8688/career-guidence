@@ -1,0 +1,60 @@
+/**
+ * Landing page design tokens — theme-aware via [data-theme]
+ * Maps to former DARK_C / LIGHT_C objects in landingData.js
+ */
+
+[data-theme="dark"] {
+  --lp-text:        #E2E8F0;
+  --lp-text-sub:    #8B9AB8;
+  --lp-text-muted:  #64748B;
+  --lp-border:      rgba(155, 110, 212, 0.18);
+  --lp-card-bg:     #0E1526;
+  --lp-primary:     #9B6ED4;
+  --lp-green:       #4ADE80;
+  --lp-blue:        #60A5FA;
+  --lp-gold:        #F59E0B;
+  --lp-nav-link:    #C4B5FD;
+  --lp-stat-divider: rgba(255, 255, 255, 0.07);
+  --lp-fresher-text: #818CF8;
+  --lp-fresher-border: rgba(99, 102, 241, 0.35);
+  --lp-fresher-border-hover: rgba(99, 102, 241, 0.6);
+  --lp-fresher-bg-hover: rgba(99, 102, 241, 0.08);
+  --lp-ghost-hover-border: rgba(155, 110, 212, 0.4);
+  --lp-mobile-overlay: rgba(0, 0, 0, 0.5);
+  --lp-pain-gradient: linear-gradient(180deg, transparent, rgba(155, 110, 212, 0.04) 50%, transparent);
+  --lp-journey-gradient: linear-gradient(180deg, transparent, rgba(155, 110, 212, 0.04) 50%, transparent);
+  --lp-cta-box-bg: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(29, 78, 216, 0.06));
+  --lp-cta-box-border: rgba(155, 110, 212, 0.25);
+  --lp-stat-cell-bg: rgba(13, 17, 32, 0.5);
+  --lp-stat-cell-bg-light: rgba(255, 255, 255, 0.02);
+  --lp-mission-stat-color: #FF7F2A;
+  --lp-code-stat-color: #0EA5E9;
+}
+
+[data-theme="light"] {
+  --lp-text:        #18244A;
+  --lp-text-sub:    #384470;
+  --lp-text-muted:  #6B7FA3;
+  --lp-border:      rgba(124, 93, 187, 0.2);
+  --lp-card-bg:     #F4F7FF;
+  --lp-primary:     #7C5DBB;
+  --lp-green:       #15803D;
+  --lp-blue:        #1D4ED8;
+  --lp-gold:        #B45309;
+  --lp-nav-link:    #7C5DBB;
+  --lp-stat-divider: rgba(124, 93, 187, 0.12);
+  --lp-fresher-text: #6366F1;
+  --lp-fresher-border: rgba(99, 102, 241, 0.35);
+  --lp-fresher-border-hover: rgba(99, 102, 241, 0.6);
+  --lp-fresher-bg-hover: rgba(99, 102, 241, 0.08);
+  --lp-ghost-hover-border: rgba(155, 110, 212, 0.4);
+  --lp-mobile-overlay: rgba(0, 0, 0, 0.5);
+  --lp-pain-gradient: linear-gradient(180deg, transparent, rgba(155, 110, 212, 0.04) 50%, transparent);
+  --lp-journey-gradient: linear-gradient(180deg, transparent, rgba(155, 110, 212, 0.04) 50%, transparent);
+  --lp-cta-box-bg: linear-gradient(135deg, rgba(124, 93, 187, 0.08), rgba(29, 78, 216, 0.04));
+  --lp-cta-box-border: rgba(124, 93, 187, 0.2);
+  --lp-stat-cell-bg: rgba(255, 255, 255, 0.7);
+  --lp-stat-cell-bg-light: rgba(255, 255, 255, 0.6);
+  --lp-mission-stat-color: #8C4200;
+  --lp-code-stat-color: #0284C7;
+}

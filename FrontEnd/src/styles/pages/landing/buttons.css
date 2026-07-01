@@ -1,0 +1,180 @@
+/* ── Shared landing buttons ── */
+.lp-btn-icon {
+  background: transparent;
+  border: 1px solid var(--lp-border);
+  border-radius: 8px;
+  color: var(--lp-text-sub);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.lp-btn-ghost {
+  background: transparent;
+  color: var(--lp-text-sub);
+  border: 1px solid var(--lp-border);
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lp-btn-ghost--sm { font-size: 0.8125rem; }
+
+.lp-btn-ghost--danger {
+  color: #EF4444;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.lp-btn-ghost--full {
+  width: 100%;
+  justify-content: center;
+}
+
+.lp-btn-ghost--guest:hover:not(:disabled) {
+  border-color: var(--lp-ghost-hover-border);
+  color: var(--lp-text);
+}
+
+.lp-btn-ghost--fresher {
+  color: var(--lp-fresher-text);
+  border-color: var(--lp-fresher-border);
+}
+
+.lp-btn-ghost--fresher:hover {
+  background: var(--lp-fresher-bg-hover);
+  border-color: var(--lp-fresher-border-hover);
+}
+
+.lp-btn-primary--nav {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.lp-btn-primary--full {
+  width: 100%;
+  justify-content: center;
+  padding: 0.875rem;
+  text-align: center;
+}
+
+.lp-btn-primary--hero:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 60px rgba(155, 110, 212, 0.8), 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lp-btn-primary--cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 60px rgba(155, 110, 212, 0.8), 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Section gradient CTAs ── */
+.lp-section-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.lp-section-cta--missions {
+  background: linear-gradient(135deg, #FF6B00, #FF7F2A);
+  box-shadow: 0 4px 24px rgba(255, 127, 42, 0.4);
+}
+
+.lp-section-cta--missions:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 127, 42, 0.6);
+}
+
+[data-theme="light"] .lp-section-cta--missions {
+  background: linear-gradient(135deg, #7C3500, #A04500);
+  box-shadow: 0 4px 20px rgba(120, 50, 0, 0.3);
+}
+
+[data-theme="light"] .lp-section-cta--missions:hover {
+  box-shadow: 0 8px 28px rgba(120, 50, 0, 0.45);
+}
+
+.lp-section-cta--code {
+  background: linear-gradient(135deg, #0EA5E9, #38BDF8);
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.35);
+}
+
+.lp-section-cta--code:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.55);
+}
+
+[data-theme="light"] .lp-section-cta--code {
+  background: linear-gradient(135deg, #0284C7, #0369A1);
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.3);
+}
+
+[data-theme="light"] .lp-section-cta--code:hover {
+  box-shadow: 0 8px 28px rgba(2, 132, 199, 0.45);
+}
+
+.lp-section-cta--ai {
+  background: linear-gradient(135deg, #00D9FF, #0EA5E9);
+  box-shadow: 0 4px 24px rgba(0, 217, 255, 0.3);
+  color: #020817;
+}
+
+.lp-section-cta--ai:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 217, 255, 0.5);
+}
+
+[data-theme="light"] .lp-section-cta--ai {
+  background: linear-gradient(135deg, #0284C7, #0369A1);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.3);
+}
+
+[data-theme="light"] .lp-section-cta--ai:hover {
+  box-shadow: 0 8px 28px rgba(2, 132, 199, 0.45);
+}
+
+.lp-section-cta--deploy {
+  background: linear-gradient(135deg, #9B6ED4, #7C3AED);
+  box-shadow: 0 4px 16px rgba(155, 110, 212, 0.35);
+}
+
+.lp-section-cta--deploy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(155, 110, 212, 0.5);
+}
+
+[data-theme="light"] .lp-section-cta--deploy {
+  background: linear-gradient(135deg, #7C3AED, #9B6ED4);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+}
+
+[data-theme="light"] .lp-section-cta--deploy:hover {
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+}
+
+.lp-cta-actions {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,7 @@
+@import '../../components/admin-shared.css';
+@import './_shared.css';
+@import './modals.css';
+@import './questions.css';
+@import './reports.css';
+@import './feedbacks.css';
+@import './walkins.css';

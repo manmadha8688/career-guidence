@@ -220,7 +220,7 @@ const HIRING_TYPES = [
 
 // ─── Section Modal ────────────────────────────────────────────────────────────
 
-function SectionModal({ section, onClose, light }) {
+function SectionModal({ section, onClose }) {
   const Icon = section.icon
 
   useEffect(() => {
@@ -228,142 +228,61 @@ function SectionModal({ section, onClose, light }) {
     const onKey = e => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', onKey)
     return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey) }
-  }, [])
+  }, [onClose])
 
   return (
     <div
+      className="fi-modal-overlay"
       onClick={e => e.target === e.currentTarget && onClose()}
-      style={{
-        position: 'fixed', inset: 0, zIndex: 200,
-        background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '1rem',
-      }}
     >
-      <div style={{
-        background: light ? '#ffffff' : '#0D1424',
-        border: `1px solid ${section.color}40`,
-        borderTop: `4px solid ${section.color}`,
-        borderRadius: 18, width: '100%', maxWidth: 620,
-        maxHeight: '88vh', display: 'flex', flexDirection: 'column',
-        boxShadow: `0 24px 80px ${section.color}18, 0 8px 40px rgba(0,0,0,0.5)`,
-        animation: 'modalIn 0.2s ease',
-      }}>
-        {/* Header */}
-        <div style={{
-          display: 'flex', alignItems: 'flex-start', gap: '1rem',
-          padding: '1.5rem 1.5rem 1.25rem', flexShrink: 0,
-          borderBottom: `1px solid ${light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.06)'}`,
-        }}>
-          <div style={{
-            width: 52, height: 52, borderRadius: 14, flexShrink: 0,
-            background: section.bg,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
+      <div
+        className="fi-modal"
+        style={{
+          '--section-color': section.color,
+          '--section-bg': section.bg,
+          '--highlight-color': section.highlightColor || section.color,
+        }}
+      >
+        <div className="fi-modal__head">
+          <div className="fi-modal__icon-wrap">
             <Icon size={24} color={section.color} />
           </div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <h2 style={{
-              fontFamily: "'Rajdhani', sans-serif", fontWeight: 800,
-              fontSize: '1.3rem', color: light ? '#0F172A' : '#F1F5F9',
-              margin: 0, lineHeight: 1.25,
-            }}>
-              {section.title}
-            </h2>
-          </div>
-          <button onClick={onClose} style={{
-            background: light ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.06)',
-            border: 'none', borderRadius: 8, width: 34, height: 34,
-            cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: light ? '#64748B' : '#64748B', flexShrink: 0,
-            transition: 'background 0.15s',
-          }}
-            onMouseEnter={e => e.currentTarget.style.background = section.bg}
-            onMouseLeave={e => e.currentTarget.style.background = light ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.06)'}
-          >
+          <h2 className="fi-modal__title">{section.title}</h2>
+          <button type="button" onClick={onClose} className="fi-modal__close">
             <X size={16} />
           </button>
         </div>
 
-        {/* Scrollable body */}
-        <div style={{ overflowY: 'auto', flex: 1, padding: '1.25rem 1.5rem 1.5rem' }}>
-
-          {/* Highlight quote */}
+        <div className="fi-modal__body">
           {section.highlight && (
-            <div style={{
-              margin: '0 0 1.125rem',
-              padding: '0.875rem 1.125rem',
-              borderRadius: 10,
-              background: `${section.highlightColor || section.color}10`,
-              borderLeft: `3px solid ${section.highlightColor || section.color}`,
-            }}>
-              <p style={{
-                fontFamily: "'Rajdhani', sans-serif", fontWeight: 700,
-                fontSize: '0.95rem', color: section.highlightColor || section.color,
-                margin: 0, lineHeight: 1.55,
-              }}>
-                ❝ {section.highlight} ❞
-              </p>
+            <div className="fi-modal__highlight">
+              <p>❝ {section.highlight} ❞</p>
             </div>
           )}
 
-          {/* Content */}
-          <div style={{ marginBottom: '1.25rem' }}>
+          <div className="fi-modal__content">
             {section.content.split('\n').map((line, i) => {
-              if (!line.trim()) return <div key={i} style={{ height: '0.5rem' }} />
-              // Detect ALL-CAPS subheading lines: e.g. "MISTAKE 1:", "HIGH DEMAND (learn these):", "THE HARD PART:"
+              if (!line.trim()) return <div key={i} className="fi-modal__spacer" />
               const isSubheading = /^[A-Z][A-Z\s\d/()–:•\-]+[:\-—]/.test(line.trim()) && line.trim().length < 80
               if (isSubheading) {
                 return (
-                  <div key={i} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                    margin: '0.875rem 0 0.3rem',
-                    padding: '0.2rem 0.7rem 0.2rem 0.5rem',
-                    borderRadius: 6,
-                    background: `${section.color}14`,
-                    border: `1px solid ${section.color}28`,
-                  }}>
-                    <span style={{ width: 4, height: 14, borderRadius: 2, background: section.color, flexShrink: 0, display: 'inline-block' }} />
-                    <span style={{
-                      fontFamily: "'Share Tech Mono', monospace",
-                      fontSize: '0.68rem', letterSpacing: '0.07em',
-                      color: section.color, fontWeight: 700,
-                    }}>{line.trim()}</span>
+                  <div key={i} className="fi-modal__subheading">
+                    <span className="fi-modal__subheading-bar" />
+                    <span className="fi-modal__subheading-text">{line.trim()}</span>
                   </div>
                 )
               }
-              return (
-                <p key={i} style={{
-                  fontSize: '0.875rem',
-                  color: light ? '#374151' : '#94A3B8',
-                  lineHeight: 1.8, margin: '0.1rem 0',
-                }}>
-                  {line}
-                </p>
-              )
+              return <p key={i} className="fi-modal__para">{line}</p>
             })}
           </div>
 
-          {/* Key Takeaways */}
-          <div style={{
-            background: light ? 'rgba(0,0,0,0.02)' : 'rgba(255,255,255,0.03)',
-            border: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)'}`,
-            borderRadius: 12, padding: '1rem 1.125rem',
-          }}>
-            <div style={{
-              fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem',
-              letterSpacing: '0.12em', color: section.color,
-              textTransform: 'uppercase', marginBottom: '0.75rem',
-            }}>
-              Key Takeaways
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <div className="fi-modal__takeaways">
+            <div className="fi-modal__takeaways-label">Key Takeaways</div>
+            <div className="fi-modal__takeaways-list">
               {section.keyPoints.map((pt, i) => (
-                <div key={i} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start' }}>
+                <div key={i} className="fi-modal__takeaway">
                   <CheckCircle size={14} color={section.color} style={{ flexShrink: 0, marginTop: 3 }} />
-                  <span style={{ fontSize: '0.83rem', color: light ? '#374151' : '#94A3B8', lineHeight: 1.55 }}>
-                    {pt}
-                  </span>
+                  <span className="fi-modal__takeaway-text">{pt}</span>
                 </div>
               ))}
             </div>
@@ -376,57 +295,24 @@ function SectionModal({ section, onClose, light }) {
 
 // ─── Section Grid Card ────────────────────────────────────────────────────────
 
-function SectionGridCard({ section, onClick, light }) {
+function SectionGridCard({ section, onClick }) {
   const Icon = section.icon
   return (
     <div
       onClick={onClick}
-      style={{
-        background: light ? '#ffffff' : '#0a1020',
-        border: `1px solid ${light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.06)'}`,
-        borderLeft: `3px solid ${section.color}`,
-        borderRadius: 14, padding: '1.375rem',
-        cursor: 'pointer',
-        transition: 'transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease',
-        display: 'flex', flexDirection: 'column', gap: '0.75rem',
-        position: 'relative', overflow: 'hidden',
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.transform = 'translateY(-4px)'
-        e.currentTarget.style.boxShadow = `0 10px 32px ${section.color}22`
-        e.currentTarget.style.borderColor = `${section.color}55`
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.transform = ''
-        e.currentTarget.style.boxShadow = ''
-        e.currentTarget.style.borderColor = light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.06)'
-      }}
+      className="fi-grid-card"
+      style={{ '--section-color': section.color, '--section-bg': section.bg }}
     >
-      {/* Subtle bg glow on card */}
-      <div style={{ position: 'absolute', top: 0, right: 0, width: 80, height: 80, borderRadius: '50%', background: `radial-gradient(circle, ${section.color}12 0%, transparent 70%)`, pointerEvents: 'none' }} />
-
-      {/* Icon + number */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ width: 42, height: 42, borderRadius: 11, background: section.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="fi-grid-card__glow" />
+      <div className="fi-grid-card__top">
+        <div className="fi-grid-card__icon-wrap">
           <Icon size={19} color={section.color} />
         </div>
-        <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700, color: `${section.color}60`, letterSpacing: '0.05em' }}>
-          {String(section.id).padStart(2,'0')}
-        </span>
+        <span className="fi-grid-card__num">{String(section.id).padStart(2, '0')}</span>
       </div>
-
-      {/* Title */}
-      <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.95rem', color: light ? '#0F172A' : '#E2E8F0', lineHeight: 1.3 }}>
-        {section.title}
-      </div>
-
-      {/* Brief */}
-      <div style={{ fontSize: '0.78rem', color: light ? '#64748B' : '#64748B', lineHeight: 1.6, flex: 1 }}>
-        {section.brief}
-      </div>
-
-      {/* Read more */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: section.color, letterSpacing: '0.06em', marginTop: 'auto' }}>
+      <div className="fi-grid-card__title">{section.title}</div>
+      <div className="fi-grid-card__brief">{section.brief}</div>
+      <div className="fi-grid-card__more">
         READ MORE <ChevronRight size={12} />
       </div>
     </div>
@@ -435,64 +321,48 @@ function SectionGridCard({ section, onClick, light }) {
 
 // ─── Hiring Card ──────────────────────────────────────────────────────────────
 
-function HiringCard({ h, light }) {
+function HiringCard({ h }) {
   const Icon = h.icon
   return (
-    <div style={{
-      background: light ? '#ffffff' : '#0D1424',
-      border: `1px solid ${light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.06)'}`,
-      borderTop: `3px solid ${h.color}`,
-      borderRadius: 14, padding: '1.25rem',
-      transition: 'transform 0.15s, box-shadow 0.15s',
-    }}
-      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = `0 6px 24px ${h.color}18` }}
-      onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-        <div style={{ width: 40, height: 40, borderRadius: 10, background: h.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+    <div className="fi-hiring-card" style={{ '--card-color': h.color, '--card-bg': h.bg }}>
+      <div className="fi-hiring-card__head">
+        <div className="fi-hiring-card__icon">
           <Icon size={20} color={h.color} />
         </div>
         <div>
-          <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.95rem', color: light ? '#0F172A' : '#E2E8F0' }}>
-            {h.type}
-          </div>
-          <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: h.color, letterSpacing: '0.06em' }}>
-            {h.focus}
-          </div>
+          <div className="fi-hiring-card__type">{h.type}</div>
+          <div className="fi-hiring-card__focus">{h.focus}</div>
         </div>
       </div>
-
-      <div style={{ fontSize: '0.73rem', color: light ? '#94A3B8' : '#475569', marginBottom: '0.875rem', fontStyle: 'italic' }}>
-        {h.examples}
-      </div>
-
-      <div style={{ marginBottom: '0.875rem' }}>
-        <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.56rem', letterSpacing: '0.1em', color: light ? '#94A3B8' : '#475569', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
-          Typical Rounds
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.28rem' }}>
-          {h.rounds.map((r, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <div style={{ width: 18, height: 18, borderRadius: '50%', background: h.bg, border: `1.5px solid ${h.color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.5rem', color: h.color, fontWeight: 700 }}>{i + 1}</span>
-              </div>
-              <span style={{ fontSize: '0.77rem', color: light ? '#374151' : '#94A3B8' }}>{r}</span>
+      <div className="fi-hiring-card__examples">{h.examples}</div>
+      <div className="fi-hiring-card__rounds-label">Typical Rounds</div>
+      <div className="fi-hiring-card__rounds">
+        {h.rounds.map((r, i) => (
+          <div key={i} className="fi-hiring-card__round">
+            <div className="fi-hiring-card__round-num">
+              <span>{i + 1}</span>
             </div>
-          ))}
-        </div>
+            <span className="fi-hiring-card__round-text">{r}</span>
+          </div>
+        ))}
       </div>
-
-      <div style={{
-        padding: '0.6rem 0.75rem', borderRadius: 8,
-        background: light ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.03)',
-        border: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)'}`,
-      }}>
-        <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.56rem', color: h.color, letterSpacing: '0.08em', marginBottom: '0.2rem' }}>💡 TIP</div>
-        <p style={{ fontSize: '0.76rem', color: light ? '#374151' : '#94A3B8', margin: 0, lineHeight: 1.55 }}>{h.tip}</p>
+      <div className="fi-hiring-card__tip">
+        <div className="fi-hiring-card__tip-label">💡 TIP</div>
+        <p className="fi-hiring-card__tip-text">{h.tip}</p>
       </div>
     </div>
   )
 }
+
+const ACTION_STEPS = [
+  { step: '01', text: 'Set up GitHub today — push any code, even basic. A blank profile loses opportunities before the interview starts.', color: '#6366F1' },
+  { step: '02', text: 'Pick ONE language (Python, Java, or JavaScript) and commit to it for 6 months. Depth beats breadth every time.', color: '#8B5CF6' },
+  { step: '03', text: 'Decide your track: Service company (fundamentals + project), Product company (DSA), or AI/Startup (build with AI tools).', color: '#EC4899' },
+  { step: '04', text: 'Build one project this month — not from a tutorial, from a problem you have seen around you. Deploy it.', color: '#10B981' },
+  { step: '05', text: 'Open the Career Guidance page — it gives you the exact role-by-role roadmap for what to learn and in what order.', color: '#F59E0B' },
+]
+
+const CTA_FEATURES = ['Structured Roadmaps', 'Real Projects', 'Problem Solving', 'Interview Prep']
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
@@ -502,9 +372,6 @@ export default function FresherInstructionsPage() {
   const light = theme === 'light'
   const [activeSection, setActiveSection] = useState(null)
 
-  const bg = light ? '#F1F5F9' : '#060D1A'
-
-  // Scroll reveal
   useEffect(() => {
     const els = document.querySelectorAll('.pg-reveal, .pg-reveal-left, .pg-reveal-right')
     const io = new IntersectionObserver(
@@ -516,336 +383,153 @@ export default function FresherInstructionsPage() {
   }, [])
 
   return (
-    <div style={{ minHeight: '100vh', background: bg, fontFamily: "'Rajdhani', sans-serif", color: light ? '#1A1A2E' : '#E2E8F0', overflowX: 'hidden', position: 'relative' }}>
+    <div className="fi-page">
 
-      {/* ── Nav ──────────────────────────────────────────────── */}
-      <div style={{
-        position: 'sticky', top: 0, zIndex: 50,
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 1.25rem', height: 52,
-        background: light ? 'rgba(241,245,249,0.97)' : 'rgba(6,13,26,0.97)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: `1px solid ${light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.05)'}`,
-      }}>
-        <button onClick={() => navigate('/')} style={{
-          background: 'none', border: 'none', cursor: 'pointer',
-          display: 'flex', alignItems: 'center', gap: '0.4rem',
-          fontFamily: "'Orbitron', sans-serif", fontWeight: 900,
-          fontSize: '0.72rem', letterSpacing: '0.1em', color: '#9B6ED4', padding: 0,
-        }}>
+      <nav className="fi-nav">
+        <button type="button" onClick={() => navigate('/')} className="fi-nav__back">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           LearnToEarn
         </button>
-
-        <span className="fi-nav-center" style={{
-          fontFamily: "'Orbitron', sans-serif", fontSize: '0.65rem', fontWeight: 700,
-          letterSpacing: '0.14em', color: light ? '#1A1A2E' : '#CBD5E1',
-          position: 'absolute', left: '50%', transform: 'translateX(-50%)',
-        }}>
-          FRESHER GUIDE
-        </span>
-
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <button onClick={toggleTheme} style={{
-            background: 'none', border: `1px solid ${light ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.08)'}`,
-            borderRadius: 6, width: 32, height: 32, cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748B',
-          }}>
+        <span className="fi-nav-center">FRESHER GUIDE</span>
+        <div className="fi-nav__actions">
+          <button type="button" onClick={toggleTheme} className="fi-nav__theme">
             {light ? <Moon size={14} /> : <Sun size={14} />}
           </button>
-          <button onClick={() => navigate('/skill-arena/dashboard')} style={{
-            background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.4)',
-            borderRadius: 6, padding: '0.25rem 0.65rem', cursor: 'pointer',
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-            letterSpacing: '0.07em', color: '#9B6ED4',
-          }}>
+          <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="fi-nav__arena">
             ⚔ SKILL ARENA
           </button>
         </div>
+      </nav>
+
+      <div className="fi-bg-orbs">
+        <div className="fi-bg-orb fi-bg-orb--1" />
+        <div className="fi-bg-orb fi-bg-orb--2" />
       </div>
 
-      {/* Background glow */}
-      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-10%', left: '50%', transform: 'translateX(-50%)', width: 700, height: 500, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(99,102,241,0.07) 0%, transparent 65%)', filter: 'blur(40px)' }} />
-        <div style={{ position: 'absolute', bottom: '20%', right: '-10%', width: 500, height: 400, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(155,110,212,0.05) 0%, transparent 65%)', filter: 'blur(40px)' }} />
-      </div>
-
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: 'clamp(3rem,7vw,5rem) 1.5rem clamp(2rem,4vw,3rem)', maxWidth: 760, margin: '0 auto' }}>
-        <div className="pg-hero-1" style={{
-          display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-          padding: '0.35rem 1rem', borderRadius: 999,
-          background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.28)',
-          fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
-          fontWeight: 700, color: '#6366F1', letterSpacing: '0.08em', marginBottom: '1.75rem',
-        }}>
-          <span className="pg-pulse-dot" style={{ width:6, height:6, borderRadius:'50%', background:'#6366F1', color:'#6366F1', display:'inline-block', flexShrink:0 }} />
+      <header className="fi-hero">
+        <div className="fi-hero__badge pg-hero-1">
+          <span className="fi-hero__pulse pg-pulse-dot" />
           <GraduationCap size={14} /> FOR FRESHERS ENTERING IT
         </div>
-
-        <h1 style={{
-          fontSize: 'clamp(1.8rem,5vw,3rem)', fontWeight: 900,
-          letterSpacing: '-0.02em', lineHeight: 1.15, margin: '0 0 1.25rem',
-          color: light ? '#0F172A' : '#F1F5F9',
-        }}>
+        <h1 className="fi-hero__title pg-hero-2">
           The IT Market Reality<br />
-          <span style={{
-            background: 'linear-gradient(135deg, #6366F1, #9B6ED4, #EC4899)',
-            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-          }}>
-            Every Fresher Must Know
-          </span>
+          <span className="fi-hero__title-grad">Every Fresher Must Know</span>
         </h1>
-
-        <p className="pg-hero-3" style={{
-          fontSize: 'clamp(0.9rem,2vw,1.05rem)', color: light ? '#475569' : '#94A3B8',
-          lineHeight: 1.8, maxWidth: 560, margin: '0 auto 2rem',
-        }}>
+        <p className="fi-hero__subtitle pg-hero-3">
           The IT market has changed. This guide covers the real situation — not filtered for comfort.
           What is actually happening with hiring, how AI is changing jobs, what companies genuinely
           want, and the honest path from where you are to where you want to be.
         </p>
-
-        {/* Career Guidance CTA */}
-        <div className="pg-hero-4" style={{
-          display: 'inline-flex', flexDirection: 'column', alignItems: 'center',
-          gap: '0.5rem', marginBottom: '2.5rem',
-        }}>
-          <button
-            onClick={() => navigate('/fresher-instructions/career-guidance')}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.625rem',
-              background: 'linear-gradient(135deg, #7C3AED, #9B6ED4, #6366F1)',
-              border: 'none', borderRadius: 12,
-              padding: '0.875rem 2rem',
-              color: '#fff', fontWeight: 700,
-              fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
-              cursor: 'pointer',
-              boxShadow: '0 4px 24px rgba(155,110,212,0.4)',
-              transition: 'transform 0.15s, box-shadow 0.15s',
-              fontFamily: "'Rajdhani', sans-serif",
-              letterSpacing: '0.03em',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(155,110,212,0.55)' }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(155,110,212,0.4)' }}
-          >
+        <div className="fi-hero__cta-wrap pg-hero-4">
+          <button type="button" onClick={() => navigate('/fresher-instructions/career-guidance')} className="fi-hero__cta-btn">
             🧭 Career Guidance — Which Path Should I Take?
           </button>
-          <span style={{
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem',
-            letterSpacing: '0.1em', color: light ? '#94A3B8' : '#475569',
-          }}>
-            ROLE GUIDE · ROADMAP · MENTOR ADVICE
-          </span>
+          <span className="fi-hero__cta-hint">ROLE GUIDE · ROADMAP · MENTOR ADVICE</span>
         </div>
-
-        {/* Stats */}
-        <div className="pg-hero-5" style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px',
-          background: light ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.07)',
-          borderRadius: 14, overflow: 'hidden', maxWidth: 460, margin: '0 auto',
-        }}>
+        <div className="fi-stats pg-hero-5">
           {[['12', 'Key Sections'], ['5', 'Hiring Paths'], ['∞', 'Your Potential']].map(([v, l], i) => (
-            <div key={i} style={{ textAlign: 'center', padding: '1rem 0.5rem', background: light ? 'rgba(255,255,255,0.8)' : 'rgba(13,20,36,0.8)' }}>
-              <div style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '1.4rem', color: '#6366F1', marginBottom: '0.15rem' }}>{v}</div>
-              <div style={{ fontSize: 'clamp(0.62rem,1.5vw,0.72rem)', color: '#64748B' }}>{l}</div>
+            <div key={i} className="fi-stats__cell">
+              <div className="fi-stats__value">{v}</div>
+              <div className="fi-stats__label">{l}</div>
             </div>
           ))}
         </div>
-      </div>
+      </header>
 
-      {/* ── AI Banner ─────────────────────────────────────────── */}
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto 2.5rem', padding: '0 1.25rem' }}>
-        <div className="pg-reveal" style={{
-          background: 'linear-gradient(135deg, rgba(6,182,212,0.1), rgba(99,102,241,0.07))',
-          border: '1px solid rgba(6,182,212,0.22)', borderRadius: 14,
-          padding: '1.125rem 1.375rem',
-          display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap',
-        }}>
-          <div style={{ width: 42, height: 42, borderRadius: 10, background: 'rgba(6,182,212,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+      <div className="fi-ai-banner-wrap">
+        <div className="fi-ai-banner pg-reveal">
+          <div className="fi-ai-banner__icon">
             <Cpu size={20} color="#06B6D4" />
           </div>
-          <p style={{ flex: 1, margin: 0, fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: '#06B6D4', lineHeight: 1.5 }}>
+          <p className="fi-ai-banner__text">
             AI does not replace engineers — it replaces engineers who only do what AI can already do. Build the skills that sit above what AI can automate.
           </p>
         </div>
       </div>
 
-      {/* ── Section Grid ──────────────────────────────────────── */}
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto', padding: '0 1.25rem 4rem' }}>
-        <div className="pg-reveal" style={{ marginBottom: '1.5rem' }}>
-          <h2 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '1.25rem', color: light ? '#0F172A' : '#F1F5F9', margin: '0 0 0.25rem' }}>
-            12 Things Every Fresher Must Understand
-          </h2>
-          <p style={{ fontSize: '0.82rem', color: '#64748B', margin: 0 }}>
-            Click any card to read the full section
-          </p>
+      <div className="fi-sections-wrap">
+        <div className="fi-sections-head pg-reveal">
+          <h2 className="fi-sections-head__title">12 Things Every Fresher Must Understand</h2>
+          <p className="fi-sections-head__hint">Click any card to read the full section</p>
         </div>
-
-        <div className="pg-stagger" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(260px, 100%), 1fr))',
-          gap: '1rem',
-        }}>
+        <div className="fi-sections-grid pg-stagger">
           {SECTIONS.map(section => (
             <div key={section.id} className="pg-reveal">
-              <SectionGridCard
-                section={section}
-                onClick={() => setActiveSection(section)}
-                light={light}
-              />
+              <SectionGridCard section={section} onClick={() => setActiveSection(section)} />
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── Today's Action Plan ──────────────────────────────── */}
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto 3rem', padding: '0 1.25rem' }}>
-        <div className="pg-reveal" style={{
-          background: light
-            ? 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(155,110,212,0.04))'
-            : 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(155,110,212,0.07))',
-          border: `1px solid ${light ? 'rgba(99,102,241,0.18)' : 'rgba(99,102,241,0.22)'}`,
-          borderRadius: 18, padding: 'clamp(1.5rem,4vw,2.5rem)',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-            <div style={{ width: 42, height: 42, borderRadius: 12, background: 'rgba(99,102,241,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+      <div className="fi-action-wrap">
+        <div className="fi-action-panel pg-reveal">
+          <div className="fi-action-panel__head">
+            <div className="fi-action-panel__icon">
               <Target size={20} color="#6366F1" />
             </div>
             <div>
-              <h2 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '1.2rem', color: light ? '#0F172A' : '#F1F5F9', margin: 0 }}>
-                Your Action Plan — Start Today
-              </h2>
-              <p style={{ fontSize: '0.78rem', color: '#64748B', margin: 0 }}>5 things you can do right now to move forward</p>
+              <h2 className="fi-action-panel__title">Your Action Plan — Start Today</h2>
+              <p className="fi-action-panel__hint">5 things you can do right now to move forward</p>
             </div>
           </div>
-
-          <div className="pg-stagger" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            {[
-              { step: '01', text: 'Set up GitHub today — push any code, even basic. A blank profile loses opportunities before the interview starts.', color: '#6366F1' },
-              { step: '02', text: 'Pick ONE language (Python, Java, or JavaScript) and commit to it for 6 months. Depth beats breadth every time.', color: '#8B5CF6' },
-              { step: '03', text: 'Decide your track: Service company (fundamentals + project), Product company (DSA), or AI/Startup (build with AI tools).', color: '#EC4899' },
-              { step: '04', text: 'Build one project this month — not from a tutorial, from a problem you have seen around you. Deploy it.', color: '#10B981' },
-              { step: '05', text: 'Open the Career Guidance page — it gives you the exact role-by-role roadmap for what to learn and in what order.', color: '#F59E0B' },
-            ].map(({ step, text, color }, i) => (
-              <div key={i} className="pg-reveal pg-check-item" style={{
-                display: 'flex', alignItems: 'flex-start', gap: '0.875rem',
-                padding: '0.875rem 1.125rem',
-                background: light ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.03)',
-                border: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)'}`,
-                borderLeft: `3px solid ${color}`,
-                borderRadius: 10, cursor: 'default',
-              }}>
-                <div style={{ fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '0.6rem', color, minWidth: 24, paddingTop: 2 }}>{step}</div>
-                <span style={{ fontSize: '0.875rem', color: light ? '#374151' : '#CBD5E1', lineHeight: 1.6 }}>{text}</span>
+          <div className="fi-action-list pg-stagger">
+            {ACTION_STEPS.map(({ step, text, color }, i) => (
+              <div key={i} className="fi-action-item pg-reveal pg-check-item" style={{ '--step-color': color }}>
+                <div className="fi-action-item__step">{step}</div>
+                <span className="fi-action-item__text">{text}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ── Hiring Process ────────────────────────────────────── */}
-      <div style={{
-        position: 'relative', zIndex: 1,
-        padding: '3.5rem 1.25rem',
-        background: light ? 'rgba(99,102,241,0.03)' : 'rgba(99,102,241,0.04)',
-        borderTop: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)'}`,
-        borderBottom: `1px solid ${light ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)'}`,
-      }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ marginBottom: '2rem' }}>
-            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: '#6366F1', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-              How Companies Actually Hire
-            </div>
-            <h2 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: 'clamp(1.4rem,3.5vw,2rem)', color: light ? '#0F172A' : '#F1F5F9', margin: '0 0 0.5rem' }}>
-              5 Hiring Paths — Know Which One You Are Targeting
-            </h2>
-            <p style={{ fontSize: '0.875rem', color: light ? '#475569' : '#94A3B8', maxWidth: 500, margin: 0, lineHeight: 1.7 }}>
+      <section className="fi-hiring-section">
+        <div className="fi-hiring-inner">
+          <div className="fi-hiring-head">
+            <div className="fi-hiring-head__label">How Companies Actually Hire</div>
+            <h2 className="fi-hiring-head__title">5 Hiring Paths — Know Which One You Are Targeting</h2>
+            <p className="fi-hiring-head__desc">
               Each path requires different preparation. Preparing for the wrong one wastes months. Pick your target, then prepare specifically for it.
             </p>
           </div>
-
-          <div className="pg-stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px,100%), 1fr))', gap: '1rem' }}>
+          <div className="fi-hiring-grid pg-stagger">
             {HIRING_TYPES.map((h, i) => (
-              <div key={i} className="pg-reveal"><HiringCard h={h} light={light} /></div>
+              <div key={i} className="pg-reveal"><HiringCard h={h} /></div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
-      <div style={{ position: 'relative', zIndex: 1, padding: '3.5rem 1.5rem 5rem', textAlign: 'center' }}>
-        <div style={{
-          maxWidth: 640, margin: '0 auto',
-          background: light ? 'linear-gradient(135deg, rgba(99,102,241,0.07), rgba(155,110,212,0.05))' : 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(155,110,212,0.07))',
-          border: '1px solid rgba(99,102,241,0.22)', borderRadius: 20,
-          padding: 'clamp(1.75rem,4vw,3rem)',
-        }}>
-          <div style={{ fontSize: '2.25rem', marginBottom: '0.875rem' }}>🚀</div>
-          <h2 style={{ fontSize: 'clamp(1.3rem,3.5vw,1.75rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.875rem', color: light ? '#0F172A' : '#F1F5F9' }}>
-            Ready to Start Your Structured Journey?
-          </h2>
-          <p style={{ fontSize: '0.9rem', color: light ? '#475569' : '#94A3B8', lineHeight: 1.8, margin: '0 0 1.75rem' }}>
+      <section className="fi-cta-section">
+        <div className="fi-cta-panel">
+          <div className="fi-cta-panel__emoji">🚀</div>
+          <h2 className="fi-cta-panel__title">Ready to Start Your Structured Journey?</h2>
+          <p className="fi-cta-panel__desc">
             This platform is built exactly for what this guide describes — structured learning from zero to job-ready, with roadmaps, quizzes, projects, and problem solving.
           </p>
-
-          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button onClick={() => navigate('/skill-arena/dashboard')} style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              background: 'linear-gradient(135deg, #6366F1, #9B6ED4)', border: 'none',
-              borderRadius: 10, padding: '0.7rem 1.5rem',
-              color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer',
-              boxShadow: '0 4px 18px rgba(99,102,241,0.4)', transition: 'transform 0.15s',
-            }}
-              onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
-              onMouseLeave={e => e.currentTarget.style.transform = 'none'}
-            >
+          <div className="fi-cta-panel__actions">
+            <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="fi-cta-panel__btn-primary">
               <Swords size={15} /> Start Learning — Free
             </button>
-            <button onClick={() => navigate('/problem-solving')} style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              background: 'transparent', border: '1px solid rgba(99,102,241,0.35)',
-              borderRadius: 10, padding: '0.7rem 1.25rem',
-              color: '#6366F1', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer',
-              transition: 'background 0.15s',
-            }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(99,102,241,0.08)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-            >
+            <button type="button" onClick={() => navigate('/problem-solving')} className="fi-cta-panel__btn-secondary">
               💻 Start Coding Practice <ArrowRight size={14} />
             </button>
           </div>
-
-          <div style={{ marginTop: '1.75rem', display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            {['Structured Roadmaps', 'Real Projects', 'Problem Solving', 'Interview Prep'].map(item => (
-              <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem', color: '#64748B' }}>
+          <div className="fi-cta-panel__features">
+            {CTA_FEATURES.map(item => (
+              <div key={item} className="fi-cta-panel__feature">
                 <CheckCircle size={13} color="#22C55E" /> {item}
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── Modal ─────────────────────────────────────────────── */}
       {activeSection && (
-        <SectionModal
-          section={activeSection}
-          onClose={() => setActiveSection(null)}
-          light={light}
-        />
+        <SectionModal section={activeSection} onClose={() => setActiveSection(null)} />
       )}
-
-      <style>{`
-        @keyframes modalIn {
-          from { opacity: 0; transform: scale(0.94) translateY(10px); }
-          to   { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        @media (max-width: 480px) {
-          .fi-nav-center { display: none !important; }
-        }
-      `}</style>
     </div>
   )
 }

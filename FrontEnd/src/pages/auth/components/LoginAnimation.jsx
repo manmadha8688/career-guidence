@@ -21,11 +21,11 @@ import { MangaSpeechBubble } from './MangaSpeechBubble'
 
 /* ── Shared eye component ─────────────────────────────────────────── */
 function BotEye({ size = 'md', pupilX, pupilY, covered, wink, sleepy, led }) {
-  const scale = size === 'sm' ? 0.72 : size === 'lg' ? 1.15 : 1
+  const sizeCls = size === 'sm' ? ' login-bot-eye--sm' : size === 'lg' ? ' login-bot-eye--lg' : ''
   const shut = covered || wink
 
   return (
-    <div className="login-bot-eye" style={{ transform: `scale(${scale})` }}>
+    <div className={`login-bot-eye${sizeCls}`}>
       <motion.div
         className="login-bot-eye-lens"
         animate={{ scaleY: shut ? 0.1 : sleepy ? 0.4 : 1 }}
@@ -53,7 +53,6 @@ function SideBot({ variant, name, active, mood, pupilX, pupilY, sleepy, coverEye
   return (
     <motion.div
       className={`login-bot login-bot--${variant}${active ? ' login-bot--speaking' : ''}`}
-      style={{ position: 'relative', zIndex: active ? 20 : 1 }}
       animate={{
         y: active ? [0, -5, 0] : happy ? [0, -4, 0] : sleepy ? [0, 2, 0] : [0, -2, 0],
         rotate: concerned ? [0, -2, 2, 0] : 0,
@@ -126,7 +125,7 @@ function EchoBot({ active, mood, pupilX, pupilY, closeEyes, sleepy, speech, bubb
   return (
     <motion.div
       className={`login-bot login-bot--prime${active ? ' login-bot--speaking' : ''}`}
-      style={{ y: bodyY, position: 'relative', zIndex: active ? 20 : 2 }}
+      style={{ y: bodyY }}
       animate={{ rotate: active || happy ? [0, -1.5, 1.5, 0] : concerned ? [0, -1, 1, 0] : 0 }}
       transition={{ duration: active || happy ? 0.5 : 0.4, repeat: Infinity, ease: 'easeInOut' }}
     >

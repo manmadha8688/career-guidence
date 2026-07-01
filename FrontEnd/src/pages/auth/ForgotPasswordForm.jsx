@@ -338,10 +338,10 @@ export default function ForgotPasswordForm() {
               </div>
             )}
             {password && !passOk && (
-              <ul style={{ margin: '0.5rem 0 0', padding: '0 0 0 1.1rem', fontSize: '0.72rem', color: 'var(--text-muted, #64748B)' }}>
+              <ul className="auth-password-hints">
                 {PASSWORD_HINTS.map(h => (
-                  <li key={h.label} style={{ color: h.ok(password) ? 'var(--accent-green, #4ADE80)' : undefined }}>
-                    {h.ok(password) ? <CheckCircle size={10} style={{ display: 'inline', marginRight: 4, verticalAlign: -1 }} /> : null}
+                  <li key={h.label} className={h.ok(password) ? 'auth-password-hints__item--ok' : undefined}>
+                    {h.ok(password) ? <CheckCircle size={10} className="auth-password-hints__icon" /> : null}
                     {h.label}
                   </li>
                 ))}
@@ -367,9 +367,8 @@ export default function ForgotPasswordForm() {
 
           <button
             type="submit"
-            className="auth-btn-primary"
+            className="auth-btn-primary auth-btn-primary--flex"
             disabled={resetting || !ready}
-            style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
           >
             {resetting
               ? <><Loader2 size={15} className="auth-spin" /> Updating…</>
@@ -379,7 +378,7 @@ export default function ForgotPasswordForm() {
       )}
 
       <div className="auth-forgot-bottom">
-        <Link to="/login" className="auth-link" style={{ fontSize: '0.78rem' }}>
+        <Link to="/login" className="auth-link auth-link--sm">
           Back to login
         </Link>
       </div>

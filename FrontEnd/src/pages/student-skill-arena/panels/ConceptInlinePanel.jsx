@@ -51,7 +51,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
 
   if (loading) return (
     <div className="sl-concept-inline">
-      <div className="flex-center" style={{ flex: 1, height: '100%' }}>
+      <div className="flex-center dash-concept-loading">
         <DungeonPortalLoader panel height={280} />
       </div>
     </div>
@@ -61,55 +61,37 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
 
   return (
     <div className="sl-concept-inline" ref={panelRef}>
-      {/* Header */}
       <div className="sl-concept-inline-header">
-        <button className="btn btn-ghost btn-sm" style={{ padding: '0.2rem 0.5rem', fontSize: '0.78rem', fontFamily: "'Rajdhani', sans-serif", letterSpacing: '0.04em' }}
-          onClick={onClose}>
+        <button className="btn btn-ghost btn-sm dash-concept-back-btn" onClick={onClose}>
           <ChevronLeft size={14} /> Gates
         </button>
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div className="dash-flex-1">
           <div className="sl-concept-inline-title">{concept.title}</div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexWrap: 'wrap', justifyContent: 'flex-end', minWidth: 0 }}>
+        <div className="dash-concept-header-actions">
           {concept.tip && (
-            <button onClick={() => scrollTo(tipRef)} style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.80rem', letterSpacing: '0.07em', padding: '0.18rem 0.55rem', borderRadius: 20, border: '1px solid rgba(245,158,11,0.35)', background: 'rgba(245,158,11,0.07)', color: '#F59E0B', cursor: 'pointer', transition: 'background 0.15s' }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(245,158,11,0.22)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'rgba(245,158,11,0.07)'}>
-              ⚡ TIP
-            </button>
+            <button onClick={() => scrollTo(tipRef)} className="dash-concept-jump-btn dash-concept-jump-btn--tip">⚡ TIP</button>
           )}
           {concept.commonMistakes?.length > 0 && (
-            <button onClick={() => scrollTo(mistakesRef)} style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', letterSpacing: '0.07em', padding: '0.18rem 0.55rem', borderRadius: 20, border: '1px solid rgba(239,68,68,0.35)', background: 'rgba(239,68,68,0.07)', color: '#EF4444', cursor: 'pointer', transition: 'background 0.15s' }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(239,68,68,0.22)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'rgba(239,68,68,0.07)'}>
-              ⚠ MISTAKES
-            </button>
+            <button onClick={() => scrollTo(mistakesRef)} className="dash-concept-jump-btn dash-concept-jump-btn--mistakes">⚠ MISTAKES</button>
           )}
-          <button onClick={() => scrollTo(quizRef)} style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', letterSpacing: '0.07em', padding: '0.18rem 0.55rem', borderRadius: 20, border: '1px solid rgba(155,110,212,0.35)', background: 'rgba(155,110,212,0.07)', color: 'var(--primary)', cursor: 'pointer', transition: 'background 0.15s' }}
-            onMouseEnter={e => e.currentTarget.style.background = 'rgba(155,110,212,0.22)'}
-            onMouseLeave={e => e.currentTarget.style.background = 'rgba(155,110,212,0.07)'}>
-            ⚔ TEST
-          </button>
+          <button onClick={() => scrollTo(quizRef)} className="dash-concept-jump-btn dash-concept-jump-btn--quiz">⚔ TEST</button>
           <ReportButton variant="inline" pageTitle={`Concept — ${concept.title}`} />
           {concept.completed && (
-            <span className="badge badge-cleared" style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.06em' }}>
-              <CheckCircle size={9} style={{ marginRight: 3 }} /> CLEARED
+            <span className="badge badge-cleared dash-concept-cleared-badge">
+              <CheckCircle size={9} className="dash-concept-cleared-badge__icon" /> CLEARED
             </span>
           )}
-          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '1rem', color: 'var(--text-muted)' }}>
-            <Clock size={11} style={{ display: 'inline', marginRight: 3 }} />
+          <span className="dash-concept-duration">
+            <Clock size={11} className="dash-concept-duration__icon" />
             {concept.estimatedMinutes}m
           </span>
         </div>
       </div>
 
-      {/* Scrollable body */}
       <div className="sl-concept-inline-body">
-
         {concept.introduction && (
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.7, padding: '0.75rem 1rem', background: 'rgba(155,110,212,0.06)', borderLeft: '3px solid #9B6ED4', borderRadius: '0 var(--radius-sm) var(--radius-sm) 0' }}>
-            {concept.introduction}
-          </p>
+          <p className="dash-concept-intro">{concept.introduction}</p>
         )}
 
         <ConceptVideo videoUrl={concept.videoUrl} videoTitle={concept.videoTitle} title={concept.title} />
@@ -133,7 +115,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
           <div>
             <div className="code-block-header">
               <span className="code-lang">[ SYNTAX ]</span>
-              <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.65rem', padding: '0.15rem 0.4rem', color: 'var(--text-muted)' }}
+              <button className="btn btn-ghost btn-sm dash-concept-copy-btn"
                 onClick={() => { navigator.clipboard.writeText(concept.syntax); toast.success('Copied!') }}>
                 COPY
               </button>
@@ -144,7 +126,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
 
         {concept.examples?.length > 0 && (
           <div>
-            <div className="concept-section-heading" style={{ marginBottom: '0.625rem' }}>Examples</div>
+            <div className="concept-section-heading dash-concept-section-heading--mb-md">Examples</div>
             <div className="concept-examples-list">
               {concept.examples.map((ex, i) => (
                 <div key={i} className="concept-example-card">
@@ -155,12 +137,12 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
                   {ex.description && <p className="concept-example-desc">{ex.description}</p>}
                   {ex.code && (
                     <>
-                      <div className="code-block-header" style={{ margin: '0.5rem 0.75rem 0' }}>
+                      <div className="code-block-header dash-concept-code-header--inset">
                         <span className="code-lang">[ CODE ]</span>
-                        <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.65rem', padding: '0.15rem 0.4rem', color: 'var(--text-muted)' }}
+                        <button className="btn btn-ghost btn-sm dash-concept-copy-btn"
                           onClick={() => { navigator.clipboard.writeText(ex.code); toast.success('Copied!') }}>COPY</button>
                       </div>
-                      <div className="code-block" style={{ margin: '0 0.75rem' }}>{ex.code}</div>
+                      <div className="code-block dash-concept-code-block--inset">{ex.code}</div>
                       {isWebSubject && <LivePreview code={ex.code} subjectType={subjectType} demoHtml={ex.demoHtml} />}
                     </>
                   )}
@@ -178,7 +160,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
 
         {concept.keyPoints?.length > 0 && (
           <div>
-            <div className="concept-section-heading" style={{ marginBottom: '0.5rem' }}>Key Points</div>
+            <div className="concept-section-heading dash-concept-section-heading--mb-sm">Key Points</div>
             <div className="concept-keypoints-list">
               {concept.keyPoints.map((kp, i) => (
                 <div key={i} className="concept-keypoint">
@@ -199,11 +181,11 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
 
         {concept.commonMistakes?.length > 0 && (
           <div ref={mistakesRef}>
-            <div className="concept-section-heading" style={{ marginBottom: '0.5rem' }}>Common Mistakes</div>
+            <div className="concept-section-heading dash-concept-section-heading--mb-sm">Common Mistakes</div>
             <div className="concept-mistakes-list">
               {concept.commonMistakes.map((m, i) => (
                 <div key={i} className="concept-mistake">
-                  <AlertTriangle size={14} style={{ color: 'var(--danger)', flexShrink: 0 }} />
+                  <AlertTriangle size={14} className="dash-concept-mistake-icon" />
                   <span>{m}</span>
                 </div>
               ))}
@@ -213,51 +195,47 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
 
         {!concept.introduction && concept.whatItIs && (
           <div>
-            <div className="concept-section-heading" style={{ marginBottom: '0.5rem' }}>What Is It?</div>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.7 }}>{concept.whatItIs}</p>
+            <div className="concept-section-heading dash-concept-section-heading--mb-sm">What Is It?</div>
+            <p className="dash-concept-what-is">{concept.whatItIs}</p>
           </div>
         )}
         {!concept.introduction && concept.codeExample && (
           <div>
             <div className="code-block-header">
               <span className="code-lang">[ EXAMPLE ]</span>
-              <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.65rem', padding: '0.15rem 0.4rem', color: 'var(--text-muted)' }}
+              <button className="btn btn-ghost btn-sm dash-concept-copy-btn"
                 onClick={() => { navigator.clipboard.writeText(concept.codeExample); toast.success('Copied!') }}>COPY</button>
             </div>
             <div className="code-block">{concept.codeExample}</div>
           </div>
         )}
 
-        <div ref={quizRef} style={{ marginTop: '0.25rem' }}>
+        <div ref={quizRef} className="dash-concept-quiz-section">
           {isMastered ? (
-            <div style={{ border: '1.5px solid #4ADE8055', borderRadius: 'var(--radius-md)', padding: '1rem', background: 'rgba(74,222,128,0.05)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+            <div className="dash-concept-quiz-cleared">
+              <div className="dash-concept-quiz-cleared__row">
                 <Trophy size={18} color="#4ADE80" />
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, color: '#4ADE80', fontSize: '0.9rem' }}>
-                    ⚔️ Skill Cleared!
-                  </div>
-                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', color: '#4ADE80', opacity: 0.75, marginTop: 2 }}>
+                <div className="dash-flex-1">
+                  <div className="dash-concept-quiz-cleared__title">⚔️ Skill Cleared!</div>
+                  <div className="dash-concept-quiz-cleared__meta">
                     {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''} · +{quizStatus.bestScore * 10} XP earned
                   </div>
                 </div>
-                <button className="btn btn-ghost btn-sm" style={{ fontSize: '0.72rem', flexShrink: 0 }}
+                <button className="btn btn-ghost btn-sm dash-concept-quiz-cleared__retry"
                   onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>Retry</button>
               </div>
             </div>
           ) : (
-            <div style={{ border: '1.5px solid rgba(155,110,212,0.25)', borderRadius: 'var(--radius-md)', padding: '1rem', textAlign: 'center', background: 'rgba(155,110,212,0.04)' }}>
-              <Brain size={24} color="var(--primary)" style={{ marginBottom: '0.375rem' }} />
-              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.25rem' }}>Ready for Gate Trial?</div>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
-                10 trials · Need 8/10 to master
-              </div>
-              <button className="btn btn-primary w-full" style={{ justifyContent: 'center', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, letterSpacing: '0.06em', fontSize: '0.875rem' }}
+            <div className="dash-concept-quiz-prompt">
+              <Brain size={24} color="var(--primary)" className="dash-concept-quiz-prompt__icon" />
+              <div className="dash-concept-quiz-prompt__title">Ready for Gate Trial?</div>
+              <div className="dash-concept-quiz-prompt__desc">10 trials · Need 8/10 to master</div>
+              <button className="btn btn-primary w-full dash-concept-quiz-prompt__btn"
                 onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>
                 <Brain size={14} /> Begin Skill Trial →
               </button>
               {quizStatus?.attemptCount > 0 && (
-                <div style={{ marginTop: '0.5rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: 'var(--text-muted)' }}>
+                <div className="dash-concept-quiz-prompt__best">
                   Best: {quizStatus.bestScore}/{quizStatus.bestTotal}
                 </div>
               )}
@@ -272,7 +250,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, naviga
                 <span className="sl-concept-nav-label">← Previous Skill</span>
                 <span className="sl-concept-nav-title">{prevC.title}</span>
               </div>
-            ) : <div style={{ flex: 1 }} />}
+            ) : <div className="dash-flex-spacer" />}
             {nextC && (
               <div className="sl-concept-nav-btn right-align" onClick={() => onClose('next', nextC.id)}>
                 <span className="sl-concept-nav-label">Next Skill →</span>

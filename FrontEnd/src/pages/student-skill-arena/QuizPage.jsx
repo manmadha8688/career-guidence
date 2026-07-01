@@ -101,145 +101,93 @@ export default function QuizPage() {
   const tColor       = timeLeft !== null ? timerColor(timeLeft, totalSeconds) : '#9B6ED4'
 
   return (
-    <div style={{
-      height: '100vh',
-      overflow: 'hidden',
-      background: 'var(--bg-primary)',
-      display: 'flex',
-      flexDirection: 'column',
-      fontFamily: "'Rajdhani', sans-serif",
-    }}>
+    <div className="dash-quiz-page">
 
       {/* ── Header (fixed 52px) ── */}
-      <header style={{
-        height: 52, flexShrink: 0,
-        background: 'var(--bg-secondary)',
-        borderBottom: '1px solid var(--border)',
-        display: 'flex', alignItems: 'center',
-        padding: '0 1.25rem', gap: '0.875rem',
-      }}>
+      <header className="dash-quiz-header">
         <button
           onClick={() => navigate(-1)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.06em', flexShrink: 0 }}
+          className="dash-quiz-back-btn"
         >
           <ArrowLeft size={13} /> GATES
         </button>
 
         {/* Progress bar in header */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 3 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#9B6ED4', letterSpacing: '0.1em' }}>
+        <div className="dash-quiz-progress-wrap">
+          <div className="dash-quiz-progress-labels">
+            <span className="dash-quiz-progress-trial">
               TRIAL {current + 1} / {quiz.questions.length}
             </span>
-            <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: 'var(--text-muted)', letterSpacing: '0.06em' }}>
+            <span className="dash-quiz-progress-answered">
               {answeredCount} ANSWERED
             </span>
           </div>
-          <div style={{ height: 3, background: 'var(--bg-tertiary)', borderRadius: 2, overflow: 'hidden' }}>
-            <div style={{ height: '100%', width: `${progress}%`, background: 'linear-gradient(90deg, #7B5EA7, #9B6ED4)', borderRadius: 2, transition: 'width 0.3s ease' }} />
+          <div className="dash-quiz-progress-track">
+            <div className="dash-quiz-progress-fill" style={{ '--progress-pct': `${progress}%` }} />
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', flexShrink: 0 }}>
+        <div className="dash-quiz-header-right">
           {timeLeft !== null && (
-            <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.9rem', fontWeight: 700, color: tColor, letterSpacing: '0.04em', transition: 'color 0.3s', minWidth: 52, textAlign: 'right' }}>
+            <div className="dash-quiz-timer" style={{ '--timer-color': tColor }}>
               {formatTime(timeLeft)}
             </div>
           )}
-          <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.62rem' }}>{rank.label}</span>
-          <div style={{ width: 28, height: 28, borderRadius: '50%', background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.7rem', color: '#fff' }}>
+          <span className={`rank-badge ${rank.cls} dash-quiz-rank-badge`}>{rank.label}</span>
+          <div
+            className="dash-avatar dash-avatar--sm"
+            style={{ '--avatar-bg': user?.avatarColor || '#9B6ED4', '--rank-color': rank.color }}
+          >
             {initials}
           </div>
         </div>
       </header>
 
       {/* ── Body (fills remaining height, no scroll) ── */}
-      <div style={{
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '0.875rem 1.25rem 0.75rem',
-        minHeight: 0,
-      }}>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', maxWidth: 720, width: '100%', margin: '0 auto', minHeight: 0 }}>
+      <div className="dash-quiz-body">
+        <div className="dash-quiz-inner">
 
           {/* Question */}
-          <div style={{
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border)',
-            borderTop: '3px solid rgba(155,110,212,0.6)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '0.875rem 1.25rem 1rem',
-            marginBottom: '0.625rem',
-            flexShrink: 0,
-          }}>
-            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: '#9B6ED4', letterSpacing: '0.14em', marginBottom: '0.5rem' }}>
+          <div className="dash-quiz-question-card">
+            <div className="dash-quiz-question-label">
               TRIAL {current + 1}
             </div>
-            <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.55 }}>
+            <div className="dash-quiz-question-text">
               {q.text}
             </div>
           </div>
 
           {/* Options — fill remaining space evenly */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem', minHeight: 0, marginBottom: '0.625rem' }}>
+          <div className="dash-quiz-options">
             {q.options.map((opt, i) => {
               const isSelected = answered === i
               return (
                 <div
                   key={i}
                   onClick={() => selectAnswer(i)}
-                  style={{
-                    flex: 1,
-                    display: 'flex', alignItems: 'center', gap: '0.875rem',
-                    padding: '0 1rem',
-                    background: isSelected ? 'rgba(155,110,212,0.1)' : 'var(--bg-secondary)',
-                    border: `1.5px solid ${isSelected ? '#9B6ED4' : 'var(--border)'}`,
-                    borderRadius: 10,
-                    cursor: 'pointer',
-                    transition: 'all 0.12s ease',
-                    boxShadow: isSelected ? '0 0 0 1px #9B6ED455' : 'none',
-                    minHeight: 0,
-                  }}
-                  onMouseEnter={e => { if (!isSelected) { e.currentTarget.style.borderColor = 'rgba(155,110,212,0.4)'; e.currentTarget.style.background = 'rgba(155,110,212,0.04)' } }}
-                  onMouseLeave={e => { if (!isSelected) { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-secondary)' } }}
+                  className={`dash-quiz-option${isSelected ? ' is-selected' : ''}`}
                 >
-                  <div style={{
-                    width: 30, height: 30, borderRadius: '50%', flexShrink: 0,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700,
-                    background: isSelected ? '#9B6ED4' : 'transparent',
-                    border: `1.5px solid ${isSelected ? '#9B6ED4' : 'var(--border-hover)'}`,
-                    color: isSelected ? '#fff' : 'var(--text-muted)',
-                    transition: 'all 0.12s',
-                  }}>
+                  <div className="dash-quiz-option__letter">
                     {LETTERS[i]}
                   </div>
-                  <span style={{ fontSize: '0.9rem', color: isSelected ? '#C8D5EE' : 'var(--text-secondary)', fontWeight: isSelected ? 600 : 400, flex: 1, lineHeight: 1.4 }}>
+                  <span className="dash-quiz-option__text">
                     {opt}
                   </span>
-                  {isSelected && <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#9B6ED4', flexShrink: 0 }} />}
+                  {isSelected && <div className="dash-quiz-option__dot" />}
                 </div>
               )
             })}
           </div>
 
           {/* Nav dots + actions (always at bottom) */}
-          <div style={{ flexShrink: 0 }}>
+          <div className="dash-quiz-nav">
             {/* Question dots */}
-            <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '0.625rem' }}>
+            <div className="dash-quiz-dots">
               {quiz.questions.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  style={{
-                    width: 26, height: 26, borderRadius: '50%', cursor: 'pointer',
-                    fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', fontWeight: 700,
-                    border: i === current ? '1.5px solid #9B6ED4' : answers[i] !== -1 ? '1.5px solid #4ADE8055' : '1.5px solid var(--border)',
-                    background: i === current ? '#9B6ED4' : answers[i] !== -1 ? 'rgba(74,222,128,0.15)' : 'var(--bg-tertiary)',
-                    color: i === current ? '#fff' : answers[i] !== -1 ? '#4ADE80' : 'var(--text-muted)',
-                    transition: 'all 0.12s',
-                  }}
+                  className={`dash-quiz-dot${i === current ? ' is-current' : ''}${answers[i] !== -1 ? ' is-answered' : ''}`}
                 >
                   {i + 1}
                 </button>
@@ -247,17 +195,11 @@ export default function QuizPage() {
             </div>
 
             {/* Prev / Next / Submit */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+            <div className="dash-quiz-actions">
               <button
                 onClick={prev}
                 disabled={current === 0}
-                style={{
-                  background: 'none', border: '1px solid var(--border)', borderRadius: 8,
-                  padding: '0.5rem 1.125rem', cursor: current === 0 ? 'not-allowed' : 'pointer',
-                  color: current === 0 ? 'var(--text-muted)' : 'var(--text-secondary)',
-                  fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.875rem', letterSpacing: '0.05em',
-                  opacity: current === 0 ? 0.4 : 1,
-                }}
+                className="dash-quiz-prev-btn"
               >
                 ← PREV
               </button>
@@ -266,26 +208,14 @@ export default function QuizPage() {
                 <button
                   onClick={next}
                   disabled={answered === -1}
-                  style={{
-                    background: answered === -1 ? 'rgba(155,110,212,0.2)' : 'linear-gradient(135deg, #7B5EA7, #9B6ED4)',
-                    border: 'none', borderRadius: 8,
-                    padding: '0.5rem 1.5rem', cursor: answered === -1 ? 'not-allowed' : 'pointer',
-                    color: answered === -1 ? '#6B5F8F' : '#fff',
-                    fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.06em',
-                    transition: 'all 0.12s',
-                  }}
+                  className="dash-quiz-next-btn"
                 >
                   NEXT →
                 </button>
               ) : answered === -1 ? (
                 <button
                   disabled
-                  style={{
-                    background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.2)',
-                    borderRadius: 8, padding: '0.5rem 1.5rem', cursor: 'not-allowed',
-                    color: '#6B5F8F', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700,
-                    fontSize: '0.875rem', letterSpacing: '0.06em',
-                  }}
+                  className="dash-quiz-submit-disabled"
                 >
                   ANSWER TO SUBMIT
                 </button>
@@ -293,16 +223,9 @@ export default function QuizPage() {
                 <button
                   onClick={() => handleSubmit(answers)}
                   disabled={submitting}
-                  style={{
-                    background: submitting ? 'rgba(74,222,128,0.2)' : 'linear-gradient(135deg, #22C55E, #4ADE80)',
-                    border: 'none', borderRadius: 8,
-                    padding: '0.5rem 1.5rem', cursor: submitting ? 'not-allowed' : 'pointer',
-                    color: submitting ? '#4ADE80' : '#0A1A0A',
-                    fontFamily: "'Rajdhani', sans-serif", fontWeight: 800, fontSize: '0.875rem', letterSpacing: '0.06em',
-                    display: 'flex', alignItems: 'center', gap: '0.4rem',
-                  }}
+                  className="dash-quiz-submit-btn"
                 >
-                  {submitting ? <span className="loading-spinner" style={{ borderTopColor: '#4ADE80' }} /> : '⚔️'}
+                  {submitting ? <span className="loading-spinner dash-quiz-submit-btn__spinner" /> : '⚔️'}
                   {submitting ? 'SUBMITTING…' : `SUBMIT (${answeredCount}/${quiz.questions.length})`}
                 </button>
               )}

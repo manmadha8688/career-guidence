@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
+import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Sun, Moon, Search, X, ChevronRight } from 'lucide-react'
 import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
@@ -47,14 +47,9 @@ export default function TrackPage() {
   const [loading, setLoading]     = useState(true)
   const [search, setSearch]       = useState('')
 
-  // Logic Building — single topic dropdown
   const [logicTopic, setLogicTopic] = useState('All')
-
-  // Skill Up — cascading category → topic
   const [skillCategory, setSkillCategory] = useState('All')
   const [skillTopic, setSkillTopic]       = useState('All')
-
-  // Interview Prep — level filter
   const [interviewLevel, setInterviewLevel] = useState('All')
 
   useEffect(() => {
@@ -71,23 +66,18 @@ export default function TrackPage() {
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [track])
 
-  // ── Derived filter options ──────────────────────────────────────────────────
-
-  // Logic Building: unique topics across all questions
   const logicTopics = useMemo(() => {
     const s = new Set()
     questions.forEach(q => (q.topics || []).forEach(t => s.add(t)))
     return ['All', ...[...s].sort()]
   }, [questions])
 
-  // Skill Up: unique categories
   const skillCategories = useMemo(() => {
     const s = new Set()
     questions.forEach(q => q.category && s.add(q.category))
     return ['All', ...[...s].sort()]
   }, [questions])
 
-  // Skill Up: topics filtered by selected category
   const skillTopics = useMemo(() => {
     const base = skillCategory === 'All'
       ? questions
@@ -97,13 +87,11 @@ export default function TrackPage() {
     return ['All', ...[...s].sort()]
   }, [questions, skillCategory])
 
-  // When category changes, reset topic
   const handleCategoryChange = (cat) => {
     setSkillCategory(cat)
     setSkillTopic('All')
   }
 
-  // ── Filtered questions ──────────────────────────────────────────────────────
   const filtered = useMemo(() => {
     let qs = questions
 
@@ -134,59 +122,29 @@ export default function TrackPage() {
   if (!meta) return null
 
   return (
-    <div style={{ minHeight: '100vh', overflowX: 'hidden', background: 'var(--ps-bg)', fontFamily: "'Rajdhani', sans-serif", color: 'var(--text-primary)' }}>
-
-      {/* Nav */}
-      <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 1.25rem', height: 52,
-        background: 'var(--ps-nav-bg)', backdropFilter: 'blur(8px)',
-        borderBottom: '1px solid var(--ps-nav-border)',
-        position: 'sticky', top: 0, zIndex: 50,
-      }}>
-        <button onClick={() => navigate(-1)} style={{
-          background: 'none', border: 'none', cursor: 'pointer',
-          display: 'flex', alignItems: 'center', gap: '0.4rem',
-          fontFamily: "'Orbitron', sans-serif", fontWeight: 900,
-          fontSize: '0.72rem', letterSpacing: '0.1em',
-          color: meta.color, padding: 0,
-        }}>
+    <div className="ps-page" style={{ '--track-color': meta.color }}>
+      <div className="ps-nav">
+        <button type="button" onClick={() => navigate(-1)} className="ps-nav__back ps-nav__back--track">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           TRACKS
         </button>
 
-        <span className="ps-nav-center" style={{
-          fontFamily: "'Orbitron', sans-serif", fontSize: '0.72rem', fontWeight: 700,
-          letterSpacing: '0.12em', color: meta.color,
-          position: 'absolute', left: '50%', transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-        }}>
+        <span className="ps-nav-center ps-nav-center--track">
           {meta.title.toUpperCase()}
         </span>
 
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <button onClick={toggleTheme} style={{
-            background: 'none', border: '1px solid var(--ps-nav-border)',
-            borderRadius: 6, width: 32, height: 32, cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: 'var(--ps-muted)',
-          }}>
+        <div className="ps-nav__actions">
+          <button type="button" onClick={toggleTheme} className="ps-nav__theme">
             {light ? <Moon size={14} /> : <Sun size={14} />}
           </button>
-          <button onClick={() => navigate('/skill-arena/dashboard')} style={{
-            background: 'var(--ps-accent-dim)', border: '1px solid var(--ps-accent)55',
-            borderRadius: 6, padding: '0.25rem 0.65rem', cursor: 'pointer',
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-            letterSpacing: '0.07em', color: 'var(--ps-accent)',
-          }}>
+          <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="ps-nav__arena">
             ⚔ SKILL ARENA
           </button>
         </div>
       </div>
 
-      {/* Content */}
       {loading ? (
         <MatrixRainLoader accentColor={meta.color} fullPage label={`LOADING ${meta.label || 'TRACK'}`} />
       ) : track === 'SKILL_UP' ? (
@@ -195,7 +153,7 @@ export default function TrackPage() {
           categories={skillCategories} selectedCategory={skillCategory} onCategoryChange={handleCategoryChange}
           topics={skillTopics}         selectedTopic={skillTopic}    onTopicChange={setSkillTopic}
           search={search} onSearch={setSearch}
-          light={light} navigate={navigate}
+          navigate={navigate}
         />
       ) : track === 'INTERVIEW_PREP' ? (
         <InterviewPrepView
@@ -209,7 +167,7 @@ export default function TrackPage() {
           questions={filtered}
           level={interviewLevel} onLevelChange={setInterviewLevel}
           search={search} onSearch={setSearch}
-          light={light} navigate={navigate}
+          navigate={navigate}
         />
       ) : (
         <LinearView
@@ -217,52 +175,25 @@ export default function TrackPage() {
           topics={track === 'LOGIC_BUILDING' ? logicTopics : null}
           selectedTopic={logicTopic} onTopicChange={setLogicTopic}
           search={search} onSearch={setSearch}
-          light={light} navigate={navigate} meta={meta}
+          navigate={navigate} meta={meta}
         />
       )}
-
-      <style>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @media (max-width: 600px) {
-          .ps-nav-center { display: none !important; }
-          .ps-view-container { padding: 0.875rem !important; }
-          .ps-searchbar-wrap { flex: 1 1 100% !important; }
-          .ps-filter-select { flex: 1 1 auto !important; min-width: 0 !important; }
-          .ps-filter-select select { width: 100% !important; box-sizing: border-box !important; }
-          .ps-filter-row { box-sizing: border-box !important; }
-        }
-      `}</style>
     </div>
   )
 }
 
-// ─── Shared UI ────────────────────────────────────────────────────────────────
-
 function SearchBar({ value, onChange, placeholder }) {
   return (
-    <div className="ps-searchbar-wrap" style={{ position: 'relative', flex: '1 1 160px', minWidth: 0 }}>
-      <Search size={14} style={{
-        position: 'absolute', left: '0.75rem', top: '50%',
-        transform: 'translateY(-50%)', color: 'var(--ps-muted)', pointerEvents: 'none',
-      }} />
-      <input value={value} onChange={e => onChange(e.target.value)}
+    <div className="ps-searchbar-wrap">
+      <Search size={14} className="ps-searchbar-wrap__icon" />
+      <input
+        value={value}
+        onChange={e => onChange(e.target.value)}
         placeholder={placeholder || 'Search problems...'}
-        style={{
-          width: '100%', boxSizing: 'border-box',
-          padding: '0.55rem 2rem 0.55rem 2.2rem', borderRadius: 8,
-          border: '1.5px solid var(--ps-card-border)',
-          background: 'var(--ps-card-bg)', color: 'var(--text-primary)',
-          fontFamily: "'Rajdhani', sans-serif", fontSize: '0.9rem', outline: 'none',
-        }}
-        onFocus={e => { e.target.style.borderColor = 'var(--ps-accent)' }}
-        onBlur={e => { e.target.style.borderColor = 'var(--ps-card-border)' }}
+        className="ps-searchbar-wrap__input"
       />
       {value && (
-        <button onClick={() => onChange('')} style={{
-          position: 'absolute', right: '0.6rem', top: '50%',
-          transform: 'translateY(-50%)', background: 'none', border: 'none',
-          cursor: 'pointer', color: 'var(--ps-muted)', padding: 0,
-        }}>
+        <button type="button" onClick={() => onChange('')} className="ps-searchbar-wrap__clear">
           <X size={13} />
         </button>
       )}
@@ -272,43 +203,21 @@ function SearchBar({ value, onChange, placeholder }) {
 
 function FilterSelect({ label, value, onChange, options, accentColor, renderLabel }) {
   const active = value !== 'All'
-  const color = accentColor || 'var(--ps-accent)'
   return (
-    <div className="ps-filter-select" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-      {label && (
-        <span style={{
-          fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
-          letterSpacing: '0.1em', color: 'var(--ps-muted)', textTransform: 'uppercase',
-        }}>
-          {label}
-        </span>
-      )}
-      <div style={{ position: 'relative' }}>
-        <select value={value} onChange={e => onChange(e.target.value)} style={{
-          background: active ? `${color}15` : 'var(--ps-card-bg)',
-          border: `1.5px solid ${active ? color + '60' : 'var(--ps-card-border)'}`,
-          borderRadius: 8,
-          padding: '0.52rem 2rem 0.52rem 0.875rem',
-          color: active ? color : 'var(--text-primary)',
-          fontFamily: "'Rajdhani', sans-serif", fontWeight: 600,
-          fontSize: '0.88rem', cursor: 'pointer', outline: 'none',
-          appearance: 'none', WebkitAppearance: 'none',
-          minWidth: 0, width: '100%', transition: 'all 0.15s',
-        }}>
+    <div
+      className={`ps-filter-select${active ? ' ps-filter-select--active' : ''}`}
+      style={accentColor ? { '--accent-color': accentColor } : undefined}
+    >
+      {label && <span className="ps-filter-select__label">{label}</span>}
+      <div className="ps-filter-select__wrap">
+        <select value={value} onChange={e => onChange(e.target.value)} className="ps-filter-select__control">
           {options.map(opt => (
-            <option key={opt} value={opt} style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>
+            <option key={opt} value={opt}>
               {renderLabel ? renderLabel(opt) : opt}
             </option>
           ))}
         </select>
-        <span style={{
-          position: 'absolute', right: '0.65rem', top: '50%',
-          transform: 'translateY(-50%)', pointerEvents: 'none',
-          color: active ? color : 'var(--ps-muted)',
-          fontSize: '0.65rem', lineHeight: 1,
-        }}>
-          ▾
-        </span>
+        <span className="ps-filter-select__chevron">▾</span>
       </div>
     </div>
   )
@@ -318,33 +227,26 @@ function ProblemCard({ problem, index, showIndex, onClick }) {
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
   const tm = TYPE_META[problem.type] || TYPE_META.WRITE
   return (
-    <div onClick={onClick} style={{
-      background: 'var(--ps-card-bg)', border: '1px solid var(--ps-card-border)',
-      borderLeft: `3px solid ${lm.color}`, borderRadius: 8,
-      padding: '0.875rem 1rem', cursor: 'pointer',
-      display: 'flex', alignItems: 'center', gap: '0.875rem',
-      transition: 'all 0.15s',
-    }}
-      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--ps-accent)'; e.currentTarget.style.transform = 'translateX(3px)' }}
-      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--ps-card-border)'; e.currentTarget.style.transform = 'translateX(0)' }}
+    <div
+      onClick={onClick}
+      className="ps-problem-card"
+      style={{ '--lm-color': lm.color }}
     >
       {showIndex && (
-        <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: 'var(--ps-muted)', minWidth: 24, textAlign: 'right' }}>
+        <div className="ps-problem-card__index">
           {String(index + 1).padStart(2, '0')}
         </div>
       )}
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: '0.3rem', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
-          {problem.title}
-        </div>
-        <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
+      <div className="ps-problem-card__body">
+        <div className="ps-problem-card__title">{problem.title}</div>
+        <div className="ps-problem-card__chips">
           <Chip color={lm.color}>{lm.label}</Chip>
           <Chip color={tm.color}>{tm.label}</Chip>
           {(problem.topics || []).slice(0, 2).map(t => <Chip key={t}>{t}</Chip>)}
           {problem.isInterview && <Chip color="#EF4444">★ Interview</Chip>}
         </div>
       </div>
-      <ChevronRight size={15} style={{ color: 'var(--ps-muted)', flexShrink: 0 }} />
+      <ChevronRight size={15} className="ps-problem-card__chevron" />
     </div>
   )
 }
@@ -352,90 +254,61 @@ function ProblemCard({ problem, index, showIndex, onClick }) {
 function InterviewCard({ problem, index, onClick }) {
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
   const tm = TYPE_META[problem.type] || TYPE_META.WRITE
+  const hasCompanies = (problem.companiesThatAsk?.length > 0)
   return (
-    <div onClick={onClick} style={{
-      background: 'var(--ps-card-bg)', border: '1px solid var(--ps-card-border)',
-      borderLeft: `3px solid #EF4444`, borderRadius: 8,
-      padding: '0.875rem 1rem', cursor: 'pointer',
-      transition: 'all 0.15s', overflow: 'hidden', minWidth: 0,
-    }}
-      onMouseEnter={e => { e.currentTarget.style.borderColor = '#EF4444'; e.currentTarget.style.transform = 'translateX(3px)' }}
-      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--ps-card-border)'; e.currentTarget.style.transform = 'translateX(0)' }}
-    >
-      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.875rem' }}>
-        <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: 'var(--ps-muted)', minWidth: 24, textAlign: 'right', paddingTop: '0.15rem' }}>
+    <div onClick={onClick} className="ps-interview-card">
+      <div className="ps-interview-card__row">
+        <div className="ps-interview-card__index">
           {String(index + 1).padStart(2, '0')}
         </div>
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: '0.3rem' }}>
-            {problem.title}
-          </div>
-          <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: (problem.companiesThatAsk?.length > 0) ? '0.5rem' : 0 }}>
+        <div className="ps-interview-card__body">
+          <div className="ps-interview-card__title">{problem.title}</div>
+          <div className={`ps-interview-card__chips${hasCompanies ? ' ps-interview-card__chips--companies' : ''}`}>
             <Chip color={lm.color}>{lm.label}</Chip>
             <Chip color={tm.color}>{tm.label}</Chip>
             {(problem.topics || []).slice(0, 2).map(t => <Chip key={t}>{t}</Chip>)}
           </div>
-          {(problem.companiesThatAsk || []).length > 0 && (
-            <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', alignItems: 'center' }}>
-              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--ps-muted)', letterSpacing: '0.06em' }}>ASKED BY</span>
+          {hasCompanies && (
+            <div className="ps-interview-card__companies">
+              <span className="ps-interview-card__companies-label">ASKED BY</span>
               {problem.companiesThatAsk.map(c => (
-                <span key={c} style={{
-                  fontSize: '0.6rem', fontFamily: "'Share Tech Mono', monospace",
-                  padding: '0.1rem 0.4rem', borderRadius: 3,
-                  background: 'rgba(239,68,68,0.08)', color: '#EF4444',
-                  border: '1px solid rgba(239,68,68,0.2)',
-                }}>{c}</span>
+                <span key={c} className="ps-company-badge">{c}</span>
               ))}
             </div>
           )}
         </div>
-        <ChevronRight size={15} style={{ color: 'var(--ps-muted)', flexShrink: 0, marginTop: '0.15rem' }} />
+        <ChevronRight size={15} className="ps-interview-card__chevron" />
       </div>
     </div>
   )
 }
 
-function Chip({ color = 'var(--ps-muted)', children }) {
-  const hex = color.startsWith('#')
+function Chip({ color, children }) {
+  const hex = color?.startsWith('#')
   return (
-    <span style={{
-      fontSize: '0.6rem', fontFamily: "'Share Tech Mono', monospace",
-      padding: '0.1rem 0.4rem', borderRadius: 3,
-      background: hex ? `${color}15` : 'var(--bg-tertiary)',
-      color, border: `1px solid ${hex ? `${color}30` : 'var(--border)'}`,
-    }}>
+    <span
+      className={`ps-chip${hex ? '' : ' ps-chip--muted'}`}
+      style={hex ? { '--badge-color': color } : undefined}
+    >
       {children}
     </span>
   )
 }
 
 function Empty() {
-  return (
-    <div style={{
-      textAlign: 'center', padding: '4rem 1rem',
-      color: 'var(--ps-muted)', fontFamily: "'Share Tech Mono', monospace",
-      fontSize: '0.75rem', letterSpacing: '0.08em',
-    }}>
-      NO PROBLEMS FOUND
-    </div>
-  )
+  return <div className="ps-empty">NO PROBLEMS FOUND</div>
 }
 
 function ResultCount({ count, filters }) {
   return (
-    <div style={{
-      fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-      letterSpacing: '0.06em', color: 'var(--ps-muted)',
-    }}>
+    <div className="ps-result-count">
       {count} PROBLEM{count !== 1 ? 'S' : ''}
-      {filters && <span style={{ color: 'var(--ps-accent)' }}> · {filters}</span>}
+      {filters && <span className="ps-result-count__filters"> · {filters}</span>}
     </div>
   )
 }
 
-// ─── Track Views ──────────────────────────────────────────────────────────────
-
-function LinearView({ track, questions, topics, selectedTopic, onTopicChange, search, onSearch, light, navigate, meta }) {
+function LinearView({ track, questions, topics, selectedTopic, onTopicChange, search, onSearch, navigate, meta }) {
   const grouped = useMemo(() => {
     const map = {}
     questions.forEach(q => {
@@ -449,10 +322,8 @@ function LinearView({ track, questions, topics, selectedTopic, onTopicChange, se
   const activeFilters = selectedTopic !== 'All' ? selectedTopic : null
 
   return (
-    <div className="ps-view-container" style={{ maxWidth: 760, margin: '0 auto', padding: '1.5rem', boxSizing: 'border-box', width: '100%' }}>
-
-      {/* Filter row */}
-      <div className="ps-filter-row" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-end', marginBottom: '1rem', flexWrap: 'wrap' }}>
+    <div className="ps-view-container ps-view-container--narrow">
+      <div className="ps-filter-row">
         <SearchBar value={search} onChange={onSearch} />
         {topics && topics.length > 2 && (
           <FilterSelect
@@ -465,34 +336,21 @@ function LinearView({ track, questions, topics, selectedTopic, onTopicChange, se
         )}
       </div>
 
-      {/* Active filter + count */}
-      <div style={{ marginBottom: '1rem' }}>
+      <div className="ps-result-wrap">
         <ResultCount count={questions.length} filters={activeFilters} />
       </div>
 
       {track === 'START_CODING' && (
-        <div style={{
-          padding: '0.6rem 0.875rem', borderRadius: 7, marginBottom: '1.25rem',
-          background: 'var(--ps-hint-bg)', border: '1px solid var(--ps-card-border)',
-          fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
-          color: 'var(--ps-muted)', letterSpacing: '0.05em',
-        }}>
+        <div className="ps-hint-banner">
           📌 Complete in order — each step builds on the last.
         </div>
       )}
 
       {Object.keys(grouped).length === 0 ? <Empty /> : (
         Object.entries(grouped).map(([cat, qs]) => (
-          <div key={cat} style={{ marginBottom: '1.75rem' }}>
-            <div style={{
-              fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem',
-              letterSpacing: '0.12em', color: meta.color, textTransform: 'uppercase',
-              marginBottom: '0.6rem',
-              borderBottom: '1px solid var(--ps-nav-border)', paddingBottom: '0.35rem',
-            }}>
-              {cat}
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+          <div key={cat} className="ps-category-group" style={{ '--track-color': meta.color }}>
+            <div className="ps-category-label">{cat}</div>
+            <div className="ps-problem-list">
               {qs.map((q, i) => (
                 <ProblemCard key={q.id} problem={q} index={i} showIndex
                   onClick={() => navigate(`/problem-solving/${q.id}`)} />
@@ -505,22 +363,15 @@ function LinearView({ track, questions, topics, selectedTopic, onTopicChange, se
   )
 }
 
-function SkillUpView({ questions, categories, selectedCategory, onCategoryChange, topics, selectedTopic, onTopicChange, search, onSearch, light, navigate }) {
+function SkillUpView({ questions, categories, selectedCategory, onCategoryChange, topics, selectedTopic, onTopicChange, search, onSearch, navigate }) {
   const activeFilters = [
     selectedCategory !== 'All' ? selectedCategory : null,
     selectedTopic !== 'All' ? selectedTopic : null,
   ].filter(Boolean).join(' › ')
 
   return (
-    <div className="ps-view-container" style={{ maxWidth: 900, margin: '0 auto', padding: '1.5rem', boxSizing: 'border-box', width: '100%' }}>
-
-      {/* Filter row */}
-      <div className="ps-filter-row" style={{
-        display: 'flex', gap: '0.75rem', alignItems: 'flex-end',
-        marginBottom: '1rem', flexWrap: 'wrap',
-        padding: '1rem', borderRadius: 10,
-        background: 'var(--ps-card-bg)', border: '1px solid var(--ps-card-border)',
-      }}>
+    <div className="ps-view-container ps-view-container--wide">
+      <div className="ps-filter-row ps-filter-row--boxed">
         <SearchBar value={search} onChange={onSearch} placeholder="Search by title, topic..." />
 
         <FilterSelect
@@ -540,30 +391,18 @@ function SkillUpView({ questions, categories, selectedCategory, onCategoryChange
         />
 
         {(selectedCategory !== 'All' || selectedTopic !== 'All') && (
-          <button onClick={() => { onCategoryChange('All'); onTopicChange('All') }} style={{
-            alignSelf: 'flex-end',
-            background: 'none', border: '1px solid var(--ps-card-border)',
-            borderRadius: 8, padding: '0.52rem 0.75rem', cursor: 'pointer',
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem',
-            color: 'var(--ps-muted)', whiteSpace: 'nowrap',
-            transition: 'all 0.12s',
-          }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = '#EF4444'; e.currentTarget.style.color = '#EF4444' }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--ps-card-border)'; e.currentTarget.style.color = 'var(--ps-muted)' }}
-          >
+          <button type="button" onClick={() => { onCategoryChange('All'); onTopicChange('All') }} className="ps-filter-clear">
             ✕ CLEAR
           </button>
         )}
       </div>
 
-      {/* Result count */}
-      <div style={{ marginBottom: '0.875rem' }}>
+      <div className="ps-result-wrap ps-result-wrap--tight">
         <ResultCount count={questions.length} filters={activeFilters || null} />
       </div>
 
-      {/* Questions */}
       {questions.length === 0 ? <Empty /> : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+        <div className="ps-problem-list">
           {questions.map((q, i) => (
             <ProblemCard key={q.id} problem={q} index={i} showIndex
               onClick={() => navigate(`/problem-solving/${q.id}`)} />
@@ -579,10 +418,8 @@ const LEVEL_LABELS = { All: 'All Levels', BEGINNER: 'Beginner', INTERMEDIATE: 'I
 
 function InterviewPrepView({ questions, level, onLevelChange, search, onSearch, navigate }) {
   return (
-    <div className="ps-view-container" style={{ maxWidth: 760, margin: '0 auto', padding: '1.5rem', boxSizing: 'border-box', width: '100%' }}>
-
-      {/* Filter row */}
-      <div className="ps-filter-row" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-end', marginBottom: '1rem', flexWrap: 'wrap' }}>
+    <div className="ps-view-container ps-view-container--narrow">
+      <div className="ps-filter-row">
         <SearchBar value={search} onChange={onSearch} placeholder="Search interview questions..." />
         <FilterSelect
           label="Level"
@@ -594,12 +431,12 @@ function InterviewPrepView({ questions, level, onLevelChange, search, onSearch, 
         />
       </div>
 
-      <div style={{ marginBottom: '1rem' }}>
+      <div className="ps-result-wrap">
         <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
       </div>
 
       {questions.length === 0 ? <Empty /> : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div className="ps-problem-list ps-problem-list--spaced">
           {questions.map((q, i) => (
             <InterviewCard key={q.id} problem={q} index={i}
               onClick={() => navigate(`/problem-solving/${q.id}`)} />
@@ -610,7 +447,7 @@ function InterviewPrepView({ questions, level, onLevelChange, search, onSearch, 
   )
 }
 
-function ScenarioView({ questions, level, onLevelChange, search, onSearch, light, navigate }) {
+function ScenarioView({ questions, level, onLevelChange, search, onSearch, navigate }) {
   const CATEGORY_COLORS = {
     Transport: '#22C55E', Healthcare: '#EF4444', Banking: '#F59E0B',
     Education: '#0EA5E9', 'Food Delivery': '#F97316', Gaming: '#8B5CF6',
@@ -619,22 +456,16 @@ function ScenarioView({ questions, level, onLevelChange, search, onSearch, light
   }
 
   return (
-    <div className="ps-view-container" style={{ maxWidth: 900, margin: '0 auto', padding: '1.5rem', boxSizing: 'border-box', width: '100%' }}>
-
-      {/* Header banner */}
-      <div style={{
-        background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.2)',
-        borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '1.25rem',
-      }}>
-        <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.65rem', letterSpacing: '0.12em', color: '#8B5CF6', marginBottom: '0.3rem' }}>REAL WORLD</div>
-        <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)', marginBottom: '0.3rem' }}>Scenario Coding</div>
-        <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+    <div className="ps-view-container ps-view-container--wide">
+      <div className="ps-scenario-banner">
+        <div className="ps-scenario-banner__tag">REAL WORLD</div>
+        <div className="ps-scenario-banner__title">Scenario Coding</div>
+        <div className="ps-scenario-banner__desc">
           Story-based problems from company placement exams. Each problem gives a real-world scenario with clear rules — you implement the logic.
         </div>
       </div>
 
-      {/* Filter row */}
-      <div className="ps-filter-row" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-end', marginBottom: '1rem', flexWrap: 'wrap' }}>
+      <div className="ps-filter-row">
         <SearchBar value={search} onChange={onSearch} placeholder="Search scenario problems..." />
         <FilterSelect
           label="Level"
@@ -646,44 +477,33 @@ function ScenarioView({ questions, level, onLevelChange, search, onSearch, light
         />
       </div>
 
-      <div style={{ marginBottom: '1rem' }}>
+      <div className="ps-result-wrap">
         <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
       </div>
 
       {questions.length === 0 ? <Empty /> : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(380px,100%), 1fr))', gap: '0.75rem' }}>
+        <div className="ps-scenario-grid">
           {questions.map((q) => {
             const lm = LEVEL_META[q.level] || LEVEL_META.BEGINNER
             const catColor = CATEGORY_COLORS[q.category] || '#8B5CF6'
             return (
               <button
                 key={q.id}
+                type="button"
                 onClick={() => navigate(`/problem-solving/${q.id}`)}
-                style={{
-                  background: 'var(--ps-card-bg)', border: '1px solid var(--ps-card-border)',
-                  borderLeft: `3px solid ${catColor}`,
-                  borderRadius: 10, padding: '1rem 1.125rem',
-                  cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = `${catColor}66`; e.currentTarget.style.transform = 'translateY(-2px)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--ps-card-border)'; e.currentTarget.style.borderLeftColor = catColor; e.currentTarget.style.transform = 'translateY(0)' }}
+                className="ps-scenario-card"
+                style={{ '--cat-color': catColor, '--lm-color': lm.color }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                  <span style={{ fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.12rem 0.45rem', borderRadius: 3, background: `${catColor}15`, color: catColor, border: `1px solid ${catColor}30` }}>
-                    {q.category}
-                  </span>
-                  <span style={{ fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", padding: '0.12rem 0.45rem', borderRadius: 3, background: `${lm.color}12`, color: lm.color, border: `1px solid ${lm.color}25` }}>
-                    {lm.label}
-                  </span>
+                <div className="ps-scenario-card__meta">
+                  <span className="ps-scenario-card__cat">{q.category}</span>
+                  <span className="ps-scenario-card__level">{lm.label}</span>
                 </div>
-                <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: 1.3 }}>
-                  {q.title}
-                </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                <div className="ps-scenario-card__title">{q.title}</div>
+                <div className="ps-scenario-card__desc">
                   {q.description?.split('\n')[0]}
                 </div>
                 {q.isInterview && (
-                  <div style={{ marginTop: '0.5rem', fontSize: '0.62rem', fontFamily: "'Share Tech Mono', monospace", color: '#EF4444' }}>★ ASKED IN PLACEMENT EXAMS</div>
+                  <div className="ps-scenario-card__exam">★ ASKED IN PLACEMENT EXAMS</div>
                 )}
               </button>
             )

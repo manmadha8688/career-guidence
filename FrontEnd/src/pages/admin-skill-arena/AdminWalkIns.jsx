@@ -59,87 +59,63 @@ function PostModal({ onClose, onSuccess, existing }) {
 
   const today = new Date().toISOString().split('T')[0]
 
-  const inputStyle = {
-    width: '100%', padding: '0.5rem 0.75rem', borderRadius: 8,
-    border: '1px solid var(--border)', background: 'var(--bg-card)',
-    color: 'var(--text-primary)', fontSize: '0.875rem', fontFamily: 'inherit',
-    boxSizing: 'border-box',
-  }
-
-  const labelStyle = {
-    display: 'block', fontSize: '0.75rem', fontWeight: 600,
-    color: 'var(--text-muted)', marginBottom: '0.375rem', letterSpacing: '0.04em',
-  }
-
   return (
-    <div onClick={e => e.target === e.currentTarget && onClose()} style={{
-      position: 'fixed', inset: 0, zIndex: 200,
-      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem',
-    }}>
-      <div style={{
-        background: 'var(--bg-card)', border: '1px solid var(--border)',
-        borderTop: '3px solid #9B6ED4', borderRadius: 14,
-        width: '100%', maxWidth: 560, maxHeight: '90vh',
-        display: 'flex', flexDirection: 'column',
-        boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
-      }}>
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem 1rem', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
-          <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)' }}>{isEdit ? 'Edit Walk-In' : 'Post Walk-In Interview'}</div>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', display: 'flex' }}>
+    <div onClick={e => e.target === e.currentTarget && onClose()} className="admin-walkin-overlay">
+      <div className="admin-walkin-modal">
+        <div className="admin-walkin-modal__header">
+          <div className="admin-walkin-modal__title">{isEdit ? 'Edit Walk-In' : 'Post Walk-In Interview'}</div>
+          <button onClick={onClose} className="admin-walkin-modal__close">
             <X size={18} />
           </button>
         </div>
 
-        {/* Body */}
-        <div style={{ overflowY: 'auto', flex: 1, padding: '1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        <div className="admin-walkin-modal__body">
+          <div className="admin-walkin-grid-2">
             <div>
-              <label style={labelStyle}>Company Name *</label>
-              <input style={inputStyle} value={form.companyName} onChange={e => set('companyName', e.target.value)} placeholder="e.g. TCS" />
+              <label className="admin-walkin-label">Company Name *</label>
+              <input className="admin-walkin-input" value={form.companyName} onChange={e => set('companyName', e.target.value)} placeholder="e.g. TCS" />
             </div>
             <div>
-              <label style={labelStyle}>Role *</label>
-              <input style={inputStyle} value={form.role} onChange={e => set('role', e.target.value)} placeholder="e.g. Java Developer" />
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div>
-              <label style={labelStyle}>Walk-In Date *</label>
-              <input type="date" style={inputStyle} value={form.walkInDate} min={today} onChange={e => set('walkInDate', e.target.value)} />
-            </div>
-            <div>
-              <label style={labelStyle}>Walk-In Time</label>
-              <input style={inputStyle} value={form.walkInTime} onChange={e => set('walkInTime', e.target.value)} placeholder="e.g. 10 AM – 2 PM" />
+              <label className="admin-walkin-label">Role *</label>
+              <input className="admin-walkin-input" value={form.role} onChange={e => set('role', e.target.value)} placeholder="e.g. Java Developer" />
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div className="admin-walkin-grid-2">
             <div>
-              <label style={labelStyle}>City *</label>
-              <select style={inputStyle} value={form.city} onChange={e => set('city', e.target.value)}>
+              <label className="admin-walkin-label">Walk-In Date *</label>
+              <input type="date" className="admin-walkin-input" value={form.walkInDate} min={today} onChange={e => set('walkInDate', e.target.value)} />
+            </div>
+            <div>
+              <label className="admin-walkin-label">Walk-In Time</label>
+              <input className="admin-walkin-input" value={form.walkInTime} onChange={e => set('walkInTime', e.target.value)} placeholder="e.g. 10 AM – 2 PM" />
+            </div>
+          </div>
+
+          <div className="admin-walkin-grid-2">
+            <div>
+              <label className="admin-walkin-label">City *</label>
+              <select className="admin-walkin-input" value={form.city} onChange={e => set('city', e.target.value)}>
                 <option value="">Select city</option>
                 {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
-              <label style={labelStyle}>Contact Info</label>
-              <input style={inputStyle} value={form.contactInfo} onChange={e => set('contactInfo', e.target.value)} placeholder="Email or phone" />
+              <label className="admin-walkin-label">Contact Info</label>
+              <input className="admin-walkin-input" value={form.contactInfo} onChange={e => set('contactInfo', e.target.value)} placeholder="Email or phone" />
             </div>
           </div>
 
           <div>
-            <label style={labelStyle}>Venue / Location</label>
-            <input style={inputStyle} value={form.location} onChange={e => set('location', e.target.value)} placeholder="e.g. TCS Manyata Tech Park, Hebbal" />
+            <label className="admin-walkin-label">Venue / Location</label>
+            <input className="admin-walkin-input" value={form.location} onChange={e => set('location', e.target.value)} placeholder="e.g. TCS Manyata Tech Park, Hebbal" />
           </div>
 
           <div>
-            <label style={labelStyle}>Skills Required</label>
-            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+            <label className="admin-walkin-label">Skills Required</label>
+            <div className="admin-walkin-skill-row">
               <input
-                style={{ ...inputStyle, flex: 1 }}
+                className="admin-walkin-input admin-walkin-input--flex"
                 value={form.skillInput}
                 onChange={e => set('skillInput', e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addSkill())}
@@ -148,10 +124,10 @@ function PostModal({ onClose, onSuccess, existing }) {
               <button onClick={addSkill} className="btn btn-primary btn-sm">Add</button>
             </div>
             {form.skills.length > 0 && (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              <div className="admin-walkin-skill-tags">
                 {form.skills.map(s => (
-                  <span key={s} style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.75rem', background: 'rgba(155,110,212,0.12)', color: '#9B6ED4', border: '1px solid rgba(155,110,212,0.25)', borderRadius: 5, padding: '0.15rem 0.5rem' }}>
-                    {s} <X size={11} style={{ cursor: 'pointer' }} onClick={() => removeSkill(s)} />
+                  <span key={s} className="admin-walkin-skill-tag">
+                    {s} <X size={11} className="admin-walkin-skill-remove" onClick={() => removeSkill(s)} />
                   </span>
                 ))}
               </div>
@@ -160,17 +136,17 @@ function PostModal({ onClose, onSuccess, existing }) {
 
           {isEdit && (
             <div>
-              <label style={labelStyle}>Status</label>
-              <select style={inputStyle} value={form.status} onChange={e => set('status', e.target.value)}>
+              <label className="admin-walkin-label">Status</label>
+              <select className="admin-walkin-input" value={form.status} onChange={e => set('status', e.target.value)}>
                 {STATUSES.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
             </div>
           )}
 
           <div>
-            <label style={labelStyle}>Description / Additional Details</label>
+            <label className="admin-walkin-label">Description / Additional Details</label>
             <textarea
-              style={{ ...inputStyle, height: 80, resize: 'vertical' }}
+              className="admin-walkin-input admin-walkin-input--textarea"
               value={form.description}
               onChange={e => set('description', e.target.value)}
               placeholder="Eligibility, documents required, batch year, etc."
@@ -178,10 +154,9 @@ function PostModal({ onClose, onSuccess, existing }) {
           </div>
         </div>
 
-        {/* Footer */}
-        <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid var(--border)', display: 'flex', gap: '0.75rem', justifyContent: 'flex-end', flexShrink: 0 }}>
+        <div className="admin-walkin-modal__footer">
           <button onClick={onClose} className="btn btn-ghost">Cancel</button>
-          <button onClick={submit} disabled={saving} className="btn btn-primary" style={{ opacity: saving ? 0.7 : 1 }}>
+          <button onClick={submit} disabled={saving} className={`btn btn-primary${saving ? ' admin-walkin-submit--saving' : ''}`}>
             {saving ? 'Saving…' : isEdit ? 'Save Changes' : 'Post Walk-In'}
           </button>
         </div>
@@ -259,15 +234,14 @@ export default function AdminWalkIns() {
         </button>
       </div>
 
-      {/* Search */}
-      <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.25rem' }}>
-        <div style={{ position: 'relative', flex: 1, maxWidth: 360 }}>
-          <Search size={15} style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+      <div className="admin-search-bar-row">
+        <div className="admin-search-wrap admin-search-wrap--flex">
+          <Search size={15} className="admin-search-icon admin-search-icon--left10" />
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search company, role, city, posted by…"
-            style={{ width: '100%', paddingLeft: 32, paddingRight: 12, height: 36, borderRadius: 8, border: '1px solid var(--border)', background: 'var(--bg-card)', color: 'var(--text-primary)', fontSize: '0.875rem', fontFamily: 'inherit', boxSizing: 'border-box' }}
+            className="admin-search-input--full"
           />
         </div>
       </div>
@@ -280,12 +254,11 @@ export default function AdminWalkIns() {
         onDelete={() => setDeleteModal(true)}
       />
 
-      {/* Table */}
       <div className="table-container">
         <table className="table">
           <thead>
             <tr>
-              <th style={{ width: 44 }}>
+              <th className="admin-th-checkbox">
                 <input
                   type="checkbox"
                   className="table-checkbox"
@@ -306,7 +279,7 @@ export default function AdminWalkIns() {
           </thead>
           <tbody>
             {filtered.length === 0 ? (
-              <tr><td colSpan={8} style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem' }}>No walk-ins found</td></tr>
+              <tr><td colSpan={8} className="admin-table-empty">No walk-ins found</td></tr>
             ) : filtered.map(w => (
               <tr key={w.id} className={selection.isSelected(w.id) ? 'row-selected' : ''}>
                 <td>
@@ -319,49 +292,43 @@ export default function AdminWalkIns() {
                   />
                 </td>
                 <td>
-                  <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{w.companyName}</div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: 2 }}>
+                  <div className="admin-walkin-company">{w.companyName}</div>
+                  <div className="admin-walkin-role">
                     <Briefcase size={11} /> {w.role}
                   </div>
                 </td>
                 <td>
-                  <div style={{ fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                    <Calendar size={12} style={{ flexShrink: 0 }} /> {w.walkInDate}
+                  <div className="admin-walkin-cell-row">
+                    <Calendar size={12} className="admin-walkin-cell-row__icon" /> {w.walkInDate}
                   </div>
-                  {w.walkInTime && <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: 2 }}>{w.walkInTime}</div>}
+                  {w.walkInTime && <div className="admin-walkin-cell-sub">{w.walkInTime}</div>}
                 </td>
                 <td>
-                  <div style={{ fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                    <MapPin size={12} style={{ flexShrink: 0 }} /> {w.city}
+                  <div className="admin-walkin-cell-row">
+                    <MapPin size={12} className="admin-walkin-cell-row__icon" /> {w.city}
                   </div>
-                  {w.location && <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 2, maxWidth: 180 }}>{w.location}</div>}
+                  {w.location && <div className="admin-walkin-cell-sub admin-walkin-cell-sub--location">{w.location}</div>}
                 </td>
                 <td>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem', maxWidth: 180 }}>
+                  <div className="admin-tag-wrap admin-tag-wrap--180">
                     {(w.skills || []).slice(0, 3).map(s => (
-                      <span key={s} style={{ fontSize: '0.65rem', background: 'rgba(155,110,212,0.12)', color: '#9B6ED4', border: '1px solid rgba(155,110,212,0.25)', borderRadius: 4, padding: '0.1rem 0.4rem' }}>{s}</span>
+                      <span key={s} className="admin-walkin-skill-table-tag">{s}</span>
                     ))}
-                    {(w.skills || []).length > 3 && <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>+{w.skills.length - 3}</span>}
+                    {(w.skills || []).length > 3 && <span className="admin-walkin-skill-more">+{w.skills.length - 3}</span>}
                   </div>
                 </td>
                 <td>
-                  <div style={{ fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <div className="admin-walkin-cell-row">
                     <User size={12} /> {w.postedBy || '—'}
                   </div>
                   {w.createdAt && (
-                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 2 }}>
+                    <div className="admin-walkin-cell-sub admin-walkin-cell-sub--72">
                       {new Date(w.createdAt).toLocaleDateString('en-IN')}
                     </div>
                   )}
                 </td>
                 <td>
-                  <span style={{
-                    fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.06em',
-                    padding: '0.15rem 0.5rem', borderRadius: 4,
-                    background: w.status === 'ACTIVE' ? 'rgba(34,197,94,0.12)' : 'rgba(100,116,139,0.12)',
-                    color: w.status === 'ACTIVE' ? '#22C55E' : '#64748B',
-                    border: `1px solid ${w.status === 'ACTIVE' ? 'rgba(34,197,94,0.25)' : 'rgba(100,116,139,0.2)'}`,
-                  }}>
+                  <span className={`admin-walkin-status${w.status === 'ACTIVE' ? ' admin-walkin-status--active' : ' admin-walkin-status--expired'}`}>
                     {w.status}
                   </span>
                 </td>

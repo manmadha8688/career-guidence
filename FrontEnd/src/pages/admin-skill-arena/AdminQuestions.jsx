@@ -95,54 +95,49 @@ export default function AdminQuestions() {
 
   return (
     <AppLayout title="Question Bank">
-      <div style={{ display: 'grid', gridTemplateColumns: '220px 220px 1fr', gap: '1rem', height: 'calc(100vh - 140px)' }}>
+      <div className="admin-questions-layout">
 
-        {/* Subjects panel */}
-        <div className="card" style={{ overflow: 'auto', padding: '0.75rem' }}>
-          <div className="font-semibold text-sm mb-2" style={{ color: 'var(--text-muted)' }}>SUBJECTS</div>
+        <div className="card admin-questions-panel">
+          <div className="font-semibold text-sm mb-2 admin-questions-panel-label">SUBJECTS</div>
           {subjects.map(s => (
             <div key={s.id}
-              className={`sidebar-link ${selectedSubject?.id === s.id ? 'active' : ''}`}
-              style={{ borderRadius: 'var(--radius-sm)', padding: '0.5rem 0.75rem', cursor: 'pointer', marginBottom: '0.125rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              className={`sidebar-link admin-questions-nav-item${selectedSubject?.id === s.id ? ' active' : ''}`}
               onClick={() => selectSubject(s)}
             >
               <span>{s.icon}</span>
-              <span className="text-sm truncate" style={{ flex: 1 }}>{s.title}</span>
+              <span className="text-sm truncate admin-flex-1">{s.title}</span>
               <ChevronRight size={13} />
             </div>
           ))}
         </div>
 
-        {/* Concepts panel */}
-        <div className="card" style={{ overflow: 'auto', padding: '0.75rem' }}>
-          <div className="font-semibold text-sm mb-2" style={{ color: 'var(--text-muted)' }}>
+        <div className="card admin-questions-panel">
+          <div className="font-semibold text-sm mb-2 admin-questions-panel-label">
             {selectedSubject ? 'CONCEPTS' : 'SELECT SUBJECT'}
           </div>
           {concepts.map(c => (
             <div key={c.id}
-              className={`sidebar-link ${selectedConcept?.id === c.id ? 'active' : ''}`}
-              style={{ borderRadius: 'var(--radius-sm)', padding: '0.5rem 0.75rem', cursor: 'pointer', marginBottom: '0.125rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              className={`sidebar-link admin-questions-nav-item${selectedConcept?.id === c.id ? ' active' : ''}`}
               onClick={() => selectConcept(c)}
             >
-              <span className="text-sm truncate" style={{ flex: 1 }}>{c.title}</span>
+              <span className="text-sm truncate admin-flex-1">{c.title}</span>
               <ChevronRight size={13} />
             </div>
           ))}
         </div>
 
-        {/* Questions panel */}
-        <div style={{ overflow: 'auto' }}>
+        <div className="admin-questions-main">
           {!selectedConcept ? (
-            <div className="card flex-center" style={{ height: '200px', color: 'var(--text-muted)' }}>
+            <div className="card flex-center admin-questions-placeholder">
               Select a concept to manage questions
             </div>
           ) : (
             <>
               <div className="flex-between mb-2">
-                <h2 className="font-semibold" style={{ fontSize: '1rem' }}>
+                <h2 className="font-semibold admin-section-heading">
                   {selectedConcept.title}
-                  <span className="badge badge-neutral" style={{ marginLeft: '0.5rem' }}>{questions.length} questions</span>
-                  {questions.length < 10 && <span className="badge" style={{ marginLeft: '0.25rem', background: '#FEF3C7', color: '#92400E' }}>Need {10 - questions.length} more</span>}
+                  <span className="badge badge-neutral admin-questions-badge-gap">{questions.length} questions</span>
+                  {questions.length < 10 && <span className="badge admin-questions-badge-warn">Need {10 - questions.length} more</span>}
                 </h2>
                 <button className="btn btn-primary btn-sm" onClick={openAdd}>
                   <Plus size={14} /> Add Question
@@ -150,26 +145,25 @@ export default function AdminQuestions() {
               </div>
 
               {questions.length === 0 ? (
-                <div className="card" style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
+                <div className="card admin-questions-empty">
                   No questions yet. Add at least 10 to enable quizzes.
                 </div>
               ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div className="admin-questions-list">
                   {questions.map((q, i) => (
-                    <div key={q.id} className="card" style={{ padding: '1rem' }}>
+                    <div key={q.id} className="card admin-question-card">
                       <div className="flex-between mb-1">
-                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                        <div className="admin-question-card__meta">
                           <span className="text-xs text-muted">Q{i + 1}</span>
-                          <span className={`badge ${q.difficulty === 'EASY' ? 'badge-success' : q.difficulty === 'HARD' ? 'badge-danger' : 'badge-info'}`}
-                            style={{ fontSize: '0.7rem' }}>{q.difficulty}</span>
+                          <span className={`badge admin-question-card__difficulty ${q.difficulty === 'EASY' ? 'badge-success' : q.difficulty === 'HARD' ? 'badge-danger' : 'badge-info'}`}>{q.difficulty}</span>
                         </div>
-                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <div className="admin-question-card__actions">
                           <button className="btn btn-ghost btn-sm" onClick={() => openEdit(q)}><Edit2 size={13} /></button>
-                          <button className="btn btn-ghost btn-sm" style={{ color: 'var(--danger)' }} onClick={() => handleDelete(q.id)}><Trash2 size={13} /></button>
+                          <button className="btn btn-ghost btn-sm admin-question-card__delete" onClick={() => handleDelete(q.id)}><Trash2 size={13} /></button>
                         </div>
                       </div>
                       <div className="font-semibold text-sm mb-1">{q.text}</div>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
+                      <div className="admin-question-options">
                         {q.options?.map((opt, oi) => (
                           <span key={oi} className={`option-badge ${oi === q.correctIndex ? 'option-correct' : 'option-neutral'}`}>
                             {LETTERS[oi]}. {opt}{oi === q.correctIndex ? ' ✓' : ''}
@@ -186,10 +180,9 @@ export default function AdminQuestions() {
         </div>
       </div>
 
-      {/* Modal */}
       {modal && (
         <div className="modal-overlay">
-          <div className="modal" style={{ width: '100%', maxWidth: 600 }}>
+          <div className="modal admin-question-modal">
             <div className="modal-header">
               <h3>{modal === 'add' ? 'Add Question' : 'Edit Question'}</h3>
               <button className="btn btn-ghost btn-sm" onClick={() => setModal(null)}><X size={16} /></button>
@@ -204,27 +197,22 @@ export default function AdminQuestions() {
               <div className="form-group">
                 <label className="form-label">Options (mark the correct one)</label>
                 {form.options.map((opt, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  <div key={i} className="admin-option-row">
                     <button
                       type="button"
                       onClick={() => setForm(f => ({ ...f, correctIndex: i }))}
-                      style={{
-                        width: 28, height: 28, borderRadius: '50%', border: `2px solid ${form.correctIndex === i ? 'var(--success)' : 'var(--border)'}`,
-                        background: form.correctIndex === i ? 'var(--success)' : 'transparent',
-                        color: form.correctIndex === i ? 'white' : 'var(--text-muted)',
-                        cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
-                      }}
+                      className={`admin-option-picker${form.correctIndex === i ? ' is-correct' : ''}`}
                     >
                       {form.correctIndex === i ? <Check size={14} /> : LETTERS[i]}
                     </button>
-                    <input className="form-input" style={{ flex: 1 }} value={opt}
+                    <input className="form-input admin-option-input" value={opt}
                       onChange={e => setOption(i, e.target.value)} placeholder={`Option ${LETTERS[i]}`} />
                   </div>
                 ))}
                 <div className="text-xs text-muted">Click the circle button to mark the correct answer</div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="admin-question-grid-2">
                 <div className="form-group">
                   <label className="form-label">Difficulty</label>
                   <select className="form-input" value={form.difficulty} onChange={e => setForm(f => ({ ...f, difficulty: e.target.value }))}>

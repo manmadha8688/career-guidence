@@ -1,0 +1,15 @@
+.admin-delete-modal .modal-title--center {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.admin-delete-modal .modal-subtitle {
+  text-align: center;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.admin-delete-modal .modal-actions--center {
+  justify-content: center;
+  gap: 0.75rem;
+}

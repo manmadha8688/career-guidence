@@ -1,0 +1,238 @@
+/* ── Platform feature cards ── */
+.lp-platform-card {
+  --pc-border: var(--lp-border);
+  --pc-glow: rgba(155, 110, 212, 0.15);
+  --pc-icon: var(--lp-primary);
+  --pc-glow-strong: rgba(155, 110, 212, 0.25);
+  --pc-cta: var(--lp-nav-link);
+  background: var(--lp-card-bg);
+  border: 1px solid var(--pc-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+[data-theme="light"] .lp-platform-card {
+  --pc-cta: var(--lp-primary);
+}
+
+.lp-platform-card--live {
+  cursor: pointer;
+}
+
+.lp-platform-card--live:hover {
+  transform: translateY(-5px);
+  border-color: var(--pc-icon);
+  box-shadow: 0 12px 32px var(--pc-glow-strong);
+}
+
+.lp-platform-card__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, var(--pc-glow), transparent 55%);
+  pointer-events: none;
+}
+
+.lp-platform-card__body {
+  position: relative;
+}
+
+.lp-platform-card__icon {
+  margin-bottom: 1.25rem;
+}
+
+.lp-platform-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.625rem;
+}
+
+.lp-platform-card__label {
+  font-weight: 700;
+  font-size: 1.0625rem;
+}
+
+.lp-platform-card__status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--status-bg, transparent);
+  color: var(--status-color, inherit);
+}
+
+.lp-platform-card__desc {
+  color: var(--lp-text-sub);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+}
+
+.lp-platform-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--pc-cta);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.lp-platform-card__cta--link {
+  --pc-cta: #0EA5E9;
+}
+
+/* ── Mission feature cards ── */
+.lp-mission-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.125rem 1.25rem;
+  border-radius: 12px;
+  transition: transform 0.2s;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .lp-mission-card {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+.lp-mission-card--highlight {
+  background: rgba(255, 127, 42, 0.07);
+  border-color: rgba(255, 127, 42, 0.2);
+}
+
+[data-theme="light"] .lp-mission-card--highlight {
+  background: rgba(255, 127, 42, 0.06);
+  border-color: rgba(120, 50, 0, 0.18);
+}
+
+.lp-mission-card:hover {
+  transform: translateX(4px);
+}
+
+.lp-mission-card__icon {
+  font-size: 1.375rem;
+  flex-shrink: 0;
+}
+
+.lp-mission-card__title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--lp-text);
+  margin-bottom: 0.25rem;
+}
+
+.lp-mission-card__body {
+  color: var(--lp-text-sub);
+  font-size: 0.8375rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Track / category / deploy cards (CSS var driven) ── */
+.lp-color-card {
+  --cc-color: var(--lp-primary);
+  padding: 1.125rem 1rem;
+  background: color-mix(in srgb, var(--cc-color) 3%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cc-color) 13%, transparent);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+[data-theme="light"] .lp-color-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: color-mix(in srgb, var(--cc-color) 15%, transparent);
+}
+
+.lp-color-card--top {
+  border-top: 3px solid var(--cc-color);
+}
+
+.lp-color-card--left {
+  border-left: 3px solid var(--cc-color);
+}
+
+.lp-color-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--cc-color) 12%, transparent);
+}
+
+.lp-color-card__icon {
+  font-size: 1.375rem;
+  margin-bottom: 0.4rem;
+}
+
+.lp-color-card__icon--sm {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.lp-color-card__title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--cc-color);
+  margin-bottom: 0.35rem;
+}
+
+.lp-color-card__title--sm {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.lp-color-card__desc {
+  color: var(--lp-text-sub);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.lp-color-card__desc--muted {
+  color: var(--lp-text-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.lp-deploy-card {
+  --cc-color: var(--lp-primary);
+  padding: 1rem;
+  background: color-mix(in srgb, var(--cc-color) 3%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cc-color) 13%, transparent);
+  border-left: 3px solid var(--cc-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+[data-theme="light"] .lp-deploy-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: color-mix(in srgb, var(--cc-color) 15%, transparent);
+  border-left-color: var(--cc-color);
+}
+
+.lp-deploy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--cc-color) 12%, transparent);
+}
+
+.lp-ai-gradient-text {
+  background: linear-gradient(135deg, #00D9FF, #7C3AED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lp-deploy-gradient-text {
+  background: linear-gradient(135deg, #9B6ED4, #60A5FA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

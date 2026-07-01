@@ -1,21 +1,23 @@
 import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import ReportButton from '../../components/ReportButton'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
 import DungeonPortalLoader from '../../components/loaders/DungeonPortalLoader'
-import { CheckCircle, Search, Brain, Trophy, X, Clock, ChevronLeft, Info, Menu, Sun, Moon } from 'lucide-react'
+import { CheckCircle, Search, Trophy, Info, Menu, Sun, Moon } from 'lucide-react'
 import {
-  getProgressSummary, getRoadmap, getRoadmapStatus, getBulkSubjectStatus,
+  getProgressSummary, getRoadmap, getBulkSubjectStatus,
   getSubjects, getRoadmaps, enrollRoadmap,
   getHunterStats, clearApiCache,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { getRank } from '../../utils/slRank'
-import ProgressBar from '../../components/ProgressBar'
 import toast from 'react-hot-toast'
 import { logApiError } from '../../utils/devLog'
+import {
+  NAV_ITEMS, DAILY_QUESTS, RANK_LADDER, GATE_FILTERS,
+  computeStats, subjectGateRank, loadQuestState, saveQuestState,
+} from './dashboard/dashboardUtils'
 
 // ─── Extracted panel components ───────────────────────────
 import ConceptInlinePanel  from './panels/ConceptInlinePanel'
@@ -31,109 +33,6 @@ import MobileAvatarMenu    from './mobile/MobileAvatarMenu'
 import MobileStatsPopup    from './mobile/MobileStatsPopup'
 import MobileQuestsPopup   from './mobile/MobileQuestsPopup'
 
-// ─── Constants ────────────────────────────────────────────
-const NAV_ITEMS = [
-  { label: 'SKILL ARENA',  view: 'arena' },
-  { label: 'DUNGEON GATE', view: 'gates' },
-  { label: 'HUNTER PATH',  view: 'paths' },
-  { label: 'CHALLENGES',   view: null, href: '/problem-solving' },
-]
-
-const DAILY_QUESTS = [
-  { id: 'q1', label: 'Complete 1 concept',    xp: 50 },
-  { id: 'q2', label: 'Study for 20 min',      xp: 30 },
-]
-
-const RANK_LADDER = [
-  { letter: 'E', label: 'E-RANK', cls: 'rank-e', color: '#888888', bg: '#88888815', min: 0 },
-  { letter: 'D', label: 'D-RANK', cls: 'rank-d', color: '#4ADE80', bg: '#4ADE8015', min: 500 },
-  { letter: 'C', label: 'C-RANK', cls: 'rank-c', color: '#60A5FA', bg: '#60A5FA15', min: 1500 },
-  { letter: 'B', label: 'B-RANK', cls: 'rank-b', color: '#9B6ED4', bg: '#9B6ED415', min: 3000 },
-  { letter: 'A', label: 'A-RANK', cls: 'rank-a', color: '#F59E0B', bg: '#F59E0B15', min: 6000 },
-  { letter: 'S', label: 'S-RANK', cls: 'rank-s', color: '#EF4444', bg: '#EF444415', min: 10000 },
-]
-
-const STAT_DEFS = [
-  { key: 'INT', label: 'INTELLIGENCE', domain: 'Backend',          color: '#9B6ED4', lightColor: '#7C5DBB', hint: 'Java · Python · Spring · Node', match: t => /java|spring|python|oop|data.struct|mongodb|django|node|backend/.test(t) },
-  { key: 'AGI', label: 'AGILITY',      domain: 'Frontend',         color: '#4ADE80', lightColor: '#15803D', hint: 'HTML · CSS · React · JS',       match: t => /react|javascript|html|css|frontend/.test(t) },
-  { key: 'END', label: 'ENDURANCE',    domain: 'Databases & Ops',  color: '#60A5FA', lightColor: '#1D4ED8', hint: 'SQL · Docker · Git · Deploy',   match: t => /sql|postgres|mysql|docker|git|deploy|database/.test(t) },
-  { key: 'PER', label: 'PERCEPTION',   domain: 'Problem Solving',  color: '#F59E0B', lightColor: '#B45309', hint: 'APIs · Security · Algorithms',  match: t => /security|jwt|rest|api|design|algorithm|boot|express/.test(t) },
-]
-
-const _SR_D = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
-const _SR_L = { S: '#DC2626', A: '#B45309', B: '#7C5DBB', C: '#1D4ED8', D: '#15803D', E: '#6B7FA3' }
-const _sr   = () => document.documentElement.getAttribute('data-theme') === 'light' ? _SR_L : _SR_D
-
-// Stat rank from 0-100 pct — independent per category
-const statRank = (pct) => {
-  const r = _sr()
-  if (pct >= 95) return { label: 'S', color: r.S }
-  if (pct >= 80) return { label: 'A', color: r.A }
-  if (pct >= 60) return { label: 'B', color: r.B }
-  if (pct >= 40) return { label: 'C', color: r.C }
-  if (pct >= 20) return { label: 'D', color: r.D }
-  return              { label: 'E', color: r.E }
-}
-
-const GATE_FILTERS = ['All GATES', 'ENTERED', 'CLOSED', 'Not ENTERED']
-
-// ─── Helpers ──────────────────────────────────────────────
-const gateRankByOrder = (idx) => {
-  const r = _sr()
-  if (idx <= 1) return { label: 'D', cls: 'rank-d', color: r.D }
-  if (idx <= 3) return { label: 'C', cls: 'rank-c', color: r.C }
-  if (idx <= 6) return { label: 'B', cls: 'rank-b', color: r.B }
-  if (idx <= 9) return { label: 'A', cls: 'rank-a', color: r.A }
-  return            { label: 'S', cls: 'rank-s', color: r.S }
-}
-
-const RANK_META = {
-  S: { cls: 'rank-s', color: '#EF4444' },
-  A: { cls: 'rank-a', color: '#F59E0B' },
-  B: { cls: 'rank-b', color: '#9B6ED4' },
-  C: { cls: 'rank-c', color: '#60A5FA' },
-  D: { cls: 'rank-d', color: '#4ADE80' },
-  E: { cls: 'rank-e', color: '#888888' },
-}
-
-// Uses rank from API; falls back to E if missing
-const subjectGateRank = (s) => {
-  const r = RANK_META[s?.rank] || RANK_META['E']
-  return { label: s?.rank || 'E', ...r }
-}
-
-const computeStats = (sp = []) =>
-  STAT_DEFS.map(def => {
-    const matched   = sp.filter(s => def.match(s.title.toLowerCase()))
-    // Real totals across all matched subjects — works for any level
-    const totalDone = matched.reduce((a, s) => a + (s.completedConcepts ?? 0), 0)
-    const totalAll  = matched.reduce((a, s) => a + (s.totalConcepts   ?? 0), 0)
-    const pct       = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) : 0
-    const cleared   = matched.filter(s => (s.percentage ?? 0) >= 100).map(s => s.title)
-    const inProgress= matched.filter(s => (s.percentage ?? 0) > 0 && (s.percentage ?? 0) < 100)
-    const next      = matched.find(s => (s.percentage ?? 0) === 0)
-    const sRank     = statRank(pct)
-    const light     = document.documentElement.getAttribute('data-theme') === 'light'
-    const statColor = light ? def.lightColor : def.color
-    return { ...def, pct, totalDone, totalAll, cleared, inProgress, next, sRank, statColor }
-  })
-
-const questKey = (userId) => `sl_quests_${userId}`
-
-const loadQuestState = (userId) => {
-  try {
-    const s = localStorage.getItem(questKey(userId))
-    if (!s) return {}
-    const { date, state } = JSON.parse(s)
-    if (date !== new Date().toDateString()) return {}
-    return state
-  } catch { return {} }
-}
-const saveQuestState = (state, userId) =>
-  localStorage.setItem(questKey(userId), JSON.stringify({ date: new Date().toDateString(), state }))
-
-// ─── About Gate Modal ─────────────────────────────────────
-// ─── Main Component ───────────────────────────────────────
 export default function DashboardPage() {
   const { user, logout } = useAuth()
   const { theme, toggleTheme } = useTheme()
@@ -415,20 +314,28 @@ export default function DashboardPage() {
     const hasBadge  = s.hasBadge ?? quizStatuses[s.id]?.hasBadge ?? false
     const gateClosed = allLearned && hasBadge
     const sealed    = p === 0
+    const enabled   = s.totalConcepts > 0
+    const gateColor = gr.color
     return (
-      <div className="sl-gate-card" style={{ cursor: s.totalConcepts > 0 ? 'pointer' : 'default', opacity: s.totalConcepts > 0 ? 1 : 0.5 }}
-        onClick={() => s.totalConcepts > 0 && openSubjectPanel(s.id)}>
+      <div
+        className={`sl-gate-card dash-gate-card ${enabled ? 'is-enabled' : 'is-disabled'}`}
+        style={{
+          '--gate-color': gateColor,
+          '--gate-bar-bg': gateClosed ? gateColor : `${gateColor}88`,
+          '--gate-status-color': gateClosed ? gateColor : sealed ? '#0cbd09' : `${gateColor}BB`,
+          '--progress-pct': `${p}%`,
+        }}
+        onClick={() => enabled && openSubjectPanel(s.id)}>
         {/* Top row: title left, rank + about right */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.25rem' }}>
-          <div className="sl-gate-title" style={{ marginBottom: 0, flex: 1 }}>{s.title}</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', flexShrink: 0 }}>
+        <div className="dash-gate-card__top">
+          <div className="sl-gate-title dash-gate-card__title">{s.title}</div>
+          <div className="dash-gate-card__actions">
             {gateClosed && <Trophy size={11} color="#4ADE80" />}
-            <span className={`rank-badge ${gr.cls}`} style={{ fontSize: '0.58rem', padding: '0.1rem 0.35rem' }}>{gr.label}</span>
+            <span className={`rank-badge dash-rank-badge-xxs ${gr.cls}`}>{gr.label}</span>
             <button
+              className="dash-gate-card__info-btn"
+              style={{ '--gate-color': gateColor }}
               onClick={e => { e.stopPropagation(); setAboutGate(s) }}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.1rem', display: 'flex', alignItems: 'center', borderRadius: 3, transition: 'color 0.15s' }}
-              onMouseEnter={e => e.currentTarget.style.color = gr.color}
-              onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
               title="About this gate"
             >
               <Info size={18} />
@@ -438,20 +345,20 @@ export default function DashboardPage() {
         <div className="sl-gate-meta">{s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'Coming soon'}</div>
         {!allLearned && (
           <div className="sl-gate-bar-track">
-            <div className="sl-gate-bar-fill" style={{ width: `${p}%`, background: gateClosed ? gr.color : `${gr.color}88` }} />
+            <div className="sl-gate-bar-fill dash-gate-bar-fill--dynamic" />
           </div>
         )}
         {gateClosed ? (
-          <div className="sl-gate-status" style={{ color: gr.color }}>GATE CLOSED SUCCESSFULLY</div>
+          <div className="sl-gate-status dash-gate-status--dynamic">GATE CLOSED SUCCESSFULLY</div>
         ) : allLearned ? (
           <button
+            className="dash-gate-final-btn"
             onClick={e => { e.stopPropagation(); startQuiz('subject', s.id, s.title, s.icon) }}
-            style={{ width: '100%', marginTop: '0.25rem', padding: '0.5rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textAlign: 'center', boxShadow: '0 0 12px rgba(245,158,11,0.15)' }}
           >
             ⚔ TAKE FINAL TEST
           </button>
         ) : (
-          <div className="sl-gate-status" style={{ color: sealed ? '#0cbd09' : `${gr.color}BB` }}>
+          <div className="sl-gate-status dash-gate-status--dynamic">
             {sealed ? '' : `IN PROGRESS ${p}%`}
           </div>
         )}
@@ -477,87 +384,84 @@ export default function DashboardPage() {
       const nextGateSp = inProgress[0] ?? sp.find(s => s.percentage === 0) ?? null
 
       return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+        <div className="dash-arena-view">
 
           {/* ── Hunter overview strip ── */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.5rem' }}>
+          <div className="dash-arena-stats">
             {[
               { label: 'SKILLS LEARNED', value: totalConceptsDone, suffix: `/ ${totalConceptsAll}`, color: '#9B6ED4' },
               { label: 'GATES CLOSED',  value: cleared.length,    suffix: `/ ${sp.length}`,        color: '#4ADE80' },
               { label: 'DAY STREAK',     value: streak,            suffix: streak === 1 ? 'day' : 'days', color: '#F59E0B' },
             ].map(stat => (
-              <div key={stat.label} style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.625rem 0.75rem', textAlign: 'center' }}>
-                <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '1.25rem', fontWeight: 900, color: stat.statColor, lineHeight: 1 }}>{stat.value}</div>
-                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: 'var(--text-muted)', letterSpacing: '0.08em', marginTop: '0.2rem' }}>{stat.suffix}</div>
-                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.52rem', color: 'var(--text-muted)', letterSpacing: '0.1em', marginTop: '0.1rem' }}>{stat.label}</div>
+              <div key={stat.label} className="dash-arena-stat" style={{ '--stat-color': stat.color }}>
+                <div className="dash-arena-stat__value">{stat.value}</div>
+                <div className="dash-arena-stat__suffix">{stat.suffix}</div>
+                <div className="dash-arena-stat__label">{stat.label}</div>
               </div>
             ))}
           </div>
 
           {/* ── Active hunter path ── */}
           {activePath ? (
-            <div style={{ background: 'var(--bg-secondary)', border: `1px solid ${activePath.color}33`, borderLeft: `3px solid ${activePath.color}`, borderRadius: 'var(--radius-sm)', padding: '0.75rem 0.875rem', cursor: 'pointer' }}
+            <div
+              className="dash-active-path"
+              style={{ '--path-color': activePath.color, '--progress-pct': `${activePath.overallPercentage ?? 0}%` }}
               onClick={() => { switchView('paths'); openRoadmapPanel(activePath.id) }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span style={{ fontSize: '1.1rem' }}>{activePath.icon}</span>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{activePath.title}</div>
-                  <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: activePath.color, letterSpacing: '0.06em' }}>ACTIVE HUNTER PATH</div>
+              <div className="dash-active-path__row">
+                <span className="dash-active-path__icon">{activePath.icon}</span>
+                <div className="dash-flex-1">
+                  <div className="dash-active-path__title">{activePath.title}</div>
+                  <div className="dash-active-path__label">ACTIVE HUNTER PATH</div>
                 </div>
-                <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.7rem', fontWeight: 700, color: activePath.color }}>{activePath.overallPercentage ?? 0}%</span>
+                <span className="dash-active-path__pct">{activePath.overallPercentage ?? 0}%</span>
               </div>
-              <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
-                <div style={{ height: '100%', width: `${activePath.overallPercentage ?? 0}%`, background: `linear-gradient(90deg, ${activePath.color}77, ${activePath.color})`, borderRadius: 2, transition: 'width 0.8s ease' }} />
+              <div className="dash-active-path__track">
+                <div className="dash-active-path__fill" />
               </div>
             </div>
           ) : (
-            <div style={{ background: 'var(--bg-secondary)', border: '1px dashed var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.75rem', textAlign: 'center', cursor: 'pointer' }}
-              onClick={() => switchView('paths')}>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>NO ACTIVE PATH</div>
-              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '0.8rem', color: '#9B6ED4', marginTop: '0.25rem', fontWeight: 600 }}>→ Go to Hunter Path to Strt Hunting </div>
+            <div className="dash-no-path" onClick={() => switchView('paths')}>
+              <div className="dash-no-path__label">NO ACTIVE PATH</div>
+              <div className="dash-no-path__cta">→ Go to Hunter Path to Strt Hunting </div>
             </div>
           )}
 
           {/* ── In-progress gates ── */}
           {inProgress.length > 0 && (
             <div>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>ACTIVE HUNTS</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+              <div className="dash-active-hunts__label">ACTIVE HUNTS</div>
+              <div className="dash-active-hunts">
                 {inProgress.map(s => {
                   const allLearned = s.percentage >= 100
-                  const borderCol  = allLearned ? 'rgba(245,158,11,0.3)' : 'rgba(155,110,212,0.18)'
-                  const accentCol  = allLearned ? '#F59E0B' : '#9B6ED4'
                   return (
-                    <div key={s.subjectId} style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                      <div onClick={() => openSubjectPanel(s.subjectId)}
-                        style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.5rem 0.75rem', background: 'var(--bg-secondary)', border: `1px solid ${borderCol}`, borderLeft: `3px solid ${accentCol}`, borderRadius: 'var(--radius-sm)', cursor: 'pointer', transition: 'border-color 0.15s' }}
-                        onMouseEnter={e => e.currentTarget.style.borderColor = allLearned ? 'rgba(245,158,11,0.5)' : 'rgba(155,110,212,0.45)'}
-                        onMouseLeave={e => e.currentTarget.style.borderColor = borderCol}>
-                        <span style={{ fontSize: '1rem', flexShrink: 0 }}>{s.icon}</span>
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.8125rem', color: 'var(--text-primary)' }}>{s.title}</div>
+                    <div key={s.subjectId} className="dash-hunt-item-wrap">
+                      <div
+                        className={`dash-hunt-item ${allLearned ? 'dash-hunt-item--ready' : 'dash-hunt-item--active'}`}
+                        style={{ '--progress-pct': `${s.percentage}%` }}
+                        onClick={() => openSubjectPanel(s.subjectId)}>
+                        <span className="dash-hunt-item__icon">{s.icon}</span>
+                        <div className="dash-flex-1">
+                          <div className="dash-hunt-item__title">{s.title}</div>
                           {allLearned ? (
-                            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: '#F59E0B', letterSpacing: '0.04em', marginTop: '0.15rem' }}>SKILLS LEARNED</div>
+                            <div className="dash-hunt-item__learned">SKILLS LEARNED</div>
                           ) : (
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginTop: '0.2rem' }}>
-                              <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
-                                <div style={{ height: '100%', width: `${s.percentage}%`, background: '#9B6ED4', borderRadius: 2 }} />
+                            <div className="dash-hunt-item__progress">
+                              <div className="dash-progress-track dash-progress-track--sm dash-flex-1">
+                                <div className="dash-progress-fill" style={{ '--accent': '#9B6ED4' }} />
                               </div>
-                              <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem', color: '#9B6ED4', fontWeight: 700, flexShrink: 0 }}>{s.percentage}%</span>
+                              <span className="dash-hunt-item__pct">{s.percentage}%</span>
                             </div>
                           )}
                         </div>
                         {allLearned ? (
                           <button
+                            className="dash-hunt-test-btn"
                             onClick={e => { e.stopPropagation(); startQuiz('subject', s.subjectId, s.title, s.icon) }}
-                            style={{ padding: '0.25rem 0.6rem', background: 'rgba(245,158,11,0.12)', border: '1.5px solid rgba(245,158,11,0.45)', borderRadius: 5, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.06em', display: 'flex', alignItems: 'center', gap: '0.3rem', flexShrink: 0, whiteSpace: 'nowrap' }}
                           >
                             <Trophy size={10} /> TAKE FINAL TEST
                           </button>
                         ) : (
-                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#9B6ED4', background: 'rgba(155,110,212,0.1)', border: '1px solid rgba(155,110,212,0.2)', padding: '0.1rem 0.35rem', borderRadius: 3, flexShrink: 0 }}>
-                            HUNT
-                          </span>
+                          <span className="dash-hunt-badge">HUNT</span>
                         )}
                       </div>
                     </div>
@@ -570,10 +474,10 @@ export default function DashboardPage() {
 
           {/* ── Cleared gates summary ── */}
           {cleared.length > 0 && (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem', alignItems: 'center' }}>
-              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.08em', marginRight: '0.25rem' }}>CLEARED:</span>
+            <div className="dash-cleared-tags">
+              <span className="dash-cleared-tags__label">CLEARED:</span>
               {cleared.map(s => (
-                <span key={s.subjectId} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#4ADE80', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', padding: '0.15rem 0.5rem', borderRadius: 3 }}>
+                <span key={s.subjectId} className="dash-cleared-tag">
                   <CheckCircle size={9} /> {s.title}
                 </span>
               ))}
@@ -588,24 +492,23 @@ export default function DashboardPage() {
       return (
         <>
           <div className="sl-panel-title">All Dungeon Gates</div>
-          <div style={{ position: 'relative', marginBottom: '0.5rem' }}>
-            <Search size={13} style={{ position: 'absolute', left: '0.625rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
-            <input className="form-input" style={{ paddingLeft: '1.875rem', fontSize: '0.8125rem' }}
+          <div className="dash-search-wrap dash-search-wrap--gates">
+            <Search size={13} className="dash-search-icon" />
+            <input className="form-input dash-search-input"
               placeholder="Scout gates…" value={gateSearch} onChange={e => setGateSearch(e.target.value)} />
           </div>
-          <div style={{ display: 'flex', gap: '0.375rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+          <div className="dash-filter-chips">
             {GATE_FILTERS.map(f => (
-              <button key={f} className={`filter-chip${gateFilter === f ? ' active' : ''}`}
-                style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.05em', padding: '0.2rem 0.5rem' }}
+              <button key={f} className={`filter-chip dash-filter-chip${gateFilter === f ? ' active' : ''}`}
                 onClick={() => setGateFilter(f)}>{f}</button>
             ))}
           </div>
           {!gatesLoaded ? (
-            <div className="flex-center" style={{ height: '200px' }}><DungeonPortalLoader panel height={200} /></div>
+            <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>
           ) : filteredSubjects.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em' }}>NO GATES MATCH</div>
+            <div className="dash-no-match">NO GATES MATCH</div>
           ) : (
-            <div className="sl-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
+            <div className="sl-cards-grid dash-cards-grid-2">
               {filteredSubjects.map((s, i) => <GateCard key={s.id} s={s} />)}
             </div>
           )}
@@ -617,38 +520,50 @@ export default function DashboardPage() {
       return (
         <>
           <div className="sl-panel-title">Hunter Paths</div>
-          <div style={{ position: 'relative', marginBottom: '0.75rem' }}>
-            <Search size={13} style={{ position: 'absolute', left: '0.625rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
-            <input className="form-input" style={{ paddingLeft: '1.875rem', fontSize: '0.8125rem' }}
+          <div className="dash-search-wrap dash-search-wrap--paths">
+            <Search size={13} className="dash-search-icon" />
+            <input className="form-input dash-search-input"
               placeholder="Scout paths…" value={pathSearch} onChange={e => setPathSearch(e.target.value)} />
           </div>
           {!pathsLoaded ? (
-            <div className="flex-center" style={{ height: '200px' }}><DungeonPortalLoader panel height={200} /></div>
+            <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>
           ) : (
-            <div className="sl-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.625rem' }}>
+            <div className="sl-cards-grid dash-cards-grid-2">
               {filteredRoadmaps.map(r => {
                 const pct = r.overallPercentage ?? 0
                 const isActive   = r.enrolled && !r.paused
                 const isPaused   = r.enrolled && r.paused
                 const isComplete = r.allSubjectsDone
+                const pathColor  = r.color
                 return (
-                  <div key={r.id} className="sl-gate-card"
-                    style={{ cursor: 'pointer', borderTop: `3px solid ${r.color}`, outline: selectedRoadmapId === r.id ? `1px solid ${r.color}` : 'none' }}
+                  <div
+                    key={r.id}
+                    className={`sl-gate-card dash-path-card${selectedRoadmapId === r.id ? ' is-selected' : ''}`}
+                    style={{
+                      '--path-color': pathColor,
+                      '--path-icon-bg': `${pathColor}22`,
+                      '--path-status-border': `${pathColor}40`,
+                      '--progress-pct': `${pct}%`,
+                      '--gate-bar-bg': isComplete ? pathColor : `${pathColor}88`,
+                      '--gate-status-color': isComplete ? pathColor : isPaused ? 'var(--text-muted)' : isActive ? `${pathColor}BB` : '#0cbd09',
+                    }}
                     onClick={() => openRoadmapPanel(r.id)}>
 
                     {/* Title row */}
-                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.375rem', marginBottom: '0.2rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: 0 }}>
-                        <div style={{ width: 26, height: 26, background: r.color + '22', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', flexShrink: 0 }}>{r.icon}</div>
-                        <div className="sl-gate-title" style={{ marginBottom: 0, fontSize: '0.8rem' }}>{r.title}</div>
+                    <div className="dash-path-card__top">
+                      <div className="dash-path-card__title-row">
+                        <div className="dash-path-card__icon-wrap">{r.icon}</div>
+                        <div className="sl-gate-title dash-path-card__title">{r.title}</div>
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0, marginTop: 2 }}>
+                      <div className="dash-path-card__actions">
                         {r.enrolled && (
-                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.05em', color: isPaused ? 'var(--text-muted)' : r.color, background: isPaused ? 'rgba(136,136,136,0.1)' : r.color + '18', border: `1px solid ${isPaused ? 'var(--border)' : r.color + '40'}`, padding: '0.1rem 0.3rem', borderRadius: 3 }}>
+                          <span className={`dash-path-card__status ${isPaused ? 'is-paused' : 'is-active'}`}>
                             {isPaused ? 'PAUSED' : 'ACTIVE'}
                           </span>
                         )}
                         <button
+                          className="dash-gate-card__info-btn"
+                          style={{ '--gate-color': pathColor }}
                           onClick={async e => {
                             e.stopPropagation()
                             // If rich data already loaded, use instantly — no network call
@@ -659,9 +574,6 @@ export default function DashboardPage() {
                             const fresh = await getRoadmap(r.id).catch(() => null)
                             setAboutRoadmap(fresh ? fresh.data : r)
                           }}
-                          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '0.1rem', display: 'flex', alignItems: 'center', borderRadius: 3, transition: 'color 0.15s' }}
-                          onMouseEnter={e => e.currentTarget.style.color = r.color}
-                          onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
                           title="About this path"
                         >
                           <Info size={18} />
@@ -670,7 +582,7 @@ export default function DashboardPage() {
                     </div>
 
                     {/* Role target */}
-                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', marginBottom: '0.25rem', fontStyle: 'italic' }}>
+                    <div className="dash-path-card__desc">
                       {r.roleTarget}
                     </div>
 
@@ -679,21 +591,21 @@ export default function DashboardPage() {
 
                     {/* Progress bar */}
                     {isActive && pct > 0 && (
-                      <div className="sl-gate-bar-track" style={{ marginTop: '0.3rem' }}>
-                        <div className="sl-gate-bar-fill" style={{ width: `${pct}%`, background: isComplete ? r.color : `${r.color}88` }} />
+                      <div className="sl-gate-bar-track dash-path-card__bar">
+                        <div className="sl-gate-bar-fill dash-gate-bar-fill--dynamic" />
                       </div>
                     )}
 
                     {/* Status line */}
-                    <div className="sl-gate-status" style={{ color: isComplete ? r.color : isPaused ? 'var(--text-muted)' : isActive ? `${r.color}BB` : '#0cbd09' }}>
+                    <div className="sl-gate-status dash-gate-status--dynamic">
                       {isComplete ? 'ALL GATES CLEARED' : isPaused ? 'PATH PAUSED' : isActive ? (pct > 0 ? `IN PROGRESS ${pct}%` : 'PATH ACTIVE') : 'BEGIN YOUR PATH'}
                     </div>
 
                     {/* Final test button */}
                     {isComplete && (
                       <button
+                        className="dash-gate-final-btn dash-gate-final-btn--sm"
                         onClick={e => { e.stopPropagation(); startQuiz('roadmap', r.id, r.title, r.icon) }}
-                        style={{ width: '100%', marginTop: '0.25rem', padding: '0.45rem 0.75rem', background: 'linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.08))', border: '1.5px solid rgba(245,158,11,0.5)', borderRadius: 6, cursor: 'pointer', color: '#F59E0B', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.08em', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem' }}
                       >
                         <Trophy size={12} /> TAKE PATH FINAL TEST
                       </button>
@@ -755,9 +667,9 @@ export default function DashboardPage() {
       <nav className="sl-dash-nav">
 
         {/* Mobile: hamburger on LEFT */}
-        <button className="sl-mob-menu-btn"
-          onClick={() => setMobileMenuOpen(o => !o)}
-          style={{ background: mobileMenuOpen ? 'rgba(155,110,212,0.15)' : 'rgba(255,255,255,0.04)', border: `1px solid ${mobileMenuOpen ? 'rgba(155,110,212,0.4)' : 'rgba(255,255,255,0.08)'}`, borderRadius: 8, color: mobileMenuOpen ? '#B48AE8' : 'var(--text-secondary)', width: 36, height: 36, alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.15s', flexShrink: 0 }}>
+        <button
+          className={`sl-mob-menu-btn dash-mob-menu-btn ${mobileMenuOpen ? 'is-open' : 'is-closed'}`}
+          onClick={() => setMobileMenuOpen(o => !o)}>
           <Menu size={18} />
         </button>
 
@@ -786,43 +698,49 @@ export default function DashboardPage() {
           </button>
           <div className="sl-nav-xp">
             <span className="sl-nav-xp-label">XP → LVL {level}</span>
-            <div className="xp-bar-track" style={{ height: 4, width: 84 }}>
-              <div className="xp-bar-fill" style={{ width: `${rank.progress}%`, background: `linear-gradient(90deg, ${rank.color}88, ${rank.color})` }} />
+            <div className="xp-bar-track dash-nav-xp-bar">
+              <div
+                className="xp-bar-fill dash-nav-xp-fill"
+                style={{ '--progress-pct': `${rank.progress}%`, '--rank-color': rank.color }}
+              />
             </div>
           </div>
-          <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.72rem', padding: '0.25rem 0.625rem' }}>{rank.label}-RANK</span>
-          <div className="sl-nav-avatar" style={{ background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}` }}
+          <span className={`rank-badge dash-nav-rank-badge ${rank.cls}`}>{rank.label}-RANK</span>
+          <div
+            className="sl-nav-avatar dash-nav-avatar--dynamic"
+            style={{ '--avatar-bg': user?.avatarColor || '#9B6ED4', '--rank-color': rank.color }}
             onClick={handleAvatarClick}>{initials}</div>
         </div>
 
         {/* Mobile: theme toggle + avatar on RIGHT */}
-        <button className="sl-mob-theme-btn" onClick={toggleTheme}
-          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, color: 'var(--text-secondary)', width: 34, height: 34, alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
+        <button className="sl-mob-theme-btn dash-mob-theme-btn" onClick={toggleTheme}>
           {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
         </button>
-        <div className="sl-mob-avatar" style={{ background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}` }}
+        <div
+          className="sl-mob-avatar dash-nav-avatar--dynamic"
+          style={{ '--avatar-bg': user?.avatarColor || '#9B6ED4', '--rank-color': rank.color }}
           onClick={handleAvatarClick}>{initials}</div>
       </nav>
 
       {/* ══ MOBILE NAV DROPDOWN (slides down from LEFT-anchored hamburger) ══ */}
       {mobileMenuOpen && (
         <>
-          <div onClick={() => setMobileMenuOpen(false)}
-            style={{ position: 'fixed', inset: 0, zIndex: 150, background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(2px)' }} />
-          <div style={{ position: 'fixed', top: 56, left: 0, width: 260, bottom: 0, zIndex: 151, background: 'var(--bg-card)', borderRight: '1px solid rgba(155,110,212,0.3)', boxShadow: '8px 0 32px rgba(0,0,0,0.6)', animation: 'slideIn 0.2s ease', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ padding: '0.875rem 1.25rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.14em', color: '#9B6ED4', borderBottom: '1px solid rgba(155,110,212,0.12)', background: 'rgba(155,110,212,0.05)' }}>
+          <div className="dash-mob-nav-backdrop" onClick={() => setMobileMenuOpen(false)} />
+          <div className="dash-mob-nav-drawer">
+            <div className="dash-mob-nav-drawer__header">
               [ SELECT SECTION ]
             </div>
             {NAV_ITEMS.map(item => (
-              <button key={item.label}
-                onClick={() => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', width: '100%', padding: '1.125rem 1.25rem', background: activeView === item.view ? 'rgba(155,110,212,0.1)' : 'transparent', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: activeView === item.view ? '3px solid #9B6ED4' : '3px solid transparent', color: activeView === item.view ? '#B48AE8' : 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1.0625rem', letterSpacing: '0.08em', cursor: 'pointer', textAlign: 'left', transition: 'background 0.15s', textTransform: 'uppercase' }}>
-                <span style={{ fontSize: '1.25rem', width: 24, textAlign: 'center', flexShrink: 0 }}>
+              <button
+                key={item.label}
+                className={`dash-mob-nav-item${activeView === item.view ? ' is-active' : ''}`}
+                onClick={() => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}>
+                <span className="dash-mob-nav-item__icon">
                   {item.view === 'arena' ? '⚔️' : item.view === 'gates' ? '🚪' : item.view === 'paths' ? '🗺️' : '💻'}
                 </span>
-                <span style={{ flex: 1 }}>{item.label}</span>
+                <span className="dash-flex-spacer">{item.label}</span>
                 {activeView === item.view && (
-                  <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#9B6ED4', background: 'rgba(155,110,212,0.12)', padding: '0.1rem 0.4rem', borderRadius: 3 }}>NOW</span>
+                  <span className="dash-mob-nav-item__now">NOW</span>
                 )}
               </button>
             ))}
@@ -860,7 +778,7 @@ export default function DashboardPage() {
               navigate={navigate}
               startQuiz={startQuiz}
             />
-            <div className="sl-panel" style={{ overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
+            <div className="sl-panel dash-panel-scroll">
               <ConceptInlinePanel
                 conceptId={selectedConceptId}
                 navList={conceptNavList}
@@ -883,46 +801,56 @@ export default function DashboardPage() {
 
               {stats.map(stat => {
                 const isUntouched = stat.totalAll === 0
+                const statColor = stat.statColor
                 return (
                   <div key={stat.key} className="sl-stat-row">
                     {/* Header row: name + rank badge + pct */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.15rem' }}>
+                    <div className="dash-stat-row-header">
                       <span className="sl-stat-name">{stat.label}</span>
                       {!isUntouched && (
-                        <span className="sl-stat-value" style={{ color: stat.statColor }}>{stat.pct}%</span>
+                        <span className="sl-stat-value dash-stat-value--dynamic" style={{ '--stat-color': statColor }}>{stat.pct}%</span>
                       )}
                     </div>
 
                     {/* Dynamic subject tags — cleared ones highlighted */}
-                    <div className="sl-stat-tags" style={{ lineHeight: 1.5 }}>
+                    <div className="sl-stat-tags dash-stat-tags">
                       {isUntouched ? (
-                        <span style={{ color: '#404860', fontSize: '0.68rem' }}>{stat.hint}</span>
+                        <span className="dash-stat-hint">{stat.hint}</span>
                       ) : stat.cleared.length > 0 ? (
-                        <span style={{ color: stat.statColor, opacity: 0.85 }}>{stat.cleared.slice(0, 2).join(' · ')}{stat.cleared.length > 2 ? ` +${stat.cleared.length - 2}` : ''}</span>
+                        <span className="dash-stat-cleared" style={{ '--stat-color': statColor }}>{stat.cleared.slice(0, 2).join(' · ')}{stat.cleared.length > 2 ? ` +${stat.cleared.length - 2}` : ''}</span>
                       ) : stat.inProgress.length > 0 ? (
-                        <span style={{ color: '#8B9AB8' }}>{stat.inProgress[0].title}</span>
+                        <span className="dash-stat-progress">{stat.inProgress[0].title}</span>
                       ) : (
-                        <span style={{ color: '#404860' }}>{stat.hint}</span>
+                        <span className="dash-stat-hint">{stat.hint}</span>
                       )}
                     </div>
 
                     {/* Progress bar */}
-                    <div className="sl-stat-track" style={{ marginBottom: isUntouched ? 0 : '0.2rem' }}>
-                      <div className="sl-stat-fill" style={{
-                        width: `${isUntouched ? 0 : stat.pct}%`,
-                        background: `linear-gradient(90deg, ${stat.statColor}50, ${stat.statColor})`,
-                        boxShadow: stat.pct > 0 ? `0 0 6px ${stat.statColor}55` : 'none',
-                      }} />
+                    <div
+                      className="sl-stat-track dash-stat-track--dynamic"
+                      style={{ '--track-mb': isUntouched ? 0 : '0.2rem' }}
+                    >
+                      <div
+                        className="sl-stat-fill dash-stat-fill--dynamic"
+                        style={{
+                          '--progress-pct': `${isUntouched ? 0 : stat.pct}%`,
+                          '--stat-color': statColor,
+                          '--stat-color-50': `${statColor}50`,
+                          '--stat-glow': stat.pct > 0 ? `0 0 6px ${statColor}55` : 'none',
+                        }}
+                      />
                     </div>
 
                     {/* Concepts count + next gate nudge */}
                     {!isUntouched && (
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.56rem', color: '#404860', letterSpacing: '0.04em' }}>
+                      <div className="dash-stat-meta">
+                        <span className="dash-stat-count">
                           {stat.totalDone}/{stat.totalAll} skills
                         </span>
                         {stat.next && stat.pct < 100 && (
-                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: stat.statColor, opacity: 0.7, letterSpacing: '0.04em', cursor: 'pointer' }}
+                          <span
+                            className="dash-stat-next"
+                            style={{ '--stat-color': statColor }}
                             onClick={() => { switchView('gates') }}>
                             → {stat.next.title.split(' ')[0]}
                           </span>
@@ -934,42 +862,51 @@ export default function DashboardPage() {
               })}
 
               {/* ── Subject Badges ── */}
-              <div style={{ marginTop: '0.875rem', paddingTop: '0.875rem', borderTop: '1px solid var(--border)' }}>
-                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '0.625rem' }}>
+              <div className="dash-badges-section">
+                <div className="dash-badges-section__title">
                   — BADGES —
                 </div>
                 {!hunterStats ? (
-                  <div style={{ display: 'flex', justifyContent: 'center', gap: 6, padding: '0.75rem', alignItems: 'center' }}>
-                    {[0,1,2].map(i => <div key={i} style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(155,110,212,0.6)', animation: `hlSectionDot 1s ${i*0.2}s ease-in-out infinite` }} />)}
+                  <div className="dash-badges-loading">
+                    {[0, 1, 2].map(i => <div key={i} className="dash-badges-loading__dot" />)}
                   </div>
                 ) : (hunterStats.badges.length === 0 && (hunterStats.roadmapBadges ?? []).length === 0) ? (
-                  <div style={{ textAlign: 'center', padding: '0.5rem 0' }}>
-                    <div style={{ fontSize: '1rem', marginBottom: '0.2rem' }}>🔒</div>
-                    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.55rem', color: '#30384A', letterSpacing: '0.06em' }}>NO BADGES YET</div>
+                  <div className="dash-badges-empty">
+                    <div className="dash-badges-empty__icon">🔒</div>
+                    <div className="dash-badges-empty__text">NO BADGES YET</div>
                   </div>
                 ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                  <div className="dash-badges-list">
                     {[...hunterStats.badges, ...(hunterStats.roadmapBadges ?? [])].map(b => {
                       const key = b.subjectId ?? b.roadmapId
                       const scorePct = b.total > 0 ? Math.round((b.score / b.total) * 100) : 0
                       const isRoadmap = b.type === 'ROADMAP'
+                      const badgeColor = b.color || '#9B6ED4'
                       const badgeLabel = isRoadmap
                         ? (b.badge === 'JOB_READY' ? 'JOB READY' : 'INTERVIEW READY')
                         : null
                       return (
-                        <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.5rem', background: `${b.color || '#9B6ED4'}0D`, border: `1px solid ${b.color || '#9B6ED4'}25`, borderRadius: 7 }}>
-                          <div style={{ fontSize: '0.95rem', flexShrink: 0 }}>{b.icon || (isRoadmap ? '🗺️' : '📚')}</div>
-                          <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.72rem', color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{b.title}</div>
+                        <div
+                          key={key}
+                          className="dash-badge-item"
+                          style={{
+                            '--badge-bg': `${badgeColor}0D`,
+                            '--badge-border': `${badgeColor}25`,
+                            '--badge-color': badgeColor,
+                            '--progress-pct': `${scorePct}%`,
+                          }}>
+                          <div className="dash-badge-item__icon">{b.icon || (isRoadmap ? '🗺️' : '📚')}</div>
+                          <div className="dash-flex-1">
+                            <div className="dash-badge-item__title">{b.title}</div>
                             {isRoadmap ? (
-                              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.54rem', color: b.badge === 'JOB_READY' ? '#F59E0B' : '#60A5FA', letterSpacing: '0.04em', marginTop: '0.15rem' }}>{badgeLabel}</div>
+                              <div className={`dash-badge-item__roadmap-label ${b.badge === 'JOB_READY' ? 'is-job-ready' : 'is-interview-ready'}`}>{badgeLabel}</div>
                             ) : (
-                              <div style={{ height: 3, background: 'rgba(255,255,255,0.05)', borderRadius: 2, marginTop: '0.2rem', overflow: 'hidden' }}>
-                                <div style={{ height: '100%', width: `${scorePct}%`, background: b.color || '#9B6ED4', borderRadius: 2 }} />
+                              <div className="dash-badge-item__bar-track">
+                                <div className="dash-badge-item__bar-fill" />
                               </div>
                             )}
                           </div>
-                          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: b.color || '#9B6ED4', flexShrink: 0 }}>{b.score}/{b.total}</span>
+                          <span className="dash-badge-item__score">{b.score}/{b.total}</span>
                         </div>
                       )
                     })}
@@ -979,12 +916,12 @@ export default function DashboardPage() {
             </div>
 
             {/* ═ MIDDLE: gate views ═ */}
-            <div className="sl-panel" style={{ overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
+            <div className="sl-panel dash-panel-scroll">
               {renderMiddle()}
             </div>
 
             {/* ═ RIGHT: DAILY QUESTS + RANK — hidden on mobile (access via avatar) ═ */}
-            <div className="sl-dash-right-panel" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div className="sl-dash-right-panel dash-right-panel">
               <div className="sl-panel">
                 <div className="sl-panel-title">Daily Quests</div>
                 {DAILY_QUESTS.map(q => (

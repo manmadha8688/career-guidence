@@ -13,7 +13,7 @@ import ReportButton from './components/ReportButton'
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
 // Each route loads its chunk only when first visited; subsequent visits use cache
-const LandingPage              = lazy(() => import('./pages/LandingPage'))
+const LandingPage              = lazy(() => import('./pages/landing'))
 const LoaderDemo               = lazy(() => import('./pages/LoaderDemo'))
 const AuthLayoutShell            = lazy(() => import('./pages/auth/AuthLayoutShell'))
 const LoginForm                  = lazy(() => import('./pages/auth/LoginForm'))
@@ -95,7 +95,7 @@ function ScrollResetter() {
 function usePrefetchRoutes() {
   useEffect(() => {
     const run = () => {
-      import('./pages/LandingPage')
+      import('./pages/landing')
       import('./pages/auth/LoginForm')
       import('./pages/auth/RegisterForm')
       import('./pages/MissionsPage')
