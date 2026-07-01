@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import { getMe, clearUserCache } from '../api/api'
+import { logApiError } from '../utils/devLog'
 import api from '../api/api'
 import LoadingOverlay from '../components/LoadingOverlay'
 
@@ -10,19 +11,32 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [logoutOverlay, setLogoutOverlay] = useState(false)
   const [logoutDone, setLogoutDone] = useState(false)
+  const [authOverlay, setAuthOverlay] = useState(null) // { type, completing }
 
-  // On mount — call /me with credentials. httpOnly cookie is sent automatically.
+  const showAuthOverlay = (type) => setAuthOverlay({ type, completing: false })
+  const completeAuthOverlay = () => setAuthOverlay(o => (o ? { ...o, completing: true } : null))
+  const hideAuthOverlay = () => setAuthOverlay(null)
+
+  // On mount — only call /me if we previously stored a session flag.
+  // Anonymous visitors (no flag) skip the call entirely — no 401/403 in console.
   useEffect(() => {
+    if (!localStorage.getItem('has_session')) {
+      setLoading(false)
+      return
+    }
     getMe()
       .then(res => setUser(res.data))
-      .catch(() => setUser(null))
+      .catch(() => {
+        localStorage.removeItem('has_session')
+        setUser(null)
+      })
       .finally(() => setLoading(false))
   }, [])
 
   // Listen for sl:refresh — re-fetch /me to get latest xp/level/rank
   useEffect(() => {
     const refresh = () => {
-      getMe().then(res => setUser(res.data)).catch(() => {})
+      getMe().then(res => setUser(res.data)).catch(err => logApiError('auth-refresh', err))
     }
     window.addEventListener('sl:refresh', refresh)
     return () => window.removeEventListener('sl:refresh', refresh)
@@ -30,7 +44,7 @@ export function AuthProvider({ children }) {
 
   const login = (_token, userData) => {
     clearUserCache()
-    // Cookie is set by the backend response — no localStorage needed
+    localStorage.setItem('has_session', '1')
     setUser(userData)
   }
 
@@ -51,7 +65,11 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isAuthenticated: !!user, loading }}>
+    <AuthContext.Provider value={{
+      user, login, logout, isAuthenticated: !!user, loading,
+      showAuthOverlay, completeAuthOverlay, hideAuthOverlay,
+    }}>
+      {authOverlay && <LoadingOverlay type={authOverlay.type} completing={authOverlay.completing} />}
       {logoutOverlay && <LoadingOverlay type="logout" completing={logoutDone} />}
       {children}
     </AuthContext.Provider>

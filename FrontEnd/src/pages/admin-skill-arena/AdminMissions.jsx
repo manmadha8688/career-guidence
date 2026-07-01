@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
-import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
+import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminMissions, createMission, updateMission, deleteMission, getAdminSubjects } from '../../api/api'
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
@@ -236,7 +239,8 @@ export default function AdminMissions() {
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(null)
-  const [deleting, setDeleting] = useState({})
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
 
   const load = () => {
     setLoading(true)
@@ -248,17 +252,6 @@ export default function AdminMissions() {
 
   useEffect(() => { load() }, [])
 
-  const handleDelete = async (id, title) => {
-    if (!window.confirm(`Delete "${title}"?`)) return
-    setDeleting(p => ({ ...p, [id]: true }))
-    try {
-      await deleteMission(id)
-      toast.success('Mission deleted')
-      load()
-    } catch { toast.error('Failed to delete') }
-    finally { setDeleting(p => ({ ...p, [id]: false })) }
-  }
-
   const q = search.toLowerCase().trim()
   const filtered = q === ''
     ? missions
@@ -269,6 +262,34 @@ export default function AdminMissions() {
         m.techStack?.some(t => t.toLowerCase().includes(q)) ||
         m.rank?.toLowerCase().includes(q)
       )
+
+  const filteredIds = useMemo(() => filtered.map(m => m.id), [filtered])
+  const selection = useAdminSelection(filteredIds)
+
+  const deleteTargets = useMemo(
+    () => selection.selectedIds.map(id => ({
+      id,
+      label: missions.find(m => m.id === id)?.title || id,
+    })),
+    [selection.selectedIds, missions],
+  )
+
+  const confirmBulkDelete = async () => {
+    setBulkDeleting(true)
+    try {
+      for (const id of selection.selectedIds) {
+        await deleteMission(id)
+      }
+      toast.success(`Deleted ${selection.selectedIds.length} mission${selection.selectedIds.length !== 1 ? 's' : ''}`)
+      selection.clear()
+      setDeleteModal(false)
+      load()
+    } catch {
+      toast.error('Could not delete all selected missions')
+    } finally {
+      setBulkDeleting(false)
+    }
+  }
 
   return (
     <AppLayout title="Missions">
@@ -291,10 +312,28 @@ export default function AdminMissions() {
       {loading ? (
         <RadarLoader height={220} />
       ) : (
-        <div className="table-container">
+        <>
+          <AdminBulkToolbar
+            count={selection.count}
+            label="mission"
+            deleting={bulkDeleting}
+            onClear={selection.clear}
+            onDelete={() => setDeleteModal(true)}
+          />
+          <div className="table-container">
           <table className="table">
             <thead>
               <tr>
+                <th style={{ width: 44 }}>
+                  <input
+                    type="checkbox"
+                    className="table-checkbox"
+                    aria-label="Select all missions"
+                    checked={selection.allSelected}
+                    ref={el => { if (el) el.indeterminate = selection.someSelected }}
+                    onChange={selection.toggleAll}
+                  />
+                </th>
                 <th>Mission</th>
                 <th>Rank</th>
                 <th>Tech Stack</th>
@@ -306,11 +345,20 @@ export default function AdminMissions() {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
+                <tr><td colSpan={8} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
                   {search ? `No missions match "${search}"` : 'No missions yet — click New Mission to add one'}
                 </td></tr>
               ) : filtered.map(m => (
-                <tr key={m.id}>
+                <tr key={m.id} className={selection.isSelected(m.id) ? 'row-selected' : ''}>
+                  <td>
+                    <input
+                      type="checkbox"
+                      className="table-checkbox"
+                      aria-label={`Select ${m.title}`}
+                      checked={selection.isSelected(m.id)}
+                      onChange={() => selection.toggle(m.id)}
+                    />
+                  </td>
                   <td>
                     <div className="table-name">{m.title}</div>
                     <div className="text-xs text-muted truncate" style={{ maxWidth: 280 }}>{m.missionBrief}</div>
@@ -344,18 +392,16 @@ export default function AdminMissions() {
                     )}
                   </td>
                   <td>
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <button className="btn btn-ghost btn-sm" onClick={() => setModal(m)}><Pencil size={13} /></button>
-                      <button className="btn btn-danger btn-sm" onClick={() => handleDelete(m.id, m.title)} disabled={deleting[m.id]}>
-                        {deleting[m.id] ? <span className="loading-spinner" /> : <Trash2 size={13} />}
-                      </button>
-                    </div>
+                    <button type="button" className="btn btn-ghost btn-sm" onClick={() => setModal(m)} aria-label={`Edit ${m.title}`}>
+                      <Pencil size={13} />
+                    </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        </>
       )}
 
       {modal && (
@@ -366,6 +412,16 @@ export default function AdminMissions() {
           onSave={() => { setModal(null); load() }}
         />
       )}
+
+      <AdminDeleteModal
+        open={deleteModal}
+        title="Delete selected missions?"
+        subtitle="Each mission and its associated data will be permanently removed."
+        items={deleteTargets}
+        deleting={bulkDeleting}
+        onConfirm={confirmBulkDelete}
+        onClose={() => !bulkDeleting && setDeleteModal(false)}
+      />
     </AppLayout>
   )
 }

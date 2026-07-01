@@ -7,7 +7,7 @@ import {
   ChevronDown, ChevronUp, Sun, Moon, ChevronLeft,
   Filter, RefreshCw, Calendar, Building2, Layers
 } from 'lucide-react'
-import api from '../api/api'
+import { getWalkIns, postWalkIn, removeWalkIn } from '../api/api'
 import toast from 'react-hot-toast'
 import ScrollToTop from '../components/ScrollToTop'
 
@@ -153,7 +153,7 @@ function PostModal({ onClose, onSuccess, light }) {
     if (!form.companyName || !form.role || !form.walkInDate || !form.city) { toast.error('Company, Role, Date, City are required'); return }
     setSaving(true)
     try {
-      await api.post('/walkins', { ...form, skills })
+      await postWalkIn({ ...form, skills })
       toast.success('Walk-in posted!'); onSuccess()
     } catch (e) { toast.error(e?.response?.data?.error || 'Failed to post') }
     finally { setSaving(false) }
@@ -258,7 +258,7 @@ export default function JobsPage() {
   const load = async () => {
     setLoading(true)
     try {
-      const { data } = await api.get('/walkins')
+      const { data } = await getWalkIns()
       setJobs(data)
     } catch { toast.error('Failed to load walk-ins') }
     finally { setLoading(false) }
@@ -268,7 +268,7 @@ export default function JobsPage() {
   const handleDelete = async (id) => {
     if (!confirm('Delete this walk-in?')) return
     try {
-      await api.delete(`/walkins/${id}`)
+      await removeWalkIn(id)
       toast.success('Deleted'); load()
     } catch { toast.error('Failed to delete') }
   }

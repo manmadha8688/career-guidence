@@ -1,41 +1,42 @@
-# Memory Index
+# Memory Index — LearnToEarn Project
 
-- [Permissions](feedback_permissions.md) — full file edit/create/delete permission granted, no confirmation needed
-- [LearnPath — Full Project Summary](project_learnpath.md) — READ THIS FIRST: vision, stack, DB creds, file structure, all API endpoints, run commands, critical bugs fixed, seed data, CSS system, what's left
+> Auto-loaded every session. Read this before working. Rules marked ⚡ are always active.
 
-Just start a new chat and say:
+---
 
-▎ "Read my project memory and continue LearnPath"
+## ⚡ Always-Active Rules
 
-That's all you need. The memory at C:\Users\ManmadhaJayamangala\.claude\projects\C--manmadha-Student-project\memory\project_learnpath.md loads automatically and I'll have full context instantly.
+- [Full Permissions](feedback_permissions.md) — all edits, creates, deletes, bash — no confirmation needed
+- [Auto-Persist to Claude](feedback_claude_system_sync.md) — any new rule/command/info → write to .claude/ immediately, never keep in conversation only
 
-When you start a new chat:
-1. Memory file loads automatically (already done before you type anything)
-2. You say "continue LearnPath"
-3. I read the memory → full context in one shot
-4. Ready to code
+---
 
-claude --resume 70419d65-f0a6-4ae1-9172-ba0cc28b6651
+## Theme & CSS Rules
 
+- [Theme Persistence](feedback_theme_persistence.md) — GOLDEN RULE: backgrounds → CSS vars, gradient text → CSS class, never inline `dark?A:B` for backgrounds
+- [Theme — Missions](feedback_theme_missions.md) — mission page gradient text must be CSS class; backgrounds use CSS vars; mobile hover fix; use navigate() not window.location.href
 
+---
 
- 14fc600b-dd28-4da0-9a20-46dfab3df846
+## Content Creation Rules
 
- I am building a learning platform for Indian graduate/fresher students called LearnToEarn (ARISE in-app). Before creating anything, read my memory file at C:\Users\ManmadhaJayamangala\.claude\projects\C--manmadha-Student-project\memory\feedback_concept_creation.md — it has the full rules, API structure, and quality standards I expect.
-▎
-▎ The core mindset:
-▎ - Think like a domain expert teaching a student, not filling a template
-▎ - Cover the concept fully — length is driven by what the concept needs, not a fixed count
-▎ - Not all students learn the same way — use analogies, mental models, step-by-step breakdowns
-▎ - No overhyping, no hallucination, no padding
-▎ - Quality over quantity — every subject, concept, example, and question must earn its place
-▎
-▎ For subjects: POST /api/admin/subjects — fill all fields honestly (no hype in overview/whyLearn)
-▎
-▎ For concepts: POST /api/admin/concepts — include introduction, explanationSimple, explanationTechnical, syntax, examples (2–3 worked examples with title/description/code/output), keyPoints, tip, commonMistakes. Add as many examples/tips/mistakes as the concept genuinely needs.
-▎
-▎ For questions (DataSeeder): 20 per concept, correct index spread across 0–1–2–3, mix EASY/MEDIUM/HARD, every option plausible, explanation says WHY. Guard: if (questionRepository.countByConceptId("FIRST_CONCEPT_ID") == 0)
-▎
-▎ Backend is Spring Boot + MongoDB at localhost:8080. Admin login: admin@demo.com / Admin@123.
-▎
-▎ Now: [your request here — e.g. "add React Intermediate questions in 2 parts"]
+- [Concept + Subject Rules](feedback_concept_creation.md) — mindset, API fields, no fixed counts, quality over quantity, beginner-progressive
+- [Mission Rules](feedback_mission_creation.md) — 7 rules, all 4 types (SUBJECT_PRACTICE/ROLE_BASED/ACADEMIC/REAL_WORLD), API fields, Python script, counts
+- [Coding Question Rules](feedback_coding_questions.md) — 2 examples mandatory, approach=thinking, explanation=walkthrough, 3 variants, descriptive names
+- [Concept Video Rules](feedback_concept_video_rules.md) — CRITICAL: search YouTube FIRST, concept name FROM video, trusted channels by subject
+- [Seeding Approach](feedback_seeding_approach.md) — add to DataSeeder directly, format from session knowledge, restart triggers seeding
+
+---
+
+## Technical Lessons
+
+- [Cache Debug](feedback_cache_debug.md) — manual DB edits bypass frontend sessionStorage cache; clear DevTools session storage
+- [JSX String Bug](feedback_jsx_strings.md) — NEVER put HTML tags or ${} inside string values in JSX — blank page in Vite
+- [Fresher Guide Tone](feedback_fresher_guide_tone.md) — peer-to-peer tone, honest realities, passion/AI/future per role
+
+---
+
+## Project State
+
+- [Full Project Summary](project_learnpath.md) — READ FIRST: vision, stack, DB, endpoints, run commands, architecture, what's done
+- [Code Audit Results](project_code_audit.md) — all changes applied June 2026, pending CONFIRM/RISKY items, lint state

@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
-import { Trash2, Search, MapPin, Calendar, Briefcase, User, Plus, X, Pencil } from 'lucide-react'
+import { useState, useEffect, useMemo } from 'react'
+import { Search, MapPin, Calendar, Briefcase, User, Plus, X, Pencil } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminWalkIns, createWalkIn, updateAdminWalkIn, deleteWalkIn } from '../../api/api'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import toast from 'react-hot-toast'
@@ -191,7 +194,8 @@ export default function AdminWalkIns() {
   const [walkIns, setWalkIns] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
-  const [deleting, setDeleting] = useState(null)
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [editing, setEditing] = useState(null)
 
@@ -205,20 +209,6 @@ export default function AdminWalkIns() {
 
   useEffect(() => { load() }, [])
 
-  const handleDelete = async (id, company) => {
-    if (!window.confirm(`Delete walk-in from ${company}?`)) return
-    setDeleting(id)
-    try {
-      await deleteWalkIn(id)
-      toast.success('Walk-in deleted')
-      setWalkIns(prev => prev.filter(w => w.id !== id))
-    } catch {
-      toast.error('Failed to delete')
-    } finally {
-      setDeleting(null)
-    }
-  }
-
   const filtered = walkIns.filter(w =>
     !search ||
     w.companyName?.toLowerCase().includes(search.toLowerCase()) ||
@@ -226,6 +216,34 @@ export default function AdminWalkIns() {
     w.city?.toLowerCase().includes(search.toLowerCase()) ||
     w.postedBy?.toLowerCase().includes(search.toLowerCase())
   )
+
+  const filteredIds = useMemo(() => filtered.map(w => w.id), [filtered])
+  const selection = useAdminSelection(filteredIds)
+
+  const deleteTargets = useMemo(
+    () => selection.selectedIds.map(id => ({
+      id,
+      label: walkIns.find(w => w.id === id)?.companyName || id,
+    })),
+    [selection.selectedIds, walkIns],
+  )
+
+  const confirmBulkDelete = async () => {
+    setBulkDeleting(true)
+    try {
+      for (const id of selection.selectedIds) {
+        await deleteWalkIn(id)
+      }
+      toast.success(`Deleted ${selection.selectedIds.length} walk-in${selection.selectedIds.length !== 1 ? 's' : ''}`)
+      selection.clear()
+      setDeleteModal(false)
+      load()
+    } catch {
+      toast.error('Could not delete all selected walk-ins')
+    } finally {
+      setBulkDeleting(false)
+    }
+  }
 
   if (loading) return <AppLayout title="Walk-Ins"><AdminSkeleton rows={6} /></AppLayout>
 
@@ -254,25 +272,52 @@ export default function AdminWalkIns() {
         </div>
       </div>
 
+      <AdminBulkToolbar
+        count={selection.count}
+        label="walk-in"
+        deleting={bulkDeleting}
+        onClear={selection.clear}
+        onDelete={() => setDeleteModal(true)}
+      />
+
       {/* Table */}
       <div className="table-container">
         <table className="table">
           <thead>
             <tr>
+              <th style={{ width: 44 }}>
+                <input
+                  type="checkbox"
+                  className="table-checkbox"
+                  aria-label="Select all walk-ins"
+                  checked={selection.allSelected}
+                  ref={el => { if (el) el.indeterminate = selection.someSelected }}
+                  onChange={selection.toggleAll}
+                />
+              </th>
               <th>Company / Role</th>
               <th>Date & Time</th>
               <th>Location</th>
               <th>Skills</th>
               <th>Posted By</th>
               <th>Status</th>
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {filtered.length === 0 ? (
-              <tr><td colSpan={7} style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem' }}>No walk-ins found</td></tr>
+              <tr><td colSpan={8} style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem' }}>No walk-ins found</td></tr>
             ) : filtered.map(w => (
-              <tr key={w.id}>
+              <tr key={w.id} className={selection.isSelected(w.id) ? 'row-selected' : ''}>
+                <td>
+                  <input
+                    type="checkbox"
+                    className="table-checkbox"
+                    aria-label={`Select ${w.companyName}`}
+                    checked={selection.isSelected(w.id)}
+                    onChange={() => selection.toggle(w.id)}
+                  />
+                </td>
                 <td>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{w.companyName}</div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: 2 }}>
@@ -321,24 +366,15 @@ export default function AdminWalkIns() {
                   </span>
                 </td>
                 <td>
-                  <div style={{ display: 'flex', gap: '0.4rem' }}>
-                    <button
-                      onClick={() => setEditing(w)}
-                      className="btn btn-ghost btn-sm"
-                      title="Edit"
-                    >
-                      <Pencil size={13} />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(w.id, w.companyName)}
-                      disabled={deleting === w.id}
-                      className="btn btn-danger btn-sm"
-                      style={{ opacity: deleting === w.id ? 0.6 : 1 }}
-                      title="Delete"
-                    >
-                      <Trash2 size={13} />
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setEditing(w)}
+                    className="btn btn-ghost btn-sm"
+                    title="Edit"
+                    aria-label={`Edit ${w.companyName}`}
+                  >
+                    <Pencil size={13} />
+                  </button>
                 </td>
               </tr>
             ))}
@@ -359,6 +395,16 @@ export default function AdminWalkIns() {
           onSuccess={() => { setEditing(null); load() }}
         />
       )}
+
+      <AdminDeleteModal
+        open={deleteModal}
+        title="Delete selected walk-ins?"
+        subtitle="Each walk-in listing will be permanently removed."
+        items={deleteTargets}
+        deleting={bulkDeleting}
+        onConfirm={confirmBulkDelete}
+        onClose={() => !bulkDeleting && setDeleteModal(false)}
+      />
     </AppLayout>
   )
 }
