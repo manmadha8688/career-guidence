@@ -20,13 +20,11 @@ export default function AdminDeleteModal({
         <div className="admin-delete-modal__icon" aria-hidden="true">
           <AlertTriangle size={28} />
         </div>
-        <h3 id="admin-delete-title" className="modal-title" style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+        <h3 id="admin-delete-title" className="modal-title modal-title--center">
           {title}
         </h3>
         {subtitle && (
-          <p className="text-sm text-muted" style={{ textAlign: 'center', margin: '0 0 1rem', lineHeight: 1.6 }}>
-            {subtitle}
-          </p>
+          <p className="text-sm text-muted modal-subtitle">{subtitle}</p>
         )}
         {items.length > 0 && (
           <ul className="admin-delete-modal__list">
@@ -39,7 +37,7 @@ export default function AdminDeleteModal({
           </ul>
         )}
         <p className="admin-delete-modal__warn">This action cannot be undone.</p>
-        <div className="modal-actions" style={{ justifyContent: 'center', gap: '0.75rem' }}>
+        <div className="modal-actions modal-actions--center">
           <button type="button" className="btn btn-ghost" onClick={onClose} disabled={deleting}>
             <X size={14} /> Cancel
           </button>

@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { buildLoginReturnUrl } from '../utils/authRedirect'
+import { clearBrowserSessionPreservingPrefs } from '../utils/browserSession'
 
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
@@ -6,22 +8,13 @@ const api = axios.create({ baseURL: BASE_URL, withCredentials: true })
 
 const AUTH_PUBLIC_PATHS = ['/login', '/register', '/forgot-password']
 
-/** Preserve guest device + theme when clearing session (matches AuthContext logout). */
-function clearBrowserSessionPreservingPrefs() {
-  const guestDeviceId = localStorage.getItem('guest_device_id')
-  const theme = localStorage.getItem('theme')
-  localStorage.clear()
-  if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
-  if (theme) localStorage.setItem('theme', theme)
-}
-
 api.interceptors.response.use(
   res => res,
   err => {
     if (err.response?.status === 401 && !AUTH_PUBLIC_PATHS.includes(window.location.pathname)) {
       clearUserCache()
       clearBrowserSessionPreservingPrefs()
-      window.location.href = '/login'
+      window.location.href = buildLoginReturnUrl(window.location.pathname, window.location.search)
     }
     return Promise.reject(err)
   }
@@ -110,7 +103,7 @@ export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`
 
 // ─── ADMIN ───────────────────────────────────
 export const getAdminStats      = ()        => withCache('adminStats', 2*60_000, () => api.get('/admin/stats'))
-export const getAdminUsers      = (p,s,q)   => api.get(`/admin/users?page=${p}&size=${s}&search=${q||''}`)
+export const getAdminUsers      = (p,s,q)   => api.get(`/admin/users?page=${p}&size=${s}&search=${encodeURIComponent(q || '')}`)
 export const deleteUser         = (id)      => api.delete(`/admin/users/${id}`).then(r => { clearApiCache('adminStats'); return r })
 
 export const getAdminSubjects   = ()        => api.get('/admin/subjects')

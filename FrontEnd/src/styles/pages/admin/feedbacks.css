@@ -1,0 +1,131 @@
+/* Admin — user feedback */
+
+.admin-feedback-stat-icon--rating {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.admin-feedback-stat-icon--useful {
+  background: #D1FAE5;
+  color: #059669;
+}
+
+.admin-feedback-stat-icon--not-useful {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.admin-feedback-stat-icon--total {
+  background: #EEF2FF;
+  color: #4F46E5;
+}
+
+.admin-feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.admin-feedback-card {
+  padding: 1.25rem 1.5rem;
+}
+
+.admin-feedback-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.admin-feedback-card__left {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.admin-feedback-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.admin-feedback-star {
+  font-size: 0.9rem;
+}
+
+.admin-feedback-star.is-filled {
+  color: #F59E0B;
+}
+
+.admin-feedback-star.is-empty {
+  color: var(--border);
+}
+
+.admin-feedback-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  background: var(--cat-bg);
+  color: var(--cat-color);
+  border: 1px solid var(--cat-border);
+}
+
+.admin-feedback-useful-yes {
+  font-size: 0.72rem;
+  color: #4ADE80;
+}
+
+.admin-feedback-useful-no {
+  font-size: 0.72rem;
+  color: #EF4444;
+}
+
+.admin-feedback-card__right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.admin-feedback-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.admin-feedback-user {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.admin-feedback-experience {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.admin-feedback-experience--spaced {
+  margin-bottom: 0.75rem;
+}
+
+.admin-feedback-note {
+  padding: 0.625rem 0.875rem;
+  background: var(--cat-bg, var(--bg-tertiary));
+  border-left: 3px solid var(--cat-color, var(--primary));
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.admin-feedback-note__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--cat-color, var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.25rem;
+}

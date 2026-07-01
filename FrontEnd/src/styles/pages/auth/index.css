@@ -1,0 +1,39 @@
+/* Auth — migrated inline styles */
+
+.auth-link--inherit { font-size: inherit; }
+.auth-link--sm { font-size: 0.78rem; }
+
+.loading-spinner--sm { width: 14px; height: 14px; }
+.loading-spinner--md { width: 18px; height: 18px; }
+
+.auth-password-hints {
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 1.1rem;
+  font-size: 0.72rem;
+  color: var(--text-muted, #64748B);
+}
+
+.auth-password-hints__item--ok {
+  color: var(--accent-green, #4ADE80);
+}
+
+.auth-password-hints__icon {
+  display: inline;
+  margin-right: 4px;
+  vertical-align: -1px;
+}
+
+.auth-btn-primary--flex {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.login-bot-eye--sm { transform: scale(0.72); }
+.login-bot-eye--lg { transform: scale(1.15); }
+
+.login-bot { z-index: 1; }
+.login-bot--prime { z-index: 2; }
+.login-bot--speaking { z-index: 20; }

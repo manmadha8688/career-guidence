@@ -1,0 +1,129 @@
+/* Admin — question bank */
+
+.admin-questions-layout {
+  display: grid;
+  grid-template-columns: 220px 220px 1fr;
+  gap: 1rem;
+  height: calc(100vh - 140px);
+}
+
+.admin-questions-panel {
+  overflow: auto;
+  padding: 0.75rem;
+}
+
+.admin-questions-panel-label {
+  color: var(--text-muted);
+}
+
+.admin-questions-nav-item {
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  margin-bottom: 0.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-questions-main {
+  overflow: auto;
+}
+
+.admin-questions-placeholder {
+  height: 200px;
+  color: var(--text-muted);
+}
+
+.admin-questions-badge-gap {
+  margin-left: 0.5rem;
+}
+
+.admin-questions-badge-warn {
+  margin-left: 0.25rem;
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.admin-questions-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.admin-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-question-card {
+  padding: 1rem;
+}
+
+.admin-question-card__meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.admin-question-card__difficulty {
+  font-size: 0.7rem;
+}
+
+.admin-question-card__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-question-card__delete {
+  color: var(--danger);
+}
+
+.admin-question-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.admin-question-modal {
+  width: 100%;
+  max-width: 600px;
+}
+
+.admin-option-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-option-picker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-option-picker.is-correct {
+  border-color: var(--success);
+  background: var(--success);
+  color: white;
+}
+
+.admin-option-input {
+  flex: 1;
+}
+
+.admin-question-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}

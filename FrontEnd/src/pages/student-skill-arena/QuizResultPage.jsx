@@ -85,64 +85,52 @@ export default function QuizResultPage() {
   const badge = result.badge ? BADGE_CFG[result.badge] : null
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column', fontFamily: "'Rajdhani', sans-serif" }}>
+    <div className="dash-quiz-result-page" style={{ '--accent': accentColor }}>
 
       {/* ── Top bar ── */}
-      <header style={{
-        height: 56, flexShrink: 0,
-        background: 'var(--bg-secondary)',
-        borderBottom: '1px solid var(--border)',
-        display: 'flex', alignItems: 'center',
-        padding: '0 1.5rem', gap: '1rem',
-        position: 'sticky', top: 0, zIndex: 50,
-      }}>
+      <header className="dash-quiz-result-header">
         <button
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.375rem', color: 'var(--text-muted)', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.06em' }}
+          className="dash-quiz-result-back"
           onClick={() => navigate(-1)}
         >
           <ArrowLeft size={14} /> GATES
         </button>
-        <div style={{ flex: 1, textAlign: 'center' }}>
-          <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: accentColor, letterSpacing: '0.14em' }}>
+        <div className="dash-quiz-result-header-center">
+          <span className="dash-quiz-result-status">
             [ SYSTEM ] {result.passed ? 'TRIAL PASSED ✓' : 'TRIAL FAILED ✗'}
           </span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <span className={`rank-badge ${rank.cls}`} style={{ fontSize: '0.68rem' }}>{rank.label}</span>
-          <div style={{ width: 32, height: 32, borderRadius: '50%', background: user?.avatarColor || '#9B6ED4', border: `2px solid ${rank.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.75rem', color: '#fff' }}>
+        <div className="dash-quiz-result-header-right">
+          <span className={`rank-badge ${rank.cls} dash-quiz-result-rank-badge`}>{rank.label}</span>
+          <div
+            className="dash-avatar dash-avatar--md"
+            style={{ '--avatar-bg': user?.avatarColor || '#9B6ED4', '--rank-color': rank.color }}
+          >
             {initials}
           </div>
         </div>
       </header>
 
       {/* ── Content ── */}
-      <div style={{ flex: 1, overflow: 'auto', padding: '1.5rem 1rem' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+      <div className="dash-quiz-result-content">
+        <div className="dash-quiz-result-inner">
 
           {/* Score hero card */}
-          <div style={{
-            background: 'var(--bg-card)',
-            border: `1px solid ${accentColor}33`,
-            borderTop: `4px solid ${accentColor}`,
-            borderRadius: 'var(--radius-lg)',
-            padding: '2rem',
-            textAlign: 'center',
-            animation: 'gateOpen 0.25s ease',
-          }}>
+          <div className="dash-quiz-result-hero">
             {/* Score */}
-            <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: 'clamp(3rem, 10vw, 5rem)', fontWeight: 900, color: accentColor, lineHeight: 1, marginBottom: '0.5rem', textShadow: `0 0 40px ${accentColor}55` }}>
+            <div className="dash-quiz-result-score">
               {result.score}/{result.total}
             </div>
 
             {/* Verdict */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '1rem', letterSpacing: '0.12em', color: accentColor, marginBottom: '0.625rem' }}>
+            <div className="dash-quiz-result-verdict">
               {result.passed
                 ? <><CheckCircle size={18} /> TRIAL PASSED ✓</>
                 : <><XCircle size={18} /> TRIAL FAILED ✗</>}
             </div>
 
             {/* Stats row */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', color: 'var(--text-muted)', letterSpacing: '0.06em' }}>
+            <div className="dash-quiz-result-stats">
               <span>{pct}% ACCURACY</span>
               <span>·</span>
               <span>{result.results?.filter(r => r.correct).length} CORRECT</span>
@@ -152,12 +140,12 @@ export default function QuizResultPage() {
 
             {/* XP earned */}
             {result.passed && result.xpEarned > 0 && (
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.375rem', marginTop: '1rem' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.375rem 1rem', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 99, fontFamily: "'Orbitron', sans-serif", fontSize: '0.75rem', color: '#4ADE80', fontWeight: 700 }}>
+              <div className="dash-quiz-result-xp-wrap">
+                <div className="dash-quiz-result-xp">
                   <Zap size={14} /> +{result.xpEarned} XP EARNED
                 </div>
                 {result.dailyBonusEarned && (
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', padding: '0.3rem 0.875rem', background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: 99, fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem', color: '#F59E0B', letterSpacing: '0.04em' }}>
+                  <div className="dash-quiz-result-bonus">
                     ⭐ DAILY BONUS +50 XP — First skill today!
                   </div>
                 )}
@@ -166,18 +154,25 @@ export default function QuizResultPage() {
 
             {/* Retry timer */}
             {!result.passed && retryIn && (
-              <div style={{ marginTop: '1rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.25rem', background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: 8, color: '#F59E0B', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.06em' }}>
-                <RotateCcw size={13} /> RETRY AVAILABLE IN <strong style={{ marginLeft: 4 }}>{retryIn.toUpperCase()}</strong>
+              <div className="dash-quiz-result-retry">
+                <RotateCcw size={13} /> RETRY AVAILABLE IN <strong>{retryIn.toUpperCase()}</strong>
               </div>
             )}
           </div>
 
           {/* Badge banner */}
           {badge && (
-            <div style={{ textAlign: 'center', padding: '1.5rem', background: `${badge.color}0D`, border: `1px solid ${badge.color}33`, borderRadius: 'var(--radius-lg)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{badge.icon}</div>
-              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '1.25rem', fontWeight: 700, color: badge.color, letterSpacing: '0.05em' }}>{badge.label}</div>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+            <div
+              className="dash-quiz-result-badge-banner"
+              style={{
+                '--badge-bg': `${badge.color}0D`,
+                '--badge-border': `${badge.color}33`,
+                '--badge-color': badge.color,
+              }}
+            >
+              <div className="dash-quiz-result-badge-icon">{badge.icon}</div>
+              <div className="dash-quiz-result-badge-label">{badge.label}</div>
+              <div className="dash-quiz-result-badge-meta">
                 {result.score}/{result.total} · {pct}%
               </div>
             </div>
@@ -185,53 +180,43 @@ export default function QuizResultPage() {
 
           {/* Answer review */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.875rem' }}>
-              <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '1rem', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-primary)' }}>
+            <div className="dash-quiz-result-review-header">
+              <div className="dash-quiz-result-review-title">
                 Trial Review
-                {wrongCount > 0 && <span style={{ color: '#EF4444', marginLeft: 8, fontSize: '0.875rem' }}>({wrongCount} wrong)</span>}
+                {wrongCount > 0 && <span className="dash-quiz-result-review-wrong">({wrongCount} wrong)</span>}
               </div>
               {result.results?.length > 5 && (
                 <button
                   onClick={() => setShowAll(s => !s)}
-                  style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 6, padding: '0.3rem 0.75rem', cursor: 'pointer', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.06em' }}
+                  className="dash-quiz-result-toggle"
                 >
                   {showAll ? 'SHOW LESS' : `SHOW ALL ${result.results.length}`}
                 </button>
               )}
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+            <div className="dash-quiz-result-review-list">
               {displayed?.map((r, i) => (
-                <div key={r.questionId}
-                  style={{
-                    background: 'var(--bg-card)',
-                    border: `1px solid ${r.correct ? 'rgba(74,222,128,0.2)' : 'rgba(239,68,68,0.2)'}`,
-                    borderLeft: `4px solid ${r.correct ? '#4ADE80' : '#EF4444'}`,
-                    borderRadius: 'var(--radius-md)',
-                    padding: '1rem 1.25rem',
-                  }}
+                <div
+                  key={r.questionId}
+                  className={`dash-quiz-result-review-item ${r.correct ? 'is-correct' : 'is-wrong'}`}
                 >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '0.625rem' }}>
+                  <div className="dash-quiz-result-review-q">
                     {r.correct
-                      ? <CheckCircle size={15} color="#4ADE80" style={{ flexShrink: 0, marginTop: 2 }} />
-                      : <XCircle size={15} color="#EF4444" style={{ flexShrink: 0, marginTop: 2 }} />}
-                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)', flex: 1, lineHeight: 1.5 }}>{r.text}</div>
+                      ? <CheckCircle size={15} color="#4ADE80" className="dash-quiz-result-review-q__icon" />
+                      : <XCircle size={15} color="#EF4444" className="dash-quiz-result-review-q__icon" />}
+                    <div className="dash-quiz-result-review-q__text">{r.text}</div>
                   </div>
 
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem', paddingLeft: '1.5rem', marginBottom: r.explanation ? '0.5rem' : 0 }}>
+                  <div className={`dash-quiz-result-options${r.explanation ? ' dash-quiz-result-options--with-explanation' : ''}`}>
                     {r.options.map((opt, oi) => {
                       const isCorrect = oi === r.correctIndex
                       const isStudent = oi === r.studentAnswer
                       return (
-                        <span key={oi} style={{
-                          padding: '0.2rem 0.625rem',
-                          borderRadius: 4,
-                          fontSize: '0.8rem',
-                          fontWeight: 500,
-                          background: isCorrect ? 'rgba(74,222,128,0.12)' : (isStudent && !isCorrect) ? 'rgba(239,68,68,0.12)' : 'var(--bg-tertiary)',
-                          color: isCorrect ? '#4ADE80' : (isStudent && !isCorrect) ? '#EF4444' : 'var(--text-muted)',
-                          border: isCorrect ? '1px solid rgba(74,222,128,0.25)' : (isStudent && !isCorrect) ? '1px solid rgba(239,68,68,0.25)' : '1px solid transparent',
-                        }}>
+                        <span
+                          key={oi}
+                          className={`dash-quiz-result-option ${isCorrect ? 'is-correct' : (isStudent && !isCorrect) ? 'is-wrong' : 'is-neutral'}`}
+                        >
                           {LETTERS[oi]}. {opt}
                           {isCorrect && ' ✓'}
                           {isStudent && !isCorrect && ' ✗'}
@@ -241,8 +226,8 @@ export default function QuizResultPage() {
                   </div>
 
                   {r.explanation && (
-                    <div style={{ paddingLeft: '1.5rem', marginTop: '0.5rem', fontFamily: "'Share Tech Mono', monospace", fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                      <Zap size={11} style={{ display: 'inline', marginRight: 6, color: '#9B6ED4' }} />
+                    <div className="dash-quiz-result-explanation">
+                      <Zap size={11} className="dash-quiz-result-explanation__icon" />
                       {r.explanation}
                     </div>
                   )}
@@ -252,11 +237,11 @@ export default function QuizResultPage() {
           </div>
 
           {/* Action buttons */}
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center', padding: '0.5rem 0 2rem' }}>
+          <div className="dash-quiz-result-actions">
             {result.passed && (
               <button
                 onClick={() => navigate('/skill-arena/dashboard?view=gates')}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'linear-gradient(135deg, #7B5EA7, #9B6ED4)', border: 'none', borderRadius: 8, padding: '0.75rem 1.75rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9375rem', letterSpacing: '0.06em' }}
+                className="dash-quiz-result-primary-btn"
               >
                 <Trophy size={16} /> CONTINUE HUNT
               </button>
@@ -264,14 +249,14 @@ export default function QuizResultPage() {
             {!result.passed && !retryIn && quizType && refId && (
               <button
                 onClick={() => navigate(`/skill-arena/quiz/${quizType}/${refId}`)}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'linear-gradient(135deg, #7B5EA7, #9B6ED4)', border: 'none', borderRadius: 8, padding: '0.75rem 1.75rem', cursor: 'pointer', color: '#fff', fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.9375rem', letterSpacing: '0.06em' }}
+                className="dash-quiz-result-primary-btn"
               >
                 <RotateCcw size={15} /> RETRY TRIAL
               </button>
             )}
             <button
               onClick={() => navigate(-1)}
-              style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 8, padding: '0.75rem 1.75rem', cursor: 'pointer', color: 'var(--text-secondary)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 600, fontSize: '0.9375rem', letterSpacing: '0.05em' }}
+              className="dash-quiz-result-secondary-btn"
             >
               ← BACK TO GATES
             </button>

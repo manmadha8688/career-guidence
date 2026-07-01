@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { Flag, X, Send, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -22,8 +22,56 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
   const { user } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
+  const modalRef = useRef(null)
+  const lastFocusRef = useRef(null)
 
   useBodyLock(open)
+
+  useEffect(() => {
+    if (!open) return
+    lastFocusRef.current = document.activeElement
+    const modal = modalRef.current
+    if (!modal) return
+
+    const getFocusables = () =>
+      [...modal.querySelectorAll(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )].filter(el => el.offsetParent !== null)
+
+    const focusFirst = () => {
+      const items = getFocusables()
+      items[0]?.focus()
+    }
+    focusFirst()
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape' && !submitting) {
+        e.preventDefault()
+        close()
+        return
+      }
+      if (e.key !== 'Tab') return
+      const items = getFocusables()
+      if (!items.length) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else if (document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      lastFocusRef.current?.focus?.()
+    }
+  }, [open, submitting])
 
   const resolvedTitle = pageTitle || getReportPageTitle(location.pathname)
   const context = useMemo(
@@ -123,6 +171,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
           onClick={e => e.target === e.currentTarget && !submitting && close()}
         >
           <div
+            ref={modalRef}
             className="report-modal"
             role="dialog"
             aria-modal="true"
@@ -171,6 +220,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
                           key={cat.id}
                           type="button"
                           className={`report-category-card${on ? ' is-on' : ''}`}
+                          aria-pressed={on}
                           onClick={() => pickCategory(cat.id)}
                         >
                           <Icon size={16} />
@@ -192,6 +242,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
                           key={t.value}
                           type="button"
                           className={`report-type-chip${type === t.value ? ' is-on' : ''}`}
+                          aria-pressed={type === t.value}
                           onClick={() => setType(t.value)}
                         >
                           {t.label}

@@ -9,7 +9,7 @@ export default function AuthSubmitButton({ ready, loading, children, compact = f
         className={`auth-btn-primary${btnCls}${ready ? ' auth-btn-primary--ready' : ' auth-btn-primary--locked'}`}
         disabled={loading || !ready}
       >
-        {loading && <span className="loading-spinner" style={{ width: 18, height: 18 }} />}
+        {loading && <span className="loading-spinner loading-spinner--md" />}
         {children}
       </button>
     </div>

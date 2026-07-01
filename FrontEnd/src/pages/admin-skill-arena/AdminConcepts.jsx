@@ -11,6 +11,8 @@ import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, delet
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
 
+const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
+
 function SearchableSelect({ items, value, onChange, placeholder = 'Select…' }) {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -25,29 +27,27 @@ function SearchableSelect({ items, value, onChange, placeholder = 'Select…' })
   }, [])
 
   return (
-    <div ref={ref} style={{ position: 'relative', minWidth: 220 }}>
-      <div className="form-input" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', userSelect: 'none' }}
+    <div ref={ref} className="admin-select-wrap admin-select-wrap--220">
+      <div className="form-input admin-select-trigger"
         onClick={() => { setOpen(o => !o); setQuery('') }}>
-        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        <span className="admin-select-value">
           {selected ? `${selected.icon} ${selected.title}` : placeholder}
         </span>
-        <ChevronDown size={14} style={{ flexShrink: 0, color: 'var(--text-muted)', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }} />
+        <ChevronDown size={14} className={`admin-select-chevron${open ? ' is-open' : ''}`} />
       </div>
       {open && (
-        <div style={{ position: 'absolute', top: 'calc(100% + 4px)', left: 0, right: 0, background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)', zIndex: 400 }}>
-          <div style={{ padding: '0.5rem' }}>
-            <input autoFocus className="form-input" style={{ fontSize: '0.875rem' }} placeholder="Type to filter…"
+        <div className="admin-select-dropdown">
+          <div className="admin-select-filter">
+            <input autoFocus className="form-input admin-select-filter-input" placeholder="Type to filter…"
               value={query} onChange={e => setQuery(e.target.value)} onClick={e => e.stopPropagation()} />
           </div>
-          <div style={{ maxHeight: 220, overflowY: 'auto' }}>
+          <div className="admin-select-list">
             {filtered.length === 0
-              ? <div style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.875rem', textAlign: 'center' }}>No matches</div>
+              ? <div className="admin-select-empty">No matches</div>
               : filtered.map(s => (
                 <div key={s.id}
                   onClick={() => { onChange(s.id); setOpen(false); setQuery('') }}
-                  style={{ padding: '0.5rem 0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', background: s.id === value ? 'var(--primary-bg)' : 'transparent', color: s.id === value ? 'var(--primary)' : 'var(--text-primary)' }}
-                  onMouseEnter={e => { if (s.id !== value) e.currentTarget.style.background = 'var(--bg-tertiary)' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = s.id === value ? 'var(--primary-bg)' : 'transparent' }}>
+                  className={`admin-select-option${s.id === value ? ' is-selected' : ''}`}>
                   <span>{s.icon}</span> {s.title}
                 </div>
               ))
@@ -63,10 +63,10 @@ const emptyExample = () => ({ title: '', description: '', code: '', output: '' }
 
 function SectionDivider({ label }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '1.25rem 0 1rem' }}>
-      <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
-      <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>{label}</span>
-      <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+    <div className="admin-section-divider">
+      <div className="admin-section-divider__line" />
+      <span className="admin-section-divider__label">{label}</span>
+      <div className="admin-section-divider__line" />
     </div>
   )
 }
@@ -113,21 +113,18 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
 
   const set = (field, val) => setForm(f => ({ ...f, [field]: val }))
 
-  // Examples helpers
   const addExample = () => setForm(f => ({ ...f, examples: [...f.examples, emptyExample()] }))
   const removeExample = i => setForm(f => ({ ...f, examples: f.examples.filter((_, idx) => idx !== i) }))
   const updateExample = (i, field, val) => setForm(f => ({
     ...f, examples: f.examples.map((ex, idx) => idx === i ? { ...ex, [field]: val } : ex)
   }))
 
-  // Key Points helpers
   const addKeyPoint = () => setForm(f => ({ ...f, keyPoints: [...f.keyPoints, ''] }))
   const removeKeyPoint = i => setForm(f => ({ ...f, keyPoints: f.keyPoints.filter((_, idx) => idx !== i) }))
   const updateKeyPoint = (i, val) => setForm(f => ({
     ...f, keyPoints: f.keyPoints.map((kp, idx) => idx === i ? val : kp)
   }))
 
-  // Common Mistakes helpers
   const addMistake = () => setForm(f => ({ ...f, commonMistakes: [...f.commonMistakes, ''] }))
   const removeMistake = i => setForm(f => ({ ...f, commonMistakes: f.commonMistakes.filter((_, idx) => idx !== i) }))
   const updateMistake = (i, val) => setForm(f => ({
@@ -148,18 +145,15 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     }
   }
 
-  const mono = { fontFamily: 'monospace', fontSize: '0.875rem' }
-
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal" style={{ maxWidth: 780 }}>
+      <div className="modal admin-form-modal--780">
         <div className="modal-header">
           <h3 className="modal-title">{concept ? 'Edit Concept' : 'New Concept'}</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
         <form onSubmit={handleSubmit}>
 
-          {/* ── Basic Info ── */}
           <SectionDivider label="Basic Info" />
           <div className="grid-2">
             <div className="form-group">
@@ -183,46 +177,41 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
           </div>
           <div className="form-group">
             <label className="form-label">Rank</label>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              {['E','D','C','B','A','S'].map(r => {
-                const colors = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
-                const c = colors[r]
-                return (
-                  <button key={r} type="button" onClick={() => set('rank', r)}
-                    style={{ padding: '0.3rem 0.75rem', borderRadius: 6, cursor: 'pointer', fontWeight: 700, fontSize: '0.78rem', fontFamily: "'Orbitron', sans-serif", letterSpacing: '0.06em', border: `1.5px solid ${c}`, background: form.rank === r ? c : 'transparent', color: form.rank === r ? '#fff' : c, transition: 'all 0.15s' }}>
-                    {r}
-                  </button>
-                )
-              })}
+            <div className="admin-rank-picker admin-rank-picker--md">
+              {['E','D','C','B','A','S'].map(r => (
+                <button key={r} type="button" onClick={() => set('rank', r)}
+                  className={`admin-rank-btn admin-rank-btn--sm${form.rank === r ? ' is-active' : ''}`}
+                  style={{ '--rank-color': RANK_COLORS[r] }}>
+                  {r}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* ── Content ── */}
           <SectionDivider label="Content" />
           <div className="form-group">
-            <label className="form-label">Introduction <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one-line hook shown at top)</span></label>
+            <label className="form-label">Introduction <span className="admin-form-label-hint">(one-line hook shown at top)</span></label>
             <input className="form-input" value={form.introduction} onChange={e => set('introduction', e.target.value)} placeholder="e.g. Variables are containers for storing data…" />
           </div>
           <div className="form-group">
-            <label className="form-label">Simple Explanation <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(analogy / beginner friendly)</span></label>
+            <label className="form-label">Simple Explanation <span className="admin-form-label-hint">(analogy / beginner friendly)</span></label>
             <textarea className="form-input" rows={4} value={form.explanationSimple} onChange={e => set('explanationSimple', e.target.value)} placeholder="Think of a variable like a labeled box…" />
           </div>
           <div className="form-group">
-            <label className="form-label">Technical Explanation <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(developer level)</span></label>
+            <label className="form-label">Technical Explanation <span className="admin-form-label-hint">(developer level)</span></label>
             <textarea className="form-input" rows={4} value={form.explanationTechnical} onChange={e => set('explanationTechnical', e.target.value)} placeholder="Java is statically typed — variable types are resolved at compile time…" />
           </div>
           <div className="form-group">
             <label className="form-label">Syntax Block</label>
-            <textarea className="form-input" rows={5} value={form.syntax} onChange={e => set('syntax', e.target.value)} placeholder="type variableName = value;" style={mono} />
+            <textarea className="form-input admin-textarea-mono--875" rows={5} value={form.syntax} onChange={e => set('syntax', e.target.value)} placeholder="type variableName = value;" />
           </div>
 
-          {/* ── Examples ── */}
           <SectionDivider label="Examples" />
           {form.examples.map((ex, i) => (
-            <div key={i} style={{ border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '1rem', marginBottom: '0.875rem', position: 'relative' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-muted)' }}>Example {i + 1}</span>
-                <button type="button" className="btn btn-ghost btn-sm" onClick={() => removeExample(i)} style={{ color: 'var(--danger)', padding: '0.2rem 0.4rem' }}>
+            <div key={i} className="admin-example-card">
+              <div className="admin-example-card__header">
+                <span className="admin-example-card__title">Example {i + 1}</span>
+                <button type="button" className="btn btn-ghost btn-sm admin-example-card__remove" onClick={() => removeExample(i)}>
                   <X size={13} />
                 </button>
               </div>
@@ -236,54 +225,50 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
               </div>
               <div className="form-group">
                 <label className="form-label">Code</label>
-                <textarea className="form-input" rows={5} value={ex.code} onChange={e => updateExample(i, 'code', e.target.value)} placeholder="// example code" style={mono} />
+                <textarea className="form-input admin-textarea-mono--875" rows={5} value={ex.code} onChange={e => updateExample(i, 'code', e.target.value)} placeholder="// example code" />
               </div>
-              <div className="form-group" style={{ marginBottom: 0 }}>
+              <div className="form-group admin-example-card__group-last">
                 <label className="form-label">Expected Output</label>
-                <textarea className="form-input" rows={2} value={ex.output} onChange={e => updateExample(i, 'output', e.target.value)} placeholder="Hello World" style={mono} />
+                <textarea className="form-input admin-textarea-mono--875" rows={2} value={ex.output} onChange={e => updateExample(i, 'output', e.target.value)} placeholder="Hello World" />
               </div>
             </div>
           ))}
-          <button type="button" className="btn btn-ghost btn-sm" onClick={addExample} style={{ width: '100%', justifyContent: 'center', border: '1px dashed var(--border)', marginBottom: '0.5rem' }}>
+          <button type="button" className="btn btn-ghost btn-sm admin-add-row-btn" onClick={addExample}>
             <Plus size={13} /> Add Example
           </button>
 
-          {/* ── Key Points ── */}
           <SectionDivider label="Key Points" />
           {form.keyPoints.map((kp, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', alignItems: 'center' }}>
-              <input className="form-input" value={kp} onChange={e => updateKeyPoint(i, e.target.value)} placeholder={`Key point ${i + 1}…`} style={{ flex: 1 }} />
-              <button type="button" className="btn btn-ghost btn-sm" onClick={() => removeKeyPoint(i)} style={{ color: 'var(--danger)', flexShrink: 0 }}>
+            <div key={i} className="admin-list-item-row">
+              <input className="form-input admin-list-item-row__input" value={kp} onChange={e => updateKeyPoint(i, e.target.value)} placeholder={`Key point ${i + 1}…`} />
+              <button type="button" className="btn btn-ghost btn-sm admin-list-item-row__remove" onClick={() => removeKeyPoint(i)}>
                 <X size={13} />
               </button>
             </div>
           ))}
-          <button type="button" className="btn btn-ghost btn-sm" onClick={addKeyPoint} style={{ width: '100%', justifyContent: 'center', border: '1px dashed var(--border)', marginBottom: '0.5rem' }}>
+          <button type="button" className="btn btn-ghost btn-sm admin-add-row-btn" onClick={addKeyPoint}>
             <Plus size={13} /> Add Key Point
           </button>
 
-          {/* ── Pro Tip ── */}
           <SectionDivider label="Pro Tip" />
           <div className="form-group">
             <label className="form-label">Tip</label>
             <textarea className="form-input" rows={2} value={form.tip} onChange={e => set('tip', e.target.value)} placeholder="A pro tip or best practice to highlight…" />
           </div>
 
-          {/* ── Common Mistakes ── */}
           <SectionDivider label="Common Mistakes" />
           {form.commonMistakes.map((m, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', alignItems: 'center' }}>
-              <input className="form-input" value={m} onChange={e => updateMistake(i, e.target.value)} placeholder={`Common mistake ${i + 1}…`} style={{ flex: 1 }} />
-              <button type="button" className="btn btn-ghost btn-sm" onClick={() => removeMistake(i)} style={{ color: 'var(--danger)', flexShrink: 0 }}>
+            <div key={i} className="admin-list-item-row">
+              <input className="form-input admin-list-item-row__input" value={m} onChange={e => updateMistake(i, e.target.value)} placeholder={`Common mistake ${i + 1}…`} />
+              <button type="button" className="btn btn-ghost btn-sm admin-list-item-row__remove" onClick={() => removeMistake(i)}>
                 <X size={13} />
               </button>
             </div>
           ))}
-          <button type="button" className="btn btn-ghost btn-sm" onClick={addMistake} style={{ width: '100%', justifyContent: 'center', border: '1px dashed var(--border)', marginBottom: '0.5rem' }}>
+          <button type="button" className="btn btn-ghost btn-sm admin-add-row-btn" onClick={addMistake}>
             <Plus size={13} /> Add Common Mistake
           </button>
 
-          {/* ── Legacy Content ── */}
           <SectionDivider label="Legacy Content (optional)" />
           <div className="form-group">
             <label className="form-label">What Is It?</label>
@@ -295,7 +280,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
           </div>
           <div className="form-group">
             <label className="form-label">Legacy Code Example</label>
-            <textarea className="form-input" rows={4} value={form.codeExample} onChange={e => set('codeExample', e.target.value)} placeholder="// Used as fallback code block if no Examples are added" style={mono} />
+            <textarea className="form-input admin-textarea-mono--875" rows={4} value={form.codeExample} onChange={e => set('codeExample', e.target.value)} placeholder="// Used as fallback code block if no Examples are added" />
           </div>
 
           <div className="modal-actions">
@@ -382,13 +367,12 @@ export default function AdminConcepts() {
           <h1 className="page-title">Concepts</h1>
           <p className="page-subtitle">Manage learning content by subject</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div className="admin-page-actions admin-page-actions--wrap">
           <SearchableSelect items={subjects} value={selectedSubject} onChange={setSelectedSubject} placeholder="Select subject…" />
-          <div style={{ position: 'relative' }}>
-            <Search size={15} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
+          <div className="admin-search-wrap">
+            <Search size={15} className="admin-search-icon" />
             <input
-              className="form-input"
-              style={{ paddingLeft: '2.25rem', width: 200 }}
+              className="form-input admin-search-input admin-search-input--narrow"
               placeholder="Search concepts…"
               value={search}
               onChange={e => setSearch(e.target.value)}
@@ -421,7 +405,7 @@ export default function AdminConcepts() {
           <table className="table">
             <thead>
               <tr>
-                <th style={{ width: 44 }}>
+                <th className="admin-th-checkbox">
                   <input
                     type="checkbox"
                     className="table-checkbox"
@@ -436,7 +420,7 @@ export default function AdminConcepts() {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={5} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No concepts match "{search}"</td></tr>
+                <tr><td colSpan={5} className="admin-table-empty">No concepts match "{search}"</td></tr>
               ) : filtered.map(c => (
                 <tr key={c.id} className={selection.isSelected(c.id) ? 'row-selected' : ''}>
                   <td>
@@ -448,17 +432,15 @@ export default function AdminConcepts() {
                       onChange={() => selection.toggle(c.id)}
                     />
                   </td>
-                  <td className="text-muted text-sm" style={{ width: 40 }}>{c.orderIndex}</td>
+                  <td className="text-muted text-sm admin-order-cell--40">{c.orderIndex}</td>
                   <td>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div className="admin-row-flex admin-row-flex--sm">
                       <div className="table-name">{c.title}</div>
-                      {c.rank && (() => {
-                        const colors = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
-                        const col = colors[c.rank] || '#888'
-                        return <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.6rem', fontWeight: 700, padding: '0.1rem 0.35rem', borderRadius: 3, border: `1px solid ${col}`, color: col, background: col + '18', flexShrink: 0 }}>{c.rank}</span>
-                      })()}
+                      {c.rank && (
+                        <span className="admin-rank-badge admin-rank-badge--sm" style={{ '--rank-color': RANK_COLORS[c.rank] || '#888' }}>{c.rank}</span>
+                      )}
                     </div>
-                    {(c.introduction || c.whatItIs) && <div className="text-xs text-muted truncate" style={{ maxWidth: 400 }}>{(c.introduction || c.whatItIs).substring(0, 80)}…</div>}
+                    {(c.introduction || c.whatItIs) && <div className="text-xs text-muted truncate admin-truncate-desc--400">{(c.introduction || c.whatItIs).substring(0, 80)}…</div>}
                   </td>
                   <td className="text-sm text-muted">{c.estimatedMinutes}m</td>
                   <td>

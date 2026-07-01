@@ -13,6 +13,8 @@ import {
 } from '../../api/api'
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
+import SectionLabel from '../../components/admin/SectionLabel'
+import { listToText, textToList } from '../../components/admin/adminFormUtils'
 
 function SearchableSelect({ items, value, onChange, placeholder = 'Select…' }) {
   const [open, setOpen] = useState(false)
@@ -28,29 +30,27 @@ function SearchableSelect({ items, value, onChange, placeholder = 'Select…' })
   }, [])
 
   return (
-    <div ref={ref} style={{ position: 'relative', flex: 1, minWidth: 180 }}>
-      <div className="form-input" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', userSelect: 'none' }}
+    <div ref={ref} className="admin-select-wrap">
+      <div className="form-input admin-select-trigger"
         onClick={() => { setOpen(o => !o); setQuery('') }}>
-        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        <span className="admin-select-value">
           {selected ? `${selected.icon} ${selected.title}` : placeholder}
         </span>
-        <ChevronDown size={14} style={{ flexShrink: 0, color: 'var(--text-muted)', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }} />
+        <ChevronDown size={14} className={`admin-select-chevron${open ? ' is-open' : ''}`} />
       </div>
       {open && (
-        <div style={{ position: 'absolute', top: 'calc(100% + 4px)', left: 0, right: 0, background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)', zIndex: 400 }}>
-          <div style={{ padding: '0.5rem' }}>
-            <input autoFocus className="form-input" style={{ fontSize: '0.875rem' }} placeholder="Type to filter…"
+        <div className="admin-select-dropdown">
+          <div className="admin-select-filter">
+            <input autoFocus className="form-input admin-select-filter-input" placeholder="Type to filter…"
               value={query} onChange={e => setQuery(e.target.value)} onClick={e => e.stopPropagation()} />
           </div>
-          <div style={{ maxHeight: 220, overflowY: 'auto' }}>
+          <div className="admin-select-list">
             {filtered.length === 0
-              ? <div style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.875rem', textAlign: 'center' }}>No matches</div>
+              ? <div className="admin-select-empty">No matches</div>
               : filtered.map(s => (
                 <div key={s.id}
                   onClick={() => { onChange(s.id); setOpen(false); setQuery('') }}
-                  style={{ padding: '0.5rem 0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', background: s.id === value ? 'var(--primary-bg)' : 'transparent', color: s.id === value ? 'var(--primary)' : 'var(--text-primary)' }}
-                  onMouseEnter={e => { if (s.id !== value) e.currentTarget.style.background = 'var(--bg-tertiary)' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = s.id === value ? 'var(--primary-bg)' : 'transparent' }}>
+                  className={`admin-select-option${s.id === value ? ' is-selected' : ''}`}>
                   <span>{s.icon}</span> {s.title}
                 </div>
               ))
@@ -58,17 +58,6 @@ function SearchableSelect({ items, value, onChange, placeholder = 'Select…' })
           </div>
         </div>
       )}
-    </div>
-  )
-}
-
-const listToText = arr => (arr || []).join('\n')
-const textToList = str => str.split('\n').map(s => s.trim()).filter(Boolean)
-
-function SectionLabel({ children }) {
-  return (
-    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: 'var(--warning)', textTransform: 'uppercase', borderBottom: '1px solid var(--border)', paddingBottom: '0.35rem', marginBottom: '0.75rem', marginTop: '0.25rem' }}>
-      {children}
     </div>
   )
 }
@@ -112,12 +101,12 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal" style={{ maxWidth: 680, maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
-        <div className="modal-header" style={{ flexShrink: 0 }}>
+      <div className="modal admin-form-modal">
+        <div className="modal-header admin-form-modal__header">
           <h3 className="modal-title">{roadmap ? 'Edit Roadmap' : 'New Roadmap'}</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
-        <form onSubmit={handleSubmit} style={{ overflowY: 'auto', flex: 1, padding: '0 1.5rem 1.5rem' }}>
+        <form onSubmit={handleSubmit} className="admin-form-modal__body">
 
           <SectionLabel>Basic Info</SectionLabel>
           <div className="form-group">
@@ -125,7 +114,7 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
             <input className="form-input" value={form.title} onChange={e => set('title', e.target.value)} required />
           </div>
           <div className="form-group">
-            <label className="form-label">Description <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one-line)</span></label>
+            <label className="form-label">Description <span className="admin-form-label-hint">(one-line)</span></label>
             <input className="form-input" value={form.description} onChange={e => set('description', e.target.value)} />
           </div>
           <div className="form-group">
@@ -144,8 +133,8 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
           </div>
           <div className="form-group">
             <label className="form-label">Color</label>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <input type="color" value={form.color} onChange={e => set('color', e.target.value)} style={{ width: 40, height: 38, border: 'none', background: 'none', cursor: 'pointer' }} />
+            <div className="admin-color-picker-row">
+              <input type="color" value={form.color} onChange={e => set('color', e.target.value)} className="admin-color-picker" />
               <input className="form-input" value={form.color} onChange={e => set('color', e.target.value)} />
             </div>
           </div>
@@ -166,24 +155,24 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
 
           <div className="form-group">
             <label className="form-label">Target Roles (one per line)</label>
-            <textarea className="form-input" rows={4} value={form.roleTargets} onChange={e => set('roleTargets', e.target.value)} placeholder={'Java Full Stack Developer\nSpring Boot Developer\nBackend Java Developer'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={4} value={form.roleTargets} onChange={e => set('roleTargets', e.target.value)} placeholder={'Java Full Stack Developer\nSpring Boot Developer\nBackend Java Developer'} />
           </div>
 
           <SectionLabel>Lists (one item per line)</SectionLabel>
           <div className="form-group">
             <label className="form-label">What You Need First</label>
-            <textarea className="form-input" rows={3} value={form.prerequisites} onChange={e => set('prerequisites', e.target.value)} placeholder={'Basic computer usage\nHTML + CSS fundamentals'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.prerequisites} onChange={e => set('prerequisites', e.target.value)} placeholder={'Basic computer usage\nHTML + CSS fundamentals'} />
           </div>
           <div className="form-group">
             <label className="form-label">Tools Required</label>
-            <textarea className="form-input" rows={3} value={form.toolsRequired} onChange={e => set('toolsRequired', e.target.value)} placeholder={'VS Code\nNode.js v18+\nGit'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.toolsRequired} onChange={e => set('toolsRequired', e.target.value)} placeholder={'VS Code\nNode.js v18+\nGit'} />
           </div>
           <div className="form-group">
             <label className="form-label">What You Will Achieve</label>
-            <textarea className="form-input" rows={3} value={form.outcomes} onChange={e => set('outcomes', e.target.value)} placeholder={'Build full-stack applications\nDeploy to cloud\nClear Java interviews'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.outcomes} onChange={e => set('outcomes', e.target.value)} placeholder={'Build full-stack applications\nDeploy to cloud\nClear Java interviews'} />
           </div>
 
-          <div className="modal-actions" style={{ paddingTop: '0.5rem', borderTop: '1px solid var(--border)', marginTop: '0.5rem' }}>
+          <div className="modal-actions admin-modal-actions--bordered">
             <button type="button" className="btn btn-ghost" onClick={onClose}>Cancel</button>
             <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? <span className="loading-spinner" /> : null} {roadmap ? 'Update' : 'Create'}
@@ -248,40 +237,40 @@ function SubjectsPanel({ roadmap, onClose }) {
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal" style={{ maxWidth: 600 }}>
+      <div className="modal admin-form-modal--600">
         <div className="modal-header">
           <h3 className="modal-title">Subjects in "{roadmap.title}"</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
         {loading ? <RadarLoader height={220} /> : (
           <>
-            <div style={{ marginBottom: '1rem', padding: '1rem', background: 'var(--bg-tertiary)', borderRadius: 'var(--radius-md)' }}>
+            <div className="admin-panel-add-box">
               <div className="form-label mb-1">Add Subject</div>
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <div className="admin-panel-add-row">
                 <SearchableSelect items={available} value={selectedSub} onChange={setSelectedSub} placeholder="Select subject…" />
-                <input type="number" className="form-input" style={{ width: 80 }} value={orderIdx} onChange={e => setOrderIdx(Number(e.target.value))} placeholder="Order" min={1} />
+                <input type="number" className="form-input admin-order-input--narrow" value={orderIdx} onChange={e => setOrderIdx(Number(e.target.value))} placeholder="Order" min={1} />
                 <button className="btn btn-primary btn-sm" onClick={handleAdd} disabled={adding || !selectedSub}>
                   {adding ? <span className="loading-spinner" /> : <Plus size={13} />} Add
                 </button>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <div className="admin-col-stack">
               {rsubs.sort((a, b) => a.orderIndex - b.orderIndex).map(rs => (
-                <div key={rs.id} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.6rem 1rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
+                <div key={rs.id} className="admin-list-card">
                   {editingId === rs.subject?.id ? (
                     <input
                       type="number" min={1}
                       value={editIdx}
                       onChange={e => setEditIdx(Number(e.target.value))}
-                      style={{ width: 52, padding: '0.2rem 0.4rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--primary)', background: 'var(--bg-card)', color: 'var(--primary)', fontWeight: 700, fontSize: '0.8rem', textAlign: 'center' }}
+                      className="admin-order-input"
                       onKeyDown={e => { if (e.key === 'Enter') handleReorder(rs.subject?.id); if (e.key === 'Escape') setEditingId(null) }}
                       autoFocus
                     />
                   ) : (
-                    <span style={{ width: 28, height: 28, background: 'var(--primary-bg)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', flexShrink: 0 }}>{rs.orderIndex}</span>
+                    <span className="admin-order-badge">{rs.orderIndex}</span>
                   )}
-                  <span style={{ fontSize: '1.25rem' }}>{rs.subject?.icon}</span>
-                  <span className="text-sm font-semibold" style={{ flex: 1 }}>{rs.subject?.title}</span>
+                  <span className="admin-emoji-lg">{rs.subject?.icon}</span>
+                  <span className="text-sm font-semibold admin-flex-1">{rs.subject?.title}</span>
                   {editingId === rs.subject?.id ? (
                     <>
                       <button className="btn btn-primary btn-sm" onClick={() => handleReorder(rs.subject?.id)}><Check size={12} /></button>
@@ -295,7 +284,7 @@ function SubjectsPanel({ roadmap, onClose }) {
                   )}
                 </div>
               ))}
-              {rsubs.length === 0 && <p className="text-muted text-sm" style={{ textAlign: 'center', padding: '1rem' }}>No subjects added yet</p>}
+              {rsubs.length === 0 && <p className="text-muted text-sm admin-empty-inline">No subjects added yet</p>}
             </div>
           </>
         )}
@@ -363,12 +352,11 @@ export default function AdminRoadmaps() {
           <h1 className="page-title">Roadmaps</h1>
           <p className="page-subtitle">{roadmaps.length} career roadmaps</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-          <div style={{ position: 'relative' }}>
-            <Search size={15} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
+        <div className="admin-page-actions">
+          <div className="admin-search-wrap">
+            <Search size={15} className="admin-search-icon" />
             <input
-              className="form-input"
-              style={{ paddingLeft: '2.25rem', width: 220 }}
+              className="form-input admin-search-input"
               placeholder="Search roadmaps…"
               value={search}
               onChange={e => setSearch(e.target.value)}
@@ -391,7 +379,7 @@ export default function AdminRoadmaps() {
           <table className="table">
             <thead>
               <tr>
-                <th style={{ width: 44 }}>
+                <th className="admin-th-checkbox">
                   <input
                     type="checkbox"
                     className="table-checkbox"
@@ -406,7 +394,7 @@ export default function AdminRoadmaps() {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={5} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No roadmaps match "{search}"</td></tr>
+                <tr><td colSpan={5} className="admin-table-empty">No roadmaps match "{search}"</td></tr>
               ) : filtered.map(r => (
                 <tr key={r.id} className={selection.isSelected(r.id) ? 'row-selected' : ''}>
                   <td>
@@ -419,20 +407,20 @@ export default function AdminRoadmaps() {
                     />
                   </td>
                   <td>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <div style={{ width: 36, height: 36, background: r.color + '22', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', flexShrink: 0 }}>
+                    <div className="admin-row-flex">
+                      <div className="admin-icon-box" style={{ '--admin-icon-bg': r.color + '22' }}>
                         {r.icon}
                       </div>
                       <div>
                         <div className="table-name">{r.title}</div>
-                        <div className="text-xs text-muted truncate" style={{ maxWidth: 280 }}>{r.description}</div>
+                        <div className="text-xs text-muted truncate admin-truncate-desc">{r.description}</div>
                       </div>
                     </div>
                   </td>
                   <td><span className="badge badge-primary">{r.roleTarget || '—'}</span></td>
                   <td className="text-sm text-muted">{r.estimatedWeeks}w</td>
                   <td>
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <div className="admin-action-btns">
                       <button type="button" className="btn btn-ghost btn-sm" onClick={() => setSubjectsPanel(r)}><Settings size={13} /> Subjects</button>
                       <button type="button" className="btn btn-ghost btn-sm" onClick={() => setModal(r)} aria-label={`Edit ${r.title}`}><Pencil size={13} /></button>
                     </div>

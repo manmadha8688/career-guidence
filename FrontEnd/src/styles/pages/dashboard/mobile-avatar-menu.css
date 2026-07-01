@@ -1,0 +1,146 @@
+/* MobileAvatarMenu */
+
+.dash-mob-menu {
+  position: fixed;
+  top: 62px;
+  right: 12px;
+  z-index: 311;
+  width: 260px;
+  background: #0D1322;
+  border: 1px solid rgba(155, 110, 212, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  animation: slideUp 0.15s ease;
+}
+
+.dash-mob-menu__header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(155, 110, 212, 0.14);
+  background: rgba(155, 110, 212, 0.07);
+}
+
+.dash-mob-menu__profile-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.dash-mob-menu__name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #E2E8F0;
+}
+
+.dash-mob-menu__guest-tag {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: #64748B;
+  background: rgba(100, 116, 139, 0.15);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.dash-mob-menu__xp-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.dash-mob-menu__xp-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #F59E0B;
+}
+
+.dash-mob-menu__level {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #64748B;
+}
+
+.dash-mob-menu__xp-hint {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: #64748B;
+  margin-top: 0.3rem;
+}
+
+.dash-mob-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.dash-mob-menu__item:hover { background: color-mix(in srgb, var(--item-color) 7%, transparent); }
+
+.dash-mob-menu__item-icon {
+  font-size: 1.15rem;
+  width: 26px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.dash-mob-menu__item-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--item-color);
+  letter-spacing: 0.02em;
+}
+
+.dash-mob-menu__guest-banner {
+  padding: 0.625rem 1rem;
+  background: rgba(155, 110, 212, 0.06);
+  border-top: 1px solid rgba(155, 110, 212, 0.12);
+  font-size: 0.72rem;
+  color: #8B9AB8;
+  line-height: 1.5;
+}
+
+.dash-mob-menu__footer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dash-mob-menu__exit-btn {
+  flex: 1;
+  padding: 0.55rem;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.dash-mob-menu__logout-btn {
+  flex: 1;
+  padding: 0.55rem;
+  border-radius: 7px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+}

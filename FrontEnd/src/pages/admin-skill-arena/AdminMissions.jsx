@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
-import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
@@ -10,20 +9,11 @@ import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminMissions, createMission, updateMission, deleteMission, getAdminSubjects } from '../../api/api'
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
+import SectionLabel from '../../components/admin/SectionLabel'
+import { listToText, textToList } from '../../components/admin/adminFormUtils'
 
 const RANKS = ['D', 'C', 'B', 'A', 'S']
 const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#22C55E' }
-
-const listToText = (arr) => (arr || []).join('\n')
-const textToList = (str) => str.split('\n').map(s => s.trim()).filter(Boolean)
-
-function SectionLabel({ children }) {
-  return (
-    <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.12em', color: 'var(--warning)', textTransform: 'uppercase', borderBottom: '1px solid var(--border)', paddingBottom: '0.375rem', marginBottom: '0.75rem', marginTop: '0.25rem' }}>
-      {children}
-    </div>
-  )
-}
 
 function MissionModal({ mission, subjects, onClose, onSave }) {
   const [form, setForm] = useState(() => mission ? {
@@ -101,13 +91,13 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal" style={{ maxWidth: 700, maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
-        <div className="modal-header" style={{ flexShrink: 0 }}>
+      <div className="modal admin-form-modal--700">
+        <div className="modal-header admin-form-modal__header">
           <h3 className="modal-title">{mission ? 'Edit Mission' : 'New Mission'}</h3>
           <button className="modal-close" onClick={onClose}><X size={18} /></button>
         </div>
 
-        <form onSubmit={handleSubmit} style={{ overflowY: 'auto', flex: 1, padding: '0 1.5rem 1.5rem' }}>
+        <form onSubmit={handleSubmit} className="admin-form-modal__body">
           <SectionLabel>Basic Info</SectionLabel>
           <div className="form-group">
             <label className="form-label">Title *</label>
@@ -120,10 +110,11 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
           <div className="grid-2">
             <div className="form-group">
               <label className="form-label">Rank</label>
-              <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+              <div className="admin-rank-picker">
                 {RANKS.map(r => (
                   <button key={r} type="button" onClick={() => set('rank', r)}
-                    style={{ padding: '0.3rem 0.75rem', borderRadius: 6, cursor: 'pointer', fontWeight: 700, fontSize: '0.8rem', fontFamily: "'Orbitron', sans-serif", letterSpacing: '0.06em', border: `1.5px solid ${RANK_COLORS[r]}`, background: form.rank === r ? RANK_COLORS[r] : 'transparent', color: form.rank === r ? '#fff' : RANK_COLORS[r], transition: 'all 0.15s' }}>
+                    className={`admin-rank-btn${form.rank === r ? ' is-active' : ''}`}
+                    style={{ '--rank-color': RANK_COLORS[r] }}>
                     {r}
                   </button>
                 ))}
@@ -139,9 +130,9 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
               <label className="form-label">Order Index</label>
               <input className="form-input" type="number" min="0" value={form.orderIndex} onChange={e => set('orderIndex', e.target.value)} />
             </div>
-            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingTop: '1.75rem' }}>
-              <input type="checkbox" id="pub" checked={form.published} onChange={e => set('published', e.target.checked)} style={{ width: 16, height: 16, cursor: 'pointer', accentColor: 'var(--primary)' }} />
-              <label htmlFor="pub" style={{ cursor: 'pointer', fontSize: '0.82rem', color: 'var(--text-secondary)', fontFamily: "'Share Tech Mono', monospace" }}>Published (visible to students)</label>
+            <div className="form-group admin-form-group-checkbox-row">
+              <input type="checkbox" id="pub" checked={form.published} onChange={e => set('published', e.target.checked)} className="admin-form-checkbox" />
+              <label htmlFor="pub" className="admin-form-checkbox-label">Published (visible to students)</label>
             </div>
           </div>
 
@@ -158,24 +149,26 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
             {form.category === 'ROLE_BASED' && (
               <div className="form-group">
                 <label className="form-label">Target Roles (one per line)</label>
-                <textarea className="form-input" rows={3} value={form.targetRoles} onChange={e => set('targetRoles', e.target.value)} placeholder={'Python Full Stack\nFrontend Developer\nData Analyst'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+                <textarea className="form-input admin-textarea-mono" rows={3} value={form.targetRoles} onChange={e => set('targetRoles', e.target.value)} placeholder={'Python Full Stack\nFrontend Developer\nData Analyst'} />
               </div>
             )}
           </div>
 
           <SectionLabel>Tech Stack (one per line)</SectionLabel>
           <div className="form-group">
-            <textarea className="form-input" rows={3} value={form.techStack} onChange={e => set('techStack', e.target.value)} placeholder={'Python\nFlask\nSQLite'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.techStack} onChange={e => set('techStack', e.target.value)} placeholder={'Python\nFlask\nSQLite'} />
           </div>
 
           <SectionLabel>Linked Subjects</SectionLabel>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>
-            {subjects.length === 0 && <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>No subjects loaded</span>}
+          <div className="admin-chip-wrap">
+            {subjects.length === 0 && <span className="admin-muted-note">No subjects loaded</span>}
             {subjects.map(s => {
               const selected = form.subjectIds.includes(s.id)
+              const accent = s.color || 'var(--primary)'
               return (
                 <button key={s.id} type="button" onClick={() => toggleSubject(s)}
-                  style={{ padding: '0.25rem 0.65rem', borderRadius: 20, cursor: 'pointer', fontSize: '0.78rem', fontFamily: "'Share Tech Mono', monospace", border: `1.5px solid ${selected ? (s.color || 'var(--primary)') : 'var(--border)'}`, background: selected ? (s.color || 'var(--primary)') + '22' : 'transparent', color: selected ? (s.color || 'var(--primary)') : 'var(--text-muted)', transition: 'all 0.15s' }}>
+                  className={`admin-subject-chip${selected ? ' is-selected' : ''}`}
+                  style={{ '--chip-accent': accent, '--chip-accent-bg': accent + '22' }}>
                   {s.icon} {s.title}
                 </button>
               )
@@ -184,43 +177,43 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
 
           <SectionLabel>Guidance (Student-Facing)</SectionLabel>
           <div className="form-group">
-            <label className="form-label">🎯 Learning Outcome <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(1 sentence — what student achieves)</span></label>
+            <label className="form-label">🎯 Learning Outcome <span className="admin-form-label-hint">(1 sentence — what student achieves)</span></label>
             <input className="form-input" value={form.learningOutcome} onChange={e => set('learningOutcome', e.target.value)} placeholder="After this, you can build a responsive grid layout without guidance." />
           </div>
           <div className="grid-2">
             <div className="form-group">
-              <label className="form-label">⚡ Prerequisites <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one per line)</span></label>
-              <textarea className="form-input" rows={3} value={form.prerequisites} onChange={e => set('prerequisites', e.target.value)} placeholder={'Flexbox\nCSS Grid\nMedia Queries'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+              <label className="form-label">⚡ Prerequisites <span className="admin-form-label-hint">(one per line)</span></label>
+              <textarea className="form-input admin-textarea-mono" rows={3} value={form.prerequisites} onChange={e => set('prerequisites', e.target.value)} placeholder={'Flexbox\nCSS Grid\nMedia Queries'} />
             </div>
             <div className="form-group">
-              <label className="form-label">📚 Concepts Covered <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one per line)</span></label>
-              <textarea className="form-input" rows={3} value={form.conceptsCovered} onChange={e => set('conceptsCovered', e.target.value)} placeholder={'CSS Grid\nResponsive Design\nCSS Variables'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+              <label className="form-label">📚 Concepts Covered <span className="admin-form-label-hint">(one per line)</span></label>
+              <textarea className="form-input admin-textarea-mono" rows={3} value={form.conceptsCovered} onChange={e => set('conceptsCovered', e.target.value)} placeholder={'CSS Grid\nResponsive Design\nCSS Variables'} />
             </div>
           </div>
           <div className="form-group">
-            <label className="form-label">⚠ Common Mistakes <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(one per line)</span></label>
-            <textarea className="form-input" rows={3} value={form.commonMistakes} onChange={e => set('commonMistakes', e.target.value)} placeholder={'Forgetting box-sizing: border-box\nNot testing on mobile viewport'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <label className="form-label">⚠ Common Mistakes <span className="admin-form-label-hint">(one per line)</span></label>
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.commonMistakes} onChange={e => set('commonMistakes', e.target.value)} placeholder={'Forgetting box-sizing: border-box\nNot testing on mobile viewport'} />
           </div>
 
           <SectionLabel>Content (one item per line)</SectionLabel>
           <div className="form-group">
             <label className="form-label">Objectives</label>
-            <textarea className="form-input" rows={4} value={form.objectives} onChange={e => set('objectives', e.target.value)} placeholder={'Build a REST API with authentication\nConnect to a database\nDeploy to the cloud'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={4} value={form.objectives} onChange={e => set('objectives', e.target.value)} placeholder={'Build a REST API with authentication\nConnect to a database\nDeploy to the cloud'} />
           </div>
           <div className="form-group">
             <label className="form-label">Bonus Objectives</label>
-            <textarea className="form-input" rows={3} value={form.bonusObjectives} onChange={e => set('bonusObjectives', e.target.value)} placeholder={'Add rate limiting\nWrite unit tests'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.bonusObjectives} onChange={e => set('bonusObjectives', e.target.value)} placeholder={'Add rate limiting\nWrite unit tests'} />
           </div>
           <div className="form-group">
             <label className="form-label">Approach Steps</label>
-            <textarea className="form-input" rows={4} value={form.approachSteps} onChange={e => set('approachSteps', e.target.value)} placeholder={'Start by planning your data models\nSet up the project structure\nImplement authentication first'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={4} value={form.approachSteps} onChange={e => set('approachSteps', e.target.value)} placeholder={'Start by planning your data models\nSet up the project structure\nImplement authentication first'} />
           </div>
           <div className="form-group">
             <label className="form-label">Hints</label>
-            <textarea className="form-input" rows={3} value={form.hints} onChange={e => set('hints', e.target.value)} placeholder={'Use environment variables for secrets\nJWT tokens expire — handle refresh logic'} style={{ fontFamily: 'monospace', fontSize: '0.82rem' }} />
+            <textarea className="form-input admin-textarea-mono" rows={3} value={form.hints} onChange={e => set('hints', e.target.value)} placeholder={'Use environment variables for secrets\nJWT tokens expire — handle refresh logic'} />
           </div>
 
-          <div className="modal-actions" style={{ paddingTop: '0.5rem', borderTop: '1px solid var(--border)', marginTop: '0.5rem' }}>
+          <div className="modal-actions admin-modal-actions--bordered">
             <button type="button" className="btn btn-ghost" onClick={onClose}>Cancel</button>
             <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? <span className="loading-spinner" /> : null}
@@ -298,10 +291,10 @@ export default function AdminMissions() {
           <h1 className="page-title">Missions</h1>
           <p className="page-subtitle">{missions.length} missions in the platform</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-          <div style={{ position: 'relative' }}>
-            <Search size={15} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', pointerEvents: 'none' }} />
-            <input className="form-input" style={{ paddingLeft: '2.25rem', width: 220 }} placeholder="Search missions…" value={search} onChange={e => setSearch(e.target.value)} />
+        <div className="admin-page-actions">
+          <div className="admin-search-wrap">
+            <Search size={15} className="admin-search-icon" />
+            <input className="form-input admin-search-input" placeholder="Search missions…" value={search} onChange={e => setSearch(e.target.value)} />
           </div>
           <button className="btn btn-primary" onClick={() => setModal('new')}>
             <Plus size={15} /> New Mission
@@ -324,7 +317,7 @@ export default function AdminMissions() {
           <table className="table">
             <thead>
               <tr>
-                <th style={{ width: 44 }}>
+                <th className="admin-th-checkbox">
                   <input
                     type="checkbox"
                     className="table-checkbox"
@@ -345,7 +338,7 @@ export default function AdminMissions() {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={8} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
+                <tr><td colSpan={8} className="admin-table-empty">
                   {search ? `No missions match "${search}"` : 'No missions yet — click New Mission to add one'}
                 </td></tr>
               ) : filtered.map(m => (
@@ -361,34 +354,34 @@ export default function AdminMissions() {
                   </td>
                   <td>
                     <div className="table-name">{m.title}</div>
-                    <div className="text-xs text-muted truncate" style={{ maxWidth: 280 }}>{m.missionBrief}</div>
+                    <div className="text-xs text-muted truncate admin-truncate-desc">{m.missionBrief}</div>
                   </td>
                   <td>
-                    <span style={{ fontFamily: "'Orbitron', sans-serif", fontSize: '0.7rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: 4, border: `1.5px solid ${RANK_COLORS[m.rank] || '#888'}`, color: RANK_COLORS[m.rank] || '#888', background: (RANK_COLORS[m.rank] || '#888') + '18' }}>
+                    <span className="admin-rank-badge" style={{ '--rank-color': RANK_COLORS[m.rank] || '#888' }}>
                       {m.rank || 'D'}
                     </span>
                   </td>
                   <td>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem', maxWidth: 160 }}>
+                    <div className="admin-tag-wrap">
                       {(m.techStack || []).slice(0, 3).map(t => (
-                        <span key={t} style={{ fontSize: '0.68rem', fontFamily: "'Share Tech Mono', monospace", color: 'var(--text-muted)', background: 'var(--bg-tertiary)', border: '1px solid var(--border)', padding: '0.1rem 0.4rem', borderRadius: 4 }}>{t}</span>
+                        <span key={t} className="admin-tag-chip">{t}</span>
                       ))}
-                      {(m.techStack || []).length > 3 && <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>+{m.techStack.length - 3}</span>}
+                      {(m.techStack || []).length > 3 && <span className="admin-tag-more">+{m.techStack.length - 3}</span>}
                     </div>
                   </td>
-                  <td className="text-sm text-muted" style={{ maxWidth: 200 }}>
+                  <td className="text-sm text-muted admin-cell-max-200">
                     {(m.subjectTitles || []).length > 0
                       ? (m.subjectTitles || []).join(', ')
-                      : <span style={{ color: 'var(--border)' }}>—</span>}
+                      : <span className="admin-em-dash">—</span>}
                   </td>
                   <td className="text-sm text-muted">
-                    {m.estimatedHours > 0 ? `${m.estimatedHours}h` : <span style={{ color: 'var(--border)' }}>—</span>}
+                    {m.estimatedHours > 0 ? `${m.estimatedHours}h` : <span className="admin-em-dash">—</span>}
                   </td>
                   <td>
                     {m.published ? (
-                      <span style={{ fontSize: '0.7rem', fontFamily: "'Share Tech Mono', monospace", color: '#4ADE80', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)', padding: '0.15rem 0.5rem', borderRadius: 4 }}>live</span>
+                      <span className="admin-status-live">live</span>
                     ) : (
-                      <span style={{ fontSize: '0.7rem', fontFamily: "'Share Tech Mono', monospace", color: 'var(--text-muted)', background: 'rgba(136,136,136,0.08)', border: '1px solid var(--border)', padding: '0.15rem 0.5rem', borderRadius: 4 }}>draft</span>
+                      <span className="admin-status-draft">draft</span>
                     )}
                   </td>
                   <td>

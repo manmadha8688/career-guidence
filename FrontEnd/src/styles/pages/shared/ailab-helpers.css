@@ -1,0 +1,862 @@
+/* AI Lab — shared helper components (InfoBox, Steps, Compare, etc.) */
+
+.tool-helper-infobox {
+  margin: 1rem 0;
+  padding: 0.875rem 1.125rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tool-color) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 16%, transparent);
+}
+
+[data-theme="light"] .tool-helper-infobox {
+  background: color-mix(in srgb, var(--tool-color) 3%, transparent);
+}
+
+.tool-helper-infobox__text {
+  font-size: 0.875rem;
+  color: var(--tool-color);
+  line-height: 1.75;
+  margin: 0;
+  font-weight: 600;
+}
+
+.tool-helper-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin: 0.75rem 0;
+}
+
+.tool-helper-step {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--tool-layout-border);
+}
+
+[data-theme="light"] .tool-helper-step {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tool-helper-step__num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tool-color) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--tool-color) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--tool-color);
+  flex-shrink: 0;
+}
+
+.tool-helper-step__title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.tool-helper-step__body {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.tool-helper-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin: 0.75rem 0;
+}
+
+.tool-helper-compare__item {
+  padding: 1rem 1.125rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--tool-layout-border);
+}
+
+[data-theme="light"] .tool-helper-compare__item {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.tool-helper-compare__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tool-helper-compare__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+}
+
+.tool-helper-compare__badge {
+  font-size: 0.6rem;
+  background: color-mix(in srgb, var(--tool-color) 8%, transparent);
+  color: var(--tool-color);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 15%, transparent);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.tool-helper-compare__body {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tool-helper-highlight {
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 12%, transparent);
+  margin: 0.5rem 0;
+}
+
+[data-theme="light"] .tool-helper-highlight {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tool-helper-highlight__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+  display: block;
+}
+
+.tool-helper-highlight__text {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tool-quick-start__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--tool-color);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.tool-success-note {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  margin-top: 0.75rem;
+}
+
+[data-theme="light"] .tool-success-note {
+  background: rgba(74, 222, 128, 0.06);
+}
+
+.tool-success-note__text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: #4ade80;
+  letter-spacing: 0.07em;
+}
+
+.tool-helper-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 0.625rem;
+  margin: 0.75rem 0;
+}
+
+.tool-helper-card {
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tool-color) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 12%, transparent);
+}
+
+[data-theme="light"] .tool-helper-card {
+  background: color-mix(in srgb, var(--tool-color) 4%, transparent);
+}
+
+.tool-helper-card__name {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.tool-helper-card__desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.tool-helper-subhead {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--tool-color);
+  margin: 1.25rem 0 0.625rem;
+}
+
+.tool-layout-cando-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* AIToolPage fallbacks */
+.tool-fallback-page {
+  min-height: 100vh;
+  background: var(--tool-layout-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  padding: 2rem;
+}
+
+.tool-fallback-page--loading {
+  color: var(--ailab-cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.tool-fallback-page__icon {
+  font-size: 3rem;
+}
+
+.tool-fallback-page__tagline {
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 400px;
+  margin: 0;
+}
+
+.tool-fallback-page__soon {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+}
+
+.tool-fallback-page__link {
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  background: var(--tool-color, var(--ailab-cyan));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.tool-fallback-page__back {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: var(--ailab-cyan);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.tool-fallback-page__back--primary {
+  padding: 0.6rem 1.25rem;
+  background: var(--ailab-cyan);
+  color: #000;
+  border: none;
+  font-weight: 700;
+}
+
+/* ── Content blocks (code, prompts, examples) ── */
+.tool-layout-block__para--flush {
+  margin-bottom: 0;
+}
+
+.tool-code-block {
+  padding: 1rem 1.125rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tool-color) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 15%, transparent);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+
+[data-theme="light"] .tool-code-block {
+  background: color-mix(in srgb, var(--tool-color) 4%, transparent);
+}
+
+.tool-code-block__label {
+  color: var(--tool-color);
+  margin-bottom: 0.4rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.tool-prompt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.tool-prompt-block {
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent-color, var(--ailab-cyan)) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-color, var(--ailab-cyan)) 14%, transparent);
+}
+
+[data-theme="light"] .tool-prompt-block {
+  background: color-mix(in srgb, var(--accent-color, #4F46E5) 4%, transparent);
+  border-color: color-mix(in srgb, var(--accent-color, #4F46E5) 14%, transparent);
+}
+
+.tool-prompt-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.875rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color, var(--ailab-cyan)) 8%, transparent);
+}
+
+.tool-prompt-block__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--accent-color, var(--ailab-cyan));
+  letter-spacing: 0.08em;
+}
+
+.tool-prompt-block__copy {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.2rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.62rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.tool-prompt-block__body {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0.75rem 0.875rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tool-example-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.tool-example-row__marker {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--tool-color);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tool-example-row__code {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 1.6;
+}
+
+.tool-example-row__text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tool-example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 0.625rem;
+  margin: 0.75rem 0;
+}
+
+.tool-example-card {
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tool-color) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 12%, transparent);
+}
+
+[data-theme="light"] .tool-example-card {
+  background: color-mix(in srgb, var(--tool-color) 4%, transparent);
+}
+
+.tool-example-card__title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.tool-example-card__sample {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  font-family: 'Share Tech Mono', monospace;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.tool-example-card__desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tool-inline-code {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85em;
+  background: color-mix(in srgb, var(--tool-color) 10%, transparent);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: var(--tool-color);
+}
+
+.tool-inline-code--tip {
+  --tool-color: #F59E0B;
+}
+
+.tool-table-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+
+.tool-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.tool-table thead tr {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="light"] .tool-table thead tr {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tool-table th {
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--tool-layout-border);
+  white-space: nowrap;
+}
+
+.tool-table td {
+  padding: 0.625rem 0.875rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--tool-layout-border);
+}
+
+.tool-table td.tool-table__cell--accent {
+  font-weight: 700;
+  color: var(--tool-color);
+  white-space: nowrap;
+}
+
+.tool-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tool-table--striped tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--tool-color) 4%, transparent);
+}
+
+[data-theme="light"] .tool-table--striped tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--tool-color) 3%, transparent);
+}
+
+[data-theme="light"] .tool-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tool-checklist-item {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.tool-checklist-item__mark {
+  color: var(--tool-color);
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+
+.tool-footnote {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.tool-constraint-box {
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--tool-layout-border);
+  margin: 0.75rem 0;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+[data-theme="light"] .tool-constraint-box {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tool-constraint-box__title {
+  font-size: 0.65rem;
+  color: var(--tool-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+.tool-constraint-box__line {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+.tool-constraint-box__line:last-child {
+  margin-bottom: 0;
+}
+
+.tool-pattern-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.tool-pattern-item {
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--tool-layout-border);
+}
+
+[data-theme="light"] .tool-pattern-item {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.tool-pattern-item__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tool-color);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.06em;
+}
+
+.tool-pattern-item__body {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tool-tag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.tool-tag-pill {
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--tool-layout-border);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+[data-theme="light"] .tool-tag-pill {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.tool-warning-note {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  margin-bottom: 1rem;
+}
+
+[data-theme="light"] .tool-warning-note {
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.tool-warning-note__text {
+  font-size: 0.8rem;
+  color: #F59E0B;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.tool-warning-note__text a {
+  color: #F59E0B;
+}
+
+.tool-term-list {
+  margin: 0;
+}
+
+.tool-term-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--tool-layout-border);
+}
+
+.tool-term-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tool-term-item__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.tool-term-item__body {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.tool-security-item {
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.625rem;
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+[data-theme="light"] .tool-security-item {
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.tool-security-item__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: #EF4444;
+  margin-bottom: 0.4rem;
+}
+
+.tool-security-item__body {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tool-use-case-block {
+  padding: 1rem 1.125rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--tool-color) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tool-color) 12%, transparent);
+  margin-bottom: 0.625rem;
+}
+
+.tool-use-case-block__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--tool-color);
+  margin-bottom: 0.625rem;
+}
+
+.tool-use-case-block__example {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  align-items: flex-start;
+}
+
+.tool-use-case-block__arrow {
+  color: var(--tool-color);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tool-use-case-block__text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tool-benchmark-row {
+  display: flex;
+  gap: 0.875rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--tool-layout-border);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="light"] .tool-benchmark-row {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tool-benchmark-row__name {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.tool-benchmark-row__desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.tool-split-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.tool-split-card {
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--tool-layout-border);
+}
+
+[data-theme="light"] .tool-split-card {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.tool-split-card__heading {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--tool-color);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.625rem;
+}
+
+.tool-split-card__point {
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+  margin-bottom: 0.35rem;
+}
+
+.tool-split-card__bullet {
+  color: var(--tool-color);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.tool-split-card__text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.tool-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 0.625rem;
+}
+
+.tool-tool-card {
+  padding: 0.75rem;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--tool-layout-border);
+}
+
+[data-theme="light"] .tool-tool-card {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.tool-tool-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.tool-tool-card__name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.tool-tool-card__free {
+  font-size: 0.55rem;
+  color: #4ADE80;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.tool-tool-card__role {
+  font-size: 0.68rem;
+  color: var(--tool-color);
+  font-family: 'Share Tech Mono', monospace;
+  margin-bottom: 0.2rem;
+}
+
+.tool-tool-card__note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}

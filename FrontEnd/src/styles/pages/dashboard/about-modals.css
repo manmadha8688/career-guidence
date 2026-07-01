@@ -1,0 +1,166 @@
+/* AboutGateModal & AboutRoadmapModal — shared about-modal styles */
+
+.dash-about-modal {
+  background: var(--bg-card);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  width: clamp(340px, 62vw, 860px);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.dash-about-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.dash-about-modal__icon-wrap {
+  width: 40px;
+  height: 40px;
+  background: var(--icon-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.dash-about-modal__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.dash-about-modal__meta {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.dash-about-modal__meta--roadmap { gap: 0.4rem; }
+
+.dash-about-modal__rank-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  background: var(--rank-bg);
+}
+
+.dash-about-modal__chip {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+
+.dash-about-modal__body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.dash-about-modal__full-col { grid-column: 1 / -1; }
+
+.dash-about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.dash-about-section__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.dash-about-list { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.dash-about-list__item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.dash-about-list__bullet {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+}
+
+.dash-about-list__text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.dash-about-overview {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  background: var(--overview-bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.dash-about-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dash-about-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.dash-about-empty--roadmap { font-size: 0.72rem; }
+
+.dash-about-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.dash-about-role-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  color: var(--accent);
+  background: var(--role-bg);
+  border: 1px solid var(--role-border);
+  letter-spacing: 0.03em;
+}

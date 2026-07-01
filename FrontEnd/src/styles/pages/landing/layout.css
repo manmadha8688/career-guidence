@@ -1,0 +1,98 @@
+/* ── Landing page shell ── */
+.lp-page {
+  background: var(--lp-bg);
+  min-height: 100vh;
+  color: var(--lp-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Hero fade (theme-aware) ── */
+.lp-hero-fade-bottom {
+  background: linear-gradient(to bottom, transparent 60%, var(--lp-bg) 100%);
+}
+
+/* ── Hero animation delays ── */
+.lp-hero-title--d1 { animation-delay: 0.1s; }
+.lp-hero-title--d2 { animation-delay: 0.2s; }
+.lp-hero-sub--d3   { animation-delay: 0.38s; }
+
+.lp-hero-headline-v2 { color: var(--lp-text); }
+.lp-hero-desc-v2     { color: var(--lp-text-sub); }
+
+.lp-hero-actions--center { justify-content: center; }
+
+.lp-job-rotate {
+  display: block;
+  min-height: 1.15em;
+}
+
+/* ── Hero stats ── */
+.lp-hero-stat:not(:last-child) {
+  border-right: 1px solid var(--lp-stat-divider);
+}
+
+.lp-hero-stat__value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.lp-hero-stat__value--primary { color: var(--lp-primary); }
+.lp-hero-stat__value--blue    { color: var(--lp-blue); }
+.lp-hero-stat__value--green   { color: var(--lp-green); }
+.lp-hero-stat__value--gold    { color: var(--lp-gold); }
+
+.lp-hero-stat__label {
+  font-size: 0.62rem;
+  color: var(--lp-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 3px;
+}
+
+/* ── Footer ── */
+.lp-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lp-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lp-footer__title {
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.lp-footer__tagline {
+  font-size: 0.8rem;
+  color: var(--lp-text-muted);
+}
+
+.lp-footer__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.lp-footer__link {
+  font-size: 0.8rem;
+  color: var(--lp-text-sub);
+  cursor: pointer;
+}
+
+.lp-footer__link--muted {
+  color: var(--lp-text-muted);
+  cursor: default;
+}
+
+.lp-mob-menu-btn { display: none; }

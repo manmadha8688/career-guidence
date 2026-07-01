@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MessageSquare, Star, ThumbsUp, ThumbsDown, Loader2, Heart } from 'lucide-react'
+import { MessageSquare, Star, ThumbsUp, ThumbsDown, Loader2, Heart, Sparkles } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { submitFeedback } from '../api/api'
 
@@ -59,13 +59,13 @@ export default function LandingFeedbackSection() {
   if (submitted) {
     return (
       <section id="feedback" className="lp-feedback-section">
-        <div className="lp-feedback-inner lp-reveal">
-          <div className="lp-feedback-card" style={{ textAlign: 'center' }}>
-            <Heart size={36} color="var(--primary)" style={{ marginBottom: '1rem' }} />
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0 0 0.5rem', color: 'var(--text-primary)' }}>
-              We got it — thank you
-            </h2>
-            <p style={{ color: 'var(--text-secondary)', margin: 0, lineHeight: 1.7, maxWidth: 420, marginInline: 'auto' }}>
+        <div className="lp-feedback-shell lp-reveal">
+          <div className="lp-feedback-card lp-feedback-card--success">
+            <div className="lp-feedback-success-icon">
+              <Heart size={32} />
+            </div>
+            <h2>We got it — thank you</h2>
+            <p>
               Every honest review goes straight to the team. Your input helps us build something students actually need.
             </p>
           </div>
@@ -76,34 +76,23 @@ export default function LandingFeedbackSection() {
 
   return (
     <section id="feedback" className="lp-feedback-section">
-      <div className="lp-feedback-inner">
-        <div className="lp-reveal" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <p style={{
-            color: 'var(--primary)', fontWeight: 700, fontSize: '0.8rem',
-            letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.5rem',
-          }}>
-            Honest Feedback
+      <div className="lp-feedback-shell">
+        <header className="lp-feedback-header lp-reveal">
+          <span className="lp-feedback-eyebrow">
+            <Sparkles size={14} /> Honest Feedback
+          </span>
+          <h2>Tell us what you really think</h2>
+          <p>
+            LearnToEarn is still growing. Good or bad — your review helps us understand what students need most.
           </p>
-          <h2 style={{
-            fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 800,
-            color: 'var(--text-primary)', margin: '0 0 0.75rem', letterSpacing: '-0.02em',
-          }}>
-            Tell us what you really think
-          </h2>
-          <p style={{
-            color: 'var(--text-secondary)', fontSize: '1rem', margin: 0,
-            maxWidth: 540, marginInline: 'auto', lineHeight: 1.7,
-          }}>
-            LearnToEarn is still growing. Your honest review — good or bad — helps us understand what students need most.
-          </p>
-        </div>
+        </header>
 
         <form className="lp-feedback-card lp-reveal" onSubmit={handleSubmit}>
-          <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-              Overall rating <span style={{ color: 'var(--danger)' }}>*</span>
+          <div className="lp-feedback-block">
+            <label className="lp-feedback-label">
+              Overall rating <span className="lp-feedback-req">*</span>
             </label>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }} role="radiogroup" aria-label="Star rating">
+            <div className="lp-feedback-stars" role="radiogroup" aria-label="Star rating">
               {[1, 2, 3, 4, 5].map(star => (
                 <button
                   key={star}
@@ -116,20 +105,18 @@ export default function LandingFeedbackSection() {
                   onMouseEnter={() => setHoverRating(star)}
                   onMouseLeave={() => setHoverRating(0)}
                 >
-                  <Star size={32} fill={star <= displayRating ? '#F59E0B' : 'none'} />
+                  <Star size={26} fill={star <= displayRating ? '#F59E0B' : 'none'} />
                 </button>
               ))}
               {displayRating > 0 && (
-                <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-                  {RATING_HINTS[displayRating]}
-                </span>
+                <span className="lp-feedback-rating-hint">{RATING_HINTS[displayRating]}</span>
               )}
             </div>
           </div>
 
-          <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-              Is LearnToEarn useful for students like you? <span style={{ color: 'var(--danger)' }}>*</span>
+          <div className="lp-feedback-block">
+            <label className="lp-feedback-label">
+              Is LearnToEarn useful for students like you? <span className="lp-feedback-req">*</span>
             </label>
             <div className="lp-feedback-useful">
               <button
@@ -138,7 +125,7 @@ export default function LandingFeedbackSection() {
                 aria-pressed={isUseful === true}
                 onClick={() => setIsUseful(true)}
               >
-                <ThumbsUp size={18} /> Yes, it helps
+                <ThumbsUp size={17} /> Yes, it helps
               </button>
               <button
                 type="button"
@@ -146,57 +133,49 @@ export default function LandingFeedbackSection() {
                 aria-pressed={isUseful === false}
                 onClick={() => setIsUseful(false)}
               >
-                <ThumbsDown size={18} /> Not really
+                <ThumbsDown size={17} /> Not really
               </button>
             </div>
           </div>
 
-          <div style={{ marginBottom: '1.25rem' }}>
-            <label htmlFor="feedback-experience" style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-              Your honest review <span style={{ color: 'var(--danger)' }}>*</span>
+          <div className="lp-feedback-block">
+            <label className="lp-feedback-label" htmlFor="feedback-experience">
+              Your honest review <span className="lp-feedback-req">*</span>
             </label>
             <textarea
               id="feedback-experience"
+              className="form-input lp-feedback-textarea"
               value={experience}
               onChange={e => setExperience(e.target.value)}
               rows={4}
               maxLength={2000}
-              placeholder="What did you like? What frustrated you? What should we add or fix? Be direct — we read everything."
-              style={{
-                width: '100%', boxSizing: 'border-box',
-                padding: '0.875rem 1rem', borderRadius: 12,
-                border: '1px solid var(--border)', background: 'var(--bg-secondary)',
-                color: 'var(--text-primary)', fontSize: '0.925rem', resize: 'vertical',
-                fontFamily: 'inherit', lineHeight: 1.6,
-              }}
+              placeholder="What did you like? What frustrated you? What should we add or fix?"
             />
-            <div style={{ textAlign: 'right', fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 4 }}>
-              {experience.length}/2000
-            </div>
+            <div className="lp-feedback-char">{experience.length}/2000</div>
           </div>
 
-          <div style={{ marginBottom: '1.25rem' }}>
-            <span style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-              Category <span style={{ fontWeight: 400, color: 'var(--text-muted)' }}>(optional)</span>
+          <div className="lp-feedback-block">
+            <span className="lp-feedback-label">
+              Category <span className="lp-feedback-opt">optional</span>
             </span>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <div className="lp-feedback-cats">
               {CATEGORIES.map(cat => (
                 <button
                   key={cat.id}
                   type="button"
                   aria-pressed={category === cat.id}
                   onClick={() => setCategory(category === cat.id ? '' : cat.id)}
-                  className={`filter-chip${category === cat.id ? ' active' : ''}`}
+                  className={`lp-feedback-cat${category === cat.id ? ' is-on' : ''}`}
                 >
-                  {cat.emoji} {cat.id}
+                  <span>{cat.emoji}</span> {cat.id}
                 </button>
               ))}
             </div>
           </div>
 
           {category && (
-            <div style={{ marginBottom: '1.25rem' }}>
-              <label htmlFor="feedback-category-note" style={{ display: 'block', fontWeight: 600, fontSize: '0.85rem', marginBottom: '0.4rem' }}>
+            <div className="lp-feedback-block">
+              <label className="lp-feedback-label" htmlFor="feedback-category-note">
                 More on {category.toLowerCase()}
               </label>
               <input
@@ -211,18 +190,7 @@ export default function LandingFeedbackSection() {
             </div>
           )}
 
-          <button
-            type="submit"
-            disabled={submitting}
-            style={{
-              width: '100%', padding: '0.95rem 1rem', borderRadius: 12, border: 'none',
-              background: 'linear-gradient(135deg, #7C3AED, #9B6ED4)',
-              color: '#fff', fontWeight: 700, fontSize: '0.95rem', cursor: submitting ? 'wait' : 'pointer',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-              opacity: submitting ? 0.75 : 1,
-              boxShadow: '0 4px 24px rgba(155, 110, 212, 0.35)',
-            }}
-          >
+          <button type="submit" className="lp-feedback-submit" disabled={submitting}>
             {submitting
               ? <><Loader2 size={18} className="spin" /> Sending…</>
               : <><MessageSquare size={18} /> Submit honest feedback</>}

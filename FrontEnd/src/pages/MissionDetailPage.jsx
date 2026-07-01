@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { TEST_DELAY_MS, PAGE_MIN_MS } from '../components/loaders/_config'
+import { PAGE_MIN_MS } from '../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, ChevronDown, ChevronUp, Sun, Moon } from 'lucide-react'
 import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
@@ -37,198 +37,81 @@ export default function MissionDetailPage() {
   if (!mission) return null
 
   const m = RANK_META[mission.rank] || RANK_META['D']
-
-  const S = {
-    page: {
-      minHeight: '100vh',
-      background: light
-        ? 'linear-gradient(135deg, #F5F0E8, #EDE8D8)'
-        : 'linear-gradient(135deg, #070B18, #0A0F22)',
-      fontFamily: "'Rajdhani', sans-serif",
-      color: light ? '#1A1A2E' : '#E2E8F0',
-    },
-    topBar: {
-      height: 56, position: 'sticky', top: 0, zIndex: 50,
-      background: 'var(--mission-nav-bg)',
-      backdropFilter: 'blur(8px)',
-      borderBottom: '1px solid var(--mission-nav-border)',
-      display: 'flex', alignItems: 'center', gap: '1rem', padding: '0 1.5rem',
-    },
-    content: { maxWidth: 800, margin: '0 auto', padding: 'clamp(1rem, 4vw, 2rem) clamp(1rem, 4vw, 1.5rem) 4rem' },
-    section: {
-      background: light ? 'rgba(252,250,246,0.95)' : 'rgba(13,17,32,0.8)',
-      border: light ? '1px solid rgba(230,80,0,0.15)' : '1px solid rgba(255,127,42,0.1)',
-      borderRadius: 10, padding: '1.5rem', marginBottom: '1.25rem',
-    },
-    sectionLabel: {
-      fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem',
-      letterSpacing: '0.2em', color: light ? '#7C3500' : '#FF7F2A',
-      textTransform: 'uppercase', marginBottom: '0.75rem', display: 'block',
-    },
-    h2: {
-      fontFamily: "'Rajdhani', sans-serif", fontWeight: 700,
-      fontSize: '1rem', letterSpacing: '0.04em',
-      color: light ? '#1A1A2E' : '#E2E8F0', margin: '0 0 0.75rem',
-    },
-    body: { fontSize: '0.9rem', lineHeight: 1.7, color: light ? '#2E2818' : '#A0B0C8' },
-    listItem: {
-      display: 'flex', gap: '0.75rem', alignItems: 'flex-start',
-      marginBottom: '0.6rem', fontSize: '0.875rem', lineHeight: 1.6,
-      color: light ? '#251C0C' : '#B0BED0',
-    },
-    bullet: {
-      width: 6, height: 6, borderRadius: '50%', flexShrink: 0,
-      marginTop: '0.45rem', background: m.color,
-    },
-    starBullet: {
-      width: 16, height: 16, borderRadius: '50%', flexShrink: 0,
-      marginTop: '0.25rem', background: `${m.color}22`, border: `1px solid ${m.color}60`,
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      fontSize: '0.5rem', color: m.color, fontFamily: "'Orbitron', monospace",
-    },
-  }
+  const rankStyle = { '--rank-color': m.color, '--rank-bg': m.bg }
 
   return (
-    <div style={S.page}>
-      {/* ── Top bar ────────────────────────────────────────── */}
-      <div style={S.topBar}>
-        {/* Back to missions */}
-        <button onClick={() => navigate(-1)} style={{
-          background: 'none', border: 'none', cursor: 'pointer',
-          display: 'flex', alignItems: 'center', gap: '0.375rem',
-          color: light ? '#8B6040' : '#8B9AB8',
-          fontFamily: "'Share Tech Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.06em',
-        }}>
+    <div className="mission-detail-page" style={rankStyle}>
+      <div className="mission-detail-topbar">
+        <button type="button" onClick={() => navigate(-1)} className="mission-detail-back">
           <ArrowLeft size={14} /> MISSIONS
         </button>
 
-        {/* Title */}
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0, padding: '0 0.75rem' }}>
-          <span style={{
-            fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '0.7rem',
-            color: m.color, background: m.bg, border: `1.5px solid ${m.color}50`,
-            borderRadius: 6, padding: '0.2rem 0.55rem', letterSpacing: '0.08em', flexShrink: 0,
-          }}>
+        <div className="mission-detail-title-row">
+          <span className="mission-detail-rank-sm">
             {mission.rank}-RANK
           </span>
-          <span style={{
-            fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: '0.95rem',
-            color: light ? '#1A1A2E' : '#E2E8F0',
-            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-          }}>
+          <span className="mission-detail-title">
             {mission.title}
           </span>
         </div>
 
-        {/* Right nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
-          {/* Hours — hide on very small screens */}
-          <span className="mission-detail-hours" style={{
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem',
-            color: light ? '#6B4820' : '#6B5020',
-          }}>
+        <div className="mission-detail-nav-right">
+          <span className="mission-detail-hours">
             ⏱ {mission.estimatedHours}h
           </span>
 
-          {/* Theme toggle */}
-          <button onClick={toggleTheme} style={{
-            background: 'none',
-            border: `1px solid ${light ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.12)'}`,
-            borderRadius: 5, width: 28, height: 28, cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: light ? '#7C3500' : '#8B9AB8', transition: 'all 0.15s',
-          }}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="mission-detail-theme"
             title={light ? 'Switch to dark' : 'Switch to light'}
           >
             {light ? <Moon size={13} /> : <Sun size={13} />}
           </button>
 
-          {/* Skill Arena */}
-          <button onClick={() => navigate('/skill-arena/dashboard')} style={{
-            background: 'rgba(155,110,212,0.12)', border: '1px solid rgba(155,110,212,0.35)',
-            borderRadius: 5, padding: '0.25rem 0.6rem', cursor: 'pointer',
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.06em',
-            color: '#B48AE8', transition: 'all 0.15s',
-            display: 'flex', alignItems: 'center', gap: '0.25rem',
-          }}
-            onMouseEnter={e => e.currentTarget.style.background = 'rgba(155,110,212,0.22)'}
-            onMouseLeave={e => e.currentTarget.style.background = 'rgba(155,110,212,0.12)'}
-          >
+          <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="mission-detail-arena">
             ⚔ <span className="mission-arena-label">SKILL ARENA</span>
           </button>
         </div>
       </div>
 
-      {/* ── Content ────────────────────────────────────────── */}
-      <div style={S.content}>
+      <div className="mission-detail-content">
 
-        {/* Hero rank + title */}
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div className="rank-stamp-lg" style={{
-            display: 'inline-block',
-            fontFamily: "'Orbitron', sans-serif", fontWeight: 900, fontSize: '1.1rem',
-            color: m.color, background: m.bg,
-            border: `2.5px solid ${m.color}60`, borderRadius: 10,
-            padding: '0.5rem 1.5rem', letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>
+        <div className="mission-detail-hero">
+          <div className="rank-stamp-lg mission-detail-rank-lg">
             {mission.rank}-RANK · {m.desc.toUpperCase()}
           </div>
-          <h1 style={{
-            fontFamily: "'Rajdhani', sans-serif", fontWeight: 700,
-            fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', letterSpacing: '0.05em',
-            color: light ? '#1A1A2E' : '#E2E8F0', margin: '0 0 0.75rem',
-          }}>
+          <h1 className="mission-detail-h1">
             {mission.title}
           </h1>
-          {/* Tech tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'center' }}>
+          <div className="mission-detail-tech-tags">
             {mission.techStack?.map(t => (
-              <span key={t} style={{
-                fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem',
-                color: light ? '#7C3500' : '#FF9F4A', letterSpacing: '0.06em',
-                padding: '0.2rem 0.55rem', borderRadius: 5,
-                background: light ? 'rgba(100,40,0,0.08)' : 'rgba(255,127,42,0.1)',
-                border: light ? '1px solid rgba(230,80,0,0.25)' : '1px solid rgba(255,127,42,0.2)',
-              }}>
+              <span key={t} className="mission-detail-tech-tag">
                 {t}
               </span>
             ))}
           </div>
         </div>
 
-        {/* Mission Brief */}
-        <div style={S.section}>
-          <span style={S.sectionLabel}>◆ MISSION BRIEF</span>
-          <p style={S.body}>{mission.missionBrief}</p>
+        <div className="mission-section">
+          <span className="mission-section__label">◆ MISSION BRIEF</span>
+          <p className="mission-section__body">{mission.missionBrief}</p>
 
-          {/* Learning Outcome */}
           {mission.learningOutcome && (
-            <div style={{
-              marginTop: '1rem', padding: '0.75rem 1rem', borderRadius: 7,
-              background: light ? `${m.color}14` : `${m.color}10`,
-              border: `1px solid ${m.color}35`,
-            }}>
-              <span style={{ ...S.sectionLabel, color: m.color, marginBottom: '0.35rem' }}>🎯 WHAT YOU WILL ACHIEVE</span>
-              <p style={{ ...S.body, margin: 0, color: light ? '#1A1A2E' : '#D0DCF0', fontStyle: 'italic' }}>
+            <div className="mission-outcome">
+              <span className="mission-section__label mission-outcome__label">🎯 WHAT YOU WILL ACHIEVE</span>
+              <p className="mission-section__body mission-outcome__text">
                 {mission.learningOutcome}
               </p>
             </div>
           )}
 
-          {/* Related subjects */}
           {mission.subjectTitles?.length > 0 && (
-            <div style={{ marginTop: '1rem', paddingTop: '1rem',
-              borderTop: light ? '1px solid rgba(230,80,0,0.1)' : '1px solid rgba(255,127,42,0.08)' }}>
-              <span style={{ ...S.sectionLabel, marginBottom: '0.5rem' }}>RELATED SUBJECTS</span>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+            <div className="mission-subjects-divider">
+              <span className="mission-section__label">RELATED SUBJECTS</span>
+              <div className="mission-tag-row">
                 {mission.subjectTitles.map(s => (
-                  <span key={s} style={{
-                    fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem',
-                    color: light ? '#4A3018' : '#8B7040', letterSpacing: '0.04em',
-                    padding: '0.2rem 0.55rem', borderRadius: 4,
-                    border: light ? '1px solid rgba(230,80,0,0.2)' : '1px solid rgba(255,127,42,0.15)',
-                  }}>
+                  <span key={s} className="mission-subject-tag">
                     {s}
                   </span>
                 ))}
@@ -237,26 +120,15 @@ export default function MissionDetailPage() {
           )}
         </div>
 
-        {/* Prerequisites */}
         {mission.prerequisites?.length > 0 && (
-          <div style={{
-            ...S.section,
-            borderColor: light ? 'rgba(251,191,36,0.3)' : 'rgba(251,191,36,0.2)',
-            background: light ? 'rgba(255,251,235,0.9)' : 'rgba(20,15,5,0.7)',
-          }}>
-            <span style={{ ...S.sectionLabel, color: '#F59E0B' }}>⚡ BEFORE YOU START — PREREQUISITES</span>
-            <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '0.75rem', color: light ? '#6B4A00' : '#A08030' }}>
+          <div className="mission-section mission-section--prereq">
+            <span className="mission-section__label mission-section__label--amber">⚡ BEFORE YOU START — PREREQUISITES</span>
+            <p className="mission-section__body mission-section__hint mission-section__hint--amber">
               Make sure you are comfortable with these concepts before attempting this mission.
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <div className="mission-tag-row mission-tag-row--spaced">
               {mission.prerequisites.map((pre, i) => (
-                <span key={i} style={{
-                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
-                  color: light ? '#7C4F00' : '#D4A030',
-                  background: light ? 'rgba(245,158,11,0.1)' : 'rgba(245,158,11,0.08)',
-                  border: '1px solid rgba(245,158,11,0.35)',
-                  borderRadius: 5, padding: '0.25rem 0.65rem', letterSpacing: '0.03em',
-                }}>
+                <span key={i} className="mission-prereq-tag">
                   {pre}
                 </span>
               ))}
@@ -264,16 +136,11 @@ export default function MissionDetailPage() {
           </div>
         )}
 
-        {/* Objectives */}
-        <div style={S.section}>
-          <span style={S.sectionLabel}>◆ MISSION OBJECTIVES</span>
+        <div className="mission-section">
+          <span className="mission-section__label">◆ MISSION OBJECTIVES</span>
           {mission.objectives?.map((obj, i) => (
-            <div key={i} style={S.listItem}>
-              <span style={{
-                fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem',
-                color: m.color, background: m.bg, border: `1px solid ${m.color}40`,
-                borderRadius: 3, padding: '0.1rem 0.3rem', flexShrink: 0, marginTop: '0.2rem',
-              }}>
+            <div key={i} className="mission-section__list-item">
+              <span className="mission-section__num">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span>{obj}</span>
@@ -281,35 +148,27 @@ export default function MissionDetailPage() {
           ))}
         </div>
 
-        {/* Bonus Objectives */}
         {mission.bonusObjectives?.length > 0 && (
-          <div style={{ ...S.section, borderColor: light ? 'rgba(245,158,11,0.2)' : 'rgba(245,158,11,0.15)' }}>
-            <span style={{ ...S.sectionLabel, color: '#F59E0B' }}>★ BONUS OBJECTIVES</span>
+          <div className="mission-section mission-section--bonus">
+            <span className="mission-section__label mission-section__label--amber">★ BONUS OBJECTIVES</span>
             {mission.bonusObjectives.map((obj, i) => (
-              <div key={i} style={S.listItem}>
-                <span style={{ ...S.starBullet, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.4)', color: '#F59E0B' }}>★</span>
+              <div key={i} className="mission-section__list-item">
+                <span className="mission-section__star">★</span>
                 <span>{obj}</span>
               </div>
             ))}
           </div>
         )}
 
-        {/* Concepts Covered */}
         {mission.conceptsCovered?.length > 0 && (
-          <div style={{ ...S.section, borderColor: light ? 'rgba(96,165,250,0.25)' : 'rgba(96,165,250,0.18)' }}>
-            <span style={{ ...S.sectionLabel, color: '#60A5FA' }}>📚 CONCEPTS PRACTICED IN THIS MISSION</span>
-            <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '0.75rem', color: light ? '#1A3050' : '#6090B0' }}>
+          <div className="mission-section mission-section--concepts">
+            <span className="mission-section__label mission-section__label--blue">📚 CONCEPTS PRACTICED IN THIS MISSION</span>
+            <p className="mission-section__body mission-section__hint mission-section__hint--blue">
               These concepts from your Skill Arena subjects are actively used in this build.
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <div className="mission-tag-row mission-tag-row--spaced">
               {mission.conceptsCovered.map((concept, i) => (
-                <span key={i} style={{
-                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.68rem',
-                  color: light ? '#1A3A6A' : '#80B8E8',
-                  background: light ? 'rgba(96,165,250,0.1)' : 'rgba(96,165,250,0.08)',
-                  border: '1px solid rgba(96,165,250,0.3)',
-                  borderRadius: 5, padding: '0.25rem 0.65rem', letterSpacing: '0.03em',
-                }}>
+                <span key={i} className="mission-concept-tag">
                   {concept}
                 </span>
               ))}
@@ -317,27 +176,15 @@ export default function MissionDetailPage() {
           </div>
         )}
 
-        {/* Approach Steps — accordion */}
         {mission.approachSteps?.length > 0 && (
-          <div style={{
-            ...S.section,
-            borderColor: approachOpen
-              ? (light ? `${m.color}40` : `${m.color}30`)
-              : (light ? 'rgba(100,40,0,0.15)' : 'rgba(255,127,42,0.1)'),
-          }}>
+          <div className={`mission-section${approachOpen ? ' mission-section--approach-open' : ''}`}>
             <button
+              type="button"
               onClick={() => setApproachOpen(o => !o)}
-              style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 0 }}
+              className="mission-accordion-toggle"
             >
-              <span style={{ ...S.sectionLabel, margin: 0, color: m.color }}>
+              <span className="mission-section__label mission-section__label--rank">
                 ◆ APPROACH GUIDE
-                <span style={{
-                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
-                  color: light ? '#6B4820' : '#6B5030', marginLeft: '0.75rem', fontWeight: 400,
-                }}>
-                 
-                </span>
               </span>
               {approachOpen
                 ? <ChevronUp size={16} color={m.color} />
@@ -345,19 +192,13 @@ export default function MissionDetailPage() {
             </button>
 
             {approachOpen && (
-              <div style={{ marginTop: '1rem' }}>
-                <p style={{ ...S.body, fontSize: '0.78rem', marginBottom: '1rem', color: light ? '#5A3A18' : '#6B5030' }}>
+              <div className="mission-accordion-body">
+                <p className="mission-section__body mission-section__hint mission-section__hint--brown">
                   High-level steps to get you started. No code — your implementation is your own.
                 </p>
                 {mission.approachSteps.map((step, i) => (
-                  <div key={i} style={{ ...S.listItem, marginBottom: '0.75rem' }}>
-                    <div style={{
-                      width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
-                      background: `${m.color}18`, border: `1.5px solid ${m.color}50`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontFamily: "'Orbitron', sans-serif", fontSize: '0.55rem',
-                      fontWeight: 700, color: m.color,
-                    }}>
+                  <div key={i} className="mission-section__list-item">
+                    <div className="mission-step-num">
                       {i + 1}
                     </div>
                     <span>{step}</span>
@@ -368,30 +209,15 @@ export default function MissionDetailPage() {
           </div>
         )}
 
-        {/* Common Mistakes — accordion */}
         {mission.commonMistakes?.length > 0 && (
-          <div style={{
-            ...S.section,
-            borderColor: mistakesOpen
-              ? (light ? 'rgba(239,68,68,0.3)' : 'rgba(239,68,68,0.25)')
-              : (light ? 'rgba(100,40,0,0.15)' : 'rgba(255,127,42,0.1)'),
-            background: mistakesOpen
-              ? (light ? 'rgba(255,245,245,0.9)' : 'rgba(20,5,5,0.7)')
-              : (light ? 'rgba(252,250,246,0.95)' : 'rgba(13,17,32,0.8)'),
-          }}>
+          <div className={`mission-section${mistakesOpen ? ' mission-section--mistakes-open' : ''}`}>
             <button
+              type="button"
               onClick={() => setMistakesOpen(o => !o)}
-              style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 0 }}
+              className="mission-accordion-toggle"
             >
-              <span style={{ ...S.sectionLabel, margin: 0, color: mistakesOpen ? '#EF4444' : (light ? '#7C3500' : '#FF7F2A') }}>
+              <span className={`mission-section__label${mistakesOpen ? ' mission-section__label--red' : ''}`}>
                 ⚠ COMMON MISTAKES
-                <span style={{
-                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
-                  color: light ? '#6B4820' : '#6B5030', marginLeft: '0.75rem', fontWeight: 400,
-                }}>
-                
-                </span>
               </span>
               {mistakesOpen
                 ? <ChevronUp size={16} color="#EF4444" />
@@ -399,16 +225,11 @@ export default function MissionDetailPage() {
             </button>
 
             {mistakesOpen && (
-              <div style={{ marginTop: '1rem' }}>
+              <div className="mission-accordion-body">
                 {mission.commonMistakes.map((mistake, i) => (
-                  <div key={i} style={{
-                    ...S.listItem,
-                    background: light ? 'rgba(239,68,68,0.05)' : 'rgba(239,68,68,0.06)',
-                    border: '1px solid rgba(239,68,68,0.2)',
-                    borderRadius: 6, padding: '0.6rem 0.75rem', marginBottom: '0.5rem',
-                  }}>
-                    <span style={{ ...S.bullet, background: '#EF4444', marginTop: '0.35rem', flexShrink: 0 }} />
-                    <span style={{ color: light ? '#5A1A1A' : '#D08080', fontSize: '0.85rem' }}>{mistake}</span>
+                  <div key={i} className="mission-section__list-item mission-mistake-item">
+                    <span className="mission-section__bullet mission-section__bullet--red" />
+                    <span className="mission-mistake-text">{mistake}</span>
                   </div>
                 ))}
               </div>
@@ -416,49 +237,27 @@ export default function MissionDetailPage() {
           </div>
         )}
 
-        {/* Intel / Hints — accordion */}
         {mission.hints?.length > 0 && (
-          <div style={{
-            ...S.section,
-            borderColor: hintsOpen
-              ? (light ? 'rgba(96,165,250,0.3)' : 'rgba(96,165,250,0.2)')
-              : (light ? 'rgba(100,40,0,0.15)' : 'rgba(255,127,42,0.1)'),
-          }}>
+          <div className={`mission-section${hintsOpen ? ' mission-section--hints-open' : ''}`}>
             <button
+              type="button"
               onClick={() => setHintsOpen(o => !o)}
-              style={{
-                width: '100%', background: 'none', border: 'none', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                padding: 0,
-              }}
+              className="mission-accordion-toggle"
             >
-              <span style={{ ...S.sectionLabel, margin: 0, color: '#60A5FA' }}>
+              <span className="mission-section__label mission-section__label--blue">
                 🔍 HINTS
-                <span style={{
-                  fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem',
-                  color: light ? '#6B4820' : '#6B5020',
-                  marginLeft: '0.75rem', fontWeight: 400,
-                }}>
-                 
-                </span>
               </span>
               {hintsOpen
                 ? <ChevronUp size={16} color="#60A5FA" />
-                : <ChevronDown size={16} color={light ? '#6B4820' : '#6B5020'} />
-              }
+                : <ChevronDown size={16} color={light ? '#6B4820' : '#6B5020'} />}
             </button>
 
             {hintsOpen && (
-              <div style={{ marginTop: '1rem' }}>
+              <div className="mission-accordion-body">
                 {mission.hints.map((hint, i) => (
-                  <div key={i} style={{
-                    ...S.listItem,
-                    background: 'rgba(96,165,250,0.06)',
-                    border: '1px solid rgba(96,165,250,0.15)',
-                    borderRadius: 6, padding: '0.6rem 0.75rem', marginBottom: '0.5rem',
-                  }}>
-                    <span style={{ ...S.bullet, background: '#60A5FA', marginTop: '0.35rem' }} />
-                    <span style={{ color: light ? '#2A3A5A' : '#93B4D8', fontSize: '0.85rem' }}>{hint}</span>
+                  <div key={i} className="mission-section__list-item mission-hint-item">
+                    <span className="mission-section__bullet mission-section__bullet--blue" />
+                    <span className="mission-hint-text">{hint}</span>
                   </div>
                 ))}
               </div>
@@ -466,19 +265,8 @@ export default function MissionDetailPage() {
           </div>
         )}
 
-        {/* Bottom nav */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-          <button onClick={() => navigate(-1)} style={{
-            display: 'flex', alignItems: 'center', gap: '0.5rem',
-            background: 'none', border: light ? '1px solid rgba(230,80,0,0.3)' : '1px solid rgba(255,127,42,0.2)',
-            borderRadius: 8, padding: '0.625rem 1.5rem', cursor: 'pointer',
-            color: light ? '#7C3500' : '#FF7F2A',
-            fontFamily: "'Share Tech Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em',
-            transition: 'all 0.15s',
-          }}
-            onMouseEnter={e => { e.currentTarget.style.background = light ? 'rgba(100,40,0,0.08)' : 'rgba(255,127,42,0.1)' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'none' }}
-          >
+        <div className="mission-detail-back-btn-wrap">
+          <button type="button" onClick={() => navigate(-1)} className="mission-detail-back-btn">
             <ArrowLeft size={14} /> BACK TO MISSION BOARD
           </button>
         </div>
@@ -486,4 +274,3 @@ export default function MissionDetailPage() {
     </div>
   )
 }
-

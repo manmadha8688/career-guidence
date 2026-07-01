@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useAuth } from '../../context/AuthContext'
 import { loginUser, guestLogin } from '../../api/api'
+import { buildAuthRedirectQuery, resolveAuthRedirect } from '../../utils/authRedirect'
 import toast from 'react-hot-toast'
 import AuthSubmitButton from './components/AuthSubmitButton'
 import { useAuthForm } from './context/AuthFormContext'
@@ -17,9 +18,9 @@ export default function LoginForm() {
 
   const { login, showAuthOverlay, completeAuthOverlay, hideAuthOverlay } = useAuth()
   const navigate           = useNavigate()
-  const [searchParams]     = useSearchParams()
-  const redirectTo         = searchParams.get('redirect') || '/'
-  const registerQs         = redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''
+  const location           = useLocation()
+  const redirectTo         = resolveAuthRedirect(location.search, '/')
+  const registerQs         = buildAuthRedirectQuery(redirectTo)
 
   const prevFieldRef        = useRef(null)
   const emailFocusedOnceRef = useRef(false)
@@ -175,7 +176,7 @@ export default function LoginForm() {
         transition={{ delay: 0.05 }}
       >
         Sign in to continue your journey.{' '}
-        <Link to={`/register${registerQs}`} className="auth-link" style={{ fontSize: 'inherit' }}>
+        <Link to={`/register${registerQs}`} className="auth-link auth-link--inherit">
           New here? Sign up free
         </Link>
       </motion.p>
@@ -255,7 +256,7 @@ export default function LoginForm() {
             onClick={handleGuest}
             disabled={guestLoading}
           >
-            {guestLoading && <span className="loading-spinner" style={{ width: 14, height: 14 }} />}
+            {guestLoading && <span className="loading-spinner loading-spinner--sm" />}
             Guest login
           </button>
         </div>

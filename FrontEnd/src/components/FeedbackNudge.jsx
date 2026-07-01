@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const STORAGE_KEY = 'feedback_nudge_dismissed'
-const DELAY_MS    =  90 * 1000   // 1.5 minutes
+const DELAY_MS    =  90 * 1000
 
 export default function FeedbackNudge() {
   const [visible, setVisible] = useState(false)
@@ -35,69 +35,28 @@ export default function FeedbackNudge() {
   if (!visible) return null
 
   return (
-    <div className="feedback-nudge" style={{
-      position: 'fixed', bottom: '1rem', right: '1rem', left: '1rem', zIndex: 9999,
-      width: 'auto', maxWidth: 340, marginLeft: 'auto',
-      background: 'var(--bg-card)', border: '1px solid var(--primary)',
-      borderRadius: 16, padding: '1.25rem',
-      boxShadow: '0 8px 40px rgba(0,0,0,0.18)',
-      animation: 'nudgeIn 0.35s cubic-bezier(0.34,1.56,0.64,1)',
-    }}>
-      <button
-        onClick={dismiss}
-        style={{
-          position: 'absolute', top: '0.75rem', right: '0.75rem',
-          background: 'none', border: 'none', cursor: 'pointer',
-          color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1,
-        }}
-        aria-label="Close"
-      >x</button>
+    <div className="feedback-nudge">
+      <button type="button" onClick={dismiss} className="feedback-nudge__close" aria-label="Close">
+        x
+      </button>
 
-      <div style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '0.85rem', color: 'var(--primary)', marginBottom: '0.5rem', letterSpacing: 1 }}>
-        QUICK QUESTION
-      </div>
+      <div className="feedback-nudge__label">QUICK QUESTION</div>
 
-      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: 'var(--text-primary)', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
+      <p className="feedback-nudge__lead">
         I am building LearnToEarn to help students enter the right learning path, level up their skills, and become job-ready.
       </p>
 
-      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '1rem', color: 'orange', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
-      The platform is still being updated, and your suggestions will help me understand what students really need.
+      <p className="feedback-nudge__highlight">
+        The platform is still being updated, and your suggestions will help me understand what students really need.
       </p>
 
-      <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: '0.9rem', color: 'var(--text-secondary)', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
+      <p className="feedback-nudge__sub">
         Your feedback helps shape the next version. Takes just 30 seconds.
       </p>
 
-      <button
-        onClick={goFeedback}
-        aria-label="Give feedback about the platform"
-        style={{
-          width: '100%', padding: '0.65rem 1rem',
-          background: 'linear-gradient(135deg, #9B6ED4, #7C3AED)',
-          border: 'none', borderRadius: 10, cursor: 'pointer',
-          fontFamily: 'Orbitron, sans-serif', fontSize: '0.8rem',
-          color: '#fff', letterSpacing: 1, fontWeight: 700,
-        }}
-      >
+      <button type="button" onClick={goFeedback} className="feedback-nudge__cta" aria-label="Give feedback about the platform">
         GIVE FEEDBACK
       </button>
-
-      <style>{`
-        @keyframes nudgeIn {
-          from { opacity: 0; transform: translateY(20px) scale(0.95); }
-          to   { opacity: 1; transform: translateY(0)    scale(1);    }
-        }
-        @media (min-width: 480px) {
-          .feedback-nudge {
-            left: auto !important;
-            right: 1.5rem !important;
-            width: 320px !important;
-            max-width: 320px !important;
-            margin-left: 0 !important;
-          }
-        }
-      `}</style>
     </div>
   )
 }

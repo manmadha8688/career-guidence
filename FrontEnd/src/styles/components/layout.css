@@ -1,0 +1,140 @@
+/* ── Navbar quick actions ── */
+.navbar-quick-btn {
+  background: none;
+  border-radius: 6px;
+  padding: 0.2rem 0.65rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: all 0.15s;
+}
+
+.navbar-quick-btn--coding {
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  color: #0EA5E9;
+}
+
+.navbar-quick-btn--coding:hover {
+  background: rgba(14, 165, 233, 0.12);
+  border-color: rgba(14, 165, 233, 0.6);
+}
+
+.navbar-quick-btn--missions {
+  border: 1px solid rgba(255, 127, 42, 0.3);
+  color: #FF7F2A;
+}
+
+.navbar-quick-btn--missions:hover {
+  background: rgba(255, 127, 42, 0.12);
+  border-color: rgba(255, 127, 42, 0.6);
+}
+
+.navbar-xp-block {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.navbar-xp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 56px;
+}
+
+.navbar-xp-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.navbar-xp-track {
+  height: 5px;
+}
+
+.navbar-avatar {
+  --avatar-bg: #9B6ED4;
+  --rank-border: transparent;
+  background: var(--avatar-bg);
+  border: 2px solid var(--rank-border);
+}
+
+.navbar-avatar--admin {
+  border: none;
+}
+
+.navbar-name--hunter {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+}
+
+.navbar-role-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Sidebar variants ── */
+.sidebar-brand-icon--emoji {
+  background: transparent;
+  font-size: 1.25rem;
+}
+
+.sidebar-brand-text--hunter {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+}
+
+.sidebar-section-label--spaced {
+  margin-top: 1rem;
+}
+
+.sidebar-footer-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-footer-user__meta {
+  min-width: 0;
+}
+
+.sidebar-footer-avatar {
+  --avatar-bg: #4F46E5;
+  background: var(--avatar-bg);
+  font-size: 0.8rem;
+}
+
+/* ── Scroll to top ── */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  z-index: 89;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.scroll-top-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-// Standard HTML scaffold for CSS previews — covers most selector types
 const CSS_SCAFFOLD = `
 <div class="container">
   <h1>Heading 1</h1>
@@ -130,16 +129,16 @@ try {
   }
 
   return (
-    <div style={{ margin: '0 0.75rem 0.5rem', borderRadius: 6, overflow: 'hidden', border: '1px solid var(--border)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', padding: '0.3rem 0.75rem', background: 'var(--bg-tertiary)', borderBottom: '1px solid var(--border)' }}>
-        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#EF4444' }} />
-        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F59E0B' }} />
-        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#22C55E' }} />
-        <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.58rem', color: 'var(--text-muted)', marginLeft: '0.25rem', letterSpacing: '0.06em' }}>LIVE PREVIEW</span>
+    <div className="dash-live-preview">
+      <div className="dash-live-preview__toolbar">
+        <div className="dash-live-preview__dot dash-live-preview__dot--red" />
+        <div className="dash-live-preview__dot dash-live-preview__dot--amber" />
+        <div className="dash-live-preview__dot dash-live-preview__dot--green" />
+        <span className="dash-live-preview__label">LIVE PREVIEW</span>
         {runKey > 0 && (
           <button
             onClick={() => setRunKey(k => k + 1)}
-            style={{ marginLeft: 'auto', padding: '2px 10px', fontSize: '0.62rem', fontWeight: 700, background: 'transparent', color: '#22C55E', border: '1px solid #22C55E', borderRadius: 4, cursor: 'pointer', letterSpacing: '0.05em', fontFamily: "'Share Tech Mono', monospace" }}
+            className="dash-live-preview__rerun"
           >↺ RERUN</button>
         )}
       </div>
@@ -148,18 +147,15 @@ try {
           key={runKey}
           srcDoc={doc}
           sandbox="allow-scripts allow-same-origin"
-          style={{ width: '100%', height: 220, border: 'none', background: '#fff', display: 'block' }}
+          className="dash-live-preview__iframe"
           title="live-preview"
         />
       ) : (
-        <div
-          onClick={() => setRunKey(1)}
-          style={{ width: '100%', height: 220, background: 'var(--bg-secondary)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10, cursor: 'pointer' }}
-        >
-          <div style={{ width: 48, height: 48, borderRadius: '50%', background: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#fff', fontSize: '1.2rem', marginLeft: 3 }}>▶</span>
+        <div onClick={() => setRunKey(1)} className="dash-live-preview__placeholder">
+          <div className="dash-live-preview__play-btn">
+            <span className="dash-live-preview__play-icon">▶</span>
           </div>
-          <span style={{ fontSize: '0.75rem', fontFamily: "'Share Tech Mono', monospace", color: 'var(--text-muted)' }}>Click to run preview</span>
+          <span className="dash-live-preview__hint">Click to run preview</span>
         </div>
       )}
     </div>
