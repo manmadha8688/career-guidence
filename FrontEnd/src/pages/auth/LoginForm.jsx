@@ -24,6 +24,7 @@ export default function LoginForm() {
 
   const prevFieldRef        = useRef(null)
   const emailFocusedOnceRef = useRef(false)
+  const passwordFocusAtRef  = useRef(null)
 
   const {
     focusedField, setFocusedField,
@@ -39,6 +40,7 @@ export default function LoginForm() {
     emitCompanionEvent,
     lastActivity,
     emailFocusedOnceRef,
+    focusedField,
   )
 
   const emailOk = form.email.trim().length > 0 && form.email.includes('@')
@@ -67,13 +69,18 @@ export default function LoginForm() {
 
   /* ── focus handlers ───────────────────────────────────────────── */
   const handleEmailFocus = () => {
-    dismissCompanion()
     cancelRankTimer()
     setFocusedField('email')
     touchActivity()
 
     if (prevFieldRef.current === 'password') {
-      emitCompanionEvent('EMAIL_RETURN')
+      const elapsed = Date.now() - (passwordFocusAtRef.current || 0)
+      if (elapsed < 2800) {
+        dismissCompanion()
+        emitCompanionEvent('EMAIL_RETURN_QUICK')
+      } else {
+        emitCompanionEvent('EMAIL_RETURN')
+      }
     } else if (!emailFocusedOnceRef.current) {
       emailFocusedOnceRef.current = true
       emitCompanionEvent('FOUND_EMAIL')
@@ -82,11 +89,11 @@ export default function LoginForm() {
   }
 
   const handlePasswordFocus = () => {
-    dismissCompanion()
     setFocusedField('password')
     touchActivity()
-    emitCompanionEvent('FOCUS_PASSWORD')
     prevFieldRef.current = 'password'
+    passwordFocusAtRef.current = Date.now()
+    emitCompanionEvent('FOCUS_PASSWORD')
   }
 
   /* ── guest ────────────────────────────────────────────────────── */

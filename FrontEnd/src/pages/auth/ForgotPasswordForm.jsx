@@ -44,8 +44,10 @@ export default function ForgotPasswordForm() {
   const cooldownRef = useRef(null)
   const redirectTimerRef = useRef(null)
   const passwordFocusedRef = useRef(false)
+  const passwordBeatTimerRef = useRef(null)
 
   const {
+    focusedField,
     setFocusedField,
     setPasswordVisible,
     setFormProgress,
@@ -62,6 +64,7 @@ export default function ForgotPasswordForm() {
     password,
     confirmPassword,
     emitCompanionEvent,
+    focusedField,
   )
 
   const hasEmail = email.trim().length > 0
@@ -78,7 +81,10 @@ export default function ForgotPasswordForm() {
     )
   }, [emailVerified, passOk, confirmOk, otpSent, hasEmail, setFormProgress])
 
-  useEffect(() => () => resetCompanion(), [])
+  useEffect(() => () => {
+    clearTimeout(passwordBeatTimerRef.current)
+    resetCompanion()
+  }, [])
 
   useEffect(() => { setPasswordVisible(showPass) }, [showPass, setPasswordVisible])
 
@@ -258,7 +264,7 @@ export default function ForgotPasswordForm() {
             autoComplete="email"
             required
             value={email}
-            onFocus={() => { dismissCompanion(); setFocusedField('email'); touchActivity() }}
+            onFocus={() => { setFocusedField('email'); touchActivity() }}
             onChange={e => { setEmail(e.target.value); resetEmailState() }}
           />
           <button
@@ -308,12 +314,14 @@ export default function ForgotPasswordForm() {
                 autoComplete="new-password"
                 value={password}
                 onFocus={() => {
-                  dismissCompanion()
                   setFocusedField('password')
                   touchActivity()
+                  clearTimeout(passwordBeatTimerRef.current)
                   if (!passwordFocusedRef.current) {
                     passwordFocusedRef.current = true
-                    emitCompanionEvent('FP_FOUND_PASSWORD')
+                    passwordBeatTimerRef.current = setTimeout(() => {
+                      emitCompanionEvent('FP_FOUND_PASSWORD')
+                    }, 480)
                   }
                 }}
                 onChange={e => setPassword(e.target.value)}

@@ -1,5 +1,10 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
-import { getMurmurHideMs } from '../hooks/companionMurmurs'
+import {
+  getMurmurHideMs,
+  getLineReadMs,
+  BEAT_TAIL_MS,
+  beatPriority,
+} from '../hooks/companionMurmurs'
 
 const AuthFormContext = createContext(null)
 
@@ -10,46 +15,108 @@ export function AuthFormProvider({ children }) {
   const [companionEvent, setCompanionEvent] = useState(null)
   const [companionVisible, setCompanionVisible] = useState(false)
   const [lastActivity, setLastActivity] = useState(() => Date.now())
-  const hideTimerRef = useRef(null)
 
-  const dismissCompanion = useCallback(() => {
+  const hideTimerRef = useRef(null)
+  const safetyTimerRef = useRef(null)
+  const lastEmitRef = useRef({ type: null, at: 0 })
+  const activeBeatRef = useRef(null)
+  const pendingBeatRef = useRef(null)
+
+  const clearBeatTimers = useCallback(() => {
     if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
+    if (safetyTimerRef.current) clearTimeout(safetyTimerRef.current)
     hideTimerRef.current = null
+    safetyTimerRef.current = null
+  }, [])
+
+  const finishBeat = useCallback(() => {
+    if (!activeBeatRef.current) return
+    clearBeatTimers()
+    activeBeatRef.current = null
     setCompanionVisible(false)
     setCompanionEvent(null)
-  }, [])
 
-  const emitCompanionEvent = useCallback((type) => {
-    if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
+    const pending = pendingBeatRef.current
+    if (pending) {
+      pendingBeatRef.current = null
+      // Defer so React flushes the clear before the next beat starts
+      setTimeout(() => startBeatRef.current?.(pending), 40)
+    }
+  }, [clearBeatTimers])
+
+  const startBeatRef = useRef(null)
+
+  const startBeat = useCallback((type) => {
+    const now = Date.now()
+    const prev = activeBeatRef.current
+    const count = prev?.type === type ? (prev.count || 0) + 1 : 0
+    const next = { type, id: now, count, startedAt: now }
+
+    clearBeatTimers()
+    lastEmitRef.current = { type, at: now }
+    activeBeatRef.current = next
 
     setCompanionVisible(true)
-    setCompanionEvent(prev => {
-      const count = prev?.type === type ? (prev.count || 0) + 1 : 0
-      const next = { type, id: Date.now(), count }
+    setCompanionEvent(next)
 
-      hideTimerRef.current = setTimeout(() => {
-        setCompanionVisible(false)
-        setCompanionEvent(null)
-      }, getMurmurHideMs(next))
+    // Safety net — never cut a beat shorter than its full script
+    safetyTimerRef.current = setTimeout(finishBeat, getMurmurHideMs(next) + 350)
+  }, [clearBeatTimers, finishBeat])
 
-      return next
-    })
-  }, [])
+  startBeatRef.current = startBeat
+
+  const emitCompanionEvent = useCallback((type) => {
+    const now = Date.now()
+    const last = lastEmitRef.current
+    if (last.type === type && now - last.at < 700) return
+
+    const current = activeBeatRef.current
+    if (current) {
+      const curPri = beatPriority(current.type)
+      const newPri = beatPriority(type)
+      const elapsed = now - (current.startedAt || now)
+
+      // Never interrupt a high-priority narrative beat mid-play
+      if (newPri < curPri && elapsed < getMurmurHideMs(current) - 400) {
+        pendingBeatRef.current = type
+        return
+      }
+    }
+
+    startBeat(type)
+  }, [startBeat])
+
+  /** Called when the last line of a beat is shown — hide after readable time. */
+  const armLastLineTimer = useCallback((lineText) => {
+    if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
+    hideTimerRef.current = setTimeout(
+      finishBeat,
+      getLineReadMs(lineText) + BEAT_TAIL_MS,
+    )
+  }, [finishBeat])
+
+  const dismissCompanion = useCallback(() => {
+    pendingBeatRef.current = null
+    clearBeatTimers()
+    activeBeatRef.current = null
+    setCompanionVisible(false)
+    setCompanionEvent(null)
+  }, [clearBeatTimers])
 
   const touchActivity = useCallback(() => {
     setLastActivity(Date.now())
   }, [])
 
   const resetCompanion = useCallback(() => {
-    if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
+    pendingBeatRef.current = null
+    clearBeatTimers()
+    activeBeatRef.current = null
     setCompanionEvent(null)
     setCompanionVisible(false)
     setLastActivity(Date.now())
-  }, [])
+  }, [clearBeatTimers])
 
-  useEffect(() => () => {
-    if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
-  }, [])
+  useEffect(() => () => clearBeatTimers(), [clearBeatTimers])
 
   const value = useMemo(() => ({
     focusedField,
@@ -62,6 +129,7 @@ export function AuthFormProvider({ children }) {
     companionVisible,
     emitCompanionEvent,
     dismissCompanion,
+    armLastLineTimer,
     lastActivity,
     touchActivity,
     resetCompanion,
@@ -73,6 +141,7 @@ export function AuthFormProvider({ children }) {
     companionVisible,
     emitCompanionEvent,
     dismissCompanion,
+    armLastLineTimer,
     lastActivity,
     touchActivity,
     resetCompanion,

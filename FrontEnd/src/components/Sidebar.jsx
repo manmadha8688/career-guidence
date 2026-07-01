@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap
+  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -14,6 +14,9 @@ export default function Sidebar({ open, onClose }) {
     { to: '/skill-arena/dashboard?view=gates', icon: <BookOpen size={18} />,        label: 'Dungeon Gates' },
     { to: '/skill-arena/dashboard?view=paths', icon: <Map size={18} />,             label: 'Hunter Paths' },
     { to: '/problem-solving',                  icon: <Code2 size={18} />,           label: 'Problem Solving' },
+    { to: '/missions',                         icon: <Sword size={18} />,           label: 'Missions' },
+    { to: '/walk-ins',                         icon: <Briefcase size={18} />,       label: 'Walk-Ins' },
+    { to: '/deployment',                       icon: <Rocket size={18} />,          label: 'Deploy Guide' },
     { to: '/fresher-instructions',             icon: <GraduationCap size={18} />,   label: 'Fresher Guide' },
     { to: '/ai-lab',                           icon: <Zap size={18} />,             label: 'AI Lab' },
   ]

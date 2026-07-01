@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
-import { LINE_DURATION_MS, LINE_GAP_MS } from './companionMurmurs'
+import { getLineReadMs, LINE_GAP_MS } from './companionMurmurs'
+import { useAuthForm } from '../context/AuthFormContext'
 
 /**
- * Steps through beat lines sequentially — only one bot talks at a time.
- * Each line is visible for LINE_DURATION_MS, then the next plays after LINE_GAP_MS.
- * Resets whenever the beat key changes (i.e. a new event fires).
+ * Steps through beat lines one at a time.
+ * Each line stays visible long enough to read (length-based timing).
+ * Last line arms the hide timer from display time (not beat start).
  */
 export default function useSequentialLine(murmur) {
+  const { armLastLineTimer } = useAuthForm()
   const [lineIdx, setLineIdx] = useState(0)
 
   useEffect(() => {
@@ -15,14 +17,20 @@ export default function useSequentialLine(murmur) {
 
   useEffect(() => {
     if (!murmur?.lines?.length) return
-    if (lineIdx >= murmur.lines.length - 1) return
+    const line = murmur.lines[lineIdx]
+    if (!line) return
+
+    const isLast = lineIdx >= murmur.lines.length - 1
+    if (isLast) armLastLineTimer(line.text)
+
+    if (isLast) return
 
     const timer = setTimeout(
       () => setLineIdx(i => i + 1),
-      LINE_DURATION_MS + LINE_GAP_MS,
+      getLineReadMs(line.text) + LINE_GAP_MS,
     )
     return () => clearTimeout(timer)
-  }, [murmur, lineIdx])
+  }, [murmur, lineIdx, armLastLineTimer])
 
   return murmur?.lines?.[lineIdx] ?? null
 }

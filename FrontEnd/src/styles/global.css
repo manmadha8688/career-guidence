@@ -4620,34 +4620,6 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
   box-shadow: 0 8px 32px rgba(100,40,0,0.1) !important;
 }
 
-/* ── Career Guidance CSS Variables ── */
-:root {
-  --cg-bg:        #07090F;
-  --cg-nav-bg:    rgba(7,9,15,0.95);
-  --cg-card:      rgba(12,16,28,0.85);
-  --cg-border:    rgba(155,110,212,0.15);
-}
-[data-theme="light"] {
-  --cg-bg:        #F0EEF8;
-  --cg-nav-bg:    rgba(240,238,248,0.95);
-  --cg-card:      rgba(255,255,255,0.9);
-  --cg-border:    rgba(100,80,180,0.15);
-}
-
-/* ── Career Guidance gradient heading ── */
-.cg-hero-title {
-  background: linear-gradient(135deg, #C4B5FD, #9B6ED4, #60A5FA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-[data-theme="light"] .cg-hero-title {
-  background: linear-gradient(135deg, #4C2E8A, #9B6ED4, #60A5FA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* ── Fade in (mission second dropdown) ── */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateX(-6px); }
