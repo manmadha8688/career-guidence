@@ -26,13 +26,13 @@ export default function TogetherAIPage() {
         </Block>
         <Block>
           <SubHead label="Why open-source models matter" color={color} />
-          <InfoBox color={color}>Open-source models (Llama, Mistral, Qwen, Falcon) are publicly released model weights — anyone can download, run, or fine-tune them. Together AI, Groq, and Hugging Face host these models on cloud infrastructure, making them accessible via API without needing the hardware to run them yourself. The practical choice: open-source models via API for development and experimentation; proprietary models (GPT-4o, Claude) for tasks that demand the highest quality.</InfoBox>
-          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The economics are compelling. Llama 3.1 70B on Together AI costs $0.88 per million tokens. GPT-4o costs $2.50 input and $10 output per million tokens — roughly 10x more expensive. For applications with significant token volume — a product with many users, a batch processing pipeline, a RAG system ingesting thousands of documents — this cost difference is the difference between a viable product and an unaffordable one.</p>
+          <InfoBox color={color}>Open-source models (Llama, Mistral, Qwen, Falcon) are publicly released model weights — anyone can download, run, or fine-tune them. Together AI, Groq, and Hugging Face host these models on cloud infrastructure, making them accessible via API without needing the hardware to run them yourself. The practical choice: open-source models via API for development and experimentation; proprietary models (GPT-5.5, Claude) for tasks that demand the highest quality.</InfoBox>
+          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The economics are compelling. Llama 3.1 70B on Together AI costs $0.88 per million tokens. GPT-5.5 costs $2.50 input and $10 output per million tokens — roughly 10x more expensive. For applications with significant token volume — a product with many users, a batch processing pipeline, a RAG system ingesting thousands of documents — this cost difference is the difference between a viable product and an unaffordable one.</p>
         </Block>
         <Block>
           <SubHead label="Notable models on Together AI" color={color} />
           <CardGrid color={color} items={[
-            { name: 'Llama 3.1 405B', desc: "Meta's largest open-source model. Comparable to GPT-4o on many benchmarks. $3.50/1M tokens — cheaper than GPT-4o for comparable quality. Best open-source option for complex reasoning." },
+            { name: 'Llama 3.1 405B', desc: "Meta's largest open-source model. Comparable to GPT-5.5 on many benchmarks. $3.50/1M tokens — cheaper than GPT-5.5 for comparable quality. Best open-source option for complex reasoning." },
             { name: 'Llama 3.1 70B / 8B', desc: 'The practical workhorses. 70B: great quality at $0.88/1M. 8B: extremely cheap at $0.18/1M. 8B handles simple tasks; 70B handles complex ones.' },
             { name: 'Qwen 2.5 72B', desc: "Alibaba's model with strong multilingual performance. Excellent for code generation and tasks involving Asian languages. Often outperforms Llama 3.1 70B on coding benchmarks." },
             { name: 'Mistral 7B / Mixtral 8x7B', desc: "Lightweight, fast models. Mistral 7B is one of the best small models. Mixtral's mixture-of-experts architecture gives large-model quality at smaller-model speed." },
@@ -43,7 +43,7 @@ export default function TogetherAIPage() {
         <Block>
           <SubHead label="Together AI vs alternatives" color={color} />
           <Compare color={color} items={[
-            { label: 'vs OpenAI API', badge: 'Together wins on cost, OpenAI wins on quality ceiling', body: "Together AI's best models (Llama 3.1 405B) approach GPT-4o quality at lower cost. For 80% of use cases, a $0.88/1M token model is indistinguishable from a $2.50/1M token model. Switch down to Together for cost savings; switch up to OpenAI when quality gaps show." },
+            { label: 'vs OpenAI API', badge: 'Together wins on cost, OpenAI wins on quality ceiling', body: "Together AI's best models (Llama 3.1 405B) approach GPT-5.5 quality at lower cost. For 80% of use cases, a $0.88/1M token model is indistinguishable from a $2.50/1M token model. Switch down to Together for cost savings; switch up to OpenAI when quality gaps show." },
             { label: 'vs Groq', badge: 'Different strengths', body: 'Groq prioritizes speed (500+ tokens/sec) with fewer model options. Together AI prioritizes model variety (100+) at competitive pricing but not the same raw speed. Groq for latency-critical apps; Together for model variety and experimentation.' },
             { label: 'vs running locally', badge: 'Together wins for development', body: 'Running Llama locally requires 16-80GB VRAM depending on model size. Together AI gives you cloud access to the same models without the hardware. Use Together AI for development, consider local deployment only for production privacy requirements.' },
             { label: 'vs Hugging Face Inference API', badge: 'Together often faster and cheaper', body: 'Both host open-source models. Together AI tends to have faster inference and lower latency. Hugging Face has more model variety (hundreds of thousands vs hundreds). Together AI for production inference; Hugging Face for finding and experimenting with niche models.' },
@@ -71,7 +71,7 @@ export default function TogetherAIPage() {
         <Block title="What you can do" titleColor={color}>
         <CanDoList items={[
           'Access 100+ open-source models through a single OpenAI-compatible API without changing your code',
-            'Run Llama 3.1, Qwen, Mistral, and other top open-source models at 10x lower cost than GPT-4o',
+            'Run Llama 3.1, Qwen, Mistral, and other top open-source models at 10x lower cost than GPT-5.5',
             "Generate images with FLUX.1 (better than DALL-E on many tasks) through the same API",
             'Systematically compare models on your specific task to find the best quality/cost ratio',
             "Build AI applications that are not locked into a single provider's pricing or availability",

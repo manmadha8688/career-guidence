@@ -14,7 +14,7 @@ export default function ClaudePage() {
         title="Claude — The AI That Thinks Before It Speaks"
         tagline="Anthropic's thoughtful, safety-focused AI assistant"
         badges={[['✓ FREE TIER', '#4ADE80'], ['claude.ai free', color], ['Anthropic', 'var(--text-muted)']]}
-        overview={"Claude is Anthropic's AI assistant, built with a different philosophy than ChatGPT. While OpenAI optimized for capability, Anthropic built Claude with constitutional AI training — a method designed to make the model genuinely helpful, harmless, and honest rather than just impressive. In practice this means Claude is exceptionally good at nuanced reasoning, handling ambiguous instructions, writing long-form content, and admitting uncertainty rather than hallucinating. For students doing deep work — understanding complex topics, writing thoughtful essays, analyzing code architecture — Claude often outperforms ChatGPT on tasks requiring sustained reasoning over long contexts. Claude 3.5 Sonnet is currently free on claude.ai and is one of the best models available at any price point."}
+        overview={"Claude is Anthropic's AI assistant, built with a different philosophy than ChatGPT. While OpenAI optimized for capability, Anthropic built Claude with constitutional AI training — a method designed to make the model genuinely helpful, harmless, and honest rather than just impressive. In practice this means Claude is exceptionally good at nuanced reasoning, handling ambiguous instructions, writing long-form content, and admitting uncertainty rather than hallucinating. For students doing deep work — understanding complex topics, writing thoughtful essays, analyzing code architecture — Claude often outperforms ChatGPT on tasks requiring sustained reasoning over long contexts. Claude Sonnet 5 is currently the free default on claude.ai and is one of the best models available at any price point."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -27,14 +27,14 @@ export default function ClaudePage() {
         <Block>
           <SubHead label="What makes Claude different" color={color} />
           <InfoBox color={color}>Claude was trained using Constitutional AI — a method where the model is given a set of principles and trained to critique and revise its own outputs against those principles. The result is a model that reasons about its responses, not just predicts tokens. It tends to be more honest about what it doesn't know and more careful about potentially harmful outputs.</InfoBox>
-          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The most practically useful difference is Claude's context window. Claude 3.5 Sonnet can handle 200,000 tokens — roughly 150,000 words — in a single conversation. This means you can paste an entire codebase, a full research paper, a legal document, or a book chapter and have a real conversation about all of it at once. Most other models including GPT-4o have context windows of 8k-128k tokens by comparison.</p>
+          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The most practically useful difference is Claude's context window. Claude Sonnet 5 handles up to 1,000,000 tokens — roughly 750,000 words — in a single conversation. This means you can paste an entire codebase, a full research paper, a legal document, or a whole book and have a real conversation about all of it at once. Many chat models still offer far smaller context windows by comparison.</p>
         </Block>
         <Block>
           <SubHead label="Claude model lineup" color={color} />
           <Compare color={color} items={[
-            { label: 'Claude 3 Haiku', badge: 'Fastest, free via API', body: 'Smallest and fastest model. Best for: simple questions, high-volume API use, quick lookups. Available on the free API tier. Not as capable for complex reasoning but very fast.' },
-            { label: 'Claude 3.5 Sonnet', badge: 'Best overall, free on claude.ai', body: 'The sweet spot model — exceptional reasoning, coding, and writing at fast response speeds. Free on claude.ai. This is what most people should use. Regularly outperforms GPT-4o on coding and instruction-following benchmarks.' },
-            { label: 'Claude 3 Opus', badge: 'Most powerful, API only', body: 'Anthropic\'s most capable model for complex multi-step reasoning, nuanced analysis, and difficult tasks. Available via API (paid). Slower and more expensive but highest quality for demanding tasks.' },
+            { label: 'Claude Haiku 4.5', badge: 'Fastest', body: 'Smallest and fastest model with near-frontier intelligence. Best for: simple questions, high-volume API use, quick lookups. Great value when speed and cost matter more than maximum reasoning depth.' },
+            { label: 'Claude Sonnet 5', badge: 'Best overall — free & default on claude.ai', body: 'The sweet spot model — frontier-level reasoning, coding, and agentic work at fast speeds, with a 1M-token context. This is the default free model on claude.ai and what most people should use. It closes much of the gap to the Opus flagship at a fraction of the cost.' },
+            { label: 'Claude Opus 4.8', badge: 'Most powerful', body: 'Anthropic\'s most capable model for the hardest reasoning, long-horizon agentic coding, and high-autonomy work. Available on paid plans and via the API. Slower and pricier, but top quality for the most demanding tasks.' },
           ]} />
         </Block>
         <Block>
@@ -61,10 +61,10 @@ export default function ClaudePage() {
         <Block>
           <SubHead label="Claude vs ChatGPT — practical differences" color={color} />
           <Compare color={color} items={[
-            { label: 'Context window', badge: 'Claude wins', body: 'Claude 3.5 Sonnet: 200K tokens. ChatGPT-4o: 128K tokens. GPT-4o mini (free): 8K tokens. For pasting large documents or codebases, Claude handles significantly more at once. This is the biggest practical difference.' },
-            { label: 'Coding tasks', badge: 'Roughly equal, Claude slightly ahead', body: 'Claude 3.5 Sonnet and GPT-4o perform similarly on coding. Claude tends to write cleaner code with better explanations. GPT-4o has Code Interpreter (code execution) which Claude lacks on the web UI.' },
-            { label: 'Web browsing', badge: 'ChatGPT Plus wins', body: 'ChatGPT Plus can browse the web for current information. Claude on claude.ai does not browse. For research requiring current information, ChatGPT Plus or Perplexity is better.' },
-            { label: 'Free tier quality', badge: 'Claude wins', body: 'Claude\'s free tier gives you Claude 3.5 Sonnet — one of the best models available. ChatGPT\'s free tier gives you GPT-4o mini, which is good but clearly less capable. For free use, Claude provides significantly more value.' },
+            { label: 'Context window', badge: 'Claude wins', body: 'Claude Sonnet 5: up to 1M tokens. Most ChatGPT tiers land around 128K–256K. For pasting large documents or whole codebases in one go, Claude still handles significantly more at once — often the biggest practical difference.' },
+            { label: 'Coding tasks', badge: 'Very close', body: 'Claude Sonnet 5 and the latest GPT-5.5 both perform strongly on coding. Claude tends to write clean code with careful explanations and shines in agentic, multi-file work (Claude Code). ChatGPT has its Codex agent and data-analysis code execution built in.' },
+            { label: 'Web browsing', badge: 'Roughly equal now', body: 'Both Claude and ChatGPT can search the web for current information today. For dedicated, citation-heavy research, a purpose-built tool like Perplexity is still often the cleanest.' },
+            { label: 'Free tier quality', badge: 'Both strong', body: 'Claude\'s free tier gives you Claude Sonnet 5; ChatGPT\'s free tier gives you GPT-5.5 Instant (with tighter limits). Both are excellent now — pick based on context size (Claude) vs built-in tools like image/data analysis (ChatGPT).' },
           ]} />
         </Block>
         <Block title="What you can do" titleColor={color}>
@@ -78,7 +78,7 @@ export default function ClaudePage() {
       </Block>
         <ProjectTask
         title={"Long Context Challenge"}
-        description={"Test what Claude's 200K context can do that ChatGPT cannot. Find a long document: a textbook chapter, a research paper PDF, a large codebase you're working on, or a lengthy article. Upload it to claude.ai. Ask 10 questions that require understanding content from different parts of the document. Then try the same with ChatGPT free tier on the same document. Note where each model loses context, gives wrong answers, or handles the full document well. This will show you the real-world value of context window size."}
+        description={"Test what Claude's 1M-token context can do. Find a long document: a textbook chapter, a research paper PDF, a large codebase you're working on, or a lengthy article. Upload it to claude.ai. Ask 10 questions that require understanding content from different parts of the document. Then try the same with another chatbot's free tier on the same document. Note where each model loses context, gives wrong answers, or handles the full document well. This will show you the real-world value of context window size."}
         costNote={"TOTAL COST: ₹0 — Claude free tier on claude.ai, no payment required"}
       >
         <Steps color={color} items={[

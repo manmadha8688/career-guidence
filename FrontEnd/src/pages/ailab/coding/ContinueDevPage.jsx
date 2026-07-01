@@ -1,4 +1,4 @@
-import { InfoBox, Steps, Compare, SubHead, CardGrid, Highlight } from '../helpers'
+import { InfoBox, Steps, Compare, SubHead, CardGrid } from '../helpers'
 import {
   ToolPageShell, ToolHeader, Block, VideoCard, ProjectTask, ProTip,
   PageNavRow,
@@ -14,7 +14,7 @@ export default function ContinueDevPage() {
         title="Continue.dev — Open-Source Copilot for VS Code and JetBrains"
         tagline="The free self-hosted AI coding assistant — any model, any IDE"
         badges={[['✓ 100% FREE', '#4ADE80'], ['continue.dev', color], ['Open Source', 'var(--text-muted)']]}
-        overview={"Continue.dev is the leading open-source AI coding assistant — a free VS Code extension and JetBrains plugin that gives you GitHub Copilot-style features without any subscription. The key difference is that Continue does not lock you into one AI provider. You bring your own model: connect it to Claude, GPT-4o, Gemini, or run a completely local model through Ollama for free, offline coding with zero data leaving your machine. Unlike Cursor or Windsurf, which are standalone editors you must migrate to, Continue installs into your existing VS Code or JetBrains IDE (IntelliJ IDEA, PyCharm, WebStorm) in minutes. For Java developers, Android developers, and Python students using PyCharm, this is especially important — Continue is one of the few AI assistants that works natively inside JetBrains without requiring you to abandon your IDE. Version 1.0 launched in early 2025 alongside a $3 million funding round, bringing total funding to $5.1 million."}
+        overview={"Continue.dev is the leading open-source AI coding assistant — a free VS Code extension and JetBrains plugin that gives you GitHub Copilot-style features without any subscription. The key difference is that Continue does not lock you into one AI provider. You bring your own model: connect it to Claude, GPT-5.5, Gemini, or run a completely local model through Ollama for free, offline coding with zero data leaving your machine. Unlike Cursor or Windsurf, which are standalone editors you must migrate to, Continue installs into your existing VS Code or JetBrains IDE (IntelliJ IDEA, PyCharm, WebStorm) in minutes. For Java developers, Android developers, and Python students using PyCharm, this is especially important — Continue is one of the few AI assistants that works natively inside JetBrains without requiring you to abandon your IDE. Version 1.0 launched in early 2025 alongside a $3 million funding round, bringing total funding to $5.1 million."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -46,7 +46,7 @@ export default function ContinueDevPage() {
           <Steps color={color} items={[
             { n: '1', title: 'Install the extension', body: "VS Code: search 'Continue' in the Extensions panel (Ctrl+Shift+X) — look for the purple icon by Continue.dev. JetBrains: Settings → Plugins → Marketplace → search 'Continue'. Install and restart." },
             { n: '2', title: 'Open the config.yaml', body: "Click the gear icon in the Continue sidebar, or open ~/.continue/config.yaml directly. This is your master configuration file. The v1.0 format uses YAML with models, rules, and tools sections." },
-            { n: '3', title: 'Add a cloud model for chat', body: "Under models, add your API provider. For Claude: provider: anthropic, model: claude-sonnet-4-5, apiKey: your-key. For GPT-4o: provider: openai, model: gpt-4o. For Gemini (free): provider: gemini, model: gemini-2.5-flash." },
+            { n: '3', title: 'Add a cloud model for chat', body: "Under models, add your API provider. For Claude: provider: anthropic, model: claude-sonnet-5, apiKey: your-key. For GPT-5.5: provider: openai, model: gpt-5.5. For Gemini (free): provider: gemini, model: gemini-3.5-flash." },
             { n: '4', title: 'Add a local model for autocomplete (optional, free)', body: "Install Ollama from ollama.com. Run: ollama pull qwen2.5-coder:1.5b (fast, small). In config.yaml set autocomplete model to provider: ollama, model: qwen2.5-coder:1.5b. Now completions are free and private." },
             { n: '5', title: 'Test it', body: "Open any code file — ghost text should appear within 1-2 seconds. Press Cmd/Ctrl+L to open chat. Type @file to reference a specific file. Everything works inside your existing IDE." },
           ]} />
@@ -55,9 +55,9 @@ export default function ContinueDevPage() {
           <SubHead label="Supported model providers" color={color} />
           <CardGrid color={color} items={[
             { name: 'Ollama (local, free)', desc: 'Run models entirely on your machine — no API key, no cost, no data sent anywhere. Best for autocomplete: Qwen2.5-Coder 1.5B. Best for chat: Qwen2.5-Coder 7B or DeepSeek-Coder.' },
-            { name: 'Anthropic (Claude)', desc: 'Claude Sonnet 4.5 and above support tools and images. Strong for complex reasoning, code review, and multi-file refactoring. Pay per token — no subscription required.' },
-            { name: 'OpenAI (GPT-4o)', desc: 'GPT-4o supports tools and vision. Good general-purpose choice. Use with your existing OpenAI API key. Also compatible with any OpenAI-compatible API endpoint.' },
-            { name: 'Google Gemini', desc: 'All Gemini models support function calling. Gemini 2.5 Flash is available on the free tier. Good price-to-performance ratio for chat.' },
+            { name: 'Anthropic (Claude)', desc: 'Claude Sonnet 5 and Opus 4.8 support tools and images. Strong for complex reasoning, code review, and multi-file refactoring. Pay per token — no subscription required.' },
+            { name: 'OpenAI (GPT-5.5)', desc: 'GPT-5.5 supports tools and vision. Good general-purpose choice. Use with your existing OpenAI API key. Also compatible with any OpenAI-compatible API endpoint.' },
+            { name: 'Google Gemini', desc: 'All Gemini models support function calling. Gemini 3.5 Flash is available on the free tier. Good price-to-performance ratio for chat.' },
             { name: 'Groq', desc: 'Ultra-fast inference for open models — Llama, Mixtral, and others at speeds far above standard API providers. Free tier available. Great for fast chat responses.' },
             { name: 'OpenRouter / Bedrock / Azure', desc: 'OpenRouter gives access to 100+ models through one API key. AWS Bedrock and Azure OpenAI for enterprise deployments. LM Studio as a local alternative to Ollama.' },
           ]} />
@@ -88,7 +88,7 @@ export default function ContinueDevPage() {
         <Block>
           <SubHead label="Continue.dev vs Codeium vs Cline" color={color} />
           <Compare color={color} items={[
-            { label: 'Continue.dev', badge: 'BYOK — you choose the model', body: 'Fully open source (Apache 2.0). Works in VS Code and JetBrains. You connect your own API key (Claude, GPT-4o, Gemini) or run Ollama locally for free. Best choice if you want model flexibility, privacy, or JetBrains support. Requires 10-15 minutes of initial configuration. The config.yaml approach gives you full control but means more setup than Codeium.' },
+            { label: 'Continue.dev', badge: 'BYOK — you choose the model', body: 'Fully open source (Apache 2.0). Works in VS Code and JetBrains. You connect your own API key (Claude, GPT-5.5, Gemini) or run Ollama locally for free. Best choice if you want model flexibility, privacy, or JetBrains support. Requires 10-15 minutes of initial configuration. The config.yaml approach gives you full control but means more setup than Codeium.' },
             { label: 'Codeium (Windsurf extension)', badge: 'Zero config — works immediately', body: 'One-click install, no API key needed, free forever for individuals. Codeium provides the model — you do not bring your own. Excellent autocomplete quality, fast responses, 70+ editors. The tradeoff: you are locked into Codeium\'s model. No local deployment option. Best if you want Copilot-quality autocomplete with zero setup.' },
             { label: 'Cline', badge: 'Autonomous agent — not autocomplete', body: 'Cline is a chat/agent tool — it handles multi-file edits, runs terminal commands, and executes complex tasks autonomously. It does NOT do tab autocomplete. Most developers pair Continue (for completions) + Cline (for heavy agentic tasks). Cline requires an API key and costs more per session than Continue because agent tasks use many more tokens.' },
             { label: 'GitHub Copilot', badge: '$10/month or free student tier', body: 'Strongest out-of-the-box experience, deepest VS Code integration, and the most polished autocomplete. But requires a subscription (or student GitHub pack). Locked into GitHub/OpenAI models. No local deployment. No JetBrains chat (autocomplete only for JetBrains on paid plans). For students without the free tier, Continue + Gemini Flash is a strong free alternative.' },
@@ -102,7 +102,7 @@ export default function ContinueDevPage() {
         <Steps color={color} items={[
             { n: '1', title: 'Install Continue in your IDE', body: 'VS Code: search Continue in Extensions. JetBrains: Settings → Plugins → Marketplace → Continue. The purple icon confirms it is installed.' },
             { n: '2', title: 'Install Ollama for free autocomplete', body: 'Download from ollama.com. After install, run in terminal: ollama pull qwen2.5-coder:1.5b — this is a fast 1.5B model that gives instant autocomplete suggestions. Takes 1-2 GB download.' },
-            { n: '3', title: 'Get a free Gemini API key for chat', body: 'Visit aistudio.google.com/apikey — free tier gives you Gemini 2.5 Flash with generous limits. Add it to config.yaml: provider: gemini, model: gemini-2.5-flash, apiKey: your-key.' },
+            { n: '3', title: 'Get a free Gemini API key for chat', body: 'Visit aistudio.google.com/apikey — free tier gives you Gemini 3.5 Flash with generous limits. Add it to config.yaml: provider: gemini, model: gemini-3.5-flash, apiKey: your-key.' },
             { n: '4', title: 'Configure config.yaml', body: 'Set autocomplete model to Ollama qwen2.5-coder:1.5b (fast, local). Set chat model to Gemini Flash (free API). Now typing gives you instant local suggestions. Complex questions use the cloud.' },
             { n: '5', title: 'Use on a real project for one week', body: 'Open your most recent project. Use Tab for completions, Cmd+L for questions, Cmd+I for inline edits. After a week, decide if you want to upgrade the chat model to Claude or keep Gemini.' },
           ]} />

@@ -14,7 +14,7 @@ export default function CopilotPage() {
         title="GitHub Copilot — AI Pair Programmer Inside Your Editor"
         tagline="The tool that autocompletes entire functions as you type"
         badges={[['✓ FREE for Students', '#4ADE80'], ['GitHub Student Pack', color], ['GitHub + OpenAI', 'var(--text-muted)']]}
-        overview={"GitHub Copilot was the first mainstream AI coding assistant embedded directly inside a code editor. Before Copilot, AI coding help meant switching to a chat window, pasting code, reading a response, and copying back. Copilot changed this: it watches what you type and suggests completions inline — entire functions, test cases, boilerplate — without breaking your flow. For students, Copilot is completely free through the GitHub Student Developer Pack. It uses GPT-4o under the hood and has access to the context of your entire open file plus related files in your project. Beyond autocomplete, Copilot Chat lets you select code and ask questions, generate documentation, explain errors, and refactor — all without leaving VS Code."}
+        overview={"GitHub Copilot was the first mainstream AI coding assistant embedded directly inside a code editor. Before Copilot, AI coding help meant switching to a chat window, pasting code, reading a response, and copying back. Copilot changed this: it watches what you type and suggests completions inline — entire functions, test cases, boilerplate — without breaking your flow. For students, Copilot is completely free through the GitHub Student Developer Pack. It uses GPT-5.5 under the hood and has access to the context of your entire open file plus related files in your project. Beyond autocomplete, Copilot Chat lets you select code and ask questions, generate documentation, explain errors, and refactor — all without leaving VS Code."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -26,7 +26,7 @@ export default function CopilotPage() {
         </Block>
         <Block>
           <SubHead label="How Copilot works" color={color} />
-          <InfoBox color={color}>Copilot sends your current file content, cursor position, and relevant open files to a GPT-4o model running on GitHub's servers. The model predicts the most likely code continuation. This context window (called "copilot context") is why writing a clear function name and a docstring comment dramatically improves suggestion quality — you are giving the model more signal.</InfoBox>
+          <InfoBox color={color}>Copilot sends your current file content, cursor position, and relevant open files to a GPT-5.5 model running on GitHub's servers. The model predicts the most likely code continuation. This context window (called "copilot context") is why writing a clear function name and a docstring comment dramatically improves suggestion quality — you are giving the model more signal.</InfoBox>
           <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The critical concept is that Copilot is not searching a code database — it is using a language model that learned coding patterns from billions of lines of public code. It does not copy-paste existing code; it generates new code that follows the patterns it learned. This is why it can generate code for your specific variable names, your project's existing style, and your partial implementation. It adapts to what it sees in your file.</p>
         </Block>
         <Block>

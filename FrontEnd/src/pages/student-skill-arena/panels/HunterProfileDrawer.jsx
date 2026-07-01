@@ -32,7 +32,7 @@ function SectionTitle({ children }) {
   )
 }
 
-export default function HunterProfileDrawer({ user, rank, level, xp, onClose, onLogout }) {
+export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout }) {
   return (
     <>
       <div onClick={onClose} className="dash-overlay-backdrop dash-overlay-backdrop--drawer" />

@@ -52,7 +52,6 @@ export default function ForgotPasswordForm() {
     setPasswordVisible,
     setFormProgress,
     emitCompanionEvent,
-    dismissCompanion,
     touchActivity,
     resetCompanion,
   } = useAuthForm()

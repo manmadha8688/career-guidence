@@ -1,4 +1,4 @@
-import { MISSION_FEATURE_CARDS, MISSION_STATS } from '../landingData'
+import { MISSION_FEATURE_CARDS } from '../landingData'
 import { useLanding } from '../context/LandingPageContext'
 
 export default function LandingMissionsSection() {
@@ -37,15 +37,6 @@ export default function LandingMissionsSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="lp-stats-row-3">
-          {MISSION_STATS.map((s, i) => (
-            <div key={i} className="lp-stat-cell">
-              <div className="lp-stat-cell__value lp-stat-cell__value--mission">{s.number}</div>
-              <div className="lp-stat-cell__label">{s.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

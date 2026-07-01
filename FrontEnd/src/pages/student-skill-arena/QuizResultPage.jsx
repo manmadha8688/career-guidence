@@ -52,7 +52,7 @@ export default function QuizResultPage() {
               const state = (parsed?.date === today) ? { ...parsed.state } : {}
               state['q1'] = true  // Complete 1 concept
               localStorage.setItem(key, JSON.stringify({ date: today, state }))
-            } catch {}
+            } catch { /* ignore malformed cached quest state */ }
           }
           // Trigger dashboard + navbar to re-fetch fresh data
           window.dispatchEvent(new CustomEvent('sl:refresh'))
@@ -196,7 +196,7 @@ export default function QuizResultPage() {
             </div>
 
             <div className="dash-quiz-result-review-list">
-              {displayed?.map((r, i) => (
+              {displayed?.map((r) => (
                 <div
                   key={r.questionId}
                   className={`dash-quiz-result-review-item ${r.correct ? 'is-correct' : 'is-wrong'}`}

@@ -157,7 +157,7 @@ export default function EmbeddingsPage() {
           ]} />
       </ProjectTask>
         <ProTip>
-        The embedding model you choose has more impact on RAG quality than the LLM you choose for generation. A mediocre LLM with excellent retrieval gives better answers than an excellent LLM with poor retrieval — because if the wrong documents are retrieved, even GPT-4o cannot answer correctly from them. Spend time testing and choosing your embedding model. Try at least two options: all-MiniLM-L6-v2 (fast, decent) and BAAI/bge-large-en-v1.5 (slower, significantly better). Measure which one retrieves more relevant chunks for your specific content domain.
+        The embedding model you choose has more impact on RAG quality than the LLM you choose for generation. A mediocre LLM with excellent retrieval gives better answers than an excellent LLM with poor retrieval — because if the wrong documents are retrieved, even GPT-5.5 cannot answer correctly from them. Spend time testing and choosing your embedding model. Try at least two options: all-MiniLM-L6-v2 (fast, decent) and BAAI/bge-large-en-v1.5 (slower, significantly better). Measure which one retrieves more relevant chunks for your specific content domain.
       </ProTip>
       <PageNavRow
         prev={{ path: '/ai-lab/foundations/rag', label: 'RAG' }}

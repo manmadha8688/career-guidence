@@ -41,7 +41,8 @@ function PostModal({ onClose, onSuccess, existing }) {
     }
     setSaving(true)
     try {
-      const { skillInput, ...payload } = form
+      const payload = { ...form }
+      delete payload.skillInput
       if (isEdit) {
         await updateAdminWalkIn(existing.id, payload)
         toast.success('Walk-in updated')

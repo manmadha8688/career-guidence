@@ -53,7 +53,7 @@ export default function LangfusePage() {
         <Block>
           <SubHead label="Integrations — works with everything" color={color} />
           <Compare color={color} items={[
-            { label: 'OpenAI SDK', badge: 'Drop-in replacement', body: 'One import change: `from langfuse.openai import OpenAI`. All subsequent OpenAI calls (chat completions, embeddings, function calling) are automatically traced. Works with gpt-4o, o1, o3-mini, any current or future OpenAI model.' },
+            { label: 'OpenAI SDK', badge: 'Drop-in replacement', body: 'One import change: `from langfuse.openai import OpenAI`. All subsequent OpenAI calls (chat completions, embeddings, function calling) are automatically traced. Works with gpt-5.5, o1, o3-mini, any current or future OpenAI model.' },
             { label: 'LangChain & LangGraph', badge: 'Callback handler', body: 'Pass `CallbackHandler()` from the Langfuse SDK when initializing your LangChain chain or LangGraph agent. Every node execution, tool call, and LLM call inside the chain is automatically captured as a hierarchical trace.' },
             { label: 'LiteLLM', badge: 'Universal proxy', body: 'Langfuse integrates natively with LiteLLM — the universal LLM proxy that routes to 100+ models. Add Langfuse as a callback and you get observability across every model provider (Anthropic, Google, Mistral, Cohere) in a single dashboard.' },
             { label: 'OpenTelemetry', badge: 'Any framework', body: 'Langfuse supports the OpenTelemetry standard. Any framework that exports OpenTelemetry traces (LlamaIndex, Haystack, CrewAI, custom frameworks) can send data to Langfuse — future-proof instrumentation without vendor lock-in.' },
@@ -69,7 +69,7 @@ export default function LangfusePage() {
           <Compare color={color} items={[
             { label: 'Debugging without Langfuse', badge: 'Blind', body: 'User reports bad AI response. You have no record of what prompt was sent, what context was retrieved, or what the model saw. You try to reproduce it manually. You cannot. You ship a guess fix and hope it works. This is how most student AI projects fail in production.' },
             { label: 'Debugging with Langfuse', badge: 'Visible', body: "User reports bad AI response. You search for the trace in Langfuse. You see the exact prompt, retrieved documents, model response, token count, and latency. You identify the bad retrieval step — a document with wrong content was fetched. You fix the retrieval logic. Problem solved." },
-            { label: 'Cost monitoring', badge: 'Essential at scale', body: "Without observability, you discover your AI app spent $500 on GPT-4o at the end of the month. With Langfuse dashboards, you see cost per trace in real time. You identify that one user's session used 40,000 tokens in a loop. You add a guard. You save money." },
+            { label: 'Cost monitoring', badge: 'Essential at scale', body: "Without observability, you discover your AI app spent $500 on GPT-5.5 at the end of the month. With Langfuse dashboards, you see cost per trace in real time. You identify that one user's session used 40,000 tokens in a loop. You add a guard. You save money." },
             { label: 'Quality tracking over time', badge: 'Engineering discipline', body: 'You change a prompt. Did it get better or worse? Without Langfuse, you do manual spot-checks. With Langfuse evaluation, automated quality scores tell you immediately whether the new prompt improved or degraded quality across all production traces.' },
           ]} />
         </Block>

@@ -4,18 +4,6 @@ import { LOADERS_ON } from './_config'
 
 const CHARS = '01アイウエオカキクケコ<>{}[]()/#$%&ABCDEF0123456789'
 
-function getChar() {
-  return CHARS[Math.floor(Math.random() * CHARS.length)]
-}
-
-// Each column: array of characters falling at different speeds
-const COLUMNS = Array.from({ length: 12 }, (_, i) => ({
-  delay: `${(i * 0.18).toFixed(2)}s`,
-  dur:   `${(0.8 + (i % 4) * 0.25).toFixed(2)}s`,
-  chars: Array.from({ length: 8 }, getChar),
-  opacity: 0.3 + (i % 5) * 0.14,
-}))
-
 export default function MatrixRainLoader({ accentColor = '#f97316', height = 200, label = '', fullPage = false }) {
   const canvasRef = useRef(null)
   const rafRef    = useRef(null)

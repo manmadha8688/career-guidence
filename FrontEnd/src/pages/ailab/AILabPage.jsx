@@ -1,5 +1,6 @@
 import { useState, useRef, Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { Sun, Moon, ArrowLeft, Search, ChevronRight, Lock, Zap } from 'lucide-react'
 import ScrollToTop from '../../components/ScrollToTop'
@@ -61,6 +62,7 @@ const CAT_META = {
 
 export default function AILabPage() {
   const navigate = useNavigate()
+  const { user } = useAuth()
   const { theme, toggleTheme } = useTheme()
   const dark = theme !== 'light'
   const [activeCategory, setActiveCategory] = useState('all')
@@ -68,6 +70,15 @@ export default function AILabPage() {
   const [primerOpen, setPrimerOpen] = useState(false)
   const [splineReady, setSplineReady] = useState(false)
   const [searchFocused, setSearchFocused] = useState(false)
+  // Only load the ~4MB 3D hero when it's worth it: skip on mobile, data-saver,
+  // and for users who prefer reduced motion. They get a lightweight glow instead.
+  const [enable3D] = useState(() => {
+    if (typeof window === 'undefined') return false
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
+    const saveData = navigator.connection?.saveData
+    const small = window.innerWidth < 768
+    return !reduced && !saveData && !small
+  })
 
   const { scrollY } = useScroll()
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0])
@@ -82,7 +93,11 @@ export default function AILabPage() {
   const grouped = CATEGORIES.filter(c => c.id !== 'all').map(cat => ({
     ...cat, tools: filtered.filter(t => t.category === cat.id),
   })).filter(g => g.tools.length > 0)
-  const goToTool = t => navigate(`/ai-lab/${t.category}/${t.id}`)
+  const goToTool = t => {
+    const path = `/ai-lab/${t.category}/${t.id}`
+    if (!user) { navigate(`/login?redirect=${encodeURIComponent(path)}`); return }
+    navigate(path)
+  }
 
   return (
     <div className="ailab-page">
@@ -232,23 +247,28 @@ export default function AILabPage() {
             <div className="ailab-hero__spline-glow" />
             <div className="ailab-hero__spline-fade" />
 
-            {!splineReady && (
-              <div className="ailab-hero__spline-loader">
-                <div className="ailab-hero__spline-loader-inner">
-                  <motion.div animate={{ rotate: 360 }} transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }} className="ailab-hero__spline-spinner" />
-                  <span className="ailab-hero__spline-loader-text">LOADING 3D...</span>
-                </div>
-              </div>
+            {enable3D ? (
+              <>
+                {!splineReady && (
+                  <div className="ailab-hero__spline-loader">
+                    <div className="ailab-hero__spline-loader-inner">
+                      <motion.div animate={{ rotate: 360 }} transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }} className="ailab-hero__spline-spinner" />
+                      <span className="ailab-hero__spline-loader-text">LOADING 3D...</span>
+                    </div>
+                  </div>
+                )}
+                <Suspense fallback={null}>
+                  <Spline
+                    scene={SPLINE_ROBOT}
+                    onLoad={() => setSplineReady(true)}
+                    className="ailab-hero__spline-canvas"
+                    style={{ opacity: splineReady ? 1 : 0, transition: 'opacity 1s ease' }}
+                  />
+                </Suspense>
+              </>
+            ) : (
+              <div className="ailab-hero__spline-static" aria-hidden="true">🤖</div>
             )}
-
-            <Suspense fallback={null}>
-              <Spline
-                scene={SPLINE_ROBOT}
-                onLoad={() => setSplineReady(true)}
-                className="ailab-hero__spline-canvas"
-                style={{ opacity: splineReady ? 1 : 0, transition: 'opacity 1s ease' }}
-              />
-            </Suspense>
           </motion.div>
 
           <div className="ailab-hero__hud-tr">

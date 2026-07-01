@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
-import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'

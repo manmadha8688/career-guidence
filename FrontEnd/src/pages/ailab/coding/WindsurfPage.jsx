@@ -45,7 +45,7 @@ export default function WindsurfPage() {
             { name: 'AI Chat panel', desc: 'Context-aware chat with your codebase. Ask questions, request explanations, understand architecture. Full codebase indexing like Cursor.' },
             { name: 'Tab autocomplete', desc: "Free autocomplete powered by Codeium's model (same technology as the Codeium extension). Available on the free tier with no usage limits." },
             { name: 'Action log', desc: 'Every Cascade action is logged — file reads, writes, terminal commands, outputs. You can see exactly what the agent did and why, making it a learning tool as much as a productivity tool.' },
-            { name: 'Model selection', desc: "Choose between Claude 3.5 Sonnet, GPT-4o, and Codeium's own models per conversation. Different models have different strengths for different types of coding tasks." },
+            { name: 'Model selection', desc: "Choose between Claude Sonnet 5, GPT-5.5, and Codeium's own models per conversation. Different models have different strengths for different types of coding tasks." },
           ]} />
         </Block>
         <Block>
@@ -72,7 +72,7 @@ export default function WindsurfPage() {
             "Learn how AI agents work by reading Cascade's action log — see exactly what steps it planned and executed",
             "Use the free tier's unlimited tab autocomplete daily without worrying about usage limits",
             'Build complete working examples of technologies you want to learn by prompting Cascade to construct them',
-            'Compare different AI models (Claude, GPT-4o, Codeium) for different coding task types',
+            'Compare different AI models (Claude, GPT-5.5, Codeium) for different coding task types',
         ]} />
       </Block>
         <ProjectTask

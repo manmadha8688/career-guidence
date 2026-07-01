@@ -97,9 +97,9 @@ ${code}
     const extraHtml = demoHtml || ''
     doc = `<!DOCTYPE html><html><head>
 <meta charset="utf-8">
-<script src="https://unpkg.com/react@18/umd/react.development.js"><\/script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"><\/script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"><\/script>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
 *{box-sizing:border-box;}
 body{margin:0;padding:12px;font-family:sans-serif;font-size:14px;line-height:1.5;}
@@ -119,7 +119,7 @@ try {
   const _escMsg = String(e.message).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   document.getElementById('root').innerHTML = '<div style="color:#EF4444;font-family:monospace;font-size:12px;padding:8px;background:#FEF2F2;border-radius:4px;">Error: ' + _escMsg + '</div>';
 }
-<\/script>
+</script>
 </body></html>`
     }
   } else {

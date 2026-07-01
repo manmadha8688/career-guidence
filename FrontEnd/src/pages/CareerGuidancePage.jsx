@@ -87,7 +87,7 @@ const ROLES = [
   {
     emoji: '🤖', title: 'AI / ML Engineer',
     demand: 'Very High', color: '#00D9FF',
-    desc: 'You build AI-powered systems — recommendation engines, prediction models, NLP pipelines, and AI integrations. One of the most in-demand and highest-paying roles entering 2025.',
+    desc: 'You build AI-powered systems — recommendation engines, prediction models, NLP pipelines, and AI integrations. One of the most in-demand and highest-paying roles in the market right now.',
     passion: 'Good fit if you genuinely enjoy maths, statistics, and understanding how models work — not just using them. If you want to use AI tools without understanding them, this is not the right path.',
     aiImpact: 'Ironically, AI tools are making this role more important — and more competitive. The bar keeps rising. You need to understand models deeply, not just call APIs.',
     future: 'Highest ceiling of all roles. Also the hardest path. Python + maths + LangChain + cloud = strong foundation. Do not start here — build Python and data fundamentals first.',
@@ -279,7 +279,7 @@ const EXPECT_ITEMS = [
 ]
 
 const ADVICE_ITEMS = [
-  { text: 'Spend 30 minutes on LinkedIn today. Search "fresher developer [your city] 2025". Look at 15 job postings. See what skills, what stacks, what company types are actually hiring near you. That is real data — more useful than any YouTube video.', color: '#9B6ED4' },
+  { text: 'Spend 30 minutes on LinkedIn today. Search "fresher developer [your city] 2026". Look at 15 job postings. See what skills, what stacks, what company types are actually hiring near you. That is real data — more useful than any YouTube video.', color: '#9B6ED4' },
   { text: 'Pick a path based on what genuinely interests you — not what someone said pays more. Interest is what keeps you going when the learning gets hard. And it will get hard.', color: '#60A5FA' },
   { text: 'Start building something this week. Not a tutorial. Not watching someone else code. Open a code editor and build even a basic version of an idea. The confusion clears when you start building.', color: '#4ADE80' },
   { text: 'Stop comparing your progress to others. Someone ahead of you started earlier or had more time or practiced more. The only comparison that matters is you today vs you last month.', color: '#F59E0B' },

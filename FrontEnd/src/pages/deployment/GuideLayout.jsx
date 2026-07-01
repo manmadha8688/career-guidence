@@ -1,5 +1,14 @@
 import { useState } from 'react'
 import { ArrowLeft, Sun, Moon, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react'
+import { motion } from 'framer-motion'
+
+// Shared scroll-reveal for guide sections (reduced-motion handled globally by MotionConfig)
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+}
 
 export function CodeBlock({ lines, isFile = false, fileName = '' }) {
   const [copied, setCopied] = useState(false)
@@ -68,13 +77,13 @@ export function StepCard({ step }) {
 
 export function PhaseBlock({ phase }) {
   return (
-    <div className="deploy-phase" style={{ '--phase-color': phase.color }}>
+    <motion.div className="deploy-phase" style={{ '--phase-color': phase.color }} {...reveal}>
       <div className="deploy-phase__banner">
         <span className="deploy-phase__num">{phase.phase}</span>
         <span className="deploy-phase__title">{phase.title}</span>
       </div>
       {phase.steps.map((step, i) => <StepCard key={i} step={step} />)}
-    </div>
+    </motion.div>
   )
 }
 
@@ -96,7 +105,12 @@ export default function GuidePageWrapper({ guide, stackData, toggleTheme, onBack
 
       <div className="deploy-content">
 
-        <div className="deploy-header">
+        <motion.div
+          className="deploy-header"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="deploy-header__emoji">{stackData.emoji}</span>
           <div>
             <div className="deploy-header__title">{stackData.title}</div>
@@ -106,11 +120,11 @@ export default function GuidePageWrapper({ guide, stackData, toggleTheme, onBack
               <span className="deploy-header__badge deploy-header__badge--free">💰 Free</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {guide.map((phase, i) => <PhaseBlock key={i} phase={phase} />)}
 
-        <div className="deploy-done">
+        <motion.div className="deploy-done" {...reveal}>
           <div className="deploy-done__emoji">🎉</div>
           <div className="deploy-done__title">Your project is live!</div>
           <div className="deploy-done__text">
@@ -120,7 +134,7 @@ export default function GuidePageWrapper({ guide, stackData, toggleTheme, onBack
           <button onClick={onBack} className="deploy-done__btn">
             ← Back to all guides
           </button>
-        </div>
+        </motion.div>
 
       </div>
     </div>

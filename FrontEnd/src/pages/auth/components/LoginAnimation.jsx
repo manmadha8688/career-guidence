@@ -43,7 +43,7 @@ function BotEye({ size = 'md', pupilX, pupilY, covered, wink, sleepy, led }) {
 }
 
 /* ── Side bots: nova (left) and pixel (right) ─────────────────────── */
-function SideBot({ variant, name, active, mood, pupilX, pupilY, sleepy, coverEyes, speech, bubbleKey }) {
+function SideBot({ variant, active, mood, pupilX, pupilY, sleepy, coverEyes, speech, bubbleKey }) {
   const isLeft  = variant === 'byte'   // nova is on the left
   const happy   = mood === 'happy' || mood === 'celebrate'
   const concerned = mood === 'concerned'

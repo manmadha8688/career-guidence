@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const STORAGE_KEY = 'feedback_nudge_dismissed'
-const DELAY_MS    =  90 * 1000
+const DELAY_MS    =  110 * 1000
 
 export default function FeedbackNudge() {
   const [visible, setVisible] = useState(false)
@@ -40,22 +40,22 @@ export default function FeedbackNudge() {
         x
       </button>
 
-      <div className="feedback-nudge__label">QUICK QUESTION</div>
+      <div className="feedback-nudge__label">CAN I ASK YOU SOMETHING?</div>
 
       <p className="feedback-nudge__lead">
-        I am building LearnToEarn to help students enter the right learning path, level up their skills, and become job-ready.
+        Hey! I&rsquo;m building LearnToEarn on my own to help students like you find the right path, grow real skills, and actually become job-ready.
       </p>
 
       <p className="feedback-nudge__highlight">
-        The platform is still being updated, and your suggestions will help me understand what students really need.
+        It&rsquo;s still growing every day &mdash; and honestly, I can&rsquo;t make it better without hearing from the people actually using it.
       </p>
 
       <p className="feedback-nudge__sub">
-        Your feedback helps shape the next version. Takes just 30 seconds.
+        A few honest words from you would mean a lot, and they genuinely shape what I build next. Takes about 30 seconds, promise.
       </p>
 
-      <button type="button" onClick={goFeedback} className="feedback-nudge__cta" aria-label="Give feedback about the platform">
-        GIVE FEEDBACK
+      <button type="button" onClick={goFeedback} className="feedback-nudge__cta" aria-label="Share your feedback about the platform">
+        SHARE YOUR THOUGHTS
       </button>
     </div>
   )

@@ -8,7 +8,7 @@ import toast from 'react-hot-toast'
 import ConceptVideo from './ConceptVideo'
 import LivePreview from './LivePreview'
 
-export default function ConceptInlinePanel({ conceptId, navList, onClose, navigate, startQuiz, subjectTitle = '' }) {
+export default function ConceptInlinePanel({ conceptId, navList, onClose, startQuiz, subjectTitle = '' }) {
   const subjectType = /css/i.test(subjectTitle) ? 'css'
     : /javascript|js\b/i.test(subjectTitle) ? 'js'
     : /html/i.test(subjectTitle) ? 'html'

@@ -11,10 +11,10 @@ export default function AzureOpenAIPage() {
     <ToolPageShell toolColor={color} categoryLabel="APIs">
       <ToolHeader
         icon="🔷"
-        title="Azure OpenAI — Enterprise GPT-4o with Compliance and Privacy"
+        title="Azure OpenAI — Enterprise GPT-5.5 with Compliance and Privacy"
         tagline="The same OpenAI models — but inside Microsoft Azure with enterprise security"
         badges={[['Free Trial', '#4ADE80'], ['Microsoft Azure', color], ['Enterprise', 'var(--text-muted)']]}
-        overview={"Azure OpenAI Service is Microsoft's enterprise-grade hosting of OpenAI's models — GPT-4o, GPT-4o mini, DALL-E 3, Whisper, and embeddings — running entirely inside Microsoft's Azure cloud infrastructure. The model weights and APIs are identical to what OpenAI offers directly, but the hosting environment is completely different. Your data stays inside Azure, never reaches OpenAI's servers for training, and is protected by Microsoft's compliance certifications (SOC 2, ISO 27001, HIPAA, FedRAMP). If a company already runs its infrastructure on Azure — which most enterprises do — Azure OpenAI is the natural choice because it fits into existing security, networking, identity, and billing frameworks without any new vendor relationships. Banks, hospitals, government agencies, and large companies use it because their data governance policies simply cannot allow API calls going to a third-party cloud they do not control."}
+        overview={"Azure OpenAI Service is Microsoft's enterprise-grade hosting of OpenAI's models — GPT-5.5 and smaller GPT variants, image generation, Whisper speech-to-text, and embeddings — running entirely inside Microsoft's Azure cloud infrastructure. The model weights and APIs are identical to what OpenAI offers directly, but the hosting environment is completely different. Your data stays inside Azure, never reaches OpenAI's servers for training, and is protected by Microsoft's compliance certifications (SOC 2, ISO 27001, HIPAA, FedRAMP). If a company already runs its infrastructure on Azure — which most enterprises do — Azure OpenAI is the natural choice because it fits into existing security, networking, identity, and billing frameworks without any new vendor relationships. Banks, hospitals, government agencies, and large companies use it because their data governance policies simply cannot allow API calls going to a third-party cloud they do not control."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -54,7 +54,7 @@ export default function AzureOpenAIPage() {
             { n: '1', title: 'Create an Azure account — $200 free credit', body: 'Go to azure.microsoft.com → Start free. New accounts receive $200 in Azure credits valid for 30 days, plus 12 months of free-tier services. Use a personal Microsoft account or create one. No credit card charge during the trial.' },
             { n: '2', title: 'Request access to Azure OpenAI (if needed)', body: 'Azure OpenAI was previously gated behind an application form, but as of 2025, most Azure subscriptions have direct access. Go to the Azure portal, search "Azure OpenAI", and create a resource. If your subscription is blocked, submit the access request form — approval typically takes 1–2 business days.' },
             { n: '3', title: 'Create an Azure OpenAI resource', body: 'Azure portal → Create a resource → search "Azure OpenAI" → Create. Select your subscription, resource group, region (East US has the broadest model availability), pricing tier (Standard S0). Give it a name and create it.' },
-            { n: '4', title: 'Deploy a model in Azure AI Foundry', body: 'Inside your resource → click "Go to Azure OpenAI Studio" (now Azure AI Foundry). Go to Deployments → + Create deployment → select model (gpt-4o or gpt-4o-mini) → set deployment name and token quota → Create. The deployment name is what you use in your API calls instead of the model name directly.' },
+            { n: '4', title: 'Deploy a model in Azure AI Foundry', body: 'Inside your resource → click "Go to Azure OpenAI Studio" (now Azure AI Foundry). Go to Deployments → + Create deployment → select model (gpt-5.5 or gpt-4o-mini) → set deployment name and token quota → Create. The deployment name is what you use in your API calls instead of the model name directly.' },
             { n: '5', title: 'Get your endpoint and API key', body: 'In your Azure OpenAI resource → Keys and Endpoint. You get: Endpoint URL (like https://your-name.openai.azure.com/), Key 1, Key 2 (rotate these without downtime). The API call path includes your deployment name: /openai/deployments/{deployment-name}/chat/completions.' },
             { n: '6', title: 'Make your first API call', body: "pip install openai\n\nfrom openai import AzureOpenAI\n\nclient = AzureOpenAI(\n    azure_endpoint='https://your-name.openai.azure.com/',\n    api_key='your-key-here',\n    api_version='2024-08-01-preview'\n)\n\nresponse = client.chat.completions.create(\n    model='your-deployment-name',\n    messages=[{'role': 'user', 'content': 'Hello from Azure!'}]\n)\nprint(response.choices[0].message.content)" },
           ]} />
@@ -76,7 +76,7 @@ export default function AzureOpenAIPage() {
               </thead>
               <tbody>
                 {[
-                  ['Models', 'GPT-4o, o1, DALL-E, Whisper', 'Same GPT-4o, o1, DALL-E, Whisper', 'Claude, Llama, Mistral, Titan, Nova, Cohere'],
+                  ['Models', 'GPT-5.5, o1, DALL-E, Whisper', 'Same GPT-5.5, o1, DALL-E, Whisper', 'Claude, Llama, Mistral, Titan, Nova, Cohere'],
                   ['Data control', 'OpenAI\'s cloud, opt-out training', 'Your Azure tenant, no training ever', 'Your AWS account, no training ever'],
                   ['Compliance certs', 'SOC 2, limited', 'SOC 1/2/3, HIPAA, FedRAMP, ISO', 'SOC 1/2/3, HIPAA, FedRAMP, ISO'],
                   ['Identity', 'API key only', 'Azure AD / Managed Identity', 'IAM roles / Managed Identity'],
@@ -105,7 +105,7 @@ export default function AzureOpenAIPage() {
           <CardGrid color={color} items={[
             { name: 'Banking and financial services', desc: 'Document summarization, contract analysis, customer support bots — using internal financial data that cannot leave the bank\'s cloud. HIPAA/SOC 2 compliance and private networking satisfy legal and audit requirements.' },
             { name: 'Healthcare systems', desc: 'Clinical note summarization, medical literature Q&A, patient intake automation. HIPAA compliance and data residency guarantees are non-negotiable. Azure OpenAI is one of the few AI APIs certified for PHI (Protected Health Information) use cases.' },
-            { name: 'Government and public sector', desc: 'Azure OpenAI has FedRAMP High authorization. In January 2025, GPT-4o received approval for classified workloads in Azure Government. Government agencies can now use GPT-4o for sensitive public sector AI projects.' },
+            { name: 'Government and public sector', desc: 'Azure OpenAI has FedRAMP High authorization, and OpenAI models have received approval for classified workloads in Azure Government. Government agencies can use frontier GPT models for sensitive public sector AI projects while keeping data inside compliant boundaries.' },
             { name: 'Enterprises already on Microsoft 365', desc: 'Companies using Teams, SharePoint, Dynamics 365, and Power Platform find Azure OpenAI integrates naturally. Microsoft Copilot in Office 365 is itself built on Azure OpenAI. Extending those capabilities with custom apps requires Azure OpenAI API access.' },
             { name: 'Students learning cloud AI', desc: 'Azure OpenAI is the right service to learn if you want to work at large enterprises or pursue cloud architect/AI engineer roles. Azure certifications (AZ-900, AI-102) include Azure OpenAI topics. The $200 trial is enough to build a full learning project.' },
             { name: 'Internal enterprise tools', desc: 'HR document Q&A, IT support bots, internal knowledge search, meeting summarization — tools that process internal company data. Azure OpenAI\'s private networking ensures proprietary company data never travels to a public endpoint.' },
@@ -113,7 +113,7 @@ export default function AzureOpenAIPage() {
         </Block>
         <Block title="What you can do as a student" titleColor={color}>
         <CanDoList items={[
-          'Deploy GPT-4o inside Azure and make API calls using the same Python openai SDK you already know — just swap the client class',
+          'Deploy GPT-5.5 inside Azure and make API calls using the same Python openai SDK you already know — just swap the client class',
             'Learn Microsoft Entra ID and RBAC by setting up proper role assignments instead of just using API keys',
             'Build a private-endpoint-aware architecture diagram that you can explain in enterprise job interviews',
             'Get hands-on with Azure AI Foundry (formerly Azure OpenAI Studio) — the model management portal used by enterprise AI teams',
@@ -128,7 +128,7 @@ export default function AzureOpenAIPage() {
             { n: '1', title: 'Set up Azure OpenAI resource', body: 'Create a free Azure account → Create Azure OpenAI resource in East US → Deploy gpt-4o-mini in Azure AI Foundry → Copy endpoint URL and API key to a .env file. Never commit the .env file.' },
             { n: '2', title: 'Load a document as context', body: "Read a text file into a string. Add it to the system message: 'You are a document assistant. Answer questions only based on the following document. If the answer is not in the document, say so clearly. Document: {document_text}'" },
             { n: '3', title: 'Build the chat loop', body: 'Accept user questions in a loop. Each call sends the system message (with document) plus the current user question. Keep conversation history for multi-turn follow-up questions. Print the response and token usage.' },
-            { n: '4', title: 'Add a \"not found\" handler', body: "Check if the model responds with phrases like 'not mentioned' or 'not in the document'. Log these as unanswered questions — in a real enterprise tool, these would feed into a gap analysis of what information is missing from the knowledge base." },
+            { n: '4', title: 'Add a "not found" handler', body: "Check if the model responds with phrases like 'not mentioned' or 'not in the document'. Log these as unanswered questions — in a real enterprise tool, these would feed into a gap analysis of what information is missing from the knowledge base." },
           ]} />
           <div className="tool-layout-task__cost"><span className="tool-layout-task__cost-text">COST: gpt-4o-mini is $0.15/1M input tokens — a 10-page document + 50 questions costs under $0.01. The $200 Azure trial covers months of this kind of experimentation.</span></div>
         </div>

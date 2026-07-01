@@ -1,9 +1,20 @@
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, Sun, Moon, Play, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { useTheme } from '../../context/ThemeContext'
 import ScrollToTop from '../../components/ScrollToTop'
 
 const CYAN = '#00D9FF'
+
+// Shared scroll-reveal — sections fade/slide in as they enter the viewport.
+// `once` avoids re-animating on scroll-up; MotionConfig (reducedMotion="user")
+// at the app root neutralises this for users who prefer reduced motion.
+const reveal = {
+  initial: { opacity: 0, y: 22 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+}
 
 /** Full-page shell for dedicated AI tool pages */
 export function ToolPageShell({ toolColor, categoryLabel, children }) {
@@ -35,7 +46,12 @@ export function ToolPageShell({ toolColor, categoryLabel, children }) {
 
 export function ToolHeader({ icon, title, tagline, badges = [], overview, linkBadge }) {
   return (
-    <div className="tool-layout-header">
+    <motion.div
+      className="tool-layout-header"
+      initial={{ opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="tool-layout-header__row">
         <div className="tool-layout-header__icon">{icon}</div>
         <div>
@@ -64,13 +80,13 @@ export function ToolHeader({ icon, title, tagline, badges = [], overview, linkBa
         </div>
       )}
       {overview && <p className="tool-layout-header__overview">{overview}</p>}
-    </div>
+    </motion.div>
   )
 }
 
 export function Block({ title, titleColor, children }) {
   return (
-    <div className="tool-layout-block">
+    <motion.div className="tool-layout-block" {...reveal}>
       {title && (
         <div
           className="tool-layout-block__title"
@@ -80,7 +96,7 @@ export function Block({ title, titleColor, children }) {
         </div>
       )}
       {children}
-    </div>
+    </motion.div>
   )
 }
 

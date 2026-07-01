@@ -263,7 +263,7 @@ function SectionModal({ section, onClose }) {
           <div className="fi-modal__content">
             {section.content.split('\n').map((line, i) => {
               if (!line.trim()) return <div key={i} className="fi-modal__spacer" />
-              const isSubheading = /^[A-Z][A-Z\s\d/()–:•\-]+[:\-—]/.test(line.trim()) && line.trim().length < 80
+              const isSubheading = /^[A-Z][A-Z\s\d/()–:•-]+[:\-—]/.test(line.trim()) && line.trim().length < 80
               if (isSubheading) {
                 return (
                   <div key={i} className="fi-modal__subheading">

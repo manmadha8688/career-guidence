@@ -14,7 +14,7 @@ export default function HuggingChatPage() {
         title="HuggingChat — 115+ Free Open-Source AI Models in One Place"
         tagline="No account needed. No subscription. The open-source alternative to ChatGPT."
         badges={[['✓ 100% FREE', '#4ADE80'], ['huggingface.co/chat', color], ['Open Source', 'var(--text-muted)']]}
-        overview={"HuggingChat is Hugging Face's free chatbot interface — a single URL that gives you access to 115+ of the best open-source AI models with zero cost, zero account required, and all tools included. Where ChatGPT locks you into GPT-4o and Claude locks you into Anthropic's models, HuggingChat lets you run Meta's Llama 3.3 70B, Alibaba's Qwen3 235B, DeepSeek R1, Mistral, and dozens more — and switch between them instantly. Every tool is included free: web search, image generation via Flux.1, Python code execution, PDF document parsing, and live rendering. For students who want the power of modern AI without any subscription cost, HuggingChat is the most complete free option available."}
+        overview={"HuggingChat is Hugging Face's free chatbot interface — a single URL that gives you access to 115+ of the best open-source AI models with zero cost, zero account required, and all tools included. Where ChatGPT locks you into GPT-5.5 and Claude locks you into Anthropic's models, HuggingChat lets you run Meta's Llama 3.3 70B, Alibaba's Qwen3 235B, DeepSeek R1, Mistral, and dozens more — and switch between them instantly. Every tool is included free: web search, image generation via Flux.1, Python code execution, PDF document parsing, and live rendering. For students who want the power of modern AI without any subscription cost, HuggingChat is the most complete free option available."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -27,7 +27,7 @@ export default function HuggingChatPage() {
         <Block>
           <SubHead label="Why open-source models matter" color={color} />
           <InfoBox color={color}>Open-source means the actual model weights are publicly released — anyone can download, inspect, run, or fine-tune them. HuggingChat hosts these models on Hugging Face's servers so you can use them via browser without downloading anything. The transparency is the key difference: you can inspect what model you are actually using, run it locally if you need privacy, and the community can audit the models for bias or safety issues.</InfoBox>
-          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The practical benefit for students is cost and variety. Instead of paying $20/month for ChatGPT Plus to access GPT-4o, HuggingChat gives you Llama 3.3 70B (which rivals GPT-4 on most tasks), Qwen3 235B (which rivals GPT-4o on reasoning), and DeepSeek R1 (which rivals OpenAI's o1 on math and coding) — all free. If one model gives a poor answer on a topic, you can switch to another instantly without paying separately for each.</p>
+          <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The practical benefit for students is cost and variety. Instead of paying $20/month for ChatGPT Plus to access GPT-5.5, HuggingChat gives you Llama 3.3 70B (which rivals GPT-4 on most tasks), Qwen3 235B (which rivals GPT-5.5 on reasoning), and DeepSeek R1 (which rivals OpenAI's o1 on math and coding) — all free. If one model gives a poor answer on a topic, you can switch to another instantly without paying separately for each.</p>
         </Block>
         <Block>
           <SubHead label="Available models — which to use for what" color={color} />
@@ -64,7 +64,7 @@ export default function HuggingChatPage() {
           <SubHead label="HuggingChat vs ChatGPT vs Claude" color={color} />
           <Compare color={color} items={[
             { label: 'HuggingChat', badge: 'Best: free + open-source + variety', body: '115+ models, all tools free, no account needed, full open-source transparency. If you hit rate limits on one model, switch to another. Best for: students who want full power at zero cost, developers who want to compare open-source models, anyone who values transparency and privacy.' },
-            { label: 'ChatGPT', badge: 'Best: conversation depth + DALL-E + Code Interp', body: 'Deeper, more consistent conversational quality on complex creative tasks. Better custom GPT ecosystem. Code Interpreter for data analysis is more polished. Free tier is GPT-4o mini which is weaker than HuggingChat\'s Llama 3.3 70B. $20/month for Plus.' },
+            { label: 'ChatGPT', badge: 'Best: conversation depth + DALL-E + Code Interp', body: 'Deeper, more consistent conversational quality on complex creative tasks. Better custom GPT ecosystem. Code Interpreter for data analysis is more polished. Free tier is GPT-5.5 which is weaker than HuggingChat\'s Llama 3.3 70B. $20/month for Plus.' },
             { label: 'Claude', badge: 'Best: long documents + reasoning + safe outputs', body: '200K token context (vs HuggingChat\'s 128K max). Superior at long-document analysis, nuanced reasoning, and safe/careful outputs. No native image gen. Free tier has daily limits. $20/month for Pro.' },
           ]} />
         </Block>

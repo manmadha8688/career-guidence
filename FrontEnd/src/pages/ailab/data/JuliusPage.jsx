@@ -13,8 +13,8 @@ export default function JuliusPage() {
         icon="📊"
         title="Julius — Chat With Your Data in Plain English"
         tagline="AI-powered data analysis without writing a single line of code"
-        badges={[['✓ FREE tier', '#4ADE80'], ['No code needed', color], ['Powered by GPT-4o', 'var(--text-muted)']]}
-        overview={"Julius is an AI data analysis platform that lets you upload any data file — CSV, Excel, PDF with tables, Google Sheets — and analyze it by asking questions in plain English. No SQL, no Python, no pandas. Ask \"Which product category had the highest revenue last quarter?\" and Julius generates and executes the analysis, produces charts, and explains the findings. It is built on GPT-4o and Code Interpreter, meaning it writes Python code to analyze your data, executes it, and shows you both the result and the code it used. For students without data science backgrounds who need to analyze survey results, project data, or academic datasets, Julius makes data analysis as accessible as chatting. The free tier allows a limited number of analyses per month."}
+        badges={[['✓ FREE tier', '#4ADE80'], ['No code needed', color], ['Powered by GPT-5.5', 'var(--text-muted)']]}
+        overview={"Julius is an AI data analysis platform that lets you upload any data file — CSV, Excel, PDF with tables, Google Sheets — and analyze it by asking questions in plain English. No SQL, no Python, no pandas. Ask \"Which product category had the highest revenue last quarter?\" and Julius generates and executes the analysis, produces charts, and explains the findings. It is built on GPT-5.5 and Code Interpreter, meaning it writes Python code to analyze your data, executes it, and shows you both the result and the code it used. For students without data science backgrounds who need to analyze survey results, project data, or academic datasets, Julius makes data analysis as accessible as chatting. The free tier allows a limited number of analyses per month."}
       />
 
       <Block title="Watch first" titleColor="#EF4444">
@@ -26,7 +26,7 @@ export default function JuliusPage() {
         </Block>
         <Block>
           <SubHead label="How Julius works" color={color} />
-          <InfoBox color={color}>Julius sends your data file and your question to GPT-4o. The model writes Python code (using pandas, matplotlib, seaborn) to answer the question, executes it in a sandboxed environment, and returns the result — along with the generated chart or table. You see the answer, the visualization, and optionally the Python code that produced it. This is the same Code Interpreter capability that powers ChatGPT Plus's data analysis, wrapped in a purpose-built interface.</InfoBox>
+          <InfoBox color={color}>Julius sends your data file and your question to GPT-5.5. The model writes Python code (using pandas, matplotlib, seaborn) to answer the question, executes it in a sandboxed environment, and returns the result — along with the generated chart or table. You see the answer, the visualization, and optionally the Python code that produced it. This is the same Code Interpreter capability that powers ChatGPT Plus's data analysis, wrapped in a purpose-built interface.</InfoBox>
           <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>The critical feature for learning is that Julius shows you the code it wrote. Ask "which month had the highest sales?" and Julius answers the question and shows the pandas code it used. This is how many students learn data analysis in practice — see the code produced by AI, understand what each line does, modify it, and build their own skills. The 'see the code' toggle makes Julius simultaneously a data analysis tool and a pandas learning resource.</p>
         </Block>
         <Block>
@@ -63,7 +63,7 @@ export default function JuliusPage() {
           <SubHead label="Julius vs ChatGPT Code Interpreter" color={color} />
           <Compare color={color} items={[
             { label: 'Julius', badge: 'Purpose-built for data', body: 'Designed specifically for data analysis. Cleaner interface for data workflows. Better file management. Results organized by conversation. Free tier available. Faster for the specific workflow of upload → analyze → visualize → iterate.' },
-            { label: 'ChatGPT Plus Code Interpreter', badge: 'More general purpose', body: 'Full GPT-4o plus code execution. More powerful for complex multi-step tasks. Handles non-data tasks in the same session. $20/month. Better when you need the full ChatGPT Plus feature set, not just data analysis.' },
+            { label: 'ChatGPT Plus Code Interpreter', badge: 'More general purpose', body: 'Full GPT-5.5 plus code execution. More powerful for complex multi-step tasks. Handles non-data tasks in the same session. $20/month. Better when you need the full ChatGPT Plus feature set, not just data analysis.' },
             { label: 'Google Colab + AI', badge: 'Full control, more work', body: 'Free Jupyter notebooks with AI code assistance (Gemini or Copilot). Maximum control — you see and modify all code. More setup and learning curve. Best when you need to build reusable analysis scripts rather than one-off interactive analysis.' },
           ]} />
         </Block>

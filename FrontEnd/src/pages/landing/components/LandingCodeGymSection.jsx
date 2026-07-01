@@ -1,4 +1,4 @@
-import { CODE_GYM_TRACKS, CODE_GYM_STATS } from '../landingData'
+import { CODE_GYM_TRACKS } from '../landingData'
 import { useLanding } from '../context/LandingPageContext'
 
 export default function LandingCodeGymSection() {
@@ -45,15 +45,6 @@ export default function LandingCodeGymSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="lp-stats-row-3">
-          {CODE_GYM_STATS.map((s, i) => (
-            <div key={i} className="lp-stat-cell">
-              <div className="lp-stat-cell__value lp-stat-cell__value--code">{s.number}</div>
-              <div className="lp-stat-cell__label">{s.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

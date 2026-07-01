@@ -13,7 +13,7 @@ export default function ChatGPTPage() {
         icon="🤖"
         title="ChatGPT — Your First AI Conversation Partner"
         tagline="OpenAI's conversational AI that changed everything"
-        badges={[['✓ FREE TIER', '#4ADE80'], ['GPT-4o mini free', color], ['ChatGPT', 'var(--text-muted)']]}
+        badges={[['✓ FREE TIER', '#4ADE80'], ['GPT-5.5 free', color], ['ChatGPT', 'var(--text-muted)']]}
         overview="ChatGPT was released in November 2022 and became the fastest product to reach 100 million users in history — two months. Before ChatGPT, AI was mostly invisible infrastructure powering search suggestions and spam filters. ChatGPT was the first AI that let anyone have a real conversation with a machine — no coding, no technical knowledge required. It demonstrated that language models could explain code, write essays, debug programs, summarize documents, and reason through problems in a way that felt genuinely useful. Whether you use ChatGPT for 5 minutes or 5 hours a day, understanding how to use it well separates people who get generic results from people who use it as a genuine thinking partner."
       />
 
@@ -28,15 +28,15 @@ export default function ChatGPTPage() {
       <Block>
         <SubHead label="What ChatGPT actually is" color={color} />
         <InfoBox color={color}>ChatGPT is a chat interface on top of a large language model. The "GPT" stands for Generative Pre-trained Transformer — a neural network architecture trained on a large portion of the internet's text. The model predicts the most likely next token given everything before it. The surprising result: doing this at scale produces a system that can reason, explain, and converse.</InfoBox>
-        <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>ChatGPT the product (what you use at chat.openai.com) is not the same as GPT-4 the model. ChatGPT is the interface — the website, the conversation history, the file uploads, the plugins. The GPT models are the underlying intelligence. This distinction matters because the same GPT-4o model is also accessible via API, Claude Code, and third-party apps — the model is the core, the interface is just a wrapper.</p>
+        <p className="tool-layout-block__para" style={{ marginBottom: 0 }}>ChatGPT the product (what you use at chatgpt.com) is not the same as the GPT model behind it. ChatGPT is the interface — the website, the conversation history, the file uploads, the custom GPTs. The GPT models are the underlying intelligence. This distinction matters because the same GPT-5.5 model family is also accessible via the API and third-party apps — the model is the core, the interface is just a wrapper.</p>
       </Block>
 
       <Block>
         <SubHead label="Free vs paid — what you actually get" color={color} />
         <Compare color={color} items={[
-          { label: 'Free tier — GPT-4o mini', badge: 'Always available', body: 'GPT-4o mini is genuinely capable for most everyday tasks: answering questions, writing drafts, explaining concepts, basic coding help. The limitation is rate limits during high traffic and no access to GPT-4o or advanced features. For learning and most student use cases, the free tier is sufficient.' },
-          { label: 'ChatGPT Plus — $20/month', badge: 'Worth it for heavy use', body: 'Access to GPT-4o (significantly better reasoning), DALL-E image generation, data analysis with Code Interpreter, browsing the web, creating custom GPTs, and higher rate limits. If you find yourself hitting rate limits or need image analysis, Plus is the upgrade.' },
-          { label: 'ChatGPT Team/Enterprise', badge: 'For organizations', body: 'Team workspaces, no training on your data, custom GPTs shared across team, admin controls. Only relevant if a company is providing it to you.' },
+          { label: 'Free tier — GPT-5.5 Instant (limited)', badge: 'Always available', body: 'The free tier now runs GPT-5.5 Instant — the same default flagship paid users get — but with tight message caps (roughly 10 messages per 5 hours before it drops to a smaller model), a shorter context window, and ads in some regions. Genuinely capable for everyday questions, drafts, explanations, and basic coding. For learning and most student use cases, the free tier is enough to start.' },
+          { label: 'ChatGPT Plus — $20/month', badge: 'Worth it for heavy use', body: 'Much higher GPT-5.5 limits plus GPT-5.5 Thinking (advanced reasoning), Deep Research, image generation, Advanced Voice, the Codex coding agent, custom GPT creation, memory across chats, and projects. If you hit the free rate limits or need reasoning/research tools, this is the upgrade most people pick.' },
+          { label: 'Go / Pro / Business', badge: 'Other tiers', body: 'Go (~$8/mo) is a budget step up from Free with higher quotas. Pro ($100 and $200/mo) unlocks GPT-5.5 Pro (highest-compute reasoning), near-unlimited usage, and up to a 1M-token context. Business/Enterprise add team workspaces, admin controls, and no training on your data.' },
         ]} />
       </Block>
 
@@ -66,7 +66,7 @@ export default function ChatGPTPage() {
       <Block>
         <SubHead label="What ChatGPT cannot do reliably" color="#EF4444" />
         <Compare color="#EF4444" items={[
-          { label: 'Real-time information', badge: 'Free tier limitation', body: 'Training data has a cutoff. GPT-4o mini on the free tier does not browse the web. For current prices, recent news, or live data, use Perplexity or ChatGPT Plus with browsing enabled. Asking ChatGPT for recent events on the free tier gives you confidently wrong answers.' },
+          { label: 'Fully current information', badge: 'Verify live data', body: 'ChatGPT can now search the web (even on the free tier), but its underlying training data still has a cutoff and search results can be incomplete. For fast-moving facts — current prices, breaking news, live docs — cross-check with a source built for it like Perplexity. When ChatGPT answers from memory instead of searching, it can be confidently wrong.' },
           { label: 'Complex multi-step math', badge: 'Known weakness', body: 'Language models predict tokens — they are not calculators. For anything beyond simple arithmetic, use Wolfram Alpha or Python via Code Interpreter. ChatGPT can make arithmetic errors while being confidently fluent about the surrounding explanation.' },
           { label: 'Factual recall on obscure topics', badge: 'Hallucination risk', body: 'ChatGPT can hallucinate specific details — paper titles, author names, dates, statistics — that sound correct but are fabricated. Always verify specific factual claims from a primary source before using them in work that matters.' },
           { label: 'Private or sensitive work', badge: 'Privacy consideration', body: 'Your conversations are used to improve the model unless you disable this in settings. Do not paste code, documents, or personal information you need to remain private into the free tier.' },

@@ -62,7 +62,7 @@ export default function HermesPage() {
         <Block>
           <SubHead label="Hermes vs cloud models for agent work" color={color} />
           <Compare color={color} items={[
-            { label: 'Quality vs cost tradeoff', badge: 'Context-dependent', body: 'Hermes 3 8B (free, local) vs GPT-4o-mini ($0.15/1M tokens) vs GPT-4o ($2.50/1M tokens). For structured output and function calling on well-defined tasks, Hermes 3 is often comparable to GPT-4o-mini. For complex reasoning, GPT-4o leads. Benchmark on your specific task before concluding cloud is necessary.' },
+            { label: 'Quality vs cost tradeoff', badge: 'Context-dependent', body: 'Hermes 3 8B (free, local) vs GPT-5.5-mini ($0.15/1M tokens) vs GPT-5.5 ($2.50/1M tokens). For structured output and function calling on well-defined tasks, Hermes 3 is often comparable to GPT-5.5-mini. For complex reasoning, GPT-5.5 leads. Benchmark on your specific task before concluding cloud is necessary.' },
             { label: 'Privacy', badge: 'Hermes wins', body: 'Running locally means no data leaves your machine. For applications processing sensitive data — personal documents, internal business data, medical records — local inference with Hermes eliminates data privacy concerns entirely.' },
             { label: 'Deployment', badge: 'Cloud easier, local more private', body: 'Cloud APIs: no hardware requirements, scales automatically, easy to update. Local Hermes: fixed compute requirements (RAM/CPU), no ongoing cost, private. For student projects: use cloud APIs. For applications with privacy requirements: consider local.' },
           ]} />
