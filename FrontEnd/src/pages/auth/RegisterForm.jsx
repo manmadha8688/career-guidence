@@ -44,6 +44,9 @@ export default function RegisterForm() {
   const [sendingOtp, setSendingOtp]         = useState(false)
   const [verifyingOtp, setVerifyingOtp]     = useState(false)
   const cooldownRef                         = useRef(null)
+  const prevFieldRef                        = useRef(null)
+  const passwordFocusAtRef                  = useRef(null)
+  const passwordBeatTimerRef                = useRef(null)
 
   const getInitialCooldown = () => {
     const sent = parseInt(sessionStorage.getItem('otp_sent_at') || '0', 10)
@@ -54,7 +57,7 @@ export default function RegisterForm() {
   const [resendCooldown, setResendCooldown] = useState(getInitialCooldown)
 
   /* ── bot story ──────────────────────────────────── */
-  useRegisterBotStory(form, emailVerified, otpSent, emitBeat)
+  useRegisterBotStory(form, emailVerified, otpSent, emitBeat, focusedField)
 
   /* ── validation ─────────────────────────────────── */
   const nameOk    = form.fullName.trim().length >= 2
@@ -72,6 +75,7 @@ export default function RegisterForm() {
     setFormProgress(0)
     setFocusedField(null)
     return () => {
+      clearTimeout(passwordBeatTimerRef.current)
       resetCompanion()
       setFormProgress(0)
       setFocusedField(null)
@@ -227,7 +231,7 @@ export default function RegisterForm() {
             autoComplete="name"
             value={form.fullName}
             onChange={e => { setForm({ ...form, fullName: e.target.value }); touchActivity() }}
-            onFocus={() => { dismissCompanion(); emitBeat('REG_FOUND_NAME'); setFocusedField('fullName'); touchActivity() }}
+            onFocus={() => { emitBeat('REG_FOUND_NAME'); setFocusedField('fullName'); touchActivity() }}
             onBlur={() => setFocusedField(f => f === 'fullName' ? null : f)}
           />
         </div>
@@ -244,7 +248,18 @@ export default function RegisterForm() {
               autoComplete="email"
               value={form.email}
               onChange={e => { setForm({ ...form, email: e.target.value }); resetEmailState(); touchActivity() }}
-              onFocus={() => { dismissCompanion(); emitBeat('REG_FOUND_EMAIL'); setFocusedField('email'); touchActivity() }}
+              onFocus={() => {
+                clearTimeout(passwordBeatTimerRef.current)
+                if (prevFieldRef.current === 'password') {
+                  const elapsed = Date.now() - (passwordFocusAtRef.current || 0)
+                  emitBeat(elapsed < 2800 ? 'REG_EMAIL_RETURN_QUICK' : 'REG_EMAIL_RETURN')
+                } else {
+                  emitBeat('REG_FOUND_EMAIL')
+                }
+                setFocusedField('email')
+                touchActivity()
+                prevFieldRef.current = 'email'
+              }}
               onBlur={() => setFocusedField(f => f === 'email' ? null : f)}
               disabled={emailVerified}
             />
@@ -281,7 +296,7 @@ export default function RegisterForm() {
                 value={otp}
                 disabled={verifyingOtp}
                 onChange={e => { setOtp(e.target.value.replace(/\D/g, '').slice(0, 6)); touchActivity() }}
-                onFocus={() => { dismissCompanion(); emitBeat('REG_OTP_FOCUS'); setFocusedField('otp'); touchActivity() }}
+                onFocus={() => { emitBeat('REG_OTP_FOCUS'); setFocusedField('otp'); touchActivity(); prevFieldRef.current = 'otp' }}
                 onBlur={() => setFocusedField(f => f === 'otp' ? null : f)}
               />
               {verifyingOtp && (
@@ -305,10 +320,14 @@ export default function RegisterForm() {
                 value={form.password}
                 onChange={e => { setForm({ ...form, password: e.target.value }); touchActivity() }}
                 onFocus={() => {
-                  dismissCompanion()
-                  emitBeat('REG_FOUND_PASSWORD')
                   setFocusedField('password')
                   touchActivity()
+                  prevFieldRef.current = 'password'
+                  passwordFocusAtRef.current = Date.now()
+                  clearTimeout(passwordBeatTimerRef.current)
+                  passwordBeatTimerRef.current = setTimeout(() => {
+                    emitBeat('REG_FOUND_PASSWORD')
+                  }, 480)
                 }}
                 onBlur={() => setFocusedField(f => f === 'password' ? null : f)}
               />

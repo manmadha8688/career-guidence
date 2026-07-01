@@ -1,110 +1,133 @@
 import { useEffect, useRef } from 'react'
 import { getBeatDurationMs, isValidEmail } from './companionMurmurs'
 
-const EMAIL_INVALID_DEBOUNCE_MS = 700
+const EMAIL_INVALID_DEBOUNCE_MS = 1000
+const PASSWORD_TYPING_DELAY_MS = 800
 
-export default function useLoginBotStory(form, emitBeat, lastActivity, emailFocusedRef) {
-  /* ── activity tracking ────────────────────────────────────────── */
-  // Refs survive closure capture — safe inside setTimeout callbacks
-  const emailRef     = useRef(form.email)
-  const passwordRef  = useRef(form.password)
+export default function useLoginBotStory(form, emitBeat, lastActivity, emailFocusedRef, focusedField) {
+  const emailRef        = useRef(form.email)
+  const passwordRef     = useRef(form.password)
+  const focusedFieldRef = useRef(focusedField)
+  const passwordFocusAt = useRef(0)
 
   useEffect(() => {
     emailRef.current    = form.email
     passwordRef.current = form.password
   }, [form])
 
+  useEffect(() => {
+    focusedFieldRef.current = focusedField
+    if (focusedField === 'password') passwordFocusAt.current = Date.now()
+  }, [focusedField])
+
   const hasActed = () =>
     emailFocusedRef.current ||
     emailRef.current.length > 0 ||
     passwordRef.current.length > 0
 
-  /* ── one-shot flags ──────────────────────────────────────────── */
   const typingEmailPlayed    = useRef(false)
   const typingPasswordPlayed = useRef(false)
   const prevEmailValid       = useRef(false)
   const prevFormValid        = useRef(false)
   const prevEmailInvalid     = useRef(false)
   const invalidDebounce      = useRef(null)
+  const greetDoneAt          = useRef(0)
+  const idle6Ref             = useRef(null)
+  const idle12Ref            = useRef(null)
 
-  /* ── derived state ───────────────────────────────────────────── */
-  const email      = form.email.trim()
-  const emailValid = isValidEmail(email)
-  const hasEmail   = email.length > 0
+  const email       = form.email.trim()
+  const emailValid  = isValidEmail(email)
+  const hasEmail    = email.length > 0
   const hasPassword = form.password.length > 0
   const formValid   = emailValid && hasPassword
 
-  /* ── GREET on mount + idle scheduling ───────────────────────── */
   useEffect(() => {
-    let idle6, idle12
-
     const greetTimer = setTimeout(() => {
       emitBeat('GREET')
-
+      greetDoneAt.current = Date.now() + getBeatDurationMs('GREET')
       const greetMs = getBeatDurationMs('GREET')
 
-      // 6-second idle fires after greet finishes if user hasn't touched anything
-      idle6 = setTimeout(() => {
+      idle6Ref.current = setTimeout(() => {
         if (!hasActed()) emitBeat('IDLE_6S')
       }, greetMs + 6000)
 
-      // 12-second idle fires if still nothing after another 6 s
-      idle12 = setTimeout(() => {
+      idle12Ref.current = setTimeout(() => {
         if (!hasActed()) emitBeat('IDLE_12S')
       }, greetMs + 12000)
     }, 380)
 
     return () => {
       clearTimeout(greetTimer)
-      clearTimeout(idle6)
-      clearTimeout(idle12)
+      clearTimeout(idle6Ref.current)
+      clearTimeout(idle12Ref.current)
     }
-  // emitBeat is stable (useCallback with no deps), so this runs exactly once
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  /* ── first character in email ────────────────────────────────── */
   useEffect(() => {
+    if (focusedField !== 'email') return
     if (!hasEmail || typingEmailPlayed.current) return
-    typingEmailPlayed.current = true
-    emitBeat('TYPING_EMAIL')
-  }, [hasEmail, emitBeat])
+    if (Date.now() < greetDoneAt.current) return
 
-  /* ── first character in password ────────────────────────────── */
+    const t = setTimeout(() => {
+      if (typingEmailPlayed.current || focusedFieldRef.current !== 'email') return
+      typingEmailPlayed.current = true
+      emitBeat('TYPING_EMAIL')
+    }, 1800)
+    return () => clearTimeout(t)
+  }, [hasEmail, focusedField, emitBeat])
+
   useEffect(() => {
+    if (focusedField !== 'password') return
     if (!hasPassword || typingPasswordPlayed.current) return
-    typingPasswordPlayed.current = true
-    emitBeat('TYPING_PASSWORD')
-  }, [hasPassword, emitBeat])
 
-  /* ── email becomes valid ─────────────────────────────────────── */
+    // Wait for the full password-privacy skit to finish before typing banter
+    const sinceFocus = Date.now() - passwordFocusAt.current
+    const waitMs = Math.max(
+      PASSWORD_TYPING_DELAY_MS,
+      getBeatDurationMs('FOCUS_PASSWORD') - sinceFocus + PASSWORD_TYPING_DELAY_MS,
+    )
+
+    const t = setTimeout(() => {
+      if (typingPasswordPlayed.current || focusedFieldRef.current !== 'password') return
+      typingPasswordPlayed.current = true
+      emitBeat('TYPING_PASSWORD')
+    }, waitMs)
+    return () => clearTimeout(t)
+  }, [hasPassword, focusedField, emitBeat])
+
   useEffect(() => {
+    if (focusedField !== 'email') return
     if (emailValid && !prevEmailValid.current) emitBeat('EMAIL_VALID')
     prevEmailValid.current = emailValid
-  }, [emailValid, emitBeat])
+  }, [emailValid, focusedField, emitBeat])
 
-  /* ── email becomes invalid (debounced) ──────────────────────── */
   useEffect(() => {
+    if (focusedField !== 'email') return
     const isInvalid = hasEmail && !emailValid
     if (isInvalid && !prevEmailInvalid.current) {
       clearTimeout(invalidDebounce.current)
       invalidDebounce.current = setTimeout(
-        () => emitBeat('EMAIL_INVALID'),
+        () => {
+          if (focusedFieldRef.current === 'email') emitBeat('EMAIL_INVALID')
+        },
         EMAIL_INVALID_DEBOUNCE_MS,
       )
     }
     if (!isInvalid) clearTimeout(invalidDebounce.current)
     prevEmailInvalid.current = isInvalid
     return () => clearTimeout(invalidDebounce.current)
-  }, [hasEmail, emailValid, emitBeat])
+  }, [hasEmail, emailValid, focusedField, emitBeat])
 
-  /* ── form becomes fully valid ────────────────────────────────── */
   useEffect(() => {
-    if (formValid && !prevFormValid.current) emitBeat('FORM_VALID')
-    prevFormValid.current = formValid
+    if (formValid && !prevFormValid.current) {
+      const t = setTimeout(() => emitBeat('FORM_VALID'), 600)
+      prevFormValid.current = true
+      return () => clearTimeout(t)
+    }
+    if (!formValid) prevFormValid.current = false
   }, [formValid, emitBeat])
 
-  // Kept for API compat — no-op since we removed RANK_GUESS
   const cancelRankTimer = () => {}
   return { cancelRankTimer }
 }

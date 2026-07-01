@@ -315,7 +315,7 @@ export default function CareerGuidancePage() {
       </div>
 
       <nav className="cg-nav">
-        <button type="button" onClick={() => navigate(-1)} className="cg-nav__back">
+        <button type="button" onClick={() => navigate('/fresher-instructions')} className="cg-nav__back">
           <ArrowLeft size={14} /> FRESHER GUIDE
         </button>
         <span className="cg-nav__title">CAREER GUIDANCE</span>
@@ -553,7 +553,7 @@ export default function CareerGuidancePage() {
             <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="cg-cta__btn-primary">
               ⚔ Start Learning Now
             </button>
-            <button type="button" onClick={() => navigate(-1)} className="cg-cta__btn-secondary">
+            <button type="button" onClick={() => navigate('/fresher-instructions')} className="cg-cta__btn-secondary">
               ← Back to Fresher Guide
             </button>
           </div>

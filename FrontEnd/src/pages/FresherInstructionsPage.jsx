@@ -429,7 +429,7 @@ export default function FresherInstructionsPage() {
           <span className="fi-hero__cta-hint">ROLE GUIDE · ROADMAP · MENTOR ADVICE</span>
         </div>
         <div className="fi-stats pg-hero-5">
-          {[['12', 'Key Sections'], ['5', 'Hiring Paths'], ['∞', 'Your Potential']].map(([v, l], i) => (
+          {[['13', 'Key Sections'], ['5', 'Hiring Paths'], ['∞', 'Your Potential']].map(([v, l], i) => (
             <div key={i} className="fi-stats__cell">
               <div className="fi-stats__value">{v}</div>
               <div className="fi-stats__label">{l}</div>
@@ -451,7 +451,7 @@ export default function FresherInstructionsPage() {
 
       <div className="fi-sections-wrap">
         <div className="fi-sections-head pg-reveal">
-          <h2 className="fi-sections-head__title">12 Things Every Fresher Must Understand</h2>
+          <h2 className="fi-sections-head__title">13 Things Every Fresher Must Understand</h2>
           <p className="fi-sections-head__hint">Click any card to read the full section</p>
         </div>
         <div className="fi-sections-grid pg-stagger">

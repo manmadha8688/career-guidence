@@ -16,7 +16,6 @@ import { AnimatePresence, motion, useSpring, useTransform } from 'framer-motion'
 import { useAuthForm } from '../context/AuthFormContext'
 import useCompanionMurmur from '../hooks/useCompanionMurmur'
 import useSequentialLine from '../hooks/useSequentialLine'
-import { getBeatDurationMs } from '../hooks/companionMurmurs'
 import { MangaSpeechBubble } from './MangaSpeechBubble'
 
 /* ── Shared eye component ─────────────────────────────────────────── */
@@ -59,7 +58,7 @@ function SideBot({ variant, name, active, mood, pupilX, pupilY, sleepy, coverEye
       }}
       transition={{ duration: active ? 0.45 : happy ? 0.55 : sleepy ? 4 : 2.8, repeat: Infinity, ease: 'easeInOut' }}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false}>
         {speech && <MangaSpeechBubble key={bubbleKey} text={speech} tail={tail} />}
       </AnimatePresence>
 
@@ -129,7 +128,7 @@ function EchoBot({ active, mood, pupilX, pupilY, closeEyes, sleepy, speech, bubb
       animate={{ rotate: active || happy ? [0, -1.5, 1.5, 0] : concerned ? [0, -1, 1, 0] : 0 }}
       transition={{ duration: active || happy ? 0.5 : 0.4, repeat: Infinity, ease: 'easeInOut' }}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false}>
         {speech && <MangaSpeechBubble key={bubbleKey} text={speech} tail="center" />}
       </AnimatePresence>
 
@@ -161,6 +160,8 @@ function EchoBot({ active, mood, pupilX, pupilY, closeEyes, sleepy, speech, bubb
 }
 
 /* ── Main scene ───────────────────────────────────────────────────── */
+const PRIVACY_BEATS = new Set(['FOCUS_PASSWORD', 'REG_FOUND_PASSWORD', 'FP_FOUND_PASSWORD'])
+
 export default function LoginAnimation() {
   const sceneRef = useRef(null)
   const { focusedField, passwordVisible, formProgress } = useAuthForm()
@@ -178,38 +179,30 @@ export default function LoginAnimation() {
   // auto-hiding — if we tied to murmur?.key the effect cleanup would cancel it.
   const { companionEvent } = useAuthForm()
   const [pixelSubmitted, setPixelSubmitted] = useState(false)
-  const pixelTimerRef = useRef(null)
 
+  // Pixel keeps peeking until his surrender line; nova/echo shut on password focus
   useEffect(() => {
-    const t = companionEvent?.type
-    // Both login and register have a password-privacy beat
-    if (t !== 'FOCUS_PASSWORD' && t !== 'REG_FOUND_PASSWORD' && t !== 'FP_FOUND_PASSWORD') return
-    // New password-focus event — (re)start timer; no cleanup return so the
-    // timer ref persists even after the companion auto-hides.
-    clearTimeout(pixelTimerRef.current)
-    const ms = getBeatDurationMs(companionEvent.type)
-    pixelTimerRef.current = setTimeout(() => setPixelSubmitted(true), ms)
-  }, [companionEvent?.id]) // fires once per unique event id
+    if (PRIVACY_BEATS.has(companionEvent?.type)) setPixelSubmitted(false)
+  }, [companionEvent?.id])
 
   useEffect(() => {
     if (!passwordMode) {
-      // User left password field — reset pixel to peeking for next time
-      clearTimeout(pixelTimerRef.current)
-      pixelTimerRef.current = null
       setPixelSubmitted(false)
+      return
     }
-  }, [passwordMode])
-
-  // Cleanup on unmount
-  useEffect(() => () => clearTimeout(pixelTimerRef.current), [])
+    if (!PRIVACY_BEATS.has(companionEvent?.type)) return
+    if (currentLine?.speaker === 'pixel' && currentLine.text.startsWith('Fine.')) {
+      setPixelSubmitted(true)
+    }
+  }, [passwordMode, companionEvent?.type, currentLine])
 
   const pixelCoverEyes = passwordMode && pixelSubmitted
 
   const sleepy = murmur?.mood === 'sleepy'
   const mood   = murmur?.mood ?? 'calm'
 
-  const bubbleKey = murmur && currentLine
-    ? `${murmur.key}-${activeSpeaker}-${currentLine.text.slice(0, 10)}`
+  const bubbleKey = murmur && activeSpeaker
+    ? `${murmur.key}-${activeSpeaker}`
     : null
 
   /* pupil tracking */

@@ -2,7 +2,12 @@ import { CODE_GYM_TRACKS, CODE_GYM_STATS } from '../landingData'
 import { useLanding } from '../context/LandingPageContext'
 
 export default function LandingCodeGymSection() {
-  const { navigate } = useLanding()
+  const { navigate, user } = useLanding()
+
+  const goToTrack = (href) => {
+    if (user) navigate(href)
+    else navigate(`/login?redirect=${encodeURIComponent(href)}`)
+  }
 
   return (
     <section className="lp-section-block">
@@ -18,7 +23,7 @@ export default function LandingCodeGymSection() {
               <span className="lp-grad-blue">Crack the interview.</span>
             </h2>
             <p className="lp-section-desc--left">
-              Four tracks built for every type of learner — from writing your first print statement to solving questions asked at Amazon and Google.
+              Five tracks built for every type of learner — from writing your first print statement to solving questions asked at Amazon and Google.
               Every problem shows brute force to optimized in four languages.
             </p>
             <button type="button" onClick={() => navigate('/problem-solving')} className="lp-section-cta lp-section-cta--code">
@@ -32,7 +37,7 @@ export default function LandingCodeGymSection() {
                 key={track.title}
                 className="lp-color-card lp-color-card--top"
                 style={{ '--cc-color': track.color }}
-                onClick={() => navigate(track.href)}
+                onClick={() => goToTrack(track.href)}
               >
                 <div className="lp-color-card__icon">{track.icon}</div>
                 <div className="lp-color-card__title">{track.title}</div>
