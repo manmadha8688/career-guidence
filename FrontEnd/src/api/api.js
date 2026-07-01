@@ -4,12 +4,23 @@ const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
 const api = axios.create({ baseURL: BASE_URL, withCredentials: true })
 
+const AUTH_PUBLIC_PATHS = ['/login', '/register', '/forgot-password']
+
+/** Preserve guest device + theme when clearing session (matches AuthContext logout). */
+function clearBrowserSessionPreservingPrefs() {
+  const guestDeviceId = localStorage.getItem('guest_device_id')
+  const theme = localStorage.getItem('theme')
+  localStorage.clear()
+  if (guestDeviceId) localStorage.setItem('guest_device_id', guestDeviceId)
+  if (theme) localStorage.setItem('theme', theme)
+}
+
 api.interceptors.response.use(
   res => res,
   err => {
-    if (err.response?.status === 401 && window.location.pathname !== '/login') {
+    if (err.response?.status === 401 && !AUTH_PUBLIC_PATHS.includes(window.location.pathname)) {
       clearUserCache()
-      localStorage.clear()
+      clearBrowserSessionPreservingPrefs()
       window.location.href = '/login'
     }
     return Promise.reject(err)
@@ -76,6 +87,9 @@ export const verifyOtp        = (email, otp) => api.post('/auth/verify-otp', { e
 export const loginUser        = (data)      => api.post('/auth/login', data)
 export const guestLogin       = (guestId)   => api.post('/auth/guest', guestId ? { guestId } : {})
 export const getMe            = ()          => api.get('/auth/me')
+export const forgotPassword       = (email) => api.post('/auth/forgot-password', { email })
+export const verifyForgotPasswordOtp = (email, otp) => api.post('/auth/forgot-password/verify-otp', { email, otp })
+export const resetPassword        = (email, newPassword) => api.post('/auth/reset-password', { email, newPassword })
 
 // ─── SUBJECTS ────────────────────────────────
 export const getSubjects      = ()          => withCache('subjects',          2*60_000, () => api.get('/subjects'))
@@ -84,17 +98,15 @@ export const getSubject       = (id)        => withCache(`subject:${id}`,     2*
 export const getConcept       = (id)        => withCache(`concept:${id}`,     2*60_000, () => api.get(`/concepts/${id}`))
 
 // ─── PROGRESS ────────────────────────────────
-export const completeConcept    = (id)      => api.post(`/progress/concept/${id}/complete`)
-export const uncompleteConcept  = (id)      => api.delete(`/progress/concept/${id}/uncomplete`)
 export const getProgressSummary = ()        => withCache('progressSummary',   60_000,   () => api.get('/progress/summary'))
 export const getHunterStats     = ()        => withCache('hunterStats',        60_000,   () => api.get('/progress/hunter-stats'))
 
 // ─── ROADMAPS ────────────────────────────────
 export const getRoadmaps        = ()        => withCache('roadmaps',          5*60_000, () => api.get('/roadmaps'))
 export const getRoadmap         = (id)      => withCache(`roadmap:${id}`,     5*60_000, () => api.get(`/roadmaps/${id}`))
-export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'enrolledRoadmaps'); return r })
-export const pauseRoadmap       = (id)      => api.post(`/roadmaps/${id}/pause`)  .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'enrolledRoadmaps'); return r })
-export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'enrolledRoadmaps'); return r })
+export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps'); return r })
+export const pauseRoadmap       = (id)      => api.post(`/roadmaps/${id}/pause`)  .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps'); return r })
+export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps'); return r })
 
 // ─── ADMIN ───────────────────────────────────
 export const getAdminStats      = ()        => withCache('adminStats', 2*60_000, () => api.get('/admin/stats'))
@@ -160,12 +172,16 @@ export const updateMission    = (id, d)  => api.put(`/admin/missions/${id}`, d) 
 export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`)  .then(r => { clearApiCache('missions', `mission:${id}`); return r })
 
 // ─── WALK-INS ─────────────────────────────────────────
+export const getWalkIns        = ()       => withCache('walkIns', 60_000, () => api.get('/walkins'))
+export const postWalkIn        = (d)      => api.post('/walkins', d)             .then(r => { clearApiCache('walkIns', 'adminWalkIns', 'adminStats'); return r })
+export const removeWalkIn      = (id)     => api.delete(`/walkins/${id}`)        .then(r => { clearApiCache('walkIns', 'adminWalkIns', 'adminStats'); return r })
 export const getAdminWalkIns   = ()       => withCache('adminWalkIns', 2*60_000, () => api.get('/admin/walkins'))
-export const createWalkIn      = (d)      => api.post('/walkins', d)             .then(r => { clearApiCache('adminWalkIns', 'adminStats'); return r })
+export const createWalkIn      = (d)      => postWalkIn(d)
 export const updateAdminWalkIn = (id, d)  => api.put(`/admin/walkins/${id}`, d)  .then(r => { clearApiCache('adminWalkIns'); return r })
-export const deleteWalkIn      = (id)     => api.delete(`/walkins/${id}`)        .then(r => { clearApiCache('adminWalkIns', 'adminStats'); return r })
+export const deleteWalkIn      = (id)     => removeWalkIn(id)
 
 // ─── REPORTS ──────────────────────────────────────────
+export const submitReport       = (data)     => api.post('/reports', data)
 export const getAdminReports    = (p=0,s=20,status='') => api.get(`/reports?page=${p}&size=${s}${status ? `&status=${status}` : ''}`)
 export const updateReport       = (id, d)    => api.put(`/reports/${id}`, d)
 export const deleteReport       = (id)       => api.delete(`/reports/${id}`)

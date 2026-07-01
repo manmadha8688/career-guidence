@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
-import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
+import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminSubjects, createSubject, updateSubject, deleteSubject } from '../../api/api'
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
@@ -189,7 +192,8 @@ export default function AdminSubjects() {
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(null)
-  const [deleting, setDeleting] = useState({})
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
 
   const load = () => {
     setLoading(true)
@@ -201,21 +205,38 @@ export default function AdminSubjects() {
 
   useEffect(() => { load() }, [])
 
-  const handleDelete = async (id, title) => {
-    if (!window.confirm(`Delete "${title}" and all its concepts?`)) return
-    setDeleting(p => ({ ...p, [id]: true }))
-    try {
-      await deleteSubject(id)
-      toast.success('Subject deleted')
-      load()
-    } catch { toast.error('Failed to delete') }
-    finally { setDeleting(p => ({ ...p, [id]: false })) }
-  }
-
   const filtered = subjects.filter(s =>
     s.title.toLowerCase().includes(search.toLowerCase()) ||
     (s.description || '').toLowerCase().includes(search.toLowerCase())
   )
+
+  const filteredIds = useMemo(() => filtered.map(s => s.id), [filtered])
+  const selection = useAdminSelection(filteredIds)
+
+  const deleteTargets = useMemo(
+    () => selection.selectedIds.map(id => ({
+      id,
+      label: subjects.find(s => s.id === id)?.title || id,
+    })),
+    [selection.selectedIds, subjects],
+  )
+
+  const confirmBulkDelete = async () => {
+    setBulkDeleting(true)
+    try {
+      for (const id of selection.selectedIds) {
+        await deleteSubject(id)
+      }
+      toast.success(`Deleted ${selection.selectedIds.length} subject${selection.selectedIds.length !== 1 ? 's' : ''}`)
+      selection.clear()
+      setDeleteModal(false)
+      load()
+    } catch {
+      toast.error('Could not delete all selected subjects')
+    } finally {
+      setBulkDeleting(false)
+    }
+  }
 
   return (
     <AppLayout title="Subjects">
@@ -235,6 +256,14 @@ export default function AdminSubjects() {
         </div>
       </div>
 
+      <AdminBulkToolbar
+        count={selection.count}
+        label="subject"
+        deleting={bulkDeleting}
+        onClear={selection.clear}
+        onDelete={() => setDeleteModal(true)}
+      />
+
       {loading ? (
         <RadarLoader height={220} />
       ) : (
@@ -242,6 +271,16 @@ export default function AdminSubjects() {
           <table className="table">
             <thead>
               <tr>
+                <th style={{ width: 44 }}>
+                  <input
+                    type="checkbox"
+                    className="table-checkbox"
+                    aria-label="Select all subjects"
+                    checked={selection.allSelected}
+                    ref={el => { if (el) el.indeterminate = selection.someSelected }}
+                    onChange={selection.toggleAll}
+                  />
+                </th>
                 <th>Subject</th>
                 <th>Rank</th>
                 <th>Difficulty</th>
@@ -252,12 +291,21 @@ export default function AdminSubjects() {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No subjects match "{search}"</td></tr>
+                <tr><td colSpan={8} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No subjects match "{search}"</td></tr>
               ) : filtered.map(s => {
                 const richCount = [s.overview, s.whyLearn, s.forWho, s.careerUse].filter(Boolean).length
                 const listCount = [(s.prerequisites||[]).length, (s.outcomes||[]).length, (s.whatYouWillBuild||[]).length].reduce((a,b)=>a+b,0)
                 return (
-                  <tr key={s.id}>
+                  <tr key={s.id} className={selection.isSelected(s.id) ? 'row-selected' : ''}>
+                    <td>
+                      <input
+                        type="checkbox"
+                        className="table-checkbox"
+                        aria-label={`Select ${s.title}`}
+                        checked={selection.isSelected(s.id)}
+                        onChange={() => selection.toggle(s.id)}
+                      />
+                    </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                         <div style={{ width: 36, height: 36, background: s.color + '22', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', flexShrink: 0 }}>
@@ -279,12 +327,9 @@ export default function AdminSubjects() {
                     <td className="text-sm text-muted">{s.totalConcepts}</td>
                     
                     <td>
-                      <div style={{ display: 'flex', gap: '0.5rem' }}>
-                        <button className="btn btn-ghost btn-sm" onClick={() => setModal(s)}><Pencil size={13} /></button>
-                        <button className="btn btn-danger btn-sm" onClick={() => handleDelete(s.id, s.title)} disabled={deleting[s.id]}>
-                          {deleting[s.id] ? <span className="loading-spinner" /> : <Trash2 size={13} />}
-                        </button>
-                      </div>
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => setModal(s)} aria-label={`Edit ${s.title}`}>
+                        <Pencil size={13} />
+                      </button>
                     </td>
                   </tr>
                 )
@@ -301,6 +346,16 @@ export default function AdminSubjects() {
           onSave={() => { setModal(null); load() }}
         />
       )}
+
+      <AdminDeleteModal
+        open={deleteModal}
+        title="Delete selected subjects?"
+        subtitle="Each subject and all of its concepts, questions, and progress data will be permanently removed."
+        items={deleteTargets}
+        deleting={bulkDeleting}
+        onConfirm={confirmBulkDelete}
+        onClose={() => !bulkDeleting && setDeleteModal(false)}
+      />
     </AppLayout>
   )
 }

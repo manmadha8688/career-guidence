@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, Trash2, X, Settings, Search, ChevronDown, Check } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import useAdminSelection from '../../hooks/useAdminSelection'
 import {
   getAdminRoadmaps, createRoadmap, updateRoadmap, deleteRoadmap,
   getRoadmapSubjects, getAdminSubjects, addSubjectToRoadmap, removeSubjectFromRoadmap, reorderSubjectInRoadmap
@@ -310,7 +313,8 @@ export default function AdminRoadmaps() {
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(null)
   const [subjectsPanel, setSubjectsPanel] = useState(null)
-  const [deleting, setDeleting] = useState({})
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
 
   const load = () => {
     setLoading(true)
@@ -319,18 +323,38 @@ export default function AdminRoadmaps() {
 
   useEffect(() => { load() }, [])
 
-  const handleDelete = async (id, title) => {
-    if (!window.confirm(`Delete roadmap "${title}"?`)) return
-    setDeleting(p => ({ ...p, [id]: true }))
-    try { await deleteRoadmap(id); toast.success('Deleted'); load() }
-    catch { toast.error('Failed to delete') }
-    finally { setDeleting(p => ({ ...p, [id]: false })) }
-  }
-
   const filtered = roadmaps.filter(r =>
     r.title.toLowerCase().includes(search.toLowerCase()) ||
     (r.roleTarget || '').toLowerCase().includes(search.toLowerCase())
   )
+
+  const filteredIds = useMemo(() => filtered.map(r => r.id), [filtered])
+  const selection = useAdminSelection(filteredIds)
+
+  const deleteTargets = useMemo(
+    () => selection.selectedIds.map(id => ({
+      id,
+      label: roadmaps.find(r => r.id === id)?.title || id,
+    })),
+    [selection.selectedIds, roadmaps],
+  )
+
+  const confirmBulkDelete = async () => {
+    setBulkDeleting(true)
+    try {
+      for (const id of selection.selectedIds) {
+        await deleteRoadmap(id)
+      }
+      toast.success(`Deleted ${selection.selectedIds.length} roadmap${selection.selectedIds.length !== 1 ? 's' : ''}`)
+      selection.clear()
+      setDeleteModal(false)
+      load()
+    } catch {
+      toast.error('Could not delete all selected roadmaps')
+    } finally {
+      setBulkDeleting(false)
+    }
+  }
 
   return (
     <AppLayout title="Roadmaps">
@@ -355,14 +379,45 @@ export default function AdminRoadmaps() {
       </div>
 
       {loading ? <RadarLoader height={220} /> : (
-        <div className="table-container">
+        <>
+          <AdminBulkToolbar
+            count={selection.count}
+            label="roadmap"
+            deleting={bulkDeleting}
+            onClear={selection.clear}
+            onDelete={() => setDeleteModal(true)}
+          />
+          <div className="table-container">
           <table className="table">
-            <thead><tr><th>Roadmap</th><th>Role</th><th>Weeks</th><th></th></tr></thead>
+            <thead>
+              <tr>
+                <th style={{ width: 44 }}>
+                  <input
+                    type="checkbox"
+                    className="table-checkbox"
+                    aria-label="Select all roadmaps"
+                    checked={selection.allSelected}
+                    ref={el => { if (el) el.indeterminate = selection.someSelected }}
+                    onChange={selection.toggleAll}
+                  />
+                </th>
+                <th>Roadmap</th><th>Role</th><th>Weeks</th><th></th>
+              </tr>
+            </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={4} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No roadmaps match "{search}"</td></tr>
+                <tr><td colSpan={5} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No roadmaps match "{search}"</td></tr>
               ) : filtered.map(r => (
-                <tr key={r.id}>
+                <tr key={r.id} className={selection.isSelected(r.id) ? 'row-selected' : ''}>
+                  <td>
+                    <input
+                      type="checkbox"
+                      className="table-checkbox"
+                      aria-label={`Select ${r.title}`}
+                      checked={selection.isSelected(r.id)}
+                      onChange={() => selection.toggle(r.id)}
+                    />
+                  </td>
                   <td>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                       <div style={{ width: 36, height: 36, background: r.color + '22', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', flexShrink: 0 }}>
@@ -378,11 +433,8 @@ export default function AdminRoadmaps() {
                   <td className="text-sm text-muted">{r.estimatedWeeks}w</td>
                   <td>
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <button className="btn btn-ghost btn-sm" onClick={() => setSubjectsPanel(r)}><Settings size={13} /> Subjects</button>
-                      <button className="btn btn-ghost btn-sm" onClick={() => setModal(r)}><Pencil size={13} /></button>
-                      <button className="btn btn-danger btn-sm" onClick={() => handleDelete(r.id, r.title)} disabled={deleting[r.id]}>
-                        {deleting[r.id] ? <span className="loading-spinner" /> : <Trash2 size={13} />}
-                      </button>
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => setSubjectsPanel(r)}><Settings size={13} /> Subjects</button>
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => setModal(r)} aria-label={`Edit ${r.title}`}><Pencil size={13} /></button>
                     </div>
                   </td>
                 </tr>
@@ -390,10 +442,21 @@ export default function AdminRoadmaps() {
             </tbody>
           </table>
         </div>
+        </>
       )}
 
       {modal && <RoadmapModal roadmap={modal === 'new' ? null : modal} onClose={() => setModal(null)} onSave={() => { setModal(null); load() }} />}
       {subjectsPanel && <SubjectsPanel roadmap={subjectsPanel} onClose={() => setSubjectsPanel(null)} />}
+
+      <AdminDeleteModal
+        open={deleteModal}
+        title="Delete selected roadmaps?"
+        subtitle="Each roadmap and its subject links and enrollment data will be permanently removed."
+        items={deleteTargets}
+        deleting={bulkDeleting}
+        onConfirm={confirmBulkDelete}
+        onClose={() => !bulkDeleting && setDeleteModal(false)}
+      />
     </AppLayout>
   )
 }

@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
-import { Plus, Pencil, Trash2, X, Search } from 'lucide-react'
+import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminProblems, createProblem, updateProblemQ, deleteProblemQ } from '../../api/api'
 import toast from 'react-hot-toast'
 import useBodyLock from '../../hooks/useBodyLock'
@@ -397,7 +400,8 @@ export default function AdminProblems() {
   const [trackFilter, setTrackFilter] = useState('ALL')
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(null)
-  const [deleting, setDeleting] = useState({})
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
 
   const load = () => {
     setLoading(true)
@@ -409,23 +413,40 @@ export default function AdminProblems() {
 
   useEffect(() => { load() }, [])
 
-  const handleDelete = async (id, title) => {
-    if (!window.confirm(`Delete "${title}"?`)) return
-    setDeleting(p => ({ ...p, [id]: true }))
-    try {
-      await deleteProblemQ(id)
-      toast.success('Problem deleted')
-      load()
-    } catch { toast.error('Failed to delete') }
-    finally { setDeleting(p => ({ ...p, [id]: false })) }
-  }
-
   const filtered = problems.filter(p => {
     const matchTrack = trackFilter === 'ALL' || (p.tracks || []).includes(trackFilter)
     const q = search.toLowerCase()
     const matchSearch = !q || p.title?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q)
     return matchTrack && matchSearch
   })
+
+  const filteredIds = useMemo(() => filtered.map(p => p.id), [filtered])
+  const selection = useAdminSelection(filteredIds)
+
+  const deleteTargets = useMemo(
+    () => selection.selectedIds.map(id => ({
+      id,
+      label: problems.find(p => p.id === id)?.title || id,
+    })),
+    [selection.selectedIds, problems],
+  )
+
+  const confirmBulkDelete = async () => {
+    setBulkDeleting(true)
+    try {
+      for (const id of selection.selectedIds) {
+        await deleteProblemQ(id)
+      }
+      toast.success(`Deleted ${selection.selectedIds.length} problem${selection.selectedIds.length !== 1 ? 's' : ''}`)
+      selection.clear()
+      setDeleteModal(false)
+      load()
+    } catch {
+      toast.error('Could not delete all selected problems')
+    } finally {
+      setBulkDeleting(false)
+    }
+  }
 
   const LEVEL_COLORS = { BEGINNER: '#22C55E', INTERMEDIATE: '#F59E0B', ADVANCED: '#EF4444' }
 
@@ -463,27 +484,53 @@ export default function AdminProblems() {
       {loading ? (
         <RadarLoader height={220} />
       ) : (
-        <div className="table-container">
+        <>
+          <AdminBulkToolbar
+            count={selection.count}
+            label="problem"
+            deleting={bulkDeleting}
+            onClear={selection.clear}
+            onDelete={() => setDeleteModal(true)}
+          />
+          <div className="table-container">
           <table className="table">
             <thead>
               <tr>
+                <th style={{ width: 44 }}>
+                  <input
+                    type="checkbox"
+                    className="table-checkbox"
+                    aria-label="Select all problems"
+                    checked={selection.allSelected}
+                    ref={el => { if (el) el.indeterminate = selection.someSelected }}
+                    onChange={selection.toggleAll}
+                  />
+                </th>
                 <th>#</th>
                 <th>Title</th>
                 <th>Tracks</th>
                 <th>Level</th>
                 <th>Type</th>
                 <th>Category</th>
-                <th>Interview</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={8} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
+                <tr><td colSpan={9} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
                   {search || trackFilter !== 'ALL' ? 'No problems match your filters.' : 'No problems yet — click New Problem.'}
                 </td></tr>
               ) : filtered.map(p => (
-                <tr key={p.id}>
+                <tr key={p.id} className={selection.isSelected(p.id) ? 'row-selected' : ''}>
+                  <td>
+                    <input
+                      type="checkbox"
+                      className="table-checkbox"
+                      aria-label={`Select ${p.title}`}
+                      checked={selection.isSelected(p.id)}
+                      onChange={() => selection.toggle(p.id)}
+                    />
+                  </td>
                   <td style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: 'var(--text-muted)', minWidth: 32 }}>
                     {p.orderIndex}
                   </td>
@@ -518,26 +565,18 @@ export default function AdminProblems() {
                   </td>
                   <td className="text-sm text-muted">{p.type || '—'}</td>
                   <td className="text-sm text-muted">{p.category || <span style={{ color: 'var(--border)' }}>—</span>}</td>
+                  
                   <td>
-                    {p.isInterview ? (
-                      <span style={{ fontSize: '0.68rem', fontFamily: "'Share Tech Mono', monospace", color: '#EF4444', background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.25)', padding: '0.1rem 0.4rem', borderRadius: 4 }}>★ Yes</span>
-                    ) : (
-                      <span style={{ color: 'var(--border)', fontSize: '0.8rem' }}>—</span>
-                    )}
-                  </td>
-                  <td>
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <button className="btn btn-ghost btn-sm" onClick={() => setModal(p)}><Pencil size={13} /></button>
-                      <button className="btn btn-danger btn-sm" onClick={() => handleDelete(p.id, p.title)} disabled={deleting[p.id]}>
-                        {deleting[p.id] ? <span className="loading-spinner" /> : <Trash2 size={13} />}
-                      </button>
-                    </div>
+                    <button type="button" className="btn btn-ghost btn-sm" onClick={() => setModal(p)} aria-label={`Edit ${p.title}`}>
+                      <Pencil size={13} />
+                    </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        </>
       )}
 
       {modal && (
@@ -547,6 +586,16 @@ export default function AdminProblems() {
           onSave={() => { setModal(null); load() }}
         />
       )}
+
+      <AdminDeleteModal
+        open={deleteModal}
+        title="Delete selected problems?"
+        subtitle="Each problem and its solutions will be permanently removed."
+        items={deleteTargets}
+        deleting={bulkDeleting}
+        onConfirm={confirmBulkDelete}
+        onClose={() => !bulkDeleting && setDeleteModal(false)}
+      />
     </AppLayout>
   )
 }

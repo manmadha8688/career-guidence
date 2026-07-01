@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './context/AuthContext'
 import { ThemeProvider } from './context/ThemeContext'
 import ProtectedRoute from './components/ProtectedRoute'
+import GuestRoute from './components/GuestRoute'
 import ErrorBoundary from './components/ErrorBoundary'
 import FeedbackNudge from './components/FeedbackNudge'
 import ScrollToTop from './components/ScrollToTop'
@@ -14,8 +15,10 @@ import ReportButton from './components/ReportButton'
 // Each route loads its chunk only when first visited; subsequent visits use cache
 const LandingPage              = lazy(() => import('./pages/LandingPage'))
 const LoaderDemo               = lazy(() => import('./pages/LoaderDemo'))
-const LoginPage                = lazy(() => import('./pages/auth/LoginPage'))
-const RegisterPage             = lazy(() => import('./pages/auth/RegisterPage'))
+const AuthLayoutShell            = lazy(() => import('./pages/auth/AuthLayoutShell'))
+const LoginForm                  = lazy(() => import('./pages/auth/LoginForm'))
+const RegisterForm               = lazy(() => import('./pages/auth/RegisterForm'))
+const ForgotPasswordForm         = lazy(() => import('./pages/auth/ForgotPasswordForm'))
 const NotFoundPage             = lazy(() => import('./pages/NotFoundPage'))
 
 const MissionsPage             = lazy(() => import('./pages/MissionsPage'))
@@ -73,7 +76,7 @@ const AdminWalkIns             = lazy(() => import('./pages/admin-skill-arena/Ad
 
 function GlobalReportButton() {
   const { pathname } = useLocation()
-  const hide = pathname.startsWith('/admin') || pathname === '/login' || pathname === '/register' || pathname === '/loader-demo'
+  const hide = pathname.startsWith('/admin') || pathname === '/login' || pathname === '/register' || pathname === '/forgot-password' || pathname === '/loader-demo'
   if (hide) return null
   return <ReportButton variant="floating" />
 }
@@ -93,8 +96,8 @@ function usePrefetchRoutes() {
   useEffect(() => {
     const run = () => {
       import('./pages/LandingPage')
-      import('./pages/auth/LoginPage')
-      import('./pages/auth/RegisterPage')
+      import('./pages/auth/LoginForm')
+      import('./pages/auth/RegisterForm')
       import('./pages/MissionsPage')
       import('./pages/JobsPage')
       import('./pages/ailab/AILabPage')
@@ -130,9 +133,14 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/loader-demo" element={<LoaderDemo />} />
 
-            {/* Public */}
-            <Route path="/login"    element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
+            {/* Auth — guests only; logged-in users redirect home or ?redirect= */}
+            <Route element={<GuestRoute />}>
+              <Route element={<AuthLayoutShell />}>
+                <Route path="/login"             element={<LoginForm />} />
+                <Route path="/register"          element={<RegisterForm />} />
+                <Route path="/forgot-password"   element={<ForgotPasswordForm />} />
+              </Route>
+            </Route>
             <Route path="/missions" element={<MissionsPage />} />
             <Route path="/walk-ins" element={<JobsPage />} />
             <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />

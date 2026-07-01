@@ -24,7 +24,15 @@ Set these in: Render Dashboard → Service → Environment
 | `CORS_ALLOWED_ORIGINS` | `https://learn-to-earn-omega.vercel.app` | No trailing slash |
 | `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis cache |
 | `SPRING_REDIS_URL` | `redis://***REMOVED***:6379` | Render Redis instance |
+| `BREVO_API_KEY` | `<Brevo SMTP API key>` | Required for register/forgot-password OTP emails |
+| `COOKIE_SECURE` | `true` | Required in production — httpOnly auth cookies over HTTPS only |
 | `PORT` | (auto-injected by Render) | DO NOT set manually |
+
+### Health Check
+
+Render should use: `GET /actuator/health` (returns `{"status":"UP"}` when healthy).
+
+Public route — no auth required. Added via Spring Boot Actuator.
 
 > **Security:** Never commit these values. Never put them in code.
 
@@ -37,13 +45,17 @@ Set these in: Render Dashboard → Service → Environment
 VITE_API_URL=http://localhost:8080/api
 ```
 
-### Backend (application-local.properties or environment)
+### Backend (application-local.properties — gitignored)
 ```properties
-spring.data.mongodb.uri=mongodb+srv://...@free-database.lfnuahd.mongodb.net/learnData_db
+MONGODB_URI=mongodb+srv://...@cluster/learnData_db
 jwt.secret=local-dev-secret-not-production
 cors.allowed.origins=http://localhost:5173
 spring.profiles.active=local
+brevo.api.key=<your-brevo-api-key>
+app.cookie.secure=false
 ```
+
+> Local profile uses `application-local.properties` (gitignored). Set `app.cookie.secure=false` for HTTP localhost.
 
 ---
 

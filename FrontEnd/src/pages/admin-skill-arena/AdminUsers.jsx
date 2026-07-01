@@ -1,9 +1,12 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import RadarLoader from '../../components/loaders/RadarLoader'
-import { Search, Trash2 } from 'lucide-react'
+import { Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminUsers, deleteUser } from '../../api/api'
 import toast from 'react-hot-toast'
 
@@ -24,7 +27,8 @@ export default function AdminUsers() {
   const [totalPages, setTotalPages] = useState(0)
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
-  const [deleting, setDeleting] = useState({})
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
   const SIZE = 10
 
   const load = useCallback((p = 0, q = search) => {
@@ -49,17 +53,32 @@ export default function AdminUsers() {
     debouncedSearch(e.target.value)
   }
 
-  const handleDelete = async (id, name) => {
-    if (!window.confirm(`Delete user "${name}"? This cannot be undone.`)) return
-    setDeleting(p => ({ ...p, [id]: true }))
+  const selectableUsers = useMemo(() => users.filter(u => u.role !== 'ADMIN'), [users])
+  const filteredIds = useMemo(() => selectableUsers.map(u => u.id), [selectableUsers])
+  const selection = useAdminSelection(filteredIds)
+
+  const deleteTargets = useMemo(
+    () => selection.selectedIds.map(id => ({
+      id,
+      label: users.find(u => u.id === id)?.fullName || id,
+    })),
+    [selection.selectedIds, users],
+  )
+
+  const confirmBulkDelete = async () => {
+    setBulkDeleting(true)
     try {
-      await deleteUser(id)
-      toast.success('User deleted')
+      for (const id of selection.selectedIds) {
+        await deleteUser(id)
+      }
+      toast.success(`Deleted ${selection.selectedIds.length} user${selection.selectedIds.length !== 1 ? 's' : ''}`)
+      selection.clear()
+      setDeleteModal(false)
       load(page)
     } catch {
-      toast.error('Failed to delete user')
+      toast.error('Could not delete all selected users')
     } finally {
-      setDeleting(p => ({ ...p, [id]: false }))
+      setBulkDeleting(false)
     }
   }
 
@@ -80,10 +99,27 @@ export default function AdminUsers() {
         <RadarLoader height={220} />
       ) : (
         <>
+          <AdminBulkToolbar
+            count={selection.count}
+            label="user"
+            deleting={bulkDeleting}
+            onClear={selection.clear}
+            onDelete={() => setDeleteModal(true)}
+          />
           <div className="table-container">
             <table className="table">
               <thead>
                 <tr>
+                  <th style={{ width: 44 }}>
+                    <input
+                      type="checkbox"
+                      className="table-checkbox"
+                      aria-label="Select all users"
+                      checked={selection.allSelected}
+                      ref={el => { if (el) el.indeterminate = selection.someSelected }}
+                      onChange={selection.toggleAll}
+                    />
+                  </th>
                   <th>User</th>
                   <th>Role</th>
                   <th>Status</th>
@@ -91,12 +127,24 @@ export default function AdminUsers() {
                   <th>Last Login</th>
                   <th>Last Logout</th>
                   <th style={{ textAlign: 'center' }}>Logins</th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 {users.map(u => (
-                  <tr key={u.id}>
+                  <tr key={u.id} className={selection.isSelected(u.id) ? 'row-selected' : ''}>
+                    <td>
+                      {u.role === 'ADMIN' ? (
+                        <input type="checkbox" className="table-checkbox" disabled aria-label={`${u.fullName} (admin — cannot delete)`} />
+                      ) : (
+                        <input
+                          type="checkbox"
+                          className="table-checkbox"
+                          aria-label={`Select ${u.fullName}`}
+                          checked={selection.isSelected(u.id)}
+                          onChange={() => selection.toggle(u.id)}
+                        />
+                      )}
+                    </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                         <div className="navbar-avatar" style={{ width: 34, height: 34, fontSize: '0.8rem', background: u.avatarColor || '#4F46E5', flexShrink: 0 }}>
@@ -125,11 +173,6 @@ export default function AdminUsers() {
                         {u.loginCount ?? 0}
                       </span>
                     </td>
-                    <td>
-                      <button className="btn btn-danger btn-sm" onClick={() => handleDelete(u.id, u.fullName)} disabled={deleting[u.id]}>
-                        {deleting[u.id] ? <span className="loading-spinner" /> : <Trash2 size={13} />}
-                      </button>
-                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -148,6 +191,16 @@ export default function AdminUsers() {
           )}
         </>
       )}
+
+      <AdminDeleteModal
+        open={deleteModal}
+        title="Delete selected users?"
+        subtitle="Admin accounts cannot be deleted and are excluded from selection. All other selected users and their progress data will be permanently removed."
+        items={deleteTargets}
+        deleting={bulkDeleting}
+        onConfirm={confirmBulkDelete}
+        onClose={() => !bulkDeleting && setDeleteModal(false)}
+      />
     </AppLayout>
   )
 }

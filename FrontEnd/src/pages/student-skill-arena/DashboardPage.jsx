@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import ReportButton from '../../components/ReportButton'
@@ -7,8 +7,7 @@ import DungeonPortalLoader from '../../components/loaders/DungeonPortalLoader'
 import { CheckCircle, Search, Brain, Trophy, X, Clock, ChevronLeft, Info, Menu, Sun, Moon } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getRoadmapStatus, getBulkSubjectStatus,
-  getSubjects, getSubject, getConcept, getQuizStatus,
-  getRoadmaps, enrollRoadmap, pauseRoadmap, resumeRoadmap,
+  getSubjects, getRoadmaps, enrollRoadmap,
   getHunterStats, clearApiCache,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
@@ -16,6 +15,7 @@ import { useTheme } from '../../context/ThemeContext'
 import { getRank } from '../../utils/slRank'
 import ProgressBar from '../../components/ProgressBar'
 import toast from 'react-hot-toast'
+import { logApiError } from '../../utils/devLog'
 
 // ─── Extracted panel components ───────────────────────────
 import ConceptInlinePanel  from './panels/ConceptInlinePanel'
@@ -202,27 +202,37 @@ export default function DashboardPage() {
   }
 
   useEffect(() => {
+    let active = true
+    const timers = []
     getProgressSummary()
       .then(s => {
+        if (!active) return
         setSummary(s.data)
         syncQuestsFromSummary(s.data, user?.id)
       })
-      .catch(() => toast.error('Failed to load status window'))
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
-    getHunterStats().then(r => setHunterStats(r.data)).catch(() => {})
+      .catch(() => { if (active) toast.error('Could not load your progress. Please refresh.') })
+      .finally(() => {
+        timers.push(setTimeout(() => { if (active) setLoading(false) }, PAGE_MIN_MS))
+      })
+    getHunterStats()
+      .then(r => { if (active) setHunterStats(r.data) })
+      .catch(err => logApiError('hunter-stats', err))
+    return () => {
+      active = false
+      timers.forEach(clearTimeout)
+    }
   }, []) // eslint-disable-line
 
   // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
   useEffect(() => {
     const refresh = () => {
-      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*', 'enrolledRoadmaps')
+      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*')
       getProgressSummary().then(s => {
         setSummary(s.data)
         syncQuestsFromSummary(s.data, user?.id)
-      }).catch(() => {})
-      getHunterStats().then(r => setHunterStats(r.data)).catch(() => {})
+      }).catch(err => logApiError('progress-refresh', err))
+      getHunterStats().then(r => setHunterStats(r.data)).catch(err => logApiError('hunter-stats-refresh', err))
       setPanelRefreshKey(k => k + 1)
-      // Reload gate cards + badge statuses directly (bypasses gatesLoaded guard)
       getSubjects().then(r => {
         setSubjects(r.data)
         setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS)
@@ -230,11 +240,19 @@ export default function DashboardPage() {
         if (ids.length > 0) {
           getBulkSubjectStatus(ids)
             .then(res => setQuizStatuses(res.data))
-            .catch(() => {})
+            .catch(err => logApiError('quiz-status-refresh', err))
         }
-      }).catch(() => {})
-      // Reload roadmap cards with fresh allSubjectsDone
-      getRoadmaps().then(r => { setAllRoadmaps(r.data); setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS) }).catch(() => {})
+      }).catch(err => {
+        logApiError('subjects-refresh', err)
+        setGatesLoaded(true)
+      })
+      getRoadmaps().then(r => {
+        setAllRoadmaps(r.data)
+        setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS)
+      }).catch(err => {
+        logApiError('roadmaps-refresh', err)
+        setPathsLoaded(true)
+      })
     }
     window.addEventListener('sl:refresh', refresh)
     return () => window.removeEventListener('sl:refresh', refresh)
@@ -276,14 +294,23 @@ export default function DashboardPage() {
       if (ids.length > 0) {
         getBulkSubjectStatus(ids)
           .then(res => setQuizStatuses(res.data))
-          .catch(() => {})
+          .catch(err => logApiError('quiz-status-gates', err))
       }
+    }).catch(err => {
+      logApiError('subjects-gates', err)
+      setGatesLoaded(true)
     })
   }
 
   const loadPaths = () => {
     if (pathsLoaded) return
-    getRoadmaps().then(r => { setAllRoadmaps(r.data); setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS) })
+    getRoadmaps().then(r => {
+      setAllRoadmaps(r.data)
+      setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS)
+    }).catch(err => {
+      logApiError('roadmaps-paths', err)
+      setPathsLoaded(true)
+    })
   }
 
   // Load roadmaps eagerly so Skill Arena can show active path

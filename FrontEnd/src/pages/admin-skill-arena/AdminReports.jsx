@@ -5,6 +5,7 @@ import RadarLoader from '../../components/loaders/RadarLoader'
 import { Flag, Trash2, CheckCircle, Clock, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminReports, updateReport, deleteReport, getReportStats } from '../../api/api'
+import { REPORT_TYPE_LABELS } from '../../constants/reportTypes'
 import toast from 'react-hot-toast'
 
 const STATUS_META = {
@@ -13,12 +14,28 @@ const STATUS_META = {
   RESOLVED:    { label: 'Resolved',    color: '#4ADE80', bg: 'rgba(74,222,128,0.1)',  icon: CheckCircle },
 }
 
-const TYPE_LABEL = {
-  NO_QUESTIONS:    '❓ No questions',
-  WRONG_CONTENT:   '✏️ Wrong content',
-  MISSING_CONTENT: '📭 Missing content',
-  BROKEN:          '🔧 Broken',
-  OTHER:           '💬 Other',
+const TYPE_LABEL = REPORT_TYPE_LABELS
+
+function parseContext(raw) {
+  if (!raw) return null
+  try { return JSON.parse(raw) } catch { return null }
+}
+
+function ContextBlock({ context }) {
+  if (!context) return null
+  const entries = Object.entries(context).filter(([k]) => k !== 'fullUrl' && k !== 'platform')
+  if (!entries.length && !context.fullUrl) return null
+  return (
+    <div>
+      <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>AUTO CONTEXT</div>
+      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.7, background: 'var(--bg-secondary)', borderRadius: 7, padding: '0.75rem 0.875rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+        {context.fullUrl && <code style={{ fontSize: '0.72rem', wordBreak: 'break-all' }}>{context.fullUrl}</code>}
+        {entries.map(([k, v]) => (
+          <span key={k}><strong style={{ color: 'var(--text-muted)', fontWeight: 600 }}>{k}:</strong> {String(v)}</span>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 const fmt = d => d ? new Date(d).toLocaleString('en-IN', { day: '2-digit', month: 'short', year: '2-digit', hour: '2-digit', minute: '2-digit' }) : '—'
@@ -187,11 +204,22 @@ export default function AdminReports() {
 
                       {/* Description */}
                       <div>
-                        <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>DESCRIPTION</div>
+                        <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>WHAT HAPPENED</div>
                         <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.7, background: 'var(--bg-secondary)', borderRadius: 7, padding: '0.75rem 0.875rem' }}>
                           {r.description}
                         </div>
                       </div>
+
+                      {r.expectedBehavior && (
+                        <div>
+                          <div style={{ fontSize: '0.72rem', fontFamily: "'Share Tech Mono', monospace", letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>EXPECTED BEHAVIOR</div>
+                          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.7, background: 'var(--bg-secondary)', borderRadius: 7, padding: '0.75rem 0.875rem', borderLeft: '3px solid rgba(96,165,250,0.5)' }}>
+                            {r.expectedBehavior}
+                          </div>
+                        </div>
+                      )}
+
+                      <ContextBlock context={parseContext(r.context)} />
 
                       {/* User info */}
                       <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
