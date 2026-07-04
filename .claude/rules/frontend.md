@@ -1,5 +1,7 @@
 # Frontend Rules — LearnToEarn React App
 
+> For anything **visual / design / redesign**, read `.claude/rules/design.md` and act as the `design-engineer` agent. This file covers structure, state, and correctness.
+
 ## Absolute Rules (Never Break)
 
 1. **CSS variables for ALL colors** — `var(--bg-primary)` not `'#0C1020'`
@@ -81,3 +83,13 @@
 | Orbitron | Headings, numbers, rank badges, stats |
 | Rajdhani | Body text, buttons, labels |
 | Share Tech Mono | Code, metadata, monospace labels |
+
+## Animation / Motion
+
+- **framer-motion** is the standard for React-driven animation (already a dependency). CSS `@keyframes` for ambient/looping FX.
+- Shared ease: `const EASE = [0.16, 1, 0.3, 1]`.
+- Entrances: `whileInView` + `viewport={{ once: true, amount: 0.3 }}`, stagger via `delay: i * 0.05–0.08`.
+- Always add `@media (prefers-reduced-motion: reduce)` to disable infinite animations.
+- Animate only `transform` / `opacity` in loops — never `width/top/left`.
+- Section styles live in `src/styles/pages/…` (feature class prefix), not `global.css`.
+- Full design tokens, color/spacing/motion scale, and redesign playbook → `.claude/rules/design.md`.

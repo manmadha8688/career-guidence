@@ -1,15 +1,20 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
-import GuidePageWrapper from './GuideLayout'
+import GuideExperience from './GuideExperience'
 import { FASTAPI_GUIDE } from './guides/fastapiGuide'
- import { STACKS } from './guideIndex'
+import { STACKS } from './guideIndex'
 
 export default function FastApiDeployPage() {
   const navigate = useNavigate()
-  const { theme, toggleTheme } = useTheme()
-  const dark = theme === 'dark'
+  const { toggleTheme } = useTheme()
   const stackData = STACKS.find(s => s.id === 'fastapi')
+
   return (
-    <GuidePageWrapper guide={FASTAPI_GUIDE} stackData={stackData} dark={dark} toggleTheme={toggleTheme} onBack={() => navigate('/deployment')} />
+    <GuideExperience
+      guide={FASTAPI_GUIDE}
+      stackData={stackData}
+      toggleTheme={toggleTheme}
+      onBack={() => navigate('/deployment')}
+    />
   )
 }

@@ -1,6 +1,6 @@
 ---
 name: feedback-mission-creation
-description: 7 rules + full quick-reference for all 4 mission types — API fields, Python script, current counts (55 total)
+description: 7 rules + full quick-reference for the 3 mission types (SUBJECT_PRACTICE, ROLE_BASED, ACADEMIC) — API fields, Python script, current counts
 metadata:
   type: feedback
 ---
@@ -38,19 +38,15 @@ Think like a senior developer assigning real work to a junior. The student must 
 - `techStack: ["Use any tech stack to complete this mission"]`
 - Domains: healthcare, agriculture, education, e-governance, transport
 - Impressive enough for viva presentation AND understandable to non-technical professor
-- orderIndex: 46–55
 
-### REAL_WORLD
-- Same structure as ROLE_BASED
-- Industry-grade, beyond college level
-- No missions seeded yet
+> There are ONLY 3 mission categories: SUBJECT_PRACTICE, ROLE_BASED, ACADEMIC. Do not introduce any other category.
 
-## Current Counts
-- SUBJECT_PRACTICE: 33 missions
-- ROLE_BASED: 11 missions
+## Current Counts (live DB, audited)
+- SUBJECT_PRACTICE: 53 missions
+- ROLE_BASED: 25 missions
 - ACADEMIC: 10 missions
-- **Total: 55 missions**
-- Next orderIndex: 56+
+- **Total: 88 missions**
+- Next orderIndex: 415+ (orderIndex values are not contiguous; always compute max+1)
 
 ## API Fields
 ```python
@@ -58,7 +54,7 @@ Think like a senior developer assigning real work to a junior. The student must 
   "title": "...",
   "missionBrief": "...",            # 3-5 sentences: problem + real-world context
   "rank": "D|C|B|A",
-  "category": "SUBJECT_PRACTICE|ROLE_BASED|ACADEMIC|REAL_WORLD",
+  "category": "SUBJECT_PRACTICE|ROLE_BASED|ACADEMIC",
   "techStack": [...],
   "estimatedHours": N,
   "subjectIds": [], "subjectTitles": [],

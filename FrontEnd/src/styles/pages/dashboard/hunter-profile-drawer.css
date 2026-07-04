@@ -6,10 +6,12 @@
   right: 0;
   bottom: 0;
   width: min(420px, 92vw);
+  height: 100dvh;
+  max-height: 100dvh;
   background: #090E1C;
   border-left: 1px solid rgba(155, 110, 212, 0.22);
   z-index: 301;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   animation: slideInRight 0.22s ease;
@@ -23,8 +25,7 @@
   justify-content: space-between;
   padding: 1rem 1.25rem;
   border-bottom: 1px solid rgba(155, 110, 212, 0.15);
-  position: sticky;
-  top: 0;
+  flex-shrink: 0;
   background: #090E1C;
   z-index: 1;
 }
@@ -42,6 +43,10 @@
   flex-direction: column;
   gap: 1.75rem;
   flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .dash-hunter-about-card {
@@ -103,6 +108,85 @@
   font-size: 0.75rem;
   color: #8B9AB8;
   line-height: 1.65;
+}
+
+/* ── Glossary: what the themed words mean ── */
+.dash-hunter-glossary { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.dash-hunter-term {
+  padding: 0.75rem 0.875rem;
+  background: var(--term-bg);
+  border: 1px solid var(--term-border);
+  border-left: 3px solid var(--term-color);
+  border-radius: 10px;
+}
+
+.dash-hunter-term__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.dash-hunter-term__word {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--term-color);
+}
+
+.dash-hunter-term__eq {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.dash-hunter-term__plain {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dash-hunter-term__desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.dash-hunter-words {
+  margin-top: 0.625rem;
+  padding: 0.75rem 0.875rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.dash-hunter-word {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.dash-hunter-word__k {
+  flex-shrink: 0;
+  min-width: 82px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dash-hunter-word__v { color: var(--text-secondary); }
+
+[data-theme="light"] .dash-hunter-words {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .dash-hunter-badge-guide { display: flex; flex-direction: column; gap: 0.625rem; }
@@ -253,16 +337,37 @@
 .dash-hunter-xp-tip__bullet { color: #F59E0B; flex-shrink: 0; }
 
 .dash-hunter-drawer__footer {
-  padding: 1rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   border-top: 1px solid rgba(155, 110, 212, 0.12);
   background: #090E1C;
-  position: sticky;
-  bottom: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dash-hunter-drawer__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 769px) {
+  .dash-hunter-drawer__actions {
+    flex-direction: row;
+    gap: 0.625rem;
+  }
+
+  .dash-hunter-exit-btn,
+  .dash-hunter-logout-btn {
+    flex: 1;
+    width: auto;
+  }
 }
 
 .dash-hunter-exit-btn {
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   padding: 0.65rem;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.03);

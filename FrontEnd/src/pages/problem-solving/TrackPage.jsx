@@ -3,6 +3,7 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Sun, Moon, Search, X, ChevronRight } from 'lucide-react'
 import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
+import EnterArenaButton from '../../components/EnterArenaButton'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblems } from '../../api/api'
 
@@ -10,36 +11,39 @@ const SLUG_TO_TRACK = {
   'start-coding':    'START_CODING',
   'logic-building':  'LOGIC_BUILDING',
   'skill-up':        'SKILL_UP',
-  'interview-prep':  'INTERVIEW_PREP',
-  'scenario-coding': 'SCENARIO_CODING',
+  'crack-it':        'CRACK_IT',
+  'build-it':        'BUILD_IT',
+  'prove-it':        'PROVE_IT',
 }
+
+// One place for track identity. Colors match the gate cards on the Code Gym page.
+// Only Prove It (the final S-rank gate) uses red — everything else stays muted.
 const TRACK_META = {
-  START_CODING:    { title: 'Start Coding',    color: '#22C55E' },
-  LOGIC_BUILDING:  { title: 'Logic Building',  color: '#F59E0B' },
-  SKILL_UP:        { title: 'Skill Up',        color: '#0EA5E9' },
-  INTERVIEW_PREP:  { title: 'Interview Prep',  color: '#EF4444' },
-  SCENARIO_CODING: { title: 'Scenario Coding', color: '#8B5CF6' },
+  START_CODING:    { title: 'Start Coding',   rank: 'E', color: '#9CA3AF' },
+  LOGIC_BUILDING:  { title: 'Logic Building', rank: 'D', color: '#4ADE80' },
+  SKILL_UP:        { title: 'Skill Up',       rank: 'C', color: '#60A5FA' },
+  CRACK_IT:        { title: 'Crack It',       rank: 'B', color: '#9B6ED4' },
+  BUILD_IT:        { title: 'Build It',       rank: 'A', color: '#F59E0B' },
+  PROVE_IT:        { title: 'Prove It',       rank: 'S', color: '#EF4444' },
 }
+
 const LEVEL_META = {
-  BEGINNER:     { label: 'Beginner',     color: '#22C55E' },
+  BEGINNER:     { label: 'Beginner',     color: '#4ADE80' },
   INTERMEDIATE: { label: 'Intermediate', color: '#F59E0B' },
-  ADVANCED:     { label: 'Advanced',     color: '#EF4444' },
+  ADVANCED:     { label: 'Advanced',     color: '#C084FC' },
 }
-const TYPE_META = {
-  WRITE:      { label: 'Write Code',   color: '#0EA5E9' },
-  PATTERN:    { label: 'Pattern',      color: '#A78BFA' },
-  OUTPUT:     { label: 'Output Based', color: '#34D399' },
-  DEBUG:      { label: 'Debug',        color: '#FB923C' },
-  CONCEPTUAL: { label: 'Conceptual',   color: '#94A3B8' },
-}
+
 // Short, experience-based tip shown at the top of each track.
 const TRACK_TIPS = {
-  START_CODING:    'Type every example yourself — never copy-paste. Syntax sticks through your fingers, not your eyes.',
-  LOGIC_BUILDING:  'Stuck? Solve it on paper with one small example first, then turn that into code. A dry-run beats guessing.',
-  SKILL_UP:        'Get the brute-force version working first, then optimize. A slow answer that runs beats a clever one that does not.',
-  INTERVIEW_PREP:  'Say your approach out loud before you code. In real interviews, how you think is scored as much as the answer.',
-  SCENARIO_CODING: 'Read the rules twice and list the edge cases before writing a line. Scenario problems are won on the details.',
+  START_CODING:    'Type every example yourself — do not copy-paste. Your fingers need the practice, not just your eyes.',
+  LOGIC_BUILDING:  'Stuck? Write one small example on paper first, then turn those steps into code.',
+  SKILL_UP:        'Get a simple answer working first, then try to make it faster. Running code beats a perfect plan.',
+  CRACK_IT:        'Read the question twice and write down every rule before you code. The thinking matters most.',
+  BUILD_IT:        'Make it work first, then improve it. Be ready to explain why your better version is better.',
+  PROVE_IT:        'List every rule and edge case on paper first. Real problems need every path covered — not just the easy case.',
 }
+
+const LEVEL_ORDER = ['BEGINNER', 'INTERMEDIATE', 'ADVANCED']
 
 export default function TrackPage() {
   const location = useLocation()
@@ -54,55 +58,34 @@ export default function TrackPage() {
   const [questions, setQuestions] = useState([])
   const [loading, setLoading]     = useState(true)
   const [search, setSearch]       = useState('')
-
-  const [logicTopic, setLogicTopic] = useState('All')
-  const [skillCategory, setSkillCategory] = useState('All')
-  const [skillTopic, setSkillTopic]       = useState('All')
-  const [interviewLevel, setInterviewLevel] = useState('All')
+  const [level, setLevel]         = useState('All')
+  const [topic, setTopic]         = useState('All')
 
   useEffect(() => {
     if (!track) { navigate('/problem-solving', { replace: true }); return }
     setLoading(true)
     setSearch('')
-    setLogicTopic('All')
-    setSkillCategory('All')
-    setSkillTopic('All')
-    setInterviewLevel('All')
+    setLevel('All')
+    setTopic('All')
     getProblems(track)
       .then(r => setQuestions(r.data))
       .catch(() => setQuestions([]))
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [track])
 
-  const logicTopics = useMemo(() => {
+  const levels = useMemo(() => {
+    const present = new Set(questions.map(q => q.level).filter(Boolean))
+    return ['All', ...LEVEL_ORDER.filter(l => present.has(l))]
+  }, [questions])
+
+  const topics = useMemo(() => {
     const s = new Set()
     questions.forEach(q => (q.topics || []).forEach(t => s.add(t)))
     return ['All', ...[...s].sort()]
   }, [questions])
 
-  const skillCategories = useMemo(() => {
-    const s = new Set()
-    questions.forEach(q => q.category && s.add(q.category))
-    return ['All', ...[...s].sort()]
-  }, [questions])
-
-  const skillTopics = useMemo(() => {
-    const base = skillCategory === 'All'
-      ? questions
-      : questions.filter(q => q.category === skillCategory)
-    const s = new Set()
-    base.forEach(q => (q.topics || []).forEach(t => s.add(t)))
-    return ['All', ...[...s].sort()]
-  }, [questions, skillCategory])
-
-  const handleCategoryChange = (cat) => {
-    setSkillCategory(cat)
-    setSkillTopic('All')
-  }
-
   const filtered = useMemo(() => {
     let qs = questions
-
     if (search.trim()) {
       const q = search.toLowerCase()
       qs = qs.filter(p =>
@@ -112,34 +95,40 @@ export default function TrackPage() {
         (p.topics || []).some(t => t.toLowerCase().includes(q))
       )
     }
-
-    if (track === 'LOGIC_BUILDING' && logicTopic !== 'All')
-      qs = qs.filter(p => (p.topics || []).includes(logicTopic))
-
-    if (track === 'SKILL_UP') {
-      if (skillCategory !== 'All') qs = qs.filter(p => p.category === skillCategory)
-      if (skillTopic !== 'All')    qs = qs.filter(p => (p.topics || []).includes(skillTopic))
-    }
-
-    if ((track === 'INTERVIEW_PREP' || track === 'SCENARIO_CODING') && interviewLevel !== 'All')
-      qs = qs.filter(p => p.level === interviewLevel)
-
+    if (level !== 'All') qs = qs.filter(p => p.level === level)
+    if (topic !== 'All') qs = qs.filter(p => (p.topics || []).includes(topic))
     return qs
-  }, [questions, search, logicTopic, skillCategory, skillTopic, interviewLevel, track])
+  }, [questions, search, level, topic])
+
+  const grouped = useMemo(() => {
+    const map = new Map()
+    filtered.forEach(q => {
+      const cat = q.category || 'Problems'
+      if (!map.has(cat)) map.set(cat, [])
+      map.get(cat).push(q)
+    })
+    return [...map.entries()]
+  }, [filtered])
 
   if (!meta) return null
+
+  const activeFilters = [
+    level !== 'All' ? LEVEL_META[level]?.label : null,
+    topic !== 'All' ? topic : null,
+  ].filter(Boolean).join(' · ')
 
   return (
     <div className="ps-page" style={{ '--track-color': meta.color }}>
       <div className="ps-nav">
-        <button type="button" onClick={() => navigate(-1)} className="ps-nav__back ps-nav__back--track">
+        <button type="button" onClick={() => navigate('/problem-solving')} className="ps-nav__back ps-nav__back--track">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          TRACKS
+          GATES
         </button>
 
         <span className="ps-nav-center ps-nav-center--track">
+          <span className="ps-nav-rank" aria-hidden="true">{meta.rank}</span>
           {meta.title.toUpperCase()}
         </span>
 
@@ -147,44 +136,76 @@ export default function TrackPage() {
           <button type="button" onClick={toggleTheme} className="ps-nav__theme">
             {light ? <Moon size={14} /> : <Sun size={14} />}
           </button>
-          <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="ps-nav__arena">
-            ⚔ SKILL ARENA
-          </button>
+          <EnterArenaButton />
         </div>
       </div>
 
       {loading ? (
-        <MatrixRainLoader accentColor={meta.color} fullPage label={`LOADING ${meta.label || 'TRACK'}`} />
-      ) : track === 'SKILL_UP' ? (
-        <SkillUpView
-          questions={filtered}
-          categories={skillCategories} selectedCategory={skillCategory} onCategoryChange={handleCategoryChange}
-          topics={skillTopics}         selectedTopic={skillTopic}    onTopicChange={setSkillTopic}
-          search={search} onSearch={setSearch}
-          navigate={navigate}
-        />
-      ) : track === 'INTERVIEW_PREP' ? (
-        <InterviewPrepView
-          questions={filtered}
-          level={interviewLevel} onLevelChange={setInterviewLevel}
-          search={search} onSearch={setSearch}
-          navigate={navigate}
-        />
-      ) : track === 'SCENARIO_CODING' ? (
-        <ScenarioView
-          questions={filtered}
-          level={interviewLevel} onLevelChange={setInterviewLevel}
-          search={search} onSearch={setSearch}
-          navigate={navigate}
-        />
+        <MatrixRainLoader accentColor={meta.color} fullPage label={`LOADING ${meta.title.toUpperCase()}`} />
       ) : (
-        <LinearView
-          track={track} questions={filtered}
-          topics={track === 'LOGIC_BUILDING' ? logicTopics : null}
-          selectedTopic={logicTopic} onTopicChange={setLogicTopic}
-          search={search} onSearch={setSearch}
-          navigate={navigate} meta={meta}
-        />
+        <div className="ps-view-container ps-view-container--narrow">
+          <div className="ps-filter-row">
+            <SearchBar value={search} onChange={setSearch} />
+            {levels.length > 2 && (
+              <FilterSelect
+                label="Level"
+                value={level}
+                onChange={setLevel}
+                options={levels}
+                accentColor={meta.color}
+                renderLabel={l => (l === 'All' ? 'All Levels' : LEVEL_META[l]?.label || l)}
+              />
+            )}
+            {topics.length > 2 && (
+              <FilterSelect
+                label="Topic"
+                value={topic}
+                onChange={setTopic}
+                options={topics}
+                accentColor={meta.color}
+              />
+            )}
+            {(level !== 'All' || topic !== 'All' || search) && (
+              <button
+                type="button"
+                onClick={() => { setSearch(''); setLevel('All'); setTopic('All') }}
+                className="ps-filter-clear"
+              >
+                ✕ CLEAR
+              </button>
+            )}
+          </div>
+
+          <div className="ps-result-wrap">
+            <ResultCount count={filtered.length} filters={activeFilters || null} />
+          </div>
+
+          {track === 'START_CODING' && (
+            <div className="ps-hint-banner">
+              📌 Complete in order — each step builds on the last.
+            </div>
+          )}
+
+          {TRACK_TIPS[track] && (
+            <div className="ps-hint-banner ps-hint-banner--tip">
+              💡 Tip: {TRACK_TIPS[track]}
+            </div>
+          )}
+
+          {grouped.length === 0 ? <Empty /> : (
+            grouped.map(([cat, qs]) => (
+              <div key={cat} className="ps-category-group" style={{ '--track-color': meta.color }}>
+                <div className="ps-category-label">{cat}</div>
+                <div className="ps-problem-list">
+                  {qs.map((q, i) => (
+                    <ProblemCard key={q.id} problem={q} index={i}
+                      onClick={() => navigate(`/problem-solving/${q.id}`)} />
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
       )}
     </div>
   )
@@ -231,62 +252,21 @@ function FilterSelect({ label, value, onChange, options, accentColor, renderLabe
   )
 }
 
-function ProblemCard({ problem, index, showIndex, onClick }) {
+function ProblemCard({ problem, index, onClick }) {
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
-  const tm = TYPE_META[problem.type] || TYPE_META.WRITE
   return (
-    <div
-      onClick={onClick}
-      className="ps-problem-card"
-      style={{ '--lm-color': lm.color }}
-    >
-      {showIndex && (
-        <div className="ps-problem-card__index">
-          {String(index + 1).padStart(2, '0')}
-        </div>
-      )}
+    <div onClick={onClick} className="ps-problem-card" style={{ '--lm-color': lm.color }}>
+      <div className="ps-problem-card__index">
+        {String(index + 1).padStart(2, '0')}
+      </div>
       <div className="ps-problem-card__body">
         <div className="ps-problem-card__title">{problem.title}</div>
         <div className="ps-problem-card__chips">
           <Chip color={lm.color}>{lm.label}</Chip>
-          <Chip color={tm.color}>{tm.label}</Chip>
-          {(problem.topics || []).slice(0, 2).map(t => <Chip key={t}>{t}</Chip>)}
-          {problem.isInterview && <Chip color="#EF4444">★ Interview</Chip>}
+          {(problem.topics || []).slice(0, 3).map(t => <Chip key={t}>{t}</Chip>)}
         </div>
       </div>
       <ChevronRight size={15} className="ps-problem-card__chevron" />
-    </div>
-  )
-}
-
-function InterviewCard({ problem, index, onClick }) {
-  const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
-  const tm = TYPE_META[problem.type] || TYPE_META.WRITE
-  const hasCompanies = (problem.companiesThatAsk?.length > 0)
-  return (
-    <div onClick={onClick} className="ps-interview-card">
-      <div className="ps-interview-card__row">
-        <div className="ps-interview-card__index">
-          {String(index + 1).padStart(2, '0')}
-        </div>
-        <div className="ps-interview-card__body">
-          <div className="ps-interview-card__title">{problem.title}</div>
-          <div className={`ps-interview-card__chips${hasCompanies ? ' ps-interview-card__chips--companies' : ''}`}>
-            <Chip color={lm.color}>{lm.label}</Chip>
-            <Chip color={tm.color}>{tm.label}</Chip>
-            {(problem.topics || []).slice(0, 2).map(t => <Chip key={t}>{t}</Chip>)}
-          </div>
-          {hasCompanies && (
-            <div className="ps-interview-card__companies">
-              <span className="ps-interview-card__companies-label">ASKED BY</span>
-              {problem.companiesThatAsk.map(c => (
-                <span key={c} className="ps-company-badge">{c}</span>
-              ))}
-            </div>
-          )}
-        </div>
-        <ChevronRight size={15} className="ps-interview-card__chevron" />
-      </div>
     </div>
   )
 }
@@ -312,230 +292,6 @@ function ResultCount({ count, filters }) {
     <div className="ps-result-count">
       {count} PROBLEM{count !== 1 ? 'S' : ''}
       {filters && <span className="ps-result-count__filters"> · {filters}</span>}
-    </div>
-  )
-}
-
-function LinearView({ track, questions, topics, selectedTopic, onTopicChange, search, onSearch, navigate, meta }) {
-  const grouped = useMemo(() => {
-    const map = {}
-    questions.forEach(q => {
-      const cat = q.category || 'General'
-      if (!map[cat]) map[cat] = []
-      map[cat].push(q)
-    })
-    return map
-  }, [questions])
-
-  const activeFilters = selectedTopic !== 'All' ? selectedTopic : null
-
-  return (
-    <div className="ps-view-container ps-view-container--narrow">
-      <div className="ps-filter-row">
-        <SearchBar value={search} onChange={onSearch} />
-        {topics && topics.length > 2 && (
-          <FilterSelect
-            label="Topic"
-            value={selectedTopic}
-            onChange={onTopicChange}
-            options={topics}
-            accentColor={meta.color}
-          />
-        )}
-      </div>
-
-      <div className="ps-result-wrap">
-        <ResultCount count={questions.length} filters={activeFilters} />
-      </div>
-
-      {track === 'START_CODING' && (
-        <div className="ps-hint-banner">
-          📌 Complete in order — each step builds on the last.
-        </div>
-      )}
-
-      {TRACK_TIPS[track] && (
-        <div className="ps-hint-banner ps-hint-banner--tip">
-          💡 Tip: {TRACK_TIPS[track]}
-        </div>
-      )}
-
-      {Object.keys(grouped).length === 0 ? <Empty /> : (
-        Object.entries(grouped).map(([cat, qs]) => (
-          <div key={cat} className="ps-category-group" style={{ '--track-color': meta.color }}>
-            <div className="ps-category-label">{cat}</div>
-            <div className="ps-problem-list">
-              {qs.map((q, i) => (
-                <ProblemCard key={q.id} problem={q} index={i} showIndex
-                  onClick={() => navigate(`/problem-solving/${q.id}`)} />
-              ))}
-            </div>
-          </div>
-        ))
-      )}
-    </div>
-  )
-}
-
-function SkillUpView({ questions, categories, selectedCategory, onCategoryChange, topics, selectedTopic, onTopicChange, search, onSearch, navigate }) {
-  const activeFilters = [
-    selectedCategory !== 'All' ? selectedCategory : null,
-    selectedTopic !== 'All' ? selectedTopic : null,
-  ].filter(Boolean).join(' › ')
-
-  return (
-    <div className="ps-view-container ps-view-container--wide">
-      <div className="ps-filter-row ps-filter-row--boxed">
-        <SearchBar value={search} onChange={onSearch} placeholder="Search by title, topic..." />
-
-        <FilterSelect
-          label="Category"
-          value={selectedCategory}
-          onChange={onCategoryChange}
-          options={categories}
-          accentColor="#0EA5E9"
-        />
-
-        <FilterSelect
-          label="Topic"
-          value={selectedTopic}
-          onChange={onTopicChange}
-          options={topics}
-          accentColor="#A78BFA"
-        />
-
-        {(selectedCategory !== 'All' || selectedTopic !== 'All') && (
-          <button type="button" onClick={() => { onCategoryChange('All'); onTopicChange('All') }} className="ps-filter-clear">
-            ✕ CLEAR
-          </button>
-        )}
-      </div>
-
-      <div className="ps-result-wrap ps-result-wrap--tight">
-        <ResultCount count={questions.length} filters={activeFilters || null} />
-      </div>
-
-      <div className="ps-hint-banner ps-hint-banner--tip">
-        💡 Tip: {TRACK_TIPS.SKILL_UP}
-      </div>
-
-      {questions.length === 0 ? <Empty /> : (
-        <div className="ps-problem-list">
-          {questions.map((q, i) => (
-            <ProblemCard key={q.id} problem={q} index={i} showIndex
-              onClick={() => navigate(`/problem-solving/${q.id}`)} />
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-const LEVELS = ['All', 'BEGINNER', 'INTERMEDIATE', 'ADVANCED']
-const LEVEL_LABELS = { All: 'All Levels', BEGINNER: 'Beginner', INTERMEDIATE: 'Intermediate', ADVANCED: 'Advanced' }
-
-function InterviewPrepView({ questions, level, onLevelChange, search, onSearch, navigate }) {
-  return (
-    <div className="ps-view-container ps-view-container--narrow">
-      <div className="ps-filter-row">
-        <SearchBar value={search} onChange={onSearch} placeholder="Search interview questions..." />
-        <FilterSelect
-          label="Level"
-          value={level}
-          onChange={onLevelChange}
-          options={LEVELS.map(l => l)}
-          accentColor="#EF4444"
-          renderLabel={l => LEVEL_LABELS[l] || l}
-        />
-      </div>
-
-      <div className="ps-result-wrap">
-        <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
-      </div>
-
-      <div className="ps-hint-banner ps-hint-banner--tip">
-        💡 Tip: {TRACK_TIPS.INTERVIEW_PREP}
-      </div>
-
-      {questions.length === 0 ? <Empty /> : (
-        <div className="ps-problem-list ps-problem-list--spaced">
-          {questions.map((q, i) => (
-            <InterviewCard key={q.id} problem={q} index={i}
-              onClick={() => navigate(`/problem-solving/${q.id}`)} />
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-function ScenarioView({ questions, level, onLevelChange, search, onSearch, navigate }) {
-  const CATEGORY_COLORS = {
-    Transport: '#22C55E', Healthcare: '#EF4444', Banking: '#F59E0B',
-    Education: '#0EA5E9', 'Food Delivery': '#F97316', Gaming: '#8B5CF6',
-    'HR System': '#06B6D4', Inventory: '#84CC16', Library: '#A78BFA',
-    Infrastructure: '#64748B',
-  }
-
-  return (
-    <div className="ps-view-container ps-view-container--wide">
-      <div className="ps-scenario-banner">
-        <div className="ps-scenario-banner__tag">REAL WORLD</div>
-        <div className="ps-scenario-banner__title">Scenario Coding</div>
-        <div className="ps-scenario-banner__desc">
-          Story-based problems from company placement exams. Each problem gives a real-world scenario with clear rules — you implement the logic.
-        </div>
-      </div>
-
-      <div className="ps-filter-row">
-        <SearchBar value={search} onChange={onSearch} placeholder="Search scenario problems..." />
-        <FilterSelect
-          label="Level"
-          value={level}
-          onChange={onLevelChange}
-          options={LEVELS.map(l => l)}
-          accentColor="#8B5CF6"
-          renderLabel={l => LEVEL_LABELS[l] || l}
-        />
-      </div>
-
-      <div className="ps-result-wrap">
-        <ResultCount count={questions.length} filters={level !== 'All' ? LEVEL_LABELS[level] : null} />
-      </div>
-
-      <div className="ps-hint-banner ps-hint-banner--tip">
-        💡 Tip: {TRACK_TIPS.SCENARIO_CODING}
-      </div>
-
-      {questions.length === 0 ? <Empty /> : (
-        <div className="ps-scenario-grid">
-          {questions.map((q) => {
-            const lm = LEVEL_META[q.level] || LEVEL_META.BEGINNER
-            const catColor = CATEGORY_COLORS[q.category] || '#8B5CF6'
-            return (
-              <button
-                key={q.id}
-                type="button"
-                onClick={() => navigate(`/problem-solving/${q.id}`)}
-                className="ps-scenario-card"
-                style={{ '--cat-color': catColor, '--lm-color': lm.color }}
-              >
-                <div className="ps-scenario-card__meta">
-                  <span className="ps-scenario-card__cat">{q.category}</span>
-                  <span className="ps-scenario-card__level">{lm.label}</span>
-                </div>
-                <div className="ps-scenario-card__title">{q.title}</div>
-                <div className="ps-scenario-card__desc">
-                  {q.description?.split('\n')[0]}
-                </div>
-                {q.isInterview && (
-                  <div className="ps-scenario-card__exam">★ ASKED IN PLACEMENT EXAMS</div>
-                )}
-              </button>
-            )
-          })}
-        </div>
-      )}
     </div>
   )
 }

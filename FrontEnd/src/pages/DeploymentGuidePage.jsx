@@ -1,96 +1,277 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { ArrowLeft, Sun, Moon, Search, X, ExternalLink } from 'lucide-react'
 import { STACKS, PLATFORMS } from './deployment/guideIndex'
 
-const DB_TAGS = ['database', 'mongodb', 'nosql', 'sql', 'postgresql', 'neon', 'supabase', 'atlas', 'storage', 'cloudinary']
-const ML_TAGS = ['machine learning', 'ml', 'data science', 'streamlit', 'hugging face', 'gradio', 'nlp', 'transformers', 'ai', 'free']
+const EASE = [0.16, 1, 0.3, 1]
 
-const isPlatformVisible = (platform, filter) => {
-  if (filter === 'all') return true
-  if (filter === 'frontend') return platform.stackType === 'frontend' || platform.stackType === 'all'
-  if (filter === 'backend') return platform.stackType === 'backend' || platform.stackType === 'all'
-  if (filter === 'fullstack') return true
-  if (filter === 'database') return platform.tags?.some(t => DB_TAGS.includes(t))
-  if (filter === 'mldata') return platform.stackType === 'mldata' || platform.tags?.some(t => ML_TAGS.includes(t))
-  return true
-}
-
-const FILTER_BANNERS = {
-  mldata: {
-    color: '#FF4B4B',
-    icon: '🤖',
-    title: 'Deploy AI & ML Projects Online',
-    desc: 'Streamlit, Gradio, HF Spaces — ML models, AI demos, chatbots, NLP, image AI — all free',
-    chips: ['1. Train model', '2. joblib.dump()', '3. Write app.py', '4. Push to GitHub', '✅ Live demo URL'],
-  },
-  database: {
-    color: '#A78BFA',
-    icon: '🗄️',
-    title: 'Free Database Setup',
-    desc: 'MongoDB Atlas · Neon PostgreSQL · Supabase · Render PostgreSQL — connect to any framework',
-  },
-  frontend: {
-    color: '#60A5FA',
-    icon: '⚛️',
-    title: 'Frontend Deployment',
-    desc: 'HTML/CSS/JS, React, and Next.js — push to GitHub and go live in minutes for free',
-    chips: ['HTML/CSS/JS → GitHub Pages', 'React/Vite → Vercel', 'Next.js → Vercel'],
-  },
-  backend: {
-    color: '#4ADE80',
-    icon: '🖥',
-    title: 'Backend API Deployment',
-    desc: 'Django, FastAPI, Flask, Node.js, Spring Boot — deploy REST APIs to Render for free',
-    chips: ['Python → Render', 'Node.js → Render', 'Spring Boot → Docker + Render'],
-  },
-  fullstack: {
-    color: '#61DAFB',
-    icon: '🔷',
-    title: 'Full Stack Deployment',
-    desc: 'MERN, Next.js, Django Full Stack — frontend + backend + database, all connected free',
-    chips: ['MERN → Vercel + Render + Atlas', 'Next.js → Vercel', 'Django Full Stack → Render'],
-  },
-}
-
-const SEARCH_PLACEHOLDERS = {
-  mldata: 'Search — "chatbot", "nlp", "image ai", "rag", "streamlit", "gradio"…',
-  database: 'Search — "mongodb", "postgresql", "neon", "supabase"…',
-  frontend: 'Search — "react", "html", "next.js", "vercel"…',
-  backend: 'Search — "django", "node.js", "flask", "fastapi", "spring boot"…',
-  fullstack: 'Search — "mern", "next.js", "django full stack", "react"…',
-  all: 'Search — "react", "django", "mongodb", "postgres"…',
-}
-
-const FILTER_OPTIONS = [
-  { key: 'all', label: 'All', icon: '🌐' },
-  { key: 'frontend', label: 'Frontend', icon: '⚛️' },
-  { key: 'backend', label: 'Backend', icon: '🖥' },
-  { key: 'fullstack', label: 'Full Stack', icon: '🔷' },
-  { key: 'database', label: 'Database', icon: '🗄️' },
-  { key: 'mldata', label: 'AI & ML', icon: '🤖' },
+// ── The universal journey every guide teaches — visualised once, up top ──────
+const PIPELINE = [
+  { key: 'code',  icon: '{ }', label: 'YOUR PROJECT',   sub: 'on your laptop' },
+  { key: 'push',  icon: '⇡',   label: 'PUSH TO GITHUB', sub: 'github.com/you' },
+  { key: 'build', icon: '⚙',   label: 'DEPLOYMENT INITIATED', sub: 'platform builds it' },
+  { key: 'live',  icon: '◉',   label: "YOU'RE LIVE",    sub: 'your-app.live', live: true },
 ]
 
-function FilterBanner({ filterKey }) {
-  const banner = FILTER_BANNERS[filterKey]
-  if (!banner) return null
+// ── Stations — the page IS the journey, ordered by how a student grows ──────
+const STATIONS = [
+  {
+    key: 'frontend', num: '01', icon: '⚛️', color: '#60A5FA',
+    title: 'Frontend', tagline: 'Your first live URL',
+    desc: 'Start here. HTML sites and React apps — push to GitHub, live in minutes, free forever.',
+  },
+  {
+    key: 'fullstack', num: '02', icon: '🔷', color: '#61DAFB',
+    title: 'Full Stack', tagline: 'Frontend + backend + database, connected',
+    desc: 'MERN, Next.js, Django Full Stack — the complete production setup recruiters ask about.',
+  },
+  {
+    key: 'backend', num: '03', icon: '🖥', color: '#4ADE80',
+    title: 'Backend APIs', tagline: 'Your REST API on a real server',
+    desc: 'Django, FastAPI, Flask, Node.js, Spring Boot — deployed to Render with a public API URL.',
+  },
+  {
+    key: 'mldata', num: '04', icon: '🤖', color: '#FF4B4B',
+    title: 'AI & ML', tagline: 'Turn your model into a live demo',
+    desc: 'Chatbots, NLP, image AI, RAG apps — Streamlit and Hugging Face Spaces, all free tiers.',
+  },
+  {
+    key: 'apps', num: '05', icon: '🚀', color: '#5865F2',
+    title: 'Bots, Apps & Automation', tagline: 'Beyond the browser',
+    desc: 'Discord bots, scheduled scrapers, and React Native mobile apps — the honest free path for each, no myths.',
+  },
+  {
+    key: 'database', num: '06', icon: '🗄️', color: '#A78BFA',
+    title: 'Databases', tagline: 'Free cloud databases for any stack',
+    desc: 'MongoDB Atlas, Neon, Supabase, Render Postgres — create, connect, and go.',
+  },
+]
+
+function LaunchPipeline() {
   return (
-    <div className="deploy-banner" style={{ '--banner-color': banner.color }}>
-      <div className="deploy-banner__row">
-        <span className="deploy-banner__icon">{banner.icon}</span>
-        <h1 className="deploy-banner__title">{banner.title}</h1>
-      </div>
-      <p className={`deploy-banner__desc${banner.chips ? '' : ' deploy-banner__desc--flush'}`}>{banner.desc}</p>
-      {banner.chips && (
-        <div className="deploy-banner__chips">
-          {banner.chips.map((step, i) => (
-            <span key={i} className="deploy-banner__chip">{step}</span>
+    <section className="deploy-hero">
+      <div className="deploy-hero__content">
+        <motion.div
+          className="deploy-hero__eyebrow"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: EASE }}
+        >
+          <span className="deploy-hero__eyebrow-live" />
+          SYSTEM ONLINE
+          <span className="deploy-hero__eyebrow-sep">//</span>
+          DEPLOYMENT PROTOCOL
+        </motion.div>
+
+        <motion.h1
+          className="deploy-hero__title"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.08, ease: EASE }}
+        >
+          Your code deserves an audience.{' '}
+          <span className="deploy-hero__title-grad">Launch it — for free.</span>
+        </motion.h1>
+
+        <motion.p
+          className="deploy-hero__sub"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.16, ease: EASE }}
+        >
+          From your localhost to a live website in minutes. No servers, no credit card, no headaches.
+        </motion.p>
+
+        <div className="deploy-hero__pipeline" aria-hidden="true">
+          {PIPELINE.map((stage, i) => (
+            <div className="deploy-hero__stage-wrap" key={stage.key}>
+              <motion.div
+                className={`deploy-hero__stage${stage.live ? ' deploy-hero__stage--live' : ''}`}
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.28 + i * 0.14, ease: EASE }}
+              >
+                <span className="deploy-hero__stage-ring">
+                  {stage.live && <span className="deploy-hero__radar" />}
+                  <span className="deploy-hero__stage-glyph">{stage.icon}</span>
+                </span>
+                <span className="deploy-hero__stage-label">{stage.label}</span>
+                <span className="deploy-hero__stage-sub">{stage.sub}</span>
+              </motion.div>
+              {i < PIPELINE.length - 1 && (
+                <motion.div
+                  className="deploy-hero__flow"
+                  initial={{ opacity: 0, scaleX: 0 }}
+                  animate={{ opacity: 1, scaleX: 1 }}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.14, ease: EASE }}
+                >
+                  <span className="deploy-hero__flow-pulse" />
+                </motion.div>
+              )}
+            </div>
           ))}
         </div>
-      )}
-    </div>
+
+        <motion.div
+          className="deploy-hero__reassure"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.9, ease: EASE }}
+        >
+          <span className="deploy-hero__reassure-dot" />
+          <span>
+            <strong>First time deploying?</strong> Every guide assumes zero experience — we start from your laptop.
+          </span>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+const LOCALHOST_POINTS = [
+  'Only you can ever see it',
+  'It disappears the moment you close your laptop',
+  '“It works on my machine” — no one can verify that',
+  'Nothing to paste in a resume, LinkedIn, or GitHub',
+  'Recruiters never get to click it',
+]
+
+const LIVE_POINTS = [
+  'Anyone can open it — phone, laptop, anywhere on earth',
+  'Runs 24/7, even while you sleep',
+  'A real link for your resume, LinkedIn & GitHub',
+  'Recruiters click it and watch your work run',
+  'Proof you can ship — not just write code',
+]
+
+function WhyGoLive() {
+  return (
+    <section className="deploy-why">
+      <div className="deploy-why__inner">
+        <motion.div
+          className="deploy-why__head"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55, ease: EASE }}
+        >
+          <span className="deploy-why__eyebrow">THE REAL REASON</span>
+          <h2 className="deploy-why__title">
+          Great projects deserve more than localhost.{' '}
+            <span className="deploy-why__title-grad">Deploy for free and share your work with the world.</span>
+          </h2>
+          <p className="deploy-why__sub">
+            You didn’t spend those late nights building something just for your own screen.
+            The gap between “I built a project” and “I got hired” is one link.
+          </p>
+        </motion.div>
+
+        <div className="deploy-why__compare">
+          <motion.div
+            className="deploy-why__card deploy-why__card--local"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.5, ease: EASE }}
+          >
+            <div className="deploy-why__card-head">
+              <span className="deploy-why__card-badge deploy-why__card-badge--local">localhost:5173</span>
+              <span className="deploy-why__card-label">Stuck on your laptop</span>
+            </div>
+            <ul className="deploy-why__list">
+              {LOCALHOST_POINTS.map(p => (
+                <li key={p} className="deploy-why__item deploy-why__item--no">
+                  <span className="deploy-why__mark">✕</span>{p}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            className="deploy-why__card deploy-why__card--live"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: EASE }}
+          >
+            <div className="deploy-why__card-head">
+              <span className="deploy-why__card-badge deploy-why__card-badge--live">
+                <span className="deploy-why__live-dot" />your-app.live
+              </span>
+              <span className="deploy-why__card-label">Live for the world</span>
+            </div>
+            <ul className="deploy-why__list">
+              {LIVE_POINTS.map(p => (
+                <li key={p} className="deploy-why__item deploy-why__item--yes">
+                  <span className="deploy-why__mark deploy-why__mark--yes">✓</span>{p}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="deploy-why__cta"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5, ease: EASE }}
+        >
+          <p className="deploy-why__cta-line">
+            Every hired developer has one thing in common — <strong>their work is online.</strong>
+          </p>
+          <button
+            type="button"
+            className="deploy-why__cta-btn"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            Pick your stack — it’s free ↑
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function StackCard({ stack, i, onOpen }) {
+  return (
+    <motion.button
+      type="button"
+      onClick={() => onOpen(stack.route)}
+      className="deploy-stack-card"
+      style={{ '--stack-color': stack.color }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: (i % 3) * 0.07, ease: EASE }}
+      whileHover={{ y: -5 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className="deploy-stack-card__accent" />
+      <div className="deploy-stack-card__top">
+        <span className="deploy-stack-card__emoji">{stack.emoji}</span>
+        <span className="deploy-stack-card__platform">{stack.platforms}</span>
+      </div>
+      <div>
+        <div className="deploy-stack-card__title">{stack.title}</div>
+        <div className="deploy-stack-card__subtitle">{stack.subtitle}</div>
+      </div>
+      <div className="deploy-stack-card__desc">{stack.desc}</div>
+      <div className="deploy-stack-card__path" aria-hidden="true">
+        <span className="deploy-stack-card__path-step">code</span>
+        <span className="deploy-stack-card__path-arrow">→</span>
+        <span className="deploy-stack-card__path-step">GitHub</span>
+        <span className="deploy-stack-card__path-arrow">→</span>
+        <span className="deploy-stack-card__path-step deploy-stack-card__path-step--live">
+          <span className="deploy-stack-card__path-dot" />
+          {stack.platforms}
+        </span>
+      </div>
+      <div className="deploy-stack-card__cta">Open guide →</div>
+    </motion.button>
   )
 }
 
@@ -100,59 +281,72 @@ export default function DeploymentGuidePage() {
   const { theme, toggleTheme } = useTheme()
   const dark = theme === 'dark'
   const [search, setSearch] = useState('')
-  const [filterStack, setFilter] = useState('all')
+  const [activeStation, setActiveStation] = useState('')
+  const [headerHidden, setHeaderHidden] = useState(false)
+  const stationRefs = useRef({})
+  const lastScrollY = useRef(0)
+  const navHiddenRef = useRef(false)
 
   const q = search.trim().toLowerCase()
 
-  const scoreItem = (item) => {
-    if (!q) return 0
-    const id = (item.id || '').toLowerCase()
-    const title = (item.title || item.name || '').toLowerCase()
-    const subtitle = (item.subtitle || '').toLowerCase()
-    const desc = (item.desc || '').toLowerCase()
-    const tags = item.tags || []
-    let score = 0
-    if (id === q || id.replace(/-/g, ' ') === q) score += 120
-    else if (id.startsWith(q)) score += 80
-    else if (id.includes(q)) score += 30
-    if (title === q) score += 110
-    else if (title.startsWith(q)) score += 70
-    else if (title.includes(q)) score += 50
-    if (subtitle.startsWith(q)) score += 40
-    else if (subtitle.includes(q)) score += 25
-    if (tags.some(t => t === q)) score += 60
-    else if (tags.some(t => t.startsWith(q))) score += 35
-    else if (tags.some(t => t.includes(q))) score += 15
-    if (desc.includes(q)) score += 8
-    return score
+  // Nav auto-hides on scroll down (reappears on scroll up). While it's hidden,
+  // the filter rail slides up to top:0 (see CSS) so it always stays pinned.
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY
+      const last = lastScrollY.current
+      let nav = navHiddenRef.current
+      if (y < 90) nav = false
+      else if (y > last + 6) nav = true
+      else if (y < last - 6) nav = false
+      navHiddenRef.current = nav
+      setHeaderHidden(nav)
+      lastScrollY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const matches = (item) => {
+    if (!q) return true
+    const hay = [item.id, item.title, item.name, item.subtitle, item.desc, ...(item.tags || [])]
+      .filter(Boolean).join(' ').toLowerCase()
+    return hay.includes(q)
   }
 
-  const matchSearch = item => !q || scoreItem(item) > 0
-  const matchStack = item =>
-    filterStack === 'all' || item.stackType === filterStack || item.stackType === 'all'
+  // Scroll-spy: highlight the station currently in view
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) setActiveStation(e.target.dataset.station)
+        })
+      },
+      { rootMargin: '-30% 0px -60% 0px' }
+    )
+    Object.values(stationRefs.current).forEach(el => el && io.observe(el))
+    return () => io.disconnect()
+  }, [q])
 
-  const visibleStacks = STACKS
-    .filter(s => matchSearch(s) && matchStack(s))
-    .sort((a, b) => scoreItem(b) - scoreItem(a))
-
-  const visiblePlatforms = PLATFORMS
-    .filter(p => isPlatformVisible(p, filterStack) && matchSearch(p))
-    .sort((a, b) => scoreItem(b) - scoreItem(a))
-
-  const hasFilters = filterStack !== 'all' || !!search
-  const clearFilters = () => { setFilter('all'); if (search) setSearch('') }
+  const jumpTo = (key) => {
+    stationRefs.current[key]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   const openGuide = (route) => {
     if (!user) { navigate(`/login?redirect=${encodeURIComponent(route)}`); return }
     navigate(route)
   }
 
-  const sectionIcon = filterStack === 'database' ? '🗄️' : filterStack === 'mldata' ? '🤖' : '📦'
-  const sectionLabel = filterStack === 'database' ? 'Database' : filterStack === 'mldata' ? 'AI & ML' : 'Deployment'
-  const activeFilter = FILTER_OPTIONS.find(o => o.key === filterStack)
+  const stationsWithStacks = STATIONS.map(st => ({
+    ...st,
+    stacks: STACKS.filter(s => s.stackType === st.key && matches(s)),
+  })).filter(st => st.stacks.length > 0)
+
+  const visiblePlatforms = PLATFORMS.filter(matches)
+  const nothingMatches = q && stationsWithStacks.length === 0 && visiblePlatforms.length === 0
 
   return (
-    <div className="deploy-hub-page">
+    <div className={`deploy-hub-page${headerHidden ? ' deploy-hub-page--header-hidden' : ''}`}>
 
       <nav className="deploy-nav">
         <button type="button" onClick={() => navigate('/')} className="deploy-nav__back">
@@ -160,147 +354,164 @@ export default function DeploymentGuidePage() {
           Home
         </button>
         <span className="deploy-nav__title">DEPLOY GUIDE</span>
-        <button type="button" onClick={toggleTheme} className="deploy-nav__theme">
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="deploy-nav__theme"
+          aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
           {dark ? <Sun size={15} /> : <Moon size={15} />}
         </button>
       </nav>
 
-      <div className="deploy-hub-layout">
+      <LaunchPipeline />
 
-        <aside className="deploy-sidebar">
-          <div className="deploy-sidebar__label">Filter Guides</div>
-          <div className="deploy-sidebar__group">
-            <div className="deploy-sidebar__group-label">Category</div>
-            {FILTER_OPTIONS.map(opt => (
+      {/* Station rail — pins under the navbar, then to the very top when the nav hides */}
+      <div className="deploy-rail">
+        <div className="deploy-rail__inner">
+          <span className="deploy-rail__label" aria-hidden="true">Jump to</span>
+          <div className="deploy-rail__chips">
+            {STATIONS.map(st => (
               <button
-                key={opt.key}
+                key={st.key}
                 type="button"
-                onClick={() => setFilter(opt.key)}
-                className={`deploy-filter-btn${filterStack === opt.key ? ' deploy-filter-btn--active' : ''}`}
+                onClick={() => jumpTo(st.key)}
+                className={`deploy-rail__chip${activeStation === st.key ? ' deploy-rail__chip--active' : ''}`}
+                style={{ '--station-color': st.color }}
               >
-                <span className="deploy-filter-btn__icon">{opt.icon}</span>
-                {opt.label}
+                <span className="deploy-rail__chip-dot" />
+                {st.title}
               </button>
             ))}
-          </div>
-          {hasFilters && (
-            <button type="button" onClick={clearFilters} className="deploy-sidebar__clear">
-              <X size={11} /> Show all
+            <button
+              type="button"
+              onClick={() => jumpTo('platforms')}
+              className={`deploy-rail__chip${activeStation === 'platforms' ? ' deploy-rail__chip--active' : ''}`}
+              style={{ '--station-color': '#F59E0B' }}
+            >
+              <span className="deploy-rail__chip-dot" />
+              Free Hosting
             </button>
-          )}
-        </aside>
-
-        <main className="deploy-hub-main">
-          <div className="deploy-hub-header">
-            {filterStack !== 'all' ? (
-              <FilterBanner filterKey={filterStack} />
-            ) : (
-              <>
-                <h1 className="deploy-hub-title">
-                  <span className="deploy-hub-title__grad">Deploy Your Project</span>
-                  <span> — Go Live Free</span>
-                </h1>
-                <p className="deploy-hub-subtitle">Step-by-step guides · Free hosting · No credit card needed</p>
-              </>
-            )}
-            <div className="deploy-search-wrap">
-              <Search size={14} className="deploy-search-icon" />
-              <input
-                type="text"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                placeholder={SEARCH_PLACEHOLDERS[filterStack] || SEARCH_PLACEHOLDERS.all}
-                className="deploy-search-input"
-              />
-              {search && (
-                <button type="button" onClick={() => setSearch('')} className="deploy-search-clear">
-                  <X size={13} />
-                </button>
-              )}
-            </div>
           </div>
-
-          {visibleStacks.length > 0 && (
-            <div className="deploy-stack-section">
-              <div className="deploy-section-label">
-                {sectionIcon} {sectionLabel} Guides ({visibleStacks.length})
-              </div>
-              <div className={`deploy-stack-grid${filterStack === 'frontend' ? ' deploy-stack-grid--two-col' : ''}`}>
-                {visibleStacks.map(stack => (
-                  <button
-                    type="button"
-                    key={stack.id}
-                    onClick={() => openGuide(stack.route)}
-                    className="deploy-stack-card"
-                    style={{ '--stack-color': stack.color }}
-                  >
-                    <div className="deploy-stack-card__accent" />
-                    <div className="deploy-stack-card__top">
-                      <span className="deploy-stack-card__emoji">{stack.emoji}</span>
-                      <span className="deploy-stack-card__platform">{stack.platforms}</span>
-                    </div>
-                    <div>
-                      <div className="deploy-stack-card__title">{stack.title}</div>
-                      <div className="deploy-stack-card__subtitle">{stack.subtitle}</div>
-                    </div>
-                    <div className="deploy-stack-card__desc">{stack.desc}</div>
-                    <div className="deploy-stack-card__tags">
-                      {stack.tags.slice(0, 4).map(tag => (
-                        <span key={tag} className="deploy-stack-card__tag">{tag}</span>
-                      ))}
-                    </div>
-                    <div className="deploy-stack-card__cta">Open guide →</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {visibleStacks.length === 0 && (
-            <div className="deploy-hub-empty">
-              <div className="deploy-hub-empty__icon">🔍</div>
-              <div className="deploy-hub-empty__title">No guides match</div>
-              <div className="deploy-hub-empty__hint">Try "react", "django", "mongodb", "postgres", or "docker"</div>
-              <button type="button" onClick={clearFilters} className="deploy-hub-empty__btn">Show all</button>
-            </div>
-          )}
-        </main>
-
-        <aside className="deploy-sidebar deploy-sidebar--right">
-          <div className="deploy-sidebar__label">🆓 Free Platforms</div>
-          {filterStack !== 'all' && activeFilter && (
-            <div className="deploy-platform-filter-note">
-              Showing: {activeFilter.icon} {activeFilter.label} only
-            </div>
-          )}
-          <div className="deploy-platform-list">
-            {visiblePlatforms.map(p => (
-              <a
-                key={p.name}
-                href={`https://${p.url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="deploy-platform-card"
-                style={{ '--platform-color': p.color }}
-              >
-                <div className="deploy-platform-card__head">
-                  <div className="deploy-platform-card__name-row">
-                    <span className="deploy-platform-card__dot" />
-                    <span className="deploy-platform-card__name">{p.name}</span>
-                  </div>
-                  <ExternalLink size={11} color={p.color} />
-                </div>
-                <div className="deploy-platform-card__desc">{p.desc}</div>
-                <span className="deploy-platform-card__free">{p.free}</span>
-              </a>
-            ))}
-            {visiblePlatforms.length === 0 && (
-              <div className="deploy-platform-empty">No platforms for this filter</div>
+          <div className="deploy-rail__search">
+            <Search size={13} className="deploy-rail__search-icon" />
+            <input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder='Search — "react", "django", "chatbot", "mongodb"…'
+              className="deploy-rail__search-input"
+            />
+            {search && (
+              <button type="button" onClick={() => setSearch('')} className="deploy-rail__search-clear" aria-label="Clear search">
+                <X size={12} />
+              </button>
             )}
           </div>
-        </aside>
-
+        </div>
       </div>
+
+      <main className="deploy-stations">
+
+        {stationsWithStacks.map(st => (
+          <section
+            key={st.key}
+            ref={el => { stationRefs.current[st.key] = el }}
+            data-station={st.key}
+            className="deploy-station"
+            style={{ '--station-color': st.color }}
+          >
+            <motion.header
+              className="deploy-station__head"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.55, ease: EASE }}
+            >
+              <div className="deploy-station__head-text">
+                <h2 className="deploy-station__title">
+                  <span className="deploy-station__icon">{st.icon}</span>
+                  {st.title}
+                  <span className="deploy-station__tagline">— {st.tagline}</span>
+                </h2>
+                <p className="deploy-station__desc">{st.desc}</p>
+              </div>
+            </motion.header>
+
+            <div className="deploy-station__grid">
+              {st.stacks.map((stack, i) => (
+                <StackCard key={stack.id} stack={stack} i={i} onOpen={openGuide} />
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {nothingMatches && (
+          <div className="deploy-hub-empty">
+            <div className="deploy-hub-empty__icon">🔍</div>
+            <div className="deploy-hub-empty__title">No guides match "{search}"</div>
+            <div className="deploy-hub-empty__hint">Try "react", "django", "mongodb", "chatbot", or "docker"</div>
+            <button type="button" onClick={() => setSearch('')} className="deploy-hub-empty__btn">Show all</button>
+          </div>
+        )}
+
+        {visiblePlatforms.length > 0 && (
+          <section
+            ref={el => { stationRefs.current.platforms = el }}
+            data-station="platforms"
+            className="deploy-station deploy-station--platforms"
+            style={{ '--station-color': '#F59E0B' }}
+          >
+            <motion.header
+              className="deploy-station__head"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.55, ease: EASE }}
+            >
+              <div className="deploy-station__head-text">
+                <h2 className="deploy-station__title">
+                  <span className="deploy-station__icon">🆓</span>
+                  Free Hosting Arsenal
+                  <span className="deploy-station__tagline">— every platform the guides use</span>
+                </h2>
+                <p className="deploy-station__desc">All free tiers. No credit card. Bookmark these.</p>
+              </div>
+            </motion.header>
+
+            <div className="deploy-platform-strip">
+              {visiblePlatforms.map((p, i) => (
+                <motion.a
+                  key={p.name}
+                  href={`https://${p.url}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="deploy-platform-card"
+                  style={{ '--platform-color': p.color }}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.45, delay: (i % 4) * 0.05, ease: EASE }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="deploy-platform-card__head">
+                    <div className="deploy-platform-card__name-row">
+                      <span className="deploy-platform-card__dot" />
+                      <span className="deploy-platform-card__name">{p.name}</span>
+                    </div>
+                    <ExternalLink size={11} color={p.color} />
+                  </div>
+                  <div className="deploy-platform-card__desc">{p.desc}</div>
+                  <span className="deploy-platform-card__free">{p.free}</span>
+                </motion.a>
+              ))}
+            </div>
+          </section>
+        )}
+
+      </main>
+
+      {!q && <WhyGoLive />}
     </div>
   )
 }

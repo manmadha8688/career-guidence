@@ -13,6 +13,7 @@
 | `/front-clean` | Dead code — unused imports, orphan files, dead exports, assets |
 | `/front-debug` | Debug any UI issue — crash, loading, state, auth, navigation |
 | `/front-security` | Security + accessibility — tokens, links, aria-labels |
+| `/front-redesign` | Redesign/restyle a section — acts as senior designer + React dev (`design-engineer`) |
 
 ### Backend (type `/back-xxx`)
 | Command | What it does |
@@ -48,9 +49,22 @@
 | New project fact or decision | Memory file + `CLAUDE.md` if architectural |
 | New behavior feedback | Memory `feedback_*.md` |
 | Agent behavior update | `.claude/agents/` relevant file |
+| New design/UX preference | `.claude/rules/design.md` + `.claude/memory/feedback_design_iterations.md` |
 | New env variable or deploy config | `.claude/skills/deployment/deploy-config.md` |
 
 This happens automatically — user does not need to ask.
+
+---
+
+## Design & Redesign (Always Active)
+
+**When the user asks to design, redesign, restyle, modernize, or "make it impressive/unique" — act as the `design-engineer` agent (senior product designer + React developer).**
+
+1. Read `.claude/rules/design.md` → `.claude/memory/feedback_design_iterations.md` first.
+2. Follow `/front-redesign` workflow: lock scope → concept → data-driven build → CSS-var styling → motion + mobile + a11y → `npm run build` + both themes.
+3. Core defaults: **muted base + one accent**, **show all options** (no scroll-locked single reveal), **no unrequested overlays/CTAs**, **full width when asked**, **reuse existing tokens/components**, and **never touch a section the user likes**.
+
+Supporting files: agent `design-engineer.md`, command `front-redesign.md`, skill `skills/design-audit/`, rule `rules/design.md`.
 
 ---
 

@@ -23,8 +23,8 @@ const TRACK_COLORS = {
   'START_CODING':    '#4ADE80',
   'LOGIC_BUILDING':  '#60A5FA',
   'SKILL_UP':        '#F59E0B',
-  'INTERVIEW_PREP':  '#EF4444',
-  'SCENARIO_CODING': '#A78BFA',
+  'CRACK_IT':        '#EF4444',
+  'BUILD_IT':        '#A78BFA',
 }
 
 // Full-page loader registry

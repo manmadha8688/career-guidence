@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
-import { Plus, Pencil, X, Search } from 'lucide-react'
+import { Plus, Pencil, X, Search, Trash2 } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
@@ -14,66 +14,69 @@ import { listToText, textToList } from '../../components/admin/adminFormUtils'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const TRACK_OPTIONS = ['START_CODING', 'LOGIC_BUILDING', 'SKILL_UP', 'INTERVIEW_PREP', 'SCENARIO_CODING']
-const TRACK_LABELS  = { START_CODING: 'Start Coding', LOGIC_BUILDING: 'Logic Building', SKILL_UP: 'Skill Up', INTERVIEW_PREP: 'Interview Prep', SCENARIO_CODING: 'Scenario Coding' }
-const TRACK_COLORS  = { START_CODING: '#22C55E', LOGIC_BUILDING: '#F59E0B', SKILL_UP: '#0EA5E9', INTERVIEW_PREP: '#EF4444', SCENARIO_CODING: '#8B5CF6' }
+const TRACK_OPTIONS = ['START_CODING', 'LOGIC_BUILDING', 'SKILL_UP', 'CRACK_IT', 'BUILD_IT', 'PROVE_IT']
+const TRACK_LABELS  = { START_CODING: 'Start Coding', LOGIC_BUILDING: 'Logic Building', SKILL_UP: 'Skill Up', CRACK_IT: 'Crack It', BUILD_IT: 'Build It', PROVE_IT: 'Prove It' }
+const TRACK_COLORS  = { START_CODING: '#9CA3AF', LOGIC_BUILDING: '#4ADE80', SKILL_UP: '#60A5FA', CRACK_IT: '#9B6ED4', BUILD_IT: '#F59E0B', PROVE_IT: '#EF4444' }
 const LEVELS  = ['BEGINNER', 'INTERMEDIATE', 'ADVANCED']
-const TYPES   = ['WRITE', 'PATTERN', 'OUTPUT', 'DEBUG', 'CONCEPTUAL']
 const LANGS   = ['python', 'java', 'c', 'cpp']
 const LANG_LABELS = { python: 'Python', java: 'Java', c: 'C', cpp: 'C++' }
 const VARIANTS = ['brute', 'normal', 'optimized']
-const VARIANT_LABELS = { brute: 'Brute Force', normal: 'Normal', optimized: 'Optimized' }
-const VARIANT_COLORS = { brute: '#EF4444', normal: '#F59E0B', optimized: '#22C55E' }
+const VARIANT_LABELS = { brute: 'Brute Force', normal: 'Cleaner Way', optimized: 'Optimal' }
+const VARIANT_COLORS = { brute: '#F59E0B', normal: '#60A5FA', optimized: '#4ADE80' }
 const MODAL_TABS = ['Basic', 'Content', 'Learning', 'Solutions']
-const LEVEL_COLORS = { BEGINNER: '#22C55E', INTERMEDIATE: '#F59E0B', ADVANCED: '#EF4444' }
+const LEVEL_COLORS = { BEGINNER: '#4ADE80', INTERMEDIATE: '#F59E0B', ADVANCED: '#C084FC' }
 
 const emptyVariant = () => ({ logic: '', timeComplexity: 'O(n)', spaceComplexity: 'O(1)', code: { c: '', python: '', java: '', cpp: '' } })
+const emptyExample = () => ({ input: '', output: '', explanation: '' })
 const emptyForm = () => ({
-  tracks: [], topics: '', category: '', level: 'BEGINNER', type: 'WRITE',
+  track: 'START_CODING', topics: '', category: '', level: 'BEGINNER',
   title: '', description: '', inputFormat: '', outputFormat: '',
-  sampleInput: '', sampleOutput: '', constraints: '',
-  hints: '', approach: '',
+  constraints: '', codeSnippet: '',
+  examples: [emptyExample(), emptyExample()],
+  hints: '', approach: '', whatYouLearn: '',
   solutions: { brute: emptyVariant(), normal: emptyVariant(), optimized: emptyVariant() },
-  explanation: '', interviewTip: '', isInterview: false,
-  companiesThatAsk: '', orderIndex: 0,
+  explanation: '', tip: '', orderIndex: 0,
 })
+
+const variantHasContent = (v) =>
+  !!(v && (v.logic?.trim() || LANGS.some(l => v.code?.[l]?.trim())))
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
 
 function ProblemModal({ problem, onClose, onSave }) {
   const initForm = () => {
     if (!problem) return emptyForm()
+    const ex = (problem.examples && problem.examples.length ? problem.examples : [emptyExample()])
+      .map(e => ({ input: e.input || '', output: e.output || '', explanation: e.explanation || '' }))
     return {
-      tracks: problem.tracks || [],
+      track: problem.track || 'START_CODING',
       topics: listToText(problem.topics),
       category: problem.category || '',
       level: problem.level || 'BEGINNER',
-      type: problem.type || 'WRITE',
       title: problem.title || '',
       description: problem.description || '',
       inputFormat: problem.inputFormat || '',
       outputFormat: problem.outputFormat || '',
-      sampleInput: problem.sampleInput || '',
-      sampleOutput: problem.sampleOutput || '',
       constraints: problem.constraints || '',
+      codeSnippet: problem.codeSnippet || '',
+      examples: ex,
       hints: listToText(problem.hints),
       approach: problem.approach || '',
+      whatYouLearn: listToText(problem.whatYouLearn),
       solutions: {
         brute:     problem.solutions?.brute     || emptyVariant(),
         normal:    problem.solutions?.normal    || emptyVariant(),
         optimized: problem.solutions?.optimized || emptyVariant(),
       },
       explanation: problem.explanation || '',
-      interviewTip: problem.interviewTip || '',
-      isInterview: problem.isInterview || false,
-      companiesThatAsk: listToText(problem.companiesThatAsk),
+      tip: problem.tip || '',
       orderIndex: problem.orderIndex || 0,
     }
   }
 
   const [form, setForm] = useState(initForm)
   const [activeTab, setActiveTab] = useState('Basic')
-  const [activeVariant, setActiveVariant] = useState('brute')
+  const [activeVariant, setActiveVariant] = useState('normal')
   const [activeLang, setActiveLang] = useState('python')
   const [loading, setLoading] = useState(false)
 
@@ -81,8 +84,10 @@ function ProblemModal({ problem, onClose, onSave }) {
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }))
 
-  const toggleTrack = (t) =>
-    set('tracks', form.tracks.includes(t) ? form.tracks.filter(x => x !== t) : [...form.tracks, t])
+  const setExample = (i, field, val) =>
+    setForm(f => ({ ...f, examples: f.examples.map((e, idx) => idx === i ? { ...e, [field]: val } : e) }))
+  const addExample = () => setForm(f => ({ ...f, examples: [...f.examples, emptyExample()] }))
+  const removeExample = (i) => setForm(f => ({ ...f, examples: f.examples.filter((_, idx) => idx !== i) }))
 
   const setSolution = (variant, field, val) =>
     setForm(f => ({ ...f, solutions: { ...f.solutions, [variant]: { ...f.solutions[variant], [field]: val } } }))
@@ -99,15 +104,22 @@ function ProblemModal({ problem, onClose, onSave }) {
   const handleSubmit = async e => {
     e.preventDefault()
     if (!form.title.trim()) { toast.error('Title is required'); return }
-    if (form.tracks.length === 0) { toast.error('Select at least one track'); return }
+    if (!form.track) { toast.error('Select a track'); return }
+
+    // Keep only variants that actually have content; drop empty ones so the backend stores null.
+    const solutions = {}
+    VARIANTS.forEach(v => { if (variantHasContent(form.solutions[v])) solutions[v] = form.solutions[v] })
+
     setLoading(true)
     try {
       const payload = {
         ...form,
-        topics:           textToList(form.topics),
-        hints:            textToList(form.hints),
-        companiesThatAsk: textToList(form.companiesThatAsk),
-        orderIndex:       parseInt(form.orderIndex) || 0,
+        topics:       textToList(form.topics),
+        hints:        textToList(form.hints),
+        whatYouLearn: textToList(form.whatYouLearn),
+        examples:     form.examples.filter(e => e.input.trim() || e.output.trim() || e.explanation.trim()),
+        solutions,
+        orderIndex:   parseInt(form.orderIndex) || 0,
       }
       problem ? await updateProblemQ(problem.id, payload) : await createProblem(payload)
       toast.success(problem ? 'Problem updated' : 'Problem created')
@@ -142,12 +154,12 @@ function ProblemModal({ problem, onClose, onSave }) {
 
           {activeTab === 'Basic' && (
             <>
-              <SectionLabel>Tracks (select all that apply)</SectionLabel>
+              <SectionLabel>Track (a problem belongs to exactly one)</SectionLabel>
               <div className="admin-toggle-row">
                 {TRACK_OPTIONS.map(t => {
-                  const active = form.tracks.includes(t)
+                  const active = form.track === t
                   return (
-                    <button key={t} type="button" onClick={() => toggleTrack(t)}
+                    <button key={t} type="button" onClick={() => set('track', t)}
                       className={`admin-toggle-chip${active ? ' is-active' : ''}`}
                       style={{ '--chip-accent': TRACK_COLORS[t], '--chip-accent-bg': TRACK_COLORS[t] + '22' }}>
                       {TRACK_LABELS[t]}
@@ -158,13 +170,13 @@ function ProblemModal({ problem, onClose, onSave }) {
 
               <div className="form-group">
                 <label className="form-label">Title *</label>
-                <input className="form-input" value={form.title} onChange={e => set('title', e.target.value)} required placeholder="e.g. Two Sum" />
+                <input className="form-input" value={form.title} onChange={e => set('title', e.target.value)} required placeholder="e.g. Sum of Digits" />
               </div>
 
               <div className="grid-2">
                 <div className="form-group">
-                  <label className="form-label">Category</label>
-                  <input className="form-input" value={form.category} onChange={e => set('category', e.target.value)} placeholder="e.g. Data Structures" />
+                  <label className="form-label">Category (group heading)</label>
+                  <input className="form-input" value={form.category} onChange={e => set('category', e.target.value)} placeholder="e.g. Loops" />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Order Index</label>
@@ -172,34 +184,16 @@ function ProblemModal({ problem, onClose, onSave }) {
                 </div>
               </div>
 
-              <div className="grid-2">
-                <div className="form-group">
-                  <label className="form-label">Level</label>
-                  <select className="form-input" value={form.level} onChange={e => set('level', e.target.value)}>
-                    {LEVELS.map(l => <option key={l} value={l}>{l.charAt(0) + l.slice(1).toLowerCase()}</option>)}
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Type</label>
-                  <select className="form-input" value={form.type} onChange={e => set('type', e.target.value)}>
-                    {TYPES.map(t => <option key={t} value={t}>{t.charAt(0) + t.slice(1).toLowerCase()}</option>)}
-                  </select>
-                </div>
+              <div className="form-group">
+                <label className="form-label">Level</label>
+                <select className="form-input" value={form.level} onChange={e => set('level', e.target.value)}>
+                  {LEVELS.map(l => <option key={l} value={l}>{l.charAt(0) + l.slice(1).toLowerCase()}</option>)}
+                </select>
               </div>
 
               <div className="form-group">
-                <label className="form-label">Topics (one per line)</label>
-                <textarea className="form-input admin-textarea-mono" rows={3} value={form.topics} onChange={e => set('topics', e.target.value)} placeholder={'Arrays\nTwo Pointers'} />
-              </div>
-
-              <SectionLabel>Interview Settings</SectionLabel>
-              <div className="admin-checkbox-row">
-                <input type="checkbox" id="isInterview" checked={form.isInterview} onChange={e => set('isInterview', e.target.checked)} className="admin-form-checkbox" />
-                <label htmlFor="isInterview" className="admin-form-checkbox-label admin-form-checkbox-label--md">Mark as Interview Question (shows ★ badge)</label>
-              </div>
-              <div className="form-group">
-                <label className="form-label">Companies that ask (one per line)</label>
-                <textarea className="form-input admin-textarea-mono" rows={3} value={form.companiesThatAsk} onChange={e => set('companiesThatAsk', e.target.value)} placeholder={'Amazon\nGoogle\nMicrosoft'} />
+                <label className="form-label">Topics (one per line — used for filtering)</label>
+                <textarea className="form-input admin-textarea-mono" rows={3} value={form.topics} onChange={e => set('topics', e.target.value)} placeholder={'Loops\nModulo'} />
               </div>
             </>
           )}
@@ -208,7 +202,7 @@ function ProblemModal({ problem, onClose, onSave }) {
             <>
               <div className="form-group">
                 <label className="form-label">Description *</label>
-                <textarea className="form-input admin-textarea-mono" rows={5} value={form.description} onChange={e => set('description', e.target.value)} placeholder="Full problem statement with examples..." />
+                <textarea className="form-input admin-textarea-mono" rows={5} value={form.description} onChange={e => set('description', e.target.value)} placeholder="The problem statement the student reads first..." />
               </div>
               <div className="grid-2">
                 <div className="form-group">
@@ -220,19 +214,45 @@ function ProblemModal({ problem, onClose, onSave }) {
                   <textarea className="form-input" rows={2} value={form.outputFormat} onChange={e => set('outputFormat', e.target.value)} />
                 </div>
               </div>
-              <div className="grid-2">
-                <div className="form-group">
-                  <label className="form-label">Sample Input</label>
-                  <textarea className="form-input admin-textarea-mono" rows={3} value={form.sampleInput} onChange={e => set('sampleInput', e.target.value)} />
+
+              <SectionLabel>Examples</SectionLabel>
+              {form.examples.map((ex, i) => (
+                <div key={i} className="admin-example-card">
+                  <div className="admin-example-card__head">
+                    <span className="admin-example-card__title">Example {i + 1}</span>
+                    {form.examples.length > 1 && (
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => removeExample(i)} aria-label={`Remove example ${i + 1}`}>
+                        <Trash2 size={13} />
+                      </button>
+                    )}
+                  </div>
+                  <div className="grid-2">
+                    <div className="form-group">
+                      <label className="form-label">Input</label>
+                      <textarea className="form-input admin-textarea-mono" rows={2} value={ex.input} onChange={e => setExample(i, 'input', e.target.value)} />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Output</label>
+                      <textarea className="form-input admin-textarea-mono" rows={2} value={ex.output} onChange={e => setExample(i, 'output', e.target.value)} />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Explanation</label>
+                    <textarea className="form-input" rows={2} value={ex.explanation} onChange={e => setExample(i, 'explanation', e.target.value)} placeholder="Why this input gives this output..." />
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Sample Output</label>
-                  <textarea className="form-input admin-textarea-mono" rows={3} value={form.sampleOutput} onChange={e => set('sampleOutput', e.target.value)} />
-                </div>
+              ))}
+              <button type="button" className="btn btn-ghost btn-sm admin-add-example-btn" onClick={addExample}>
+                <Plus size={13} /> Add Example
+              </button>
+
+              <div className="form-group admin-form-group--spaced">
+                <label className="form-label">Constraints</label>
+                <input className="form-input" value={form.constraints} onChange={e => set('constraints', e.target.value)} placeholder="e.g. 1 <= n <= 100" />
               </div>
               <div className="form-group">
-                <label className="form-label">Constraints</label>
-                <input className="form-input" value={form.constraints} onChange={e => set('constraints', e.target.value)} placeholder="e.g. 1 <= n <= 10^5" />
+                <label className="form-label">Code Snippet (optional — for "read this code" problems)</label>
+                <textarea className="form-input admin-textarea-mono--code" rows={5} value={form.codeSnippet} onChange={e => set('codeSnippet', e.target.value)} />
               </div>
             </>
           )}
@@ -240,32 +260,40 @@ function ProblemModal({ problem, onClose, onSave }) {
           {activeTab === 'Learning' && (
             <>
               <div className="form-group">
-                <label className="form-label">Hints (one per line — progressive, easiest first)</label>
-                <textarea className="form-input admin-textarea-mono" rows={4} value={form.hints} onChange={e => set('hints', e.target.value)} placeholder={'Hint 1 — gentle nudge\nHint 2 — more specific\nHint 3 — almost the answer'} />
+                <label className="form-label">What You'll Learn (one per line — skills this problem builds)</label>
+                <textarea className="form-input admin-textarea-mono" rows={3} value={form.whatYouLearn} onChange={e => set('whatYouLearn', e.target.value)} placeholder={'Writing your first loop\nUsing a counter to repeat an action'} />
               </div>
               <div className="form-group">
-                <label className="form-label">Approach</label>
+                <label className="form-label">Hints (one per line — progressive, easiest first)</label>
+                <textarea className="form-input admin-textarea-mono" rows={4} value={form.hints} onChange={e => set('hints', e.target.value)} placeholder={'Hint 1 — gentle nudge\nHint 2 — more specific'} />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Approach (guide the thinking — do not give the full answer)</label>
                 <textarea className="form-input" rows={4} value={form.approach} onChange={e => set('approach', e.target.value)} placeholder="How to think about the problem step by step..." />
               </div>
               <div className="form-group">
-                <label className="form-label">Explanation</label>
-                <textarea className="form-input" rows={4} value={form.explanation} onChange={e => set('explanation', e.target.value)} placeholder="Why this solution works, key insights..." />
+                <label className="form-label">Explanation (why the solution works)</label>
+                <textarea className="form-input" rows={4} value={form.explanation} onChange={e => set('explanation', e.target.value)} placeholder="Why this solution works, key insight..." />
               </div>
               <div className="form-group">
-                <label className="form-label">Interview Tip</label>
-                <textarea className="form-input" rows={3} value={form.interviewTip} onChange={e => set('interviewTip', e.target.value)} placeholder="What interviewers look for, follow-up questions, common mistakes..." />
+                <label className="form-label">Tip (short, encouraging)</label>
+                <textarea className="form-input" rows={2} value={form.tip} onChange={e => set('tip', e.target.value)} placeholder="A friendly nudge to keep the student going..." />
               </div>
             </>
           )}
 
           {activeTab === 'Solutions' && (
             <>
+              <div className="admin-solutions-hint admin-solutions-hint--top">
+                💡 Variants are optional. A simple problem can ship just one (fill "Cleaner Way").
+                Harder ones can add Brute Force and Optimal. Empty variants are ignored.
+              </div>
               <div className="admin-toggle-row admin-toggle-row--variant">
                 {VARIANTS.map(v => (
                   <button key={v} type="button" onClick={() => setActiveVariant(v)}
-                    className={`admin-toggle-chip admin-toggle-chip--variant${activeVariant === v ? ' is-active' : ''}`}
+                    className={`admin-toggle-chip admin-toggle-chip--variant${activeVariant === v ? ' is-active' : ''}${variantHasContent(form.solutions[v]) ? ' has-content' : ''}`}
                     style={{ '--chip-accent': VARIANT_COLORS[v], '--chip-accent-bg': VARIANT_COLORS[v] + '18' }}>
-                    {VARIANT_LABELS[v]}
+                    {VARIANT_LABELS[v]}{variantHasContent(form.solutions[v]) ? ' ✓' : ''}
                   </button>
                 ))}
               </div>
@@ -306,11 +334,8 @@ function ProblemModal({ problem, onClose, onSave }) {
                   rows={12}
                   value={form.solutions[activeVariant].code[activeLang]}
                   onChange={e => setSolutionCode(activeVariant, activeLang, e.target.value)}
-                  placeholder={`${LANG_LABELS[activeLang]} code for ${VARIANT_LABELS[activeVariant]} solution...`}
+                  placeholder={`${LANG_LABELS[activeLang]} code for the ${VARIANT_LABELS[activeVariant]} solution...`}
                 />
-              </div>
-              <div className="admin-solutions-hint">
-                💡 Fill all 3 variants × 4 languages. Switch variants above, then languages.
               </div>
             </>
           )}
@@ -365,7 +390,7 @@ export default function AdminProblems() {
   useEffect(() => { load() }, [])
 
   const filtered = problems.filter(p => {
-    const matchTrack = trackFilter === 'ALL' || (p.tracks || []).includes(trackFilter)
+    const matchTrack = trackFilter === 'ALL' || p.track === trackFilter
     const q = search.toLowerCase()
     const matchSearch = !q || p.title?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q)
     return matchTrack && matchSearch
@@ -454,16 +479,15 @@ export default function AdminProblems() {
                 </th>
                 <th>#</th>
                 <th>Title</th>
-                <th>Tracks</th>
+                <th>Track</th>
                 <th>Level</th>
-                <th>Type</th>
                 <th>Category</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={9} className="admin-table-empty">
+                <tr><td colSpan={7} className="admin-table-empty">
                   {search || trackFilter !== 'ALL' ? 'No problems match your filters.' : 'No problems yet — click New Problem.'}
                 </td></tr>
               ) : filtered.map(p => (
@@ -485,20 +509,18 @@ export default function AdminProblems() {
                     {p.description && <div className="text-xs text-muted truncate admin-truncate-desc--260">{p.description.split('\n')[0]}</div>}
                   </td>
                   <td>
-                    <div className="admin-tag-wrap admin-tag-wrap--180">
-                      {(p.tracks || []).map(t => (
-                        <span key={t} className="admin-tag-chip--dynamic"
-                          style={{
-                            '--tag-bg': TRACK_COLORS[t] + '18',
-                            '--tag-color': TRACK_COLORS[t],
-                            '--tag-border': TRACK_COLORS[t] + '30',
-                            '--tag-font-size': '0.58rem',
-                            '--tag-radius': '3px',
-                          }}>
-                          {TRACK_LABELS[t]}
-                        </span>
-                      ))}
-                    </div>
+                    {p.track && (
+                      <span className="admin-tag-chip--dynamic"
+                        style={{
+                          '--tag-bg': (TRACK_COLORS[p.track] || '#888') + '18',
+                          '--tag-color': TRACK_COLORS[p.track] || '#888',
+                          '--tag-border': (TRACK_COLORS[p.track] || '#888') + '30',
+                          '--tag-font-size': '0.6rem',
+                          '--tag-radius': '3px',
+                        }}>
+                        {TRACK_LABELS[p.track] || p.track}
+                      </span>
+                    )}
                   </td>
                   <td>
                     <span className="admin-tag-chip--dynamic"
@@ -513,7 +535,6 @@ export default function AdminProblems() {
                       {p.level ? p.level.charAt(0) + p.level.slice(1).toLowerCase() : '—'}
                     </span>
                   </td>
-                  <td className="text-sm text-muted">{p.type || '—'}</td>
                   <td className="text-sm text-muted">{p.category || <span className="admin-em-dash">—</span>}</td>
 
                   <td>

@@ -271,8 +271,8 @@ export const STORY_BEATS = {
   LOGIN_FAILED: {
     mood: 'concerned',
     lines: [
-      { speaker: 'echo',  text: "Credentials rejected. Awkward." },
-      { speaker: 'pixel', text: "Wrong password or wrong life choices?" },
+      { speaker: 'echo',  text: "Credentials rejected. Happens to everyone." },
+      { speaker: 'pixel', text: "Wrong password — not wrong you. Give it another go." },
       { speaker: 'nova',  text: "Try again. Caps Lock is the usual villain." },
       { speaker: 'pixel', text: "And yes, we checked. It's not us." },
     ],
@@ -303,7 +303,7 @@ export const STORY_BEATS = {
   REG_GREET: {
     mood: 'happy',
     lines: [
-      { speaker: 'pixel', text: "Registration page. They want to join the circus." },
+      { speaker: 'pixel', text: "Registration page. They want to join the hunt." },
       { speaker: 'echo',  text: "Do they know there are four fields and an OTP?" },
       { speaker: 'nova',  text: "They'll learn. We'll cheer from the sidelines." },
       { speaker: 'pixel', text: "Cheer loudly. They'll need it." },

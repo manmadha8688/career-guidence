@@ -1,15 +1,20 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
-import GuidePageWrapper from './GuideLayout'
+import GuideExperience from './GuideExperience'
 import { IMAGE_AI_GUIDE } from './guides/imageAiGuide'
- import { STACKS } from './guideIndex'
+import { STACKS } from './guideIndex'
 
 export default function ImageAiPage() {
   const navigate = useNavigate()
-  const { theme, toggleTheme } = useTheme()
-  const dark = theme === 'dark'
+  const { toggleTheme } = useTheme()
   const stackData = STACKS.find(s => s.id === 'image-ai')
+
   return (
-    <GuidePageWrapper guide={IMAGE_AI_GUIDE} stackData={stackData} dark={dark} toggleTheme={toggleTheme} onBack={() => navigate('/deployment')} />
+    <GuideExperience
+      guide={IMAGE_AI_GUIDE}
+      stackData={stackData}
+      toggleTheme={toggleTheme}
+      onBack={() => navigate('/deployment')}
+    />
   )
 }

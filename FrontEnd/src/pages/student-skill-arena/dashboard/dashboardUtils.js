@@ -1,8 +1,7 @@
 export const NAV_ITEMS = [
-  { label: 'SKILL ARENA',  view: 'arena' },
-  { label: 'DUNGEON GATE', view: 'gates' },
-  { label: 'HUNTER PATH',  view: 'paths' },
-  { label: 'CHALLENGES',   view: null, href: '/problem-solving' },
+  { label: 'OVERVIEW',     sub: 'Dashboard',       view: 'arena' },
+  { label: 'DUNGEON GATE', sub: 'Subjects',        view: 'gates' },
+  { label: 'HUNTER PATH',  sub: 'Career Roadmaps', view: 'paths' },
 ]
 
 export const DAILY_QUESTS = [
@@ -39,8 +38,6 @@ export const statRank = (pct) => {
   if (pct >= 20) return { label: 'D', color: r.D }
   return              { label: 'E', color: r.E }
 }
-
-export const GATE_FILTERS = ['All GATES', 'ENTERED', 'CLOSED', 'Not ENTERED']
 
 export const gateRankByOrder = (idx) => {
   const r = _sr()

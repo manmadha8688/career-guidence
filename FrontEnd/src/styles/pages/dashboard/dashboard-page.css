@@ -317,20 +317,6 @@
 .dash-search-wrap--gates { margin-bottom: 0.5rem; }
 .dash-search-wrap--paths { margin-bottom: 0.75rem; }
 
-.dash-filter-chips {
-  display: flex;
-  gap: 0.375rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.75rem;
-}
-
-.dash-filter-chip {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.5rem;
-}
-
 .dash-no-match {
   text-align: center;
   padding: 2rem;
@@ -537,6 +523,26 @@
   flex-shrink: 0;
 }
 
+.dash-mob-nav-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dash-mob-nav-item__sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
+.dash-mob-nav-item.is-active .dash-mob-nav-item__sub {
+  color: #B48AE8;
+  opacity: 0.95;
+}
+
 .dash-mob-nav-item__now {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.55rem;
@@ -547,7 +553,6 @@
 }
 
 .dash-panel-scroll {
-  overflow: auto;
   display: flex;
   flex-direction: column;
 }

@@ -66,8 +66,8 @@ export const CODE_GYM_TRACKS = [
   { icon: '💻', title: 'Start Coding',    color: '#22C55E', href: '/problem-solving/start-coding',    desc: 'Never coded before? Begin here. Step-by-step from Hello World to functions.' },
   { icon: '🧠', title: 'Logic Building', color: '#F59E0B', href: '/problem-solving/logic-building',  desc: "Can code but can't solve problems? Train your problem-solving mind." },
   { icon: '⚡', title: 'Skill Up',         color: '#0EA5E9', href: '/problem-solving/skill-up',        desc: 'Arrays, strings, searching — same problem, 4 languages, brute to optimized.' },
-  { icon: '💼', title: 'Interview Prep',  color: '#EF4444', href: '/problem-solving/interview-prep',  desc: 'Most-asked questions from Amazon, Google, TCS, and more. All levels.' },
-  { icon: '🎯', title: 'Scenario Coding', color: '#A78BFA', href: '/problem-solving/scenario-coding', desc: 'Real-world story problems — solve placement-style scenarios with logic.' },
+  { icon: '🎯', title: 'Crack It', color: '#9B6ED4', href: '/problem-solving/crack-it', desc: 'Story problems packed with rules — read the situation and code every case correctly.' },
+  { icon: '🔥', title: 'Build It', color: '#F59E0B', href: '/problem-solving/build-it', desc: 'Get it working, then make it faster — optimize under real constraints and explain why.' },
 ]
 
 export const CODE_GYM_STATS = [

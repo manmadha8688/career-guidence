@@ -1647,22 +1647,101 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .auth-stage {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    gap: 0;
+  /* Let the page scroll on mobile — bots + tall forms won't fit no-scroll */
+  .auth-page {
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-top: clamp(3.5rem, 8vh, 4.5rem);
+    padding-bottom: 1.5rem;
   }
 
+  /* Keep Home / theme pinned while the content scrolls */
+  .auth-top-actions {
+    position: fixed;
+  }
+
+  /* Stack: compact bot band on top, form below (flex so rows size to content) */
+  .auth-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 0 0 auto;
+    height: auto;
+    min-height: 0;
+    max-width: 420px;
+    gap: 0.25rem;
+    overflow: visible;
+  }
+
+  /* Bots are shown on mobile as a slim, still-interactive strip */
   .auth-stage-col--leading {
-    display: none;
+    display: flex;
+    flex: 0 0 auto;
+    height: clamp(140px, 20vh, 180px);
+    overflow: visible;
+    align-items: center;
   }
 
   .auth-stage-col--trailing {
     width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .auth-form-col {
+    height: auto;
   }
 
   .auth-card-wrap {
     max-width: 100%;
+  }
+
+  .auth-scene--login {
+    width: 100%;
+    aspect-ratio: auto;
+    height: 100%;
+    max-height: none;
+  }
+
+  .auth-scene--login .login-scene-center {
+    transform: scale(0.72);
+    transform-origin: center center;
+    gap: 0;
+  }
+
+  .auth-scene--login .login-squad {
+    padding-top: clamp(3.5rem, 10vh, 5rem);
+  }
+
+  /* Drop desktop-only chrome to keep the strip clean and short */
+  .auth-scene--login .login-squad-desk,
+  .auth-scene--login .login-progress-arc,
+  .auth-scene--login .login-scene-grid {
+    display: none;
+  }
+
+  /* Compensate for the scale so speech stays readable */
+  .auth-scene--login .login-manga-bubble {
+    min-width: 150px;
+    max-width: 210px;
+  }
+
+  .auth-scene--login .login-manga-bubble-text {
+    font-size: 1.02rem;
+  }
+
+  /* Keep the side bots' bubbles inside the screen (they sit near the edges) */
+  .auth-scene--login .login-bot--glitch .login-manga-bubble {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+
+  .auth-scene--login .login-bot--byte .login-manga-bubble {
+    left: 0;
+    transform: none;
   }
 }
 

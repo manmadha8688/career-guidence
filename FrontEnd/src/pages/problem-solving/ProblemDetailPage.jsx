@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Sun, Moon, ChevronDown, ChevronUp, Eye, EyeOff } from 'lucide-react'
@@ -12,29 +12,27 @@ const LANGS = [
   { key: 'c',      label: 'C'      },
   { key: 'cpp',    label: 'C++'    },
 ]
+
+// Solution variants, in display order. Muted palette — no red.
 const VARIANTS = [
-  { key: 'brute',     label: 'Brute Force',      color: '#EF4444' },
-  { key: 'normal',    label: 'Better Approach',  color: '#F59E0B' },
-  { key: 'optimized', label: 'Optimal Solution', color: '#22C55E' },
+  { key: 'brute',     label: 'Brute Force', color: '#F59E0B' },
+  { key: 'normal',    label: 'Cleaner Way', color: '#60A5FA' },
+  { key: 'optimized', label: 'Optimal',     color: '#4ADE80' },
 ]
+
 const LEVEL_META = {
-  BEGINNER:     { label: 'Beginner',     color: '#22C55E' },
+  BEGINNER:     { label: 'Beginner',     color: '#4ADE80' },
   INTERMEDIATE: { label: 'Intermediate', color: '#F59E0B' },
-  ADVANCED:     { label: 'Advanced',     color: '#EF4444' },
+  ADVANCED:     { label: 'Advanced',     color: '#C084FC' },
 }
-const TYPE_META = {
-  WRITE:      { label: 'Write Code',   color: '#0EA5E9' },
-  PATTERN:    { label: 'Pattern',      color: '#A78BFA' },
-  OUTPUT:     { label: 'Output Based', color: '#34D399' },
-  DEBUG:      { label: 'Debug',        color: '#FB923C' },
-  CONCEPTUAL: { label: 'Conceptual',   color: '#94A3B8' },
-}
-const TRACK_LABELS = {
-  START_CODING:    'Start Coding',
-  LOGIC_BUILDING:  'Logic Building',
-  SKILL_UP:        'Skill Up',
-  INTERVIEW_PREP:  'Interview Prep',
-  SCENARIO_CODING: 'Scenario Coding',
+
+const TRACK_META = {
+  START_CODING:    { label: 'Start Coding',   color: '#9CA3AF' },
+  LOGIC_BUILDING:  { label: 'Logic Building', color: '#4ADE80' },
+  SKILL_UP:        { label: 'Skill Up',       color: '#60A5FA' },
+  CRACK_IT:        { label: 'Crack It',       color: '#9B6ED4' },
+  BUILD_IT:        { label: 'Build It',       color: '#F59E0B' },
+  PROVE_IT:        { label: 'Prove It',       color: '#EF4444' },
 }
 
 export default function ProblemDetailPage() {
@@ -48,9 +46,8 @@ export default function ProblemDetailPage() {
   const [notFound, setNotFound] = useState(false)
 
   const [lang, setLang] = useState('python')
-  const [variant, setVariant] = useState('normal')
+  const [variant, setVariant] = useState(null)
   const [revealedHints, setRevealedHints] = useState(0)
-  const [approachOpen, setApproachOpen] = useState(false)
   const [solutionOpen, setSolutionOpen] = useState(false)
   const [explanationOpen, setExplanationOpen] = useState(false)
   const [tipOpen, setTipOpen] = useState(false)
@@ -62,7 +59,26 @@ export default function ProblemDetailPage() {
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [id])
 
-  if (loading) return <GlitchBreachLoader accentColor="#f97316" label="LOADING PROBLEM" />
+  // Only offer solution variants that actually have code — a beginner problem may ship just one.
+  const availableVariants = useMemo(() => {
+    if (!problem?.solutions) return []
+    return VARIANTS
+      .filter(v => {
+        const s = problem.solutions[v.key]
+        return s && s.code && LANGS.some(l => s.code[l.key]?.trim())
+      })
+      .map(v => {
+        // A lone variant is just "Solution" — no need to call it brute/optimal.
+        const label = (problem.solutions && countVariants(problem.solutions) === 1) ? 'Solution' : v.label
+        return { ...v, label }
+      })
+  }, [problem])
+
+  useEffect(() => {
+    if (availableVariants.length) setVariant(availableVariants[0].key)
+  }, [availableVariants])
+
+  if (loading) return <GlitchBreachLoader accentColor="#8b7fd4" label="LOADING PROBLEM" />
 
   if (notFound) return (
     <div className="ps-page ps-page--centered">
@@ -74,13 +90,16 @@ export default function ProblemDetailPage() {
   )
 
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
-  const tm = TYPE_META[problem.type] || TYPE_META.WRITE
-  const sol = problem.solutions?.[variant]
+  const trackMeta = TRACK_META[problem.track]
+  const activeVariant = variant || availableVariants[0]?.key
+  const sol = activeVariant ? problem.solutions?.[activeVariant] : null
   const code = sol?.code?.[lang] || ''
-  const varMeta = VARIANTS.find(v => v.key === variant)
+  const varMeta = availableVariants.find(v => v.key === activeVariant)
+  const examples = problem.examples || []
+  const learn = problem.whatYouLearn || []
 
   return (
-    <div className="ps-page">
+    <div className="ps-page" style={trackMeta ? { '--track-color': trackMeta.color } : undefined}>
       <div className="ps-nav">
         <button type="button" onClick={() => navigate(-1)} className="ps-nav__back">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -105,17 +124,22 @@ export default function ProblemDetailPage() {
           <div className="ps-card">
             <div className="ps-meta-row">
               <span className="ps-badge ps-badge--level" style={{ '--lm-color': lm.color }}>{lm.label}</span>
-              <span className="ps-badge ps-badge--type" style={{ '--tm-color': tm.color }}>{tm.label}</span>
-              {(problem.tracks || [problem.track]).filter(Boolean).map(t => (
-                <span key={t} className="ps-badge ps-badge--track">{TRACK_LABELS[t] || t}</span>
-              ))}
-              {problem.isInterview && <span className="ps-badge ps-badge--interview">★ Interview</span>}
+              {trackMeta && <span className="ps-badge ps-badge--track">{trackMeta.label}</span>}
+              {problem.category && <span className="ps-badge ps-badge--track">{problem.category}</span>}
             </div>
             <h1 className="ps-problem-title">{problem.title}</h1>
             <pre className="ps-problem-desc">{problem.description}</pre>
           </div>
 
-          {(problem.inputFormat || problem.sampleInput) && (
+          {problem.codeSnippet && (
+            <div className="ps-card ps-card--compact">
+              <SectionLabel label="Read the Code" accentColor="#60A5FA" />
+              <div className="ps-snippet-hint">Trace it by hand — don't run it.</div>
+              <pre className="ps-code-pre ps-code-pre--snippet">{problem.codeSnippet}</pre>
+            </div>
+          )}
+
+          {(problem.inputFormat || problem.outputFormat || examples.length > 0 || problem.constraints) && (
             <div className="ps-card ps-card--compact">
               <SectionLabel label="Input / Output" />
               {problem.inputFormat && (
@@ -131,49 +155,30 @@ export default function ProblemDetailPage() {
                 </div>
               )}
 
-              {problem.sampleInput && (
-                <div className={`ps-example-block${problem.sampleInput2 ? ' ps-example-block--with-gap' : ''}`}>
-                  <div className="ps-example-label">Example 1</div>
+              {examples.map((ex, i) => (
+                <div
+                  key={i}
+                  className={`ps-example-block${i < examples.length - 1 ? ' ps-example-block--with-gap' : ''}`}
+                >
+                  <div className="ps-example-label">Example {i + 1}</div>
                   <div className="ps-io-grid">
                     <div>
                       <Label>Input</Label>
-                      <CodeBlock code={problem.sampleInput} />
+                      <CodeBlock code={ex.input} />
                     </div>
                     <div>
                       <Label>Output</Label>
-                      <CodeBlock code={problem.sampleOutput} />
+                      <CodeBlock code={ex.output} />
                     </div>
                   </div>
-                  {problem.example1Explanation && (
+                  {ex.explanation && (
                     <div className="ps-explanation-box">
                       <span className="ps-explanation-box__label">Explanation:</span>
-                      {problem.example1Explanation}
+                      {ex.explanation}
                     </div>
                   )}
                 </div>
-              )}
-
-              {problem.sampleInput2 && (
-                <div className="ps-example-block">
-                  <div className="ps-example-label">Example 2</div>
-                  <div className="ps-io-grid">
-                    <div>
-                      <Label>Input</Label>
-                      <CodeBlock code={problem.sampleInput2} />
-                    </div>
-                    <div>
-                      <Label>Output</Label>
-                      <CodeBlock code={problem.sampleOutput2} />
-                    </div>
-                  </div>
-                  {problem.example2Explanation && (
-                    <div className="ps-explanation-box">
-                      <span className="ps-explanation-box__label">Explanation:</span>
-                      {problem.example2Explanation}
-                    </div>
-                  )}
-                </div>
-              )}
+              ))}
 
               {problem.constraints && (
                 <div className="ps-constraints">
@@ -181,6 +186,17 @@ export default function ProblemDetailPage() {
                   <p className="ps-constraints-text">{problem.constraints}</p>
                 </div>
               )}
+            </div>
+          )}
+
+          {learn.length > 0 && (
+            <div className="ps-card ps-card--compact">
+              <SectionLabel label="What You'll Learn" accentColor="#4ADE80" />
+              <ul className="ps-learn-list">
+                {learn.map((item, i) => (
+                  <li key={i} className="ps-learn-item">{item}</li>
+                ))}
+              </ul>
             </div>
           )}
 
@@ -213,102 +229,96 @@ export default function ProblemDetailPage() {
           )}
 
           {problem.approach && (
-            <Accordion open={approachOpen} onToggle={() => setApproachOpen(o => !o)}
-              label="Approach" accentColor="#A78BFA">
+            <div className="ps-card ps-card--compact">
+              <SectionLabel label="How to Approach It" accentColor="#9B6ED4" />
               <p className="ps-accordion-text ps-accordion-text--approach">{problem.approach}</p>
-            </Accordion>
-          )}
-
-          {problem.isInterview && (problem.companiesThatAsk || []).length > 0 && (
-            <div className="ps-card ps-card--tight">
-              <SectionLabel label="Asked By" accentColor="#EF4444" />
-              <div className="ps-companies-row">
-                {problem.companiesThatAsk.map(c => (
-                  <span key={c} className="ps-company-tag">{c}</span>
-                ))}
-              </div>
             </div>
           )}
         </div>
 
         <div className="ps-detail-right">
-          <div className="ps-card ps-card--flush">
-            <button
-              type="button"
-              onClick={() => setSolutionOpen(o => !o)}
-              className={`ps-accordion-toggle${solutionOpen ? ' ps-accordion-toggle--open' : ''}`}
-            >
-              <span className="ps-accordion-toggle__label">SOLUTION</span>
-              {solutionOpen ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
-            </button>
+          {availableVariants.length > 0 && (
+            <div className="ps-card ps-card--flush">
+              <button
+                type="button"
+                onClick={() => setSolutionOpen(o => !o)}
+                className={`ps-accordion-toggle${solutionOpen ? ' ps-accordion-toggle--open' : ''}`}
+              >
+                <span className="ps-accordion-toggle__label">SOLUTION</span>
+                {solutionOpen ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
+              </button>
 
-            {solutionOpen && (
-              <div className="ps-accordion-body ps-accordion-body--solution">
-                <div className="ps-tab-group">
-                  <Label>Language</Label>
-                  <div className="ps-tab-row">
-                    {LANGS.map(l => (
-                      <button
-                        key={l.key}
-                        type="button"
-                        onClick={() => setLang(l.key)}
-                        className={`ps-lang-tab${lang === l.key ? ' ps-lang-tab--active' : ''}`}
-                      >
-                        {l.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="ps-tab-group ps-tab-group--variant">
-                  <Label>Approach</Label>
-                  <div className="ps-tab-row">
-                    {VARIANTS.map(v => (
-                      <button
-                        key={v.key}
-                        type="button"
-                        onClick={() => setVariant(v.key)}
-                        className={`ps-variant-tab${variant === v.key ? ' ps-variant-tab--active' : ''}`}
-                        style={{ '--accent-color': v.color }}
-                      >
-                        {v.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {sol && (
-                  <div className="ps-complexity-row">
-                    <ComplexityBadge label="Time" value={sol.timeComplexity} color={varMeta?.color} />
-                    <ComplexityBadge label="Space" value={sol.spaceComplexity} color="#60A5FA" />
-                  </div>
-                )}
-
-                {sol?.logic && (
-                  <div className="ps-approach-box" style={{ '--accent-color': varMeta?.color }}>
-                    <div className="ps-approach-box__label">APPROACH NAME</div>
-                    <p className="ps-approach-box__text">{sol.logic}</p>
-                  </div>
-                )}
-
-                {code ? (
-                  <div className="ps-code-panel">
-                    <div className="ps-code-header">
-                      <span className="ps-code-header__label">
-                        {LANGS.find(l => l.key === lang)?.label?.toUpperCase()} · {varMeta?.label?.toUpperCase()}
-                      </span>
-                      <CopyButton code={code} />
+              {solutionOpen && (
+                <div className="ps-accordion-body ps-accordion-body--solution">
+                  <div className="ps-tab-group">
+                    <Label>Language</Label>
+                    <div className="ps-tab-row">
+                      {LANGS.map(l => (
+                        <button
+                          key={l.key}
+                          type="button"
+                          onClick={() => setLang(l.key)}
+                          className={`ps-lang-tab${lang === l.key ? ' ps-lang-tab--active' : ''}`}
+                        >
+                          {l.label}
+                        </button>
+                      ))}
                     </div>
-                    <pre className="ps-code-pre">{code}</pre>
                   </div>
-                ) : (
-                  <div className="ps-no-solution">
-                    No solution available for this language yet.
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
+
+                  {availableVariants.length > 1 && (
+                    <div className="ps-tab-group ps-tab-group--variant">
+                      <Label>Approach</Label>
+                      <div className="ps-tab-row">
+                        {availableVariants.map(v => (
+                          <button
+                            key={v.key}
+                            type="button"
+                            onClick={() => setVariant(v.key)}
+                            className={`ps-variant-tab${activeVariant === v.key ? ' ps-variant-tab--active' : ''}`}
+                            style={{ '--accent-color': v.color }}
+                          >
+                            {v.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {sol && (
+                    <div className="ps-complexity-row">
+                      <ComplexityBadge label="Time" value={sol.timeComplexity} color={varMeta?.color} />
+                      <ComplexityBadge label="Space" value={sol.spaceComplexity} color="#60A5FA" />
+                    </div>
+                  )}
+
+                  {sol?.logic && (
+                    <div className="ps-approach-box" style={{ '--accent-color': varMeta?.color }}>
+                      <div className="ps-approach-box__label">HOW IT WORKS</div>
+                      <p className="ps-approach-box__text">{sol.logic}</p>
+                    </div>
+                  )}
+
+                  {code ? (
+                    <div className="ps-code-panel">
+                      <div className="ps-code-header">
+                        <span className="ps-code-header__label">
+                          {LANGS.find(l => l.key === lang)?.label?.toUpperCase()}
+                          {varMeta && ` · ${varMeta.label.toUpperCase()}`}
+                        </span>
+                        <CopyButton code={code} />
+                      </div>
+                      <pre className="ps-code-pre">{code}</pre>
+                    </div>
+                  ) : (
+                    <div className="ps-no-solution">
+                      No solution available for this language yet.
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
 
           {problem.explanation && (
             <Accordion open={explanationOpen} onToggle={() => setExplanationOpen(o => !o)} label="Explanation">
@@ -316,16 +326,23 @@ export default function ProblemDetailPage() {
             </Accordion>
           )}
 
-          {problem.interviewTip && (
+          {problem.tip && (
             <Accordion open={tipOpen} onToggle={() => setTipOpen(o => !o)}
-              label="Interview Tip" accentColor="#F59E0B">
-              <p className="ps-accordion-text">{problem.interviewTip}</p>
+              label="Tip" accentColor="#F59E0B">
+              <p className="ps-accordion-text">{problem.tip}</p>
             </Accordion>
           )}
         </div>
       </div>
     </div>
   )
+}
+
+function countVariants(solutions) {
+  return VARIANTS.reduce((n, v) => {
+    const s = solutions[v.key]
+    return n + (s && s.code && LANGS.some(l => s.code[l.key]?.trim()) ? 1 : 0)
+  }, 0)
 }
 
 function SectionLabel({ label, accentColor }) {

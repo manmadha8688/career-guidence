@@ -1,15 +1,20 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
-import GuidePageWrapper from './GuideLayout'
+import GuideExperience from './GuideExperience'
 import { STREAMLIT_GUIDE } from './guides/streamlitGuide'
- import { STACKS } from './guideIndex'
+import { STACKS } from './guideIndex'
 
 export default function StreamlitDeployPage() {
   const navigate = useNavigate()
-  const { theme, toggleTheme } = useTheme()
-  const dark = theme === 'dark'
+  const { toggleTheme } = useTheme()
   const stackData = STACKS.find(s => s.id === 'streamlit')
+
   return (
-    <GuidePageWrapper guide={STREAMLIT_GUIDE} stackData={stackData} dark={dark} toggleTheme={toggleTheme} onBack={() => navigate('/deployment')} />
+    <GuideExperience
+      guide={STREAMLIT_GUIDE}
+      stackData={stackData}
+      toggleTheme={toggleTheme}
+      onBack={() => navigate('/deployment')}
+    />
   )
 }

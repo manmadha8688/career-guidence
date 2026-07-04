@@ -336,7 +336,7 @@ demo = gr.Interface(
     ],
     outputs=gr.Textbox(label="Answer", lines=6),
     title="📄 RAG Document Q&A (OpenAI)",
-    description="PDF Q&A using sentence-transformers for retrieval and GPT-5.5-mini for answers.",
+    description="PDF Q&A using sentence-transformers for retrieval and gpt-4o-mini for answers.",
 )
 
 if __name__ == "__main__":

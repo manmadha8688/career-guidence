@@ -1,20 +1,18 @@
 import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
-import GuidePageWrapper from './GuideLayout'
+import GuideExperience from './GuideExperience'
 import { HTML_STATIC_GUIDE } from './guides/htmlStaticGuide'
- import { STACKS } from './guideIndex'
+import { STACKS } from './guideIndex'
 
 export default function HtmlStaticDeployPage() {
   const navigate = useNavigate()
-  const { theme, toggleTheme } = useTheme()
-  const dark = theme === 'dark'
+  const { toggleTheme } = useTheme()
   const stackData = STACKS.find(s => s.id === 'html-static')
 
   return (
-    <GuidePageWrapper
+    <GuideExperience
       guide={HTML_STATIC_GUIDE}
       stackData={stackData}
-      dark={dark}
       toggleTheme={toggleTheme}
       onBack={() => navigate('/deployment')}
     />

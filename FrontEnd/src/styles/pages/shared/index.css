@@ -3,9 +3,12 @@
 @import './not-found.css';
 @import './jobs.css';
 @import './missions.css';
+@import './missions-board.css';
 @import './problem-solving.css';
 @import './ailab.css';
 @import './ailab-helpers.css';
 @import './deployment.css';
+@import './deployment-stations.css';
+@import './deployment-guide.css';
 @import './career-guidance.css';
 @import './fresher-guide.css';

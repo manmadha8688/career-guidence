@@ -1,4 +1,5 @@
 import { X, LogOut } from 'lucide-react'
+import useBodyLock from '../../../hooks/useBodyLock'
 
 const RANK_LADDER = [
   { letter: 'E', label: 'E-RANK', cls: 'rank-e', color: '#888888', bg: '#88888815', min: 0 },
@@ -9,10 +10,34 @@ const RANK_LADDER = [
   { letter: 'S', label: 'S-RANK', cls: 'rank-s', color: '#EF4444', bg: '#EF444415', min: 10000 },
 ]
 
+// Plain-language glossary for the 3 core themed words a newcomer meets first.
+const GLOSSARY = [
+  {
+    word: 'Skill', plain: 'One lesson / topic', color: '#4ADE80',
+    desc: 'The smallest step. One thing you learn — like "CSS Flexbox" or "Java Loops" — followed by a short quiz. (Also shown as a "concept".)',
+  },
+  {
+    word: 'Dungeon Gate', plain: 'A Subject', color: '#60A5FA',
+    desc: 'A full subject made up of many skills — such as HTML, JavaScript, or Java. Learn all the skills inside it to master the subject and earn its badge.',
+  },
+  {
+    word: 'Hunter Path', plain: 'A Career Roadmap', color: '#9B6ED4',
+    desc: 'A guided, ordered set of subjects for a specific job — like Java Full Stack or MERN. Follow it start to finish to go from beginner to job-ready.',
+  },
+]
+
+// Shorter one-line words to round out the vocabulary.
+const QUICK_WORDS = [
+  { k: 'Trial', v: 'a quiz you take to clear a skill or subject' },
+  { k: 'XP', v: 'points you earn for passing quizzes' },
+  { k: 'Rank (E → S)', v: 'your overall level, based on total XP' },
+  { k: 'Badge', v: 'proof you finished a subject or roadmap' },
+]
+
 const HOW_IT_WORKS = [
-  { num: '01', color: '#9B6ED4', title: 'Pick a Hunter Path', desc: 'Go to HUNTER PATH tab and choose a career roadmap — Java Full Stack, MERN, Python, Frontend. Each path is a structured sequence of dungeon gates.' },
-  { num: '02', color: '#60A5FA', title: 'Enter Dungeon Gates', desc: 'Go to DUNGEON GATE tab — each gate is a subject (HTML, CSS, JavaScript...). Enter a gate and start clearing concepts one by one at your own pace.' },
-  { num: '03', color: '#F59E0B', title: 'Clear Concepts & Earn XP', desc: 'Read each concept then pass the quiz (8/10 to clear). Earn XP per concept — first concept of the day gives +50 bonus XP.' },
+  { num: '01', color: '#9B6ED4', title: 'Pick a Hunter Path (career roadmap)', desc: 'Open the HUNTER PATH tab and choose a roadmap for the job you want — Java Full Stack, MERN, Python, or Frontend. It lays out the subjects to learn, in the right order.' },
+  { num: '02', color: '#60A5FA', title: 'Enter a Dungeon Gate (subject)', desc: 'Open the DUNGEON GATE tab. Each gate is one subject (HTML, CSS, JavaScript…). Go in and learn its skills one by one, at your own pace.' },
+  { num: '03', color: '#F59E0B', title: 'Clear skills & earn XP', desc: 'Read each skill, then pass its quiz (8 out of 10 to clear). You earn XP for every skill — the first one each day gives a +50 bonus.' },
 ]
 
 const XP_TIPS = [
@@ -33,6 +58,8 @@ function SectionTitle({ children }) {
 }
 
 export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout }) {
+  useBodyLock()
+
   return (
     <>
       <div onClick={onClose} className="dash-overlay-backdrop dash-overlay-backdrop--drawer" />
@@ -48,9 +75,37 @@ export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout 
             <SectionTitle>ABOUT LEARNTOEARN</SectionTitle>
             <div className="dash-hunter-about-card">
               <p className="dash-hunter-about-card__text">
-                LearnToEarn is a Solo Leveling–inspired learning platform where you level up your tech skills like a player. Learn concept by concept, earn XP and badges as proof, and follow structured roadmaps to go from beginner to job-ready.
+                LearnToEarn is a learning platform with a Solo Leveling (anime) theme — so you level up your tech skills like a game character. Don't worry if you don't know the anime: the game words simply stand for normal learning terms, explained right below.
               </p>
-              <div className="dash-hunter-about-card__tags">Skills Arena · Resume · AI · Jobs</div>
+              <div className="dash-hunter-about-card__tags">Learn · Earn XP · Badges · Get Job-Ready</div>
+            </div>
+          </div>
+
+          <div>
+            <SectionTitle>WHAT THE WORDS MEAN</SectionTitle>
+            <div className="dash-hunter-glossary">
+              {GLOSSARY.map(g => (
+                <div
+                  key={g.word}
+                  className="dash-hunter-term"
+                  style={{ '--term-color': g.color, '--term-bg': `${g.color}14`, '--term-border': `${g.color}38` }}
+                >
+                  <div className="dash-hunter-term__head">
+                    <span className="dash-hunter-term__word">{g.word}</span>
+                    <span className="dash-hunter-term__eq">means</span>
+                    <span className="dash-hunter-term__plain">{g.plain}</span>
+                  </div>
+                  <div className="dash-hunter-term__desc">{g.desc}</div>
+                </div>
+              ))}
+            </div>
+            <div className="dash-hunter-words">
+              {QUICK_WORDS.map(w => (
+                <div key={w.k} className="dash-hunter-word">
+                  <span className="dash-hunter-word__k">{w.k}</span>
+                  <span className="dash-hunter-word__v">{w.v}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -148,12 +203,14 @@ export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout 
               <span className="dash-guest-note__highlight">Guest session</span> — create a free account to save your XP and progress permanently.
             </div>
           )}
-          <button onClick={() => { window.location.href = '/' }} className="dash-hunter-exit-btn">
-            ← EXIT ARENA
-          </button>
-          <button onClick={onLogout} className="dash-hunter-logout-btn">
-            <LogOut size={13} /> EXIT SYSTEM
-          </button>
+          <div className="dash-hunter-drawer__actions">
+            <button onClick={() => { window.location.href = '/' }} className="dash-hunter-exit-btn">
+              ← EXIT ARENA
+            </button>
+            <button onClick={onLogout} className="dash-hunter-logout-btn">
+              <LogOut size={13} /> EXIT SYSTEM
+            </button>
+          </div>
         </div>
       </div>
     </>

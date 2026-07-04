@@ -307,7 +307,7 @@ docker stop $(docker ps -q --filter "ancestor=my-spring-app")`,
           `git push`,
           `git log --all -- .env`,
         ],
-        note: '⚠️  Treat any pushed secret as already compromised. Revoke it at the provider dashboard immediately, then clean Git tracking. See Node.js or Django guide Phase 09 for full cleanup steps.',
+        note: '⚠️  Treat any pushed secret as already compromised. Revoke it at the provider dashboard immediately, then clean Git tracking. See the React guide\'s "If you accidentally pushed a secret" phase for full history-cleanup steps (git rm --cached, git-filter-repo).',
       },
     ],
   },
@@ -464,7 +464,7 @@ docker stop $(docker ps -q --filter "ancestor=my-spring-app")`,
 
   {
     phase: '13',
-    title: 'Create Django superuser — not applicable',
+    title: 'Admin access in Spring Boot (no built-in superuser)',
     color: '#F59E0B',
     steps: [
       {

@@ -367,3 +367,42 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.admin-solutions-hint--top {
+  margin-bottom: 1rem;
+}
+
+.admin-toggle-chip.has-content {
+  border-style: solid;
+}
+
+.admin-example-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.875rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-tertiary);
+}
+
+.admin-example-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.admin-example-card__title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.admin-add-example-btn {
+  margin-bottom: 0.5rem;
+}
+
+.admin-form-group--spaced {
+  margin-top: 0.75rem;
+}

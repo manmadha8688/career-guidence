@@ -133,7 +133,7 @@ Index: `userId + refId + takenAt`
 {
   "title": "string",
   "brief": "string",
-  "category": "SUBJECT_PRACTICE|ACADEMIC|ROLE_BASED|REAL_WORLD",
+  "category": "SUBJECT_PRACTICE|ACADEMIC|ROLE_BASED",
   "rank": "D|C|B|A|S",
   "techStack": ["string"],
   "objectives": ["string"],
@@ -150,7 +150,7 @@ Index: `userId + refId + takenAt`
 ### `problems`
 ```json
 {
-  "track": "START_CODING|LOGIC_BUILDING|SKILL_UP|INTERVIEW_PREP|SCENARIO_CODING",
+  "track": "START_CODING|LOGIC_BUILDING|SKILL_UP|CRACK_IT|BUILD_IT|PROVE_IT",
   "title": "string",
   "difficulty": "BEGINNER|INTERMEDIATE|ADVANCED",
   "problemType": "string",

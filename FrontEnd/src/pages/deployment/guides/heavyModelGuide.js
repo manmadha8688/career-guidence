@@ -275,11 +275,11 @@ print("Upload complete.")`,
         isFile: true,
         fileName: 'class_names.txt',
         commands: [
-          `cat
-dog
-rabbit`,
+          `cats
+dogs
+rabbits`,
         ],
-        note: 'One label per line. NO extra spaces or blank lines.',
+        note: 'One label per line, in the SAME order your model was trained on (see the examples below). NO extra spaces or blank lines. These match the ["cats", "dogs", "rabbits"] order shown next.',
       },
       {
         label: 'How to get the correct class order from your training',

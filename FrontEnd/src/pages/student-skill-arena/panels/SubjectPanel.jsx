@@ -134,9 +134,6 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
                       style={{ '--rank-color': rankCol, '--rank-color-40': `${rankCol}40`, '--rank-color-15': rankCol + '15' }}
                     >{c.rank}</span>
                   )}
-                  <span className={`sl-skill-badge ${c.completed ? 'cleared' : 'enter'}`}>
-                    {c.completed ? 'CLEARED' : 'ENTER'}
-                  </span>
                 </div>
               )
             })}

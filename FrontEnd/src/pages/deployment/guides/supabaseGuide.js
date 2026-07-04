@@ -5,7 +5,7 @@ export const SUPABASE_GUIDE = [
     color: '#3ECF8E',
     steps: [
       {
-        label: 'Supabase — PostgreSQL + Auth + Storage, free forever',
+        label: 'Supabase — PostgreSQL + Auth + Storage (free tier, pauses when idle)',
         isText: true,
         text: [
           'Supabase is an open-source Firebase alternative built on PostgreSQL.',

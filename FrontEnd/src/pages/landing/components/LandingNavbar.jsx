@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight } from 'lucide-react'
 import { NAV_LINKS } from '../landingData'
 import { useLanding } from '../context/LandingPageContext'
+import { LandingProfileDropdown } from './LandingProfileMenu'
 
 export default function LandingNavbar() {
   const {
@@ -44,52 +45,53 @@ export default function LandingNavbar() {
               onClick={onNavLink(link)}
             >
               {link.label}
-              {link.live ? (
-                <span className="lp-nav-live-dot" />
-              ) : (
-                <span className="lp-nav-soon-badge">SOON</span>
-              )}
+              {!link.live && <span className="lp-nav-soon-badge">SOON</span>}
             </div>
           ))}
         </div>
 
-        <div className="lp-nav-auth">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="lp-btn-icon"
-            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
-          {user ? (
-            <>
-              <button type="button" onClick={logout} className="lp-btn-ghost lp-btn-ghost--sm lp-btn-ghost--danger lp-signout-btn">
-                Sign Out
-              </button>
+        <div className="lp-navbar__end">
+          <div className="lp-nav-auth">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="lp-btn-icon"
+              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            {user ? (
               <button type="button" onClick={handleEnter} className="lp-btn-primary lp-btn-primary--nav">
                 Enter Arena <ChevronRight size={14} />
               </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login?redirect=/" className="lp-btn-ghost">Sign In</Link>
-              <Link to="/register" className="lp-btn-primary lp-btn-primary--nav">
-                Sign up <ChevronRight size={14} />
-              </Link>
-            </>
-          )}
-        </div>
+            ) : (
+              <>
+                <Link to="/login?redirect=/" className="lp-btn-ghost">Sign In</Link>
+                <Link to="/register" className="lp-btn-primary lp-btn-primary--nav">
+                  Sign up <ChevronRight size={14} />
+                </Link>
+              </>
+            )}
+          </div>
 
-        <button
-          type="button"
-          className="lp-mob-menu-btn"
-          onClick={() => setMobileMenuOpen(o => !o)}
-          aria-expanded={mobileMenuOpen}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {mobileMenuOpen ? <XIcon size={18} /> : <Menu size={18} />}
-        </button>
+          {user && (
+            <LandingProfileDropdown
+              user={user}
+              logout={logout}
+              dismissSignal={mobileMenuOpen}
+            />
+          )}
+
+          <button
+            type="button"
+            className="lp-mob-menu-btn"
+            onClick={() => setMobileMenuOpen(o => !o)}
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {mobileMenuOpen ? <XIcon size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </nav>
 
       {mobileMenuOpen && (
@@ -105,27 +107,16 @@ export default function LandingNavbar() {
                   onClick={() => onMobileNav(link)}
                 >
                   <span>{link.label}</span>
-                  {link.live ? (
-                    <span className="lp-mobile-live-badge">
-                      <span className="lp-nav-live-dot" /> LIVE
-                    </span>
-                  ) : (
-                    <span className="lp-mobile-soon-badge">SOON</span>
-                  )}
+                  {!link.live && <span className="lp-mobile-soon-badge">SOON</span>}
                 </button>
               ))}
             </div>
 
             <div className="lp-mobile-auth">
               {user ? (
-                <>
-                  <button type="button" onClick={() => { handleEnter(); closeMobile() }} className="lp-btn-primary lp-btn-primary--full">
-                    <Swords size={16} /> Enter Arena
-                  </button>
-                  <button type="button" onClick={logout} className="lp-btn-ghost lp-btn-ghost--full lp-btn-ghost--danger">
-                    Sign Out
-                  </button>
-                </>
+                <button type="button" onClick={() => { handleEnter(); closeMobile() }} className="lp-btn-primary lp-btn-primary--full">
+                  <Swords size={16} /> Enter Arena
+                </button>
               ) : (
                 <>
                   <Link to="/register" className="lp-btn-primary lp-btn-primary--full" onClick={closeMobile}>

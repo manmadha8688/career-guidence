@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import EnterArenaButton from '../components/EnterArenaButton'
 import { useTheme } from '../context/ThemeContext'
 import '../styles/pages-animations.css'
 import {
@@ -397,9 +398,7 @@ export default function FresherInstructionsPage() {
           <button type="button" onClick={toggleTheme} className="fi-nav__theme">
             {light ? <Moon size={14} /> : <Sun size={14} />}
           </button>
-          <button type="button" onClick={() => navigate('/skill-arena/dashboard')} className="fi-nav__arena">
-            ⚔ SKILL ARENA
-          </button>
+          <EnterArenaButton />
         </div>
       </nav>
 

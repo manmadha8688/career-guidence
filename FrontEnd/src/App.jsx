@@ -10,6 +10,7 @@ import ErrorBoundary from './components/ErrorBoundary'
 import FeedbackNudge from './components/FeedbackNudge'
 import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
+import AutoHideNav from './components/AutoHideNav'
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
 // Each route loads its chunk only when first visited; subsequent visits use cache
@@ -20,6 +21,10 @@ const LoginForm                  = lazy(() => import('./pages/auth/LoginForm'))
 const RegisterForm               = lazy(() => import('./pages/auth/RegisterForm'))
 const ForgotPasswordForm         = lazy(() => import('./pages/auth/ForgotPasswordForm'))
 const NotFoundPage             = lazy(() => import('./pages/NotFoundPage'))
+const AboutPage                = lazy(() => import('./pages/AboutPage'))
+const ContactPage              = lazy(() => import('./pages/ContactPage'))
+const TermsPage                = lazy(() => import('./pages/TermsPage'))
+const PrivacyPage              = lazy(() => import('./pages/PrivacyPage'))
 
 const MissionsPage             = lazy(() => import('./pages/MissionsPage'))
 const MissionDetailPage        = lazy(() => import('./pages/MissionDetailPage'))
@@ -51,6 +56,10 @@ const NlpDemoPage              = lazy(() => import('./pages/deployment/NlpDemoPa
 const ImageAiPage              = lazy(() => import('./pages/deployment/ImageAiPage'))
 const RagAppPage               = lazy(() => import('./pages/deployment/RagAppPage'))
 const HeavyModelPage           = lazy(() => import('./pages/deployment/HeavyModelPage'))
+const VueDeployPage            = lazy(() => import('./pages/deployment/VueDeployPage'))
+const DiscordBotDeployPage     = lazy(() => import('./pages/deployment/DiscordBotDeployPage'))
+const ScraperDeployPage        = lazy(() => import('./pages/deployment/ScraperDeployPage'))
+const ExpoDeployPage           = lazy(() => import('./pages/deployment/ExpoDeployPage'))
 
 const ProblemSolvingPage       = lazy(() => import('./pages/problem-solving/ProblemSolvingPage'))
 const TrackPage                = lazy(() => import('./pages/problem-solving/TrackPage'))
@@ -98,6 +107,9 @@ const ROUTE_TITLES = {
   '/login': 'Sign In · LearnToEarn',
   '/register': 'Create Account · LearnToEarn',
   '/forgot-password': 'Reset Password · LearnToEarn',
+  '/about': 'About · LearnToEarn',
+  '/terms': 'Terms of Service · LearnToEarn',
+  '/privacy': 'Privacy Policy · LearnToEarn',
   '/missions': 'Missions · LearnToEarn',
   '/walk-ins': 'Walk-In Drives · LearnToEarn',
   '/fresher-instructions': 'Fresher Guide · LearnToEarn',
@@ -162,6 +174,7 @@ function App() {
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         <FeedbackNudge />
         <ScrollToTop />
+        <AutoHideNav />
         <GlobalReportButton />
         <Suspense fallback={<PageTransitionLoader />}>
           <Routes>
@@ -177,6 +190,10 @@ function App() {
                 <Route path="/forgot-password"   element={<ForgotPasswordForm />} />
               </Route>
             </Route>
+            <Route path="/about"   element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/terms"   element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/missions" element={<MissionsPage />} />
             <Route path="/walk-ins" element={<JobsPage />} />
             <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />
@@ -207,13 +224,18 @@ function App() {
               <Route path="/deployment/image-ai"         element={<ImageAiPage />} />
               <Route path="/deployment/rag-app"             element={<RagAppPage />} />
               <Route path="/deployment/heavy-model-deploy" element={<HeavyModelPage />} />
+              <Route path="/deployment/vue"                element={<VueDeployPage />} />
+              <Route path="/deployment/discord-bot"        element={<DiscordBotDeployPage />} />
+              <Route path="/deployment/scraper-automation" element={<ScraperDeployPage />} />
+              <Route path="/deployment/expo-mobile"        element={<ExpoDeployPage />} />
             </Route>
             <Route path="/problem-solving" element={<ProblemSolvingPage />} />
             <Route path="/problem-solving/start-coding"    element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
             <Route path="/problem-solving/logic-building"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
             <Route path="/problem-solving/skill-up"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/interview-prep"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/scenario-coding" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+            <Route path="/problem-solving/crack-it"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+            <Route path="/problem-solving/build-it" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
+            <Route path="/problem-solving/prove-it"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
             <Route path="/problem-solving/:id"             element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
 
             {/* Missions detail — requires login */}

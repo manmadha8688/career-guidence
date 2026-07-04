@@ -46,11 +46,13 @@ Different from approach — approach is thinking, explanation is code.
 | START_CODING | Absolute beginners |
 | LOGIC_BUILDING | Building logic skills |
 | SKILL_UP | Intermediate LeetCode-style |
-| INTERVIEW_PREP | Job-ready classic problems |
-| SCENARIO_CODING | Story-based placement problems |
+| CRACK_IT | Story-based placement problems (multi-condition logic) |
+| BUILD_IT | Optimization under constraints (brute → optimal) |
+| PROVE_IT | Real-world mini-systems (S-rank) |
 
-## 8. SCENARIO_CODING Format
-- Story context (bus company, hospital, factory...)
+## 8. CRACK_IT / BUILD_IT Format
+- Story context (shopping cart, electricity bill, payroll...)
 - Clear rules in bullet points + example walkthrough
 - Clean numeric/string I/O — NOT command parsing like ADD/REMOVE/STATUS
-- `isInterview: true`, `companiesThatAsk` filled
+- NO company names or "interview" labels anywhere (schema dropped `isInterview`/`companiesThatAsk`)
+- Provide brute + optimal solution variants whenever a genuine performance difference exists
