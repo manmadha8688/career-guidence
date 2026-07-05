@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { Sun, Moon } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useTheme } from '../../context/ThemeContext'
+import BrandNavButton from '../../components/BrandNavButton'
 import EnterArenaButton from '../../components/EnterArenaButton'
 import GymLoginSquad from './components/GymLoginSquad'
 import GymTrackPath from './components/GymTrackPath'
@@ -40,12 +41,7 @@ export default function ProblemSolvingPage() {
       </div>
 
       <div className="ps-nav">
-        <button type="button" onClick={() => navigate(-1)} className="ps-nav__back">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          LearnToEarn
-        </button>
+        <BrandNavButton onClick={() => navigate('/')} />
         <span className="ps-nav-center ps-nav-center--landing">CODE GYM</span>
         <div className="ps-nav__actions">
           <button type="button" onClick={toggleTheme} className="ps-nav__theme">

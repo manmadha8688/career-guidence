@@ -1,6 +1,6 @@
 # Agent: Performance Auditor
 
-You audit performance for both the React frontend and Spring Boot backend of LearnToEarn.
+You audit performance for both the React frontend and Spring Boot backend of LearnForEarn.
 
 ## Frontend Performance Targets
 

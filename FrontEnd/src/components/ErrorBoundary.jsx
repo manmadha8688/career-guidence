@@ -20,7 +20,7 @@ export default class ErrorBoundary extends Component {
           <span className="error-boundary__icon">⚠️</span>
           <h2 className="error-boundary__title">Something went wrong</h2>
           <p className="error-boundary__desc">
-            An unexpected error occurred. Please refresh the page or go back to the home page.
+            An unexpected error occurred. Please refresh the page or go back to learnforearn.
           </p>
           <div className="error-boundary__actions">
             <button type="button" className="error-boundary__btn-primary" onClick={() => window.location.reload()}>
@@ -31,7 +31,7 @@ export default class ErrorBoundary extends Component {
               className="error-boundary__btn-ghost"
               onClick={() => { this.setState({ hasError: false }); window.location.href = '/' }}
             >
-              Go home
+              learnforearn
             </button>
           </div>
         </div>

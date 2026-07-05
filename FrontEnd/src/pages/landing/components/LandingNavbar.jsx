@@ -34,7 +34,7 @@ export default function LandingNavbar() {
           <div className="lp-navbar__logo">
             <Swords size={16} color="#fff" />
           </div>
-          <span className="lp-grad-text lp-navbar__title">LearnToEarn</span>
+          <span className="lp-grad-text lp-navbar__title">learnforearn</span>
         </div>
 
         <div className="lp-nav-links">

@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Sun, Moon, Search, X, SlidersHorizontal, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
+import BrandNavButton from '../components/BrandNavButton'
 import EnterArenaButton from '../components/EnterArenaButton'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
@@ -130,12 +131,7 @@ export default function MissionsPage() {
     <div className="missions-page">
 
       <div className="missions-nav">
-        <button type="button" onClick={() => navigate('/')} className="missions-nav__brand">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          LearnToEarn
-        </button>
+        <BrandNavButton onClick={() => navigate('/')} />
 
         <div className="missions-nav__actions">
           <button

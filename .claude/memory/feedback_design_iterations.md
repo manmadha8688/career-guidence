@@ -63,6 +63,20 @@ These are patterns to follow and mistakes never to repeat. Full rules: `.claude/
 - **Dossier cards** (`.mb-card`): rotated rank stamp (straightens on hover), rank label + hours, 3-line-clamp brief, tech chips, dashed footer with "◇ N objectives" + "ACCEPT MISSION →" slide-in on hover, shine sweep. Framer entrance stagger + whileHover lift. `@media (hover:none)`: CTA always visible, shine off.
 - Files: MissionsPage.jsx (rewritten, logic preserved), styles/pages/shared/missions-board.css (new). Old MissionSelect/MissionCard markup removed; old board styles in missions.css partially dead — prune later.
 
+## 404 Page — "Time Rift" cinematic sequence (July 2026)
+
+- User asked twice: first version (static scene) → "more animated like video editing but coding, same concept, more expectation." Lesson: for special pages (404), the user WANTS a choreographed title sequence — the no-intro-overlay rule applies to content pages, not moments like this.
+- **Concept**: URL doesn't exist in this timeline → user ejected from 2025, falls back through history. Always-dark cinematic void (loader exception).
+- **5-beat director sequence** (stage state machine + chained setTimeouts in one effect; click-to-skip; reduced-motion lazy-inits straight to 'settled'):
+  1. `signal` (1.1s) — CRT "SIGNAL LOST_" typewriter (steps() width animation), scanline static, red blink
+  2. `rift` (0.8s) — hyperspace warp: 20 streaks at `--a` rotations, each ::after scaleX 0→1 gradient line, staggered `--d`
+  3. `fall` (~0.43s × 6) — era fly-bys: AnimatePresence keyed card, framer keyframes scale [0.12,1,3.1] opacity [0,1,0] — 2025📱→1995💾→1870📮→900🕊️→3000BC𓂀→🗿
+  4. `impact` (0.65s) — 404 slams from scale 4.5 + blur with overshoot ease [0.22,1.2,0.36,1], expanding shockwave ring, container camera-shake keyframes
+  5. `settled` — parallax tilt scene (pointermove → --rx/--ry, translateZ depth layers), 3D-extruded 404 (8 stacked text-shadows + levitate + RGB-split glitch), rotating ROASTS (3.8s, AnimatePresence mode="wait"), era timeline strip with tumbling 🧑‍🚀 + red "YOU ARE HERE" ping on 🗿, CTAs "⌂ RETURN TO 2025" / "← last known location"
+- Sarcasm tone the user wanted: roast Gen-Z for getting lost WITH GPS/AI ("The ancestors navigated oceans by starlight. You mistyped a URL.")
+- Lint patterns: reduced-motion check in useState lazy init (not sync setState in effect); copy `timers.current` to a local before using in effect cleanup.
+- Files: NotFoundPage.jsx + not-found.css (both fully rewritten).
+
 ## Process reminders
 
 - Iterate on copy + density quickly; the user gives tight, specific feedback — apply it literally, don't over-interpret.

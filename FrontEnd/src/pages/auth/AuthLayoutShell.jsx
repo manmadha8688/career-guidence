@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, Moon, Sun, Swords } from 'lucide-react'
+import BrandNavButton from '../../components/BrandNavButton'
+import { Moon, Sun, Swords } from 'lucide-react'
 import { useTheme } from '../../context/ThemeContext'
 import LoginAnimation from './components/LoginAnimation'
 import { AuthFormProvider } from './context/AuthFormContext'
@@ -41,9 +42,7 @@ export default function AuthLayoutShell() {
         <div className="auth-bg-noise"    aria-hidden="true" />
 
         <div className="auth-top-actions">
-          <button type="button" className="auth-back-btn" onClick={() => navigate('/')}>
-            <ChevronLeft size={15} /> Home
-          </button>
+          <BrandNavButton onClick={() => navigate('/')} />
           <button
             type="button"
             className="auth-theme-btn"
@@ -118,7 +117,7 @@ function AuthFormCard({ navigate, isLogin }) {
             <div className="auth-brand-icon">
               <Swords size={22} color="#fff" />
             </div>
-            <div className="auth-brand-title">LearnToEarn</div>
+            <div className="auth-brand-title">learnforearn</div>
           </motion.button>
 
           <p className="auth-brand-tagline">{tagline}</p>

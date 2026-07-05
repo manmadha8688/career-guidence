@@ -66,7 +66,7 @@ cat FrontEnd/.env.example
 
 **Must be set in Vercel dashboard (NOT in code):**
 ```
-VITE_API_URL = https://learntoearn-wnpp.onrender.com/api
+VITE_API_URL = https://learnforearn-wnpp.onrender.com/api
 ```
 
 **Verify no secrets in VITE_ vars:**
@@ -165,7 +165,7 @@ cd C:\manmadha\Student-project\Student-BackEnd
 ```bash
 # If Docker is available:
 cd Student-BackEnd
-docker build -t learntoearn-backend . 2>&1 | tail -10
+docker build -t learnforearn-backend . 2>&1 | tail -10
 # → "Successfully built" or "Successfully tagged"
 
 # Verify Dockerfile exists
@@ -210,7 +210,7 @@ grep -rn "cors.allowed\|CORS_ALLOWED" \
 |----------|-------|-------|
 | `MONGODB_URI` | `mongodb+srv://...` | Full Atlas connection string |
 | `JWT_SECRET` | `<256-bit random>` | Generate: `openssl rand -hex 32` |
-| `CORS_ALLOWED_ORIGINS` | `https://learn-to-earn-omega.vercel.app` | No trailing slash |
+| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.com` | No trailing slash |
 | `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis |
 | `SPRING_REDIS_URL` | `redis://red-xxx:6379` | Internal Render Redis |
 
@@ -255,12 +255,12 @@ config.setAllowedOrigins(List.of(System.getenv("CORS_ALLOWED_ORIGINS")));
 
 **Test after deploy:**
 ```bash
-curl -H "Origin: https://learn-to-earn-omega.vercel.app" \
+curl -H "Origin: https://learnforearn.com" \
   -H "Access-Control-Request-Method: GET" \
   -X OPTIONS \
-  https://learntoearn-wnpp.onrender.com/api/subjects -v 2>&1 | \
+  https://learnforearn-wnpp.onrender.com/api/subjects -v 2>&1 | \
   grep "Access-Control"
-# → Should show: Access-Control-Allow-Origin: https://learn-to-earn-omega.vercel.app
+# → Should show: Access-Control-Allow-Origin: https://learnforearn.com
 ```
 
 ---
@@ -347,10 +347,10 @@ grep -rn "profiles\|SPRING_PROFILES" \
 ```bash
 # Frontend points to correct backend
 cat FrontEnd/.env.example | grep VITE_API_URL
-# → https://learntoearn-wnpp.onrender.com/api
+# → https://learnforearn-wnpp.onrender.com/api
 
 # Backend CORS allows correct frontend
-grep -rn "CORS_ALLOWED_ORIGINS\|learn-to-earn-omega" \
+grep -rn "CORS_ALLOWED_ORIGINS\|learnforearn-omega" \
   Student-BackEnd/src/main/resources/ --include="*.yml" --include="*.properties"
 ```
 
@@ -361,8 +361,8 @@ grep -rn "CORS_ALLOWED_ORIGINS\|learn-to-earn-omega" \
 After both are deployed, run this sequence:
 
 ```bash
-FRONTEND=https://learn-to-earn-omega.vercel.app
-BACKEND=https://learntoearn-wnpp.onrender.com
+FRONTEND=https://learnforearn.com
+BACKEND=https://learnforearn-wnpp.onrender.com
 
 # 1. Backend alive
 curl -s $BACKEND/actuator/health | python -m json.tool

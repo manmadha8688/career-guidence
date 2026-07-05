@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <InfoPageLayout label="[ CONTACT ]" title="Contact & Feedback">
       <p className="info-page__intro">
-        LearnToEarn is built for students, by someone who cares whether you actually get hired.
+        learnforearn is built for students, by someone who cares whether you actually get hired.
         Every report and piece of feedback is read — your input directly shapes what gets fixed
         and what gets built next.
       </p>

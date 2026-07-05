@@ -4,6 +4,8 @@ import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader
 import ProgressBar from '../../../components/ProgressBar'
 import { getSubject, getQuizStatus } from '../../../api/api'
 import { Search, Trophy, Lock, CheckCircle, Clock } from 'lucide-react'
+import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
+import { isMongoId } from '../../../utils/mongoId'
 
 const RANK_COLORS = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
 
@@ -11,15 +13,30 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
   const [subject, setSubject]       = useState(null)
   const [quizStatus, setQuizStatus] = useState(null)
   const [loading, setLoading]       = useState(true)
+  const [notFound, setNotFound]     = useState(false)
   const [search, setSearch]         = useState('')
   const isGrid = mode === 'grid'
 
   useEffect(() => {
-    setLoading(true); setSubject(null); setSearch('')
+    setLoading(true)
+    setNotFound(false)
+    setSubject(null)
+    setSearch('')
+
+    if (!isMongoId(subjectId)) {
+      setNotFound(true)
+      setTimeout(() => setLoading(false), TEST_DELAY_MS)
+      return
+    }
+
     Promise.all([
-      getSubject(subjectId),
+      getSubject(subjectId).catch(() => null),
       getQuizStatus('subject', subjectId).catch(() => null),
     ]).then(([s, qs]) => {
+      if (!s?.data) {
+        setNotFound(true)
+        return
+      }
       setSubject(s.data)
       if (qs) setQuizStatus(qs.data)
     }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
@@ -44,6 +61,8 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
 
       {loading ? (
         <div className="flex-center dash-flex-center-fill"><DungeonPortalLoader panel height={120} /></div>
+      ) : notFound ? (
+        <SectionNotFoundPanel variant="arena-gate" onBack={onClose} fill />
       ) : !subject ? null : (
         <div className={bodyClass}>
           <div className="sl-panel-subject-meta">

@@ -31,7 +31,7 @@ export default function LandingFeedbackSection() {
       return
     }
     if (isUseful === null) {
-      toast.error('Tell us if LearnToEarn is useful for you — yes or not really.')
+      toast.error('Tell us if learnforearn is useful for you — yes or not really.')
       return
     }
     if (!experience.trim()) {
@@ -83,7 +83,7 @@ export default function LandingFeedbackSection() {
           </span>
           <h2>Tell us what you really think</h2>
           <p>
-            LearnToEarn is still growing. Good or bad — your review helps us understand what students need most.
+            learnforearn is still growing. Good or bad — your review helps us understand what students need most.
           </p>
         </header>
 
@@ -116,7 +116,7 @@ export default function LandingFeedbackSection() {
 
           <div className="lp-feedback-block">
             <label className="lp-feedback-label">
-              Is LearnToEarn useful for students like you? <span className="lp-feedback-req">*</span>
+              Is learnforearn useful for students like you? <span className="lp-feedback-req">*</span>
             </label>
             <div className="lp-feedback-useful">
               <button

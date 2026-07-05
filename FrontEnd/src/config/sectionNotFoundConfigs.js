@@ -1,0 +1,177 @@
+/** Themed cinematic not-found configs — one per major section. */
+
+export const SECTION_NOT_FOUND = {
+  'ai-lab': {
+    themeClass: 'nf-void--ai',
+    signalText: 'NEURAL LINK LOST_',
+    signalMeta: 'SCANNING TOOL REGISTRY…',
+    eyebrow: '[ ERROR · TOOL NOT IN REGISTRY ]',
+    code: 'NULL',
+    title: 'This AI tool does not exist in the lab.',
+    quips: [
+      'Even ChatGPT would admit it never heard of this one.',
+      'You typed a URL. The model typed back: ¯\\_(ツ)_/¯',
+      '404 — tool not found. Have you tried turning the LLM off and on again?',
+      'This endpoint returned nothing. Classic hallucination energy.',
+      'The vector database searched everywhere. Embeddings came back empty.',
+    ],
+    stages: [
+      { year: 'ChatGPT', icon: '🤖', label: 'online' },
+      { year: 'Claude',  icon: '🧠', label: 'online' },
+      { year: 'Gemini',  icon: '✨', label: 'online' },
+      { year: 'Copilot', icon: '💻', label: 'online' },
+      { year: 'RAG',     icon: '📚', label: 'indexed' },
+      { year: '???',     icon: '🔍', label: 'YOU ARE HERE', current: true },
+    ],
+    traveler: '🤖',
+    primaryBtn: { label: '⚡ RETURN TO AI LAB', path: '/ai-lab' },
+    secondaryBtn: { label: '← last known tool', back: true },
+  },
+
+  missions: {
+    themeClass: 'nf-void--missions',
+    signalText: 'MISSION LOST_',
+    signalMeta: 'SCANNING MISSION BOARD…',
+    eyebrow: '[ ERROR · MISSION FILE MISSING ]',
+    code: 'LOST',
+    title: 'This mission was never posted on the board.',
+    quips: [
+      'The guild has no record of this quest. Check your briefing scroll.',
+      'You accepted a mission that doesn\'t exist. Bold strategy.',
+      'Even the S-rank hunters couldn\'t find this one.',
+      'Wrong mission ID — the board shows nothing here.',
+      'This project brief got deleted before you could build it.',
+    ],
+    stages: [
+      { year: 'Rank E', icon: '🌱', label: 'beginner' },
+      { year: 'Rank C', icon: '⚔', label: 'building' },
+      { year: 'Rank B', icon: '🛡', label: 'deployed' },
+      { year: 'Rank A', icon: '🔥', label: 'advanced' },
+      { year: 'Rank S', icon: '👑', label: 'elite' },
+      { year: '???', icon: '📋', label: 'YOU ARE HERE', current: true },
+    ],
+    traveler: '⚔',
+    primaryBtn: { label: '⚔ RETURN TO MISSIONS', path: '/missions' },
+    secondaryBtn: { label: '← last briefing', back: true },
+  },
+
+  'code-gym': {
+    themeClass: 'nf-void--gym',
+    signalText: 'RUNTIME ERROR_',
+    signalMeta: 'COMPILING PROBLEM ID…',
+    eyebrow: '[ ERROR · PROBLEM NOT IN GYM ]',
+    code: 'ERR',
+    title: 'This problem isn\'t in the Code GYM.',
+    quips: [
+      'Segmentation fault — but for your URL.',
+      'The compiler tried. The compiler failed. The compiler is not sorry.',
+      'No test cases. No solution. No mercy.',
+      'You opened a problem that was never added to the gym.',
+      'Stack overflow — of confusion, not recursion.',
+    ],
+    stages: [
+      { year: 'Python', icon: '🐍', label: 'track' },
+      { year: 'Java',   icon: '☕', label: 'track' },
+      { year: 'C',      icon: '⚙', label: 'track' },
+      { year: 'C++',    icon: '⚡', label: 'track' },
+      { year: 'Brute',  icon: '🐢', label: 'approach' },
+      { year: '???',    icon: '💥', label: 'YOU ARE HERE', current: true },
+    ],
+    traveler: '💻',
+    primaryBtn: { label: '💻 RETURN TO CODE GYM', path: '/problem-solving' },
+    secondaryBtn: { label: '← last rep', back: true },
+  },
+
+  'hunter-path': {
+    themeClass: 'nf-void--arena',
+    signalText: 'GATE NOT FOUND_',
+    signalMeta: 'TRACING HUNTER PATH…',
+    eyebrow: '[ ERROR · PATH NOT IN REGISTRY ]',
+    code: '404',
+    title: 'This hunter path doesn\'t exist in the system.',
+    quips: [
+      'The System has no record of this gate. Did you mistype the coordinates?',
+      'Even an E-rank hunter knows to check the map first.',
+      'This dungeon gate was never unlocked — because it was never built.',
+      'Wrong path ID. The Skill Arena shows an empty corridor.',
+      'You wandered into a zone the System hasn\'t seeded yet.',
+    ],
+    stages: [
+      { year: 'Arena',  icon: '🏟', label: 'dashboard' },
+      { year: 'Gates',  icon: '🚪', label: 'subjects' },
+      { year: 'Skills', icon: '📖', label: 'concepts' },
+      { year: 'Trial',  icon: '⚔', label: 'quiz' },
+      { year: 'Rank',   icon: '🏅', label: 'XP earned' },
+      { year: '???',    icon: '🗿', label: 'YOU ARE HERE', current: true },
+    ],
+    traveler: '🧑‍🚀',
+    primaryBtn: { label: '🏟 RETURN TO SKILL ARENA', path: '/skill-arena/dashboard?view=paths' },
+    secondaryBtn: { label: '← last gate', back: true },
+  },
+}
+
+/** Compact cinematic not-found — embedded in dashboard panels / overlays. */
+export const PANEL_NOT_FOUND = {
+  'arena-skill': {
+    themeClass: 'snp--arena',
+    scanText: 'SCANNING SKILL REGISTRY…',
+    eyebrow: '[ SKILL NOT IN SYSTEM ]',
+    code: '???',
+    title: 'This skill does not exist.',
+    quips: [
+      'The System has no record of this skill ID.',
+      'Wrong coordinates — this gate has no such skill.',
+      'Even the dungeon map shows nothing here.',
+      'You opened a concept that was never seeded.',
+    ],
+    stages: [
+      { icon: '🚪', label: 'gate' },
+      { icon: '📖', label: 'skill' },
+      { icon: '⚔', label: 'trial' },
+      { icon: '🗿', label: 'HERE', current: true },
+    ],
+    backLabel: '← BACK TO GATES',
+  },
+
+  'arena-gate': {
+    themeClass: 'snp--arena',
+    scanText: 'LOCATING DUNGEON GATE…',
+    eyebrow: '[ GATE NOT IN REGISTRY ]',
+    code: '404',
+    title: 'This dungeon gate was never built.',
+    quips: [
+      'The System cannot find this subject.',
+      'Wrong gate ID — scout mode shows an empty corridor.',
+      'This gate was deleted or never existed.',
+      'Check the URL — the hunter path may be wrong too.',
+    ],
+    stages: [
+      { icon: '🏟', label: 'arena' },
+      { icon: '🚪', label: 'gate' },
+      { icon: '📖', label: 'skills' },
+      { icon: '🗿', label: 'HERE', current: true },
+    ],
+    backLabel: '✕ CLOSE PANEL',
+  },
+
+  'arena-path': {
+    themeClass: 'snp--arena',
+    scanText: 'TRACING HUNTER PATH…',
+    eyebrow: '[ PATH NOT IN REGISTRY ]',
+    code: 'LOST',
+    title: 'This hunter path does not exist.',
+    quips: [
+      'No career roadmap matches this ID.',
+      'The path registry returned empty.',
+      'You selected a route the System never mapped.',
+      'Wrong path — return to the arena and pick again.',
+    ],
+    stages: [
+      { icon: '🗺', label: 'path' },
+      { icon: '🚪', label: 'gates' },
+      { icon: '🏅', label: 'rank' },
+      { icon: '🗿', label: 'HERE', current: true },
+    ],
+    backLabel: '✕ CLOSE PANEL',
+  },
+}

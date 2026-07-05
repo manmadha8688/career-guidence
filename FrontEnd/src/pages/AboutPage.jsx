@@ -14,9 +14,9 @@ export default function AboutPage() {
   const navigate = useNavigate()
 
   return (
-    <InfoPageLayout label="[ ABOUT ]" title="About LearnToEarn">
+    <InfoPageLayout label="[ ABOUT ]" title="About learnforearn">
       <p className="info-page__intro">
-        LearnToEarn is a free learning platform built for students — especially freshers and
+        learnforearn is a free learning platform built for students — especially freshers and
         final-year students who want to go from <strong>zero knowledge to job-ready</strong>.
         Instead of endless video playlists, everything here works on a simple leveling system:
         you start as a beginner, clear one skill at a time, prove it in a test, and level up
@@ -65,7 +65,7 @@ export default function AboutPage() {
           motivation drops, and there's no way to show progress to a recruiter.
         </p>
         <p>
-          LearnToEarn fixes that with structure: a clear path from beginner to expert, small wins
+          learnforearn fixes that with structure: a clear path from beginner to expert, small wins
           every day, tests that verify real understanding, and projects that become portfolio proof.
           Learn the skills. Earn the job.
         </p>

@@ -1,6 +1,6 @@
 # Deployment Skill
 
-Deploy the LearnToEarn application. Frontend → Vercel. Backend → Render (Docker).
+Deploy the LearnForEarn application. Frontend → Vercel. Backend → Render (Docker).
 
 ## Pre-Deployment Checklist
 
@@ -40,11 +40,11 @@ npm run build          # Creates dist/
 
 ### Environment Variables (Vercel dashboard)
 ```
-VITE_API_URL = https://learntoearn-wnpp.onrender.com/api
+VITE_API_URL = https://learnforearn-wnpp.onrender.com/api
 ```
 
 ### Verify deployment:
-1. Open https://learn-to-earn-omega.vercel.app
+1. Open https://learnforearn.com
 2. Check: page loads without blank screen
 3. Check: /login route works (no 404)
 4. Check: Network → /api/auth/me returns 401 (backend connected)
@@ -66,10 +66,10 @@ See `deploy-config.md` for full list.
 
 ### Verify deployment:
 ```bash
-curl https://learntoearn-wnpp.onrender.com/api/auth/me
+curl https://learnforearn-wnpp.onrender.com/api/auth/me
 # → 401 (backend alive, auth required)
 
-curl https://learntoearn-wnpp.onrender.com/actuator/health
+curl https://learnforearn-wnpp.onrender.com/actuator/health
 # → {"status":"UP"}
 ```
 
@@ -83,7 +83,7 @@ This is expected — users see the splash screen during wake.
 ## Full Stack Smoke Test After Deploy
 
 ```
-1. Open https://learn-to-earn-omega.vercel.app
+1. Open https://learnforearn.com
 2. Click "Try as Guest" → should create guest session
 3. Navigate to /missions → should load mission list
 4. Login with admin@demo.com / ***REMOVED***

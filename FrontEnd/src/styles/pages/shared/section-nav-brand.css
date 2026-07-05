@@ -1,0 +1,63 @@
+/* Shared learnforearn nav brand — same look as Missions; color per section via CSS vars */
+
+.section-nav-brand {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: clamp(0.72rem, 2.5vw, 0.9rem);
+  letter-spacing: 0.12em;
+  color: var(--section-brand-color, #FF7F2A);
+  padding: 0;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.section-nav-brand:hover {
+  opacity: 0.82;
+}
+
+[data-theme="light"] .section-nav-brand {
+  color: var(--section-brand-color-light, #7C3500);
+}
+
+/* Section accent colors */
+.missions-page {
+  --section-brand-color: #FF7F2A;
+  --section-brand-color-light: #7C3500;
+}
+
+.ps-page {
+  --section-brand-color: var(--ps-accent, #0EA5E9);
+  --section-brand-color-light: #0284C7;
+}
+
+.ailab-page {
+  --section-brand-color: var(--ailab-cyan, #00D9FF);
+  --section-brand-color-light: #0284C7;
+}
+
+.deploy-hub-page,
+.deploy-page {
+  --section-brand-color: var(--deploy-brand-color, #9B6ED4);
+  --section-brand-color-light: #7C5DBB;
+}
+
+.fi-page {
+  --section-brand-color: #9B6ED4;
+  --section-brand-color-light: #7C5DBB;
+}
+
+.info-page {
+  --section-brand-color: #B48AE8;
+  --section-brand-color-light: #7C3AED;
+}
+
+.auth-page {
+  --section-brand-color: #B48AE8;
+  --section-brand-color-light: #7C3AED;
+}

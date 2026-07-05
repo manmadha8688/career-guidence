@@ -4,7 +4,7 @@ Perform a deep React correctness audit on this project.
 
 ## Scope
 
-This skill audits the LearnToEarn frontend for React-specific bugs.
+This skill audits the LearnForEarn frontend for React-specific bugs.
 Target: `FrontEnd/src/` — all .jsx and .js files.
 
 ## Audit Checklist

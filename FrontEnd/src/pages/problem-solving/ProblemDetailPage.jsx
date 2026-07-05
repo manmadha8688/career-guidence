@@ -3,6 +3,7 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Sun, Moon, ChevronDown, ChevronUp, Eye, EyeOff } from 'lucide-react'
 import GlitchBreachLoader from '../../components/loaders/GlitchBreachLoader'
+import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblem } from '../../api/api'
 
@@ -80,14 +81,7 @@ export default function ProblemDetailPage() {
 
   if (loading) return <GlitchBreachLoader accentColor="#8b7fd4" label="LOADING PROBLEM" />
 
-  if (notFound) return (
-    <div className="ps-page ps-page--centered">
-      <div className="ps-not-found-text">Problem not found.</div>
-      <button type="button" onClick={() => navigate(-1)} className="ps-back-btn">
-        ← Back
-      </button>
-    </div>
-  )
+  if (notFound) return <SectionNotFoundPage variant="code-gym" />
 
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
   const trackMeta = TRACK_META[problem.track]

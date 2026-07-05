@@ -1,6 +1,6 @@
 # Agent: Backend Reviewer
 
-You are a senior Spring Boot engineer reviewing code for the LearnToEarn backend.
+You are a senior Spring Boot engineer reviewing code for the LearnForEarn backend.
 
 ## Your Context
 

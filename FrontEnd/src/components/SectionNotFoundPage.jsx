@@ -1,47 +1,32 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SECTION_NOT_FOUND } from '../config/sectionNotFoundConfigs'
 
 const EASE = [0.16, 1, 0.3, 1]
-
-// Sarcastic rotator — roasting a Gen-Z traveler who got lost WITH technology
-const ROASTS = [
-  'You had GPS, Google Maps, and an AI in your pocket… and still ended up here?',
-  'Gen-Z legend — lost on the internet, WITH the internet.',
-  'The ancestors navigated oceans by starlight. You mistyped a URL.',
-  'This page doesn’t exist in any timeline. We checked all of them.',
-  'Even the pigeons delivered to the right address.',
-]
-
-// The eras you fall through — newest to oldest
-const ERAS = [
-  { year: 'Present',    icon: '📱', label: 'you were here' },
-  { year: '1995',    icon: '💾', label: 'dial-up era' },
-  { year: '1870',    icon: '📮', label: 'telegram era' },
-  { year: '900 AD',  icon: '🕊️', label: 'pigeon mail' },
-  { year: '3000 BC', icon: '𓂀',  label: 'hieroglyphs' },
-  { year: '???',     icon: '🗿', label: 'YOU ARE HERE', current: true },
-]
-
-// Cinematic sequence beats (ms) — signal → rift → fall (per-era) → impact → settled
 const T_SIGNAL = 1100
 const T_RIFT   = 800
 const T_ERA    = 430
 const T_IMPACT = 650
 
-export default function NotFoundPage() {
+/**
+ * Cinematic section-themed not-found — same engine as global 404,
+ * but content and colors match AI Lab, Missions, Code GYM, etc.
+ */
+export default function SectionNotFoundPage({ variant }) {
+  const cfg = SECTION_NOT_FOUND[variant]
   const navigate = useNavigate()
   const sceneRef = useRef(null)
   const timers = useRef([])
 
-  // Reduced-motion users skip the title sequence entirely (lazy init, no effect churn)
   const [stage, setStage] = useState(() =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'settled' : 'signal'
-  ) // signal | rift | fall | impact | settled
+  )
   const [flyIdx, setFlyIdx] = useState(-1)
-  const [roastIdx, setRoastIdx] = useState(0)
+  const [quipIdx, setQuipIdx] = useState(0)
 
-  // ── Director: run the title sequence once ──
+  const stages = cfg.stages
+
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
@@ -49,11 +34,11 @@ export default function NotFoundPage() {
     const later = (fn, ms) => { pending.push(setTimeout(fn, ms)) }
     later(() => setStage('rift'), T_SIGNAL)
     later(() => setStage('fall'), T_SIGNAL + T_RIFT)
-    ERAS.forEach((_, i) => later(() => setFlyIdx(i), T_SIGNAL + T_RIFT + i * T_ERA))
-    later(() => setStage('impact'), T_SIGNAL + T_RIFT + ERAS.length * T_ERA)
-    later(() => setStage('settled'), T_SIGNAL + T_RIFT + ERAS.length * T_ERA + T_IMPACT)
+    stages.forEach((_, i) => later(() => setFlyIdx(i), T_SIGNAL + T_RIFT + i * T_ERA))
+    later(() => setStage('impact'), T_SIGNAL + T_RIFT + stages.length * T_ERA)
+    later(() => setStage('settled'), T_SIGNAL + T_RIFT + stages.length * T_ERA + T_IMPACT)
     return () => pending.forEach(clearTimeout)
-  }, [])
+  }, [stages])
 
   const skipIntro = () => {
     if (stage === 'settled') return
@@ -61,14 +46,12 @@ export default function NotFoundPage() {
     setStage('settled')
   }
 
-  // Rotate the sarcasm once we've landed
   useEffect(() => {
     if (stage !== 'settled') return
-    const t = setInterval(() => setRoastIdx(i => (i + 1) % ROASTS.length), 3800)
+    const t = setInterval(() => setQuipIdx(i => (i + 1) % cfg.quips.length), 3800)
     return () => clearInterval(t)
-  }, [stage])
+  }, [stage, cfg.quips.length])
 
-  // Pointer parallax — the settled rift tilts toward the cursor
   const onPointerMove = (e) => {
     const el = sceneRef.current
     if (!el || stage !== 'settled') return
@@ -78,25 +61,29 @@ export default function NotFoundPage() {
     el.style.setProperty('--rx', `${(-y * 10).toFixed(2)}deg`)
     el.style.setProperty('--ry', `${(x * 12).toFixed(2)}deg`)
   }
+
   const onPointerLeave = () => {
-    const el = sceneRef.current
-    if (!el) return
-    el.style.setProperty('--rx', '0deg')
-    el.style.setProperty('--ry', '0deg')
+    sceneRef.current?.style.setProperty('--rx', '0deg')
+    sceneRef.current?.style.setProperty('--ry', '0deg')
   }
 
   const inIntro = stage !== 'settled'
   const warping = stage === 'rift' || stage === 'fall'
 
+  const goPrimary = () => navigate(cfg.primaryBtn.path)
+  const goSecondary = () => {
+    if (cfg.secondaryBtn.back) navigate(-1)
+    else if (cfg.secondaryBtn.path) navigate(cfg.secondaryBtn.path)
+  }
+
   return (
     <div
-      className={`nf-void${stage === 'impact' ? ' nf-void--shake' : ''}`}
+      className={`nf-void ${cfg.themeClass}${stage === 'impact' ? ' nf-void--shake' : ''}`}
       ref={sceneRef}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
       onClick={inIntro ? skipIntro : undefined}
     >
-      {/* ── Ambient layers (always behind everything) ── */}
       <div className="nf-stars" aria-hidden="true" />
       <div className="nf-stars nf-stars--far" aria-hidden="true" />
       {stage === 'settled' && <div className="nf-vortex" aria-hidden="true" />}
@@ -108,18 +95,16 @@ export default function NotFoundPage() {
         </div>
       )}
 
-      {/* ── BEAT 1 · SIGNAL LOST ── */}
       <AnimatePresence>
         {stage === 'signal' && (
           <motion.div className="nf-signal" exit={{ opacity: 0 }} transition={{ duration: 0.25 }} aria-hidden="true">
             <div className="nf-signal__scanlines" />
-            <div className="nf-signal__text">SIGNAL LOST_</div>
-            <div className="nf-signal__meta">TRACING LAST KNOWN COORDINATES…</div>
+            <div className="nf-signal__text">{cfg.signalText}</div>
+            <div className="nf-signal__meta">{cfg.signalMeta}</div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── BEAT 2+3 · HYPERSPACE WARP ── */}
       {warping && (
         <div className="nf-warp" aria-hidden="true">
           {Array.from({ length: 20 }).map((_, i) => (
@@ -128,7 +113,6 @@ export default function NotFoundPage() {
         </div>
       )}
 
-      {/* ── BEAT 3 · ERA FLY-BYS — falling backwards through time ── */}
       <AnimatePresence>
         {stage === 'fall' && flyIdx >= 0 && (
           <motion.div
@@ -139,19 +123,16 @@ export default function NotFoundPage() {
             transition={{ duration: T_ERA / 1000, times: [0, 0.45, 1], ease: 'easeIn' }}
             aria-hidden="true"
           >
-            <span className="nf-flyby__icon">{ERAS[flyIdx].icon}</span>
-            <span className="nf-flyby__year">{ERAS[flyIdx].year}</span>
+            <span className="nf-flyby__icon">{stages[flyIdx].icon}</span>
+            <span className="nf-flyby__year">{stages[flyIdx].year}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── BEAT 4 · IMPACT shockwave ── */}
       {stage === 'impact' && <div className="nf-shockwave" aria-hidden="true" />}
 
-      {/* ── BEAT 4+5 · THE SCENE ── */}
       {(stage === 'impact' || stage === 'settled') && (
         <div className="nf-scene">
-
           {stage === 'settled' && (
             <motion.div
               className="nf-eyebrow"
@@ -159,20 +140,19 @@ export default function NotFoundPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: EASE }}
             >
-              [ ERROR 404 · TIMELINE BREACH DETECTED ]
+              {cfg.eyebrow}
             </motion.div>
           )}
 
-          {/* 404 slams in from depth */}
           <motion.div
             className="nf-code"
-            aria-label="Error 404"
+            aria-label={`Error ${cfg.code}`}
             initial={{ scale: 4.5, opacity: 0, filter: 'blur(10px)' }}
             animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
             transition={{ duration: T_IMPACT / 1000, ease: [0.22, 1.2, 0.36, 1] }}
           >
-            <span className="nf-code__glitch" aria-hidden="true">404</span>
-            404
+            <span className="nf-code__glitch" aria-hidden="true">{cfg.code}</span>
+            {cfg.code}
           </motion.div>
 
           {stage === 'settled' && (
@@ -183,24 +163,24 @@ export default function NotFoundPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.1, ease: EASE }}
               >
-                This page fell out of the timeline.
+                {cfg.title}
               </motion.h1>
 
               <div className="nf-roast" aria-hidden="true">
                 <AnimatePresence mode="wait">
                   <motion.p
-                    key={roastIdx}
+                    key={quipIdx}
                     className="nf-roast__line"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.4, ease: EASE }}
                   >
-                    “{ROASTS[roastIdx]}”
+                    “{cfg.quips[quipIdx]}”
                   </motion.p>
                 </AnimatePresence>
               </div>
-              <p className="sr-only">The page you are looking for does not exist.</p>
+              <p className="sr-only">{cfg.title}</p>
 
               <motion.div
                 className="nf-timeline"
@@ -210,8 +190,8 @@ export default function NotFoundPage() {
                 aria-hidden="true"
               >
                 <div className="nf-timeline__line" />
-                <span className="nf-traveler">🧑‍🚀</span>
-                {ERAS.map((era, i) => (
+                <span className="nf-traveler">{cfg.traveler}</span>
+                {stages.map((era, i) => (
                   <motion.div
                     key={era.year}
                     className={`nf-era${era.current ? ' nf-era--current' : ''}`}
@@ -233,11 +213,11 @@ export default function NotFoundPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.75, ease: EASE }}
               >
-                <button type="button" className="nf-btn" onClick={() => navigate('/')}>
-                  ⌂ RETURN TO Present
+                <button type="button" className="nf-btn" onClick={goPrimary}>
+                  {cfg.primaryBtn.label}
                 </button>
-                <button type="button" className="nf-btn nf-btn--ghost" onClick={() => navigate(-1)}>
-                  ← last known location
+                <button type="button" className="nf-btn nf-btn--ghost" onClick={goSecondary}>
+                  {cfg.secondaryBtn.label}
                 </button>
               </motion.div>
             </>
@@ -245,7 +225,6 @@ export default function NotFoundPage() {
         </div>
       )}
 
-      {/* Skip hint during the intro */}
       {inIntro && stage !== 'signal' && (
         <div className="nf-skip" aria-hidden="true">click to skip</div>
       )}

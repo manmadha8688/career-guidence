@@ -187,9 +187,15 @@ export default function DashboardPage() {
   useEffect(() => {
     const view    = searchParams.get('view') || 'arena'
     const subject = searchParams.get('subject')
-    if (view === 'gates' && !gatesLoaded) loadGates()
-    if (view === 'paths' && !pathsLoaded) loadPaths()
+    const concept = searchParams.get('concept')
+
+    if (concept) setActiveView('gates')
+    else if (view === 'gates' || view === 'paths') setActiveView(view)
+
+    if (view === 'gates' || subject || concept) loadGates()
+    if (view === 'paths') loadPaths()
     if (subject) setSelectedSubjectId(subject)
+    if (concept) setSelectedConceptId(concept)
   }, []) // eslint-disable-line
 
 

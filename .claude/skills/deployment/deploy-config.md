@@ -6,7 +6,7 @@ Set these in: Vercel Dashboard → Project → Settings → Environment Variable
 
 | Variable | Value | Required |
 |----------|-------|----------|
-| `VITE_API_URL` | `https://learntoearn-wnpp.onrender.com/api` | ✅ Yes |
+| `VITE_API_URL` | `https://learnforearn-wnpp.onrender.com/api` | ✅ Yes |
 
 > **Note:** `VITE_` prefix = public variable, embedded in JS bundle.
 > Never put secrets here. The backend URL is safe to expose.
@@ -21,7 +21,7 @@ Set these in: Render Dashboard → Service → Environment
 |----------|-------|-------|
 | `MONGODB_URI` | `mongodb+srv://user:pass@cluster/learnData_db` | Full Atlas connection string |
 | `JWT_SECRET` | `<256-bit random string>` | Generate: `openssl rand -hex 32` |
-| `CORS_ALLOWED_ORIGINS` | `https://learn-to-earn-omega.vercel.app` | No trailing slash |
+| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.com` | No trailing slash |
 | `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis cache |
 | `SPRING_REDIS_URL` | `redis://***REMOVED***:6379` | Render Redis instance |
 | `BREVO_API_KEY` | `<Brevo SMTP API key>` | Required for register/forgot-password OTP emails |

@@ -1,5 +1,5 @@
 /**
- * ARISE / LearnToEarn — stylesheet entry point
+ * ARISE / LearnForEarn — stylesheet entry point
  *
  * Import order:
  * 1. Design tokens (CSS custom properties)
@@ -10,6 +10,7 @@
 
 @import './tokens/landing.css';
 @import './global.css';
+@import './scrollbars.css';
 @import './components/index.css';
 @import './pages/landing/index.css';
 @import './pages/auth/index.css';

@@ -11,6 +11,7 @@ import FeedbackNudge from './components/FeedbackNudge'
 import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
 import AutoHideNav from './components/AutoHideNav'
+import { resolveDocumentTitle } from './utils/documentTitle'
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
 // Each route loads its chunk only when first visited; subsequent visits use cache
@@ -99,40 +100,10 @@ function ScrollResetter() {
   return null
 }
 
-// Per-route <title> for better UX (browser tab / history) and SEO.
-// Dynamic detail pages fall back to a section title; the base title is used for the rest.
-const BASE_TITLE = 'LearnToEarn — Gamified Career Learning Platform'
-const ROUTE_TITLES = {
-  '/': BASE_TITLE,
-  '/login': 'Sign In · LearnToEarn',
-  '/register': 'Create Account · LearnToEarn',
-  '/forgot-password': 'Reset Password · LearnToEarn',
-  '/about': 'About · LearnToEarn',
-  '/terms': 'Terms of Service · LearnToEarn',
-  '/privacy': 'Privacy Policy · LearnToEarn',
-  '/missions': 'Missions · LearnToEarn',
-  '/walk-ins': 'Walk-In Drives · LearnToEarn',
-  '/fresher-instructions': 'Fresher Guide · LearnToEarn',
-  '/fresher-instructions/career-guidance': 'Career Guidance · LearnToEarn',
-  '/ai-lab': 'AI Lab — 89+ AI Tools · LearnToEarn',
-  '/deployment': 'Deployment Guides · LearnToEarn',
-  '/problem-solving': 'Code GYM — Problem Solving · LearnToEarn',
-  '/skill-arena/dashboard': 'Skill Arena · LearnToEarn',
-}
-
 function DocumentTitle() {
   const { pathname } = useLocation()
   useEffect(() => {
-    let title = ROUTE_TITLES[pathname]
-    if (!title) {
-      if (pathname.startsWith('/ai-lab/')) title = 'AI Lab · LearnToEarn'
-      else if (pathname.startsWith('/deployment/')) title = 'Deployment Guide · LearnToEarn'
-      else if (pathname.startsWith('/problem-solving/')) title = 'Code GYM · LearnToEarn'
-      else if (pathname.startsWith('/admin-skill-arena')) title = 'Admin · LearnToEarn'
-      else if (pathname.startsWith('/skill-arena')) title = 'Skill Arena · LearnToEarn'
-      else title = BASE_TITLE
-    }
-    document.title = title
+    document.title = resolveDocumentTitle(pathname)
   }, [pathname])
   return null
 }

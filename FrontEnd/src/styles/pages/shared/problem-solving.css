@@ -35,6 +35,7 @@
 }
 
 .ps-nav__back {
+  /* track / detail back links — not the learnforearn brand */
   background: none;
   border: none;
   cursor: pointer;

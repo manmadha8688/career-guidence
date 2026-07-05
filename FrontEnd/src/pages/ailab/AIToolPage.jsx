@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { TOOLS } from './aiLabData'
 import { TOOL_COMPONENTS } from './toolComponents'
+import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 
 export default function AIToolPage() {
   const { category, toolId } = useParams()
@@ -23,15 +24,7 @@ export default function AIToolPage() {
   }
 
   if (!tool) {
-    return (
-      <div className="ai-tool-fallback">
-        <div className="ai-tool-fallback__icon">🔍</div>
-        <p>Tool not found</p>
-        <button type="button" onClick={() => navigate('/ai-lab')} className="ai-tool-fallback__btn--primary">
-          Back to AI Lab
-        </button>
-      </div>
-    )
+    return <SectionNotFoundPage variant="ai-lab" />
   }
 
   return (

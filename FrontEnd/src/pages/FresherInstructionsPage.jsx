@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import BrandNavButton from '../components/BrandNavButton'
 import EnterArenaButton from '../components/EnterArenaButton'
 import { useTheme } from '../context/ThemeContext'
 import '../styles/pages-animations.css'
@@ -387,12 +388,7 @@ export default function FresherInstructionsPage() {
     <div className="fi-page">
 
       <nav className="fi-nav">
-        <button type="button" onClick={() => navigate('/')} className="fi-nav__back">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          LearnToEarn
-        </button>
+        <BrandNavButton onClick={() => navigate('/')} />
         <span className="fi-nav-center">FRESHER GUIDE</span>
         <div className="fi-nav__actions">
           <button type="button" onClick={toggleTheme} className="fi-nav__theme">

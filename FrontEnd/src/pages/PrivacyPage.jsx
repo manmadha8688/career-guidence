@@ -4,7 +4,7 @@ export default function PrivacyPage() {
   return (
     <InfoPageLayout label="[ PRIVACY ]" title="Privacy Policy" updated="JULY 2026">
       <p className="info-page__intro">
-        LearnToEarn is built for students, and your privacy is treated with the same care as your
+        learnforearn is built for students, and your privacy is treated with the same care as your
         learning progress. This page explains exactly what data is collected, why, and what happens
         to it. Short version: <strong>only what's needed to run the platform, never sold, no ad tracking.</strong>
       </p>

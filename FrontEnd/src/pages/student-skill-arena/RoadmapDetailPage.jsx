@@ -3,6 +3,8 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, PlayCircle, Trophy, Zap, Lock } from 'lucide-react'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
+import SectionNotFoundPage from '../../components/SectionNotFoundPage'
+import { isMongoId } from '../../utils/mongoId'
 import { getRoadmap, enrollRoadmap, getRoadmapStatus } from '../../api/api'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
@@ -28,6 +30,7 @@ export default function RoadmapDetailPage() {
   const [roadmap, setRoadmap]         = useState(null)
   const [roadmapStatus, setRoadmapStatus] = useState(null)
   const [loading, setLoading]         = useState(true)
+  const [notFound, setNotFound]       = useState(false)
   const [enrolling, setEnrolling]     = useState(false)
 
   const xp       = user?.xp ?? 0
@@ -35,15 +38,24 @@ export default function RoadmapDetailPage() {
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 
   useEffect(() => {
+    if (!isMongoId(id)) {
+      setNotFound(true)
+      setTimeout(() => setLoading(false), PAGE_MIN_MS)
+      return
+    }
     Promise.all([
-      getRoadmap(id),
+      getRoadmap(id).catch(() => null),
       getRoadmapStatus(id).catch(() => null),
     ])
       .then(([r, rs]) => {
+        if (!r?.data) {
+          setNotFound(true)
+          return
+        }
         setRoadmap(r.data)
         if (rs) setRoadmapStatus(rs.data)
       })
-      .catch(() => toast.error('Failed to load hunter path'))
+      .catch(() => setNotFound(true))
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [id])
 
@@ -59,6 +71,8 @@ export default function RoadmapDetailPage() {
 
   // ── Loading ──────────────────────────────────────────
   if (loading) return <SystemAwakeningLoader subtitle="LOADING ROADMAP" />
+
+  if (notFound) return <SectionNotFoundPage variant="hunter-path" />
 
   if (!roadmap) return null
 

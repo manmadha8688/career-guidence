@@ -1,6 +1,6 @@
 # Design Audit Skill
 
-Audit the LearnToEarn frontend for visual quality, UX, responsiveness, theming, motion, and accessibility.
+Audit the LearnForEarn frontend for visual quality, UX, responsiveness, theming, motion, and accessibility.
 Pairs with `.claude/rules/design.md`. Use the `design-engineer` lens.
 
 ## Scope

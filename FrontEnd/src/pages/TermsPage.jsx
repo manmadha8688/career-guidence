@@ -4,7 +4,7 @@ export default function TermsPage() {
   return (
     <InfoPageLayout label="[ TERMS ]" title="Terms of Service" updated="JULY 2026">
       <p className="info-page__intro">
-        Welcome to LearnToEarn. By creating an account, using a guest session, or simply browsing
+        Welcome to learnforearn. By creating an account, using a guest session, or simply browsing
         the platform, you agree to these terms. They exist to keep the platform safe and useful
         for every student — please read them.
       </p>
@@ -12,7 +12,7 @@ export default function TermsPage() {
       <div className="info-section">
         <h2 className="info-section__title"><span className="info-section__num">01</span> The Service</h2>
         <p>
-          LearnToEarn is a free educational platform offering structured learning content, coding
+          learnforearn is a free educational platform offering structured learning content, coding
           practice, quizzes, project briefs, career guidance, and a community walk-in job board.
           The service is provided as-is and may change, add, or remove features at any time as the
           platform evolves.
@@ -45,8 +45,8 @@ export default function TermsPage() {
         <ul>
           <li>The Walk-Ins board is community-driven. When you post a walk-in drive, you confirm the information is accurate to the best of your knowledge.</li>
           <li>Do not post fake drives, personal data of others, or promotional spam. Misuse leads to content removal and may lead to account suspension.</li>
-          <li>By submitting content (walk-in posts, feedback, reports) you allow LearnToEarn to display and moderate it on the platform.</li>
-          <li>Walk-in posts are shared by students, not verified by LearnToEarn — always confirm details with the company before travelling.</li>
+          <li>By submitting content (walk-in posts, feedback, reports) you allow learnforearn to display and moderate it on the platform.</li>
+          <li>Walk-in posts are shared by students, not verified by learnforearn — always confirm details with the company before travelling.</li>
         </ul>
       </div>
 
@@ -63,7 +63,7 @@ export default function TermsPage() {
         <h2 className="info-section__title"><span className="info-section__num">06</span> Intellectual Property</h2>
         <p>
           Platform content — explanations, quizzes, missions, guides, and design — belongs to
-          LearnToEarn. You may use it freely for personal learning. Code examples may be used in
+          learnforearn. You may use it freely for personal learning. Code examples may be used in
           your own projects without restriction. You may not republish platform content as your own.
         </p>
       </div>
@@ -71,7 +71,7 @@ export default function TermsPage() {
       <div className="info-section">
         <h2 className="info-section__title"><span className="info-section__num">07</span> Termination</h2>
         <p>
-          You may stop using the platform at any time. LearnToEarn may suspend or remove accounts
+          You may stop using the platform at any time. learnforearn may suspend or remove accounts
           that violate these terms, abuse other users, or attempt to damage the service.
         </p>
       </div>
@@ -80,7 +80,7 @@ export default function TermsPage() {
         <h2 className="info-section__title"><span className="info-section__num">08</span> Limitation of Liability</h2>
         <p>
           The platform is provided free of charge and without warranties of any kind. To the maximum
-          extent permitted by law, LearnToEarn is not liable for any indirect damages, data loss, or
+          extent permitted by law, learnforearn is not liable for any indirect damages, data loss, or
           outcomes arising from use of the platform — including decisions made based on walk-in
           posts or career guidance content.
         </p>

@@ -43,7 +43,7 @@ export default function FeedbackNudge() {
       <div className="feedback-nudge__label">CAN I ASK YOU SOMETHING?</div>
 
       <p className="feedback-nudge__lead">
-        Hey! I&rsquo;m building LearnToEarn on my own to help students like you find the right path, grow real skills, and actually become job-ready.
+        Hey! I&rsquo;m building learnforearn on my own to help students like you find the right path, grow real skills, and actually become job-ready.
       </p>
 
       <p className="feedback-nudge__highlight">

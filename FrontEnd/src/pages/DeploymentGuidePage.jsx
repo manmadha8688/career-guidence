@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
-import { ArrowLeft, Sun, Moon, Search, X, ExternalLink } from 'lucide-react'
+import BrandNavButton from '../components/BrandNavButton'
+import { Sun, Moon, Search, X, ExternalLink } from 'lucide-react'
 import { STACKS, PLATFORMS } from './deployment/guideIndex'
 
 const EASE = [0.16, 1, 0.3, 1]
@@ -349,10 +350,7 @@ export default function DeploymentGuidePage() {
     <div className={`deploy-hub-page${headerHidden ? ' deploy-hub-page--header-hidden' : ''}`}>
 
       <nav className="deploy-nav">
-        <button type="button" onClick={() => navigate('/')} className="deploy-nav__back">
-          <ArrowLeft size={15} />
-          Home
-        </button>
+        <BrandNavButton onClick={() => navigate('/')} />
         <span className="deploy-nav__title">DEPLOY GUIDE</span>
         <button
           type="button"

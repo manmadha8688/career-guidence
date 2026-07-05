@@ -21,24 +21,6 @@
   z-index: 50;
 }
 
-.missions-nav__brand {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: clamp(1.1rem, 2.5vw, 0.9rem);
-  letter-spacing: 0.12em;
-  color: #FF7F2A;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-[data-theme="light"] .missions-nav__brand { color: #7C3500; }
-
 .missions-nav__actions {
   display: flex;
   align-items: center;

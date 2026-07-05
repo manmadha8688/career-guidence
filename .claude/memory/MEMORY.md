@@ -1,4 +1,4 @@
-# Memory Index — LearnToEarn Project
+# Memory Index — learnforearn Project
 
 > Auto-loaded every session. Read this before working. Rules marked ⚡ are always active.
 

@@ -1,4 +1,4 @@
-# Design Rules — LearnToEarn / ARISE
+# Design Rules — LearnForEarn / ARISE
 
 > The single source of truth for how anything visual is built or redesigned.
 > When the user says "redesign", "make it impress", "modern layout", "unique", etc. — read this first, then act as the `design-engineer` agent.
@@ -9,7 +9,7 @@
 
 | Field | Value |
 |-------|-------|
-| Brand | LearnToEarn (in-app: ARISE) |
+| Brand | LearnForEarn (in-app: ARISE) |
 | Theme | Solo Leveling anime — dark gaming, "hunter" energy |
 | Audience | Indian graduate students (0 → hired), mostly mobile |
 | Feeling | Confident, cinematic, a little playful — never corporate/generic |

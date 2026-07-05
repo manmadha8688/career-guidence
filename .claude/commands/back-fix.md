@@ -290,18 +290,18 @@ grep -rn "CORS_ALLOWED_ORIGINS\|allowedOrigins\|CorsConfiguration" \
   Student-BackEnd/src/main/java/com/ --include="*.java" | grep -v "//"
 
 # Test CORS manually:
-curl -H "Origin: https://learn-to-earn-omega.vercel.app" \
+curl -H "Origin: https://learnforearn.com" \
   -H "Access-Control-Request-Method: GET" \
   -X OPTIONS \
   http://localhost:8080/api/subjects -v 2>&1 | grep "Access-Control"
-# → Must show: Access-Control-Allow-Origin: https://learn-to-earn-omega.vercel.app
+# → Must show: Access-Control-Allow-Origin: https://learnforearn.com
 ```
 
 **Common CORS mistakes:**
 ```
 Trailing slash in origin:
-→ "https://learn-to-earn-omega.vercel.app/" ← WRONG
-→ "https://learn-to-earn-omega.vercel.app"  ← CORRECT
+→ "https://learnforearn.com/" ← WRONG
+→ "https://learnforearn.com"  ← CORRECT
 
 Wildcard in production:
 → Never use: allowedOrigins("*") with credentials

@@ -7,6 +7,8 @@ import { ChevronLeft, AlertTriangle, Trophy, Brain, CheckCircle, Clock } from 'l
 import toast from 'react-hot-toast'
 import ConceptVideo from './ConceptVideo'
 import LivePreview from './LivePreview'
+import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
+import { isMongoId } from '../../../utils/mongoId'
 
 export default function ConceptInlinePanel({ conceptId, navList, onClose, startQuiz, subjectTitle = '' }) {
   const subjectType = /css/i.test(subjectTitle) ? 'css'
@@ -18,6 +20,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
   const [concept, setConcept]       = useState(null)
   const [quizStatus, setQuizStatus] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [notFound, setNotFound] = useState(false)
   const [tab, setTab]         = useState('simple')
   const tipRef      = useRef(null)
   const mistakesRef = useRef(null)
@@ -28,14 +31,28 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
 
   useEffect(() => {
     let active = true
-    setLoading(true); setTab('simple')
+    setLoading(true)
+    setNotFound(false)
+    setConcept(null)
+    setTab('simple')
     panelRef.current?.parentElement?.scrollTo({ top: 0, behavior: 'instant' })
     window.scrollTo({ top: 0, behavior: 'instant' })
+
+    if (!isMongoId(conceptId)) {
+      setNotFound(true)
+      setTimeout(() => { if (active) setLoading(false) }, TEST_DELAY_MS)
+      return () => { active = false }
+    }
+
     Promise.all([
-      getConcept(conceptId),
+      getConcept(conceptId).catch(() => null),
       getQuizStatus('concept', conceptId).catch(() => null),
     ]).then(([c, qs]) => {
       if (!active) return
+      if (!c?.data) {
+        setNotFound(true)
+        return
+      }
       setConcept(c.data)
       if (qs) setQuizStatus(qs.data)
     }).finally(() => {
@@ -56,6 +73,14 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
       </div>
     </div>
   )
+
+  if (notFound) {
+    return (
+      <div className="sl-concept-inline">
+        <SectionNotFoundPanel variant="arena-skill" onBack={onClose} />
+      </div>
+    )
+  }
 
   if (!concept) return null
 

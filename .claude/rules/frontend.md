@@ -1,4 +1,4 @@
-# Frontend Rules — LearnToEarn React App
+# Frontend Rules — LearnForEarn React App
 
 > For anything **visual / design / redesign**, read `.claude/rules/design.md` and act as the `design-engineer` agent. This file covers structure, state, and correctness.
 

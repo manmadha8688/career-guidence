@@ -1,4 +1,4 @@
-# ARISE — LearnToEarn Career Learning Platform
+# ARISE — LearnForEarn Career Learning Platform
 
 A Solo Leveling–inspired learning platform helping freshers and college students build job-ready tech skills through structured roadmaps, concept-by-concept learning, coding challenges, AI tools, real-world missions, and deployment guides.
 

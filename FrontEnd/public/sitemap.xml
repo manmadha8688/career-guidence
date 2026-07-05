@@ -1,162 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/</loc>
+    <loc>https://learnforearn.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/about</loc>
+    <loc>https://learnforearn.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/contact</loc>
+    <loc>https://learnforearn.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/terms</loc>
+    <loc>https://learnforearn.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/privacy</loc>
+    <loc>https://learnforearn.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/fresher-instructions</loc>
+    <loc>https://learnforearn.com/fresher-instructions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/fresher-instructions/career-guidance</loc>
+    <loc>https://learnforearn.com/fresher-instructions/career-guidance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/ai-lab</loc>
+    <loc>https://learnforearn.com/ai-lab</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment</loc>
+    <loc>https://learnforearn.com/deployment</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/problem-solving</loc>
+    <loc>https://learnforearn.com/problem-solving</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/missions</loc>
+    <loc>https://learnforearn.com/missions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/walk-ins</loc>
+    <loc>https://learnforearn.com/walk-ins</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/react</loc>
+    <loc>https://learnforearn.com/deployment/react</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/nextjs</loc>
+    <loc>https://learnforearn.com/deployment/nextjs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/nodejs</loc>
+    <loc>https://learnforearn.com/deployment/nodejs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/mern</loc>
+    <loc>https://learnforearn.com/deployment/mern</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/django</loc>
+    <loc>https://learnforearn.com/deployment/django</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/django-fullstack</loc>
+    <loc>https://learnforearn.com/deployment/django-fullstack</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/springboot</loc>
+    <loc>https://learnforearn.com/deployment/springboot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/fastapi</loc>
+    <loc>https://learnforearn.com/deployment/fastapi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/flask</loc>
+    <loc>https://learnforearn.com/deployment/flask</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/html-static</loc>
+    <loc>https://learnforearn.com/deployment/html-static</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/streamlit</loc>
+    <loc>https://learnforearn.com/deployment/streamlit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/mongodb-atlas</loc>
+    <loc>https://learnforearn.com/deployment/mongodb-atlas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/neon-postgres</loc>
+    <loc>https://learnforearn.com/deployment/neon-postgres</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/supabase</loc>
+    <loc>https://learnforearn.com/deployment/supabase</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/render-postgres</loc>
+    <loc>https://learnforearn.com/deployment/render-postgres</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/chatbot-deploy</loc>
+    <loc>https://learnforearn.com/deployment/chatbot-deploy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/nlp-demo</loc>
+    <loc>https://learnforearn.com/deployment/nlp-demo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/image-ai</loc>
+    <loc>https://learnforearn.com/deployment/image-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/rag-app</loc>
+    <loc>https://learnforearn.com/deployment/rag-app</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learn-to-earn-omega.vercel.app/deployment/heavy-model-deploy</loc>
+    <loc>https://learnforearn.com/deployment/heavy-model-deploy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

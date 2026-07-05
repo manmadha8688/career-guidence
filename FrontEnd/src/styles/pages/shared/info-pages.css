@@ -20,26 +20,6 @@
   border-bottom: 1px solid var(--border);
 }
 
-.info-page__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.35rem 0.75rem;
-  color: var(--text-secondary);
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-}
-.info-page__back:hover {
-  border-color: var(--primary);
-  color: var(--text-primary);
-}
-
 .info-page__label {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.62rem;

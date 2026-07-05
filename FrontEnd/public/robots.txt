@@ -1,4 +1,4 @@
-# LearnToEarn (ARISE) — robots policy
+# LearnForEarn (ARISE) — robots policy
 User-agent: *
 Allow: /
 
@@ -10,4 +10,4 @@ Disallow: /skill-arena/
 Disallow: /admin-skill-arena/
 Disallow: /loader-demo
 
-Sitemap: https://learn-to-earn-omega.vercel.app/sitemap.xml
+Sitemap: https://learnforearn.com/sitemap.xml

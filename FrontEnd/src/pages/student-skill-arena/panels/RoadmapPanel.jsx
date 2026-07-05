@@ -4,21 +4,37 @@ import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader
 import { getRoadmap, getRoadmapStatus, enrollRoadmap, pauseRoadmap, resumeRoadmap } from '../../../api/api'
 import { CheckCircle, Trophy, Lock } from 'lucide-react'
 import toast from 'react-hot-toast'
+import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
+import { isMongoId } from '../../../utils/mongoId'
 
 export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate, startQuiz }) {
   const [roadmap, setRoadmap]   = useState(null)
   const [status, setStatus]     = useState(null)
   const [loading, setLoading]   = useState(true)
+  const [notFound, setNotFound] = useState(false)
   const [enrolling, setEnrolling] = useState(false)
   const [pausing, setPausing]     = useState(false)
   const [resuming, setResuming]   = useState(false)
 
   useEffect(() => {
-    setLoading(true); setRoadmap(null)
+    setLoading(true)
+    setNotFound(false)
+    setRoadmap(null)
+
+    if (!isMongoId(roadmapId)) {
+      setNotFound(true)
+      setTimeout(() => setLoading(false), TEST_DELAY_MS)
+      return
+    }
+
     Promise.all([
-      getRoadmap(roadmapId),
+      getRoadmap(roadmapId).catch(() => null),
       getRoadmapStatus(roadmapId).catch(() => null),
     ]).then(([r, rs]) => {
+      if (!r?.data) {
+        setNotFound(true)
+        return
+      }
       setRoadmap(r.data)
       if (rs) setStatus(rs.data)
     }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
@@ -72,6 +88,8 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
 
       {loading ? (
         <div className="flex-center dash-flex-center-fill--tall"><DungeonPortalLoader panel height={180} /></div>
+      ) : notFound ? (
+        <SectionNotFoundPanel variant="arena-path" onBack={onClose} fill />
       ) : !roadmap ? null : (
         <div className="sl-subject-panel-body">
           <div className="dash-roadmap-header">

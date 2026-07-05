@@ -1,6 +1,6 @@
 {
-  "name": "LearnToEarn — ARISE",
-  "short_name": "LearnToEarn",
+  "name": "learnforearn — ARISE",
+  "short_name": "learnforearn",
   "description": "Solo Leveling–inspired career learning platform: Skill Arena, Code GYM, AI Lab, and beginner-friendly deployment guides.",
   "start_url": "/",
   "scope": "/",

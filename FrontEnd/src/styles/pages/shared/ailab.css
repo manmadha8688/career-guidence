@@ -250,21 +250,6 @@
   border-bottom: 1px solid rgba(0, 217, 255, 0.1);
 }
 
-.ailab-nav__back {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  color: var(--ailab-cyan);
-  padding: 0;
-}
-
 .ailab-nav__brand {
   display: flex;
   align-items: center;

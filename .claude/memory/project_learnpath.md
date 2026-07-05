@@ -1,14 +1,14 @@
 ---
 name: project-learnpath
-description: Complete project summary — LearnToEarn / ARISE platform. READ THIS FIRST every session.
+description: Complete project summary — LearnForEarn / ARISE platform. READ THIS FIRST every session.
 metadata:
   type: project
 ---
 
-# LearnToEarn / ARISE — Skills Arena Platform
+# LearnForEarn / ARISE — Skills Arena Platform
 
 ## App Names
-- **Brand / Landing**: LearnToEarn
+- **Brand / Landing**: LearnForEarn
 - **In-app navbar logo**: ARISE
 - **Tagline**: "Learn the skills. Earn the job."
 - **Theme**: Solo Leveling anime / dark gaming aesthetic
@@ -19,8 +19,8 @@ metadata:
 ## Live URLs
 | Service | URL |
 |---|---|
-| Frontend (Vercel) | https://learn-to-earn-omega.vercel.app |
-| Backend (Render) | https://learntoearn-wnpp.onrender.com |
+| Frontend (Vercel) | https://learnforearn.com |
+| Backend (Render) | https://learnforearn-wnpp.onrender.com |
 
 ---
 
@@ -40,7 +40,7 @@ metadata:
 - Root directory: `FrontEnd/`
 - Build: `npm run build` → `dist/`
 - `vercel.json`: SPA rewrites all routes to index.html
-- Env vars: `VITE_API_URL=https://learntoearn-wnpp.onrender.com/api`
+- Env vars: `VITE_API_URL=https://learnforearn-wnpp.onrender.com/api`
 
 ### Backend — Render
 - Root directory: `Student-BackEnd/`

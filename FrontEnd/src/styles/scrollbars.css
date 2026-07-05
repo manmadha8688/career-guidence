@@ -1,0 +1,114 @@
+/* ═══ Scrollbars — themed page scroll; hidden on inner panels ═══ */
+
+:root {
+  --scrollbar-size: 6px;
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(155, 110, 212, 0.32);
+  --scrollbar-thumb-hover: rgba(155, 110, 212, 0.52);
+}
+
+[data-theme="light"] {
+  --scrollbar-thumb: rgba(124, 58, 237, 0.22);
+  --scrollbar-thumb-hover: rgba(124, 58, 237, 0.38);
+}
+
+/* ── Page-level scroll — hidden bar, scroll still works (wheel / touch) ── */
+html {
+  scrollbar-gutter: stable;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ── Utility: scroll works, bar invisible ── */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Inner panels — scroll without visible bar */
+.dash-skill-list,
+.sl-concept-inline-body,
+.dash-hunter-drawer__body,
+.sl-subject-panel-body,
+.dash-sheet__body--scroll,
+.lp-profile-dropdown--mobile,
+.lp-mobile-drawer,
+.concept-sidebar,
+.modal,
+.dash-instructions-modal,
+.dash-about-modal__body,
+.ailab-modal-overlay,
+.deploy-sidebar,
+.dgx-rail,
+.jobs-sidebar,
+.main-content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.dash-skill-list::-webkit-scrollbar,
+.sl-concept-inline-body::-webkit-scrollbar,
+.dash-hunter-drawer__body::-webkit-scrollbar,
+.sl-subject-panel-body::-webkit-scrollbar,
+.dash-sheet__body--scroll::-webkit-scrollbar,
+.lp-profile-dropdown--mobile::-webkit-scrollbar,
+.lp-mobile-drawer::-webkit-scrollbar,
+.concept-sidebar::-webkit-scrollbar,
+.modal::-webkit-scrollbar,
+.dash-instructions-modal::-webkit-scrollbar,
+.dash-about-modal__body::-webkit-scrollbar,
+.ailab-modal-overlay::-webkit-scrollbar,
+.deploy-sidebar::-webkit-scrollbar,
+.dgx-rail::-webkit-scrollbar,
+.jobs-sidebar::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ── Horizontal code / tables — thin visible hint ── */
+pre,
+code,
+.table-container,
+.dash-concept-code-block,
+.deploy-code-block,
+.tool-layout-code,
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+pre::-webkit-scrollbar,
+code::-webkit-scrollbar,
+.table-container::-webkit-scrollbar,
+.dash-concept-code-block::-webkit-scrollbar,
+.deploy-code-block::-webkit-scrollbar,
+.tool-layout-code::-webkit-scrollbar,
+.scrollbar-thin::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+pre::-webkit-scrollbar-thumb,
+code::-webkit-scrollbar-thumb,
+.table-container::-webkit-scrollbar-thumb,
+.dash-concept-code-block::-webkit-scrollbar-thumb,
+.deploy-code-block::-webkit-scrollbar-thumb,
+.tool-layout-code::-webkit-scrollbar-thumb,
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+}

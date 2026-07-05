@@ -58,21 +58,6 @@
   border-bottom: 1px solid var(--fi-border);
 }
 
-.fi-nav__back {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: #9B6ED4;
-  padding: 0;
-}
-
 .fi-nav-center {
   font-family: 'Orbitron', sans-serif;
   font-size: 0.65rem;

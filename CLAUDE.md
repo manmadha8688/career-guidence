@@ -1,4 +1,4 @@
-# LearnToEarn / ARISE — Claude Code Project Guide
+# LearnForEarn / ARISE — Claude Code Project Guide
 
 > Read this before every session. Contains everything Claude needs to understand this codebase.
 
@@ -72,12 +72,12 @@ Supporting files: agent `design-engineer.md`, command `front-redesign.md`, skill
 
 | Field | Value |
 |-------|-------|
-| Brand name | LearnToEarn |
+| Brand name | LearnForEarn |
 | In-app name | ARISE |
 | Theme | Solo Leveling anime — dark gaming aesthetic |
 | Audience | Indian graduate students (0 → hired) |
-| Frontend live | https://learn-to-earn-omega.vercel.app |
-| Backend live  | https://learntoearn-wnpp.onrender.com |
+| Frontend live | https://learnforearn.com |
+| Backend live  | https://learnforearn-wnpp.onrender.com |
 
 ---
 
@@ -329,14 +329,14 @@ XP earned = quiz score × 10. First concept of the day = +50 daily bonus.
 ### Frontend (.env.local / Vercel dashboard)
 ```
 VITE_API_URL=http://localhost:8080/api          # dev
-VITE_API_URL=https://learntoearn-wnpp.onrender.com/api  # prod
+VITE_API_URL=https://learnforearn-wnpp.onrender.com/api  # prod
 ```
 
 ### Backend (Render dashboard)
 ```
 MONGODB_URI=mongodb+srv://...@free-database.lfnuahd.mongodb.net/learnData_db
 JWT_SECRET=<strong-random-256-bit>
-CORS_ALLOWED_ORIGINS=https://learn-to-earn-omega.vercel.app
+CORS_ALLOWED_ORIGINS=https://learnforearn.com
 SPRING_PROFILES_ACTIVE=prod
 SPRING_REDIS_URL=redis://***REMOVED***:6379
 ```

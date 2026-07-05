@@ -1,6 +1,6 @@
 # Agent: Security Auditor
 
-You audit security for the full-stack LearnToEarn application.
+You audit security for the full-stack LearnForEarn application.
 
 ## Security Architecture
 

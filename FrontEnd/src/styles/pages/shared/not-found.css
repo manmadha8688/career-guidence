@@ -1,61 +1,558 @@
-/* NotFoundPage */
+/* ══ NotFoundPage — "Time Rift 404" ═════════════════════════════════════════
+   Cinematic space-time void (always dark, like the loaders — intentional).
+   Layers: starfields → vortex → dust motes → 3D tilt scene (404, roast,
+   era timeline with tumbling traveler, portal buttons). */
 
-.not-found-page {
+.nf-void {
+  --rx: 0deg;
+  --ry: 0deg;
+  position: relative;
   min-height: 100vh;
-  background: var(--bg-primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, #1A1040 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, #0A1B3D 0%, transparent 55%),
+    #05030F;
+  color: #E2E8F0;
+  perspective: 1100px;
+}
+
+/* ── Starfields — two drifting parallax layers ── */
+.nf-stars {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    radial-gradient(1.5px 1.5px at 22% 31%, #fff, transparent),
+    radial-gradient(1px 1px at 68% 12%, #C4B5FD, transparent),
+    radial-gradient(1.8px 1.8px at 84% 57%, #fff, transparent),
+    radial-gradient(1px 1px at 41% 74%, #93C5FD, transparent),
+    radial-gradient(1.4px 1.4px at 12% 86%, #fff, transparent),
+    radial-gradient(1px 1px at 55% 45%, #E9D5FF, transparent),
+    radial-gradient(1.2px 1.2px at 92% 88%, #fff, transparent),
+    radial-gradient(1px 1px at 33% 8%, #fff, transparent);
+  background-size: 46rem 46rem;
+  background-repeat: repeat;
+  animation: nf-drift 140s linear infinite;
+  opacity: 0.8;
+}
+
+.nf-stars--far {
+  background-size: 28rem 28rem;
+  opacity: 0.35;
+  animation-duration: 220s;
+  animation-direction: reverse;
+}
+
+@keyframes nf-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-46rem, -23rem, 0); }
+}
+
+/* ── Time vortex — slow spinning conic ring behind the 404 ── */
+.nf-vortex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(78vmin, 640px);
+  height: min(78vmin, 640px);
+  margin: calc(min(78vmin, 640px) / -2) 0 0 calc(min(78vmin, 640px) / -2);
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(155, 110, 212, 0.16) 18%,
+    rgba(96, 165, 250, 0.10) 34%,
+    transparent 50%,
+    rgba(124, 58, 237, 0.14) 68%,
+    transparent 86%,
+    rgba(155, 110, 212, 0.16) 100%
+  );
+  filter: blur(26px);
+  animation: nf-spin 26s linear infinite;
+}
+
+@keyframes nf-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Floating dust motes ── */
+.nf-dust { position: absolute; inset: 0; pointer-events: none; }
+
+.nf-dust__mote {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(196, 181, 253, 0.5);
+  box-shadow: 0 0 8px rgba(155, 110, 212, 0.6);
+  left: calc(8% + var(--i) * 10.5%);
+  top: calc(15% + (var(--i) * 37%) - (var(--i) * var(--i) * 3.6%));
+  animation: nf-float calc(7s + var(--i) * 1.3s) ease-in-out calc(var(--i) * -1.7s) infinite;
+  opacity: 0.7;
+}
+
+@keyframes nf-float {
+  0%, 100% { transform: translateY(0)      scale(1);    opacity: 0.5; }
+  50%      { transform: translateY(-26px)  scale(1.25); opacity: 0.9; }
+}
+
+/* ── 3D tilt scene ── */
+.nf-scene {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  width: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.18s ease-out;
+}
+
+.nf-eyebrow {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  color: #EF4444;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+  animation: nf-blink 2.4s steps(1) infinite;
+}
+
+@keyframes nf-blink {
+  0%, 92%, 100% { opacity: 1; }
+  94%, 97%      { opacity: 0.35; }
+}
+
+/* ── The 404 — CSS 3D extrusion + float + occasional glitch ── */
+.nf-code {
+  position: relative;
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(5.5rem, 21vw, 11rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #E9D5FF;
+  transform: translateZ(60px);
+  /* Stacked shadows fake a real extruded 3D block */
+  text-shadow:
+    0 1px 0 #7C3AED, 0 2px 0 #7433DB, 0 3px 0 #6B2FCB, 0 4px 0 #612ABB,
+    0 5px 0 #5826AB, 0 6px 0 #4F229B, 0 7px 0 #451E8B, 0 8px 0 #3C1A7B,
+    0 12px 24px rgba(0, 0, 0, 0.7),
+    0 0 70px rgba(155, 110, 212, 0.45);
+  animation: nf-levitate 5.5s ease-in-out infinite;
+  margin-bottom: 0.6rem;
+}
+
+@keyframes nf-levitate {
+  0%, 100% { transform: translateZ(60px) translateY(0); }
+  50%      { transform: translateZ(60px) translateY(-14px); }
+}
+
+/* RGB-split glitch flash every few seconds */
+.nf-code__glitch {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  text-shadow: -3px 0 0 rgba(239, 68, 68, 0.75), 3px 0 0 rgba(96, 165, 250, 0.75);
+  opacity: 0;
+  animation: nf-glitch 4.6s steps(1) infinite;
+  pointer-events: none;
+}
+
+@keyframes nf-glitch {
+  0%, 89%, 100% { opacity: 0; transform: translateX(0); }
+  90%           { opacity: 1; transform: translateX(-2px); }
+  92%           { opacity: 1; transform: translateX(3px)  skewX(3deg); }
+  94%           { opacity: 0; }
+}
+
+.nf-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(0.95rem, 2.6vw, 1.35rem);
+  font-weight: 800;
+  color: #E2E8F0;
+  margin: 0 0 0.9rem;
+  transform: translateZ(35px);
+}
+
+/* ── Rotating roast line ── */
+.nf-roast {
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(25px);
+  margin-bottom: 1.9rem;
+}
+
+.nf-roast__line {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(0.92rem, 2.2vw, 1.08rem);
+  font-style: italic;
+  color: #8B9AB8;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ── Era timeline — the fall through history ── */
+.nf-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  max-width: 700px;
+  margin: 0 auto 2.1rem;
+  padding: 1.4rem 0.5rem 0.4rem;
+  transform: translateZ(20px);
+}
+
+.nf-timeline__line {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 50%;
+  border-top: 1.5px dashed rgba(155, 110, 212, 0.35);
+}
+
+/* Tumbling astronaut drifting back through the eras */
+.nf-traveler {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  font-size: 1.35rem;
+  filter: drop-shadow(0 0 10px rgba(155, 110, 212, 0.6));
+  animation: nf-tumble 11s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes nf-tumble {
+  0%   { left: 2%;  transform: rotate(0turn)    translateY(0); opacity: 0; }
+  6%   { opacity: 1; }
+  50%  { left: 48%; transform: rotate(1.5turn)  translateY(-10px); }
+  94%  { opacity: 1; }
+  100% { left: 92%; transform: rotate(3turn)    translateY(0); opacity: 0; }
+}
+
+.nf-era {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.22rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.nf-era__icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 2rem;
-  text-align: center;
+  font-size: 1.25rem;
+  background: rgba(13, 19, 34, 0.9);
+  border: 1px solid rgba(155, 110, 212, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, border-color 0.2s;
 }
 
-.not-found-page__code {
+.nf-era:hover .nf-era__icon {
+  transform: translateY(-4px) scale(1.1);
+  border-color: rgba(155, 110, 212, 0.7);
+}
+
+.nf-era__year {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(5rem, 20vw, 9rem);
-  font-weight: 900;
-  line-height: 1;
-  background: linear-gradient(135deg, #9B6ED4, #7C3AED);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  font-size: 0.56rem;
+  font-weight: 800;
+  color: #C4B5FD;
 }
 
-.not-found-page__label {
+.nf-era__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+  color: #586080;
+  white-space: nowrap;
+}
+
+/* Current era — the stone age, where the user "is" */
+.nf-era--current .nf-era__icon {
+  border-color: #EF4444;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35);
+}
+
+.nf-era--current .nf-era__year,
+.nf-era--current .nf-era__label {
+  color: #EF4444;
+}
+
+.nf-era__ping {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(239, 68, 68, 0.6);
+  animation: nf-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes nf-ping {
+  0%   { transform: scale(0.85); opacity: 0.9; }
+  100% { transform: scale(1.7);  opacity: 0; }
+}
+
+/* ── Buttons ── */
+.nf-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform: translateZ(40px);
+}
+
+.nf-btn {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-}
-
-.not-found-page__text {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  max-width: 360px;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.not-found-page__btn {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   letter-spacing: 0.1em;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.9rem;
+  border-radius: 10px;
   background: linear-gradient(135deg, #9B6ED4, #7C3AED);
   border: none;
   color: #fff;
   cursor: pointer;
-  transition: opacity 0.15s;
+  box-shadow: 0 0 26px rgba(155, 110, 212, 0.4);
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.not-found-page__btn:hover {
-  opacity: 0.85;
+.nf-btn:hover {
+  box-shadow: 0 0 42px rgba(155, 110, 212, 0.65);
+  transform: translateY(-2px);
+}
+
+.nf-btn--ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(155, 110, 212, 0.35);
+  color: #C4B5FD;
+  box-shadow: none;
+}
+
+.nf-btn--ghost:hover {
+  background: rgba(155, 110, 212, 0.12);
+  box-shadow: none;
+}
+
+/* ══ Title sequence beats ═══════════════════════════════════════════════ */
+
+/* BEAT 1 · SIGNAL LOST — CRT terminal moment */
+.nf-signal {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: #030208;
+}
+
+.nf-signal__scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px, transparent 2px,
+    rgba(255, 255, 255, 0.025) 3px, rgba(255, 255, 255, 0.025) 4px
+  );
+  animation: nf-static 0.18s steps(2) infinite;
+}
+
+@keyframes nf-static {
+  0%   { opacity: 0.7; transform: translateY(0); }
+  50%  { opacity: 1;   transform: translateY(1px); }
+  100% { opacity: 0.7; transform: translateY(0); }
+}
+
+.nf-signal__text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
+  letter-spacing: 0.3em;
+  color: #EF4444;
+  text-shadow: 0 0 18px rgba(239, 68, 68, 0.8);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: nf-type 0.7s steps(12) 0.15s forwards, nf-blink 0.9s steps(1) infinite;
+}
+
+@keyframes nf-type {
+  to { width: 12.4ch; }
+}
+
+.nf-signal__meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: #586080;
+  opacity: 0;
+  animation: nf-fade-in 0.3s ease 0.8s forwards;
+}
+
+@keyframes nf-fade-in { to { opacity: 1; } }
+
+/* BEAT 2+3 · HYPERSPACE WARP — streaks radiating from center */
+.nf-warp {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.nf-warp__streak {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  transform: rotate(var(--a));
+  transform-origin: 0 0;
+}
+
+.nf-warp__streak::after {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 46vmax;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(196, 181, 253, 0.9), rgba(96, 165, 250, 0.4), transparent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  animation: nf-streak 0.55s cubic-bezier(0.3, 0, 0.8, 0.4) var(--d) infinite;
+}
+
+@keyframes nf-streak {
+  0%   { transform: scaleX(0);   opacity: 0; }
+  25%  { opacity: 1; }
+  100% { transform: scaleX(1);   opacity: 0; }
+}
+
+/* BEAT 3 · ERA FLY-BY — a signpost rushing past the camera */
+.nf-flyby {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.nf-flyby__icon {
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  filter: drop-shadow(0 0 30px rgba(155, 110, 212, 0.7));
+}
+
+.nf-flyby__year {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: #C4B5FD;
+  text-shadow: 0 0 24px rgba(155, 110, 212, 0.8);
+}
+
+/* BEAT 4 · IMPACT — shockwave + camera shake */
+.nf-shockwave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  border-radius: 50%;
+  border: 3px solid rgba(196, 181, 253, 0.9);
+  box-shadow: 0 0 60px rgba(155, 110, 212, 0.8), inset 0 0 40px rgba(155, 110, 212, 0.5);
+  animation: nf-shockwave 0.65s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes nf-shockwave {
+  0%   { transform: scale(0.2); opacity: 1; }
+  100% { transform: scale(9);   opacity: 0; }
+}
+
+.nf-void--shake {
+  animation: nf-shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes nf-shake {
+  0%, 100% { transform: translate(0, 0); }
+  15% { transform: translate(-10px, 6px); }
+  30% { transform: translate(9px, -5px); }
+  45% { transform: translate(-7px, -6px); }
+  60% { transform: translate(6px, 4px); }
+  75% { transform: translate(-4px, 2px); }
+  90% { transform: translate(2px, -1px); }
+}
+
+/* Skip hint */
+.nf-skip {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: #586080;
+  animation: nf-fade-in 0.4s ease 0.3s both;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .nf-timeline {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    justify-content: center;
+  }
+  .nf-era { flex: 0 0 30%; }
+  .nf-timeline__line,
+  .nf-traveler { display: none; }
+}
+
+/* ── Reduced motion — kill every autonomous loop (JS also skips the intro) ── */
+@media (prefers-reduced-motion: reduce) {
+  .nf-stars,
+  .nf-stars--far,
+  .nf-vortex,
+  .nf-dust__mote,
+  .nf-code,
+  .nf-code__glitch,
+  .nf-eyebrow,
+  .nf-traveler,
+  .nf-era__ping,
+  .nf-signal__scanlines,
+  .nf-signal__text,
+  .nf-warp__streak::after,
+  .nf-void--shake {
+    animation: none !important;
+  }
+  .nf-scene { transform: none; transition: none; }
 }

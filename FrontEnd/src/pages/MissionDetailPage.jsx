@@ -9,6 +9,8 @@ import {
 import { motion } from 'framer-motion'
 import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
 import EnterArenaButton from '../components/EnterArenaButton'
+import SectionNotFoundPage from '../components/SectionNotFoundPage'
+import { isMongoId } from '../utils/mongoId'
 import { getMission } from '../api/api'
 import { useTheme } from '../context/ThemeContext'
 
@@ -37,18 +39,25 @@ export default function MissionDetailPage() {
   const light               = theme === 'light'
   const [mission, setMission] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [notFound, setNotFound] = useState(false)
   const [approachOpen, setApproachOpen] = useState(false)
   const [mistakesOpen, setMistakesOpen] = useState(false)
   const [hintsOpen, setHintsOpen] = useState(false)
 
   useEffect(() => {
+    if (!isMongoId(id)) {
+      setNotFound(true)
+      setTimeout(() => setLoading(false), PAGE_MIN_MS)
+      return
+    }
     getMission(id)
       .then(r => setMission(r.data))
-      .catch(() => navigate('/missions'))
+      .catch(() => setNotFound(true))
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [id])
 
   if (loading) return <SmokeBladeLoader />
+  if (notFound) return <SectionNotFoundPage variant="missions" />
   if (!mission) return null
 
   const m = RANK_META[mission.rank] || RANK_META['D']

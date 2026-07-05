@@ -2,8 +2,9 @@ import { useState, useRef, Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
-import { Sun, Moon, ArrowLeft, Search, ChevronRight, Lock, Zap } from 'lucide-react'
+import { Sun, Moon, Search, ChevronRight, Lock, Zap } from 'lucide-react'
 import ScrollToTop from '../../components/ScrollToTop'
+import BrandNavButton from '../../components/BrandNavButton'
 import { CATEGORIES, TOOLS } from './aiLabData'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
 
@@ -174,9 +175,9 @@ export default function AILabPage() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="ailab-nav"
       >
-        <motion.button whileHover={{ x: -3 }} type="button" onClick={() => navigate('/')} className="ailab-nav__back">
-          <ArrowLeft size={13} /> LearnToEarn
-        </motion.button>
+        <motion.div whileHover={{ x: -3 }} style={{ display: 'inline-flex' }}>
+          <BrandNavButton onClick={() => navigate('/')} />
+        </motion.div>
         <div className="ailab-nav__brand">
           <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}>
             <Zap size={13} color="#00D9FF" />

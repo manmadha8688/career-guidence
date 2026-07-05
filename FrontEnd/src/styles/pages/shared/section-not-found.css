@@ -1,0 +1,280 @@
+/* ══ Section-themed not-found variants (AI Lab, Missions, Code GYM, Arena)
+   Overrides CSS vars on .nf-void — base styles live in not-found.css */
+
+.nf-void--ai {
+  --nf-bg-a: #0A1628;
+  --nf-bg-b: #061018;
+  --nf-bg-c: #020817;
+  --nf-vortex-a: rgba(0, 217, 255, 0.18);
+  --nf-vortex-b: rgba(139, 92, 246, 0.12);
+  --nf-vortex-c: rgba(0, 217, 255, 0.14);
+  --nf-dust: rgba(0, 217, 255, 0.55);
+  --nf-dust-glow: rgba(0, 217, 255, 0.65);
+  --nf-eyebrow: #00D9FF;
+  --nf-eyebrow-glow: rgba(0, 217, 255, 0.55);
+  --nf-code: #E0F7FF;
+  --nf-code-shadow: #0891B2, #0E7490, #155E75, #164E63, #134E4A, #115E59, #0F766E, #0D9488,
+    0 12px 24px rgba(0, 0, 0, 0.7), 0 0 70px rgba(0, 217, 255, 0.45);
+  --nf-code-glow: rgba(0, 217, 255, 0.45);
+  --nf-glitch-a: rgba(0, 217, 255, 0.75);
+  --nf-glitch-b: rgba(139, 92, 246, 0.75);
+  --nf-era-border: rgba(0, 217, 255, 0.35);
+  --nf-era-hover: rgba(0, 217, 255, 0.7);
+  --nf-era-year: #67E8F9;
+  --nf-timeline-line: rgba(0, 217, 255, 0.35);
+  --nf-traveler-glow: rgba(0, 217, 255, 0.6);
+  --nf-warp-a: rgba(103, 232, 249, 0.9);
+  --nf-warp-b: rgba(139, 92, 246, 0.4);
+  --nf-shockwave: rgba(103, 232, 249, 0.9);
+  --nf-shockwave-glow: rgba(0, 217, 255, 0.8);
+  --nf-btn-from: #00D9FF;
+  --nf-btn-to: #0891B2;
+  --nf-btn-shadow: rgba(0, 217, 255, 0.4);
+  --nf-btn-hover-shadow: rgba(0, 217, 255, 0.65);
+  --nf-btn-ghost-border: rgba(0, 217, 255, 0.35);
+  --nf-btn-ghost-text: #67E8F9;
+  --nf-btn-ghost-hover: rgba(0, 217, 255, 0.12);
+  --nf-signal: #00D9FF;
+  --nf-flyby: #67E8F9;
+  --nf-flyby-glow: rgba(0, 217, 255, 0.8);
+  --nf-star-b: #67E8F9;
+  --nf-star-c: #A78BFA;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, #0C2340 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, var(--nf-bg-a) 0%, transparent 55%),
+    var(--nf-bg-c);
+}
+
+.nf-void--ai::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+}
+
+.nf-void--missions {
+  --nf-bg-c: #0A0806;
+  --nf-vortex-a: rgba(249, 115, 22, 0.18);
+  --nf-vortex-b: rgba(245, 158, 11, 0.12);
+  --nf-vortex-c: rgba(239, 68, 68, 0.14);
+  --nf-dust: rgba(251, 146, 60, 0.55);
+  --nf-dust-glow: rgba(249, 115, 22, 0.65);
+  --nf-eyebrow: #FB923C;
+  --nf-eyebrow-glow: rgba(249, 115, 22, 0.55);
+  --nf-code: #FFEDD5;
+  --nf-code-glow: rgba(249, 115, 22, 0.45);
+  --nf-glitch-a: rgba(239, 68, 68, 0.75);
+  --nf-glitch-b: rgba(251, 146, 60, 0.75);
+  --nf-era-border: rgba(249, 115, 22, 0.35);
+  --nf-era-hover: rgba(251, 146, 60, 0.7);
+  --nf-era-year: #FDBA74;
+  --nf-timeline-line: rgba(249, 115, 22, 0.35);
+  --nf-traveler-glow: rgba(249, 115, 22, 0.6);
+  --nf-warp-a: rgba(251, 146, 60, 0.9);
+  --nf-warp-b: rgba(239, 68, 68, 0.4);
+  --nf-shockwave: rgba(251, 146, 60, 0.9);
+  --nf-shockwave-glow: rgba(249, 115, 22, 0.8);
+  --nf-btn-from: #F97316;
+  --nf-btn-to: #EA580C;
+  --nf-btn-shadow: rgba(249, 115, 22, 0.4);
+  --nf-btn-hover-shadow: rgba(249, 115, 22, 0.65);
+  --nf-btn-ghost-border: rgba(251, 146, 60, 0.35);
+  --nf-btn-ghost-text: #FDBA74;
+  --nf-btn-ghost-hover: rgba(249, 115, 22, 0.12);
+  --nf-signal: #FB923C;
+  --nf-flyby: #FDBA74;
+  --nf-flyby-glow: rgba(249, 115, 22, 0.8);
+  --nf-star-b: #FDBA74;
+  --nf-star-c: #FCA5A5;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, #2A1208 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, #1A0E06 0%, transparent 55%),
+    var(--nf-bg-c);
+}
+
+.nf-void--gym {
+  --nf-bg-c: #060A12;
+  --nf-vortex-a: rgba(96, 165, 250, 0.18);
+  --nf-vortex-b: rgba(74, 222, 128, 0.10);
+  --nf-vortex-c: rgba(59, 130, 246, 0.14);
+  --nf-dust: rgba(96, 165, 250, 0.55);
+  --nf-dust-glow: rgba(59, 130, 246, 0.65);
+  --nf-eyebrow: #60A5FA;
+  --nf-eyebrow-glow: rgba(96, 165, 250, 0.55);
+  --nf-code: #DBEAFE;
+  --nf-code-glow: rgba(96, 165, 250, 0.45);
+  --nf-glitch-a: rgba(239, 68, 68, 0.75);
+  --nf-glitch-b: rgba(74, 222, 128, 0.75);
+  --nf-era-border: rgba(96, 165, 250, 0.35);
+  --nf-era-hover: rgba(96, 165, 250, 0.7);
+  --nf-era-year: #93C5FD;
+  --nf-timeline-line: rgba(96, 165, 250, 0.35);
+  --nf-traveler-glow: rgba(96, 165, 250, 0.6);
+  --nf-warp-a: rgba(147, 197, 253, 0.9);
+  --nf-warp-b: rgba(74, 222, 128, 0.4);
+  --nf-shockwave: rgba(147, 197, 253, 0.9);
+  --nf-shockwave-glow: rgba(96, 165, 250, 0.8);
+  --nf-btn-from: #3B82F6;
+  --nf-btn-to: #2563EB;
+  --nf-btn-shadow: rgba(59, 130, 246, 0.4);
+  --nf-btn-hover-shadow: rgba(59, 130, 246, 0.65);
+  --nf-btn-ghost-border: rgba(96, 165, 250, 0.35);
+  --nf-btn-ghost-text: #93C5FD;
+  --nf-btn-ghost-hover: rgba(59, 130, 246, 0.12);
+  --nf-signal: #60A5FA;
+  --nf-flyby: #93C5FD;
+  --nf-flyby-glow: rgba(96, 165, 250, 0.8);
+  --nf-star-b: #93C5FD;
+  --nf-star-c: #4ADE80;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, #0C1A30 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, #081018 0%, transparent 55%),
+    var(--nf-bg-c);
+}
+
+.nf-void--gym::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px, transparent 23px,
+      rgba(96, 165, 250, 0.04) 24px, rgba(96, 165, 250, 0.04) 25px
+    );
+  pointer-events: none;
+}
+
+.nf-void--arena {
+  /* Same purple Solo Leveling palette as global 404 — already default-ish */
+  --nf-eyebrow: #A78BFA;
+  --nf-eyebrow-glow: rgba(167, 139, 250, 0.55);
+  --nf-code-glow: rgba(155, 110, 212, 0.45);
+}
+
+/* Apply theme vars to shared nf-* elements */
+.nf-void[class*="nf-void--"] .nf-vortex {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    var(--nf-vortex-a, rgba(155, 110, 212, 0.16)) 18%,
+    var(--nf-vortex-b, rgba(96, 165, 250, 0.10)) 34%,
+    transparent 50%,
+    var(--nf-vortex-c, rgba(124, 58, 237, 0.14)) 68%,
+    transparent 86%,
+    var(--nf-vortex-a, rgba(155, 110, 212, 0.16)) 100%
+  );
+}
+
+.nf-void[class*="nf-void--"] .nf-dust__mote {
+  background: var(--nf-dust, rgba(196, 181, 253, 0.5));
+  box-shadow: 0 0 8px var(--nf-dust-glow, rgba(155, 110, 212, 0.6));
+}
+
+.nf-void[class*="nf-void--"] .nf-eyebrow {
+  color: var(--nf-eyebrow, #EF4444);
+  text-shadow: 0 0 12px var(--nf-eyebrow-glow, rgba(239, 68, 68, 0.5));
+}
+
+.nf-void[class*="nf-void--"] .nf-code {
+  color: var(--nf-code, #E9D5FF);
+  text-shadow:
+    0 1px 0 var(--nf-btn-to, #7C3AED), 0 2px 0 #7433DB, 0 3px 0 #6B2FCB, 0 4px 0 #612ABB,
+    0 5px 0 #5826AB, 0 6px 0 #4F229B, 0 7px 0 #451E8B, 0 8px 0 #3C1A7B,
+    0 12px 24px rgba(0, 0, 0, 0.7),
+    0 0 70px var(--nf-code-glow, rgba(155, 110, 212, 0.45));
+}
+
+.nf-void--ai .nf-code {
+  font-size: clamp(4rem, 18vw, 9rem);
+  letter-spacing: 0.08em;
+}
+
+.nf-void--missions .nf-code,
+.nf-void--gym .nf-code {
+  font-size: clamp(4.5rem, 19vw, 10rem);
+  letter-spacing: 0.06em;
+}
+
+.nf-void[class*="nf-void--"] .nf-code__glitch {
+  text-shadow: -3px 0 0 var(--nf-glitch-a, rgba(239, 68, 68, 0.75)), 3px 0 0 var(--nf-glitch-b, rgba(96, 165, 250, 0.75));
+}
+
+.nf-void[class*="nf-void--"] .nf-timeline__line {
+  border-top-color: var(--nf-timeline-line, rgba(155, 110, 212, 0.35));
+}
+
+.nf-void[class*="nf-void--"] .nf-traveler {
+  filter: drop-shadow(0 0 10px var(--nf-traveler-glow, rgba(155, 110, 212, 0.6)));
+}
+
+.nf-void[class*="nf-void--"] .nf-era__icon {
+  border-color: var(--nf-era-border, rgba(155, 110, 212, 0.3));
+}
+
+.nf-void[class*="nf-void--"] .nf-era:hover .nf-era__icon {
+  border-color: var(--nf-era-hover, rgba(155, 110, 212, 0.7));
+}
+
+.nf-void[class*="nf-void--"] .nf-era__year {
+  color: var(--nf-era-year, #C4B5FD);
+}
+
+.nf-void[class*="nf-void--"] .nf-warp__streak::after {
+  background: linear-gradient(90deg, var(--nf-warp-a, rgba(196, 181, 253, 0.9)), var(--nf-warp-b, rgba(96, 165, 250, 0.4)), transparent);
+}
+
+.nf-void[class*="nf-void--"] .nf-shockwave {
+  border-color: var(--nf-shockwave, rgba(196, 181, 253, 0.9));
+  box-shadow: 0 0 60px var(--nf-shockwave-glow, rgba(155, 110, 212, 0.8)), inset 0 0 40px var(--nf-shockwave-glow, rgba(155, 110, 212, 0.5));
+}
+
+.nf-void[class*="nf-void--"] .nf-btn {
+  background: linear-gradient(135deg, var(--nf-btn-from, #9B6ED4), var(--nf-btn-to, #7C3AED));
+  box-shadow: 0 0 26px var(--nf-btn-shadow, rgba(155, 110, 212, 0.4));
+}
+
+.nf-void[class*="nf-void--"] .nf-btn:hover {
+  box-shadow: 0 0 42px var(--nf-btn-hover-shadow, rgba(155, 110, 212, 0.65));
+}
+
+.nf-void[class*="nf-void--"] .nf-btn--ghost {
+  border-color: var(--nf-btn-ghost-border, rgba(155, 110, 212, 0.35));
+  color: var(--nf-btn-ghost-text, #C4B5FD);
+}
+
+.nf-void[class*="nf-void--"] .nf-btn--ghost:hover {
+  background: var(--nf-btn-ghost-hover, rgba(155, 110, 212, 0.12));
+}
+
+.nf-void[class*="nf-void--"] .nf-signal__text {
+  color: var(--nf-signal, #EF4444);
+  text-shadow: 0 0 18px var(--nf-eyebrow-glow, rgba(239, 68, 68, 0.8));
+}
+
+.nf-void[class*="nf-void--"] .nf-flyby__icon {
+  filter: drop-shadow(0 0 30px var(--nf-flyby-glow, rgba(155, 110, 212, 0.7)));
+}
+
+.nf-void[class*="nf-void--"] .nf-flyby__year {
+  color: var(--nf-flyby, #C4B5FD);
+  text-shadow: 0 0 24px var(--nf-flyby-glow, rgba(155, 110, 212, 0.8));
+}
+
+.nf-void--ai .nf-stars {
+  background-image:
+    radial-gradient(1.5px 1.5px at 22% 31%, #fff, transparent),
+    radial-gradient(1px 1px at 68% 12%, var(--nf-star-b, #C4B5FD), transparent),
+    radial-gradient(1.8px 1.8px at 84% 57%, #fff, transparent),
+    radial-gradient(1px 1px at 41% 74%, var(--nf-star-c, #93C5FD), transparent),
+    radial-gradient(1.4px 1.4px at 12% 86%, #fff, transparent),
+    radial-gradient(1px 1px at 55% 45%, var(--nf-star-b, #E9D5FF), transparent),
+    radial-gradient(1.2px 1.2px at 92% 88%, #fff, transparent),
+    radial-gradient(1px 1px at 33% 8%, #fff, transparent);
+}

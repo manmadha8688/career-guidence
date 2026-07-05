@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, Sun, Moon } from 'lucide-react'
+import BrandNavButton from './BrandNavButton'
+import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import '../styles/pages/shared/info-pages.css'
 
@@ -18,9 +19,7 @@ export default function InfoPageLayout({ label, title, updated, children }) {
   return (
     <div className="info-page">
       <nav className="info-page__nav">
-        <button type="button" className="info-page__back" onClick={() => navigate('/')} aria-label="Back to home">
-          <ArrowLeft size={14} /> Home
-        </button>
+        <BrandNavButton onClick={() => navigate('/')} aria-label="Back to learnforearn" />
         <span className="info-page__label">{label}</span>
         <button
           type="button"

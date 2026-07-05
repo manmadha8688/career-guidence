@@ -25,7 +25,7 @@ export default function LandingFooter() {
         <div className="lp-footer__brand-block">
           <div className="lp-footer__brand">
             <Swords size={15} color="#9B6ED4" />
-            <span className="lp-grad-text lp-footer__title">LearnToEarn</span>
+            <span className="lp-grad-text lp-footer__title">learnforearn</span>
           </div>
           <span className="lp-footer__tagline">Learn the skills. Earn the job.</span>
         </div>
@@ -58,7 +58,7 @@ export default function LandingFooter() {
         ))}
       </div>
 
-      <div className="lp-footer__copy">© {new Date().getFullYear()} LearnToEarn · Free for students</div>
+      <div className="lp-footer__copy">© {new Date().getFullYear()} learnforearn · Free for students</div>
     </footer>
   )
 }
