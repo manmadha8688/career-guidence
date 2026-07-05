@@ -10,6 +10,7 @@ import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { getMissions } from '../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../utils/apiError'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -80,7 +81,7 @@ export default function MissionsPage() {
   useEffect(() => {
     getMissions()
       .then(r => setMissions(r.data))
-      .catch(() => toast.error('Failed to load missions. Please refresh.'))
+      .catch(err => toast.error(getApiError(err, 'We could not load missions. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [])
 

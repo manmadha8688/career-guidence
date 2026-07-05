@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Mail, Loader2, Eye, EyeOff, CheckCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { forgotPassword, verifyForgotPasswordOtp, resetPassword } from '../../api/api'
+import { getApiError } from '../../utils/apiError'
 import { useAuthForm } from './context/AuthFormContext'
 import useForgotPasswordBotStory from './hooks/useForgotPasswordBotStory'
 import {
@@ -13,17 +14,6 @@ import {
   strengthLabel,
   strengthColors,
 } from '../../utils/passwordRules'
-
-function getApiError(err, fallback) {
-  const data = err.response?.data
-  if (data?.error) return data.error
-  if (data?.errors?.newPassword) return data.errors.newPassword
-  if (data?.errors && typeof data.errors === 'object') {
-    const first = Object.values(data.errors)[0]
-    if (first) return first
-  }
-  return fallback
-}
 
 export default function ForgotPasswordForm() {
   const navigate = useNavigate()

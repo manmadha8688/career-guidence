@@ -7,6 +7,7 @@ import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminWalkIns, createWalkIn, updateAdminWalkIn, deleteWalkIn } from '../../api/api'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 
 const CITIES = ['Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Mumbai', 'Noida', 'Delhi', 'Kolkata', 'Ahmedabad', 'Gurugram']
@@ -52,7 +53,7 @@ function PostModal({ onClose, onSuccess, existing }) {
       }
       onSuccess()
     } catch (e) {
-      toast.error(e?.response?.data?.error || 'Failed to save')
+      toast.error(getApiError(e, 'We could not save this walk-in. Please try again.'))
     } finally {
       setSaving(false)
     }
@@ -179,7 +180,7 @@ export default function AdminWalkIns() {
     setLoading(true)
     getAdminWalkIns()
       .then(r => setWalkIns(r.data))
-      .catch(() => toast.error('Failed to load walk-ins'))
+      .catch(err => toast.error(getApiError(err, 'We could not load walk-ins. Please refresh.')))
       .finally(() => setLoading(false))
   }
 
@@ -214,8 +215,8 @@ export default function AdminWalkIns() {
       selection.clear()
       setDeleteModal(false)
       load()
-    } catch {
-      toast.error('Could not delete all selected walk-ins')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected walk-ins could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

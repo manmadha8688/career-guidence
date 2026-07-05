@@ -4,6 +4,7 @@ import { useAuth } from '../../../context/AuthContext'
 import { guestLogin, getPublicStats } from '../../../api/api'
 import { logApiError } from '../../../utils/devLog'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../../utils/apiError'
 import useLandingTheme from './useLandingTheme'
 
 export default function useLandingPage() {
@@ -87,9 +88,9 @@ export default function useLandingPage() {
       hideAuthOverlay()
       login(data.token, data.user)
       navigate('/')
-    } catch {
+    } catch (err) {
       hideAuthOverlay()
-      toast.error('Could not start guest session. Try again.')
+      toast.error(getApiError(err, 'We could not start a guest session right now. Please try again.'))
     } finally {
       setGuestLoading(false)
     }

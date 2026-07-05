@@ -8,6 +8,7 @@ import {
 import AppLayout from '../../components/AppLayout'
 import { getAdminStats } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
 
 const QUICK_ACTIONS = [
@@ -26,7 +27,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     getAdminStats()
       .then(r => setStats(r.data))
-      .catch(() => toast.error('Could not load dashboard stats. Please refresh.'))
+      .catch(err => toast.error(getApiError(err, 'We could not load dashboard stats. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [])
 

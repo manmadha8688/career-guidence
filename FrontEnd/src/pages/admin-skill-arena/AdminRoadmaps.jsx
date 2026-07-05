@@ -11,6 +11,7 @@ import {
   getRoadmapSubjects, getAdminSubjects, addSubjectToRoadmap, removeSubjectFromRoadmap, reorderSubjectInRoadmap
 } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 import SectionLabel from '../../components/admin/SectionLabel'
 import { listToText, textToList } from '../../components/admin/adminFormUtils'
@@ -95,7 +96,7 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
       }
       roadmap ? await updateRoadmap(roadmap.id, payload) : await createRoadmap(payload)
       toast.success(roadmap ? 'Updated' : 'Created'); onSave()
-    } catch { toast.error('Failed to save') } finally { setTimeout(() => setLoading(false), TEST_DELAY_MS) }
+    } catch (err) { toast.error(getApiError(err, 'We could not save this roadmap. Please try again.')) } finally { setTimeout(() => setLoading(false), TEST_DELAY_MS) }
   }
 
   return (
@@ -202,7 +203,7 @@ function SubjectsPanel({ roadmap, onClose }) {
     setLoading(true)
     Promise.all([getRoadmapSubjects(roadmap.id), getAdminSubjects()])
       .then(([rs, all]) => { setRsubs(rs.data); setAllSubs(all.data) })
-      .catch(() => toast.error('Failed to load'))
+      .catch(err => toast.error(getApiError(err, 'We could not load roadmap subjects. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
@@ -214,21 +215,21 @@ function SubjectsPanel({ roadmap, onClose }) {
     try {
       await addSubjectToRoadmap(roadmap.id, { subjectId: selectedSub, orderIndex: orderIdx })
       toast.success('Subject added'); setSelectedSub(''); load()
-    } catch { toast.error('Failed to add') } finally { setAdding(false) }
+    } catch (err) { toast.error(getApiError(err, 'We could not add this subject. Please try again.')) } finally { setAdding(false) }
   }
 
   const handleRemove = async (subId) => {
     try {
       await removeSubjectFromRoadmap(roadmap.id, subId)
       toast.success('Removed'); load()
-    } catch { toast.error('Failed to remove') }
+    } catch (err) { toast.error(getApiError(err, 'We could not remove this subject. Please try again.')) }
   }
 
   const handleReorder = async (subId) => {
     try {
       await reorderSubjectInRoadmap(roadmap.id, subId, editIdx)
       toast.success('Order updated'); setEditingId(null); load()
-    } catch { toast.error('Failed to update order') }
+    } catch (err) { toast.error(getApiError(err, 'We could not update the order. Please try again.')) }
   }
 
   const assigned = new Set(rsubs.map(rs => rs.subject?.id))
@@ -306,7 +307,7 @@ export default function AdminRoadmaps() {
 
   const load = () => {
     setLoading(true)
-    getAdminRoadmaps().then(r => setRoadmaps(r.data)).catch(() => toast.error('Failed to load')).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
+    getAdminRoadmaps().then(r => setRoadmaps(r.data)).catch(err => toast.error(getApiError(err, 'We could not load roadmaps. Please refresh.'))).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
   useEffect(() => { load() }, [])
@@ -337,8 +338,8 @@ export default function AdminRoadmaps() {
       selection.clear()
       setDeleteModal(false)
       load()
-    } catch {
-      toast.error('Could not delete all selected roadmaps')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected roadmaps could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

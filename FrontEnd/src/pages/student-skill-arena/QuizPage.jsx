@@ -6,6 +6,7 @@ import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoade
 import { startConceptQuiz, startSubjectQuiz, startRoadmapQuiz, submitQuiz } from '../../api/api'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
+import { getApiError } from '../../utils/apiError'
 import toast from 'react-hot-toast'
 
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -52,7 +53,7 @@ export default function QuizPage() {
           setTimeLeft(secs); setTotalSeconds(secs)
         }
       })
-      .catch(err => { toast.error(err.response?.data?.error || 'Failed to start trial'); navigate(-1) })
+      .catch(err => { toast.error(getApiError(err, 'We could not start this trial. Please try again.')); navigate(-1) })
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [type, refId])
 
@@ -66,8 +67,8 @@ export default function QuizPage() {
         answers: currentAnswers || answers,
       })
       navigate(`/skill-arena/quiz/result/${res.data.attemptId}?type=${type}&refId=${refId}`, { replace: true })
-    } catch {
-      toast.error('Failed to submit trial')
+    } catch (err) {
+      toast.error(getApiError(err, 'We could not submit this trial. Please try again.'))
       setSubmitting(false)
     }
   }, [submitting, type, refId, quiz, answers, navigate])

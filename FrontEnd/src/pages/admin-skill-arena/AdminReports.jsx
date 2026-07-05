@@ -6,6 +6,7 @@ import AppLayout from '../../components/AppLayout'
 import { getAdminReports, updateReport, deleteReport, getReportStats } from '../../api/api'
 import { REPORT_TYPE_LABELS } from '../../constants/reportTypes'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 
 const STATUS_META = {
   OPEN:        { label: 'Open',        color: '#EF4444', bg: 'rgba(239,68,68,0.1)',   icon: AlertCircle },
@@ -58,7 +59,7 @@ export default function AdminReports() {
       setTotalPages(r.data.totalPages)
       setPage(p)
       setStats(s.data)
-    } catch { toast.error('Failed to load reports') }
+    } catch (err) { toast.error(getApiError(err, 'We could not load reports. Please refresh.')) }
     finally { setTimeout(() => setLoading(false), TEST_DELAY_MS) }
   }
 
@@ -78,7 +79,7 @@ export default function AdminReports() {
       toast.success('Report updated')
       setEditing(p => { const n = {...p}; delete n[id]; return n })
       load(page)
-    } catch { toast.error('Failed to update') }
+    } catch (err) { toast.error(getApiError(err, 'We could not update this report. Please try again.')) }
     finally { setSaving(p => ({ ...p, [id]: false })) }
   }
 
@@ -88,7 +89,7 @@ export default function AdminReports() {
       await deleteReport(id)
       toast.success('Deleted')
       load(page)
-    } catch { toast.error('Failed to delete') }
+    } catch (err) { toast.error(getApiError(err, 'We could not delete this report. Please try again.')) }
   }
 
   const setEdit = (id, field, val) =>

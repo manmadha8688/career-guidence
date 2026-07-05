@@ -8,6 +8,7 @@ import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminMissions, createMission, updateMission, deleteMission, getAdminSubjects } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 import SectionLabel from '../../components/admin/SectionLabel'
 import { listToText, textToList } from '../../components/admin/adminFormUtils'
@@ -83,7 +84,7 @@ function MissionModal({ mission, subjects, onClose, onSave }) {
       toast.success(mission ? 'Mission updated' : 'Mission created')
       onSave()
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to save')
+      toast.error(getApiError(err, 'We could not save this mission. Please try again.'))
     } finally {
       setTimeout(() => setLoading(false), TEST_DELAY_MS)
     }
@@ -239,7 +240,7 @@ export default function AdminMissions() {
     setLoading(true)
     Promise.all([getAdminMissions(), getAdminSubjects()])
       .then(([m, s]) => { setMissions(m.data); setSubjects(s.data) })
-      .catch(() => toast.error('Failed to load'))
+      .catch(err => toast.error(getApiError(err, 'We could not load missions. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
@@ -277,8 +278,8 @@ export default function AdminMissions() {
       selection.clear()
       setDeleteModal(false)
       load()
-    } catch {
-      toast.error('Could not delete all selected missions')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected missions could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

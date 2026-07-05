@@ -8,6 +8,7 @@ import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminProblems, createProblem, updateProblemQ, deleteProblemQ } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 import SectionLabel from '../../components/admin/SectionLabel'
 import { listToText, textToList } from '../../components/admin/adminFormUtils'
@@ -125,7 +126,7 @@ function ProblemModal({ problem, onClose, onSave }) {
       toast.success(problem ? 'Problem updated' : 'Problem created')
       onSave()
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to save')
+      toast.error(getApiError(err, 'We could not save this problem. Please try again.'))
     } finally {
       setTimeout(() => setLoading(false), TEST_DELAY_MS)
     }
@@ -383,7 +384,7 @@ export default function AdminProblems() {
     setLoading(true)
     getAdminProblems()
       .then(r => setProblems(r.data))
-      .catch(() => toast.error('Failed to load'))
+      .catch(err => toast.error(getApiError(err, 'We could not load problems. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
@@ -417,8 +418,8 @@ export default function AdminProblems() {
       selection.clear()
       setDeleteModal(false)
       load()
-    } catch {
-      toast.error('Could not delete all selected problems')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected problems could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

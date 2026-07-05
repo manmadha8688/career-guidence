@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useAuth } from '../../context/AuthContext'
 import { loginUser, guestLogin } from '../../api/api'
 import { buildAuthRedirectQuery, resolveAuthRedirect } from '../../utils/authRedirect'
+import { getApiError } from '../../utils/apiError'
 import toast from 'react-hot-toast'
 import AuthSubmitButton from './components/AuthSubmitButton'
 import { useAuthForm } from './context/AuthFormContext'
@@ -111,9 +112,9 @@ export default function LoginForm() {
       hideAuthOverlay()
       login(data.token, data.user)
       navigate(redirectTo)
-    } catch {
+    } catch (err) {
       hideAuthOverlay()
-      toast.error('Guest mode is unavailable right now. Please try again in a moment.')
+      toast.error(getApiError(err, 'Guest mode is unavailable right now. Please try again in a moment.'))
     } finally {
       setGuestLoading(false)
     }
@@ -149,7 +150,7 @@ export default function LoginForm() {
       hideAuthOverlay()
       dismissCompanion()
       emitCompanionEvent('LOGIN_FAILED')
-      toast.error(err.response?.data?.error || 'That email or password did not match. Double-check and try again.')
+      toast.error(getApiError(err, 'That email or password did not match. Please double-check and try again.'))
     } finally {
       setLoading(false)
     }

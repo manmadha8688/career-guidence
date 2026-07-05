@@ -10,6 +10,7 @@ import {
 import { getWalkIns, postWalkIn, removeWalkIn } from '../api/api'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
+import { getApiError } from '../utils/apiError'
 import ScrollToTop from '../components/ScrollToTop'
 
 const CITIES = ['Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Mumbai', 'Noida', 'Delhi', 'Kolkata', 'Ahmedabad', 'Gurugram']
@@ -139,7 +140,7 @@ function PostModal({ onClose, onSuccess }) {
     try {
       await postWalkIn({ ...form, skills })
       toast.success('Walk-in posted!'); onSuccess()
-    } catch (e) { toast.error(e?.response?.data?.error || 'Failed to post') }
+    } catch (e) { toast.error(getApiError(e, 'We could not post this walk-in. Please try again.')) }
     finally { setSaving(false) }
   }
 
@@ -261,7 +262,7 @@ export default function JobsPage() {
     try {
       const { data } = await getWalkIns()
       setJobs(data)
-    } catch { toast.error('Failed to load walk-ins') }
+    } catch (err) { toast.error(getApiError(err, 'We could not load walk-ins. Please refresh.')) }
     finally { setLoading(false) }
   }
   useEffect(() => { load() }, [])
@@ -271,7 +272,7 @@ export default function JobsPage() {
     try {
       await removeWalkIn(id)
       toast.success('Deleted'); load()
-    } catch { toast.error('Failed to delete') }
+    } catch (err) { toast.error(getApiError(err, 'We could not delete this walk-in. Please try again.')) }
   }
 
   const toggleCity = (c) => setSelCities(s => s.includes(c) ? s.filter(x => x !== c) : [...s, c])

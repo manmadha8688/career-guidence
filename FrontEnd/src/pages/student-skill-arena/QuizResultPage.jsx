@@ -7,6 +7,7 @@ import { getAttemptResult } from '../../api/api'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 
 const LETTERS = ['A', 'B', 'C', 'D']
 
@@ -58,7 +59,7 @@ export default function QuizResultPage() {
           window.dispatchEvent(new CustomEvent('sl:refresh'))
         }
       })
-      .catch(() => { toast.error('Failed to load result'); navigate(-1) })
+      .catch(err => { toast.error(getApiError(err, 'We could not load this result. Please try again.')); navigate(-1) })
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [attemptId])
 

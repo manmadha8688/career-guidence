@@ -4,6 +4,7 @@ import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader
 import { getRoadmap, getRoadmapStatus, enrollRoadmap, pauseRoadmap, resumeRoadmap } from '../../../api/api'
 import { CheckCircle, Trophy, Lock } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../../utils/apiError'
 import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
 import { isMongoId } from '../../../utils/mongoId'
 
@@ -47,7 +48,7 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
       await enrollRoadmap(roadmapId)
       setRoadmap(r => ({ ...r, enrolled: true, paused: false }))
       toast.success('⚔️ Path registered!')
-    } catch { toast.error('Failed to register') }
+    } catch (err) { toast.error(getApiError(err, 'We could not register this path. Please try again.')) }
     finally { setEnrolling(false) }
   }
 
@@ -58,7 +59,7 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
       await pauseRoadmap(roadmapId)
       setRoadmap(r => ({ ...r, paused: true }))
       toast.success('Hunt paused')
-    } catch { toast.error('Failed to pause') }
+    } catch (err) { toast.error(getApiError(err, 'We could not pause this hunt. Please try again.')) }
     finally { setPausing(false) }
   }
 
@@ -69,7 +70,7 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
       await resumeRoadmap(roadmapId)
       setRoadmap(r => ({ ...r, paused: false }))
       toast.success('⚔️ Hunt resumed!')
-    } catch { toast.error('Failed to resume') }
+    } catch (err) { toast.error(getApiError(err, 'We could not resume this hunt. Please try again.')) }
     finally { setResuming(false) }
   }
 

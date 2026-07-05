@@ -5,6 +5,7 @@ import { MessageSquare, Star, ThumbsUp, ThumbsDown, RefreshCw } from 'lucide-rea
 import AppLayout from '../../components/AppLayout'
 import { getAllFeedbacks } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 
 const CATEGORY_COLOR = {
   Bug:        { bg: '#FEE2E2', color: '#991B1B', dark: 'rgba(239,68,68,0.15)',  text: '#EF4444' },
@@ -49,7 +50,7 @@ export default function AdminFeedbacks() {
         const avg = items.length ? (items.reduce((s, f) => s + f.rating, 0) / items.length).toFixed(1) : '—'
         setSummary({ avg, useful: items.filter(f => f.isUseful === true).length, notUseful: items.filter(f => f.isUseful === false).length })
       })
-      .catch(() => toast.error('Failed to load feedbacks'))
+      .catch(err => toast.error(getApiError(err, 'We could not load feedback. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 

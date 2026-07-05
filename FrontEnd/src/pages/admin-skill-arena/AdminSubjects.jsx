@@ -8,6 +8,7 @@ import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminSubjects, createSubject, updateSubject, deleteSubject } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 import SectionLabel from '../../components/admin/SectionLabel'
 import { listToText, textToList } from '../../components/admin/adminFormUtils'
@@ -61,7 +62,7 @@ function SubjectModal({ subject, onClose, onSave }) {
       toast.success(subject ? 'Subject updated' : 'Subject created')
       onSave()
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to save')
+      toast.error(getApiError(err, 'We could not save this subject. Please try again.'))
     } finally {
       setTimeout(() => setLoading(false), TEST_DELAY_MS)
     }
@@ -186,7 +187,7 @@ export default function AdminSubjects() {
     setLoading(true)
     getAdminSubjects()
       .then(r => setSubjects(r.data))
-      .catch(() => toast.error('Failed to load'))
+      .catch(err => toast.error(getApiError(err, 'We could not load subjects. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
@@ -218,8 +219,8 @@ export default function AdminSubjects() {
       selection.clear()
       setDeleteModal(false)
       load()
-    } catch {
-      toast.error('Could not delete all selected subjects')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected subjects could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

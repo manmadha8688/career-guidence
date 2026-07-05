@@ -8,6 +8,7 @@ import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, deleteConcept } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 
 const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
@@ -138,7 +139,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
       toast.success(concept ? 'Concept updated' : 'Concept created')
       onSave()
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to save')
+      toast.error(getApiError(err, 'We could not save this concept. Please try again.'))
     } finally {
       setTimeout(() => setLoading(false), TEST_DELAY_MS)
     }
@@ -317,7 +318,7 @@ export default function AdminConcepts() {
     setLoading(true)
     getAdminConcepts(selectedSubject)
       .then(r => setConcepts(r.data))
-      .catch(() => toast.error('Failed to load'))
+      .catch(err => toast.error(getApiError(err, 'We could not load concepts. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [selectedSubject])
 
@@ -352,8 +353,8 @@ export default function AdminConcepts() {
       selection.clear()
       setDeleteModal(false)
       reload()
-    } catch {
-      toast.error('Could not delete all selected concepts')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected concepts could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

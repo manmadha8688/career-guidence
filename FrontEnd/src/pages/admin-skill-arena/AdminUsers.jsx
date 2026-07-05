@@ -8,6 +8,7 @@ import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminUsers, deleteUser } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 
 const fmtDate = (d) => d ? new Date(d).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: '2-digit' }) : '—'
 const fmtDateTime = (d) => {
@@ -39,7 +40,7 @@ export default function AdminUsers() {
         setTotalPages(r.data.totalPages)
         setPage(p)
       })
-      .catch(() => toast.error('Failed to load users'))
+      .catch(err => toast.error(getApiError(err, 'We could not load users. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [search])
 
@@ -74,8 +75,8 @@ export default function AdminUsers() {
       selection.clear()
       setDeleteModal(false)
       load(page)
-    } catch {
-      toast.error('Could not delete all selected users')
+    } catch (err) {
+      toast.error(getApiError(err, 'Some selected users could not be deleted. Please try again.'))
     } finally {
       setBulkDeleting(false)
     }

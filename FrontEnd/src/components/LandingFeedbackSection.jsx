@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { MessageSquare, Star, ThumbsUp, ThumbsDown, Loader2, Heart, Sparkles } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { getApiError } from '../utils/apiError'
 import { submitFeedback } from '../api/api'
 
 const CATEGORIES = [
@@ -49,8 +50,8 @@ export default function LandingFeedbackSection() {
       })
       setSubmitted(true)
       toast.success('Thank you — honest feedback like yours shapes what we build next.')
-    } catch {
-      toast.error('We could not send your feedback right now. Please try again.')
+    } catch (err) {
+      toast.error(getApiError(err, 'We could not send your feedback right now. Please try again.'))
     } finally {
       setSubmitting(false)
     }

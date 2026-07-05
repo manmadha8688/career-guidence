@@ -3,6 +3,7 @@ import { Plus, Trash2, Edit2, ChevronRight, X, Check } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, getAdminConcepts, getConceptQuestions, createQuestion, updateQuestion, deleteQuestion } from '../../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 
 const DIFFICULTY = ['EASY', 'MEDIUM', 'HARD']
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -23,14 +24,14 @@ export default function AdminQuestions() {
   const [saving, setSaving] = useState(false)
 
   useEffect(() => {
-    getAdminSubjects().then(r => setSubjects(r.data)).catch(() => toast.error('Failed to load subjects'))
+    getAdminSubjects().then(r => setSubjects(r.data)).catch(err => toast.error(getApiError(err, 'We could not load subjects. Please refresh.')))
   }, [])
 
   const selectSubject = (s) => {
     setSelectedSubject(s)
     setSelectedConcept(null)
     setQuestions([])
-    getAdminConcepts(s.id).then(r => setConcepts(r.data)).catch(() => toast.error('Failed to load concepts'))
+    getAdminConcepts(s.id).then(r => setConcepts(r.data)).catch(err => toast.error(getApiError(err, 'We could not load concepts. Please refresh.')))
   }
 
   const selectConcept = (c) => {
@@ -39,7 +40,7 @@ export default function AdminQuestions() {
   }
 
   const loadQuestions = (conceptId) => {
-    getConceptQuestions(conceptId).then(r => setQuestions(r.data)).catch(() => toast.error('Failed to load questions'))
+    getConceptQuestions(conceptId).then(r => setQuestions(r.data)).catch(err => toast.error(getApiError(err, 'We could not load questions. Please refresh.')))
   }
 
   const openAdd = () => {
@@ -78,7 +79,7 @@ export default function AdminQuestions() {
       }
       setModal(null)
       loadQuestions(selectedConcept.id)
-    } catch { toast.error('Failed to save') }
+    } catch (err) { toast.error(getApiError(err, 'We could not save this question. Please try again.')) }
     finally { setSaving(false) }
   }
 
@@ -88,7 +89,7 @@ export default function AdminQuestions() {
       await deleteQuestion(id)
       toast.success('Deleted')
       setQuestions(prev => prev.filter(q => q.id !== id))
-    } catch { toast.error('Failed to delete') }
+    } catch (err) { toast.error(getApiError(err, 'We could not delete this question. Please try again.')) }
   }
 
   const setOption = (i, val) => setForm(f => { const opts = [...f.options]; opts[i] = val; return { ...f, options: opts } })

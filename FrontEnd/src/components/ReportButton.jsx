@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { submitReport } from '../api/api'
 import toast from 'react-hot-toast'
+import { getApiError } from '../utils/apiError'
 import useBodyLock from '../hooks/useBodyLock'
 import { REPORT_CATEGORIES } from '../constants/reportTypes'
 import { buildReportContext, formatContextPreview, getReportPageTitle } from '../utils/reportContext'
@@ -135,8 +136,8 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
       })
       setSubmitted(true)
       toast.success('Report sent — thank you for helping improve ARISE.')
-    } catch {
-      toast.error('Could not send your report. Please try again.')
+    } catch (err) {
+      toast.error(getApiError(err, 'We could not send your report right now. Please try again.'))
     } finally {
       setSubmit(false)
     }

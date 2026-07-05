@@ -6,6 +6,7 @@ import { useAuth } from '../../context/AuthContext'
 import { registerUser, sendOtp, verifyOtp } from '../../api/api'
 import { buildAuthRedirectQuery, resolveAuthRedirect } from '../../utils/authRedirect'
 import { getPasswordStrength, strengthLabel, strengthColors } from '../../utils/passwordRules'
+import { getApiError } from '../../utils/apiError'
 import toast from 'react-hot-toast'
 import AuthSubmitButton from './components/AuthSubmitButton'
 import { useAuthForm } from './context/AuthFormContext'
@@ -138,10 +139,10 @@ export default function RegisterForm() {
       toast.success('We sent a 6-digit code to your inbox.')
     } catch (err) {
       const status      = err.response?.status
-      const msg         = err.response?.data?.error || 'Failed to send OTP'
+      const msg         = getApiError(err, 'We could not send the code. Please try again.')
       const retryAfter  = err.response?.data?.retryAfter
       if (status === 409)  setEmailError(msg)
-      else if (retryAfter) { startCooldown(retryAfter); toast.error(`Almost there — wait ${retryAfter}s before requesting another code.`) }
+      else if (retryAfter) { startCooldown(retryAfter); toast.error(`Almost there — please wait ${retryAfter}s before requesting another code.`) }
       else toast.error(msg)
     } finally {
       setSendingOtp(false)
@@ -159,7 +160,7 @@ export default function RegisterForm() {
       sessionStorage.removeItem('otp_sent_at')
       toast.success('Your email is verified. You can finish signing up.')
     } catch (err) {
-      toast.error(err.response?.data?.error || 'That code did not work. Check your email and try again.')
+      toast.error(getApiError(err, 'That code did not work. Please check your email and try again.'))
     } finally {
       setVerifyingOtp(false)
     }
@@ -193,7 +194,7 @@ export default function RegisterForm() {
       hideAuthOverlay()
       dismissCompanion()
       emitBeat('REG_FAILED')
-      toast.error(err.response?.data?.error || 'We could not create your account. Please try again.')
+      toast.error(getApiError(err, 'We could not create your account. Please try again.'))
     } finally {
       setLoading(false)
     }

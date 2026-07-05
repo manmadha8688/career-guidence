@@ -9,6 +9,7 @@ import { getRoadmap, enrollRoadmap, getRoadmapStatus } from '../../api/api'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 
 const RANK_COLORS = {
   S: { color: '#EF4444', bg: '#EF444412' },
@@ -65,7 +66,7 @@ export default function RoadmapDetailPage() {
       await enrollRoadmap(id)
       setRoadmap(r => ({ ...r, enrolled: true }))
       toast.success('⚔️ Path registered! Your hunt begins.')
-    } catch { toast.error('Failed to register path') }
+    } catch (err) { toast.error(getApiError(err, 'We could not register this path. Please try again.')) }
     finally { setEnrolling(false) }
   }
 

@@ -13,6 +13,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { getRank } from '../../utils/slRank'
 import toast from 'react-hot-toast'
+import { getApiError } from '../../utils/apiError'
 import { logApiError } from '../../utils/devLog'
 import {
   NAV_ITEMS, DAILY_QUESTS,
@@ -136,7 +137,7 @@ export default function DashboardPage() {
         setSummary(s.data)
         syncQuestsFromSummary(s.data, user?.id)
       })
-      .catch(() => { if (active) toast.error('Could not load your progress. Please refresh.') })
+      .catch(err => { if (active) toast.error(getApiError(err, 'We could not load your progress. Please refresh.')) })
       .finally(() => {
         timers.push(setTimeout(() => { if (active) setLoading(false) }, PAGE_MIN_MS))
       })
