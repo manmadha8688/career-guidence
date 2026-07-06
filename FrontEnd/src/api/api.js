@@ -81,6 +81,7 @@ export const registerUser     = (data)      => api.post('/auth/register', data)
 export const sendOtp          = (email)     => api.post('/auth/send-otp', { email })
 export const verifyOtp        = (email, otp) => api.post('/auth/verify-otp', { email, otp })
 export const loginUser        = (data)      => api.post('/auth/login', data)
+export const googleLogin      = (credential) => api.post('/auth/google', { credential })
 export const guestLogin       = (guestId)   => api.post('/auth/guest', guestId ? { guestId } : {})
 export const getMe            = ()          => api.get('/auth/me')
 export const forgotPassword       = (email) => api.post('/auth/forgot-password', { email })
@@ -190,10 +191,12 @@ export const getPublicProfile = (username) => api.get(`/public/profile/${encodeU
 export const updateProfile    = (data)     => api.put('/profile/me', data)
 
 // ─── REPORTS ──────────────────────────────────────────
-export const submitReport       = (data)     => api.post('/reports', data)
+// Report mutations bust the cached admin dashboard stats so the open-report
+// count and totals refresh on the next dashboard visit.
+export const submitReport       = (data)     => api.post('/reports', data).then(r => { clearApiCache('adminStats'); return r })
 export const getAdminReports    = (p=0,s=20,status='') => api.get(`/reports?page=${p}&size=${s}${status ? `&status=${status}` : ''}`)
-export const updateReport       = (id, d)    => api.put(`/reports/${id}`, d)
-export const deleteReport       = (id)       => api.delete(`/reports/${id}`)
+export const updateReport       = (id, d)    => api.put(`/reports/${id}`, d).then(r => { clearApiCache('adminStats'); return r })
+export const deleteReport       = (id)       => api.delete(`/reports/${id}`).then(r => { clearApiCache('adminStats'); return r })
 export const getReportStats     = ()         => api.get('/reports/stats')
 
 export default api

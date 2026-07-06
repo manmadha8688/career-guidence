@@ -3,11 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useAuth } from '../../context/AuthContext'
-import { loginUser, guestLogin } from '../../api/api'
+import { loginUser, guestLogin, googleLogin } from '../../api/api'
 import { buildAuthRedirectQuery, resolveAuthRedirect } from '../../utils/authRedirect'
 import { getApiError } from '../../utils/apiError'
 import toast from 'react-hot-toast'
 import AuthSubmitButton from './components/AuthSubmitButton'
+import GoogleSignInButton from './components/GoogleSignInButton'
 import { useAuthForm } from './context/AuthFormContext'
 import useLoginBotStory from './hooks/useLoginBotStory'
 
@@ -120,6 +121,37 @@ export default function LoginForm() {
     }
   }
 
+  /* ── google ───────────────────────────────────────────────────── */
+  const handleGoogleClick = () => {
+    dismissCompanion()
+    emitCompanionEvent('GOOGLE_CLICK')
+  }
+
+  const handleGoogle = async (credential) => {
+    setLoading(true)
+    showAuthOverlay('login')
+    dismissCompanion()
+    emitCompanionEvent('GOOGLE_PROCESSING')
+    try {
+      const { data } = await googleLogin(credential)
+      dismissCompanion()
+      emitCompanionEvent('GOOGLE_SUCCESS')
+      completeAuthOverlay()
+      await new Promise(r => setTimeout(r, 800))
+      hideAuthOverlay()
+      login(data.token, data.user)
+      if (data.user.role === 'ADMIN') navigate('/admin-skill-arena')
+      else navigate(redirectTo)
+    } catch (err) {
+      hideAuthOverlay()
+      dismissCompanion()
+      emitCompanionEvent('GOOGLE_FAILED')
+      toast.error(getApiError(err, 'Google sign-in did not complete. Please try again.'))
+    } finally {
+      setLoading(false)
+    }
+  }
+
   /* ── submit ───────────────────────────────────────────────────── */
   const handleSubmit = async e => {
     e.preventDefault()
@@ -177,29 +209,28 @@ export default function LoginForm() {
       >
         Welcome back
       </motion.h1>
-      <motion.p
-        className="auth-form-sub"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.05 }}
-      >
-        Sign in to continue your journey.{' '}
-        <Link to={`/register${registerQs}`} className="auth-link auth-link--inherit">
-          New here? Sign up free
-        </Link>
-      </motion.p>
 
-      <form onSubmit={handleSubmit} className="auth-form">
+      <div className="auth-auth-switch">
+        <span className="auth-auth-switch__label">New here?</span>
+        <Link to={`/register${registerQs}`} className="auth-auth-switch__link" replace>
+          Sign up
+        </Link>
+      </div>
+
+      <GoogleSignInButton text="signin_with" onCredential={handleGoogle} onInteract={handleGoogleClick} disabled={loading || guestLoading} />
+      <div className="auth-divider"><span>or sign in with email</span></div>
+
+      <form onSubmit={handleSubmit} className="auth-form auth-form--login-manual">
         {/* Email */}
-        <div className={`auth-field${focusedField === 'email' ? ' auth-field--focus' : ''}`}>
+        <div className={`auth-field auth-field--compact${focusedField === 'email' ? ' auth-field--focus' : ''}`}>
           <label className="auth-label auth-label--with-icon" htmlFor="login-email">
-            <Mail size={13} aria-hidden="true" />
+            <Mail size={12} aria-hidden="true" />
             Email
           </label>
           <input
             id="login-email"
             type="email"
-            className="auth-input"
+            className="auth-input auth-input--compact"
             placeholder="you@example.com"
             autoComplete="email"
             required
@@ -211,13 +242,13 @@ export default function LoginForm() {
         </div>
 
         {/* Password */}
-        <div className={`auth-field${focusedField === 'password' ? ' auth-field--focus' : ''}`}>
+        <div className={`auth-field auth-field--compact${focusedField === 'password' ? ' auth-field--focus' : ''}`}>
           <label className="auth-label" htmlFor="login-password">Password</label>
           <div className="auth-pass-wrap">
             <input
               id="login-password"
               type={showPass ? 'text' : 'password'}
-              className="auth-input"
+              className="auth-input auth-input--compact"
               placeholder="Enter your password"
               autoComplete="current-password"
               required
@@ -232,42 +263,31 @@ export default function LoginForm() {
               aria-label={showPass ? 'Hide password' : 'Show password'}
               onClick={togglePassword}
             >
-              {showPass ? <EyeOff size={17} /> : <Eye size={17} />}
+              {showPass ? <EyeOff size={15} /> : <Eye size={15} />}
             </button>
           </div>
-          <div className="auth-field-meta auth-field-meta--end">
+          <div className="auth-field-meta auth-field-meta--end auth-field-meta--compact">
             <Link to="/forgot-password" className="auth-link auth-link--meta">
               Forgot password?
             </Link>
           </div>
         </div>
 
-        <AuthSubmitButton ready={ready} loading={loading} compact>
+        <AuthSubmitButton ready={ready} loading={loading} size="sm">
           Sign in
         </AuthSubmitButton>
       </form>
 
-      <div className="auth-login-bottom">
-        <span className="auth-login-bottom-label">New here?</span>
-        <div className="auth-login-bottom-actions">
-          <Link
-            to={`/register${registerQs}`}
-            className="auth-link-btn"
-            replace
-          >
-            Sign up
-          </Link>
-          <span className="auth-login-bottom-sep">|</span>
-          <button
-            type="button"
-            className="auth-ghost-inline"
-            onClick={handleGuest}
-            disabled={guestLoading}
-          >
-            {guestLoading && <span className="loading-spinner loading-spinner--sm" />}
-            Guest login
-          </button>
-        </div>
+      <div className="auth-guest-row">
+        <button
+          type="button"
+          className="auth-ghost-inline"
+          onClick={handleGuest}
+          disabled={guestLoading}
+        >
+          {guestLoading && <span className="loading-spinner loading-spinner--sm" />}
+          Guest login
+        </button>
       </div>
     </>
   )

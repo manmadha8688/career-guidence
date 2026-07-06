@@ -1,6 +1,10 @@
-export default function AuthSubmitButton({ ready, loading, children, compact = false }) {
-  const wrapCls = compact ? ' auth-escape-wrap--compact' : ''
-  const btnCls  = compact ? ' auth-btn-primary--compact' : ''
+export default function AuthSubmitButton({ ready, loading, children, compact = false, size }) {
+  const wrapCls = (compact || size === 'sm') ? ' auth-escape-wrap--compact' : ''
+  const btnCls  = size === 'sm'
+    ? ' auth-btn-primary--sm'
+    : compact
+      ? ' auth-btn-primary--compact'
+      : ''
 
   return (
     <div className={`auth-escape-wrap auth-escape-wrap--static${wrapCls}`}>

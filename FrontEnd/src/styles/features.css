@@ -422,3 +422,46 @@
   border-color: var(--accent);
   color: var(--text-primary);
 }
+
+/* ── Google Sign-In (login / register) ─────────────────────────────────────── */
+.google-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 44px;
+}
+.google-signin__btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color-scheme: light; /* keeps the GIS iframe rendering consistent across themes */
+}
+.google-signin--disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.google-signin__loading {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 10px 0;
+}
+
+/* "or" divider between Google and the email form */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin: 0.4rem 0 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  text-transform: lowercase;
+  letter-spacing: 0.03em;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color, rgba(128, 128, 128, 0.25));
+}

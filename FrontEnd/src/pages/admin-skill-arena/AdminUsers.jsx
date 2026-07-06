@@ -20,6 +20,12 @@ const fmtDateTime = (d) => {
 
 function debounce(fn, d) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d) } }
 
+const providerBadgeClass = (p) => {
+  if (p === 'guest') return 'badge-warning'
+  if (p === 'google' || p === 'email + google') return 'badge-primary'
+  return 'badge-student'
+}
+
 export default function AdminUsers() {
   const [users, setUsers] = useState([])
   const [page, setPage] = useState(0)
@@ -121,6 +127,7 @@ export default function AdminUsers() {
                     />
                   </th>
                   <th>User</th>
+                  <th>Method</th>
                   <th>Role</th>
                   <th>Status</th>
                   <th>Joined</th>
@@ -156,6 +163,7 @@ export default function AdminUsers() {
                         </div>
                       </div>
                     </td>
+                    <td><span className={`badge ${providerBadgeClass(u.provider)}`}>{u.provider || 'email'}</span></td>
                     <td><span className={`badge ${u.role === 'ADMIN' ? 'badge-admin' : u.role === 'GUEST' ? 'badge-warning' : 'badge-student'}`}>{u.role}</span></td>
                     <td><span className={`badge ${u.isActive ? 'badge-success' : 'badge-danger'}`}>{u.isActive ? 'Active' : 'Inactive'}</span></td>
                     <td className="text-sm text-muted">{fmtDate(u.createdAt)}</td>

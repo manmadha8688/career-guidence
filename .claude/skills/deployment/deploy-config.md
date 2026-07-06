@@ -1,15 +1,37 @@
 # Deploy Configuration — Environment Variables
 
+## Test vs Production stacks
+
+| | Frontend | Backend API | Render `CORS_ALLOWED_ORIGINS` |
+|---|---|---|---|
+| **Test** | `https://learn-to-earn-omega.vercel.app` | `https://learntoearn-wnpp.onrender.com/api` | `https://learn-to-earn-omega.vercel.app` |
+| **Production** | `https://learnforearn.in` | `https://learnforearn.onrender.com/api` | `https://learnforearn.in` |
+
+> **CSP:** `FrontEnd/vercel.json` allows `https://*.onrender.com` in `connect-src` so both test and prod Render backends work. Vercel reads `vercel.json` **before** the build — env-based CSP patching at build time does not affect deployed headers.
+
+---
+
 ## Frontend (Vercel)
 
 Set these in: Vercel Dashboard → Project → Settings → Environment Variables
 
+### Test project (`learn-to-earn-omega`)
+
 | Variable | Value | Required |
 |----------|-------|----------|
-| `VITE_API_URL` | `https://learnforearn-wnpp.onrender.com/api` | ✅ Yes |
+| `VITE_API_URL` | `https://learntoearn-wnpp.onrender.com/api` | Yes |
+| `VITE_GOOGLE_CLIENT_ID` | `<web-client-id>.apps.googleusercontent.com` | Yes (Google sign-in) |
+
+### Production project (`learnforearn.in`)
+
+| Variable | Value | Required |
+|----------|-------|----------|
+| `VITE_API_URL` | `https://learnforearn.onrender.com/api` | Yes |
+| `VITE_GOOGLE_CLIENT_ID` | `<web-client-id>.apps.googleusercontent.com` | Yes (Google sign-in) |
 
 > **Note:** `VITE_` prefix = public variable, embedded in JS bundle.
 > Never put secrets here. The backend URL is safe to expose.
+> After changing env vars, **redeploy** — Vite bakes them at build time.
 
 ---
 
@@ -17,16 +39,32 @@ Set these in: Vercel Dashboard → Project → Settings → Environment Variable
 
 Set these in: Render Dashboard → Service → Environment
 
+### Test service (`learntoearn-wnpp`)
+
 | Variable | Value | Notes |
 |----------|-------|-------|
 | `MONGODB_URI` | `mongodb+srv://user:pass@cluster/learnData_db` | Full Atlas connection string |
 | `JWT_SECRET` | `<256-bit random string>` | Generate: `openssl rand -hex 32` |
-| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.in` | No trailing slash |
+| `CORS_ALLOWED_ORIGINS` | `https://learn-to-earn-omega.vercel.app` | No trailing slash |
 | `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis L2 cache (omit for Caffeine-only) |
-| `SPRING_REDIS_URL` | `redis://red-<id>:6379` | Render Key Value **internal** URL (set `allkeys-lru`). Omit if not using Redis |
+| `SPRING_REDIS_URL` | `redis://red-<id>:6379` | Optional — Render Key Value internal URL |
 | `BREVO_API_KEY` | `<Brevo SMTP API key>` | Required for register/forgot-password OTP emails |
+| `GOOGLE_CLIENT_ID` | `<web-client-id>.apps.googleusercontent.com` | Must match `VITE_GOOGLE_CLIENT_ID` |
 | `COOKIE_SECURE` | `true` | Required in production — httpOnly auth cookies over HTTPS only |
 | `PORT` | (auto-injected by Render) | DO NOT set manually |
+
+### Production service (`learnforearn`)
+
+| Variable | Value | Notes |
+|----------|-------|-------|
+| `MONGODB_URI` | (production Atlas URI) | |
+| `JWT_SECRET` | (production secret) | |
+| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.in` | No trailing slash |
+| `SPRING_PROFILES_ACTIVE` | `prod` | |
+| `SPRING_REDIS_URL` | (optional) | |
+| `BREVO_API_KEY` | (production key) | |
+| `GOOGLE_CLIENT_ID` | same Web Client ID as Vercel | |
+| `COOKIE_SECURE` | `true` | |
 
 ### Health Check
 
@@ -38,11 +76,24 @@ Public route — no auth required. Added via Spring Boot Actuator.
 
 ---
 
+## Google Cloud Console (OAuth)
+
+**OAuth 2.0 Client → Authorized JavaScript origins** (all required):
+
+- `http://localhost:5173`
+- `https://learn-to-earn-omega.vercel.app`
+- `https://learnforearn.in`
+
+`GOOGLE_CLIENT_ID` on both Render services must match `VITE_GOOGLE_CLIENT_ID` on both Vercel projects.
+
+---
+
 ## Local Development
 
 ### Frontend (.env.local)
 ```
 VITE_API_URL=http://localhost:8080/api
+VITE_GOOGLE_CLIENT_ID=xxxxxxxx.apps.googleusercontent.com
 ```
 
 ### Backend (application-local.properties — gitignored)
@@ -53,9 +104,29 @@ cors.allowed.origins=http://localhost:5173
 spring.profiles.active=local
 brevo.api.key=<your-brevo-api-key>
 app.cookie.secure=false
+google.client-id=xxxxxxxx.apps.googleusercontent.com
 ```
 
 > Local profile uses `application-local.properties` (gitignored). Set `app.cookie.secure=false` for HTTP localhost.
+> Local dev does not use `vercel.json` CSP — only Vercel deployments do.
+
+---
+
+## Post-deploy verification
+
+**CSP (test):**
+```bash
+curl -sI https://learn-to-earn-omega.vercel.app/ | findstr Content-Security-Policy
+```
+Should include `https://learntoearn-wnpp.onrender.com` in `connect-src`.
+
+**CORS (test):**
+```bash
+curl -H "Origin: https://learn-to-earn-omega.vercel.app" -I https://learntoearn-wnpp.onrender.com/api/subjects
+```
+Should return `Access-Control-Allow-Origin: https://learn-to-earn-omega.vercel.app`.
+
+Repeat on production with `learnforearn.in` + `learnforearn.onrender.com`.
 
 ---
 
@@ -102,8 +173,4 @@ Notes:
 
 ## Vercel Config (already in repo)
 
-`FrontEnd/vercel.json`:
-```json
-{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
-```
-This handles SPA routing — all URLs serve index.html (React Router handles routing).
+`FrontEnd/vercel.json` — SPA rewrites + security headers. CSP `connect-src` includes `https://*.onrender.com` so any Render backend (test or prod) is allowed without per-env CSP changes.

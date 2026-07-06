@@ -21,6 +21,14 @@ export const BEAT_PRIORITY = {
   LOGIN_PROCESSING: 10,
   LOGIN_SUCCESS: 10,
   LOGIN_FAILED: 10,
+  GOOGLE_PROCESSING: 10,
+  GOOGLE_SUCCESS: 10,
+  GOOGLE_FAILED: 8,
+  REG_GOOGLE_PROCESSING: 10,
+  REG_GOOGLE_SUCCESS: 10,
+  REG_GOOGLE_FAILED: 8,
+  GOOGLE_CLICK: 7,
+  REG_GOOGLE_CLICK: 7,
   REG_GREET: 10,
   REG_FOUND_PASSWORD: 10,
   FP_GREET: 10,
@@ -109,10 +117,9 @@ export const STORY_BEATS = {
     mood: 'calm',
     lines: [
       { speaker: 'pixel', text: "Oh. Someone actually came back to log in." },
-      { speaker: 'echo',  text: "Do we pretend to be impressed, or stay honest?" },
+      { speaker: 'echo',  text: "One Google tap, or the classic email route." },
       { speaker: 'nova',  text: "Welcome back! We missed you. Probably." },
       { speaker: 'pixel', text: "We don't know them yet. Relax, Nova." },
-      { speaker: 'echo',  text: "Half of logins fail on the first try anyway." },
       { speaker: 'nova',  text: "Not this one. I can feel it." },
       { speaker: 'pixel', text: "You 'felt' the last one too. They forgot their email." },
     ],
@@ -287,6 +294,44 @@ export const STORY_BEATS = {
     ],
   },
 
+  /* ── Login — Google sign-in ── */
+  GOOGLE_CLICK: {
+    mood: 'nudge',
+    lines: [
+      { speaker: 'pixel', text: "Ah, the Google shortcut. Someone values their time." },
+      { speaker: 'echo',  text: "No email, no password. Just vibes and a token." },
+      { speaker: 'nova',  text: "Smart pick. Let Google do the vouching." },
+    ],
+  },
+
+  GOOGLE_PROCESSING: {
+    mood: 'calm',
+    lines: [
+      { speaker: 'nova',  text: "Asking Google if they're the real deal." },
+      { speaker: 'echo',  text: "Handshake in progress. Very official." },
+      { speaker: 'pixel', text: "No password to fumble this time. Refreshing." },
+    ],
+  },
+
+  GOOGLE_SUCCESS: {
+    mood: 'celebrate',
+    lines: [
+      { speaker: 'nova',  text: "Google says you're legit. Good enough for us." },
+      { speaker: 'echo',  text: "Identity confirmed. Zero passwords harmed." },
+      { speaker: 'pixel', text: "Fine — that was almost suspiciously smooth." },
+      { speaker: 'nova',  text: "Welcome back, hunter." },
+    ],
+  },
+
+  GOOGLE_FAILED: {
+    mood: 'concerned',
+    lines: [
+      { speaker: 'echo',  text: "Google popup vanished mid-handshake." },
+      { speaker: 'pixel', text: "Not you — just a hiccup between us and Google." },
+      { speaker: 'nova',  text: "Give it one more tap. We'll wait." },
+    ],
+  },
+
   LONG_IDLE: {
     mood: 'sleepy',
     lines: [
@@ -304,9 +349,47 @@ export const STORY_BEATS = {
     mood: 'happy',
     lines: [
       { speaker: 'pixel', text: "Registration page. They want to join the hunt." },
-      { speaker: 'echo',  text: "Do they know there are four fields and an OTP?" },
-      { speaker: 'nova',  text: "They'll learn. We'll cheer from the sidelines." },
+      { speaker: 'echo',  text: "Google in one tap, or four fields and an OTP." },
+      { speaker: 'nova',  text: "Either way, we'll cheer from the sidelines." },
       { speaker: 'pixel', text: "Cheer loudly. They'll need it." },
+    ],
+  },
+
+  /* ── Register — Google sign-up ── */
+  REG_GOOGLE_CLICK: {
+    mood: 'nudge',
+    lines: [
+      { speaker: 'pixel', text: "Google signup — skipping the OTP boss fight. Clever." },
+      { speaker: 'echo',  text: "No name field, no six digits. Bold shortcut." },
+      { speaker: 'nova',  text: "Let Google handle the paperwork. I approve." },
+    ],
+  },
+
+  REG_GOOGLE_PROCESSING: {
+    mood: 'calm',
+    lines: [
+      { speaker: 'nova',  text: "Setting up your account through Google." },
+      { speaker: 'echo',  text: "Borrowing your details, with permission." },
+      { speaker: 'pixel', text: "Zero forms. I'm quietly impressed." },
+    ],
+  },
+
+  REG_GOOGLE_SUCCESS: {
+    mood: 'celebrate',
+    lines: [
+      { speaker: 'nova',  text: "Account created via Google. Effortless." },
+      { speaker: 'echo',  text: "New hunter registered — zero typos." },
+      { speaker: 'pixel', text: "Didn't even break a sweat. Show-off." },
+      { speaker: 'nova',  text: "See you inside." },
+    ],
+  },
+
+  REG_GOOGLE_FAILED: {
+    mood: 'concerned',
+    lines: [
+      { speaker: 'echo',  text: "Google sign-up stalled mid-handshake." },
+      { speaker: 'pixel', text: "Not your fault — Google blinked." },
+      { speaker: 'nova',  text: "Try once more. You're basically in." },
     ],
   },
 

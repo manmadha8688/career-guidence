@@ -3,12 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, ShieldCheck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useAuth } from '../../context/AuthContext'
-import { registerUser, sendOtp, verifyOtp } from '../../api/api'
+import { registerUser, sendOtp, verifyOtp, googleLogin } from '../../api/api'
 import { buildAuthRedirectQuery, resolveAuthRedirect } from '../../utils/authRedirect'
 import { getPasswordStrength, strengthLabel, strengthColors } from '../../utils/passwordRules'
 import { getApiError } from '../../utils/apiError'
 import toast from 'react-hot-toast'
 import AuthSubmitButton from './components/AuthSubmitButton'
+import GoogleSignInButton from './components/GoogleSignInButton'
 import { useAuthForm } from './context/AuthFormContext'
 import useRegisterBotStory from './hooks/useRegisterBotStory'
 
@@ -172,6 +173,36 @@ export default function RegisterForm() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [otp, otpSent, emailVerified])
 
+  /* ── google ─────────────────────────────────────── */
+  const handleGoogleClick = () => {
+    dismissCompanion()
+    emitBeat('REG_GOOGLE_CLICK')
+  }
+
+  const handleGoogle = async (credential) => {
+    setLoading(true)
+    showAuthOverlay('register')
+    dismissCompanion()
+    emitBeat('REG_GOOGLE_PROCESSING')
+    try {
+      const { data } = await googleLogin(credential)
+      dismissCompanion()
+      emitBeat('REG_GOOGLE_SUCCESS')
+      completeAuthOverlay()
+      await new Promise(r => setTimeout(r, 700))
+      hideAuthOverlay()
+      login(data.token, data.user)
+      navigate(redirectTo)
+    } catch (err) {
+      hideAuthOverlay()
+      dismissCompanion()
+      emitBeat('REG_GOOGLE_FAILED')
+      toast.error(getApiError(err, 'Google sign-up did not complete. Please try again.'))
+    } finally {
+      setLoading(false)
+    }
+  }
+
   /* ── submit ─────────────────────────────────────── */
   const handleSubmit = async e => {
     e.preventDefault()
@@ -218,6 +249,16 @@ export default function RegisterForm() {
       >
         Register your hunter profile
       </motion.h1>
+
+      <div className="auth-auth-switch">
+        <span className="auth-auth-switch__label">Already have an account?</span>
+        <Link to={`/login${loginQs}`} className="auth-auth-switch__link" replace>
+          Sign in
+        </Link>
+      </div>
+
+      <GoogleSignInButton text="signup_with" onCredential={handleGoogle} onInteract={handleGoogleClick} disabled={loading} />
+      <div className="auth-divider"><span>or register with email</span></div>
 
       <form onSubmit={handleSubmit} className="auth-form auth-form--register">
 
@@ -373,13 +414,6 @@ export default function RegisterForm() {
           Create account
         </AuthSubmitButton>
       </form>
-
-      <div className="auth-login-bottom">
-        <span className="auth-login-bottom-label">Already a hunter?</span>
-        <div className="auth-login-bottom-actions">
-          <Link to={`/login${loginQs}`} className="auth-link-btn" replace>Sign in</Link>
-        </div>
-      </div>
     </>
   )
 }
