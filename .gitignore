@@ -1,0 +1,28 @@
+# ── Local secrets & tooling (NEVER commit) ───────────────────────────
+CLAUDE.local.md
+.claude/settings.local.json
+**/application-local.properties
+*.local
+.env
+.env.*
+!.env.example
+
+# ── Credentials / keys ───────────────────────────────────────────────
+*.pem
+*.key
+secrets.json
+cookies*.txt
+login*.json
+
+# ── Build output ─────────────────────────────────────────────────────
+target/
+dist/
+build/
+node_modules/
+
+# ── Editor / OS ──────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

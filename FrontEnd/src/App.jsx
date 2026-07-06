@@ -12,7 +12,7 @@ import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
 import AutoHideNav from './components/AutoHideNav'
 import GlobalSearchOverlay from './components/GlobalSearchOverlay'
-import { resolveDocumentTitle } from './utils/documentTitle'
+import { resolveSeo } from './utils/documentTitle'
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
 // Each route loads its chunk only when first visited; subsequent visits use cache
@@ -105,10 +105,43 @@ function ScrollResetter() {
   return null
 }
 
-function DocumentTitle() {
+// Keeps title + description + canonical + Open Graph + robots in sync on every
+// client-side navigation. In an SPA the static index.html only describes the
+// landing page, so we mutate the DOM head per route for search + social crawlers.
+function setMeta(selector, attr, value, create) {
+  let el = document.head.querySelector(selector)
+  if (!el && create) { el = create(); document.head.appendChild(el) }
+  if (el) el.setAttribute(attr, value)
+  return el
+}
+
+function Seo() {
   const { pathname } = useLocation()
   useEffect(() => {
-    document.title = resolveDocumentTitle(pathname)
+    const { title, description, canonical, noindex } = resolveSeo(pathname)
+
+    document.title = title
+
+    setMeta('meta[name="description"]', 'content', description,
+      () => Object.assign(document.createElement('meta'), { name: 'description' }))
+
+    setMeta('link[rel="canonical"]', 'href', canonical,
+      () => Object.assign(document.createElement('link'), { rel: 'canonical' }))
+
+    setMeta('meta[property="og:title"]', 'content', title,
+      () => { const m = document.createElement('meta'); m.setAttribute('property', 'og:title'); return m })
+    setMeta('meta[property="og:description"]', 'content', description,
+      () => { const m = document.createElement('meta'); m.setAttribute('property', 'og:description'); return m })
+    setMeta('meta[property="og:url"]', 'content', canonical,
+      () => { const m = document.createElement('meta'); m.setAttribute('property', 'og:url'); return m })
+    setMeta('meta[name="twitter:title"]', 'content', title,
+      () => Object.assign(document.createElement('meta'), { name: 'twitter:title' }))
+    setMeta('meta[name="twitter:description"]', 'content', description,
+      () => Object.assign(document.createElement('meta'), { name: 'twitter:description' }))
+
+    // Private/authenticated routes should never be indexed even if a bot runs JS.
+    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, nofollow' : 'index, follow',
+      () => Object.assign(document.createElement('meta'), { name: 'robots' }))
   }, [pathname])
   return null
 }
@@ -146,7 +179,7 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <ScrollResetter />
-        <DocumentTitle />
+        <Seo />
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         <FeedbackNudge />
         <ScrollToTop />

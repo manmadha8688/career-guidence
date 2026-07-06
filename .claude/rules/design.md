@@ -106,7 +106,7 @@ Rank colors (fixed): E `#888`, D `#4ADE80`, C `#60A5FA`, B `#9B6ED4`, A `#F59E0B
 
 ## 10. Redesign lessons (hard-won — do NOT repeat)
 
-These come from real user corrections. See `memory/feedback_design_iterations.md` for the full story.
+These come from real user corrections. See `memory/feedback_design.md` for the full story.
 
 1. **Show all options at once.** Don't hide items behind a scroll-pinned "one at a time" reveal when the user wants to compare/pick. Show all cards.
 2. **No forced intro/overlay screens** ("SYSTEM ONLINE", "X DETECTED") unless asked. They read as gimmicks and block content.
@@ -120,7 +120,7 @@ These come from real user corrections. See `memory/feedback_design_iterations.md
 
 ## 11. When acting on a redesign request
 
-1. Read this file + `memory/feedback_design_iterations.md`.
+1. Read this file + `memory/feedback_design.md`.
 2. Adopt the `design-engineer` persona (senior product designer + React engineer).
 3. Restate the intent in one line, propose the concept, then build.
 4. Keep the hero/section the user likes untouched unless told otherwise.

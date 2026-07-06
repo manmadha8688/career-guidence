@@ -63,7 +63,7 @@ Report **confirmed issues only**, with file + line + minimal fix. No hypothetica
 - [ ] Reused existing components/patterns instead of duplicating (`GymLoginSquad`, split-hero, card grids)
 - [ ] Repeated cards are data-driven (`.map()`), not hand-copied markup
 
-### 8. Redesign-lesson regressions (see feedback_design_iterations.md)
+### 8. Redesign-lesson regressions (see feedback_design.md)
 - [ ] No scroll-locked "one item at a time" where users need to compare
 - [ ] No unrequested intro/overlay screens
 - [ ] No unrequested CTA buttons

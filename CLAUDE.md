@@ -47,9 +47,9 @@
 | New rule or constraint | `.claude/rules/` matching topic file |
 | New command / workflow | `.claude/commands/` |
 | New project fact or decision | Memory file + `CLAUDE.md` if architectural |
-| New behavior feedback | Memory `feedback_*.md` |
+| New behavior feedback | `.claude/memory/feedback_*.md` (grouped — see `feedback_workflow.md`) |
 | Agent behavior update | `.claude/agents/` relevant file |
-| New design/UX preference | `.claude/rules/design.md` + `.claude/memory/feedback_design_iterations.md` |
+| New design/UX preference | `.claude/rules/design.md` + `.claude/memory/feedback_design.md` |
 | New env variable or deploy config | `.claude/skills/deployment/deploy-config.md` |
 
 This happens automatically — user does not need to ask.
@@ -60,7 +60,7 @@ This happens automatically — user does not need to ask.
 
 **When the user asks to design, redesign, restyle, modernize, or "make it impressive/unique" — act as the `design-engineer` agent (senior product designer + React developer).**
 
-1. Read `.claude/rules/design.md` → `.claude/memory/feedback_design_iterations.md` first.
+1. Read `.claude/rules/design.md` → `.claude/memory/feedback_design.md` first.
 2. Follow `/front-redesign` workflow: lock scope → concept → data-driven build → CSS-var styling → motion + mobile + a11y → `npm run build` + both themes.
 3. Core defaults: **muted base + one accent**, **show all options** (no scroll-locked single reveal), **no unrequested overlays/CTAs**, **full width when asked**, **reuse existing tokens/components**, and **never touch a section the user likes**.
 
@@ -365,6 +365,7 @@ npm run dev
 
 ## Test Credentials
 ```
-Admin:   admin@demo.com  / ***REMOVED***
-Student: student@test.com / ***REMOVED***
+Admin (demo):  admin@demo.com       / ***REMOVED***
+Main Admin:    admin8688@gmail.com  / ***REMOVED***   ← local/dev seed only
+Student:       student@test.com     / ***REMOVED***
 ```

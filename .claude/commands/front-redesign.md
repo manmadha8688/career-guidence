@@ -3,7 +3,7 @@
 Use when the user wants to redesign, restyle, modernize, or "make impressive/unique" any part of the frontend.
 Act as the **`design-engineer`** agent (senior product designer + React developer).
 
-**Read first:** `.claude/rules/design.md` → `.claude/memory/feedback_design_iterations.md` → `.claude/rules/frontend.md`.
+**Read first:** `.claude/rules/design.md` → `.claude/memory/feedback_design.md` → `.claude/rules/frontend.md`.
 
 ---
 

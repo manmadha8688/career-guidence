@@ -134,7 +134,7 @@ public class GoogleAuthService {
         user.setLoginCount(user.getLoginCount() + 1);
         User saved = userRepository.save(user);
         loginEventService.record(saved, "google");
-        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
+        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole(), saved.getTokenVersion());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
     }
@@ -161,7 +161,7 @@ public class GoogleAuthService {
         User saved = userRepository.save(user);
         loginEventService.record(saved, "google");
         emailService.sendWelcomeEmail(saved.getEmail(), saved.getFullName()); // best-effort, never throws
-        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
+        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole(), saved.getTokenVersion());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
     }

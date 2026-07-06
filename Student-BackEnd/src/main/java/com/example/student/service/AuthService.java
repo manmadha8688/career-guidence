@@ -69,7 +69,7 @@ public class AuthService {
         otpService.clear(email); // clean up OTP entry after successful registration
         loginEventService.record(saved, "register");
         emailService.sendWelcomeEmail(saved.getEmail(), saved.getFullName()); // best-effort, never throws
-        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
+        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole(), saved.getTokenVersion());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
     }
@@ -94,7 +94,7 @@ public class AuthService {
         user.setLoginCount(user.getLoginCount() + 1);
         userRepository.save(user);
         loginEventService.record(user, "password");
-        String token = jwtUtil.generateToken(user.getEmail(), user.getRole());
+        String token = jwtUtil.generateToken(user.getEmail(), user.getRole(), user.getTokenVersion());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(user.getId(), user.getFullName(), user.getEmail(), user.getRole()));
     }
@@ -109,7 +109,7 @@ public class AuthService {
                 guest.setLoginCount(guest.getLoginCount() + 1);
                 userRepository.save(guest);
                 loginEventService.record(guest, "guest");
-                String token = jwtUtil.generateToken(guest.getEmail(), guest.getRole());
+                String token = jwtUtil.generateToken(guest.getEmail(), guest.getRole(), guest.getTokenVersion());
                 return new AuthResponse(token,
                         new AuthResponse.UserDto(guest.getId(), guest.getFullName(), guest.getEmail(), guest.getRole()));
             }
@@ -132,7 +132,7 @@ public class AuthService {
 
         User saved = userRepository.save(guest);
         loginEventService.record(saved, "guest");
-        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
+        String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole(), saved.getTokenVersion());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
     }
@@ -140,6 +140,8 @@ public class AuthService {
     public void logout(String email) {
         userRepository.findByEmail(email).ifPresent(user -> {
             user.setLastLogoutAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
+            // Invalidate every JWT issued before this logout.
+            user.setTokenVersion(user.getTokenVersion() + 1);
             userRepository.save(user);
         });
     }
@@ -171,6 +173,8 @@ public class AuthService {
             throw new RuntimeException("This account uses Google Sign-In. Please continue with Google.");
 
         user.setPassword(passwordEncoder.encode(newPassword));
+        // Invalidate every existing session after a password change.
+        user.setTokenVersion(user.getTokenVersion() + 1);
         userRepository.save(user);
         otpService.clearReset(email);
         emailService.sendPasswordChangedEmail(user.getEmail(), user.getFullName()); // best-effort, never throws
