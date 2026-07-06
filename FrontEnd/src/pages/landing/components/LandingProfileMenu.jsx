@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { LogOut } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { LogOut, Bookmark, UserCog } from 'lucide-react'
 import { getRank } from '../../../utils/slRank'
 import useBodyLock from '../../../hooks/useBodyLock'
 
@@ -35,7 +36,7 @@ function getRoleMeta(user) {
   return { label: `${rank.label}-Rank Hunter`, sub: 'Student account', rank, isGuest: false, isAdmin: false }
 }
 
-function ProfileOverview({ user, onLogout }) {
+function ProfileOverview({ user, onLogout, onNavigate }) {
   const meta = getRoleMeta(user)
   const xp = user?.xp ?? 0
 
@@ -90,10 +91,14 @@ function ProfileOverview({ user, onLogout }) {
         </div>
       )}
 
-      {user?.collegeName && (
-        <div className="lp-profile-panel__college">
-          <span className="lp-profile-panel__college-label">College</span>
-          <span>{user.collegeName}</span>
+      {!meta.isAdmin && (
+        <div className="lp-profile-panel__actions">
+          <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/bookmarks')}>
+            <Bookmark size={15} /> My Bookmarks
+          </button>
+          <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/myprofile')}>
+            <UserCog size={15} /> My Profile
+          </button>
         </div>
       )}
 
@@ -109,6 +114,7 @@ export function LandingProfileDropdown({ user, logout, dismissSignal = false }) 
   const btnRef = useRef(null)
   const [anchor, setAnchor] = useState(null)
   const isMobile = useIsMobile()
+  const navigate = useNavigate()
   const rank = getRank(user?.xp ?? 0)
   const isAdmin = user?.role === 'ADMIN'
 
@@ -174,7 +180,11 @@ export function LandingProfileDropdown({ user, logout, dismissSignal = false }) 
         aria-label="Profile overview"
         style={!isMobile && anchor ? { top: anchor.top, right: anchor.right } : undefined}
       >
-        <ProfileOverview user={user} onLogout={() => { close(); logout() }} />
+        <ProfileOverview
+          user={user}
+          onLogout={() => { close(); logout() }}
+          onNavigate={(path) => { close(); navigate(path) }}
+        />
       </div>
     </>
   ) : null

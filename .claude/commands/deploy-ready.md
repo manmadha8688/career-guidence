@@ -210,7 +210,7 @@ grep -rn "cors.allowed\|CORS_ALLOWED" \
 |----------|-------|-------|
 | `MONGODB_URI` | `mongodb+srv://...` | Full Atlas connection string |
 | `JWT_SECRET` | `<256-bit random>` | Generate: `openssl rand -hex 32` |
-| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.com` | No trailing slash |
+| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.in` | No trailing slash |
 | `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis |
 | `SPRING_REDIS_URL` | `redis://red-xxx:6379` | Internal Render Redis |
 
@@ -255,12 +255,12 @@ config.setAllowedOrigins(List.of(System.getenv("CORS_ALLOWED_ORIGINS")));
 
 **Test after deploy:**
 ```bash
-curl -H "Origin: https://learnforearn.com" \
+curl -H "Origin: https://learnforearn.in" \
   -H "Access-Control-Request-Method: GET" \
   -X OPTIONS \
   https://learnforearn-wnpp.onrender.com/api/subjects -v 2>&1 | \
   grep "Access-Control"
-# → Should show: Access-Control-Allow-Origin: https://learnforearn.com
+# → Should show: Access-Control-Allow-Origin: https://learnforearn.in
 ```
 
 ---
@@ -361,7 +361,7 @@ grep -rn "CORS_ALLOWED_ORIGINS\|learnforearn-omega" \
 After both are deployed, run this sequence:
 
 ```bash
-FRONTEND=https://learnforearn.com
+FRONTEND=https://learnforearn.in
 BACKEND=https://learnforearn-wnpp.onrender.com
 
 # 1. Backend alive

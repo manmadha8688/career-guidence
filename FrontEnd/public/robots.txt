@@ -10,4 +10,4 @@ Disallow: /skill-arena/
 Disallow: /admin-skill-arena/
 Disallow: /loader-demo
 
-Sitemap: https://learnforearn.com/sitemap.xml
+Sitemap: https://learnforearn.in/sitemap.xml

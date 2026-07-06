@@ -1,162 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://learnforearn.com/</loc>
+    <loc>https://learnforearn.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/about</loc>
+    <loc>https://learnforearn.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/contact</loc>
+    <loc>https://learnforearn.in/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/terms</loc>
+    <loc>https://learnforearn.in/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/privacy</loc>
+    <loc>https://learnforearn.in/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/fresher-instructions</loc>
+    <loc>https://learnforearn.in/fresher-instructions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/fresher-instructions/career-guidance</loc>
+    <loc>https://learnforearn.in/fresher-instructions/career-guidance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/ai-lab</loc>
+    <loc>https://learnforearn.in/ai-lab</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment</loc>
+    <loc>https://learnforearn.in/deployment</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/problem-solving</loc>
+    <loc>https://learnforearn.in/problem-solving</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/missions</loc>
+    <loc>https://learnforearn.in/missions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/walk-ins</loc>
+    <loc>https://learnforearn.in/walk-ins</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/react</loc>
+    <loc>https://learnforearn.in/deployment/react</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/nextjs</loc>
+    <loc>https://learnforearn.in/deployment/vue</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/nodejs</loc>
+    <loc>https://learnforearn.in/deployment/nextjs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/mern</loc>
+    <loc>https://learnforearn.in/deployment/nodejs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/django</loc>
+    <loc>https://learnforearn.in/deployment/mern</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/django-fullstack</loc>
+    <loc>https://learnforearn.in/deployment/django</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/springboot</loc>
+    <loc>https://learnforearn.in/deployment/django-fullstack</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/fastapi</loc>
+    <loc>https://learnforearn.in/deployment/springboot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/flask</loc>
+    <loc>https://learnforearn.in/deployment/fastapi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/html-static</loc>
+    <loc>https://learnforearn.in/deployment/flask</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/streamlit</loc>
+    <loc>https://learnforearn.in/deployment/html-static</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/mongodb-atlas</loc>
+    <loc>https://learnforearn.in/deployment/streamlit</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://learnforearn.in/deployment/mongodb-atlas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/neon-postgres</loc>
+    <loc>https://learnforearn.in/deployment/neon-postgres</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/supabase</loc>
+    <loc>https://learnforearn.in/deployment/supabase</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/render-postgres</loc>
+    <loc>https://learnforearn.in/deployment/render-postgres</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/chatbot-deploy</loc>
+    <loc>https://learnforearn.in/deployment/chatbot-deploy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/nlp-demo</loc>
+    <loc>https://learnforearn.in/deployment/nlp-demo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/image-ai</loc>
+    <loc>https://learnforearn.in/deployment/image-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/rag-app</loc>
+    <loc>https://learnforearn.in/deployment/rag-app</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://learnforearn.com/deployment/heavy-model-deploy</loc>
+    <loc>https://learnforearn.in/deployment/heavy-model-deploy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://learnforearn.in/deployment/discord-bot</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://learnforearn.in/deployment/scraper-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://learnforearn.in/deployment/expo-mobile</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

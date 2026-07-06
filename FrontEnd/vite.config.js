@@ -11,5 +11,22 @@ export default defineConfig({
   },
   build: {
     sourcemap: false,
+    // The Spline 3D runtime (react-spline + physics) is unavoidably large, but it is
+    // already isolated into its own lazy-loaded chunks — it only downloads on the routes
+    // that actually render a Spline scene. Raise the limit so those known-heavy, on-demand
+    // chunks don't flood the build log with warnings.
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Pull React core into its own long-cached vendor chunk. It changes far less
+          // often than app code, so browsers can keep it cached across deploys, and the
+          // main entry chunk shrinks.
+          if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id)) {
+            return 'react-vendor'
+          }
+        },
+      },
+    },
   },
 })

@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -34,6 +35,7 @@ public class AdminService {
     private final ProblemRepository problemRepository;
     private final ReportRepository reportRepository;
     private final WalkInRepository walkInRepository;
+    private final BookmarkRepository bookmarkRepository;
 
     public AdminService(UserRepository userRepository,
                         SubjectRepository subjectRepository,
@@ -50,7 +52,8 @@ public class AdminService {
                         MissionRepository missionRepository,
                         ProblemRepository problemRepository,
                         ReportRepository reportRepository,
-                        WalkInRepository walkInRepository) {
+                        WalkInRepository walkInRepository,
+                        BookmarkRepository bookmarkRepository) {
         this.userRepository = userRepository;
         this.subjectRepository = subjectRepository;
         this.conceptRepository = conceptRepository;
@@ -67,6 +70,7 @@ public class AdminService {
         this.problemRepository = problemRepository;
         this.reportRepository = reportRepository;
         this.walkInRepository = walkInRepository;
+        this.bookmarkRepository = bookmarkRepository;
     }
 
     // ─── STATS ───────────────────────────────────────────────────────────────
@@ -123,7 +127,6 @@ public class AdminService {
             m.put("fullName",     u.getFullName());
             m.put("email",        u.getEmail());
             m.put("role",         u.getRole());
-            m.put("collegeName",  u.getCollegeName() != null ? u.getCollegeName() : "");
             m.put("avatarColor",  u.getAvatarColor() != null ? u.getAvatarColor() : "#4F46E5");
             m.put("isActive",     u.getIsActive() != null ? u.getIsActive() : true);
             m.put("createdAt",    u.getCreatedAt() != null ? u.getCreatedAt().toString() : "");
@@ -138,18 +141,28 @@ public class AdminService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-        List<Map<String, Object>> subjectProgress = subjectRepository.findAll().stream()
-                .filter(s -> conceptRepository.countBySubjectId(s.getId()) > 0)
+        // One query for all of this user's progress, grouped in memory by subject
+        // (replaces the previous N × countByUserIdAndSubjectId round-trips).
+        Map<String, Long> completedBySubject = progressRepository.findByUserId(userId).stream()
+                .collect(Collectors.groupingBy(UserConceptProgress::getSubjectId, Collectors.counting()));
+
+        List<Subject> subjects = cacheService.get("subjects", "all", subjectRepository::findAll);
+
+        List<Map<String, Object>> subjectProgress = subjects.stream()
                 .map(s -> {
-                    int total = (int) conceptRepository.countBySubjectId(s.getId());
-                    long completed = progressRepository.countByUserIdAndSubjectId(userId, s.getId());
-                    double pct = total > 0
-                            ? Math.round((completed * 100.0 / total) * 10) / 10.0 : 0;
+                    // Concept counts served from Caffeine (warmed on startup) — no per-subject DB call.
+                    long total = cacheService.get("concepts", "count:" + s.getId(),
+                            () -> conceptRepository.countBySubjectId(s.getId()));
+                    if (total == 0) return null;
+                    long completed = completedBySubject.getOrDefault(s.getId(), 0L);
+                    double pct = Math.round((completed * 100.0 / total) * 10) / 10.0;
                     return Map.<String, Object>of(
                             "subjectId", s.getId(), "title", s.getTitle(),
-                            "icon", s.getIcon(), "total", total,
+                            "icon", s.getIcon(), "total", (int) total,
                             "completed", completed, "percentage", pct);
-                }).collect(Collectors.toList());
+                })
+                .filter(java.util.Objects::nonNull)
+                .collect(Collectors.toList());
 
         return Map.of(
                 "user", Map.of("id", user.getId(), "fullName", user.getFullName(),
@@ -158,6 +171,7 @@ public class AdminService {
         );
     }
 
+    @Transactional
     public void deleteUser(String userId) {
         if (!userRepository.existsById(userId))
             throw new ResourceNotFoundException("User not found");
@@ -170,12 +184,14 @@ public class AdminService {
      * Reports, feedback and walk-ins are intentionally preserved as admin/community records.
      * Safe to call for any user id.
      */
+    @Transactional
     public void deleteUserOwnedData(String userId) {
         progressRepository.deleteByUserId(userId);
         quizAttemptRepository.deleteByUserId(userId);
         badgeRepository.deleteByUserId(userId);
         roadmapBadgeRepository.deleteByUserId(userId);
         enrollmentRepository.deleteByUserId(userId);
+        bookmarkRepository.deleteByUserId(userId);
     }
 
     // ─── SUBJECTS ────────────────────────────────────────────────────────────
@@ -235,6 +251,7 @@ public class AdminService {
         return saved;
     }
 
+    @Transactional
     public void deleteSubject(String id) {
         if (!subjectRepository.existsById(id))
             throw new ResourceNotFoundException("Subject not found");
@@ -363,6 +380,7 @@ public class AdminService {
         return updated;
     }
 
+    @Transactional
     public void deleteConcept(String id) {
         Concept c = conceptRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Concept not found"));
@@ -433,6 +451,7 @@ public class AdminService {
         return saved;
     }
 
+    @Transactional
     public void deleteRoadmap(String id) {
         if (!roadmapRepository.existsById(id))
             throw new ResourceNotFoundException("Roadmap not found");

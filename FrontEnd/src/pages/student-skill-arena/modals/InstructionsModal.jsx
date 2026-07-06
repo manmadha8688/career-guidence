@@ -1,5 +1,6 @@
 import { X } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
+import useModalA11y from '../../../hooks/useModalA11y'
 
 const QUIZ_META = {
   concept: {
@@ -40,15 +41,16 @@ const QUIZ_META = {
 export default function InstructionsModal({ intent, onClose, onConfirm }) {
   const meta = QUIZ_META[intent?.type]
   useBodyLock()
+  const modalRef = useModalA11y(onClose, !!meta)
 
   if (!meta) return null
 
   return (
     <div onClick={e => e.target === e.currentTarget && onClose()} className="dash-overlay-backdrop dash-overlay-backdrop--modal">
-      <div className="dash-instructions-modal" style={{ '--accent': meta.color }}>
+      <div ref={modalRef} role="dialog" aria-modal="true" aria-labelledby="instructions-title" className="dash-instructions-modal" style={{ '--accent': meta.color }}>
         <div className="dash-instructions-modal__header">
-          <span className="dash-instructions-modal__tag">[ {meta.label} PROTOCOL ]</span>
-          <button onClick={onClose} className="dash-instructions-modal__close"><X size={15} /></button>
+          <span id="instructions-title" className="dash-instructions-modal__tag">[ {meta.label} PROTOCOL ]</span>
+          <button type="button" aria-label="Close" onClick={onClose} className="dash-instructions-modal__close"><X size={15} /></button>
         </div>
 
         <div className="dash-instructions-modal__body">

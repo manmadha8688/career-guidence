@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight } from 'lucide-react'
+import { Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight, Search } from 'lucide-react'
 import { NAV_LINKS } from '../landingData'
 import { useLanding } from '../context/LandingPageContext'
 import { LandingProfileDropdown } from './LandingProfileMenu'
+import { openGlobalSearch } from '../../../components/GlobalSearchOverlay'
 
 export default function LandingNavbar() {
   const {
@@ -52,6 +53,17 @@ export default function LandingNavbar() {
 
         <div className="lp-navbar__end">
           <div className="lp-nav-auth">
+            {user && user.role !== 'ADMIN' && (
+              <button
+                type="button"
+                onClick={openGlobalSearch}
+                className="lp-btn-icon"
+                title="Search (Ctrl+K)"
+                aria-label="Search"
+              >
+                <Search size={16} />
+              </button>
+            )}
             <button
               type="button"
               onClick={toggleTheme}

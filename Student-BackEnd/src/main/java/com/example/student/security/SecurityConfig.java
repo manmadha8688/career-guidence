@@ -52,7 +52,7 @@ public class SecurityConfig {
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/actuator/health", "/actuator/health/**", "/api/auth/register", "/api/auth/login", "/api/auth/guest", "/api/auth/logout", "/api/auth/send-otp", "/api/auth/verify-otp", "/api/auth/forgot-password", "/api/auth/forgot-password/verify-otp", "/api/auth/reset-password", "/api/ping", "/api/public-stats", "/api/missions", "/api/problems", "/api/problems/**", "/api/walkins", "/api/walkins/**").permitAll()
+                .requestMatchers("/actuator/health", "/actuator/health/**", "/api/auth/register", "/api/auth/login", "/api/auth/guest", "/api/auth/logout", "/api/auth/send-otp", "/api/auth/verify-otp", "/api/auth/forgot-password", "/api/auth/forgot-password/verify-otp", "/api/auth/reset-password", "/api/ping", "/api/public-stats", "/api/public/profile/**", "/api/missions", "/api/problems", "/api/problems/**", "/api/walkins", "/api/walkins/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/feedback").permitAll()
                 .anyRequest().authenticated()
             )
@@ -60,7 +60,7 @@ public class SecurityConfig {
                 .authenticationEntryPoint((req, res, e) ->
                     res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized"))
                 .accessDeniedHandler((req, res, e) ->
-                    res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized"))
+                    res.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden"))
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 

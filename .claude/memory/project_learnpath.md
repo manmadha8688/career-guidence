@@ -19,7 +19,7 @@ metadata:
 ## Live URLs
 | Service | URL |
 |---|---|
-| Frontend (Vercel) | https://learnforearn.com |
+| Frontend (Vercel) | https://learnforearn.in |
 | Backend (Render) | https://learnforearn-wnpp.onrender.com |
 
 ---

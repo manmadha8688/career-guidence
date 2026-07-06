@@ -171,20 +171,28 @@ export default function AdminWalkIns() {
   const [walkIns, setWalkIns] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
+  const [page, setPage] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [totalPages, setTotalPages] = useState(0)
   const [deleteModal, setDeleteModal] = useState(false)
   const [bulkDeleting, setBulkDeleting] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [editing, setEditing] = useState(null)
 
-  const load = () => {
+  const load = (p = 0) => {
     setLoading(true)
-    getAdminWalkIns()
-      .then(r => setWalkIns(r.data))
+    getAdminWalkIns(p, 20)
+      .then(r => {
+        setWalkIns(r.data.content)
+        setTotal(r.data.totalElements)
+        setTotalPages(r.data.totalPages)
+        setPage(r.data.number ?? p)
+      })
       .catch(err => toast.error(getApiError(err, 'We could not load walk-ins. Please refresh.')))
       .finally(() => setLoading(false))
   }
 
-  useEffect(() => { load() }, [])
+  useEffect(() => { load(0) }, [])
 
   const filtered = walkIns.filter(w =>
     !search ||
@@ -214,7 +222,7 @@ export default function AdminWalkIns() {
       toast.success(`Deleted ${selection.selectedIds.length} walk-in${selection.selectedIds.length !== 1 ? 's' : ''}`)
       selection.clear()
       setDeleteModal(false)
-      load()
+      load(page)
     } catch (err) {
       toast.error(getApiError(err, 'Some selected walk-ins could not be deleted. Please try again.'))
     } finally {
@@ -229,7 +237,7 @@ export default function AdminWalkIns() {
       <div className="page-header">
         <div>
           <h1 className="page-title">Walk-In Interviews</h1>
-          <p className="page-subtitle">{walkIns.length} total — {walkIns.filter(w => w.status === 'ACTIVE').length} active</p>
+          <p className="page-subtitle">{total} total — {walkIns.filter(w => w.status === 'ACTIVE').length} active on this page</p>
         </div>
         <button onClick={() => setShowModal(true)} className="btn btn-primary">
           <Plus size={15} /> Post Walk-In
@@ -351,17 +359,27 @@ export default function AdminWalkIns() {
         </table>
       </div>
 
+      {totalPages > 1 && (
+        <div className="flex-center admin-pagination">
+          <button className="btn btn-ghost btn-sm" disabled={page === 0} onClick={() => load(page - 1)}>← Prev</button>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button key={i} className={`btn btn-sm ${page === i ? 'btn-primary' : 'btn-ghost'}`} onClick={() => load(i)}>{i + 1}</button>
+          ))}
+          <button className="btn btn-ghost btn-sm" disabled={page === totalPages - 1} onClick={() => load(page + 1)}>Next →</button>
+        </div>
+      )}
+
       {showModal && (
         <PostModal
           onClose={() => setShowModal(false)}
-          onSuccess={() => { setShowModal(false); load() }}
+          onSuccess={() => { setShowModal(false); load(page) }}
         />
       )}
       {editing && (
         <PostModal
           existing={editing}
           onClose={() => setEditing(null)}
-          onSuccess={() => { setEditing(null); load() }}
+          onSuccess={() => { setEditing(null); load(page) }}
         />
       )}
 

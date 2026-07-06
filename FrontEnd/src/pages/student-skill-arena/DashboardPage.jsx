@@ -75,7 +75,7 @@ export default function DashboardPage() {
     setQuizIntent(null)
   }
   const [panelRefreshKey, setPanelRefreshKey] = useState(0)
-  const [, setStudySeconds] = useState(0)
+  const studySecondsRef = useRef(0)
 
   const [subjects, setSubjects]       = useState([])
   const [quizStatuses, setQuizStatuses] = useState({})
@@ -203,17 +203,16 @@ export default function DashboardPage() {
   // Auto-check "Study for 20 min" quest after 20 minutes on the dashboard
   useEffect(() => {
     if (loadQuestState(user?.id).q2) return  // already earned today
+    studySecondsRef.current = 0
+    // Accumulate in a ref (no per-second re-render — that previously remounted every gate card).
     const t = setInterval(() => {
-      setStudySeconds(s => {
-        const next = s + 1
-        if (next >= 1200) {  // 20 minutes = 1200 seconds
-          clearInterval(t)
-          const updated = { ...loadQuestState(user?.id), q2: true }
-          setQuests(updated)
-          saveQuestState(updated, user?.id)
-        }
-        return next
-      })
+      studySecondsRef.current += 1
+      if (studySecondsRef.current >= 1200) {  // 20 minutes = 1200 seconds
+        clearInterval(t)
+        const updated = { ...loadQuestState(user?.id), q2: true }
+        setQuests(updated)
+        saveQuestState(updated, user?.id)
+      }
     }, 1000)
     return () => clearInterval(t)
   }, []) // eslint-disable-line

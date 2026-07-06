@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       <div className="info-section">
         <h2 className="info-section__title"><span className="info-section__num">01</span> Data We Collect</h2>
         <ul>
-          <li><strong>Account details</strong> — your name, email address, and college name (provided at registration). Passwords are stored only as secure one-way hashes — nobody, including us, can read them.</li>
+          <li><strong>Account details</strong> — your name and email address (provided at registration). Passwords are stored only as secure one-way hashes — nobody, including us, can read them.</li>
           <li><strong>Learning progress</strong> — completed skills, quiz attempts, scores, XP, ranks, badges, and enrolled paths. This is the core of the platform.</li>
           <li><strong>Guest sessions</strong> — a random device identifier stored in your browser so your guest progress survives between visits. No personal details are collected for guests.</li>
           <li><strong>Content you submit</strong> — walk-in posts, feedback, and issue reports.</li>

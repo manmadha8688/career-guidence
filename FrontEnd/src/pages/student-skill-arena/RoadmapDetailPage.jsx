@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, PlayCircle, Trophy, Zap, Lock } from 'lucide-react'
@@ -6,6 +6,7 @@ import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoade
 import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { isMongoId } from '../../utils/mongoId'
 import { getRoadmap, enrollRoadmap, getRoadmapStatus } from '../../api/api'
+import BookmarkButton from '../../components/BookmarkButton'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
@@ -33,22 +34,32 @@ export default function RoadmapDetailPage() {
   const [loading, setLoading]         = useState(true)
   const [notFound, setNotFound]       = useState(false)
   const [enrolling, setEnrolling]     = useState(false)
+  const mountedRef = useRef(true)
 
   const xp       = user?.xp ?? 0
   const rank     = getRank(xp)
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 
   useEffect(() => {
+    mountedRef.current = true
+    return () => { mountedRef.current = false }
+  }, [])
+
+  useEffect(() => {
+    let active = true
+    let doneTimer
+
     if (!isMongoId(id)) {
       setNotFound(true)
-      setTimeout(() => setLoading(false), PAGE_MIN_MS)
-      return
+      doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS)
+      return () => { active = false; clearTimeout(doneTimer) }
     }
     Promise.all([
       getRoadmap(id).catch(() => null),
       getRoadmapStatus(id).catch(() => null),
     ])
       .then(([r, rs]) => {
+        if (!active) return
         if (!r?.data) {
           setNotFound(true)
           return
@@ -56,18 +67,21 @@ export default function RoadmapDetailPage() {
         setRoadmap(r.data)
         if (rs) setRoadmapStatus(rs.data)
       })
-      .catch(() => setNotFound(true))
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+      .catch(() => { if (active) setNotFound(true) })
+      .finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+
+    return () => { active = false; clearTimeout(doneTimer) }
   }, [id])
 
   const handleEnroll = async () => {
     setEnrolling(true)
     try {
       await enrollRoadmap(id)
+      if (!mountedRef.current) return
       setRoadmap(r => ({ ...r, enrolled: true }))
       toast.success('⚔️ Path registered! Your hunt begins.')
-    } catch (err) { toast.error(getApiError(err, 'We could not register this path. Please try again.')) }
-    finally { setEnrolling(false) }
+    } catch (err) { if (mountedRef.current) toast.error(getApiError(err, 'We could not register this path. Please try again.')) }
+    finally { if (mountedRef.current) setEnrolling(false) }
   }
 
   // ── Loading ──────────────────────────────────────────
@@ -192,6 +206,14 @@ export default function RoadmapDetailPage() {
                   </button>
                 )
               )}
+              <BookmarkButton
+                type="ROADMAP"
+                refId={id}
+                title={roadmap.title}
+                description={roadmap.roleTarget}
+                icon={roadmap.icon}
+                iconOnly
+              />
             </div>
           </div>
 

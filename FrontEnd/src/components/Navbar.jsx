@@ -1,8 +1,9 @@
-import { Menu, Sun, Moon } from 'lucide-react'
+import { Menu, Sun, Moon, Search } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { getRank } from '../utils/slRank'
+import { openGlobalSearch } from './GlobalSearchOverlay'
 
 export default function Navbar({ onMenuClick, title = '' }) {
   const { user } = useAuth()
@@ -24,6 +25,17 @@ export default function Navbar({ onMenuClick, title = '' }) {
       </div>
 
       <div className="navbar-right">
+        {!isAdmin && (
+          <button
+            type="button"
+            onClick={openGlobalSearch}
+            className="theme-icon-btn"
+            title="Search (Ctrl+K)"
+            aria-label="Search"
+          >
+            <Search size={16} />
+          </button>
+        )}
         {!isAdmin && (
           <>
             <button

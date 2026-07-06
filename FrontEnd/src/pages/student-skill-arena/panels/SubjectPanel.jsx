@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../../components/loaders/_config'
 import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader'
 import ProgressBar from '../../../components/ProgressBar'
 import { getSubject, getQuizStatus } from '../../../api/api'
+import BookmarkButton from '../../../components/BookmarkButton'
 import { Search, Trophy, Lock, CheckCircle, Clock } from 'lucide-react'
 import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
 import { isMongoId } from '../../../utils/mongoId'
@@ -23,23 +24,29 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
     setSubject(null)
     setSearch('')
 
+    let active = true
+    let doneTimer
+
     if (!isMongoId(subjectId)) {
       setNotFound(true)
-      setTimeout(() => setLoading(false), TEST_DELAY_MS)
-      return
+      doneTimer = setTimeout(() => setLoading(false), TEST_DELAY_MS)
+      return () => { active = false; clearTimeout(doneTimer) }
     }
 
     Promise.all([
       getSubject(subjectId).catch(() => null),
       getQuizStatus('subject', subjectId).catch(() => null),
     ]).then(([s, qs]) => {
+      if (!active) return
       if (!s?.data) {
         setNotFound(true)
         return
       }
       setSubject(s.data)
       if (qs) setQuizStatus(qs.data)
-    }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
+    }).finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), TEST_DELAY_MS) })
+
+    return () => { active = false; clearTimeout(doneTimer) }
   }, [subjectId])
 
   const pct = subject?.totalConcepts > 0
@@ -82,6 +89,14 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
                 >
                   ⚔ MISSIONS
                 </button>
+                <BookmarkButton
+                  type="SUBJECT"
+                  refId={subjectId}
+                  title={subject.title}
+                  description={subject.rank ? `${subject.rank}-Rank gate` : undefined}
+                  icon={subject.icon}
+                  iconOnly
+                />
               </div>
             </div>
           </div>

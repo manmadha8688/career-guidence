@@ -1,5 +1,6 @@
 import { X, LogOut } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
+import useModalA11y from '../../../hooks/useModalA11y'
 
 const RANK_LADDER = [
   { letter: 'E', label: 'E-RANK', cls: 'rank-e', color: '#888888', bg: '#88888815', min: 0 },
@@ -59,15 +60,16 @@ function SectionTitle({ children }) {
 
 export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout }) {
   useBodyLock()
+  const drawerRef = useModalA11y(onClose)
 
   return (
     <>
       <div onClick={onClose} className="dash-overlay-backdrop dash-overlay-backdrop--drawer" />
 
-      <div className="dash-hunter-drawer">
+      <div ref={drawerRef} role="dialog" aria-modal="true" aria-labelledby="hunter-drawer-title" className="dash-hunter-drawer">
         <div className="dash-hunter-drawer__header">
-          <span className="dash-hunter-drawer__title">[ HUNTER INSTRUCTIONS ]</span>
-          <button onClick={onClose} className="dash-icon-btn"><X size={16} /></button>
+          <span id="hunter-drawer-title" className="dash-hunter-drawer__title">[ HUNTER INSTRUCTIONS ]</span>
+          <button type="button" aria-label="Close" onClick={onClose} className="dash-icon-btn"><X size={16} /></button>
         </div>
 
         <div className="dash-hunter-drawer__body">

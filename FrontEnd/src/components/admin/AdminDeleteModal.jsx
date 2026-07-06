@@ -1,5 +1,6 @@
 import { AlertTriangle, Trash2, X } from 'lucide-react'
 import useBodyLock from '../../hooks/useBodyLock'
+import useModalA11y from '../../hooks/useModalA11y'
 
 export default function AdminDeleteModal({
   open,
@@ -11,12 +12,13 @@ export default function AdminDeleteModal({
   onClose,
 }) {
   useBodyLock(open)
+  const modalRef = useModalA11y(() => { if (!deleting) onClose() }, open)
 
   if (!open) return null
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && !deleting && onClose()}>
-      <div className="modal admin-delete-modal" role="dialog" aria-modal="true" aria-labelledby="admin-delete-title">
+      <div ref={modalRef} className="modal admin-delete-modal" role="dialog" aria-modal="true" aria-labelledby="admin-delete-title">
         <div className="admin-delete-modal__icon" aria-hidden="true">
           <AlertTriangle size={28} />
         </div>

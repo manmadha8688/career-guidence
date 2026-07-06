@@ -11,6 +11,7 @@ import FeedbackNudge from './components/FeedbackNudge'
 import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
 import AutoHideNav from './components/AutoHideNav'
+import GlobalSearchOverlay from './components/GlobalSearchOverlay'
 import { resolveDocumentTitle } from './utils/documentTitle'
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
@@ -26,6 +27,10 @@ const AboutPage                = lazy(() => import('./pages/AboutPage'))
 const ContactPage              = lazy(() => import('./pages/ContactPage'))
 const TermsPage                = lazy(() => import('./pages/TermsPage'))
 const PrivacyPage              = lazy(() => import('./pages/PrivacyPage'))
+
+const MyBookmarksPage         = lazy(() => import('./pages/MyBookmarksPage'))
+const MyProfilePage           = lazy(() => import('./pages/MyProfilePage'))
+const PublicProfilePage       = lazy(() => import('./pages/PublicProfilePage'))
 
 const MissionsPage             = lazy(() => import('./pages/MissionsPage'))
 const MissionDetailPage        = lazy(() => import('./pages/MissionDetailPage'))
@@ -147,6 +152,7 @@ function App() {
         <ScrollToTop />
         <AutoHideNav />
         <GlobalReportButton />
+        <GlobalSearchOverlay />
         <Suspense fallback={<PageTransitionLoader />}>
           <Routes>
             {/* Landing */}
@@ -211,6 +217,13 @@ function App() {
 
             {/* Missions detail — requires login */}
             <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
+
+            {/* Public shareable profile — no auth required */}
+            <Route path="/u/:username" element={<PublicProfilePage />} />
+
+            {/* Bookmarks + profile — require login (standalone pages, no sidebar) */}
+            <Route path="/bookmarks" element={<ProtectedRoute><MyBookmarksPage /></ProtectedRoute>} />
+            <Route path="/myprofile" element={<ProtectedRoute><MyProfilePage /></ProtectedRoute>} />
 
             {/* ── Student: skill-arena ── */}
             <Route path="/skill-arena/dashboard"              element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />

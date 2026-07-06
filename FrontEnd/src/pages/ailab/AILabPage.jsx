@@ -5,6 +5,7 @@ import { useTheme } from '../../context/ThemeContext'
 import { Sun, Moon, Search, ChevronRight, Lock, Zap } from 'lucide-react'
 import ScrollToTop from '../../components/ScrollToTop'
 import BrandNavButton from '../../components/BrandNavButton'
+import BookmarkButton from '../../components/BookmarkButton'
 import { CATEGORIES, TOOLS } from './aiLabData'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
 
@@ -461,6 +462,20 @@ function ToolCard({ tool, onClick, delay = 0, visible = true, catColor }) {
         <div className="ailab-tool-card__soon">
           <Lock size={7} /> SOON
         </div>
+      )}
+
+      {!soon && (
+        <span className="ailab-tool-card__bookmark">
+          <BookmarkButton
+            type="AITOOL"
+            refId={`${tool.category}/${tool.id}`}
+            title={tool.name}
+            description={tool.tagline}
+            icon={tool.icon}
+            iconOnly
+            stopPropagation
+          />
+        </span>
       )}
 
       <div className="ailab-tool-card__header">

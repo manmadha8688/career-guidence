@@ -37,8 +37,11 @@ export default function QuizResultPage() {
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 
   useEffect(() => {
+    let active = true
+    let doneTimer
     getAttemptResult(attemptId)
       .then(r => {
+        if (!active) return
         setResult(r.data)
         // Auto-mark daily quests when concept is cleared
         if (r.data.passed) {
@@ -59,8 +62,9 @@ export default function QuizResultPage() {
           window.dispatchEvent(new CustomEvent('sl:refresh'))
         }
       })
-      .catch(err => { toast.error(getApiError(err, 'We could not load this result. Please try again.')); navigate(-1) })
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+      .catch(err => { if (active) { toast.error(getApiError(err, 'We could not load this result. Please try again.')); navigate(-1) } })
+      .finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { active = false; clearTimeout(doneTimer) }
   }, [attemptId])
 
   // ─── Loading ───────────────────────────────────────────

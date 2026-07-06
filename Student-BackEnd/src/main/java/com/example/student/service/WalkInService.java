@@ -7,6 +7,8 @@ import com.example.student.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -41,6 +43,7 @@ public class WalkInService {
         User user = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        walkIn.setId(null); // never let the client choose the document id (prevents overwriting others' walk-ins)
         walkIn.setPostedBy(user.getFullName());
         walkIn.setPostedById(user.getId());
         walkIn.setCreatedAt(LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
@@ -92,8 +95,10 @@ public class WalkInService {
         return walkInRepository.findById(id);
     }
 
-    public List<WalkIn> getAll() {
-        return walkInRepository.findAllByOrderByCreatedAtDesc();
+    public Page<WalkIn> getAllPaged(int page, int size) {
+        int safeSize = Math.min(Math.max(size, 1), 100);
+        int safePage = Math.max(page, 0);
+        return walkInRepository.findAllByOrderByCreatedAtDesc(PageRequest.of(safePage, safeSize));
     }
 
     private void expirePastWalkIns() {

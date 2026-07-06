@@ -21,9 +21,9 @@ Set these in: Render Dashboard → Service → Environment
 |----------|-------|-------|
 | `MONGODB_URI` | `mongodb+srv://user:pass@cluster/learnData_db` | Full Atlas connection string |
 | `JWT_SECRET` | `<256-bit random string>` | Generate: `openssl rand -hex 32` |
-| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.com` | No trailing slash |
-| `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis cache |
-| `SPRING_REDIS_URL` | `redis://***REMOVED***:6379` | Render Redis instance |
+| `CORS_ALLOWED_ORIGINS` | `https://learnforearn.in` | No trailing slash |
+| `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis L2 cache (omit for Caffeine-only) |
+| `SPRING_REDIS_URL` | `redis://red-<id>:6379` | Render Key Value **internal** URL (set `allkeys-lru`). Omit if not using Redis |
 | `BREVO_API_KEY` | `<Brevo SMTP API key>` | Required for register/forgot-password OTP emails |
 | `COOKIE_SECURE` | `true` | Required in production — httpOnly auth cookies over HTTPS only |
 | `PORT` | (auto-injected by Render) | DO NOT set manually |
@@ -77,11 +77,26 @@ learnData_db
 
 ---
 
-## Render Redis Setup
+## Render Key Value (Redis) Setup
 
-Redis is provisioned as a Render "Redis" service (private).
-URL format: `redis://red-<id>:<port>`
-This is internal to Render — no external access needed.
+Provider: **Render Key Value** (Redis-compatible, Valkey 8), **Free tier** (25 MB RAM, 50 connections, no persistence).
+
+Redis is an **optional L2 cache** with graceful fallback — the app runs fine without it (Caffeine-only). It only activates under the `prod` profile.
+
+### To enable
+1. Render Dashboard → New → Key Value → **Free** (same region as the backend).
+2. Set **maxmemory-policy = `allkeys-lru`** (25 MB is small — this makes it evict old keys instead of erroring on writes when full).
+3. Copy the **Internal** URL: `redis://red-<id>:6379` (no TLS, internal-only, no egress cost).
+4. On the backend service set:
+   - `SPRING_REDIS_URL` = internal URL
+   - `SPRING_PROFILES_ACTIVE` = `prod`  ← turns Redis on
+5. Redeploy.
+
+Notes:
+- Free tier has **no persistence** — data wiped on restart/maintenance. Fine here (cache only, graceful fallback).
+- Redis health is disabled (`management.health.redis.enabled=false`) so a down Redis never marks the service unhealthy.
+- Single-instance deploys can safely run **without** Redis (Caffeine is enough). Redis L2 matters only when scaling to multiple instances or wanting cross-instance shared cache.
+- Off-platform free-forever alternative: **Upstash** (256 MB, 500K cmds/mo, no card) — requires TLS URL form `rediss://...`.
 
 ---
 

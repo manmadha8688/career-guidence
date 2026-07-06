@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { TEST_DELAY_MS } from '../../../components/loaders/_config'
 import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader'
 import { getRoadmap, getRoadmapStatus, enrollRoadmap, pauseRoadmap, resumeRoadmap } from '../../../api/api'
@@ -16,29 +16,41 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
   const [enrolling, setEnrolling] = useState(false)
   const [pausing, setPausing]     = useState(false)
   const [resuming, setResuming]   = useState(false)
+  const mountedRef = useRef(true)
+
+  useEffect(() => {
+    mountedRef.current = true
+    return () => { mountedRef.current = false }
+  }, [])
 
   useEffect(() => {
     setLoading(true)
     setNotFound(false)
     setRoadmap(null)
 
+    let active = true
+    let doneTimer
+
     if (!isMongoId(roadmapId)) {
       setNotFound(true)
-      setTimeout(() => setLoading(false), TEST_DELAY_MS)
-      return
+      doneTimer = setTimeout(() => setLoading(false), TEST_DELAY_MS)
+      return () => { active = false; clearTimeout(doneTimer) }
     }
 
     Promise.all([
       getRoadmap(roadmapId).catch(() => null),
       getRoadmapStatus(roadmapId).catch(() => null),
     ]).then(([r, rs]) => {
+      if (!active) return
       if (!r?.data) {
         setNotFound(true)
         return
       }
       setRoadmap(r.data)
       if (rs) setStatus(rs.data)
-    }).finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
+    }).finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), TEST_DELAY_MS) })
+
+    return () => { active = false; clearTimeout(doneTimer) }
   }, [roadmapId])
 
   const handleEnroll = async (e) => {
@@ -46,10 +58,11 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
     setEnrolling(true)
     try {
       await enrollRoadmap(roadmapId)
+      if (!mountedRef.current) return
       setRoadmap(r => ({ ...r, enrolled: true, paused: false }))
       toast.success('⚔️ Path registered!')
-    } catch (err) { toast.error(getApiError(err, 'We could not register this path. Please try again.')) }
-    finally { setEnrolling(false) }
+    } catch (err) { if (mountedRef.current) toast.error(getApiError(err, 'We could not register this path. Please try again.')) }
+    finally { if (mountedRef.current) setEnrolling(false) }
   }
 
   const handlePause = async (e) => {
@@ -57,10 +70,11 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
     setPausing(true)
     try {
       await pauseRoadmap(roadmapId)
+      if (!mountedRef.current) return
       setRoadmap(r => ({ ...r, paused: true }))
       toast.success('Hunt paused')
-    } catch (err) { toast.error(getApiError(err, 'We could not pause this hunt. Please try again.')) }
-    finally { setPausing(false) }
+    } catch (err) { if (mountedRef.current) toast.error(getApiError(err, 'We could not pause this hunt. Please try again.')) }
+    finally { if (mountedRef.current) setPausing(false) }
   }
 
   const handleResume = async (e) => {
@@ -68,10 +82,11 @@ export default function RoadmapPanel({ roadmapId, onClose, onGateClick, navigate
     setResuming(true)
     try {
       await resumeRoadmap(roadmapId)
+      if (!mountedRef.current) return
       setRoadmap(r => ({ ...r, paused: false }))
       toast.success('⚔️ Hunt resumed!')
-    } catch (err) { toast.error(getApiError(err, 'We could not resume this hunt. Please try again.')) }
-    finally { setResuming(false) }
+    } catch (err) { if (mountedRef.current) toast.error(getApiError(err, 'We could not resume this hunt. Please try again.')) }
+    finally { if (mountedRef.current) setResuming(false) }
   }
 
   const pct      = roadmap?.overallPercentage ?? 0

@@ -430,26 +430,6 @@
   transition: width 0.3s ease;
 }
 
-.lp-profile-panel__college {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  font-size: 0.78rem;
-  margin-bottom: 0.875rem;
-  padding: 0.55rem 0.65rem;
-  border-radius: 8px;
-  background: var(--lp-card-bg);
-  border: 1px solid var(--lp-border);
-}
-
-.lp-profile-panel__college-label {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--lp-text-muted);
-}
-
 .lp-profile-panel__logout {
   width: 100%;
   display: flex;

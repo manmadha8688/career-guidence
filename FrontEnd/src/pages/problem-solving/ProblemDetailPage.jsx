@@ -6,6 +6,7 @@ import GlitchBreachLoader from '../../components/loaders/GlitchBreachLoader'
 import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblem } from '../../api/api'
+import BookmarkButton from '../../components/BookmarkButton'
 
 const LANGS = [
   { key: 'python', label: 'Python' },
@@ -54,10 +55,13 @@ export default function ProblemDetailPage() {
   const [tipOpen, setTipOpen] = useState(false)
 
   useEffect(() => {
+    let active = true
+    let doneTimer
     getProblem(id)
-      .then(r => setProblem(r.data))
-      .catch(() => setNotFound(true))
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+      .then(r => { if (active) setProblem(r.data) })
+      .catch(() => { if (active) setNotFound(true) })
+      .finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { active = false; clearTimeout(doneTimer) }
   }, [id])
 
   // Only offer solution variants that actually have code — a beginner problem may ship just one.
@@ -115,7 +119,17 @@ export default function ProblemDetailPage() {
 
       <div className="ps-detail-grid">
         <div className="ps-detail-left">
-          <div className="ps-card">
+          <div className="ps-card ps-card--statement">
+            <span className="ps-card__bookmark">
+              <BookmarkButton
+                type="PROBLEM"
+                refId={id}
+                title={problem.title}
+                description={problem.level}
+                icon="💻"
+                iconOnly
+              />
+            </span>
             <div className="ps-meta-row">
               <span className="ps-badge ps-badge--level" style={{ '--lm-color': lm.color }}>{lm.label}</span>
               {trackMeta && <span className="ps-badge ps-badge--track">{trackMeta.label}</span>}

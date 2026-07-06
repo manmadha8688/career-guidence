@@ -4,7 +4,10 @@ import { clearBrowserSessionPreservingPrefs } from '../utils/browserSession'
 
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
-const api = axios.create({ baseURL: BASE_URL, withCredentials: true })
+// 60s ceiling: generous enough to survive a cold Render free-tier spin-up,
+// but bounded so a truly hung request fails fast (mapped to a friendly
+// timeout message in utils/apiError.js) instead of spinning forever.
+const api = axios.create({ baseURL: BASE_URL, withCredentials: true, timeout: 60000 })
 
 const AUTH_PUBLIC_PATHS = ['/login', '/register', '/forgot-password']
 
@@ -166,12 +169,25 @@ export const deleteMission    = (id)     => api.delete(`/admin/missions/${id}`) 
 
 // ─── WALK-INS ─────────────────────────────────────────
 export const getWalkIns        = ()       => withCache('walkIns', 60_000, () => api.get('/walkins'))
-export const postWalkIn        = (d)      => api.post('/walkins', d)             .then(r => { clearApiCache('walkIns', 'adminWalkIns', 'adminStats'); return r })
-export const removeWalkIn      = (id)     => api.delete(`/walkins/${id}`)        .then(r => { clearApiCache('walkIns', 'adminWalkIns', 'adminStats'); return r })
-export const getAdminWalkIns   = ()       => withCache('adminWalkIns', 2*60_000, () => api.get('/admin/walkins'))
+export const postWalkIn        = (d)      => api.post('/walkins', d)             .then(r => { clearApiCache('walkIns', 'adminWalkIns*', 'adminStats'); return r })
+export const removeWalkIn      = (id)     => api.delete(`/walkins/${id}`)        .then(r => { clearApiCache('walkIns', 'adminWalkIns*', 'adminStats'); return r })
+export const getAdminWalkIns   = (page = 0, size = 20) => withCache(`adminWalkIns:${page}:${size}`, 2*60_000, () => api.get(`/admin/walkins?page=${page}&size=${size}`))
 export const createWalkIn      = (d)      => postWalkIn(d)
-export const updateAdminWalkIn = (id, d)  => api.put(`/admin/walkins/${id}`, d)  .then(r => { clearApiCache('adminWalkIns'); return r })
+export const updateAdminWalkIn = (id, d)  => api.put(`/admin/walkins/${id}`, d)  .then(r => { clearApiCache('adminWalkIns*'); return r })
 export const deleteWalkIn      = (id)     => removeWalkIn(id)
+
+// ─── SEARCH ───────────────────────────────────────────
+export const globalSearch = (q) => api.get('/search?q=' + encodeURIComponent(q))
+
+// ─── BOOKMARKS ────────────────────────────────────────
+export const getBookmarks       = ()            => api.get('/bookmarks')
+export const addBookmark        = (data)        => api.post('/bookmarks', data)
+export const removeBookmark     = (type, refId) => api.delete(`/bookmarks?type=${encodeURIComponent(type)}&refId=${encodeURIComponent(refId)}`)
+export const removeBookmarkById = (id)          => api.delete(`/bookmarks/${id}`)
+
+// ─── PROFILE ──────────────────────────────────────────
+export const getPublicProfile = (username) => api.get(`/public/profile/${encodeURIComponent(username)}`)
+export const updateProfile    = (data)     => api.put('/profile/me', data)
 
 // ─── REPORTS ──────────────────────────────────────────
 export const submitReport       = (data)     => api.post('/reports', data)

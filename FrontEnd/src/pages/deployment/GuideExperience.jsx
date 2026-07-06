@@ -3,6 +3,7 @@ import { ArrowLeft, Sun, Moon } from 'lucide-react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import { CodeBlock, textLineClass } from './GuideLayout'
 import { GUIDE_JOURNEYS } from './guideJourneys'
+import BookmarkButton from '../../components/BookmarkButton'
 
 // Split a flat list of stages into balanced rows so a long flow can "snake"
 // (left→right, then right→left) instead of overflowing off the screen.
@@ -177,6 +178,16 @@ export default function GuideExperience({ guide, stackData, journey, toggleTheme
 
       {/* Full-width hero header */}
       <header className="dgx-hero">
+        <span className="dgx-hero__bookmark">
+          <BookmarkButton
+            type="GUIDE"
+            refId={stackData.route}
+            title={stackData.title}
+            description={stackData.subtitle || stackData.platforms}
+            icon={stackData.emoji}
+            iconOnly
+          />
+        </span>
         <motion.div
           className="dgx-hero__content"
           initial={{ opacity: 0, y: 18 }}

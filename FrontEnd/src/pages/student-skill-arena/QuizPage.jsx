@@ -7,7 +7,10 @@ import { startConceptQuiz, startSubjectQuiz, startRoadmapQuiz, submitQuiz } from
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import { getApiError } from '../../utils/apiError'
+import { isMongoId } from '../../utils/mongoId'
 import toast from 'react-hot-toast'
+
+const QUIZ_TYPES = { concept: startConceptQuiz, subject: startSubjectQuiz, roadmap: startRoadmapQuiz }
 
 const LETTERS = ['A', 'B', 'C', 'D']
 
@@ -41,11 +44,17 @@ export default function QuizPage() {
   const rank    = getRank(xp)
   const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
   useEffect(() => {
-    const fn = type === 'concept' ? startConceptQuiz
-             : type === 'subject' ? startSubjectQuiz
-             : startRoadmapQuiz
+    const fn = QUIZ_TYPES[type]
+    if (!fn || !isMongoId(refId)) {
+      toast.error('That trial link is invalid.')
+      navigate(-1)
+      return
+    }
+    let active = true
+    let doneTimer
     fn(refId)
       .then(r => {
+        if (!active) return
         setQuiz(r.data)
         setAnswers(new Array(r.data.questions.length).fill(-1))
         if (r.data.timeLimitMinutes) {
@@ -53,8 +62,9 @@ export default function QuizPage() {
           setTimeLeft(secs); setTotalSeconds(secs)
         }
       })
-      .catch(err => { toast.error(getApiError(err, 'We could not start this trial. Please try again.')); navigate(-1) })
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+      .catch(err => { if (active) { toast.error(getApiError(err, 'We could not start this trial. Please try again.')); navigate(-1) } })
+      .finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { active = false; clearTimeout(doneTimer) }
   }, [type, refId])
 
   const handleSubmit = useCallback(async (currentAnswers) => {

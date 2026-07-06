@@ -17,6 +17,7 @@
 @import './pages/dashboard/index.css';
 @import './pages/admin/index.css';
 @import './pages/shared/index.css';
+@import './features.css';
 @import './landing-animations.css';
 @import './auth-animations.css';
 @import './pages-animations.css';

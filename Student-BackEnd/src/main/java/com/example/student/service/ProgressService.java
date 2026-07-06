@@ -16,9 +16,11 @@ import com.example.student.repository.UserSubjectBadgeRepository;
 import com.example.student.repository.UserRoadmapBadgeRepository;
 import com.example.student.repository.RoadmapRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +60,10 @@ public class ProgressService {
         this.cacheService = cacheService;
     }
 
+    // All quest/streak/daily-bonus date logic uses IST so it matches the Indian-student
+    // audience regardless of the server timezone (Render runs in UTC).
+    private static final ZoneId IST = ZoneId.of("Asia/Kolkata");
+
     private static String computeRank(long xp) {
         if (xp >= 10000) return "S";
         if (xp >= 6000)  return "A";
@@ -72,6 +78,7 @@ public class ProgressService {
      * @param quizScore the raw quiz score (e.g. 8 for 8/10). Pass 0 for non-quiz completions.
      * @return map with xpEarned and dailyBonusEarned keys
      */
+    @Transactional
     public Map<String, Object> completeConcept(String conceptId, String userId, int quizScore) {
         if (progressRepository.existsByUserIdAndConceptId(userId, conceptId)) {
             return Map.of("message", "Already completed", "conceptId", conceptId,
@@ -86,7 +93,7 @@ public class ProgressService {
         progress.setSubjectId(concept.getSubjectId());
         progress.setSubjectTitle(concept.getSubjectTitle());
         progress.setSubjectIcon(concept.getSubjectIcon());
-        progress.setCompletedAt(LocalDateTime.now());
+        progress.setCompletedAt(LocalDateTime.now(IST));
         progressRepository.save(progress);
 
         // XP from quiz score: score * 10 (8/10 → 80, 9/10 → 90, 10/10 → 100)
@@ -95,7 +102,7 @@ public class ProgressService {
         // Daily bonus: +50 XP if this is the FIRST concept passed today.
         // Uses QuizAttempt.takenAt (reliable timestamp set at submission time)
         // rather than completedAt (which could be corrupted by DataSeeder repairs).
-        LocalDateTime startOfToday = LocalDate.now().atStartOfDay();
+        LocalDateTime startOfToday = LocalDate.now(IST).atStartOfDay();
         boolean isFirstToday = !quizAttemptRepository
                 .existsByUserIdAndTypeAndPassedTrueAndTakenAtAfterAndRefIdNot(
                         userId, "CONCEPT", startOfToday, conceptId);
@@ -163,7 +170,7 @@ public class ProgressService {
                 .collect(Collectors.toSet());
 
         int streak = 0;
-        LocalDate date = LocalDate.now();
+        LocalDate date = LocalDate.now(IST);
         while (completionDates.contains(date)) { streak++; date = date.minusDays(1); }
 
         // ── XP / Level / Rank — read from User document (source of truth) ─────
@@ -205,7 +212,7 @@ public class ProgressService {
         // ── Today's concept completion (cross-device quest sync) ────────────
         boolean completedConceptToday = quizAttemptRepository
                 .existsByUserIdAndTypeAndPassedTrueAndTakenAtAfter(
-                        userId, "CONCEPT", LocalDate.now().atStartOfDay());
+                        userId, "CONCEPT", LocalDate.now(IST).atStartOfDay());
 
         return new ProgressSummaryDTO(totalConcepts, completedConcepts, percentage,
                 streak, xp, level, rank, completedConceptToday, subjectProgress);

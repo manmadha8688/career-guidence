@@ -76,7 +76,7 @@ Supporting files: agent `design-engineer.md`, command `front-redesign.md`, skill
 | In-app name | ARISE |
 | Theme | Solo Leveling anime — dark gaming aesthetic |
 | Audience | Indian graduate students (0 → hired) |
-| Frontend live | https://learnforearn.com |
+| Frontend live | https://learnforearn.in |
 | Backend live  | https://learnforearn-wnpp.onrender.com |
 
 ---
@@ -336,7 +336,7 @@ VITE_API_URL=https://learnforearn-wnpp.onrender.com/api  # prod
 ```
 MONGODB_URI=mongodb+srv://...@free-database.lfnuahd.mongodb.net/learnData_db
 JWT_SECRET=<strong-random-256-bit>
-CORS_ALLOWED_ORIGINS=https://learnforearn.com
+CORS_ALLOWED_ORIGINS=https://learnforearn.in
 SPRING_PROFILES_ACTIVE=prod
 SPRING_REDIS_URL=redis://***REMOVED***:6379
 ```

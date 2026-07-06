@@ -1,11 +1,13 @@
 import { X } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
+import useModalA11y from '../../../hooks/useModalA11y'
 
 export default function AboutGateModal({ subject, onClose }) {
   const RANK_COLOR = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
   const rc = RANK_COLOR[subject?.rank] || '#888888'
 
   useBodyLock()
+  const modalRef = useModalA11y(onClose)
 
   const Section = ({ label, children }) => (
     <div className="dash-about-section">
@@ -28,13 +30,17 @@ export default function AboutGateModal({ subject, onClose }) {
   return (
     <div className="dash-overlay-backdrop dash-overlay-backdrop--about" onClick={e => e.target === e.currentTarget && onClose()}>
       <div
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="about-gate-title"
         className="dash-about-modal"
         style={{ '--accent': rc, '--rank-bg': rc + '15', '--overview-bg': rc + '08', '--icon-bg': subject.color + '22' }}
       >
         <div className="dash-about-modal__header">
           <div className="dash-about-modal__icon-wrap">{subject.icon}</div>
           <div className="dash-flex-1">
-            <div className="dash-about-modal__title">{subject.title}</div>
+            <div id="about-gate-title" className="dash-about-modal__title">{subject.title}</div>
             <div className="dash-about-modal__meta">
               <span className="dash-about-modal__rank-badge">{subject.rank || 'E'}-RANK</span>
               {subject.difficulty && <span className="dash-about-modal__chip">{subject.difficulty}</span>}
@@ -42,7 +48,7 @@ export default function AboutGateModal({ subject, onClose }) {
               <span className="dash-about-modal__chip">{subject.totalConcepts} skills</span>
             </div>
           </div>
-          <button onClick={onClose} className="dash-icon-btn"><X size={16} /></button>
+          <button type="button" aria-label="Close" onClick={onClose} className="dash-icon-btn"><X size={16} /></button>
         </div>
 
         <div className="dash-about-modal__body">

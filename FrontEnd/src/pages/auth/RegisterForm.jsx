@@ -14,7 +14,7 @@ import useRegisterBotStory from './hooks/useRegisterBotStory'
 
 export default function RegisterForm() {
   const [form, setForm] = useState({
-    fullName: '', email: '', password: '', confirmPassword: '', collegeName: '',
+    fullName: '', email: '', password: '', confirmPassword: '',
   })
   const [loading, setLoading]         = useState(false)
   const [showPass, setShowPass]       = useState(false)
@@ -181,8 +181,8 @@ export default function RegisterForm() {
     dismissCompanion()
     emitBeat('LOGIN_PROCESSING')
     try {
-      const { fullName, email, password, collegeName } = form
-      const { data } = await registerUser({ fullName, email, password, collegeName })
+      const { fullName, email, password } = form
+      const { data } = await registerUser({ fullName, email, password })
       dismissCompanion()
       emitBeat('REG_SUCCESS')
       completeAuthOverlay()
@@ -245,7 +245,7 @@ export default function RegisterForm() {
               id="reg-email"
               type="email"
               className={`auth-input auth-input--compact${emailVerified ? ' auth-input--success' : emailError ? ' auth-input--error' : ''}`}
-              placeholder="you@college.edu"
+              placeholder="you@email.com"
               autoComplete="email"
               value={form.email}
               onChange={e => { setForm({ ...form, email: e.target.value }); resetEmailState(); touchActivity() }}
@@ -367,24 +367,6 @@ export default function RegisterForm() {
               onBlur={() => setFocusedField(f => f === 'confirm' ? null : f)}
             />
           </div>
-        </div>
-
-        {/* College (optional) */}
-        <div className={`auth-field auth-field--compact${focusedField === 'college' ? ' auth-field--focus' : ''}`}>
-          <label className="auth-label" htmlFor="reg-college">
-            College <span className="auth-label-opt">(optional)</span>
-          </label>
-          <input
-            id="reg-college"
-            type="text"
-            className="auth-input auth-input--compact"
-            placeholder="Your college"
-            autoComplete="organization"
-            value={form.collegeName}
-            onChange={e => { setForm({ ...form, collegeName: e.target.value }); touchActivity() }}
-            onFocus={() => { setFocusedField('college'); touchActivity() }}
-            onBlur={() => setFocusedField(f => f === 'college' ? null : f)}
-          />
         </div>
 
         <AuthSubmitButton ready={ready} loading={loading} compact>

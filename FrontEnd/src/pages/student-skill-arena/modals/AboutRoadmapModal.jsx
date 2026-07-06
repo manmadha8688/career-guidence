@@ -1,8 +1,10 @@
 import { X } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
+import useModalA11y from '../../../hooks/useModalA11y'
 
 export default function AboutRoadmapModal({ roadmap: r, onClose }) {
   useBodyLock()
+  const modalRef = useModalA11y(onClose)
 
   const Section = ({ label, children }) => (
     <div className="dash-about-section">
@@ -29,6 +31,10 @@ export default function AboutRoadmapModal({ roadmap: r, onClose }) {
   return (
     <div className="dash-overlay-backdrop dash-overlay-backdrop--about" onClick={e => e.target === e.currentTarget && onClose()}>
       <div
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="about-roadmap-title"
         className="dash-about-modal"
         style={{
           '--accent': r.color,
@@ -41,7 +47,7 @@ export default function AboutRoadmapModal({ roadmap: r, onClose }) {
         <div className="dash-about-modal__header">
           <div className="dash-about-modal__icon-wrap">{r.icon}</div>
           <div className="dash-flex-1">
-            <div className="dash-about-modal__title">{r.title}</div>
+            <div id="about-roadmap-title" className="dash-about-modal__title">{r.title}</div>
             <div className="dash-about-modal__meta dash-about-modal__meta--roadmap">
               <span className="dash-about-modal__chip">
                 {r.totalSubjects ?? r.subjectCount ?? '?'} gates
@@ -51,7 +57,7 @@ export default function AboutRoadmapModal({ roadmap: r, onClose }) {
               )}
             </div>
           </div>
-          <button onClick={onClose} className="dash-icon-btn"><X size={16} /></button>
+          <button type="button" aria-label="Close" onClick={onClose} className="dash-icon-btn"><X size={16} /></button>
         </div>
 
         <div className="dash-about-modal__body">
