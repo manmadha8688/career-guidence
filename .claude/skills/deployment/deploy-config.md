@@ -7,6 +7,7 @@ Set these in: Vercel Dashboard → Project → Settings → Environment Variable
 | Variable | Value | Required |
 |----------|-------|----------|
 | `VITE_API_URL` | `https://learnforearn-wnpp.onrender.com/api` | ✅ Yes |
+| `VITE_GOOGLE_CLIENT_ID` | `<web-client-id>.apps.googleusercontent.com` | ✅ Yes (for Google sign-in) |
 
 > **Note:** `VITE_` prefix = public variable, embedded in JS bundle.
 > Never put secrets here. The backend URL is safe to expose.
@@ -25,6 +26,7 @@ Set these in: Render Dashboard → Service → Environment
 | `SPRING_PROFILES_ACTIVE` | `prod` | Enables Redis L2 cache (omit for Caffeine-only) |
 | `SPRING_REDIS_URL` | `redis://red-<id>:6379` | Render Key Value **internal** URL (set `allkeys-lru`). Omit if not using Redis |
 | `BREVO_API_KEY` | `<Brevo SMTP API key>` | Required for register/forgot-password OTP emails |
+| `GOOGLE_CLIENT_ID` | `<web-client-id>.apps.googleusercontent.com` | Required for Google sign-in — must match `VITE_GOOGLE_CLIENT_ID` |
 | `COOKIE_SECURE` | `true` | Required in production — httpOnly auth cookies over HTTPS only |
 | `PORT` | (auto-injected by Render) | DO NOT set manually |
 

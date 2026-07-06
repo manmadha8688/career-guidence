@@ -21,11 +21,12 @@ public class AuthService {
     private final OtpService otpService;
     private final EmailService emailService;
     private final UsernameService usernameService;
+    private final LoginEventService loginEventService;
 
     public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
                        JwtUtil jwtUtil, AuthenticationManager authenticationManager,
                        OtpService otpService, EmailService emailService,
-                       UsernameService usernameService) {
+                       UsernameService usernameService, LoginEventService loginEventService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
@@ -33,25 +34,40 @@ public class AuthService {
         this.otpService = otpService;
         this.emailService = emailService;
         this.usernameService = usernameService;
+        this.loginEventService = loginEventService;
     }
 
     public AuthResponse register(RegisterRequest req) {
         String email = req.getEmail().trim().toLowerCase();
         if (!otpService.isVerified(email))
             throw new RuntimeException("Email not verified. Please verify your email with OTP first.");
-        if (userRepository.existsByEmail(email))
+
+        java.util.Optional<User> existing = userRepository.findByEmail(email);
+        if (existing.isPresent()) {
+            User u = existing.get();
+            // One email = one account. If it's a Google-only account, guide them to Google.
+            if (isGoogleOnly(u))
+                throw new RuntimeException("This account uses Google Sign-In. Please continue with Google.");
             throw new RuntimeException("Email already registered");
+        }
+
         User user = new User();
         user.setFullName(req.getFullName());
         user.setEmail(email);
         user.setPassword(passwordEncoder.encode(req.getPassword()));
         user.setRole("STUDENT");
+        user.setProviders(new java.util.ArrayList<>(java.util.List.of("local")));
         user.setAvatarColor("#4F46E5");
         user.setIsActive(true);
         user.setUsername(usernameService.generateUnique(req.getFullName(), email));
+        // Registration immediately signs the user in — count it as their first login
+        // so activity metrics (last login, login count, logins today) stay accurate.
+        user.setLastLoginAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
+        user.setLoginCount(1);
 
         User saved = userRepository.save(user);
         otpService.clear(email); // clean up OTP entry after successful registration
+        loginEventService.record(saved, "register");
         emailService.sendWelcomeEmail(saved.getEmail(), saved.getFullName()); // best-effort, never throws
         String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
         return new AuthResponse(token,
@@ -62,6 +78,14 @@ public class AuthService {
         // Normalise to match how emails are stored at registration (trimmed + lowercase),
         // so login is not case-sensitive.
         String email = req.getEmail() == null ? "" : req.getEmail().trim().toLowerCase();
+
+        // Block password login for accounts that only linked a social provider (no password set),
+        // with a clear message instead of a generic "invalid credentials".
+        userRepository.findByEmail(email).ifPresent(u -> {
+            if (isGoogleOnly(u))
+                throw new RuntimeException("This account uses Google Sign-In. Please continue with Google.");
+        });
+
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(email, req.getPassword()));
         User user = userRepository.findByEmail(email)
@@ -69,6 +93,7 @@ public class AuthService {
         user.setLastLoginAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
         user.setLoginCount(user.getLoginCount() + 1);
         userRepository.save(user);
+        loginEventService.record(user, "password");
         String token = jwtUtil.generateToken(user.getEmail(), user.getRole());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(user.getId(), user.getFullName(), user.getEmail(), user.getRole()));
@@ -83,6 +108,7 @@ public class AuthService {
                 guest.setLastLoginAt(java.time.LocalDateTime.now(java.time.ZoneId.of("Asia/Kolkata")));
                 guest.setLoginCount(guest.getLoginCount() + 1);
                 userRepository.save(guest);
+                loginEventService.record(guest, "guest");
                 String token = jwtUtil.generateToken(guest.getEmail(), guest.getRole());
                 return new AuthResponse(token,
                         new AuthResponse.UserDto(guest.getId(), guest.getFullName(), guest.getEmail(), guest.getRole()));
@@ -105,6 +131,7 @@ public class AuthService {
         guest.setLoginCount(1);
 
         User saved = userRepository.save(guest);
+        loginEventService.record(saved, "guest");
         String token = jwtUtil.generateToken(saved.getEmail(), saved.getRole());
         return new AuthResponse(token,
                 new AuthResponse.UserDto(saved.getId(), saved.getFullName(), saved.getEmail(), saved.getRole()));
@@ -122,6 +149,16 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
+    /**
+     * True when the account can only sign in through a social provider (e.g. Google) and has
+     * no usable local password — i.e. providers contains a social provider but not "local".
+     */
+    private boolean isGoogleOnly(User user) {
+        java.util.List<String> providers = user.getProviders();
+        if (providers == null || providers.isEmpty()) return false;
+        return !providers.contains("local") && providers.contains("google");
+    }
+
     public void resetPassword(String email, String newPassword) {
         if (!otpService.isResetVerified(email))
             throw new RuntimeException("Email not verified. Please verify OTP first.");
@@ -130,6 +167,8 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
         if ("GUEST".equals(user.getRole()))
             throw new RuntimeException("Guest accounts cannot reset password.");
+        if (isGoogleOnly(user))
+            throw new RuntimeException("This account uses Google Sign-In. Please continue with Google.");
 
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);

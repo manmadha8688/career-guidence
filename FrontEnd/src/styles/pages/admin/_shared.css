@@ -495,3 +495,143 @@
   text-align: center;
   padding: 2rem;
 }
+
+/* ── Refresh spinner ── */
+.admin-spin {
+  animation: admin-spin 0.8s linear infinite;
+}
+@keyframes admin-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Today at a glance ── */
+.admin-today-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-today-card {
+  border-left: 3px solid var(--stat-color, var(--primary));
+}
+
+/* ── Visualization row ── */
+.admin-viz-row {
+  margin-bottom: 1.5rem;
+}
+
+.admin-chart-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-chart-legend {
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.admin-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.admin-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.admin-legend-dot--logins  { background: var(--primary); }
+.admin-legend-dot--signups { background: #059669; }
+
+/* Bar chart */
+.admin-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: 180px;
+  padding-top: 0.5rem;
+}
+.admin-chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 0.4rem;
+}
+.admin-chart-bars {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+}
+.admin-chart-bar {
+  width: 40%;
+  max-width: 16px;
+  min-height: 2px;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.3s ease;
+}
+.admin-chart-bar--logins  { background: var(--primary); }
+.admin-chart-bar--signups { background: #059669; }
+.admin-chart-col--today .admin-chart-label {
+  color: var(--primary);
+  font-weight: 700;
+}
+.admin-chart-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Sign-in method split */
+.admin-provider-split {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.admin-provider-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--bg-tertiary, var(--border));
+}
+.admin-provider-seg {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+.admin-provider-seg--google { background: var(--primary); }
+.admin-provider-seg--email  { background: #059669; }
+.admin-provider-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.admin-provider-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+.admin-provider-row--muted { color: var(--text-muted); }
+.admin-provider-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.admin-provider-val {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.admin-provider-note {
+  margin: 0.25rem 0 0;
+}
