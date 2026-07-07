@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, Trash2, X, Settings, Search, ChevronDown, Check } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
@@ -347,11 +348,7 @@ export default function AdminRoadmaps() {
 
   return (
     <AppLayout title="Roadmaps">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Roadmaps</h1>
-          <p className="page-subtitle">{roadmaps.length} career roadmaps</p>
-        </div>
+      <AdminPageToolbar subtitle={`${roadmaps.length} career roadmaps`}>
         <div className="admin-page-actions">
           <div className="admin-search-wrap">
             <Search size={15} className="admin-search-icon" />
@@ -364,7 +361,7 @@ export default function AdminRoadmaps() {
           </div>
           <button className="btn btn-primary" onClick={() => setModal('new')}><Plus size={15} /> New Roadmap</button>
         </div>
-      </div>
+      </AdminPageToolbar>
 
       {loading ? <RadarLoader height={220} /> : (
         <>

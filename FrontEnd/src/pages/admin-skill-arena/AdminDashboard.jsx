@@ -71,8 +71,8 @@ export default function AdminDashboard() {
 
   const cards = [
     { icon: Users,      label: 'Total Users',          value: stats?.totalUsers ?? 0,     bg: '#EEF2FF', color: '#4F46E5', link: '/admin-skill-arena/users' },
-    { icon: TrendingUp, label: 'Registered Students',  value: stats?.totalStudents ?? 0,  bg: '#D1FAE5', color: '#059669', link: '/admin-skill-arena/users' },
-    { icon: Users,      label: 'Guest Visits',         value: stats?.totalGuests ?? 0,    bg: '#FEF9C3', color: '#CA8A04', link: '/admin-skill-arena/users' },
+    { icon: TrendingUp, label: 'Registered Students',  value: stats?.totalStudents ?? 0,  bg: '#D1FAE5', color: '#059669', link: '/admin-skill-arena/users?filter=student' },
+    { icon: Users,      label: 'Guest Visits',         value: stats?.totalGuests ?? 0,    bg: '#FEF9C3', color: '#CA8A04', link: '/admin-skill-arena/users?filter=guest' },
     { icon: BookOpen,   label: 'Subjects',             value: stats?.totalSubjects ?? 0,  bg: '#F3E8FF', color: '#7C3AED', link: '/admin-skill-arena/subjects' },
     { icon: Layers,     label: 'Concepts',             value: stats?.totalConcepts ?? 0,  bg: '#FEF3C7', color: '#D97706', link: '/admin-skill-arena/concepts' },
     { icon: HelpCircle, label: 'Questions',            value: stats?.totalQuestions ?? 0, bg: '#ECFDF5', color: '#059669', link: '/admin-skill-arena/questions' },

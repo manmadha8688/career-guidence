@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, X, Search, Trash2 } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
@@ -426,12 +427,8 @@ export default function AdminProblems() {
   }
 
   return (
-    <AppLayout title="Problems">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Problem Solving</h1>
-          <p className="page-subtitle">{problems.length} problems across all tracks</p>
-        </div>
+    <AppLayout title="Problem Solving">
+      <AdminPageToolbar subtitle={`${problems.length} problems across all tracks`}>
         <div className="admin-page-actions admin-page-actions--wrap">
           <select
             value={trackFilter}
@@ -451,7 +448,7 @@ export default function AdminProblems() {
             <Plus size={15} /> New Problem
           </button>
         </div>
-      </div>
+      </AdminPageToolbar>
 
       {loading ? (
         <RadarLoader height={220} />

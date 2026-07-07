@@ -3,6 +3,8 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Flag, Trash2, CheckCircle, Clock, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
+import AdminFilterStatCards from '../../components/admin/AdminFilterStatCards'
 import { getAdminReports, updateReport, deleteReport, getReportStats } from '../../api/api'
 import { REPORT_TYPE_LABELS } from '../../constants/reportTypes'
 import toast from 'react-hot-toast'
@@ -97,43 +99,19 @@ export default function AdminReports() {
 
   return (
     <AppLayout title="Reports">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Issue Reports</h1>
-          <p className="page-subtitle">Reports submitted by students</p>
-        </div>
-      </div>
+      <AdminPageToolbar subtitle="Reports submitted by students" />
 
-      <div className="admin-reports-stats">
-        {[
-          { label: 'Total',       value: stats.total || 0,      color: '#9B6ED4' },
-          { label: 'Open',        value: stats.open || 0,       color: '#EF4444' },
-          { label: 'In Progress', value: stats.inProgress || 0, color: '#F59E0B' },
-          { label: 'Resolved',    value: stats.resolved || 0,   color: '#4ADE80' },
-        ].map(s => (
-          <div key={s.label} className="admin-reports-stat-card" style={{ '--stat-accent': s.color }}>
-            <div className="admin-reports-stat-value">{s.value}</div>
-            <div className="admin-reports-stat-label">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="filter-chips admin-filter-chips-spaced">
-        {[
-          { key: '',            label: 'All' },
-          { key: 'OPEN',        label: `Open (${stats.open || 0})` },
-          { key: 'IN_PROGRESS', label: `In Progress (${stats.inProgress || 0})` },
-          { key: 'RESOLVED',    label: `Resolved (${stats.resolved || 0})` },
-        ].map(f => (
-          <button
-            key={f.key}
-            className={`filter-chip${statusFilter === f.key ? ' active' : ''}`}
-            onClick={() => handleFilterChange(f.key)}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
+      <AdminFilterStatCards
+        ariaLabel="Filter reports by status"
+        active={statusFilter}
+        onSelect={handleFilterChange}
+        items={[
+          { id: '', label: 'Total', value: stats.total || 0, color: '#9B6ED4' },
+          { id: 'OPEN', label: 'Open', value: stats.open || 0, color: '#EF4444' },
+          { id: 'IN_PROGRESS', label: 'In Progress', value: stats.inProgress || 0, color: '#F59E0B' },
+          { id: 'RESOLVED', label: 'Resolved', value: stats.resolved || 0, color: '#4ADE80' },
+        ]}
+      />
 
       {loading ? (
         <RadarLoader height={220} />

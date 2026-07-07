@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
@@ -287,11 +288,7 @@ export default function AdminMissions() {
 
   return (
     <AppLayout title="Missions">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Missions</h1>
-          <p className="page-subtitle">{missions.length} missions in the platform</p>
-        </div>
+      <AdminPageToolbar subtitle={`${missions.length} missions in the platform`}>
         <div className="admin-page-actions">
           <div className="admin-search-wrap">
             <Search size={15} className="admin-search-icon" />
@@ -301,7 +298,7 @@ export default function AdminMissions() {
             <Plus size={15} /> New Mission
           </button>
         </div>
-      </div>
+      </AdminPageToolbar>
 
       {loading ? (
         <RadarLoader height={220} />

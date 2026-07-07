@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, X, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
@@ -228,11 +229,7 @@ export default function AdminSubjects() {
 
   return (
     <AppLayout title="Subjects">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Subjects</h1>
-          <p className="page-subtitle">{subjects.length} subjects in the platform</p>
-        </div>
+      <AdminPageToolbar subtitle={`${subjects.length} subjects in the platform`}>
         <div className="admin-page-actions">
           <div className="admin-search-wrap">
             <Search size={15} className="admin-search-icon" />
@@ -242,7 +239,7 @@ export default function AdminSubjects() {
             <Plus size={15} /> New Subject
           </button>
         </div>
-      </div>
+      </AdminPageToolbar>
 
       <AdminBulkToolbar
         count={selection.count}

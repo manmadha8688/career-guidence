@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket
+  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket, Home
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -66,6 +66,10 @@ export default function Sidebar({ open, onClose }) {
           {isAdmin && (
             <>
               <div className="sidebar-section-label sidebar-section-label--spaced">Hunter View</div>
+              <NavLink to="/" end className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><Home size={18} /></span>
+                Landing Page
+              </NavLink>
               <NavLink to="/skill-arena/dashboard" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><LayoutDashboard size={18} /></span>
                 Skill Arena

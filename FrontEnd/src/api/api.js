@@ -107,7 +107,11 @@ export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`
 
 // ─── ADMIN ───────────────────────────────────
 export const getAdminStats      = ()        => withCache('adminStats', 2*60_000, () => api.get('/admin/stats'))
-export const getAdminUsers      = (p,s,q)   => api.get(`/admin/users?page=${p}&size=${s}&search=${encodeURIComponent(q || '')}`)
+export const getAdminUsers      = (p, s, q, filter) => {
+  const params = new URLSearchParams({ page: p, size: s, search: q || '' })
+  if (filter && filter !== 'all') params.set('filter', filter)
+  return api.get(`/admin/users?${params}`)
+}
 export const deleteUser         = (id)      => api.delete(`/admin/users/${id}`).then(r => { clearApiCache('adminStats'); return r })
 
 export const getAdminSubjects   = ()        => api.get('/admin/subjects')

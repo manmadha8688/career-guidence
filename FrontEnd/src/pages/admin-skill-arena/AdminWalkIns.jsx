@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Search, MapPin, Calendar, Briefcase, User, Plus, X, Pencil } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
@@ -230,19 +231,15 @@ export default function AdminWalkIns() {
     }
   }
 
-  if (loading) return <AppLayout title="Walk-Ins"><AdminSkeleton rows={6} /></AppLayout>
+  if (loading) return <AppLayout title="Walk-In Interviews"><AdminSkeleton rows={6} /></AppLayout>
 
   return (
-    <AppLayout title="Walk-In Management">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Walk-In Interviews</h1>
-          <p className="page-subtitle">{total} total — {walkIns.filter(w => w.status === 'ACTIVE').length} active on this page</p>
-        </div>
+    <AppLayout title="Walk-In Interviews">
+      <AdminPageToolbar subtitle={`${total} total — ${walkIns.filter(w => w.status === 'ACTIVE').length} active on this page`}>
         <button onClick={() => setShowModal(true)} className="btn btn-primary">
           <Plus size={15} /> Post Walk-In
         </button>
-      </div>
+      </AdminPageToolbar>
 
       <div className="admin-search-bar-row">
         <div className="admin-search-wrap admin-search-wrap--flex">

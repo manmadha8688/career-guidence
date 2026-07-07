@@ -1,12 +1,15 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
-import { Search } from 'lucide-react'
+import { Search, Users, TrendingUp, Shield, UserRound } from 'lucide-react'
+import { useSearchParams } from 'react-router-dom'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
+import AdminFilterStatCards from '../../components/admin/AdminFilterStatCards'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
-import { getAdminUsers, deleteUser } from '../../api/api'
+import { getAdminUsers, getAdminStats, deleteUser } from '../../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
 
@@ -26,7 +29,19 @@ const providerBadgeClass = (p) => {
   return 'badge-student'
 }
 
+const SHOWING = {
+  all:     n => `Showing ${n} account${n !== 1 ? 's' : ''}`,
+  student: n => `Showing ${n} registered student${n !== 1 ? 's' : ''}`,
+  guest:   n => `Showing ${n} guest session${n !== 1 ? 's' : ''}`,
+  admin:   n => `Showing ${n} admin${n !== 1 ? 's' : ''}`,
+}
+
 export default function AdminUsers() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const rawFilter = searchParams.get('filter') || 'all'
+  const filter = rawFilter === 'registered' ? 'student' : rawFilter
+
+  const [platformStats, setPlatformStats] = useState(null)
   const [users, setUsers] = useState([])
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
@@ -37,9 +52,27 @@ export default function AdminUsers() {
   const [bulkDeleting, setBulkDeleting] = useState(false)
   const SIZE = 10
 
+  const adminCount = useMemo(() => {
+    if (!platformStats) return 0
+    return Math.max(0, (platformStats.totalUsers ?? 0) - (platformStats.totalStudents ?? 0) - (platformStats.totalGuests ?? 0))
+  }, [platformStats])
+
+  const filterCards = useMemo(() => [
+    { id: 'all',     label: 'Total Users',           value: platformStats?.totalUsers ?? 0,     color: '#4F46E5', icon: Users },
+    { id: 'student', label: 'Registered Students',   value: platformStats?.totalStudents ?? 0, color: '#059669', icon: TrendingUp },
+    { id: 'guest',   label: 'Guest Visits',          value: platformStats?.totalGuests ?? 0,    color: '#CA8A04', icon: UserRound },
+    { id: 'admin',   label: 'Admins',                value: adminCount,                         color: '#9B6ED4', icon: Shield },
+  ], [platformStats, adminCount])
+
+  const loadStats = useCallback(() => {
+    getAdminStats()
+      .then(r => setPlatformStats(r.data))
+      .catch(() => {})
+  }, [])
+
   const load = useCallback((p = 0, q = search) => {
     setLoading(true)
-    getAdminUsers(p, SIZE, q)
+    getAdminUsers(p, SIZE, q, filter)
       .then(r => {
         setUsers(r.data.content)
         setTotal(r.data.totalElements)
@@ -48,20 +81,31 @@ export default function AdminUsers() {
       })
       .catch(err => toast.error(getApiError(err, 'We could not load users. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
-  }, [search])
+  }, [search, filter])
 
-  useEffect(() => { load(0) }, [])
+  useEffect(() => { loadStats() }, [loadStats])
 
-  const debouncedSearch = useCallback(debounce(q => load(0, q), 400), [])
+  const debouncedSearch = useCallback(debounce(q => load(0, q), 400), [load])
 
   const handleSearch = e => {
     setSearch(e.target.value)
     debouncedSearch(e.target.value)
   }
 
+  const setRoleFilter = (id) => {
+    if (id === filter) return
+    setSearchParams(id === 'all' ? {} : { filter: id }, { replace: true })
+  }
+
   const selectableUsers = useMemo(() => users.filter(u => u.role !== 'ADMIN'), [users])
   const filteredIds = useMemo(() => selectableUsers.map(u => u.id), [selectableUsers])
   const selection = useAdminSelection(filteredIds)
+
+  useEffect(() => {
+    selection.clear()
+    load(0)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter])
 
   const deleteTargets = useMemo(
     () => selection.selectedIds.map(id => ({
@@ -80,6 +124,7 @@ export default function AdminUsers() {
       toast.success(`Deleted ${selection.selectedIds.length} user${selection.selectedIds.length !== 1 ? 's' : ''}`)
       selection.clear()
       setDeleteModal(false)
+      loadStats()
       load(page)
     } catch (err) {
       toast.error(getApiError(err, 'Some selected users could not be deleted. Please try again.'))
@@ -88,21 +133,32 @@ export default function AdminUsers() {
     }
   }
 
+  const showingFn = SHOWING[filter] || SHOWING.all
+
   return (
     <AppLayout title="Users">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Users</h1>
-          <p className="page-subtitle">{total} registered users</p>
-        </div>
+      <AdminPageToolbar subtitle={showingFn(total)}>
         <div className="search-container">
           <Search size={16} className="search-icon" />
           <input className="search-input" placeholder="Search by name or email…" value={search} onChange={handleSearch} />
         </div>
-      </div>
+      </AdminPageToolbar>
+
+      <AdminFilterStatCards
+        items={filterCards}
+        active={filter}
+        onSelect={setRoleFilter}
+        ariaLabel="Filter users by role"
+      />
 
       {loading ? (
         <RadarLoader height={220} />
+      ) : users.length === 0 ? (
+        <div className="empty-state">
+          <div className="empty-state-icon">👤</div>
+          <div className="empty-state-text">No users match this filter</div>
+          <div className="empty-state-sub">Try another category or clear your search.</div>
+        </div>
       ) : (
         <>
           <AdminBulkToolbar

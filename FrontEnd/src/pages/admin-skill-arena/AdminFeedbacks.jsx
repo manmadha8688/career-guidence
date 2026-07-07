@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { MessageSquare, Star, ThumbsUp, ThumbsDown, RefreshCw } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import { getAllFeedbacks } from '../../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
@@ -65,15 +66,11 @@ export default function AdminFeedbacks() {
 
   return (
     <AppLayout title="User Feedback">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">User Feedback</h1>
-          <p className="page-subtitle">{totalCount} response{totalCount !== 1 ? 's' : ''} collected</p>
-        </div>
+      <AdminPageToolbar subtitle={`${totalCount} response${totalCount !== 1 ? 's' : ''} collected`}>
         <button className="btn btn-ghost btn-sm" onClick={load} disabled={loading}>
           <RefreshCw size={14} className={loading ? 'spin' : ''} /> Refresh
         </button>
-      </div>
+      </AdminPageToolbar>
 
       <div className="stats-grid admin-stats-grid-spaced">
         <div className="stat-card">

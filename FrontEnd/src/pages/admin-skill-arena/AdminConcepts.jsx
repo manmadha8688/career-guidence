@@ -3,6 +3,7 @@ import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { Plus, Pencil, X, ChevronDown, Search } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
+import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import useAdminSelection from '../../hooks/useAdminSelection'
@@ -362,11 +363,7 @@ export default function AdminConcepts() {
 
   return (
     <AppLayout title="Concepts">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Concepts</h1>
-          <p className="page-subtitle">Manage learning content by subject</p>
-        </div>
+      <AdminPageToolbar subtitle="Manage learning content by subject">
         <div className="admin-page-actions admin-page-actions--wrap">
           <SearchableSelect items={subjects} value={selectedSubject} onChange={setSelectedSubject} placeholder="Select subject…" />
           <div className="admin-search-wrap">
@@ -382,7 +379,7 @@ export default function AdminConcepts() {
             <Plus size={15} /> New Concept
           </button>
         </div>
-      </div>
+      </AdminPageToolbar>
 
       {loading ? (
         <RadarLoader height={220} />

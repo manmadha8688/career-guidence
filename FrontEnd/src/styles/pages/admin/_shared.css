@@ -635,3 +635,96 @@
 .admin-provider-note {
   margin: 0.25rem 0 0;
 }
+
+/* ── Page toolbar (navbar holds title — no duplicate h1) ── */
+.admin-page-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.admin-page-subtitle {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.admin-page-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+/* ── Clickable filter stat cards ── */
+.admin-filter-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .admin-filter-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .admin-filter-stats { grid-template-columns: 1fr; }
+}
+
+.admin-filter-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  border-top: 3px solid var(--stat-accent, var(--primary));
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.admin-filter-stat-card:hover {
+  border-color: color-mix(in srgb, var(--stat-accent, var(--primary)) 45%, var(--border));
+  transform: translateY(-2px);
+}
+
+.admin-filter-stat-card.is-active {
+  border-color: var(--stat-accent, var(--primary));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--stat-accent, var(--primary)) 35%, transparent),
+              0 8px 24px color-mix(in srgb, var(--stat-accent, var(--primary)) 12%, transparent);
+  background: color-mix(in srgb, var(--stat-accent, var(--primary)) 6%, var(--bg-card));
+}
+
+.admin-filter-stat-card__icon {
+  color: var(--stat-accent, var(--primary));
+  opacity: 0.85;
+}
+
+.admin-filter-stat-card__value {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  line-height: 1;
+  color: var(--stat-accent, var(--primary));
+}
+
+.admin-filter-stat-card__label {
+  font-size: 0.72rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
