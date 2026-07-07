@@ -1,5 +1,18 @@
 # Deploy Configuration — Environment Variables
 
+## Deploy roots (CRITICAL)
+
+The **repo root is never deployed as a unit**. Each platform deploys a subfolder as its root:
+
+| Platform | Deployed root directory |
+|---|---|
+| Vercel (frontend) | `FrontEnd/` |
+| Render (backend) | `Student-BackEnd/` |
+
+Implications: `vercel.json`, build config, and any path/asset must be resolvable **relative to `FrontEnd/`** (not the repo root). Likewise Docker/build config must resolve relative to `Student-BackEnd/`. Files at the repo root (`CLAUDE.md`, `.claude/`, `scripts/`, root `.gitignore`) are dev-only and do not ship.
+
+---
+
 ## Test vs Production stacks
 
 | | Frontend | Backend API | Render `CORS_ALLOWED_ORIGINS` |

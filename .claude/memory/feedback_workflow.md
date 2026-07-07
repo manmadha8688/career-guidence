@@ -15,6 +15,20 @@ User granted full create/edit/delete in `C:\manmadha\Student-project` without pe
 
 ---
 
+## Git commits — NEVER commit, only supply messages (always active)
+
+The user commits **manually**. The agent must **never run `git commit`/`git add`/`git push`** on its own.
+
+When the user says they want to commit, provide **three** ready-to-paste commit messages grouped by deploy scope (they deploy folders separately — Vercel root = `FrontEnd/`, Render root = `Student-BackEnd/`):
+
+1. **Whole project** — repo-root / shared / dev-only changes (`CLAUDE.md`, `.claude/`, `scripts/`, root `.gitignore`, cross-cutting).
+2. **Frontend folder** — changes under `FrontEnd/`.
+3. **Backend folder** — changes under `Student-BackEnd/`.
+
+If a scope has no changes, say so instead of inventing a message. Base each message on the actual `git status`/diff for that folder.
+
+---
+
 ## Auto-persist to `.claude/` (always active)
 
 Whenever the user provides new rules, commands, memory, or project facts — **write to disk immediately**. Never keep only in conversation.
