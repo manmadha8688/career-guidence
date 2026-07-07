@@ -26,6 +26,34 @@ export const NAV_LINKS = [
   { label: 'Deploy Guidance',  live: true, href: '/deployment' },
 ]
 
+export const ABOUT_AUDIENCE = [
+  'College students',
+  'Final-year graduates',
+  'Career switchers',
+  'Self-taught coders',
+]
+
+export const ABOUT_OFFERINGS = [
+  { icon: '🗺️', color: '#9B6ED4', title: 'Learn in the right order', body: 'Follow a clear roadmap built from real job descriptions. You always know exactly what to learn next — no more random, half-finished tutorials.' },
+  { icon: '💻', color: '#0EA5E9', title: 'Practice by doing', body: 'Solve real coding problems in C, Python, Java and C++ — from your very first line of code to interview-level DSA, every solution explained.' },
+  { icon: '🚀', color: '#FF7F2A', title: 'Build real projects', body: 'Finish guided project missions you can actually put on your resume, then deploy them live with copy-paste-ready hosting guides.' },
+  { icon: '🤖', color: '#22C55E', title: 'Master AI tools', body: 'Learn the AI tools every developer is now expected to use — the exact edge that gets a fresher hired over everyone else.' },
+]
+
+export const ABOUT_TRUST = [
+  { value: '100', suffix: '%', label: 'Free forever' },
+  { value: 'subjects',        label: 'Subjects' },
+  { value: 'concepts',        label: 'Concepts to learn' },
+  { value: '₹0',              label: 'Credit card needed' },
+]
+
+export const FRESHER_GUIDE_POINTS = [
+  'How to choose the right roadmap for your goal',
+  'The exact order to learn, practice and build',
+  'How to turn projects into a resume that gets calls',
+  'Common fresher mistakes — and how to avoid them',
+]
+
 export const PAIN_POINTS = [
   '"I have a degree but I\'m still not getting any interview calls."',
   '"There are thousands of courses online — I don\'t know where to even start."',

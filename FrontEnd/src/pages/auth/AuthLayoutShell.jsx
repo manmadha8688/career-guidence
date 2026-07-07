@@ -117,7 +117,10 @@ function AuthFormCard({ navigate, isLogin }) {
             <div className="auth-brand-icon">
               <Swords size={22} color="#fff" />
             </div>
-            <div className="auth-brand-title">learnforearn</div>
+            <div className="auth-brand-text">
+              <div className="auth-brand-title">learnforearn</div>
+              <div className="auth-brand-caption">Learn Skills. Earn Job.</div>
+            </div>
           </motion.button>
 
           <p className="auth-brand-tagline">{tagline}</p>

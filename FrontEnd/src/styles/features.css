@@ -185,7 +185,12 @@
   background: linear-gradient(135deg, #7C3AED, #4F46E5);
   flex-shrink: 0;
 }
-.feat-topbar__brand { font-weight: 800; font-size: 1.05rem; white-space: nowrap; }
+.feat-topbar__brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+.feat-topbar__brand { font-weight: 800; font-size: 1.2rem; white-space: nowrap; }
+.feat-topbar__caption {
+  font-size: 0.56rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-secondary); margin-top: 2px;
+}
 
 /* Cross-link pill used in the top bar actions slot */
 .feat-topbar__link {
@@ -199,7 +204,7 @@
 .feat-topbar__link:hover { border-color: var(--accent); color: var(--text-primary); }
 
 @media (max-width: 560px) {
-  .feat-topbar__brand { display: none; }
+  .feat-topbar__brand-text { display: none; }
   .feat-topbar__link span { display: none; }
 }
 

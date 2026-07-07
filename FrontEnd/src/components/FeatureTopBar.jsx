@@ -25,7 +25,10 @@ export default function FeatureTopBar({ actions = null }) {
         </button>
         <Link to="/" className="feat-topbar__brand-wrap" title="learnforearn home">
           <span className="feat-topbar__logo"><Swords size={14} color="#fff" /></span>
-          <span className="lp-grad-text feat-topbar__brand">learnforearn</span>
+          <span className="feat-topbar__brand-text">
+            <span className="lp-grad-text feat-topbar__brand">learnforearn</span>
+            <span className="feat-topbar__caption">Learn Skills. Earn Job.</span>
+          </span>
         </Link>
       </div>
 

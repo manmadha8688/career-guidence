@@ -22,9 +22,9 @@
 }
 
 .lp-navbar__logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #7C3AED, #9B6ED4);
   display: flex;
   align-items: center;
@@ -33,10 +33,26 @@
   flex-shrink: 0;
 }
 
+.lp-navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
 .lp-navbar__title {
   font-weight: 900;
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.lp-navbar__caption {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lp-text-sub);
+  margin-top: 3px;
 }
 
 .lp-nav-links {

@@ -1,83 +1,109 @@
-import { Swords, Ghost } from 'lucide-react'
-import { HERO_SKILL_BADGES } from '../landingData'
+import { lazy, Suspense, useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { Swords, Ghost, Sparkles } from 'lucide-react'
 import { useLanding } from '../context/LandingPageContext'
 
-const STAT_TONES = ['primary', 'blue', 'green', 'gold']
+const Spline = lazy(() => import('@splinetool/react-spline'))
+const SPLINE_ROBOT = 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode'
 
 export default function LandingHeroSection() {
-  const { user, navigate, handleEnter, handleGuest, guestLoading, platformStats, countUpRef } = useLanding()
+  const { user, handleEnter, handleGuest, guestLoading } = useLanding()
+  const [splineReady, setSplineReady] = useState(false)
 
-  const stats = [
-    [platformStats.paths,    'Career Paths',  /^\d+$/.test(platformStats.paths) ? platformStats.paths : null, ''],
-    [platformStats.subjects, 'Subjects',      /^\d+$/.test(platformStats.subjects) ? platformStats.subjects : null, ''],
-    [platformStats.concepts, 'Concepts',      platformStats.concepts.replace('+', ''), '+'],
-    ['100+',                 'Problems',      null, ''],
-  ]
+  // The 3D scene is ~4MB — load it everywhere (mobile included) so the hero
+  // looks identical across devices. Only skip it for users who explicitly opt
+  // out via reduced-motion or data-saver; they get an animated glow fallback.
+  const [enable3D] = useState(() => {
+    if (typeof window === 'undefined') return false
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
+    const saveData = navigator.connection?.saveData
+    return !reduced && !saveData
+  })
+
+  const { scrollY } = useScroll()
+  const contentY = useTransform(scrollY, [0, 600], [0, -70])
+  const contentOpacity = useTransform(scrollY, [0, 480], [1, 0])
+  const robotScale = useTransform(scrollY, [0, 500], [1, 1.14])
+  const robotY = useTransform(scrollY, [0, 500], [0, 60])
 
   return (
-    <section className="lp-hero-section">
+    <section className="lp-hero-section lp-hero-section--robot">
       <div className="lp-hero-bg" />
       <div className="lp-aurora lp-aurora-1" />
       <div className="lp-aurora lp-aurora-2" />
-      <div className="lp-hero-noise" />
+
+      {/* ── 3D robot background ── */}
+      <motion.div style={{ scale: robotScale, y: robotY }} className="lp-hero-robot" aria-hidden="true">
+        <div className="lp-hero-robot__glow" />
+        {enable3D ? (
+          <>
+            {!splineReady && (
+              <div className="lp-hero-robot__loader">
+                <span className="lp-hero-robot__spinner" />
+                <span className="lp-hero-robot__loading">INITIALIZING AI…</span>
+              </div>
+            )}
+            <Suspense fallback={null}>
+              <Spline
+                scene={SPLINE_ROBOT}
+                onLoad={() => setSplineReady(true)}
+                className="lp-hero-robot__canvas"
+                style={{ opacity: splineReady ? 1 : 0, transition: 'opacity 1.1s ease' }}
+              />
+            </Suspense>
+          </>
+        ) : (
+          <div className="lp-hero-robot__static">🤖</div>
+        )}
+      </motion.div>
+
+      <div className="lp-hero-robot__scrim" />
+      <div className="lp-hero-robot__grid" />
       <div className="lp-hero-fade-bottom" />
 
-      <div className="lp-skill-badges" aria-hidden="true">
-        {HERO_SKILL_BADGES.map((s, i) => (
-          <div
-            key={i}
-            className="lp-skill-pill"
-            style={{
-              left: s.x,
-              top: s.y,
-              color: s.color,
-              borderColor: `${s.color}40`,
-              background: `${s.color}0d`,
-              animationDelay: s.delay,
-              animationDuration: s.dur,
-            }}
-          >
-            {s.label}
-          </div>
-        ))}
-      </div>
+      {/* ── Message over the 3D ── */}
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="lp-hero-stage">
+      
 
-      <div className="lp-hero-center">
-        <div className="lp-hero-eyebrow lp-hero-title">
-          <span className="lp-eyebrow-dot" />
-          Skills Arena · Code GYM · Mission Board — Free
-        </div>
+        <motion.h1
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="lp-punch-title"
+        >
+          <span className="lp-punch-line">AI won't replace humans.</span>
+          <span className="lp-punch-line lp-punch-grad">Humans who use AI efficiently will replace those who don't.</span>
+        </motion.h1>
 
-        <p className="lp-hero-tagline-cap lp-hero-title lp-hero-title--d1">
-          Learn the skills. Earn the job.
-        </p>
+        <motion.p
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.24, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="lp-punch-quote"
+        >
+          AI is not your competition — <strong>the person using it better than you is.</strong>
+        </motion.p>
 
-        <h1 className="lp-hero-headline-v2 lp-hero-title lp-hero-title--d2">
-          Your path to becoming a<br />
-          <span className="lp-job-rotate">
-            <span className="lp-job-word lp-job-1 lp-grad-text">Python Developer</span>
-            <span className="lp-job-word lp-job-2 lp-grad-blue">Full Stack Dev</span>
-            <span className="lp-job-word lp-job-3 lp-grad-orange">Data Analyst</span>
-            <span className="lp-job-word lp-job-4 lp-grad-text">Backend Engineer</span>
-          </span>
-        </h1>
+        <motion.p
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.34, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="lp-punch-desc"
+        >
+          So become that person. A <strong>completely free</strong> platform to
+          <strong> learn the skills and earn the job</strong> — career roadmaps, real coding
+          problems and hands-on AI projects that take you from fresher to hired.
+        </motion.p>
 
-        <p className="lp-hero-desc-v2 lp-hero-sub lp-hero-sub--d3">
-          Structured career roadmaps, real coding problems, and project missions —<br className="lp-br-desktop" />
-          everything an Indian fresher needs to land their first tech job.
-        </p>
-
-        <div className="lp-hero-actions lp-hero-ctas lp-hero-actions--center">
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.42, duration: 0.7 }}
+          className="lp-hero-actions lp-punch-actions"
+        >
           <button type="button" onClick={handleEnter} className="lp-btn-primary lp-cta-pulse lp-btn-primary--hero">
             <Swords size={17} />
             {user ? 'Go to Dashboard' : 'Start Learning — Free'}
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate('/fresher-instructions')}
-            className="lp-btn-ghost lp-btn-ghost--fresher"
-          >
-            🎓 Fresher? Read this first
           </button>
           {!user && (
             <button
@@ -89,23 +115,8 @@ export default function LandingHeroSection() {
               <Ghost size={14} /> {guestLoading ? 'Starting…' : 'Try as Guest'}
             </button>
           )}
-        </div>
-
-        <div ref={countUpRef} className="lp-hero-stats-row lp-hero-stats">
-          {stats.map(([val, label, countTarget, suffix], i) => (
-            <div key={label} className="lp-hero-stat">
-              <div
-                data-target={countTarget || undefined}
-                data-suffix={suffix || undefined}
-                className={`lp-countup lp-hero-stat__value lp-hero-stat__value--${STAT_TONES[i]}`}
-              >
-                {val}
-              </div>
-              <div className="lp-hero-stat__label">{label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

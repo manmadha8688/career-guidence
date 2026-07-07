@@ -1192,10 +1192,31 @@
   box-shadow: 0 4px 14px rgba(155, 110, 212, 0.35);
 }
 
+.auth-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  text-align: left;
+}
+
 .auth-brand-title {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
+}
+
+.auth-brand-caption {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+[data-theme="light"] .auth-brand-caption {
+  color: rgba(124, 93, 187, 0.8);
 }
 
 /* ── Form ── */
@@ -1923,7 +1944,9 @@
   }
 
   .auth-page--login .auth-brand-tagline,
-  .auth-page--register .auth-brand-tagline {
+  .auth-page--register .auth-brand-tagline,
+  .auth-page--login .auth-brand-caption,
+  .auth-page--register .auth-brand-caption {
     display: none;
   }
 }
