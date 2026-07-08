@@ -1,9 +1,7 @@
 import { useEffect } from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import BrandNavButton from '../../components/BrandNavButton'
-import { Moon, Sun, Swords } from 'lucide-react'
-import { useTheme } from '../../context/ThemeContext'
+import Navbar from '../../components/navbars/Navbar'
 import LoginAnimation from './components/LoginAnimation'
 import { AuthFormProvider } from './context/AuthFormContext'
 import '../../styles/auth-animations.css'
@@ -16,8 +14,6 @@ const panelVariants = {
 
 export default function AuthLayoutShell() {
   const { pathname } = useLocation()
-  const navigate     = useNavigate()
-  const { theme, toggleTheme } = useTheme()
   const isRegister = pathname === '/register'
   const isForgot   = pathname === '/forgot-password'
   const direction  = isRegister ? 1 : -1
@@ -41,17 +37,7 @@ export default function AuthLayoutShell() {
         <div className="auth-bg-gradient" aria-hidden="true" />
         <div className="auth-bg-noise"    aria-hidden="true" />
 
-        <div className="auth-top-actions">
-          <BrandNavButton onClick={() => navigate('/')} />
-          <button
-            type="button"
-            className="auth-theme-btn"
-            onClick={toggleTheme}
-            aria-label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
-          >
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
-        </div>
+        <Navbar sticky />
 
         <div className="auth-stage">
           {/*
@@ -77,7 +63,7 @@ export default function AuthLayoutShell() {
                 animate="animate"
                 exit="exit"
               >
-                <AuthFormCard navigate={navigate} isLogin={!isRegister} />
+                <AuthFormCard isLogin={!isRegister} />
               </motion.div>
             </AnimatePresence>
           </div>
@@ -87,7 +73,7 @@ export default function AuthLayoutShell() {
   )
 }
 
-function AuthFormCard({ navigate, isLogin }) {
+function AuthFormCard({ isLogin }) {
   const { pathname } = useLocation()
   const isForgot = pathname === '/forgot-password'
   const tagline = isForgot
@@ -106,23 +92,6 @@ function AuthFormCard({ navigate, isLogin }) {
       >
         <div className="auth-card-glow" aria-hidden="true" />
         <div className="auth-card-inner">
-          {/* Brand — same on both pages, no nav tabs */}
-          <motion.button
-            type="button"
-            className="auth-brand-block"
-            onClick={() => navigate('/')}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="auth-brand-icon">
-              <Swords size={22} color="#fff" />
-            </div>
-            <div className="auth-brand-text">
-              <div className="auth-brand-title">learnforearn</div>
-              <div className="auth-brand-caption">Learn Skills. Earn Job.</div>
-            </div>
-          </motion.button>
-
           <p className="auth-brand-tagline">{tagline}</p>
 
           {/* Form outlet */}

@@ -4,42 +4,49 @@ const BRAND = 'learnforearn'
 const ORIGIN = 'https://learnforearn.in'
 const brand = (label) => `${label} · ${BRAND}`
 
-export const BASE_TITLE = `${BRAND} — Gamified Career Learning Platform`
+export const BASE_TITLE = `${BRAND} — Free Coding Practice, Career Roadmaps & Fresher Jobs`
 export const BASE_DESCRIPTION =
-  'learnforearn (ARISE) is a Solo Leveling–inspired learning platform for students. Master real skills in the Skill Arena, train in the Code GYM, explore the AI Lab, and ship real projects with beginner-friendly deployment guides.'
+  'learnforearn is a 100% free learning platform for students and freshers in India. Follow guided career roadmaps, practice real coding problems in C, Python, Java & C++, build resume-worthy projects, master in-demand AI tools, and find walk-in job drives — everything you need to go from beginner to hired.'
+
+// Broad, audience-focused keyword base. Per-route keywords below are prepended
+// to this so each page leads with its own most-relevant terms.
+export const BASE_KEYWORDS =
+  'free coding practice, DSA practice, learn programming free, placement preparation, fresher jobs India, walk-in drives, AI tools for students, career roadmap, coding problems with solutions, project ideas for students, deployment guides, interview preparation, learn Python, learn Java, learn React, coding for beginners'
 
 /**
  * Per-route SEO metadata. Titles use live counts from data files (never hardcoded).
- * Descriptions are hand-written per public route so search + social previews are
- * meaningful for every crawlable page (SPA crawlers read the DOM we mutate here).
+ * Descriptions + keywords are hand-written per public route so search + social
+ * previews are meaningful for every crawlable page (SPA crawlers read the DOM
+ * we mutate here).
  */
 const ROUTE_SEO = {
   '/': { title: BASE_TITLE, description: BASE_DESCRIPTION },
-  '/login': { title: brand('Sign In'), description: 'Sign in to learnforearn to continue leveling up your skills, quests, and career progress.' },
-  '/register': { title: brand('Create Account'), description: 'Create your free learnforearn account and start your journey from 0 to hired.' },
-  '/forgot-password': { title: brand('Reset Password'), description: 'Reset your learnforearn account password.' },
-  '/about': { title: brand('About'), description: 'What learnforearn is, who it is for, and how the Solo Leveling–inspired system helps students go from 0 to hired.' },
-  '/terms': { title: brand('Terms of Service'), description: 'learnforearn terms of service.' },
-  '/privacy': { title: brand('Privacy Policy'), description: 'How learnforearn handles your data and privacy.' },
-  '/missions': { title: brand('Missions'), description: 'Real, buildable project missions — subject practice, role-based, and academic — to turn what you learn into portfolio-grade work.' },
-  '/walk-ins': { title: brand('Walk-In Drives'), description: 'Latest walk-in drives and hiring opportunities for freshers, updated regularly.' },
-  '/fresher-instructions': { title: brand('Fresher Guide'), description: 'An honest, peer-to-peer guide for freshers: what is true about hiring, AI impact, and how to actually get your first job.' },
-  '/fresher-instructions/career-guidance': { title: brand('Career Guidance'), description: 'Role-by-role career guidance for students — passion fit, AI impact, and realistic future outlook.' },
-  '/ai-lab': { title: `AI Lab — ${TOOLS.length} AI Tools · ${BRAND}`, description: `Explore ${TOOLS.length} AI tools across 14 categories — hands-on guides to use modern AI for learning, building, and career work.` },
-  '/deployment': { title: brand('Deployment Guides'), description: 'Beginner-friendly, step-by-step guides to deploy React, Node, Django, Spring Boot, databases, and AI apps for free.' },
-  '/problem-solving': { title: brand('Code GYM — Problem Solving'), description: 'Train your coding logic in the Code GYM — LeetCode-style problems across ranked tracks, from beginner to real-world systems.' },
+  '/login': { title: brand('Sign In'), description: 'Sign in to learnforearn to continue your career roadmaps, coding practice, and job search.', keywords: 'learnforearn login, student login' },
+  '/register': { title: brand('Create Free Account'), description: 'Create your free learnforearn account and start your journey from fresher to hired — no credit card needed.', keywords: 'sign up free, create account, free learning platform' },
+  '/forgot-password': { title: brand('Reset Password'), description: 'Reset your learnforearn account password.', keywords: 'reset password' },
+  '/about': { title: brand('About Us'), description: 'What learnforearn is, who it is for, and how it helps Indian students and freshers go from zero to hired — completely free.', keywords: 'about learnforearn, free learning platform for students, career platform India' },
+  '/contact': { title: brand('Contact Us'), description: 'Get in touch with the learnforearn team — support, feedback, privacy, and partnership enquiries.', keywords: 'contact learnforearn, support, feedback, partnerships' },
+  '/terms': { title: brand('Terms of Service'), description: 'learnforearn terms of service.', keywords: 'terms of service' },
+  '/privacy': { title: brand('Privacy Policy'), description: 'How learnforearn collects, uses, and protects your data.', keywords: 'privacy policy, data protection' },
+  '/missions': { title: brand('Project Missions'), description: 'Real, buildable project missions — subject practice, role-based, and academic — to turn what you learn into portfolio-grade, resume-worthy work.', keywords: 'project ideas for students, resume projects, portfolio projects, mini projects, final year project ideas' },
+  '/walk-ins': { title: brand('Walk-In Job Drives'), description: 'Latest walk-in interview drives and hiring opportunities for freshers across India — filter by city, role, and skills.', keywords: 'walk-in drives, fresher jobs India, walk-in interview, off campus drive, IT jobs for freshers, hiring near me' },
+  '/fresher-instructions': { title: brand('Fresher Guide'), description: 'An honest, peer-to-peer guide for freshers: the truth about hiring, AI impact, and how to actually land your first job.', keywords: 'fresher guide, how to get first job, placement tips, fresher career advice, first job after graduation' },
+  '/fresher-instructions/career-guidance': { title: brand('Career Guidance'), description: 'Role-by-role career guidance for students — passion fit, AI impact, salaries, and realistic future outlook for each path.', keywords: 'career guidance, which career to choose, IT career paths, software career roadmap, career after B.Tech' },
+  '/ai-lab': { title: `AI Lab — ${TOOLS.length}+ AI Tools for Students · ${BRAND}`, description: `Learn ${TOOLS.length}+ AI tools across 14 categories — hands-on, beginner-friendly guides to use ChatGPT, coding copilots, agents, RAG, and automation for learning, building, and your career.`, keywords: 'AI tools for students, ChatGPT guide, AI coding tools, prompt engineering, RAG, LangChain, AI copilots, learn AI free' },
+  '/deployment': { title: brand('Free Deployment Guides'), description: 'Beginner-friendly, copy-paste deployment guides to host React, Node, Django, Spring Boot, FastAPI, databases, and AI apps for free.', keywords: 'free hosting, deploy React app, deploy Django, deploy Node.js, free deployment, host project free, Vercel, Render' },
+  '/problem-solving': { title: brand('Code GYM — Coding Practice'), description: 'Practice coding in the Code GYM — problems across ranked tracks in C, Python, Java & C++, from your first line of code to interview-level DSA, with brute-force and optimized solutions.', keywords: 'coding practice, DSA practice, coding problems with solutions, LeetCode alternative, practice Python, practice Java, interview coding questions' },
   '/skill-arena/dashboard': { title: brand('Skill Arena'), description: 'Your Skill Arena dashboard — subjects, concepts, quests, XP, and rank progression.' },
 }
 
 const PREFIX_SEO = [
-  ['/ai-lab/', { title: brand('AI Lab'), description: 'A hands-on guide to using this AI tool effectively for learning and building.' }],
-  ['/deployment/', { title: brand('Deployment Guide'), description: 'A step-by-step deployment guide with copy-paste commands and free hosting.' }],
-  ['/problem-solving/', { title: brand('Code GYM'), description: 'Solve this coding problem with guided approach, explanation, and multiple solution variants.' }],
+  ['/ai-lab/', { title: brand('AI Lab'), description: 'A hands-on, beginner-friendly guide to using this AI tool effectively for learning and building.', keywords: 'AI tool guide, how to use, AI for students' }],
+  ['/deployment/', { title: brand('Deployment Guide'), description: 'A step-by-step deployment guide with copy-paste commands and free hosting.', keywords: 'free hosting, deployment guide, deploy for free' }],
+  ['/problem-solving/', { title: brand('Code GYM'), description: 'Solve this coding problem with a guided approach, explanation, and multiple solution variants.', keywords: 'coding problem, solution, DSA practice' }],
   ['/admin-skill-arena', { title: brand('Admin'), description: '', noindex: true }],
   ['/skill-arena', { title: brand('Skill Arena'), description: '', noindex: true }],
 ]
 
-/** Full SEO record for a path: { title, description, canonical, noindex }. */
+/** Full SEO record for a path: { title, description, keywords, canonical, noindex }. */
 export function resolveSeo(pathname) {
   const exact = ROUTE_SEO[pathname]
   if (exact) return withCanonical(pathname, exact)
@@ -50,9 +57,11 @@ export function resolveSeo(pathname) {
 }
 
 function withCanonical(pathname, meta) {
+  const keywords = meta.keywords ? `${meta.keywords}, ${BASE_KEYWORDS}` : BASE_KEYWORDS
   return {
     title: meta.title,
     description: meta.description || BASE_DESCRIPTION,
+    keywords,
     canonical: ORIGIN + (pathname === '/' ? '/' : pathname),
     noindex: !!meta.noindex,
   }

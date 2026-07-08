@@ -4,6 +4,7 @@ import AppLayout from '../../components/AppLayout'
 import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import blurOnEnter from '../../utils/blurOnEnter'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminWalkIns, createWalkIn, updateAdminWalkIn, deleteWalkIn } from '../../api/api'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
@@ -247,6 +248,7 @@ export default function AdminWalkIns() {
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
+            onKeyDown={blurOnEnter}
             placeholder="Search company, role, city, posted by…"
             className="admin-search-input--full"
           />

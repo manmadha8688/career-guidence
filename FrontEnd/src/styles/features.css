@@ -364,6 +364,24 @@
 .feat-profile-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; color: var(--text-muted); font-size: 0.8rem; }
 .feat-profile-meta strong { color: var(--text-primary); }
 
+.feat-profile-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.feat-profile-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.8rem; font-weight: 600;
+  text-decoration: none;
+  transition: border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.feat-profile-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateY(-1px);
+}
+
 .feat-badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 .feat-badge-card {
   background: var(--bg-card);
@@ -399,6 +417,53 @@
   border: 2px solid transparent;
 }
 .feat-color-swatch.is-active { border-color: var(--text-primary); }
+
+/* Primary Save action pinned to the bottom-right of a section */
+.feat-section-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.feat-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #16A34A;
+  border: 1px solid #16A34A;
+  color: #fff;
+  border-radius: 9px;
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+.feat-save-btn:hover { background: #15803D; border-color: #15803D; box-shadow: 0 2px 10px rgba(22, 163, 74, 0.35); }
+.feat-save-btn:active { transform: translateY(1px); }
+.feat-save-btn:disabled { opacity: 0.6; cursor: default; box-shadow: none; }
+
+.feat-field-error { color: #EF4444; font-size: 0.75rem; margin-top: 4px; }
+
+/* Inputs with a leading icon (username) + shared field input styling */
+.feat-input-affix { position: relative; display: flex; align-items: center; }
+.feat-input-affix__icon { position: absolute; left: 11px; color: var(--text-muted); pointer-events: none; }
+.feat-affix-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 9px 12px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.feat-input-affix .feat-affix-input { padding-left: 32px; }
+.feat-affix-input:focus { outline: none; border-color: var(--accent); }
+.feat-affix-input.has-error { border-color: #EF4444; }
+.feat-affix-input.is-readonly { color: var(--text-secondary); background: var(--bg-card); cursor: not-allowed; }
 
 /* Profile menu action links */
 .lp-profile-panel__actions {

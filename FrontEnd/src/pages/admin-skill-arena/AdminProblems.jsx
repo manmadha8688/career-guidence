@@ -6,6 +6,7 @@ import AppLayout from '../../components/AppLayout'
 import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import blurOnEnter from '../../utils/blurOnEnter'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminProblems, createProblem, updateProblemQ, deleteProblemQ } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -441,7 +442,7 @@ export default function AdminProblems() {
 
           <div className="admin-search-wrap">
             <Search size={14} className="admin-search-icon" />
-            <input className="form-input admin-search-input" placeholder="Search problems…" value={search} onChange={e => setSearch(e.target.value)} />
+            <input className="form-input admin-search-input" placeholder="Search problems…" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={blurOnEnter} />
           </div>
 
           <button className="btn btn-primary" onClick={() => setModal('new')}>

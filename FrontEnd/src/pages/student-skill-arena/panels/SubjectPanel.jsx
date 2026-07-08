@@ -7,6 +7,7 @@ import BookmarkButton from '../../../components/BookmarkButton'
 import { Search, Trophy, Lock, CheckCircle, Clock } from 'lucide-react'
 import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
 import { isMongoId } from '../../../utils/mongoId'
+import blurOnEnter from '../../../utils/blurOnEnter'
 
 const RANK_COLORS = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
 
@@ -139,7 +140,7 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
           <div className="dash-search-wrap">
             <Search size={12} className="dash-search-icon dash-search-icon--panel" />
             <input className="form-input dash-search-input--panel"
-              placeholder="Scout skills…" value={search} onChange={e => setSearch(e.target.value)} />
+              placeholder="Scout skills…" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={blurOnEnter} />
           </div>
 
           <div className="dash-skill-list">

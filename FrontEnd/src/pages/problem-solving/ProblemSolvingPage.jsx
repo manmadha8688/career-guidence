@@ -1,9 +1,5 @@
-import { useNavigate } from 'react-router-dom'
-import { Sun, Moon } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useTheme } from '../../context/ThemeContext'
-import BrandNavButton from '../../components/BrandNavButton'
-import EnterArenaButton from '../../components/EnterArenaButton'
+import Navbar from '../../components/navbars/Navbar'
 import GymLoginSquad from './components/GymLoginSquad'
 import GymTrackPath from './components/GymTrackPath'
 
@@ -28,10 +24,6 @@ const HERO_CONVO = [
 const EASE = [0.16, 1, 0.3, 1]
 
 export default function ProblemSolvingPage() {
-  const navigate = useNavigate()
-  const { theme, toggleTheme } = useTheme()
-  const light = theme === 'light'
-
   return (
     <div className="ps-page ps-page--journey">
       <div className="lv-aura" aria-hidden="true">
@@ -40,16 +32,7 @@ export default function ProblemSolvingPage() {
         <div className="lv-aura__blob lv-aura__blob--3" />
       </div>
 
-      <div className="ps-nav">
-        <BrandNavButton onClick={() => navigate('/')} />
-        <span className="ps-nav-center ps-nav-center--landing">CODE GYM</span>
-        <div className="ps-nav__actions">
-          <button type="button" onClick={toggleTheme} className="ps-nav__theme">
-            {light ? <Moon size={14} /> : <Sun size={14} />}
-          </button>
-          <EnterArenaButton />
-        </div>
-      </div>
+      <Navbar sticky />
 
       <section className="lv-hero lv-hero--split">
         <div className="lv-hero__shell">

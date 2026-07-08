@@ -166,8 +166,8 @@ export default function OpenClawPage() {
       </ProTip>
 
       <PageNavRow
-        prev={{ path: '/ai-lab/autogen', label: 'AutoGen' }}
-        next={{ path: '/ai-lab/hermes-agent', label: 'Hermes Agent' }}
+        prev={{ path: '/ai-lab/agents/autogen', label: 'AutoGen' }}
+        next={{ path: '/ai-lab/agents/hermes', label: 'Nous Hermes' }}
       />
     </ToolPageShell>
   )

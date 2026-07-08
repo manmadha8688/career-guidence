@@ -85,7 +85,7 @@
   background: var(--ailab-page-bg);
   color: var(--ailab-text);
   font-family: 'Rajdhani', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .ailab-modal-overlay {

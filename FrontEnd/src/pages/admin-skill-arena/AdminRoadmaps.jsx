@@ -6,6 +6,7 @@ import AppLayout from '../../components/AppLayout'
 import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import blurOnEnter from '../../utils/blurOnEnter'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import {
   getAdminRoadmaps, createRoadmap, updateRoadmap, deleteRoadmap,
@@ -357,6 +358,7 @@ export default function AdminRoadmaps() {
               placeholder="Search roadmaps…"
               value={search}
               onChange={e => setSearch(e.target.value)}
+              onKeyDown={blurOnEnter}
             />
           </div>
           <button className="btn btn-primary" onClick={() => setModal('new')}><Plus size={15} /> New Roadmap</button>

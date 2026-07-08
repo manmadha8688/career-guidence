@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { useTheme } from '../context/ThemeContext'
+import Navbar from '../components/navbars/Navbar'
 import {
   MapPin, Clock, Plus, X, Search,
-  ChevronDown, ChevronUp, Sun, Moon, ChevronLeft,
+  ChevronDown, ChevronUp,
   Filter, RefreshCw, Calendar, Layers
 } from 'lucide-react'
 import { getWalkIns, postWalkIn, removeWalkIn } from '../api/api'
@@ -46,10 +46,10 @@ function FilterSection({ title, icon: Icon, children, defaultOpen = true }) {
   )
 }
 
-function WalkInCard({ job, onDelete, userId, isAdmin, index = 0 }) {
+function WalkInCard({ job, onDelete, isAdmin, index = 0 }) {
   const [expanded, setExpanded] = useState(false)
   const days = daysUntil(job.walkInDate)
-  const canDelete = isAdmin || job.postedById === userId
+  const canDelete = isAdmin || job.mine
 
   const dateBadge = days === 0
     ? { bg: 'rgba(74,222,128,0.15)', color: '#4ADE80', border: 'rgba(74,222,128,0.3)', label: 'TODAY' }
@@ -243,9 +243,7 @@ export function JobsComingSoon() {
 
 export default function JobsPage() {
   const { user } = useAuth()
-  const { theme: th, toggleTheme: tog } = useTheme()
   const navigate = useNavigate()
-  const light = th === 'light'
 
   const [jobs, setJobs] = useState([])
   const [loading, setLoading] = useState(true)
@@ -293,6 +291,25 @@ export default function JobsPage() {
   const todayJobs = filtered.filter(j => daysUntil(j.walkInDate) === 0)
   const upcomingJobs = filtered.filter(j => daysUntil(j.walkInDate) > 0)
 
+  // The search lives in a sticky sidebar, so after scrolling the list a search
+  // can filter results that are now above the fold. Enter exits the field and —
+  // only if the results have scrolled out of view above — scrolls back up to
+  // them. Searching from the top (results already visible) doesn't move.
+  const resultsRef = useRef(null)
+  const handleSearchEnter = (e) => {
+    if (!(e.key === 'Enter' || e.keyCode === 13) || search.trim() === '') return
+    e.preventDefault()
+    e.currentTarget.blur()
+    const el = resultsRef.current
+    if (!el) return
+    const NAV_OFFSET = 80 // sticky navbar band
+    const rectTop = el.getBoundingClientRect().top
+    if (rectTop < NAV_OFFSET) {
+      const top = rectTop + window.scrollY - NAV_OFFSET
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
+    }
+  }
+
   const sidebarJsx = (
     <div className="jobs-filters">
       {activeFilterCount > 0 && (
@@ -310,6 +327,7 @@ export default function JobsPage() {
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
+            onKeyDown={handleSearchEnter}
             placeholder="Company, role or skill..."
             className="jobs-search-input"
           />
@@ -368,26 +386,7 @@ export default function JobsPage() {
 
   return (
     <div className="jobs-page">
-      <div className="jobs-nav">
-        <div className="jobs-nav__inner">
-          <button type="button" onClick={() => navigate(-1)} className="jobs-nav__back">
-            <ChevronLeft size={14} /> Jobs
-          </button>
-          <div className="jobs-nav__spacer" />
-          <div className="jobs-nav__actions">
-            <button
-              type="button"
-              onClick={() => setMobileFilter(m => !m)}
-              className={`jobs-filter-btn${activeFilterCount > 0 ? ' is-active' : ''}`}
-            >
-              <Filter size={12} /> {activeFilterCount > 0 ? activeFilterCount : ''}
-            </button>
-            <button type="button" onClick={tog} className="jobs-theme-btn" aria-label="Toggle theme">
-              {light ? <Moon size={13} /> : <Sun size={13} />}
-            </button>
-          </div>
-        </div>
-      </div>
+      <Navbar sticky />
 
       <div className="jobs-body">
         <aside className="jobs-sidebar">
@@ -395,7 +394,7 @@ export default function JobsPage() {
           {sidebarJsx}
         </aside>
 
-        <main className="jobs-main">
+        <main className="jobs-main" ref={resultsRef}>
           <div className="jobs-header">
             <div>
               <h1 className="jobs-header__title">Walk-In Interviews</h1>
@@ -403,15 +402,24 @@ export default function JobsPage() {
                 {loading ? 'Loading…' : `${filtered.length} active walk-in${filtered.length !== 1 ? 's' : ''}${activeFilterCount > 0 ? ' (filtered)' : ''} across India`}
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => {
-                if (!user) { navigate('/login?redirect=/walk-ins') } else { setShowModal(true) }
-              }}
-              className="jobs-post-btn"
-            >
-              <Plus size={15} /> Post Walk-In
-            </button>
+            <div className="jobs-header__actions">
+              <button
+                type="button"
+                onClick={() => setMobileFilter(m => !m)}
+                className={`jobs-filter-btn${activeFilterCount > 0 ? ' is-active' : ''}`}
+              >
+                <Filter size={12} /> Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (!user) { navigate('/login?redirect=/walk-ins') } else { setShowModal(true) }
+                }}
+                className="jobs-post-btn"
+              >
+                <Plus size={15} /> Post Walk-In
+              </button>
+            </div>
           </div>
 
           {mobileFilter && (
@@ -447,7 +455,7 @@ export default function JobsPage() {
                   </div>
                   <div className="jobs-grid">
                     {todayJobs.map((j, i) => (
-                      <WalkInCard key={j.id} job={j} index={i} onDelete={handleDelete} userId={user?.id} isAdmin={user?.role === 'ADMIN'} />
+                      <WalkInCard key={j.id} job={j} index={i} onDelete={handleDelete} isAdmin={user?.role === 'ADMIN'} />
                     ))}
                   </div>
                 </div>
@@ -462,7 +470,7 @@ export default function JobsPage() {
                   </div>
                   <div className="jobs-grid">
                     {upcomingJobs.map((j, i) => (
-                      <WalkInCard key={j.id} job={j} index={i} onDelete={handleDelete} userId={user?.id} isAdmin={user?.role === 'ADMIN'} />
+                      <WalkInCard key={j.id} job={j} index={i} onDelete={handleDelete} isAdmin={user?.role === 'ADMIN'} />
                     ))}
                   </div>
                 </div>

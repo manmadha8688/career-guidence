@@ -8,6 +8,7 @@ import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminFilterStatCards from '../../components/admin/AdminFilterStatCards'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import blurOnEnter from '../../utils/blurOnEnter'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminUsers, getAdminStats, deleteUser } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -140,7 +141,7 @@ export default function AdminUsers() {
       <AdminPageToolbar subtitle={showingFn(total)}>
         <div className="search-container">
           <Search size={16} className="search-icon" />
-          <input className="search-input" placeholder="Search by name or email…" value={search} onChange={handleSearch} />
+          <input className="search-input" placeholder="Search by name or email…" value={search} onChange={handleSearch} onKeyDown={blurOnEnter} />
         </div>
       </AdminPageToolbar>
 

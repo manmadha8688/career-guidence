@@ -6,6 +6,7 @@ import AppLayout from '../../components/AppLayout'
 import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import blurOnEnter from '../../utils/blurOnEnter'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, deleteConcept } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -373,6 +374,7 @@ export default function AdminConcepts() {
               placeholder="Search concepts…"
               value={search}
               onChange={e => setSearch(e.target.value)}
+              onKeyDown={blurOnEnter}
             />
           </div>
           <button className="btn btn-primary" onClick={() => setModal('new')}>

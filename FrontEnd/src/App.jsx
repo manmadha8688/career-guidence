@@ -12,6 +12,7 @@ import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
 import AutoHideNav from './components/AutoHideNav'
 import GlobalSearchOverlay from './components/GlobalSearchOverlay'
+import SiteFooter from './components/SiteFooter'
 import { resolveSeo } from './utils/documentTitle'
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
@@ -96,6 +97,22 @@ function GlobalReportButton() {
   return <ReportButton variant="floating" />
 }
 
+// Global footer on every content page. Hidden on the app-like fullscreen
+// surfaces (Skill Arena, admin panels, auth stages, loader demo) where a
+// marketing footer would break the fixed-height / focused-task UX.
+function GlobalFooter() {
+  const { pathname } = useLocation()
+  const hide =
+    pathname.startsWith('/skill-arena') ||
+    pathname.startsWith('/admin') ||
+    pathname === '/login' ||
+    pathname === '/register' ||
+    pathname === '/forgot-password' ||
+    pathname === '/loader-demo'
+  if (hide) return null
+  return <SiteFooter />
+}
+
 function ScrollResetter() {
   const { pathname } = useLocation()
   const navType = useNavigationType()
@@ -118,12 +135,15 @@ function setMeta(selector, attr, value, create) {
 function Seo() {
   const { pathname } = useLocation()
   useEffect(() => {
-    const { title, description, canonical, noindex } = resolveSeo(pathname)
+    const { title, description, keywords, canonical, noindex } = resolveSeo(pathname)
 
     document.title = title
 
     setMeta('meta[name="description"]', 'content', description,
       () => Object.assign(document.createElement('meta'), { name: 'description' }))
+
+    setMeta('meta[name="keywords"]', 'content', keywords,
+      () => Object.assign(document.createElement('meta'), { name: 'keywords' }))
 
     setMeta('link[rel="canonical"]', 'href', canonical,
       () => Object.assign(document.createElement('link'), { rel: 'canonical' }))
@@ -286,6 +306,7 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
+        <GlobalFooter />
       </BrowserRouter>
     </AuthProvider>
     </ThemeProvider>

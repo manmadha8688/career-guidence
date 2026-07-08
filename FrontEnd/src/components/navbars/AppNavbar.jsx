@@ -1,11 +1,12 @@
 import { Menu, Sun, Moon, Search } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
-import { useTheme } from '../context/ThemeContext'
-import { getRank } from '../utils/slRank'
-import { openGlobalSearch } from './GlobalSearchOverlay'
+import { useAuth } from '../../context/AuthContext'
+import { useTheme } from '../../context/ThemeContext'
+import { getRank } from '../../utils/slRank'
+import { openGlobalSearch } from '../GlobalSearchOverlay'
 
-export default function Navbar({ onMenuClick, title = '' }) {
+/** Skill Arena top bar (used by AppLayout): sidebar toggle + XP/rank + hunter avatar. */
+export default function AppNavbar({ onMenuClick, title = '' }) {
   const { user } = useAuth()
   const { theme, toggleTheme } = useTheme()
   const navigate = useNavigate()

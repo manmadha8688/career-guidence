@@ -12,13 +12,60 @@
   height: 64px;
   background: var(--lp-nav-bg);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--lp-border);
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 6px 30px -12px rgba(0, 0, 0, 0.45);
+}
+
+/* Glowing gradient hairline — gives the bar a premium, branded edge */
+.lp-navbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(155, 110, 212, 0.55) 25%,
+    rgba(96, 165, 250, 0.55) 75%,
+    transparent);
+}
+
+/* Sticky variant — used on top-level feature pages (in normal flow, pinned on scroll) */
+.lp-navbar.lp-navbar--sticky {
+  position: sticky;
+}
+
+/* Left cluster: brand lockup */
+.lp-navbar__lead {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-width: 0;
 }
 
 .lp-navbar__brand {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Highlight the nav link matching the current page — subtle pill + persistent underline */
+.lp-nav-link--active {
+  color: var(--lp-text);
+  background: color-mix(in srgb, var(--lp-primary) 12%, transparent);
+}
+
+.lp-nav-link--active::after {
+  left: 14%;
+  right: 14%;
+}
+
+[data-theme="light"] .lp-nav-link--active {
+  color: var(--lp-primary);
 }
 
 .lp-navbar__logo {
@@ -74,13 +121,51 @@
 }
 
 .lp-nav-link--live {
+  position: relative;
   color: var(--lp-nav-link);
   font-weight: 600;
   cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Animated gradient underline — sweeps out from the center on hover */
+.lp-nav-link--live::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 1px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--lp-primary), #60A5FA);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--lp-primary) 55%, transparent);
+  transition: left 0.26s cubic-bezier(0.16, 1, 0.3, 1), right 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lp-nav-link--live:hover {
+  color: var(--lp-text);
+  transform: translateY(-1px);
+}
+
+.lp-nav-link--live:hover::after {
+  left: 14%;
+  right: 14%;
+}
+
+[data-theme="dark"] .lp-nav-link--live:hover {
+  text-shadow: 0 0 12px rgba(155, 110, 212, 0.5);
 }
 
 [data-theme="light"] .lp-nav-link--live {
   color: var(--lp-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-navbar__logo { animation: none; }
+  .lp-nav-link--live { transition: color 0.2s ease; }
+  .lp-nav-link--live:hover { transform: none; }
+  .lp-nav-link--live::after { transition: none; }
 }
 
 .lp-nav-live-dot {

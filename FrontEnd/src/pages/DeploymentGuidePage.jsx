@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
-import { useTheme } from '../context/ThemeContext'
-import BrandNavButton from '../components/BrandNavButton'
-import { Sun, Moon, Search, X, ExternalLink } from 'lucide-react'
+import Navbar from '../components/navbars/Navbar'
+import { Search, X, ExternalLink } from 'lucide-react'
 import { STACKS, PLATFORMS } from './deployment/guideIndex'
 
 const EASE = [0.16, 1, 0.3, 1]
@@ -279,34 +278,11 @@ function StackCard({ stack, i, onOpen }) {
 export default function DeploymentGuidePage() {
   const navigate = useNavigate()
   const { user } = useAuth()
-  const { theme, toggleTheme } = useTheme()
-  const dark = theme === 'dark'
   const [search, setSearch] = useState('')
   const [activeStation, setActiveStation] = useState('')
-  const [headerHidden, setHeaderHidden] = useState(false)
   const stationRefs = useRef({})
-  const lastScrollY = useRef(0)
-  const navHiddenRef = useRef(false)
 
   const q = search.trim().toLowerCase()
-
-  // Nav auto-hides on scroll down (reappears on scroll up). While it's hidden,
-  // the filter rail slides up to top:0 (see CSS) so it always stays pinned.
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY
-      const last = lastScrollY.current
-      let nav = navHiddenRef.current
-      if (y < 90) nav = false
-      else if (y > last + 6) nav = true
-      else if (y < last - 6) nav = false
-      navHiddenRef.current = nav
-      setHeaderHidden(nav)
-      lastScrollY.current = y
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   const matches = (item) => {
     if (!q) return true
@@ -333,6 +309,24 @@ export default function DeploymentGuidePage() {
     stationRefs.current[key]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  // Enter exits the search field, and — only if the user has scrolled past the
+  // first result — scrolls up to it so filtered results at the top aren't
+  // missed. If the first result is already at/below the fold (e.g. searching
+  // from the top), nothing scrolls.
+  const handleSearchEnter = (e) => {
+    if (!(e.key === 'Enter' || e.keyCode === 13) || search.trim() === '') return
+    e.preventDefault()
+    e.currentTarget.blur()
+    const firstKey = stationsWithStacks[0]?.key
+      || (visiblePlatforms.length > 0 ? 'platforms' : null)
+    const el = firstKey ? stationRefs.current[firstKey] : null
+    // ~navbar (64px) + station rail height — the results sit below this band.
+    const RAIL_OFFSET = 130
+    if (el && el.getBoundingClientRect().top < RAIL_OFFSET) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const openGuide = (route) => {
     if (!user) { navigate(`/login?redirect=${encodeURIComponent(route)}`); return }
     navigate(route)
@@ -347,20 +341,9 @@ export default function DeploymentGuidePage() {
   const nothingMatches = q && stationsWithStacks.length === 0 && visiblePlatforms.length === 0
 
   return (
-    <div className={`deploy-hub-page${headerHidden ? ' deploy-hub-page--header-hidden' : ''}`}>
+    <div className="deploy-hub-page">
 
-      <nav className="deploy-nav">
-        <BrandNavButton onClick={() => navigate('/')} />
-        <span className="deploy-nav__title">DEPLOY GUIDE</span>
-        <button
-          type="button"
-          onClick={toggleTheme}
-          className="deploy-nav__theme"
-          aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-        >
-          {dark ? <Sun size={15} /> : <Moon size={15} />}
-        </button>
-      </nav>
+      <Navbar sticky />
 
       <LaunchPipeline />
 
@@ -397,6 +380,7 @@ export default function DeploymentGuidePage() {
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
+              onKeyDown={handleSearchEnter}
               placeholder='Search — "react", "django", "chatbot", "mongodb"…'
               className="deploy-rail__search-input"
             />

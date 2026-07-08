@@ -164,8 +164,8 @@ export default function RAGPage() {
       </ProTip>
 
       <PageNavRow
-        prev={{ path: '/ai-lab/embeddings-vectors', label: 'Embeddings & Vectors' }}
-        next={{ path: '/ai-lab/chatgpt', label: 'ChatGPT' }}
+        prev={{ path: '/ai-lab/foundations/embeddings', label: 'Embeddings & Vectors' }}
+        next={{ path: '/ai-lab/chatbots/chatgpt', label: 'ChatGPT' }}
       />
     </ToolPageShell>
   )

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Bookmark, ChevronRight, Trash2, BookmarkX } from 'lucide-react'
-import FeatureTopBar from '../components/FeatureTopBar'
+import Navbar from '../components/navbars/Navbar'
 import { getBookmarks, removeBookmarkById } from '../api/api'
 import { invalidateBookmarkCache } from '../components/BookmarkButton'
 import { getApiError } from '../utils/apiError'
@@ -56,7 +56,7 @@ export default function MyBookmarksPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
-      <FeatureTopBar />
+      <Navbar sticky />
 
       <div className="feat-page">
         <div className="feat-page-header">

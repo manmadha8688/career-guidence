@@ -21,3 +21,7 @@
 @import './landing-animations.css';
 @import './auth-animations.css';
 @import './pages-animations.css';
+
+/* Mobile responsiveness layer — imported LAST so it wins. All rules are
+   inside mobile media queries; desktop view is unchanged. */
+@import './mobile.css';

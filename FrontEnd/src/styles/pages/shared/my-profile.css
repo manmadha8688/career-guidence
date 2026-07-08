@@ -1,0 +1,140 @@
+/* ── My Profile — full-width identity dashboard ──────────────────────────── */
+
+.mp-page { min-height: 100vh; background: var(--bg-primary); }
+
+.mp-shell {
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 36px) 0 72px;
+}
+
+.mp-head { margin-bottom: clamp(18px, 3vw, 26px); }
+.mp-head__title {
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  font-weight: 800; color: var(--text-primary);
+  margin: 0 0 6px; display: flex; align-items: center; gap: 10px;
+}
+.mp-head__sub { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 26px);
+  align-items: start;
+}
+@media (max-width: 900px) { .mp-grid { grid-template-columns: 1fr; } }
+
+/* ── Identity card (live preview) ── */
+.mp-identity {
+  position: sticky; top: 84px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(20px, 2.4vw, 28px);
+  overflow: hidden;
+}
+@media (max-width: 900px) { .mp-identity { position: static; } }
+
+.mp-id__top { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.mp-id__avatar {
+  width: 64px; height: 64px; border-radius: 16px;
+  display: grid; place-items: center; flex-shrink: 0;
+  font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.5rem;
+  color: #fff; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+.mp-id__name { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 0; line-height: 1.2; word-break: break-word; }
+.mp-id__handle { color: var(--text-muted); font-size: 0.88rem; margin: 3px 0 0; font-family: 'Share Tech Mono', monospace; }
+.mp-id__bio { color: var(--text-secondary); font-size: 0.86rem; line-height: 1.5; margin: 12px 0 0; }
+
+/* ── Rank + XP progress ── */
+.mp-rank {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px; border-radius: 14px;
+  background: color-mix(in srgb, var(--rank-color) 9%, var(--bg-secondary));
+  border: 1px solid color-mix(in srgb, var(--rank-color) 30%, transparent);
+  margin-bottom: 16px;
+}
+.mp-rank__badge {
+  width: 50px; height: 50px; border-radius: 13px; flex-shrink: 0;
+  display: grid; place-items: center;
+  font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.5rem;
+  color: var(--rank-color);
+  border: 2px solid var(--rank-color);
+  background: color-mix(in srgb, var(--rank-color) 14%, transparent);
+}
+.mp-rank__info { flex: 1; min-width: 0; }
+.mp-rank__value { font-weight: 800; color: var(--text-primary); font-size: 1rem; }
+.mp-xp__bar {
+  height: 8px; border-radius: 999px; overflow: hidden; margin: 9px 0 6px;
+  background: color-mix(in srgb, var(--text-primary) 12%, transparent);
+}
+.mp-xp__fill {
+  height: 100%; border-radius: 999px; background: var(--rank-color);
+  transition: width .7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mp-xp__meta { display: flex; justify-content: space-between; gap: 8px; font-size: 0.74rem; color: var(--text-muted); }
+
+/* ── Stat tiles ── */
+.mp-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+.mp-stat {
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 12px; padding: 13px 8px; text-align: center;
+}
+.mp-stat__num { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text-primary); line-height: 1; }
+.mp-stat__label { font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 7px; }
+
+/* ── Link chips ── */
+.mp-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.mp-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; border-radius: 999px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 0.8rem; font-weight: 600;
+  text-decoration: none; transition: border-color .18s, color .18s, transform .18s;
+}
+.mp-link:hover { border-color: var(--accent); color: var(--accent-light); transform: translateY(-1px); }
+
+/* ── Share row ── */
+.mp-share {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 12px; padding: 8px 8px 8px 12px;
+}
+.mp-share__url {
+  flex: 1; min-width: 0; font-size: 0.8rem; color: var(--text-secondary);
+  font-family: 'Share Tech Mono', monospace;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.mp-share__btn {
+  display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0;
+  padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg-card); color: var(--text-secondary);
+  font-size: 0.76rem; font-weight: 600; cursor: pointer; text-decoration: none;
+  transition: border-color .18s, color .18s;
+}
+.mp-share__btn:hover { border-color: var(--accent); color: var(--accent-light); }
+
+/* ── Editor column ── */
+.mp-editor { display: flex; flex-direction: column; gap: clamp(14px, 2vw, 20px); }
+.mp-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: clamp(18px, 2.2vw, 24px);
+}
+.mp-card__title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 4px;
+}
+.mp-card__hint { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 16px; }
+
+.mp-fields-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 620px) { .mp-fields-2 { grid-template-columns: 1fr; } }
+
+.mp-guest {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: clamp(32px, 6vw, 56px) 24px; text-align: center;
+  color: var(--text-secondary); line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-xp__fill { transition: none; }
+}

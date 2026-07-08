@@ -1,13 +1,13 @@
 import { useState, useRef, Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
-import { useTheme } from '../../context/ThemeContext'
-import { Sun, Moon, Search, ChevronRight, Lock, Zap } from 'lucide-react'
+import { Search, ChevronRight, Lock } from 'lucide-react'
 import ScrollToTop from '../../components/ScrollToTop'
-import BrandNavButton from '../../components/BrandNavButton'
+import Navbar from '../../components/navbars/Navbar'
 import BookmarkButton from '../../components/BookmarkButton'
 import { CATEGORIES, TOOLS } from './aiLabData'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
+import blurOnEnter from '../../utils/blurOnEnter'
 
 const Spline = lazy(() => import('@splinetool/react-spline'))
 
@@ -65,8 +65,6 @@ const CAT_META = {
 export default function AILabPage() {
   const navigate = useNavigate()
   const { user } = useAuth()
-  const { theme, toggleTheme } = useTheme()
-  const dark = theme !== 'light'
   const [activeCategory, setActiveCategory] = useState('all')
   const [search, setSearch] = useState('')
   const [primerOpen, setPrimerOpen] = useState(false)
@@ -86,6 +84,9 @@ export default function AILabPage() {
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0])
   const heroY = useTransform(scrollY, [0, 500], [0, -80])
   const splineScale = useTransform(scrollY, [0, 400], [1, 1.1])
+  // Skip scroll-linked parallax on touch/small screens to keep scrolling smooth.
+  const heroSectionStyle = enable3D ? { opacity: heroOpacity, y: heroY } : undefined
+  const splineStyle = enable3D ? { scale: splineScale } : undefined
 
   const filtered = TOOLS.filter(t => {
     const matchCat = activeCategory === 'all' || t.category === activeCategory
@@ -170,27 +171,9 @@ export default function AILabPage() {
         )}
       </AnimatePresence>
 
-      <motion.nav
-        initial={{ y: -60, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="ailab-nav"
-      >
-        <motion.div whileHover={{ x: -3 }} style={{ display: 'inline-flex' }}>
-          <BrandNavButton onClick={() => navigate('/')} />
-        </motion.div>
-        <div className="ailab-nav__brand">
-          <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}>
-            <Zap size={13} color="#00D9FF" />
-          </motion.div>
-          <span className="ailab-nav__title">AI LAB</span>
-        </div>
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} type="button" onClick={toggleTheme} className="ailab-nav__theme">
-          {dark ? <Sun size={13} /> : <Moon size={13} />}
-        </motion.button>
-      </motion.nav>
+      <Navbar sticky />
 
-      <motion.section style={{ opacity: heroOpacity, y: heroY }}>
+      <motion.section style={heroSectionStyle}>
         <div className="ailab-hero">
           <div className="ailab-hero__grid" />
           <div className="ailab-hero__scanlines" />
@@ -240,7 +223,7 @@ export default function AILabPage() {
           </div>
 
           <motion.div
-            style={{ scale: splineScale }}
+            style={splineStyle}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 1.2 }}
@@ -298,6 +281,7 @@ export default function AILabPage() {
             <input
               value={search}
               onChange={e => setSearch(e.target.value)}
+              onKeyDown={blurOnEnter}
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
               placeholder="Search tools, categories, tags..."

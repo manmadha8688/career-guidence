@@ -6,6 +6,7 @@ import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
 import EnterArenaButton from '../../components/EnterArenaButton'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblems } from '../../api/api'
+import blurOnEnter from '../../utils/blurOnEnter'
 
 const SLUG_TO_TRACK = {
   'start-coding':    'START_CODING',
@@ -218,6 +219,7 @@ function SearchBar({ value, onChange, placeholder }) {
       <input
         value={value}
         onChange={e => onChange(e.target.value)}
+        onKeyDown={blurOnEnter}
         placeholder={placeholder || 'Search problems...'}
         className="ps-searchbar-wrap__input"
       />

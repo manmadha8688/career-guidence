@@ -1,4 +1,4 @@
-/* ── Info pages (About / Terms / Privacy) ─────────────────────────────── */
+/* ── Info pages (About / Contact / Terms / Privacy) ───────────────────── */
 
 .info-page {
   min-height: 100vh;
@@ -6,150 +6,390 @@
   color: var(--text-primary);
 }
 
-.info-page__nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  height: 56px;
-  padding: 0 clamp(1rem, 4vw, 2rem);
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border);
+/* Shared inner width — wide, content fills it via two-column blocks */
+.info-hero__inner,
+.info-page__body,
+.info-page__footer-inner {
+  width: min(1240px, 94vw);
+  margin: 0 auto;
 }
 
-.info-page__label {
+/* ── Full-bleed hero band ─────────────────────────────────────────────── */
+.info-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+}
+
+.info-hero__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 90% at 12% 0%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 60%),
+    radial-gradient(ellipse 45% 75% at 92% 15%, rgba(96, 165, 250, 0.18), transparent 62%);
+}
+
+.info-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.75rem, 7vw, 5.25rem) 0 clamp(2rem, 5vw, 3.5rem);
+}
+
+.info-hero__eyebrow {
+  display: inline-block;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--primary);
+  padding: 0.3rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  margin-bottom: 1.1rem;
+}
+
+.info-hero__title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.1rem, 6.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 0;
+  max-width: 20ch;
+  color: var(--text-primary);
+}
+
+.info-hero__lede {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 1.15rem 0 0;
+  max-width: 72ch;
+}
+
+.info-hero__updated {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
+  margin-top: 1.5rem;
   text-transform: uppercase;
 }
 
+/* ── Body ─────────────────────────────────────────────────────────────── */
 .info-page__body {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) 4rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(3rem, 6vw, 5rem);
 }
 
-.info-page__title {
+/* ── Two-column doc block — heading rail on the left, content fills right ─ */
+.info-block {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3.25rem);
+  padding: clamp(1.75rem, 3.5vw, 2.85rem) 0;
+  border-top: 1px solid var(--border);
+}
+.info-block:first-child { border-top: none; }
+
+.info-block__head {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+  height: fit-content;
+}
+
+.info-block__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  padding: 0 0.5rem;
+  border-radius: 9px;
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1.5rem, 4.5vw, 2.15rem);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 26%, transparent);
+  margin-bottom: 0.75rem;
+}
+
+.info-block__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
   font-weight: 800;
   line-height: 1.15;
-  margin: 0 0 0.5rem;
   color: var(--text-primary);
+  margin: 0 0 0.4rem;
 }
 
-.info-page__updated {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
+.info-block__desc {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-muted);
-  margin-bottom: 2.25rem;
+  margin: 0;
+  max-width: 34ch;
 }
 
-.info-page__intro {
+.info-block__content > *:first-child { margin-top: 0; }
+.info-block__content > *:last-child { margin-bottom: 0; }
+
+.info-block__content p {
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.05rem;
-  line-height: 1.65;
+  line-height: 1.72;
   color: var(--text-secondary);
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 
-.info-section {
-  margin-bottom: 2rem;
-}
+.info-block__content strong { color: var(--text-primary); font-weight: 700; }
 
-.info-section__title {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 0.625rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.info-section__num {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 800;
-  color: var(--primary);
-  flex-shrink: 0;
-}
-
-.info-section p {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin: 0 0 0.75rem;
-}
-
-.info-section ul {
-  margin: 0 0 0.75rem;
-  padding-left: 1.1rem;
-}
-
-.info-section li {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 0.35rem;
-}
-
-.info-section strong {
-  color: var(--text-primary);
-  font-weight: 700;
-}
-
-.info-section a {
+.info-block__content a {
   color: var(--primary);
   text-decoration: none;
+  font-weight: 600;
 }
-.info-section a:hover {
-  text-decoration: underline;
+.info-block__content a:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .info-block {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding: 1.75rem 0;
+  }
+  .info-block__head { position: static; }
+  .info-block__desc { max-width: none; }
 }
 
-/* Rank ladder mini-table on the About page */
+/* ── Check-list cards — bullet points become a full-width grid ────────── */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.7rem;
+}
+.info-list li {
+  position: relative;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  padding: 0.85rem 1rem 0.85rem 2.35rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  transition: border-color 0.16s ease;
+}
+.info-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.95rem;
+  top: 1.15rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+.info-list li:hover { border-color: color-mix(in srgb, var(--primary) 40%, transparent); }
+.info-list li strong { color: var(--text-primary); }
+
+/* A single-column list variant for dense legal points */
+.info-list--stack { grid-template-columns: 1fr; }
+
+/* ── Card grid (feature cards, contact cards) ─────────────────────────── */
+.info-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.info-grid--2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+.info-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.35rem 1.4rem;
+  background: var(--bg-secondary);
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.info-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px -18px color-mix(in srgb, var(--primary) 65%, transparent);
+}
+
+.info-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  margin-bottom: 0.9rem;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent);
+}
+
+.info-card__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.35rem;
+}
+
+.info-card p {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.info-card__email {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  word-break: break-all;
+}
+.info-card__email:hover { text-decoration: underline; }
+
+/* ── Callout / TL;DR banner ───────────────────────────────────────────── */
+.info-callout {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  border: 1px solid color-mix(in srgb, var(--primary) 34%, transparent);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border-radius: 16px;
+  padding: 1.15rem 1.3rem;
+}
+.info-callout__icon { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.info-callout p { margin: 0; color: var(--text-primary); font-size: 1.02rem; line-height: 1.6; }
+.info-callout strong { color: var(--primary); }
+
+/* ── Stat strip (About) ───────────────────────────────────────────────── */
+.info-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.info-stat {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  background: var(--bg-secondary);
+}
+.info-stat__num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+.info-stat__label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+/* ── CTA row ───────────────────────────────────────────────────────────── */
+.info-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.info-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 0.72rem 1.3rem;
+  border-radius: 11px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.info-cta__btn--primary { background: var(--primary); color: #fff; }
+.info-cta__btn--primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--primary) 80%, transparent); }
+.info-cta__btn--ghost { background: transparent; color: var(--text-primary); border-color: var(--border); }
+.info-cta__btn--ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Rank ladder chips (About) */
 .info-ranks {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0.5rem 0 0.75rem;
+  margin: 0.4rem 0 1rem;
 }
 .info-ranks__chip {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  padding: 0.3rem 0.7rem;
-  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
   border: 1.5px solid var(--rank-color, var(--border));
   color: var(--rank-color, var(--text-secondary));
   background: color-mix(in srgb, var(--rank-color, transparent) 10%, transparent);
 }
 
-/* Footer legal row — base styles live in layout.css; info-pages only adds page footer variant */
+/* ── Footer ───────────────────────────────────────────────────────────── */
 .info-page__footer {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 0 clamp(1rem, 4vw, 2rem) 3rem;
-}
-
-.info-page__footer .lp-footer__legal {
   border-top: 1px solid var(--border);
-  padding-top: 1.25rem;
-  margin-top: 0;
+  background: var(--bg-secondary);
 }
-
-.info-page__footer .lp-footer__legal-link {
+.info-page__footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.6rem 0;
+}
+.info-page__footer-brand {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
   color: var(--text-muted);
 }
-.info-page__footer .lp-footer__legal-link:hover {
-  color: var(--primary);
+.info-page__footer .lp-footer__legal {
+  display: flex;
+  gap: 1.1rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.info-page__footer .lp-footer__legal-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.info-page__footer .lp-footer__legal-link:hover { color: var(--primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .info-card:hover,
+  .info-cta__btn--primary:hover,
+  .info-cta__btn--ghost:hover { transform: none; }
 }

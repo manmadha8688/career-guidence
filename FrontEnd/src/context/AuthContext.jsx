@@ -43,10 +43,20 @@ export function AuthProvider({ children }) {
     return () => window.removeEventListener('sl:refresh', refresh)
   }, [])
 
-  const login = (_token, userData) => {
+  const login = async (_token, userData) => {
     clearUserCache()
     localStorage.setItem('has_session', '1')
+    // The login/register response only carries {id, fullName, email, role}.
+    // Set that instantly for a snappy transition, then hydrate the FULL profile
+    // (xp, level, rank, username, bio, links…) from /me so the UI shows real
+    // user data immediately instead of defaults until the next refresh.
     setUser(userData)
+    try {
+      const res = await getMe()
+      setUser(res.data)
+    } catch (err) {
+      logApiError('auth-login-hydrate', err)
+    }
   }
 
   const logout = async () => {

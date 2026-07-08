@@ -4,7 +4,7 @@
 
 .ps-page {
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--ps-bg);
   font-family: 'Rajdhani', sans-serif;
   color: var(--text-primary);
@@ -262,7 +262,7 @@
 
 /* ═══ ProblemSolvingPage — THE LEVEL JOURNEY (beginner → job-ready) ═══════ */
 
-.ps-page--journey { position: relative; overflow: hidden; }
+.ps-page--journey { position: relative; overflow-x: clip; }
 
 /* Ambient drifting glows (CSS only) */
 .lv-aura { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }

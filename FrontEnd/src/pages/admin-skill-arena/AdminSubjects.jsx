@@ -6,6 +6,7 @@ import AppLayout from '../../components/AppLayout'
 import AdminPageToolbar from '../../components/admin/AdminPageToolbar'
 import AdminBulkToolbar from '../../components/admin/AdminBulkToolbar'
 import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
+import blurOnEnter from '../../utils/blurOnEnter'
 import useAdminSelection from '../../hooks/useAdminSelection'
 import { getAdminSubjects, createSubject, updateSubject, deleteSubject } from '../../api/api'
 import toast from 'react-hot-toast'
@@ -233,7 +234,7 @@ export default function AdminSubjects() {
         <div className="admin-page-actions">
           <div className="admin-search-wrap">
             <Search size={15} className="admin-search-icon" />
-            <input className="form-input admin-search-input" placeholder="Search subjects…" value={search} onChange={e => setSearch(e.target.value)} />
+            <input className="form-input admin-search-input" placeholder="Search subjects…" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={blurOnEnter} />
           </div>
           <button className="btn btn-primary" onClick={() => setModal('new')}>
             <Plus size={15} /> New Subject

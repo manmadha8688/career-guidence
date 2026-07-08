@@ -1,16 +1,81 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight, Search } from 'lucide-react'
-import { NAV_LINKS } from '../landingData'
-import { useLanding } from '../context/LandingPageContext'
-import { LandingProfileDropdown } from './LandingProfileMenu'
-import { openGlobalSearch } from '../../../components/GlobalSearchOverlay'
+import { useAuth } from '../../context/AuthContext'
+import { useTheme } from '../../context/ThemeContext'
+import { guestLogin } from '../../api/api'
+import { getApiError } from '../../utils/apiError'
+import toast from 'react-hot-toast'
+import { NAV_LINKS } from '../../pages/landing/landingData'
+import { LandingProfileDropdown } from '../../pages/landing/components/LandingProfileMenu'
+import { openGlobalSearch } from '../GlobalSearchOverlay'
+import useBodyLock from '../../hooks/useBodyLock'
 
-export default function LandingNavbar() {
+/**
+ * Global site navbar — same look everywhere (landing + top-level feature pages).
+ *
+ * Props:
+ *  - sticky: render in normal flow, pinned on scroll (feature pages). Default is
+ *            a fixed overlay bar used by the landing hero.
+ *
+ * The logo/title always navigates home; back navigation is left to the browser.
+ */
+export default function Navbar({ sticky = false }) {
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const { theme, toggleTheme } = useTheme()
   const {
-    theme, toggleTheme, user, logout,
-    navigate, handleEnter, handleGuest, guestLoading,
-    mobileMenuOpen, setMobileMenuOpen,
-  } = useLanding()
+    user, login, logout,
+    showAuthOverlay, completeAuthOverlay, hideAuthOverlay,
+  } = useAuth()
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [guestLoading, setGuestLoading] = useState(false)
+
+  // Lock the page behind the mobile drawer so the background can't scroll while
+  // the hamburger menu is open. Mobile-only — the drawer never opens on desktop.
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches,
+  )
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)')
+    const sync = () => setIsMobile(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+  useBodyLock(mobileMenuOpen && isMobile)
+  // Some pages (e.g. auth) scroll an inner container instead of the body, so a
+  // body lock alone won't freeze them. Flag <html> so CSS can stop those too.
+  useEffect(() => {
+    if (!(mobileMenuOpen && isMobile)) return
+    const root = document.documentElement
+    root.classList.add('lp-drawer-open')
+    return () => root.classList.remove('lp-drawer-open')
+  }, [mobileMenuOpen, isMobile])
+
+  const handleEnter = () =>
+    navigate(user ? '/skill-arena/dashboard' : '/login?redirect=/skill-arena/dashboard')
+
+  const handleGuest = async () => {
+    setGuestLoading(true)
+    showAuthOverlay?.('guest')
+    try {
+      const storedGuestId = localStorage.getItem('guest_device_id')
+      const { data } = await guestLogin(storedGuestId)
+      localStorage.setItem('guest_device_id', data.user.id)
+      completeAuthOverlay?.()
+      await new Promise(r => setTimeout(r, 600))
+      hideAuthOverlay?.()
+      login(data.token, data.user)
+      navigate('/')
+    } catch (err) {
+      hideAuthOverlay?.()
+      toast.error(getApiError(err, 'We could not start a guest session right now. Please try again.'))
+    } finally {
+      setGuestLoading(false)
+    }
+  }
 
   const onNavLink = (link) => {
     if (!link.live) return undefined
@@ -30,22 +95,24 @@ export default function LandingNavbar() {
 
   return (
     <>
-      <nav className="lp-navbar">
-        <div className="lp-navbar__brand">
-          <div className="lp-navbar__logo">
-            <Swords size={16} color="#fff" />
-          </div>
-          <div className="lp-navbar__brand-text">
-            <span className="lp-grad-text lp-navbar__title">learnforearn</span>
-            <span className="lp-navbar__caption">Learn Skills. Earn Job.</span>
-          </div>
+      <nav className={`lp-navbar${sticky ? ' lp-navbar--sticky' : ''}`}>
+        <div className="lp-navbar__lead">
+          <Link to="/" className="lp-navbar__brand" aria-label="learnforearn home">
+            <div className="lp-navbar__logo">
+              <Swords size={16} color="#fff" />
+            </div>
+            <div className="lp-navbar__brand-text">
+              <span className="lp-grad-text lp-navbar__title">learnforearn</span>
+              <span className="lp-navbar__caption">Learn Skills. Earn Job.</span>
+            </div>
+          </Link>
         </div>
 
         <div className="lp-nav-links">
           {NAV_LINKS.map(link => (
             <div
               key={link.label}
-              className={`lp-nav-link${link.live ? ' lp-nav-link--live' : ''}`}
+              className={`lp-nav-link${link.live ? ' lp-nav-link--live' : ''}${link.href && pathname.startsWith(link.href) ? ' lp-nav-link--active' : ''}`}
               onClick={onNavLink(link)}
             >
               {link.label}

@@ -7,7 +7,7 @@
   position: sticky;
   /* Sits just under the navbar; slides up to the very top (0) when the nav
      auto-hides on scroll, so the filter always stays pinned with no gap. */
-  top: 52px;
+  top: 64px;
   z-index: 40;
   /* Solid, opaque toolbar so it never blends with the hero pipeline behind it */
   background: var(--deploy-card-bg);
@@ -23,7 +23,7 @@
 }
 
 /* When the navbar is hidden, the filter rail pins to the very top */
-.deploy-hub-page--header-hidden .deploy-rail {
+html.nav-hidden .deploy-rail {
   top: 0;
 }
 

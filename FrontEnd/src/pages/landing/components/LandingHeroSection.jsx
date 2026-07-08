@@ -10,14 +10,24 @@ export default function LandingHeroSection() {
   const { user, handleEnter, handleGuest, guestLoading } = useLanding()
   const [splineReady, setSplineReady] = useState(false)
 
-  // The 3D scene is ~4MB — load it everywhere (mobile included) so the hero
-  // looks identical across devices. Only skip it for users who explicitly opt
-  // out via reduced-motion or data-saver; they get an animated glow fallback.
+  // Phones/tablets get a lightweight animated fallback instead of the ~4MB
+  // Spline WebGL scene: continuously rendering it (and repainting it on every
+  // scroll frame via the transforms below) is the main cause of mobile jank.
+  // Desktops (fine pointer + wide viewport) keep the full 3D robot.
+  const [isMobile] = useState(() => {
+    if (typeof window === 'undefined') return false
+    const coarse = window.matchMedia?.('(pointer: coarse)')?.matches
+    return window.innerWidth < 900 || !!coarse
+  })
   const [enable3D] = useState(() => {
     if (typeof window === 'undefined') return false
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
-    const saveData = navigator.connection?.saveData
-    return !reduced && !saveData
+    const conn = navigator.connection
+    const saveData = conn?.saveData
+    const slowNet = conn?.effectiveType ? /(2g|slow-2g|3g)/.test(conn.effectiveType) : false
+    const coarse = window.matchMedia?.('(pointer: coarse)')?.matches
+    const small = window.innerWidth < 900
+    return !reduced && !saveData && !slowNet && !coarse && !small
   })
 
   const { scrollY } = useScroll()
@@ -26,6 +36,11 @@ export default function LandingHeroSection() {
   const robotScale = useTransform(scrollY, [0, 500], [1, 1.14])
   const robotY = useTransform(scrollY, [0, 500], [0, 60])
 
+  // On mobile, skip scroll-linked transforms entirely so scrolling never
+  // forces a repaint of the hero layers.
+  const robotStyle = isMobile ? undefined : { scale: robotScale, y: robotY }
+  const stageStyle = isMobile ? undefined : { y: contentY, opacity: contentOpacity }
+
   return (
     <section className="lp-hero-section lp-hero-section--robot">
       <div className="lp-hero-bg" />
@@ -33,7 +48,7 @@ export default function LandingHeroSection() {
       <div className="lp-aurora lp-aurora-2" />
 
       {/* ── 3D robot background ── */}
-      <motion.div style={{ scale: robotScale, y: robotY }} className="lp-hero-robot" aria-hidden="true">
+      <motion.div style={robotStyle} className="lp-hero-robot" aria-hidden="true">
         <div className="lp-hero-robot__glow" />
         {enable3D ? (
           <>
@@ -53,7 +68,11 @@ export default function LandingHeroSection() {
             </Suspense>
           </>
         ) : (
-          <div className="lp-hero-robot__static">🤖</div>
+          <div className="lp-hero-robot__fallback" aria-hidden="true">
+            <span className="lp-hero-robot__orbit lp-hero-robot__orbit--1" />
+            <span className="lp-hero-robot__orbit lp-hero-robot__orbit--2" />
+            <span className="lp-hero-robot__core">🤖</span>
+          </div>
         )}
       </motion.div>
 
@@ -62,7 +81,7 @@ export default function LandingHeroSection() {
       <div className="lp-hero-fade-bottom" />
 
       {/* ── Message over the 3D ── */}
-      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="lp-hero-stage">
+      <motion.div style={stageStyle} className="lp-hero-stage">
       
 
         <motion.h1
@@ -72,7 +91,9 @@ export default function LandingHeroSection() {
           className="lp-punch-title"
         >
           <span className="lp-punch-line">AI won't replace humans.</span>
-          <span className="lp-punch-line lp-punch-grad">Humans who use AI efficiently will replace those who don't.</span>
+          <span className="lp-punch-line lp-punch-line--sub">
+            Human who <span className="lp-punch-key">use AI efficiently</span> will.
+          </span>
         </motion.h1>
 
         <motion.p

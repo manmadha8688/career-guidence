@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { Award, Calendar, Trophy, ShieldX } from 'lucide-react'
+import { Award, Calendar, Trophy, ShieldX, Github, Linkedin, Globe } from 'lucide-react'
 import { getPublicProfile } from '../api/api'
+
+const PROFILE_LINKS = [
+  { key: 'githubUrl', label: 'GitHub', icon: Github },
+  { key: 'linkedinUrl', label: 'LinkedIn', icon: Linkedin },
+  { key: 'portfolioUrl', label: 'Portfolio', icon: Globe },
+]
 
 function initials(name = '') {
   return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() || '').join('') || '?'
@@ -65,6 +71,16 @@ export default function PublicProfilePage() {
                     <span><Calendar size={13} style={{ verticalAlign: -2 }} /> Joined {formatDate(profile.joinedAt)}</span>
                   )}
                 </div>
+                {PROFILE_LINKS.some(l => profile[l.key]) && (
+                  <div className="feat-profile-links">
+                    {PROFILE_LINKS.filter(l => profile[l.key]).map(({ key, label, icon: Icon }) => (
+                      <a key={key} className="feat-profile-link" href={profile[key]}
+                        target="_blank" rel="noopener noreferrer nofollow">
+                        <Icon size={14} /> {label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 

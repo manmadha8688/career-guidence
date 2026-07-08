@@ -1,0 +1,193 @@
+/* ══════════════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVENESS LAYER
+   Loaded last so it wins over earlier rules. EVERYTHING here is inside a
+   mobile media query — desktop (>768px) is completely unaffected.
+
+   Note: horizontal-scroll prevention uses `overflow-x: clip` (not `hidden`)
+   because `hidden` breaks `position: sticky` on the navbars.
+   ══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* ── No horizontal scroll ────────────────────────────────────────── */
+  html, body, #root { overflow-x: clip; max-width: 100%; }
+
+  /* ── Media never overflows its container ─────────────────────────── */
+  img, video, canvas { max-width: 100%; height: auto; }
+
+  /* ── Global navbar → compact hamburger bar, large touch targets ──── */
+  .lp-navbar { height: 60px; padding: 0 16px !important; }
+  .lp-nav-links,
+  .lp-nav-auth { display: none !important; }
+  .lp-mob-menu-btn {
+    display: inline-flex !important;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+  }
+  .lp-btn-icon { width: 44px; height: 44px; }
+  .lp-mobile-drawer,
+  .lp-mobile-overlay { top: 60px; }
+  /* Comfortable tap targets inside the drawer */
+  .lp-mobile-nav-item,
+  .lp-btn-primary--full,
+  .lp-btn-ghost--full,
+  .lp-mobile-theme-btn { min-height: 48px; }
+
+  /* ── Info pages (About / Contact / Terms / Privacy) ──────────────── */
+  .info-hero__inner,
+  .info-page__body,
+  .info-page__footer-inner {
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .info-hero__inner { padding-top: 40px !important; padding-bottom: 28px !important; }
+  .info-hero__eyebrow { font-size: 0.6rem; }
+  .info-hero__title { font-size: 28px !important; line-height: 1.12 !important; max-width: 100% !important; }
+  .info-hero__lede { font-size: 18px !important; max-width: 100% !important; }
+
+  .info-block { padding: 20px 0 !important; }
+  .info-block__num { margin-bottom: 0.5rem; }
+  .info-block__title { font-size: 20px !important; }
+  .info-block__desc { font-size: 14px; }
+  .info-block__content p,
+  .info-list li,
+  .info-card p,
+  .info-callout p { font-size: 14px !important; line-height: 1.65 !important; }
+
+  /* Cards & lists → single column */
+  .info-grid,
+  .info-grid--2,
+  .info-list { grid-template-columns: 1fr !important; }
+  .info-stats { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Buttons full width */
+  .info-cta { flex-direction: column; }
+  .info-cta__btn { width: 100%; justify-content: center; min-height: 48px; }
+
+  .info-page__footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ALL PAGES — consistent mobile polish (spacing, hero scale, stacking,
+   tap targets). Everything additive and mobile-only.
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Prevent padding-driven overflow anywhere */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* ── Consistent 16px side padding on main content wrappers ───────── */
+  .missions-container,
+  .missions-hero,
+  .jobs-main,
+  .deploy-content,
+  .deploy-hub-main,
+  .md-body,
+  .lv-wrap,
+  .ps-tracks-wrap,
+  .feat-page,
+  .dgx-body {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* ── Page hero / heading scale ───────────────────────────────────── */
+  .missions-hero__title,
+  .md-hero__title,
+  .deploy-header__title,
+  .dgx-hero__title,
+  .ailab-hero__title,
+  .ailab-hero__main-title,
+  .lv-hero__title,
+  .ps-tracks-title,
+  .jobs-header__title {
+    font-size: 28px !important;
+    line-height: 1.14 !important;
+  }
+  .missions-hero__sub,
+  .md-hero__lead,
+  .deploy-header__desc,
+  .dgx-hero__desc,
+  .ailab-hero__desc,
+  .lv-hero__sub,
+  .ps-tracks-subtitle,
+  .jobs-header__sub { font-size: 15px !important; }
+
+  /* ── Fixed two-column layouts → stack ────────────────────────────── */
+  .md-cols,
+  .jobs-modal__grid,
+  .deploy-stack-grid--two-col { grid-template-columns: 1fr !important; }
+
+  /* ── Larger tap targets for detail-page icon buttons ─────────────── */
+  .md-top__icon-btn,
+  .missions-nav__theme,
+  .jobs-theme-btn,
+  .jobs-filter-btn,
+  .deploy-nav__theme,
+  .ailab-nav__theme,
+  .ps-nav__theme { min-width: 44px; min-height: 44px; }
+}
+
+/* ── Phones: full-width primary actions + tighter type ─────────────── */
+@media (max-width: 480px) {
+  .jobs-post-btn,
+  .missions-clear-btn,
+  .deploy-done__btn,
+  .dgx-outro__btn,
+  .ailab-btn-primary,
+  .ailab-btn-ghost,
+  .lv-cta,
+  .info-cta__btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Modal footers stack their buttons */
+  .jobs-modal__footer,
+  .ailab-modal__actions { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   MOBILE PERFORMANCE — cut the work that makes scrolling laggy on phones.
+   The heaviest offenders are (1) continuously animating large blurred
+   layers and (2) backdrop-filter on the sticky navbar (recomputes every
+   scroll frame). Trimming these keeps 60fps without hurting the look much.
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Freeze the big background auroras — a static glow costs ~nothing,
+     while animating an 800px blurred element churns the compositor. */
+  .lp-aurora,
+  .lp-aurora-1,
+  .lp-aurora-2,
+  .lp-aurora-3,
+  .lp-aurora-4 {
+    animation: none !important;
+    filter: blur(55px);
+    opacity: 0.28;
+  }
+
+  /* Lighter frosted navbar so the sticky bar doesn't re-blur the page
+     underneath on every scroll frame. */
+  .lp-navbar,
+  .lp-mobile-drawer,
+  .lp-mobile-menu {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Promote the hero robot / fallback to its own layer so it isn't
+     repainted together with the scrolling content. */
+  .lp-hero-robot { will-change: transform; transform: translateZ(0); }
+}
+
+/* Honour users who ask for less motion — kill the infinite loops. */
+@media (prefers-reduced-motion: reduce) {
+  .lp-aurora, .lp-aurora-1, .lp-aurora-2, .lp-aurora-3, .lp-aurora-4,
+  .lp-hero-robot__core, .lp-hero-robot__orbit,
+  .lp-hero-robot__static { animation: none !important; }
+}

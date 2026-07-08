@@ -10,6 +10,7 @@ import {
   getHunterStats, clearApiCache,
 } from '../../api/api'
 import { useAuth } from '../../context/AuthContext'
+import blurOnEnter from '../../utils/blurOnEnter'
 import { useTheme } from '../../context/ThemeContext'
 import { getRank } from '../../utils/slRank'
 import toast from 'react-hot-toast'
@@ -502,7 +503,7 @@ export default function DashboardPage() {
           <div className="dash-search-wrap dash-search-wrap--gates">
             <Search size={13} className="dash-search-icon" />
             <input className="form-input dash-search-input"
-              placeholder="Scout gates…" value={gateSearch} onChange={e => setGateSearch(e.target.value)} />
+              placeholder="Scout gates…" value={gateSearch} onChange={e => setGateSearch(e.target.value)} onKeyDown={blurOnEnter} />
           </div>
           {!gatesLoaded ? (
             <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>
@@ -524,7 +525,7 @@ export default function DashboardPage() {
           <div className="dash-search-wrap dash-search-wrap--paths">
             <Search size={13} className="dash-search-icon" />
             <input className="form-input dash-search-input"
-              placeholder="Scout paths…" value={pathSearch} onChange={e => setPathSearch(e.target.value)} />
+              placeholder="Scout paths…" value={pathSearch} onChange={e => setPathSearch(e.target.value)} onKeyDown={blurOnEnter} />
           </div>
           {!pathsLoaded ? (
             <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>

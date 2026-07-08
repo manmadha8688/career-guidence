@@ -62,15 +62,13 @@ export function clearApiCache(...keys) {
   _write(store)
 }
 
-// Clears every key that carries per-user data.
-// Call on login (switching users) and logout.
-// Roadmap content (no user data) is intentionally kept.
+// Wipes the ENTIRE client API cache. Called on login (switching users) and
+// logout so no per-user data can leak or go stale across accounts —
+// progress, roadmap enrolment, quiz status, walk-in ownership (`mine`),
+// admin stats, etc. Global content (subjects/missions/problems) simply
+// refetches on next use, a negligible cost for guaranteed correctness.
 export function clearUserCache() {
-  clearApiCache(
-    'progressSummary', 'hunterStats',
-    'subjects', 'subject:*', 'concept:*',
-    'quizStatus:*', 'roadmapStatus:*'
-  )
+  clearApiCache()
 }
 
 // ─── PUBLIC ──────────────────────────────────

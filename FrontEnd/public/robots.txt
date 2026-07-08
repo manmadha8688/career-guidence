@@ -9,5 +9,16 @@ Disallow: /forgot-password
 Disallow: /skill-arena/
 Disallow: /admin-skill-arena/
 Disallow: /loader-demo
+Disallow: /bookmarks
+Disallow: /myprofile
+
+# Login-gated detail pages (hubs below stay crawlable). Trailing slash means the
+# hub itself (/deployment, /problem-solving, /ai-lab, /missions) is still allowed,
+# only the protected sub-pages are blocked. Remove a line here if that section is
+# ever made public so it can be indexed again.
+Disallow: /deployment/
+Disallow: /problem-solving/
+Disallow: /ai-lab/
+Disallow: /missions/
 
 Sitemap: https://learnforearn.in/sitemap.xml
