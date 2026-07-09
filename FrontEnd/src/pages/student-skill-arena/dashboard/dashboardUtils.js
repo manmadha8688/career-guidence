@@ -9,14 +9,8 @@ export const DAILY_QUESTS = [
   { id: 'q2', label: 'Study for 20 min',   xp: 30 },
 ]
 
-export const RANK_LADDER = [
-  { letter: 'E', label: 'E-RANK', cls: 'rank-e', color: '#888888', bg: '#88888815', min: 0 },
-  { letter: 'D', label: 'D-RANK', cls: 'rank-d', color: '#4ADE80', bg: '#4ADE8015', min: 500 },
-  { letter: 'C', label: 'C-RANK', cls: 'rank-c', color: '#60A5FA', bg: '#60A5FA15', min: 1500 },
-  { letter: 'B', label: 'B-RANK', cls: 'rank-b', color: '#9B6ED4', bg: '#9B6ED415', min: 3000 },
-  { letter: 'A', label: 'A-RANK', cls: 'rank-a', color: '#F59E0B', bg: '#F59E0B15', min: 6000 },
-  { letter: 'S', label: 'S-RANK', cls: 'rank-s', color: '#EF4444', bg: '#EF444415', min: 10000 },
-]
+// Re-exported from the shared source so existing importers of this module are unaffected.
+export { RANK_LADDER } from '../../../constants/ranks'
 
 export const STAT_DEFS = [
   { key: 'INT', label: 'INTELLIGENCE', domain: 'Backend',         color: '#9B6ED4', lightColor: '#7C5DBB', hint: 'Java · Python · Spring · Node', match: t => /java|spring|python|oop|data.struct|mongodb|django|node|backend/.test(t) },

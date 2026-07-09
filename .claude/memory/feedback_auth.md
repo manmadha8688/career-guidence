@@ -40,11 +40,12 @@ Wire in `companionMurmurs.js`: `GOOGLE_CLICK`, `GOOGLE_PROCESSING`, `GOOGLE_SUCC
 
 ---
 
-## Local admin accounts (DataSeeder, non-prod only)
+## Local admin accounts (non-prod only)
 
 | Email | Password | Role |
 |---|---|---|
-| `admin@demo.com` | `***REMOVED***` | ADMIN |
-| `admin8688@gmail.com` | `***REMOVED***` | ADMIN (main) |
+| `admin@demo.com` | (local secret — not stored here) | ADMIN |
+| `admin8688@gmail.com` | (local secret — not stored here) | ADMIN (main) |
 
-Seeded on backend startup when **not** `prod` profile. Restart local backend after seeder changes.
+> **Never commit real passwords to docs.** Keep them in your local password manager only.
+> Note: the old `DataSeeder` startup seeder was removed — admin accounts are no longer auto-created.

@@ -146,7 +146,7 @@ try {
         <iframe
           key={runKey}
           srcDoc={doc}
-          sandbox="allow-scripts allow-same-origin"
+          sandbox="allow-scripts"
           className="dash-live-preview__iframe"
           title="live-preview"
         />

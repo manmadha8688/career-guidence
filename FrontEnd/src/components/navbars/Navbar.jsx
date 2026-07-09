@@ -63,7 +63,8 @@ export default function Navbar({ sticky = false }) {
     try {
       const storedGuestId = localStorage.getItem('guest_device_id')
       const { data } = await guestLogin(storedGuestId)
-      localStorage.setItem('guest_device_id', data.user.id)
+      // Persist the server-issued secret device token (not the guessable user id).
+      if (data.guestToken) localStorage.setItem('guest_device_id', data.guestToken)
       completeAuthOverlay?.()
       await new Promise(r => setTimeout(r, 600))
       hideAuthOverlay?.()

@@ -193,6 +193,9 @@ function usePrefetchRoutes() {
 
 function App() {
   usePrefetchRoutes()
+  // App mounted successfully — clear the one-shot stale-chunk reload guard so a future
+  // redeploy can auto-reload again if the user hits a purged chunk.
+  useEffect(() => { sessionStorage.removeItem('sl_chunk_reloaded') }, [])
   return (
     <ErrorBoundary>
     <ThemeProvider>

@@ -2,7 +2,7 @@
 
 ## Connection
 ```
-URI:      mongodb+srv://***REMOVED***:...@free-database.lfnuahd.mongodb.net
+URI:      mongodb+srv://<db-user>:<db-password>@<cluster-host>   (real value in MONGODB_URI env var only)
 Database: learnData_db
 Cluster:  Free-Database (M0 shared)
 ```

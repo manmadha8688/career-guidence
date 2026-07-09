@@ -334,11 +334,16 @@ VITE_API_URL=https://learnforearn-wnpp.onrender.com/api  # prod
 
 ### Backend (Render dashboard)
 ```
-MONGODB_URI=mongodb+srv://...@free-database.lfnuahd.mongodb.net/learnData_db
+MONGODB_URI=mongodb+srv://<db-user>:<db-password>@<cluster-host>/learnData_db
 JWT_SECRET=<strong-random-256-bit>
 CORS_ALLOWED_ORIGINS=https://learnforearn.in
 SPRING_PROFILES_ACTIVE=prod
-SPRING_REDIS_URL=redis://***REMOVED***:6379
+SPRING_REDIS_URL=<redis-url>
+PORT=<injected by Render; falls back to 8080 locally>
+COOKIE_SECURE=true                          # true in prod (HTTPS); set false only for local HTTP dev
+APP_URL=https://learnforearn.in             # base URL used in outbound emails (OTP, welcome, reset)
+BREVO_API_KEY=<brevo-transactional-email-api-key>
+GOOGLE_CLIENT_ID=<google-oauth-web-client-id>   # verifies Google Sign-In ID tokens; must match frontend VITE_GOOGLE_CLIENT_ID
 ```
 
 ---
@@ -364,8 +369,11 @@ npm run dev
 ---
 
 ## Test Credentials
+
+> Real passwords are **never** stored here. Keep them in your local password manager only.
+
 ```
-Admin (demo):  admin@demo.com       / ***REMOVED***
-Main Admin:    admin8688@gmail.com  / ***REMOVED***   ← local/dev seed only
-Student:       student@test.com     / ***REMOVED***
+Admin (demo):  admin@demo.com       / <local secret>
+Main Admin:    admin8688@gmail.com  / <local secret>
+Student:       student@test.com     / <local secret>
 ```

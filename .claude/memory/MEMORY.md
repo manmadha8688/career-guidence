@@ -38,3 +38,4 @@
 - [Code Audit](project_code_audit.md) — applied fixes, pending items
 - [Production Audit](project_production_audit.md) — deploy health, feature roadmap
 - [Enterprise Roadmap](project_enterprise_roadmap.md) — Jul 2026 security+deadcode audit, fixes applied, prioritized next steps
+- [Email System](project_email_system.md) — Brevo sending, Zoho mailboxes, Reply-To routing, templates, future mail suggestions
