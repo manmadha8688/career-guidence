@@ -155,7 +155,7 @@ export default function AboutPage() {
       <div className="info-block" id="contact">
         <div className="info-block__head">
           <span className="info-block__num">05</span>
-          <h2 className="info-block__title">Work with us</h2>
+          <h2 className="info-block__title">Get in touch</h2>
           <p className="info-block__desc">Built in the open, shaped by student feedback.</p>
         </div>
         <div className="info-block__content">
@@ -168,13 +168,13 @@ export default function AboutPage() {
               <span className="info-card__icon"><Mail size={20} /></span>
               <h3 className="info-card__title">Partnerships & outreach</h3>
               <p>Colleges, communities, and hiring teams.</p>
-              <a className="info-card__email" href="mailto:partnerships@learnforearn.in">partnerships@learnforearn.in</a>
+              <a className="info-card__email" href="mailto:partnerships@learnforearn.in" rel="noopener">partnerships@learnforearn.in</a>
             </div>
             <div className="info-card">
               <span className="info-card__icon"><Mail size={20} /></span>
               <h3 className="info-card__title">Say hello</h3>
               <p>General questions, ideas, and everything else.</p>
-              <a className="info-card__email" href="mailto:hello@learnforearn.in">hello@learnforearn.in</a>
+              <a className="info-card__email" href="mailto:hello@learnforearn.in" rel="noopener">hello@learnforearn.in</a>
             </div>
           </div>
         </div>

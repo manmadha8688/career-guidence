@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom'
-import { Swords, Mail, ArrowUpRight, Heart } from 'lucide-react'
+import { Swords, Mail, ArrowUpRight, Heart, LifeBuoy, ShieldCheck, Handshake } from 'lucide-react'
 import '../styles/site-footer.css'
+
+const CONTACT_EMAILS = [
+  { icon: Mail, label: 'General', email: 'hello@learnforearn.in' },
+  { icon: LifeBuoy, label: 'Support', email: 'help@learnforearn.in' },
+  { icon: ShieldCheck, label: 'Privacy', email: 'privacy@learnforearn.in' },
+  { icon: Handshake, label: 'Partnerships', email: 'partnerships@learnforearn.in' },
+]
 
 const FOOTER_COLUMNS = [
   {
@@ -47,12 +54,12 @@ export default function SiteFooter() {
 
       <div className="site-footer__inner">
         <div className="site-footer__brand-col">
-          <Link to="/" className="site-footer__brand" aria-label="learnforearn home">
+          <Link to="/" className="site-footer__brand" aria-label="LearnForEarn home">
             <span className="site-footer__logo">
               <Swords size={18} color="#fff" />
             </span>
             <span className="site-footer__brand-text">
-              <span className="lp-grad-text site-footer__name">learnforearn</span>
+              <span className="lp-grad-text site-footer__name">LearnForEarn</span>
               <span className="site-footer__tagline">Learn Skills. Earn Job.</span>
             </span>
           </Link>
@@ -67,9 +74,7 @@ export default function SiteFooter() {
             <Link to="/skill-arena/dashboard" className="site-footer__cta">
               Start Learning — Free <ArrowUpRight size={15} />
             </Link>
-            <a href="mailto:hello@learnforearn.in" className="site-footer__mail">
-              <Mail size={15} /> hello@learnforearn.in
-            </a>
+            
           </div>
         </div>
 
@@ -89,8 +94,28 @@ export default function SiteFooter() {
         </nav>
       </div>
 
+      <section className="site-footer__contact" aria-label="Contact us">
+        <h3 className="site-footer__col-title">Contact Us</h3>
+        <div className="site-footer__contact-grid">
+          {CONTACT_EMAILS.map(({ icon: Icon, label, email }) => (
+            <a
+              key={email}
+              href={`mailto:${email}`}
+              rel="noopener"
+              className="site-footer__contact-item"
+            >
+              <span className="site-footer__contact-icon"><Icon size={16} /></span>
+              <span className="site-footer__contact-text">
+                <span className="site-footer__contact-label">{label}</span>
+                <span className="site-footer__contact-email">{email}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <div className="site-footer__bar">
-        <p className="site-footer__copy">© {year} learnforearn · Free forever for students</p>
+        <p className="site-footer__copy">© {year} LearnForEarn · Free forever for students</p>
         <p className="site-footer__made">
           Built for students, with <Heart size={12} className="site-footer__heart" /> in India
         </p>

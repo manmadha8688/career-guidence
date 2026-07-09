@@ -352,6 +352,23 @@
   box-shadow: none;
 }
 
+/* ── Help line ── */
+.nf-help {
+  margin: 1.3rem 0 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  color: #8B9AB8;
+  transform: translateZ(30px);
+}
+.nf-help a {
+  color: #C4B5FD;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196, 181, 253, 0.4);
+  transition: color 0.16s ease, border-color 0.16s ease;
+  word-break: break-word;
+}
+.nf-help a:hover { color: #E9D5FF; border-color: #E9D5FF; }
+
 /* ══ Title sequence beats ═══════════════════════════════════════════════ */
 
 /* BEAT 1 · SIGNAL LOST — CRT terminal moment */

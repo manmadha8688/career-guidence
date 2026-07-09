@@ -1,12 +1,12 @@
 import { TOOLS } from '../pages/ailab/aiLabData'
 
-const BRAND = 'learnforearn'
+const BRAND = 'LearnForEarn'
 const ORIGIN = 'https://learnforearn.in'
 const brand = (label) => `${label} · ${BRAND}`
 
 export const BASE_TITLE = `${BRAND} — Free Coding Practice, Career Roadmaps & Fresher Jobs`
 export const BASE_DESCRIPTION =
-  'learnforearn is a 100% free learning platform for students and freshers in India. Follow guided career roadmaps, practice real coding problems in C, Python, Java & C++, build resume-worthy projects, master in-demand AI tools, and find walk-in job drives — everything you need to go from beginner to hired.'
+  'LearnForEarn is a 100% free learning platform for students and freshers in India. Follow guided career roadmaps, practice real coding problems in C, Python, Java & C++, build resume-worthy projects, master in-demand AI tools, and find walk-in job drives — everything you need to go from beginner to hired.'
 
 // Broad, audience-focused keyword base. Per-route keywords below are prepended
 // to this so each page leads with its own most-relevant terms.
@@ -21,13 +21,13 @@ export const BASE_KEYWORDS =
  */
 const ROUTE_SEO = {
   '/': { title: BASE_TITLE, description: BASE_DESCRIPTION },
-  '/login': { title: brand('Sign In'), description: 'Sign in to learnforearn to continue your career roadmaps, coding practice, and job search.', keywords: 'learnforearn login, student login' },
-  '/register': { title: brand('Create Free Account'), description: 'Create your free learnforearn account and start your journey from fresher to hired — no credit card needed.', keywords: 'sign up free, create account, free learning platform' },
-  '/forgot-password': { title: brand('Reset Password'), description: 'Reset your learnforearn account password.', keywords: 'reset password' },
-  '/about': { title: brand('About Us'), description: 'What learnforearn is, who it is for, and how it helps Indian students and freshers go from zero to hired — completely free.', keywords: 'about learnforearn, free learning platform for students, career platform India' },
-  '/contact': { title: brand('Contact Us'), description: 'Get in touch with the learnforearn team — support, feedback, privacy, and partnership enquiries.', keywords: 'contact learnforearn, support, feedback, partnerships' },
-  '/terms': { title: brand('Terms of Service'), description: 'learnforearn terms of service.', keywords: 'terms of service' },
-  '/privacy': { title: brand('Privacy Policy'), description: 'How learnforearn collects, uses, and protects your data.', keywords: 'privacy policy, data protection' },
+  '/login': { title: brand('Sign In'), description: 'Sign in to LearnForEarn to continue your career roadmaps, coding practice, and job search.', keywords: 'LearnForEarn login, student login' },
+  '/register': { title: brand('Create Free Account'), description: 'Create your free LearnForEarn account and start your journey from fresher to hired — no credit card needed.', keywords: 'sign up free, create account, free learning platform' },
+  '/forgot-password': { title: brand('Reset Password'), description: 'Reset your LearnForEarn account password.', keywords: 'reset password' },
+  '/about': { title: brand('About Us'), description: 'What LearnForEarn is, who it is for, and how it helps Indian students and freshers go from zero to hired — completely free.', keywords: 'about LearnForEarn, free learning platform for students, career platform India' },
+  '/contact': { title: brand('Contact Us'), description: 'Get in touch with the LearnForEarn team — support, feedback, privacy, and partnership enquiries.', keywords: 'contact LearnForEarn, support, feedback, partnerships' },
+  '/terms': { title: brand('Terms of Service'), description: 'LearnForEarn terms of service.', keywords: 'terms of service' },
+  '/privacy': { title: brand('Privacy Policy'), description: 'How LearnForEarn collects, uses, and protects your data.', keywords: 'privacy policy, data protection' },
   '/missions': { title: brand('Project Missions'), description: 'Real, buildable project missions — subject practice, role-based, and academic — to turn what you learn into portfolio-grade, resume-worthy work.', keywords: 'project ideas for students, resume projects, portfolio projects, mini projects, final year project ideas' },
   '/walk-ins': { title: brand('Walk-In Job Drives'), description: 'Latest walk-in interview drives and hiring opportunities for freshers across India — filter by city, role, and skills.', keywords: 'walk-in drives, fresher jobs India, walk-in interview, off campus drive, IT jobs for freshers, hiring near me' },
   '/fresher-instructions': { title: brand('Fresher Guide'), description: 'An honest, peer-to-peer guide for freshers: the truth about hiring, AI impact, and how to actually land your first job.', keywords: 'fresher guide, how to get first job, placement tips, fresher career advice, first job after graduation' },

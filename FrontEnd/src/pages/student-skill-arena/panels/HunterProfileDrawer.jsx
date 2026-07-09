@@ -77,7 +77,7 @@ export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout 
             <SectionTitle>ABOUT LEARNFOREARN</SectionTitle>
             <div className="dash-hunter-about-card">
               <p className="dash-hunter-about-card__text">
-                learnforearn is a learning platform with a Solo Leveling (anime) theme — so you level up your tech skills like a game character. Don't worry if you don't know the anime: the game words simply stand for normal learning terms, explained right below.
+                LearnForEarn is a learning platform with a Solo Leveling (anime) theme — so you level up your tech skills like a game character. Don't worry if you don't know the anime: the game words simply stand for normal learning terms, explained right below.
               </p>
               <div className="dash-hunter-about-card__tags">Learn · Earn XP · Badges · Get Job-Ready</div>
             </div>

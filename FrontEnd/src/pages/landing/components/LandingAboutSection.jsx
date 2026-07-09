@@ -15,12 +15,12 @@ export default function LandingAboutSection() {
     <section id="about" className="lp-section-block lp-about-section">
       <div className="lp-section-block--inner">
         <div className="lp-section-header lp-reveal">
-          <p className="lp-section-eyebrow">What is learnforearn?</p>
+          <p className="lp-section-eyebrow">What is LearnForEarn?</p>
           <h2 className="lp-grad-text lp-section-title lp-section-title--lg">
             A free training ground that turns freshers into hired developers.
           </h2>
           <p className="lp-section-desc lp-about-lead">
-            learnforearn is a completely free platform for students and graduates in India who
+            LearnForEarn is a completely free platform for students and graduates in India who
             want a tech job but don't know where to start. Everything you need to go from
             <strong> "zero idea"</strong> to <strong>"I got the offer"</strong> — learn, practice,
             build and get noticed. No fees, no credit card, ever.

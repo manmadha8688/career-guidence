@@ -325,6 +325,19 @@
 
 /* Lightweight animated fallback shown instead of the 3D scene on mobile.
    Uses only transform/opacity (compositor-friendly) so it stays smooth. */
+/* Static robot image — shown instead of the live WebGL scene on mobile /
+   low-end / reduced-motion. Zero animation, near-zero cost. */
+.lp-hero-robot__img {
+  width: 100%;
+  height: 90%;
+  object-position: center 22%;
+  background: #04050d;
+  opacity: 1;
+  user-select: none;
+  pointer-events: none;
+}
+[data-theme="light"] .lp-hero-robot__img { background: #eef0f8; }
+
 .lp-hero-robot__fallback {
   position: relative;
   display: flex;

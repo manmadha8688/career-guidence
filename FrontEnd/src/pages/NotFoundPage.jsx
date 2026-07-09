@@ -240,6 +240,16 @@ export default function NotFoundPage() {
                   ← last known location
                 </button>
               </motion.div>
+
+              <motion.p
+                className="nf-help"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.95, ease: EASE }}
+              >
+                Need help? Contact{' '}
+                <a href="mailto:help@learnforearn.in" rel="noopener">help@learnforearn.in</a>
+              </motion.p>
             </>
           )}
         </div>

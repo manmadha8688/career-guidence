@@ -4,7 +4,7 @@ import InfoPageLayout from '../components/InfoPageLayout'
 
 const MAILBOXES = [
   { icon: Mail, title: 'General', text: 'Questions, ideas, or just want to say hi.', email: 'hello@learnforearn.in' },
-  { icon: LifeBuoy, title: 'Support', text: 'Bugs, broken content, account or login trouble.', email: 'support@learnforearn.in' },
+  { icon: LifeBuoy, title: 'Support', text: 'Bugs, broken content, account or login trouble.', email: 'help@learnforearn.in' },
   { icon: ShieldCheck, title: 'Privacy & data', text: 'Data access, correction, or deletion requests.', email: 'privacy@learnforearn.in' },
   { icon: Handshake, title: 'Partnerships', text: 'Colleges, communities, and hiring teams.', email: 'partnerships@learnforearn.in' },
 ]
@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <span className="info-card__icon"><Icon size={20} /></span>
                 <h3 className="info-card__title">{title}</h3>
                 <p>{text}</p>
-                <a className="info-card__email" href={`mailto:${email}`}>{email}</a>
+                <a className="info-card__email" href={`mailto:${email}`} rel="noopener">{email}</a>
               </div>
             ))}
           </div>
@@ -90,6 +90,24 @@ export default function ContactPage() {
               Critical bugs are prioritised and usually addressed <strong>within a day or two</strong>.
               Emails are answered as fast as a small team can — feature requests get queued and shipped
               when they help the most students.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="info-block">
+        <div className="info-block__head">
+          <span className="info-block__num">04</span>
+          <h2 className="info-block__title">Still have questions?</h2>
+          <p className="info-block__desc">Can't find what you need? We're one email away.</p>
+        </div>
+        <div className="info-block__content">
+          <div className="info-callout">
+            <LifeBuoy className="info-callout__icon" size={22} />
+            <p>
+              Still have questions? Email us at{' '}
+              <a href="mailto:help@learnforearn.in" rel="noopener">help@learnforearn.in</a>{' '}
+              and a real person will get back to you.
             </p>
           </div>
         </div>

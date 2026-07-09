@@ -27,7 +27,7 @@ export default function LandingPainSection() {
             You need the right skills — learned in the right order.
           </p>
           <p className="lp-pain-answer__body">
-            learnforearn gives you a clear roadmap so you always know what to learn next —
+            LearnForEarn gives you a clear roadmap so you always know what to learn next —
             and quizzes to prove you actually learned it.
           </p>
         </div>

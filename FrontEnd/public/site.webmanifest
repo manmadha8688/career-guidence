@@ -1,12 +1,12 @@
 {
-  "name": "learnforearn — ARISE",
-  "short_name": "learnforearn",
-  "description": "Solo Leveling–inspired career learning platform: Skill Arena, Code GYM, AI Lab, and beginner-friendly deployment guides.",
+  "name": "LearnForEarn — ARISE",
+  "short_name": "LearnForEarn",
+  "description": "Free platform to learn tech skills and earn jobs through real coding challenges, career roadmaps, and hands-on AI projects — for students and freshers in India.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#6D28D9",
+  "background_color": "#1E0A3C",
+  "theme_color": "#1E0A3C",
   "orientation": "portrait-primary",
   "categories": ["education", "productivity"],
   "icons": [

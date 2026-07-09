@@ -97,12 +97,12 @@ export default function Navbar({ sticky = false }) {
     <>
       <nav className={`lp-navbar${sticky ? ' lp-navbar--sticky' : ''}`}>
         <div className="lp-navbar__lead">
-          <Link to="/" className="lp-navbar__brand" aria-label="learnforearn home">
+          <Link to="/" className="lp-navbar__brand" aria-label="LearnForEarn home">
             <div className="lp-navbar__logo">
               <Swords size={16} color="#fff" />
             </div>
             <div className="lp-navbar__brand-text">
-              <span className="lp-grad-text lp-navbar__title">learnforearn</span>
+              <span className="lp-grad-text lp-navbar__title">LearnForEarn</span>
               <span className="lp-navbar__caption">Learn Skills. Earn Job.</span>
             </div>
           </Link>

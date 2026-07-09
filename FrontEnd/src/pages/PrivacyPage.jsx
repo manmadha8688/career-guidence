@@ -23,6 +23,11 @@ export default function PrivacyPage() {
               there's <strong>no ad tracking</strong>, and you can request deletion at any time.
             </p>
           </div>
+          <p>
+            <strong>Official privacy contact:</strong>{' '}
+            <a href="mailto:privacy@learnforearn.in" rel="noopener">privacy@learnforearn.in</a>{' '}
+            — for any data access, correction, or deletion request.
+          </p>
         </div>
       </div>
 
@@ -118,7 +123,7 @@ export default function PrivacyPage() {
         <div className="info-block__content">
           <ul className="info-list">
             <li>Use the platform as a guest without providing any personal details.</li>
-            <li>Request deletion of your account and all data any time — email <a href="mailto:privacy@learnforearn.in">privacy@learnforearn.in</a> or use the feedback form. Requests are honored.</li>
+            <li>Request deletion of your account and all data any time — email <a href="mailto:privacy@learnforearn.in" rel="noopener">privacy@learnforearn.in</a> or use the feedback form. Requests are honored.</li>
             <li>Inactive guest accounts are cleaned up automatically.</li>
           </ul>
         </div>
@@ -160,7 +165,7 @@ export default function PrivacyPage() {
         </div>
         <div className="info-block__content">
           <p>
-            Email <a href="mailto:privacy@learnforearn.in">privacy@learnforearn.in</a> — every message
+            Email <a href="mailto:privacy@learnforearn.in" rel="noopener">privacy@learnforearn.in</a> — every message
             is read.
           </p>
         </div>

@@ -19,7 +19,7 @@ export default function LandingFreshersSection() {
             <span className="lp-grad-text">Read the Fresher's Guide.</span>
           </h2>
           <p className="lp-freshers__desc">
-            A step-by-step playbook that shows you exactly how to use learnforearn — which
+            A step-by-step playbook that shows you exactly how to use LearnForEarn — which
             roadmap to pick, how to practice, what to build, and how to turn it all into
             interview calls. Written for people starting from absolute zero.
           </p>

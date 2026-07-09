@@ -68,11 +68,15 @@ export default function LandingHeroSection() {
             </Suspense>
           </>
         ) : (
-          <div className="lp-hero-robot__fallback" aria-hidden="true">
-            <span className="lp-hero-robot__orbit lp-hero-robot__orbit--1" />
-            <span className="lp-hero-robot__orbit lp-hero-robot__orbit--2" />
-            <span className="lp-hero-robot__core">🤖</span>
-          </div>
+          <img
+            src="/hero-robot.png"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+            loading="eager"
+            decoding="async"
+            className="lp-hero-robot__img"
+          />
         )}
       </motion.div>
 
