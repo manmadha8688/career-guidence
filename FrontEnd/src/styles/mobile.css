@@ -187,7 +187,82 @@
 
 /* Honour users who ask for less motion — kill the infinite loops. */
 @media (prefers-reduced-motion: reduce) {
-  .lp-aurora, .lp-aurora-1, .lp-aurora-2, .lp-aurora-3, .lp-aurora-4,
-  .lp-hero-robot__core, .lp-hero-robot__orbit,
-  .lp-hero-robot__static { animation: none !important; }
+  .lp-aurora, .lp-aurora-1, .lp-aurora-2, .lp-aurora-3, .lp-aurora-4 { animation: none !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   SITE-WIDE MOBILE PERFORMANCE AUDIT (≤900px, touch devices)
+   Same principle as the landing-hero and auth fixes: on phones, freeze the
+   always-on decorative animation loops and shrink the large blurred layers
+   that repaint every frame, and lighten the sticky-navbar backdrop blur that
+   re-samples the scrolling page each frame. Purely mobile — desktop untouched.
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  /* ── A. Large blurred, animated background blobs ───────────────────────
+     Code GYM auras (44vw, blur 95px) and the Code GYM gate beams (blur 90px)
+     are the mobile equivalent of the landing auroras: huge blurred surfaces
+     drifting on a loop. Freeze the drift and cut the blur radius so the
+     compositor stops churning a full-viewport blurred layer every frame. */
+  .lv-aura__blob--1,
+  .lv-aura__blob--2,
+  .lv-aura__blob--3 {
+    animation: none !important;
+    filter: blur(45px);
+  }
+  .gym-gates__beam--1,
+  .gym-gates__beam--2 {
+    animation: none !important;
+    filter: blur(45px);
+  }
+
+  /* ── B. Animated background grids ──────────────────────────────────────
+     Drifting grid overlays repaint a large area continuously. Freeze them —
+     the grid stays visible, it just stops sliding. */
+  .ailab-hero__grid,
+  .mb-hero__grid { animation: none !important; }
+
+  /* ── C. Flowing / shimmer gradient headlines ───────────────────────────
+     background-position loops on gradient-clipped text repaint the whole
+     headline every frame. Freeze to a static gradient (visually identical
+     at rest, zero per-frame cost). */
+  .lv-hero__title,
+  .lv-encourage__title,
+  .ailab-hero__ai-title,
+  .deploy-hero__title-grad { animation: none !important; }
+
+  /* ── D. Ambient motion loops (marquee / float) ─────────────────────────
+     The Code GYM ticker marquee and floating gate icon run forever. Freeze
+     on mobile; content stays legible, motion stops competing with scroll. */
+  .gym-ticker__row,
+  .lv-gate__icon { animation: none !important; }
+
+  /* ── E. High-frequency flicker overlays on empty/error states ──────────
+     nf-static / snp-static repaint a full-cover noise layer every ~0.15s —
+     brutal on mobile. Freeze the flicker (the static texture stays). */
+  .nf-signal__scanlines,
+  .snp-scan__lines { animation: none !important; }
+
+  /* ── F. Sticky navbar backdrop-blur — lighten the per-scroll-frame cost ─
+     Every sticky frosted bar re-samples + re-blurs the scrolling page each
+     frame. Cap the blur radius (kept frosted, far cheaper). Matches the
+     landing navbar which is already 8px on mobile. */
+  .ps-nav,
+  .jobs-nav,
+  .ailab-nav,
+  .tool-layout-nav,
+  .fi-nav,
+  .deploy-nav,
+  .missions-nav,
+  .cg-nav {
+    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  /* ── G. Full-screen loader / awakening overlay backdrop ────────────────
+     The session-loading overlay blurs the entire viewport at blur(16).
+     Shrink it on mobile — it still frosts the screen, much cheaper. */
+  .loading-overlay {
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+  }
 }

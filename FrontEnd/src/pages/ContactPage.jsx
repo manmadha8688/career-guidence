@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <InfoPageLayout
       eyebrow="Contact"
-      title="Talk to a human."
+      title="You'll hear back from us — not a bot."
       lede="This platform is built by people who actually care whether you get hired. Every report, question, and idea is read — and it directly shapes what gets fixed and built next."
     >
       <div className="info-block">

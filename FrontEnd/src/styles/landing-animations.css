@@ -313,18 +313,6 @@
   background: radial-gradient(ellipse 55% 55% at 50% 42%, rgba(124,58,237,0.22), transparent 70%);
   pointer-events: none;
 }
-.lp-hero-robot__static {
-  font-size: clamp(6rem, 22vw, 14rem);
-  filter: drop-shadow(0 0 60px rgba(124,58,237,0.5));
-  animation: lpRobotFloat 6s ease-in-out infinite;
-}
-@keyframes lpRobotFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-18px); }
-}
-
-/* Lightweight animated fallback shown instead of the 3D scene on mobile.
-   Uses only transform/opacity (compositor-friendly) so it stays smooth. */
 /* Static robot image — shown instead of the live WebGL scene on mobile /
    low-end / reduced-motion. Zero animation, near-zero cost. */
 .lp-hero-robot__img {
@@ -338,41 +326,6 @@
 }
 [data-theme="light"] .lp-hero-robot__img { background: #eef0f8; }
 
-.lp-hero-robot__fallback {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: min(72vw, 340px);
-  aspect-ratio: 1;
-}
-.lp-hero-robot__core {
-  font-size: clamp(5rem, 20vw, 9rem);
-  filter: drop-shadow(0 0 50px rgba(124,58,237,0.55));
-  animation: lpRobotFloat 6s ease-in-out infinite;
-  will-change: transform;
-}
-.lp-hero-robot__orbit {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(155,110,212,0.28);
-  will-change: transform;
-}
-.lp-hero-robot__orbit--1 {
-  inset: 6%;
-  border-color: rgba(124,58,237,0.30);
-  box-shadow: 0 0 40px rgba(124,58,237,0.18) inset;
-  animation: lpOrbitSpin 16s linear infinite;
-}
-.lp-hero-robot__orbit--2 {
-  inset: 22%;
-  border-style: dashed;
-  border-color: rgba(96,165,250,0.28);
-  animation: lpOrbitSpin 11s linear infinite reverse;
-}
-@keyframes lpOrbitSpin {
-  to { transform: rotate(360deg); }
-}
 .lp-hero-robot__loader {
   position: absolute;
   inset: 0;
@@ -545,14 +498,20 @@
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
-  /* Grow to fit the copy instead of clipping it inside a fixed 100dvh box */
+  /* Grow to fit the copy instead of clipping it inside a fixed box.
+     Use svh (small viewport height) — it stays CONSTANT while scrolling,
+     unlike dvh/vh which shrink+grow as the mobile address bar hides/shows
+     and made the hero (and the image filling it) visibly zoom on scroll. */
   .lp-hero-section--robot {
     height: auto;
-    min-height: 100dvh;
+    min-height: 100vh;   /* fallback for old browsers */
+    min-height: 100svh;
     justify-content: center;
   }
-  /* Same 3D robot background as desktop */
+  /* Same 3D robot background as desktop. object-fit keeps the image scaled
+     proportionally so any height change never stretches/zooms it. */
   .lp-hero-robot { inset: 0; opacity: 1; }
+  .lp-hero-robot__img { object-fit: cover; }
   .lp-hero-stage { padding: 6rem 1.25rem 3rem; }
   .lp-punch-eyebrow { font-size: 0.6rem; margin-bottom: 1.1rem; }
   .lp-punch-title { font-size: clamp(1.55rem, 8.5vw, 2.5rem); margin-bottom: 1.1rem; }
@@ -565,6 +524,5 @@
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .lp-hero-robot__static,
   .lp-hero-robot__spinner { animation: none; }
 }

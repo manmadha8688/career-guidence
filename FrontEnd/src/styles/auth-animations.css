@@ -1942,6 +1942,41 @@
   }
 }
 
+/* ── Mobile performance — smooth out auth scrolling on phones ──
+   The roughness comes from (1) live backdrop-blur on the card re-blurring the
+   page behind it every scroll frame and (2) always-on gradient/box-shadow
+   animation loops that repaint constantly. Freeze/replace them on mobile only;
+   desktop keeps the full glass treatment. */
+@media (max-width: 900px) {
+  /* Stop the perpetual animated gradient border (constant repaint). */
+  .auth-card,
+  .auth-page--login .auth-card--login,
+  .auth-page--register .auth-card--register {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  /* Swap live backdrop-blur for a near-opaque panel — still reads as a frosted
+     card, but no per-frame re-blur of everything behind it while scrolling. */
+  .auth-card-inner,
+  .auth-page--login .auth-card--login .auth-card-inner,
+  .auth-page--register .auth-card--register .auth-card-inner {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(var(--auth-glass-rgb, 21, 28, 46), 0.97);
+  }
+
+  /* Shrink the big blurred glow so it repaints a much smaller area. */
+  .auth-card-glow { filter: blur(22px); opacity: 0.45; }
+
+  /* Freeze the always-on decorative pulse (box-shadow animation is costly). */
+  .login-bot-antenna-tip { animation: none !important; }
+
+  /* Keep the bot strip on its own compositor layer so its transform loops
+     don't repaint the scrolling form beneath it. */
+  .auth-stage-col--leading { will-change: transform; transform: translateZ(0); }
+}
+
 @media (max-width: 480px) {
   .auth-field-row {
     grid-template-columns: 1fr;
