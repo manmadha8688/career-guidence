@@ -3,7 +3,7 @@ import { TEST_DELAY_MS } from '../../../components/loaders/_config'
 import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader'
 import { getConcept, getQuizStatus } from '../../../api/api'
 import ReportButton from '../../../components/ReportButton'
-import { ChevronLeft, AlertTriangle, Trophy, Brain, CheckCircle, Clock } from 'lucide-react'
+import { AlertTriangle, Trophy, Brain, CheckCircle, Clock } from 'lucide-react'
 import toast from 'react-hot-toast'
 import ConceptVideo from './ConceptVideo'
 import LivePreview from './LivePreview'
@@ -87,9 +87,6 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
   return (
     <div className="sl-concept-inline" ref={panelRef}>
       <div className="sl-concept-inline-header">
-        <button className="btn btn-ghost btn-sm dash-concept-back-btn" onClick={onClose}>
-          <ChevronLeft size={14} /> Gates
-        </button>
         <div className="dash-flex-1">
           <div className="sl-concept-inline-title">{concept.title}</div>
         </div>

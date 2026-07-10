@@ -194,7 +194,7 @@ export default function PromptEngPage() {
       </ProTip>
       <PageNavRow
         prev={{ path: '/ai-lab/foundations/gen-ai', label: 'Generative AI' }}
-        next={{ path: '/ai-lab/foundations/rag', label: 'RAG' }}
+        next={{ path: '/ai-lab/foundations/loop-engineering', label: 'Loop Engineering' }}
       />
     </ToolPageShell>
   )

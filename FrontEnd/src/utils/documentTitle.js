@@ -35,6 +35,7 @@ const ROUTE_SEO = {
   '/ai-lab': { title: `AI Lab — ${TOOLS.length}+ AI Tools for Students · ${BRAND}`, description: `Learn ${TOOLS.length}+ AI tools across 14 categories — hands-on, beginner-friendly guides to use ChatGPT, coding copilots, agents, RAG, and automation for learning, building, and your career.`, keywords: 'AI tools for students, ChatGPT guide, AI coding tools, prompt engineering, RAG, LangChain, AI copilots, learn AI free' },
   '/deployment': { title: brand('Free Deployment Guides'), description: 'Beginner-friendly, copy-paste deployment guides to host React, Node, Django, Spring Boot, FastAPI, databases, and AI apps for free.', keywords: 'free hosting, deploy React app, deploy Django, deploy Node.js, free deployment, host project free, Vercel, Render' },
   '/problem-solving': { title: brand('Code GYM — Coding Practice'), description: 'Practice coding in the Code GYM — problems across ranked tracks in C, Python, Java & C++, from your first line of code to interview-level DSA, with brute-force and optimized solutions.', keywords: 'coding practice, DSA practice, coding problems with solutions, LeetCode alternative, practice Python, practice Java, interview coding questions' },
+  '/aptitude': { title: brand('Aptitude — Quant, Reasoning, Verbal & DI'), description: 'Master placement aptitude the easy way — every topic explained two ways: Learn It for the full beginner-first walkthrough and Crack It for the fastest shortcut methods, across quantitative, logical, verbal and data interpretation.', keywords: 'aptitude preparation, quantitative aptitude, logical reasoning, verbal ability, data interpretation, placement aptitude, aptitude shortcuts, TCS NQT aptitude, aptitude tricks' },
   '/skill-arena/dashboard': { title: brand('Skill Arena'), description: 'Your Skill Arena dashboard — subjects, concepts, quests, XP, and rank progression.' },
 }
 
@@ -42,6 +43,7 @@ const PREFIX_SEO = [
   ['/ai-lab/', { title: brand('AI Lab'), description: 'A hands-on, beginner-friendly guide to using this AI tool effectively for learning and building.', keywords: 'AI tool guide, how to use, AI for students' }],
   ['/deployment/', { title: brand('Deployment Guide'), description: 'A step-by-step deployment guide with copy-paste commands and free hosting.', keywords: 'free hosting, deployment guide, deploy for free' }],
   ['/problem-solving/', { title: brand('Code GYM'), description: 'Solve this coding problem with a guided approach, explanation, and multiple solution variants.', keywords: 'coding problem, solution, DSA practice' }],
+  ['/aptitude/', { title: brand('Aptitude'), description: 'Learn this aptitude topic two ways — a full beginner-first explanation and quick shortcut methods — with worked examples and common mistakes.', keywords: 'aptitude topic, aptitude shortcuts, aptitude tricks, placement preparation' }],
   ['/admin-skill-arena', { title: brand('Admin'), description: '', noindex: true }],
   ['/skill-arena', { title: brand('Skill Arena'), description: '', noindex: true }],
 ]

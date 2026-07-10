@@ -6,6 +6,7 @@ export const TOOL_COMPONENTS = {
   // Foundations
   'gen-ai':          lazy(() => import('./foundations/GenAIPage')),
   'prompt-eng':      lazy(() => import('./foundations/PromptEngPage')),
+  'loop-engineering':lazy(() => import('./foundations/LoopEngineeringPage')),
   'rag':             lazy(() => import('./foundations/RAGPage')),
   'embeddings':      lazy(() => import('./foundations/EmbeddingsPage')),
   'fine-tuning':     lazy(() => import('./foundations/FineTuningPage')),

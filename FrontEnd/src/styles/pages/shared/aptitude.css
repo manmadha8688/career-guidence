@@ -1,0 +1,711 @@
+/* Aptitude — hub, category and topic pages. Uses global design tokens only. */
+
+.apt-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ── Ambient aura (hub only) ─────────────────────────────────────────────── */
+.apt-aura { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.apt-aura__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.16;
+}
+.apt-aura__blob--1 { top: -140px; left: -100px; width: 380px; height: 380px; background: color-mix(in srgb, var(--primary) 40%, transparent); }
+.apt-aura__blob--2 { top: 220px; right: -120px; width: 300px; height: 300px; background: color-mix(in srgb, var(--primary) 28%, transparent); }
+
+/* ── Hub split hero ──────────────────────────────────────────────────────── */
+.apt-hero { position: relative; z-index: 1; padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem 2rem; }
+.apt-hero__grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.apt-hero__copy { min-width: 0; }
+.apt-hero__eyebrow {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0 0 1rem;
+}
+.apt-hero__title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 5.2vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.15rem;
+  color: var(--text-primary);
+}
+/* "speed" — the word gets a speed visualization: italic lean + trailing motion
+   streaks that whoosh off its right edge. */
+.apt-hero__speed {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--primary);
+  margin-right: 1.7em; /* room for the trailing streaks */
+}
+.apt-hero__speed-lines {
+  position: absolute; left: 100%; top: 50%;
+  margin-left: 0.22em;
+  width: 1.5em; height: 0.72em;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  pointer-events: none;
+  /* three stacked lines of decreasing length = motion streaks */
+  background:
+    linear-gradient(var(--primary), var(--primary)) left 12% / 100% 0.11em no-repeat,
+    linear-gradient(var(--primary), var(--primary)) left 50% / 72% 0.11em no-repeat,
+    linear-gradient(var(--primary), var(--primary)) left 88% / 46% 0.11em no-repeat;
+  border-radius: 2px;
+  animation: apt-speed-streak 1.5s ease-in-out infinite;
+}
+@keyframes apt-speed-streak {
+  0%, 100% { opacity: 0.35; transform: translateY(-50%) scaleX(0.86); }
+  50%      { opacity: 0.7;  transform: translateY(-50%) scaleX(1); }
+}
+.apt-hero__lead { font-size: 1.02rem; line-height: 1.72; color: var(--text-secondary); margin: 0; max-width: 540px; }
+.apt-hero__lead strong { color: var(--text-primary); font-weight: 700; }
+.apt-hero__actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.apt-hero__cta {
+  display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer;
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.04em;
+  padding: 0.7rem 1.25rem; border-radius: 10px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid color-mix(in srgb, var(--primary) 45%, var(--border));
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.apt-hero__cta svg { color: var(--primary); }
+.apt-hero__cta:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, var(--bg-secondary));
+}
+.apt-hero__cta:active { transform: translateY(0) scale(0.98); }
+.apt-hero__note { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: var(--text-muted); }
+
+/* ── Hero console (animated aptitude round) ──────────────────────────────── */
+.apt-hero__visual { display: flex; justify-content: center; min-width: 0; }
+.apt-console {
+  width: 100%; max-width: 400px;
+  border-radius: 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 44px -28px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+.apt-console__bar {
+  display: flex; align-items: center; gap: 0.45rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+.apt-console__label {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+.apt-console__timer {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.68rem; font-weight: 700;
+  color: var(--cat-color);
+}
+.apt-console__timer.is-running svg { animation: apt-tick 1s steps(8) infinite; }
+@keyframes apt-tick { to { transform: rotate(360deg); } }
+.apt-console__screen { position: relative; padding: 1.3rem 1.2rem; min-height: 168px; }
+.apt-console__q { display: flex; flex-direction: column; gap: 0.75rem; }
+.apt-console__q-head { display: flex; align-items: center; gap: 0.55rem; }
+.apt-console__q-icon { font-size: 1.4rem; line-height: 1; }
+.apt-console__q-cat {
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.82rem; color: var(--cat-color);
+}
+.apt-console__q-text {
+  margin: 0; font-size: 0.98rem; line-height: 1.5; font-weight: 600; color: var(--text-primary);
+}
+.apt-console__opts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.2rem; }
+.apt-console__opt {
+  height: 26px; border-radius: 7px;
+  background: color-mix(in srgb, var(--cat-color) 7%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, var(--cat-color) 16%, var(--border));
+}
+.apt-console__opt--pick {
+  background: color-mix(in srgb, var(--cat-color) 18%, var(--bg-primary));
+  border-color: color-mix(in srgb, var(--cat-color) 50%, transparent);
+}
+.apt-console__foot { display: flex; gap: 0.4rem; padding: 0 1.2rem 1.1rem; }
+.apt-console__tick {
+  flex: 1; height: 3px; border-radius: 999px;
+  background: var(--border);
+  transition: background 0.35s ease;
+}
+.apt-console__tick.is-on { background: var(--tick-color); }
+
+/* ── Sections — heading + one responsive row of gate cards ───────────────── */
+.apt-sections { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 2.5rem) 1.5rem 3.5rem; scroll-margin-top: 70px; }
+.apt-sections__head { max-width: 900px; margin: 0 auto 2.25rem; text-align: center; }
+.apt-sections__title { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 3.8vw, 2.3rem); line-height: 1.14; margin: 0 0 0.7rem; color: var(--text-primary); }
+.apt-sections__sub { font-size: 0.96rem; line-height: 1.65; color: var(--text-secondary); margin: 0 auto; max-width: 560px; }
+
+/* Fluid: 4 across on wide screens, wraps to 2 then 1 as space runs out. */
+.apt-gates { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; }
+.apt-gate {
+  position: relative; cursor: pointer; text-align: left;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  padding: 1.5rem 1.3rem 1.25rem;
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+/* Top accent rail — the single dose of section colour */
+.apt-gate__rail {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--cat-color); opacity: 0.7;
+  transition: opacity 0.22s ease;
+}
+.apt-gate:hover {
+  border-color: color-mix(in srgb, var(--cat-color) 55%, transparent);
+  box-shadow: 0 16px 38px -22px color-mix(in srgb, var(--cat-color) 60%, transparent);
+  background: color-mix(in srgb, var(--cat-color) 4%, var(--bg-secondary));
+}
+.apt-gate:hover .apt-gate__rail { opacity: 1; }
+
+.apt-gate__icon {
+  font-size: 1.6rem; line-height: 1;
+  width: 54px; height: 54px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--cat-color) 11%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 26%, transparent);
+}
+.apt-gate__title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.05rem; margin: 0.55rem 0 0; color: var(--text-primary); }
+.apt-gate__tagline { font-size: 0.84rem; font-weight: 600; color: var(--text-primary); margin: 0; }
+.apt-gate__desc {
+  font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.apt-gate__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.2rem; }
+.apt-gate__chip {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  padding: 0.2rem 0.45rem; border-radius: 6px;
+  background: color-mix(in srgb, var(--cat-color) 7%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, var(--cat-color) 18%, var(--border));
+}
+.apt-gate__foot { margin-top: auto; padding-top: 0.7rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.apt-gate__count { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cat-color); }
+.apt-gate__enter {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  font-family: 'Orbitron', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--cat-color); white-space: nowrap; transition: gap 0.22s ease;
+}
+.apt-gate:hover .apt-gate__enter { gap: 0.5rem; }
+
+/* ── Motivation — training loop (flow) + why it pays off ──────────────────── */
+.apt-why { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 1rem 1.5rem 4.5rem; }
+.apt-why__head { max-width: 700px; margin: 0 auto 2.25rem; text-align: center; }
+.apt-why__eyebrow {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.64rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--primary); margin: 0 0 0.7rem;
+}
+.apt-why__title {
+  font-family: 'Orbitron', sans-serif; font-weight: 800;
+  font-size: clamp(1.5rem, 3.8vw, 2.3rem); line-height: 1.16; margin: 0 0 0.8rem; color: var(--text-primary);
+}
+.apt-why__sub { font-size: 0.96rem; line-height: 1.65; color: var(--text-secondary); margin: 0; }
+
+/* Flow diagram — the repeatable training loop */
+.apt-flow { margin-bottom: 2.75rem; }
+.apt-flow__track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.apt-flow__node {
+  position: relative;
+  padding: 1.5rem 1.3rem 1.4rem;
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+.apt-flow__num {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--step-color);
+}
+.apt-flow__ring {
+  display: flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 14px; margin: 0.7rem 0 0.9rem;
+  background: color-mix(in srgb, var(--step-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--step-color) 32%, transparent);
+}
+.apt-flow__glyph { font-size: 1.5rem; line-height: 1; }
+.apt-flow__title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.98rem; margin: 0 0 0.5rem; color: var(--text-primary); }
+.apt-flow__text { font-size: 0.85rem; line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+/* Static connector arrows between nodes */
+.apt-flow__arrow {
+  position: absolute; right: -0.85rem; top: 74px;
+  z-index: 3; display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--bg-primary); border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.apt-flow__loop {
+  margin-top: 1.1rem; text-align: center;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.76rem; letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.apt-flow__loop em { color: var(--primary); font-style: normal; font-weight: 700; }
+
+/* Why it pays off — the honest case (restored rich cards) */
+.apt-why__band-label {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.64rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-muted); text-align: center; margin: 0 0 1.2rem;
+}
+.apt-why__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-bottom: 1.6rem; }
+.apt-why__card {
+  position: relative;
+  padding: 1.5rem 1.5rem 1.4rem;
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.apt-why__card-num {
+  position: absolute; top: 0.9rem; right: 1.1rem;
+  font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.5rem;
+  color: color-mix(in srgb, var(--primary) 20%, transparent); line-height: 1;
+}
+.apt-why__card-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 11px; margin-bottom: 0.9rem;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 11%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent);
+}
+.apt-why__card-title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.02rem; margin: 0 0 0.5rem; color: var(--text-primary); }
+.apt-why__card-body { font-size: 0.9rem; line-height: 1.62; color: var(--text-secondary); margin: 0; }
+
+/* ── Learn It / Crack It duality ─────────────────────────────────────────── */
+.apt-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 1.6rem; }
+.apt-mode {
+  padding: 1.5rem; border-radius: 16px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  --mode-accent: var(--primary);
+}
+.apt-mode--crack { --mode-accent: #F59E0B; }
+.apt-mode__head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem; }
+.apt-mode__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 10px;
+  color: var(--mode-accent);
+  background: color-mix(in srgb, var(--mode-accent) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--mode-accent) 30%, transparent);
+}
+.apt-mode__tag {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.14em; color: var(--mode-accent);
+}
+.apt-mode__title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.05rem; margin: 0 0 0.5rem; color: var(--text-primary); }
+.apt-mode__body { font-size: 0.9rem; line-height: 1.62; color: var(--text-secondary); margin: 0; }
+
+/* ── Hub responsive + reduced motion ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .apt-hero__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .apt-hero__visual { order: -1; }
+  .apt-console { max-width: 360px; }
+  /* Flow becomes 2×2; arrows only make sense in a single row, so hide them */
+  .apt-flow__track { grid-template-columns: repeat(2, 1fr); }
+  .apt-flow__arrow { display: none; }
+  .apt-modes { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .apt-flow__track { grid-template-columns: 1fr; }
+  .apt-why__grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .apt-console__timer.is-running svg { animation: none; }
+  .apt-hero__speed-lines { animation: none; opacity: 0.5; }
+}
+
+/* ── Compact nav (category + topic) ──────────────────────────────────────── */
+.apt-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  height: 52px;
+  padding: 0 1.25rem;
+  background: color-mix(in srgb, var(--bg-secondary) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.apt-nav__back {
+  background: none; border: none; cursor: pointer; padding: 0;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Orbitron', sans-serif; font-weight: 800;
+  font-size: 0.7rem; letter-spacing: 0.1em;
+  color: var(--cat-color, var(--primary));
+}
+.apt-nav__center {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: 'Orbitron', sans-serif; font-weight: 700;
+  font-size: 0.72rem; letter-spacing: 0.1em;
+  color: var(--cat-color, var(--text-primary));
+  white-space: nowrap;
+}
+.apt-nav__center--topic {
+  color: var(--text-primary);
+  max-width: 46%;
+  overflow: hidden; text-overflow: ellipsis;
+  letter-spacing: 0.04em;
+}
+.apt-nav__icon { font-size: 0.95rem; }
+.apt-nav__actions { display: flex; align-items: center; gap: 0.5rem; }
+.apt-nav__theme {
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  width: 32px; height: 32px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; color: var(--text-secondary);
+}
+
+/* ── Containers ──────────────────────────────────────────────────────────── */
+.apt-container { max-width: 1080px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.apt-container--topic { max-width: 860px; }
+
+/* ── Category header ─────────────────────────────────────────────────────── */
+.apt-cat-head { margin-bottom: 1.75rem; }
+.apt-cat-head__title { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 4vw, 2.1rem); margin: 0 0 0.5rem; }
+.apt-cat-head__desc { font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 0.75rem; max-width: 640px; }
+.apt-cat-head__count {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em;
+  color: var(--cat-color); text-transform: uppercase;
+}
+
+/* ── Toolbar — search + filter chips ─────────────────────────────────────── */
+.apt-toolbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem 1.5rem;
+  flex-wrap: wrap; margin-bottom: 1.75rem;
+}
+.apt-search { position: relative; flex: 1 1 240px; max-width: 340px; min-width: 200px; }
+.apt-search__icon { position: absolute; left: 0.8rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+.apt-search__input {
+  width: 100%; box-sizing: border-box;
+  padding: 0.6rem 2.2rem 0.6rem 2.3rem;
+  font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px;
+  outline: none; transition: border-color 0.2s ease;
+}
+.apt-search__input::placeholder { color: var(--text-muted); font-weight: 500; }
+.apt-search__input:focus { border-color: color-mix(in srgb, var(--cat-color) 55%, var(--border)); }
+.apt-search__clear {
+  position: absolute; right: 0.6rem; top: 50%; transform: translateY(-50%);
+  display: flex; padding: 0.2rem; cursor: pointer;
+  background: none; border: none; color: var(--text-muted);
+}
+.apt-search__clear:hover { color: var(--text-primary); }
+
+.apt-filters { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; }
+.apt-select { display: inline-flex; align-items: center; gap: 0.5rem; }
+.apt-select__label {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.apt-select__field {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.82rem; line-height: 1;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border); border-radius: 10px;
+  outline: none;
+  /* chevron */
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+                    linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+  background-position: right 0.95rem center, right 0.7rem center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  transition: border-color 0.18s ease;
+}
+.apt-select__field:hover { border-color: color-mix(in srgb, var(--cat-color) 45%, var(--border)); }
+.apt-select__field:focus { border-color: color-mix(in srgb, var(--cat-color) 60%, var(--border)); }
+.apt-select__field.is-set { border-color: color-mix(in srgb, var(--cat-color) 55%, transparent); color: var(--cat-color); }
+.apt-select__field option { color: var(--text-primary); background: var(--bg-secondary); }
+
+/* ── Topic grid (category) ───────────────────────────────────────────────── */
+.apt-topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.apt-topic-card {
+  position: relative; text-align: left; cursor: pointer;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  padding: 1.25rem; border-radius: 14px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.apt-topic-card:hover {
+  border-color: color-mix(in srgb, var(--diff-color) 55%, transparent);
+  box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--diff-color) 70%, transparent);
+}
+.apt-topic-card__top { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+.apt-topic-card__icon { font-size: 1.6rem; line-height: 1; }
+
+/* Difficulty = a signal-bar meter + label (reads instantly as a LEVEL). */
+.apt-topic-card__diff {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--diff-color);
+}
+.apt-topic-card__meter { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.apt-topic-card__meter i {
+  width: 3px; border-radius: 1px;
+  background: color-mix(in srgb, var(--text-muted) 35%, transparent);
+}
+.apt-topic-card__meter i:nth-child(1) { height: 5px; }
+.apt-topic-card__meter i:nth-child(2) { height: 8px; }
+.apt-topic-card__meter i:nth-child(3) { height: 12px; }
+.apt-topic-card__meter i.is-on { background: var(--diff-color); }
+
+/* Priority = a dot + label (reads as a FLAG / how-important marker). */
+.apt-topic-card__pri {
+  display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--pri-color);
+  padding: 0.22rem 0.55rem 0.22rem 0.45rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--pri-color) 10%, transparent);
+}
+.apt-topic-card__pri-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pri-color); }
+.apt-topic-card__title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1rem; margin: 0.15rem 0 0; }
+.apt-topic-card__desc { font-size: 0.84rem; line-height: 1.5; color: var(--text-secondary); margin: 0; flex: 1; }
+.apt-topic-card__enter {
+  display: inline-flex; align-items: center; gap: 0.2rem;
+  font-family: 'Orbitron', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--diff-color);
+}
+
+/* ── Topic header ────────────────────────────────────────────────────────── */
+.apt-topic-head { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.75rem; }
+.apt-topic-head__icon {
+  flex-shrink: 0; font-size: 2.2rem; line-height: 1;
+  width: 58px; height: 58px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--cat-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 30%, transparent);
+}
+.apt-topic-head__row { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+.apt-topic-head__title { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: clamp(1.35rem, 4vw, 1.9rem); margin: 0; }
+.apt-topic-head__diff {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--diff-color);
+  background: color-mix(in srgb, var(--diff-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--diff-color) 34%, transparent);
+  padding: 0.22rem 0.55rem; border-radius: 999px;
+}
+.apt-topic-head__desc { font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0.5rem 0 0; }
+
+/* ── Section heading ─────────────────────────────────────────────────────── */
+.apt-section-h {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary);
+  margin: 0 0 0.9rem;
+}
+.apt-section-h svg { color: var(--cat-color); }
+
+/* ── Videos ──────────────────────────────────────────────────────────────── */
+.apt-videos { margin-bottom: 1.75rem; }
+.apt-videos__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+.apt-video-card {
+  display: flex; align-items: center; gap: 0.8rem; text-decoration: none;
+  padding: 0.9rem 1rem; border-radius: 12px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.apt-video-card:hover { border-color: color-mix(in srgb, #EF4444 45%, transparent); transform: translateY(-2px); }
+.apt-video-card__play {
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #EF4444; background: color-mix(in srgb, #EF4444 14%, transparent);
+  border: 1px solid color-mix(in srgb, #EF4444 30%, transparent);
+}
+.apt-video-card__body { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+.apt-video-card__label { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); line-height: 1.3; }
+.apt-video-card__note { font-size: 0.76rem; color: var(--text-secondary); }
+
+/* ── Mode tabs ───────────────────────────────────────────────────────────── */
+.apt-mode-tabs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.apt-mode-tab {
+  cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  padding: 0.85rem 0.75rem; border-radius: 12px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+.apt-mode-tab svg { display: inline; }
+.apt-mode-tab__sub { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.02em; opacity: 0.8; }
+.apt-mode-tab.is-active {
+  color: var(--cat-color);
+  border-color: color-mix(in srgb, var(--cat-color) 55%, transparent);
+  background: color-mix(in srgb, var(--cat-color) 10%, var(--bg-secondary));
+}
+.apt-mode-tab:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ── Lesson cards ────────────────────────────────────────────────────────── */
+.apt-lesson { display: flex; flex-direction: column; gap: 1rem; }
+.apt-card {
+  padding: 1.3rem 1.4rem; border-radius: 14px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+}
+.apt-card p { font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); margin: 0; }
+.apt-card-h {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.98rem;
+  color: var(--text-primary); margin: 0 0 0.7rem;
+}
+.apt-lesson__realLife { border-left: 3px solid var(--cat-color); }
+.apt-lesson__trick { border-left: 3px solid #F59E0B; background: color-mix(in srgb, #F59E0B 6%, var(--bg-secondary)); }
+.apt-lesson__mistakes { border-left: 3px solid #EF4444; }
+.apt-lesson__shortcut { border-left: 3px solid var(--cat-color); }
+.apt-lesson__pattern { border-left: 3px solid #22C55E; }
+
+/* ── Formulas ────────────────────────────────────────────────────────────── */
+.apt-formula-list { display: flex; flex-direction: column; gap: 0.9rem; }
+.apt-formula { display: flex; flex-direction: column; gap: 0.4rem; }
+.apt-formula__label {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--text-secondary);
+}
+.apt-formula__eq {
+  display: block; font-family: 'Share Tech Mono', monospace; font-size: 0.95rem;
+  color: var(--text-primary); padding: 0.7rem 0.9rem; border-radius: 10px;
+  background: color-mix(in srgb, var(--cat-color) 8%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, var(--cat-color) 25%, transparent);
+  white-space: pre-wrap; word-break: break-word;
+}
+.apt-formula__eq--big { font-size: 1rem; }
+.apt-formula__break { font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+
+/* ── Examples ────────────────────────────────────────────────────────────── */
+.apt-example-list { display: flex; flex-direction: column; gap: 1.1rem; }
+.apt-example {
+  border-radius: 12px; border: 1px solid var(--border);
+  background: var(--bg-primary); overflow: hidden;
+}
+.apt-example__head { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); }
+.apt-example__level {
+  display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase; color: var(--cat-color);
+  background: color-mix(in srgb, var(--cat-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 32%, transparent);
+  padding: 0.15rem 0.5rem; border-radius: 999px; margin-bottom: 0.45rem;
+}
+.apt-example__problem { font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0; line-height: 1.5; }
+.apt-example__steps { list-style: none; margin: 0; padding: 0.6rem 0; counter-reset: apt-step; }
+.apt-example__step {
+  position: relative; padding: 0.55rem 1rem 0.55rem 2.6rem; counter-increment: apt-step;
+  display: flex; flex-direction: column; gap: 0.2rem;
+}
+.apt-example__step::before {
+  content: counter(apt-step);
+  position: absolute; left: 1rem; top: 0.55rem;
+  width: 1.25rem; height: 1.25rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; font-weight: 700;
+  color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 30%, transparent);
+}
+.apt-example__action { font-size: 0.9rem; line-height: 1.55; color: var(--text-primary); }
+.apt-example__why { font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); font-style: italic; }
+.apt-example__answer {
+  padding: 0.7rem 1rem; font-size: 0.9rem; color: var(--text-primary);
+  background: color-mix(in srgb, #22C55E 8%, var(--bg-primary));
+  border-top: 1px solid color-mix(in srgb, #22C55E 25%, transparent);
+}
+.apt-example__answer strong { color: #22C55E; }
+
+/* ── Bullet lists ────────────────────────────────────────────────────────── */
+.apt-bullet-list { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.apt-bullet-list li { font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); }
+
+/* ── Compare ─────────────────────────────────────────────────────────────── */
+.apt-compare { display: flex; flex-direction: column; gap: 1rem; }
+.apt-compare__ex { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+.apt-compare__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+.apt-compare__col { padding: 0.85rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-primary); }
+.apt-compare__col p { font-size: 0.85rem; line-height: 1.55; margin: 0; }
+.apt-compare__col--normal { border-color: color-mix(in srgb, var(--text-secondary) 35%, transparent); }
+.apt-compare__col--shortcut { border-color: color-mix(in srgb, #22C55E 40%, transparent); background: color-mix(in srgb, #22C55E 6%, var(--bg-primary)); }
+.apt-compare__tag {
+  display: block; font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; color: var(--text-secondary);
+}
+.apt-compare__col--shortcut .apt-compare__tag { color: #22C55E; }
+
+/* ── When works / not ────────────────────────────────────────────────────── */
+.apt-when-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.apt-when--yes { border-left: 3px solid #22C55E; }
+.apt-when--no { border-left: 3px solid #EF4444; }
+
+/* ── Coming soon states ──────────────────────────────────────────────────── */
+.apt-lesson-soon, .apt-questions-soon {
+  text-align: center; padding: 2.5rem 1.5rem; border-radius: 14px;
+  background: var(--bg-secondary); border: 1px dashed var(--border);
+}
+.apt-lesson-soon--inline { padding: 2rem 1.5rem; }
+.apt-lesson-soon__icon { font-size: 2rem; display: block; margin-bottom: 0.6rem; }
+.apt-lesson-soon h2, .apt-questions-soon h2 {
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--text-primary);
+}
+.apt-lesson-soon p, .apt-questions-soon p { font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin: 0 auto; max-width: 460px; }
+.apt-questions-soon { margin-top: 1.5rem; }
+.apt-questions-soon__badge {
+  display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--cat-color);
+  background: color-mix(in srgb, var(--cat-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 30%, transparent);
+  padding: 0.2rem 0.6rem; border-radius: 999px; margin-bottom: 0.7rem;
+}
+
+/* ── Empty ───────────────────────────────────────────────────────────────── */
+.apt-empty {
+  text-align: center; padding: 3rem 1.5rem; color: var(--text-secondary);
+  font-family: 'Orbitron', sans-serif; letter-spacing: 0.06em;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.apt-empty__btn {
+  cursor: pointer; padding: 0.55rem 1.1rem; border-radius: 8px;
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  color: var(--primary); font-family: 'Orbitron', sans-serif; font-size: 0.75rem; letter-spacing: 0.06em;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .apt-hero { padding: 2.25rem 1.1rem 1rem; }
+  .apt-cat-section { padding: 1rem 1.1rem 3rem; }
+  .apt-cat-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .apt-container { padding: 1.5rem 1.1rem 3rem; }
+  .apt-topic-grid { grid-template-columns: 1fr; }
+  .apt-videos__grid { grid-template-columns: 1fr; }
+  .apt-mode-tabs { grid-template-columns: 1fr; }
+  .apt-compare__cols { grid-template-columns: 1fr; }
+  .apt-when-grid { grid-template-columns: 1fr; }
+  .apt-nav__center--topic { max-width: 38%; font-size: 0.66rem; }
+  .apt-topic-head__icon { width: 48px; height: 48px; font-size: 1.8rem; }
+  /* Freeze the decorative aura blur on mobile for smooth scrolling. */
+  .apt-aura__blob { filter: blur(60px); opacity: 0.3; }
+}

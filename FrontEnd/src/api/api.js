@@ -158,6 +158,11 @@ export const getMission   = (id)   => withCache(`mission:${id}`, 30_000, () => a
 export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*60_000, () => api.get('/problems' + (track ? `?track=${track}` : '')))
 export const getProblem   = (id)    => withCache(`problem:${id}`,            5*60_000, () => api.get(`/problems/${id}`))
 
+// ─── APTITUDE (public) ────────────────────────────────────────
+export const getAptitudeCategories = ()          => withCache('aptitudeCategories',      10*60_000, () => api.get('/aptitude/categories'))
+export const getAptitudeTopics     = (category)  => withCache(`aptitudeTopics:${category}`, 10*60_000, () => api.get(`/aptitude/topics/${category}`))
+export const getAptitudeTopic      = (topicId)   => withCache(`aptitudeTopic:${topicId}`,   10*60_000, () => api.get(`/aptitude/topic/${topicId}`))
+
 // ─── ADMIN PROBLEMS ───────────────────────────────────────────
 export const getAdminProblems  = ()       => api.get('/admin/problems')
 export const createProblem     = (d)      => api.post('/admin/problems', d)       .then(r => { clearApiCache('problems:*');                              return r })

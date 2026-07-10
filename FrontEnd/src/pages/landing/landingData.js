@@ -21,6 +21,7 @@ export const steps = [
 export const NAV_LINKS = [
   { label: 'Missions',         live: true, href: '/missions' },
   { label: 'Code GYM',         live: true, href: '/problem-solving' },
+  { label: 'Aptitude',         live: true, href: '/aptitude' },
   { label: 'Walk-Ins',         live: true, href: '/walk-ins' },
   { label: 'AI Lab',           live: true, href: '/ai-lab' },
   { label: 'Deploy Guidance',  live: true, href: '/deployment' },
