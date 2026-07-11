@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Sun, Moon, BookOpen, Zap, Play, Lightbulb, AlertTriangle } from 'lucide-react'
+import { Sun, Moon, BookOpen, Zap, Play, Lightbulb, AlertTriangle, Target, Search, Clock, CheckCircle2, XCircle, ChevronRight } from 'lucide-react'
 import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
 import EnterArenaButton from '../../components/EnterArenaButton'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useTheme } from '../../context/ThemeContext'
-import { getAptitudeTopic } from '../../api/api'
+import { getAptitudeTopic, getAptitudeQuestions } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
 
 const EASE = [0.16, 1, 0.3, 1]
 
 export default function AptitudeTopicPage() {
-  const { category, topicId } = useParams()
+  const { category, group, topicId } = useParams()
   const navigate = useNavigate()
   const { theme, toggleTheme } = useTheme()
   const light = theme === 'light'
@@ -20,6 +20,7 @@ export default function AptitudeTopicPage() {
   const catMeta = APTITUDE_CATEGORY_MAP[category]
 
   const [topic, setTopic] = useState(null)
+  const [questions, setQuestions] = useState([])
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
   const [mode, setMode] = useState('learn')
@@ -27,10 +28,11 @@ export default function AptitudeTopicPage() {
   useEffect(() => {
     setLoading(true)
     setNotFound(false)
-    getAptitudeTopic(topicId)
-      .then(r => setTopic(r.data))
-      .catch(() => setNotFound(true))
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+    setQuestions([])
+    Promise.all([
+      getAptitudeTopic(topicId).then(r => setTopic(r.data)).catch(() => setNotFound(true)),
+      getAptitudeQuestions(topicId).then(r => setQuestions(r.data || [])).catch(() => setQuestions([])),
+    ]).finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [topicId])
 
   const accent = catMeta?.color || '#0EA5E9'
@@ -44,13 +46,16 @@ export default function AptitudeTopicPage() {
       <div className="apt-nav">
         <button
           type="button"
-          onClick={() => navigate(catMeta ? `/aptitude/${category}` : '/aptitude')}
+          onClick={() => navigate(
+            catMeta && group ? `/aptitude/${category}/${group}`
+              : catMeta ? `/aptitude/${category}` : '/aptitude'
+          )}
           className="apt-nav__back"
         >
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          {catMeta ? catMeta.label.toUpperCase() : 'APTITUDE'}
+          BACK
         </button>
 
         <span className="apt-nav__center apt-nav__center--topic">
@@ -121,29 +126,34 @@ export default function AptitudeTopicPage() {
 
           {(hasLearn || hasCrack) ? (
             <>
-              <div className="apt-mode-tabs" role="tablist">
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={mode === 'learn'}
-                  className={`apt-mode-tab${mode === 'learn' ? ' is-active' : ''}`}
-                  onClick={() => setMode('learn')}
-                  disabled={!hasLearn}
-                >
-                  <BookOpen size={15} /> Learn It
-                  <span className="apt-mode-tab__sub">Full explanation</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={mode === 'crack'}
-                  className={`apt-mode-tab${mode === 'crack' ? ' is-active' : ''}`}
-                  onClick={() => setMode('crack')}
-                  disabled={!hasCrack}
-                >
-                  <Zap size={15} /> Crack It
-                  <span className="apt-mode-tab__sub">Shortcut methods</span>
-                </button>
+              <div className="apt-modeswitch">
+                <div className="apt-seg" role="tablist">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={mode === 'learn'}
+                    className={`apt-seg__btn apt-seg__btn--learn${mode === 'learn' ? ' is-active' : ''}`}
+                    onClick={() => setMode('learn')}
+                    disabled={!hasLearn}
+                  >
+                    <BookOpen size={15} /> Learn It
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={mode === 'crack'}
+                    className={`apt-seg__btn apt-seg__btn--crack${mode === 'crack' ? ' is-active' : ''}`}
+                    onClick={() => setMode('crack')}
+                    disabled={!hasCrack}
+                  >
+                    <Zap size={15} /> Crack It
+                  </button>
+                </div>
+                <p className="apt-modeswitch__hint">
+                  {mode === 'learn'
+                    ? 'Full beginner-first explanation — understand it from zero.'
+                    : 'Exam-day shortcuts — solve it in seconds.'}
+                </p>
               </div>
 
               <AnimatePresence mode="wait">
@@ -169,14 +179,56 @@ export default function AptitudeTopicPage() {
             </div>
           )}
 
-          <section className="apt-questions-soon">
-            <span className="apt-questions-soon__badge">Practice</span>
-            <h2>Questions Coming Soon</h2>
-            <p>Solved practice questions and a timed quiz for this topic are on the way.</p>
-          </section>
+          {questions.length > 0 ? (
+            <button
+              type="button"
+              className="apt-practice-cta"
+              onClick={() => navigate(`/aptitude/${category}/${group}/${topicId}/questions`)}
+            >
+              <span className="apt-practice-cta__icon" aria-hidden="true">🎯</span>
+              <span className="apt-practice-cta__body">
+                <span className="apt-practice-cta__title">Practice Questions</span>
+                <span className="apt-practice-cta__sub">
+                  {questions.length} solved question{questions.length !== 1 ? 's' : ''} — answers hidden until you try. Test yourself now.
+                </span>
+              </span>
+              <span className="apt-practice-cta__go">Start <ChevronRight size={16} /></span>
+            </button>
+          ) : (
+            <section className="apt-questions-soon">
+              <span className="apt-questions-soon__badge">Practice</span>
+              <h2>Questions Coming Soon</h2>
+              <p>Solved practice questions and a timed quiz for this topic are on the way.</p>
+            </section>
+          )}
         </div>
       )}
     </div>
+  )
+}
+
+// 60-second drill — answers hidden, revealed per-item on click (self-test).
+function DrillList({ items }) {
+  const [open, setOpen] = useState({})
+  return (
+    <ol className="apt-drill-list">
+      {items.map((d, i) => {
+        const shown = !!open[i]
+        return (
+          <li key={i} className="apt-drill__item">
+            <span className="apt-drill__q">{d.question}</span>
+            <button
+              type="button"
+              className={`apt-drill__reveal${shown ? ' is-shown' : ''}`}
+              onClick={() => setOpen(o => ({ ...o, [i]: !o[i] }))}
+              aria-label={shown ? 'Hide answer' : 'Show answer'}
+            >
+              {shown ? <span className="apt-drill__a">{d.answer}</span> : 'Tap to reveal'}
+            </button>
+          </li>
+        )
+      })}
+    </ol>
   )
 }
 
@@ -248,6 +300,7 @@ function LearnMode({ data }) {
                 {f.label && <span className="apt-formula__label">{f.label}</span>}
                 <code className="apt-formula__eq">{f.formula}</code>
                 {f.breakdown && <p className="apt-formula__break">{f.breakdown}</p>}
+                {f.example && <p className="apt-formula__ex"><strong>Example:</strong> {f.example}</p>}
               </div>
             ))}
           </div>
@@ -258,6 +311,20 @@ function LearnMode({ data }) {
           <h3 className="apt-card-h">✍️ Worked examples</h3>
           <div className="apt-example-list">
             {data.examples.map((ex, i) => <ExampleBlock key={i} ex={ex} />)}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.questionTypes) && data.questionTypes.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h"><Target size={16} /> Every question type</h3>
+          <div className="apt-qtype-list">
+            {data.questionTypes.map((qt, i) => (
+              <div key={i} className="apt-qtype">
+                <h4 className="apt-qtype__name">{qt.name}</h4>
+                {qt.idea && <p className="apt-qtype__idea">{qt.idea}</p>}
+                <ExampleBlock ex={{ level: 'Example', problem: qt.problem, steps: qt.steps, answer: qt.answer }} />
+              </div>
+            ))}
           </div>
         </Card>
       )}
@@ -282,6 +349,53 @@ function LearnMode({ data }) {
 function CrackMode({ data }) {
   return (
     <div className="apt-lesson">
+      {data.oneLine && (
+        <Card className="apt-lesson__oneline">
+          <h3 className="apt-card-h">⚡ The whole topic in one line</h3>
+          <p className="apt-oneline">{data.oneLine}</p>
+        </Card>
+      )}
+      {Array.isArray(data.shortcuts) && data.shortcuts.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h">🎯 Shortcuts — one per question type</h3>
+          <div className="apt-scut-list">
+            {data.shortcuts.map((s, i) => (
+              <div key={i} className="apt-scut">
+                <h4 className="apt-scut__name">{s.name}</h4>
+                {s.method && <code className="apt-formula__eq">{s.method}</code>}
+                {s.whereNumbersGo && <p className="apt-scut__where"><strong>Where the numbers go:</strong> {s.whereNumbersGo}</p>}
+                {s.example && <p className="apt-scut__ex"><strong>Same example:</strong> {s.example}</p>}
+                {s.timeSaved && <p className="apt-scut__time"><Clock size={13} /> {s.timeSaved}</p>}
+                <div className="apt-scut__when">
+                  {s.whenWorks && <span className="apt-scut__yes"><CheckCircle2 size={13} /> {s.whenWorks}</span>}
+                  {s.whenFails && <span className="apt-scut__no"><XCircle size={13} /> {s.whenFails}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.patternGuide) && data.patternGuide.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h"><Search size={16} /> Pattern recognition — read the question, pick the trick</h3>
+          <div className="apt-pattern-list">
+            {data.patternGuide.map((p, i) => (
+              <div key={i} className="apt-pattern">
+                <span className="apt-pattern__signal">{p.signal}</span>
+                <span className="apt-pattern__arrow" aria-hidden="true">→</span>
+                <span className="apt-pattern__use">{p.use}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.drill) && data.drill.length > 0 && (
+        <Card className="apt-lesson__drill">
+          <h3 className="apt-card-h"><Clock size={16} /> 60-second drill</h3>
+          <p className="apt-drill__hint">Say the answer out loud first, then reveal to check. If you can name the trick for each, you own this topic.</p>
+          <DrillList items={data.drill} />
+        </Card>
+      )}
       {data.theTrick && (
         <Card className="apt-lesson__trick">
           <h3 className="apt-card-h">⚡ The trick</h3>

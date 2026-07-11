@@ -15,6 +15,7 @@ import GateOpenLoader from '../components/loaders/GateOpenLoader'
 import ShadowSoldierLoader from '../components/loaders/ShadowSoldierLoader'
 import CircuitLoader from '../components/loaders/CircuitLoader'
 import MatrixRainLoader from '../components/loaders/MatrixRainLoader'
+import AptitudeLoader from '../components/loaders/AptitudeLoader'
 import RadarLoader from '../components/loaders/RadarLoader'
 import DataHelixLoader from '../components/loaders/DataHelixLoader'
 import AdminSkeleton from '../components/loaders/AdminSkeleton'
@@ -112,6 +113,30 @@ const SECTION = [
     accent: '#f97316', status: 'ALT',
     desc: 'Canvas-based falling chars with accent color',
     component: <MatrixRainLoader accentColor="#f97316" height={220} />,
+  },
+  {
+    num: '#A1', label: 'Aptitude · Quantitative', tag: 'Quant category',
+    accent: '#0EA5E9', status: 'NEW ✦',
+    desc: 'Timer ring + cycling math operators (+ − × ÷ % =)',
+    component: <AptitudeLoader variant="quantitative" height={220} label="QUANTITATIVE" />,
+  },
+  {
+    num: '#A2', label: 'Aptitude · Logical', tag: 'Logical Reasoning category',
+    accent: '#9B6ED4', status: 'NEW ✦',
+    desc: '3×3 pattern-lock grid lighting in sequence',
+    component: <AptitudeLoader variant="logical" height={220} label="LOGICAL REASONING" />,
+  },
+  {
+    num: '#A3', label: 'Aptitude · Verbal', tag: 'Verbal Ability category',
+    accent: '#22C55E', status: 'NEW ✦',
+    desc: 'Cycling words — READ → THINK → ANSWER',
+    component: <AptitudeLoader variant="verbal" height={220} label="VERBAL ABILITY" />,
+  },
+  {
+    num: '#A4', label: 'Aptitude · Data Interpretation', tag: 'Data Interpretation category',
+    accent: '#F59E0B', status: 'NEW ✦',
+    desc: 'Animated bar chart rising and falling',
+    component: <AptitudeLoader variant="data-interpretation" height={220} label="DATA INTERPRETATION" />,
   },
   {
     num: '#S5', label: 'Radar Data Scan', tag: 'Admin panels',

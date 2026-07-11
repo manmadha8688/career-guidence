@@ -10,7 +10,7 @@ export default function LandingPlatformSection() {
         <p className="lp-section-eyebrow">The Platform</p>
         <h2 className="lp-grad-text lp-section-title">One Platform. Zero to Hired.</h2>
         <p className="lp-section-desc">
-          Six tools working together — learn, solve, build missions, deploy live, and land the job.
+          Seven tools working together — learn, solve, crack the aptitude round, build missions, deploy live, and land the job.
         </p>
       </div>
 

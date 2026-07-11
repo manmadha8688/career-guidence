@@ -10,6 +10,7 @@ import LandingPainSection from './components/LandingPainSection'
 import LandingPlatformSection from './components/LandingPlatformSection'
 import LandingMissionsSection from './components/LandingMissionsSection'
 import LandingCodeGymSection from './components/LandingCodeGymSection'
+import LandingAptitudeSection from './components/LandingAptitudeSection'
 import LandingAILabSection from './components/LandingAILabSection'
 import LandingDeploySection from './components/LandingDeploySection'
 import LandingHowItWorksSection from './components/LandingHowItWorksSection'
@@ -33,6 +34,8 @@ export default function LandingPage() {
         <LandingMissionsSection />
         <LandingGlowDivider />
         <LandingCodeGymSection />
+        <LandingGlowDivider />
+        <LandingAptitudeSection />
         <LandingGlowDivider />
         <LandingAILabSection />
         <LandingGlowDivider />

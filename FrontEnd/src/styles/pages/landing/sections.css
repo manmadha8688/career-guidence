@@ -149,6 +149,18 @@
   border-color: rgba(2, 132, 199, 0.2);
 }
 
+.lp-topic-badge--aptitude {
+  color: #818CF8;
+  background: rgba(129, 140, 248, 0.08);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+}
+
+[data-theme="light"] .lp-topic-badge--aptitude {
+  color: #6366F1;
+  background: rgba(99, 102, 241, 0.07);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
 .lp-topic-badge--ai {
   color: #00D9FF;
   background: rgba(0, 217, 255, 0.07);

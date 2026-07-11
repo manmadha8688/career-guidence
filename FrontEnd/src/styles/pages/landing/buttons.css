@@ -132,6 +132,25 @@
   box-shadow: 0 8px 28px rgba(2, 132, 199, 0.45);
 }
 
+.lp-section-cta--aptitude {
+  background: linear-gradient(135deg, #6366F1, #818CF8);
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.35);
+}
+
+.lp-section-cta--aptitude:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.55);
+}
+
+[data-theme="light"] .lp-section-cta--aptitude {
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+}
+
+[data-theme="light"] .lp-section-cta--aptitude:hover {
+  box-shadow: 0 8px 28px rgba(79, 70, 229, 0.45);
+}
+
 .lp-section-cta--ai {
   background: linear-gradient(135deg, #00D9FF, #0EA5E9);
   box-shadow: 0 4px 24px rgba(0, 217, 255, 0.3);

@@ -24,6 +24,16 @@
   border-color: rgba(14, 165, 233, 0.6);
 }
 
+.navbar-quick-btn--aptitude {
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  color: #818CF8;
+}
+
+.navbar-quick-btn--aptitude:hover {
+  background: rgba(129, 140, 248, 0.12);
+  border-color: rgba(129, 140, 248, 0.6);
+}
+
 .navbar-quick-btn--missions {
   border: 1px solid rgba(255, 127, 42, 0.3);
   color: #FF7F2A;

@@ -74,7 +74,9 @@ const ProblemDetailPage        = lazy(() => import('./pages/problem-solving/Prob
 
 const AptitudePage             = lazy(() => import('./pages/aptitude/AptitudePage'))
 const AptitudeCategoryPage     = lazy(() => import('./pages/aptitude/AptitudeCategoryPage'))
+const AptitudeGroupPage        = lazy(() => import('./pages/aptitude/AptitudeGroupPage'))
 const AptitudeTopicPage        = lazy(() => import('./pages/aptitude/AptitudeTopicPage'))
+const AptitudeQuestionsPage    = lazy(() => import('./pages/aptitude/AptitudeQuestionsPage'))
 
 const DashboardPage            = lazy(() => import('./pages/student-skill-arena/DashboardPage'))
 const RoadmapDetailPage        = lazy(() => import('./pages/student-skill-arena/RoadmapDetailPage'))
@@ -275,10 +277,12 @@ function App() {
             <Route path="/problem-solving/prove-it"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
             <Route path="/problem-solving/:id"             element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
 
-            {/* Aptitude — public (browsable without login) */}
+            {/* Aptitude — public (browsable without login): category → group → topic */}
             <Route path="/aptitude" element={<AptitudePage />} />
             <Route path="/aptitude/:category" element={<AptitudeCategoryPage />} />
-            <Route path="/aptitude/:category/:topicId" element={<AptitudeTopicPage />} />
+            <Route path="/aptitude/:category/:group" element={<AptitudeGroupPage />} />
+            <Route path="/aptitude/:category/:group/:topicId" element={<AptitudeTopicPage />} />
+            <Route path="/aptitude/:category/:group/:topicId/questions" element={<AptitudeQuestionsPage />} />
 
             {/* Missions detail — requires login */}
             <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />

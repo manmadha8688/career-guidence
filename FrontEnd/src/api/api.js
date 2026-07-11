@@ -159,9 +159,11 @@ export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*6
 export const getProblem   = (id)    => withCache(`problem:${id}`,            5*60_000, () => api.get(`/problems/${id}`))
 
 // ─── APTITUDE (public) ────────────────────────────────────────
-export const getAptitudeCategories = ()          => withCache('aptitudeCategories',      10*60_000, () => api.get('/aptitude/categories'))
-export const getAptitudeTopics     = (category)  => withCache(`aptitudeTopics:${category}`, 10*60_000, () => api.get(`/aptitude/topics/${category}`))
-export const getAptitudeTopic      = (topicId)   => withCache(`aptitudeTopic:${topicId}`,   10*60_000, () => api.get(`/aptitude/topic/${topicId}`))
+export const getAptitudeCategories = ()          => withCache('aptitudeCategories',        10*60_000, () => api.get('/aptitude/categories'))
+export const getAptitudeGroups     = (category)  => withCache(`aptitudeGroups:${category}`,  10*60_000, () => api.get(`/aptitude/groups/${category}`))
+export const getAptitudeTopics     = (group)     => withCache(`aptitudeTopics:${group}`,     10*60_000, () => api.get(`/aptitude/topics/${group}`))
+export const getAptitudeTopic      = (topicId)   => withCache(`aptitudeTopic:${topicId}`,    10*60_000, () => api.get(`/aptitude/topic/${topicId}`))
+export const getAptitudeQuestions  = (topicId)   => withCache(`aptitudeQuestions:${topicId}`, 10*60_000, () => api.get(`/aptitude/questions/${topicId}`))
 
 // ─── ADMIN PROBLEMS ───────────────────────────────────────────
 export const getAdminProblems  = ()       => api.get('/admin/problems')

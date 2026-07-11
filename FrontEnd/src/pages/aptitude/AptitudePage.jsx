@@ -112,7 +112,7 @@ export default function AptitudePage() {
       .then(r => {
         if (!alive) return
         const map = {}
-        ;(r.data || []).forEach(c => { map[c.category] = c.topicCount })
+        ;(r.data || []).forEach(c => { map[c.category] = c })
         setCounts(map)
       })
       .catch(() => { if (alive) setCounts({}) })
@@ -221,7 +221,9 @@ export default function AptitudePage() {
 
               <span className="apt-gate__foot">
                 <span className="apt-gate__count">
-                  {counts[cat.id] != null ? counts[cat.id] : '—'} topics
+                  {counts[cat.id]
+                    ? `${counts[cat.id].groupCount} groups · ${counts[cat.id].topicCount} topics`
+                    : '— topics'}
                 </span>
                 <span className="apt-gate__enter">
                   Explore <ChevronRight size={15} />

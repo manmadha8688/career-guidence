@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import {
   Swords, Dumbbell, Rocket, Sparkles, Server, Compass, MapPin,
-  Target, ArrowRight, Mail,
+  Target, ArrowRight, Mail, Brain,
 } from 'lucide-react'
 import InfoPageLayout from '../components/InfoPageLayout'
 
@@ -24,6 +24,7 @@ const STATS = [
 const FEATURES = [
   { icon: Swords, title: 'Skill Arena', text: 'Structured subjects and career paths — Full Stack, Frontend, Data — with progress tracking, XP, and earned badges.' },
   { icon: Dumbbell, title: 'Code GYM', text: 'Coding problems across every level, from your first program to placement-style challenges, each with approaches and multiple solutions.' },
+  { icon: Brain, title: 'Aptitude', text: 'The round every placement test opens with — quantitative, logical reasoning, verbal and data interpretation, each topic taught in full and with exam-day shortcuts.' },
   { icon: Rocket, title: 'Missions', text: 'Real project briefs you can build and ship straight to your resume — subject practice, role-based take-homes, and academic ideas.' },
   { icon: Sparkles, title: 'AI Lab', text: 'Hands-on guides for 88+ AI tools every student should know — from ChatGPT and Copilot to vector databases and agents.' },
   { icon: Server, title: 'Deployment Guides', text: 'Step-by-step instructions to put your projects live on free hosting, across 20+ tech stacks.' },

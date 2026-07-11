@@ -329,6 +329,17 @@
   gap: 0.625rem;
 }
 
+/* Sign up + Sign in share one row; each button takes an equal half. */
+.lp-mobile-auth-row {
+  display: flex;
+  gap: 0.625rem;
+}
+.lp-mobile-auth-row > * {
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+}
+
 .lp-mobile-theme-row {
   border-top: 1px solid var(--lp-border);
   padding-top: 0.75rem;

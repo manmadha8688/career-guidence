@@ -11,7 +11,7 @@ export const BASE_DESCRIPTION =
 // Broad, audience-focused keyword base. Per-route keywords below are prepended
 // to this so each page leads with its own most-relevant terms.
 export const BASE_KEYWORDS =
-  'free coding practice, DSA practice, learn programming free, placement preparation, fresher jobs India, walk-in drives, AI tools for students, career roadmap, coding problems with solutions, project ideas for students, deployment guides, interview preparation, learn Python, learn Java, learn React, coding for beginners'
+  'free coding practice, DSA practice, learn programming free, placement preparation, aptitude preparation, quantitative aptitude, logical reasoning, verbal ability, data interpretation, fresher jobs India, walk-in drives, AI tools for students, career roadmap, coding problems with solutions, project ideas for students, deployment guides, interview preparation, learn Python, learn Java, learn React, coding for beginners'
 
 /**
  * Per-route SEO metadata. Titles use live counts from data files (never hardcoded).

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket, Home
+  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket, Home, Brain
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -14,6 +14,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/skill-arena/dashboard?view=gates', icon: <BookOpen size={18} />,        label: 'Dungeon Gates' },
     { to: '/skill-arena/dashboard?view=paths', icon: <Map size={18} />,             label: 'Hunter Paths' },
     { to: '/problem-solving',                  icon: <Code2 size={18} />,           label: 'Problem Solving' },
+    { to: '/aptitude',                         icon: <Brain size={18} />,           label: 'Aptitude' },
     { to: '/missions',                         icon: <Sword size={18} />,           label: 'Missions' },
     { to: '/walk-ins',                         icon: <Briefcase size={18} />,       label: 'Walk-Ins' },
     { to: '/deployment',                       icon: <Rocket size={18} />,          label: 'Deploy Guide' },
@@ -77,6 +78,10 @@ export default function Sidebar({ open, onClose }) {
               <NavLink to="/problem-solving" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><Code2 size={18} /></span>
                 Coding
+              </NavLink>
+              <NavLink to="/aptitude" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><Brain size={18} /></span>
+                Aptitude
               </NavLink>
               <NavLink to="/missions" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><Sword size={18} /></span>

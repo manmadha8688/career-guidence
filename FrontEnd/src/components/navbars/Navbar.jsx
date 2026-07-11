@@ -202,12 +202,14 @@ export default function Navbar({ sticky = false }) {
                 </button>
               ) : (
                 <>
-                  <Link to="/register" className="lp-btn-primary lp-btn-primary--full" onClick={closeMobile}>
-                    <Swords size={16} /> Sign up
-                  </Link>
-                  <Link to="/login?redirect=/" className="lp-btn-ghost lp-btn-ghost--full" onClick={closeMobile}>
-                    Sign In
-                  </Link>
+                  <div className="lp-mobile-auth-row">
+                    <Link to="/register" className="lp-btn-primary" onClick={closeMobile}>
+                      <Swords size={16} /> Sign up
+                    </Link>
+                    <Link to="/login?redirect=/" className="lp-btn-ghost" onClick={closeMobile}>
+                      Sign In
+                    </Link>
+                  </div>
                   <button
                     type="button"
                     onClick={() => { handleGuest(); closeMobile() }}

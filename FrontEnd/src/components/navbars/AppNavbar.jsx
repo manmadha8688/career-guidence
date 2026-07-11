@@ -50,6 +50,15 @@ export default function AppNavbar({ onMenuClick, title = '' }) {
             </button>
             <button
               type="button"
+              onClick={() => navigate('/aptitude')}
+              className="navbar-quick-btn navbar-quick-btn--aptitude"
+              title="Aptitude"
+              aria-label="Aptitude"
+            >
+              Aptitude
+            </button>
+            <button
+              type="button"
               onClick={() => navigate('/missions')}
               className="navbar-quick-btn navbar-quick-btn--missions"
               title="Mission Board"
