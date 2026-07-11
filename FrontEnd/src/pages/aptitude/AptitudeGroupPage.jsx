@@ -1,13 +1,14 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Sun, Moon, ChevronRight, Search, X } from 'lucide-react'
-import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
-import EnterArenaButton from '../../components/EnterArenaButton'
+import { ChevronRight, Search, X } from 'lucide-react'
+import Navbar from '../../components/navbars/Navbar'
+import AptitudeLoader from '../../components/loaders/AptitudeLoader'
 import BookmarkButton from '../../components/BookmarkButton'
+import SectionNotFoundPage from '../../components/SectionNotFoundPage'
+import blurOnEnter from '../../utils/blurOnEnter'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
-import { useTheme } from '../../context/ThemeContext'
-import { getAptitudeGroups, getAptitudeTopics } from '../../api/api'
+import { getAptitudeGroups, getAptitudeTopics, aptitudeCache } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META, PRIORITY_META, sortTopics } from './aptitudeData'
 
 const EASE = [0.16, 1, 0.3, 1]
@@ -27,28 +28,46 @@ const DIFF_CHIPS = [
 export default function AptitudeGroupPage() {
   const { category, group } = useParams()
   const navigate = useNavigate()
-  const { theme, toggleTheme } = useTheme()
-  const light = theme === 'light'
+  const [searchParams] = useSearchParams()
 
   const meta = APTITUDE_CATEGORY_MAP[category]
 
-  const [groupMeta, setGroupMeta] = useState(null)
-  const [topics, setTopics] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [query, setQuery] = useState('')
+  // Seed from cache so a revisit renders instantly; needs topics + group meta.
+  const [groupMeta, setGroupMeta] = useState(() => {
+    const cg = aptitudeCache.groups(category)
+    return cg ? (cg.find(g => g.slug === group) || null) : null
+  })
+  const [topics, setTopics] = useState(() => {
+    const ct = aptitudeCache.topics(group)
+    return ct ? sortTopics(ct) : []
+  })
+  const [loading, setLoading] = useState(() =>
+    !(aptitudeCache.topics(group) !== undefined && aptitudeCache.groups(category) !== undefined))
+  // Pre-fill the topic search when arriving from the group-list search (?q=…),
+  // so a "relative speed" search lands here already filtered to that topic.
+  const [query, setQuery] = useState(() => searchParams.get('q') || '')
   const [priFilter, setPriFilter] = useState('all')
   const [diffFilter, setDiffFilter] = useState('all')
 
   useEffect(() => {
-    if (!meta) { navigate('/aptitude', { replace: true }); return }
-    setLoading(true)
-    setQuery(''); setPriFilter('all'); setDiffFilter('all')
+    if (!meta) return
+    const ct = aptitudeCache.topics(group)
+    const cg = aptitudeCache.groups(category)
+    const cached = ct !== undefined && cg !== undefined
+    if (cached) {
+      setTopics(sortTopics(ct))
+      setGroupMeta(cg.find(g => g.slug === group) || null)
+      setLoading(false)
+    } else {
+      setLoading(true)
+    }
+    setQuery(searchParams.get('q') || ''); setPriFilter('all'); setDiffFilter('all')
     Promise.all([
       getAptitudeTopics(group).then(r => setTopics(sortTopics(r.data || []))).catch(() => setTopics([])),
       getAptitudeGroups(category)
         .then(r => setGroupMeta((r.data || []).find(g => g.slug === group) || null))
         .catch(() => setGroupMeta(null)),
-    ]).finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+    ]).finally(() => { if (!cached) setTimeout(() => setLoading(false), PAGE_MIN_MS) })
   }, [category, group])
 
   const filtered = useMemo(() => {
@@ -65,33 +84,16 @@ export default function AptitudeGroupPage() {
   const clearAll = () => { setQuery(''); setPriFilter('all'); setDiffFilter('all') }
   const title = groupMeta?.displayName || 'Topics'
 
-  if (!meta) return null
+  if (!meta) return <SectionNotFoundPage variant="aptitude" />
+  // Group slug doesn't resolve to a real group (once loading has settled).
+  if (!loading && !groupMeta) return <SectionNotFoundPage variant="aptitude" />
 
   return (
     <div className="apt-page" style={{ '--cat-color': meta.color }}>
-      <div className="apt-nav">
-        <button type="button" onClick={() => navigate(`/aptitude/${category}`)} className="apt-nav__back">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          {meta.label.toUpperCase()}
-        </button>
-
-        <span className="apt-nav__center">
-          <span className="apt-nav__icon" aria-hidden="true">{groupMeta?.icon || meta.icon}</span>
-          {title}
-        </span>
-
-        <div className="apt-nav__actions">
-          <button type="button" onClick={toggleTheme} className="apt-nav__theme" aria-label="Toggle theme">
-            {light ? <Moon size={14} /> : <Sun size={14} />}
-          </button>
-          <EnterArenaButton />
-        </div>
-      </div>
+      <Navbar sticky />
 
       {loading ? (
-        <MatrixRainLoader accentColor={meta.color} fullPage label={`LOADING ${title.toUpperCase()}`} />
+        <AptitudeLoader variant={category} fullPage label={`LOADING ${title.toUpperCase()}`} />
       ) : (
         <div className="apt-container">
           <div className="apt-cat-head">
@@ -114,6 +116,7 @@ export default function AptitudeGroupPage() {
                   placeholder="Search topics…"
                   value={query}
                   onChange={e => setQuery(e.target.value)}
+                  onKeyDown={blurOnEnter}
                   aria-label="Search topics"
                 />
                 {query && (

@@ -728,3 +728,113 @@
   line-height: 1.3;
 }
 
+/* ─── Aptitude admin panel (drill-down: groups → topics → questions) ─── */
+.admin-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+.admin-breadcrumb__link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+}
+.admin-breadcrumb__link:disabled {
+  color: var(--text-primary);
+  cursor: default;
+}
+.admin-breadcrumb__sep {
+  color: var(--text-muted);
+}
+.admin-breadcrumb__current {
+  color: var(--text-muted);
+}
+
+.admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.admin-tab {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.admin-tab:hover {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+.admin-tab.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.admin-badge--on {
+  background: color-mix(in srgb, var(--success, #4ADE80) 18%, transparent);
+  color: var(--success, #4ADE80);
+}
+.admin-badge--off {
+  background: color-mix(in srgb, var(--text-muted) 18%, transparent);
+  color: var(--text-muted);
+}
+
+.admin-row-actions {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: flex-end;
+}
+.admin-btn-danger {
+  color: var(--danger);
+}
+.admin-btn-danger:hover {
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
+
+.admin-check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  margin: 0.25rem 0 0.5rem;
+}
+.admin-check-row input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.admin-json-hint {
+  margin: -0.25rem 0 0.5rem;
+}
+
+.admin-q-option-row .form-label {
+  font-weight: 700;
+}
+
+.admin-truncate-desc--360 {
+  max-width: 360px;
+}
+

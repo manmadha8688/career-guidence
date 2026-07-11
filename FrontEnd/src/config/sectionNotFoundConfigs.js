@@ -108,6 +108,33 @@ export const SECTION_NOT_FOUND = {
     primaryBtn: { label: '🏟 RETURN TO SKILL ARENA', path: '/skill-arena/dashboard?view=paths' },
     secondaryBtn: { label: '← last gate', back: true },
   },
+
+  aptitude: {
+    themeClass: 'nf-void--aptitude',
+    signalText: 'SIGNAL LOST_',
+    signalMeta: 'SCANNING APTITUDE SYLLABUS…',
+    eyebrow: '[ ERROR · NOT IN SYLLABUS ]',
+    code: '404',
+    title: 'This aptitude page doesn’t exist.',
+    quips: [
+      'The syllabus has no record of this one — check the URL.',
+      'You opened a section, group, or topic that was never added.',
+      'Wrong coordinates. The four gates are back that way.',
+      'Even a sharp mind can’t solve a page that isn’t here.',
+      'This link points nowhere. Return to the aptitude hub.',
+    ],
+    stages: [
+      { year: 'Quant',    icon: '🧮', label: 'numbers' },
+      { year: 'Logical',  icon: '🧩', label: 'reasoning' },
+      { year: 'Verbal',   icon: '📖', label: 'english' },
+      { year: 'Data',     icon: '📊', label: 'charts' },
+      { year: 'Practice', icon: '⚡', label: 'questions' },
+      { year: '???',      icon: '🔍', label: 'YOU ARE HERE', current: true },
+    ],
+    traveler: '🧠',
+    primaryBtn: { label: '🧠 RETURN TO APTITUDE', path: '/aptitude' },
+    secondaryBtn: { label: '← go back', back: true },
+  },
 }
 
 /** Compact cinematic not-found — embedded in dashboard panels / overlays. */

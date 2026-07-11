@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sun, Moon, Zap, CheckCircle2, Eye, EyeOff } from 'lucide-react'
-import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
+import AptitudeLoader from '../../components/loaders/AptitudeLoader'
 import EnterArenaButton from '../../components/EnterArenaButton'
+import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useTheme } from '../../context/ThemeContext'
-import { getAptitudeTopic, getAptitudeQuestions } from '../../api/api'
+import { getAptitudeTopic, getAptitudeQuestions, aptitudeCache } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
 
 const EASE = [0.16, 1, 0.3, 1]
@@ -20,18 +21,29 @@ export default function AptitudeQuestionsPage() {
   const catMeta = APTITUDE_CATEGORY_MAP[category]
   const accent = catMeta?.color || '#0EA5E9'
 
-  const [topic, setTopic] = useState(null)
-  const [questions, setQuestions] = useState([])
-  const [loading, setLoading] = useState(true)
+  // Seed from cache so a revisit renders instantly; only an uncached visit loads.
+  const [topic, setTopic] = useState(() => aptitudeCache.topic(topicId) ?? null)
+  const [questions, setQuestions] = useState(() => aptitudeCache.questions(topicId) ?? [])
+  const [loading, setLoading] = useState(() =>
+    !(aptitudeCache.topic(topicId) !== undefined && aptitudeCache.questions(topicId) !== undefined))
   const [revealed, setRevealed] = useState({})
 
   useEffect(() => {
-    setLoading(true)
+    const ct = aptitudeCache.topic(topicId)
+    const cq = aptitudeCache.questions(topicId)
+    const cached = ct !== undefined && cq !== undefined
+    if (cached) {
+      setTopic(ct)
+      setQuestions(cq)
+      setLoading(false)
+    } else {
+      setLoading(true)
+    }
     setRevealed({})
     Promise.all([
       getAptitudeTopic(topicId).then(r => setTopic(r.data)).catch(() => setTopic(null)),
       getAptitudeQuestions(topicId).then(r => setQuestions(r.data || [])).catch(() => setQuestions([])),
-    ]).finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+    ]).finally(() => { if (!cached) setTimeout(() => setLoading(false), PAGE_MIN_MS) })
   }, [topicId])
 
   const backToTopic = () => navigate(`/aptitude/${category}/${group}/${topicId}`)
@@ -42,6 +54,9 @@ export default function AptitudeQuestionsPage() {
     if (allOpen) setRevealed({})
     else setRevealed(Object.fromEntries(questions.map((q, i) => [q.id || i, true])))
   }
+
+  // Topic slug doesn't exist — themed aptitude not-found (same as lesson page).
+  if (!loading && !topic) return <SectionNotFoundPage variant="aptitude" />
 
   return (
     <div className="apt-page" style={{ '--cat-color': accent }}>
@@ -64,7 +79,7 @@ export default function AptitudeQuestionsPage() {
       </div>
 
       {loading ? (
-        <MatrixRainLoader accentColor={accent} fullPage label="LOADING QUESTIONS" />
+        <AptitudeLoader variant={category} accentColor={accent} fullPage label="LOADING QUESTIONS" />
       ) : (
         <div className="apt-container apt-container--topic">
           <div className="apt-practice__head">

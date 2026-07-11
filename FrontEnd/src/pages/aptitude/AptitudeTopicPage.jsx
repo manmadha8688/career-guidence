@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sun, Moon, BookOpen, Zap, Play, Lightbulb, AlertTriangle, Target, Search, Clock, CheckCircle2, XCircle, ChevronRight } from 'lucide-react'
-import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
+import AptitudeLoader from '../../components/loaders/AptitudeLoader'
 import EnterArenaButton from '../../components/EnterArenaButton'
+import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useTheme } from '../../context/ThemeContext'
-import { getAptitudeTopic, getAptitudeQuestions } from '../../api/api'
+import { getAptitudeTopic, getAptitudeQuestions, aptitudeCache } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
 import { DI_LESSONS } from './dataInterpretationData'
 import DataInterpretationLesson from './DataInterpretationLesson'
@@ -21,20 +22,33 @@ export default function AptitudeTopicPage() {
 
   const catMeta = APTITUDE_CATEGORY_MAP[category]
 
-  const [topic, setTopic] = useState(null)
-  const [questions, setQuestions] = useState([])
-  const [loading, setLoading] = useState(true)
+  // Seed from cache so a revisit renders instantly with real data (no loader,
+  // and crucially no null-topic render that would crash into the error page).
+  const [topic, setTopic] = useState(() => aptitudeCache.topic(topicId) ?? null)
+  const [questions, setQuestions] = useState(() => aptitudeCache.questions(topicId) ?? [])
+  const [loading, setLoading] = useState(() =>
+    !(aptitudeCache.topic(topicId) !== undefined && aptitudeCache.questions(topicId) !== undefined))
   const [notFound, setNotFound] = useState(false)
   const [mode, setMode] = useState('learn')
 
   useEffect(() => {
-    setLoading(true)
-    setNotFound(false)
-    setQuestions([])
+    const ct = aptitudeCache.topic(topicId)
+    const cq = aptitudeCache.questions(topicId)
+    const cached = ct !== undefined && cq !== undefined
+    if (cached) {
+      setTopic(ct)
+      setQuestions(cq)
+      setNotFound(false)
+      setLoading(false)
+    } else {
+      setLoading(true)
+      setNotFound(false)
+      setQuestions([])
+    }
     Promise.all([
       getAptitudeTopic(topicId).then(r => setTopic(r.data)).catch(() => setNotFound(true)),
       getAptitudeQuestions(topicId).then(r => setQuestions(r.data || [])).catch(() => setQuestions([])),
-    ]).finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+    ]).finally(() => { if (!cached) setTimeout(() => setLoading(false), PAGE_MIN_MS) })
   }, [topicId])
 
   const accent = catMeta?.color || '#0EA5E9'
@@ -60,6 +74,9 @@ export default function AptitudeTopicPage() {
   // Data Interpretation is taught visually from the frontend (rendered charts),
   // not from DB text — pick up the matching lesson if this is a DI topic.
   const diLesson = category === 'data-interpretation' ? DI_LESSONS[topicId] : null
+
+  // Topic slug doesn't exist (404 from the API) — themed aptitude not-found.
+  if (!loading && notFound) return <SectionNotFoundPage variant="aptitude" />
 
   return (
     <div className="apt-page" style={{ '--cat-color': accent }}>
@@ -91,16 +108,7 @@ export default function AptitudeTopicPage() {
       </div>
 
       {loading ? (
-        <MatrixRainLoader accentColor={accent} fullPage label="LOADING TOPIC" />
-      ) : notFound ? (
-        <div className="apt-container">
-          <div className="apt-empty">
-            This topic could not be found.
-            <button type="button" className="apt-empty__btn" onClick={() => navigate('/aptitude')}>
-              Back to Aptitude
-            </button>
-          </div>
-        </div>
+        <AptitudeLoader variant={category} accentColor={accent} fullPage label="LOADING TOPIC" />
       ) : (
         <div className={`apt-container apt-container--topic${diLesson ? ' apt-container--di' : ''}`}>
           <motion.header

@@ -158,6 +158,58 @@
   --nf-code-glow: rgba(155, 110, 212, 0.45);
 }
 
+.nf-void--aptitude {
+  --nf-bg-c: #041016;
+  --nf-vortex-a: rgba(20, 184, 166, 0.18);
+  --nf-vortex-b: rgba(45, 212, 191, 0.12);
+  --nf-vortex-c: rgba(14, 165, 233, 0.14);
+  --nf-dust: rgba(45, 212, 191, 0.55);
+  --nf-dust-glow: rgba(20, 184, 166, 0.65);
+  --nf-eyebrow: #2DD4BF;
+  --nf-eyebrow-glow: rgba(20, 184, 166, 0.55);
+  --nf-code: #CCFBF1;
+  --nf-code-glow: rgba(20, 184, 166, 0.45);
+  --nf-glitch-a: rgba(45, 212, 191, 0.75);
+  --nf-glitch-b: rgba(14, 165, 233, 0.75);
+  --nf-era-border: rgba(20, 184, 166, 0.35);
+  --nf-era-hover: rgba(45, 212, 191, 0.7);
+  --nf-era-year: #5EEAD4;
+  --nf-timeline-line: rgba(20, 184, 166, 0.35);
+  --nf-traveler-glow: rgba(20, 184, 166, 0.6);
+  --nf-warp-a: rgba(94, 234, 212, 0.9);
+  --nf-warp-b: rgba(14, 165, 233, 0.4);
+  --nf-shockwave: rgba(94, 234, 212, 0.9);
+  --nf-shockwave-glow: rgba(20, 184, 166, 0.8);
+  --nf-btn-from: #14B8A6;
+  --nf-btn-to: #0D9488;
+  --nf-btn-shadow: rgba(20, 184, 166, 0.4);
+  --nf-btn-hover-shadow: rgba(20, 184, 166, 0.65);
+  --nf-btn-ghost-border: rgba(45, 212, 191, 0.35);
+  --nf-btn-ghost-text: #5EEAD4;
+  --nf-btn-ghost-hover: rgba(20, 184, 166, 0.12);
+  --nf-signal: #2DD4BF;
+  --nf-flyby: #5EEAD4;
+  --nf-flyby-glow: rgba(20, 184, 166, 0.8);
+  --nf-star-b: #5EEAD4;
+  --nf-star-c: #38BDF8;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, #062A2A 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, #04181C 0%, transparent 55%),
+    var(--nf-bg-c);
+}
+
+.nf-void--aptitude::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+}
+
 /* Apply theme vars to shared nf-* elements */
 .nf-void[class*="nf-void--"] .nf-vortex {
   background: conic-gradient(

@@ -33,6 +33,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/admin-skill-arena/reports',  icon: <Flag size={18} />,             label: 'Reports' },
     { to: '/admin-skill-arena/missions',  icon: <Sword size={18} />,           label: 'Missions' },
     { to: '/admin-skill-arena/problems',  icon: <Code2 size={18} />,           label: 'Problems' },
+    { to: '/admin-skill-arena/aptitude',  icon: <Brain size={18} />,           label: 'Aptitude' },
     { to: '/admin-skill-arena/walk-ins',  icon: <Briefcase size={18} />,       label: 'Walk-Ins' },
   ]
 

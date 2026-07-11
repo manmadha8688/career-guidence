@@ -159,11 +159,48 @@ export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*6
 export const getProblem   = (id)    => withCache(`problem:${id}`,            5*60_000, () => api.get(`/problems/${id}`))
 
 // ─── APTITUDE (public) ────────────────────────────────────────
-export const getAptitudeCategories = ()          => withCache('aptitudeCategories',        10*60_000, () => api.get('/aptitude/categories'))
-export const getAptitudeGroups     = (category)  => withCache(`aptitudeGroups:${category}`,  10*60_000, () => api.get(`/aptitude/groups/${category}`))
-export const getAptitudeTopics     = (group)     => withCache(`aptitudeTopics:${group}`,     10*60_000, () => api.get(`/aptitude/topics/${group}`))
-export const getAptitudeTopic      = (topicId)   => withCache(`aptitudeTopic:${topicId}`,    10*60_000, () => api.get(`/aptitude/topic/${topicId}`))
-export const getAptitudeQuestions  = (topicId)   => withCache(`aptitudeQuestions:${topicId}`, 10*60_000, () => api.get(`/aptitude/questions/${topicId}`))
+const APT_TTL = 10*60_000
+export const getAptitudeCategories = ()          => withCache('aptitudeCategories',        APT_TTL, () => api.get('/aptitude/categories'))
+export const getAptitudeGroups     = (category)  => withCache(`aptitudeGroups:${category}`,  APT_TTL, () => api.get(`/aptitude/groups/${category}`))
+export const getAptitudeTopics     = (group)     => withCache(`aptitudeTopics:${group}`,     APT_TTL, () => api.get(`/aptitude/topics/${group}`))
+export const getAptitudeTopic      = (topicId)   => withCache(`aptitudeTopic:${topicId}`,    APT_TTL, () => api.get(`/aptitude/topic/${topicId}`))
+export const getAptitudeQuestions  = (topicId)   => withCache(`aptitudeQuestions:${topicId}`, APT_TTL, () => api.get(`/aptitude/questions/${topicId}`))
+
+// Synchronous cache read — returns the cached value (or undefined if absent/stale).
+// Lets a page seed its initial state from cache so a revisit renders instantly
+// with real data (no loader AND no null-render flash), while the first uncached
+// visit still shows the loader for the genuine fetch.
+export function getApiCached(key, ttlMs) {
+  const store = _read()
+  const hit = store[key]
+  return (hit && Date.now() - hit.ts < ttlMs) ? hit.data : undefined
+}
+export const aptitudeCache = {
+  groups:    (category) => getApiCached(`aptitudeGroups:${category}`,   APT_TTL),
+  topics:    (group)    => getApiCached(`aptitudeTopics:${group}`,      APT_TTL),
+  topic:     (topicId)  => getApiCached(`aptitudeTopic:${topicId}`,     APT_TTL),
+  questions: (topicId)  => getApiCached(`aptitudeQuestions:${topicId}`, APT_TTL),
+}
+
+// ─── ADMIN APTITUDE ───────────────────────────────────────────
+// Every mutation clears the public aptitude cache so student pages reflect edits.
+const bustAptitude = (r) => { clearApiCache('aptitudeCategories', 'aptitudeGroups:*', 'aptitudeTopics:*', 'aptitudeTopic:*', 'aptitudeQuestions:*'); return r }
+
+export const getAdminAptitudeGroups   = ()       => api.get('/admin/aptitude/groups')
+export const createAptitudeGroup      = (d)      => api.post('/admin/aptitude/groups', d)      .then(bustAptitude)
+export const updateAptitudeGroup      = (id, d)  => api.put(`/admin/aptitude/groups/${id}`, d) .then(bustAptitude)
+export const deleteAptitudeGroup      = (id)     => api.delete(`/admin/aptitude/groups/${id}`) .then(bustAptitude)
+
+export const getAdminAptitudeTopics   = (group)  => api.get(`/admin/aptitude/topics/${group}`)
+export const getAdminAptitudeTopic    = (topicId)=> api.get(`/admin/aptitude/topic/${topicId}`)
+export const createAptitudeTopic      = (d)      => api.post('/admin/aptitude/topics', d)      .then(bustAptitude)
+export const updateAptitudeTopic      = (id, d)  => api.put(`/admin/aptitude/topics/${id}`, d)  .then(bustAptitude)
+export const deleteAptitudeTopic      = (id)     => api.delete(`/admin/aptitude/topics/${id}`)  .then(bustAptitude)
+
+export const getAdminAptitudeQuestions = (topic) => api.get(`/admin/aptitude/questions/${topic}`)
+export const createAptitudeQuestion    = (d)     => api.post('/admin/aptitude/questions', d)      .then(bustAptitude)
+export const updateAptitudeQuestion    = (id, d) => api.put(`/admin/aptitude/questions/${id}`, d)  .then(bustAptitude)
+export const deleteAptitudeQuestion    = (id)    => api.delete(`/admin/aptitude/questions/${id}`)  .then(bustAptitude)
 
 // ─── ADMIN PROBLEMS ───────────────────────────────────────────
 export const getAdminProblems  = ()       => api.get('/admin/problems')

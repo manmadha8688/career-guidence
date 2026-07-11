@@ -93,6 +93,7 @@ const AdminFeedbacks           = lazy(() => import('./pages/admin-skill-arena/Ad
 const AdminReports             = lazy(() => import('./pages/admin-skill-arena/AdminReports'))
 const AdminMissions            = lazy(() => import('./pages/admin-skill-arena/AdminMissions'))
 const AdminProblems            = lazy(() => import('./pages/admin-skill-arena/AdminProblems'))
+const AdminAptitude            = lazy(() => import('./pages/admin-skill-arena/AdminAptitude'))
 const AdminWalkIns             = lazy(() => import('./pages/admin-skill-arena/AdminWalkIns'))
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -277,12 +278,13 @@ function App() {
             <Route path="/problem-solving/prove-it"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
             <Route path="/problem-solving/:id"             element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
 
-            {/* Aptitude — public (browsable without login): category → group → topic */}
+            {/* Aptitude — browsing (category → group → topic list) is public,
+                but opening a topic's lesson + its questions requires login. */}
             <Route path="/aptitude" element={<AptitudePage />} />
             <Route path="/aptitude/:category" element={<AptitudeCategoryPage />} />
             <Route path="/aptitude/:category/:group" element={<AptitudeGroupPage />} />
-            <Route path="/aptitude/:category/:group/:topicId" element={<AptitudeTopicPage />} />
-            <Route path="/aptitude/:category/:group/:topicId/questions" element={<AptitudeQuestionsPage />} />
+            <Route path="/aptitude/:category/:group/:topicId" element={<ProtectedRoute><AptitudeTopicPage /></ProtectedRoute>} />
+            <Route path="/aptitude/:category/:group/:topicId/questions" element={<ProtectedRoute><AptitudeQuestionsPage /></ProtectedRoute>} />
 
             {/* Missions detail — requires login */}
             <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
@@ -317,6 +319,7 @@ function App() {
             <Route path="/admin-skill-arena/reports"      element={<ProtectedRoute adminOnly><AdminReports /></ProtectedRoute>} />
             <Route path="/admin-skill-arena/missions"     element={<ProtectedRoute adminOnly><AdminMissions /></ProtectedRoute>} />
             <Route path="/admin-skill-arena/problems"     element={<ProtectedRoute adminOnly><AdminProblems /></ProtectedRoute>} />
+            <Route path="/admin-skill-arena/aptitude"     element={<ProtectedRoute adminOnly><AdminAptitude /></ProtectedRoute>} />
             <Route path="/admin-skill-arena/walk-ins"    element={<ProtectedRoute adminOnly><AdminWalkIns /></ProtectedRoute>} />
 
             <Route path="*" element={<NotFoundPage />} />
