@@ -1,9 +1,10 @@
 package com.example.student.config;
 
 import com.example.student.model.AptitudeQuestion;
-import com.example.student.model.AptitudeTopic;
 import com.example.student.repository.AptitudeQuestionRepository;
 import com.example.student.repository.AptitudeTopicRepository;
+import com.example.student.repository.LogicalTopicRepository;
+import com.example.student.repository.VerbalTopicRepository;
 import com.example.student.service.CacheService;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,14 +40,20 @@ public class AptitudeQuestionSeeder {
 
     private final AptitudeQuestionRepository questionRepo;
     private final AptitudeTopicRepository topicRepo;
+    private final LogicalTopicRepository logicalRepo;
+    private final VerbalTopicRepository verbalRepo;
     private final CacheService cacheService;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public AptitudeQuestionSeeder(AptitudeQuestionRepository questionRepo,
                                   AptitudeTopicRepository topicRepo,
+                                  LogicalTopicRepository logicalRepo,
+                                  VerbalTopicRepository verbalRepo,
                                   CacheService cacheService) {
         this.questionRepo = questionRepo;
         this.topicRepo = topicRepo;
+        this.logicalRepo = logicalRepo;
+        this.verbalRepo = verbalRepo;
         this.cacheService = cacheService;
     }
 
@@ -81,11 +88,24 @@ public class AptitudeQuestionSeeder {
                 keep.add(id);
 
                 // Inherit category/group from the topic (single source of truth).
+                // Topics live in three collections by category — check each.
                 String category = null, group = null;
-                Optional<AptitudeTopic> topicOpt = topicRepo.findByTopic(d.topic);
-                if (topicOpt.isPresent()) {
-                    category = topicOpt.get().getCategory();
-                    group = topicOpt.get().getGroup();
+                var quant = topicRepo.findByTopic(d.topic).orElse(null);
+                if (quant != null) {
+                    category = quant.getCategory();
+                    group = quant.getGroup();
+                } else {
+                    var logical = logicalRepo.findByTopic(d.topic).orElse(null);
+                    if (logical != null) {
+                        category = logical.getCategory();
+                        group = logical.getGroup();
+                    } else {
+                        var verbal = verbalRepo.findByTopic(d.topic).orElse(null);
+                        if (verbal != null) {
+                            category = verbal.getCategory();
+                            group = verbal.getGroup();
+                        }
+                    }
                 }
 
                 AptitudeQuestion q = AptitudeQuestion.builder()

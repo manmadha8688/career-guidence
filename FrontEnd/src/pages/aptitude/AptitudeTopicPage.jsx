@@ -8,6 +8,8 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useTheme } from '../../context/ThemeContext'
 import { getAptitudeTopic, getAptitudeQuestions } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
+import { DI_LESSONS } from './dataInterpretationData'
+import DataInterpretationLesson from './DataInterpretationLesson'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -37,9 +39,27 @@ export default function AptitudeTopicPage() {
 
   const accent = catMeta?.color || '#0EA5E9'
   const diff = topic ? (DIFFICULTY_META[topic.difficulty] || DIFFICULTY_META.easy) : null
-  const hasLearn = !!topic?.learnIt
-  const hasCrack = !!topic?.crackIt
   const videos = topic?.videos || []
+
+  // Each category stores its lesson in a shape tuned to how that subject is
+  // taught: quantitative is formula-based (learnIt/crackIt); logical is
+  // pattern-based and verbal is rule-based (both under lesson.{mode}).
+  const isLogical = category === 'logical'
+  const isVerbal = category === 'verbal'
+  const learnData = isLogical ? topic?.lesson?.understand
+    : isVerbal ? topic?.lesson?.learn
+    : topic?.learnIt
+  const crackData = (isLogical || isVerbal) ? topic?.lesson?.crack : topic?.crackIt
+  const hasLearn = !!learnData
+  const hasCrack = !!crackData
+  const learnLabel = isLogical ? 'Understand It' : 'Learn It'
+  const learnHint = isLogical
+    ? 'See the pattern and learn how to think — from zero.'
+    : 'Full beginner-first explanation — understand it from zero.'
+
+  // Data Interpretation is taught visually from the frontend (rendered charts),
+  // not from DB text — pick up the matching lesson if this is a DI topic.
+  const diLesson = category === 'data-interpretation' ? DI_LESSONS[topicId] : null
 
   return (
     <div className="apt-page" style={{ '--cat-color': accent }}>
@@ -82,7 +102,7 @@ export default function AptitudeTopicPage() {
           </div>
         </div>
       ) : (
-        <div className="apt-container apt-container--topic">
+        <div className={`apt-container apt-container--topic${diLesson ? ' apt-container--di' : ''}`}>
           <motion.header
             className="apt-topic-head"
             initial={{ opacity: 0, y: 16 }}
@@ -124,7 +144,9 @@ export default function AptitudeTopicPage() {
             </section>
           )}
 
-          {(hasLearn || hasCrack) ? (
+          {diLesson ? (
+            <DataInterpretationLesson lesson={diLesson} accent={accent} />
+          ) : (hasLearn || hasCrack) ? (
             <>
               <div className="apt-modeswitch">
                 <div className="apt-seg" role="tablist">
@@ -136,7 +158,7 @@ export default function AptitudeTopicPage() {
                     onClick={() => setMode('learn')}
                     disabled={!hasLearn}
                   >
-                    <BookOpen size={15} /> Learn It
+                    <BookOpen size={15} /> {learnLabel}
                   </button>
                   <button
                     type="button"
@@ -151,7 +173,7 @@ export default function AptitudeTopicPage() {
                 </div>
                 <p className="apt-modeswitch__hint">
                   {mode === 'learn'
-                    ? 'Full beginner-first explanation — understand it from zero.'
+                    ? learnHint
                     : 'Exam-day shortcuts — solve it in seconds.'}
                 </p>
               </div>
@@ -164,9 +186,17 @@ export default function AptitudeTopicPage() {
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.28, ease: EASE }}
                 >
-                  {mode === 'learn' && hasLearn && <LearnMode data={topic.learnIt} />}
-                  {mode === 'crack' && hasCrack && <CrackMode data={topic.crackIt} />}
-                  {mode === 'learn' && !hasLearn && <ComingSoon label="Learn It" />}
+                  {mode === 'learn' && hasLearn && (
+                    isLogical ? <LogicalUnderstand data={learnData} />
+                      : isVerbal ? <VerbalLearn data={learnData} />
+                      : <LearnMode data={learnData} />
+                  )}
+                  {mode === 'crack' && hasCrack && (
+                    isLogical ? <LogicalCrack data={crackData} />
+                      : isVerbal ? <VerbalCrack data={crackData} />
+                      : <CrackMode data={crackData} />
+                  )}
+                  {mode === 'learn' && !hasLearn && <ComingSoon label={learnLabel} />}
                   {mode === 'crack' && !hasCrack && <ComingSoon label="Crack It" />}
                 </motion.div>
               </AnimatePresence>
@@ -179,7 +209,7 @@ export default function AptitudeTopicPage() {
             </div>
           )}
 
-          {questions.length > 0 ? (
+          {!diLesson && (questions.length > 0 ? (
             <button
               type="button"
               className="apt-practice-cta"
@@ -200,7 +230,7 @@ export default function AptitudeTopicPage() {
               <h2>Questions Coming Soon</h2>
               <p>Solved practice questions and a timed quiz for this topic are on the way.</p>
             </section>
-          )}
+          ))}
         </div>
       )}
     </div>
@@ -474,4 +504,287 @@ function CrackMode({ data }) {
 
 function Card({ children, className = '' }) {
   return <div className={`apt-card ${className}`}>{children}</div>
+}
+
+// ── Shared "best for / be careful when" two-column grid ─────────────────────
+function WhenGrid({ yes, no, yesLabel, noLabel }) {
+  const hasYes = Array.isArray(yes) && yes.length > 0
+  const hasNo = Array.isArray(no) && no.length > 0
+  if (!hasYes && !hasNo) return null
+  return (
+    <div className="apt-when-grid">
+      {hasYes && (
+        <Card className="apt-when apt-when--yes">
+          <h3 className="apt-card-h">{yesLabel}</h3>
+          <ul className="apt-bullet-list">{yes.map((w, i) => <li key={i}>{w}</li>)}</ul>
+        </Card>
+      )}
+      {hasNo && (
+        <Card className="apt-when apt-when--no">
+          <h3 className="apt-card-h">{noLabel}</h3>
+          <ul className="apt-bullet-list">{no.map((w, i) => <li key={i}>{w}</li>)}</ul>
+        </Card>
+      )}
+    </div>
+  )
+}
+
+// ── Shared: fully-solved question types (Logical + Verbal) ──────────────────
+function WorkedTypes({ items, heading }) {
+  if (!Array.isArray(items) || items.length === 0) return null
+  return (
+    <Card>
+      <h3 className="apt-card-h"><Target size={16} /> {heading}</h3>
+      <div className="apt-qtype-list">
+        {items.map((qt, i) => (
+          <div key={i} className="apt-qtype">
+            <h4 className="apt-qtype__name">{qt.name}</h4>
+            {qt.idea && <p className="apt-qtype__idea">{qt.idea}</p>}
+            <ExampleBlock ex={{ level: 'Example', problem: qt.problem, steps: qt.steps, answer: qt.answer }} />
+          </div>
+        ))}
+      </div>
+    </Card>
+  )
+}
+
+// ── LOGICAL: pattern-based lesson ───────────────────────────────────────────
+function LogicalUnderstand({ data }) {
+  return (
+    <div className="apt-lesson">
+      {data.realLife && (
+        <Card className="apt-lesson__realLife">
+          <h3 className="apt-card-h">🌍 A real-life example</h3>
+          <p>{data.realLife}</p>
+        </Card>
+      )}
+      {data.coreIdea && (
+        <Card>
+          <h3 className="apt-card-h">💬 What it actually asks</h3>
+          <p>{data.coreIdea}</p>
+        </Card>
+      )}
+      {data.howToThink && (
+        <Card>
+          <h3 className="apt-card-h">🧭 How to think about it</h3>
+          <p>{data.howToThink}</p>
+        </Card>
+      )}
+      {Array.isArray(data.patterns) && data.patterns.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h">🧩 Patterns to know</h3>
+          <div className="apt-formula-list">
+            {data.patterns.map((p, i) => (
+              <div key={i} className="apt-formula">
+                {p.name && <span className="apt-formula__label">{p.name}</span>}
+                {p.whatItLooksLike && <code className="apt-formula__eq">{p.whatItLooksLike}</code>}
+                {p.howItWorks && <p className="apt-formula__break">{p.howItWorks}</p>}
+                {p.example && <p className="apt-formula__ex"><strong>Example:</strong> {p.example}</p>}
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      <WorkedTypes items={data.workedTypes} heading="Every question type" />
+      {Array.isArray(data.traps) && data.traps.length > 0 && (
+        <Card className="apt-lesson__mistakes">
+          <h3 className="apt-card-h"><AlertTriangle size={16} /> Common mistakes</h3>
+          <ul className="apt-bullet-list">{data.traps.map((m, i) => <li key={i}>{m}</li>)}</ul>
+        </Card>
+      )}
+      {data.memoryHook && (
+        <Card className="apt-lesson__trick">
+          <h3 className="apt-card-h"><Lightbulb size={16} /> Quick memory hook</h3>
+          <p>{data.memoryHook}</p>
+        </Card>
+      )}
+    </div>
+  )
+}
+
+function LogicalCrack({ data }) {
+  return (
+    <div className="apt-lesson">
+      {data.oneLine && (
+        <Card className="apt-lesson__oneline">
+          <h3 className="apt-card-h">⚡ The whole topic in one line</h3>
+          <p className="apt-oneline">{data.oneLine}</p>
+        </Card>
+      )}
+      {Array.isArray(data.techniques) && data.techniques.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h">🎯 Fast techniques — one per question type</h3>
+          <div className="apt-scut-list">
+            {data.techniques.map((s, i) => (
+              <div key={i} className="apt-scut">
+                <h4 className="apt-scut__name">{s.name}</h4>
+                {s.method && <code className="apt-formula__eq">{s.method}</code>}
+                {s.howToApply && <p className="apt-scut__where"><strong>How to apply:</strong> {s.howToApply}</p>}
+                {s.example && <p className="apt-scut__ex"><strong>Example:</strong> {s.example}</p>}
+                {s.timeSaved && <p className="apt-scut__time"><Clock size={13} /> {s.timeSaved}</p>}
+                <div className="apt-scut__when">
+                  {s.whenWorks && <span className="apt-scut__yes"><CheckCircle2 size={13} /> {s.whenWorks}</span>}
+                  {s.whenFails && <span className="apt-scut__no"><XCircle size={13} /> {s.whenFails}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.clueToMethod) && data.clueToMethod.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h"><Search size={16} /> Read the clue → pick the method</h3>
+          <div className="apt-pattern-list">
+            {data.clueToMethod.map((p, i) => (
+              <div key={i} className="apt-pattern">
+                <span className="apt-pattern__signal">{p.clue}</span>
+                <span className="apt-pattern__arrow" aria-hidden="true">→</span>
+                <span className="apt-pattern__use">{p.method}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.drill) && data.drill.length > 0 && (
+        <Card className="apt-lesson__drill">
+          <h3 className="apt-card-h"><Clock size={16} /> 60-second drill</h3>
+          <p className="apt-drill__hint">Say the answer out loud first, then reveal to check. If you can name the method for each, you own this topic.</p>
+          <DrillList items={data.drill} />
+        </Card>
+      )}
+      {data.whyItWorks && (
+        <Card>
+          <h3 className="apt-card-h">🧠 Why it works</h3>
+          <p>{data.whyItWorks}</p>
+        </Card>
+      )}
+      <WhenGrid yes={data.bestFor} no={data.notFor} yesLabel="✅ Best for" noLabel="🚫 Be careful when" />
+      {data.practicePattern && (
+        <Card className="apt-lesson__pattern">
+          <h3 className="apt-card-h">🔁 Practice this pattern</h3>
+          <p>{data.practicePattern}</p>
+        </Card>
+      )}
+    </div>
+  )
+}
+
+// ── VERBAL: rule-based lesson ───────────────────────────────────────────────
+function VerbalLearn({ data }) {
+  return (
+    <div className="apt-lesson">
+      {data.realLife && (
+        <Card className="apt-lesson__realLife">
+          <h3 className="apt-card-h">🌍 A real-life example</h3>
+          <p>{data.realLife}</p>
+        </Card>
+      )}
+      {data.coreIdea && (
+        <Card>
+          <h3 className="apt-card-h">💬 What it actually tests</h3>
+          <p>{data.coreIdea}</p>
+        </Card>
+      )}
+      {data.howItWorks && (
+        <Card>
+          <h3 className="apt-card-h">🧭 How it works</h3>
+          <p>{data.howItWorks}</p>
+        </Card>
+      )}
+      {Array.isArray(data.rules) && data.rules.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h">📘 Rules to remember</h3>
+          <div className="apt-formula-list">
+            {data.rules.map((r, i) => (
+              <div key={i} className="apt-formula">
+                {r.name && <span className="apt-formula__label">{r.name}</span>}
+                {r.rule && <code className="apt-formula__eq">{r.rule}</code>}
+                {r.explanation && <p className="apt-formula__break">{r.explanation}</p>}
+                {r.example && <p className="apt-formula__ex"><strong>Example:</strong> {r.example}</p>}
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      <WorkedTypes items={data.workedTypes} heading="Every question type" />
+      {Array.isArray(data.traps) && data.traps.length > 0 && (
+        <Card className="apt-lesson__mistakes">
+          <h3 className="apt-card-h"><AlertTriangle size={16} /> Common mistakes</h3>
+          <ul className="apt-bullet-list">{data.traps.map((m, i) => <li key={i}>{m}</li>)}</ul>
+        </Card>
+      )}
+      {data.memoryHook && (
+        <Card className="apt-lesson__trick">
+          <h3 className="apt-card-h"><Lightbulb size={16} /> Quick memory hook</h3>
+          <p>{data.memoryHook}</p>
+        </Card>
+      )}
+    </div>
+  )
+}
+
+function VerbalCrack({ data }) {
+  return (
+    <div className="apt-lesson">
+      {data.oneLine && (
+        <Card className="apt-lesson__oneline">
+          <h3 className="apt-card-h">⚡ The whole topic in one line</h3>
+          <p className="apt-oneline">{data.oneLine}</p>
+        </Card>
+      )}
+      {Array.isArray(data.strategies) && data.strategies.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h">🎯 Exam strategies — one per question type</h3>
+          <div className="apt-scut-list">
+            {data.strategies.map((s, i) => (
+              <div key={i} className="apt-scut">
+                <h4 className="apt-scut__name">{s.name}</h4>
+                {s.method && <code className="apt-formula__eq">{s.method}</code>}
+                {s.howToApply && <p className="apt-scut__where"><strong>How to apply:</strong> {s.howToApply}</p>}
+                {s.example && <p className="apt-scut__ex"><strong>Example:</strong> {s.example}</p>}
+                <div className="apt-scut__when">
+                  {s.whenWorks && <span className="apt-scut__yes"><CheckCircle2 size={13} /> {s.whenWorks}</span>}
+                  {s.whenFails && <span className="apt-scut__no"><XCircle size={13} /> {s.whenFails}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.signalGuide) && data.signalGuide.length > 0 && (
+        <Card>
+          <h3 className="apt-card-h"><Search size={16} /> Signal words — spot it, know the move</h3>
+          <div className="apt-pattern-list">
+            {data.signalGuide.map((p, i) => (
+              <div key={i} className="apt-pattern">
+                <span className="apt-pattern__signal">{p.signal}</span>
+                <span className="apt-pattern__arrow" aria-hidden="true">→</span>
+                <span className="apt-pattern__use">{p.use}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+      {Array.isArray(data.drill) && data.drill.length > 0 && (
+        <Card className="apt-lesson__drill">
+          <h3 className="apt-card-h"><Clock size={16} /> 60-second drill</h3>
+          <p className="apt-drill__hint">Say the answer out loud first, then reveal to check.</p>
+          <DrillList items={data.drill} />
+        </Card>
+      )}
+      {data.whyItWorks && (
+        <Card>
+          <h3 className="apt-card-h">🧠 Why it works</h3>
+          <p>{data.whyItWorks}</p>
+        </Card>
+      )}
+      <WhenGrid yes={data.bestFor} no={data.notFor} yesLabel="✅ Best for" noLabel="🚫 Be careful when" />
+      {data.practicePattern && (
+        <Card className="apt-lesson__pattern">
+          <h3 className="apt-card-h">🔁 Practice this pattern</h3>
+          <p>{data.practicePattern}</p>
+        </Card>
+      )}
+    </div>
+  )
 }
