@@ -34,6 +34,12 @@ Type these in Claude Code (e.g. `/front-fix`).
 | `/deploy-ready` | Vercel + Render env, CORS, smoke test |
 | `/change-check` | Targeted verification after a small change |
 
+## Content / Curriculum
+
+| Command | Purpose |
+|---|---|
+| `/seed-subject` | Bring a subject to full parity: audit+enrich, 20 questions/concept, 3 tricky/concept |
+
 ## Fix commands first
 
 For user-reported bugs, prefer `/front-fix` or `/back-fix` before running a full audit.

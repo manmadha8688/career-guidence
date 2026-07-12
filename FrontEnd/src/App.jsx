@@ -82,6 +82,8 @@ const DashboardPage            = lazy(() => import('./pages/student-skill-arena/
 const RoadmapDetailPage        = lazy(() => import('./pages/student-skill-arena/RoadmapDetailPage'))
 const QuizPage                 = lazy(() => import('./pages/student-skill-arena/QuizPage'))
 const QuizResultPage           = lazy(() => import('./pages/student-skill-arena/QuizResultPage'))
+const CertificateViewPage      = lazy(() => import('./pages/student-skill-arena/certificates/CertificateViewPage'))
+const CertificateVerifyPage    = lazy(() => import('./pages/certificates/CertificateVerifyPage'))
 
 const AdminDashboard           = lazy(() => import('./pages/admin-skill-arena/AdminDashboard'))
 const AdminUsers               = lazy(() => import('./pages/admin-skill-arena/AdminUsers'))
@@ -292,6 +294,11 @@ function App() {
             {/* Public shareable profile — no auth required */}
             <Route path="/u/:username" element={<PublicProfilePage />} />
 
+            {/* Public certificate verification — no auth required */}
+            <Route path="/certificate/verify"       element={<CertificateVerifyPage />} />
+            <Route path="/certificate/verify/:code" element={<CertificateVerifyPage />} />
+            <Route path="/verify/:code"             element={<CertificateVerifyPage />} />
+
             {/* Bookmarks + profile — require login (standalone pages, no sidebar) */}
             <Route path="/bookmarks" element={<ProtectedRoute><MyBookmarksPage /></ProtectedRoute>} />
             <Route path="/myprofile" element={<ProtectedRoute><MyProfilePage /></ProtectedRoute>} />
@@ -301,8 +308,12 @@ function App() {
             <Route path="/skill-arena/roadmaps/:id"           element={<ProtectedRoute><RoadmapDetailPage /></ProtectedRoute>} />
             <Route path="/skill-arena/quiz/:type/:refId"      element={<ProtectedRoute><QuizPage /></ProtectedRoute>} />
             <Route path="/skill-arena/quiz/result/:attemptId" element={<ProtectedRoute><QuizResultPage /></ProtectedRoute>} />
+            <Route path="/skill-arena/certificates/:id"       element={<ProtectedRoute><CertificateViewPage /></ProtectedRoute>} />
 
             {/* Backward-compat redirects (old bookmark URLs) */}
+            <Route path="/skill-arena/history"      element={<Navigate to="/skill-arena/dashboard?view=history"      replace />} />
+            <Route path="/skill-arena/badges"       element={<Navigate to="/skill-arena/dashboard?view=badges"       replace />} />
+            <Route path="/skill-arena/certificates" element={<Navigate to="/skill-arena/dashboard?view=certificates" replace />} />
             <Route path="/skill-arena/subjects"     element={<Navigate to="/skill-arena/dashboard?view=gates"  replace />} />
             <Route path="/skill-arena/subjects/:id" element={<Navigate to="/skill-arena/dashboard?view=gates"  replace />} />
             <Route path="/skill-arena/concepts/:id" element={<Navigate to="/skill-arena/dashboard?view=gates"  replace />} />

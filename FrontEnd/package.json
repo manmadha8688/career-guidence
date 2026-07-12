@@ -1,7 +1,14 @@
 {
   "name": "arise-learnforearn",
   "description": "Solo Leveling-inspired career learning platform for students — Skill Arena, Code GYM, AI Lab, Deployment Guides",
-  "keywords": ["react", "learning-platform", "career", "skill-arena", "vite", "education"],
+  "keywords": [
+    "react",
+    "learning-platform",
+    "career",
+    "skill-arena",
+    "vite",
+    "education"
+  ],
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -15,6 +22,8 @@
     "@splinetool/react-spline": "^4.1.0",
     "axios": "^1.7.7",
     "framer-motion": "^12.41.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
     "lucide-react": "^0.447.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

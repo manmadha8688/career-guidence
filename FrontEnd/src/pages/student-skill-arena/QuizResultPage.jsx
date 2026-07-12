@@ -4,6 +4,7 @@ import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { CheckCircle, XCircle, ArrowLeft, RotateCcw, Trophy, Zap } from 'lucide-react'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
 import { getAttemptResult } from '../../api/api'
+import { badgeMeta } from '../../utils/badgeMeta'
 import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
@@ -43,22 +44,10 @@ export default function QuizResultPage() {
       .then(r => {
         if (!active) return
         setResult(r.data)
-        // Auto-mark daily quests when concept is cleared
+        // On any pass, tell the dashboard/navbar to re-fetch fresh data (XP, badges,
+        // certificates, and the server-driven daily quests — the "complete a concept"
+        // quest reconciles from /progress/quests, no client-side bookkeeping needed).
         if (r.data.passed) {
-          // Auto-mark daily quests in localStorage — only when bonus was actually earned
-          // (daily bonus = first concept of the day). Quest check stays in sync with XP.
-          if (r.data.dailyBonusEarned) {
-            const today = new Date().toDateString()
-            const key = `sl_quests_${user?.id}`
-            try {
-              const saved = localStorage.getItem(key)
-              const parsed = saved ? JSON.parse(saved) : null
-              const state = (parsed?.date === today) ? { ...parsed.state } : {}
-              state['q1'] = true  // Complete 1 concept
-              localStorage.setItem(key, JSON.stringify({ date: today, state }))
-            } catch { /* ignore malformed cached quest state */ }
-          }
-          // Trigger dashboard + navbar to re-fetch fresh data
           window.dispatchEvent(new CustomEvent('sl:refresh'))
         }
       })
@@ -81,13 +70,9 @@ export default function QuizResultPage() {
   const FAIL_COLOR = '#EF4444'
   const accentColor = result.passed ? PASS_COLOR : FAIL_COLOR
 
-  // Badge config
-  const BADGE_CFG = {
-    SUBJECT_MASTERED: { icon: '🏅', label: 'Gate Clearance Earned!', color: '#4ADE80' },
-    INTERVIEW_READY:  { icon: '🎯', label: 'Interview Ready!',       color: '#60A5FA' },
-    JOB_READY:        { icon: '🏆', label: 'S-Rank Clearance!',      color: '#F59E0B' },
-  }
-  const badge = result.badge ? BADGE_CFG[result.badge] : null
+  // Badge config — unique names shared with certificates/history via badgeMeta
+  const bm    = result.badge ? badgeMeta(result.badge) : null
+  const badge = bm ? { icon: bm.icon, label: `${bm.label} Unlocked!`, color: bm.color } : null
 
   return (
     <div className="dash-quiz-result-page" style={{ '--accent': accentColor }}>
@@ -178,7 +163,7 @@ export default function QuizResultPage() {
               <div className="dash-quiz-result-badge-icon">{badge.icon}</div>
               <div className="dash-quiz-result-badge-label">{badge.label}</div>
               <div className="dash-quiz-result-badge-meta">
-                {result.score}/{result.total} · {pct}%
+                {bm.kind} · Certificate ready
               </div>
             </div>
           )}
@@ -243,10 +228,18 @@ export default function QuizResultPage() {
 
           {/* Action buttons */}
           <div className="dash-quiz-result-actions">
+            {result.passed && badge && (
+              <button
+                onClick={() => navigate('/skill-arena/certificates')}
+                className="dash-quiz-result-primary-btn"
+              >
+                <Trophy size={16} /> VIEW CERTIFICATE
+              </button>
+            )}
             {result.passed && (
               <button
                 onClick={() => navigate('/skill-arena/dashboard?view=gates')}
-                className="dash-quiz-result-primary-btn"
+                className={badge ? 'dash-quiz-result-secondary-btn' : 'dash-quiz-result-primary-btn'}
               >
                 <Trophy size={16} /> CONTINUE HUNT
               </button>

@@ -36,6 +36,11 @@
 | `/front-fix` | Fix any React issue — crash, blank page, loading, state, quiz, auth, theme, routing, modals |
 | `/back-fix` | Fix any Spring Boot issue — 401/403/500, slow, stale data, Atlas, CORS, cache, quiz/XP |
 
+### Content / Curriculum
+| Command | What it does |
+|---------|-------------|
+| `/seed-subject` | Bring a subject to full parity — audit+enrich every concept, seed 20 questions/concept, add 3 tricky/concept (see `.claude/skills/content-pipeline/SKILL.md`) |
+
 ---
 
 ## Standing Instruction (Always Active)

@@ -8,7 +8,47 @@ import toast from 'react-hot-toast'
 import ConceptVideo from './ConceptVideo'
 import LivePreview from './LivePreview'
 import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
+import CooldownTimer from '../../../components/CooldownTimer'
 import { isMongoId } from '../../../utils/mongoId'
+
+const TRICKY_META = {
+  OUTPUT:     { label: 'PREDICT THE OUTPUT', cls: 'is-output' },
+  GOTCHA:     { label: 'GOTCHA',             cls: 'is-gotcha' },
+  REAL_WORLD: { label: 'REAL-WORLD',         cls: 'is-real' },
+}
+
+function TrickyProblemCard({ tp, num, isWebSubject, subjectType }) {
+  const [revealed, setRevealed] = useState(false)
+  const meta = TRICKY_META[tp.type] || TRICKY_META.GOTCHA
+  return (
+    <div className={`tricky-card ${meta.cls}`}>
+      <div className="tricky-card__head">
+        <span className="tricky-card__num">{num}</span>
+        <span className="tricky-card__tag">{meta.label}</span>
+        {tp.title && <span className="tricky-card__title">{tp.title}</span>}
+      </div>
+      {tp.prompt && <p className="tricky-card__prompt">{tp.prompt}</p>}
+      {tp.code && (
+        <div className="code-block dash-concept-code-block--inset tricky-card__code">{tp.code}</div>
+      )}
+      {!revealed ? (
+        <button className="btn btn-ghost btn-sm tricky-card__reveal" onClick={() => setRevealed(true)}>
+          Reveal answer →
+        </button>
+      ) : (
+        <div className="tricky-card__answer">
+          {tp.answer && (
+            <div className="tricky-card__answer-row">
+              <span className="tricky-card__answer-label">Answer</span>
+              <pre className="tricky-card__answer-val">{tp.answer}</pre>
+            </div>
+          )}
+          {tp.explanation && <p className="tricky-card__why">{tp.explanation}</p>}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function ConceptInlinePanel({ conceptId, navList, onClose, startQuiz, subjectTitle = '' }) {
   const subjectType = /css/i.test(subjectTitle) ? 'css'
@@ -24,6 +64,7 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
   const [tab, setTab]         = useState('simple')
   const tipRef      = useRef(null)
   const mistakesRef = useRef(null)
+  const trickyRef   = useRef(null)
   const quizRef     = useRef(null)
   const panelRef    = useRef(null)
 
@@ -65,6 +106,11 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
   const prevC    = navIdx > 0 ? navList[navIdx - 1] : null
   const nextC    = navIdx < navList.length - 1 ? navList[navIdx + 1] : null
   const isMastered = quizStatus?.hasPassed
+  const attempted  = (quizStatus?.attemptCount ?? 0) > 0
+  const inCooldown = !isMastered && quizStatus?.nextRetryAt
+    && quizStatus?.canRetry === false
+    && new Date(quizStatus.nextRetryAt).getTime() > Date.now()
+  const liftCooldown = () => setQuizStatus(s => (s ? { ...s, canRetry: true } : s))
 
   if (loading) return (
     <div className="sl-concept-inline">
@@ -96,6 +142,9 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
           )}
           {concept.commonMistakes?.length > 0 && (
             <button onClick={() => scrollTo(mistakesRef)} className="dash-concept-jump-btn dash-concept-jump-btn--mistakes">⚠ MISTAKES</button>
+          )}
+          {concept.trickyProblems?.length > 0 && (
+            <button onClick={() => scrollTo(trickyRef)} className="dash-concept-jump-btn dash-concept-jump-btn--tricky">🧠 TRICKY</button>
           )}
           <button onClick={() => scrollTo(quizRef)} className="dash-concept-jump-btn dash-concept-jump-btn--quiz">⚔ TEST</button>
           <ReportButton variant="inline" pageTitle={`Concept — ${concept.title}`} />
@@ -215,6 +264,18 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
           </div>
         )}
 
+        {concept.trickyProblems?.length > 0 && (
+          <div ref={trickyRef}>
+            <div className="concept-section-heading dash-concept-section-heading--mb-md">🧠 Tricky Parts & Real-World Problems</div>
+            <p className="tricky-intro">Predict the answer first, then reveal it. These are the traps exams and interviews love.</p>
+            <div className="tricky-list">
+              {concept.trickyProblems.map((tp, i) => (
+                <TrickyProblemCard key={i} tp={tp} num={i + 1} isWebSubject={isWebSubject} subjectType={subjectType} />
+              ))}
+            </div>
+          </div>
+        )}
+
         {!concept.introduction && concept.whatItIs && (
           <div>
             <div className="concept-section-heading dash-concept-section-heading--mb-sm">What Is It?</div>
@@ -240,25 +301,44 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
                 <div className="dash-flex-1">
                   <div className="dash-concept-quiz-cleared__title">⚔️ Skill Cleared!</div>
                   <div className="dash-concept-quiz-cleared__meta">
-                    {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''} · +{quizStatus.bestScore * 10} XP earned
+                    Best {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''}
                   </div>
                 </div>
                 <button className="btn btn-ghost btn-sm dash-concept-quiz-cleared__retry"
-                  onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>Retry</button>
+                  onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>
+                  Re-attempt
+                </button>
               </div>
             </div>
           ) : (
             <div className="dash-concept-quiz-prompt">
               <Brain size={24} color="var(--primary)" className="dash-concept-quiz-prompt__icon" />
-              <div className="dash-concept-quiz-prompt__title">Ready for Gate Trial?</div>
+              <div className="dash-concept-quiz-prompt__title">
+                {attempted ? 'Trial Not Cleared Yet' : 'Ready for Gate Trial?'}
+              </div>
               <div className="dash-concept-quiz-prompt__desc">10 trials · Need 8/10 to master</div>
-              <button className="btn btn-primary w-full dash-concept-quiz-prompt__btn"
-                onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>
-                <Brain size={14} /> Begin Skill Trial →
-              </button>
-              {quizStatus?.attemptCount > 0 && (
+
+              {inCooldown ? (
+                <>
+                  <button className="btn btn-primary w-full dash-concept-quiz-prompt__btn" disabled>
+                    <Clock size={14} /> Trial Cooling Down
+                  </button>
+                  <CooldownTimer
+                    until={quizStatus.nextRetryAt}
+                    onDone={liftCooldown}
+                    className="dash-concept-quiz-cooldown"
+                  />
+                </>
+              ) : (
+                <button className="btn btn-primary w-full dash-concept-quiz-prompt__btn"
+                  onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>
+                  <Brain size={14} /> {attempted ? 'Try Again →' : 'Begin Skill Trial →'}
+                </button>
+              )}
+
+              {attempted && (
                 <div className="dash-concept-quiz-prompt__best">
-                  Best: {quizStatus.bestScore}/{quizStatus.bestTotal}
+                  Best so far: {quizStatus.bestScore}/{quizStatus.bestTotal} · {quizStatus.attemptCount} attempt{quizStatus.attemptCount !== 1 ? 's' : ''}
                 </div>
               )}
             </div>

@@ -1,12 +1,8 @@
 import { X, CheckCircle } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
 
-const DAILY_QUESTS = [
-  { id: 'q1', label: 'Complete 1 concept',    xp: 50 },
-  { id: 'q2', label: 'Study for 20 min',      xp: 30 },
-]
-
-export default function MobileQuestsPopup({ quests, doneCount, earnedXp, onClose }) {
+// Quest data is server-driven and passed in from DashboardPage (single source of truth).
+export default function MobileQuestsPopup({ questList = [], doneCount = 0, totalQuests = 0, earnedXp = 0, onClose }) {
   useBodyLock()
   return (
     <>
@@ -17,17 +13,26 @@ export default function MobileQuestsPopup({ quests, doneCount, earnedXp, onClose
           <button onClick={onClose} className="dash-sheet__close"><X size={16} /></button>
         </div>
         <div className="dash-sheet__body">
-          {DAILY_QUESTS.map(q => (
-            <div key={q.id} className={`dash-quest-item${quests[q.id] ? ' is-done' : ''}`}>
-              <div className="dash-quest-item__check">
-                {quests[q.id] && <CheckCircle size={12} color="#4ADE80" />}
+          {questList.map(q => {
+            const mins       = q.targetSeconds ? Math.floor((q.progressSeconds || 0) / 60) : null
+            const targetMins = q.targetSeconds ? Math.round(q.targetSeconds / 60) : null
+            return (
+              <div key={q.id} className={`dash-quest-item${q.done ? ' is-done' : ''}`}>
+                <div className="dash-quest-item__check">
+                  {q.done && <CheckCircle size={12} color="#4ADE80" />}
+                </div>
+                <span className="dash-quest-item__label">
+                  {q.label}
+                  {q.targetSeconds != null && !q.done && (
+                    <span className="dash-quest-item__progress"> · {mins}/{targetMins}m</span>
+                  )}
+                </span>
+                <span className="dash-quest-item__xp">+{q.xp} XP</span>
               </div>
-              <span className="dash-quest-item__label">{q.label}</span>
-              <span className="dash-quest-item__xp">+{q.xp} XP</span>
-            </div>
-          ))}
+            )
+          })}
           <div className="dash-quest-summary">
-            {doneCount}/{DAILY_QUESTS.length} completed · +{earnedXp} XP earned today
+            {doneCount}/{totalQuests} completed · +{earnedXp} XP earned today
           </div>
         </div>
       </div>

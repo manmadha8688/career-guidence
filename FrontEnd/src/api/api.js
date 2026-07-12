@@ -96,6 +96,17 @@ export const getConcept       = (id)        => withCache(`concept:${id}`,     2*
 export const getProgressSummary = ()        => withCache('progressSummary',   60_000,   () => api.get('/progress/summary'))
 export const getHunterStats     = ()        => withCache('hunterStats',        60_000,   () => api.get('/progress/hunter-stats'))
 
+// ─── DAILY QUESTS ────────────────────────────
+// Server-authoritative daily quests. Not cached: the state changes with each study
+// ping and must reflect the concept-quest sync immediately.
+export const getQuests   = ()  => api.get('/progress/quests')
+export const studyPing   = ()  => api.post('/progress/study-ping')
+
+// ─── CERTIFICATES ────────────────────────────
+export const getCertificates   = ()      => withCache('certificates', 60_000, () => api.get('/certificates'))
+export const getCertificate    = (id)    => api.get(`/certificates/${id}`)
+export const verifyCertificate = (code)  => api.get(`/certificates/verify/${encodeURIComponent(code)}`)
+
 // ─── ROADMAPS ────────────────────────────────
 export const getRoadmaps        = ()        => withCache('roadmaps',          5*60_000, () => api.get('/roadmaps'))
 export const getRoadmap         = (id)      => withCache(`roadmap:${id}`,     5*60_000, () => api.get(`/roadmaps/${id}`))
@@ -142,6 +153,8 @@ export const startSubjectQuiz  = (subjectId)       => api.post(`/quiz/subject/${
 export const startRoadmapQuiz  = (roadmapId)       => api.post(`/quiz/roadmap/${roadmapId}/start`)
 export const submitQuiz        = (data)            => api.post('/quiz/submit', data)
 export const getAttemptResult  = (attemptId)       => api.get(`/quiz/attempt/${attemptId}`)
+// Full attempt history (newest first). limit=0 → all. Short TTL so new attempts show fast.
+export const getQuizHistory    = (limit = 0)       => withCache(`quizHistory:${limit}`, 30_000, () => api.get(`/quiz/history?limit=${limit}`))
 export const getQuizStatus          = (type, refId) => withCache(`quizStatus:${type}:${refId}`, 2*60_000, () => api.get(`/quiz/${type}/${refId}/status`))
 export const getBulkSubjectStatus   = (ids)         => withCache(`quizStatus:bulk:${ids.join(',')}`, 2*60_000, () => api.get(`/quiz/subjects/bulk-status?ids=${ids.join(',')}`))
 export const getRoadmapStatus  = (roadmapId)       => withCache(`roadmapStatus:${roadmapId}`, 2*60_000, () => api.get(`/quiz/roadmap/${roadmapId}/status`))

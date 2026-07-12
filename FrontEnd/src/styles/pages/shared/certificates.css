@@ -1,0 +1,347 @@
+/* ── Credentials (badges · certificates · history · verify) ───────────────────
+   Full-bleed pages that carry the global navbar, an animated hero band and a wide
+   content body. The .cert-doc block is the printable/exportable certificate.
+   All colors via design tokens so both themes work. */
+
+/* ── Shared full-bleed shell ── */
+.cred-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.cred-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 3.5rem) clamp(1rem, 5vw, 4rem) clamp(1.75rem, 4vw, 2.75rem);
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(120% 150% at 12% -30%, color-mix(in srgb, var(--hero-accent, #9B6ED4) 22%, transparent), transparent 55%),
+    var(--bg-secondary);
+}
+.cred-hero--verify  { --hero-accent: #4ADE80; }
+
+.cred-hero__fx {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(85% 100% at 50% 0%, #000, transparent 78%);
+          mask-image: radial-gradient(85% 100% at 50% 0%, #000, transparent 78%);
+  opacity: 0.16;
+}
+.cred-hero__inner { position: relative; max-width: 1240px; margin: 0 auto; width: 100%; }
+.cred-hero__inner--center { text-align: center; }
+
+.cred-hero__title {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif; font-weight: 800;
+  font-size: clamp(1.8rem, 4.5vw, 3rem); color: var(--text-primary);
+  margin: 0.45rem 0 0.55rem; line-height: 1.1;
+}
+.cred-hero__sub {
+  color: var(--text-secondary); font-size: clamp(0.9rem, 1.6vw, 1rem);
+  max-width: 64ch; line-height: 1.6;
+}
+.cred-hero__sub--center { margin-left: auto; margin-right: auto; }
+
+.cred-body {
+  flex: 1; width: 100%; max-width: 1240px; margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1rem, 5vw, 4rem) 4rem;
+}
+.cred-body--narrow { max-width: 960px; }
+.cred-body--cert   { max-width: 1040px; }
+
+/* ── Badge grid ── */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.3rem);
+}
+.badge-card {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 0.4rem; padding: 1.7rem 1.2rem 1.35rem; border-radius: 18px;
+  background: color-mix(in srgb, var(--bc, #9B6ED4) 7%, var(--bg-secondary));
+  border: 1px solid color-mix(in srgb, var(--bc, #9B6ED4) 32%, transparent);
+  box-shadow: 0 12px 34px -24px color-mix(in srgb, var(--bc, #9B6ED4) 85%, transparent);
+}
+.badge-card__glow {
+  position: absolute; top: -42%; left: 50%; transform: translateX(-50%);
+  width: 170px; height: 170px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--bc, #9B6ED4) 42%, transparent), transparent 70%);
+}
+.badge-card__medal {
+  position: relative; width: 74px; height: 74px; display: grid; place-items: center;
+  border-radius: 50%; margin-bottom: 0.35rem;
+  background: color-mix(in srgb, var(--bc, #9B6ED4) 18%, transparent);
+  border: 2px solid color-mix(in srgb, var(--bc, #9B6ED4) 55%, transparent);
+}
+.badge-card__medal-icon { font-size: 2rem; position: relative; z-index: 1; }
+.badge-card__medal-ring {
+  position: absolute; inset: -6px; border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--bc, #9B6ED4) 50%, transparent);
+  animation: badge-spin 16s linear infinite;
+}
+@keyframes badge-spin { to { transform: rotate(360deg); } }
+.badge-card__kind {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--bc, #9B6ED4) 80%, var(--text-secondary));
+}
+.badge-card__title {
+  font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.02rem;
+  color: var(--text-primary); line-height: 1.15;
+}
+.badge-card__subtitle { font-size: 0.78rem; color: var(--text-muted); }
+.badge-card__earned {
+  margin-top: 0.45rem; font-family: 'Share Tech Mono', monospace;
+  font-size: 0.66rem; letter-spacing: 0.06em; color: #4ADE80;
+}
+
+/* ── The certificate document (view / verify / PDF export) ── */
+.cert-view-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.4rem; }
+
+.cert-doc {
+  --c: var(--cert-color, #9B6ED4);
+  position: relative; overflow: hidden;
+  background: #0c0e1a; color: #f5f3ff;
+  border: 2px solid color-mix(in srgb, var(--c) 55%, transparent);
+  border-radius: 18px; padding: clamp(1.8rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem) 2.4rem;
+  max-width: 900px; margin: 0 auto;
+  box-shadow: 0 20px 60px -30px rgba(0,0,0,0.8);
+}
+.cert-doc::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(80% 60% at 50% -10%, color-mix(in srgb, var(--c) 26%, transparent), transparent 60%),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: auto, 34px 34px;
+}
+.cert-doc__frame {
+  position: absolute; inset: 12px; pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); border-radius: 12px;
+}
+.cert-doc__inner { position: relative; text-align: center; }
+.cert-doc__brand {
+  font-family: 'Orbitron', sans-serif; letter-spacing: 0.28em;
+  font-size: 0.72rem; text-transform: uppercase; color: color-mix(in srgb, var(--c) 80%, #fff);
+}
+.cert-doc__kind {
+  font-family: 'Share Tech Mono', monospace; letter-spacing: 0.2em;
+  font-size: 0.8rem; text-transform: uppercase; margin-top: 1.2rem; color: #cbd5e1;
+}
+.cert-doc__present { margin-top: 1.4rem; font-size: 0.85rem; color: #94a3b8; }
+.cert-doc__name {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif; font-weight: 800;
+  font-size: clamp(1.7rem, 4vw, 2.6rem); margin: 0.5rem 0 0.2rem; color: #fff;
+}
+.cert-doc__rule {
+  width: 220px; height: 2px; margin: 0.6rem auto 1.2rem;
+  background: linear-gradient(90deg, transparent, var(--c), transparent);
+}
+.cert-doc__for { font-size: 0.9rem; color: #94a3b8; }
+.cert-doc__credential {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-top: 0.6rem; padding: 0.5rem 1.1rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff;
+}
+.cert-doc__distinction {
+  margin-top: 0.75rem; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; color: #cbd5e1;
+}
+.cert-doc__distinction strong { color: var(--c); font-weight: 700; }
+
+.cert-doc__details {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: clamp(1.2rem, 5vw, 2.8rem); margin-top: 1.7rem;
+}
+.cert-doc__detail { text-align: center; }
+.cert-doc__detail-label {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8;
+}
+.cert-doc__detail-value {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem;
+  color: #f1f5f9; margin-top: 0.2rem;
+}
+.cert-doc__detail-value--mono { font-family: 'Share Tech Mono', monospace; color: var(--c); font-size: 0.9rem; }
+
+.cert-doc__footer {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 1rem; margin-top: 2.2rem; padding-top: 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--c) 25%, transparent);
+}
+.cert-doc__sig { text-align: left; }
+.cert-doc__sig-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #e2e8f0; }
+.cert-doc__sig-label { font-size: 0.66rem; color: #94a3b8; letter-spacing: 0.06em; text-transform: uppercase; }
+.cert-doc__seal {
+  width: 68px; height: 68px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.6rem;
+  background: color-mix(in srgb, var(--c) 20%, transparent);
+  border: 2px solid color-mix(in srgb, var(--c) 55%, transparent);
+}
+.cert-doc__verify { text-align: right; }
+.cert-doc__verify-strong { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #e2e8f0; font-size: 0.85rem; }
+.cert-doc__verify-label { font-size: 0.64rem; color: #94a3b8; letter-spacing: 0.04em; margin-top: 0.15rem; }
+
+/* ── Verify page: code input ── */
+.cert-verify-form { display: flex; gap: 0.6rem; flex-wrap: wrap; max-width: 520px; margin: 1.6rem auto 0; }
+.cert-verify-input-wrap { position: relative; flex: 1 1 240px; }
+.cert-verify-input-icon {
+  position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%);
+  color: var(--text-muted); pointer-events: none;
+}
+.cert-verify-input {
+  width: 100%; padding-left: 2.2rem !important;
+  font-family: 'Share Tech Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.cert-verify-result { margin-top: 0.5rem; }
+.cert-verify-invalid {
+  text-align: center; padding: 2.5rem 1.5rem; max-width: 520px; margin: 0 auto;
+  border-radius: 16px; border: 1px solid var(--border); background: var(--bg-secondary);
+}
+.cert-verify-status {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.8rem;
+  letter-spacing: 0.06em; margin: 0 auto 1.3rem;
+}
+.cert-verify-status.is-valid   { color: #4ADE80; background: rgba(74,222,128,0.12);  border: 1px solid rgba(74,222,128,0.35); }
+.cert-verify-status.is-invalid { color: #EF4444; background: rgba(239,68,68,0.12);   border: 1px solid rgba(239,68,68,0.35); }
+
+.cert-spin { animation: cert-spin 0.8s linear infinite; }
+@keyframes cert-spin { to { transform: rotate(360deg); } }
+
+/* ── History (test & trial log) ── */
+.hist-stats { display: flex; gap: 1.1rem; margin-top: 1.1rem; flex-wrap: wrap; }
+.hist-stat {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.78rem;
+  color: var(--text-secondary); letter-spacing: 0.04em;
+}
+.hist-stat strong { color: var(--text-primary); }
+.hist-stat--pass strong { color: #4ADE80; }
+.hist-stat--fail strong { color: #EF4444; }
+
+.hist-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.hist-filter {
+  padding: 0.4rem 0.9rem; border-radius: 999px; cursor: pointer;
+  background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-secondary);
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; letter-spacing: 0.04em;
+  transition: all 0.15s ease;
+}
+.hist-filter:hover { color: var(--text-primary); border-color: var(--accent, #9B6ED4); }
+.hist-filter.is-active {
+  background: color-mix(in srgb, var(--accent, #9B6ED4) 16%, transparent);
+  border-color: color-mix(in srgb, var(--accent, #9B6ED4) 55%, transparent);
+  color: var(--text-primary);
+}
+
+.hist-list { display: flex; flex-direction: column; gap: 0.55rem; }
+.hist-row {
+  display: flex; align-items: center; gap: 0.85rem; padding: 0.8rem 1rem; border-radius: 12px;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+}
+.hist-row__icon {
+  width: 34px; height: 34px; flex: none; border-radius: 9px; display: grid; place-items: center;
+  color: var(--h-color, #9B6ED4);
+  background: color-mix(in srgb, var(--h-color, #9B6ED4) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--h-color, #9B6ED4) 30%, transparent);
+}
+.hist-row__main { flex: 1 1 auto; min-width: 0; }
+.hist-row__name {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hist-row__meta { display: flex; gap: 0.7rem; align-items: center; margin-top: 0.1rem; }
+.hist-row__type {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--h-color, #9B6ED4);
+}
+.hist-row__date { font-size: 0.72rem; color: var(--text-muted); }
+.hist-row__score { text-align: right; flex: none; }
+.hist-row__score-num { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--text-primary); }
+.hist-row__score-pct { font-size: 0.68rem; color: var(--text-muted); }
+.hist-row__result {
+  flex: none; display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.3rem 0.6rem; border-radius: 999px;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;
+}
+.hist-row__result.is-pass { color: #4ADE80; background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.3); }
+.hist-row__result.is-fail { color: #EF4444; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); }
+
+@media (max-width: 560px) {
+  .hist-row__result span { display: none; }
+  .hist-row { gap: 0.6rem; padding: 0.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-card__medal-ring { animation: none; }
+  .cert-spin { animation: none; }
+}
+
+/* ── Compact variants when badges/history render inside the dashboard middle panel ── */
+.badge-grid--panel {
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 0.85rem;
+}
+.badge-grid--panel .badge-card { padding: 1.15rem 0.85rem 1rem; border-radius: 14px; }
+.badge-grid--panel .badge-card__medal { width: 56px; height: 56px; }
+.badge-grid--panel .badge-card__medal-icon { font-size: 1.55rem; }
+.badge-grid--panel .badge-card__glow { width: 130px; height: 130px; top: -38%; }
+.hist-stats--panel { margin-top: 0.3rem; margin-bottom: 0.85rem; gap: 0.85rem; }
+
+/* ── Collection views (all badges / all certificates, earned + locked) ── */
+.coll-summary {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+  color: var(--text-muted); letter-spacing: 0.02em; margin: 0.15rem 0 1rem;
+}
+.coll-summary strong {
+  font-family: 'Orbitron', sans-serif; color: var(--text-primary); font-size: 0.85rem;
+}
+/* Locked = greyscale, dimmed — clearly "not yet earned". */
+.badge-card.is-locked {
+  filter: grayscale(1); opacity: 0.55;
+  box-shadow: none;
+}
+.badge-card.is-locked .badge-card__medal-ring { animation: none; }
+.badge-card.is-locked .badge-card__glow { display: none; }
+.badge-card__earned.is-locked {
+  color: var(--text-muted);
+  font-family: 'Share Tech Mono', monospace; letter-spacing: 0.05em;
+}
+/* Earned certificate cards are clickable — lift + pointer + subtle focus ring. */
+.badge-card.is-clickable { cursor: pointer; transition: transform 0.16s ease, box-shadow 0.16s ease; }
+.badge-card.is-clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -22px color-mix(in srgb, var(--bc, #9B6ED4) 90%, transparent);
+}
+.badge-card.is-clickable:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--bc, #9B6ED4) 70%, transparent); outline-offset: 3px;
+}
+
+/* ── Single certificate view: download on the right + fit to screen ── */
+.cert-view-actions { justify-content: flex-end; align-items: center; }
+.cred-body--cert { max-width: 900px; padding-top: clamp(1.2rem, 3vw, 2rem); }
+/* Compact the document in the on-screen view so it fits without page scroll. */
+.cred-body--cert .cert-doc {
+  max-width: 760px;
+  padding: clamp(1.3rem, 3.5vw, 2.1rem) clamp(1.2rem, 4vw, 2.4rem) 1.8rem;
+}
+.cred-body--cert .cert-doc__kind    { margin-top: 0.9rem; }
+.cred-body--cert .cert-doc__present { margin-top: 1rem; }
+.cred-body--cert .cert-doc__name    { font-size: clamp(1.5rem, 3.4vw, 2.2rem); }
+.cred-body--cert .cert-doc__rule    { margin: 0.5rem auto 0.9rem; }
+.cred-body--cert .cert-doc__details { margin-top: 1.2rem; }
+.cred-body--cert .cert-doc__footer  { margin-top: 1.4rem; padding-top: 0.9rem; }
+
+/* ── Print / PDF: only the certificate document ── */
+@media print {
+  body * { visibility: hidden !important; }
+  .cert-doc, .cert-doc * { visibility: visible !important; }
+  .cert-doc { position: absolute; left: 0; top: 0; width: 100%; border-color: #6d28d9; box-shadow: none; }
+  .cert-view-actions, .sl-dash-nav, .site-footer, .navbar { display: none !important; }
+}

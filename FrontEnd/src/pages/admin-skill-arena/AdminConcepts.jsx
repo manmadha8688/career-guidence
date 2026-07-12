@@ -85,6 +85,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     keyPoints: concept.keyPoints || [],
     tip: concept.tip || '',
     commonMistakes: concept.commonMistakes || [],
+    trickyProblems: concept.trickyProblems || [],
     whatItIs: concept.whatItIs || '',
     whyItMatters: concept.whyItMatters || '',
     codeExample: concept.codeExample || '',
@@ -102,6 +103,7 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     keyPoints: [],
     tip: '',
     commonMistakes: [],
+    trickyProblems: [],
     whatItIs: '',
     whyItMatters: '',
     codeExample: '',
@@ -131,6 +133,12 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
   const removeMistake = i => setForm(f => ({ ...f, commonMistakes: f.commonMistakes.filter((_, idx) => idx !== i) }))
   const updateMistake = (i, val) => setForm(f => ({
     ...f, commonMistakes: f.commonMistakes.map((m, idx) => idx === i ? val : m)
+  }))
+
+  const addTricky = () => setForm(f => ({ ...f, trickyProblems: [...f.trickyProblems, { type: 'OUTPUT', title: '', prompt: '', code: '', answer: '', explanation: '' }] }))
+  const removeTricky = i => setForm(f => ({ ...f, trickyProblems: f.trickyProblems.filter((_, idx) => idx !== i) }))
+  const updateTricky = (i, field, val) => setForm(f => ({
+    ...f, trickyProblems: f.trickyProblems.map((tp, idx) => idx === i ? { ...tp, [field]: val } : tp)
   }))
 
   const handleSubmit = async e => {
@@ -269,6 +277,51 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
           ))}
           <button type="button" className="btn btn-ghost btn-sm admin-add-row-btn" onClick={addMistake}>
             <Plus size={13} /> Add Common Mistake
+          </button>
+
+          <SectionDivider label="Tricky Problems & Real-World" />
+          {form.trickyProblems.map((tp, i) => (
+            <div key={i} className="admin-example-card">
+              <div className="admin-example-card__header">
+                <span className="admin-example-card__title">Tricky #{i + 1}</span>
+                <button type="button" className="btn btn-ghost btn-sm admin-example-card__remove" onClick={() => removeTricky(i)}>
+                  <X size={13} />
+                </button>
+              </div>
+              <div className="grid-2">
+                <div className="form-group">
+                  <label className="form-label">Type</label>
+                  <select className="form-input" value={tp.type} onChange={e => updateTricky(i, 'type', e.target.value)}>
+                    <option value="OUTPUT">Output (what does this print?)</option>
+                    <option value="GOTCHA">Gotcha (conceptual trap)</option>
+                    <option value="REAL_WORLD">Real-world problem</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label className="form-label">Title</label>
+                  <input className="form-input" value={tp.title} onChange={e => updateTricky(i, 'title', e.target.value)} placeholder="e.g. What does this print?" />
+                </div>
+              </div>
+              <div className="form-group">
+                <label className="form-label">Prompt / Scenario</label>
+                <textarea className="form-input" rows={2} value={tp.prompt} onChange={e => updateTricky(i, 'prompt', e.target.value)} placeholder="The tricky question or real-world scenario the student must reason about" />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Code <span className="admin-form-label-hint">(optional)</span></label>
+                <textarea className="form-input admin-textarea-mono--875" rows={4} value={tp.code} onChange={e => updateTricky(i, 'code', e.target.value)} placeholder="// snippet the student must reason about" />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Answer <span className="admin-form-label-hint">(revealed after thinking)</span></label>
+                <textarea className="form-input admin-textarea-mono--875" rows={2} value={tp.answer} onChange={e => updateTricky(i, 'answer', e.target.value)} placeholder="The correct output / answer" />
+              </div>
+              <div className="form-group admin-example-card__group-last">
+                <label className="form-label">Explanation <span className="admin-form-label-hint">(why — the trap / rule / takeaway)</span></label>
+                <textarea className="form-input" rows={3} value={tp.explanation} onChange={e => updateTricky(i, 'explanation', e.target.value)} placeholder="Explain WHY this is the answer and what trap it exposes" />
+              </div>
+            </div>
+          ))}
+          <button type="button" className="btn btn-ghost btn-sm admin-add-row-btn" onClick={addTricky}>
+            <Plus size={13} /> Add Tricky Problem
           </button>
 
           <SectionDivider label="Legacy Content (optional)" />

@@ -37,6 +37,32 @@ q.apply(new String[]{ conceptId, "question", "opt0", "opt1", "opt2", "opt3", "co
 
 ---
 
+## Full-parity standard (current bar — read for any new subject)
+
+Every subject must reach: **each concept = complete two-mode explanation + exactly
+20 questions (~7 EASY / 9 MEDIUM / 4 HARD) + 3 tricky problems.** Full process,
+scripts, and multi-agent workflow live in `skills/content-pipeline/SKILL.md`
+(command: `/seed-subject`).
+
+- **Explanations first.** Audit and enrich `explanationSimple` (teach from zero) AND
+  `explanationTechnical` (depth + exam mindset). Weave real-world complications and
+  traps directly INTO the explanation — the structured `trickyProblems` are a
+  *supplement*, not the whole job. Consider merge/split/reorder across concepts.
+  Do NOT pad already-strong concepts.
+- **Tricky problems** live on `Concept.trickyProblems[]`: `type`
+  (`OUTPUT`|`GOTCHA`|`REAL_WORLD`), `title`, `prompt`, `code?`, `answer`, `explanation`.
+- **Toolkit is in `C:\manmadha\_curaudit`** (external to repo): `list-subjects.mjs`,
+  `dump-content.mjs`, `dump.mjs`, `seed-questions.mjs`, `apply-tricky.mjs`,
+  `append-section.mjs`, `fix-question.mjs`, + `PLAYBOOK.md`. Gold-standard reference:
+  `dump.mjs "Python Basics"` / `"Spring Boot REST API & Database"`.
+- **Accuracy:** ground every question strictly in the subject's own content; cite the
+  lesson's own values for version-drift-prone facts; never assert an unsure fact.
+- **Aptitude/Logical/Verbal use separate models** (`AptitudeGroup`, `AptitudeTopic`,
+  `LogicalTopic`, `VerbalTopic`, `AptitudeQuestion`) — NOT the `Concept` pipeline.
+  Data Interpretation is frontend-only (not DB-seeded).
+
+---
+
 ## Concept videos (CRITICAL)
 
 **Search YouTube FIRST. Concept name comes FROM the video — never reverse.**

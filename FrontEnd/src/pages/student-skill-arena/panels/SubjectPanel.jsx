@@ -6,6 +6,7 @@ import { getSubject, getQuizStatus } from '../../../api/api'
 import BookmarkButton from '../../../components/BookmarkButton'
 import { Search, Trophy, Lock, CheckCircle, Clock } from 'lucide-react'
 import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
+import CooldownTimer from '../../../components/CooldownTimer'
 import { isMongoId } from '../../../utils/mongoId'
 import blurOnEnter from '../../../utils/blurOnEnter'
 
@@ -52,6 +53,10 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
 
   const pct = subject?.totalConcepts > 0
     ? Math.round((subject.completedCount / subject.totalConcepts) * 100) : 0
+
+  const subjectCooldown = !quizStatus?.hasBadge && quizStatus?.canRetry === false
+    && quizStatus?.nextRetryAt && new Date(quizStatus.nextRetryAt).getTime() > Date.now()
+  const liftSubjectCooldown = () => setQuizStatus(s => (s ? { ...s, canRetry: true } : s))
 
   const concepts = (subject?.concepts ?? []).filter(c =>
     c.title.toLowerCase().includes(search.toLowerCase())
@@ -110,23 +115,57 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
             <ProgressBar value={pct} size="sm" />
           </div>
 
-          {!isGrid && (
+          {isGrid ? (
+            /* Compact gate status for the narrow skills column (concept view). Previously
+               this column showed nothing, so a student reading a concept couldn't see that
+               the gate was cleared or that the final test was ready. */
+            quizStatus?.hasBadge ? (
+              <div className="dash-gate-badge-row">
+                <Trophy size={12} color="#4ADE80" />
+                <div className="dash-flex-1">
+                  <div className="dash-gate-badge-row__title">GATE CLOSED · BADGE</div>
+                </div>
+              </div>
+            ) : pct >= 100 ? (
+              subjectCooldown ? (
+                <div className="dash-gate-cooldown-row">
+                  <CooldownTimer until={quizStatus.nextRetryAt} onDone={liftSubjectCooldown} />
+                </div>
+              ) : (
+                <button className="dash-gate-test-btn"
+                  onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>
+                  <Trophy size={13} /> {quizStatus?.attemptCount > 0 ? 'Retry Final Test →' : 'Take Final Test →'}
+                </button>
+              )
+            ) : null
+          ) : (
             quizStatus?.hasBadge ? (
               <div className="dash-gate-badge-row">
                 <Trophy size={13} color="#4ADE80" />
                 <div className="dash-flex-1">
                   <div className="dash-gate-badge-row__title">GATE CLOSED · BADGE EARNED</div>
-                  <div className="dash-gate-badge-row__score">{quizStatus.badgeScore}/{quizStatus.badgeTotal}</div>
+                  <div className="dash-gate-badge-row__score">Best {quizStatus.badgeScore}/{quizStatus.badgeTotal}</div>
                 </div>
                 <button className="btn btn-ghost btn-sm dash-gate-badge-row__retry"
-                  onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>Retry</button>
+                  onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>Re-attempt</button>
               </div>
             ) : pct >= 100 ? (
-              <button className="dash-gate-test-btn"
-                onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>
-                <Trophy size={14} />
-                {quizStatus?.badgeScore > 0 ? `Retry Final Test · ${quizStatus.badgeScore}/25` : 'Take Final Test to Close Gate →'}
-              </button>
+              subjectCooldown ? (
+                <div className="dash-gate-cooldown-row">
+                  <div className="dash-gate-cooldown-row__text">
+                    Final test not cleared · last {quizStatus.lastScore}/{quizStatus.lastTotal}
+                  </div>
+                  <CooldownTimer until={quizStatus.nextRetryAt} onDone={liftSubjectCooldown} />
+                </div>
+              ) : (
+                <button className="dash-gate-test-btn"
+                  onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>
+                  <Trophy size={14} />
+                  {quizStatus?.attemptCount > 0
+                    ? `Retry Final Test · last ${quizStatus.lastScore}/${quizStatus.lastTotal}`
+                    : 'Take Final Test to Close Gate →'}
+                </button>
+              )
             ) : (
               <div className="dash-gate-locked-row">
                 <Lock size={12} color="var(--text-muted)" className="dash-gate-locked-row__icon" />

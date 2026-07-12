@@ -44,6 +44,14 @@
 
 .dash-concept-jump-btn--mistakes:hover { background: rgba(239, 68, 68, 0.22); }
 
+.dash-concept-jump-btn--tricky {
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: rgba(96, 165, 250, 0.07);
+  color: #60A5FA;
+}
+
+.dash-concept-jump-btn--tricky:hover { background: rgba(96, 165, 250, 0.22); }
+
 .dash-concept-jump-btn--quiz {
   border: 1px solid rgba(155, 110, 212, 0.35);
   background: rgba(155, 110, 212, 0.07);
@@ -167,4 +175,122 @@
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.65rem;
   color: var(--text-muted);
+}
+
+/* ── Tricky Parts & Real-World Problems ── */
+.tricky-intro {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.tricky-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tricky-card {
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-left: 3px solid #60A5FA;
+  border-radius: 8px;
+  background: var(--bg-secondary, rgba(255, 255, 255, 0.02));
+  padding: 0.85rem 1rem;
+}
+
+.tricky-card.is-output { border-left-color: #60A5FA; }
+.tricky-card.is-gotcha { border-left-color: #F59E0B; }
+.tricky-card.is-real   { border-left-color: #4ADE80; }
+
+.tricky-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.tricky-card__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.15);
+  color: #60A5FA;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tricky-card__tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.is-output .tricky-card__tag { background: rgba(96, 165, 250, 0.15); color: #60A5FA; }
+.is-gotcha .tricky-card__tag { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+.is-real   .tricky-card__tag { background: rgba(74, 222, 128, 0.15); color: #4ADE80; }
+
+.tricky-card__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tricky-card__prompt {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-secondary, var(--text-primary));
+  margin: 0 0 0.6rem;
+}
+
+.tricky-card__code { margin: 0.4rem 0; }
+
+.tricky-card__reveal {
+  border: 1px dashed rgba(96, 165, 250, 0.5);
+  color: #60A5FA;
+}
+
+.tricky-card__answer {
+  margin-top: 0.5rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--border-color, rgba(255, 255, 255, 0.1));
+}
+
+.tricky-card__answer-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.tricky-card__answer-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: #4ADE80;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.tricky-card__answer-val {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tricky-card__why {
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
 }

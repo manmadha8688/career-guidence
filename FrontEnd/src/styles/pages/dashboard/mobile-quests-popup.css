@@ -45,6 +45,14 @@
   text-decoration: line-through;
 }
 
+.dash-quest-item__progress {
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
 .dash-quest-item__xp {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.72rem;

@@ -7,8 +7,10 @@ import { CheckCircle, Search, Trophy, Info, Menu, Sun, Moon } from 'lucide-react
 import {
   getProgressSummary, getRoadmap, getBulkSubjectStatus,
   getSubjects, getRoadmaps,
-  getHunterStats, clearApiCache,
+  getHunterStats, clearApiCache, getQuests, studyPing, getQuizHistory, getCertificates,
 } from '../../api/api'
+import { badgeMeta } from '../../utils/badgeMeta'
+import { subjectBadgeTitle } from '../../utils/subjectBadgeTitle'
 import { useAuth } from '../../context/AuthContext'
 import blurOnEnter from '../../utils/blurOnEnter'
 import { useTheme } from '../../context/ThemeContext'
@@ -17,8 +19,8 @@ import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
 import { logApiError } from '../../utils/devLog'
 import {
-  NAV_ITEMS, DAILY_QUESTS,
-  computeStats, subjectGateRank, loadQuestState, saveQuestState,
+  NAV_ITEMS,
+  computeStats, subjectGateRank,
 } from './dashboard/dashboardUtils'
 
 // ─── Extracted panel components ───────────────────────────
@@ -35,6 +37,19 @@ import MobileAvatarMenu    from './mobile/MobileAvatarMenu'
 import MobileStatsPopup    from './mobile/MobileStatsPopup'
 import MobileQuestsPopup   from './mobile/MobileQuestsPopup'
 
+const HIST_TYPE_LABEL = { CONCEPT: 'Skill Trial', SUBJECT: 'Gate Test', ROADMAP: 'Path Exam' }
+function fmtHistDate(iso) {
+  if (!iso) return ''
+  const d = new Date(iso)
+  return isNaN(d) ? '' : d.toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+}
+const HIST_FILTERS = [
+  { id: 'ALL', label: 'All' },
+  { id: 'CONCEPT', label: 'Skill Trials' },
+  { id: 'SUBJECT', label: 'Gate Tests' },
+  { id: 'ROADMAP', label: 'Path Exams' },
+]
+
 export default function DashboardPage() {
   const { user, logout } = useAuth()
   const { theme, toggleTheme } = useTheme()
@@ -50,7 +65,16 @@ export default function DashboardPage() {
   const [conceptNavList, setConceptNavList] = useState([])
   const [selectedRoadmapId, setSelectedRoadmapId] = useState(null)
 
-  const [quests, setQuests]           = useState(() => loadQuestState(user?.id))
+  // Daily-quest state now comes from the server (survives reloads, syncs across devices,
+  // and awards real XP). Shape: { quests:[{id,label,xp,done,progressSeconds?,targetSeconds?}],
+  // doneCount, totalCount, earnedXp, studySeconds, studyTargetSeconds, studyDone, conceptDone }.
+  const [questData, setQuestData]     = useState(null)
+  const [recentHistory, setRecentHistory] = useState([])
+  const [historyItems, setHistoryItems]   = useState([])
+  const [historyLoaded, setHistoryLoaded] = useState(false)
+  const [historyFilter, setHistoryFilter] = useState('ALL')
+  const [certs, setCerts]                 = useState([])
+  const [certsLoaded, setCertsLoaded]     = useState(false)
   const [aboutGate, setAboutGate]           = useState(null)
   const [aboutRoadmap, setAboutRoadmap]     = useState(null)
   const [hunterStats, setHunterStats]       = useState(null)
@@ -76,7 +100,6 @@ export default function DashboardPage() {
     setQuizIntent(null)
   }
   const [panelRefreshKey, setPanelRefreshKey] = useState(0)
-  const studySecondsRef = useRef(0)
 
   const [subjects, setSubjects]       = useState([])
   const [quizStatuses, setQuizStatuses] = useState({})
@@ -117,18 +140,6 @@ export default function DashboardPage() {
     }
   }, [loading, activeView, selectedConceptId])
 
-  // Sync q1 quest from server (source of truth, works across devices)
-  const syncQuestsFromSummary = (summaryData, uid) => {
-    if (summaryData?.completedConceptToday) {
-      const current = loadQuestState(uid)
-      if (!current.q1) {
-        const updated = { ...current, q1: true }
-        setQuests(updated)
-        saveQuestState(updated, uid)
-      }
-    }
-  }
-
   useEffect(() => {
     let active = true
     const timers = []
@@ -136,7 +147,6 @@ export default function DashboardPage() {
       .then(s => {
         if (!active) return
         setSummary(s.data)
-        syncQuestsFromSummary(s.data, user?.id)
       })
       .catch(err => { if (active) toast.error(getApiError(err, 'We could not load your progress. Please refresh.')) })
       .finally(() => {
@@ -145,20 +155,49 @@ export default function DashboardPage() {
     getHunterStats()
       .then(r => { if (active) setHunterStats(r.data) })
       .catch(err => logApiError('hunter-stats', err))
+    getQuests()
+      .then(r => { if (active) setQuestData(r.data) })
+      .catch(err => logApiError('quests', err))
+    getQuizHistory(5)
+      .then(r => { if (active) setRecentHistory(r.data || []) })
+      .catch(err => logApiError('quiz-history', err))
     return () => {
       active = false
       timers.forEach(clearTimeout)
     }
   }, []) // eslint-disable-line
 
+  // Full attempt history — loaded lazily the first time the History view is opened.
+  useEffect(() => {
+    if (activeView !== 'history' || historyLoaded) return
+    let active = true
+    getQuizHistory(0)
+      .then(r => { if (active) { setHistoryItems(r.data || []); setHistoryLoaded(true) } })
+      .catch(err => logApiError('quiz-history-full', err))
+    return () => { active = false }
+  }, [activeView, historyLoaded])
+
+  // Earned certificates — loaded lazily the first time the Certificates view is opened.
+  useEffect(() => {
+    if (activeView !== 'certificates' || certsLoaded) return
+    let active = true
+    getCertificates()
+      .then(r => { if (active) { setCerts(r.data || []); setCertsLoaded(true) } })
+      .catch(err => { logApiError('certificates', err); if (active) setCertsLoaded(true) })
+    return () => { active = false }
+  }, [activeView, certsLoaded])
+
   // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
   useEffect(() => {
     const refresh = () => {
-      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*')
+      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*', 'certificates', 'quizHistory:*')
       getProgressSummary().then(s => {
         setSummary(s.data)
-        syncQuestsFromSummary(s.data, user?.id)
       }).catch(err => logApiError('progress-refresh', err))
+      getQuests().then(r => setQuestData(r.data)).catch(err => logApiError('quests-refresh', err))
+      getQuizHistory(5).then(r => setRecentHistory(r.data || [])).catch(err => logApiError('quiz-history-refresh', err))
+      setHistoryLoaded(false)
+      setCertsLoaded(false)
       getHunterStats().then(r => setHunterStats(r.data)).catch(err => logApiError('hunter-stats-refresh', err))
       setPanelRefreshKey(k => k + 1)
       getSubjects().then(r => {
@@ -192,7 +231,7 @@ export default function DashboardPage() {
     const concept = searchParams.get('concept')
 
     if (concept) setActiveView('gates')
-    else if (view === 'gates' || view === 'paths') setActiveView(view)
+    else if (['gates', 'paths', 'badges', 'history', 'certificates'].includes(view)) setActiveView(view)
 
     if (view === 'gates' || subject || concept) loadGates()
     if (view === 'paths') loadPaths()
@@ -201,22 +240,23 @@ export default function DashboardPage() {
   }, []) // eslint-disable-line
 
 
-  // Auto-check "Study for 20 min" quest after 20 minutes on the dashboard
+  // Study-time quest: ping the server periodically while the arena is open. The server
+  // measures REAL elapsed time between pings (capped per ping), so the 30-minute quest
+  // survives reloads, counts across sessions/devices, and awards real XP exactly once —
+  // unlike the old client-only 20-min timer that reset on every remount and gave no XP.
   useEffect(() => {
-    if (loadQuestState(user?.id).q2) return  // already earned today
-    studySecondsRef.current = 0
-    // Accumulate in a ref (no per-second re-render — that previously remounted every gate card).
+    if (questData?.studyDone) return  // already earned today — stop pinging
+    let cancelled = false
+    // First ping establishes the server-side baseline (lastPingAt); no time credited yet.
+    studyPing().then(r => { if (!cancelled) setQuestData(r.data) }).catch(() => {})
     const t = setInterval(() => {
-      studySecondsRef.current += 1
-      if (studySecondsRef.current >= 1200) {  // 20 minutes = 1200 seconds
-        clearInterval(t)
-        const updated = { ...loadQuestState(user?.id), q2: true }
-        setQuests(updated)
-        saveQuestState(updated, user?.id)
-      }
-    }, 1000)
-    return () => clearInterval(t)
-  }, []) // eslint-disable-line
+      if (document.hidden) return  // don't credit time while the tab is backgrounded
+      studyPing()
+        .then(r => { if (!cancelled) setQuestData(r.data) })
+        .catch(() => {})
+    }, 60_000)
+    return () => { cancelled = true; clearInterval(t) }
+  }, [questData?.studyDone]) // eslint-disable-line
 
   const loadGates = () => {
     if (gatesLoaded) return
@@ -307,8 +347,18 @@ export default function DashboardPage() {
   const level          = summary?.level ?? user?.level ?? 1
   const stats          = useMemo(() => computeStats(summary?.subjectProgress), [summary])
   const initials       = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
-  const doneCount      = DAILY_QUESTS.filter(q => quests[q.id]).length
-  const earnedXp       = DAILY_QUESTS.filter(q => quests[q.id]).reduce((s, q) => s + q.xp, 0)
+  const questList      = questData?.quests || []
+  const doneCount      = questData?.doneCount ?? questList.filter(q => q.done).length
+  const totalQuests    = questData?.totalCount ?? questList.length
+  const earnedXp       = questData?.earnedXp ?? 0
+
+  // Badge lookup from the progress summary — a resilient fallback so an earned badge still
+  // shows on a gate card even if the parallel bulk-status call failed or hasn't returned yet.
+  const summaryBadgeMap = useMemo(() => {
+    const m = {}
+    ;(summary?.subjectProgress || []).forEach(sp => { m[sp.subjectId] = sp.hasBadge })
+    return m
+  }, [summary])
 
   const filteredSubjects = subjects.filter(s =>
     s.title.toLowerCase().includes(gateSearch.toLowerCase())
@@ -323,7 +373,7 @@ export default function DashboardPage() {
     const p = pOvr !== undefined ? pOvr : (s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0))
     const gr        = subjectGateRank(s)
     const allLearned = p >= 100
-    const hasBadge  = s.hasBadge ?? quizStatuses[s.id]?.hasBadge ?? false
+    const hasBadge  = s.hasBadge ?? quizStatuses[s.id]?.hasBadge ?? summaryBadgeMap[s.id] ?? false
     const gateClosed = allLearned && hasBadge
     const sealed    = p === 0
     const enabled   = s.totalConcepts > 0
@@ -620,6 +670,188 @@ export default function DashboardPage() {
         </>
       )
     }
+
+    if (activeView === 'badges') {
+      // Subject badges — every gate is a badge slot; earned ones light up.
+      const subjectBadges = (summary?.subjectProgress ?? []).map(s => ({
+        key: `s-${s.subjectId}`,
+        earned: s.hasBadge,
+        color: s.color || '#9B6ED4',
+        icon: s.icon || '📚',
+        title: subjectBadgeTitle(s.title),
+        subtitle: s.title,
+        kind: 'Subject Mastery',
+      }))
+      // Roadmap badges — every path is a badge slot; earned = path final cleared.
+      const earnedR = new Map((hunterStats?.roadmapBadges ?? []).map(b => [b.roadmapId, b]))
+      const roadmapBadges = allRoadmaps.map(r => {
+        const eb = earnedR.get(r.id)
+        return {
+          key: `r-${r.id}`,
+          earned: !!eb,
+          color: r.color || '#9B6ED4',
+          icon: r.icon || '🗺️',
+          title: eb ? badgeMeta(eb.badge).label : (r.roleTarget || r.title),
+          subtitle: r.title,
+          kind: 'Career Path',
+        }
+      })
+      const all = [...roadmapBadges, ...subjectBadges].sort((a, b) => (b.earned ? 1 : 0) - (a.earned ? 1 : 0))
+      const earnedCount = all.filter(b => b.earned).length
+      return (
+        <>
+          <div className="sl-panel-title">Your Badges</div>
+          <div className="coll-summary">
+            <strong>{earnedCount}</strong> of {all.length} earned · locked badges unlock when you clear the gate or path
+          </div>
+          {!summary ? (
+            <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>
+          ) : (
+            <div className="badge-grid badge-grid--panel">
+              {all.map(b => (
+                <div
+                  key={b.key}
+                  className={`badge-card${b.earned ? '' : ' is-locked'}`}
+                  style={{ '--bc': b.earned ? b.color : '#64748b' }}>
+                  <div className="badge-card__glow" aria-hidden="true" />
+                  <div className="badge-card__medal">
+                    <span className="badge-card__medal-icon">{b.earned ? b.icon : '🔒'}</span>
+                    <span className="badge-card__medal-ring" aria-hidden="true" />
+                  </div>
+                  <div className="badge-card__kind">{b.kind}</div>
+                  <div className="badge-card__title">{b.title}</div>
+                  <div className="badge-card__subtitle">{b.subtitle}</div>
+                  <div className={`badge-card__earned${b.earned ? '' : ' is-locked'}`}>
+                    {b.earned ? '✓ Earned' : 'Locked'}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      )
+    }
+
+    if (activeView === 'certificates') {
+      const bySubject = new Map()
+      const byRoadmap = new Map()
+      certs.forEach(c => {
+        if (c.type === 'SUBJECT') bySubject.set(c.refId, c)
+        else if (c.type === 'ROADMAP') byRoadmap.set(c.refId, c)
+      })
+      const subjectCerts = (summary?.subjectProgress ?? []).map(s => {
+        const c = bySubject.get(s.subjectId)
+        return {
+          key: `s-${s.subjectId}`, earned: !!c, certId: c?.id, code: c?.code,
+          color: c?.color || s.color || '#9B6ED4', icon: c?.icon || s.icon || '📚',
+          title: s.title, kind: 'Subject Mastery',
+        }
+      })
+      const roadmapCerts = allRoadmaps.map(r => {
+        const c = byRoadmap.get(r.id)
+        return {
+          key: `r-${r.id}`, earned: !!c, certId: c?.id, code: c?.code,
+          color: c?.color || r.color || '#7C3AED', icon: c?.icon || r.icon || '🗺️',
+          title: c?.credentialTitle || r.roleTarget || r.title, kind: 'Career Path',
+        }
+      })
+      const all = [...roadmapCerts, ...subjectCerts].sort((a, b) => (b.earned ? 1 : 0) - (a.earned ? 1 : 0))
+      const earnedCount = all.filter(c => c.earned).length
+      const openCert = (id) => window.open(`/skill-arena/certificates/${id}`, '_blank', 'noopener')
+      return (
+        <>
+          <div className="sl-panel-title">Your Certificates</div>
+          <div className="coll-summary">
+            <strong>{earnedCount}</strong> of {all.length} earned · click an earned certificate to open &amp; download it
+          </div>
+          {!certsLoaded || !summary ? (
+            <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>
+          ) : (
+            <div className="badge-grid badge-grid--panel">
+              {all.map(c => {
+                const clickable = c.earned && c.certId
+                return (
+                  <div
+                    key={c.key}
+                    className={`badge-card${c.earned ? '' : ' is-locked'}${clickable ? ' is-clickable' : ''}`}
+                    style={{ '--bc': c.earned ? c.color : '#64748b' }}
+                    role={clickable ? 'button' : undefined}
+                    tabIndex={clickable ? 0 : undefined}
+                    onClick={clickable ? () => openCert(c.certId) : undefined}
+                    onKeyDown={clickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCert(c.certId) } } : undefined}>
+                    <div className="badge-card__glow" aria-hidden="true" />
+                    <div className="badge-card__medal">
+                      <span className="badge-card__medal-icon">{c.earned ? c.icon : '🔒'}</span>
+                      <span className="badge-card__medal-ring" aria-hidden="true" />
+                    </div>
+                    <div className="badge-card__kind">{c.kind}</div>
+                    <div className="badge-card__title">{c.title}</div>
+                    <div className="badge-card__subtitle">{c.earned ? c.code : 'Not earned yet'}</div>
+                    <div className={`badge-card__earned${c.earned ? '' : ' is-locked'}`}>
+                      {c.earned ? 'View & download ↗' : 'Locked'}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </>
+      )
+    }
+
+    if (activeView === 'history') {
+      const filtered = historyFilter === 'ALL'
+        ? historyItems
+        : historyItems.filter(i => i.type === historyFilter)
+      const passed = historyItems.filter(i => i.passed).length
+      return (
+        <>
+          <div className="sl-panel-title">Test &amp; Trial History</div>
+          <div className="hist-stats hist-stats--panel">
+            <span className="hist-stat"><strong>{historyItems.length}</strong> attempts</span>
+            <span className="hist-stat hist-stat--pass"><strong>{passed}</strong> passed</span>
+            <span className="hist-stat hist-stat--fail"><strong>{historyItems.length - passed}</strong> failed</span>
+          </div>
+          <div className="hist-filters">
+            {HIST_FILTERS.map(f => (
+              <button
+                key={f.id}
+                className={`hist-filter${historyFilter === f.id ? ' is-active' : ''}`}
+                onClick={() => setHistoryFilter(f.id)}>
+                {f.label}
+              </button>
+            ))}
+          </div>
+          {!historyLoaded ? (
+            <div className="flex-center dash-flex-center-fill--h200"><DungeonPortalLoader panel height={200} /></div>
+          ) : filtered.length === 0 ? (
+            <div className="dash-no-match">NO ATTEMPTS YET</div>
+          ) : (
+            <div className="hist-list">
+              {filtered.map(a => (
+                <div key={a.id} className="hist-row">
+                  <span className={`dash-activity-dot ${a.passed ? 'is-pass' : 'is-fail'}`} />
+                  <div className="hist-row__main">
+                    <div className="hist-row__name">{a.name}</div>
+                    <div className="hist-row__meta">
+                      <span className="hist-row__type">{HIST_TYPE_LABEL[a.type] || 'Quiz'}</span>
+                      <span className="hist-row__date">{fmtHistDate(a.takenAt)}</span>
+                    </div>
+                  </div>
+                  <div className="hist-row__score">
+                    <div className="hist-row__score-num">{a.score}/{a.total}</div>
+                    <div className="hist-row__score-pct">{a.scorePercent}%</div>
+                  </div>
+                  <span className={`hist-row__result${a.passed ? ' is-pass' : ' is-fail'}`}>
+                    {a.passed ? 'PASS' : 'FAIL'}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      )
+    }
   }
 
   if (loading) return <SystemAwakeningLoader subtitle="SKILL ARENA" />
@@ -661,8 +893,8 @@ export default function DashboardPage() {
 
       {/* ══ MOBILE: Daily Quests popup ══ */}
       {mobilePopup === 'quests' && (
-        <MobileQuestsPopup quests={quests} doneCount={doneCount} earnedXp={earnedXp}
-          onClose={() => setMobilePopup(null)} />
+        <MobileQuestsPopup questList={questList} doneCount={doneCount} totalQuests={totalQuests}
+          earnedXp={earnedXp} onClose={() => setMobilePopup(null)} />
       )}
 
       {/* ══ NAVBAR ══ */}
@@ -680,7 +912,10 @@ export default function DashboardPage() {
 
         {/* Mobile: current section name (center) */}
         <div className="sl-mob-section-title">
-          {NAV_ITEMS.find(i => i.view === activeView)?.label || 'ARISE'}
+          {NAV_ITEMS.find(i => i.view === activeView)?.label
+            || (activeView === 'badges' ? 'Badges'
+              : activeView === 'history' ? 'History'
+              : activeView === 'certificates' ? 'Certificates' : 'ARISE')}
         </div>
 
         {/* Desktop nav links */}
@@ -865,57 +1100,20 @@ export default function DashboardPage() {
                 )
               })}
 
-              {/* ── Subject Badges ── */}
+              {/* ── Badges + Certificates entry ── */}
               <div className="dash-badges-section">
-                <div className="dash-badges-section__title">
-                  — BADGES —
+                <div className="dash-badges-actions">
+                  <button
+                    className={`dash-badges-cert-link${activeView === 'badges' ? ' is-active' : ''}`}
+                    onClick={() => switchView('badges')}>
+                    🎖️ Badges →
+                  </button>
+                  <button
+                    className={`dash-badges-cert-link${activeView === 'certificates' ? ' is-active' : ''}`}
+                    onClick={() => switchView('certificates')}>
+                    🎓 Certificates →
+                  </button>
                 </div>
-                {!hunterStats ? (
-                  <div className="dash-badges-loading">
-                    {[0, 1, 2].map(i => <div key={i} className="dash-badges-loading__dot" />)}
-                  </div>
-                ) : (hunterStats.badges.length === 0 && (hunterStats.roadmapBadges ?? []).length === 0) ? (
-                  <div className="dash-badges-empty">
-                    <div className="dash-badges-empty__icon">🔒</div>
-                    <div className="dash-badges-empty__text">NO BADGES YET</div>
-                  </div>
-                ) : (
-                  <div className="dash-badges-list">
-                    {[...hunterStats.badges, ...(hunterStats.roadmapBadges ?? [])].map(b => {
-                      const key = b.subjectId ?? b.roadmapId
-                      const scorePct = b.total > 0 ? Math.round((b.score / b.total) * 100) : 0
-                      const isRoadmap = b.type === 'ROADMAP'
-                      const badgeColor = b.color || '#9B6ED4'
-                      const badgeLabel = isRoadmap
-                        ? (b.badge === 'JOB_READY' ? 'JOB READY' : 'INTERVIEW READY')
-                        : null
-                      return (
-                        <div
-                          key={key}
-                          className="dash-badge-item"
-                          style={{
-                            '--badge-bg': `${badgeColor}0D`,
-                            '--badge-border': `${badgeColor}25`,
-                            '--badge-color': badgeColor,
-                            '--progress-pct': `${scorePct}%`,
-                          }}>
-                          <div className="dash-badge-item__icon">{b.icon || (isRoadmap ? '🗺️' : '📚')}</div>
-                          <div className="dash-flex-1">
-                            <div className="dash-badge-item__title">{b.title}</div>
-                            {isRoadmap ? (
-                              <div className={`dash-badge-item__roadmap-label ${b.badge === 'JOB_READY' ? 'is-job-ready' : 'is-interview-ready'}`}>{badgeLabel}</div>
-                            ) : (
-                              <div className="dash-badge-item__bar-track">
-                                <div className="dash-badge-item__bar-fill" />
-                              </div>
-                            )}
-                          </div>
-                          <span className="dash-badge-item__score">{b.score}/{b.total}</span>
-                        </div>
-                      )
-                    })}
-                  </div>
-                )}
               </div>
             </div>
 
@@ -928,18 +1126,47 @@ export default function DashboardPage() {
             <div className="sl-dash-right-panel dash-right-panel">
               <div className="sl-panel">
                 <div className="sl-panel-title">Daily Quests</div>
-                {DAILY_QUESTS.map(q => (
-                  <div key={q.id} className="sl-quest-item">
-                    <div className={`sl-quest-check${quests[q.id] ? ' done' : ''}`}>
-                      {quests[q.id] && <CheckCircle size={9} color="#9B6ED4" />}
+                {questList.map(q => {
+                  const mins       = q.targetSeconds ? Math.floor((q.progressSeconds || 0) / 60) : null
+                  const targetMins = q.targetSeconds ? Math.round(q.targetSeconds / 60) : null
+                  return (
+                    <div key={q.id} className="sl-quest-item">
+                      <div className={`sl-quest-check${q.done ? ' done' : ''}`}>
+                        {q.done && <CheckCircle size={9} color="#9B6ED4" />}
+                      </div>
+                      <span className={`sl-quest-label${q.done ? ' done' : ''}`}>
+                        {q.label}
+                        {q.targetSeconds != null && !q.done && (
+                          <span className="sl-quest-progress"> · {mins}/{targetMins}m</span>
+                        )}
+                      </span>
+                      <span className="sl-quest-xp">+{q.xp} XP</span>
                     </div>
-                    <span className={`sl-quest-label${quests[q.id] ? ' done' : ''}`}>{q.label}</span>
-                    <span className="sl-quest-xp">+{q.xp} XP</span>
-                  </div>
-                ))}
-                <div className="sl-quest-summary">{doneCount} / {DAILY_QUESTS.length} QUESTS DONE · +{earnedXp} XP</div>
+                  )
+                })}
+                <div className="sl-quest-summary">{doneCount} / {totalQuests} QUESTS DONE · +{earnedXp} XP</div>
               </div>
-              
+
+              {/* Recent test/trial activity — quick glance + link to full history */}
+              <div className="sl-panel dash-activity-panel">
+                <div className="sl-panel-title-row">
+                  <div className="sl-panel-title">Recent Activity</div>
+                  <button className="dash-activity-more" onClick={() => switchView('history')}>
+                    View all →
+                  </button>
+                </div>
+                {recentHistory.length === 0 ? (
+                  <div className="dash-activity-empty">No attempts yet. Take a skill trial to begin.</div>
+                ) : (
+                  recentHistory.map(a => (
+                    <div key={a.id} className="dash-activity-item">
+                      <span className={`dash-activity-dot${a.passed ? ' is-pass' : ' is-fail'}`} />
+                      <span className="dash-activity-name" title={a.name}>{a.name}</span>
+                      <span className="dash-activity-score">{a.score}/{a.total}</span>
+                    </div>
+                  ))
+                )}
+              </div>
             </div>
           </div>
         )}

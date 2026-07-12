@@ -8,5 +8,6 @@ Deep playbooks invoked by commands or agents.
 | [react-audit](react-audit/SKILL.md) | `/front-audit` | React production audit checklist |
 | [design-audit](design-audit/SKILL.md) | `/front-redesign`, design-engineer | Visual/UX audit + redesign guardrails |
 | [deployment](deployment/SKILL.md) | `/deploy-ready` | Vercel + Render env matrix, smoke tests |
+| [content-pipeline](content-pipeline/SKILL.md) | `/seed-subject` | Full-parity subject: audit+enrich, 20q/concept, 3 tricky/concept |
 
 Deploy env reference: [deployment/deploy-config.md](deployment/deploy-config.md)
