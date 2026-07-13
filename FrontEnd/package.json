@@ -16,13 +16,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:assets": "node generate-assets.js"
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
     "axios": "^1.7.7",
     "framer-motion": "^12.41.0",
     "html2canvas": "^1.4.1",
+    "html2canvas-pro": "^2.2.4",
     "jspdf": "^4.2.1",
     "lucide-react": "^0.447.0",
     "react": "^19.2.6",
@@ -40,7 +42,9 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
+    "png-to-ico": "^3.0.2",
     "postcss": "^8.4.47",
+    "sharp": "^0.35.3",
     "vite": "^8.0.12"
   }
 }

@@ -3,8 +3,8 @@ import useLandingPage from './hooks/useLandingPage'
 import { LandingPageProvider } from './context/LandingPageContext'
 import Navbar from '../../components/navbars/Navbar'
 import LandingHeroSection from './components/LandingHeroSection'
+import LandingExploreSection from './components/LandingExploreSection'
 import LandingAboutSection from './components/LandingAboutSection'
-import LandingFreshersSection from './components/LandingFreshersSection'
 import LandingGlowDivider from './components/LandingGlowDivider'
 import LandingPainSection from './components/LandingPainSection'
 import LandingPlatformSection from './components/LandingPlatformSection'
@@ -24,9 +24,9 @@ export default function LandingPage() {
       <div className="lp-page">
         <Navbar />
         <LandingHeroSection />
-        <LandingAboutSection />
+        <LandingExploreSection />
         <LandingGlowDivider />
-        <LandingFreshersSection />
+        <LandingAboutSection />
         <LandingGlowDivider />
         <LandingPainSection />
         <LandingPlatformSection />

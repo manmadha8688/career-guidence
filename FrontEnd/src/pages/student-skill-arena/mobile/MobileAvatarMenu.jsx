@@ -1,11 +1,15 @@
 import { LogOut } from 'lucide-react'
+import useBodyLock from '../../../hooks/useBodyLock'
 
-export default function MobileAvatarMenu({ rank, user, initials, level, xp, onClose, onStatsOpen, onQuestsOpen, onProfileOpen, onLogout }) {
+export default function MobileAvatarMenu({ rank, user, initials, level, xp, onClose, onStatsOpen, onBadgesOpen, onCertsOpen, onQuestsOpen, onProfileOpen, onLogout }) {
+  useBodyLock()
   const xpToNext = rank.next ? rank.next - xp : null
   const MENU_ITEMS = [
-    { icon: '⚡', label: 'Stats & Badges',  color: '#9B6ED4', onClick: onStatsOpen },
-    { icon: '📋', label: 'Daily Quests',    color: '#4ADE80', onClick: onQuestsOpen },
-    { icon: '📖', label: 'Instructions',    color: '#60A5FA', onClick: onProfileOpen },
+    { icon: '⚡', label: 'Stats',         color: '#9B6ED4', onClick: onStatsOpen },
+    { icon: '🏅', label: 'Badges',        color: '#F59E0B', onClick: onBadgesOpen },
+    { icon: '📜', label: 'Certificates',  color: '#38BDF8', onClick: onCertsOpen },
+    { icon: '📋', label: 'Daily Quests',  color: '#4ADE80', onClick: onQuestsOpen },
+    { icon: '📖', label: 'Instructions',  color: '#60A5FA', onClick: onProfileOpen },
   ]
   return (
     <>

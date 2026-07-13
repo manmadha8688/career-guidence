@@ -338,6 +338,38 @@
 .cred-body--cert .cert-doc__details { margin-top: 1.2rem; }
 .cred-body--cert .cert-doc__footer  { margin-top: 1.4rem; padding-top: 0.9rem; }
 
+/* ── Certificate document: mobile responsive ── */
+@media (max-width: 560px) {
+  .cred-body--cert { padding-left: 0.85rem; padding-right: 0.85rem; }
+  .cred-body--cert .cert-doc {
+    max-width: 100%;
+    padding: 1.5rem 1rem 1.4rem;
+    border-radius: 14px;
+  }
+  .cert-doc__frame { inset: 8px; border-radius: 10px; }
+  .cert-doc__brand { font-size: 0.6rem; letter-spacing: 0.18em; }
+  .cert-doc__kind  { margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.16em; }
+
+  /* long credential title must wrap inside the pill instead of overflowing */
+  .cert-doc__credential {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    max-width: 100%; border-radius: 14px;
+    font-size: 1rem; padding: 0.5rem 0.9rem; line-height: 1.25;
+  }
+  .cert-doc__details { gap: 1rem 1.5rem; margin-top: 1.3rem; }
+
+  /* stack the footer vertically and center it — seal on top */
+  .cert-doc__footer {
+    flex-direction: column; align-items: center; text-align: center;
+    gap: 1rem; margin-top: 1.6rem;
+  }
+  .cert-doc__sig, .cert-doc__verify { text-align: center; }
+  .cert-doc__seal { order: -1; }
+  .cert-doc__verify-label { overflow-wrap: anywhere; }
+
+  .cert-view-actions { justify-content: center; }
+}
+
 /* ── Print / PDF: only the certificate document ── */
 @media print {
   body * { visibility: hidden !important; }

@@ -211,6 +211,9 @@ input, textarea, select { font-family: inherit; }
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+/* When an overlay locks scrolling (useBodyLock), also freeze pages whose scroll
+   lives in a nested container instead of the window (e.g. AppLayout content). */
+html.scroll-locked .main-content { overflow: hidden !important; }
 .loading-screen {
   display: flex;
   align-items: center;

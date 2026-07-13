@@ -4,6 +4,7 @@ import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, getAdminConcepts, getConceptQuestions, createQuestion, updateQuestion, deleteQuestion } from '../../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
+import useBodyLock from '../../hooks/useBodyLock'
 
 const DIFFICULTY = ['EASY', 'MEDIUM', 'HARD']
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -22,6 +23,7 @@ export default function AdminQuestions() {
   const [editId, setEditId] = useState(null)
   const [form, setForm] = useState(emptyForm())
   const [saving, setSaving] = useState(false)
+  useBodyLock(!!modal)
 
   useEffect(() => {
     getAdminSubjects().then(r => setSubjects(r.data)).catch(err => toast.error(getApiError(err, 'We could not load subjects. Please refresh.')))

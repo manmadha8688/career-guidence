@@ -34,7 +34,10 @@ export default function CertificateViewPage() {
     setDownloading(true)
     try {
       const [{ default: html2canvas }, jspdf] = await Promise.all([
-        import('html2canvas'),
+        // html2canvas-pro understands modern CSS color functions (color-mix,
+        // oklch, …) that the original html2canvas throws on — the certificate
+        // design uses color-mix() heavily, so the plain lib failed silently.
+        import('html2canvas-pro'),
         import('jspdf'),
       ])
       const JsPDF = jspdf.jsPDF || jspdf.default
@@ -44,13 +47,6 @@ export default function CertificateViewPage() {
         backgroundColor: '#0b0b12',
         useCORS: true,
         logging: false,
-        // html2canvas can't parse color-mix() inside gradients; strip the purely
-        // decorative gradient layers on the clone so capture never throws.
-        onclone: (doc) => {
-          const st = doc.createElement('style')
-          st.textContent = '.cert-doc::before,.cert-doc::after{background:none!important}'
-          doc.head.appendChild(st)
-        },
       })
       const imgData = canvas.toDataURL('image/png')
       const pdf = new JsPDF({ orientation: 'landscape', unit: 'px', format: [canvas.width, canvas.height] })

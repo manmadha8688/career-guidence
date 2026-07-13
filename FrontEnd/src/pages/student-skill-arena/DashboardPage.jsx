@@ -36,6 +36,7 @@ import InstructionsModal   from './modals/InstructionsModal'
 import MobileAvatarMenu    from './mobile/MobileAvatarMenu'
 import MobileStatsPopup    from './mobile/MobileStatsPopup'
 import MobileQuestsPopup   from './mobile/MobileQuestsPopup'
+import MobileNavDrawer     from './mobile/MobileNavDrawer'
 
 const HIST_TYPE_LABEL = { CONCEPT: 'Skill Trial', SUBJECT: 'Gate Test', ROADMAP: 'Path Exam' }
 function fmtHistDate(iso) {
@@ -879,15 +880,17 @@ export default function DashboardPage() {
           rank={rank} user={user} initials={initials} level={level} xp={xp}
           onClose={() => setMobileAvatarMenu(false)}
           onStatsOpen={() => setMobilePopup('stats')}
+          onBadgesOpen={() => switchView('badges')}
+          onCertsOpen={() => switchView('certificates')}
           onQuestsOpen={() => setMobilePopup('quests')}
           onProfileOpen={() => setAvatarOpen(true)}
           onLogout={logout}
         />
       )}
 
-      {/* ══ MOBILE: Stats & Badges popup ══ */}
+      {/* ══ MOBILE: Stats popup ══ */}
       {mobilePopup === 'stats' && (
-        <MobileStatsPopup user={user} rank={rank} level={level} xp={xp} stats={stats} hunterStats={hunterStats}
+        <MobileStatsPopup user={user} rank={rank} level={level} xp={xp} stats={stats}
           onClose={() => setMobilePopup(null)} />
       )}
 
@@ -962,31 +965,12 @@ export default function DashboardPage() {
 
       {/* ══ MOBILE NAV DROPDOWN (slides down from LEFT-anchored hamburger) ══ */}
       {mobileMenuOpen && (
-        <>
-          <div className="dash-mob-nav-backdrop" onClick={() => setMobileMenuOpen(false)} />
-          <div className="dash-mob-nav-drawer">
-            <div className="dash-mob-nav-drawer__header">
-              [ SELECT SECTION ]
-            </div>
-            {NAV_ITEMS.map(item => (
-              <button
-                key={item.label}
-                className={`dash-mob-nav-item${activeView === item.view ? ' is-active' : ''}`}
-                onClick={() => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}>
-                <span className="dash-mob-nav-item__icon">
-                  {item.view === 'arena' ? '⚔️' : item.view === 'gates' ? '🚪' : item.view === 'paths' ? '🗺️' : '💻'}
-                </span>
-                <span className="dash-flex-spacer dash-mob-nav-item__text">
-                  <span className="dash-mob-nav-item__label">{item.label}</span>
-                  {item.sub && <span className="dash-mob-nav-item__sub">{item.sub}</span>}
-                </span>
-                {activeView === item.view && (
-                  <span className="dash-mob-nav-item__now">NOW</span>
-                )}
-              </button>
-            ))}
-          </div>
-        </>
+        <MobileNavDrawer
+          navItems={NAV_ITEMS}
+          activeView={activeView}
+          onSelect={(item) => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}
+          onClose={() => setMobileMenuOpen(false)}
+        />
       )}
 
       {/* ══ BODY ══ */}

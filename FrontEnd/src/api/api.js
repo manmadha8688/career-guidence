@@ -151,7 +151,15 @@ export const deleteQuestion      = (id)           => api.delete(`/admin/question
 export const startConceptQuiz  = (conceptId)       => api.post(`/quiz/concept/${conceptId}/start`)
 export const startSubjectQuiz  = (subjectId)       => api.post(`/quiz/subject/${subjectId}/start`)
 export const startRoadmapQuiz  = (roadmapId)       => api.post(`/quiz/roadmap/${roadmapId}/start`)
-export const submitQuiz        = (data)            => api.post('/quiz/submit', data)
+// A quiz pass changes XP/level/rank, concept completion, subject/roadmap badges,
+// certificates, gate/quiz status and attempt history. Bust every user-specific
+// cache so the arena reflects the new state immediately instead of serving stale
+// (pre-quiz) data until each TTL lapses. `subject:*` covers the skills list's
+// per-concept `completed` flags + completedCount.
+export const submitQuiz        = (data)            => api.post('/quiz/submit', data).then(r => {
+  clearApiCache('progressSummary', 'hunterStats', 'certificates', 'quizStatus:*', 'roadmapStatus:*', 'quizHistory:*', 'subject:*')
+  return r
+})
 export const getAttemptResult  = (attemptId)       => api.get(`/quiz/attempt/${attemptId}`)
 // Full attempt history (newest first). limit=0 → all. Short TTL so new attempts show fast.
 export const getQuizHistory    = (limit = 0)       => withCache(`quizHistory:${limit}`, 30_000, () => api.get(`/quiz/history?limit=${limit}`))

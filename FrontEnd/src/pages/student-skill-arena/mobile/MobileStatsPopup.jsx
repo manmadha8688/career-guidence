@@ -1,9 +1,8 @@
 import { X } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
 
-export default function MobileStatsPopup({ rank, level, xp, stats, hunterStats, onClose }) {
+export default function MobileStatsPopup({ rank, level, xp, stats, onClose }) {
   const xpToNext = rank.next ? rank.next - xp : null
-  const allBadges = hunterStats ? [...(hunterStats.badges || []), ...(hunterStats.roadmapBadges || [])] : []
   useBodyLock()
   return (
     <>
@@ -59,34 +58,6 @@ export default function MobileStatsPopup({ rank, level, xp, stats, hunterStats, 
                   />
                 </div>
                 <div className="dash-mob-stat-card__meta">{stat.totalDone}/{stat.totalAll} skills · {stat.domain}</div>
-              </div>
-            )
-          })}
-
-          <div className="dash-mob-stats-section-title dash-mob-stats-section-title--badges">— BADGES —</div>
-          {allBadges.length === 0 ? (
-            <div className="dash-mob-stats-empty">🔒 NO BADGES YET</div>
-          ) : allBadges.map(b => {
-            const key = b.subjectId ?? b.roadmapId
-            const scorePct = b.total > 0 ? Math.round((b.score / b.total) * 100) : 0
-            const isRoadmap = b.type === 'ROADMAP'
-            const badgeColor = b.color || '#9B6ED4'
-            return (
-              <div
-                key={key}
-                className="dash-mob-badge-card"
-                style={{ '--badge-bg': `${badgeColor}0D`, '--badge-border': `${badgeColor}28`, '--badge-color': badgeColor }}
-              >
-                <div className="dash-mob-badge-card__icon">{b.icon || (isRoadmap ? '🗺️' : '📚')}</div>
-                <div className="dash-flex-1">
-                  <div className="dash-mob-badge-card__title">{b.title}</div>
-                  {!isRoadmap && (
-                    <div className="dash-progress-track dash-progress-track--sm">
-                      <div className="dash-progress-fill" style={{ '--progress-pct': `${scorePct}%`, '--accent': badgeColor }} />
-                    </div>
-                  )}
-                </div>
-                <span className="dash-mob-badge-card__score">{b.score}/{b.total}</span>
               </div>
             )
           })}
