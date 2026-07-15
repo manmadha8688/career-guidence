@@ -1,0 +1,28 @@
+---
+description: Hard architectural lines a change must not cross (full-stack). Always applied.
+alwaysApply: true
+---
+
+# Architecture Boundaries
+
+Full detail: `.claude/rules/architecture-boundaries.md` (+ `frontend.md`, `backend.md`, `performance.md`).
+
+## Frontend
+- Every route is `React.lazy()` in `App.jsx`. `usePrefetchRoutes()` fires once on idle — only high-probability routes (never admin / guides / AI-lab tools).
+- **All API access goes through `src/api/api.js`.** No direct axios in pages. Reads use `withCache(key, ttl, fn)`; mutations call `clearApiCache(...)`.
+- Auth state lives **only** in `AuthContext` (from `/api/auth/me`). No JWT in JS anywhere.
+- No `AppLayout` on `DashboardPage`, `QuizPage`, `QuizResultPage`, `RoadmapDetailPage`.
+- `QuizPage` is 100vh fixed — never add scrolling. No separate Subject/Concept/Roadmap pages (inline in DashboardPage SPA).
+- `sl:refresh` event is the single signal for a full dashboard reload; listeners bust user cache.
+- Co-locate sub-components: `panels/` (stateful), `modals/` (overlay + `useBodyLock`), `mobile/`.
+
+## Backend
+- Strict **Controller → Service → Repository**. Controllers hold no business logic.
+- Services own caching: reads via `CacheService.get(name, key, supplier)`; **every admin mutation MUST evict** matching keys immediately.
+- No N+1 — batch queries. Keep invariants: `getProgressSummary` = 2 DB queries; `getBulkSubjectStatus` = 2 DB queries.
+- Two-level cache: Caffeine L1 + Redis L2 (Redis only in `prod`). Evict both on mutation.
+- `CacheWarmup` = static-ish data only (subjects/concepts/roadmaps/missions/problems/aptitude/publicStats). Never warm user-specific data (progress, quiz status).
+
+## API contract
+- Paths: `/api/{resource}[/{id}[/{action}]]`, `/api/admin/*`, `/api/auth/*`.
+- Errors always `{ "error": "message" }`. XP = score × 10; first concept of day = +50. Ranks E/D/C/B/A/S.

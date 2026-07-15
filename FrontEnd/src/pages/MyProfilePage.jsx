@@ -1,29 +1,54 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
-import { User as UserIcon, Shield, Copy, Check, ExternalLink, Save, AtSign, Github, Linkedin, Globe } from 'lucide-react'
+import {
+  User as UserIcon, AtSign, Mail, Lock, MapPin, GraduationCap, Building2,
+  Github, Linkedin, Globe, Check, X, Loader2, Save, Copy, ExternalLink,
+  Eye, EyeOff,
+} from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
-import { updateProfile } from '../api/api'
+import { updateProfile, checkUsername } from '../api/api'
 import { getApiError } from '../utils/apiError'
 import { getRank } from '../utils/slRank'
 import Navbar from '../components/navbars/Navbar'
 import toast from 'react-hot-toast'
+import '../styles/pages/shared/my-profile.css'
 
-const AVATAR_COLORS = [
-  '#4F46E5', '#7C3AED', '#DB2777', '#DC2626', '#EA580C',
-  '#D97706', '#16A34A', '#0891B2', '#2563EB', '#475569',
-]
-const BIO_MAX = 300
+const BIO_MAX = 150
 const USERNAME_RE = /^[a-z0-9_]{3,20}$/
 const URL_RE = /^https?:\/\/[^\s]{3,}$/i
+const EASE = [0.16, 1, 0.3, 1]
+
+const AVATAR_COLORS = [
+  '#6366F1', '#8B5CF6', '#EC4899', '#EF4444', '#F97316',
+  '#F59E0B', '#10B981', '#06B6D4', '#3B82F6', '#64748B',
+]
 const LINK_FIELDS = [
   { key: 'githubUrl', label: 'GitHub', icon: Github, placeholder: 'https://github.com/username' },
   { key: 'linkedinUrl', label: 'LinkedIn', icon: Linkedin, placeholder: 'https://linkedin.com/in/username' },
   { key: 'portfolioUrl', label: 'Portfolio / website', icon: Globe, placeholder: 'https://your-site.com' },
 ]
-const EASE = [0.16, 1, 0.3, 1]
-const NEXT_RANK = { E: 'D', D: 'C', C: 'B', B: 'A', A: 'S' }
+
+const EMPTY_EDU = { degree: '', fieldOfStudy: '', institution: '', graduationYear: '', cgpa: '' }
+// Backend stores blank education fields as null; coerce to '' so inputs stay controlled.
+function normEdu(e = {}) {
+  return {
+    degree: e?.degree || '',
+    fieldOfStudy: e?.fieldOfStudy || '',
+    institution: e?.institution || '',
+    graduationYear: e?.graduationYear || '',
+    cgpa: e?.cgpa || '',
+  }
+}
+const EMPTY_FORM = {
+  fullName: '', username: '', bio: '', avatarColor: '#6366F1', location: '',
+  githubUrl: '', linkedinUrl: '', portfolioUrl: '',
+  education: { ...EMPTY_EDU }, publicProfile: true,
+}
+
+const CURRENT_YEAR = new Date().getFullYear()
+const GRAD_YEARS = Array.from({ length: CURRENT_YEAR + 6 - 1980 + 1 }, (_, i) => CURRENT_YEAR + 6 - i)
 
 function initials(name = '') {
   return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() || '').join('') || '?'
@@ -33,75 +58,139 @@ function fmtMonthYear(iso) {
   try { return new Date(iso).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) }
   catch { return '—' }
 }
+// Normalised snapshot of the editable fields (privacy is excluded — it auto-saves).
+function snapshot(f) {
+  return JSON.stringify({
+    fullName: f.fullName.trim(),
+    username: f.username.trim().toLowerCase(),
+    bio: f.bio.trim(),
+    avatarColor: f.avatarColor,
+    location: f.location.trim(),
+    githubUrl: f.githubUrl.trim(),
+    linkedinUrl: f.linkedinUrl.trim(),
+    portfolioUrl: f.portfolioUrl.trim(),
+    education: {
+      degree: (f.education.degree || '').trim(),
+      fieldOfStudy: (f.education.fieldOfStudy || '').trim(),
+      institution: (f.education.institution || '').trim(),
+      graduationYear: (f.education.graduationYear || '').trim(),
+      cgpa: (f.education.cgpa || '').trim(),
+    },
+  })
+}
+function urlState(v) {
+  if (!v || !v.trim()) return 'empty'
+  return URL_RE.test(v.trim()) ? 'valid' : 'invalid'
+}
 
 export default function MyProfilePage() {
-  const { user } = useAuth()
+  const { user, loading } = useAuth()
   const { theme } = useTheme()
   const reduce = useReducedMotion()
-  const [form, setForm] = useState({ fullName: '', username: '', bio: '', avatarColor: '#4F46E5', githubUrl: '', linkedinUrl: '', portfolioUrl: '' })
-  const [linkErrors, setLinkErrors] = useState({})
+
+  const [form, setForm] = useState(EMPTY_FORM)
+  const [baseline, setBaseline] = useState(null)
   const [saving, setSaving] = useState(false)
+  const [privacyBusy, setPrivacyBusy] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [usernameStatus, setUsernameStatus] = useState('idle') // idle|checking|available|taken|invalid
   const [usernameError, setUsernameError] = useState('')
+
   const mountedRef = useRef(true)
+  const initializedRef = useRef(false)
+  const originalUsernameRef = useRef('')
 
   useEffect(() => {
     mountedRef.current = true
     return () => { mountedRef.current = false }
   }, [])
 
+  // Initialise the editable form ONCE from the user so later /me refreshes
+  // (xp, rank, navbar) never clobber unsaved edits.
   useEffect(() => {
-    if (user) {
-      setForm({
-        fullName: user.fullName || '',
-        username: user.username || '',
-        bio: user.bio || '',
-        avatarColor: user.avatarColor || '#4F46E5',
-        githubUrl: user.githubUrl || '',
-        linkedinUrl: user.linkedinUrl || '',
-        portfolioUrl: user.portfolioUrl || '',
-      })
+    if (!user || initializedRef.current) return
+    const next = {
+      fullName: user.fullName || '',
+      username: user.username || '',
+      bio: user.bio || '',
+      avatarColor: user.avatarColor || '#6366F1',
+      location: user.location || '',
+      githubUrl: user.githubUrl || '',
+      linkedinUrl: user.linkedinUrl || '',
+      portfolioUrl: user.portfolioUrl || '',
+      education: normEdu(user.education),
+      publicProfile: user.publicProfile !== false,
     }
+    setForm(next)
+    setBaseline(snapshot(next))
+    originalUsernameRef.current = (user.username || '').toLowerCase()
+    initializedRef.current = true
   }, [user])
 
   const isGuest = user?.role === 'GUEST'
   const profileUrl = form.username ? `${window.location.origin}/u/${form.username}` : ''
 
   const xp = user?.xp || 0
-  // theme is a dep so rank colours re-resolve when the user flips the theme.
   const rank = useMemo(() => getRank(xp), [xp, theme]) // eslint-disable-line react-hooks/exhaustive-deps
-  const progress = Math.max(0, Math.min(100, rank.progress || 0))
-  const toNext = rank.next ? rank.next - xp : 0
 
-  const activeLinks = LINK_FIELDS.filter(l => form[l.key]?.trim())
+  const isDirty = baseline != null && snapshot(form) !== baseline
 
-  const set = (k, v) => {
+  // Warn before leaving with unsaved edits (covers refresh / tab close / hard nav).
+  useEffect(() => {
+    if (!isDirty) return
+    const handler = (e) => { e.preventDefault(); e.returnValue = '' }
+    window.addEventListener('beforeunload', handler)
+    return () => window.removeEventListener('beforeunload', handler)
+  }, [isDirty])
+
+  // Live username availability (debounced).
+  useEffect(() => {
+    if (!initializedRef.current) return
+    const uname = form.username.trim().toLowerCase()
+    if (uname === originalUsernameRef.current) { setUsernameStatus('available'); return }
+    if (!uname) { setUsernameStatus('idle'); return }
+    if (!USERNAME_RE.test(uname)) { setUsernameStatus('invalid'); return }
+    setUsernameStatus('checking')
+    let cancelled = false
+    const t = setTimeout(async () => {
+      try {
+        const { data } = await checkUsername(uname)
+        if (cancelled || !mountedRef.current) return
+        setUsernameStatus(data?.available ? 'available' : 'taken')
+      } catch {
+        if (!cancelled && mountedRef.current) setUsernameStatus('idle')
+      }
+    }, 450)
+    return () => { cancelled = true; clearTimeout(t) }
+  }, [form.username])
+
+  const set = useCallback((k, v) => {
     setForm(f => ({ ...f, [k]: v }))
     if (k === 'username') setUsernameError('')
-    if (k in { githubUrl: 1, linkedinUrl: 1, portfolioUrl: 1 }) {
-      setLinkErrors(e => { const n = { ...e }; delete n[k]; return n })
-    }
-  }
+  }, [])
+  const setEdu = useCallback((k, v) => {
+    setForm(f => ({ ...f, education: { ...f.education, [k]: v } }))
+  }, [])
 
   const save = async (e) => {
     e.preventDefault()
-    if (saving) return
+    if (saving || !isDirty) return
 
     const username = form.username.trim().toLowerCase()
     if (!USERNAME_RE.test(username)) {
       setUsernameError('Username must be 3–20 characters: lowercase letters, numbers or underscore.')
       return
     }
-
-    const nextLinkErrors = {}
-    LINK_FIELDS.forEach(({ key, label }) => {
-      const v = form[key].trim()
-      if (v && !URL_RE.test(v)) nextLinkErrors[key] = `${label} must be a full URL starting with https://`
-    })
-    if (Object.keys(nextLinkErrors).length) { setLinkErrors(nextLinkErrors); return }
+    if (usernameStatus === 'taken') {
+      setUsernameError('That username is already taken.')
+      return
+    }
+    if (LINK_FIELDS.some(({ key }) => urlState(form[key]) === 'invalid')) {
+      toast.error('Please fix the invalid links before saving.')
+      return
+    }
 
     setUsernameError('')
-    setLinkErrors({})
     setSaving(true)
     try {
       const { data } = await updateProfile({
@@ -109,12 +198,30 @@ export default function MyProfilePage() {
         username,
         bio: form.bio,
         avatarColor: form.avatarColor,
+        location: form.location.trim(),
         githubUrl: form.githubUrl.trim(),
         linkedinUrl: form.linkedinUrl.trim(),
         portfolioUrl: form.portfolioUrl.trim(),
+        education: {
+          degree: (form.education.degree || '').trim(),
+          fieldOfStudy: (form.education.fieldOfStudy || '').trim(),
+          institution: (form.education.institution || '').trim(),
+          graduationYear: (form.education.graduationYear || '').trim(),
+          cgpa: (form.education.cgpa || '').trim(),
+        },
+        publicProfile: form.publicProfile,
       })
-      if (data?.username) set('username', data.username)
-      toast.success('Profile updated')
+      const saved = {
+        ...form,
+        username: data?.username || username,
+        location: data?.location ?? form.location,
+        education: normEdu(data?.education || form.education),
+      }
+      if (!mountedRef.current) return
+      setForm(saved)
+      setBaseline(snapshot(saved))
+      originalUsernameRef.current = (data?.username || username).toLowerCase()
+      toast.success('Profile updated successfully')
       window.dispatchEvent(new Event('sl:refresh'))
     } catch (err) {
       const msg = getApiError(err, 'We could not save your changes. Please review the fields and try again.')
@@ -122,6 +229,23 @@ export default function MyProfilePage() {
       else toast.error(msg)
     } finally {
       if (mountedRef.current) setSaving(false)
+    }
+  }
+
+  const togglePrivacy = async () => {
+    if (privacyBusy) return
+    const next = !form.publicProfile
+    setForm(f => ({ ...f, publicProfile: next }))
+    setPrivacyBusy(true)
+    try {
+      await updateProfile({ publicProfile: next })
+      toast.success(next ? 'Profile is now public' : 'Profile is now private')
+      window.dispatchEvent(new Event('sl:refresh'))
+    } catch (err) {
+      if (mountedRef.current) setForm(f => ({ ...f, publicProfile: !next }))
+      toast.error(getApiError(err, 'Could not update visibility. Please try again.'))
+    } finally {
+      if (mountedRef.current) setPrivacyBusy(false)
     }
   }
 
@@ -139,180 +263,260 @@ export default function MyProfilePage() {
     transition: { duration: 0.5, ease: EASE, delay },
   })
 
+  // ── Loading skeleton ──
+  if (loading || (!user && localStorage.getItem('has_session'))) {
+    return (
+      <div className="mpx-page">
+        <Navbar sticky />
+        <div className="mpx-shell">
+          <div className="mpx-skel mpx-skel--hero" />
+          <div className="mpx-skel mpx-skel--card" />
+          <div className="mpx-skel mpx-skel--card" />
+          <div className="mpx-skel mpx-skel--card mpx-skel--sm" />
+        </div>
+      </div>
+    )
+  }
+
+  if (isGuest) {
+    return (
+      <div className="mpx-page">
+        <Navbar sticky />
+        <div className="mpx-shell">
+          <div className="mpx-guest">
+            Guest accounts can’t be customised.<br />
+            <Link to="/register" className="mpx-guest__link">Create a free account</Link> to unlock your profile and shareable card.
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="mp-page">
+    <div className="mpx-page">
       <Navbar sticky />
 
-      <div className="mp-shell">
-        <div className="mp-head">
-          <h1 className="mp-head__title"><UserIcon size={24} /> My Profile</h1>
-          <p className="mp-head__sub">This is how you show up across ARISE and on your public hunter card.</p>
-        </div>
-
-        {isGuest ? (
-          <div className="mp-guest">
-            Guest accounts can’t be customised.<br />
-            <Link to="/register" style={{ color: 'var(--accent-light)', fontWeight: 700 }}>Create a free account</Link> to unlock your profile, rank and shareable card.
+      <form className="mpx-shell" onSubmit={save}>
+        {/* ── Hero header ── */}
+        <motion.header className="mpx-hero" style={{ '--mpx-av': form.avatarColor, '--rank-color': rank.color }} {...rise(0)}>
+          <div className="mpx-hero__row">
+            <div className="mpx-avatar">{initials(form.fullName)}</div>
+            <div className="mpx-hero__id">
+              <h1 className="mpx-hero__name">{form.fullName || 'Your name'}</h1>
+              <p className="mpx-hero__handle">@{form.username || 'username'}</p>
+              <div className="mpx-hero__meta">
+                <span className="mpx-rankpill">{rank.label} rank</span>
+                <span className="mpx-dot">•</span>
+                <span>{xp.toLocaleString()} XP</span>
+                <span className="mpx-dot">•</span>
+                <span>Joined {fmtMonthYear(user?.createdAt)}</span>
+              </div>
+            </div>
           </div>
-        ) : (
-          <div className="mp-grid">
-            {/* ── Left: live identity card ── */}
-            <motion.aside className="mp-identity" style={{ '--rank-color': rank.color }} {...rise(0)}>
-              <div className="mp-id__top">
-                <div className="mp-id__avatar" style={{ background: form.avatarColor || '#4F46E5' }}>
-                  {initials(form.fullName)}
-                </div>
-                <div style={{ minWidth: 0 }}>
-                  <h2 className="mp-id__name">{form.fullName || 'Your name'}</h2>
-                  <p className="mp-id__handle">@{form.username || 'username'}</p>
-                </div>
+
+          {/* Identity colour picker */}
+          <div className="mpx-swatches" role="radiogroup" aria-label="Profile colour">
+            {AVATAR_COLORS.map(c => (
+              <button key={c} type="button"
+                className={`mpx-swatch${form.avatarColor === c ? ' is-active' : ''}`}
+                style={{ '--sw': c }}
+                role="radio" aria-checked={form.avatarColor === c}
+                aria-label={`Colour ${c}`}
+                onClick={() => set('avatarColor', c)} />
+            ))}
+          </div>
+
+          {/* Visibility + shareable link */}
+          <div className={`mpx-visibility${form.publicProfile ? ' is-public' : ' is-private'}`}>
+            <div className="mpx-visibility__top">
+              <span className="mpx-visibility__icon">{form.publicProfile ? <Eye size={17} /> : <EyeOff size={17} />}</span>
+              <div className="mpx-visibility__text">
+                <span className="mpx-visibility__title">{form.publicProfile ? 'Public profile' : 'Private profile'}</span>
+                <span className="mpx-visibility__desc">
+                  {form.publicProfile
+                    ? 'Anyone with your link can view your profile.'
+                    : 'Only you can see it — your public link is switched off.'}
+                </span>
               </div>
+              <button type="button"
+                className={`mpx-toggle${form.publicProfile ? ' is-on' : ''}`}
+                role="switch" aria-checked={form.publicProfile}
+                aria-label="Toggle profile visibility"
+                disabled={privacyBusy}
+                onClick={togglePrivacy}>
+                <span className="mpx-toggle__knob">{privacyBusy && <Loader2 size={11} className="mpx-spin" />}</span>
+              </button>
+            </div>
 
-              {form.bio && <p className="mp-id__bio">{form.bio}</p>}
-
-              <div className="mp-rank" style={{ marginTop: form.bio ? 16 : 0 }}>
-                <div className="mp-rank__badge">{rank.label}</div>
-                <div className="mp-rank__info">
-                  <div className="mp-rank__value">Rank {rank.label}</div>
-                  <div className="mp-xp__bar" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
-                    <div className="mp-xp__fill" style={{ width: `${progress}%` }} />
-                  </div>
-                  <div className="mp-xp__meta">
-                    <span>{xp.toLocaleString()} XP</span>
-                    <span>{rank.next ? `${toNext.toLocaleString()} XP to Rank ${NEXT_RANK[rank.label] || ''}`.trim() : 'Max rank reached'}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mp-stats">
-                <div className="mp-stat">
-                  <div className="mp-stat__num">{user?.level ?? 1}</div>
-                  <div className="mp-stat__label">Level</div>
-                </div>
-                <div className="mp-stat">
-                  <div className="mp-stat__num">{xp.toLocaleString()}</div>
-                  <div className="mp-stat__label">Total XP</div>
-                </div>
-                <div className="mp-stat">
-                  <div className="mp-stat__num">{fmtMonthYear(user?.createdAt)}</div>
-                  <div className="mp-stat__label">Joined</div>
-                </div>
-              </div>
-
-              {activeLinks.length > 0 && (
-                <div className="mp-links">
-                  {activeLinks.map(({ key, label, icon: Icon }) => (
-                    <a key={key} className="mp-link" href={form[key]} target="_blank" rel="noopener noreferrer">
-                      <Icon size={14} /> {label}
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {profileUrl && (
-                <div className="mp-share">
-                  <span className="mp-share__url">{profileUrl}</span>
-                  <button type="button" className="mp-share__btn" onClick={copyLink} aria-label="Copy profile link">
-                    {copied ? <Check size={13} /> : <Copy size={13} />} {copied ? 'Copied' : 'Copy'}
-                  </button>
-                  <a className="mp-share__btn" href={profileUrl} target="_blank" rel="noreferrer" aria-label="Open public profile">
-                    <ExternalLink size={13} /> View
-                  </a>
-                </div>
-              )}
-            </motion.aside>
-
-            {/* ── Right: editor ── */}
-            <motion.form className="mp-editor" onSubmit={save} {...rise(0.08)}>
-              <div className="mp-card">
-                <h2 className="mp-card__title"><UserIcon size={17} /> Profile details</h2>
-                <p className="mp-card__hint">Your name, handle and bio — the card on the left updates as you type.</p>
-
-                <div className="mp-fields-2">
-                  <div className="feat-field">
-                    <label htmlFor="s-name">Display name</label>
-                    <input id="s-name" className="feat-affix-input"
-                      value={form.fullName} maxLength={60}
-                      onChange={e => set('fullName', e.target.value)} />
-                  </div>
-
-                  <div className="feat-field">
-                    <label htmlFor="s-username">Username</label>
-                    <div className="feat-input-affix">
-                      <AtSign size={14} className="feat-input-affix__icon" />
-                      <input id="s-username"
-                        className={`feat-affix-input${usernameError ? ' has-error' : ''}`}
-                        value={form.username} maxLength={20}
-                        autoComplete="off" spellCheck={false}
-                        onChange={e => set('username', e.target.value.toLowerCase().replace(/\s+/g, ''))} />
-                    </div>
-                  </div>
-                </div>
-                {usernameError
-                  ? <div className="feat-field-error" style={{ marginTop: -6, marginBottom: 12 }}>{usernameError}</div>
-                  : <div className="feat-field-hint" style={{ marginTop: -6, marginBottom: 12 }}>Created from your email — change it to anything unique. 3–20 characters.</div>}
-
-                <div className="feat-field">
-                  <label htmlFor="s-bio">Bio</label>
-                  <textarea id="s-bio" rows={3} maxLength={BIO_MAX}
-                    style={{ border: '1px solid var(--border)', borderRadius: 9, padding: '9px 12px', width: '100%', background: 'transparent', color: 'var(--text-primary)', resize: 'vertical', fontFamily: 'inherit' }}
-                    value={form.bio} onChange={e => set('bio', e.target.value)} />
-                  <div className="feat-field-hint">{form.bio.length}/{BIO_MAX}</div>
-                </div>
-
-                <div className="feat-field" style={{ marginBottom: 0 }}>
-                  <label>Avatar colour</label>
-                  <div className="feat-color-row">
-                    {AVATAR_COLORS.map(c => (
-                      <button key={c} type="button"
-                        className={`feat-color-swatch${form.avatarColor === c ? ' is-active' : ''}`}
-                        style={{ background: c }}
-                        aria-label={`Select colour ${c}`}
-                        aria-pressed={form.avatarColor === c}
-                        onClick={() => set('avatarColor', c)} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mp-card">
-                <h2 className="mp-card__title"><Globe size={17} /> Career links</h2>
-                <p className="mp-card__hint">Optional — recruiters and visitors see these on your public profile.</p>
-                {LINK_FIELDS.map(({ key, label, icon: Icon, placeholder }) => (
-                  <div key={key} className="feat-field" style={{ marginBottom: 12 }}>
-                    <div className="feat-input-affix">
-                      <Icon size={14} className="feat-input-affix__icon" />
-                      <input
-                        className={`feat-affix-input${linkErrors[key] ? ' has-error' : ''}`}
-                        type="url" inputMode="url" autoComplete="off" spellCheck={false}
-                        placeholder={placeholder}
-                        aria-label={label}
-                        value={form[key]}
-                        onChange={e => set(key, e.target.value)} />
-                    </div>
-                    {linkErrors[key] && <div className="feat-field-error">{linkErrors[key]}</div>}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mp-card">
-                <h2 className="mp-card__title"><Shield size={17} /> Account</h2>
-                <div className="feat-field" style={{ marginBottom: 0 }}>
-                  <label htmlFor="s-email">Email</label>
-                  <input id="s-email" className="feat-affix-input is-readonly" value={user?.email || ''} readOnly disabled />
-                  <div className="feat-field-hint">Used to sign in — it can’t be changed here and is never shown publicly.</div>
-                </div>
-              </div>
-
-              <div className="feat-section-actions">
-                <button type="submit" className="feat-save-btn" disabled={saving}>
-                  <Save size={15} /> {saving ? 'Saving…' : 'Save changes'}
+            {profileUrl && form.publicProfile && (
+              <div className="mpx-share">
+                <Globe size={14} className="mpx-share__globe" />
+                <span className="mpx-share__url">{profileUrl}</span>
+                <button type="button" className="mpx-share__btn" onClick={copyLink}>
+                  {copied ? <Check size={13} /> : <Copy size={13} />} {copied ? 'Copied' : 'Copy'}
                 </button>
+                <a className="mpx-share__btn" href={profileUrl} target="_blank" rel="noreferrer">
+                  <ExternalLink size={13} /> View
+                </a>
               </div>
-            </motion.form>
+            )}
           </div>
-        )}
-      </div>
+        </motion.header>
+
+        {/* ── Basic information ── */}
+        <motion.section className="mpx-card" {...rise(0.05)}>
+          <div className="mpx-card__head">
+            <h2 className="mpx-card__title"><UserIcon size={17} /> Basic information</h2>
+            <p className="mpx-card__sub">The essentials that appear on your profile.</p>
+          </div>
+
+          <div className="mpx-field">
+            <label className="mpx-label" htmlFor="mpx-name">Full name</label>
+            <input id="mpx-name" className="mpx-input" value={form.fullName} maxLength={60}
+              onChange={e => set('fullName', e.target.value)} placeholder="Your full name" />
+          </div>
+
+          <div className="mpx-field">
+            <label className="mpx-label" htmlFor="mpx-username">Username</label>
+            <div className={`mpx-inputwrap${usernameError ? ' has-error' : ''}`}>
+              <AtSign size={15} className="mpx-inputwrap__icon" />
+              <input id="mpx-username" className="mpx-input mpx-input--affix"
+                value={form.username} maxLength={20} autoComplete="off" spellCheck={false}
+                onChange={e => set('username', e.target.value.toLowerCase().replace(/\s+/g, ''))}
+                placeholder="your_handle" />
+              <span className="mpx-status">
+                {usernameStatus === 'checking' && <Loader2 size={15} className="mpx-spin mpx-status--muted" />}
+                {usernameStatus === 'available' && <Check size={15} className="mpx-status--ok" />}
+                {(usernameStatus === 'taken' || usernameStatus === 'invalid') && <X size={15} className="mpx-status--bad" />}
+              </span>
+            </div>
+            {usernameError
+              ? <p className="mpx-msg mpx-msg--bad">{usernameError}</p>
+              : usernameStatus === 'taken'
+                ? <p className="mpx-msg mpx-msg--bad">That username is already taken.</p>
+                : usernameStatus === 'invalid'
+                  ? <p className="mpx-msg mpx-msg--bad">3–20 characters: lowercase letters, numbers or underscore.</p>
+                  : usernameStatus === 'available' && form.username.trim().toLowerCase() !== originalUsernameRef.current
+                    ? <p className="mpx-msg mpx-msg--ok">Nice — that username is available.</p>
+                    : <p className="mpx-hint">This is your public link: /u/{form.username || 'username'}</p>}
+          </div>
+
+          <div className="mpx-field">
+            <label className="mpx-label" htmlFor="mpx-bio">Bio</label>
+            <textarea id="mpx-bio" className="mpx-input mpx-textarea" rows={3} maxLength={BIO_MAX}
+              value={form.bio} onChange={e => set('bio', e.target.value)}
+              placeholder="A short line about who you are and what you’re building." />
+            <div className={`mpx-counter${form.bio.length >= BIO_MAX ? ' is-max' : ''}`}>{form.bio.length}/{BIO_MAX}</div>
+          </div>
+
+          <div className="mpx-field">
+            <label className="mpx-label" htmlFor="mpx-email">Email
+              <span className="mpx-locktip" tabIndex={0} aria-label="Email cannot be changed">
+                <Lock size={12} />
+                <span className="mpx-tooltip">Email cannot be changed</span>
+              </span>
+            </label>
+            <div className="mpx-inputwrap is-locked">
+              <Mail size={15} className="mpx-inputwrap__icon" />
+              <input id="mpx-email" className="mpx-input mpx-input--affix" value={user?.email || ''} readOnly disabled />
+            </div>
+          </div>
+
+          <div className="mpx-field mpx-field--last">
+            <label className="mpx-label" htmlFor="mpx-location">Location</label>
+            <div className="mpx-inputwrap">
+              <MapPin size={15} className="mpx-inputwrap__icon" />
+              <input id="mpx-location" className="mpx-input mpx-input--affix" value={form.location} maxLength={120}
+                onChange={e => set('location', e.target.value)} placeholder="City, State / Country" />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ── Education ── */}
+        <motion.section className="mpx-card" {...rise(0.1)}>
+          <div className="mpx-card__head">
+            <h2 className="mpx-card__title"><GraduationCap size={17} /> Education</h2>
+            <p className="mpx-card__sub">Your highest / current qualification.</p>
+          </div>
+
+          <div className="mpx-grid-2">
+            <div className="mpx-field">
+              <label className="mpx-label" htmlFor="mpx-degree">Degree</label>
+              <input id="mpx-degree" className="mpx-input" value={form.education.degree} maxLength={120}
+                onChange={e => setEdu('degree', e.target.value)} placeholder="Bachelor of Technology" />
+            </div>
+            <div className="mpx-field">
+              <label className="mpx-label" htmlFor="mpx-field">Branch / Specialization</label>
+              <input id="mpx-field" className="mpx-input" value={form.education.fieldOfStudy} maxLength={120}
+                onChange={e => setEdu('fieldOfStudy', e.target.value)} placeholder="Computer Science and Engineering" />
+            </div>
+          </div>
+
+          <div className="mpx-grid-2">
+            <div className="mpx-field">
+              <label className="mpx-label" htmlFor="mpx-college">College / University</label>
+              <div className="mpx-inputwrap">
+                <Building2 size={15} className="mpx-inputwrap__icon" />
+                <input id="mpx-college" className="mpx-input mpx-input--affix" value={form.education.institution} maxLength={120}
+                  onChange={e => setEdu('institution', e.target.value)} placeholder="Your college name" />
+              </div>
+            </div>
+            <div className="mpx-field">
+              <label className="mpx-label" htmlFor="mpx-gradyear">Pass out year</label>
+              <input id="mpx-gradyear" className="mpx-input" list="mpx-gradyears"
+                inputMode="numeric" maxLength={4} placeholder="e.g. 2025"
+                value={form.education.graduationYear}
+                onChange={e => setEdu('graduationYear', e.target.value.replace(/[^\d]/g, '').slice(0, 4))} />
+              <datalist id="mpx-gradyears">
+                {GRAD_YEARS.map(y => <option key={y} value={String(y)} />)}
+              </datalist>
+            </div>
+          </div>
+
+          <div className="mpx-grid-2 mpx-field--last">
+            <div className="mpx-field" style={{ marginBottom: 0 }}>
+              <label className="mpx-label" htmlFor="mpx-cgpa">CGPA / %</label>
+              <input id="mpx-cgpa" className="mpx-input" value={form.education.cgpa} maxLength={20}
+                onChange={e => setEdu('cgpa', e.target.value)} placeholder="8.2/10 or 82%" />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ── Social links ── */}
+        <motion.section className="mpx-card" {...rise(0.15)}>
+          <div className="mpx-card__head">
+            <h2 className="mpx-card__title"><Globe size={17} /> Social links</h2>
+            <p className="mpx-card__sub">Optional — shown to visitors and recruiters.</p>
+          </div>
+          {LINK_FIELDS.map(({ key, label, icon: Icon, placeholder }, i) => {
+            const st = urlState(form[key])
+            return (
+              <div key={key} className={`mpx-field${i === LINK_FIELDS.length - 1 ? ' mpx-field--last' : ''}`}>
+                <label className="mpx-label" htmlFor={`mpx-${key}`}>{label}</label>
+                <div className={`mpx-inputwrap${st === 'invalid' ? ' has-error' : ''}`}>
+                  <Icon size={15} className="mpx-inputwrap__icon" />
+                  <input id={`mpx-${key}`} className="mpx-input mpx-input--affix"
+                    type="url" inputMode="url" autoComplete="off" spellCheck={false}
+                    value={form[key]} placeholder={placeholder}
+                    onChange={e => set(key, e.target.value)} />
+                  <span className="mpx-status">
+                    {st === 'valid' && <Check size={15} className="mpx-status--ok" />}
+                    {st === 'invalid' && <X size={15} className="mpx-status--bad" />}
+                  </span>
+                </div>
+                {st === 'invalid' && <p className="mpx-msg mpx-msg--bad">Enter a full URL starting with https://</p>}
+              </div>
+            )
+          })}
+        </motion.section>
+
+        {/* ── Save ── */}
+        <motion.div className="mpx-savebar" {...rise(0.2)}>
+          <button type="submit" className="mpx-save" disabled={!isDirty || saving}>
+            {saving ? <><Loader2 size={15} className="mpx-spin" /> Saving…</> : <><Save size={15} /> Save changes</>}
+          </button>
+        </motion.div>
+      </form>
     </div>
   )
 }

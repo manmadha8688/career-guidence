@@ -1,0 +1,42 @@
+---
+description: Bridge that makes the project's .claude/ AI system (commands, agents, skills, rules, memory) authoritative inside Cursor too. Always applied.
+alwaysApply: true
+---
+
+# .claude/ System — Authoritative in Cursor
+
+This repo ships a full AI system under `.claude/`. Treat it as the source of truth
+in Cursor. Do **not** duplicate its content here — read the `.claude/` files directly.
+Never modify `.claude/` unless the user asks (it is shared with Claude Code).
+
+## Always
+- Honor `CLAUDE.md` + `CLAUDE.local.md` (architecture, hard constraints, local dev).
+- Before non-trivial work, consult `.claude/memory/MEMORY.md` (feedback index) and the
+  matching `feedback_*.md` for the task area (design / content / technical / auth / workflow).
+- **Standing instruction**: when the user gives a new rule, command, fact, or feedback,
+  persist it immediately to the correct `.claude/` file (see `memory/feedback_workflow.md`).
+
+## Commands (`/name`)
+When the user invokes a slash command or names a workflow, open the matching
+`.claude/commands/<name>.md` and execute it **fully, end to end**. Apply it to the files
+or target named in the user's message. For user-reported bugs, prefer `/front-fix` or
+`/back-fix` before a full audit. Mirrors live in `.cursor/commands/`.
+
+## Agents
+Use Cursor subagents whose definitions live in `.claude/agents/`:
+`architect`, `code-reviewer`, `design-engineer`, `researcher`, `security-reviewer`,
+`test-writer`. For any redesign/restyle request, act as **design-engineer** and read
+`.claude/rules/design.md` + `.claude/memory/feedback_design.md` first.
+
+## Skills
+Registered Cursor skills map to `.claude/skills/`: `backend-audit`, `deployment`,
+`design-audit`, `react-audit`. Other `.claude/skills/*/SKILL.md` can be read on demand.
+
+## gstack
+`gstack` is an **external** tool referenced by some agents (e.g. `/investigate`, `/cso`,
+`/qa`, `/plan-eng-review`). Do **not** auto-run it. Invoke only if the user explicitly
+asks and it is runnable as a real shell command.
+
+## Secrets (mirrors .claude/settings.json deny)
+Never read, edit, or commit: `**/.env*`, `**/application-local.properties`,
+`CLAUDE.local.md`, `**/*.pem`, `**/*.key`, `**/secrets.json`. Ask before `git commit`/`push`.

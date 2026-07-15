@@ -1,11 +1,55 @@
 {
   "permissions": {
     "allow": [
-      "Read(c:/manmadha/Student-project/**)",
-      "Write(c:/manmadha/Student-project/**)",
-      "Edit(c:/manmadha/Student-project/**)",
-      "Bash(*)"
+      "Read(//c/manmadha/Student-project/**)",
+      "Edit(//c/manmadha/Student-project/FrontEnd/**)",
+      "Edit(//c/manmadha/Student-project/Student-BackEnd/**)",
+      "Edit(//c/manmadha/Student-project/.claude/**)",
+      "Write(//c/manmadha/Student-project/FrontEnd/**)",
+      "Write(//c/manmadha/Student-project/Student-BackEnd/**)",
+      "Write(//c/manmadha/Student-project/.claude/**)",
+      "Bash(npm run build)",
+      "Bash(npm run dev)",
+      "Bash(npm run lint)",
+      "Bash(npx eslint *)",
+      "Bash(npm install *)",
+      "Bash(npm ci)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(./mvnw.cmd compile)",
+      "Bash(./mvnw.cmd clean compile)",
+      "Bash(./mvnw compile)",
+      "Bash(curl -s http://localhost:8080/*)",
+      "Bash(curl -s http://localhost:5173/*)"
     ],
-    "deny": []
+    "ask": [
+      "Bash(git push *)",
+      "Bash(git commit *)",
+      "Bash(git reset *)",
+      "Edit(//c/manmadha/Student-project/**/application-local.properties)",
+      "Edit(//c/manmadha/Student-project/**/application.properties)",
+      "Edit(//c/manmadha/Student-project/**/application-prod.properties)",
+      "Edit(//c/manmadha/Student-project/**/.env)",
+      "Edit(//c/manmadha/Student-project/**/.env.*)",
+      "Edit(//c/manmadha/Student-project/**/Dockerfile)",
+      "Edit(//c/manmadha/Student-project/**/render.yaml)",
+      "Edit(//c/manmadha/Student-project/**/vercel.json)",
+      "Edit(//c/manmadha/Student-project/CLAUDE.md)",
+      "Edit(//c/manmadha/Student-project/.gitignore)"
+    ],
+    "deny": [
+      "Read(//c/manmadha/Student-project/**/.env)",
+      "Read(//c/manmadha/Student-project/**/.env.*)",
+      "Read(//c/manmadha/Student-project/**/application-local.properties)",
+      "Read(//c/manmadha/Student-project/**/*.pem)",
+      "Read(//c/manmadha/Student-project/**/*.key)",
+      "Read(//c/manmadha/Student-project/CLAUDE.local.md)",
+      "Read(//c/manmadha/Student-project/**/secrets.json)"
+    ]
   }
 }

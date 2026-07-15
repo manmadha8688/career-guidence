@@ -3676,6 +3676,8 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
 html.nav-hidden .sl-dashboard-wrapper {
   --sl-dash-sticky-top: 0px;
 }
+/* When the navbar auto-hides, the side panel rises to fill the gap it left. */
+html.nav-hidden .sl-subject-panel { top: 0; }
 
 /* ── Panel base ── */
 .sl-panel {
@@ -4107,6 +4109,7 @@ html.nav-hidden .sl-dashboard-wrapper {
   border-right: none;
   box-shadow: -16px 0 48px rgba(0,0,0,0.55);
   animation: slideFromRight 0.22s cubic-bezier(0.22,1,0.36,1);
+  transition: top 0.22s cubic-bezier(0.22,1,0.36,1);
 }
 .sl-subject-panel.sl-panel-left {
   left: 0;
@@ -4256,6 +4259,9 @@ html.nav-hidden .sl-dashboard-wrapper {
 .sl-subject-panel-body {
   flex: 1;
   overflow-y: auto;
+  /* Keep the scroll inside the panel — don't chain to the page/navbar when the
+     cursor is over the panel and it reaches its top/bottom. */
+  overscroll-behavior: contain;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -4428,6 +4434,15 @@ html.nav-hidden .sl-dashboard-wrapper {
     border-top: 1px solid rgba(155,110,212,0.35);
     top: 56px;
     animation: slideFromRight 0.22s cubic-bezier(0.22,1,0.36,1);
+    /* Mobile: the whole panel scrolls so the [SKILLS] header scrolls away too
+       (on desktop the header stays fixed while only the body scrolls). */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .sl-subject-panel .sl-subject-panel-body {
+    flex: 0 0 auto;
+    overflow-y: visible;
   }
   .sl-subject-panel.sl-panel-left {
     left: 0;

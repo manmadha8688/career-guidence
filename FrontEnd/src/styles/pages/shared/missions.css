@@ -1145,4 +1145,254 @@
   .md-stat { flex: 1 1 calc(50% - 0.3rem); }
 }
 
+/* ── Submit your build (repo + live demo) — highlighted call-to-action ── */
+.md-submit {
+  position: relative;
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+  padding: 2rem 2.1rem 2.1rem;
+  border-radius: 18px;
+  border: 1.5px solid color-mix(in srgb, var(--rank-color) 42%, transparent);
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--rank-color) 14%, transparent), transparent 55%),
+    color-mix(in srgb, var(--rank-color) 7%, var(--bg-secondary, transparent));
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--rank-color) 8%, transparent),
+    0 18px 40px -22px color-mix(in srgb, var(--rank-color) 60%, transparent);
+  overflow: hidden;
+}
+
+/* Top accent bar for extra emphasis */
+.md-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rank-color), color-mix(in srgb, var(--rank-color) 30%, transparent));
+}
+
+.md-submit__head { margin-bottom: 1.4rem; }
+
+.md-submit__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--rank-color) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--rank-color) 32%, transparent);
+  color: var(--rank-color);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.md-submit__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.md-submit__title svg { color: var(--rank-color); flex-shrink: 0; }
+
+.md-submit__hint {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-secondary, var(--text-muted));
+  max-width: 62ch;
+}
+
+.md-submit__hint strong { color: var(--text-primary); font-weight: 700; }
+
+.md-submit__loading {
+  padding: 0.6rem 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Edit form */
+.md-submit__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.md-submit__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.md-submit__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-secondary, var(--text-muted));
+}
+
+.md-submit__input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-family: inherit;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.md-submit__input::placeholder { color: var(--text-muted); opacity: 0.7; }
+
+.md-submit__input:focus {
+  outline: none;
+  border-color: var(--rank-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rank-color) 22%, transparent);
+}
+
+.md-submit__error {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #EF4444;
+}
+
+.md-submit__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.md-submit__save {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #fff;
+  background: var(--rank-color);
+  transition: filter 0.18s ease, transform 0.12s ease;
+}
+
+.md-submit__save:hover:not(:disabled) { filter: brightness(1.08); }
+.md-submit__save:active:not(:disabled) { transform: translateY(1px); }
+.md-submit__save:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.md-submit__cancel {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.18s ease;
+}
+
+.md-submit__cancel:hover:not(:disabled) { background: color-mix(in srgb, var(--text-primary) 6%, transparent); }
+.md-submit__cancel:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Saved state */
+.md-submit__saved {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.md-submit__flash {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #16A34A;
+  background: color-mix(in srgb, #22C55E 16%, transparent);
+}
+
+.md-submit__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  flex: 1 1 auto;
+}
+
+.md-submit__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.md-submit__link:hover {
+  border-color: var(--rank-color);
+  background: color-mix(in srgb, var(--rank-color) 8%, transparent);
+}
+
+.md-submit__link--live svg:first-child { color: #22C55E; }
+.md-submit__ext { color: var(--text-muted); }
+
+.md-submit__edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.md-submit__edit:hover { background: color-mix(in srgb, var(--text-primary) 6%, transparent); color: var(--text-primary); }
+
+@media (max-width: 560px) {
+  .md-submit { padding: 1.4rem 1.2rem; margin-top: 2rem; }
+  .md-submit__title { font-size: 1.35rem; }
+  .md-submit__hint { font-size: 0.92rem; }
+  .md-submit__links { width: 100%; }
+  .md-submit__link { flex: 1 1 calc(50% - 0.3rem); justify-content: center; }
+}
+
 /* (legacy mission-detail styles removed — replaced by .md-* full-page layout above) */

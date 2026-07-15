@@ -1,384 +1,222 @@
 # LearnForEarn / ARISE — Claude Code Project Guide
 
-> Read this before every session. Contains everything Claude needs to understand this codebase.
+> Read this first every session. It is the lean entry point. Deep knowledge lives in
+> `.claude/memory/*.md`; project rules in `.claude/rules/*.md`. Generic engineering
+> workflows (review, QA, ship, deploy) come from **gstack** (installed globally — see below),
+> not from this repo.
 
-## Available Commands
-
-### Frontend (type `/front-xxx`)
-| Command | What it does |
-|---------|-------------|
-| `/front-review` | Full code review — structure, imports, architecture, naming |
-| `/front-audit` | Deep production audit — bugs, race conditions, edge cases, auth |
-| `/front-optimize` | Performance — bundle size, lazy loading, cache, re-renders |
-| `/front-clean` | Dead code — unused imports, orphan files, dead exports, assets |
-| `/front-debug` | Debug any UI issue — crash, loading, state, auth, navigation |
-| `/front-security` | Security + accessibility — tokens, links, aria-labels |
-| `/front-redesign` | Redesign/restyle a section — acts as senior designer + React dev (`design-engineer`) |
-
-### Backend (type `/back-xxx`)
-| Command | What it does |
-|---------|-------------|
-| `/back-review` | Full code review — structure, cache, N+1, security |
-| `/back-audit` | Deep production audit — correctness, baselines, edge cases |
-| `/back-optimize` | Performance — queries, cache coverage, response size |
-| `/back-clean` | Dead code — unused endpoints, orphan methods, stale DTOs |
-| `/back-debug` | Debug any API issue — 401/403/500, slow response, stale data |
-| `/back-test` | API endpoint testing — full test suite with curl commands |
-
-### Deployment
-| Command | What it does |
-|---------|-------------|
-| `/deploy-ready` | Full deployment readiness check — Vercel + Render, latest limits, env vars, CORS, smoke test |
-
-### Fix Issues
-| Command | What it does |
-|---------|-------------|
-| `/front-fix` | Fix any React issue — crash, blank page, loading, state, quiz, auth, theme, routing, modals |
-| `/back-fix` | Fix any Spring Boot issue — 401/403/500, slow, stale data, Atlas, CORS, cache, quiz/XP |
-
-### Content / Curriculum
-| Command | What it does |
-|---------|-------------|
-| `/seed-subject` | Bring a subject to full parity — audit+enrich every concept, seed 20 questions/concept, add 3 tricky/concept (see `.claude/skills/content-pipeline/SKILL.md`) |
+**LearnForEarn** (in-app name **ARISE**) is a free, Solo-Leveling-themed learning platform that takes
+Indian graduate students from "zero idea" to hired — career roadmaps, subject "gates" with concept
+lessons + quizzes, a problem-solving gym, project missions, an AI-tools lab, deployment guides,
+aptitude practice, and shareable hunter profiles. Frontend on Vercel (learnforearn.in), Spring Boot
+backend on Render, MongoDB Atlas.
 
 ---
 
-## Standing Instruction (Always Active)
+## Prerequisites — Install gstack once on your machine
 
-**Whenever the user provides any new rule, command, prompt, memory, feedback, or project information — persist it immediately to the correct place in the `.claude/` system. Do not keep it only in conversation context.**
+This project uses **gstack** for AI-assisted development (code review, QA, security audits, docs, deployment). Every contributor must install gstack **once** on their own machine before using Claude Code on this repo.
 
-| User provides | Where to write it |
+**Requirements:** Claude Code, Git, Node.js 18+ ([nodejs.org](https://nodejs.org) LTS). Bun is installed automatically by gstack's setup.
+
+**Windows users:** you must use **Git Bash** (comes with Git for Windows). PowerShell and CMD will NOT work.
+
+### Fastest install — paste this to Claude Code
+
+Open Claude Code (from anywhere on your machine) and paste this exact message:
+
+> Install gstack: run `git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup` then confirm the skills are available by listing `~/.claude/skills/`.
+
+Claude will clone the repo, run setup, and verify. Takes ~60 seconds.
+
+### Manual install
+
+```bash
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
+cd ~/.claude/skills/gstack
+./setup
+```
+
+### Verify it works
+
+Reopen this project in Claude Code and type `/office-hours` — if Claude responds with the office-hours flow, gstack is working.
+
+### Update gstack later
+
+Inside any Claude Code session, run `/gstack-upgrade`.
+
+### Troubleshooting
+
+| Problem | Fix |
 |---|---|
-| New rule or constraint | `.claude/rules/` matching topic file |
-| New command / workflow | `.claude/commands/` |
-| New project fact or decision | Memory file + `CLAUDE.md` if architectural |
-| New behavior feedback | `.claude/memory/feedback_*.md` (grouped — see `feedback_workflow.md`) |
-| Agent behavior update | `.claude/agents/` relevant file |
-| New design/UX preference | `.claude/rules/design.md` + `.claude/memory/feedback_design.md` |
-| New env variable or deploy config | `.claude/skills/deployment/deploy-config.md` |
-
-This happens automatically — user does not need to ask.
+| `/office-hours` not recognized | `cd ~/.claude/skills/gstack && ./setup` |
+| Windows: `bad interpreter: /bin/bash^M` | `cd ~/.claude/skills/gstack && git config core.autocrlf false && git config core.eol lf && git rm --cached -r . && git reset --hard HEAD && ./setup` |
+| `/browse` fails | `cd ~/.claude/skills/gstack && bun install && bun run build` |
 
 ---
 
-## Design & Redesign (Always Active)
+## Tech Stack
 
-**When the user asks to design, redesign, restyle, modernize, or "make it impressive/unique" — act as the `design-engineer` agent (senior product designer + React developer).**
+| Layer | Stack |
+|---|---|
+| Frontend | React 19 + Vite 8, React Router v6 (lazy routes), framer-motion, Axios; deployed on Vercel |
+| Backend | Spring Boot 3.3.5 (Java 21), Docker on Render |
+| Database | MongoDB Atlas (`learnData_db`) |
+| Cache | Caffeine L1 + Redis L2 (`prod` profile) |
+| Auth | JWT in httpOnly cookie (24h), BCrypt(12), Google Sign-In, OTP email via Brevo |
 
-1. Read `.claude/rules/design.md` → `.claude/memory/feedback_design.md` first.
-2. Follow `/front-redesign` workflow: lock scope → concept → data-driven build → CSS-var styling → motion + mobile + a11y → `npm run build` + both themes.
-3. Core defaults: **muted base + one accent**, **show all options** (no scroll-locked single reveal), **no unrequested overlays/CTAs**, **full width when asked**, **reuse existing tokens/components**, and **never touch a section the user likes**.
+## Architecture Summary
 
-Supporting files: agent `design-engineer.md`, command `front-redesign.md`, skill `skills/design-audit/`, rule `rules/design.md`.
+- **Frontend** (`FrontEnd/`): all routes `React.lazy()`; API through `src/api/api.js` (Axios + `sessionStorage` cache + 401 interceptor); auth state only in `AuthContext` (from `/api/auth/me`); theme via CSS variables only.
+- **Backend** (`Student-BackEnd/`): strict `Controller → Service → Repository`; services own caching via `CacheService`; every admin mutation evicts cache; `CacheWarmup` pre-fills static data on startup.
+- **Data flow:** Browser → `/api/*` (CORS from `CORS_ALLOWED_ORIGINS`) → services → Mongo, with a two-level cache in front of read-heavy endpoints.
 
----
+## Critical Constraints (never break)
 
-## Project Identity
+1. **CSS variables for all theming** — never `dark ? colorA : colorB` for backgrounds; gradient text via a CSS class, never inline `background-clip`.
+2. **No JWT in localStorage/sessionStorage** — httpOnly cookie only; `logout()` preserves `guest_device_id` + `theme`.
+3. **No AppLayout** on DashboardPage, QuizPage, QuizResultPage, RoadmapDetailPage; QuizPage is 100vh fixed.
+4. **Every admin mutation evicts** the matching `CacheService` keys; keep `getProgressSummary`/`getBulkSubjectStatus` at 2 DB queries.
+5. **Every route is lazy**; no new npm dependency without checking bundle impact.
+6. Pass bar for changes: `npm run build` + `npx eslint` with **0 errors** (pre-existing warnings tolerated); backend must compile.
 
-| Field | Value |
-|-------|-------|
-| Brand name | LearnForEarn |
-| In-app name | ARISE |
-| Theme | Solo Leveling anime — dark gaming aesthetic |
-| Audience | Indian graduate students (0 → hired) |
-| Frontend live | https://learnforearn.in |
-| Backend live  | https://learnforearn-wnpp.onrender.com |
-
----
-
-## Full-Stack Architecture
+## Repository Navigation
 
 ```
-Browser
-  │
-  ├── React 19 + Vite 8 (Vercel CDN)
-  │     ├── Lazy-loaded routes (56 routes, code split)
-  │     ├── sessionStorage API cache (TTL 1–5 min)
-  │     ├── httpOnly cookie auth (no JWT in JS)
-  │     └── Prefetch strategy on idle
-  │
-  │   HTTPS requests → /api/*
-  │
-  ├── Spring Boot 3.3.5 (Render — Docker)
-  │     ├── SecurityConfig (CORS: CORS_ALLOWED_ORIGINS env)
-  │     ├── JWT filter (Bearer token, 24h expiry)
-  │     ├── Controllers → Services → Repositories
-  │     └── Two-level cache: Caffeine L1 + Redis L2
-  │
-  │   mongodb+srv://...
-  │
-  └── MongoDB Atlas (learnData_db)
-        ├── users, subjects, concepts
-        ├── roadmaps, roadmap_subjects
-        ├── user_concept_progress, user_roadmap_enrollments
-        ├── questions, quiz_attempts, user_subject_badges
-        ├── missions, problems
-        └── reports, feedback, walkIns
+FrontEnd/            React app → Vercel   (see .claude/memory/repository-map.md)
+Student-BackEnd/     Spring Boot → Render (Docker)
+CLAUDE.md            you are here
+CLAUDE.local.md      personal overrides (gitignored)
+.claude/             project knowledge base + rules + workflows (this repo's source of truth)
 ```
 
----
+Full per-folder map: [.claude/memory/repository-map.md](.claude/memory/repository-map.md).
 
-## Repository Structure
+## Memory Files (read as needed)
 
-```
-Student-project/
-  FrontEnd/              ← React app (this is what ships to Vercel)
-  Student-BackEnd/       ← Spring Boot app (ships to Render via Docker)
-  CLAUDE.md              ← You are here
-  CLAUDE.local.md        ← Local secrets (gitignored)
-```
-
----
-
-## Frontend Structure
-
-```
-FrontEnd/src/
-  api/api.js             ← Axios + sessionStorage cache + 401 interceptor
-  context/
-    AuthContext.jsx       ← httpOnly cookie session, guest device persistence
-    ThemeContext.jsx      ← dark/light toggle, sky canvas animation
-  hooks/
-    useSkyTransition.js   ← canvas theme animation
-    useBodyLock.js        ← scroll lock for modals (replaces 11 inline patterns)
-  components/
-    loaders/              ← 14 cinematic loaders (SystemAwakening, DungeonPortal…)
-    Navbar, Sidebar, AppLayout, ErrorBoundary, ScrollToTop…
-  pages/
-    auth/                 ← LoginPage, RegisterPage (OTP email verification)
-    ailab/                ← 89 AI tool pages, 14 categories, toolComponents.js lazy map
-    deployment/
-      guides/             ← 20 per-guide .js data files (split from 15k-line monolith)
-      *.jsx               ← 20 thin wrapper components (14–22 lines each)
-    student-skill-arena/
-      DashboardPage.jsx   ← Main SPA (1014 lines after extraction)
-      panels/             ← ConceptInlinePanel, RoadmapPanel, SubjectPanel…
-      modals/             ← AboutGateModal, AboutRoadmapModal, InstructionsModal
-      mobile/             ← MobileAvatarMenu, MobileStatsPopup, MobileQuestsPopup
-    admin-skill-arena/    ← 11 admin CRUD panels
-    problem-solving/      ← 5 tracks, ProblemDetailPage, TrackPage
-  styles/
-    global.css            ← Full design system (CSS vars, 4000+ lines)
-    landing-animations.css
-    pages-animations.css
-  utils/slRank.js         ← XP → rank calculator
-```
-
----
-
-## Backend Structure
-
-```
-Student-BackEnd/src/main/java/com/
-  config/
-    DataSeeder.java          ← Seeds subjects/concepts/missions/problems on startup
-    SecurityConfig.java      ← CORS (CORS_ALLOWED_ORIGINS), JWT filter, public routes
-    CacheConfig.java          ← Caffeine L1 bean (Redis L2 conditional on prod profile)
-    CacheWarmup.java          ← Pre-warms Caffeine from DB on ApplicationReadyEvent
-  model/
-    User.java                ← role: STUDENT / GUEST / ADMIN
-    Subject.java             ← rich fields: overview, whyLearn, prerequisites, outcomes…
-    Concept.java             ← examples[], keyPoints[], tip, commonMistakes[]
-    Roadmap.java / RoadmapSubject.java
-    UserConceptProgress.java ← completedAt, manual uncomplete supported
-    UserRoadmapEnrollment.java ← paused boolean
-    Question.java / QuizAttempt.java ← xpEarned, dailyBonusEarned
-    UserSubjectBadge.java
-    Mission.java / Problem.java
-  dto/
-    AdminStatsDTO.java       ← totalGuests field
-    ProgressSummaryDTO.java  ← built by buildProgressSummary()
-  service/
-    AuthService.java         ← login, guestLogin, register, /me
-    SubjectService.java / ConceptService.java
-    ProgressService.java     ← getProgressSummary (optimized: <500ms, 2 DB queries)
-    RoadmapService.java      ← enroll, pause, resume
-    QuizService.java         ← start, submit, getBulkSubjectStatus (2 DB queries)
-    AdminService.java        ← CRUD + cache eviction on every mutation
-    CacheService.java        ← get(name, key, supplier), evict, evictAll
-  controller/
-    AuthController.java      ← POST /register /login /guest, GET /me
-    SubjectController.java / ConceptController.java
-    ProgressController.java  ← GET /summary, /hunter-stats
-    RoadmapController.java   ← enroll /pause /resume /enrolled
-    QuizController.java      ← start, submit, GET /status, /bulk-status
-    AdminController.java     ← all /admin/* endpoints
-    MissionController.java / ProblemController.java
-    FeedbackController.java / ReportController.java
-    WalkInController.java
-  security/
-    JwtFilter.java           ← validates Bearer token per request
-```
-
----
-
-## Authentication Flow
-
-```
-1. POST /api/auth/login { email, password }
-   └── Returns JWT in httpOnly cookie (24h expiry)
-
-2. Frontend AuthContext.jsx on mount:
-   └── GET /api/auth/me (withCredentials: true)
-       ├── 200 → setUser(data) + setLoading(false)
-       └── 401 → setUser(null) + setLoading(false)
-
-3. ProtectedRoute.jsx:
-   └── while loading → SystemAwakeningLoader
-   └── !user → navigate('/login?redirect=...')
-   └── adminOnly && user.role !== 'ADMIN' → navigate('/skill-arena/dashboard')
-
-4. Logout:
-   └── POST /api/auth/logout (clears httpOnly cookie)
-   └── localStorage.clear() (preserves guest_device_id + theme)
-   └── clearUserCache() (clears sessionStorage API cache)
-   └── window.location.href = '/' (hard reload, clears all React state)
-
-5. Guest Login:
-   └── POST /api/auth/guest { guestId? }
-   └── Creates GUEST-role user, stores device ID in localStorage
-```
-
----
-
-## API Communication Pattern
-
-All frontend API calls go through `src/api/api.js`:
-
-```js
-// Base URL
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
-
-// Every request: withCredentials: true (sends httpOnly cookie)
-// 401 interceptor: clears cache + redirects to /login
-
-// Cached read:
-withCache('subjects', 2*60_000, () => api.get('/subjects'))
-
-// Mutation (auto-busts cache):
-enrollRoadmap(id) → clears roadmap:{id}, roadmaps, enrolledRoadmaps
-```
-
----
-
-## Caching Strategy
-
-### Frontend (sessionStorage, api.js)
-| Data | TTL | Cache key pattern |
-|------|-----|-------------------|
-| Subjects (list) | 2 min | `subjects` |
-| Subject (single) | 2 min | `subject:{id}` |
-| Concept (single) | 2 min | `concept:{id}` |
-| Progress summary | 60 sec | `progressSummary` |
-| Hunter stats | 60 sec | `hunterStats` |
-| Roadmaps | 5 min | `roadmaps` |
-| Roadmap (single) | 5 min | `roadmap:{id}` |
-| Quiz status | 2 min | `quizStatus:{type}:{id}` |
-| Bulk quiz status | 2 min | `quizStatus:bulk:{ids}` |
-| Missions | 30 sec | `missions`, `mission:{id}` |
-| Problems | 5 min | `problems:{track}`, `problem:{id}` |
-
-### Backend (Caffeine L1 + Redis L2)
-- CacheService.get(cacheName, key, () → DB call)
-- Admin mutations call CacheService.evict() immediately
-- CacheWarmup pre-fills on startup: subjects, concepts, roadmaps, missions, problems
-
----
-
-## Performance Strategy
-
-### Frontend
-- All 56 routes are `React.lazy()` — code split per page
-- `usePrefetchRoutes()` hook fires once on idle (requestIdleCallback), pre-loads main page chunks
-- guideData.js (15k lines) split into 20 per-guide files → each deployment page loads only its own data
-- DashboardPage (originally 2634 lines) split into 12 components under panels/modals/mobile/
-
-### Backend
-- `getProgressSummary`: optimized from 18 DB queries to 2 (subjects from Caffeine, one batch badge query)
-- `getBulkSubjectStatus`: 2 DB queries replaces N×M calls (one query for badges, one for progress)
-- DataSeeder uses `existsByXxx()` checks to skip re-seeding
-
----
-
-## XP & Rank System
-
-| XP threshold | Rank | Color |
-|---|---|---|
-| 0 | E | #888888 |
-| 500 | D | #4ADE80 |
-| 1500 | C | #60A5FA |
-| 3000 | B | #9B6ED4 |
-| 6000 | A | #F59E0B |
-| 10000 | S | #EF4444 |
-
-XP earned = quiz score × 10. First concept of the day = +50 daily bonus.
-
----
-
-## Key Constraints (Never Break These)
-
-1. **No separate Subject/Concept/Roadmap pages** — everything is inline in DashboardPage SPA
-2. **QuizPage is 100vh fixed** — never adds scrolling
-3. **DashboardPage, QuizPage, QuizResultPage, RoadmapDetailPage have NO AppLayout** (no sidebar/navbar)
-4. **Theme is CSS variables only** — never use `dark ? colorA : colorB` for backgrounds; use `var(--bg-primary)`
-5. **No JWT in localStorage** — auth is httpOnly cookie only
-6. **Logout preserves `guest_device_id` and `theme`** in localStorage
-7. **Admin routes require `adminOnly` prop on ProtectedRoute**
-8. **sl:refresh custom event** triggers full dashboard data reload (fired by QuizResultPage after pass)
-9. **All admin mutations must evict backend cache** via CacheService.evict()
-
----
+- [project-context.md](.claude/memory/project-context.md) — business purpose, audience, product surface
+- [architecture.md](.claude/memory/architecture.md) — full-stack architecture, auth, cache, XP/rank
+- [domain-knowledge.md](.claude/memory/domain-knowledge.md) — Solo Leveling vocabulary, data model, gotchas
+- [repository-map.md](.claude/memory/repository-map.md) — folder-by-folder guide
+- [decisions.md](.claude/memory/decisions.md) — architectural decisions + gstack collision notes
+- [progress.md](.claude/memory/progress.md) — current state, known limitations, what's next
 
 ## Environment Variables
 
-### Frontend (.env.local / Vercel dashboard)
-```
-VITE_API_URL=http://localhost:8080/api          # dev
-VITE_API_URL=https://learnforearn-wnpp.onrender.com/api  # prod
-```
+**Frontend** (`.env.local` / Vercel): `VITE_API_URL`, `VITE_GOOGLE_CLIENT_ID`.
+**Backend** (Render): `MONGODB_URI`, `JWT_SECRET`, `CORS_ALLOWED_ORIGINS`, `SPRING_PROFILES_ACTIVE`, `SPRING_REDIS_URL`, `PORT`, `COOKIE_SECURE`, `APP_URL`, `BREVO_API_KEY`, `GOOGLE_CLIENT_ID`.
+Secrets never live in source — see [.claude/rules/security-rules.md](.claude/rules/security-rules.md).
 
-### Backend (Render dashboard)
-```
-MONGODB_URI=mongodb+srv://<db-user>:<db-password>@<cluster-host>/learnData_db
-JWT_SECRET=<strong-random-256-bit>
-CORS_ALLOWED_ORIGINS=https://learnforearn.in
-SPRING_PROFILES_ACTIVE=prod
-SPRING_REDIS_URL=<redis-url>
-PORT=<injected by Render; falls back to 8080 locally>
-COOKIE_SECURE=true                          # true in prod (HTTPS); set false only for local HTTP dev
-APP_URL=https://learnforearn.in             # base URL used in outbound emails (OTP, welcome, reset)
-BREVO_API_KEY=<brevo-transactional-email-api-key>
-GOOGLE_CLIENT_ID=<google-oauth-web-client-id>   # verifies Google Sign-In ID tokens; must match frontend VITE_GOOGLE_CLIENT_ID
-```
+## Common Commands
 
----
-
-## Local Dev Commands
-
-### Backend (PowerShell)
-```powershell
-$env:JAVA_HOME = "C:\Users\ManmadhaJayamangala\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.11.v20260515-1531\jre"
-$env:PATH = "$env:JAVA_HOME\bin;$env:PATH"
-cd C:\manmadha\Student-project\Student-BackEnd
-.\mvnw.cmd spring-boot:run
-# → http://localhost:8080
-```
-
-### Frontend
 ```bash
-cd C:/manmadha/Student-project/FrontEnd
-npm run dev
-# → http://localhost:5173
+# Frontend
+cd FrontEnd && npm install && npm run dev         # http://localhost:5173
+cd FrontEnd && npm run build && npx eslint .       # pre-commit gate (0 errors)
+
+# Backend (Git Bash / PowerShell — set JAVA_HOME to Java 21 first)
+cd Student-BackEnd && ./mvnw.cmd spring-boot:run   # http://localhost:8080
 ```
 
 ---
 
-## Test Credentials
+## Available gstack Commands
 
-> Real passwords are **never** stored here. Keep them in your local password manager only.
+gstack is installed globally at `~/.claude/skills/gstack`. Use `/browse` from gstack for all web browsing; never use `mcp__claude-in-chrome__*` tools.
 
+- **Planning:** `/office-hours`, `/autoplan`, `/spec`, `/plan-ceo-review`, `/plan-eng-review`, `/plan-design-review`
+- **Review & investigate:** `/review`, `/investigate`, `/codex`
+- **Testing:** `/qa <url>`, `/qa-only <url>`, `/browse`, `/open-gstack-browser`
+- **Security & docs:** `/cso`, `/document-release`, `/document-generate`
+- **Ship & deploy:** `/ship`, `/land-and-deploy`, `/canary`
+- **Safety:** `/careful`, `/freeze`, `/guard`, `/unfreeze`
+- **Learn & upgrade:** `/learn`, `/gstack-upgrade`
+
+## Recommended Workflow
+
+- **New feature:** `/office-hours` → `/autoplan` → implement → `/review` → `/qa` → `/cso` → `/ship`
+- **Routine change:** implement → `/review` → `/qa` → `/ship`
+- **Bug fix:** `/investigate` → fix → `/review` → `/qa` → `/ship`
+
+Before every PR (never skip):
+- `/review` — bugs CI won't catch
+- `/qa <staging-url>` — real browser test
+- `/cso` — security audit (if security-sensitive)
+- `/ship` — opens PR
+
+---
+
+## Pre-flight — gstack availability check
+
+Before offering the Skill routing menu OR running any gstack slash command, Claude MUST first verify gstack is installed:
+
+```bash
+test -f ~/.claude/skills/gstack/setup && echo "gstack_installed" || echo "gstack_missing"
 ```
-Admin (demo):  admin@demo.com       / <local secret>
-Main Admin:    admin8688@gmail.com  / <local secret>
-Student:       student@test.com     / <local secret>
+
+- `gstack_installed` → show **Menu A** below
+- `gstack_missing` → show **Menu B** below
+
+Install command (used when the user chooses "Install gstack now"):
+
+```bash
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup
 ```
+
+After install, tell the user: "✅ gstack installed. Reopen this project in Claude Code so the new skills are discovered. Then re-ask your original question."
+
+If install fails, report the error, suggest the manual install, and fall back to the normal project approach.
+
+## Skill routing
+
+Before any repository task, Claude must run the Pre-flight check and show the correct menu.
+
+**Menu A — gstack IS installed**
+> "Before I start, choose one:
+> 1. Use gstack workflow
+> 2. Use normal project files / plain Claude approach
+> 3. Let Claude recommend the best option first"
+
+**Menu B — gstack is NOT installed**
+> "gstack is not installed on your machine. Before I start, choose one:
+> 1. Install gstack now (~60 seconds), then use gstack workflow
+> 2. Use normal project files / plain Claude approach (no gstack workflows available)
+> 3. Let Claude recommend the best option first"
+
+The install option MUST appear on every question until gstack is installed — not just the first time.
+
+**Slash command exception:** if the user types a gstack slash command (`/review`, `/qa`, `/cso`, `/ship`, `/office-hours`, etc.) directly, run the Pre-flight check first. If installed, run the command directly. If not, show Menu B.
+
+Claude must wait for the user's selection before reading files, editing files, or invoking any skill.
+
+### Option 1 (Menu A) — Use gstack workflow
+
+Mappings:
+- Product brainstorm / feature ideas → `/office-hours`
+- Rough idea to spec → `/spec`
+- Scope tradeoffs → `/plan-ceo-review`
+- New-feature architecture → `/plan-eng-review`
+- Bugs / unexpected errors → `/investigate`
+- Test a URL → `/qa` or `/qa-only`
+- Diff review before land → `/review`
+- Security-sensitive change → `/cso`
+- Open a PR → `/ship`
+- Deploy / verify prod → `/land-and-deploy`
+- Docs update → `/document-release`
+- Docs generation → `/document-generate`
+
+### Option 1 (Menu B) — Install gstack now
+
+Run the install command. On success, tell the user to reopen the project. On failure, fall back to Option 2.
+
+### Option 2 — Use normal project files / plain Claude approach
+
+Reading files, explaining code, small edits, typo fixes, one-file updates, basic refactoring, config changes, project Q&A, checking implementation details. Follow `.claude/rules/*.md` and the project's own commands (`/team-review`, `/scaffold`, `/feature`, `/bugfix`, `/deploy`, and the existing `/front-*`, `/back-*`, `/seed-subject`, `/deploy-ready`).
+
+### Option 3 — Let Claude recommend
+
+If gstack installed → recommend between gstack workflow and normal approach. If gstack missing → recommend between installing gstack (for tasks that need it) or normal approach (for small tasks).
+
+---
+
+> **Project vs gstack:** `.claude/` is the source of truth for **project-specific** guidance (this repo's conventions, domain, rules). `~/.claude/skills/gstack/` is the shared toolkit for **generic** workflows (review, QA, ship). The project's own domain commands (`/front-*`, `/back-*`, `/seed-subject`, `/deploy-ready`, `/change-check`) remain available and do not collide with gstack's reserved names.

@@ -1,6 +1,6 @@
 import {
   Swords, Code2, Briefcase, ChevronRight, Trophy, Target,
-  CheckCircle, ArrowRight, Zap, Rocket, Brain,
+  CheckCircle, ArrowRight, Zap, Rocket, Brain, FileText,
 } from 'lucide-react'
 
 export const features = [
@@ -9,6 +9,7 @@ export const features = [
   { Icon: Brain,    iconD: '#A5B4FC', iconL: '#6366F1', label: 'Aptitude',        status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'The round every placement test opens with. Master quantitative, logical reasoning, verbal, and data interpretation — each topic taught twice: a full Learn It walkthrough, then Crack It shortcuts to solve it in seconds.', glow: 'rgba(129,140,248,0.12)', activeBorder: 'rgba(129,140,248,0.35)', isLive: true, href: '/aptitude', cta: 'Train Aptitude' },
   { Icon: Trophy,   iconD: '#FF7F2A', iconL: '#B45309', label: 'Mission Board',   status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Real project briefs you build end to end. Finish one and you walk away with a portfolio piece to show recruiters — not just another tutorial you followed along with.', glow: 'rgba(255,127,42,0.12)', activeBorder: 'rgba(255,127,42,0.35)', isLive: true, href: '/missions', cta: 'Explore Missions' },
   { Icon: Rocket,   iconD: '#9B6ED4', iconL: '#7C5DBB', label: 'Deploy Guidance', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Get your project off localhost and onto a live URL. Copy-paste-ready guides for React, Django, Node, FastAPI, Spring Boot, and ML demos — free hosting, database, and env setup included.', glow: 'rgba(155,110,212,0.12)', activeBorder: 'rgba(155,110,212,0.35)', isLive: true, href: '/deployment', cta: 'Open Deploy Guide' },
+  { Icon: FileText, iconD: '#5EEAD4', iconL: '#0F766E', label: 'Resume Studio',   status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Turn everything you build here into a recruiter-ready resume. Fill in guided sections, watch it update live, and download a clean, ATS-friendly PDF — saved to your account so you can refine it anytime.', glow: 'rgba(94,234,212,0.12)', activeBorder: 'rgba(94,234,212,0.35)', isLive: true, href: '/resume', cta: 'Build Resume' },
   { Icon: Briefcase,iconD: '#4ADE80', iconL: '#15803D', label: 'Walk-In Jobs',    status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Real walk-in interview drives shared by the community. Filter by city, see the role and skills needed, and show up prepared.', glow: 'rgba(74,222,128,0.12)', activeBorder: 'rgba(74,222,128,0.3)', isLive: true, href: '/walk-ins', cta: 'View Walk-Ins' },
   { Icon: Zap,      iconD: '#00D9FF', iconL: '#0284C7', label: 'AI Lab',          status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Learn the AI tools every developer is now expected to know — chatbots, coding copilots, agents, and automation — with beginner-friendly guides and a hands-on project for each.', glow: 'rgba(0,217,255,0.1)', activeBorder: 'rgba(0,217,255,0.35)', isLive: true, href: '/ai-lab', cta: 'Explore AI Tools' },
 ]
@@ -20,9 +21,9 @@ export const steps = [
 ]
 
 export const NAV_LINKS = [
-  { label: 'Missions',         live: true, href: '/missions' },
   { label: 'Code GYM',         live: true, href: '/problem-solving' },
   { label: 'Aptitude',         live: true, href: '/aptitude' },
+  { label: 'Resume',           live: true, href: '/resume' },
   { label: 'Walk-Ins',         live: true, href: '/walk-ins' },
   { label: 'AI Lab',           live: true, href: '/ai-lab' },
   { label: 'Deploy Guidance',  live: true, href: '/deployment' },

@@ -1,0 +1,17 @@
+---
+description: Design/redesign defaults (act as design-engineer). Applies to styles and page components.
+globs: FrontEnd/src/styles/**,FrontEnd/src/pages/**
+alwaysApply: false
+---
+
+# Design Rules
+
+Full detail: `.claude/rules/design.md` + `.claude/memory/feedback_design.md`. Command: `/front-redesign`.
+
+When asked to design, redesign, restyle, modernize, or "make it impressive/unique",
+act as the **design-engineer** (senior product designer + React dev):
+
+1. Read `.claude/rules/design.md` → `.claude/memory/feedback_design.md` first.
+2. Lock scope → concept → data-driven build → CSS-var styling → motion + mobile + a11y → `npm run build` + both themes.
+3. Core defaults: **muted base + one accent**; **show all options** (no scroll-locked single reveal); **no unrequested overlays/CTAs**; **full width when asked**; **reuse existing tokens/components**; and **never touch a section the user likes**.
+4. Theme via CSS variables only — never hardcode `dark ? a : b` for backgrounds.

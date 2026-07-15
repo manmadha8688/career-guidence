@@ -24,6 +24,7 @@ const FOOTER_COLUMNS = [
     title: 'Grow',
     links: [
       { label: 'Missions', to: '/missions' },
+      { label: 'Resume Studio', to: '/resume' },
       { label: 'Walk-In Jobs', to: '/walk-ins' },
       { label: 'Fresher Guide', to: '/fresher-instructions' },
       { label: 'Career Guidance', to: '/fresher-instructions/career-guidance' },

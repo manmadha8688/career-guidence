@@ -1,0 +1,18 @@
+---
+description: Backend (Spring Boot 3.3.5 / Java 21 / MongoDB) conventions for the LearnForEarn/ARISE API.
+globs: Student-BackEnd/**
+alwaysApply: false
+---
+
+# Backend Rules
+
+Full detail: `.claude/rules/backend.md` · `.claude/rules/database.md` · `.claude/rules/api-conventions.md` · `.claude/rules/performance.md`.
+
+- Strict **Controller → Service → Repository**. Controllers contain no business logic.
+- Caching lives in services via `CacheService.get(name, key, supplier)`. **Every admin mutation must call `evict`/`evictAll`** on the matching keys right after save. Every cache namespace must be registered in `CacheService.TTLS` or it silently skips Caffeine L1.
+- Two-level cache: Caffeine L1 always; Redis L2 only in `prod` profile. Redis paths must stay null-safe (never throw when Redis is down).
+- No N+1: batch with `findBy...In(...)`. Preserve the 2-DB-query invariants in `getProgressSummary` and `getBulkSubjectStatus`.
+- DTOs: never expose `password`; never expose `email` in public/list responses.
+- Validate `@RequestBody` with `@Valid` + `@NotBlank`/`@Email`/`@Size`. Admin endpoints use `@PreAuthorize("hasRole('ADMIN')")`.
+- Errors return `{ "error": "message" }` with correct status (400/401/403/404/500) via `GlobalExceptionHandler`.
+- Verify a change: `./mvnw.cmd compile` (Java path per `CLAUDE.md`). Don't edit `application*.properties` without asking.

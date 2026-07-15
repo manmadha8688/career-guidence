@@ -1,0 +1,17 @@
+---
+description: Frontend (React 19 + Vite) conventions for the LearnForEarn/ARISE app.
+globs: FrontEnd/**
+alwaysApply: false
+---
+
+# Frontend Rules
+
+Full detail: `.claude/rules/frontend.md` · design: `.claude/rules/design.md`.
+
+- **Theme = CSS variables only.** Never `dark ? colorA : colorB` for backgrounds — use `var(--bg-primary)` etc. Never touch a section the user likes.
+- All API calls route through `src/api/api.js`; reads cached via `withCache`, mutations bust cache via `clearApiCache`.
+- Auth: `AuthContext` only, `user?.role === 'ADMIN'` with optional chaining. No JWT in JS/localStorage.
+- Routes are `React.lazy()`. Overlays/modals use the `useBodyLock` hook for scroll lock.
+- No `dangerouslySetInnerHTML`. User content renders via JSX (auto-escaped).
+- Redesign/restyle requests → act as **design-engineer**, read `.claude/rules/design.md` + `.claude/memory/feedback_design.md`, then follow `/front-redesign`.
+- Verify a change: `npm run build` + eslint, check **both** light and dark themes and mobile.

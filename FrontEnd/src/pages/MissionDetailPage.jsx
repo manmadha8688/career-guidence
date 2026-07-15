@@ -5,13 +5,14 @@ import {
   ArrowLeft, ChevronDown, Sun, Moon,
   Clock, Target, Sparkles, Compass, PenLine,
   AlertTriangle, Lightbulb, ListChecks, BookOpen,
+  Github, Globe, ExternalLink, Check, Rocket,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
 import EnterArenaButton from '../components/EnterArenaButton'
 import SectionNotFoundPage from '../components/SectionNotFoundPage'
 import { isMongoId } from '../utils/mongoId'
-import { getMission } from '../api/api'
+import { getMission, getMissionSubmission, saveMissionSubmission } from '../api/api'
 import BookmarkButton from '../components/BookmarkButton'
 import { useTheme } from '../context/ThemeContext'
 
@@ -45,6 +46,18 @@ export default function MissionDetailPage() {
   const [mistakesOpen, setMistakesOpen] = useState(false)
   const [hintsOpen, setHintsOpen] = useState(false)
 
+  // ── Hunter's submitted work (repo + live demo) ──
+  const [submission, setSubmission] = useState(null)
+  const [subLoading, setSubLoading] = useState(true)
+  const [repoUrl, setRepoUrl]       = useState('')
+  const [deployUrl, setDeployUrl]   = useState('')
+  const [editing, setEditing]       = useState(false)
+  const [saving, setSaving]         = useState(false)
+  const [saveErr, setSaveErr]       = useState('')
+  const [justSaved, setJustSaved]   = useState(false)
+
+  const hasLinks = !!(submission && (submission.repoUrl || submission.deployUrl))
+
   useEffect(() => {
     if (!isMongoId(id)) {
       setNotFound(true)
@@ -56,6 +69,55 @@ export default function MissionDetailPage() {
       .catch(() => setNotFound(true))
       .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
   }, [id])
+
+  useEffect(() => {
+    if (!isMongoId(id)) return
+    setSubLoading(true)
+    getMissionSubmission(id)
+      .then(r => {
+        const s = r.data
+        setSubmission(s)
+        if (s && (s.repoUrl || s.deployUrl)) {
+          setRepoUrl(s.repoUrl || '')
+          setDeployUrl(s.deployUrl || '')
+          setEditing(false)
+        } else {
+          setEditing(true)
+        }
+      })
+      .catch(() => setEditing(true))
+      .finally(() => setSubLoading(false))
+  }, [id])
+
+  const handleSaveSubmission = async () => {
+    setSaveErr('')
+    const repo = repoUrl.trim()
+    const deploy = deployUrl.trim()
+    if (!repo && !deploy) { setSaveErr('Add at least one link before saving.'); return }
+    const invalid = [repo, deploy].filter(Boolean).some(u => !/^https?:\/\/.+/i.test(u))
+    if (invalid) { setSaveErr('Links must start with http:// or https://'); return }
+    setSaving(true)
+    try {
+      const { data } = await saveMissionSubmission(id, { repoUrl: repo, deployUrl: deploy })
+      setSubmission(data)
+      setRepoUrl(data.repoUrl || '')
+      setDeployUrl(data.deployUrl || '')
+      setEditing(false)
+      setJustSaved(true)
+      setTimeout(() => setJustSaved(false), 2500)
+    } catch (e) {
+      setSaveErr(e?.response?.data?.message || 'Could not save — check your links and try again.')
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const cancelEdit = () => {
+    setSaveErr('')
+    setRepoUrl(submission?.repoUrl || '')
+    setDeployUrl(submission?.deployUrl || '')
+    setEditing(false)
+  }
 
   if (loading) return <SmokeBladeLoader />
   if (notFound) return <SectionNotFoundPage variant="missions" />
@@ -310,6 +372,81 @@ export default function MissionDetailPage() {
             )}
           </motion.section>
         )}
+
+        {/* Submit your build — repo + live demo links */}
+        <motion.section {...reveal} className="md-submit">
+          <div className="md-submit__head">
+            <span className="md-submit__eyebrow"><Sparkles size={13} /> Final step</span>
+            <h2 className="md-submit__title"><Rocket size={22} /> Ship it &amp; show it off</h2>
+            <p className="md-submit__hint">
+              You built it — now make it count. Add your <strong>GitHub repo</strong> and
+              <strong> live demo</strong> so recruiters and mentors can see what you can do.
+            </p>
+          </div>
+
+          {subLoading ? (
+            <div className="md-submit__loading">Loading your submission…</div>
+          ) : editing ? (
+            <div className="md-submit__form">
+              <label className="md-submit__field">
+                <span className="md-submit__label"><Github size={15} /> GitHub repository</span>
+                <input
+                  type="url"
+                  inputMode="url"
+                  className="md-submit__input"
+                  placeholder="https://github.com/you/project"
+                  value={repoUrl}
+                  onChange={e => setRepoUrl(e.target.value)}
+                />
+              </label>
+              <label className="md-submit__field">
+                <span className="md-submit__label"><Globe size={15} /> Live demo URL</span>
+                <input
+                  type="url"
+                  inputMode="url"
+                  className="md-submit__input"
+                  placeholder="https://your-app.vercel.app"
+                  value={deployUrl}
+                  onChange={e => setDeployUrl(e.target.value)}
+                />
+              </label>
+
+              {saveErr && (
+                <p className="md-submit__error"><AlertTriangle size={14} /> {saveErr}</p>
+              )}
+
+              <div className="md-submit__actions">
+                <button type="button" className="md-submit__save" onClick={handleSaveSubmission} disabled={saving}>
+                  {saving ? 'Saving…' : <><Check size={15} /> Save my work</>}
+                </button>
+                {hasLinks && (
+                  <button type="button" className="md-submit__cancel" onClick={cancelEdit} disabled={saving}>
+                    Cancel
+                  </button>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="md-submit__saved">
+              {justSaved && <span className="md-submit__flash"><Check size={14} /> Saved</span>}
+              <div className="md-submit__links">
+                {submission?.repoUrl && (
+                  <a href={submission.repoUrl} target="_blank" rel="noopener noreferrer" className="md-submit__link">
+                    <Github size={16} /> <span>Repository</span> <ExternalLink size={13} className="md-submit__ext" />
+                  </a>
+                )}
+                {submission?.deployUrl && (
+                  <a href={submission.deployUrl} target="_blank" rel="noopener noreferrer" className="md-submit__link md-submit__link--live">
+                    <Globe size={16} /> <span>Live demo</span> <ExternalLink size={13} className="md-submit__ext" />
+                  </a>
+                )}
+              </div>
+              <button type="button" className="md-submit__edit" onClick={() => setEditing(true)}>
+                <PenLine size={14} /> Edit links
+              </button>
+            </div>
+          )}
+        </motion.section>
 
         <div className="md-back-wrap">
           <button type="button" onClick={() => navigate(-1)} className="md-back-btn">

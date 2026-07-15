@@ -175,6 +175,15 @@ export const getAllFeedbacks = (p=0,s=15) => api.get(`/feedback?page=${p}&size=$
 export const getMissions  = ()     => withCache('missions',      30_000, () => api.get('/missions'))
 export const getMission   = (id)   => withCache(`mission:${id}`, 30_000, () => api.get(`/missions/${id}`))
 
+// Per-user submitted work (repo + live demo). Not cached — always fresh for the signed-in hunter.
+export const getMissionSubmission  = (id)       => api.get(`/missions/${id}/submission`)
+export const saveMissionSubmission = (id, body) => api.put(`/missions/${id}/submission`, body)
+
+// ─── RESUME (per-user) ────────────────────────────────
+// Not cached — the builder always reads/writes the freshest copy for the user.
+export const getResume  = ()     => api.get('/resume')
+export const saveResume = (data) => api.put('/resume', data)
+
 // ─── PROBLEMS (public) ────────────────────────────────────────
 export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*60_000, () => api.get('/problems' + (track ? `?track=${track}` : '')))
 export const getProblem   = (id)    => withCache(`problem:${id}`,            5*60_000, () => api.get(`/problems/${id}`))
@@ -256,6 +265,7 @@ export const removeBookmarkById = (id)          => api.delete(`/bookmarks/${id}`
 // ─── PROFILE ──────────────────────────────────────────
 export const getPublicProfile = (username) => api.get(`/public/profile/${encodeURIComponent(username)}`)
 export const updateProfile    = (data)     => api.put('/profile/me', data)
+export const checkUsername    = (username) => api.get('/profile/check-username', { params: { username } })
 
 // ─── REPORTS ──────────────────────────────────────────
 // Report mutations bust the cached admin dashboard stats so the open-report

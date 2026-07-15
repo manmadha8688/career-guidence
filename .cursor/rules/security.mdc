@@ -1,0 +1,22 @@
+---
+description: Security non-negotiables (auth, secrets, CORS, data exposure). Always applied.
+alwaysApply: true
+---
+
+# Security Rules
+
+Full detail: `.claude/rules/security.md` + `.claude/rules/security-rules.md`.
+
+## Auth
+- JWT lives in an **httpOnly cookie only** — never localStorage/sessionStorage/React state. `withCredentials: true` on all requests; 401 interceptor clears cache + redirects to `/login`.
+- `AuthContext` is the only source of truth for the user. Frontend role checks gate UI; the **backend must always re-validate** (`@PreAuthorize`). Never trust the client alone.
+
+## Secrets
+- `VITE_`-prefixed vars are PUBLIC (bundled) — only `VITE_API_URL`, never keys/passwords.
+- Backend secrets (`MONGODB_URI`, `JWT_SECRET`, `CORS_ALLOWED_ORIGINS`, `SPRING_REDIS_URL`) live in Render env, never in code.
+- Never read, edit, or commit: `**/.env*`, `**/application-local.properties`, `CLAUDE.local.md`, `**/*.pem`, `**/*.key`, `**/secrets.json`.
+
+## CORS & data
+- Allowed origins from `CORS_ALLOWED_ORIGINS` env only; never `allowedOrigins("*")` in prod.
+- Never return `password`; never return `email` in public/list responses. Guests shown as `Guest#XXXX`.
+- No `dangerouslySetInnerHTML`. The live code preview iframe (`sandbox="allow-scripts allow-same-origin"`) is intentional — don't replicate that sandbox elsewhere.

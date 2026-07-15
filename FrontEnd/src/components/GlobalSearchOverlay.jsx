@@ -9,10 +9,12 @@ import useBodyLock from '../hooks/useBodyLock'
 const MIN_LEN = 2
 
 const GROUPS = [
-  { key: 'subjects', label: 'Dungeon Gates',  link: (id) => `/skill-arena/dashboard?view=gates&subject=${id}` },
-  { key: 'roadmaps', label: 'Hunter Paths',   link: (id) => `/skill-arena/roadmaps/${id}` },
-  { key: 'missions', label: 'Missions',       link: (id) => `/missions/${id}` },
-  { key: 'problems', label: 'Code Gym',       link: (id) => `/problem-solving/${id}` },
+  { key: 'subjects', label: 'Dungeon Gates',  link: (i) => `/skill-arena/dashboard?view=gates&subject=${i.id}` },
+  { key: 'concepts', label: 'Concepts',       link: (i) => `/skill-arena/dashboard?view=gates&subject=${i.subjectId}&concept=${i.id}` },
+  { key: 'roadmaps', label: 'Hunter Paths',   link: (i) => `/skill-arena/roadmaps/${i.id}` },
+  { key: 'aptitude', label: 'Aptitude',       link: (i) => `/aptitude/${i.category}/${i.group}/${i.topic}` },
+  { key: 'missions', label: 'Missions',       link: (i) => `/missions/${i.id}` },
+  { key: 'problems', label: 'Code Gym',       link: (i) => `/problem-solving/${i.id}` },
 ]
 
 /** Fire this from anywhere to open the search overlay. */
@@ -84,7 +86,7 @@ export default function GlobalSearchOverlay() {
   // Flatten results for keyboard navigation
   const flat = []
   if (results) {
-    GROUPS.forEach(g => (results[g.key] || []).forEach(item => flat.push({ ...item, _link: g.link(item.id) })))
+    GROUPS.forEach(g => (results[g.key] || []).forEach(item => flat.push({ ...item, _link: g.link(item) })))
   }
 
   const goTo = useCallback((link) => { close(); navigate(link) }, [close, navigate])
@@ -158,7 +160,7 @@ export default function GlobalSearchOverlay() {
                       type="button"
                       className={`gs-result${idx === activeIdx ? ' is-active' : ''}`}
                       onMouseEnter={() => setActiveIdx(idx)}
-                      onClick={() => goTo(group.link(item.id))}
+                      onClick={() => goTo(group.link(item))}
                     >
                       <span className="gs-result__icon">{item.icon || '•'}</span>
                       <span className="gs-result__body">

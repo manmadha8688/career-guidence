@@ -35,6 +35,7 @@ const PublicProfilePage       = lazy(() => import('./pages/PublicProfilePage'))
 
 const MissionsPage             = lazy(() => import('./pages/MissionsPage'))
 const MissionDetailPage        = lazy(() => import('./pages/MissionDetailPage'))
+const ResumePage               = lazy(() => import('./pages/resume/ResumePage'))
 const JobsPage                 = lazy(() => import('./pages/JobsPage'))
 const FresherInstructionsPage  = lazy(() => import('./pages/FresherInstructionsPage'))
 const CareerGuidancePage       = lazy(() => import('./pages/CareerGuidancePage'))
@@ -114,6 +115,7 @@ function GlobalFooter() {
   const hide =
     pathname.startsWith('/skill-arena') ||
     pathname.startsWith('/admin') ||
+    pathname.startsWith('/u/') ||
     pathname === '/login' ||
     pathname === '/register' ||
     pathname === '/forgot-password' ||
@@ -290,6 +292,10 @@ function App() {
 
             {/* Missions detail — requires login */}
             <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
+
+            {/* Resume builder + ATS guide — public. Saving & downloading the PDF
+                require a registered (non-guest) account; gated inside the page. */}
+            <Route path="/resume" element={<ResumePage />} />
 
             {/* Public shareable profile — no auth required */}
             <Route path="/u/:username" element={<PublicProfilePage />} />

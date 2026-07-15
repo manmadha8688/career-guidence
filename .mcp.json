@@ -1,0 +1,19 @@
+{
+  "_note": "Optional MCP servers for this repo. Both are commented-in as suggestions — remove the ones you don't want. Secrets MUST NOT be committed: each server reads its token from an environment variable (set it in your shell or MCP client, never inline here). 'github' powers PR/issue workflows (this repo already uses the gh CLI); 'mongodb' gives read access to the MongoDB Atlas 'learnData_db'. Install prerequisites: `npx` (bundled with Node) for the GitHub server; `npm i -g mongodb-mcp-server` (or use npx) for the MongoDB server. Enable in an interactive session with `claude mcp` or /mcp.",
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "mongodb": {
+      "command": "npx",
+      "args": ["-y", "mongodb-mcp-server"],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "${MONGODB_URI}"
+      }
+    }
+  }
+}

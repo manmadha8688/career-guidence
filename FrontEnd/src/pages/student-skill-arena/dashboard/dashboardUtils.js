@@ -2,6 +2,7 @@ export const NAV_ITEMS = [
   { label: 'OVERVIEW',     sub: 'Dashboard',       view: 'arena' },
   { label: 'DUNGEON GATE', sub: 'Subjects',        view: 'gates' },
   { label: 'HUNTER PATH',  sub: 'Career Roadmaps', view: 'paths' },
+  { label: 'MISSIONS',     sub: 'Build Projects',  view: 'missions', href: '/missions' },
 ]
 
 export const DAILY_QUESTS = [

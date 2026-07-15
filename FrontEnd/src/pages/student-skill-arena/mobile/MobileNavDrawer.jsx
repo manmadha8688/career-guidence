@@ -6,10 +6,11 @@ import useBodyLock from '../../../hooks/useBodyLock'
 // the accent is a small dose — icon tile, left rail, active glow. Colors track
 // the Solo-Leveling rank palette so it feels on-brand.
 const SECTION_META = {
-  arena: { accent: '#60A5FA', icon: '⚔️', tag: 'HQ' },
-  gates: { accent: '#F59E0B', icon: '🚪', tag: 'DUNGEON' },
-  paths: { accent: '#9B6ED4', icon: '🗺️', tag: 'CAREER' },
-  code:  { accent: '#4ADE80', icon: '💻', tag: 'ARENA' },
+  arena:    { accent: '#60A5FA', icon: '⚔️', tag: 'HQ' },
+  gates:    { accent: '#F59E0B', icon: '🚪', tag: 'DUNGEON' },
+  paths:    { accent: '#9B6ED4', icon: '🗺️', tag: 'CAREER' },
+  missions: { accent: '#FF7F2A', icon: '🎯', tag: 'BUILD' },
+  code:     { accent: '#4ADE80', icon: '💻', tag: 'ARENA' },
 }
 const fallbackMeta = { accent: '#9B6ED4', icon: '💠', tag: 'SECTION' }
 

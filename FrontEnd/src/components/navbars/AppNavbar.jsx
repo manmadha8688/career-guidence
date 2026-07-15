@@ -66,6 +66,15 @@ export default function AppNavbar({ onMenuClick, title = '' }) {
             >
               ◆ MISSIONS
             </button>
+            <button
+              type="button"
+              onClick={() => navigate('/resume')}
+              className="navbar-quick-btn navbar-quick-btn--resume"
+              title="Resume Studio"
+              aria-label="Resume Studio"
+            >
+              Resume
+            </button>
           </>
         )}
         <button className="theme-icon-btn" onClick={toggleTheme} title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'} aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>

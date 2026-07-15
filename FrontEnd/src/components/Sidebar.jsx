@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import useBodyLock from '../hooks/useBodyLock'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
-  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket, Home, Brain
+  Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket, Home, Brain, FileText
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -20,6 +20,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/problem-solving',                  icon: <Code2 size={18} />,           label: 'Problem Solving' },
     { to: '/aptitude',                         icon: <Brain size={18} />,           label: 'Aptitude' },
     { to: '/missions',                         icon: <Sword size={18} />,           label: 'Missions' },
+    { to: '/resume',                           icon: <FileText size={18} />,        label: 'Resume' },
     { to: '/walk-ins',                         icon: <Briefcase size={18} />,       label: 'Walk-Ins' },
     { to: '/deployment',                       icon: <Rocket size={18} />,          label: 'Deploy Guide' },
     { to: '/fresher-instructions',             icon: <GraduationCap size={18} />,   label: 'Fresher Guide' },
@@ -91,6 +92,10 @@ export default function Sidebar({ open, onClose }) {
               <NavLink to="/missions" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><Sword size={18} /></span>
                 Missions
+              </NavLink>
+              <NavLink to="/resume" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+                <span className="sidebar-link-icon"><FileText size={18} /></span>
+                Resume
               </NavLink>
               <NavLink to="/walk-ins" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><Briefcase size={18} /></span>

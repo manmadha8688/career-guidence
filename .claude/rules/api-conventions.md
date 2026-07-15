@@ -1,5 +1,7 @@
 # API Conventions
 
+> gstack `/review` reads this file for the project's REST shapes, error format, and cache-invalidation map.
+
 ## Base URL Pattern
 ```
 /api/{resource}                → list / create
