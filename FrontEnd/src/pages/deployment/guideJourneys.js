@@ -290,4 +290,172 @@ export const GUIDE_JOURNEYS = {
       { icon: '✅', label: 'LIVE DB', sub: 'connected', live: true },
     ],
   },
+
+  'aiven': {
+    title: 'From a managed service to a connected app',
+    subtitle: 'Aiven runs the database for you — create a free service, copy the Service URI, and wire it into your app.',
+    stages: [
+      { icon: '🐦', label: 'CREATE SERVICE', sub: 'free plan' },
+      { icon: '🔗', label: 'SERVICE URI', sub: 'copy string' },
+      { icon: '🔑', label: 'SET ENV VAR', sub: 'DATABASE_URL' },
+      { icon: '🔌', label: 'CONNECT APP', sub: 'ssl required' },
+      { icon: '✅', label: 'LIVE DB', sub: 'connected', live: true },
+    ],
+  },
+
+  'upstash-redis': {
+    title: 'From zero to a serverless Redis',
+    subtitle: 'Upstash hosts a Redis that scales to zero — create it, grab your REST URL + token, and cache from anywhere.',
+    stages: [
+      { icon: '⚡', label: 'CREATE DATABASE', sub: 'upstash' },
+      { icon: '🌍', label: 'PICK REGION', sub: 'single region' },
+      { icon: '🔑', label: 'URL + TOKEN', sub: 'copy creds' },
+      { icon: '🔌', label: 'CONNECT APP', sub: 'REST / TCP' },
+      { icon: '✅', label: 'CACHE LIVE', sub: 'scales to zero', live: true },
+    ],
+  },
+
+  'turso': {
+    title: 'From the CLI to a hosted SQLite',
+    subtitle: 'Turso hosts libSQL (SQLite at the edge) — create a database with the CLI, grab a URL + token, and connect.',
+    stages: [
+      { icon: '⬇', label: 'INSTALL CLI', sub: 'turso' },
+      { icon: '🗃️', label: 'CREATE DB', sub: 'turso db create' },
+      { icon: '🔑', label: 'URL + TOKEN', sub: 'copy creds' },
+      { icon: '🔌', label: 'CONNECT APP', sub: '@libsql/client' },
+      { icon: '✅', label: 'EDGE DB LIVE', sub: 'no cold starts', live: true },
+    ],
+  },
+
+  'angular': {
+    title: 'From ng build to a live Angular URL',
+    subtitle: 'Build, point the host at the /browser folder, add the SPA rewrite, and your Angular app is live and free.',
+    stages: [
+      { icon: '🅰️', label: 'ANGULAR APP', sub: 'ng project' },
+      { icon: '⚙', label: 'NG BUILD', sub: 'dist/…/browser' },
+      { icon: '↥', label: 'PUSH TO GITHUB', sub: 'a repo' },
+      { icon: '△', label: 'IMPORT ON HOST', sub: 'Vercel / Netlify' },
+      { icon: '🌐', label: "YOU'RE LIVE", sub: 'shareable link', live: true },
+    ],
+  },
+
+  'astro': {
+    title: 'From an Astro build to a live URL',
+    subtitle: 'A default Astro site is pure static HTML — it deploys to Vercel, Netlify, or Cloudflare with zero config and no adapter.',
+    stages: [
+      { icon: '🚀', label: 'ASTRO SITE', sub: 'content + islands' },
+      { icon: '⚙', label: 'ASTRO BUILD', sub: 'dist/' },
+      { icon: '↥', label: 'PUSH TO GITHUB', sub: 'a repo' },
+      { icon: '△', label: 'IMPORT ON HOST', sub: 'Vercel / Netlify' },
+      { icon: '🌐', label: "YOU'RE LIVE", sub: 'fast static site', live: true },
+    ],
+  },
+
+  'cloudflare-pages': {
+    title: 'From a Vite build to the global edge',
+    subtitle: 'Cloudflare Pages builds your app on every push and serves it worldwide with unlimited bandwidth — free.',
+    stages: [
+      { icon: '⚛', label: 'VITE / STATIC', sub: 'your frontend' },
+      { icon: '↥', label: 'PUSH TO GITHUB', sub: 'a repo' },
+      { icon: '🟧', label: 'CONNECT PAGES', sub: 'set build cmd' },
+      { icon: '⚙', label: 'AUTO BUILD', sub: 'npm run build' },
+      { icon: '🌐', label: "YOU'RE LIVE", sub: '*.pages.dev', live: true },
+    ],
+  },
+
+  'sveltekit': {
+    title: 'From a SvelteKit app to a live Vercel URL',
+    subtitle: 'The adapter packs your app for Vercel — SSR pages and API routes deploy as functions, free for personal projects.',
+    stages: [
+      { icon: '🔥', label: 'SVELTEKIT APP', sub: 'vite project' },
+      { icon: '🔌', label: 'SET ADAPTER', sub: 'adapter-vercel' },
+      { icon: '↥', label: 'PUSH TO GITHUB', sub: 'a repo' },
+      { icon: '▲', label: 'IMPORT TO VERCEL', sub: 'auto-detected' },
+      { icon: '🌐', label: "YOU'RE LIVE", sub: '*.vercel.app', live: true },
+    ],
+  },
+
+  'firebase': {
+    title: 'From a React app to a live backend',
+    subtitle: 'Firebase gives you Hosting, a Firestore database, and Auth — a full backend with no server to manage, free on the Spark plan.',
+    stages: [
+      { icon: '🔶', label: 'CREATE PROJECT', sub: 'firebase console' },
+      { icon: '⚛', label: 'CONNECT APP', sub: 'firebase config' },
+      { icon: '🗄', label: 'FIRESTORE + AUTH', sub: 'db + login' },
+      { icon: '⚙', label: 'BUILD + INIT', sub: 'firebase init' },
+      { icon: '🌐', label: 'LIVE APP', sub: '*.web.app', live: true },
+    ],
+  },
+
+  'docker': {
+    title: 'From a Dockerfile to a running container',
+    subtitle: 'Write a recipe, build an image, run it anywhere — then ship the same container to a host like Render.',
+    stages: [
+      { icon: '📝', label: 'DOCKERFILE', sub: 'the recipe' },
+      { icon: '📦', label: 'BUILD IMAGE', sub: 'docker build' },
+      { icon: '▶', label: 'RUN CONTAINER', sub: 'docker run' },
+      { icon: '↥', label: 'PUSH / DEPLOY', sub: 'registry / host' },
+      { icon: '✅', label: 'RUNS ANYWHERE', sub: 'same everywhere', live: true },
+    ],
+  },
+
+  'pythonanywhere': {
+    title: 'From uploaded code to a live Python site',
+    subtitle: 'PythonAnywhere runs Flask/Django from a web form — clone your code, point the WSGI file at your app, and reload.',
+    stages: [
+      { icon: '🐍', label: 'FLASK / DJANGO', sub: 'your app' },
+      { icon: '⬇', label: 'CLONE CODE', sub: 'git in console' },
+      { icon: '📦', label: 'VIRTUALENV', sub: 'pip install' },
+      { icon: '⚙', label: 'WSGI + RELOAD', sub: 'Web tab' },
+      { icon: '🌐', label: "YOU'RE LIVE", sub: '*.pythonanywhere.com', live: true },
+    ],
+  },
+
+  'deno-deploy': {
+    title: 'From a handler to a live edge API',
+    subtitle: 'Write a web-standard Deno handler, connect GitHub on console.deno.com, and it deploys to the edge on every push.',
+    stages: [
+      { icon: '🦕', label: 'DENO HANDLER', sub: 'main.ts' },
+      { icon: '↥', label: 'PUSH TO GITHUB', sub: 'a repo' },
+      { icon: '🏢', label: 'CREATE ORG + APP', sub: 'console.deno.com' },
+      { icon: '⚙', label: 'INTEGRATED BUILD', sub: 'live logs' },
+      { icon: '🌐', label: 'LIVE EDGE API', sub: '*.deno.dev', live: true },
+    ],
+  },
+
+  'koyeb': {
+    title: 'From a repo to a live free backend',
+    subtitle: 'Koyeb builds from GitHub or Docker and runs one free web service — bind $PORT, deploy, and go live.',
+    stages: [
+      { icon: '🪂', label: 'YOUR BACKEND', sub: 'node / python' },
+      { icon: '↥', label: 'PUSH TO GITHUB', sub: 'a repo' },
+      { icon: '🔧', label: 'CREATE SERVICE', sub: 'buildpack / Docker' },
+      { icon: '🔑', label: 'ENV + $PORT', sub: 'bind 0.0.0.0' },
+      { icon: '🌐', label: 'LIVE API', sub: '*.koyeb.app', live: true },
+    ],
+  },
+
+  'flutter': {
+    title: 'From one Flutter codebase to a shared app',
+    subtitle: 'Build for the web and host it free, and build an APK to send — two free ways to put your Flutter app in people\'s hands.',
+    stages: [
+      { icon: '🦋', label: 'FLUTTER APP', sub: 'dart codebase' },
+      { icon: '🌐', label: 'BUILD WEB', sub: 'build/web' },
+      { icon: '📦', label: 'BUILD APK', sub: 'app-release.apk' },
+      { icon: '↥', label: 'HOST + SHARE', sub: 'Firebase / Pages' },
+      { icon: '🚀', label: 'SHIPPED', sub: 'link + apk', live: true },
+    ],
+  },
+
+  'telegram-bot': {
+    title: 'From bot code to a 24/7 online bot',
+    subtitle: 'A webhook bot on Cloudflare Workers is genuinely free and always awake — BotFather gives the token, setWebhook connects it.',
+    stages: [
+      { icon: '✈️', label: 'BOTFATHER', sub: 'get token' },
+      { icon: '🤖', label: 'BOT CODE', sub: 'webhook handler' },
+      { icon: '↥', label: 'DEPLOY WORKER', sub: 'wrangler' },
+      { icon: '🔗', label: 'SET WEBHOOK', sub: 'point telegram' },
+      { icon: '✅', label: 'BOT ONLINE', sub: '24/7 free', live: true },
+    ],
+  },
 }

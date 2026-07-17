@@ -23,7 +23,7 @@
 - CORS origins from `CORS_ALLOWED_ORIGINS` env var only — never hardcoded, never `"*"` in prod.
 
 ## Data exposure
-- **DTOs never return `password`.** **`email` never appears in public/list responses.** Guest displayed as `Guest#XXXX`; admin stats show counts, no guest PII.
+- **DTOs never return `password`.** **The private login `email` never appears in public/list responses.** The only email that may appear on a public profile is the user's opt-in `publicEmail` contact field (empty by default, set by the user on MyProfilePage) — never `user.email`. Guest displayed as `Guest#XXXX`; admin stats show counts, no guest PII.
 
 ## Content / injection
 - No `dangerouslySetInnerHTML` anywhere. User content rendered via JSX (auto-escaped).

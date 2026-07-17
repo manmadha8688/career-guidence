@@ -276,23 +276,6 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
           </div>
         )}
 
-        {!concept.introduction && concept.whatItIs && (
-          <div>
-            <div className="concept-section-heading dash-concept-section-heading--mb-sm">What Is It?</div>
-            <p className="dash-concept-what-is">{concept.whatItIs}</p>
-          </div>
-        )}
-        {!concept.introduction && concept.codeExample && (
-          <div>
-            <div className="code-block-header">
-              <span className="code-lang">[ EXAMPLE ]</span>
-              <button className="btn btn-ghost btn-sm dash-concept-copy-btn"
-                onClick={() => { navigator.clipboard.writeText(concept.codeExample); toast.success('Copied!') }}>COPY</button>
-            </div>
-            <div className="code-block">{concept.codeExample}</div>
-          </div>
-        )}
-
         <div ref={quizRef} className="dash-concept-quiz-section">
           {isMastered ? (
             <div className="dash-concept-quiz-cleared">

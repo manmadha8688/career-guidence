@@ -36,6 +36,7 @@ const PublicProfilePage       = lazy(() => import('./pages/PublicProfilePage'))
 const MissionsPage             = lazy(() => import('./pages/MissionsPage'))
 const MissionDetailPage        = lazy(() => import('./pages/MissionDetailPage'))
 const ResumePage               = lazy(() => import('./pages/resume/ResumePage'))
+const SharedResumePage         = lazy(() => import('./pages/resume/SharedResumePage'))
 const JobsPage                 = lazy(() => import('./pages/JobsPage'))
 const FresherInstructionsPage  = lazy(() => import('./pages/FresherInstructionsPage'))
 const CareerGuidancePage       = lazy(() => import('./pages/CareerGuidancePage'))
@@ -58,6 +59,20 @@ const MongoAtlasPage           = lazy(() => import('./pages/deployment/MongoAtla
 const NeonPostgresPage         = lazy(() => import('./pages/deployment/NeonPostgresPage'))
 const SupabaseDeployPage       = lazy(() => import('./pages/deployment/SupabaseDeployPage'))
 const RenderPostgresPage       = lazy(() => import('./pages/deployment/RenderPostgresPage'))
+const AivenPage                = lazy(() => import('./pages/deployment/AivenPage'))
+const UpstashRedisPage         = lazy(() => import('./pages/deployment/UpstashRedisPage'))
+const TursoPage                = lazy(() => import('./pages/deployment/TursoPage'))
+const AngularDeployPage        = lazy(() => import('./pages/deployment/AngularDeployPage'))
+const AstroDeployPage          = lazy(() => import('./pages/deployment/AstroDeployPage'))
+const CloudflarePagesDeployPage= lazy(() => import('./pages/deployment/CloudflarePagesDeployPage'))
+const SvelteKitDeployPage      = lazy(() => import('./pages/deployment/SvelteKitDeployPage'))
+const FirebaseDeployPage       = lazy(() => import('./pages/deployment/FirebaseDeployPage'))
+const DockerDeployPage         = lazy(() => import('./pages/deployment/DockerDeployPage'))
+const PythonAnywhereDeployPage = lazy(() => import('./pages/deployment/PythonAnywhereDeployPage'))
+const DenoDeployPage           = lazy(() => import('./pages/deployment/DenoDeployPage'))
+const KoyebDeployPage          = lazy(() => import('./pages/deployment/KoyebDeployPage'))
+const FlutterDeployPage        = lazy(() => import('./pages/deployment/FlutterDeployPage'))
+const TelegramBotDeployPage    = lazy(() => import('./pages/deployment/TelegramBotDeployPage'))
 const StreamlitDeployPage      = lazy(() => import('./pages/deployment/StreamlitDeployPage'))
 const ChatbotDeployPage        = lazy(() => import('./pages/deployment/ChatbotDeployPage'))
 const NlpDemoPage              = lazy(() => import('./pages/deployment/NlpDemoPage'))
@@ -102,7 +117,7 @@ const AdminWalkIns             = lazy(() => import('./pages/admin-skill-arena/Ad
 
 function GlobalReportButton() {
   const { pathname } = useLocation()
-  const hide = pathname.startsWith('/admin') || pathname === '/login' || pathname === '/register' || pathname === '/forgot-password' || pathname === '/loader-demo'
+  const hide = pathname.startsWith('/admin') || pathname.startsWith('/r/') || pathname === '/login' || pathname === '/register' || pathname === '/forgot-password' || pathname === '/loader-demo'
   if (hide) return null
   return <ReportButton variant="floating" />
 }
@@ -116,6 +131,7 @@ function GlobalFooter() {
     pathname.startsWith('/skill-arena') ||
     pathname.startsWith('/admin') ||
     pathname.startsWith('/u/') ||
+    pathname.startsWith('/r/') ||
     pathname === '/login' ||
     pathname === '/register' ||
     pathname === '/forgot-password' ||
@@ -262,6 +278,20 @@ function App() {
               <Route path="/deployment/neon-postgres"    element={<NeonPostgresPage />} />
               <Route path="/deployment/supabase"         element={<SupabaseDeployPage />} />
               <Route path="/deployment/render-postgres"  element={<RenderPostgresPage />} />
+              <Route path="/deployment/aiven"            element={<AivenPage />} />
+              <Route path="/deployment/upstash-redis"    element={<UpstashRedisPage />} />
+              <Route path="/deployment/turso"            element={<TursoPage />} />
+              <Route path="/deployment/angular"          element={<AngularDeployPage />} />
+              <Route path="/deployment/astro"            element={<AstroDeployPage />} />
+              <Route path="/deployment/cloudflare-pages" element={<CloudflarePagesDeployPage />} />
+              <Route path="/deployment/sveltekit"        element={<SvelteKitDeployPage />} />
+              <Route path="/deployment/firebase"         element={<FirebaseDeployPage />} />
+              <Route path="/deployment/docker"           element={<DockerDeployPage />} />
+              <Route path="/deployment/pythonanywhere"   element={<PythonAnywhereDeployPage />} />
+              <Route path="/deployment/deno-deploy"      element={<DenoDeployPage />} />
+              <Route path="/deployment/koyeb"            element={<KoyebDeployPage />} />
+              <Route path="/deployment/flutter"          element={<FlutterDeployPage />} />
+              <Route path="/deployment/telegram-bot"     element={<TelegramBotDeployPage />} />
               <Route path="/deployment/streamlit"          element={<StreamlitDeployPage />} />
               <Route path="/deployment/chatbot-deploy"   element={<ChatbotDeployPage />} />
               <Route path="/deployment/nlp-demo"         element={<NlpDemoPage />} />
@@ -296,6 +326,9 @@ function App() {
             {/* Resume builder + ATS guide — public. Saving & downloading the PDF
                 require a registered (non-guest) account; gated inside the page. */}
             <Route path="/resume" element={<ResumePage />} />
+
+            {/* Public shareable resume — anyone with the link can view + download */}
+            <Route path="/r/:slug" element={<SharedResumePage />} />
 
             {/* Public shareable profile — no auth required */}
             <Route path="/u/:username" element={<PublicProfilePage />} />

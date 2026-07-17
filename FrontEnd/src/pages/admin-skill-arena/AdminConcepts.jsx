@@ -86,9 +86,6 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     tip: concept.tip || '',
     commonMistakes: concept.commonMistakes || [],
     trickyProblems: concept.trickyProblems || [],
-    whatItIs: concept.whatItIs || '',
-    whyItMatters: concept.whyItMatters || '',
-    codeExample: concept.codeExample || '',
     rank: concept.rank || 'E',
     estimatedMinutes: concept.estimatedMinutes || 15,
     orderIndex: concept.orderIndex || 0
@@ -104,9 +101,6 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
     tip: '',
     commonMistakes: [],
     trickyProblems: [],
-    whatItIs: '',
-    whyItMatters: '',
-    codeExample: '',
     rank: 'E',
     estimatedMinutes: 15,
     orderIndex: 0
@@ -324,20 +318,6 @@ function ConceptModal({ concept, subjects, onClose, onSave }) {
             <Plus size={13} /> Add Tricky Problem
           </button>
 
-          <SectionDivider label="Legacy Content (optional)" />
-          <div className="form-group">
-            <label className="form-label">What Is It?</label>
-            <textarea className="form-input" rows={2} value={form.whatItIs} onChange={e => set('whatItIs', e.target.value)} placeholder="Simple one-line definition (used as fallback if Introduction is empty)" />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Why Does It Matter?</label>
-            <textarea className="form-input" rows={2} value={form.whyItMatters} onChange={e => set('whyItMatters', e.target.value)} />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Legacy Code Example</label>
-            <textarea className="form-input admin-textarea-mono--875" rows={4} value={form.codeExample} onChange={e => set('codeExample', e.target.value)} placeholder="// Used as fallback code block if no Examples are added" />
-          </div>
-
           <div className="modal-actions">
             <button type="button" className="btn btn-ghost" onClick={onClose}>Cancel</button>
             <button type="submit" className="btn btn-primary" disabled={loading}>
@@ -492,7 +472,7 @@ export default function AdminConcepts() {
                         <span className="admin-rank-badge admin-rank-badge--sm" style={{ '--rank-color': RANK_COLORS[c.rank] || '#888' }}>{c.rank}</span>
                       )}
                     </div>
-                    {(c.introduction || c.whatItIs) && <div className="text-xs text-muted truncate admin-truncate-desc--400">{(c.introduction || c.whatItIs).substring(0, 80)}…</div>}
+                    {c.introduction && <div className="text-xs text-muted truncate admin-truncate-desc--400">{c.introduction.substring(0, 80)}…</div>}
                   </td>
                   <td className="text-sm text-muted">{c.estimatedMinutes}m</td>
                   <td>

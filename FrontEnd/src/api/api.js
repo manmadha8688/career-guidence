@@ -179,10 +179,15 @@ export const getMission   = (id)   => withCache(`mission:${id}`, 30_000, () => a
 export const getMissionSubmission  = (id)       => api.get(`/missions/${id}/submission`)
 export const saveMissionSubmission = (id, body) => api.put(`/missions/${id}/submission`, body)
 
-// ─── RESUME (per-user) ────────────────────────────────
+// ─── RESUME (per-user, up to 3, shareable) ────────────
 // Not cached — the builder always reads/writes the freshest copy for the user.
-export const getResume  = ()     => api.get('/resume')
-export const saveResume = (data) => api.put('/resume', data)
+export const listResumes    = ()                 => api.get('/resumes')
+export const createResume   = (title, data)      => api.post('/resumes', { title, data })
+export const updateResume   = (id, title, data)  => api.put(`/resumes/${id}`, { title, data })
+export const deleteResume   = (id)               => api.delete(`/resumes/${id}`)
+export const setResumeShare = (id, isPublic)     => api.post(`/resumes/${id}/share`, { public: isPublic })
+// Public — anyone with the link can view a shared resume.
+export const getPublicResume = (slug)            => api.get(`/public/resume/${slug}`)
 
 // ─── PROBLEMS (public) ────────────────────────────────────────
 export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*60_000, () => api.get('/problems' + (track ? `?track=${track}` : '')))

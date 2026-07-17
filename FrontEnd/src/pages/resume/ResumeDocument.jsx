@@ -116,6 +116,14 @@ const ResumeDocument = forwardRef(function ResumeDocument({ resume }, ref) {
         </Section>
       )}
 
+      {has((r.achievements || []).filter(Boolean)) && (
+        <Section title="Achievements">
+          <ul className="rz-doc__bullets">
+            {r.achievements.filter(Boolean).map((a, i) => <li key={i}>{a}</li>)}
+          </ul>
+        </Section>
+      )}
+
       {has((r.certificates || []).filter(Boolean)) && (
         <Section title="Certificates">
           <ul className="rz-doc__bullets">

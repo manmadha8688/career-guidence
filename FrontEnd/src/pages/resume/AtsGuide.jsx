@@ -4,7 +4,7 @@ import {
   ScanLine, Bot, Columns3, Table, Image as ImageIcon, KeyRound, Target,
   Building2, ShieldCheck, Wrench, ListChecks, FileText,
   Mail, GraduationCap, FolderGit2, BadgeCheck, Search, CheckCircle2, XCircle,
-  AlertTriangle, Info, ChevronRight, Gauge, User, Sparkles,
+  AlertTriangle, Info, ChevronRight, Gauge, User, Sparkles, ExternalLink,
 } from 'lucide-react'
 import '../../styles/pages/ats-guide.css'
 
@@ -364,7 +364,9 @@ Education: B.Tech CSE, 2025`}</pre>
             <div className="ats-tools">
               {TOOLS.map((t, i) => (
                 <Reveal key={i} className="ats-tool" delay={(i % 3) * 0.05}>
-                  <div className="ats-tool__name">{t.name}</div>
+                  <a className="ats-tool__name" href={t.url} target="_blank" rel="noopener noreferrer">
+                    {t.name}<ExternalLink size={13} />
+                  </a>
                   <div className="ats-tool__free">{t.free}</div>
                   <p className="ats-tool__d">{t.d}</p>
                 </Reveal>
@@ -492,10 +494,11 @@ const CHECKLIST = [
 ]
 
 const TOOLS = [
-  { name: 'Jobscan', free: '5 free scans / month', d: 'Paste resume + JD for a match % and platform-specific parsing (Taleo, Workday, iCIMS…). The gold standard for keyword gaps.' },
-  { name: 'Resume Worded', free: 'Free general score', d: '“Score My Resume” gives free line-by-line feedback on strength and clarity (job-specific match is paid).' },
-  { name: 'KudosWall / ResumeAdapter', free: 'Free, no sign-up', d: 'Instant 0–100 ATS score + missing keywords by pasting your resume and the job description.' },
-  { name: 'ResumeFast', free: 'Free unlimited', d: 'Unlimited keyword matching and ATS scoring against a job description at no cost.' },
+  { name: 'Jobscan', url: 'https://www.jobscan.co', free: '5 free scans / month', d: 'Paste resume + JD for a match % and platform-specific parsing (Taleo, Workday, iCIMS…). The gold standard for keyword gaps.' },
+  { name: 'Resume Worded', url: 'https://resumeworded.com', free: 'Free instant score', d: '“Score My Resume” gives free, line-by-line feedback on strength, impact and clarity (deep job-match is paid).' },
+  { name: 'Teal', url: 'https://www.tealhq.com', free: 'Free — generous', d: 'Free resume builder + job tracker that scores your resume against any job description and flags the missing keywords.' },
+  { name: 'Enhancv Resume Checker', url: 'https://enhancv.com/resume-checker', free: 'Free checker', d: 'Upload your resume for a free check across ~20 ATS + content rules (formatting, sections, action verbs, length).' },
+  { name: 'Rezi', url: 'https://www.rezi.ai', free: 'Free tier', d: 'ATS resume builder with the Rezi Score — grades your resume on 23 content & formatting checks in real time.' },
 ]
 
 const MISTAKES = [

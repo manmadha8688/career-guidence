@@ -21,6 +21,10 @@ export const TOOL_COMPONENTS = {
   'notebooklm':      lazy(() => import('./chatbots/NotebookLMPage')),
   'youcom':          lazy(() => import('./chatbots/YouComPage')),
   'huggingchat':     lazy(() => import('./chatbots/HuggingChatPage')),
+  'deepseek':        lazy(() => import('./chatbots/DeepSeekPage')),
+  'grok':            lazy(() => import('./chatbots/GrokPage')),
+  'qwen':            lazy(() => import('./chatbots/QwenPage')),
+  'kimi':            lazy(() => import('./chatbots/KimiPage')),
   // Builders
   'bolt-new':        lazy(() => import('./builders/BoltNewPage')),
   'v0':              lazy(() => import('./builders/V0Page')),
@@ -41,6 +45,10 @@ export const TOOL_COMPONENTS = {
   'aider':           lazy(() => import('./coding/AiderPage')),
   'continue-dev':    lazy(() => import('./coding/ContinueDevPage')),
   'tabnine':         lazy(() => import('./coding/TabninePage')),
+  'openai-codex':    lazy(() => import('./coding/OpenAICodexPage')),
+  'jules':           lazy(() => import('./coding/JulesPage')),
+  'trae':            lazy(() => import('./coding/TraePage')),
+  'qodo':            lazy(() => import('./coding/QodoPage')),
   // APIs
   'gemini-api':      lazy(() => import('./apis/GeminiAPIPage')),
   'groq':            lazy(() => import('./apis/GroqPage')),
@@ -53,6 +61,10 @@ export const TOOL_COMPONENTS = {
   'azure-openai':    lazy(() => import('./apis/AzureOpenAIPage')),
   'mistral-api':     lazy(() => import('./apis/MistralAPIPage')),
   'replicate':       lazy(() => import('./apis/ReplicatePage')),
+  'google-ai-studio': lazy(() => import('./apis/GoogleAIStudioPage')),
+  'cerebras':        lazy(() => import('./apis/CerebrasPage')),
+  'sambanova':       lazy(() => import('./apis/SambaNovaPage')),
+  'cohere':          lazy(() => import('./apis/CoherePage')),
   // Agents
   'langchain':       lazy(() => import('./agents/LangChainPage')),
   'langgraph':       lazy(() => import('./agents/LangGraphPage')),
@@ -62,6 +74,9 @@ export const TOOL_COMPONENTS = {
   'openclaw':        lazy(() => import('./agents/OpenClawPage')),
   'hermes':          lazy(() => import('./agents/HermesPage')),
   'mcp':             lazy(() => import('./agents/MCPPage')),
+  'llamaindex':      lazy(() => import('./agents/LlamaIndexPage')),
+  'pydantic-ai':     lazy(() => import('./agents/PydanticAIPage')),
+  'smolagents':      lazy(() => import('./agents/SmolagentsPage')),
   // Automation
   'n8n':             lazy(() => import('./automation/N8NPage')),
   'flowise':         lazy(() => import('./automation/FlowisePage')),
@@ -75,6 +90,7 @@ export const TOOL_COMPONENTS = {
   'oobabooga':       lazy(() => import('./local/OobaboogaPage')),
   'litelllm':        lazy(() => import('./local/LiteLLMPage')),
   'localai':         lazy(() => import('./local/LocalAIPage')),
+  'jan':             lazy(() => import('./local/JanPage')),
   // Vector
   'chromadb':        lazy(() => import('./vector/ChromaDBPage')),
   'pinecone':        lazy(() => import('./vector/PineconePage')),
@@ -86,6 +102,9 @@ export const TOOL_COMPONENTS = {
   'code-interpreter':lazy(() => import('./data/CodeInterpreterPage')),
   'langfuse':        lazy(() => import('./data/LangfusePage')),
   'modal':           lazy(() => import('./data/ModalPage')),
+  'colab':           lazy(() => import('./data/ColabPage')),
+  'kaggle':          lazy(() => import('./data/KagglePage')),
+  'wandb':           lazy(() => import('./data/WandbPage')),
   // Creative
   'dalle-free':      lazy(() => import('./creative/BingImagePage')),
   'stable-diffusion':lazy(() => import('./creative/StableDiffusionPage')),
@@ -93,6 +112,8 @@ export const TOOL_COMPONENTS = {
   'flux':            lazy(() => import('./creative/FLUXPage')),
   'gamma':           lazy(() => import('./creative/GammaPage')),
   'canva-ai':        lazy(() => import('./creative/CanvaAIPage')),
+  'ideogram':        lazy(() => import('./creative/IdeogramPage')),
+  'leonardo':        lazy(() => import('./creative/LeonardoPage')),
   // Voice
   'whisper':         lazy(() => import('./voice/WhisperPage')),
   'elevenlabs':      lazy(() => import('./voice/ElevenLabsPage')),
@@ -100,10 +121,22 @@ export const TOOL_COMPONENTS = {
   'teal':            lazy(() => import('./career/TealPage')),
   'notion-ai':       lazy(() => import('./career/NotionAIPage')),
   'grammarly':       lazy(() => import('./career/GrammarlyPage')),
+  'pramp':           lazy(() => import('./career/PrampPage')),
+  'rezi':            lazy(() => import('./career/ReziPage')),
+  'kickresume':      lazy(() => import('./career/KickresumePage')),
   // Security
   'snyk':            lazy(() => import('./security/SnykPage')),
   'sonarqube':       lazy(() => import('./security/SonarQubePage')),
   'github-adv-sec':  lazy(() => import('./security/GitHubAdvSecPage')),
   'gitguardian':     lazy(() => import('./security/GitGuardianPage')),
   'wiz':             lazy(() => import('./security/WizPage')),
+  'semgrep':         lazy(() => import('./security/SemgrepPage')),
+  'trivy':           lazy(() => import('./security/TrivyPage')),
+  // Video & Music
+  'runway':          lazy(() => import('./media/RunwayPage')),
+  'kling':           lazy(() => import('./media/KlingPage')),
+  'luma':            lazy(() => import('./media/LumaPage')),
+  'pika':            lazy(() => import('./media/PikaPage')),
+  'suno':            lazy(() => import('./media/SunoPage')),
+  'udio':            lazy(() => import('./media/UdioPage')),
 }

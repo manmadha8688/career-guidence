@@ -221,8 +221,14 @@
 
 /* Tools */
 .ats-tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-.ats-tool { padding: 1.2rem 1.3rem; border-radius: 14px; border: 1px solid var(--ats-line); background: var(--ats-panel); }
-.ats-tool__name { font-weight: 800; font-size: 1.05rem; }
+.ats-tool { position: relative; padding: 1.2rem 1.3rem; border-radius: 14px; border: 1px solid var(--ats-line); background: var(--ats-panel); transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+.ats-tool:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--ats) 55%, var(--ats-line)); box-shadow: 0 10px 26px -14px color-mix(in srgb, var(--ats) 60%, transparent); }
+.ats-tool__name { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 800; font-size: 1.05rem; color: var(--text-primary); text-decoration: none; transition: color 0.18s ease; }
+/* Stretched link — the whole card becomes the click target. */
+.ats-tool__name::after { content: ''; position: absolute; inset: 0; border-radius: 14px; }
+.ats-tool:hover .ats-tool__name { color: var(--ats); }
+.ats-tool__name svg { opacity: 0.55; flex-shrink: 0; }
+.ats-tool:hover .ats-tool__name svg { opacity: 1; }
 .ats-tool__free { display: inline-block; margin: 0.35rem 0 0.6rem; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; background: var(--ats-soft); color: color-mix(in srgb, var(--ats) 85%, var(--text-primary)); }
 .ats-tool__d { margin: 0; color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; }
 

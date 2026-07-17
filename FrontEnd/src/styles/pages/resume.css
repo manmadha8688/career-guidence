@@ -58,8 +58,8 @@
 /* ── Layout ── */
 .rz-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
   align-items: start;
   margin-top: 1.5rem;
 }
@@ -194,7 +194,11 @@
 @keyframes rz-spin { to { transform: rotate(360deg); } }
 
 /* ── Preview column ── */
-.rz-preview { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 0.85rem; min-width: 0; }
+.rz-preview {
+  display: flex; flex-direction: column; gap: 0.85rem; min-width: 0;
+  /* Match the form column height so the sticky stage has room to pin while scrolling. */
+  align-self: stretch;
+}
 
 .rz-preview__actions { display: flex; gap: 0.6rem; justify-content: flex-end; }
 
@@ -224,42 +228,179 @@
 }
 .rz-gate-note__link:hover { opacity: 0.85; }
 
-.rz-preview__scroll {
-  max-height: calc(100vh - 160px);
-  overflow: auto;
-  border-radius: 12px;
-  padding: 0.5rem;
-  background: color-mix(in srgb, var(--text-primary) 6%, transparent);
-  border: 1px solid var(--border);
+/* Sticky stage — sheet stays pinned while the form scrolls; rail floats mid-left. */
+.rz-preview__stage {
+  position: sticky;
+  top: 1rem;
+  width: 100%;
+  height: calc(100dvh - 2rem);
+  min-height: 420px;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* Zoom-fit viewport — padding reserves space for the left icon rail on desktop. */
+.rz-preview__viewport {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* White paper card — matches .rzs-paper on the shared viewer. */
+.rz-preview__paper {
+  flex: none;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0, 0.22);
+  overflow: hidden;
+}
+
+/* Side rail — plain icon column */
+.rz-rail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+}
+.rz-rail--left { left: 0; width: auto; }
+
+.rz-rail .rz-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+}
+.rz-rail .rz-btn--primary { color: #10B981; }
+.rz-rail .rz-btn--accent { color: #60A5FA; }
+.rz-rail .rz-btn--danger { color: #EF4444; }
+.rz-rail .rz-btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  filter: none;
+}
+
+.rz-rail__actions {
+  display: flex; flex-direction: column; align-items: center; gap: 0.65rem;
+}
+
+.rz-rail .rz-btn--icon {
+  width: 48px; height: 48px;
+}
+.rz-rail .rz-btn--icon svg {
+  width: 22px; height: 22px;
+}
+
+/* Save only — icon + label stacked */
+.rz-rail .rz-btn--rail-save {
+  width: auto; height: auto; min-width: 52px;
+  flex-direction: column; gap: 0.2rem;
+  padding: 0.35rem 0.4rem;
+}
+.rz-rail .rz-btn--rail-save .rz-btn__label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.72rem; font-weight: 700; line-height: 1;
+}
+
+/* Completeness ring — in the left icon column with Save / Delete / Download */
+.rz-complete--rail {
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+  margin: 0 0 0.2rem; padding: 0;
+  background: none; border: none;
+}
+.rz-complete--rail .rz-ring { width: 44px; height: 44px; }
+.rz-complete--rail .rz-complete__pct { font-size: 0.8rem; min-width: 0; text-align: center; }
+
+/* Share panel — manager column only (preview untouched) */
+.rz-manager__share {
+  display: flex; flex-direction: column; gap: 0.35rem;
+}
+.rz-share-panel--manager {
+  display: flex; flex-direction: column; gap: 0.45rem;
+  max-width: none; margin: 0; padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: color-mix(in srgb, var(--text-primary) 4%, transparent);
+}
+.rz-share-panel__row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 0.5rem 0.75rem;
+}
+.rz-share-panel__toggle {
+  display: flex; align-items: center; gap: 0.65rem;
+}
+.rz-share-panel__links {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-left: auto;
+}
+.rz-vis-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--text-muted);
+}
+.rz-vis-label.is-active { color: var(--text-primary); }
+.rz-switch--manager { flex: none; padding: 0; }
+.rz-share-panel--manager .rz-share-panel__hint {
+  margin: 0; font-size: 0.78rem; line-height: 1.35;
+  color: var(--text-muted);
+}
+.rz-btn--sm {
+  padding: 0.38rem 0.65rem; font-size: 0.8rem; gap: 0.35rem;
+}
+
+/* Keep the builder preview a true fixed A4 page at every screen size so the
+   zoom-fit view matches the PDF — never the fluid reflow. */
+.rz-preview__paper .rz-doc {
+  box-shadow: none; border-radius: 0;
+  width: 760px; max-width: none;
+  aspect-ratio: 210 / 297;
+  padding: 44px 48px;
+  font-size: 13px;
 }
 
 /* ══ Printable resume document — FIXED light colors ══ */
 .rz-doc {
   --rz-ink: #1f2430;
   --rz-muted: #5b6472;
+  box-sizing: border-box;
   width: 760px;
   max-width: 100%;
+  /* Always render a full A4 page (210×297). It shows the whole sheet from the
+     start and fills as you type; it only extends to a 2nd page when content
+     genuinely overflows one A4. */
+  aspect-ratio: 210 / 297;
   margin: 0 auto;
   background: #ffffff;
   color: var(--rz-ink);
   padding: 44px 48px;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: Arial, Helvetica, 'Segoe UI', sans-serif;
   font-size: 13px;
   line-height: 1.5;
   box-shadow: 0 4px 18px rgba(0,0,0,0.14);
 }
 
 .rz-doc__head { text-align: center; padding-bottom: 2px; margin-bottom: 14px; }
-.rz-doc__name { margin: 0; font-size: 25px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--rz-ink); }
-.rz-doc__contact { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 3px 12px; justify-content: center; font-size: 11.5px; color: var(--rz-muted); }
+.rz-doc__name { margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--rz-ink); }
+.rz-doc__contact { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 3px 12px; justify-content: center; font-size: 13px; color: var(--rz-muted); }
 .rz-doc__contact-item { white-space: nowrap; }
-.rz-doc__contact-label { font-weight: 700; color: var(--rz-ink); }
+.rz-doc__contact-item:not(:first-child)::before { content: '|'; margin-right: 9px; color: var(--rz-muted); font-weight: 400; }
+.rz-doc__contact-label { font-weight: 700; font-size: 14px; color: var(--rz-ink); }
 .rz-doc__link { color: #0563C1; text-decoration: underline; }
 
 .rz-doc__section { margin-top: 14px; }
 .rz-doc__section-title {
-  margin: 0 0 7px; font-size: 12px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 1.2px; color: var(--rz-ink);
+  margin: 0 0 7px; font-size: 14px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.3px; color: var(--rz-ink);
   border-bottom: 2px solid var(--rz-ink); padding-bottom: 3px;
 }
 
@@ -268,9 +409,9 @@
 /* Education */
 .rz-doc__edu { margin-bottom: 8px; }
 .rz-doc__edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.rz-doc__edu-degree { font-weight: 700; font-size: 13px; }
+.rz-doc__edu-degree { font-weight: 400; }
 .rz-doc__edu-college { color: var(--rz-muted); }
-.rz-doc__edu-year { font-size: 11.5px; color: var(--rz-muted); white-space: nowrap; font-weight: 600; }
+.rz-doc__edu-year { font-size: 13px; color: var(--rz-muted); white-space: nowrap; font-weight: 600; }
 
 /* Technical skills — category + value rows */
 .rz-doc__skills { display: flex; flex-direction: column; gap: 4px; padding-left: 22px; }
@@ -281,10 +422,10 @@
 
 /* Projects */
 .rz-doc__project { margin-bottom: 11px; }
-.rz-doc__project-name { font-weight: 700; font-size: 13.5px; }
-.rz-doc__project-link { font-size: 11.5px; margin-top: 1px; color: var(--rz-muted); }
+.rz-doc__project-name { font-weight: 700; }
+.rz-doc__project-link { font-size: 13px; margin-top: 1px; color: var(--rz-muted); }
 
-.rz-doc__bullets { margin: 5px 0 0; padding-left: 18px; }
+.rz-doc__bullets { margin: 5px 0 0; padding-left: 26px; }
 .rz-doc__bullets li { margin-bottom: 3px; }
 
 /* ── ATS guide ── */
@@ -343,16 +484,292 @@
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .rz-layout { grid-template-columns: 1fr; }
-  .rz-preview { position: static; }
-  .rz-preview__scroll { max-height: none; overflow: auto; }
-  .rz-preview__actions { justify-content: stretch; }
-  .rz-preview__actions .rz-btn { flex: 1; justify-content: center; }
+  /* Single column: preview drops below the form; rail bar sits above the sheet. */
+  .rz-preview { position: static; align-self: auto; }
+  .rz-preview__stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  /* Action rail between form and preview — horizontal bar, no overlap */
+  .rz-rail {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    order: -1;
+  }
+  .rz-rail__actions {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+  .rz-complete--rail {
+    flex-direction: row;
+    gap: 0.35rem;
+    margin: 0;
+  }
+  .rz-preview__viewport {
+    flex: 1;
+    min-height: 72dvh;
+    height: auto;
+    padding-left: 0;
+  }
   .rz-guide__cols { grid-template-columns: 1fr; }
   .rz-guide__rules { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {
+  /* Only the builder's FORM fields stack on mobile. The resume sheet (.rz-doc)
+     stays a fixed A4 and is zoom-fitted, so it must match desktop exactly. */
   .rz-grid-2 { grid-template-columns: 1fr; }
-  .rz-doc { padding: 28px 22px; }
-  .rz-doc__skillrow { grid-template-columns: 130px 1fr; gap: 8px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   Resume manager — switch between up to 3 saved resumes + sharing
+   ══════════════════════════════════════════════════════════════════ */
+.rz-manager {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-secondary, var(--bg-primary));
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.rz-manager__tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.rz-rtab {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  max-width: 220px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.86rem;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+.rz-rtab:hover:not(:disabled) { border-color: color-mix(in srgb, var(--accent, #7C5DBB) 45%, transparent); color: var(--text-primary); }
+.rz-rtab.is-active {
+  border-color: transparent;
+  background: color-mix(in srgb, var(--accent, #7C5DBB) 16%, transparent);
+  color: var(--text-primary);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent, #7C5DBB) 45%, transparent);
+}
+.rz-rtab__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rz-rtab__globe { color: var(--accent, #7C5DBB); flex: none; }
+.rz-rtab__draft {
+  font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 0.05rem 0.35rem; border-radius: 5px;
+  background: color-mix(in srgb, var(--text-muted) 18%, transparent);
+  color: var(--text-muted);
+}
+.rz-rtab--new { color: var(--accent, #7C5DBB); border-style: dashed; }
+.rz-rtab--new:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.rz-manager__row {
+  display: flex; flex-wrap: wrap; align-items: flex-end;
+  gap: 0.85rem 1.25rem;
+}
+.rz-manager__name { display: flex; flex-direction: column; gap: 0.3rem; flex: 1 1 auto; min-width: 0; }
+
+.rz-share { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+
+/* toggle switch */
+.rz-switch {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: none; border: none; padding: 0; cursor: pointer;
+  color: var(--text-secondary); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.86rem;
+}
+.rz-switch:disabled { opacity: 0.55; cursor: not-allowed; }
+.rz-switch__track {
+  position: relative; width: 40px; height: 22px; flex: none;
+  border-radius: 999px; background: color-mix(in srgb, var(--text-muted) 32%, transparent);
+  transition: background 0.2s ease;
+}
+.rz-switch__thumb {
+  position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
+  border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+.rz-switch.is-on .rz-switch__track { background: var(--accent, #7C5DBB); }
+.rz-switch.is-on .rz-switch__thumb { transform: translateX(18px); }
+.rz-switch.is-on .rz-switch__text { color: var(--text-primary); }
+.rz-switch__text { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+.rz-share__hint { font-size: 0.8rem; color: var(--text-muted); }
+
+.rz-share__link { display: flex; align-items: center; gap: 0.4rem; flex: 0 1 auto; min-width: 0; }
+.rz-preview__actions .rz-share__url { width: 190px; max-width: 42vw; }
+.rz-share__url {
+  flex: 1; min-width: 0; font-size: 0.82rem;
+  background: var(--bg-primary); color: var(--accent, #7C5DBB); cursor: text;
+}
+.rz-share__link .rz-icon-btn { color: var(--text-secondary); }
+.rz-share__link .rz-icon-btn:hover { color: var(--accent, #7C5DBB); border-color: color-mix(in srgb, var(--accent, #7C5DBB) 40%, transparent); background: color-mix(in srgb, var(--accent, #7C5DBB) 10%, transparent); }
+
+.rz-manager__note {
+  display: flex; align-items: flex-start; gap: 0.45rem;
+  margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);
+}
+.rz-manager__note svg { flex: none; margin-top: 2px; color: var(--accent, #7C5DBB); }
+
+.rz-btn--danger { color: #EF4444; border-color: color-mix(in srgb, #EF4444 35%, transparent); }
+.rz-btn--danger:hover:not(:disabled) { background: color-mix(in srgb, #EF4444 10%, transparent); }
+
+/* Icon-only action buttons (square, no label) */
+.rz-btn--icon { width: 40px; height: 40px; padding: 0; gap: 0; justify-content: center; flex: 0 0 auto; }
+.rz-btn--icon.is-on { color: #fff; background: var(--accent, #7C5DBB); border-color: transparent; }
+
+/* ══════════════════════════════════════════════════════════════════
+   Shared resume page (/r/:slug) — public live view
+   ══════════════════════════════════════════════════════════════════ */
+/* Full-viewport PDF-style viewer: actions pinned on top, the sheet fills the
+   rest and is zoom-fitted so the whole page is always visible (no scrolling). */
+.rzs-page {
+  height: 100dvh; overflow: hidden;
+  background: var(--bg-secondary, var(--bg-primary)); color: var(--text-primary);
+}
+
+.rzs-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.7rem 1.1rem;
+  background: color-mix(in srgb, var(--bg-primary) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+/* Brand-less shared view — Copy link + Download float top-right (no chrome). */
+.rzs-actions { display: flex; justify-content: flex-end; gap: 0.6rem; flex-wrap: wrap; }
+.rzs-brand {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Rajdhani', sans-serif; font-weight: 800; font-size: 1rem;
+  color: var(--text-primary); text-decoration: none;
+}
+.rzs-brand svg { color: var(--accent, #7C5DBB); }
+.rzs-brand span { color: var(--text-muted); font-weight: 600; }
+.rzs-bar__actions { display: flex; gap: 0.5rem; }
+
+.rzs-main {
+  position: relative;
+  height: 100%;
+  margin: 0; padding: 0;
+  display: flex; flex-direction: column; min-height: 0;
+}
+
+/* Floating toolbar (top-right) — plain text/icon buttons, no panel background. */
+.rzs-actions {
+  position: absolute; top: 12px; right: 12px; z-index: 5;
+  flex: none; margin: 0; gap: 0.65rem;
+  padding: 0; border: none; border-radius: 0;
+  background: none; backdrop-filter: none;
+}
+.rzs-actions .rz-btn {
+  background: transparent;
+  border: none;
+  padding: 0.45rem 0.55rem;
+}
+.rzs-actions .rz-btn--ghost { color: var(--accent, #7C5DBB); }
+.rzs-actions .rz-btn--ghost:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+.rzs-actions .rz-btn--accent {
+  background: transparent;
+  color: #60A5FA;
+  border: none;
+}
+.rzs-actions .rz-btn--accent:hover:not(:disabled) {
+  filter: none;
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+
+/* Stage fills the whole height and centres the zoom-fitted sheet. */
+.rzs-stage {
+  flex: 1; min-height: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding: 12px;
+}
+
+.rzs-paper {
+  flex: none;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+  overflow: hidden;
+  animation: rzs-fade 0.5s ease both;
+}
+@keyframes rzs-fade { from { opacity: 0; } to { opacity: 1; } }
+/* The document already carries its own fixed print colors (.rz-doc). Keep it a
+   true fixed A4 page at every screen size (even mobile) so the zoom-fit view
+   looks exactly like the downloaded PDF — not the fluid mobile reflow. */
+.rzs-paper .rz-doc {
+  box-shadow: none; border-radius: 0;
+  width: 760px; max-width: none;
+  aspect-ratio: 210 / 297;
+  padding: 44px 48px;
+  font-size: 13px;
+}
+
+.rzs-foot { text-align: center; margin: 1.4rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
+.rzs-foot__link { color: var(--accent, #7C5DBB); font-weight: 700; text-decoration: none; }
+.rzs-foot__link:hover { text-decoration: underline; }
+
+.rzs-status {
+  min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.6rem; text-align: center; padding: 2rem;
+  background: var(--bg-secondary, var(--bg-primary)); color: var(--text-primary);
+}
+
+/* ══ Check ATS score button (right of the resume tabs row) ══ */
+.rz-ats-btn {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.5rem 0.9rem; border-radius: 10px; cursor: pointer;
+  font: inherit; font-weight: 700; font-size: 0.85rem;
+  color: var(--accent, #10b981);
+  background: color-mix(in srgb, var(--accent, #10b981) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent, #10b981) 34%, transparent);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.rz-ats-btn:hover { background: color-mix(in srgb, var(--accent, #10b981) 18%, transparent); transform: translateY(-1px); }
+.rz-ats-btn svg { flex: none; }
+.rz-ats-btn--bottom { display: none; }  /* shown only on mobile, beside the ring */
+.rz-ats-btn__hint {
+  margin-left: 0.1rem; padding: 0.08rem 0.4rem; border-radius: 999px;
+  font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--text-muted); background: color-mix(in srgb, var(--text-primary) 10%, transparent);
+}
+
+/* ══ Completeness ring (right of the resume-name row) ══ */
+.rz-manager__name { max-width: 460px; }
+.rz-complete { display: flex; align-items: center; gap: 0.4rem; margin-left: auto; --rz-ring-c: #ef4444; }
+.rz-complete.is-ok { --rz-ring-c: #f59e0b; }
+.rz-complete.is-good { --rz-ring-c: #10b981; }
+.rz-ring { width: 40px; height: 40px; }
+.rz-ring svg { transform: rotate(-90deg); }
+.rz-ring__track { fill: none; stroke: color-mix(in srgb, var(--text-primary) 12%, transparent); stroke-width: 5; }
+.rz-ring__bar { fill: none; stroke: var(--rz-ring-c); stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease; }
+.rz-complete__pct { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 800; color: var(--rz-ring-c); min-width: 38px; }
+
+@media (max-width: 560px) {
+  .rz-manager__row { flex-wrap: wrap; align-items: center; }
+  .rz-manager__name { flex: 1 0 100%; max-width: none; }
+  .rz-ats-btn--top { display: none; }
+  .rz-ats-btn--bottom {
+    display: inline-flex; flex: 1 1 0; min-width: 0; margin-left: 0;
+    justify-content: center; white-space: nowrap;
+  }
+  .rz-ats-btn--bottom .rz-ats-btn__hint { display: none; }
 }

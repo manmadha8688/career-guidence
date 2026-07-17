@@ -75,7 +75,9 @@ Both checks MUST exist. Frontend check prevents UI access. Backend check prevent
 ## Data Exposure Rules
 
 - Never return `password` field in any API response
-- Never return `email` in public-facing list responses
+- Never return the private login `email` in public-facing or list responses
+- Exception: the public profile may show the user's opt-in `publicEmail` contact field
+  (a separate `User.publicEmail`, empty by default, set on MyProfilePage) — never `user.email`
 - Guest users: name displayed as `Guest#XXXX` (generated on creation)
 - Admin stats show guest count but no guest PII
 

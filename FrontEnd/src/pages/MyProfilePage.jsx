@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
   User as UserIcon, AtSign, Mail, Lock, MapPin, GraduationCap, Building2,
-  Github, Linkedin, Globe, Check, X, Loader2, Save, Copy, ExternalLink,
-  Eye, EyeOff,
+  Github, Linkedin, Globe, Check, X, Loader2, Save, Share2, ExternalLink,
+  Eye, EyeOff, FileText,
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
-import { updateProfile, checkUsername } from '../api/api'
+import { updateProfile, checkUsername, listResumes } from '../api/api'
 import { getApiError } from '../utils/apiError'
 import { getRank } from '../utils/slRank'
 import Navbar from '../components/navbars/Navbar'
@@ -18,6 +18,7 @@ import '../styles/pages/shared/my-profile.css'
 const BIO_MAX = 150
 const USERNAME_RE = /^[a-z0-9_]{3,20}$/
 const URL_RE = /^https?:\/\/[^\s]{3,}$/i
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 const EASE = [0.16, 1, 0.3, 1]
 
 const AVATAR_COLORS = [
@@ -42,9 +43,9 @@ function normEdu(e = {}) {
   }
 }
 const EMPTY_FORM = {
-  fullName: '', username: '', bio: '', avatarColor: '#6366F1', location: '',
+  fullName: '', username: '', bio: '', avatarColor: '#6366F1', location: '', publicEmail: '',
   githubUrl: '', linkedinUrl: '', portfolioUrl: '',
-  education: { ...EMPTY_EDU }, publicProfile: true,
+  education: { ...EMPTY_EDU }, publicProfile: true, featuredResumeId: '',
 }
 
 const CURRENT_YEAR = new Date().getFullYear()
@@ -66,6 +67,7 @@ function snapshot(f) {
     bio: f.bio.trim(),
     avatarColor: f.avatarColor,
     location: f.location.trim(),
+    publicEmail: f.publicEmail.trim(),
     githubUrl: f.githubUrl.trim(),
     linkedinUrl: f.linkedinUrl.trim(),
     portfolioUrl: f.portfolioUrl.trim(),
@@ -76,11 +78,16 @@ function snapshot(f) {
       graduationYear: (f.education.graduationYear || '').trim(),
       cgpa: (f.education.cgpa || '').trim(),
     },
+    featuredResumeId: f.featuredResumeId || '',
   })
 }
 function urlState(v) {
   if (!v || !v.trim()) return 'empty'
   return URL_RE.test(v.trim()) ? 'valid' : 'invalid'
+}
+function emailState(v) {
+  if (!v || !v.trim()) return 'empty'
+  return EMAIL_RE.test(v.trim()) ? 'valid' : 'invalid'
 }
 
 export default function MyProfilePage() {
@@ -90,6 +97,8 @@ export default function MyProfilePage() {
 
   const [form, setForm] = useState(EMPTY_FORM)
   const [baseline, setBaseline] = useState(null)
+  const [resumes, setResumes] = useState([])
+  const [resumesLoaded, setResumesLoaded] = useState(false)
   const [saving, setSaving] = useState(false)
   const [privacyBusy, setPrivacyBusy] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -115,17 +124,49 @@ export default function MyProfilePage() {
       bio: user.bio || '',
       avatarColor: user.avatarColor || '#6366F1',
       location: user.location || '',
+      publicEmail: user.publicEmail || '',
       githubUrl: user.githubUrl || '',
       linkedinUrl: user.linkedinUrl || '',
       portfolioUrl: user.portfolioUrl || '',
       education: normEdu(user.education),
       publicProfile: user.publicProfile !== false,
+      featuredResumeId: user.featuredResumeId || '',
     }
     setForm(next)
     setBaseline(snapshot(next))
     originalUsernameRef.current = (user.username || '').toLowerCase()
     initializedRef.current = true
   }, [user])
+
+  // Load the user's resumes (for the "resume on profile" picker).
+  useEffect(() => {
+    if (!user || user.role === 'GUEST') return
+    let active = true
+    setResumesLoaded(false)
+    listResumes()
+      .then(({ data }) => { if (active) setResumes(Array.isArray(data) ? data : []) })
+      .catch(() => { if (active) setResumes([]) })
+      .finally(() => { if (active) setResumesLoaded(true) })
+    return () => { active = false }
+  }, [user?.id])
+
+  // Keep the picker in sync with reality:
+  // - deleted resume → clear pick
+  // - share link turned off in Resume Studio → clear pick (backend also clears featuredResumeId)
+  // Persist the clear so /me + public profile stay consistent without the student noticing a broken link.
+  useEffect(() => {
+    if (!initializedRef.current || !resumesLoaded) return
+    const fid = form.featuredResumeId
+    if (!fid) return
+    const match = resumes.find(r => r.id === fid)
+    if (match && match.isPublic) return
+    const nf = { ...form, featuredResumeId: '' }
+    setForm(nf)
+    setBaseline(snapshot(nf))
+    updateProfile({ featuredResumeId: '' }).catch(() => {})
+    window.dispatchEvent(new Event('sl:refresh'))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [resumes, resumesLoaded])
 
   const isGuest = user?.role === 'GUEST'
   const profileUrl = form.username ? `${window.location.origin}/u/${form.username}` : ''
@@ -189,6 +230,17 @@ export default function MyProfilePage() {
       toast.error('Please fix the invalid links before saving.')
       return
     }
+    if (emailState(form.publicEmail) === 'invalid') {
+      toast.error('Please enter a valid public contact email address')
+      return
+    }
+    if (form.featuredResumeId) {
+      const picked = resumes.find(r => r.id === form.featuredResumeId)
+      if (!picked || !picked.isPublic) {
+        toast.error('That resume’s share link is off. Turn sharing on in Resume Studio, or pick None.')
+        return
+      }
+    }
 
     setUsernameError('')
     setSaving(true)
@@ -199,6 +251,7 @@ export default function MyProfilePage() {
         bio: form.bio,
         avatarColor: form.avatarColor,
         location: form.location.trim(),
+        publicEmail: form.publicEmail.trim(),
         githubUrl: form.githubUrl.trim(),
         linkedinUrl: form.linkedinUrl.trim(),
         portfolioUrl: form.portfolioUrl.trim(),
@@ -210,12 +263,14 @@ export default function MyProfilePage() {
           cgpa: (form.education.cgpa || '').trim(),
         },
         publicProfile: form.publicProfile,
+        featuredResumeId: form.featuredResumeId || '',
       })
       const saved = {
         ...form,
         username: data?.username || username,
         location: data?.location ?? form.location,
         education: normEdu(data?.education || form.education),
+        featuredResumeId: data?.featuredResumeId ?? form.featuredResumeId,
       }
       if (!mountedRef.current) return
       setForm(saved)
@@ -223,6 +278,10 @@ export default function MyProfilePage() {
       originalUsernameRef.current = (data?.username || username).toLowerCase()
       toast.success('Profile updated successfully')
       window.dispatchEvent(new Event('sl:refresh'))
+      // Featuring a resume auto-shares it — refresh the list so its status is current.
+      listResumes().then(({ data: list }) => {
+        if (mountedRef.current) setResumes(Array.isArray(list) ? list : [])
+      }).catch(() => {})
     } catch (err) {
       const msg = getApiError(err, 'We could not save your changes. Please review the fields and try again.')
       if (/username/i.test(msg)) setUsernameError(msg)
@@ -250,11 +309,28 @@ export default function MyProfilePage() {
   }
 
   const copyLink = async () => {
+    if (!profileUrl) return
+    // Native share sheet when supported; else copy the link.
+    if (navigator.share) {
+      try { await navigator.share({ title: `${form.fullName || user?.fullName || 'My'} profile — LearnForEarn`, text: 'Check out my hunter profile', url: profileUrl }) } catch { /* cancelled */ }
+      return
+    }
     try {
       await navigator.clipboard.writeText(profileUrl)
       setCopied(true)
       setTimeout(() => mountedRef.current && setCopied(false), 1600)
     } catch { toast.error('Could not copy the link.') }
+  }
+
+  // Share a specific resume's public link (native sheet, else copy).
+  const shareResume = async (url, name) => {
+    if (!url) return
+    if (navigator.share) {
+      try { await navigator.share({ title: `${name || 'My resume'} — LearnForEarn`, text: 'Here is my resume', url }) } catch { /* cancelled */ }
+      return
+    }
+    try { await navigator.clipboard.writeText(url); toast.success('Resume link copied') }
+    catch { toast.error('Could not copy the link.') }
   }
 
   const rise = (delay = 0) => ({
@@ -338,6 +414,16 @@ export default function MyProfilePage() {
                     : 'Only you can see it — your public link is switched off.'}
                 </span>
               </div>
+              {profileUrl && form.publicProfile && (
+                <div className="mpx-share">
+                  <button type="button" className="mpx-share__btn" onClick={copyLink}>
+                    {copied ? <Check size={13} /> : <Share2 size={13} />} {copied ? 'Copied' : 'Share link'}
+                  </button>
+                  <a className="mpx-share__btn" href={profileUrl} target="_blank" rel="noreferrer">
+                    <ExternalLink size={13} /> View
+                  </a>
+                </div>
+              )}
               <button type="button"
                 className={`mpx-toggle${form.publicProfile ? ' is-on' : ''}`}
                 role="switch" aria-checked={form.publicProfile}
@@ -347,19 +433,6 @@ export default function MyProfilePage() {
                 <span className="mpx-toggle__knob">{privacyBusy && <Loader2 size={11} className="mpx-spin" />}</span>
               </button>
             </div>
-
-            {profileUrl && form.publicProfile && (
-              <div className="mpx-share">
-                <Globe size={14} className="mpx-share__globe" />
-                <span className="mpx-share__url">{profileUrl}</span>
-                <button type="button" className="mpx-share__btn" onClick={copyLink}>
-                  {copied ? <Check size={13} /> : <Copy size={13} />} {copied ? 'Copied' : 'Copy'}
-                </button>
-                <a className="mpx-share__btn" href={profileUrl} target="_blank" rel="noreferrer">
-                  <ExternalLink size={13} /> View
-                </a>
-              </div>
-            )}
           </div>
         </motion.header>
 
@@ -420,6 +493,26 @@ export default function MyProfilePage() {
               <Mail size={15} className="mpx-inputwrap__icon" />
               <input id="mpx-email" className="mpx-input mpx-input--affix" value={user?.email || ''} readOnly disabled />
             </div>
+            <p className="mpx-hint">Your login email — private, never shown on your public profile.</p>
+          </div>
+
+          <div className="mpx-field">
+            <label className="mpx-label" htmlFor="mpx-public-email">Public contact email</label>
+            <div className={`mpx-inputwrap${emailState(form.publicEmail) === 'invalid' ? ' has-error' : ''}`}>
+              <Mail size={15} className="mpx-inputwrap__icon" />
+              <input id="mpx-public-email" className="mpx-input mpx-input--affix"
+                type="email" inputMode="email" autoComplete="off" spellCheck={false}
+                value={form.publicEmail} maxLength={254}
+                onChange={e => set('publicEmail', e.target.value)}
+                placeholder="you@example.com (optional)" />
+              <span className="mpx-status">
+                {emailState(form.publicEmail) === 'valid' && <Check size={15} className="mpx-status--ok" />}
+                {emailState(form.publicEmail) === 'invalid' && <X size={15} className="mpx-status--bad" />}
+              </span>
+            </div>
+            {emailState(form.publicEmail) === 'invalid'
+              ? <p className="mpx-msg mpx-msg--bad">Enter a valid email address</p>
+              : <p className="mpx-hint">Optional — shown on your public profile for recruiters to reach you</p>}
           </div>
 
           <div className="mpx-field mpx-field--last">
@@ -510,8 +603,95 @@ export default function MyProfilePage() {
           })}
         </motion.section>
 
+        {/* ── Resume on profile ── */}
+        <motion.section className="mpx-card" {...rise(0.18)}>
+          <div className="mpx-card__head">
+            <h2 className="mpx-card__title"><FileText size={17} /> Resume on your profile</h2>
+            <p className="mpx-card__sub">Only resumes with a share link turned on can appear here — pick one, or none.</p>
+          </div>
+
+          {!resumesLoaded ? (
+            <p className="mpx-hint">Loading your resumes…</p>
+          ) : resumes.length === 0 ? (
+            <div className="mpx-resumeempty">
+              <p className="mpx-resumeempty__text">
+                You haven’t saved a resume yet. Build one in Resume Studio, turn on its share link, then come back here to show it on your profile.
+              </p>
+              <Link to="/resume" className="mpx-resumeempty__btn">
+                <FileText size={15} /> Go to Resume Studio
+              </Link>
+            </div>
+          ) : (
+            <>
+              <div className="mpx-resumepick" role="radiogroup" aria-label="Resume on your profile">
+                <label className={`mpx-resumeopt${!form.featuredResumeId ? ' is-active' : ''}`}>
+                  <input type="radio" name="featuredResume" className="mpx-resumeopt__input"
+                    checked={!form.featuredResumeId} onChange={() => set('featuredResumeId', '')} />
+                  <span className="mpx-resumeopt__radio" aria-hidden="true" />
+                  <span className="mpx-resumeopt__body">
+                    <span className="mpx-resumeopt__title">None</span>
+                    <span className="mpx-resumeopt__meta">Don’t show a resume on my profile</span>
+                  </span>
+                </label>
+
+                {resumes.map(r => {
+                  const selectable = !!r.isPublic
+                  const active = form.featuredResumeId === r.id
+                  const url = r.isPublic && r.shareSlug ? `${window.location.origin}/r/${r.shareSlug}` : ''
+                  return (
+                    <label
+                      key={r.id}
+                      className={`mpx-resumeopt${active ? ' is-active' : ''}${selectable ? '' : ' is-disabled'}`}
+                      title={selectable ? undefined : 'Turn on the share link in Resume Studio first'}
+                    >
+                      <input type="radio" name="featuredResume" className="mpx-resumeopt__input"
+                        checked={active} disabled={!selectable}
+                        onChange={() => selectable && set('featuredResumeId', r.id)} />
+                      <span className="mpx-resumeopt__radio" aria-hidden="true" />
+                      <span className="mpx-resumeopt__body">
+                        <span className="mpx-resumeopt__title">{r.title || 'Untitled'}</span>
+                        <span className="mpx-resumeopt__meta">
+                          {selectable
+                            ? 'Share link on — can show on your profile'
+                            : 'Share link off — open Resume Studio and turn sharing on'}
+                        </span>
+                      </span>
+                      {url ? (
+                        <span className="mpx-resumeopt__actions">
+                          <button type="button" className="mpx-resumeopt__view"
+                            onClick={e => { e.preventDefault(); e.stopPropagation(); shareResume(url, r.title) }}>
+                            <Share2 size={13} /> Share link
+                          </button>
+                          <a className="mpx-resumeopt__view" href={url} target="_blank" rel="noreferrer"
+                            onClick={e => e.stopPropagation()}>
+                            <ExternalLink size={13} /> View
+                          </a>
+                        </span>
+                      ) : (
+                        <Link to="/resume" className="mpx-resumeopt__view" onClick={e => e.stopPropagation()}>
+                          Open
+                        </Link>
+                      )}
+                    </label>
+                  )
+                })}
+              </div>
+              {resumes.every(r => !r.isPublic) ? (
+                <p className="mpx-hint">
+                  None of your resumes have a share link yet.{' '}
+                  <Link to="/resume" className="mpx-inlinelink">Open Resume Studio</Link>, turn sharing on for one, then pick it here.
+                </p>
+              ) : (
+                <p className="mpx-hint">
+                  If you turn off a resume’s share link later, it’s removed from your profile automatically.
+                </p>
+              )}
+            </>
+          )}
+        </motion.section>
+
         {/* ── Save ── */}
-        <motion.div className="mpx-savebar" {...rise(0.2)}>
+        <motion.div className="mpx-savebar" {...rise(0.22)}>
           <button type="submit" className="mpx-save" disabled={!isDirty || saving}>
             {saving ? <><Loader2 size={15} className="mpx-spin" /> Saving…</> : <><Save size={15} /> Save changes</>}
           </button>
