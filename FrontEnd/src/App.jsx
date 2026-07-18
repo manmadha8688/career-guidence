@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import PageTransitionLoader from './components/loaders/PageTransitionLoader'
 import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation, useNavigationType } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider, useAuth } from './context/AuthContext'
 import { ConfirmProvider } from './context/ConfirmContext'
 import { ThemeProvider } from './context/ThemeContext'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -194,9 +194,15 @@ function Seo() {
   return null
 }
 
+// Stable toast config — hoisted so it isn't re-created on every AppShell render.
+const TOAST_OPTIONS = { duration: 3000 }
+
 // Prefetch common page chunks in the background after app is idle.
 // Runs once — subsequent visits use the browser cache.
-function usePrefetchRoutes() {
+// The dashboard chunk is heavy and only useful to logged-in hunters, so it is
+// prefetched only when an active session exists — logged-out / landing-only
+// visitors never pay for it.
+function usePrefetchRoutes(hasSession) {
   useEffect(() => {
     const run = () => {
       import('./pages/landing')
@@ -204,10 +210,8 @@ function usePrefetchRoutes() {
       import('./pages/auth/RegisterForm')
       import('./pages/MissionsPage')
       import('./pages/JobsPage')
-      import('./pages/ailab/AILabPage')
-      import('./pages/DeploymentGuidePage')
       import('./pages/problem-solving/ProblemSolvingPage')
-      import('./pages/student-skill-arena/DashboardPage')
+      if (hasSession) import('./pages/student-skill-arena/DashboardPage')
       import('./pages/FresherInstructionsPage')
       import('./pages/CareerGuidancePage')
     }
@@ -216,17 +220,18 @@ function usePrefetchRoutes() {
     } else {
       setTimeout(run, 800)
     }
-  }, [])
+  }, [hasSession])
 }
 
 function AppShell() {
-  usePrefetchRoutes()
+  const { isAuthenticated } = useAuth()
+  usePrefetchRoutes(isAuthenticated)
   useEffect(() => { sessionStorage.removeItem('sl_chunk_reloaded') }, [])
   return (
     <>
       <ScrollResetter />
       <Seo />
-      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+      <Toaster position="top-right" toastOptions={TOAST_OPTIONS} />
       <FeedbackNudge />
       <ScrollToTop />
       <AutoHideNav />
@@ -245,7 +250,7 @@ const router = createBrowserRouter([
     element: <AppShell />,
     children: [
       { path: '/', element: <LandingPage /> },
-      { path: '/loader-demo', element: <LoaderDemo /> },
+      { path: '/loader-demo', element: import.meta.env.DEV ? <LoaderDemo /> : <Navigate to="/" replace /> },
       {
         element: <GuestRoute />,
         children: [

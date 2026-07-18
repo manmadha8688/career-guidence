@@ -70,27 +70,10 @@ export const PROOF_POINTS = [
   'XP, ranks, and badges you can actually show recruiters',
 ]
 
-export const HERO_SKILL_BADGES = [
-  { label: 'Python',      color: '#4ADE80', x: '8%',  y: '22%', delay: '0s',   dur: '6s'   },
-  { label: 'DSA',         color: '#C4B5FD', x: '88%', y: '18%', delay: '0.8s', dur: '7s'   },
-  { label: 'Java',        color: '#F59E0B', x: '6%',  y: '70%', delay: '1.2s', dur: '5.5s' },
-  { label: 'React',       color: '#38BDF8', x: '85%', y: '65%', delay: '0.4s', dur: '6.5s' },
-  { label: 'SQL',         color: '#A78BFA', x: '14%', y: '45%', delay: '2s',   dur: '7.5s' },
-  { label: 'Node.js',     color: '#86EFAC', x: '80%', y: '42%', delay: '1.6s', dur: '5s'   },
-  { label: 'Spring Boot', color: '#FCA5A5', x: '20%', y: '82%', delay: '0.6s', dur: '8s'   },
-  { label: 'Git',         color: '#FCD34D', x: '75%', y: '80%', delay: '1.8s', dur: '6s'   },
-]
-
 export const MISSION_FEATURE_CARDS = [
   { icon: '🎯', title: 'Project-based practice', body: 'Every mission is a complete project you build from scratch — not a drill, a real thing.' },
   { icon: '🗺️', title: 'Clear objectives & hints', body: "Know exactly what to build. Stuck? Unlock hints one at a time without spoiling the answer." },
   { icon: '📈', title: 'Matched to your skills', body: 'Missions span beginner to advanced — always something challenging but achievable.' },
-]
-
-export const MISSION_STATS = [
-  { number: '20+', label: 'Missions' },
-  { number: '4',   label: 'Technologies' },
-  { number: '∞',   label: 'Ways to solve' },
 ]
 
 export const CODE_GYM_TRACKS = [
@@ -99,12 +82,6 @@ export const CODE_GYM_TRACKS = [
   { icon: '⚡', title: 'Skill Up',         color: '#0EA5E9', href: '/problem-solving/skill-up',        desc: 'Arrays, strings, searching — same problem, 4 languages, brute to optimized.' },
   { icon: '🎯', title: 'Crack It', color: '#9B6ED4', href: '/problem-solving/crack-it', desc: 'Story problems packed with rules — read the situation and code every case correctly.' },
   { icon: '🔥', title: 'Build It', color: '#F59E0B', href: '/problem-solving/build-it', desc: 'Get it working, then make it faster — optimize under real constraints and explain why.' },
-]
-
-export const CODE_GYM_STATS = [
-  { number: '35+', label: 'Problems & growing' },
-  { number: '4',   label: 'Languages' },
-  { number: '3',   label: 'Approaches each' },
 ]
 
 export const AI_LAB_CATEGORIES = [
@@ -123,13 +100,6 @@ export const DEPLOY_STACKS = [
   { icon: '📊', title: 'Streamlit ML Apps',  color: '#FF4B4B', desc: 'Train model → save → app.py → Streamlit Cloud. No web framework needed' },
   { icon: '🤗', title: 'HF Spaces — NLP · LLM · RAG · CV', color: '#FF9D00', desc: 'Deploy NLP, chatbots, RAG apps, image classifiers as Gradio demos — 16GB RAM free' },
   { icon: '🗄️', title: 'Free Databases',     color: '#A78BFA', desc: 'MongoDB Atlas, Neon, Supabase — setup + connection guide' },
-]
-
-export const DEPLOY_STATS = [
-  { value: '10+', label: 'Deployment guides', tone: 'purple' },
-  { value: '4',   label: 'Free databases',    tone: 'green' },
-  { value: '0',   label: 'Credit card needed', tone: 'blue' },
-  { value: '30m', label: 'To go live',        tone: 'gold' },
 ]
 
 /** Re-export icons used in landing section components. */

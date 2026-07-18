@@ -60,3 +60,48 @@
 - Never return full concept list with all fields in subject list endpoint
 - Subject list → lightweight (title, icon, color, rank, totalConcepts)
 - Concept detail → full fields on individual fetch only
+
+---
+
+## Default quality bar (proven — Jul 2026 perf/quality pass)
+
+> Apply these by default when writing/changing code, without being asked. They are
+> the standards the codebase already holds; new code must not regress them.
+
+### Frontend — write it optimized the first time
+- **Never declare a component inside another component.** A nested component is a new
+  type every render → its whole subtree remounts. Hoist to module scope; wrap list
+  leaves in `React.memo` and pass closure values as props.
+- **Stable references:** wrap Context/`use*`-hook return objects in `useMemo`, and
+  callbacks passed down or into deps in `useCallback`. Never build `{}`/`[]`/config
+  objects inline in JSX or context values — hoist consts (e.g. `TOAST_OPTIONS`).
+- **Every async effect** uses a mounted guard (`let alive = true` … `return () => { alive = false }`)
+  and **clears every timer/interval/listener** in cleanup — including a `setTimeout`
+  inside `.finally()`. Guard `setState` behind the flag.
+- **`api.js` eviction must cover EVERY mutation**, not just the obvious ones. Enroll /
+  pause / resume / any state-changing call evicts the same user caches a quiz pass does
+  (`progressSummary`, `hunterStats`, plus the entity key). Missing eviction = stale UI.
+- Prefetch heavy/auth-only chunks (dashboard) **only when a session exists** — never for
+  logged-out landing visitors. Gate dev-only routes with `import.meta.env.DEV`.
+
+### Backend — write it optimized the first time
+- **Bound every history/list query** with `Pageable`; treat `limit <= 0` as a safe
+  default (e.g. 50). Never fetch-all-then-trim-in-memory.
+- **Cap unbounded request inputs** at the controller and return `400 {"error": "..."}`
+  when exceeded (e.g. bulk-status ≤ 50 ids, search query ≤ 100 chars).
+- **Scoped repository queries, not `findByUserId(...)` + in-memory `.filter(byField)`.**
+  Add a derived finder (`findByUserIdAndSubjectId`) so Mongo does the filtering.
+  (Exception: filters a derived query can't express identically, e.g. `hasText` empty-vs-null.)
+- **Cache read-heavy endpoints with a short TTL AND evict on every change.** Public
+  profile (90s) / hunter stats (60s) via `CacheService.get(name, key, supplier)`; evict
+  the key wherever the underlying data mutates (self-update, quiz pass, complete/uncomplete).
+- **Don't hit the DB per request for auth.** `UserDetailsServiceImpl` caches the user
+  (Caffeine, ~45s) keyed by email and is evicted wherever `tokenVersion` bumps
+  (logout, password reset) — preserving the exact revocation check.
+- **Move recurring/expensive work off the request path** to `@Scheduled`
+  (`@EnableScheduling` is on). Don't run sweeps like walk-in expiry on every public read.
+- `CacheService.TTLS` has > 10 namespaces → it must use `Map.ofEntries(...)` (not `Map.of`).
+- Indexes: `auto-index-creation` is **disabled**, so `@Indexed`/`@CompoundIndex` are inert —
+  every hot-path index MUST be created explicitly in `DataIntegrityMigration.ensureIndexes()`.
+- Give outbound `HttpClient` calls (Brevo, GitHub OAuth) connect + request timeouts so a
+  slow upstream can't pin a request thread.

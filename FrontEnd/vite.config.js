@@ -25,6 +25,11 @@ export default defineConfig({
           if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id)) {
             return 'react-vendor'
           }
+          // framer-motion is used app-wide (and eagerly via MotionConfig). Its own vendor
+          // chunk stays cached across deploys and keeps it out of the main entry chunk.
+          if (/[\\/]node_modules[\\/]framer-motion[\\/]/.test(id)) {
+            return 'framer-motion'
+          }
         },
       },
     },

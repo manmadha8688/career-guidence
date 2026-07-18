@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, BookOpen, Zap, Filter, Repeat, Timer, Layers } from 'lucide-react'
 import Navbar from '../../components/navbars/Navbar'
 import { getAptitudeCategories } from '../../api/api'
 import { APTITUDE_CATEGORIES } from './aptitudeData'
+import '../../styles/pages/shared/aptitude.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -115,7 +117,7 @@ export default function AptitudePage() {
         ;(r.data || []).forEach(c => { map[c.category] = c })
         setCounts(map)
       })
-      .catch(() => { if (alive) setCounts({}) })
+      .catch(() => { if (alive) { toast.error('Could not load aptitude sections. Please try again.'); setCounts({}) } })
     return () => { alive = false }
   }, [])
 

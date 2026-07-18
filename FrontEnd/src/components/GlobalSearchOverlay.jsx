@@ -59,7 +59,9 @@ export default function GlobalSearchOverlay() {
   }, [canSearch])
 
   useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 30)
+    if (!open) return
+    const t = setTimeout(() => inputRef.current?.focus(), 30)
+    return () => clearTimeout(t)
   }, [open])
 
   // Stop the page behind the search overlay from scrolling on mobile.

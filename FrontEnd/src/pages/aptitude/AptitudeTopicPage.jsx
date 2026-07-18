@@ -11,6 +11,7 @@ import { getAptitudeTopic, getAptitudeQuestions, aptitudeCache } from '../../api
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
 import { DI_LESSONS } from './dataInterpretationData'
 import DataInterpretationLesson from './DataInterpretationLesson'
+import '../../styles/pages/shared/aptitude.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -45,10 +46,13 @@ export default function AptitudeTopicPage() {
       setNotFound(false)
       setQuestions([])
     }
+    let alive = true
+    let doneTimer
     Promise.all([
-      getAptitudeTopic(topicId).then(r => setTopic(r.data)).catch(() => setNotFound(true)),
-      getAptitudeQuestions(topicId).then(r => setQuestions(r.data || [])).catch(() => setQuestions([])),
-    ]).finally(() => { if (!cached) setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+      getAptitudeTopic(topicId).then(r => { if (alive) setTopic(r.data) }).catch(() => { if (alive) setNotFound(true) }),
+      getAptitudeQuestions(topicId).then(r => { if (alive) setQuestions(r.data || []) }).catch(() => { if (alive) setQuestions([]) }),
+    ]).finally(() => { if (alive && !cached) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { alive = false; clearTimeout(doneTimer) }
   }, [topicId])
 
   const accent = catMeta?.color || '#0EA5E9'

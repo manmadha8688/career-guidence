@@ -10,6 +10,8 @@ import {
 import { getWalkIns, postWalkIn, removeWalkIn } from '../api/api'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
+import '../styles/pages/shared/jobs.css'
+import '../styles/pages/shared/jobs-mobile.css'
 import { getApiError } from '../utils/apiError'
 import { deleteWalkInConfirmOptions } from '../utils/confirmRemoveLink'
 import { useConfirm } from '../context/ConfirmContext'

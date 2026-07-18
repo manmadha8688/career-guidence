@@ -53,5 +53,3 @@ export const REPORT_TYPE_LABELS = {
   SUGGESTION: '💡 Suggestion',
   OTHER: '💬 Other',
 }
-
-export const ALL_REPORT_TYPES = REPORT_CATEGORIES.flatMap(c => c.types)

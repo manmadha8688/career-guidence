@@ -15,6 +15,37 @@
   padding: 1.5rem 1.25rem 4rem;
 }
 
+/* ── Loading skeleton (avoids blank builder flash while auth/data load) ── */
+.rz-skel-wrap { padding: 1.5rem 0; }
+.rz-skel-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+.rz-skel {
+  border-radius: 14px;
+  background: linear-gradient(90deg,
+    var(--bg-card) 30%,
+    color-mix(in srgb, var(--text-primary) 8%, var(--bg-card)) 50%,
+    var(--bg-card) 70%);
+  background-size: 200% 100%;
+  animation: rz-skel-shimmer 1.4s ease-in-out infinite;
+}
+.rz-skel--tabs { height: 48px; max-width: 280px; margin: 0 auto; }
+.rz-skel--form { height: 560px; }
+.rz-skel--preview { height: 560px; }
+@keyframes rz-skel-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@media (max-width: 960px) {
+  .rz-skel-layout { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rz-skel { animation: none; }
+}
+
 /* ── Hero ── */
 .rz-hero { text-align: center; padding: 1.5rem 0 1.75rem; }
 

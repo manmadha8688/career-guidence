@@ -9,6 +9,7 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useTheme } from '../../context/ThemeContext'
 import { getAptitudeTopic, getAptitudeQuestions, aptitudeCache } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
+import '../../styles/pages/shared/aptitude.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -40,10 +41,13 @@ export default function AptitudeQuestionsPage() {
       setLoading(true)
     }
     setRevealed({})
+    let alive = true
+    let doneTimer
     Promise.all([
-      getAptitudeTopic(topicId).then(r => setTopic(r.data)).catch(() => setTopic(null)),
-      getAptitudeQuestions(topicId).then(r => setQuestions(r.data || [])).catch(() => setQuestions([])),
-    ]).finally(() => { if (!cached) setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+      getAptitudeTopic(topicId).then(r => { if (alive) setTopic(r.data) }).catch(() => { if (alive) setTopic(null) }),
+      getAptitudeQuestions(topicId).then(r => { if (alive) setQuestions(r.data || []) }).catch(() => { if (alive) setQuestions([]) }),
+    ]).finally(() => { if (alive && !cached) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { alive = false; clearTimeout(doneTimer) }
   }, [topicId])
 
   const backToTopic = () => navigate(`/aptitude/${category}/${group}/${topicId}`)

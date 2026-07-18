@@ -9,6 +9,32 @@
   font-family: 'Rajdhani', sans-serif;
 }
 
+/* Empty/error state when a quiz loads but has no data */
+.dash-quiz-unavailable {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.dash-quiz-unavailable__title {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.dash-quiz-unavailable__text {
+  margin: 0;
+  max-width: 420px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 .dash-quiz-header {
   height: 52px;
   flex-shrink: 0;

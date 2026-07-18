@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../context/AuthContext'
 import { guestLogin, getPublicStats } from '../../../api/api'
@@ -74,9 +74,12 @@ export default function useLandingPage() {
       .catch(err => logApiError('public-stats', err))
   }, [])
 
-  const handleEnter = () => navigate(user ? '/skill-arena/dashboard' : '/login?redirect=/skill-arena/dashboard')
+  const handleEnter = useCallback(
+    () => navigate(user ? '/skill-arena/dashboard' : '/login?redirect=/skill-arena/dashboard'),
+    [navigate, user],
+  )
 
-  const handleGuest = async () => {
+  const handleGuest = useCallback(async () => {
     setGuestLoading(true)
     showAuthOverlay('guest')
     try {
@@ -95,9 +98,12 @@ export default function useLandingPage() {
     } finally {
       setGuestLoading(false)
     }
-  }
+  }, [navigate, showAuthOverlay, completeAuthOverlay, hideAuthOverlay, login])
 
-  return {
+  // Memoized so the returned object keeps a stable reference between renders —
+  // prevents the 12 landing sections (which consume this via context) from
+  // re-rendering together on unrelated state changes. Same keys/values as before.
+  return useMemo(() => ({
     navigate,
     user,
     logout,
@@ -109,5 +115,5 @@ export default function useLandingPage() {
     countUpRef,
     handleEnter,
     handleGuest,
-  }
+  }), [navigate, user, logout, themeProps, guestLoading, mobileMenuOpen, platformStats, handleEnter, handleGuest])
 }

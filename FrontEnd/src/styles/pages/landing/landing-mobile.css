@@ -1,0 +1,27 @@
+/* Landing — mobile rules co-located from mobile.css.
+   These target landing-only content classes (lp-aurora*, lp-hero-robot). They set
+   NON-!important properties (filter / opacity / will-change / transform), so once the
+   landing content CSS loads from its own route chunk they MUST load AFTER it to keep
+   the exact same cascade result they had when mobile.css was imported last.
+   Copied verbatim from mobile.css — selectors, breakpoints and values unchanged.
+   (The shared .lp-navbar / .lp-mobile-* backdrop rules stay in mobile.css because the
+   Navbar is global; the reduced-motion aurora rule stays in mobile.css because it is
+   !important and therefore cascade-safe regardless of load order.) */
+
+@media (max-width: 768px) {
+  /* Freeze the big background auroras — a static glow costs ~nothing,
+     while animating an 800px blurred element churns the compositor. */
+  .lp-aurora,
+  .lp-aurora-1,
+  .lp-aurora-2,
+  .lp-aurora-3,
+  .lp-aurora-4 {
+    animation: none !important;
+    filter: blur(55px);
+    opacity: 0.28;
+  }
+
+  /* Promote the hero robot / fallback to its own layer so it isn't
+     repainted together with the scrolling content. */
+  .lp-hero-robot { will-change: transform; transform: translateZ(0); }
+}

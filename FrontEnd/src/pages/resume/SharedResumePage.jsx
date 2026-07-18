@@ -19,6 +19,9 @@ export default function SharedResumePage() {
   // CSS `zoom` (not transform) re-rasterises the text so it stays crisp.
   const stageRef = useRef(null)
   const [scale, setScale] = useState(1)
+  // "Copied" toast reset timer — cleared on unmount so it never fires on a gone component.
+  const copiedTimerRef = useRef(null)
+  useEffect(() => () => clearTimeout(copiedTimerRef.current), [])
 
   useEffect(() => {
     let active = true
@@ -62,7 +65,7 @@ export default function SharedResumePage() {
     if (downloading || !data) return
     setDownloading(true)
     try {
-      await buildAndSaveResumePdf(data)
+      await buildAndSaveResumePdf(data, title)
     } catch {
       toast.error('Could not generate the PDF. Please try again.')
     } finally {
@@ -81,7 +84,8 @@ export default function SharedResumePage() {
     try {
       await navigator.clipboard.writeText(url)
       setCopied(true)
-      setTimeout(() => setCopied(false), 1600)
+      clearTimeout(copiedTimerRef.current)
+      copiedTimerRef.current = setTimeout(() => setCopied(false), 1600)
     } catch {
       toast.error('Could not copy the link.')
     }

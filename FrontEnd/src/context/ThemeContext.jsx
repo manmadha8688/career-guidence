@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useRef, useEffect } from 'react'
+import { createContext, useContext, useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { useSkyTransition } from '../hooks/useSkyTransition'
 
 const ThemeContext = createContext({ theme: 'dark', toggleTheme: () => {} })
@@ -30,7 +30,7 @@ export function ThemeProvider({ children }) {
     }
   }, [])
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     const next = theme === 'dark' ? 'light' : 'dark'
     const applyTheme = () => {
       document.documentElement.setAttribute('data-theme', next)
@@ -38,10 +38,12 @@ export function ThemeProvider({ children }) {
       setTheme(next)
     }
     triggerSky(applyTheme)
-  }
+  }, [theme, triggerSky])
+
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   )

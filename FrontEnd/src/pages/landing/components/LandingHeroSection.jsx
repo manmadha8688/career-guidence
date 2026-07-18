@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Swords, Ghost, Sparkles } from 'lucide-react'
+import { Swords, Ghost } from 'lucide-react'
 import { useLanding } from '../context/LandingPageContext'
 
 const Spline = lazy(() => import('@splinetool/react-spline'))
@@ -75,6 +75,8 @@ export default function LandingHeroSection() {
             draggable="false"
             loading="eager"
             decoding="async"
+            width="480"
+            height="720"
             className="lp-hero-robot__img"
           />
         )}

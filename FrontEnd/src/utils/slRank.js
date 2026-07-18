@@ -1,7 +1,5 @@
 // ── Rank lookup from XP (used by Navbar/QuizPage which don't have summary) ──
 
-export const calcXp = (completedConcepts) => (completedConcepts || 0) * 50
-
 const isLight = () => document.documentElement.getAttribute('data-theme') === 'light'
 
 const DARK = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
@@ -17,11 +15,6 @@ export const getRank = (xp = 0) => {
   if (xp >= 500)   return { label: 'D', cls: 'rank-d', color: r.D, next: 1500,  min: 500,   progress: Math.round((xp - 500)   / 1000 * 100) }
   return               { label: 'E', cls: 'rank-e', color: r.E, next: 500,   min: 0,     progress: Math.round(xp / 500 * 100) }
 }
-
-// ── localStorage fallback (for pages that haven't loaded summary yet) ──
-export const getStoredXp   = () => parseInt(localStorage.getItem('sl_xp') || '0', 10)
-export const setStoredXp   = (xp) => localStorage.setItem('sl_xp', String(xp))
-export const saveCompleted = (n) => setStoredXp(calcXp(n))
 
 export const getGateRank = (pct, hasContent) => {
   const r = rc()

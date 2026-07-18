@@ -1,0 +1,13 @@
+/* AI Lab — mobile override co-located from mobile.css.
+   Every other ailab- mobile rule in mobile.css is either !important or uses a
+   different property than the base (min-width vs width), so those stay in
+   mobile.css and remain cascade-safe there. The one exception is the modal
+   actions gap: it is NON-!important, and once ailab.css loads from its own route
+   chunk (after mobile.css) the base gap:0.625rem would win at <=480px and change
+   the value. Re-applying the exact mobile values here — loaded after ailab.css —
+   preserves byte-identical rendering. The original grouped rule (which also
+   serves .jobs-modal__footer) is left untouched in mobile.css. */
+
+@media (max-width: 480px) {
+  .ailab-modal__actions { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+}

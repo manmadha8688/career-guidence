@@ -37,6 +37,30 @@ All production endpoints responded correctly:
 
 ---
 
+## Perf/quality pass — Jul 2026 (15 fixes, build + backend compile green, 0 visual/behavior change)
+
+Standards distilled from this pass now live in `rules/performance.md` ("Default quality bar") + `rules/code-style.md` ("Code hygiene") — apply them by default; don't re-flag.
+
+| # | Area | Change |
+|---|---|---|
+| 1 | FE re-render | `GateCard` hoisted out of `DashboardPage` to module scope + `React.memo`; closure deps passed as props |
+| 2 | FE prefetch | Dashboard chunk prefetch gated behind `isAuthenticated` (App.jsx) |
+| 3 | FE alloc | `TOAST_OPTIONS` hoisted to module scope |
+| 4 | FE alloc | `useLandingPage` return object `useMemo`'d; `handleEnter`/`handleGuest` `useCallback`'d |
+| 5 | FE dead code | Removed unused exports (`slRank`, `documentTitle`, `reportTypes`) |
+| 6 | FE safety | `/loader-demo` gated to `import.meta.env.DEV` |
+| 7 | BE observability | `GitHubAuthController` logs the swallowed OAuth exception |
+| 8 | BE auth perf | `UserDetailsServiceImpl` 45s Caffeine user cache; evict on logout + reset |
+| 9 | BE bounds | `/api/quiz/history` uses `Pageable` (limit ≤ 0 → 50); no in-memory trim |
+| 10 | BE bounds | bulk-status capped at 50 ids, concept search at 100 chars → 400 |
+| 11 | FE cache | `api.js` enroll/pause/resume also evict `progressSummary` + `hunterStats` |
+| 12 | FE leaks | mounted-guard + `clearTimeout` cleanup in `TrackPage` + 4 aptitude pages |
+| 13 | BE off-path | `WalkInService.expirePastWalkIns` → `@Scheduled(1h)`, off the read path |
+| 14 | BE query | `SubjectService.getSubjectDetail` uses scoped `findByUserIdAndSubjectId` |
+| 15 | BE cache | short-TTL `publicProfile` (90s) + `hunterStats` (60s) with targeted eviction |
+
+---
+
 ## HIGH priority — do next (not yet applied; need product/UX decisions)
 
 1. **Rotate exposed credentials.** The Mongo password and admin passwords appeared in

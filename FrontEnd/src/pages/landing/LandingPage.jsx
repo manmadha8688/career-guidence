@@ -15,6 +15,8 @@ import LandingAILabSection from './components/LandingAILabSection'
 import LandingDeploySection from './components/LandingDeploySection'
 import LandingHowItWorksSection from './components/LandingHowItWorksSection'
 import LandingFinalCtaSection from './components/LandingFinalCtaSection'
+import '../../styles/pages/landing/index.css'
+import '../../styles/pages/landing/landing-mobile.css'
 
 export default function LandingPage() {
   const landing = useLandingPage()

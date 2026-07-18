@@ -19,6 +19,7 @@ import AptitudeLoader from '../components/loaders/AptitudeLoader'
 import RadarLoader from '../components/loaders/RadarLoader'
 import DataHelixLoader from '../components/loaders/DataHelixLoader'
 import AdminSkeleton from '../components/loaders/AdminSkeleton'
+import '../styles/pages/admin/index.css'
 
 const TRACK_COLORS = {
   'START_CODING':    '#4ADE80',

@@ -9,6 +9,7 @@ import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
+import '../../styles/pages/dashboard/index.css'
 
 const LETTERS = ['A', 'B', 'C', 'D']
 

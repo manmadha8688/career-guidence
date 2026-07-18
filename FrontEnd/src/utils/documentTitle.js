@@ -68,8 +68,3 @@ function withCanonical(pathname, meta) {
     noindex: !!meta.noindex,
   }
 }
-
-/** Backwards-compatible title-only helper. */
-export function resolveDocumentTitle(pathname) {
-  return resolveSeo(pathname).title
-}

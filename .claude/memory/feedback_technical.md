@@ -50,3 +50,21 @@ Use plain text or describe elements as `(div element)`.
 ## CSP connect-src (Vercel)
 
 Vercel applies `vercel.json` headers at deploy time — include `https://*.onrender.com` in `connect-src` for all Render backends (test + prod).
+
+---
+
+## Short-TTL cache + eviction pattern (proven, Jul 2026)
+
+Read-heavy, per-key endpoints get a short-TTL `CacheService.get(name, key, supplier)` **and** an explicit evict wherever the source data changes:
+
+- `publicProfile` (90s) — evict on `updateOwnProfile` for **both** old and new username (capture `previousUsername` before save).
+- `hunterStats` (60s) — evict on `completeConcept`, `uncompleteConcept`, and quiz **pass**; frontend also evicts it on roadmap enroll/pause/resume.
+- Adding namespaces: `CacheService.TTLS` is past `Map.of`'s 10-pair cap → use `Map.ofEntries(...)`.
+
+## JWT per-request DB read → Caffeine cache (proven)
+
+Authenticated requests re-loaded the `User` from Mongo on every call. `UserDetailsServiceImpl` now caches by email (~45s Caffeine) with an `evict(email)` called wherever `tokenVersion` bumps (`logout`, `resetPassword`) — so the `tokenVersion` revocation check stays exact while killing the per-request read.
+
+## Auto-index-creation is OFF
+
+`spring.data.mongodb.auto-index-creation` is disabled → `@Indexed` / `@CompoundIndex` annotations do **nothing**. Any index a hot query relies on must be created explicitly in `DataIntegrityMigration.ensureIndexes()`.

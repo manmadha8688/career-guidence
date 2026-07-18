@@ -8,6 +8,8 @@ import BookmarkButton from '../../components/BookmarkButton'
 import { CATEGORIES, TOOLS } from './aiLabData'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
 import blurOnEnter from '../../utils/blurOnEnter'
+import '../../styles/pages/shared/ailab.css'
+import '../../styles/pages/shared/ailab-mobile.css'
 
 const Spline = lazy(() => import('@splinetool/react-spline'))
 

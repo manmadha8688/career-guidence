@@ -1,0 +1,32 @@
+/* Problem Solving / Code Gym — mobile rules co-located from mobile.css.
+   These rules exclusively target this page's lv- and gym- classes. They set a
+   non-!important filter, so they MUST load AFTER problem-solving.css to keep
+   the exact same cascade result they had when mobile.css was imported last.
+   Copied verbatim from mobile.css — breakpoints and values unchanged.
+   (Shared, cross-page mobile rules that also list ps-/lv- selectors stay in
+   mobile.css because they are !important and serve other pages too.) */
+
+@media (max-width: 900px) {
+  /* ── A. Large blurred, animated background blobs ───────────────────────
+     Code GYM auras (44vw, blur 95px) and the Code GYM gate beams (blur 90px)
+     are the mobile equivalent of the landing auroras: huge blurred surfaces
+     drifting on a loop. Freeze the drift and cut the blur radius so the
+     compositor stops churning a full-viewport blurred layer every frame. */
+  .lv-aura__blob--1,
+  .lv-aura__blob--2,
+  .lv-aura__blob--3 {
+    animation: none !important;
+    filter: blur(45px);
+  }
+  .gym-gates__beam--1,
+  .gym-gates__beam--2 {
+    animation: none !important;
+    filter: blur(45px);
+  }
+
+  /* ── D. Ambient motion loops (marquee / float) ─────────────────────────
+     The Code GYM ticker marquee and floating gate icon run forever. Freeze
+     on mobile; content stays legible, motion stops competing with scroll. */
+  .gym-ticker__row,
+  .lv-gate__icon { animation: none !important; }
+}

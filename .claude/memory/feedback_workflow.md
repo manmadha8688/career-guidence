@@ -9,6 +9,18 @@ metadata:
 
 ---
 
+## Default quality bar (always active)
+
+Write **optimized, production-grade code by default** — don't wait to be asked to "make it fast/clean". Before finishing any change, apply:
+
+- **Performance standards:** [`rules/performance.md`](../rules/performance.md) → "Default quality bar" (FE: no nested components, stable refs, effect cleanup, full cache eviction; BE: bounded queries, input caps, scoped finders, short-TTL cache + evict, cached auth lookup, `@Scheduled` off-path).
+- **Code hygiene:** [`rules/code-style.md`](../rules/code-style.md) → "Code hygiene" (no dead code, no narrating comments, never swallow exceptions, gate dev-only routes, behavior-preserving).
+- **Verify before claiming done:** FE `npm run build` clean + `npx eslint .` at 0 errors; BE `./mvnw.cmd compile` clean. Report exit codes.
+
+Default to **zero visual / behavior / API-contract change** unless the task explicitly asks for one — optimize the implementation, not the result.
+
+---
+
 ## Full permissions
 
 User granted full create/edit/delete in `C:\manmadha\Student-project` without per-action confirmation. Proceed directly with changes inside this project.

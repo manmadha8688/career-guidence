@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import Navbar from '../../components/navbars/Navbar'
 import GymLoginSquad from './components/GymLoginSquad'
 import GymTrackPath from './components/GymTrackPath'
+import '../../styles/pages/shared/problem-solving.css'
+import '../../styles/pages/shared/problem-solving-mobile.css'
 
 const HERO_PUNCH = [
   { stop: 'Stop taking notes.', start: 'Start making mistakes.' },

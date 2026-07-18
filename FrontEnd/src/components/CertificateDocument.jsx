@@ -4,6 +4,7 @@
 // details that make a credential useful (what, who, when, and how to verify).
 import { badgeMeta } from '../utils/badgeMeta'
 import { subjectBadgeTitle } from '../utils/subjectBadgeTitle'
+import '../styles/pages/shared/certificates.css'
 
 function fmtDate(iso) {
   if (!iso) return ''

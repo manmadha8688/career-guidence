@@ -12,15 +12,27 @@
 @import './global.css';
 @import './scrollbars.css';
 @import './components/index.css';
-@import './pages/landing/index.css';
+/* Landing navbar + buttons stay global: the shared Navbar (on every public route)
+   uses lp-navbar / lp-btn classes. The landing PAGE content (layout/sections/cards)
+   is imported co-located in LandingPage.jsx — see pages/landing/index.css. */
+@import './pages/landing/navbar.css';
+@import './pages/landing/buttons.css';
 @import './pages/auth/index.css';
-@import './pages/dashboard/index.css';
-@import './pages/admin/index.css';
+/* dashboard CSS (pages/dashboard/index.css) is imported co-located in the 4 skill-arena routes
+   (DashboardPage / QuizPage / QuizResultPage / RoadmapDetailPage) — not globally. Its .dash-*
+   classes (+ panel/modal/mobile sub-components rendered within those routes) are used nowhere
+   else, and mobile.css has no dash- rules (mobile styles are self-contained in the dashboard
+   files), so cascade order is unaffected — no override needed. */
+/* admin CSS (pages/admin/index.css) is imported co-located in the 12 admin-skill-arena pages
+   + LoaderDemo (renders AdminSkeleton) — NEVER globally. Its admin- and ask- classes are used
+   only in admin pages/components, and mobile.css has no admin- rules, so cascade is unaffected.
+   This keeps admin CSS out of every student-facing route chunk. */
 @import './pages/shared/index.css';
 @import './features.css';
 @import './landing-animations.css';
-@import './auth-animations.css';
-@import './pages-animations.css';
+/* auth-animations.css and pages-animations.css are imported co-located in their own
+   lazy pages (AuthLayoutShell / Fresher & Career pages) — not globally — so they load
+   only with those routes instead of on every page. */
 
 /* Mobile responsiveness layer — imported LAST so it wins. All rules are
    inside mobile media queries; desktop view is unchanged. */

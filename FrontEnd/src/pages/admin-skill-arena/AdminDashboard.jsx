@@ -11,6 +11,7 @@ import { getAdminStats, clearApiCache } from '../../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
 import AdminSkeleton from '../../components/loaders/AdminSkeleton'
+import '../../styles/pages/admin/index.css'
 
 const QUICK_ACTIONS = [
   { label: 'New Subject',  icon: BookOpen,   path: '/admin-skill-arena/subjects',  accent: '#7C3AED' },

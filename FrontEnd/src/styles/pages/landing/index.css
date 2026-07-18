@@ -1,5 +1,7 @@
+/* Landing PAGE CONTENT — imported co-located in LandingPage.jsx (lazy '/' route),
+   NOT globally. navbar.css + buttons.css stay in the global bundle (styles/index.css)
+   because the shared Navbar — present on every public route — uses lp-navbar / lp-btn
+   classes. Only the landing hero/sections/cards content is route-scoped here. */
 @import './layout.css';
-@import './navbar.css';
-@import './buttons.css';
 @import './sections.css';
 @import './cards.css';

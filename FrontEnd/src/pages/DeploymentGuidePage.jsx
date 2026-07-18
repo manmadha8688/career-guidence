@@ -5,6 +5,8 @@ import { useAuth } from '../context/AuthContext'
 import Navbar from '../components/navbars/Navbar'
 import { Search, X, ExternalLink } from 'lucide-react'
 import { STACKS, PLATFORMS } from './deployment/guideIndex'
+import '../styles/pages/shared/deployment.css'
+import '../styles/pages/shared/deployment-stations.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 

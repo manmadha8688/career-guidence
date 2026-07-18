@@ -1,5 +1,4 @@
 // Full-page cinematic loader for Skill Arena — "ARISE" gate effect
-// Section variant available as HunterSectionLoader
 
 const PARTICLES = [
   { left:'3%',  w:2, h:40, delay:'0s',    dur:'2.4s' },
@@ -72,20 +71,6 @@ export default function HunterLoader({ subtitle = '' }) {
       <div className="hl-corner hl-corner-tr" aria-hidden="true" />
       <div className="hl-corner hl-corner-bl" aria-hidden="true" />
       <div className="hl-corner hl-corner-br" aria-hidden="true" />
-    </div>
-  )
-}
-
-// Compact section loader for panels
-export function HunterSectionLoader({ height = 200 }) {
-  return (
-    <div className="hl-section" style={{ height }}>
-      <div className="hl-scan-line" />
-      <div className="hl-section-text">
-        <span className="hl-section-dot" />
-        <span className="hl-section-dot" style={{ animationDelay: '0.2s' }} />
-        <span className="hl-section-dot" style={{ animationDelay: '0.4s' }} />
-      </div>
     </div>
   )
 }

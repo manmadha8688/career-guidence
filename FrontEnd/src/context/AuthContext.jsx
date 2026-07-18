@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react'
 import { getMe, clearUserCache } from '../api/api'
 import { logApiError } from '../utils/devLog'
 import { clearBrowserSessionPreservingPrefs } from '../utils/browserSession'
@@ -14,9 +14,9 @@ export function AuthProvider({ children }) {
   const [logoutDone, setLogoutDone] = useState(false)
   const [authOverlay, setAuthOverlay] = useState(null) // { type, completing }
 
-  const showAuthOverlay = (type) => setAuthOverlay({ type, completing: false })
-  const completeAuthOverlay = () => setAuthOverlay(o => (o ? { ...o, completing: true } : null))
-  const hideAuthOverlay = () => setAuthOverlay(null)
+  const showAuthOverlay = useCallback((type) => setAuthOverlay({ type, completing: false }), [])
+  const completeAuthOverlay = useCallback(() => setAuthOverlay(o => (o ? { ...o, completing: true } : null)), [])
+  const hideAuthOverlay = useCallback(() => setAuthOverlay(null), [])
 
   // On mount — only call /me if we previously stored a session flag.
   // Anonymous visitors (no flag) skip the call entirely — no 401/403 in console.
@@ -43,7 +43,7 @@ export function AuthProvider({ children }) {
     return () => window.removeEventListener('sl:refresh', refresh)
   }, [])
 
-  const login = async (_token, userData) => {
+  const login = useCallback(async (_token, userData) => {
     clearUserCache()
     localStorage.setItem('has_session', '1')
     // The login/register response only carries {id, fullName, email, role}.
@@ -57,9 +57,9 @@ export function AuthProvider({ children }) {
     } catch (err) {
       logApiError('auth-login-hydrate', err)
     }
-  }
+  }, [])
 
-  const logout = async () => {
+  const logout = useCallback(async () => {
     setLogoutOverlay(true)
     setLogoutDone(false)
     try { await api.post('/auth/logout') } catch { /* best-effort: proceed with local cleanup */ }
@@ -69,13 +69,15 @@ export function AuthProvider({ children }) {
     await new Promise(r => setTimeout(r, 800))
     setUser(null)
     window.location.href = '/'
-  }
+  }, [])
+
+  const value = useMemo(() => ({
+    user, login, logout, isAuthenticated: !!user, loading,
+    showAuthOverlay, completeAuthOverlay, hideAuthOverlay,
+  }), [user, loading, login, logout, showAuthOverlay, completeAuthOverlay, hideAuthOverlay])
 
   return (
-    <AuthContext.Provider value={{
-      user, login, logout, isAuthenticated: !!user, loading,
-      showAuthOverlay, completeAuthOverlay, hideAuthOverlay,
-    }}>
+    <AuthContext.Provider value={value}>
       {authOverlay && <LoadingOverlay type={authOverlay.type} completing={authOverlay.completing} />}
       {logoutOverlay && <LoadingOverlay type="logout" completing={logoutDone} />}
       {children}

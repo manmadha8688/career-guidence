@@ -17,7 +17,7 @@ const TRICKY_META = {
   REAL_WORLD: { label: 'REAL-WORLD',         cls: 'is-real' },
 }
 
-function TrickyProblemCard({ tp, num, isWebSubject, subjectType }) {
+function TrickyProblemCard({ tp, num }) {
   const [revealed, setRevealed] = useState(false)
   const meta = TRICKY_META[tp.type] || TRICKY_META.GOTCHA
   return (

@@ -6,13 +6,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
@@ -24,16 +27,20 @@ public class CacheService {
     // TTL in seconds per cache name. Every namespace here gets a Caffeine (L1) cache;
     // a namespace NOT listed would silently skip L1 and be Redis-only, so keep this in
     // sync with every cacheService.get(...) call site.
-    static final Map<String, Long> TTLS = Map.of(
-        "subjects",    86400L,   // 24 h
-        "concepts",    86400L,   // 24 h
-        "roadmaps",    86400L,   // 24 h
-        "missions",    86400L,   // 24 h — reference data, rarely changes
-        "problems",    86400L,   // 24 h — reference data, rarely changes
-        "aptitude",    86400L,   // 24 h — reference data, rarely changes
-        "progress",    300L,     // 5 min — per-user, evicted on quiz pass / completion
-        "certificates",300L,     // 5 min — per-user, evicted when a certificate is issued
-        "publicStats", 300L      // 5 min — landing-page counts, cheap-to-spam public endpoint
+    // Map.ofEntries (not Map.of) because there are more than 10 namespaces.
+    static final Map<String, Long> TTLS = Map.ofEntries(
+        Map.entry("subjects",     86400L),   // 24 h
+        Map.entry("concepts",     86400L),   // 24 h
+        Map.entry("roadmaps",     86400L),   // 24 h
+        Map.entry("missions",     86400L),   // 24 h — reference data, rarely changes
+        Map.entry("problems",     86400L),   // 24 h — reference data, rarely changes
+        Map.entry("aptitude",     86400L),   // 24 h — reference data, rarely changes
+        Map.entry("progress",     300L),     // 5 min — per-user, evicted on quiz pass / completion
+        Map.entry("certificates", 300L),     // 5 min — per-user, evicted when a certificate is issued
+        Map.entry("publicStats",  300L),     // 5 min — landing-page counts, cheap-to-spam public endpoint
+        Map.entry("adminStats",   90L),      // 90 s — admin dashboard aggregate counts (heavy to compute)
+        Map.entry("hunterStats",  60L),      // 60 s — per-user badges/counts, evicted on quiz pass / uncomplete
+        Map.entry("publicProfile",90L)       // 90 s — public hunter profile, evicted on self-update
     );
 
     private final Map<String, Cache<String, Object>> caffeineCaches;
@@ -130,10 +137,22 @@ public class CacheService {
         if (caffeine != null) caffeine.invalidateAll();
         if (redisTemplate != null) {
             try {
-                Set<String> keys = redisTemplate.keys(cacheName + ":*");
-                if (keys != null && !keys.isEmpty()) redisTemplate.delete(keys);
+                // SCAN instead of KEYS: iterate the keyspace in small batches so Redis is
+                // never blocked. Same match pattern → the exact same keys get deleted.
+                ScanOptions options = ScanOptions.scanOptions().match(cacheName + ":*").count(200).build();
+                List<String> batch = new ArrayList<>();
+                try (Cursor<String> cursor = redisTemplate.scan(options)) {
+                    while (cursor.hasNext()) {
+                        batch.add(cursor.next());
+                        if (batch.size() >= 500) {
+                            redisTemplate.delete(batch);
+                            batch.clear();
+                        }
+                    }
+                }
+                if (!batch.isEmpty()) redisTemplate.delete(batch);
             } catch (Exception e) {
-                log.warn("Redis KEYS/DELETE failed [{}:*]: {}", cacheName, e.getMessage());
+                log.warn("Redis SCAN/DELETE failed [{}:*]: {}", cacheName, e.getMessage());
             }
         }
     }

@@ -31,4 +31,11 @@ export default defineConfig([
       'react-refresh/only-export-components': 'warn',
     },
   },
+  {
+    // Node-run build/tooling scripts (not part of the browser bundle) need node globals.
+    files: ['generate-assets.js', '*.config.js', 'scripts/**/*.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ])

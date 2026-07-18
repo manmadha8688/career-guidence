@@ -1,5 +1,4 @@
 // Full-page terminal boot loader for Problem Solving pages
-// Section variant: TerminalSectionLoader
 
 const BOOT_LINES = [
   { text: '> SYSTEM BOOT........................', fill: 100, delay: 0 },
@@ -48,17 +47,6 @@ export default function TerminalLoader({ accentColor = '#f97316', label = 'LOADI
 
       {/* Bottom label */}
       <div className="tl-footer">{label}</div>
-    </div>
-  )
-}
-
-// Compact inline section loader
-export function TerminalSectionLoader({ accentColor = '#f97316' }) {
-  return (
-    <div className="tl-section" style={{ '--tl-accent': accentColor }}>
-      <span className="tl-prompt">{'>'}</span>
-      <span className="tl-section-text">FETCHING DATA</span>
-      <span className="tl-section-cursor">█</span>
     </div>
   )
 }

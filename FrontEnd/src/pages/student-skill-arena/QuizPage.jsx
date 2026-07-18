@@ -9,6 +9,7 @@ import { useAuth } from '../../context/AuthContext'
 import { getApiError } from '../../utils/apiError'
 import { isMongoId } from '../../utils/mongoId'
 import toast from 'react-hot-toast'
+import '../../styles/pages/dashboard/index.css'
 
 const QUIZ_TYPES = { concept: startConceptQuiz, subject: startSubjectQuiz, roadmap: startRoadmapQuiz }
 
@@ -98,7 +99,19 @@ export default function QuizPage() {
   // ── Loading ──────────────────────────────────────────
   if (loading) return <SystemAwakeningLoader subtitle="LOADING QUIZ" />
 
-  if (!quiz) return null
+  if (!quiz) return (
+    <div className="dash-quiz-page">
+      <div className="dash-quiz-unavailable">
+        <h2 className="dash-quiz-unavailable__title">Quiz not available</h2>
+        <p className="dash-quiz-unavailable__text">
+          This trial has no questions yet or could not be loaded. Please try again later.
+        </p>
+        <button type="button" className="dash-quiz-back-btn" onClick={() => navigate(-1)}>
+          <ArrowLeft size={13} /> GATES
+        </button>
+      </div>
+    </div>
+  )
 
   const q            = quiz.questions[current]
   const answered     = answers[current]
@@ -172,7 +185,15 @@ export default function QuizPage() {
               return (
                 <div
                   key={i}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => selectAnswer(i)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      selectAnswer(i)
+                    }
+                  }}
                   className={`dash-quiz-option${isSelected ? ' is-selected' : ''}`}
                 >
                   <div className="dash-quiz-option__letter">

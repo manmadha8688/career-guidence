@@ -159,17 +159,11 @@
    scroll frame). Trimming these keeps 60fps without hurting the look much.
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Freeze the big background auroras — a static glow costs ~nothing,
-     while animating an 800px blurred element churns the compositor. */
-  .lp-aurora,
-  .lp-aurora-1,
-  .lp-aurora-2,
-  .lp-aurora-3,
-  .lp-aurora-4 {
-    animation: none !important;
-    filter: blur(55px);
-    opacity: 0.28;
-  }
+  /* Landing auroras (.lp-aurora*) and the hero robot (.lp-hero-robot) mobile perf
+     rules moved to styles/pages/landing/landing-mobile.css (co-located with the
+     landing route chunk) — they set non-!important props and must load after the
+     landing content CSS to preserve the exact cascade. Only the shared Navbar
+     backdrop rule stays here (the Navbar is global). */
 
   /* Lighter frosted navbar so the sticky bar doesn't re-blur the page
      underneath on every scroll frame. */
@@ -179,10 +173,6 @@
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
   }
-
-  /* Promote the hero robot / fallback to its own layer so it isn't
-     repainted together with the scrolling content. */
-  .lp-hero-robot { will-change: transform; transform: translateZ(0); }
 }
 
 /* Honour users who ask for less motion — kill the infinite loops. */
@@ -198,23 +188,6 @@
    re-samples the scrolling page each frame. Purely mobile — desktop untouched.
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  /* ── A. Large blurred, animated background blobs ───────────────────────
-     Code GYM auras (44vw, blur 95px) and the Code GYM gate beams (blur 90px)
-     are the mobile equivalent of the landing auroras: huge blurred surfaces
-     drifting on a loop. Freeze the drift and cut the blur radius so the
-     compositor stops churning a full-viewport blurred layer every frame. */
-  .lv-aura__blob--1,
-  .lv-aura__blob--2,
-  .lv-aura__blob--3 {
-    animation: none !important;
-    filter: blur(45px);
-  }
-  .gym-gates__beam--1,
-  .gym-gates__beam--2 {
-    animation: none !important;
-    filter: blur(45px);
-  }
-
   /* ── B. Animated background grids ──────────────────────────────────────
      Drifting grid overlays repaint a large area continuously. Freeze them —
      the grid stays visible, it just stops sliding. */
@@ -229,12 +202,6 @@
   .lv-encourage__title,
   .ailab-hero__ai-title,
   .deploy-hero__title-grad { animation: none !important; }
-
-  /* ── D. Ambient motion loops (marquee / float) ─────────────────────────
-     The Code GYM ticker marquee and floating gate icon run forever. Freeze
-     on mobile; content stays legible, motion stops competing with scroll. */
-  .gym-ticker__row,
-  .lv-gate__icon { animation: none !important; }
 
   /* ── E. High-frequency flicker overlays on empty/error states ──────────
      nf-static / snp-static repaint a full-cover noise layer every ~0.15s —

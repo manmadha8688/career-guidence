@@ -10,6 +10,7 @@ import blurOnEnter from '../../utils/blurOnEnter'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { getAptitudeGroups, getAptitudeTopics, aptitudeCache } from '../../api/api'
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META, PRIORITY_META, sortTopics } from './aptitudeData'
+import '../../styles/pages/shared/aptitude.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -62,12 +63,15 @@ export default function AptitudeGroupPage() {
       setLoading(true)
     }
     setQuery(searchParams.get('q') || ''); setPriFilter('all'); setDiffFilter('all')
+    let alive = true
+    let doneTimer
     Promise.all([
-      getAptitudeTopics(group).then(r => setTopics(sortTopics(r.data || []))).catch(() => setTopics([])),
+      getAptitudeTopics(group).then(r => { if (alive) setTopics(sortTopics(r.data || [])) }).catch(() => { if (alive) setTopics([]) }),
       getAptitudeGroups(category)
-        .then(r => setGroupMeta((r.data || []).find(g => g.slug === group) || null))
-        .catch(() => setGroupMeta(null)),
-    ]).finally(() => { if (!cached) setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+        .then(r => { if (alive) setGroupMeta((r.data || []).find(g => g.slug === group) || null) })
+        .catch(() => { if (alive) setGroupMeta(null) }),
+    ]).finally(() => { if (alive && !cached) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { alive = false; clearTimeout(doneTimer) }
   }, [category, group])
 
   const filtered = useMemo(() => {

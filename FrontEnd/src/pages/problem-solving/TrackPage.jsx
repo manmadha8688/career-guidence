@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import toast from 'react-hot-toast'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Sun, Moon, Search, X, ChevronRight } from 'lucide-react'
@@ -7,6 +8,8 @@ import EnterArenaButton from '../../components/EnterArenaButton'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblems } from '../../api/api'
 import blurOnEnter from '../../utils/blurOnEnter'
+import '../../styles/pages/shared/problem-solving.css'
+import '../../styles/pages/shared/problem-solving-mobile.css'
 
 const SLUG_TO_TRACK = {
   'start-coding':    'START_CODING',
@@ -64,14 +67,21 @@ export default function TrackPage() {
 
   useEffect(() => {
     if (!track) { navigate('/problem-solving', { replace: true }); return }
+    let alive = true
+    let doneTimer
     setLoading(true)
     setSearch('')
     setLevel('All')
     setTopic('All')
     getProblems(track)
-      .then(r => setQuestions(r.data))
-      .catch(() => setQuestions([]))
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+      .then(r => { if (alive) setQuestions(r.data) })
+      .catch(() => {
+        if (!alive) return
+        toast.error('Could not load problems. Please try again.')
+        setQuestions([])
+      })
+      .finally(() => { if (alive) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
+    return () => { alive = false; clearTimeout(doneTimer) }
   }, [track])
 
   const levels = useMemo(() => {

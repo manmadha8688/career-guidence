@@ -4,6 +4,8 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import { CodeBlock, textLineClass } from './GuideLayout'
 import { GUIDE_JOURNEYS } from './guideJourneys'
 import BookmarkButton from '../../components/BookmarkButton'
+import '../../styles/pages/shared/deployment.css'
+import '../../styles/pages/shared/deployment-guide.css'
 
 // Split a flat list of stages into balanced rows so a long flow can "snake"
 // (left→right, then right→left) instead of overflowing off the screen.

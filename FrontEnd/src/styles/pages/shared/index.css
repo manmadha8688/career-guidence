@@ -3,17 +3,39 @@
 @import './section-nav-brand.css';
 @import './not-found.css';
 @import './section-not-found.css';
-@import './jobs.css';
-@import './missions.css';
-@import './missions-board.css';
-@import './problem-solving.css';
-@import './aptitude.css';
-@import './certificates.css';
-@import './ailab.css';
+/* jobs.css (+ jobs-mobile.css) is imported co-located in JobsPage (the only route that uses
+   .jobs-* classes). The one non-!important mobile rule (.jobs-modal__footer gap) is re-applied
+   in jobs-mobile.css after jobs.css to preserve cascade; the rest are !important and stay in
+   mobile.css. */
+/* missions.css is imported co-located in MissionsPage + MissionDetailPage; missions-board.css
+   (.mb-*) in MissionsPage only. No other route uses .missions-/.mission-/.md-/.mb- classes
+   (dash-missions-btn, lp-mission-card, dash-...--mb-md are different classes). All missions
+   mobile rules in mobile.css are !important or property-disjoint — no override needed. */
+/* problem-solving.css (+ problem-solving-mobile.css) is imported co-located in the 3 lazy
+   problem-solving route pages (ProblemSolvingPage / TrackPage / ProblemDetailPage) — not
+   globally — so it loads only on those routes. Its .ps-/.lv-/.gym- section-only mobile
+   rules moved into problem-solving-mobile.css; the shared !important mobile rules that also
+   list .ps-/.lv- selectors stay in mobile.css (they serve other pages and are cascade-safe). */
+/* aptitude.css is imported co-located in the 5 lazy aptitude route pages
+   (AptitudePage / Category / Group / Topic / Questions) — not globally — so it
+   loads only on aptitude routes. Its selectors (.apt-*, .di-*) are used nowhere
+   else and mobile.css has no apt-/di- overrides, so cascade order is unaffected. */
+/* certificates.css (.cred-/.cert-/.badge-/.hist-/.coll-summary) is imported co-located in its
+   consumers: CertificateDocument (cert-doc, shared by view/verify/PDF), CertificateVerifyPage,
+   CertificateViewPage, DashboardPage (badge/hist panel), and HunterProfileDrawer. mobile.css
+   has no rules for these classes, so cascade order is unaffected — no override needed. */
+/* ailab.css (+ ailab-mobile.css) is imported co-located in AILabPage (the only route that
+   uses .ailab-* classes) — not globally. ailab-helpers.css stays global below: its .tool-*
+   classes are shared by every AI-tool page (ToolPageLayout + all tool pages). */
 @import './ailab-helpers.css';
-@import './deployment.css';
-@import './deployment-stations.css';
-@import './deployment-guide.css';
-@import './career-guidance.css';
-@import './fresher-guide.css';
-@import './my-profile.css';
+/* deployment.css / deployment-stations.css / deployment-guide.css are imported co-located:
+   deployment.css + deployment-stations.css in DeploymentGuidePage (the hub, uses .deploy-rail),
+   and deployment.css + deployment-guide.css in GuideExperience (rendered by all ~40 guide
+   pages, and by GuideLayout). None of these deploy- or dgx- classes are used outside the
+   deployment feature. All deployment mobile rules in mobile.css are !important or use
+   properties disjoint from the base, so they stay cascade-safe there — no override needed. */
+/* career-guidance.css (.cg-*) is imported co-located in CareerGuidancePage; fresher-guide.css
+   (.fi-*) in FresherInstructionsPage. Their only mobile rules (.cg-nav / .fi-nav) are
+   !important, so they stay cascade-safe in mobile.css — no override needed. */
+/* my-profile.css is imported co-located in MyProfilePage (a lazy route) — not globally —
+   so it loads only on that page. */

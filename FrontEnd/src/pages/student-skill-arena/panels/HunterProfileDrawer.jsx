@@ -2,6 +2,7 @@ import { X, LogOut } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
 import useModalA11y from '../../../hooks/useModalA11y'
 import { RANK_LADDER } from '../../../constants/ranks'
+import '../../../styles/pages/shared/certificates.css'
 
 // Plain-language glossary for the 3 core themed words a newcomer meets first.
 const GLOSSARY = [

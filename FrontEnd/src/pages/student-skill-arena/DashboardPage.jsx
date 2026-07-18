@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef, memo } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
@@ -23,6 +23,8 @@ import {
   NAV_ITEMS,
   computeStats, subjectGateRank,
 } from './dashboard/dashboardUtils'
+import '../../styles/pages/dashboard/index.css'
+import '../../styles/pages/shared/certificates.css'
 
 // ─── Extracted panel components ───────────────────────────
 import ConceptInlinePanel  from './panels/ConceptInlinePanel'
@@ -51,6 +53,69 @@ const HIST_FILTERS = [
   { id: 'SUBJECT', label: 'Gate Tests' },
   { id: 'ROADMAP', label: 'Path Exams' },
 ]
+
+// Hoisted to module scope + memoized so it is a STABLE component type: previously
+// declared inside DashboardPage, it was recreated every render, remounting all gate
+// cards on each quest tick / search keystroke. Closure deps are now passed as props
+// (same names) — rendered output is identical.
+const GateCard = memo(function GateCard({ s, pOvr, quizStatuses, summaryBadgeMap, openSubjectPanel, setAboutGate, startQuiz }) {
+  const p = pOvr !== undefined ? pOvr : (s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0))
+  const gr        = subjectGateRank(s)
+  const allLearned = p >= 100
+  const hasBadge  = s.hasBadge ?? quizStatuses[s.id]?.hasBadge ?? summaryBadgeMap[s.id] ?? false
+  const gateClosed = allLearned && hasBadge
+  const sealed    = p === 0
+  const enabled   = s.totalConcepts > 0
+  const gateColor = gr.color
+  return (
+    <div
+      className={`sl-gate-card dash-gate-card ${enabled ? 'is-enabled' : 'is-disabled'}`}
+      style={{
+        '--gate-color': gateColor,
+        '--gate-bar-bg': gateClosed ? gateColor : `${gateColor}88`,
+        '--gate-status-color': gateClosed ? gateColor : sealed ? '#0cbd09' : `${gateColor}BB`,
+        '--progress-pct': `${p}%`,
+      }}
+      onClick={() => enabled && openSubjectPanel(s.id)}>
+      {/* Top row: title left, rank + about right */}
+      <div className="dash-gate-card__top">
+        <div className="sl-gate-title dash-gate-card__title">{s.title}</div>
+        <div className="dash-gate-card__actions">
+          {gateClosed && <Trophy size={11} color="#4ADE80" />}
+          <span className={`rank-badge dash-rank-badge-xxs ${gr.cls}`}>{gr.label}</span>
+          <button
+            className="dash-gate-card__info-btn"
+            style={{ '--gate-color': gateColor }}
+            onClick={e => { e.stopPropagation(); setAboutGate(s) }}
+            title="About this gate"
+          >
+            <Info size={18} />
+          </button>
+        </div>
+      </div>
+      <div className="sl-gate-meta">{s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'Coming soon'}</div>
+      {!allLearned && (
+        <div className="sl-gate-bar-track">
+          <div className="sl-gate-bar-fill dash-gate-bar-fill--dynamic" />
+        </div>
+      )}
+      {gateClosed ? (
+        <div className="sl-gate-status dash-gate-status--dynamic">GATE CLOSED SUCCESSFULLY</div>
+      ) : allLearned ? (
+        <button
+          className="dash-gate-final-btn"
+          onClick={e => { e.stopPropagation(); startQuiz('subject', s.id, s.title, s.icon) }}
+        >
+          ⚔ TAKE FINAL TEST
+        </button>
+      ) : (
+        <div className="sl-gate-status dash-gate-status--dynamic">
+          {sealed ? '' : `IN PROGRESS ${p}%`}
+        </div>
+      )}
+    </div>
+  )
+})
 
 export default function DashboardPage() {
   const { user, logout } = useAuth()
@@ -114,6 +179,10 @@ export default function DashboardPage() {
 
   const lastScrollY = useRef(0)
   const navHiddenRef = useRef(false)
+  // Fire-and-forget "loaded" timers started from event handlers (sl:refresh, loadGates,
+  // loadPaths). Tracked so they can be cleared if the page unmounts before they fire.
+  const pendingTimersRef = useRef([])
+  useEffect(() => () => { pendingTimersRef.current.forEach(clearTimeout); pendingTimersRef.current = [] }, [])
 
   // Auto-hide navbar on page scroll (reappears when scrolling up).
   useEffect(() => {
@@ -167,7 +236,7 @@ export default function DashboardPage() {
       active = false
       timers.forEach(clearTimeout)
     }
-  }, []) // eslint-disable-line
+  }, [])
 
   // Full attempt history — loaded lazily the first time the History view is opened.
   useEffect(() => {
@@ -204,7 +273,7 @@ export default function DashboardPage() {
       setPanelRefreshKey(k => k + 1)
       getSubjects().then(r => {
         setSubjects(r.data)
-        setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS)
+        pendingTimersRef.current.push(setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS))
         const ids = r.data.map(s => s.id)
         if (ids.length > 0) {
           getBulkSubjectStatus(ids)
@@ -217,7 +286,7 @@ export default function DashboardPage() {
       })
       getRoadmaps().then(r => {
         setAllRoadmaps(r.data)
-        setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS)
+        pendingTimersRef.current.push(setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS))
       }).catch(err => {
         logApiError('roadmaps-refresh', err)
         setPathsLoaded(true)
@@ -258,13 +327,13 @@ export default function DashboardPage() {
         .catch(() => {})
     }, 60_000)
     return () => { cancelled = true; clearInterval(t) }
-  }, [questData?.studyDone]) // eslint-disable-line
+  }, [questData?.studyDone])
 
   const loadGates = () => {
     if (gatesLoaded) return
     getSubjects().then(r => {
       setSubjects(r.data)
-      setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS)
+      pendingTimersRef.current.push(setTimeout(() => setGatesLoaded(true), TEST_DELAY_MS))
       const ids = r.data.map(s => s.id)
       if (ids.length > 0) {
         getBulkSubjectStatus(ids)
@@ -273,6 +342,7 @@ export default function DashboardPage() {
       }
     }).catch(err => {
       logApiError('subjects-gates', err)
+      toast.error('Could not load gates. Please try again.')
       setGatesLoaded(true)
     })
   }
@@ -281,9 +351,10 @@ export default function DashboardPage() {
     if (pathsLoaded) return
     getRoadmaps().then(r => {
       setAllRoadmaps(r.data)
-      setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS)
+      pendingTimersRef.current.push(setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS))
     }).catch(err => {
       logApiError('roadmaps-paths', err)
+      toast.error('Could not load paths. Please try again.')
       setPathsLoaded(true)
     })
   }
@@ -370,65 +441,6 @@ export default function DashboardPage() {
     r.title.toLowerCase().includes(pathSearch.toLowerCase()) ||
     (r.roleTarget || '').toLowerCase().includes(pathSearch.toLowerCase())
   )
-
-  const GateCard = ({ s, pOvr }) => {
-    const p = pOvr !== undefined ? pOvr : (s.percentage ?? (s.totalConcepts > 0 ? Math.round((s.completedCount / s.totalConcepts) * 100) : 0))
-    const gr        = subjectGateRank(s)
-    const allLearned = p >= 100
-    const hasBadge  = s.hasBadge ?? quizStatuses[s.id]?.hasBadge ?? summaryBadgeMap[s.id] ?? false
-    const gateClosed = allLearned && hasBadge
-    const sealed    = p === 0
-    const enabled   = s.totalConcepts > 0
-    const gateColor = gr.color
-    return (
-      <div
-        className={`sl-gate-card dash-gate-card ${enabled ? 'is-enabled' : 'is-disabled'}`}
-        style={{
-          '--gate-color': gateColor,
-          '--gate-bar-bg': gateClosed ? gateColor : `${gateColor}88`,
-          '--gate-status-color': gateClosed ? gateColor : sealed ? '#0cbd09' : `${gateColor}BB`,
-          '--progress-pct': `${p}%`,
-        }}
-        onClick={() => enabled && openSubjectPanel(s.id)}>
-        {/* Top row: title left, rank + about right */}
-        <div className="dash-gate-card__top">
-          <div className="sl-gate-title dash-gate-card__title">{s.title}</div>
-          <div className="dash-gate-card__actions">
-            {gateClosed && <Trophy size={11} color="#4ADE80" />}
-            <span className={`rank-badge dash-rank-badge-xxs ${gr.cls}`}>{gr.label}</span>
-            <button
-              className="dash-gate-card__info-btn"
-              style={{ '--gate-color': gateColor }}
-              onClick={e => { e.stopPropagation(); setAboutGate(s) }}
-              title="About this gate"
-            >
-              <Info size={18} />
-            </button>
-          </div>
-        </div>
-        <div className="sl-gate-meta">{s.totalConcepts > 0 ? `${s.totalConcepts} skills` : 'Coming soon'}</div>
-        {!allLearned && (
-          <div className="sl-gate-bar-track">
-            <div className="sl-gate-bar-fill dash-gate-bar-fill--dynamic" />
-          </div>
-        )}
-        {gateClosed ? (
-          <div className="sl-gate-status dash-gate-status--dynamic">GATE CLOSED SUCCESSFULLY</div>
-        ) : allLearned ? (
-          <button
-            className="dash-gate-final-btn"
-            onClick={e => { e.stopPropagation(); startQuiz('subject', s.id, s.title, s.icon) }}
-          >
-            ⚔ TAKE FINAL TEST
-          </button>
-        ) : (
-          <div className="sl-gate-status dash-gate-status--dynamic">
-            {sealed ? '' : `IN PROGRESS ${p}%`}
-          </div>
-        )}
-      </div>
-    )
-  }
 
   const renderMiddle = () => {
     if (activeView === 'arena') {
@@ -563,7 +575,17 @@ export default function DashboardPage() {
             <div className="dash-no-match">NO GATES MATCH</div>
           ) : (
             <div className="sl-cards-grid dash-cards-grid-2">
-              {filteredSubjects.map((s) => <GateCard key={s.id} s={s} />)}
+              {filteredSubjects.map((s) => (
+                <GateCard
+                  key={s.id}
+                  s={s}
+                  quizStatuses={quizStatuses}
+                  summaryBadgeMap={summaryBadgeMap}
+                  openSubjectPanel={openSubjectPanel}
+                  setAboutGate={setAboutGate}
+                  startQuiz={startQuiz}
+                />
+              ))}
             </div>
           )}
         </>

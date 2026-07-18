@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Navbar from '../components/navbars/Navbar'
 import { ChevronDown, ChevronUp, CheckCircle } from 'lucide-react'
 import '../styles/pages-animations.css'
+import '../styles/pages/shared/career-guidance.css'
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 

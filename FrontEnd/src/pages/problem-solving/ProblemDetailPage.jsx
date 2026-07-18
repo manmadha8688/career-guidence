@@ -7,6 +7,8 @@ import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { useTheme } from '../../context/ThemeContext'
 import { getProblem } from '../../api/api'
 import BookmarkButton from '../../components/BookmarkButton'
+import '../../styles/pages/shared/problem-solving.css'
+import '../../styles/pages/shared/problem-solving-mobile.css'
 
 const LANGS = [
   { key: 'python', label: 'Python' },

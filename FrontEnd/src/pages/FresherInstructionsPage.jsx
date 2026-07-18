@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import Navbar from '../components/navbars/Navbar'
 import '../styles/pages-animations.css'
+import '../styles/pages/shared/fresher-guide.css'
 import {
   X,
   TrendingUp, MessageCircle, Building2, BookOpen,

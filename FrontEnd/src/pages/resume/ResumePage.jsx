@@ -29,7 +29,7 @@ import {
 import { useConfirm } from '../../context/ConfirmContext'
 import { useUnsavedChangesGuard } from '../../hooks/useUnsavedChangesGuard'
 import {
-  pickResumeOwn, mergeResumeWithProfile, isProfileResumeReady, profileEducation,
+  pickResumeOwn, mergeResumeWithProfile, profileEducation,
 } from './resumeProfile'
 import '../../styles/pages/resume.css'
 
@@ -46,28 +46,9 @@ const EMPTY = {
   softSkills: [],   // string[]
 }
 
-// ── Field validators (run on blur + before download) ──
-const reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const rePhone = /^[+]?\d[\d\s().-]{6,17}$/
+// ── Field validators (run on blur) ──
 const reUrl = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i
-const vPhone = (v) => !v?.trim() ? '' : rePhone.test(v.trim()) ? '' : 'Enter a valid phone number.'
 const vUrl = (v) => !v?.trim() ? '' : reUrl.test(v.trim()) ? '' : 'Enter a valid link, e.g. github.com/you'
-const vEmail = (v) => !v?.trim() ? 'Email is required.' : reEmail.test(v.trim()) ? '' : 'Enter a valid email address.'
-
-// Full-resume validation gate — every message here blocks the PDF download.
-function collectResumeErrors(r) {
-  const e = []
-  if (!r.fullName?.trim()) e.push('Full name is required.')
-  if (vEmail(r.email)) e.push(vEmail(r.email))
-  if (vPhone(r.mobile)) e.push('Mobile number is not valid.')
-  ;[['linkedin', 'LinkedIn'], ['github', 'GitHub'], ['portfolio', 'Portfolio']].forEach(([k, label]) => {
-    if (vUrl(r[k])) e.push(`${label} link is not a valid URL.`)
-  })
-  ;(r.projects || []).forEach((p, i) => {
-    if (vUrl(p.link)) e.push(`Project ${i + 1}: link is not a valid URL.`)
-  })
-  return e
-}
 
 function collectProjectLinkErrors(projects) {
   const e = []
@@ -85,6 +66,19 @@ function normalizeResumePayload(data) {
     return { ...p, link: link ? normalizeHttpUrl(link) : '' }
   })
   return payload
+}
+
+// Stable signature of just the project links (normalized). The backend re-runs a live
+// reachability check on every save; we use this to skip re-verifying links that haven't
+// changed since the last successful save/load, so editing text (e.g. the career objective)
+// never re-triggers the "can't verify link" modal. New/edited links still get verified.
+function projectLinksSignature(data) {
+  return JSON.stringify(
+    (data?.projects || [])
+      .map(p => (p.link || '').trim())
+      .filter(Boolean)
+      .map(link => normalizeHttpUrl(link) || link)
+  )
 }
 
 export default function ResumePage() {
@@ -115,13 +109,18 @@ export default function ResumePage() {
 
   // Baseline snapshot of the last saved/loaded state — used to detect unsaved edits.
   const baselineRef = useRef('')
+  // Signature of the project links as of the last successful save/load — lets us skip
+  // re-verifying links that haven't changed (see projectLinksSignature).
+  const savedLinksRef = useRef('')
+  // "Copied" toast reset timer — cleared on unmount so it never fires on a gone component.
+  const copiedTimerRef = useRef(null)
+  useEffect(() => () => clearTimeout(copiedTimerRef.current), [])
   const pendingSaveRef = useRef(null)
   const leaveGuardRef = useRef({ notifyDeferredLeave: () => {}, completePendingLeave: () => {} })
   const saveBeforeLeaveRef = useRef(async () => true)
   const current = resumes.find(r => r.id === currentId) || null
   const dirty = loaded && JSON.stringify({ title, resume }) !== baselineRef.current
   const shareUrl = current?.shareSlug ? `${window.location.origin}/r/${current.shareSlug}` : ''
-  const profileReady = useMemo(() => isProfileResumeReady(user), [user])
   const mergedResume = useMemo(() => mergeResumeWithProfile(resume, user), [resume, user])
   const profileEdu = useMemo(() => profileEducation(user), [user])
 
@@ -150,6 +149,8 @@ export default function ResumePage() {
     setResume(clean)
     setShowProjectLinkErrors(false)
     baselineRef.current = JSON.stringify({ title: ttl, resume: clean })
+    // Loaded links were already accepted when previously saved — treat them as verified.
+    savedLinksRef.current = projectLinksSignature(clean)
   }
 
   // Load the user's saved resumes once auth resolves — only for registered users.
@@ -175,7 +176,12 @@ export default function ResumePage() {
         } else if (list.length) loadInto(list[0].id, list[0].title, list[0].data || {})
         else loadInto(null, 'My Resume', {})
       })
-      .catch(() => { if (active) loadInto(null, 'My Resume', {}) })
+      .catch(() => {
+        if (active) {
+          toast.error('Could not load your resumes. Please try again.')
+          loadInto(null, 'My Resume', {})
+        }
+      })
       .finally(() => { if (active) setLoaded(true) })
     return () => { active = false }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -218,6 +224,9 @@ export default function ResumePage() {
       setResumes(prev => prev.map(r => r.id === createdOrUpdated.id ? createdOrUpdated : r))
       baselineRef.current = JSON.stringify({ title, resume })
     }
+    // Links just passed (or were overridden) — remember them so an unrelated edit
+    // (career objective, skills, etc.) won't re-trigger link verification next save.
+    savedLinksRef.current = projectLinksSignature(resume)
     setLinkVerifyResults(null)
     setShowProjectLinkErrors(false)
   }
@@ -237,7 +246,7 @@ export default function ResumePage() {
   }
 
   const onSave = async () => {
-    if (!isRegistered) return requireAccount('save')
+    if (!isRegistered) { requireAccount('save'); return false }
     const linkErrors = collectProjectLinkErrors(resume.projects)
     if (linkErrors.length) {
       setShowProjectLinkErrors(true)
@@ -245,19 +254,23 @@ export default function ResumePage() {
       requestAnimationFrame(() => {
         document.querySelector('.rz-input--error')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       })
-      return
+      return false
     }
     setShowProjectLinkErrors(false)
     pendingSaveRef.current = { payload: normalizeResumePayload(resume), resumeTitle: title, id: currentId }
     setSaving(true)
     try {
-      await executeResumeSave(false)
+      // Only re-verify links that actually changed since the last successful save.
+      const skipVerify = projectLinksSignature(resume) === savedLinksRef.current
+      await executeResumeSave(skipVerify)
+      return true
     } catch (e) {
       if (isLinkVerificationError(e)) {
         setLinkVerifyResults(getLinkVerificationResults(e))
-        return
+        return false
       }
       toast.error(getApiError(e, 'Could not save your resume. Please try again.'))
+      return false
     } finally {
       setSaving(false)
     }
@@ -316,7 +329,9 @@ export default function ResumePage() {
     pendingSaveRef.current = { payload: normalizeResumePayload(resume), resumeTitle: title, id: currentId }
     setSaving(true)
     try {
-      await executeResumeSave(false)
+      // Only re-verify links that actually changed since the last successful save.
+      const skipVerify = projectLinksSignature(resume) === savedLinksRef.current
+      await executeResumeSave(skipVerify)
       return true
     } catch (e) {
       if (isLinkVerificationError(e)) {
@@ -443,7 +458,8 @@ export default function ResumePage() {
     try {
       await navigator.clipboard.writeText(shareUrl)
       setCopied(true)
-      setTimeout(() => setCopied(false), 1600)
+      clearTimeout(copiedTimerRef.current)
+      copiedTimerRef.current = setTimeout(() => setCopied(false), 1600)
     } catch {
       toast.error('Could not copy the link.')
     }
@@ -463,34 +479,41 @@ export default function ResumePage() {
 
   // Education is a single entry (highest / current degree) stored as a one-item array.
   const downloadPdf = async () => {
-    if (downloading) return
+    if (downloading || saving) return
     if (!isRegistered) return requireAccount('download')
-    if (!profileReady) {
-      setTab('build')
-      toast.error('Complete My Profile before downloading your resume.')
-      return
-    }
-    const errors = collectResumeErrors(mergedResume)
-    if (errors.length) {
-      setShowProjectLinkErrors(true)
-      setTab('build')
-      toast.error(errors.length === 1
-        ? errors[0]
-        : `Please fix ${errors.length} fields before downloading.`)
-      requestAnimationFrame(() => {
-        document.querySelector('.rz-input--error')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      })
-      return
+    // Persist any unsaved edits first so the PDF matches what's stored on the account.
+    // No completeness / field gating — download whatever the resume currently holds.
+    if (dirty) {
+      const saved = await onSave()
+      if (!saved) return // save failed or needs link verification — don't download yet
     }
     setDownloading(true)
     try {
-      await buildAndSaveResumePdf(mergedResume)
+      await buildAndSaveResumePdf(mergedResume, title)
       toast.success('Resume downloaded — links are clickable')
     } catch {
       toast.error('Could not generate the PDF. Please try again.')
     } finally {
       setDownloading(false)
     }
+  }
+
+  // Skeleton while auth resolves / resumes load — avoids a blank builder flash.
+  if (authLoading || !loaded) {
+    return (
+      <div className="rz-page">
+        <Navbar sticky />
+        <main className="rz-main">
+          <div className="rz-skel-wrap" aria-hidden="true">
+            <div className="rz-skel rz-skel--tabs" />
+            <div className="rz-skel-layout">
+              <div className="rz-skel rz-skel--form" />
+              <div className="rz-skel rz-skel--preview" />
+            </div>
+          </div>
+        </main>
+      </div>
+    )
   }
 
   return (

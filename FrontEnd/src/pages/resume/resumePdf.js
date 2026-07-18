@@ -32,7 +32,7 @@ function formatDegree(e = {}) {
   return degree || branch || ''
 }
 
-export async function buildAndSaveResumePdf(resume) {
+export async function buildAndSaveResumePdf(resume, fileNameHint) {
   const jspdf = await import('jspdf')
   const JsPDF = jspdf.jsPDF || jspdf.default
   const doc = new JsPDF({ unit: 'pt', format: 'a4', compress: true })
@@ -258,6 +258,9 @@ export async function buildAndSaveResumePdf(resume) {
     r.softSkills.filter(Boolean).forEach((s) => bullet(s))
   }
 
-  const safe = (r.fullName || 'resume').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase()
+  // File is named after the resume's title (e.g. "Backend Developer"), falling back to
+  // the person's name, then a generic "resume".
+  const nameSource = (fileNameHint || r.fullName || 'resume')
+  const safe = nameSource.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase()
   doc.save(`${safe || 'resume'}.pdf`)
 }

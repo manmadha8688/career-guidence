@@ -66,3 +66,12 @@
 ### Errors
 - Throw `RuntimeException` subclasses with clear messages; `@ControllerAdvice` returns `{ "error": "message" }`.
 - 400 bad input · 401 unauthenticated · 403 wrong role · 404 not found · 500 unexpected.
+- **Never silently swallow a caught exception** — at minimum `log.error("context", e)` before any fallback/redirect. Empty `catch {}` (or catch that only redirects) hides prod failures.
+
+---
+
+## Code hygiene (both stacks — apply by default)
+- **No dead code.** Don't leave exports/functions/props/vars that nothing imports or uses. Remove them (verify unused across `src/` / the module first). ESLint bar stays **0 errors**; don't add new warnings.
+- **No obvious/narrating comments.** Comment intent, trade-offs, and non-obvious constraints only.
+- **Dev-only surfaces gated:** demo/debug routes render only under `import.meta.env.DEV` (redirect to `/` in prod). Never ship a debug route to production.
+- Keep changes **behavior-preserving** unless the task says otherwise: same output, same API contract, same UI. Optimize the implementation, not the result.

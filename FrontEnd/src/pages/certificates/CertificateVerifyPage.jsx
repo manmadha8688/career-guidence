@@ -5,6 +5,7 @@ import { CheckCircle, XCircle, Home, Search, Loader2 } from 'lucide-react'
 import Navbar from '../../components/navbars/Navbar'
 import CertificateDocument from '../../components/CertificateDocument'
 import { verifyCertificate } from '../../api/api'
+import '../../styles/pages/shared/certificates.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -29,7 +30,6 @@ export default function CertificateVerifyPage() {
   // If a code was passed in the URL (a shared verification link), check it immediately.
   useEffect(() => {
     if (codeParam) runVerify(codeParam)
-    // eslint-disable-next-line
   }, [codeParam])
 
   const onSubmit = (e) => {

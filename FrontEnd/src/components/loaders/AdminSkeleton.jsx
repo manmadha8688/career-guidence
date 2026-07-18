@@ -34,18 +34,3 @@ export default function AdminSkeleton({ rows = 6 }) {
     </div>
   )
 }
-
-// Compact section skeleton
-export function AdminRowSkeleton({ rows = 4 }) {
-  return (
-    <div className="ask-table" style={{ padding: '1rem' }}>
-      {Array.from({ length: rows }).map((_, i) => (
-        <div key={i} className="ask-row">
-          <div className="ask-cell ask-shimmer" style={{ width: '35%', height: 14, animationDelay: `${i * 0.08}s` }} />
-          <div className="ask-cell ask-shimmer" style={{ width: '20%', height: 14, animationDelay: `${i * 0.08 + 0.04}s` }} />
-          <div className="ask-cell ask-shimmer" style={{ width: '25%', height: 14, animationDelay: `${i * 0.08 + 0.08}s` }} />
-        </div>
-      ))}
-    </div>
-  )
-}

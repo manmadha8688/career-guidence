@@ -10,6 +10,8 @@ import { getMissions } from '../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../utils/apiError'
 import blurOnEnter from '../utils/blurOnEnter'
+import '../styles/pages/shared/missions.css'
+import '../styles/pages/shared/missions-board.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 
