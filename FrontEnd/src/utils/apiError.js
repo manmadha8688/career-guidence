@@ -43,7 +43,9 @@ export function getApiError(err, fallback = GENERIC) {
   const data   = response.data
 
   // Prefer an explicit, user-safe message the backend chose to send.
-  if (data?.error && typeof data.error === 'string') return data.error
+  if (data?.error && typeof data.error === 'string' && data.error !== 'link_verification_failed') {
+    return data.error
+  }
 
   const validation = firstValidationMessage(data)
   if (validation) return validation

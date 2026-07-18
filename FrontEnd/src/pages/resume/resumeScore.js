@@ -169,10 +169,10 @@ export function scoreResume(resume, jdText = '') {
     [15, datesFrac],                      // dates present for parsing / chronology
     [10, badLinks.length ? 0 : 1],        // clean, valid links
   ])
-  if (!emailOk) add(false, 'med', 'Add your email address so you can be contacted.')
-  if (!clean(r.mobile)) add(false, 'low', 'Add your phone number.')
-  if (!clean(r.linkedin) && !clean(r.github)) add(false, 'low', 'Add a LinkedIn or GitHub link.')
-  if (sectionsFrac < 1) add(false, 'low', 'Fill in your Education, Skills and Projects.')
+  if (!emailOk) add(false, 'med', 'Add your contact email on My Profile.')
+  if (!clean(r.mobile)) add(false, 'low', 'Add your mobile number on My Profile.')
+  if (!clean(r.linkedin) && !clean(r.github)) add(false, 'low', 'Add a LinkedIn or GitHub link on My Profile.')
+  if (sectionsFrac < 1) add(false, 'low', 'Complete Education on My Profile and add Skills and Projects here.')
   if (badLinks.length) add(false, 'low', `Check your ${badLinks.map(([k]) => k).join(' and ')} link — it looks incomplete.`)
 
   // ══ 2. CONTENT QUALITY (part of the 50%) — impact, verbs, brevity, clean language ══

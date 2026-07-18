@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { getPublicProfile } from '../api/api'
 import { getRank } from '../utils/slRank'
+import { safeExternalUrl } from '../utils/safeExternalUrl'
 import '../styles/pages/shared/public-profile.css'
 
 const EASE = [0.16, 1, 0.3, 1]
@@ -36,8 +37,18 @@ function degreeLine(edu) {
   if (!edu) return ''
   return [edu.degree, edu.fieldOfStudy].filter(Boolean).join(' in ')
 }
+function formatEduYears(edu) {
+  if (!edu) return null
+  const years = edu.years?.trim()
+  if (years) return years
+  const start = edu.yearStart?.trim()
+  const end = (edu.yearEnd || edu.graduationYear || '').trim()
+  if (start && end) return `${start} – ${end}`
+  if (end) return end
+  if (start) return start
+  return null
+}
 const host = (url) => { try { return new URL(/^https?:\/\//i.test(url) ? url : `https://${url}`).hostname.replace(/^www\./, '') } catch { return url } }
-const withProto = (url) => (/^https?:\/\//i.test(url) ? url : `https://${url}`)
 
 // Animated number count-up (honors reduced motion).
 function CountUp({ value, reduce }) {
@@ -110,7 +121,8 @@ export default function PublicProfilePage() {
   }, [rank, reduce])
 
   const edu = profile?.education
-  const hasAbout = !!(edu && (edu.degree || edu.fieldOfStudy || edu.institution || edu.graduationYear || edu.cgpa))
+  const eduYears = formatEduYears(edu)
+  const hasAbout = !!(edu && (edu.degree || edu.fieldOfStudy || edu.institution || edu.years || edu.graduationYear || edu.cgpa))
   const links = profile ? PROFILE_LINKS.filter(l => profile[l.key]) : []
   const work = profile?.missionWork || []
   const certs = profile?.certificates || []
@@ -193,10 +205,21 @@ export default function PublicProfilePage() {
                 </div>
                 {(links.length > 0 || profile.publicEmail || resume) && (
                   <div className="pp-links">
-                    {links.map(({ key, label, icon: Icon }) => (
-                      <a key={key} className="pp-link" href={profile[key]} target="_blank" rel="noopener noreferrer nofollow"><Icon size={14} /> {label}</a>
-                    ))}
-                    {profile.publicEmail && <a className="pp-link" href={`mailto:${profile.publicEmail}`}><Mail size={14} /> Email</a>}
+                    {links.map(({ key, label, icon: Icon }) => {
+                      const href = safeExternalUrl(profile[key])
+                      if (!href) return null
+                      return (
+                      <a key={key} className="pp-link" href={href} target="_blank" rel="noopener noreferrer nofollow">
+                        <Icon size={14} /> {label}
+                        {key === 'githubUrl' && profile.githubVerified && (
+                          <span className="pp-link__verified" title="Verified via GitHub">Verified</span>
+                        )}
+                      </a>
+                      )
+                    })}
+                    {profile.publicEmail && safeExternalUrl(`mailto:${profile.publicEmail}`) && (
+                      <a className="pp-link" href={safeExternalUrl(`mailto:${profile.publicEmail}`)}><Mail size={14} /> Email</a>
+                    )}
                     {resume && (
                       <a className="pp-link" href={`/r/${resume.slug}`} target="_blank" rel="noopener noreferrer">
                         <FileText size={14} /> Resume
@@ -276,8 +299,8 @@ export default function PublicProfilePage() {
                         </div>
                       )}
                       <div className="pp-work__actions">
-                        {w.deployUrl && <a className="pp-btn pp-btn--primary" href={withProto(w.deployUrl)} target="_blank" rel="noopener noreferrer"><Rocket size={14} /> Live demo</a>}
-                        {w.repoUrl && <a className="pp-btn pp-btn--ghost" href={withProto(w.repoUrl)} target="_blank" rel="noopener noreferrer"><Code2 size={14} /> Code</a>}
+                        {safeExternalUrl(w.deployUrl) && <a className="pp-btn pp-btn--primary" href={safeExternalUrl(w.deployUrl)} target="_blank" rel="noopener noreferrer"><Rocket size={14} /> Live demo</a>}
+                        {safeExternalUrl(w.repoUrl) && <a className="pp-btn pp-btn--ghost" href={safeExternalUrl(w.repoUrl)} target="_blank" rel="noopener noreferrer"><Code2 size={14} /> Code</a>}
                       </div>
                       {(w.deployUrl || w.repoUrl) && <span className="pp-work__host">{host(w.deployUrl || w.repoUrl)}</span>}
                     </motion.article>
@@ -342,7 +365,7 @@ export default function PublicProfilePage() {
                     {degreeLine(edu) && <p className="pp-edu__degree">{degreeLine(edu)}</p>}
                     {edu.institution && <p className="pp-edu__inst">{edu.institution}</p>}
                     <div className="pp-edu__tags">
-                      {edu.graduationYear && <span className="pp-tag"><Calendar size={12} /> Class of {edu.graduationYear}</span>}
+                      {eduYears && <span className="pp-tag"><Calendar size={12} /> {eduYears}</span>}
                       {edu.cgpa && <span className="pp-tag"><Trophy size={12} /> {edu.cgpa}</span>}
                     </div>
                   </div>

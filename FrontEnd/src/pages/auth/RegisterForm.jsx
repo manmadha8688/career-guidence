@@ -139,11 +139,9 @@ export default function RegisterForm() {
       sessionStorage.setItem('otp_email', form.email)
       toast.success('We sent a 6-digit code to your inbox.')
     } catch (err) {
-      const status      = err.response?.status
       const msg         = getApiError(err, 'We could not send the code. Please try again.')
       const retryAfter  = err.response?.data?.retryAfter
-      if (status === 409)  setEmailError(msg)
-      else if (retryAfter) { startCooldown(retryAfter); toast.error(`Almost there — please wait ${retryAfter}s before requesting another code.`) }
+      if (retryAfter) { startCooldown(retryAfter); toast.error(`Almost there — please wait ${retryAfter}s before requesting another code.`) }
       else toast.error(msg)
     } finally {
       setSendingOtp(false)

@@ -8,6 +8,7 @@ export default function AdminDeleteModal({
   subtitle,
   items = [],
   deleting,
+  confirmLabel,
   onConfirm,
   onClose,
 }) {
@@ -15,6 +16,9 @@ export default function AdminDeleteModal({
   const modalRef = useModalA11y(() => { if (!deleting) onClose() }, open)
 
   if (!open) return null
+
+  const count = items.length || 0
+  const defaultConfirmLabel = `Delete ${count || ''} item${count !== 1 ? 's' : ''}`
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && !deleting && onClose()}>
@@ -45,7 +49,7 @@ export default function AdminDeleteModal({
           </button>
           <button type="button" className="btn btn-danger" onClick={onConfirm} disabled={deleting}>
             {deleting ? <span className="loading-spinner" /> : <Trash2 size={14} />}
-            Delete {items.length || ''} item{(items.length || 0) !== 1 ? 's' : ''}
+            {confirmLabel || defaultConfirmLabel}
           </button>
         </div>
       </div>

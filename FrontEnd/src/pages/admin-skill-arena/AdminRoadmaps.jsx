@@ -14,6 +14,8 @@ import {
 } from '../../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
+import { removeRoadmapSubjectConfirmOptions } from '../../utils/confirmRemoveLink'
+import { useConfirm } from '../../context/ConfirmContext'
 import useBodyLock from '../../hooks/useBodyLock'
 import SectionLabel from '../../components/admin/SectionLabel'
 import { listToText, textToList } from '../../components/admin/adminFormUtils'
@@ -187,6 +189,7 @@ function RoadmapModal({ roadmap, onClose, onSave }) {
 }
 
 function SubjectsPanel({ roadmap, onClose }) {
+  const confirm = useConfirm()
   const [rsubs, setRsubs] = useState([])
   const [allSubs, setAllSubs] = useState([])
   const [loading, setLoading] = useState(true)
@@ -220,10 +223,13 @@ function SubjectsPanel({ roadmap, onClose }) {
     } catch (err) { toast.error(getApiError(err, 'We could not add this subject. Please try again.')) } finally { setAdding(false) }
   }
 
-  const handleRemove = async (subId) => {
+  const handleRemove = async (rs) => {
+    const subjectTitle = rs.subject?.title || 'Subject'
+    if (!(await confirm(removeRoadmapSubjectConfirmOptions(subjectTitle, roadmap.title)))) return
     try {
-      await removeSubjectFromRoadmap(roadmap.id, subId)
-      toast.success('Removed'); load()
+      await removeSubjectFromRoadmap(roadmap.id, rs.subject?.id)
+      toast.success('Removed')
+      load()
     } catch (err) { toast.error(getApiError(err, 'We could not remove this subject. Please try again.')) }
   }
 
@@ -281,7 +287,7 @@ function SubjectsPanel({ roadmap, onClose }) {
                   ) : (
                     <>
                       <button className="btn btn-ghost btn-sm" onClick={() => { setEditingId(rs.subject?.id); setEditIdx(rs.orderIndex) }}><Pencil size={12} /></button>
-                      <button className="btn btn-danger btn-sm" onClick={() => handleRemove(rs.subject?.id)}><Trash2 size={12} /></button>
+                      <button className="btn btn-danger btn-sm" onClick={() => handleRemove(rs)}><Trash2 size={12} /></button>
                     </>
                   )}
                 </div>

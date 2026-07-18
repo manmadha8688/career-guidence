@@ -1,8 +1,9 @@
 import { lazy, Suspense, useEffect } from 'react'
 import PageTransitionLoader from './components/loaders/PageTransitionLoader'
-import { BrowserRouter, Routes, Route, Navigate, Outlet, useLocation, useNavigationType } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation, useNavigationType } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './context/AuthContext'
+import { ConfirmProvider } from './context/ConfirmContext'
 import { ThemeProvider } from './context/ThemeContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import GuestRoute from './components/GuestRoute'
@@ -218,165 +219,159 @@ function usePrefetchRoutes() {
   }, [])
 }
 
-function App() {
+function AppShell() {
   usePrefetchRoutes()
-  // App mounted successfully — clear the one-shot stale-chunk reload guard so a future
-  // redeploy can auto-reload again if the user hits a purged chunk.
   useEffect(() => { sessionStorage.removeItem('sl_chunk_reloaded') }, [])
+  return (
+    <>
+      <ScrollResetter />
+      <Seo />
+      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+      <FeedbackNudge />
+      <ScrollToTop />
+      <AutoHideNav />
+      <GlobalReportButton />
+      <GlobalSearchOverlay />
+      <Suspense fallback={<PageTransitionLoader />}>
+        <Outlet />
+      </Suspense>
+      <GlobalFooter />
+    </>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    element: <AppShell />,
+    children: [
+      { path: '/', element: <LandingPage /> },
+      { path: '/loader-demo', element: <LoaderDemo /> },
+      {
+        element: <GuestRoute />,
+        children: [
+          {
+            element: <AuthLayoutShell />,
+            children: [
+              { path: '/login', element: <LoginForm /> },
+              { path: '/register', element: <RegisterForm /> },
+              { path: '/forgot-password', element: <ForgotPasswordForm /> },
+            ],
+          },
+        ],
+      },
+      { path: '/about', element: <AboutPage /> },
+      { path: '/contact', element: <ContactPage /> },
+      { path: '/terms', element: <TermsPage /> },
+      { path: '/privacy', element: <PrivacyPage /> },
+      { path: '/missions', element: <MissionsPage /> },
+      { path: '/walk-ins', element: <JobsPage /> },
+      { path: '/fresher-instructions', element: <FresherInstructionsPage /> },
+      { path: '/ai-lab', element: <AILabPage /> },
+      { path: '/ai-lab/:category/:toolId', element: <ProtectedRoute><AIToolPage /></ProtectedRoute> },
+      { path: '/fresher-instructions/career-guidance', element: <CareerGuidancePage /> },
+      { path: '/deployment', element: <DeploymentGuidePage /> },
+      {
+        element: <ProtectedRoute><Outlet /></ProtectedRoute>,
+        children: [
+          { path: '/deployment/react', element: <ReactDeployPage /> },
+          { path: '/deployment/django', element: <DjangoDeployPage /> },
+          { path: '/deployment/html-static', element: <HtmlStaticDeployPage /> },
+          { path: '/deployment/django-fullstack', element: <DjangoFullstackDeployPage /> },
+          { path: '/deployment/springboot', element: <SpringBootDeployPage /> },
+          { path: '/deployment/nodejs', element: <NodeJsDeployPage /> },
+          { path: '/deployment/mern', element: <MernDeployPage /> },
+          { path: '/deployment/nextjs', element: <NextJsDeployPage /> },
+          { path: '/deployment/fastapi', element: <FastApiDeployPage /> },
+          { path: '/deployment/flask', element: <FlaskDeployPage /> },
+          { path: '/deployment/mongodb-atlas', element: <MongoAtlasPage /> },
+          { path: '/deployment/neon-postgres', element: <NeonPostgresPage /> },
+          { path: '/deployment/supabase', element: <SupabaseDeployPage /> },
+          { path: '/deployment/render-postgres', element: <RenderPostgresPage /> },
+          { path: '/deployment/aiven', element: <AivenPage /> },
+          { path: '/deployment/upstash-redis', element: <UpstashRedisPage /> },
+          { path: '/deployment/turso', element: <TursoPage /> },
+          { path: '/deployment/angular', element: <AngularDeployPage /> },
+          { path: '/deployment/astro', element: <AstroDeployPage /> },
+          { path: '/deployment/cloudflare-pages', element: <CloudflarePagesDeployPage /> },
+          { path: '/deployment/sveltekit', element: <SvelteKitDeployPage /> },
+          { path: '/deployment/firebase', element: <FirebaseDeployPage /> },
+          { path: '/deployment/docker', element: <DockerDeployPage /> },
+          { path: '/deployment/pythonanywhere', element: <PythonAnywhereDeployPage /> },
+          { path: '/deployment/deno-deploy', element: <DenoDeployPage /> },
+          { path: '/deployment/koyeb', element: <KoyebDeployPage /> },
+          { path: '/deployment/flutter', element: <FlutterDeployPage /> },
+          { path: '/deployment/telegram-bot', element: <TelegramBotDeployPage /> },
+          { path: '/deployment/streamlit', element: <StreamlitDeployPage /> },
+          { path: '/deployment/chatbot-deploy', element: <ChatbotDeployPage /> },
+          { path: '/deployment/nlp-demo', element: <NlpDemoPage /> },
+          { path: '/deployment/image-ai', element: <ImageAiPage /> },
+          { path: '/deployment/rag-app', element: <RagAppPage /> },
+          { path: '/deployment/heavy-model-deploy', element: <HeavyModelPage /> },
+          { path: '/deployment/vue', element: <VueDeployPage /> },
+          { path: '/deployment/discord-bot', element: <DiscordBotDeployPage /> },
+          { path: '/deployment/scraper-automation', element: <ScraperDeployPage /> },
+          { path: '/deployment/expo-mobile', element: <ExpoDeployPage /> },
+        ],
+      },
+      { path: '/problem-solving', element: <ProblemSolvingPage /> },
+      { path: '/problem-solving/start-coding', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/problem-solving/logic-building', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/problem-solving/skill-up', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/problem-solving/crack-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/problem-solving/build-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/problem-solving/prove-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/problem-solving/:id', element: <ProtectedRoute><ProblemDetailPage /></ProtectedRoute> },
+      { path: '/aptitude', element: <AptitudePage /> },
+      { path: '/aptitude/:category', element: <AptitudeCategoryPage /> },
+      { path: '/aptitude/:category/:group', element: <AptitudeGroupPage /> },
+      { path: '/aptitude/:category/:group/:topicId', element: <ProtectedRoute><AptitudeTopicPage /></ProtectedRoute> },
+      { path: '/aptitude/:category/:group/:topicId/questions', element: <ProtectedRoute><AptitudeQuestionsPage /></ProtectedRoute> },
+      { path: '/missions/:id', element: <ProtectedRoute><MissionDetailPage /></ProtectedRoute> },
+      { path: '/resume', element: <ResumePage /> },
+      { path: '/r/:slug', element: <SharedResumePage /> },
+      { path: '/u/:username', element: <PublicProfilePage /> },
+      { path: '/certificate/verify', element: <CertificateVerifyPage /> },
+      { path: '/certificate/verify/:code', element: <CertificateVerifyPage /> },
+      { path: '/verify/:code', element: <CertificateVerifyPage /> },
+      { path: '/bookmarks', element: <ProtectedRoute><MyBookmarksPage /></ProtectedRoute> },
+      { path: '/myprofile', element: <ProtectedRoute><MyProfilePage /></ProtectedRoute> },
+      { path: '/skill-arena/dashboard', element: <ProtectedRoute><DashboardPage /></ProtectedRoute> },
+      { path: '/skill-arena/roadmaps/:id', element: <ProtectedRoute><RoadmapDetailPage /></ProtectedRoute> },
+      { path: '/skill-arena/quiz/:type/:refId', element: <ProtectedRoute><QuizPage /></ProtectedRoute> },
+      { path: '/skill-arena/quiz/result/:attemptId', element: <ProtectedRoute><QuizResultPage /></ProtectedRoute> },
+      { path: '/skill-arena/certificates/:id', element: <ProtectedRoute><CertificateViewPage /></ProtectedRoute> },
+      { path: '/skill-arena/history', element: <Navigate to="/skill-arena/dashboard?view=history" replace /> },
+      { path: '/skill-arena/badges', element: <Navigate to="/skill-arena/dashboard?view=badges" replace /> },
+      { path: '/skill-arena/certificates', element: <Navigate to="/skill-arena/dashboard?view=certificates" replace /> },
+      { path: '/skill-arena/subjects', element: <Navigate to="/skill-arena/dashboard?view=gates" replace /> },
+      { path: '/skill-arena/subjects/:id', element: <Navigate to="/skill-arena/dashboard?view=gates" replace /> },
+      { path: '/skill-arena/concepts/:id', element: <Navigate to="/skill-arena/dashboard?view=gates" replace /> },
+      { path: '/skill-arena/roadmaps', element: <Navigate to="/skill-arena/dashboard?view=paths" replace /> },
+      { path: '/admin-skill-arena', element: <ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute> },
+      { path: '/admin-skill-arena/users', element: <ProtectedRoute adminOnly><AdminUsers /></ProtectedRoute> },
+      { path: '/admin-skill-arena/subjects', element: <ProtectedRoute adminOnly><AdminSubjects /></ProtectedRoute> },
+      { path: '/admin-skill-arena/concepts', element: <ProtectedRoute adminOnly><AdminConcepts /></ProtectedRoute> },
+      { path: '/admin-skill-arena/roadmaps', element: <ProtectedRoute adminOnly><AdminRoadmaps /></ProtectedRoute> },
+      { path: '/admin-skill-arena/questions', element: <ProtectedRoute adminOnly><AdminQuestions /></ProtectedRoute> },
+      { path: '/admin-skill-arena/feedbacks', element: <ProtectedRoute adminOnly><AdminFeedbacks /></ProtectedRoute> },
+      { path: '/admin-skill-arena/reports', element: <ProtectedRoute adminOnly><AdminReports /></ProtectedRoute> },
+      { path: '/admin-skill-arena/missions', element: <ProtectedRoute adminOnly><AdminMissions /></ProtectedRoute> },
+      { path: '/admin-skill-arena/problems', element: <ProtectedRoute adminOnly><AdminProblems /></ProtectedRoute> },
+      { path: '/admin-skill-arena/aptitude', element: <ProtectedRoute adminOnly><AdminAptitude /></ProtectedRoute> },
+      { path: '/admin-skill-arena/walk-ins', element: <ProtectedRoute adminOnly><AdminWalkIns /></ProtectedRoute> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+])
+
+function App() {
   return (
     <ErrorBoundary>
     <ThemeProvider>
     <AuthProvider>
-      <BrowserRouter>
-        <ScrollResetter />
-        <Seo />
-        <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
-        <FeedbackNudge />
-        <ScrollToTop />
-        <AutoHideNav />
-        <GlobalReportButton />
-        <GlobalSearchOverlay />
-        <Suspense fallback={<PageTransitionLoader />}>
-          <Routes>
-            {/* Landing */}
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/loader-demo" element={<LoaderDemo />} />
-
-            {/* Auth — guests only; logged-in users redirect home or ?redirect= */}
-            <Route element={<GuestRoute />}>
-              <Route element={<AuthLayoutShell />}>
-                <Route path="/login"             element={<LoginForm />} />
-                <Route path="/register"          element={<RegisterForm />} />
-                <Route path="/forgot-password"   element={<ForgotPasswordForm />} />
-              </Route>
-            </Route>
-            <Route path="/about"   element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/terms"   element={<TermsPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/missions" element={<MissionsPage />} />
-            <Route path="/walk-ins" element={<JobsPage />} />
-            <Route path="/fresher-instructions" element={<FresherInstructionsPage />} />
-            <Route path="/ai-lab" element={<AILabPage />} />
-            {/* AI tool detail — requires login */}
-            <Route path="/ai-lab/:category/:toolId" element={<ProtectedRoute><AIToolPage /></ProtectedRoute>} />
-            <Route path="/fresher-instructions/career-guidance" element={<CareerGuidancePage />} />
-            <Route path="/deployment" element={<DeploymentGuidePage />} />
-            {/* Deployment guide detail pages — list is public, each guide requires login */}
-            <Route element={<ProtectedRoute><Outlet /></ProtectedRoute>}>
-              <Route path="/deployment/react"            element={<ReactDeployPage />} />
-              <Route path="/deployment/django"           element={<DjangoDeployPage />} />
-              <Route path="/deployment/html-static"      element={<HtmlStaticDeployPage />} />
-              <Route path="/deployment/django-fullstack" element={<DjangoFullstackDeployPage />} />
-              <Route path="/deployment/springboot"       element={<SpringBootDeployPage />} />
-              <Route path="/deployment/nodejs"           element={<NodeJsDeployPage />} />
-              <Route path="/deployment/mern"             element={<MernDeployPage />} />
-              <Route path="/deployment/nextjs"           element={<NextJsDeployPage />} />
-              <Route path="/deployment/fastapi"          element={<FastApiDeployPage />} />
-              <Route path="/deployment/flask"            element={<FlaskDeployPage />} />
-              <Route path="/deployment/mongodb-atlas"    element={<MongoAtlasPage />} />
-              <Route path="/deployment/neon-postgres"    element={<NeonPostgresPage />} />
-              <Route path="/deployment/supabase"         element={<SupabaseDeployPage />} />
-              <Route path="/deployment/render-postgres"  element={<RenderPostgresPage />} />
-              <Route path="/deployment/aiven"            element={<AivenPage />} />
-              <Route path="/deployment/upstash-redis"    element={<UpstashRedisPage />} />
-              <Route path="/deployment/turso"            element={<TursoPage />} />
-              <Route path="/deployment/angular"          element={<AngularDeployPage />} />
-              <Route path="/deployment/astro"            element={<AstroDeployPage />} />
-              <Route path="/deployment/cloudflare-pages" element={<CloudflarePagesDeployPage />} />
-              <Route path="/deployment/sveltekit"        element={<SvelteKitDeployPage />} />
-              <Route path="/deployment/firebase"         element={<FirebaseDeployPage />} />
-              <Route path="/deployment/docker"           element={<DockerDeployPage />} />
-              <Route path="/deployment/pythonanywhere"   element={<PythonAnywhereDeployPage />} />
-              <Route path="/deployment/deno-deploy"      element={<DenoDeployPage />} />
-              <Route path="/deployment/koyeb"            element={<KoyebDeployPage />} />
-              <Route path="/deployment/flutter"          element={<FlutterDeployPage />} />
-              <Route path="/deployment/telegram-bot"     element={<TelegramBotDeployPage />} />
-              <Route path="/deployment/streamlit"          element={<StreamlitDeployPage />} />
-              <Route path="/deployment/chatbot-deploy"   element={<ChatbotDeployPage />} />
-              <Route path="/deployment/nlp-demo"         element={<NlpDemoPage />} />
-              <Route path="/deployment/image-ai"         element={<ImageAiPage />} />
-              <Route path="/deployment/rag-app"             element={<RagAppPage />} />
-              <Route path="/deployment/heavy-model-deploy" element={<HeavyModelPage />} />
-              <Route path="/deployment/vue"                element={<VueDeployPage />} />
-              <Route path="/deployment/discord-bot"        element={<DiscordBotDeployPage />} />
-              <Route path="/deployment/scraper-automation" element={<ScraperDeployPage />} />
-              <Route path="/deployment/expo-mobile"        element={<ExpoDeployPage />} />
-            </Route>
-            <Route path="/problem-solving" element={<ProblemSolvingPage />} />
-            <Route path="/problem-solving/start-coding"    element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/logic-building"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/skill-up"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/crack-it"  element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/build-it" element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/prove-it"        element={<ProtectedRoute><TrackPage /></ProtectedRoute>} />
-            <Route path="/problem-solving/:id"             element={<ProtectedRoute><ProblemDetailPage /></ProtectedRoute>} />
-
-            {/* Aptitude — browsing (category → group → topic list) is public,
-                but opening a topic's lesson + its questions requires login. */}
-            <Route path="/aptitude" element={<AptitudePage />} />
-            <Route path="/aptitude/:category" element={<AptitudeCategoryPage />} />
-            <Route path="/aptitude/:category/:group" element={<AptitudeGroupPage />} />
-            <Route path="/aptitude/:category/:group/:topicId" element={<ProtectedRoute><AptitudeTopicPage /></ProtectedRoute>} />
-            <Route path="/aptitude/:category/:group/:topicId/questions" element={<ProtectedRoute><AptitudeQuestionsPage /></ProtectedRoute>} />
-
-            {/* Missions detail — requires login */}
-            <Route path="/missions/:id" element={<ProtectedRoute><MissionDetailPage /></ProtectedRoute>} />
-
-            {/* Resume builder + ATS guide — public. Saving & downloading the PDF
-                require a registered (non-guest) account; gated inside the page. */}
-            <Route path="/resume" element={<ResumePage />} />
-
-            {/* Public shareable resume — anyone with the link can view + download */}
-            <Route path="/r/:slug" element={<SharedResumePage />} />
-
-            {/* Public shareable profile — no auth required */}
-            <Route path="/u/:username" element={<PublicProfilePage />} />
-
-            {/* Public certificate verification — no auth required */}
-            <Route path="/certificate/verify"       element={<CertificateVerifyPage />} />
-            <Route path="/certificate/verify/:code" element={<CertificateVerifyPage />} />
-            <Route path="/verify/:code"             element={<CertificateVerifyPage />} />
-
-            {/* Bookmarks + profile — require login (standalone pages, no sidebar) */}
-            <Route path="/bookmarks" element={<ProtectedRoute><MyBookmarksPage /></ProtectedRoute>} />
-            <Route path="/myprofile" element={<ProtectedRoute><MyProfilePage /></ProtectedRoute>} />
-
-            {/* ── Student: skill-arena ── */}
-            <Route path="/skill-arena/dashboard"              element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-            <Route path="/skill-arena/roadmaps/:id"           element={<ProtectedRoute><RoadmapDetailPage /></ProtectedRoute>} />
-            <Route path="/skill-arena/quiz/:type/:refId"      element={<ProtectedRoute><QuizPage /></ProtectedRoute>} />
-            <Route path="/skill-arena/quiz/result/:attemptId" element={<ProtectedRoute><QuizResultPage /></ProtectedRoute>} />
-            <Route path="/skill-arena/certificates/:id"       element={<ProtectedRoute><CertificateViewPage /></ProtectedRoute>} />
-
-            {/* Backward-compat redirects (old bookmark URLs) */}
-            <Route path="/skill-arena/history"      element={<Navigate to="/skill-arena/dashboard?view=history"      replace />} />
-            <Route path="/skill-arena/badges"       element={<Navigate to="/skill-arena/dashboard?view=badges"       replace />} />
-            <Route path="/skill-arena/certificates" element={<Navigate to="/skill-arena/dashboard?view=certificates" replace />} />
-            <Route path="/skill-arena/subjects"     element={<Navigate to="/skill-arena/dashboard?view=gates"  replace />} />
-            <Route path="/skill-arena/subjects/:id" element={<Navigate to="/skill-arena/dashboard?view=gates"  replace />} />
-            <Route path="/skill-arena/concepts/:id" element={<Navigate to="/skill-arena/dashboard?view=gates"  replace />} />
-            <Route path="/skill-arena/roadmaps"     element={<Navigate to="/skill-arena/dashboard?view=paths"  replace />} />
-
-            {/* ── Admin: admin-skill-arena ── */}
-            <Route path="/admin-skill-arena"              element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/users"        element={<ProtectedRoute adminOnly><AdminUsers /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/subjects"     element={<ProtectedRoute adminOnly><AdminSubjects /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/concepts"     element={<ProtectedRoute adminOnly><AdminConcepts /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/roadmaps"     element={<ProtectedRoute adminOnly><AdminRoadmaps /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/questions"    element={<ProtectedRoute adminOnly><AdminQuestions /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/feedbacks"    element={<ProtectedRoute adminOnly><AdminFeedbacks /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/reports"      element={<ProtectedRoute adminOnly><AdminReports /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/missions"     element={<ProtectedRoute adminOnly><AdminMissions /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/problems"     element={<ProtectedRoute adminOnly><AdminProblems /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/aptitude"     element={<ProtectedRoute adminOnly><AdminAptitude /></ProtectedRoute>} />
-            <Route path="/admin-skill-arena/walk-ins"    element={<ProtectedRoute adminOnly><AdminWalkIns /></ProtectedRoute>} />
-
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-        <GlobalFooter />
-      </BrowserRouter>
+    <ConfirmProvider>
+      <RouterProvider router={router} />
+    </ConfirmProvider>
     </AuthProvider>
     </ThemeProvider>
     </ErrorBoundary>

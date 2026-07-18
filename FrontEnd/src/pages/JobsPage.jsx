@@ -11,6 +11,8 @@ import { getWalkIns, postWalkIn, removeWalkIn } from '../api/api'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { getApiError } from '../utils/apiError'
+import { deleteWalkInConfirmOptions } from '../utils/confirmRemoveLink'
+import { useConfirm } from '../context/ConfirmContext'
 import ScrollToTop from '../components/ScrollToTop'
 
 const CITIES = ['Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Mumbai', 'Noida', 'Delhi', 'Kolkata', 'Ahmedabad', 'Gurugram']
@@ -243,6 +245,7 @@ export function JobsComingSoon() {
 
 export default function JobsPage() {
   const { user } = useAuth()
+  const confirm = useConfirm()
   const navigate = useNavigate()
 
   const [jobs, setJobs] = useState([])
@@ -266,7 +269,7 @@ export default function JobsPage() {
   useEffect(() => { load() }, [])
 
   const handleDelete = async (id) => {
-    if (!confirm('Delete this walk-in?')) return
+    if (!(await confirm(deleteWalkInConfirmOptions()))) return
     try {
       await removeWalkIn(id)
       toast.success('Deleted'); load()

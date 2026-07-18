@@ -89,6 +89,12 @@
 .pp-link { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.5rem 0.9rem; border-radius: 10px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.86rem; color: var(--text-secondary); text-decoration: none; background: var(--bg-card); border: 1px solid var(--border); transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease; }
 .pp-link:hover { color: var(--rank); border-color: color-mix(in srgb, var(--rank) 45%, var(--border)); transform: translateY(-2px); }
 .pp-link svg { flex: 0 0 auto; }
+.pp-link__verified {
+  margin-left: 0.15rem; padding: 0.1rem 0.45rem; border-radius: 999px;
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+  color: #10B981; background: color-mix(in srgb, #10B981 14%, transparent);
+  border: 1px solid color-mix(in srgb, #10B981 35%, var(--border));
+}
 
 /* ascension ladder — spans full hero width */
 .pp-ladderwrap { grid-column: 1 / -1; background: color-mix(in srgb, var(--rank) 4%, var(--bg-secondary)); border: 1px solid color-mix(in srgb, var(--rank) 16%, var(--border)); border-radius: 16px; padding: clamp(1rem, 2.5vw, 1.4rem) clamp(1.25rem, 3vw, 1.75rem); }

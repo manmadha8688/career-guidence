@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
@@ -964,14 +965,16 @@ export default function DashboardPage() {
       </nav>
 
       {/* ══ MOBILE NAV DROPDOWN (slides down from LEFT-anchored hamburger) ══ */}
-      {mobileMenuOpen && (
-        <MobileNavDrawer
-          navItems={NAV_ITEMS}
-          activeView={activeView}
-          onSelect={(item) => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}
-          onClose={() => setMobileMenuOpen(false)}
-        />
-      )}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <MobileNavDrawer
+            navItems={NAV_ITEMS}
+            activeView={activeView}
+            onSelect={(item) => { item.href ? navigate(item.href) : switchView(item.view); setMobileMenuOpen(false) }}
+            onClose={() => setMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
       {/* ══ BODY ══ */}
       <div className="sl-dashboard-body">

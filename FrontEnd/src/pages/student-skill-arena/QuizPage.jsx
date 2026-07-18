@@ -113,6 +113,7 @@ export default function QuizPage() {
       {/* ── Header (fixed 52px) ── */}
       <header className="dash-quiz-header">
         <button
+          type="button"
           onClick={() => navigate(-1)}
           className="dash-quiz-back-btn"
         >

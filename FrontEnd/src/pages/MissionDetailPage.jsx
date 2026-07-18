@@ -1,22 +1,44 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { PAGE_MIN_MS } from '../components/loaders/_config'
 import { useParams, useNavigate } from 'react-router-dom'
 import {
   ArrowLeft, ChevronDown, Sun, Moon,
   Clock, Target, Sparkles, Compass, PenLine,
   AlertTriangle, Lightbulb, ListChecks, BookOpen,
-  Github, Globe, ExternalLink, Check, Rocket,
+  Github, Globe, ExternalLink, Check, Rocket, Loader2, Unlink,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
 import EnterArenaButton from '../components/EnterArenaButton'
 import SectionNotFoundPage from '../components/SectionNotFoundPage'
 import { isMongoId } from '../utils/mongoId'
-import { getMission, getMissionSubmission, saveMissionSubmission } from '../api/api'
+import { getMission, getMissionSubmission, saveMissionSubmission, connectGitHub, clearUserCache } from '../api/api'
+import { getApiError } from '../utils/apiError'
+import { getLinkVerificationResults, isLinkVerificationError } from '../utils/linkVerification'
+import { normalizeGitHubRepoUrl } from '../utils/githubRepoUrl'
+import { isLooseHttpUrl, normalizeHttpUrl } from '../utils/normalizeHttpUrl'
+import { saveOnEnter } from '../utils/saveOnEnter'
+import { removeLinkConfirmOptions } from '../utils/confirmRemoveLink'
+import { safeExternalUrl } from '../utils/safeExternalUrl'
+import { useConfirm } from '../context/ConfirmContext'
 import BookmarkButton from '../components/BookmarkButton'
+import LinkVerifyModal from '../components/LinkVerifyModal'
+import GitHubConnectModal from '../components/GitHubConnectModal'
+import { useUnsavedChangesGuard } from '../hooks/useUnsavedChangesGuard'
 import { useTheme } from '../context/ThemeContext'
+import { useAuth } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const EASE = [0.16, 1, 0.3, 1]
+
+const GITHUB_ERRORS = {
+  denied: 'GitHub connection was cancelled.',
+  already_linked: 'That GitHub is already linked to another ARISE account. Use your own GitHub, or ask them to disconnect first.',
+  unavailable: 'GitHub connect is not configured yet. Try again later.',
+  guest: 'Guest accounts cannot connect GitHub.',
+  invalid: 'GitHub connection expired. Please try again.',
+  failed: 'Could not connect GitHub. Please try again.',
+}
 
 const RANK_META = {
   D: { color: '#4ADE80', bg: 'rgba(74,222,128,0.12)',  desc: 'Beginner' },
@@ -34,9 +56,54 @@ const reveal = {
   transition: { duration: 0.5, ease: EASE },
 }
 
+function RepoTipsHelp({ githubLogin = 'your-username' }) {
+  const [open, setOpen] = useState(false)
+  const rootRef = useRef(null)
+
+  useEffect(() => {
+    if (!open) return
+    const onPointerDown = (e) => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => document.removeEventListener('pointerdown', onPointerDown)
+  }, [open])
+
+  return (
+    <div className={`md-submit__help${open ? ' is-open' : ''}`} ref={rootRef}>
+      <button
+        type="button"
+        className="md-submit__help-btn"
+        aria-label="How to paste your repo link"
+        aria-expanded={open}
+        onClick={() => setOpen(o => !o)}
+      >
+        ?
+      </button>
+      {open && (
+        <div className="md-submit__help-panel" role="dialog" aria-label="How to paste your repo link">
+          <p className="md-submit__help-title">How to paste your repo link</p>
+          <ul className="md-submit__tips-list">
+            <li>
+              Best format:{' '}
+              <span className="md-submit__tips-code">{`https://github.com/${githubLogin}/project-name`}</span>
+            </li>
+            <li>Links with <span className="md-submit__tips-code">/tree/…</span> or <span className="md-submit__tips-code">/blob/…</span> also work — we clean them on save.</li>
+            <li>Repo must be <strong>public</strong> and under your connected GitHub account.</li>
+            <li>Each repo can only be linked to <strong>one mission</strong> on ARISE.</li>
+            <li>Use a repo you built for this mission — don&apos;t reuse the same project across missions.</li>
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function MissionDetailPage() {
   const { id }              = useParams()
   const navigate            = useNavigate()
+  const confirm             = useConfirm()
+  const { user }            = useAuth()
   const { theme, toggleTheme } = useTheme()
   const light               = theme === 'light'
   const [mission, setMission] = useState(null)
@@ -51,12 +118,48 @@ export default function MissionDetailPage() {
   const [subLoading, setSubLoading] = useState(true)
   const [repoUrl, setRepoUrl]       = useState('')
   const [deployUrl, setDeployUrl]   = useState('')
-  const [editing, setEditing]       = useState(false)
-  const [saving, setSaving]         = useState(false)
-  const [saveErr, setSaveErr]       = useState('')
-  const [justSaved, setJustSaved]   = useState(false)
+  const [savingRepo, setSavingRepo] = useState(false)
+  const [savingDeploy, setSavingDeploy] = useState(false)
+  const [repoErr, setRepoErr]       = useState('')
+  const [deployErr, setDeployErr]   = useState('')
+  const [githubBusy, setGithubBusy] = useState(false)
+  const [githubConnectOpen, setGithubConnectOpen] = useState(false)
+  const [linkVerifyResults, setLinkVerifyResults] = useState(null)
+  const pendingDeploySaveRef = useRef(null)
+  const leaveGuardRef = useRef({ notifyDeferredLeave: () => {}, completePendingLeave: () => {} })
+  const saveAllBeforeLeaveRef = useRef(async () => true)
 
-  const hasLinks = !!(submission && (submission.repoUrl || submission.deployUrl))
+  const githubConnected = !!user?.githubConnected
+  const githubLogin = user?.githubLogin || 'you'
+
+  const savedRepo = (submission?.repoUrl || '').trim()
+  const savedDeploy = (submission?.deployUrl || '').trim()
+  const repoTrim = repoUrl.trim()
+  const deployTrim = deployUrl.trim()
+  const repoNormalized = repoTrim ? normalizeGitHubRepoUrl(repoTrim) : ''
+  const repoUnchanged = !!savedRepo && repoNormalized === savedRepo
+  const canSaveRepo = githubConnected && !repoUnchanged && (repoTrim !== '' || savedRepo !== '') && !savingRepo && !savingDeploy
+  const deployUnchanged = deployTrim === savedDeploy
+  const deployLooksValid = !deployTrim || isLooseHttpUrl(deployTrim)
+  const canSaveDeploy = deployLooksValid && !deployUnchanged && (deployTrim !== '' || savedDeploy !== '') && !savingRepo && !savingDeploy
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const gh = params.get('github')
+    if (gh === 'connected') {
+      clearUserCache()
+      toast.success('GitHub connected — paste your repository link below.')
+      window.dispatchEvent(new Event('sl:refresh'))
+    } else if (gh === 'error') {
+      toast.error(GITHUB_ERRORS[params.get('reason') || 'failed'] || GITHUB_ERRORS.failed)
+    }
+    if (gh) {
+      params.delete('github')
+      params.delete('reason')
+      const qs = params.toString()
+      window.history.replaceState({}, '', window.location.pathname + (qs ? `?${qs}` : ''))
+    }
+  }, [id])
 
   useEffect(() => {
     if (!isMongoId(id)) {
@@ -77,47 +180,244 @@ export default function MissionDetailPage() {
       .then(r => {
         const s = r.data
         setSubmission(s)
-        if (s && (s.repoUrl || s.deployUrl)) {
-          setRepoUrl(s.repoUrl || '')
-          setDeployUrl(s.deployUrl || '')
-          setEditing(false)
-        } else {
-          setEditing(true)
-        }
+        setRepoUrl(s?.repoUrl || '')
+        setDeployUrl(s?.deployUrl || '')
       })
-      .catch(() => setEditing(true))
+      .catch(() => {})
       .finally(() => setSubLoading(false))
   }, [id])
 
-  const handleSaveSubmission = async () => {
-    setSaveErr('')
-    const repo = repoUrl.trim()
-    const deploy = deployUrl.trim()
-    if (!repo && !deploy) { setSaveErr('Add at least one link before saving.'); return }
-    const invalid = [repo, deploy].filter(Boolean).some(u => !/^https?:\/\/.+/i.test(u))
-    if (invalid) { setSaveErr('Links must start with http:// or https://'); return }
-    setSaving(true)
+  const handleConnectGitHub = async () => {
+    if (githubBusy || !isMongoId(id)) return
+    setGithubBusy(true)
     try {
-      const { data } = await saveMissionSubmission(id, { repoUrl: repo, deployUrl: deploy })
-      setSubmission(data)
-      setRepoUrl(data.repoUrl || '')
-      setDeployUrl(data.deployUrl || '')
-      setEditing(false)
-      setJustSaved(true)
-      setTimeout(() => setJustSaved(false), 2500)
-    } catch (e) {
-      setSaveErr(e?.response?.data?.message || 'Could not save — check your links and try again.')
-    } finally {
-      setSaving(false)
+      await connectGitHub(`/missions/${id}`)
+    } catch (err) {
+      toast.error(getApiError(err, 'Could not start GitHub connect. Try again in a moment.'))
+      setGithubBusy(false)
     }
   }
 
-  const cancelEdit = () => {
-    setSaveErr('')
-    setRepoUrl(submission?.repoUrl || '')
-    setDeployUrl(submission?.deployUrl || '')
-    setEditing(false)
+  const mergeSubmission = (data) => {
+    setSubmission(data)
+    setRepoUrl(data?.repoUrl || '')
+    setDeployUrl(data?.deployUrl || '')
+    setLinkVerifyResults(null)
+    setRepoErr('')
+    setDeployErr('')
   }
+
+  const ensureCanSave = () => {
+    if (!user) {
+      toast.error('Sign in to save your mission links.')
+      return false
+    }
+    if (!isMongoId(id)) return false
+    return true
+  }
+
+  const handleSaveRepo = async () => {
+    setRepoErr('')
+    if (!ensureCanSave()) return
+    if (!githubConnected) {
+      setRepoErr('Connect your GitHub account on this page before adding a repository.')
+      return
+    }
+    const repo = repoUrl.trim()
+    if (!repo && !savedRepo) {
+      setRepoErr('Paste your GitHub repository link before saving.')
+      return
+    }
+    const normalized = repo ? normalizeGitHubRepoUrl(repo) : ''
+    if (repo && !normalized) {
+      setRepoErr('Enter a GitHub repository link like https://github.com/your-username/project-name')
+      return
+    }
+    setSavingRepo(true)
+    try {
+      const { data } = await saveMissionSubmission(id, { target: 'repo', repoUrl: normalized || '' })
+      mergeSubmission(data)
+      toast.success(normalized ? 'Repository saved' : 'Repository removed')
+    } catch (e) {
+      setRepoErr(getApiError(e, 'Could not save your repository. Check the link and try again.'))
+    } finally {
+      setSavingRepo(false)
+    }
+  }
+
+  const handleRemoveRepo = async () => {
+    if (!savedRepo || savingRepo || savingDeploy) return
+    if (!ensureCanSave()) return
+    if (!(await confirm(removeLinkConfirmOptions('this repository link from the mission')))) return
+    setRepoUrl('')
+    setRepoErr('')
+    setSavingRepo(true)
+    try {
+      const { data } = await saveMissionSubmission(id, { target: 'repo', repoUrl: '' })
+      mergeSubmission(data)
+      toast.success('Repository removed')
+    } catch (e) {
+      setRepoErr(getApiError(e, 'Could not remove repository. Please try again.'))
+    } finally {
+      setSavingRepo(false)
+    }
+  }
+
+  const executeDeploySave = async (skipLinkVerification = false) => {
+    const deploy = normalizeHttpUrl(pendingDeploySaveRef.current ?? deployUrl)
+    pendingDeploySaveRef.current = deploy
+    const { data } = await saveMissionSubmission(id, {
+      target: 'deploy',
+      deployUrl: deploy,
+      ...(skipLinkVerification ? { skipLinkVerification: true } : {}),
+    })
+    mergeSubmission(data)
+    toast.success(deploy ? 'Live demo saved' : 'Live demo removed')
+  }
+
+  const handleSaveDeploy = async () => {
+    setDeployErr('')
+    if (!ensureCanSave()) return
+    const normalized = normalizeHttpUrl(deployUrl)
+    if (deployUrl.trim() && !isLooseHttpUrl(deployUrl)) {
+      setDeployErr('Enter a full URL like https://your-app.onrender.com')
+      return
+    }
+    pendingDeploySaveRef.current = normalized
+    setSavingDeploy(true)
+    try {
+      await executeDeploySave(false)
+    } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+        return
+      }
+      setDeployErr(getApiError(e, 'Could not save your live demo link. Check the URL and try again.'))
+    } finally {
+      setSavingDeploy(false)
+    }
+  }
+
+  const handleRemoveDeploy = async () => {
+    if (!savedDeploy || savingRepo || savingDeploy) return
+    if (!ensureCanSave()) return
+    if (!(await confirm(removeLinkConfirmOptions('this live demo link from the mission')))) return
+    setDeployUrl('')
+    setDeployErr('')
+    setLinkVerifyResults(null)
+    pendingDeploySaveRef.current = ''
+    setSavingDeploy(true)
+    try {
+      await executeDeploySave(false)
+    } catch (e) {
+      setDeployErr(getApiError(e, 'Could not remove live demo. Please try again.'))
+    } finally {
+      setSavingDeploy(false)
+    }
+  }
+
+  const handleLinkVerifyRetry = async () => {
+    setSavingDeploy(true)
+    try {
+      await executeDeploySave(false)
+      leaveGuardRef.current.completePendingLeave()
+      return true
+    } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+        return false
+      }
+      setDeployErr(getApiError(e, 'Could not save. Please try again.'))
+      setLinkVerifyResults(null)
+      return undefined
+    } finally {
+      setSavingDeploy(false)
+    }
+  }
+
+  const handleLinkVerifyOverride = async () => {
+    setSavingDeploy(true)
+    pendingDeploySaveRef.current = normalizeHttpUrl(pendingDeploySaveRef.current ?? deployUrl)
+    try {
+      await executeDeploySave(true)
+      leaveGuardRef.current.completePendingLeave()
+    } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+      } else {
+        setDeployErr(getApiError(e, 'Could not save. Please try again.'))
+      }
+    } finally {
+      setSavingDeploy(false)
+    }
+  }
+
+  const submissionDirty = repoTrim !== savedRepo || deployTrim !== savedDeploy
+
+  const saveAllBeforeLeave = useCallback(async () => {
+    if (!ensureCanSave()) return false
+    try {
+      if (repoTrim !== savedRepo) {
+        if (!githubConnected) {
+          toast.error('Connect GitHub before saving your repository link.')
+          return false
+        }
+        const normalized = repoTrim ? normalizeGitHubRepoUrl(repoTrim) : ''
+        if (repoTrim && !normalized) {
+          setRepoErr('Enter a GitHub repository link like https://github.com/your-username/project-name')
+          return false
+        }
+        setSavingRepo(true)
+        try {
+          const { data } = await saveMissionSubmission(id, { target: 'repo', repoUrl: normalized || '' })
+          mergeSubmission(data)
+        } finally {
+          setSavingRepo(false)
+        }
+      }
+      if (deployTrim !== savedDeploy) {
+        if (deployTrim && !isLooseHttpUrl(deployUrl)) {
+          setDeployErr('Enter a full URL like https://your-app.onrender.com')
+          return false
+        }
+        pendingDeploySaveRef.current = normalizeHttpUrl(deployUrl)
+        setSavingDeploy(true)
+        try {
+          await executeDeploySave(false)
+        } catch (e) {
+          if (isLinkVerificationError(e)) {
+            setLinkVerifyResults(getLinkVerificationResults(e))
+            leaveGuardRef.current.notifyDeferredLeave()
+            return false
+          }
+          setDeployErr(getApiError(e, 'Could not save your live demo link. Check the URL and try again.'))
+          return false
+        } finally {
+          setSavingDeploy(false)
+        }
+      }
+      return true
+    } catch (e) {
+      toast.error(getApiError(e, 'Could not save your changes.'))
+      return false
+    }
+  }, [
+    repoTrim, savedRepo, deployTrim, savedDeploy, githubConnected,
+    deployUrl, id, user,
+  ])
+
+  saveAllBeforeLeaveRef.current = saveAllBeforeLeave
+
+  const leaveGuard = useUnsavedChangesGuard(submissionDirty, {
+    onSave: () => saveAllBeforeLeaveRef.current(),
+    saving: savingRepo || savingDeploy,
+    contextLabel: 'mission links',
+  })
+  leaveGuardRef.current = {
+    notifyDeferredLeave: leaveGuard.notifyDeferredLeave,
+    completePendingLeave: leaveGuard.completePendingLeave,
+  }
+  const { requestLeave, leaveModal } = leaveGuard
 
   if (loading) return <SmokeBladeLoader />
   if (notFound) return <SectionNotFoundPage variant="missions" />
@@ -144,7 +444,7 @@ export default function MissionDetailPage() {
     <div className="md" style={rankStyle}>
       {/* ── Sticky top bar ─────────────────────────────────────────────── */}
       <header className="md-top">
-        <button type="button" onClick={() => navigate(-1)} className="md-top__back">
+        <button type="button" onClick={() => requestLeave(() => navigate(-1))} className="md-top__back">
           <ArrowLeft size={14} /> <span>All Missions</span>
         </button>
         <span className="md-top__title">{mission.title}</span>
@@ -379,81 +679,165 @@ export default function MissionDetailPage() {
             <span className="md-submit__eyebrow"><Sparkles size={13} /> Final step</span>
             <h2 className="md-submit__title"><Rocket size={22} /> Ship it &amp; show it off</h2>
             <p className="md-submit__hint">
-              You built it — now make it count. Add your <strong>GitHub repo</strong> and
-              <strong> live demo</strong> so recruiters and mentors can see what you can do.
+              Add your <strong>GitHub repo</strong> and <strong>live demo</strong> — that&apos;s your best proof of work.
             </p>
           </div>
 
           {subLoading ? (
             <div className="md-submit__loading">Loading your submission…</div>
-          ) : editing ? (
+          ) : (
             <div className="md-submit__form">
-              <label className="md-submit__field">
-                <span className="md-submit__label"><Github size={15} /> GitHub repository</span>
-                <input
-                  type="url"
-                  inputMode="url"
-                  className="md-submit__input"
-                  placeholder="https://github.com/you/project"
-                  value={repoUrl}
-                  onChange={e => setRepoUrl(e.target.value)}
-                />
-              </label>
-              <label className="md-submit__field">
-                <span className="md-submit__label"><Globe size={15} /> Live demo URL</span>
-                <input
-                  type="url"
-                  inputMode="url"
-                  className="md-submit__input"
-                  placeholder="https://your-app.vercel.app"
-                  value={deployUrl}
-                  onChange={e => setDeployUrl(e.target.value)}
-                />
-              </label>
+              {!githubConnected ? (
+                <div className="md-submit__github md-submit__github--inline">
+                  <button type="button" className="md-submit__github-btn" disabled={githubBusy} onClick={() => setGithubConnectOpen(true)}>
+                    {githubBusy ? <Loader2 size={16} className="md-submit__spin" /> : <Github size={16} />}
+                    {githubBusy ? 'Connecting…' : 'Connect GitHub'}
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="md-submit__connected">
+                    <Github size={15} />
+                    <span>Connected as <strong>@{githubLogin}</strong></span>
+                  </div>
 
-              {saveErr && (
-                <p className="md-submit__error"><AlertTriangle size={14} /> {saveErr}</p>
+                  <div className="md-submit__field">
+                    <div className="md-submit__label-row">
+                      <label className="md-submit__label" htmlFor="md-repo-url">
+                        <Github size={15} /> GitHub repository
+                      </label>
+                      <RepoTipsHelp githubLogin={githubLogin} />
+                    </div>
+                    <div className="md-submit__field-row">
+                      <input
+                        id="md-repo-url"
+                        type="url"
+                        inputMode="url"
+                        className="md-submit__input"
+                        placeholder={`https://github.com/${githubLogin}/your-project`}
+                        value={repoUrl}
+                        onChange={e => { setRepoUrl(e.target.value); setRepoErr('') }}
+                        onKeyDown={e => saveOnEnter(e, canSaveRepo, handleSaveRepo)}
+                      />
+                      <div className="md-submit__field-actions">
+                        {savedRepo && (
+                          <button
+                            type="button"
+                            className="md-submit__field-remove"
+                            onClick={handleRemoveRepo}
+                            disabled={savingRepo || savingDeploy}
+                            aria-label="Remove saved repository link"
+                          >
+                            {savingRepo ? <Loader2 size={14} className="md-submit__spin" /> : <Unlink size={14} aria-hidden="true" />}
+                            Remove
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          className="md-submit__field-save"
+                          onClick={handleSaveRepo}
+                          disabled={!canSaveRepo}
+                        >
+                          {savingRepo ? <Loader2 size={15} className="md-submit__spin" /> : <><Check size={15} /> Save</>}
+                        </button>
+                      </div>
+                    </div>
+                    {repoErr && (
+                      <p className="md-submit__error"><AlertTriangle size={14} /> {repoErr}</p>
+                    )}
+                  </div>
+                </>
               )}
 
-              <div className="md-submit__actions">
-                <button type="button" className="md-submit__save" onClick={handleSaveSubmission} disabled={saving}>
-                  {saving ? 'Saving…' : <><Check size={15} /> Save my work</>}
-                </button>
-                {hasLinks && (
-                  <button type="button" className="md-submit__cancel" onClick={cancelEdit} disabled={saving}>
-                    Cancel
-                  </button>
+              <div className="md-submit__field">
+                <div className="md-submit__label-row">
+                  <label className="md-submit__label" htmlFor="md-deploy-url">
+                    <Globe size={15} /> Live demo
+                  </label>
+                </div>
+                <div className="md-submit__field-row">
+                  <input
+                    id="md-deploy-url"
+                    type="url"
+                    inputMode="url"
+                    className="md-submit__input"
+                    placeholder="https://your-app.onrender.com"
+                    value={deployUrl}
+                    onChange={e => { setDeployUrl(e.target.value); setDeployErr('') }}
+                    onKeyDown={e => saveOnEnter(e, canSaveDeploy, handleSaveDeploy)}
+                  />
+                  <div className="md-submit__field-actions">
+                    {savedDeploy && (
+                      <button
+                        type="button"
+                        className="md-submit__field-remove"
+                        onClick={handleRemoveDeploy}
+                        disabled={savingRepo || savingDeploy}
+                        aria-label="Remove saved live demo link"
+                      >
+                        {savingDeploy ? <Loader2 size={14} className="md-submit__spin" /> : <Unlink size={14} aria-hidden="true" />}
+                        Remove
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      className="md-submit__field-save"
+                      onClick={handleSaveDeploy}
+                      disabled={!canSaveDeploy}
+                    >
+                      {savingDeploy ? <Loader2 size={15} className="md-submit__spin" /> : <><Check size={15} /> Save</>}
+                    </button>
+                  </div>
+                </div>
+                {deployErr && (
+                  <p className="md-submit__error"><AlertTriangle size={14} /> {deployErr}</p>
+                )}
+                {!deployErr && deployTrim && !deployLooksValid && (
+                  <p className="md-submit__error"><AlertTriangle size={14} /> Enter a full URL like https://your-app.onrender.com</p>
                 )}
               </div>
-            </div>
-          ) : (
-            <div className="md-submit__saved">
-              {justSaved && <span className="md-submit__flash"><Check size={14} /> Saved</span>}
-              <div className="md-submit__links">
-                {submission?.repoUrl && (
-                  <a href={submission.repoUrl} target="_blank" rel="noopener noreferrer" className="md-submit__link">
-                    <Github size={16} /> <span>Repository</span> <ExternalLink size={13} className="md-submit__ext" />
-                  </a>
-                )}
-                {submission?.deployUrl && (
-                  <a href={submission.deployUrl} target="_blank" rel="noopener noreferrer" className="md-submit__link md-submit__link--live">
-                    <Globe size={16} /> <span>Live demo</span> <ExternalLink size={13} className="md-submit__ext" />
-                  </a>
-                )}
-              </div>
-              <button type="button" className="md-submit__edit" onClick={() => setEditing(true)}>
-                <PenLine size={14} /> Edit links
-              </button>
+
+              {(submission?.repoUrl || submission?.deployUrl) && (
+                <div className="md-submit__links md-submit__links--inline">
+                  {submission?.repoUrl && safeExternalUrl(submission.repoUrl) && (
+                    <a href={safeExternalUrl(submission.repoUrl)} target="_blank" rel="noopener noreferrer" className="md-submit__link">
+                      <Github size={16} /> <span>Repository</span> <ExternalLink size={13} className="md-submit__ext" />
+                    </a>
+                  )}
+                  {submission?.deployUrl && safeExternalUrl(submission.deployUrl) && (
+                    <a href={safeExternalUrl(submission.deployUrl)} target="_blank" rel="noopener noreferrer" className="md-submit__link md-submit__link--live">
+                      <Globe size={16} /> <span>Live demo</span> <ExternalLink size={13} className="md-submit__ext" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </motion.section>
 
         <div className="md-back-wrap">
-          <button type="button" onClick={() => navigate(-1)} className="md-back-btn">
+          <button type="button" onClick={() => requestLeave(() => navigate(-1))} className="md-back-btn">
             <ArrowLeft size={14} /> Back to Mission Board
           </button>
         </div>
       </div>
+
+      <GitHubConnectModal
+        open={githubConnectOpen}
+        busy={githubBusy}
+        onClose={() => { if (!githubBusy) setGithubConnectOpen(false) }}
+        onConfirm={handleConnectGitHub}
+      />
+      <LinkVerifyModal
+        open={!!linkVerifyResults?.length}
+        results={linkVerifyResults || []}
+        busy={savingDeploy}
+        context="mission"
+        onClose={() => setLinkVerifyResults(null)}
+        onRetry={handleLinkVerifyRetry}
+        onSaveUnverified={handleLinkVerifyOverride}
+      />
+      {leaveModal}
     </div>
   )
 }

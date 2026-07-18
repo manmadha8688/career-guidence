@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight, Search } from 'lucide-react'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import {
+  Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight, Search,
+  Code2, Brain, FileText, Briefcase, Zap, Rocket,
+} from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { guestLogin } from '../../api/api'
@@ -10,6 +14,18 @@ import { NAV_LINKS } from '../../pages/landing/landingData'
 import { LandingProfileDropdown } from '../../pages/landing/components/LandingProfileMenu'
 import { openGlobalSearch } from '../GlobalSearchOverlay'
 import useBodyLock from '../../hooks/useBodyLock'
+import '../../styles/components/mobile-navbar-drawer.css'
+
+const MOBILE_NAV_META = {
+  'Code GYM': { accent: '#0EA5E9', Icon: Code2, tag: 'PRACTICE' },
+  Aptitude: { accent: '#6366F1', Icon: Brain, tag: 'TRAIN' },
+  Resume: { accent: '#0F766E', Icon: FileText, tag: 'BUILD' },
+  'Walk-Ins': { accent: '#4ADE80', Icon: Briefcase, tag: 'JOBS' },
+  'AI Lab': { accent: '#00D9FF', Icon: Zap, tag: 'TOOLS' },
+  'Deploy Guidance': { accent: '#9B6ED4', Icon: Rocket, tag: 'SHIP' },
+}
+
+const MOBILE_DRAWER_EASE = [0.16, 1, 0.3, 1]
 
 /**
  * Global site navbar — same look everywhere (landing + top-level feature pages).
@@ -31,6 +47,7 @@ export default function Navbar({ sticky = false }) {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [guestLoading, setGuestLoading] = useState(false)
+  const reduceMotion = useReducedMotion()
 
   // Lock the page behind the mobile drawer so the background can't scroll while
   // the hamburger menu is open. Mobile-only — the drawer never opens on desktop.
@@ -167,7 +184,7 @@ export default function Navbar({ sticky = false }) {
 
           <button
             type="button"
-            className="lp-mob-menu-btn"
+            className={`lp-mob-menu-btn${mobileMenuOpen ? ' is-open' : ''}`}
             onClick={() => setMobileMenuOpen(o => !o)}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -177,60 +194,107 @@ export default function Navbar({ sticky = false }) {
         </div>
       </nav>
 
-      {mobileMenuOpen && (
-        <>
-          <div role="presentation" className="lp-mobile-overlay" onClick={closeMobile} />
-          <div className="lp-mobile-drawer">
-            <div className="lp-mobile-nav-list">
-              {NAV_LINKS.map(link => (
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            <motion.div
+              key="lp-mobile-overlay"
+              role="presentation"
+              className="lp-mobile-overlay lp-mobile-overlay--v2"
+              onClick={closeMobile}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.22 }}
+            />
+            <motion.div
+              key="lp-mobile-drawer"
+              className="lp-mobile-drawer lp-mobile-drawer--v2"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Site navigation"
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -32, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -24, scale: 0.98 }}
+              transition={{ duration: 0.38, ease: MOBILE_DRAWER_EASE }}
+            >
+              <div className="lp-mdraw-body">
+                <ul className="lp-mdraw-list">
+                  {NAV_LINKS.map((link, i) => {
+                    const meta = MOBILE_NAV_META[link.label] ?? { accent: '#9B6ED4', Icon: ChevronRight, tag: 'GO' }
+                    const Icon = meta.Icon
+                    const isActive = !!(link.href && pathname.startsWith(link.href))
+                    return (
+                      <motion.li
+                        key={link.label}
+                        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -16 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, ease: MOBILE_DRAWER_EASE, delay: 0.08 + i * 0.06 }}
+                      >
+                        <motion.button
+                          type="button"
+                          className={`lp-mdraw-item${isActive ? ' is-active' : ''}`}
+                          style={{ '--accent': meta.accent }}
+                          disabled={!link.live}
+                          aria-current={isActive ? 'page' : undefined}
+                          onClick={() => onMobileNav(link)}
+                          whileTap={reduceMotion || !link.live ? undefined : { scale: 0.98 }}
+                        >
+                          <span className="lp-mdraw-item__icon" aria-hidden="true">
+                            <Icon size={20} />
+                          </span>
+                          <span className="lp-mdraw-item__text">
+                            <span className="lp-mdraw-item__label">{link.label}</span>
+                          </span>
+                          {!link.live && <span className="lp-mdraw-soon">SOON</span>}
+                        </motion.button>
+                      </motion.li>
+                    )
+                  })}
+                </ul>
+
                 <button
-                  key={link.label}
                   type="button"
-                  className={`lp-mobile-nav-item${link.live ? ' lp-mobile-nav-item--live' : ''}`}
-                  onClick={() => onMobileNav(link)}
+                  className="lp-mdraw-arena"
+                  onClick={() => { handleEnter(); closeMobile() }}
                 >
-                  <span>{link.label}</span>
-                  {!link.live && <span className="lp-mobile-soon-badge">SOON</span>}
+                  <Swords size={16} aria-hidden="true" /> Enter Arena
                 </button>
-              ))}
-            </div>
+              </div>
 
-            <div className="lp-mobile-auth">
-              {user ? (
-                <button type="button" onClick={() => { handleEnter(); closeMobile() }} className="lp-btn-primary lp-btn-primary--full">
-                  <Swords size={16} /> Enter Arena
-                </button>
-              ) : (
-                <>
-                  <div className="lp-mobile-auth-row">
-                    <Link to="/register" className="lp-btn-primary" onClick={closeMobile}>
-                      <Swords size={16} /> Sign up
-                    </Link>
-                    <Link to="/login?redirect=/" className="lp-btn-ghost" onClick={closeMobile}>
-                      Sign In
-                    </Link>
+              <div className="lp-mdraw-footer">
+                {!user && (
+                  <div className="lp-mobile-auth">
+                    <div className="lp-mobile-auth-row">
+                      <Link to="/register" className="lp-btn-primary" onClick={closeMobile}>
+                        <Swords size={16} /> Sign up
+                      </Link>
+                      <Link to="/login?redirect=/" className="lp-btn-ghost" onClick={closeMobile}>
+                        Sign In
+                      </Link>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => { handleGuest(); closeMobile() }}
+                      disabled={guestLoading}
+                      className="lp-btn-ghost lp-btn-ghost--full"
+                    >
+                      <Ghost size={14} /> {guestLoading ? 'Starting…' : 'Try as Guest'}
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => { handleGuest(); closeMobile() }}
-                    disabled={guestLoading}
-                    className="lp-btn-ghost lp-btn-ghost--full"
-                  >
-                    <Ghost size={14} /> {guestLoading ? 'Starting…' : 'Try as Guest'}
-                  </button>
-                </>
-              )}
-            </div>
+                )}
 
-            <div className="lp-mobile-theme-row">
-              <span className="lp-mobile-theme-label">{theme === 'dark' ? 'Dark mode' : 'Light mode'}</span>
-              <button type="button" onClick={() => { toggleTheme(); closeMobile() }} className="lp-mobile-theme-btn">
-                {theme === 'dark' ? <><Sun size={15} /> Light</> : <><Moon size={15} /> Dark</>}
-              </button>
-            </div>
-          </div>
-        </>
-      )}
+                <div className="lp-mobile-theme-row">
+                  <span className="lp-mobile-theme-label">{theme === 'dark' ? 'Dark mode' : 'Light mode'}</span>
+                  <button type="button" onClick={() => { toggleTheme(); closeMobile() }} className="lp-mobile-theme-btn">
+                    {theme === 'dark' ? <><Sun size={15} /> Light</> : <><Moon size={15} /> Dark</>}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   )
 }

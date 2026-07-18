@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Plus, Trash2, Edit2, ChevronRight, X, Check } from 'lucide-react'
 import AppLayout from '../../components/AppLayout'
 import { getAdminSubjects, getAdminConcepts, getConceptQuestions, createQuestion, updateQuestion, deleteQuestion } from '../../api/api'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
@@ -23,6 +24,8 @@ export default function AdminQuestions() {
   const [editId, setEditId] = useState(null)
   const [form, setForm] = useState(emptyForm())
   const [saving, setSaving] = useState(false)
+  const [deleteTarget, setDeleteTarget] = useState(null)
+  const [deleting, setDeleting] = useState(false)
   useBodyLock(!!modal)
 
   useEffect(() => {
@@ -85,13 +88,16 @@ export default function AdminQuestions() {
     finally { setSaving(false) }
   }
 
-  const handleDelete = async (id) => {
-    if (!confirm('Delete this question?')) return
+  const confirmDelete = async () => {
+    if (!deleteTarget) return
+    setDeleting(true)
     try {
-      await deleteQuestion(id)
+      await deleteQuestion(deleteTarget.id)
       toast.success('Deleted')
-      setQuestions(prev => prev.filter(q => q.id !== id))
+      setQuestions(prev => prev.filter(q => q.id !== deleteTarget.id))
+      setDeleteTarget(null)
     } catch (err) { toast.error(getApiError(err, 'We could not delete this question. Please try again.')) }
+    finally { setDeleting(false) }
   }
 
   const setOption = (i, val) => setForm(f => { const opts = [...f.options]; opts[i] = val; return { ...f, options: opts } })
@@ -162,7 +168,7 @@ export default function AdminQuestions() {
                         </div>
                         <div className="admin-question-card__actions">
                           <button className="btn btn-ghost btn-sm" onClick={() => openEdit(q)}><Edit2 size={13} /></button>
-                          <button className="btn btn-ghost btn-sm admin-question-card__delete" onClick={() => handleDelete(q.id)}><Trash2 size={13} /></button>
+                          <button className="btn btn-ghost btn-sm admin-question-card__delete" onClick={() => setDeleteTarget({ id: q.id, label: q.text?.slice(0, 80) || 'Question' })}><Trash2 size={13} /></button>
                         </div>
                       </div>
                       <div className="font-semibold text-sm mb-1">{q.text}</div>
@@ -240,6 +246,16 @@ export default function AdminQuestions() {
           </div>
         </div>
       )}
+
+      <AdminDeleteModal
+        open={!!deleteTarget}
+        title="Delete this question?"
+        subtitle="This question will be permanently removed from the concept quiz."
+        items={deleteTarget ? [deleteTarget] : []}
+        deleting={deleting}
+        onConfirm={confirmDelete}
+        onClose={() => !deleting && setDeleteTarget(null)}
+      />
     </AppLayout>
   )
 }

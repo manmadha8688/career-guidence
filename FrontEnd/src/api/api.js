@@ -182,8 +182,10 @@ export const saveMissionSubmission = (id, body) => api.put(`/missions/${id}/subm
 // ─── RESUME (per-user, up to 3, shareable) ────────────
 // Not cached — the builder always reads/writes the freshest copy for the user.
 export const listResumes    = ()                 => api.get('/resumes')
-export const createResume   = (title, data)      => api.post('/resumes', { title, data })
-export const updateResume   = (id, title, data)  => api.put(`/resumes/${id}`, { title, data })
+export const createResume   = (title, data, skipLinkVerification = false) =>
+  api.post('/resumes', { title, data, ...(skipLinkVerification ? { skipLinkVerification: true } : {}) })
+export const updateResume   = (id, title, data, skipLinkVerification = false) =>
+  api.put(`/resumes/${id}`, { title, data, ...(skipLinkVerification ? { skipLinkVerification: true } : {}) })
 export const deleteResume   = (id)               => api.delete(`/resumes/${id}`)
 export const setResumeShare = (id, isPublic)     => api.post(`/resumes/${id}/share`, { public: isPublic })
 // Public — anyone with the link can view a shared resume.
@@ -270,7 +272,23 @@ export const removeBookmarkById = (id)          => api.delete(`/bookmarks/${id}`
 // ─── PROFILE ──────────────────────────────────────────
 export const getPublicProfile = (username) => api.get(`/public/profile/${encodeURIComponent(username)}`)
 export const updateProfile    = (data)     => api.put('/profile/me', data)
+export const sendProfileContactOtp = (email) => api.post('/profile/contact-email/send-otp', { email })
+export const verifyProfileContactOtp = (email, otp) => api.post('/profile/contact-email/verify-otp', { email, otp })
 export const checkUsername    = (username) => api.get('/profile/check-username', { params: { username } })
+/** Fetch GitHub authorize URL; pass SPA origin + optional in-app return path after OAuth. */
+export const getGitHubConnectUrl = (returnTo = typeof window !== 'undefined' ? window.location.origin : '', returnPath = '') => {
+  const params = {}
+  if (returnTo) params.returnTo = returnTo
+  if (returnPath) params.returnPath = returnPath
+  return api.get('/profile/github/connect-url', { params })
+}
+export const connectGitHub = async (returnPath = '') => {
+  const returnTo = window.location.origin
+  const { data } = await getGitHubConnectUrl(returnTo, returnPath)
+  if (data?.url) window.location.href = data.url
+  else throw new Error('GitHub connect URL missing')
+}
+export const disconnectGitHub = () => api.delete('/profile/github').then(r => { clearUserCache(); return r })
 
 // ─── REPORTS ──────────────────────────────────────────
 // Report mutations bust the cached admin dashboard stats so the open-report

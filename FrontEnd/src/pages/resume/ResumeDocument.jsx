@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import { safeExternalUrl } from '../../utils/safeExternalUrl'
 
 /**
  * Printable resume — fixed light colors (white paper, ink text) so the PDF is
@@ -15,11 +16,11 @@ const ResumeDocument = forwardRef(function ResumeDocument({ resume }, ref) {
 
   // Contact rendered as labeled items, joined with separators — like the source resume.
   const contacts = [
-    r.email && { label: 'Email', value: r.email, href: `mailto:${r.email}` },
+    r.email && safeExternalUrl(`mailto:${r.email}`) && { label: 'Email', value: r.email, href: safeExternalUrl(`mailto:${r.email}`) },
     r.mobile && { label: 'Mobile', value: r.mobile },
-    r.linkedin && { label: 'LinkedIn', value: cleanUrl(r.linkedin), href: withProto(r.linkedin) },
-    r.github && { label: 'GitHub', value: cleanUrl(r.github), href: withProto(r.github) },
-    r.portfolio && { label: 'Portfolio', value: cleanUrl(r.portfolio), href: withProto(r.portfolio) },
+    r.linkedin && safeExternalUrl(r.linkedin) && { label: 'LinkedIn', value: cleanUrl(r.linkedin), href: safeExternalUrl(r.linkedin) },
+    r.github && safeExternalUrl(r.github) && { label: 'GitHub', value: cleanUrl(r.github), href: safeExternalUrl(r.github) },
+    r.portfolio && safeExternalUrl(r.portfolio) && { label: 'Portfolio', value: cleanUrl(r.portfolio), href: safeExternalUrl(r.portfolio) },
   ].filter(Boolean)
 
   return (
@@ -82,9 +83,9 @@ const ResumeDocument = forwardRef(function ResumeDocument({ resume }, ref) {
           {r.projects.map((p, i) => (
             <div key={i} className="rz-doc__project">
               <div className="rz-doc__project-name">{p.name || 'Project'}</div>
-              {p.link && (
+              {p.link && safeExternalUrl(p.link) && (
                 <div className="rz-doc__project-link">
-                  {/github\.com/i.test(p.link) ? 'GitHub' : 'Live'}: <a href={withProto(p.link)} className="rz-doc__link" target="_blank" rel="noopener noreferrer">{cleanUrl(p.link)}</a>
+                  {/github\.com/i.test(p.link) ? 'GitHub' : 'Live'}: <a href={safeExternalUrl(p.link)} className="rz-doc__link" target="_blank" rel="noopener noreferrer">{cleanUrl(p.link)}</a>
                 </div>
               )}
               {has((p.points || []).filter(Boolean)) && (
@@ -160,11 +161,6 @@ export function formatDegree(e = {}) {
   const branch = (e.branch || '').trim()
   if (degree && branch) return `${degree} in ${branch}`
   return degree || branch || ''
-}
-
-function withProto(url) {
-  if (!url) return url
-  return /^https?:\/\//i.test(url) ? url : `https://${url}`
 }
 
 function cleanUrl(url) {

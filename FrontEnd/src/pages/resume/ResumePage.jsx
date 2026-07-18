@@ -1,31 +1,43 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import { useNavigate, Link, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   Save, Download, Loader2, Plus, Trash2,
-  Sparkles, PenLine, Lightbulb, Lock,
+  PenLine, Lightbulb, Lock,
   Globe, Share2, Check, ExternalLink, FileText,
+  User, GraduationCap, Unlink,
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import Navbar from '../../components/navbars/Navbar'
+import LinkVerifyModal from '../../components/LinkVerifyModal'
 import { useAuth } from '../../context/AuthContext'
 import {
   listResumes, createResume, updateResume, deleteResume, setResumeShare,
 } from '../../api/api'
 import { getApiError } from '../../utils/apiError'
+import { getLinkVerificationResults, isLinkVerificationError } from '../../utils/linkVerification'
+import { normalizeHttpUrl } from '../../utils/normalizeHttpUrl'
 import ResumeDocument from './ResumeDocument'
 import { scoreResume } from './resumeScore'
 import AtsGuide from './AtsGuide'
 import { buildAndSaveResumePdf } from './resumePdf'
+import {
+  deleteResumeConfirmOptions,
+  removeLinkConfirmOptions,
+  turnOffShareConfirmOptions,
+} from '../../utils/confirmRemoveLink'
+import { useConfirm } from '../../context/ConfirmContext'
+import { useUnsavedChangesGuard } from '../../hooks/useUnsavedChangesGuard'
+import {
+  pickResumeOwn, mergeResumeWithProfile, isProfileResumeReady, profileEducation,
+} from './resumeProfile'
 import '../../styles/pages/resume.css'
 
 const EASE = [0.16, 1, 0.3, 1]
 const MAX_RESUMES = 3
 
 const EMPTY = {
-  fullName: '', email: '', mobile: '', linkedin: '', github: '', portfolio: '',
   objective: '',
-  education: [],
   skills: [],       // [{ category, value }]
   projects: [],     // [{ name, link, repo, points: [] }]
   internships: [],  // [{ role, company, duration, points: [] }]
@@ -40,7 +52,6 @@ const rePhone = /^[+]?\d[\d\s().-]{6,17}$/
 const reUrl = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i
 const vPhone = (v) => !v?.trim() ? '' : rePhone.test(v.trim()) ? '' : 'Enter a valid phone number.'
 const vUrl = (v) => !v?.trim() ? '' : reUrl.test(v.trim()) ? '' : 'Enter a valid link, e.g. github.com/you'
-const vRequired = (v) => v?.trim() ? '' : 'This field is required.'
 const vEmail = (v) => !v?.trim() ? 'Email is required.' : reEmail.test(v.trim()) ? '' : 'Enter a valid email address.'
 
 // Full-resume validation gate — every message here blocks the PDF download.
@@ -58,9 +69,29 @@ function collectResumeErrors(r) {
   return e
 }
 
+function collectProjectLinkErrors(projects) {
+  const e = []
+  ;(projects || []).forEach((p, i) => {
+    const msg = vUrl(p.link)
+    if (msg) e.push(`Project ${i + 1}: enter a valid link (e.g. github.com/you/repo or your-app.vercel.app)`)
+  })
+  return e
+}
+
+function normalizeResumePayload(data) {
+  const payload = pickResumeOwn(data)
+  payload.projects = (payload.projects || []).map(p => {
+    const link = (p.link || '').trim()
+    return { ...p, link: link ? normalizeHttpUrl(link) : '' }
+  })
+  return payload
+}
+
 export default function ResumePage() {
   const { user, loading: authLoading } = useAuth()
+  const confirm = useConfirm()
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   // Registered = logged in AND not a guest. Only these can save, share & download.
   const isRegistered = !!user && user.role !== 'GUEST'
 
@@ -73,8 +104,9 @@ export default function ResumePage() {
   const [saving, setSaving] = useState(false)
   const [downloading, setDownloading] = useState(false)
   const [sharing, setSharing] = useState(false)
-  const [showErrors, setShowErrors] = useState(false)
+  const [showProjectLinkErrors, setShowProjectLinkErrors] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [linkVerifyResults, setLinkVerifyResults] = useState(null)
 
   // Preview zoom-to-fit — the A4 sheet is fixed; we zoom it (crisp, not blurry)
   // to fill its stage so the whole page is visible on screen without scrolling.
@@ -83,19 +115,40 @@ export default function ResumePage() {
 
   // Baseline snapshot of the last saved/loaded state — used to detect unsaved edits.
   const baselineRef = useRef('')
+  const pendingSaveRef = useRef(null)
+  const leaveGuardRef = useRef({ notifyDeferredLeave: () => {}, completePendingLeave: () => {} })
+  const saveBeforeLeaveRef = useRef(async () => true)
   const current = resumes.find(r => r.id === currentId) || null
   const dirty = loaded && JSON.stringify({ title, resume }) !== baselineRef.current
   const shareUrl = current?.shareSlug ? `${window.location.origin}/r/${current.shareSlug}` : ''
+  const profileReady = useMemo(() => isProfileResumeReady(user), [user])
+  const mergedResume = useMemo(() => mergeResumeWithProfile(resume, user), [resume, user])
+  const profileEdu = useMemo(() => profileEducation(user), [user])
+
   // How complete the resume is (0–100) — shown next to the resume name.
-  const completeness = useMemo(() => scoreResume(resume).completeness, [resume])
+  const completeness = useMemo(() => scoreResume(mergedResume).completeness, [mergedResume])
+
+  const syncResumeIdInUrl = useCallback((id) => {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev)
+      if (id) {
+        if (next.get('id') === id) return prev
+        next.set('id', id)
+      } else {
+        if (!next.has('id')) return prev
+        next.delete('id')
+      }
+      return next
+    }, { replace: true })
+  }, [setSearchParams])
 
   // Load state into the editor and reset the dirty baseline.
   const loadInto = (id, ttl, data) => {
-    const clean = { ...EMPTY, ...data }
+    const clean = pickResumeOwn(data)
     setCurrentId(id)
     setTitle(ttl)
     setResume(clean)
-    setShowErrors(false)
+    setShowProjectLinkErrors(false)
     baselineRef.current = JSON.stringify({ title: ttl, resume: clean })
   }
 
@@ -104,7 +157,7 @@ export default function ResumePage() {
   useEffect(() => {
     if (authLoading) return
     if (!isRegistered) {
-      loadInto(null, 'My Resume', { fullName: '', email: '' })
+      loadInto(null, 'My Resume', {})
       setLoaded(true)
       return
     }
@@ -114,8 +167,13 @@ export default function ResumePage() {
         if (!active) return
         const list = Array.isArray(data) ? data : []
         setResumes(list)
-        if (list.length) loadInto(list[0].id, list[0].title, list[0].data || {})
-        else loadInto(null, 'My Resume', { fullName: user?.fullName || '', email: user?.email || '' })
+        const wantedId = searchParams.get('id')?.trim()
+        const picked = wantedId ? list.find(r => r.id === wantedId) : null
+        if (picked) {
+          loadInto(picked.id, picked.title, picked.data || {})
+          setTab('build')
+        } else if (list.length) loadInto(list[0].id, list[0].title, list[0].data || {})
+        else loadInto(null, 'My Resume', {})
       })
       .catch(() => { if (active) loadInto(null, 'My Resume', {}) })
       .finally(() => { if (active) setLoaded(true) })
@@ -148,62 +206,198 @@ export default function ResumePage() {
     navigate('/register?redirect=/resume')
   }
 
-  const confirmDiscard = () =>
-    !dirty || window.confirm('You have unsaved changes. Discard them?')
-
   // ── resume manager ──
-  const newResume = () => {
-    if (resumes.length >= MAX_RESUMES) {
-      toast.error(`You can keep up to ${MAX_RESUMES} resumes. Delete one to add another.`)
-      return
+  const applyResumeSaveSuccess = (createdOrUpdated, isNew) => {
+    if (isNew) {
+      setResumes(prev => [createdOrUpdated, ...prev])
+      setCurrentId(createdOrUpdated.id)
+      setTitle(createdOrUpdated.title)
+      baselineRef.current = JSON.stringify({ title: createdOrUpdated.title, resume })
+      syncResumeIdInUrl(createdOrUpdated.id)
+    } else {
+      setResumes(prev => prev.map(r => r.id === createdOrUpdated.id ? createdOrUpdated : r))
+      baselineRef.current = JSON.stringify({ title, resume })
     }
-    if (!confirmDiscard()) return
-    const blank = { fullName: user?.fullName || '', email: user?.email || '' }
-    loadInto(null, `Resume ${resumes.length + 1}`, blank)
+    setLinkVerifyResults(null)
+    setShowProjectLinkErrors(false)
   }
 
-  const switchTo = (r) => {
-    if (r.id === currentId) return
-    if (!confirmDiscard()) return
-    loadInto(r.id, r.title, r.data || {})
+  const executeResumeSave = async (skipLinkVerification = false) => {
+    const pending = pendingSaveRef.current
+    if (!pending) return
+    const { payload, resumeTitle, id } = pending
+    if (id == null) {
+      const { data: created } = await createResume(resumeTitle, payload, skipLinkVerification)
+      applyResumeSaveSuccess(created, true)
+    } else {
+      const { data: updated } = await updateResume(id, resumeTitle, payload, skipLinkVerification)
+      applyResumeSaveSuccess(updated, false)
+    }
+    toast.success('Resume saved to your account')
   }
 
   const onSave = async () => {
     if (!isRegistered) return requireAccount('save')
+    const linkErrors = collectProjectLinkErrors(resume.projects)
+    if (linkErrors.length) {
+      setShowProjectLinkErrors(true)
+      toast.error(linkErrors.length === 1 ? linkErrors[0] : `Fix ${linkErrors.length} project links before saving.`)
+      requestAnimationFrame(() => {
+        document.querySelector('.rz-input--error')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      })
+      return
+    }
+    setShowProjectLinkErrors(false)
+    pendingSaveRef.current = { payload: normalizeResumePayload(resume), resumeTitle: title, id: currentId }
     setSaving(true)
     try {
-      if (currentId == null) {
-        const { data: created } = await createResume(title, resume)
-        setResumes(prev => [created, ...prev])
-        setCurrentId(created.id)
-        setTitle(created.title)
-        baselineRef.current = JSON.stringify({ title: created.title, resume })
-      } else {
-        const { data: updated } = await updateResume(currentId, title, resume)
-        setResumes(prev => prev.map(r => r.id === updated.id ? updated : r))
-        baselineRef.current = JSON.stringify({ title, resume })
-      }
-      toast.success('Resume saved to your account')
+      await executeResumeSave(false)
     } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+        return
+      }
       toast.error(getApiError(e, 'Could not save your resume. Please try again.'))
     } finally {
       setSaving(false)
     }
   }
 
-  const onDelete = async () => {
-    if (currentId == null) {
-      if (!confirmDiscard()) return
-      loadInto(null, `Resume ${resumes.length + 1}`, { fullName: user?.fullName || '', email: user?.email || '' })
+  const handleLinkVerifyRetry = async () => {
+    setSaving(true)
+    try {
+      await executeResumeSave(false)
+      leaveGuardRef.current.completePendingLeave()
+      return true
+    } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+        return false
+      }
+      toast.error(getApiError(e, 'Could not save your resume. Please try again.'))
+      setLinkVerifyResults(null)
+      return undefined
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const handleLinkVerifyOverride = async () => {
+    setSaving(true)
+    try {
+      await executeResumeSave(true)
+      leaveGuardRef.current.completePendingLeave()
+    } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+        return
+      }
+      toast.error(getApiError(e, 'Could not save your resume. Please try again.'))
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const saveBeforeLeave = useCallback(async () => {
+    if (!isRegistered) {
+      requireAccount('save')
+      return false
+    }
+    const linkErrors = collectProjectLinkErrors(resume.projects)
+    if (linkErrors.length) {
+      setShowProjectLinkErrors(true)
+      toast.error(linkErrors.length === 1 ? linkErrors[0] : `Fix ${linkErrors.length} project links before saving.`)
+      requestAnimationFrame(() => {
+        document.querySelector('.rz-input--error')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      })
+      return false
+    }
+    setShowProjectLinkErrors(false)
+    pendingSaveRef.current = { payload: normalizeResumePayload(resume), resumeTitle: title, id: currentId }
+    setSaving(true)
+    try {
+      await executeResumeSave(false)
+      return true
+    } catch (e) {
+      if (isLinkVerificationError(e)) {
+        setLinkVerifyResults(getLinkVerificationResults(e))
+        leaveGuardRef.current.notifyDeferredLeave()
+        return false
+      }
+      toast.error(getApiError(e, 'Could not save your resume. Please try again.'))
+      return false
+    } finally {
+      setSaving(false)
+    }
+  }, [isRegistered, resume, title, currentId, navigate])
+
+  saveBeforeLeaveRef.current = saveBeforeLeave
+
+  const leaveGuard = useUnsavedChangesGuard(loaded && dirty, {
+    onSave: () => saveBeforeLeaveRef.current(),
+    saving,
+    contextLabel: 'resume edits',
+  })
+  leaveGuardRef.current = {
+    notifyDeferredLeave: leaveGuard.notifyDeferredLeave,
+    completePendingLeave: leaveGuard.completePendingLeave,
+  }
+  const { requestLeave, leaveModal } = leaveGuard
+
+  const openBuilder = () => {
+    requestLeave(() => {
+      setTab('build')
+      if (currentId) syncResumeIdInUrl(currentId)
+      else syncResumeIdInUrl(null)
+    })
+  }
+
+  const switchTab = (nextTab) => {
+    if (nextTab === tab) return
+    if (nextTab === 'build') {
+      openBuilder()
       return
     }
-    if (!window.confirm('Delete this resume permanently? Any share link will stop working.')) return
+    requestLeave(() => setTab('guide'))
+  }
+
+  const newResume = () => {
+    if (resumes.length >= MAX_RESUMES) {
+      toast.error(`You can keep up to ${MAX_RESUMES} resumes. Delete one to add another.`)
+      return
+    }
+    requestLeave(() => {
+      const blank = pickResumeOwn({})
+      loadInto(null, `Resume ${resumes.length + 1}`, blank)
+      syncResumeIdInUrl(null)
+    })
+  }
+
+  const switchTo = (r) => {
+    if (r.id === currentId) return
+    requestLeave(() => {
+      loadInto(r.id, r.title, r.data || {})
+      syncResumeIdInUrl(r.id)
+    })
+  }
+
+  const onDelete = async () => {
+    if (currentId == null) {
+      requestLeave(() => loadInto(null, `Resume ${resumes.length + 1}`, {}))
+      return
+    }
+    if (!(await confirm(deleteResumeConfirmOptions()))) return
     try {
       await deleteResume(currentId)
       const rest = resumes.filter(r => r.id !== currentId)
       setResumes(rest)
-      if (rest.length) loadInto(rest[0].id, rest[0].title, rest[0].data || {})
-      else loadInto(null, 'My Resume', { fullName: user?.fullName || '', email: user?.email || '' })
+      if (rest.length) {
+        loadInto(rest[0].id, rest[0].title, rest[0].data || {})
+        syncResumeIdInUrl(rest[0].id)
+      } else {
+        loadInto(null, 'My Resume', {})
+        syncResumeIdInUrl(null)
+      }
       toast.success('Resume deleted')
     } catch (e) {
       toast.error(getApiError(e, 'Could not delete this resume.'))
@@ -214,9 +408,14 @@ export default function ResumePage() {
     if (!isRegistered) return requireAccount('share')
     if (currentId == null) { toast.error('Save this resume first, then share it.'); return }
     if (dirty) { toast.error('Save your changes before updating the share link.'); return }
+
+    const enable = !current?.isPublic
+    if (!enable) {
+      if (!(await confirm(turnOffShareConfirmOptions({ featured: current?.featured })))) return
+    }
+
     setSharing(true)
     try {
-      const enable = !current?.isPublic
       const { data: updated } = await setResumeShare(currentId, enable)
       setResumes(prev => prev.map(r => r.id === updated.id ? { ...updated, featured: enable ? r.featured : false } : r))
       if (enable) {
@@ -255,19 +454,25 @@ export default function ResumePage() {
   const addEntry = (key, empty) => setResume(r => ({ ...r, [key]: [...(r[key] || []), empty] }))
   const updEntry = (key, idx, patch) => setResume(r => ({ ...r, [key]: r[key].map((e, i) => i === idx ? { ...e, ...patch } : e) }))
   const delEntry = (key, idx) => setResume(r => ({ ...r, [key]: r[key].filter((_, i) => i !== idx) }))
+  const removeProjectLink = async (idx) => {
+    if (!(await confirm(removeLinkConfirmOptions('this project link', 'Save the resume to apply the change.')))) return
+    updEntry('projects', idx, { link: '' })
+  }
   const addStr = (key) => setResume(r => ({ ...r, [key]: [...(r[key] || []), ''] }))
   const updStr = (key, idx, val) => setResume(r => ({ ...r, [key]: r[key].map((s, i) => i === idx ? val : s) }))
 
   // Education is a single entry (highest / current degree) stored as a one-item array.
-  const edu = resume.education?.[0] || {}
-  const setEdu = (patch) => setResume(r => ({ ...r, education: [{ ...(r.education?.[0] || {}), ...patch }] }))
-
   const downloadPdf = async () => {
     if (downloading) return
     if (!isRegistered) return requireAccount('download')
-    const errors = collectResumeErrors(resume)
+    if (!profileReady) {
+      setTab('build')
+      toast.error('Complete My Profile before downloading your resume.')
+      return
+    }
+    const errors = collectResumeErrors(mergedResume)
     if (errors.length) {
-      setShowErrors(true)
+      setShowProjectLinkErrors(true)
       setTab('build')
       toast.error(errors.length === 1
         ? errors[0]
@@ -279,7 +484,7 @@ export default function ResumePage() {
     }
     setDownloading(true)
     try {
-      await buildAndSaveResumePdf(resume)
+      await buildAndSaveResumePdf(mergedResume)
       toast.success('Resume downloaded — links are clickable')
     } catch {
       toast.error('Could not generate the PDF. Please try again.')
@@ -301,10 +506,10 @@ export default function ResumePage() {
           transition={{ duration: 0.5, ease: EASE }}
         >
           <div className="rz-tabs" role="tablist">
-            <button role="tab" aria-selected={tab === 'guide'} className={`rz-tab${tab === 'guide' ? ' is-active' : ''}`} onClick={() => setTab('guide')}>
+            <button role="tab" aria-selected={tab === 'guide'} className={`rz-tab${tab === 'guide' ? ' is-active' : ''}`} onClick={() => switchTab('guide')}>
               <Lightbulb size={15} /> ATS Guide
             </button>
-            <button role="tab" aria-selected={tab === 'build'} className={`rz-tab${tab === 'build' ? ' is-active' : ''}`} onClick={() => setTab('build')}>
+            <button role="tab" aria-selected={tab === 'build'} className={`rz-tab${tab === 'build' ? ' is-active' : ''}`} onClick={() => switchTab('build')}>
               <PenLine size={15} /> Builder
             </button>
           </div>
@@ -407,16 +612,41 @@ export default function ResumePage() {
                   </section>
                 )}
 
-                {/* Personal details — name, contact, links */}
-                <fieldset className="rz-card">
-                  <legend className="rz-card__legend"><Sparkles size={15} /> Personal Details</legend>
+                {/* Personal information (incl. education) — read-only from My Profile */}
+                <fieldset className="rz-card rz-card--profile">
+                  <legend className="rz-card__legend rz-card__legend--split">
+                    <span><User size={15} /> Personal information</span>
+                    <Link to="/myprofile" className="rz-profile-edit">Edit in My Profile</Link>
+                  </legend>
+                  <p className="rz-profile-note">Filled automatically from your profile. Update them on My Profile.</p>
                   <div className="rz-grid-2">
-                    <TextField label="Full name" value={resume.fullName} onChange={v => set('fullName', v)} placeholder="your name" validate={vRequired} forceShow={showErrors} />
-                    <TextField label="Email" type="email" value={resume.email} onChange={v => set('email', v)} placeholder="you@email.com" validate={vEmail} forceShow={showErrors} />
-                    <TextField label="Mobile" value={resume.mobile} onChange={v => set('mobile', v)} placeholder="9876543210" validate={vPhone} forceShow={showErrors} />
-                    <TextField label="LinkedIn" value={resume.linkedin} onChange={v => set('linkedin', v)} placeholder="linkedin.com/in/you" validate={vUrl} forceShow={showErrors} />
-                    <TextField label="GitHub" value={resume.github} onChange={v => set('github', v)} placeholder="github.com/you" validate={vUrl} forceShow={showErrors} />
-                    <TextField label="Portfolio" value={resume.portfolio} onChange={v => set('portfolio', v)} placeholder="your-portfolio.dev" validate={vUrl} forceShow={showErrors} />
+                    <ReadonlyField label="Full name" value={mergedResume.fullName} />
+                    <ReadonlyField label="Email" value={mergedResume.email} />
+                    <ReadonlyField label="Mobile" value={mergedResume.mobile} />
+                  </div>
+
+                  <div className="rz-subsection">
+                    <h3 className="rz-subsection__title"><GraduationCap size={16} /> Education</h3>
+                    <p className="rz-subsection__sub">Your highest or current qualification.</p>
+                  </div>
+                  <div className="rz-grid-2">
+                    <ReadonlyField label="Degree" value={profileEdu.degree} />
+                    <ReadonlyField label="Branch / Specialization" value={profileEdu.branch} />
+                    <ReadonlyField label="Years (start – graduation)" value={profileEdu.years} />
+                    <ReadonlyField label="College / University" value={profileEdu.college} />
+                    <ReadonlyField label="CGPA / %" value={profileEdu.cgpa} />
+                  </div>
+                </fieldset>
+
+                <fieldset className="rz-card rz-card--profile">
+                  <legend className="rz-card__legend rz-card__legend--split">
+                    <span><Globe size={15} /> Social links</span>
+                    <Link to="/myprofile#social-links" className="rz-profile-edit">Edit in My Profile</Link>
+                  </legend>
+                  <div className="rz-grid-2">
+                    <ReadonlyField label="LinkedIn" value={mergedResume.linkedin} />
+                    <ReadonlyField label="GitHub" value={mergedResume.github} />
+                    <ReadonlyField label="Portfolio" value={mergedResume.portfolio} />
                   </div>
                 </fieldset>
 
@@ -429,18 +659,6 @@ export default function ResumePage() {
                     placeholder="e.g. I am an aspiring Python Full Stack Developer eager to build scalable web applications using Django and React. I enjoy creating clean, responsive interfaces backed by solid server-side logic. As a fresher, I am looking to join a collaborative team where I can work on real projects, grow my skills, and contribute meaningfully from day one."
                     rows={4}
                   />
-                </fieldset>
-
-                {/* Education (single — highest / current degree) */}
-                <fieldset className="rz-card">
-                  <legend className="rz-card__legend">Education</legend>
-                  <div className="rz-grid-2">
-                    <TextField label="Degree" value={edu.degree} onChange={v => setEdu({ degree: v })} placeholder="Bachelor of Technology" />
-                    <TextField label="Branch / Specialization" value={edu.branch} onChange={v => setEdu({ branch: v })} placeholder="Computer Science and Engineering" />
-                    <TextField label="Years (start – graduation)" value={edu.years} onChange={v => setEdu({ years: v })} placeholder="2021 - 2025" />
-                    <TextField label="College" value={edu.college} onChange={v => setEdu({ college: v })} placeholder="Bapatla Engineering College" />
-                    <TextField label="CGPA / %" value={edu.cgpa} onChange={v => setEdu({ cgpa: v })} placeholder="8.2/10" />
-                  </div>
                 </fieldset>
 
                 {/* Technical Skills — compact key/value rows with a side delete */}
@@ -464,7 +682,18 @@ export default function ResumePage() {
                     <>
                       <div className="rz-grid-2">
                         <TextField label="Project name" value={p.name} onChange={v => updEntry('projects', i, { name: v })} placeholder="College Management Portal" />
-                        <TextField label="Live link or GitHub repo" value={p.link} onChange={v => updEntry('projects', i, { link: v })} placeholder="college-portal.vercel.app or github.com/you/repo" validate={vUrl} forceShow={showErrors} />
+                        <div className="rz-link-field">
+                          <TextField label="Live link or GitHub repo" value={p.link} onChange={v => updEntry('projects', i, { link: v })} placeholder="college-portal.vercel.app or github.com/you/repo" validate={vUrl} validateOnBlur={false} forceShow={showProjectLinkErrors} />
+                          {p.link?.trim() && (
+                            <button
+                              type="button"
+                              className="rz-link-remove"
+                              onClick={() => removeProjectLink(i)}
+                            >
+                              <Unlink size={13} aria-hidden="true" /> Remove link
+                            </button>
+                          )}
+                        </div>
                       </div>
                       <TextArea
                         label="Highlights (one per line)"
@@ -591,7 +820,7 @@ export default function ResumePage() {
 
                   <div className="rz-preview__viewport" ref={stageRef}>
                     <div className="rz-preview__paper" style={{ zoom: scale }}>
-                      <ResumeDocument resume={resume} />
+                      <ResumeDocument resume={mergedResume} />
                     </div>
                   </div>
                 </div>
@@ -600,14 +829,36 @@ export default function ResumePage() {
           </>
         )}
       </main>
+
+      <LinkVerifyModal
+        open={!!linkVerifyResults?.length}
+        results={linkVerifyResults || []}
+        busy={saving}
+        context="resume"
+        onClose={() => setLinkVerifyResults(null)}
+        onRetry={handleLinkVerifyRetry}
+        onSaveUnverified={handleLinkVerifyOverride}
+      />
+      {leaveModal}
     </div>
   )
 }
 
 /* ── Field primitives ── */
-function TextField({ label, value, onChange, placeholder, validate, type = 'text', forceShow = false }) {
+function ReadonlyField({ label, value, empty = '—' }) {
+  const display = value?.trim() ? value : empty
+  const isMissing = !value?.trim()
+  return (
+    <div className="rz-field rz-field--readonly">
+      <span className="rz-field__label">{label}</span>
+      <div className={`rz-readonly${isMissing ? ' is-empty' : ''}`}>{display}</div>
+    </div>
+  )
+}
+
+function TextField({ label, value, onChange, placeholder, validate, type = 'text', forceShow = false, validateOnBlur = true }) {
   const [touched, setTouched] = useState(false)
-  const err = (touched || forceShow) && validate ? validate(value) : ''
+  const err = ((validateOnBlur && touched) || forceShow) && validate ? validate(value) : ''
   return (
     <label className="rz-field">
       {label && <span className="rz-field__label">{label}</span>}
@@ -616,7 +867,7 @@ function TextField({ label, value, onChange, placeholder, validate, type = 'text
         type={type}
         value={value || ''}
         onChange={e => onChange(e.target.value)}
-        onBlur={() => setTouched(true)}
+        onBlur={() => { if (validateOnBlur) setTouched(true) }}
         placeholder={placeholder}
       />
       {err && <span className="rz-field__error">{err}</span>}

@@ -3,6 +3,7 @@ package com.example.student.config;
 import com.example.student.model.Bookmark;
 import com.example.student.model.Concept;
 import com.example.student.model.Feedback;
+import com.example.student.model.MissionSubmission;
 import com.example.student.model.QuizAttempt;
 import com.example.student.model.Report;
 import com.example.student.model.Resume;
@@ -230,6 +231,10 @@ public class DataIntegrityMigration implements CommandLineRunner {
         ensureUniqueSparse(User.class, new Document("googleId", 1),
                 List.of("googleId"), "users{googleId}");
 
+        // One GitHub account maps to one user; sparse so non-GitHub users don't collide on null.
+        ensureUniqueSparse(User.class, new Document("githubId", 1),
+                List.of("githubId"), "users{githubId}");
+
         // One bookmark per (user, type, ref) — prevents duplicates.
         ensureUnique(Bookmark.class,
                 new Document("userId", 1).append("type", 1).append("refId", 1),
@@ -270,6 +275,10 @@ public class DataIntegrityMigration implements CommandLineRunner {
         // Public shareable resume slug; sparse so unshared resumes (no slug) don't collide on null.
         ensureUniqueSparse(Resume.class, new Document("shareSlug", 1),
                 List.of("shareSlug"), "resumes{shareSlug}");
+
+        // One GitHub repo can only be linked to one mission submission globally.
+        ensureUniqueSparse(MissionSubmission.class, new Document("repoKey", 1),
+                List.of("repoKey"), "mission_submissions{repoKey}");
     }
 
     private boolean indexExistsForKeys(Class<?> type, List<String> keys) {

@@ -8,6 +8,7 @@ import AdminFilterStatCards from '../../components/admin/AdminFilterStatCards'
 import { getAdminReports, updateReport, deleteReport, getReportStats } from '../../api/api'
 import { REPORT_TYPE_LABELS } from '../../constants/reportTypes'
 import toast from 'react-hot-toast'
+import AdminDeleteModal from '../../components/admin/AdminDeleteModal'
 import { getApiError } from '../../utils/apiError'
 
 const STATUS_META = {
@@ -52,6 +53,8 @@ export default function AdminReports() {
   const [editing, setEditing]   = useState({})   // { [id]: { note, status } }
   const [saving, setSaving]     = useState({})
   const [statusFilter, setStatusFilter] = useState('')  // '' | 'OPEN' | 'IN_PROGRESS' | 'RESOLVED'
+  const [deleteTarget, setDeleteTarget] = useState(null)
+  const [deleting, setDeleting] = useState(false)
 
   const load = async (p = 0, sf = statusFilter) => {
     setLoading(true)
@@ -85,13 +88,16 @@ export default function AdminReports() {
     finally { setSaving(p => ({ ...p, [id]: false })) }
   }
 
-  const handleDelete = async (id) => {
-    if (!window.confirm('Delete this report?')) return
+  const confirmDelete = async () => {
+    if (!deleteTarget) return
+    setDeleting(true)
     try {
-      await deleteReport(id)
+      await deleteReport(deleteTarget.id)
       toast.success('Deleted')
+      setDeleteTarget(null)
       load(page)
     } catch (err) { toast.error(getApiError(err, 'We could not delete this report. Please try again.')) }
+    finally { setDeleting(false) }
   }
 
   const setEdit = (id, field, val) =>
@@ -217,7 +223,10 @@ export default function AdminReports() {
                           </button>
                           <button
                             className="btn btn-danger btn-sm"
-                            onClick={() => handleDelete(r.id)}
+                            onClick={() => setDeleteTarget({
+                              id: r.id,
+                              label: `${TYPE_LABEL[r.type] || r.type} — ${r.pageTitle || r.pageUrl || 'Report'}`,
+                            })}
                           >
                             <Trash2 size={13} />
                           </button>
@@ -247,6 +256,16 @@ export default function AdminReports() {
           <button className="btn btn-ghost btn-sm" disabled={page === totalPages - 1} onClick={() => load(page + 1)}>Next →</button>
         </div>
       )}
+
+      <AdminDeleteModal
+        open={!!deleteTarget}
+        title="Delete this report?"
+        subtitle="This report and its notes will be permanently removed."
+        items={deleteTarget ? [deleteTarget] : []}
+        deleting={deleting}
+        onConfirm={confirmDelete}
+        onClose={() => !deleting && setDeleteTarget(null)}
+      />
     </AppLayout>
   )
 }

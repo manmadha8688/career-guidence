@@ -41,11 +41,15 @@ public class User implements UserDetails {
 
     // Optional public contact email shown on the shareable profile (recruiter contact).
     // Deliberately SEPARATE from the private login `email` above, which is never exposed
-    // publicly. Opt-in: empty/null means it is hidden from the public profile.
+    // publicly unless the user opts in via {@link #useLoginEmailForContact}.
     private String publicEmail;
+
+    /** When true, login email is used as the resume / public-profile contact (explicit opt-in). */
+    private Boolean useLoginEmailForContact;
 
     // Personal profile details (settings page). All optional.
     private String location;
+    private String mobile;       // contact phone for resume / public contact
     private Education education;
 
     // The single resume the student chose to feature on their public profile.
@@ -69,6 +73,15 @@ public class User implements UserDetails {
     // ever serialized directly instead of via a DTO/map).
     @JsonIgnore
     private String googleId;
+
+    // Stable GitHub account id (numeric string from GitHub API). Sparse-unique index in
+    // DataIntegrityMigration. NULL until the user connects GitHub on My Profile.
+    // @JsonIgnore: never expose in any response.
+    @JsonIgnore
+    private String githubId;
+
+    // GitHub handle (login) — safe to expose as @username on My Profile / public profile.
+    private String githubLogin;
 
     // Secret device token for GUEST session persistence. A server-generated random UUID
     // (not the guessable Mongo _id) that the guest's browser stores and presents to reuse

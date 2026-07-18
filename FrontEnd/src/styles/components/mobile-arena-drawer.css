@@ -1,0 +1,143 @@
+/* Skill Arena mobile menu only — not used by global Navbar */
+@media (max-width: 768px) {
+  html.sl-drawer-open .sl-dash-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 110;
+    transform: none !important;
+  }
+
+  html.sl-drawer-open .mnav-backdrop--v2 {
+    z-index: 108;
+  }
+
+  html.sl-drawer-open .mnav-drawer--v2 {
+    z-index: 109;
+  }
+
+  .mnav-backdrop--v2 {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: color-mix(in srgb, var(--bg-primary) 35%, rgba(0, 0, 0, 0.72));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .mnav-drawer--v2 {
+    position: fixed;
+    top: calc(56px + 10px);
+    left: 12px;
+    right: auto;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+    bottom: auto;
+    max-height: calc(100dvh - 56px - 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+      radial-gradient(90% 60% at 50% -10%, color-mix(in srgb, #9B6ED4 10%, transparent), transparent 58%),
+      color-mix(in srgb, var(--bg-card) 97%, transparent);
+    border: none;
+    box-shadow:
+      0 24px 56px -18px rgba(0, 0, 0, 0.62),
+      0 0 0 1px color-mix(in srgb, var(--text-primary) 6%, transparent);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+
+  .mnav-drawer--v2 .mnav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 0.65rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    width: max-content;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mnav-drawer--v2 .mnav-list li {
+    list-style: none;
+  }
+
+  .mnav-drawer--v2 .mnav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    min-height: 46px;
+    padding: 0.5rem 0.45rem 0.5rem 0.3rem;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.18s ease;
+  }
+
+  .mnav-drawer--v2 .mnav-item.is-active {
+    background: color-mix(in srgb, var(--accent, #9B6ED4) 10%, transparent);
+  }
+
+  .mnav-drawer--v2 .mnav-item:active {
+    background: color-mix(in srgb, var(--text-primary) 6%, transparent);
+  }
+
+  .mnav-drawer--v2 .mnav-item.is-active:active {
+    background: color-mix(in srgb, var(--accent, #9B6ED4) 14%, transparent);
+  }
+
+  .mnav-drawer--v2 .mnav-item__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .mnav-drawer--v2 .mnav-item__label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.15;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .mnav-drawer--v2 .mnav-item:focus-visible {
+    outline: 2px solid var(--accent, #9B6ED4);
+    outline-offset: 2px;
+  }
+
+  html.sl-drawer-open .dash-mob-menu-btn.is-open {
+    background: color-mix(in srgb, #9B6ED4 10%, transparent);
+    border-color: color-mix(in srgb, #9B6ED4 45%, var(--border));
+    color: #B48AE8;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 640px) {
+  .mnav-drawer--v2 .mnav-list {
+    padding: 0.65rem 0.55rem 0.7rem;
+    gap: 0.1rem;
+  }
+
+  .mnav-drawer--v2 .mnav-item {
+    min-height: 42px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
