@@ -1,9 +1,35 @@
 /** Option presets for useConfirm() — replaces native window.confirm. */
 
-export function removeLinkConfirmOptions(label, hint = 'You can add it again anytime.') {
+// A profile link (LinkedIn / portfolio). Removing it never affects XP already earned.
+export function removeProfileLinkConfirmOptions(name) {
   return {
-    title: 'Remove link?',
-    message: `Remove ${label}? ${hint}`,
+    title: `Remove ${name}?`,
+    message: `This hides it from your public profile. Any XP you already earned for it stays. You can add it again anytime.`,
+    confirmLabel: 'Remove',
+    tone: 'danger',
+  }
+}
+
+// A mission link (GitHub repo / live demo). Removing it REVERSES the XP it earned, so
+// tell the hunter the exact amount when we know it.
+export function removeMissionLinkConfirmOptions(kind, xp = 0) {
+  const isRepo = kind === 'repository'
+  const label = isRepo ? 'repository link' : 'live demo link'
+  const noun = isRepo ? 'GitHub repo' : 'live demo'
+  const xpNote = xp > 0 ? ` and takes back the ${xp} XP you earned for it` : ''
+  return {
+    title: `Remove ${label}?`,
+    message: `This removes your ${noun} from this mission${xpNote}. You can add it again anytime.`,
+    confirmLabel: 'Remove',
+    tone: 'danger',
+  }
+}
+
+// A link inside a resume project entry.
+export function removeResumeProjectLinkConfirmOptions() {
+  return {
+    title: 'Remove project link?',
+    message: 'This removes the link from this project. Save the resume to apply the change.',
     confirmLabel: 'Remove',
     tone: 'danger',
   }
@@ -13,7 +39,7 @@ export function disconnectGitHubConfirmOptions() {
   return {
     title: 'Disconnect GitHub?',
     message:
-      'Disconnect GitHub from your account? Your verified profile link will be removed. You can connect again anytime.',
+      'This removes the verified GitHub badge from your profile. Your earned XP stays, and you can reconnect anytime.',
     confirmLabel: 'Disconnect',
     tone: 'danger',
   }
@@ -22,7 +48,8 @@ export function disconnectGitHubConfirmOptions() {
 export function deleteResumeConfirmOptions() {
   return {
     title: 'Delete resume?',
-    message: 'Delete this resume permanently? Any share link will stop working.',
+    message:
+      "This permanently deletes this resume and stops its share link. If it's shown on your public profile, it'll be removed there too. This can't be undone.",
     confirmLabel: 'Delete',
     tone: 'danger',
   }
@@ -34,7 +61,7 @@ export function turnOffShareConfirmOptions({ featured = false } = {}) {
     : ''
   return {
     title: 'Turn off sharing?',
-    message: `Turn off sharing? Your public link will stop working.${profileNote}`,
+    message: `Your public resume link will stop working.${profileNote} You can turn sharing back on anytime.`,
     confirmLabel: 'Turn off',
     tone: 'danger',
   }

@@ -14,6 +14,7 @@ export function ConfirmProvider({ children }) {
     })
   }, [])
 
+  // Back button / back-gesture support is handled inside ConfirmModal via useModalA11y.
   const close = useCallback((result) => {
     resolveRef.current?.(result)
     resolveRef.current = null

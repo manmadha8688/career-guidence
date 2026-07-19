@@ -407,3 +407,82 @@
 }
 
 .dash-hunter-logout-btn:hover { background: rgba(239, 68, 68, 0.16); }
+
+/* ── How to accomplish missions ─────────────────────────────────────────── */
+.dash-hunter-mission {
+  padding: 0.875rem;
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  border-radius: 10px;
+}
+
+.dash-hunter-mission__intro {
+  font-size: 0.775rem;
+  color: #8B9AB8;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Reuse badge-step layout; scope the number color to the mission accent. */
+.dash-hunter-mission__reqs {
+  --badge-color: #F59E0B;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.875rem;
+}
+
+.dash-hunter-mission__xp {
+  padding: 0.625rem 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.dash-hunter-mission__xp-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: #64748B;
+  margin-bottom: 0.5rem;
+}
+
+.dash-hunter-mission__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dash-hunter-mission__row--head {
+  border-top: none;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.09em;
+  color: #64748B;
+}
+
+.dash-hunter-mission__rank {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 0.68rem;
+  color: var(--rank-color, #E2E8F0);
+}
+
+.dash-hunter-mission__val {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #8B9AB8;
+}
+
+.dash-hunter-mission__val--demo { color: #E2E8F0; }
+
+.dash-hunter-mission__note {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: #64748B;
+}

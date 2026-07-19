@@ -5,6 +5,7 @@ import { Search, X, CornerDownLeft, SearchX } from 'lucide-react'
 import { globalSearch } from '../api/api'
 import { useAuth } from '../context/AuthContext'
 import useBodyLock from '../hooks/useBodyLock'
+import useBackClose from '../hooks/useBackClose'
 
 const MIN_LEN = 2
 
@@ -67,6 +68,7 @@ export default function GlobalSearchOverlay() {
   // Stop the page behind the search overlay from scrolling on mobile.
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches
   useBodyLock(open && isMobile)
+  useBackClose(open, close)
 
   // Debounced instant search on every keystroke
   useEffect(() => {

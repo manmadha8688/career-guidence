@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { TEST_DELAY_MS } from '../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Search, X, SlidersHorizontal, ChevronDown } from 'lucide-react'
+import { Search, X, SlidersHorizontal, ChevronDown, Check, Github, Globe, ExternalLink, Plus } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SmokeBladeLoader from '../components/loaders/SmokeBladeLoader'
 import Navbar from '../components/navbars/Navbar'
 import { useAuth } from '../context/AuthContext'
-import { getMissions } from '../api/api'
+import { getMissions, getMissionSubmissions } from '../api/api'
+import { isGuest } from '../utils/auth'
 import toast from 'react-hot-toast'
 import { getApiError } from '../utils/apiError'
+import { safeExternalUrl } from '../utils/safeExternalUrl'
 import blurOnEnter from '../utils/blurOnEnter'
 import '../styles/pages/shared/missions.css'
 import '../styles/pages/shared/missions-board.css'
@@ -62,6 +64,7 @@ export default function MissionsPage() {
   const [filter, setFilter]       = useState('')
   const [category, setCategory]   = useState('')
   const [subFilter, setSubFilter] = useState('')
+  const [submissions, setSubmissions] = useState({})
   const { user }                  = useAuth()
   const navigate                  = useNavigate()
   const [searchParams]            = useSearchParams()
@@ -83,6 +86,21 @@ export default function MissionsPage() {
       .catch(err => toast.error(getApiError(err, 'We could not load missions. Please refresh.')))
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }, [])
+
+  // The signed-in hunter's per-mission submission status (repo / live demo), for card badges.
+  useEffect(() => {
+    if (isGuest(user)) { setSubmissions({}); return undefined }
+    let alive = true
+    getMissionSubmissions()
+      .then(r => {
+        if (!alive) return
+        const map = {}
+        for (const s of (r.data || [])) map[s.missionId] = s
+        setSubmissions(map)
+      })
+      .catch(() => {})
+    return () => { alive = false }
+  }, [user])
 
   const subjectOptions = [...new Set(
     missions.filter(m => m.category === 'SUBJECT_PRACTICE').flatMap(m => m.subjectTitles || [])
@@ -126,6 +144,9 @@ export default function MissionsPage() {
     }
     navigate(`/missions/${id}`)
   }
+
+  // Deep-link into the mission's submit section, focused on the missing link's field.
+  const handleAddLink = (id, target) => navigate(`/missions/${id}?add=${target}`)
 
   return (
     <div className="missions-page">
@@ -272,7 +293,9 @@ export default function MissionsPage() {
                 key={mission.id}
                 mission={mission}
                 index={i}
+                status={submissions[mission.id]}
                 onClick={() => handleCardClick(mission.id)}
+                onAdd={(target) => handleAddLink(mission.id, target)}
               />
             ))}
           </div>
@@ -288,22 +311,34 @@ export default function MissionsPage() {
   )
 }
 
-function MissionDossier({ mission, index, onClick }) {
+function MissionDossier({ mission, index, status, onClick, onAdd }) {
   const m = RANK_META[mission.rank] || RANK_META['D']
   const objectives = mission.objectives?.length || 0
 
+  const repoHref = status?.repoUrl ? safeExternalUrl(status.repoUrl) : ''
+  const deployHref = status?.deployUrl ? safeExternalUrl(status.deployUrl) : ''
+  const hasRepo = !!repoHref
+  const hasDeploy = !!deployHref
+  const accomplished = hasRepo || hasDeploy
+
+  const stop = (e) => e.stopPropagation()
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick() }
+  }
+
   return (
-    <motion.button
-      type="button"
-      className="mb-card"
+    <motion.div
+      role="button"
+      tabIndex={0}
+      className={`mb-card${accomplished ? ' mb-card--done' : ''}`}
       onClick={onClick}
+      onKeyDown={handleKeyDown}
       style={{ '--rank-color': m.color, '--rank-bg': m.bg }}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.07, ease: EASE }}
       whileHover={{ y: -6 }}
-      whileTap={{ scale: 0.98 }}
     >
       <span className="mb-card__shine" aria-hidden="true" />
 
@@ -313,6 +348,9 @@ function MissionDossier({ mission, index, onClick }) {
           <span className="mb-card__rank-label">{m.label}</span>
           <span className="mb-card__hours">⏱ {mission.estimatedHours}h build</span>
         </span>
+        {accomplished && (
+          <span className="mb-card__done-badge"><Check size={12} /> ACCOMPLISHED</span>
+        )}
       </div>
 
       <h3 className="mb-card__title">{mission.title}</h3>
@@ -329,12 +367,47 @@ function MissionDossier({ mission, index, onClick }) {
         })}
       </div>
 
-      <div className="mb-card__foot">
-        <span className="mb-card__objectives">
-          {objectives > 0 ? `◇ ${objectives} objectives` : '◇ full brief inside'}
-        </span>
-        <span className="mb-card__accept">ACCEPT MISSION →</span>
-      </div>
-    </motion.button>
+      {accomplished ? (
+        <div className="mb-card__submitted">
+          {hasRepo ? (
+            <a
+              className="mb-card__link"
+              href={repoHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={stop}
+            >
+              <Github size={13} /> Repository <ExternalLink size={11} className="mb-card__link-ext" />
+            </a>
+          ) : (
+            <button type="button" className="mb-card__add" onClick={(e) => { stop(e); onAdd?.('repo') }}>
+              <Plus size={13} /> Add repo
+            </button>
+          )}
+          {hasDeploy ? (
+            <a
+              className="mb-card__link mb-card__link--live"
+              href={deployHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={stop}
+            >
+              <Globe size={13} /> Live demo <ExternalLink size={11} className="mb-card__link-ext" />
+            </a>
+          ) : (
+            <button type="button" className="mb-card__add" onClick={(e) => { stop(e); onAdd?.('deploy') }}>
+              <Plus size={13} /> Add demo
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="mb-card__foot">
+          <span className="mb-card__objectives">
+            {objectives > 0 ? `◇ ${objectives} objectives` : '◇ full brief inside'}
+          </span>
+          <span className="mb-card__accept">ACCEPT MISSION →</span>
+        </div>
+      )}
+    </motion.div>
   )
 }

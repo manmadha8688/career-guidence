@@ -23,10 +23,11 @@ import AtsGuide from './AtsGuide'
 import { buildAndSaveResumePdf } from './resumePdf'
 import {
   deleteResumeConfirmOptions,
-  removeLinkConfirmOptions,
+  removeResumeProjectLinkConfirmOptions,
   turnOffShareConfirmOptions,
 } from '../../utils/confirmRemoveLink'
 import { useConfirm } from '../../context/ConfirmContext'
+import { isRegistered as isRegisteredUser } from '../../utils/auth'
 import { useUnsavedChangesGuard } from '../../hooks/useUnsavedChangesGuard'
 import {
   pickResumeOwn, mergeResumeWithProfile, profileEducation,
@@ -87,7 +88,7 @@ export default function ResumePage() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
   // Registered = logged in AND not a guest. Only these can save, share & download.
-  const isRegistered = !!user && user.role !== 'GUEST'
+  const isRegistered = isRegisteredUser(user)
 
   const [tab, setTab] = useState('guide')
   const [resumes, setResumes] = useState([])   // saved resumes (owner view maps)
@@ -471,7 +472,7 @@ export default function ResumePage() {
   const updEntry = (key, idx, patch) => setResume(r => ({ ...r, [key]: r[key].map((e, i) => i === idx ? { ...e, ...patch } : e) }))
   const delEntry = (key, idx) => setResume(r => ({ ...r, [key]: r[key].filter((_, i) => i !== idx) }))
   const removeProjectLink = async (idx) => {
-    if (!(await confirm(removeLinkConfirmOptions('this project link', 'Save the resume to apply the change.')))) return
+    if (!(await confirm(removeResumeProjectLinkConfirmOptions()))) return
     updEntry('projects', idx, { link: '' })
   }
   const addStr = (key) => setResume(r => ({ ...r, [key]: [...(r[key] || []), ''] }))

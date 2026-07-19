@@ -79,12 +79,15 @@
     border-radius: var(--radius-xl);
   }
 
+  /* Buttons side by side on mobile (not stacked) */
   .confirm-modal__actions {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   .confirm-modal__actions .btn {
-    width: 100%;
-    flex: none;
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
   }
 }

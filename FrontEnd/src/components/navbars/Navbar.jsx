@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import {
   Swords, Ghost, Menu, X as XIcon, Sun, Moon, ChevronRight, Search,
-  Code2, Brain, FileText, Briefcase, Zap, Rocket,
+  Code2, Brain, FileText, Briefcase, Zap, Rocket, UserPlus,
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
@@ -13,7 +13,10 @@ import toast from 'react-hot-toast'
 import { NAV_LINKS } from '../../pages/landing/landingData'
 import { LandingProfileDropdown } from '../../pages/landing/components/LandingProfileMenu'
 import { openGlobalSearch } from '../GlobalSearchOverlay'
+import { isGuest } from '../../utils/auth'
+import RegisterCTA from '../RegisterCTA'
 import useBodyLock from '../../hooks/useBodyLock'
+import useBackClose from '../../hooks/useBackClose'
 import '../../styles/components/mobile-navbar-drawer.css'
 
 const MOBILE_NAV_META = {
@@ -62,6 +65,7 @@ export default function Navbar({ sticky = false }) {
     return () => mq.removeEventListener('change', sync)
   }, [])
   useBodyLock(mobileMenuOpen && isMobile)
+  useBackClose(mobileMenuOpen && isMobile, () => setMobileMenuOpen(false))
   // Some pages (e.g. auth) scroll an inner container instead of the body, so a
   // body lock alone won't freeze them. Flag <html> so CSS can stop those too.
   useEffect(() => {
@@ -160,17 +164,28 @@ export default function Navbar({ sticky = false }) {
             >
               {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
             </button>
-            {user ? (
-              <button type="button" onClick={handleEnter} className="lp-btn-primary lp-btn-primary--nav">
-                Enter Arena <ChevronRight size={14} />
-              </button>
-            ) : (
+            {!user ? (
               <>
                 <Link to="/login?redirect=/" className="lp-btn-ghost">Sign In</Link>
                 <Link to="/register" className="lp-btn-primary lp-btn-primary--nav">
                   Sign up <ChevronRight size={14} />
                 </Link>
               </>
+            ) : isGuest(user) ? (
+              <>
+                <RegisterCTA
+                  className="lp-btn-primary lp-btn-primary--nav"
+                  label="Create account"
+                  trailingIcon={<ChevronRight size={14} />}
+                />
+                <button type="button" onClick={handleEnter} className="lp-btn-ghost">
+                  Enter Arena
+                </button>
+              </>
+            ) : (
+              <button type="button" onClick={handleEnter} className="lp-btn-primary lp-btn-primary--nav">
+                Enter Arena <ChevronRight size={14} />
+              </button>
             )}
           </div>
 
@@ -281,6 +296,19 @@ export default function Navbar({ sticky = false }) {
                     >
                       <Ghost size={14} /> {guestLoading ? 'Starting…' : 'Try as Guest'}
                     </button>
+                  </div>
+                )}
+
+                {user && isGuest(user) && (
+                  <div className="lp-mobile-auth">
+                    <p className="lp-mobile-guest-note">
+                      <span className="lp-mobile-guest-note__hl">Guest session</span> — your XP won't be saved permanently.
+                    </p>
+                    <RegisterCTA
+                      className="lp-btn-primary lp-btn-primary--full"
+                      icon={<UserPlus size={16} />}
+                      onClick={closeMobile}
+                    />
                   </div>
                 )}
 

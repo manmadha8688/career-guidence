@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Sun, Moon, BookOpen, Zap, Play, Lightbulb, AlertTriangle, Target, Search, Clock, CheckCircle2, XCircle, ChevronRight } from 'lucide-react'
+import { Sun, Moon, BookOpen, Zap, Play, Lightbulb, AlertTriangle, Target, Search, Clock, CheckCircle2, XCircle } from 'lucide-react'
 import AptitudeLoader from '../../components/loaders/AptitudeLoader'
 import EnterArenaButton from '../../components/EnterArenaButton'
 import SectionNotFoundPage from '../../components/SectionNotFoundPage'
@@ -11,6 +11,7 @@ import { getAptitudeTopic, getAptitudeQuestions, aptitudeCache } from '../../api
 import { APTITUDE_CATEGORY_MAP, DIFFICULTY_META } from './aptitudeData'
 import { DI_LESSONS } from './dataInterpretationData'
 import DataInterpretationLesson from './DataInterpretationLesson'
+import AptitudePracticeList from './AptitudePracticeList'
 import '../../styles/pages/shared/aptitude.css'
 
 const EASE = [0.16, 1, 0.3, 1]
@@ -70,6 +71,7 @@ export default function AptitudeTopicPage() {
   const crackData = (isLogical || isVerbal) ? topic?.lesson?.crack : topic?.crackIt
   const hasLearn = !!learnData
   const hasCrack = !!crackData
+  const hasQuestions = questions.length > 0
   const learnLabel = isLogical ? 'Understand It' : 'Learn It'
   const learnHint = isLogical
     ? 'See the pattern and learn how to think — from zero.'
@@ -78,6 +80,12 @@ export default function AptitudeTopicPage() {
   // Data Interpretation is taught visually from the frontend (rendered charts),
   // not from DB text — pick up the matching lesson if this is a DI topic.
   const diLesson = category === 'data-interpretation' ? DI_LESSONS[topicId] : null
+
+  // Three-tab lesson: Learn / Crack / Practice. Fall back to the first tab that
+  // actually has content so a questions-only topic opens straight on Practice.
+  const available = { learn: hasLearn, crack: hasCrack, practice: hasQuestions }
+  const effectiveMode = available[mode] ? mode : (['learn', 'crack', 'practice'].find(m => available[m]) || 'learn')
+  const hasAnyTab = hasLearn || hasCrack || hasQuestions
 
   // Topic slug doesn't exist (404 from the API) — themed aptitude not-found.
   if (!loading && notFound) return <SectionNotFoundPage variant="aptitude" />
@@ -133,9 +141,7 @@ export default function AptitudeTopicPage() {
 
           {videos.length > 0 && (
             <section className="apt-videos" aria-label="Recommended videos">
-              <h2 className="apt-section-h">
-                <Play size={15} /> Watch first
-              </h2>
+              
               <div className="apt-videos__grid">
                 {videos.map((v, i) => (
                   <a
@@ -158,15 +164,15 @@ export default function AptitudeTopicPage() {
 
           {diLesson ? (
             <DataInterpretationLesson lesson={diLesson} accent={accent} />
-          ) : (hasLearn || hasCrack) ? (
+          ) : hasAnyTab ? (
             <>
               <div className="apt-modeswitch">
-                <div className="apt-seg" role="tablist">
+                <div className="apt-seg apt-seg--3" role="tablist">
                   <button
                     type="button"
                     role="tab"
-                    aria-selected={mode === 'learn'}
-                    className={`apt-seg__btn apt-seg__btn--learn${mode === 'learn' ? ' is-active' : ''}`}
+                    aria-selected={effectiveMode === 'learn'}
+                    className={`apt-seg__btn apt-seg__btn--learn${effectiveMode === 'learn' ? ' is-active' : ''}`}
                     onClick={() => setMode('learn')}
                     disabled={!hasLearn}
                   >
@@ -175,41 +181,56 @@ export default function AptitudeTopicPage() {
                   <button
                     type="button"
                     role="tab"
-                    aria-selected={mode === 'crack'}
-                    className={`apt-seg__btn apt-seg__btn--crack${mode === 'crack' ? ' is-active' : ''}`}
+                    aria-selected={effectiveMode === 'crack'}
+                    className={`apt-seg__btn apt-seg__btn--crack${effectiveMode === 'crack' ? ' is-active' : ''}`}
                     onClick={() => setMode('crack')}
                     disabled={!hasCrack}
                   >
                     <Zap size={15} /> Crack It
                   </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={effectiveMode === 'practice'}
+                    className={`apt-seg__btn apt-seg__btn--practice${effectiveMode === 'practice' ? ' is-active' : ''}`}
+                    onClick={() => setMode('practice')}
+                    disabled={!hasQuestions}
+                  >
+                    <Target size={15} /> Practice It
+                  </button>
                 </div>
                 <p className="apt-modeswitch__hint">
-                  {mode === 'learn'
+                  {effectiveMode === 'learn'
                     ? learnHint
-                    : 'Exam-day shortcuts — solve it in seconds.'}
+                    : effectiveMode === 'crack'
+                      ? 'Exam-day shortcuts — solve it in seconds.'
+                      : 'Solve real exam questions — answers stay hidden until you try.'}
                 </p>
               </div>
 
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={mode}
+                  key={effectiveMode}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.28, ease: EASE }}
                 >
-                  {mode === 'learn' && hasLearn && (
-                    isLogical ? <LogicalUnderstand data={learnData} />
-                      : isVerbal ? <VerbalLearn data={learnData} />
-                      : <LearnMode data={learnData} />
+                  {effectiveMode === 'learn' && (
+                    hasLearn ? (
+                      isLogical ? <LogicalUnderstand data={learnData} />
+                        : isVerbal ? <VerbalLearn data={learnData} />
+                        : <LearnMode data={learnData} />
+                    ) : <ComingSoon label={learnLabel} />
                   )}
-                  {mode === 'crack' && hasCrack && (
-                    isLogical ? <LogicalCrack data={crackData} />
-                      : isVerbal ? <VerbalCrack data={crackData} />
-                      : <CrackMode data={crackData} />
+                  {effectiveMode === 'crack' && (
+                    hasCrack ? (
+                      isLogical ? <LogicalCrack data={crackData} />
+                        : isVerbal ? <VerbalCrack data={crackData} />
+                        : <CrackMode data={crackData} />
+                    ) : <ComingSoon label="Crack It" />
                   )}
-                  {mode === 'learn' && !hasLearn && <ComingSoon label={learnLabel} />}
-                  {mode === 'crack' && !hasCrack && <ComingSoon label="Crack It" />}
+                  {effectiveMode === 'practice' && <AptitudePracticeList questions={questions} />}
                 </motion.div>
               </AnimatePresence>
             </>
@@ -217,32 +238,9 @@ export default function AptitudeTopicPage() {
             <div className="apt-lesson-soon">
               <span className="apt-lesson-soon__icon">📝</span>
               <h2>Detailed lesson coming soon</h2>
-              <p>We are writing the full <strong>Learn It</strong> and <strong>Crack It</strong> guides for this topic. Check back shortly.</p>
+              <p>We are writing the full <strong>Learn It</strong>, <strong>Crack It</strong> and <strong>Practice It</strong> sets for this topic. Check back shortly.</p>
             </div>
           )}
-
-          {!diLesson && (questions.length > 0 ? (
-            <button
-              type="button"
-              className="apt-practice-cta"
-              onClick={() => navigate(`/aptitude/${category}/${group}/${topicId}/questions`)}
-            >
-              <span className="apt-practice-cta__icon" aria-hidden="true">🎯</span>
-              <span className="apt-practice-cta__body">
-                <span className="apt-practice-cta__title">Practice Questions</span>
-                <span className="apt-practice-cta__sub">
-                  {questions.length} solved question{questions.length !== 1 ? 's' : ''} — answers hidden until you try. Test yourself now.
-                </span>
-              </span>
-              <span className="apt-practice-cta__go">Start <ChevronRight size={16} /></span>
-            </button>
-          ) : (
-            <section className="apt-questions-soon">
-              <span className="apt-questions-soon__badge">Practice</span>
-              <h2>Questions Coming Soon</h2>
-              <p>Solved practice questions and a timed quiz for this topic are on the way.</p>
-            </section>
-          ))}
         </div>
       )}
     </div>

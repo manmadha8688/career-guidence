@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
-import { LogOut, Bookmark, UserCog } from 'lucide-react'
+import { LogOut, Bookmark, UserCog, GraduationCap, UserPlus } from 'lucide-react'
 import { getRank } from '../../../utils/slRank'
+import { isGuest } from '../../../utils/auth'
 import useBodyLock from '../../../hooks/useBodyLock'
+import useBackClose from '../../../hooks/useBackClose'
+import RegisterCTA from '../../../components/RegisterCTA'
 
 const MOBILE_BP = 768
 
@@ -29,14 +32,14 @@ function getRoleMeta(user) {
   if (user?.role === 'ADMIN') {
     return { label: 'Shadow Monarch', sub: 'Platform Admin', isGuest: false, isAdmin: true }
   }
-  if (user?.role === 'GUEST') {
+  if (isGuest(user)) {
     return { label: 'Guest Hunter', sub: 'Temporary session — progress may not be saved', isGuest: true, isAdmin: false }
   }
   const rank = getRank(user?.xp ?? 0)
   return { label: `${rank.label}-Rank Hunter`, sub: 'Student account', rank, isGuest: false, isAdmin: false }
 }
 
-function ProfileOverview({ user, onLogout, onNavigate }) {
+function ProfileOverview({ user, onLogout, onNavigate, onClose }) {
   const meta = getRoleMeta(user)
   const xp = user?.xp ?? 0
 
@@ -56,18 +59,10 @@ function ProfileOverview({ user, onLogout, onNavigate }) {
           <div className="lp-profile-panel__name">{user?.fullName}</div>
           <div className="lp-profile-panel__email">{user?.email}</div>
         </div>
-      </div>
-
-      <div className="lp-profile-panel__meta">
-        <span className={`lp-profile-panel__role${meta.isAdmin ? ' lp-profile-panel__role--admin' : ''}`}>
-          {meta.label}
-        </span>
         {meta.rank && (
-          <span className={`rank-badge ${meta.rank.cls}`}>{meta.rank.label}</span>
+          <span className={`rank-badge ${meta.rank.cls} lp-profile-panel__rank`}>{meta.rank.label}</span>
         )}
       </div>
-
-      <p className="lp-profile-panel__sub">{meta.sub}</p>
 
       {!meta.isAdmin && !meta.isGuest && meta.rank && (
         <div className="lp-profile-panel__xp">
@@ -91,16 +86,30 @@ function ProfileOverview({ user, onLogout, onNavigate }) {
         </div>
       )}
 
-      {!meta.isAdmin && (
-        <div className="lp-profile-panel__actions">
-          <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/bookmarks')}>
-            <Bookmark size={15} /> My Bookmarks
-          </button>
-          <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/myprofile')}>
-            <UserCog size={15} /> My Profile
-          </button>
-        </div>
-      )}
+      <div className="lp-profile-panel__actions">
+        {!meta.isAdmin && (
+          <>
+            <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/bookmarks')}>
+              <Bookmark size={15} /> My Bookmarks
+            </button>
+            {!meta.isGuest && (
+              <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/myprofile')}>
+                <UserCog size={15} /> My Profile
+              </button>
+            )}
+          </>
+        )}
+        <button type="button" className="lp-profile-panel__action" onClick={() => onNavigate('/about')}>
+          <GraduationCap size={15} /> Tutorial
+        </button>
+        {meta.isGuest && (
+          <RegisterCTA
+            className="lp-profile-panel__action lp-profile-panel__action--primary"
+            icon={<UserPlus size={15} />}
+            onClick={onClose}
+          />
+        )}
+      </div>
 
       <button type="button" onClick={onLogout} className="lp-profile-panel__logout">
         <LogOut size={14} /> Sign Out
@@ -119,6 +128,7 @@ export function LandingProfileDropdown({ user, logout, dismissSignal = false }) 
   const isAdmin = user?.role === 'ADMIN'
 
   useBodyLock(open && isMobile)
+  useBackClose(open && isMobile, () => setOpen(false))
 
   const close = () => setOpen(false)
 
@@ -182,6 +192,7 @@ export function LandingProfileDropdown({ user, logout, dismissSignal = false }) 
       >
         <ProfileOverview
           user={user}
+          onClose={close}
           onLogout={() => { close(); logout() }}
           onNavigate={(path) => { close(); navigate(path) }}
         />

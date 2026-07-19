@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useRef, memo } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import useBackClose from '../../hooks/useBackClose'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
 import DungeonPortalLoader from '../../components/loaders/DungeonPortalLoader'
 import { CheckCircle, Search, Trophy, Info, Menu, Sun, Moon } from 'lucide-react'
@@ -151,6 +152,14 @@ export default function DashboardPage() {
   const [mobilePopup, setMobilePopup]       = useState(null) // 'status' | 'badges' | null
   const [quizIntent, setQuizIntent]         = useState(null)
 
+  // Browser Back / back-gesture closes the open mobile overlay instead of leaving the page.
+  // Driven from this always-mounted page (enabled = the overlay's open flag) — the same
+  // pattern the Navbar uses — so the history entry is pushed/popped cleanly on toggle.
+  useBackClose(mobileMenuOpen, () => setMobileMenuOpen(false))
+  useBackClose(mobileAvatarMenu, () => setMobileAvatarMenu(false))
+  useBackClose(mobilePopup === 'stats', () => setMobilePopup(null))
+  useBackClose(mobilePopup === 'quests', () => setMobilePopup(null))
+
   const handleAvatarClick = () => {
     if (window.matchMedia('(max-width: 768px)').matches) {
       setMobileAvatarMenu(o => !o)
@@ -296,19 +305,26 @@ export default function DashboardPage() {
     return () => window.removeEventListener('sl:refresh', refresh)
   }, [])
 
+  // Sync the open subject/concept panel and active tab FROM the URL. Runs on mount and
+  // whenever the query changes — including the browser Back/Forward buttons / back-gesture —
+  // so Back walks concept → subject → arena (each drill-in pushed a history entry via
+  // setSearchParams). Clearing when a param is absent is what lets Back close the panels.
   useEffect(() => {
     const view    = searchParams.get('view') || 'arena'
     const subject = searchParams.get('subject')
     const concept = searchParams.get('concept')
 
+    setSelectedSubjectId(subject || null)
+    setSelectedConceptId(concept || null)
+    if (!concept) setConceptNavList([])
+
     if (concept) setActiveView('gates')
     else if (['gates', 'paths', 'badges', 'history', 'certificates'].includes(view)) setActiveView(view)
+    else setActiveView('arena')
 
     if (view === 'gates' || subject || concept) loadGates()
     if (view === 'paths') loadPaths()
-    if (subject) setSelectedSubjectId(subject)
-    if (concept) setSelectedConceptId(concept)
-  }, []) // eslint-disable-line
+  }, [searchParams]) // eslint-disable-line
 
 
   // Study-time quest: ping the server periodically while the arena is open. The server

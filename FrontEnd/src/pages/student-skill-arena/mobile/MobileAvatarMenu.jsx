@@ -1,5 +1,7 @@
-import { LogOut } from 'lucide-react'
+import { LogOut, UserPlus } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
+import { isGuest } from '../../../utils/auth'
+import RegisterCTA from '../../../components/RegisterCTA'
 
 export default function MobileAvatarMenu({ rank, user, initials, level, xp, onClose, onStatsOpen, onBadgesOpen, onCertsOpen, onQuestsOpen, onProfileOpen, onLogout }) {
   useBodyLock()
@@ -23,7 +25,7 @@ export default function MobileAvatarMenu({ rank, user, initials, level, xp, onCl
             >{initials}</div>
             <div className="dash-flex-1">
               <div className="dash-mob-menu__name">{user?.fullName}</div>
-              {user?.role === 'GUEST' && <span className="dash-mob-menu__guest-tag">GUEST</span>}
+              {isGuest(user) && <span className="dash-mob-menu__guest-tag">GUEST</span>}
             </div>
             <span className={`rank-badge ${rank.cls} dash-rank-badge-sm`}>{rank.label}-RANK</span>
           </div>
@@ -54,9 +56,14 @@ export default function MobileAvatarMenu({ rank, user, initials, level, xp, onCl
           </button>
         ))}
 
-        {user?.role === 'GUEST' && (
+        {isGuest(user) && (
           <div className="dash-mob-menu__guest-banner">
-            <span className="dash-guest-note__highlight">Guest session</span> — register to save XP permanently.
+            <span className="dash-guest-note__highlight">Guest session</span> — your XP won't be saved permanently.
+            <RegisterCTA
+              className="dash-guest-cta"
+              icon={<UserPlus size={13} />}
+              onClick={onClose}
+            />
           </div>
         )}
         <div className="dash-mob-menu__footer">

@@ -329,6 +329,17 @@
   gap: 0.625rem;
 }
 
+.lp-mobile-guest-note {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.lp-mobile-guest-note__hl {
+  color: color-mix(in srgb, var(--accent) 80%, var(--text-primary));
+  font-weight: 600;
+}
+
 /* Sign up + Sign in share one row; each button takes an equal half. */
 .lp-mobile-auth-row {
   display: flex;
@@ -463,6 +474,7 @@
 }
 
 .lp-profile-panel__identity {
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -481,6 +493,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.lp-profile-panel__rank {
+  margin-left: auto;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 
 .lp-profile-panel__meta {

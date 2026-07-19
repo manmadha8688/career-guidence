@@ -4485,8 +4485,9 @@ html.nav-hidden .sl-subject-panel { top: 0; }
 
   /* ─ Modals ─ */
   .modal { padding: 1.25rem; border-radius: var(--radius-lg); }
-  .modal-actions { flex-direction: column-reverse; }
-  .modal-actions .btn { width: 100%; justify-content: center; }
+  /* Keep action buttons side-by-side on mobile (no vertical stacking). */
+  .modal-actions { flex-direction: row; flex-wrap: nowrap; }
+  .modal-actions .btn { flex: 1 1 0; min-width: 0; width: auto; justify-content: center; }
 
   /* ─ Grids ─ */
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }

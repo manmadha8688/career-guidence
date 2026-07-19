@@ -493,6 +493,17 @@
   color: var(--text-primary);
 }
 
+.lp-profile-panel__action--primary {
+  justify-content: center;
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-card));
+  color: var(--text-primary);
+}
+.lp-profile-panel__action--primary:hover {
+  background: color-mix(in srgb, var(--accent) 20%, var(--bg-card));
+  border-color: var(--accent);
+}
+
 /* ── Google Sign-In (login / register) ─────────────────────────────────────── */
 .google-signin {
   display: flex;

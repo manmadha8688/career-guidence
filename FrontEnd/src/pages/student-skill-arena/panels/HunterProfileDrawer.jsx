@@ -1,7 +1,9 @@
-import { X, LogOut } from 'lucide-react'
+import { X, LogOut, UserPlus } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
 import useModalA11y from '../../../hooks/useModalA11y'
 import { RANK_LADDER } from '../../../constants/ranks'
+import { isGuest } from '../../../utils/auth'
+import RegisterCTA from '../../../components/RegisterCTA'
 import '../../../styles/pages/shared/certificates.css'
 
 // Plain-language glossary for the 3 core themed words a newcomer meets first.
@@ -39,6 +41,24 @@ const XP_TIPS = [
   'Each quiz earns score × 10 XP (max 100 per concept)',
   'Clear all concepts in a gate to unlock the subject badge',
   'Enroll a Hunter Path to track your full career progress',
+]
+
+// What it takes to accomplish a mission. Mirrors MissionDetailPage / the board.
+const MISSION_REQS = [
+  'Open the MISSIONS tab and build the project to its objectives',
+  'Connect your GitHub, then submit your public repository link',
+  'Deploy it live and submit the demo URL — proof it actually runs',
+  'A mission is Accomplished once you submit at least one link',
+  'Each repo links to one mission only — build something new for each',
+]
+
+// Mission-link XP by rank — mirrors backend MissionSubmissionService (repo / live demo).
+const MISSION_XP = [
+  { rank: 'D', repo: 40,  demo: 50,  color: '#4ADE80' },
+  { rank: 'C', repo: 60,  demo: 90,  color: '#60A5FA' },
+  { rank: 'B', repo: 100, demo: 140, color: '#9B6ED4' },
+  { rank: 'A', repo: 140, demo: 220, color: '#F59E0B' },
+  { rank: 'S', repo: 200, demo: 340, color: '#EF4444' },
 ]
 
 function SectionTitle({ children }) {
@@ -160,6 +180,42 @@ export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout 
           </div>
 
           <div>
+            <SectionTitle>HOW TO ACCOMPLISH MISSIONS</SectionTitle>
+            <div className="dash-hunter-mission">
+              <p className="dash-hunter-mission__intro">
+                Missions are real projects you build. Submit your work to accomplish one and earn XP —
+                a great proof of skill for recruiters.
+              </p>
+              <div className="dash-hunter-mission__reqs">
+                {MISSION_REQS.map((r, i) => (
+                  <div key={i} className="dash-hunter-badge-step">
+                    <span className="dash-hunter-badge-step__num">0{i + 1}</span>
+                    <span className="dash-hunter-badge-step__text">{r}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="dash-hunter-mission__xp">
+                <div className="dash-hunter-mission__xp-title">[ XP EARNED · BY MISSION RANK ]</div>
+                <div className="dash-hunter-mission__row dash-hunter-mission__row--head">
+                  <span>RANK</span>
+                  <span>REPOSITORY</span>
+                  <span>LIVE DEMO</span>
+                </div>
+                {MISSION_XP.map(r => (
+                  <div key={r.rank} className="dash-hunter-mission__row" style={{ '--rank-color': r.color }}>
+                    <span className="dash-hunter-mission__rank">{r.rank}-Rank</span>
+                    <span className="dash-hunter-mission__val">+{r.repo} XP</span>
+                    <span className="dash-hunter-mission__val dash-hunter-mission__val--demo">+{r.demo} XP</span>
+                  </div>
+                ))}
+              </div>
+              <p className="dash-hunter-mission__note">
+                A live demo pays more than the repo. XP is granted once per link and reversed if you remove it.
+              </p>
+            </div>
+          </div>
+
+          <div>
             <SectionTitle>RANK PROGRESSION GUIDE</SectionTitle>
             <div className="dash-hunter-ranks">
               {RANK_LADDER.map(r => {
@@ -193,9 +249,14 @@ export default function HunterProfileDrawer({ user, rank, xp, onClose, onLogout 
         </div>
 
         <div className="sl-drawer-exit-footer dash-hunter-drawer__footer">
-          {user?.role === 'GUEST' && (
+          {isGuest(user) && (
             <div className="dash-guest-note dash-guest-note--purple">
-              <span className="dash-guest-note__highlight">Guest session</span> — create a free account to save your XP and progress permanently.
+              <span className="dash-guest-note__highlight">Guest session</span> — your XP and progress won't be saved permanently.
+              <RegisterCTA
+                className="dash-guest-cta"
+                icon={<UserPlus size={13} />}
+                onClick={onClose}
+              />
             </div>
           )}
           <div className="dash-hunter-drawer__actions">

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import useBodyLock from '../hooks/useBodyLock'
+import useBackClose from '../hooks/useBackClose'
 import {
   BookOpen, Map, LayoutDashboard, LogOut,
   Users, Layers, HelpCircle, MessageSquare, Sword, Code2, GraduationCap, Flag, Briefcase, Zap, Rocket, Home, Brain, FileText
@@ -12,6 +13,7 @@ export default function Sidebar({ open, onClose }) {
   // The drawer only opens on mobile (hamburger is hidden on desktop), so this
   // freezes the page behind the slide-in sidebar.
   useBodyLock(open)
+  useBackClose(open, onClose)
 
   const studentLinks = [
     { to: '/skill-arena/dashboard',           icon: <LayoutDashboard size={18} />, label: 'Skill Arena' },

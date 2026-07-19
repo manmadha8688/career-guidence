@@ -402,7 +402,6 @@
   text-align: left;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 3px solid color-mix(in srgb, var(--rank-color) 55%, transparent);
   border-radius: 14px;
   padding: 1.1rem 1.15rem 1rem;
   cursor: pointer;
@@ -416,7 +415,6 @@
 
 .mb-card:hover {
   border-color: color-mix(in srgb, var(--rank-color) 45%, transparent);
-  border-left-color: var(--rank-color);
   box-shadow: 0 10px 32px color-mix(in srgb, var(--rank-color) 15%, transparent);
 }
 
@@ -553,6 +551,97 @@
 .mb-card:hover .mb-card__accept {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* ── Accomplished state (hunter has submitted at least one link) ───────────── */
+.mb-card--done:hover {
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--warning) 15%, transparent);
+}
+
+.mb-card__done-badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warning) 40%, transparent);
+  border-radius: 999px;
+  padding: 0.22rem 0.5rem;
+}
+
+.mb-card__submitted {
+  display: flex;
+  gap: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed color-mix(in srgb, var(--warning) 30%, transparent);
+}
+
+/* Two equal slots side by side: each is a saved link OR an inline "Add" button. */
+.mb-card__submitted > .mb-card__link,
+.mb-card__submitted > .mb-card__add {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+}
+
+.mb-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.28rem 0.55rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.16s, border-color 0.16s, background 0.16s;
+}
+
+.mb-card__link:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
+}
+
+.mb-card__link--live:hover {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 45%, transparent);
+}
+
+.mb-card__link-ext {
+  opacity: 0.6;
+}
+
+.mb-card__add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.74rem;
+  color: var(--rank-color);
+  background: transparent;
+  border: 1px dashed color-mix(in srgb, var(--rank-color) 50%, transparent);
+  border-radius: 7px;
+  padding: 0.28rem 0.6rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.16s, border-color 0.16s, background 0.16s;
+}
+
+.mb-card__add:hover {
+  background: color-mix(in srgb, var(--rank-color) 12%, transparent);
+  border-color: var(--rank-color);
 }
 
 /* ── Empty state ──────────────────────────────────────────────────────────── */

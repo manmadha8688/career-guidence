@@ -2,6 +2,11 @@ import { useState, useEffect, useRef } from 'react'
 import { AnimatePresence, motion, useInView, useSpring, useTransform } from 'framer-motion'
 import { MangaSpeechBubble } from '../../auth/components/MangaSpeechBubble'
 import { getLineReadMs, LINE_GAP_MS, BEAT_TAIL_MS } from '../../auth/hooks/companionMurmurs'
+// The bot/scene shapes (.login-bot*, .login-scene*) live in auth-animations.css.
+// Import it here so the styles always ship with this component's chunk — otherwise
+// the squad can paint unstyled (broken black shape) on a fresh load before the
+// auth layout's CSS chunk happens to be cached.
+import '../../../styles/auth-animations.css'
 
 const START_DELAY_MS = 380
 

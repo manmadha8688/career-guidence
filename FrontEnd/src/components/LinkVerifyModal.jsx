@@ -32,7 +32,9 @@ export default function LinkVerifyModal({
   onClose,
 }) {
   useBodyLock(open)
-  const modalRef = useModalA11y(() => { if (!busy) onClose?.() }, open)
+  // Part of the unsaved-changes leave flow (can trigger blocker.proceed on close), so
+  // opt out of Back-to-close to keep React Router's history in sync.
+  const modalRef = useModalA11y(() => { if (!busy) onClose?.() }, open, { backClose: false })
   const [retryFeedback, setRetryFeedback] = useState(null)
 
   useEffect(() => {

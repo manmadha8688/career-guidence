@@ -1,6 +1,8 @@
 /** Map /me profile → resume personal, education & link fields (single source of truth).
  *  Backend mirror: ResumeProfileMerge.java — strips these keys on save, merges on public read. */
 
+import { isGuest } from '../../utils/auth'
+
 export function profileEducation(user) {
   const e = user?.education || {}
   let years = e.years || ''
@@ -45,7 +47,7 @@ export function profileResumeFields(user) {
 
 /** Human-readable missing pieces — empty when profile is ready for resume. */
 export function profileResumeGaps(user) {
-  if (!user || user.role === 'GUEST') return ['a registered account and My Profile']
+  if (isGuest(user)) return ['a registered account and My Profile']
   const gaps = []
   if (!(user.fullName || '').trim()) gaps.push('full name')
   if (!profileContactEmail(user)) gaps.push('contact email')

@@ -180,7 +180,15 @@ export const getMission   = (id)   => withCache(`mission:${id}`, 30_000, () => a
 
 // Per-user submitted work (repo + live demo). Not cached — always fresh for the signed-in hunter.
 export const getMissionSubmission  = (id)       => api.get(`/missions/${id}/submission`)
-export const saveMissionSubmission = (id, body) => api.put(`/missions/${id}/submission`, body)
+// The hunter's submitted links across all missions, for the board's per-card status.
+// Short cache; busted whenever a link is saved/removed so the board reflects it immediately.
+export const getMissionSubmissions = ()         => withCache('missionSubmissions', 30_000, () => api.get('/missions/submissions'))
+// Saving/removing a verified repo or live-demo link awards/reverses XP, so bust the
+// user's XP/level/rank + hunter caches to reflect the new total immediately.
+export const saveMissionSubmission = (id, body) => api.put(`/missions/${id}/submission`, body).then(r => {
+  clearApiCache('progressSummary', 'hunterStats', 'missionSubmissions')
+  return r
+})
 
 // ─── RESUME (per-user, up to 3, shareable) ────────────
 // Not cached — the builder always reads/writes the freshest copy for the user.
@@ -274,7 +282,12 @@ export const removeBookmarkById = (id)          => api.delete(`/bookmarks/${id}`
 
 // ─── PROFILE ──────────────────────────────────────────
 export const getPublicProfile = (username) => api.get(`/public/profile/${encodeURIComponent(username)}`)
-export const updateProfile    = (data)     => api.put('/profile/me', data)
+// A profile save can grant one-time completion XP (personal, education, links, resume),
+// so bust the user's XP/level/rank + hunter caches to reflect the new total immediately.
+export const updateProfile    = (data)     => api.put('/profile/me', data).then(r => {
+  if (r?.data?.xpEarned > 0) clearApiCache('progressSummary', 'hunterStats')
+  return r
+})
 export const sendProfileContactOtp = (email) => api.post('/profile/contact-email/send-otp', { email })
 export const verifyProfileContactOtp = (email, otp) => api.post('/profile/contact-email/verify-otp', { email, otp })
 export const checkUsername    = (username) => api.get('/profile/check-username', { params: { username } })

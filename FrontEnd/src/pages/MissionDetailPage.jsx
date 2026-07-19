@@ -18,7 +18,7 @@ import { getLinkVerificationResults, isLinkVerificationError } from '../utils/li
 import { normalizeGitHubRepoUrl } from '../utils/githubRepoUrl'
 import { isLooseHttpUrl, normalizeHttpUrl } from '../utils/normalizeHttpUrl'
 import { saveOnEnter } from '../utils/saveOnEnter'
-import { removeLinkConfirmOptions } from '../utils/confirmRemoveLink'
+import { removeMissionLinkConfirmOptions } from '../utils/confirmRemoveLink'
 import { safeExternalUrl } from '../utils/safeExternalUrl'
 import { useConfirm } from '../context/ConfirmContext'
 import BookmarkButton from '../components/BookmarkButton'
@@ -40,6 +40,15 @@ const GITHUB_ERRORS = {
   invalid: 'GitHub connection expired. Please try again.',
   failed: 'Could not connect GitHub. Please try again.',
 }
+
+// "+N XP" suffix for a save toast when the backend awarded XP for this link (0 or − → no suffix)
+const xpSuffix = (data) => (data?.xpEarned > 0 ? ` · +${data.xpEarned} XP` : '')
+
+// Removal toast content — appends a red "−N XP" when clearing the link reversed XP (0 → plain label)
+const removeToast = (label, data) =>
+  data?.xpEarned < 0
+    ? <span>{label} · <span style={{ color: '#EF4444', fontWeight: 700 }}>−{Math.abs(data.xpEarned)} XP</span></span>
+    : label
 
 const RANK_META = {
   D: { color: '#4ADE80', bg: 'rgba(74,222,128,0.12)',  desc: 'Beginner' },
@@ -129,6 +138,7 @@ export default function MissionDetailPage() {
   const pendingDeploySaveRef = useRef(null)
   const leaveGuardRef = useRef({ notifyDeferredLeave: () => {}, completePendingLeave: () => {} })
   const saveAllBeforeLeaveRef = useRef(async () => true)
+  const submitRef = useRef(null)
 
   const githubConnected = !!user?.githubConnected
   const githubLogin = user?.githubLogin || 'you'
@@ -158,7 +168,7 @@ export default function MissionDetailPage() {
       params.delete('github')
       params.delete('reason')
       const qs = params.toString()
-      window.history.replaceState({}, '', window.location.pathname + (qs ? `?${qs}` : ''))
+      window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? `?${qs}` : ''))
     }
   }, [id])
 
@@ -187,6 +197,30 @@ export default function MissionDetailPage() {
       .catch(() => {})
       .finally(() => setSubLoading(false))
   }, [id])
+
+  // Deep-link from the mission board's "Add repo / demo" button: once the page content
+  // is actually on screen (both the mission AND the submission have loaded — otherwise
+  // the loader is still showing and the target doesn't exist), scroll to the submit
+  // section and focus the missing field.
+  useEffect(() => {
+    if (loading || subLoading) return undefined
+    const params = new URLSearchParams(window.location.search)
+    const add = params.get('add')
+    if (add !== 'repo' && add !== 'deploy') return undefined
+    params.delete('add')
+    const qs = params.toString()
+    window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? `?${qs}` : ''))
+    const t = setTimeout(() => {
+      const field = document.getElementById(add === 'repo' ? 'md-repo-url' : 'md-deploy-url')
+      if (field) {
+        field.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        field.focus({ preventScroll: true })
+      } else {
+        submitRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 260)
+    return () => clearTimeout(t)
+  }, [loading, subLoading])
 
   const handleConnectGitHub = async () => {
     if (githubBusy || !isMongoId(id)) return
@@ -238,7 +272,7 @@ export default function MissionDetailPage() {
     try {
       const { data } = await saveMissionSubmission(id, { target: 'repo', repoUrl: normalized || '' })
       mergeSubmission(data)
-      toast.success(normalized ? 'Repository saved' : 'Repository removed')
+      toast.success(normalized ? `Repository saved${xpSuffix(data)}` : removeToast('Repository removed', data))
     } catch (e) {
       setRepoErr(getApiError(e, 'Could not save your repository. Check the link and try again.'))
     } finally {
@@ -249,14 +283,14 @@ export default function MissionDetailPage() {
   const handleRemoveRepo = async () => {
     if (!savedRepo || savingRepo || savingDeploy) return
     if (!ensureCanSave()) return
-    if (!(await confirm(removeLinkConfirmOptions('this repository link from the mission')))) return
+    if (!(await confirm(removeMissionLinkConfirmOptions('repository', submission?.repoXp)))) return
     setRepoUrl('')
     setRepoErr('')
     setSavingRepo(true)
     try {
       const { data } = await saveMissionSubmission(id, { target: 'repo', repoUrl: '' })
       mergeSubmission(data)
-      toast.success('Repository removed')
+      toast.success(removeToast('Repository removed', data))
     } catch (e) {
       setRepoErr(getApiError(e, 'Could not remove repository. Please try again.'))
     } finally {
@@ -273,7 +307,7 @@ export default function MissionDetailPage() {
       ...(skipLinkVerification ? { skipLinkVerification: true } : {}),
     })
     mergeSubmission(data)
-    toast.success(deploy ? 'Live demo saved' : 'Live demo removed')
+    toast.success(deploy ? `Live demo saved${xpSuffix(data)}` : removeToast('Live demo removed', data))
   }
 
   const handleSaveDeploy = async () => {
@@ -302,7 +336,7 @@ export default function MissionDetailPage() {
   const handleRemoveDeploy = async () => {
     if (!savedDeploy || savingRepo || savingDeploy) return
     if (!ensureCanSave()) return
-    if (!(await confirm(removeLinkConfirmOptions('this live demo link from the mission')))) return
+    if (!(await confirm(removeMissionLinkConfirmOptions('live demo', submission?.deployXp)))) return
     setDeployUrl('')
     setDeployErr('')
     setLinkVerifyResults(null)
@@ -675,7 +709,7 @@ export default function MissionDetailPage() {
         )}
 
         {/* Submit your build — repo + live demo links */}
-        <motion.section {...reveal} className="md-submit">
+        <motion.section {...reveal} ref={submitRef} className="md-submit">
           <div className="md-submit__head">
             <span className="md-submit__eyebrow"><Sparkles size={13} /> Final step</span>
             <h2 className="md-submit__title"><Rocket size={22} /> Ship it &amp; show it off</h2>

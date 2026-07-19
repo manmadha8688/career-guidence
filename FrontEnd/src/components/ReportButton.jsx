@@ -6,6 +6,7 @@ import { submitReport } from '../api/api'
 import toast from 'react-hot-toast'
 import { getApiError } from '../utils/apiError'
 import useBodyLock from '../hooks/useBodyLock'
+import useBackClose from '../hooks/useBackClose'
 import { REPORT_CATEGORIES } from '../constants/reportTypes'
 import { buildReportContext, formatContextPreview, getReportPageTitle } from '../utils/reportContext'
 
@@ -27,6 +28,7 @@ export default function ReportButton({ pageTitle, variant = 'floating' }) {
   const lastFocusRef = useRef(null)
 
   useBodyLock(open)
+  useBackClose(open, () => close())
 
   useEffect(() => {
     if (!open) return

@@ -13,7 +13,34 @@
 | **Path** | Roadmap (ordered subjects toward a role) |
 | **The System / ARISE** | The app itself / the level-up UI voice |
 | **Trial** | The quiz (unlocks at 100% concept progress) |
-| **XP** | Experience points = quiz score × 10 (+50 first concept/day) |
+| **XP** | Experience points = quiz score × 10 (+50 first concept/day). Also from mission links (below), subject/roadmap quiz passes, badges. |
+
+### Mission-link XP (awarded on verified submission, by mission rank)
+A mission grants XP when the hunter links **verified** work: a GitHub repo (owned + exists) and a live deploy URL (reachable). Deploy > repo (running proof is worth more). Awarded **once per link**, reversed exactly if the link is cleared (no add/remove farming). Kept modest — XP also flows from quizzes/bonus/badges.
+
+| Rank | Repo | Deploy | Total |
+|---|---|---|---|
+| D | 40 | 50 | 90 |
+| C | 60 | 90 | 150 |
+| B | 100 | 140 | 240 |
+| A | 140 | 220 | 360 |
+| S | 200 | 340 | 540 |
+
+Impl: `MissionSubmission.repoXp/deployXp` (persisted, award-once ledger) + transient `xpEarned` (save-response delta for the "+N XP" toast). `MissionSubmissionService` awards via `ProgressService.awardXp/deductXp` (which evict `progress` summary); frontend `saveMissionSubmission` busts `progressSummary`+`hunterStats`.
+
+### Profile-completion XP (awarded ONCE per item, NEVER reversed)
+Granted the first time each item is observed complete; clearing a field / disconnecting a link never deducts or re-awards. Contact email is part of **Personal** (mobile is NOT required). Each social link awards separately.
+
+| Item | Complete when | XP |
+|---|---|---|
+| Personal | fullName + bio + location + contact email (same-as-login OR verified public email) | 25 |
+| Education | degree + fieldOfStudy + institution + years + cgpa | 30 |
+| GitHub | account connected (OAuth) | 20 |
+| LinkedIn | link saved (verified) | 20 |
+| Portfolio | link saved (verified) | 20 |
+| Resume | a resume created + featured on public profile (`featuredResumeId`) | 60 |
+
+Impl: award-once booleans on `User` (`personalXpAwarded`/`educationXpAwarded`/`githubXpAwarded`/`linkedinXpAwarded`/`portfolioXpAwarded`/`resumeXpAwarded`, all `@JsonIgnore`) + transient `xpEarned`. Central `ProfileXpService.applyAwards(user)` mutates flags, applies XP via `ProgressService.applyXp` (in-memory, no save), then saves + evicts `progress`+`hunterStats` + the auth-lookup cache (`UserDetailsServiceImpl.evict`, to stop a stale principal double-awarding). Called from `ProfileService.updateOwnProfile` (returns `xpEarned` in the response map) and `GitHubLinkService.handleCallback` (GitHubAuthController appends `&xp=` to the `github=connected` redirect). Frontend shows "+N XP" toasts; `updateProfile` busts `progressSummary`+`hunterStats` when `xpEarned>0`. Existing users get a one-time backfill on their next save/connect.
 
 ## Data model (MongoDB collections)
 - `users` — role STUDENT / GUEST / ADMIN, xp, level, avatarColor, username, `tokenVersion`, password (BCrypt). Index: email unique.

@@ -18,7 +18,8 @@ import { linkedinUrlState, LINKEDIN_URL_HINT } from '../utils/linkedinUrl'
 import { normalizeHttpUrl, isLooseHttpUrl } from '../utils/normalizeHttpUrl'
 import { saveOnEnter } from '../utils/saveOnEnter'
 import { safeExternalUrl } from '../utils/safeExternalUrl'
-import { disconnectGitHubConfirmOptions, removeLinkConfirmOptions } from '../utils/confirmRemoveLink'
+import { isGuest } from '../utils/auth'
+import { disconnectGitHubConfirmOptions, removeProfileLinkConfirmOptions } from '../utils/confirmRemoveLink'
 import { useConfirm } from '../context/ConfirmContext'
 import { getRank } from '../utils/slRank'
 import Navbar from '../components/navbars/Navbar'
@@ -50,6 +51,9 @@ const GITHUB_ERRORS = {
   invalid: 'GitHub connection expired. Please try again.',
   failed: 'Could not connect GitHub. Please try again.',
 }
+
+// "+N XP" suffix when a profile save unlocked one-time completion XP (0 → no suffix)
+const xpSuffix = (data) => (data?.xpEarned > 0 ? ` · +${data.xpEarned} XP` : '')
 
 const EMPTY_EDU = { degree: '', fieldOfStudy: '', institution: '', years: '', cgpa: '' }
 // Backend stores blank education fields as null; coerce to '' so inputs stay controlled.
@@ -276,7 +280,7 @@ export default function MyProfilePage() {
 
   // Load the user's resumes (for the "resume on profile" picker).
   useEffect(() => {
-    if (!user || user.role === 'GUEST') return
+    if (isGuest(user)) return
     let active = true
     setResumesLoaded(false)
     listResumes()
@@ -312,7 +316,8 @@ export default function MyProfilePage() {
 
     if (gh === 'connected') {
       clearUserCache()
-      toast.success('GitHub connected — your profile link is verified.')
+      const xp = parseInt(params.get('xp'), 10)
+      toast.success(`GitHub connected — your profile link is verified.${xp > 0 ? ` · +${xp} XP` : ''}`)
       window.dispatchEvent(new Event('sl:refresh'))
     } else if (gh === 'error') {
       const reason = params.get('reason') || 'failed'
@@ -322,9 +327,10 @@ export default function MyProfilePage() {
     if (gh) {
       params.delete('github')
       params.delete('reason')
+      params.delete('xp')
       const qs = params.toString()
       const hash = shouldScroll ? '#social-links' : ''
-      window.history.replaceState({}, '', window.location.pathname + (qs ? `?${qs}` : '') + hash)
+      window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? `?${qs}` : '') + hash)
     }
 
     if (shouldScroll) {
@@ -337,7 +343,7 @@ export default function MyProfilePage() {
 
   // Keep GitHub UI in sync with /me after connect, disconnect, or sl:refresh — URL comes from OAuth only.
 
-  const isGuest = user?.role === 'GUEST'
+  const guest = isGuest(user)
   const githubConnected = !!user?.githubConnected
   const profileUrl = form.username ? `${window.location.origin}/u/${form.username}` : ''
   const contactEmailNorm = normEmail(form.publicEmail)
@@ -362,9 +368,13 @@ export default function MyProfilePage() {
     && portfolioTrim !== savedPortfolio
     && (portfolioTrim !== '' || savedPortfolio !== '')
     && portfolioUrlState(form.portfolioUrl) !== 'invalid'
-  const isPageDirty = isPersonalDirty
-    || linkedinTrim !== savedLinkedin
-    || portfolioTrim !== savedPortfolio
+  const isSocialDirty = linkedinTrim !== savedLinkedin || portfolioTrim !== savedPortfolio
+  const isPageDirty = isPersonalDirty || isSocialDirty
+  // Name the exact unsaved section(s) so the leave prompt is specific, not generic.
+  const unsavedSections = [
+    isPersonalDirty && 'personal details',
+    isSocialDirty && 'social links',
+  ].filter(Boolean)
 
   // Live username availability (debounced).
   useEffect(() => {
@@ -481,7 +491,7 @@ export default function MyProfilePage() {
     try {
       const { data } = await updateProfile(payload)
       applyPersonalSuccess(data)
-      toast.success('Personal details saved')
+      toast.success(`Personal details saved${xpSuffix(data)}`)
     } catch (err) {
       const msg = getApiError(err, 'We could not save your details. Please review the fields and try again.')
       if (/username/i.test(msg)) setUsernameError(msg)
@@ -503,7 +513,7 @@ export default function MyProfilePage() {
     const { data } = await updateProfile(body)
     applyLinkSuccess(data, key)
     const label = key === 'linkedinUrl' ? 'LinkedIn' : 'Portfolio'
-    toast.success(url ? `${label} saved` : `${label} removed`)
+    toast.success(url ? `${label} saved${xpSuffix(data)}` : `${label} removed`)
   }
 
   const handleSaveLinkedin = async () => {
@@ -558,10 +568,10 @@ export default function MyProfilePage() {
 
   const handleRemoveLink = async (key) => {
     const isLinkedin = key === 'linkedinUrl'
-    const label = isLinkedin ? 'LinkedIn from your profile' : 'portfolio link from your profile'
+    const name = isLinkedin ? 'LinkedIn' : 'portfolio link'
     const saved = (isLinkedin ? savedLinkedin : savedPortfolio).trim()
     if (!saved || savingLinkedin || savingPortfolio) return
-    if (!(await confirm(removeLinkConfirmOptions(label)))) return
+    if (!(await confirm(removeProfileLinkConfirmOptions(name)))) return
     set(key, '')
     if (isLinkedin) setLinkedinErr('')
     else { setPortfolioErr(''); setShowPortfolioFormatError(false) }
@@ -753,6 +763,7 @@ export default function MyProfilePage() {
     onSave: () => saveAllBeforeLeaveRef.current(),
     saving: savingPersonal || savingLinkedin || savingPortfolio,
     contextLabel: 'profile edits',
+    sections: unsavedSections,
   })
   leaveGuardRef.current = {
     notifyDeferredLeave: leaveGuard.notifyDeferredLeave,
@@ -766,9 +777,9 @@ export default function MyProfilePage() {
     setForm(f => ({ ...f, featuredResumeId: resumeId }))
     setSavingResume(true)
     try {
-      await updateProfile({ featuredResumeId: resumeId || '' })
+      const { data } = await updateProfile({ featuredResumeId: resumeId || '' })
       setSavedFeaturedResumeId(resumeId)
-      toast.success(resumeId ? 'Resume added to your profile' : 'Resume removed from your profile')
+      toast.success(resumeId ? `Resume added to your profile${xpSuffix(data)}` : 'Resume removed from your profile')
       window.dispatchEvent(new Event('sl:refresh'))
     } catch (err) {
       setForm(f => ({ ...f, featuredResumeId: prev }))
@@ -867,7 +878,7 @@ export default function MyProfilePage() {
     )
   }
 
-  if (isGuest) {
+  if (guest) {
     return (
       <div className="mpx-page">
         <Navbar sticky />
