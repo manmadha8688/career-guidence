@@ -1,0 +1,402 @@
+[
+  {
+    "id": "variance-standard-deviation-q1",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A data set has variance 9. What is its standard deviation?",
+    "options": [
+      "3",
+      "9",
+      "81",
+      "4.5"
+    ],
+    "answer": "A",
+    "solution": "SD = √variance = √9 = 3.",
+    "trick": "√9 = 3.",
+    "type": "Standard deviation from variance",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q2",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A data set has variance 49. What is its standard deviation?",
+    "options": [
+      "6",
+      "7",
+      "24.5",
+      "14"
+    ],
+    "answer": "B",
+    "solution": "SD = √49 = 7.",
+    "trick": "√49 = 7.",
+    "type": "Standard deviation from variance",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q3",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A data set has standard deviation 5. What is its variance?",
+    "options": [
+      "5",
+      "10",
+      "25",
+      "50"
+    ],
+    "answer": "C",
+    "solution": "Variance = SD² = 5² = 25.",
+    "trick": "5² = 25.",
+    "type": "Variance from SD",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q4",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Find the standard deviation of 4, 4, 4 and 4.",
+    "options": [
+      "4",
+      "2",
+      "1",
+      "0"
+    ],
+    "answer": "D",
+    "solution": "All values are equal, so every deviation is 0 and SD = 0.",
+    "trick": "No spread → SD 0.",
+    "type": "SD of equal values",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q5",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A data set has variance 100. What is its standard deviation?",
+    "options": [
+      "10",
+      "50",
+      "100",
+      "20"
+    ],
+    "answer": "A",
+    "solution": "SD = √100 = 10.",
+    "trick": "√100 = 10.",
+    "type": "Standard deviation from variance",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q6",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A data set has standard deviation 8. What is its variance?",
+    "options": [
+      "16",
+      "64",
+      "8",
+      "32"
+    ],
+    "answer": "B",
+    "solution": "Variance = SD² = 8² = 64.",
+    "trick": "8² = 64.",
+    "type": "Variance from SD",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q7",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Find the standard deviation of the two-value set {2, 8}.",
+    "options": [
+      "6",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "C",
+    "solution": "For two values, SD = |a − b|/2 = |2 − 8|/2 = 6/2 = 3.",
+    "trick": "Half the gap: 6/2 = 3.",
+    "type": "SD of a two-value set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q8",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "Find the standard deviation of 9, 9 and 9.",
+    "options": [
+      "9",
+      "3",
+      "1",
+      "0"
+    ],
+    "answer": "D",
+    "solution": "All values equal, so SD = 0.",
+    "trick": "Identical values → SD 0.",
+    "type": "SD of equal values",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q9",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A data set has SD = 6. If 5 is added to every value, what is the new SD?",
+    "options": [
+      "6",
+      "11",
+      "1",
+      "30"
+    ],
+    "answer": "A",
+    "solution": "Adding a constant does not change the spread, so SD stays 6.",
+    "trick": "Shift keeps SD.",
+    "type": "Effect of adding a constant",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q10",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A data set has SD = 4. If every value is multiplied by 3, what is the new SD?",
+    "options": [
+      "4",
+      "12",
+      "7",
+      "16"
+    ],
+    "answer": "B",
+    "solution": "Multiplying by k multiplies the SD by k: 4 × 3 = 12.",
+    "trick": "SD ×k = 4×3 = 12.",
+    "type": "Effect of multiplying by a constant",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q11",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Find the variance of 2, 4 and 6.",
+    "options": [
+      "2",
+      "1.33",
+      "2.67",
+      "4"
+    ],
+    "answer": "C",
+    "solution": "Mean = 4; deviations −2, 0, 2; squares 4, 0, 4; variance = 8/3 ≈ 2.67.",
+    "trick": "8/3 ≈ 2.67.",
+    "type": "Variance of a small set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q12",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find the standard deviation of the set {5, 15}.",
+    "options": [
+      "10",
+      "2.5",
+      "15",
+      "5"
+    ],
+    "answer": "D",
+    "solution": "For two values, SD = |5 − 15|/2 = 10/2 = 5.",
+    "trick": "Half the gap: 10/2 = 5.",
+    "type": "SD of a two-value set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q13",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A data set has variance 9. If every value is multiplied by 2, what is the new variance?",
+    "options": [
+      "36",
+      "18",
+      "9",
+      "12"
+    ],
+    "answer": "A",
+    "solution": "Multiplying by k multiplies the variance by k²: 9 × 2² = 9 × 4 = 36.",
+    "trick": "Variance ×k² = 9×4 = 36.",
+    "type": "Effect of scaling on variance",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q14",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Find the standard deviation of 1, 2, 3, 4 and 5.",
+    "options": [
+      "2",
+      "1.41",
+      "10",
+      "5"
+    ],
+    "answer": "B",
+    "solution": "Mean = 3; squared deviations 4,1,0,1,4 = 10; variance = 10/5 = 2; SD = √2 ≈ 1.41.",
+    "trick": "√2 ≈ 1.41.",
+    "type": "SD of a small set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q15",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Find the variance of 10, 20 and 30.",
+    "options": [
+      "100",
+      "33.3",
+      "66.67",
+      "50"
+    ],
+    "answer": "C",
+    "solution": "Mean = 20; deviations −10, 0, 10; squares 100, 0, 100 = 200; variance = 200/3 ≈ 66.67.",
+    "trick": "200/3 ≈ 66.67.",
+    "type": "Variance of a small set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q16",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "A data set has SD = 5. If every value is multiplied by 0, what is the new SD?",
+    "options": [
+      "5",
+      "25",
+      "1",
+      "0"
+    ],
+    "answer": "D",
+    "solution": "Multiplying by 0 makes every value 0, so there is no spread: SD = 0.",
+    "trick": "×0 → all zero → SD 0.",
+    "type": "Effect of multiplying by a constant",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q17",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Find the variance of 4 and 8.",
+    "options": [
+      "4",
+      "2",
+      "8",
+      "16"
+    ],
+    "answer": "A",
+    "solution": "Mean = 6; deviations −2, 2; squares 4, 4 = 8; variance = 8/2 = 4.",
+    "trick": "(4+4)/2 = 4.",
+    "type": "Variance of a two-value set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q18",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Find the standard deviation of 2, 4 and 6.",
+    "options": [
+      "2.67",
+      "1.63",
+      "2",
+      "3"
+    ],
+    "answer": "B",
+    "solution": "Variance = 8/3 ≈ 2.67; SD = √2.67 ≈ 1.63.",
+    "trick": "√(8/3) ≈ 1.63.",
+    "type": "SD of a small set",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q19",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Two data sets have standard deviations 3 and 7. Which set is more spread out?",
+    "options": [
+      "They are equally spread",
+      "The set with SD 3",
+      "The set with SD 7",
+      "Cannot be said"
+    ],
+    "answer": "C",
+    "solution": "A larger standard deviation means greater spread, so the SD-7 set is more spread out.",
+    "trick": "Bigger SD = more spread.",
+    "type": "Interpreting SD",
+    "active": true
+  },
+  {
+    "id": "variance-standard-deviation-q20",
+    "topic": "variance-standard-deviation",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A data set has variance 16. If 100 is added to every value, what is the new variance?",
+    "options": [
+      "116",
+      "16000",
+      "10016",
+      "16"
+    ],
+    "answer": "D",
+    "solution": "Adding a constant does not change the spread, so the variance stays 16.",
+    "trick": "Shift keeps variance.",
+    "type": "Effect of adding a constant",
+    "active": true
+  }
+]

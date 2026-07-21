@@ -1,0 +1,402 @@
+[
+  {
+    "id": "phrasal-verbs-q1",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "'Give up' means:",
+    "options": [
+      "to quit",
+      "to lift",
+      "to donate",
+      "to raise"
+    ],
+    "answer": "A",
+    "solution": "'give up' = to stop or quit; not the literal 'give'.",
+    "trick": "Treat as one unit.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q2",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "'The meeting was ___ because of the rain.' Choose the correct phrasal verb.",
+    "options": [
+      "put on",
+      "put off",
+      "put up",
+      "put in"
+    ],
+    "answer": "B",
+    "solution": "'put off' = postpone, which fits 'because of the rain'.",
+    "trick": "put off = postpone.",
+    "type": "Fill the particle",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q3",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "'We ran out of milk.' 'Ran out of' means:",
+    "options": [
+      "bought more of",
+      "stored",
+      "have no more left of",
+      "spilled"
+    ],
+    "answer": "C",
+    "solution": "'run out of' = exhaust the supply of; have none left.",
+    "trick": "'out' = finished.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q4",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "'I can't ___ his rudeness anymore.' Choose the correct phrasal verb.",
+    "options": [
+      "put on",
+      "put off",
+      "put in",
+      "put up with"
+    ],
+    "answer": "D",
+    "solution": "'put up with' = tolerate.",
+    "trick": "put up with = tolerate.",
+    "type": "Fill the particle",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q5",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "'The match was called off.' 'Called off' means:",
+    "options": [
+      "cancelled",
+      "telephoned",
+      "shouted",
+      "postponed"
+    ],
+    "answer": "A",
+    "solution": "'call off' = cancel.",
+    "trick": "call off = cancel (not postpone).",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q6",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "'Please look after the children.' 'Look after' means:",
+    "options": [
+      "search for",
+      "take care of",
+      "look back at",
+      "ignore"
+    ],
+    "answer": "B",
+    "solution": "'look after' = take care of.",
+    "trick": "look after = care for.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q7",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "'The car broke down on the highway.' 'Broke down' means:",
+    "options": [
+      "was sold",
+      "broke in",
+      "stopped functioning",
+      "sped up"
+    ],
+    "answer": "C",
+    "solution": "'break down' (for a machine) = stop functioning.",
+    "trick": "'down' = stop working.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q8",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "'He turned down the job offer.' 'Turned down' means:",
+    "options": [
+      "accepted",
+      "turned around",
+      "lowered the volume",
+      "rejected"
+    ],
+    "answer": "D",
+    "solution": "'turn down' (an offer) = reject.",
+    "trick": "turn down = reject.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q9",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "'The plane took off on time.' 'Took off' means:",
+    "options": [
+      "departed",
+      "removed",
+      "copied",
+      "reduced"
+    ],
+    "answer": "A",
+    "solution": "'take off' (a plane) = leave the ground / depart.",
+    "trick": "Context = flight.",
+    "type": "Meaning in context",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q10",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "'She was brought up by her aunt.' 'Brought up' means:",
+    "options": [
+      "carried up",
+      "raised",
+      "brought down",
+      "woken up"
+    ],
+    "answer": "B",
+    "solution": "'bring up' (a child) = raise.",
+    "trick": "bring up = raise.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q11",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "'I need to find out the truth.' 'Find out' means:",
+    "options": [
+      "lose",
+      "search outside",
+      "discover",
+      "invent"
+    ],
+    "answer": "C",
+    "solution": "'find out' = discover / learn.",
+    "trick": "'out' = discover.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q12",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "'They get along very well.' 'Get along' means:",
+    "options": [
+      "leave",
+      "travel",
+      "hurry",
+      "have a good relationship"
+    ],
+    "answer": "D",
+    "solution": "'get along' = have a friendly relationship.",
+    "trick": "get along = relate well.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q13",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "'Please carry on with your work.' 'Carry on' means:",
+    "options": [
+      "continue",
+      "lift",
+      "cancel",
+      "return"
+    ],
+    "answer": "A",
+    "solution": "'carry on' = continue.",
+    "trick": "carry on = continue.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q14",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "'I came across an old photo.' 'Came across' means:",
+    "options": [
+      "crossed a road",
+      "found by chance",
+      "argued",
+      "agreed"
+    ],
+    "answer": "B",
+    "solution": "'come across' = find or meet by chance.",
+    "trick": "come across = find by chance.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q15",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "'You should cut down on sugar.' 'Cut down (on)' means:",
+    "options": [
+      "chop wood",
+      "fall over",
+      "reduce",
+      "increase"
+    ],
+    "answer": "C",
+    "solution": "'cut down on' = reduce the amount of.",
+    "trick": "'down' = reduce.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q16",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "'Hand in your assignments by Friday.' 'Hand in' means:",
+    "options": [
+      "shake hands",
+      "help",
+      "give up",
+      "submit"
+    ],
+    "answer": "D",
+    "solution": "'hand in' = submit / give to someone in authority.",
+    "trick": "hand in = submit.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q17",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "'Hold on a minute, please.' 'Hold on' means:",
+    "options": [
+      "wait",
+      "keep it forever",
+      "hang up",
+      "let go"
+    ],
+    "answer": "A",
+    "solution": "'hold on' = wait (especially on the phone).",
+    "trick": "hold on = wait.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q18",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "'I look forward to meeting you.' 'Look forward to' means:",
+    "options": [
+      "look ahead",
+      "anticipate with pleasure",
+      "forget",
+      "dread"
+    ],
+    "answer": "B",
+    "solution": "'look forward to' = await with pleasure.",
+    "trick": "look forward to = anticipate happily.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q19",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "'He made up a story.' 'Made up' means:",
+    "options": [
+      "applied cosmetics",
+      "built",
+      "invented",
+      "destroyed"
+    ],
+    "answer": "C",
+    "solution": "'make up' (a story) = invent / fabricate.",
+    "trick": "Context = a story → invent.",
+    "type": "Meaning in context",
+    "active": true
+  },
+  {
+    "id": "phrasal-verbs-q20",
+    "topic": "phrasal-verbs",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "'They set up a new company.' 'Set up' means:",
+    "options": [
+      "sit down",
+      "arrange chairs",
+      "fail",
+      "establish"
+    ],
+    "answer": "D",
+    "solution": "'set up' = establish / start.",
+    "trick": "set up = establish.",
+    "type": "Meaning",
+    "active": true
+  }
+]

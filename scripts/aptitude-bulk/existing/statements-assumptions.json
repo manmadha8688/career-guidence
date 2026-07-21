@@ -1,0 +1,402 @@
+[
+  {
+    "id": "statements-assumptions-q1",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Statement: 'Advertise your product in our newspaper for wide reach.' Assumption: People read the newspaper.",
+    "options": [
+      "Implicit",
+      "Not implicit",
+      "Either",
+      "Data insufficient"
+    ],
+    "answer": "A",
+    "solution": "Negation: if no one reads it, there is no reach — the statement fails. So it is implicit.",
+    "trick": "Negation test.",
+    "type": "Advertisement",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q2",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Statement: 'Please switch off the lights when you leave the room.' Assumption: People are able to switch off the lights.",
+    "options": [
+      "Not implicit",
+      "Implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "If people can't switch them off, the appeal is pointless — so it is implicit.",
+    "trick": "Appeal needs a capable audience.",
+    "type": "Appeal",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q3",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Statement: 'This medicine cures fever within three days.' Assumption: The medicine cures fever.",
+    "options": [
+      "Implicit",
+      "Either",
+      "Not implicit",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "The cure is explicitly stated, so it is not an assumption.",
+    "trick": "Stated facts aren't assumptions.",
+    "type": "Stated fact",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q4",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Statement: 'Our coaching improved many students' scores.' Assumption: All students who join will top the exam.",
+    "options": [
+      "Implicit",
+      "Either",
+      "Insufficient",
+      "Not implicit"
+    ],
+    "answer": "D",
+    "solution": "'Many improved' doesn't require 'all will top' — an extreme, unnecessary claim.",
+    "trick": "Extreme ⇒ not implicit.",
+    "type": "Extreme",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q5",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Statement: 'The city will run extra buses to reduce traffic.' Assumption: Extra buses can help reduce traffic.",
+    "options": [
+      "Implicit",
+      "Not implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "If extra buses can't reduce traffic, the plan is pointless — so it is implicit.",
+    "trick": "Plan assumes it can work.",
+    "type": "Plan",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q6",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Statement: 'Book your tickets online to avoid queues.' Assumption: Online booking is available.",
+    "options": [
+      "Not implicit",
+      "Implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "The advice only makes sense if online booking exists — implicit.",
+    "trick": "Advice assumes the option exists.",
+    "type": "Advertisement",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q7",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Statement: 'Attend our seminar to learn new investment strategies.' Assumption: The seminar will cover investment strategies.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Implicit",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "The promise implies the seminar's content covers those strategies — implicit.",
+    "trick": "Offer assumes it delivers.",
+    "type": "Advertisement",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q8",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Statement: 'The manager asked employees to submit reports by email.' Assumption: Employees have access to email.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Insufficient",
+      "Implicit"
+    ],
+    "answer": "D",
+    "solution": "The instruction assumes employees can use email — negation breaks it.",
+    "trick": "Instruction assumes the means.",
+    "type": "Appeal",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q9",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Statement: 'Visit our store this weekend for exclusive discounts.' Assumption: Customers prefer discounts.",
+    "options": [
+      "Implicit",
+      "Not implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "The offer relies on discounts attracting customers — implicit.",
+    "trick": "Incentive assumes it appeals.",
+    "type": "Advertisement",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q10",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Statement: 'The college will start evening classes for working students.' Assumption: Some working people wish to study.",
+    "options": [
+      "Not implicit",
+      "Implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Starting evening classes for them assumes such demand exists — implicit.",
+    "trick": "Service assumes a need for it.",
+    "type": "Plan",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q11",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Statement: 'Use our app to track your daily steps.' Assumption: Users own a device that runs the app.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Implicit",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "Using the app requires a compatible device — implicit.",
+    "trick": "Tool assumes access to it.",
+    "type": "Advertisement",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q12",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Statement: 'The notice says the office will be closed on Sunday.' Assumption: The office normally operates on other days.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Insufficient",
+      "Implicit"
+    ],
+    "answer": "D",
+    "solution": "Announcing a Sunday closure implies it is otherwise open — implicit.",
+    "trick": "Exception implies the norm.",
+    "type": "Notice",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q13",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Statement: 'Everyone in the country supports the new law.' Assumption: The law is popular with a few people.",
+    "options": [
+      "Not implicit",
+      "Implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "The claim is itself stated (and extreme); 'a few' is not the assumption behind it.",
+    "trick": "Not a necessary hidden belief.",
+    "type": "Extreme",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q14",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Statement: 'Drink our juice daily to stay healthy.' Assumption: The juice contributes to health.",
+    "options": [
+      "Not implicit",
+      "Implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "The claim relies on the juice benefiting health — implicit.",
+    "trick": "Benefit claim assumes the benefit.",
+    "type": "Advertisement",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q15",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Statement: 'The bank introduced a mobile alert service for every transaction.' Assumptions: I. Customers have mobile phones. II. Customers want to be alerted. Which is implicit?",
+    "options": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither"
+    ],
+    "answer": "C",
+    "solution": "The service needs customers to have phones (I) and presumes they value alerts (II); both are implicit.",
+    "trick": "Service assumes means and demand.",
+    "type": "Plan",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q16",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Statement: 'Government urges citizens to save water this summer.' Assumption: Citizens can reduce their water use.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Insufficient",
+      "Implicit"
+    ],
+    "answer": "D",
+    "solution": "An appeal to save water assumes people are able to cut usage — implicit.",
+    "trick": "Appeal assumes ability to comply.",
+    "type": "Appeal",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q17",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Statement: 'The publisher printed 10,000 extra copies of the book.' Assumption: There is demand for the extra copies.",
+    "options": [
+      "Implicit",
+      "Not implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "Printing extra copies assumes demand for them — negation makes the decision irrational.",
+    "trick": "Business action assumes demand.",
+    "type": "Plan",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q18",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Statement: 'The airline added a direct flight between the two cities.' Assumption: Some people travel between the two cities.",
+    "options": [
+      "Not implicit",
+      "Implicit",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Adding the route assumes travellers between the cities exist — implicit.",
+    "trick": "New route assumes travellers.",
+    "type": "Plan",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q19",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Statement: 'Read the instructions carefully before using the device.' Assumption: The user can read the instructions.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Implicit",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "The instruction assumes the user is able to read them — implicit.",
+    "trick": "'Read this' assumes readability/access.",
+    "type": "Appeal",
+    "active": true
+  },
+  {
+    "id": "statements-assumptions-q20",
+    "topic": "statements-assumptions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Statement: 'The company will give a bonus only if profits exceed last year.' Assumption: The company made a profit last year.",
+    "options": [
+      "Not implicit",
+      "Either",
+      "Insufficient",
+      "Implicit"
+    ],
+    "answer": "D",
+    "solution": "Comparing to last year's profit assumes there was a profit to exceed — implicit.",
+    "trick": "Comparison assumes the baseline exists.",
+    "type": "Plan",
+    "active": true
+  }
+]

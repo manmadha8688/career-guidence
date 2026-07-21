@@ -1,0 +1,1207 @@
+{
+  "topic": "geometry",
+  "category": "quantitative",
+  "group": "geometry-mensuration",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Triangle base 10 cm, height 6 cm. Area?",
+      "options": [
+        "30",
+        "60",
+        "16",
+        "60"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×10×6 = 30 cm².",
+      "trick": "A = ½bh.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Square side 8 cm. Perimeter?",
+      "options": [
+        "64",
+        "32",
+        "16",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×8 = 32 cm.",
+      "trick": "P = 4a.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Circle radius 7 cm. Area (use π = 22/7)?",
+      "options": [
+        "44.0",
+        "49",
+        "154.0",
+        "77.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×7² = 154.0 cm².",
+      "trick": "πr².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Triangle sides 3, 4, 5 cm. Area (Heron)?",
+      "options": [
+        "6.0",
+        "6.0",
+        "7",
+        "6.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=6.0. Area = √[s(s−a)(s−b)(s−c)] = 6.0.",
+      "trick": "Heron's formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Two angles of triangle are 60° and 50°. Third angle?",
+      "options": [
+        "70",
+        "60",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 60 − 50 = 70°.",
+      "trick": "Sum = 180°.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Rectangle 12×5 cm. Perimeter?",
+      "options": [
+        "60",
+        "34",
+        "17",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(12+5) = 34 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Circle radius 14. Circumference (π=22/7)?",
+      "options": [
+        "44.0",
+        "196",
+        "88.0",
+        "44.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 88.0 cm.",
+      "trick": "C = 2πr.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Rhombus diagonals 8 cm and 6 cm. Area?",
+      "options": [
+        "48",
+        "14",
+        "2",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×8×6 = 24 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Triangle base 11 cm, height 7 cm. Area?",
+      "options": [
+        "38",
+        "77",
+        "18",
+        "76"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×11×7 = 38 cm².",
+      "trick": "A = ½bh.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Square side 9 cm. Perimeter?",
+      "options": [
+        "81",
+        "36",
+        "18",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×9 = 36 cm.",
+      "trick": "P = 4a.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Circle radius 8 cm. Area (use π = 22/7)?",
+      "options": [
+        "50.285714285714285",
+        "64",
+        "201.1",
+        "100.55"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×8² = 201.1 cm².",
+      "trick": "πr².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Triangle sides 4, 5, 6 cm. Area (Heron)?",
+      "options": [
+        "10.0",
+        "7.5",
+        "9",
+        "9.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=7.5. Area = √[s(s−a)(s−b)(s−c)] = 9.9.",
+      "trick": "Heron's formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Two angles of triangle are 70° and 50°. Third angle?",
+      "options": [
+        "60",
+        "70",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 70 − 50 = 60°.",
+      "trick": "Sum = 180°.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Rectangle 13×6 cm. Perimeter?",
+      "options": [
+        "78",
+        "38",
+        "19",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(13+6) = 38 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Circle radius 15. Circumference (π=22/7)?",
+      "options": [
+        "47.14285714285714",
+        "225",
+        "94.3",
+        "47.15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 94.3 cm.",
+      "trick": "C = 2πr.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Rhombus diagonals 9 cm and 7 cm. Area?",
+      "options": [
+        "63",
+        "16",
+        "2",
+        "31"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×9×7 = 31 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Triangle base 12 cm, height 8 cm. Area?",
+      "options": [
+        "48",
+        "96",
+        "20",
+        "96"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×12×8 = 48 cm².",
+      "trick": "A = ½bh.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Square side 10 cm. Perimeter?",
+      "options": [
+        "100",
+        "40",
+        "20",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×10 = 40 cm.",
+      "trick": "P = 4a.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Circle radius 9 cm. Area (use π = 22/7)?",
+      "options": [
+        "56.57142857142857",
+        "81",
+        "254.6",
+        "127.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×9² = 254.6 cm².",
+      "trick": "πr².",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Triangle sides 5, 6, 7 cm. Area (Heron)?",
+      "options": [
+        "15.0",
+        "9.0",
+        "11",
+        "14.7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=9.0. Area = √[s(s−a)(s−b)(s−c)] = 14.7.",
+      "trick": "Heron's formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Two angles of triangle are 80° and 50°. Third angle?",
+      "options": [
+        "50",
+        "80",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 80 − 50 = 50°.",
+      "trick": "Sum = 180°.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Rectangle 14×7 cm. Perimeter?",
+      "options": [
+        "98",
+        "42",
+        "21",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(14+7) = 42 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Circle radius 16. Circumference (π=22/7)?",
+      "options": [
+        "50.285714285714285",
+        "256",
+        "100.6",
+        "50.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 100.6 cm.",
+      "trick": "C = 2πr.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Rhombus diagonals 10 cm and 8 cm. Area?",
+      "options": [
+        "80",
+        "18",
+        "2",
+        "40"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×10×8 = 40 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Triangle base 13 cm, height 9 cm. Area?",
+      "options": [
+        "58",
+        "117",
+        "22",
+        "116"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×13×9 = 58 cm².",
+      "trick": "A = ½bh.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Square side 11 cm. Perimeter?",
+      "options": [
+        "121",
+        "44",
+        "22",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×11 = 44 cm.",
+      "trick": "P = 4a.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Circle radius 10 cm. Area (use π = 22/7)?",
+      "options": [
+        "62.857142857142854",
+        "100",
+        "314.3",
+        "157.15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×10² = 314.3 cm².",
+      "trick": "πr².",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Triangle sides 6, 7, 8 cm. Area (Heron)?",
+      "options": [
+        "21.0",
+        "10.5",
+        "13",
+        "20.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=10.5. Area = √[s(s−a)(s−b)(s−c)] = 20.3.",
+      "trick": "Heron's formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Two angles of triangle are 90° and 50°. Third angle?",
+      "options": [
+        "40",
+        "90",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 90 − 50 = 40°.",
+      "trick": "Sum = 180°.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Rectangle 15×8 cm. Perimeter?",
+      "options": [
+        "120",
+        "46",
+        "23",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(15+8) = 46 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Circle radius 17. Circumference (π=22/7)?",
+      "options": [
+        "53.42857142857143",
+        "289",
+        "106.9",
+        "53.45"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 106.9 cm.",
+      "trick": "C = 2πr.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Rhombus diagonals 11 cm and 9 cm. Area?",
+      "options": [
+        "99",
+        "20",
+        "2",
+        "49"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×11×9 = 49 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Triangle base 14 cm, height 10 cm. Area?",
+      "options": [
+        "70",
+        "140",
+        "24",
+        "140"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×14×10 = 70 cm².",
+      "trick": "A = ½bh.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Square side 12 cm. Perimeter?",
+      "options": [
+        "144",
+        "48",
+        "24",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×12 = 48 cm.",
+      "trick": "P = 4a.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Circle radius 11 cm. Area (use π = 22/7)?",
+      "options": [
+        "69.14285714285714",
+        "121",
+        "380.3",
+        "190.15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×11² = 380.3 cm².",
+      "trick": "πr².",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Triangle sides 7, 8, 9 cm. Area (Heron)?",
+      "options": [
+        "28.0",
+        "12.0",
+        "15",
+        "26.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=12.0. Area = √[s(s−a)(s−b)(s−c)] = 26.8.",
+      "trick": "Heron's formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Two angles of triangle are 100° and 50°. Third angle?",
+      "options": [
+        "30",
+        "100",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 100 − 50 = 30°.",
+      "trick": "Sum = 180°.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Rectangle 16×9 cm. Perimeter?",
+      "options": [
+        "144",
+        "50",
+        "25",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(16+9) = 50 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Circle radius 18. Circumference (π=22/7)?",
+      "options": [
+        "56.57142857142857",
+        "324",
+        "113.1",
+        "56.55"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 113.1 cm.",
+      "trick": "C = 2πr.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Rhombus diagonals 12 cm and 10 cm. Area?",
+      "options": [
+        "120",
+        "22",
+        "2",
+        "60"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×12×10 = 60 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Triangle base 15 cm, height 11 cm. Area?",
+      "options": [
+        "82",
+        "165",
+        "26",
+        "164"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×15×11 = 82 cm².",
+      "trick": "A = ½bh.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Square side 13 cm. Perimeter?",
+      "options": [
+        "169",
+        "52",
+        "26",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×13 = 52 cm.",
+      "trick": "P = 4a.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Circle radius 12 cm. Area (use π = 22/7)?",
+      "options": [
+        "75.42857142857143",
+        "144",
+        "452.6",
+        "226.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×12² = 452.6 cm².",
+      "trick": "πr².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Triangle sides 8, 9, 10 cm. Area (Heron)?",
+      "options": [
+        "36.0",
+        "13.5",
+        "17",
+        "34.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=13.5. Area = √[s(s−a)(s−b)(s−c)] = 34.2.",
+      "trick": "Heron's formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Two angles of triangle are 110° and 50°. Third angle?",
+      "options": [
+        "20",
+        "110",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 110 − 50 = 20°.",
+      "trick": "Sum = 180°.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Rectangle 17×10 cm. Perimeter?",
+      "options": [
+        "170",
+        "54",
+        "27",
+        "17"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(17+10) = 54 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Circle radius 19. Circumference (π=22/7)?",
+      "options": [
+        "59.714285714285715",
+        "361",
+        "119.4",
+        "59.7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 119.4 cm.",
+      "trick": "C = 2πr.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Rhombus diagonals 13 cm and 11 cm. Area?",
+      "options": [
+        "143",
+        "24",
+        "2",
+        "71"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×13×11 = 71 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Triangle base 16 cm, height 12 cm. Area?",
+      "options": [
+        "96",
+        "192",
+        "28",
+        "192"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×16×12 = 96 cm².",
+      "trick": "A = ½bh.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Square side 14 cm. Perimeter?",
+      "options": [
+        "196",
+        "56",
+        "28",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×14 = 56 cm.",
+      "trick": "P = 4a.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Circle radius 13 cm. Area (use π = 22/7)?",
+      "options": [
+        "81.71428571428571",
+        "169",
+        "531.1",
+        "265.55"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×13² = 531.1 cm².",
+      "trick": "πr².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Triangle sides 9, 10, 11 cm. Area (Heron)?",
+      "options": [
+        "45.0",
+        "15.0",
+        "19",
+        "42.4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=15.0. Area = √[s(s−a)(s−b)(s−c)] = 42.4.",
+      "trick": "Heron's formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Two angles of triangle are 120° and 50°. Third angle?",
+      "options": [
+        "10",
+        "120",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 120 − 50 = 10°.",
+      "trick": "Sum = 180°.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Rectangle 18×11 cm. Perimeter?",
+      "options": [
+        "198",
+        "58",
+        "29",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(18+11) = 58 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Circle radius 20. Circumference (π=22/7)?",
+      "options": [
+        "62.857142857142854",
+        "400",
+        "125.7",
+        "62.85"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 125.7 cm.",
+      "trick": "C = 2πr.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Rhombus diagonals 14 cm and 12 cm. Area?",
+      "options": [
+        "168",
+        "26",
+        "2",
+        "84"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×14×12 = 84 cm².",
+      "trick": "½ d1 d2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Triangle base 17 cm, height 13 cm. Area?",
+      "options": [
+        "110",
+        "221",
+        "30",
+        "220"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×17×13 = 110 cm².",
+      "trick": "A = ½bh.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Square side 15 cm. Perimeter?",
+      "options": [
+        "225",
+        "60",
+        "30",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×15 = 60 cm.",
+      "trick": "P = 4a.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Circle radius 14 cm. Area (use π = 22/7)?",
+      "options": [
+        "88.0",
+        "196",
+        "616.0",
+        "308.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×14² = 616.0 cm².",
+      "trick": "πr².",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Triangle sides 10, 11, 12 cm. Area (Heron)?",
+      "options": [
+        "55.0",
+        "16.5",
+        "21",
+        "51.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=16.5. Area = √[s(s−a)(s−b)(s−c)] = 51.5.",
+      "trick": "Heron's formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Two angles of triangle are 130° and 50°. Third angle?",
+      "options": [
+        "0",
+        "130",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 130 − 50 = 0°.",
+      "trick": "Sum = 180°.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Rectangle 19×12 cm. Perimeter?",
+      "options": [
+        "228",
+        "62",
+        "31",
+        "19"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(19+12) = 62 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Circle radius 21. Circumference (π=22/7)?",
+      "options": [
+        "66.0",
+        "441",
+        "132.0",
+        "66.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 132.0 cm.",
+      "trick": "C = 2πr.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Rhombus diagonals 15 cm and 13 cm. Area?",
+      "options": [
+        "195",
+        "28",
+        "2",
+        "97"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×15×13 = 97 cm².",
+      "trick": "½ d1 d2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Triangle base 18 cm, height 14 cm. Area?",
+      "options": [
+        "126",
+        "252",
+        "32",
+        "252"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×18×14 = 126 cm².",
+      "trick": "A = ½bh.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Square side 16 cm. Perimeter?",
+      "options": [
+        "256",
+        "64",
+        "32",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×16 = 64 cm.",
+      "trick": "P = 4a.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Circle radius 15 cm. Area (use π = 22/7)?",
+      "options": [
+        "94.28571428571428",
+        "225",
+        "707.1",
+        "353.55"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×15² = 707.1 cm².",
+      "trick": "πr².",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Triangle sides 11, 12, 13 cm. Area (Heron)?",
+      "options": [
+        "66.0",
+        "18.0",
+        "23",
+        "61.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=18.0. Area = √[s(s−a)(s−b)(s−c)] = 61.5.",
+      "trick": "Heron's formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Two angles of triangle are 140° and 50°. Third angle?",
+      "options": [
+        "-10",
+        "140",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 140 − 50 = -10°.",
+      "trick": "Sum = 180°.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Rectangle 20×13 cm. Perimeter?",
+      "options": [
+        "260",
+        "66",
+        "33",
+        "20"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(20+13) = 66 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Circle radius 22. Circumference (π=22/7)?",
+      "options": [
+        "69.14285714285714",
+        "484",
+        "138.3",
+        "69.15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 138.3 cm.",
+      "trick": "C = 2πr.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Rhombus diagonals 16 cm and 14 cm. Area?",
+      "options": [
+        "224",
+        "30",
+        "2",
+        "112"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×16×14 = 112 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Triangle base 19 cm, height 15 cm. Area?",
+      "options": [
+        "142",
+        "285",
+        "34",
+        "284"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ½×19×15 = 142 cm².",
+      "trick": "A = ½bh.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Square side 17 cm. Perimeter?",
+      "options": [
+        "289",
+        "68",
+        "34",
+        "17"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×17 = 68 cm.",
+      "trick": "P = 4a.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Circle radius 16 cm. Area (use π = 22/7)?",
+      "options": [
+        "100.57142857142857",
+        "256",
+        "804.6",
+        "402.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 22/7×16² = 804.6 cm².",
+      "trick": "πr².",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Triangle sides 12, 13, 14 cm. Area (Heron)?",
+      "options": [
+        "78.0",
+        "19.5",
+        "25",
+        "72.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: s=19.5. Area = √[s(s−a)(s−b)(s−c)] = 72.3.",
+      "trick": "Heron's formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Two angles of triangle are 150° and 50°. Third angle?",
+      "options": [
+        "-20",
+        "150",
+        "50",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 180 − 150 − 50 = -20°.",
+      "trick": "Sum = 180°.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Rectangle 21×14 cm. Perimeter?",
+      "options": [
+        "294",
+        "70",
+        "35",
+        "21"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2(21+14) = 70 cm.",
+      "trick": "P = 2(l+w).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Circle radius 23. Circumference (π=22/7)?",
+      "options": [
+        "72.28571428571428",
+        "529",
+        "144.6",
+        "72.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 2πr = 144.6 cm.",
+      "trick": "C = 2πr.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Rhombus diagonals 17 cm and 15 cm. Area?",
+      "options": [
+        "255",
+        "32",
+        "2",
+        "127"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ½×17×15 = 127 cm².",
+      "trick": "½ d1 d2.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

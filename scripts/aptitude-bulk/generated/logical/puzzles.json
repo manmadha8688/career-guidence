@@ -1,0 +1,1207 @@
+{
+  "topic": "puzzles",
+  "category": "logical",
+  "group": "puzzles",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Puzzle 21: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Puzzle 22: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Puzzle 23: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Puzzle 24: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Puzzle 25: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Puzzle 26: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Puzzle 27: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Puzzle 28: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Puzzle 29: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Puzzle 30: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Puzzle 31: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Puzzle 32: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Puzzle 33: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Puzzle 34: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Puzzle 35: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Puzzle 36: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Puzzle 37: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Puzzle 38: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Puzzle 39: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Puzzle 40: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Puzzle 41: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Puzzle 42: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Puzzle 43: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Puzzle 44: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Puzzle 45: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Puzzle 46: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Puzzle 47: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Puzzle 48: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Puzzle 49: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Puzzle 50: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Puzzle 51: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Puzzle 52: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Puzzle 53: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Puzzle 54: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Puzzle 55: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Puzzle 56: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Puzzle 57: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Puzzle 58: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Puzzle 59: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Puzzle 60: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Puzzle 61: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Puzzle 62: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Puzzle 63: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Puzzle 64: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Puzzle 65: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Puzzle 66: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Puzzle 67: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Puzzle 68: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Puzzle 69: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Puzzle 70: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Puzzle 71: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Puzzle 72: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Puzzle 73: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Puzzle 74: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Puzzle 75: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Weight puzzle"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Puzzle 76: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Puzzle 77: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Puzzle 78: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Puzzle 79: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Puzzle 80: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Puzzle 81: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Puzzle 82: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Puzzle 83: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Puzzle 84: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Puzzle 85: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Puzzle 86: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Puzzle 87: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Puzzle 88: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Puzzle 89: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Puzzle 90: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Puzzle 91: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Puzzle 92: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Puzzle 93: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Puzzle 94: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Puzzle 95: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Puzzle 96: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Puzzle 97: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Puzzle 98: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Puzzle 99: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Puzzle 100: Red box is heavier than Blue but lighter than Green. Yellow is lighter than Blue. Which is heaviest?",
+      "options": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Green > Red > Blue > Yellow. Step 2: Green is heaviest. Answer: Green.",
+      "trick": "Chain inequalities.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

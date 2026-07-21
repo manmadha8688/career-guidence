@@ -1,0 +1,402 @@
+[
+  {
+    "id": "equations-q1",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Solve 3x − 7 = 11.",
+    "options": [
+      "6",
+      "4",
+      "18",
+      "5"
+    ],
+    "answer": "A",
+    "solution": "3x = 18 → x = 6.",
+    "trick": "Constant across, then divide.",
+    "type": "Linear equation",
+    "active": true
+  },
+  {
+    "id": "equations-q2",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Solve 2x + 5 = 13.",
+    "options": [
+      "9",
+      "4",
+      "3",
+      "6"
+    ],
+    "answer": "B",
+    "solution": "2x = 8 → x = 4.",
+    "trick": "Isolate x.",
+    "type": "Linear equation",
+    "active": true
+  },
+  {
+    "id": "equations-q3",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Solve x + y = 10 and x − y = 4. Find x.",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "6"
+    ],
+    "answer": "C",
+    "solution": "Add: 2x = 14 → x = 7.",
+    "trick": "Add to eliminate y.",
+    "type": "Simultaneous equations",
+    "active": true
+  },
+  {
+    "id": "equations-q4",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Solve x² − 5x + 6 = 0.",
+    "options": [
+      "−2 and −3",
+      "1 and 6",
+      "2 and 6",
+      "2 and 3"
+    ],
+    "answer": "D",
+    "solution": "(x−2)(x−3) = 0 → x = 2 or 3.",
+    "trick": "Product 6, sum 5.",
+    "type": "Quadratic by factoring",
+    "active": true
+  },
+  {
+    "id": "equations-q5",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find the sum of the roots of x² − 7x + 12 = 0.",
+    "options": [
+      "7",
+      "12",
+      "−7",
+      "19"
+    ],
+    "answer": "A",
+    "solution": "Sum = −b/a = 7.",
+    "trick": "−b/a.",
+    "type": "Sum & product of roots",
+    "active": true
+  },
+  {
+    "id": "equations-q6",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Find the product of the roots of x² − 7x + 12 = 0.",
+    "options": [
+      "7",
+      "12",
+      "−12",
+      "19"
+    ],
+    "answer": "B",
+    "solution": "Product = c/a = 12.",
+    "trick": "c/a.",
+    "type": "Sum & product of roots",
+    "active": true
+  },
+  {
+    "id": "equations-q7",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Solve x² = 49.",
+    "options": [
+      "7",
+      "±49",
+      "±7",
+      "24.5"
+    ],
+    "answer": "C",
+    "solution": "x = ±√49 = ±7.",
+    "trick": "Both roots for a square.",
+    "type": "Quadratic by factoring",
+    "active": true
+  },
+  {
+    "id": "equations-q8",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Solve 2x + 3y = 13 and x + y = 5.",
+    "options": [
+      "x=3, y=2",
+      "x=1, y=4",
+      "x=4, y=1",
+      "x=2, y=3"
+    ],
+    "answer": "D",
+    "solution": "x = 5 − y → 2(5−y) + 3y = 13 → 10 + y = 13 → y = 3, x = 2.",
+    "trick": "Substitute from the simple equation.",
+    "type": "Simultaneous equations",
+    "active": true
+  },
+  {
+    "id": "equations-q9",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Solve 2x² − 4x − 6 = 0.",
+    "options": [
+      "3 and −1",
+      "3 and 1",
+      "−3 and 1",
+      "2 and −3"
+    ],
+    "answer": "A",
+    "solution": "D = 16 + 48 = 64. x = (4 ± 8)/4 → 3 or −1.",
+    "trick": "Quadratic formula.",
+    "type": "Quadratic formula / discriminant",
+    "active": true
+  },
+  {
+    "id": "equations-q10",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "For what value of k does x² − 6x + k = 0 have equal roots?",
+    "options": [
+      "6",
+      "9",
+      "3",
+      "36"
+    ],
+    "answer": "B",
+    "solution": "Equal roots → D = 0 → 36 − 4k = 0 → k = 9.",
+    "trick": "Set b²−4ac = 0.",
+    "type": "Quadratic formula / discriminant",
+    "active": true
+  },
+  {
+    "id": "equations-q11",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "The sum of two numbers is 15 and their difference is 3. Find the larger number.",
+    "options": [
+      "6",
+      "12",
+      "9",
+      "7.5"
+    ],
+    "answer": "C",
+    "solution": "x + y = 15, x − y = 3 → 2x = 18 → x = 9.",
+    "trick": "Add the equations.",
+    "type": "Word problem to equation",
+    "active": true
+  },
+  {
+    "id": "equations-q12",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "If the roots of x² − px + 12 = 0 are 3 and 4, find p.",
+    "options": [
+      "12",
+      "1",
+      "−7",
+      "7"
+    ],
+    "answer": "D",
+    "solution": "Sum of roots = p = 3 + 4 = 7 (and product 12 checks out).",
+    "trick": "p = sum of roots.",
+    "type": "Sum & product of roots",
+    "active": true
+  },
+  {
+    "id": "equations-q13",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Solve (x/2) + (x/3) = 5.",
+    "options": [
+      "6",
+      "5",
+      "10",
+      "3"
+    ],
+    "answer": "A",
+    "solution": "(3x + 2x)/6 = 5 → 5x = 30 → x = 6.",
+    "trick": "Clear the denominator first.",
+    "type": "Linear equation",
+    "active": true
+  },
+  {
+    "id": "equations-q14",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Solve x² + x − 12 = 0.",
+    "options": [
+      "4 and −3",
+      "−4 and 3",
+      "−4 and −3",
+      "4 and 3"
+    ],
+    "answer": "B",
+    "solution": "(x+4)(x−3) = 0 → x = −4 or 3.",
+    "trick": "Product −12, sum +1.",
+    "type": "Quadratic by factoring",
+    "active": true
+  },
+  {
+    "id": "equations-q15",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "The product of two consecutive positive integers is 56. Find the smaller integer.",
+    "options": [
+      "8",
+      "6",
+      "7",
+      "14"
+    ],
+    "answer": "C",
+    "solution": "x(x+1) = 56 → x² + x − 56 = 0 → (x+8)(x−7) = 0 → x = 7.",
+    "trick": "Consecutive → x and x+1.",
+    "type": "Word problem to equation",
+    "active": true
+  },
+  {
+    "id": "equations-q16",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "If one root of x² − 5x + k = 0 is 2, find the other root.",
+    "options": [
+      "6",
+      "2",
+      "5",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "2 is a root: 4 − 10 + k = 0 → k = 6. Product of roots = 6 → other root = 6/2 = 3.",
+    "trick": "Use product = c/a.",
+    "type": "Sum & product of roots",
+    "active": true
+  },
+  {
+    "id": "equations-q17",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A man is 3 times as old as his son. 12 years ago he was 9 times as old. Find the son's present age.",
+    "options": [
+      "16",
+      "12",
+      "8",
+      "18"
+    ],
+    "answer": "A",
+    "solution": "3s − 12 = 9(s − 12) → 3s − 12 = 9s − 108 → 96 = 6s → s = 16.",
+    "trick": "Set up with s and 3s.",
+    "type": "Word problem to equation",
+    "active": true
+  },
+  {
+    "id": "equations-q18",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Solve 2x + y = 7 and 3x − y = 8.",
+    "options": [
+      "x=1, y=3",
+      "x=3, y=1",
+      "x=2, y=3",
+      "x=3, y=2"
+    ],
+    "answer": "B",
+    "solution": "Add: 5x = 15 → x = 3. Then y = 7 − 6 = 1.",
+    "trick": "Add to cancel y.",
+    "type": "Simultaneous equations",
+    "active": true
+  },
+  {
+    "id": "equations-q19",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "The sum of a positive number and its reciprocal is 5/2. Find the number.",
+    "options": [
+      "2 or 3",
+      "5 or 1/5",
+      "2 or 1/2",
+      "1 or 2"
+    ],
+    "answer": "C",
+    "solution": "x + 1/x = 5/2 → 2x² − 5x + 2 = 0 → (2x−1)(x−2) = 0 → x = 2 or 1/2.",
+    "trick": "Clear the fraction into a quadratic.",
+    "type": "Word problem to equation",
+    "active": true
+  },
+  {
+    "id": "equations-q20",
+    "topic": "equations",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "For what values of k does x² + kx + 9 = 0 have real and distinct roots?",
+    "options": [
+      "k = 6",
+      "−6 < k < 6",
+      "k = ±6",
+      "k > 6 or k < −6"
+    ],
+    "answer": "D",
+    "solution": "Real distinct → D > 0 → k² − 36 > 0 → k² > 36 → k > 6 or k < −6.",
+    "trick": "D > 0 gives the range.",
+    "type": "Quadratic formula / discriminant",
+    "active": true
+  }
+]

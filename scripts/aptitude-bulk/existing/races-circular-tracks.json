@@ -1,0 +1,402 @@
+[
+  {
+    "id": "races-circular-tracks-q1",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "In a 100 m race, A beats B by 20 m. Find the ratio of their speeds.",
+    "options": [
+      "5:4",
+      "4:5",
+      "5:1",
+      "1:5"
+    ],
+    "answer": "A",
+    "solution": "A runs 100 while B runs 80 in the same time → 100:80 = 5:4.",
+    "trick": "Ratio d:(d−x).",
+    "type": "Beats by a distance",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q2",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "In a 100 m race, A gives B a start of 25 m. How far does B actually run?",
+    "options": [
+      "125 m",
+      "75 m",
+      "25 m",
+      "100 m"
+    ],
+    "answer": "B",
+    "solution": "B runs 100 − 25 = 75 m.",
+    "trick": "Start subtracts from the loser's distance.",
+    "type": "Head start, who wins",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q3",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "In a race, A finishes in 40 s and beats B by 10 s. How long does B take?",
+    "options": [
+      "30 s",
+      "10 s",
+      "50 s",
+      "45 s"
+    ],
+    "answer": "C",
+    "solution": "B's time = 40 + 10 = 50 s.",
+    "trick": "Loser's time = winner + gap.",
+    "type": "Beats by time",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q4",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "In a 200 m race, A beats B by 40 m. Find the ratio of their speeds.",
+    "options": [
+      "4:5",
+      "5:1",
+      "200:40",
+      "5:4"
+    ],
+    "answer": "D",
+    "solution": "200:(200−40) = 200:160 = 5:4.",
+    "trick": "Ratio d:(d−x).",
+    "type": "Beats by a distance",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q5",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Two runners on a 400 m circular track run in opposite directions at 5 and 3 m/s from the same point. When do they first meet?",
+    "options": [
+      "50 s",
+      "200 s",
+      "100 s",
+      "80 s"
+    ],
+    "answer": "A",
+    "solution": "Relative = 8 m/s. Time = 400/8 = 50 s.",
+    "trick": "L ÷ (sum of speeds).",
+    "type": "Circular track, first meeting",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q6",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "On a circular track A laps in 40 s and B in 60 s from the start. When do they next meet at the starting point?",
+    "options": [
+      "100 s",
+      "120 s",
+      "60 s",
+      "240 s"
+    ],
+    "answer": "B",
+    "solution": "LCM(40, 60) = 120 s.",
+    "trick": "Meet at start = LCM of lap times.",
+    "type": "Meeting at the starting point",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q7",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "In a 100 m race A finishes in 20 s and beats B by 5 s. Find B's speed.",
+    "options": [
+      "5 m/s",
+      "3 m/s",
+      "4 m/s",
+      "4.5 m/s"
+    ],
+    "answer": "C",
+    "solution": "B's time = 25 s. Speed = 100/25 = 4 m/s.",
+    "trick": "Distance ÷ (winner time + gap).",
+    "type": "Beats by time",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q8",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "In a 200 m race, A beats B by 20 m or 5 seconds. Find A's time for 200 m.",
+    "options": [
+      "50 s",
+      "40 s",
+      "55 s",
+      "45 s"
+    ],
+    "answer": "D",
+    "solution": "B's speed = 20/5 = 4 m/s → B's time = 200/4 = 50 s. A = 50 − 5 = 45 s.",
+    "trick": "x m ÷ t s gives the loser's speed.",
+    "type": "Beats by distance OR time",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q9",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "In a 100 m race, A gives B a start of 10 m. A runs at 10 m/s and B at 8 m/s. Who wins?",
+    "options": [
+      "A wins",
+      "B wins",
+      "Dead heat",
+      "Cannot tell"
+    ],
+    "answer": "A",
+    "solution": "A: 100/10 = 10 s. B: (100−10)/8 = 11.25 s. A is faster → A wins.",
+    "trick": "Compare times after applying the start.",
+    "type": "Head start, who wins",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q10",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "In a 500 m race, A beats B by 50 m. If A's speed is 10 m/s, find B's speed.",
+    "options": [
+      "10 m/s",
+      "9 m/s",
+      "8 m/s",
+      "9.5 m/s"
+    ],
+    "answer": "B",
+    "solution": "Ratio A:B = 500:450 = 10:9. B = 10 × 9/10 = 9 m/s.",
+    "trick": "Speed ratio = distance ratio.",
+    "type": "Beats by a distance",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q11",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Two runners on a 300 m circular track run in the same direction at 7 and 4 m/s from the same point. When do they first meet?",
+    "options": [
+      "27.3 s",
+      "75 s",
+      "100 s",
+      "150 s"
+    ],
+    "answer": "C",
+    "solution": "Relative = 7 − 4 = 3 m/s. Time = 300/3 = 100 s.",
+    "trick": "Same direction → subtract speeds.",
+    "type": "Circular track, first meeting",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q12",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "On a 400 m track, A runs at 8 m/s and B at 5 m/s in the same direction from the start. When do they next meet at the starting point?",
+    "options": [
+      "200 s",
+      "133 s",
+      "800 s",
+      "400 s"
+    ],
+    "answer": "D",
+    "solution": "Lap times: A = 400/8 = 50 s, B = 400/5 = 80 s. LCM(50, 80) = 400 s.",
+    "trick": "LCM of individual lap times.",
+    "type": "Meeting at the starting point",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q13",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "In a 100 m race, A beats B by 10 m and B beats C by 10 m. By how many metres does A beat C over 100 m?",
+    "options": [
+      "19 m",
+      "20 m",
+      "18 m",
+      "10 m"
+    ],
+    "answer": "A",
+    "solution": "A:B = 100:90. When A runs 100, B runs 90; while B runs 90, C runs 90×0.9 = 81. A beats C by 100 − 81 = 19 m.",
+    "trick": "Chain the ratios, don't just add.",
+    "type": "Beats by a distance",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q14",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "In a 1000 m race, A beats B by 100 m or 10 seconds. Find A's time for the race.",
+    "options": [
+      "100 s",
+      "90 s",
+      "80 s",
+      "110 s"
+    ],
+    "answer": "B",
+    "solution": "B's speed = 100/10 = 10 m/s → B's time = 1000/10 = 100 s. A = 100 − 10 = 90 s.",
+    "trick": "Loser's speed from the gap.",
+    "type": "Beats by distance OR time",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q15",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "In a game of 100 points, A can give B 20 points and C 28 points. How many points can B give C in a game of 100?",
+    "options": [
+      "8 points",
+      "12 points",
+      "10 points",
+      "20 points"
+    ],
+    "answer": "C",
+    "solution": "A:B = 100:80, A:C = 100:72. So B:C = 80:72 = 100:90. B gives C 10 points.",
+    "trick": "Divide the two ratios.",
+    "type": "Beats by distance OR time",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q16",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Two people run around a 600 m circular track at 4 and 6 m/s in opposite directions. How many times do they meet in 5 minutes (excluding start)?",
+    "options": [
+      "6",
+      "10",
+      "3",
+      "5"
+    ],
+    "answer": "D",
+    "solution": "Relative = 10 m/s → meet every 600/10 = 60 s. In 300 s → 300/60 = 5 times.",
+    "trick": "Total time ÷ meeting interval.",
+    "type": "Circular track, first meeting",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q17",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "In a 200 m race, A beats B by 20 m and C by 38 m. In a 200 m race between B and C, by how much does B beat C?",
+    "options": [
+      "20 m",
+      "18 m",
+      "38 m",
+      "25 m"
+    ],
+    "answer": "A",
+    "solution": "A:B = 200:180, A:C = 200:162. When B runs 180, C runs 162; scaled to 200, C = 162×200/180 = 180. B beats C by 20 m.",
+    "trick": "Compare B and C at equal A-distance.",
+    "type": "Head start, who wins",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q18",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Three runners start together on a circular track and complete a lap in 6, 9 and 12 minutes. After how long do they all meet at the starting point?",
+    "options": [
+      "18 min",
+      "36 min",
+      "12 min",
+      "27 min"
+    ],
+    "answer": "B",
+    "solution": "LCM(6, 9, 12) = 36 minutes.",
+    "trick": "LCM of all lap times.",
+    "type": "Meeting at the starting point",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q19",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A and B run on a 400 m track from the same point in the same direction at 8 and 5 m/s. After how long does the faster first gain a full lap on the slower (they first meet again)?",
+    "options": [
+      "80 s",
+      "50 s",
+      "133⅓ s",
+      "100 s"
+    ],
+    "answer": "C",
+    "solution": "Relative = 3 m/s. Time = 400/3 = 133⅓ s.",
+    "trick": "One lap gained ÷ relative speed.",
+    "type": "Circular track, first meeting",
+    "active": true
+  },
+  {
+    "id": "races-circular-tracks-q20",
+    "topic": "races-circular-tracks",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "In a 1200 m race, A beats B by 120 m and B beats C by 100 m. By how many metres does A beat C in the same race?",
+    "options": [
+      "220 m",
+      "200 m",
+      "120 m",
+      "210 m"
+    ],
+    "answer": "D",
+    "solution": "A:B = 1200:1080. When A runs 1200, B runs 1080; while B runs 1080, C runs 1080×(1100/1200) = 990. A beats C by 1200 − 990 = 210 m.",
+    "trick": "Chain the ratios at A's finish.",
+    "type": "Beats by a distance",
+    "active": true
+  }
+]

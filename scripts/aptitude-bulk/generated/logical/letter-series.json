@@ -1,0 +1,1207 @@
+{
+  "topic": "letter-series",
+  "category": "logical",
+  "group": "series-patterns",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Find the next letter: V, X, Z, B, D, ?",
+      "options": [
+        "F",
+        "E",
+        "G",
+        "H"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is F. Answer: F.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Find the next letter (reverse alphabet): X, W, V, U, T, ?",
+      "options": [
+        "S",
+        "R",
+        "T",
+        "U"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is S. Answer: S.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Find the next vowel in order: O, U, A, E, ?",
+      "options": [
+        "I",
+        "A",
+        "E",
+        "O"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is I. Answer: I.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Find the next letter: G, L, Q, V, A, ?",
+      "options": [
+        "F",
+        "E",
+        "G",
+        "H"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Advance by +5 (wrap at Z). Step 2: After A → F. Answer: F.",
+      "trick": "+5 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Find the next letter: Z, B, D, F, H, ?",
+      "options": [
+        "J",
+        "I",
+        "K",
+        "L"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is J. Answer: J.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Find the next letter (reverse alphabet): T, S, R, Q, P, ?",
+      "options": [
+        "O",
+        "N",
+        "P",
+        "Q"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is O. Answer: O.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Find the next vowel in order: I, O, U, A, ?",
+      "options": [
+        "E",
+        "A",
+        "I",
+        "O"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is E. Answer: E.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find the next letter: S, W, A, E, I, ?",
+      "options": [
+        "M",
+        "L",
+        "N",
+        "O"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Advance by +4 (wrap at Z). Step 2: After I → M. Answer: M.",
+      "trick": "+4 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Find the next letter: D, F, H, J, L, ?",
+      "options": [
+        "N",
+        "M",
+        "O",
+        "P"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is N. Answer: N.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Find the next letter (reverse alphabet): Z, Y, X, W, V, ?",
+      "options": [
+        "U",
+        "T",
+        "V",
+        "W"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is U. Answer: U.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Find the next vowel in order: E, I, O, U, ?",
+      "options": [
+        "A",
+        "E",
+        "I",
+        "O"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is A. Answer: A.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Find the next letter: I, L, O, R, U, ?",
+      "options": [
+        "X",
+        "W",
+        "Y",
+        "Z"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Advance by +3 (wrap at Z). Step 2: After U → X. Answer: X.",
+      "trick": "+3 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Find the next letter: H, J, L, N, P, ?",
+      "options": [
+        "R",
+        "Q",
+        "S",
+        "T"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is R. Answer: R.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Find the next letter (reverse alphabet): V, U, T, S, R, ?",
+      "options": [
+        "Q",
+        "P",
+        "R",
+        "S"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is Q. Answer: Q.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Find the next vowel in order: A, E, I, O, ?",
+      "options": [
+        "U",
+        "A",
+        "E",
+        "I"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is U. Answer: U.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Find the next letter: U, W, Y, A, C, ?",
+      "options": [
+        "E",
+        "D",
+        "F",
+        "G"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Advance by +2 (wrap at Z). Step 2: After C → E. Answer: E.",
+      "trick": "+2 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Find the next letter: L, N, P, R, T, ?",
+      "options": [
+        "V",
+        "U",
+        "W",
+        "X"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is V. Answer: V.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Find the next letter (reverse alphabet): R, Q, P, O, N, ?",
+      "options": [
+        "M",
+        "L",
+        "N",
+        "O"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is M. Answer: M.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Find the next vowel in order: U, A, E, I, ?",
+      "options": [
+        "O",
+        "A",
+        "E",
+        "I"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is O. Answer: O.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Find the next letter: K, L, M, N, O, ?",
+      "options": [
+        "P",
+        "O",
+        "Q",
+        "R"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Advance by +1 (wrap at Z). Step 2: After O → P. Answer: P.",
+      "trick": "+1 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Find the next letter: P, R, T, V, X, ?",
+      "options": [
+        "Y",
+        "Z",
+        "A",
+        "B"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is Z. Answer: Z.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Find the next letter (reverse alphabet): X, W, V, U, T, ?",
+      "options": [
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is S. Answer: S.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Find the next vowel in order: O, U, A, E, ?",
+      "options": [
+        "A",
+        "I",
+        "E",
+        "O"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is I. Answer: I.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Find the next letter: A, F, K, P, U, ?",
+      "options": [
+        "Y",
+        "Z",
+        "A",
+        "B"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Advance by +5 (wrap at Z). Step 2: After U → Z. Answer: Z.",
+      "trick": "+5 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Find the next letter: T, V, X, Z, B, ?",
+      "options": [
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is D. Answer: D.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Find the next letter (reverse alphabet): T, S, R, Q, P, ?",
+      "options": [
+        "N",
+        "O",
+        "P",
+        "Q"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is O. Answer: O.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Find the next vowel in order: I, O, U, A, ?",
+      "options": [
+        "A",
+        "E",
+        "I",
+        "O"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is E. Answer: E.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Find the next letter: M, Q, U, Y, C, ?",
+      "options": [
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Advance by +4 (wrap at Z). Step 2: After C → G. Answer: G.",
+      "trick": "+4 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Find the next letter: X, Z, B, D, F, ?",
+      "options": [
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is H. Answer: H.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Find the next letter (reverse alphabet): Z, Y, X, W, V, ?",
+      "options": [
+        "T",
+        "U",
+        "V",
+        "W"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is U. Answer: U.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Find the next vowel in order: E, I, O, U, ?",
+      "options": [
+        "E",
+        "A",
+        "I",
+        "O"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is A. Answer: A.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Find the next letter: C, F, I, L, O, ?",
+      "options": [
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Advance by +3 (wrap at Z). Step 2: After O → R. Answer: R.",
+      "trick": "+3 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Find the next letter: B, D, F, H, J, ?",
+      "options": [
+        "K",
+        "L",
+        "M",
+        "N"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is L. Answer: L.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Find the next letter (reverse alphabet): V, U, T, S, R, ?",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is Q. Answer: Q.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Find the next vowel in order: A, E, I, O, ?",
+      "options": [
+        "A",
+        "U",
+        "E",
+        "I"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is U. Answer: U.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Find the next letter: O, Q, S, U, W, ?",
+      "options": [
+        "X",
+        "Y",
+        "Z",
+        "A"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Advance by +2 (wrap at Z). Step 2: After W → Y. Answer: Y.",
+      "trick": "+2 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Find the next letter: F, H, J, L, N, ?",
+      "options": [
+        "O",
+        "P",
+        "Q",
+        "R"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is P. Answer: P.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): R, Q, P, O, N, ?",
+      "options": [
+        "L",
+        "M",
+        "N",
+        "O"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is M. Answer: M.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: U, A, E, I, ?",
+      "options": [
+        "A",
+        "O",
+        "E",
+        "I"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is O. Answer: O.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Find the next letter: E, F, G, H, I, ?",
+      "options": [
+        "I",
+        "J",
+        "K",
+        "L"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Advance by +1 (wrap at Z). Step 2: After I → J. Answer: J.",
+      "trick": "+1 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Find the next letter: J, L, N, P, R, ?",
+      "options": [
+        "S",
+        "U",
+        "T",
+        "V"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is T. Answer: T.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): X, W, V, U, T, ?",
+      "options": [
+        "R",
+        "T",
+        "S",
+        "U"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is S. Answer: S.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: O, U, A, E, ?",
+      "options": [
+        "A",
+        "E",
+        "I",
+        "O"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is I. Answer: I.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Find the next letter: Q, V, A, F, K, ?",
+      "options": [
+        "O",
+        "Q",
+        "P",
+        "R"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Advance by +5 (wrap at Z). Step 2: After K → P. Answer: P.",
+      "trick": "+5 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Find the next letter: N, P, R, T, V, ?",
+      "options": [
+        "W",
+        "Y",
+        "X",
+        "Z"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is X. Answer: X.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): T, S, R, Q, P, ?",
+      "options": [
+        "N",
+        "P",
+        "O",
+        "Q"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is O. Answer: O.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: I, O, U, A, ?",
+      "options": [
+        "A",
+        "I",
+        "E",
+        "O"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is E. Answer: E.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Find the next letter: G, K, O, S, W, ?",
+      "options": [
+        "Z",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Advance by +4 (wrap at Z). Step 2: After W → A. Answer: A.",
+      "trick": "+4 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Find the next letter: R, T, V, X, Z, ?",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is B. Answer: B.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): Z, Y, X, W, V, ?",
+      "options": [
+        "T",
+        "V",
+        "U",
+        "W"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is U. Answer: U.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: E, I, O, U, ?",
+      "options": [
+        "E",
+        "I",
+        "A",
+        "O"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is A. Answer: A.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Find the next letter: S, V, Y, B, E, ?",
+      "options": [
+        "G",
+        "I",
+        "H",
+        "J"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Advance by +3 (wrap at Z). Step 2: After E → H. Answer: H.",
+      "trick": "+3 each step.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Find the next letter: V, X, Z, B, D, ?",
+      "options": [
+        "E",
+        "G",
+        "F",
+        "H"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is F. Answer: F.",
+      "trick": "Every alternate letter.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): V, U, T, S, R, ?",
+      "options": [
+        "P",
+        "R",
+        "Q",
+        "S"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is Q. Answer: Q.",
+      "trick": "Reverse alphabet series.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: A, E, I, O, ?",
+      "options": [
+        "A",
+        "E",
+        "U",
+        "I"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is U. Answer: U.",
+      "trick": "Vowel cycle.",
+      "type": "Alphabet series"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Find the next letter: I, K, M, O, Q, ?",
+      "options": [
+        "R",
+        "T",
+        "S",
+        "U"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Advance by +2 (wrap at Z). Step 2: After Q → S. Answer: S.",
+      "trick": "+2 each step.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Find the next letter: Z, B, D, F, H, ?",
+      "options": [
+        "I",
+        "K",
+        "J",
+        "L"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is J. Answer: J.",
+      "trick": "Every alternate letter.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): R, Q, P, O, N, ?",
+      "options": [
+        "L",
+        "N",
+        "M",
+        "O"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is M. Answer: M.",
+      "trick": "Reverse alphabet series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: U, A, E, I, ?",
+      "options": [
+        "A",
+        "E",
+        "O",
+        "I"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is O. Answer: O.",
+      "trick": "Vowel cycle.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Find the next letter: U, V, W, X, Y, ?",
+      "options": [
+        "Y",
+        "A",
+        "Z",
+        "B"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Advance by +1 (wrap at Z). Step 2: After Y → Z. Answer: Z.",
+      "trick": "+1 each step.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Find the next letter: D, F, H, J, L, ?",
+      "options": [
+        "M",
+        "O",
+        "P",
+        "N"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is N. Answer: N.",
+      "trick": "Every alternate letter.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): X, W, V, U, T, ?",
+      "options": [
+        "R",
+        "T",
+        "U",
+        "S"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is S. Answer: S.",
+      "trick": "Reverse alphabet series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: O, U, A, E, ?",
+      "options": [
+        "A",
+        "E",
+        "O",
+        "I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is I. Answer: I.",
+      "trick": "Vowel cycle.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Find the next letter: K, P, U, Z, E, ?",
+      "options": [
+        "I",
+        "K",
+        "L",
+        "J"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Advance by +5 (wrap at Z). Step 2: After E → J. Answer: J.",
+      "trick": "+5 each step.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Find the next letter: H, J, L, N, P, ?",
+      "options": [
+        "Q",
+        "S",
+        "T",
+        "R"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is R. Answer: R.",
+      "trick": "Every alternate letter.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): T, S, R, Q, P, ?",
+      "options": [
+        "N",
+        "P",
+        "Q",
+        "O"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is O. Answer: O.",
+      "trick": "Reverse alphabet series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: I, O, U, A, ?",
+      "options": [
+        "A",
+        "I",
+        "O",
+        "E"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is E. Answer: E.",
+      "trick": "Vowel cycle.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Find the next letter: A, E, I, M, Q, ?",
+      "options": [
+        "T",
+        "V",
+        "W",
+        "U"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Advance by +4 (wrap at Z). Step 2: After Q → U. Answer: U.",
+      "trick": "+4 each step.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Find the next letter: L, N, P, R, T, ?",
+      "options": [
+        "U",
+        "W",
+        "X",
+        "V"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is V. Answer: V.",
+      "trick": "Every alternate letter.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): Z, Y, X, W, V, ?",
+      "options": [
+        "T",
+        "V",
+        "W",
+        "U"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is U. Answer: U.",
+      "trick": "Reverse alphabet series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: E, I, O, U, ?",
+      "options": [
+        "E",
+        "I",
+        "O",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is A. Answer: A.",
+      "trick": "Vowel cycle.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find the next letter: M, P, S, V, Y, ?",
+      "options": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Advance by +3 (wrap at Z). Step 2: After Y → B. Answer: B.",
+      "trick": "+3 each step.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Find the next letter: P, R, T, V, X, ?",
+      "options": [
+        "Y",
+        "A",
+        "B",
+        "Z"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is Z. Answer: Z.",
+      "trick": "Every alternate letter.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): V, U, T, S, R, ?",
+      "options": [
+        "P",
+        "R",
+        "S",
+        "Q"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is Q. Answer: Q.",
+      "trick": "Reverse alphabet series.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: A, E, I, O, ?",
+      "options": [
+        "A",
+        "E",
+        "I",
+        "U"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is U. Answer: U.",
+      "trick": "Vowel cycle.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Find the next letter: C, E, G, I, K, ?",
+      "options": [
+        "L",
+        "N",
+        "O",
+        "M"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Advance by +2 (wrap at Z). Step 2: After K → M. Answer: M.",
+      "trick": "+2 each step.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Find the next letter: T, V, X, Z, B, ?",
+      "options": [
+        "C",
+        "E",
+        "F",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Skip-one pattern (+2 letters). Step 2: Next is D. Answer: D.",
+      "trick": "Every alternate letter.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Find the next letter (reverse alphabet): R, Q, P, O, N, ?",
+      "options": [
+        "L",
+        "N",
+        "O",
+        "M"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count backwards in alphabet. Step 2: Next is M. Answer: M.",
+      "trick": "Reverse alphabet series.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Find the next vowel in order: U, A, E, I, ?",
+      "options": [
+        "A",
+        "E",
+        "I",
+        "O"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Cycle vowels A-E-I-O-U. Step 2: Next vowel is O. Answer: O.",
+      "trick": "Vowel cycle.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Find the next letter: O, P, Q, R, S, ?",
+      "options": [
+        "S",
+        "U",
+        "V",
+        "T"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Advance by +1 (wrap at Z). Step 2: After S → T. Answer: T.",
+      "trick": "+1 each step.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

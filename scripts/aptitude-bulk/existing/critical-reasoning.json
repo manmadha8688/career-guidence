@@ -1,0 +1,402 @@
+[
+  {
+    "id": "critical-reasoning-q1",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "'Sales rose after we advertised, so ads boosted sales.' The conclusion is:",
+    "options": [
+      "ads boosted sales",
+      "sales rose",
+      "we advertised",
+      "sales fell"
+    ],
+    "answer": "A",
+    "solution": "The claim being argued (after 'so') is that ads boosted sales.",
+    "trick": "'So/therefore' marks the conclusion.",
+    "type": "Conclusion",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q2",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "In the same argument, which is a PREMISE?",
+    "options": [
+      "ads boosted sales",
+      "sales rose after advertising",
+      "ads are costly",
+      "nothing"
+    ],
+    "answer": "B",
+    "solution": "The reason given (evidence) is that sales rose after advertising.",
+    "trick": "Premise = the 'because' part.",
+    "type": "Premise",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q3",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "'The medicine cured 80% in trials, so it should be sold nationwide.' It assumes that:",
+    "options": [
+      "the medicine is cheap",
+      "doctors like it",
+      "trial results apply to the whole population",
+      "it tastes good"
+    ],
+    "answer": "C",
+    "solution": "Selling nationwide needs the assumption that trial results generalise to everyone.",
+    "trick": "Assumption bridges premise to conclusion.",
+    "type": "Assumption",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q4",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "'Crime fell after CCTV was installed, so CCTV cut crime.' Which WEAKENS this?",
+    "options": [
+      "CCTV is modern",
+      "cameras were expensive",
+      "people like cameras",
+      "police also doubled patrols then"
+    ],
+    "answer": "D",
+    "solution": "An alternative cause (more patrols) breaks the CCTV-to-crime link.",
+    "trick": "Weaken with a rival cause.",
+    "type": "Weaken",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q5",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "'Students who sleep 8 hours score higher, so sleep raises scores.' Which STRENGTHENS it?",
+    "options": [
+      "the effect held after controlling for study hours",
+      "sleep is pleasant",
+      "some students nap",
+      "scores are on paper"
+    ],
+    "answer": "A",
+    "solution": "Ruling out study time as the cause strengthens the sleep-to-score link.",
+    "trick": "Strengthen by removing alternatives.",
+    "type": "Strengthen",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q6",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "'All A are B. All B are C.' Therefore:",
+    "options": [
+      "all C are A",
+      "all A are C",
+      "no A is C",
+      "some C are not A"
+    ],
+    "answer": "B",
+    "solution": "A is inside B, B inside C, so all A are C.",
+    "trick": "Chain the subsets.",
+    "type": "Conclusion",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q7",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "'Hiring Ravi will boost output because he worked at a top firm.' The assumption is that:",
+    "options": [
+      "Ravi is young",
+      "top firms pay well",
+      "skills from the top firm transfer to this job",
+      "output is monthly"
+    ],
+    "answer": "C",
+    "solution": "The argument needs Ravi's prior skills to apply here.",
+    "trick": "Negate it: if skills don't transfer, the argument fails.",
+    "type": "Assumption",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q8",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "'Ice-cream sales and drownings rise together, so ice-cream causes drowning.' Which WEAKENS it most?",
+    "options": [
+      "ice-cream is sweet",
+      "both are counted daily",
+      "drowning is tragic",
+      "hot weather independently raises both"
+    ],
+    "answer": "D",
+    "solution": "A common cause (hot weather) explains both without ice-cream causing drowning.",
+    "trick": "Correlation is not causation — find the third factor.",
+    "type": "Weaken",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q9",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "'The new fertiliser raised the yield.' Which STRENGTHENS this claim?",
+    "options": [
+      "a nearby farm without it saw no rise",
+      "the fertiliser smells strong",
+      "it comes in bags",
+      "farmers are busy"
+    ],
+    "answer": "A",
+    "solution": "A control farm with no rise supports that the fertiliser caused the increase.",
+    "trick": "A comparison group strengthens cause.",
+    "type": "Strengthen",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q10",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "'Because the road is icy and cars skid, driving tonight is dangerous.' The conclusion is:",
+    "options": [
+      "the road is icy",
+      "driving tonight is dangerous",
+      "cars skid",
+      "it is night"
+    ],
+    "answer": "B",
+    "solution": "The main claim is that driving tonight is dangerous; the rest are reasons.",
+    "trick": "Find the claim the reasons support.",
+    "type": "Conclusion",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q11",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "'Advertise on TV to reach the youth.' This assumes that:",
+    "options": [
+      "TV is cheap",
+      "youth dislike ads",
+      "youth watch TV",
+      "ads are colourful"
+    ],
+    "answer": "C",
+    "solution": "Reaching youth via TV assumes youth actually watch TV.",
+    "trick": "Negate: if youth don't watch TV, the plan fails.",
+    "type": "Assumption",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q12",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "'Employees who use the gym are more productive, so the gym makes them productive.' Which WEAKENS it?",
+    "options": [
+      "the gym is free",
+      "gyms have machines",
+      "productivity is good",
+      "driven people both use gyms and work hard anyway"
+    ],
+    "answer": "D",
+    "solution": "A shared trait (being driven) could cause both, breaking the gym-to-productivity link.",
+    "trick": "Self-selection is a rival cause.",
+    "type": "Weaken",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q13",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "'Most of the class passed. Rahul is in the class.' What can we conclude?",
+    "options": [
+      "Rahul probably passed, but not certainly",
+      "Rahul certainly passed",
+      "Rahul failed",
+      "no one passed"
+    ],
+    "answer": "A",
+    "solution": "'Most' gives a likelihood, not certainty, for any individual.",
+    "trick": "'Most' ≠ 'all' — only probable.",
+    "type": "Conclusion",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q14",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "'Some birds cannot fly.' Which does NOT validly follow?",
+    "options": [
+      "some birds are flightless",
+      "all birds can fly",
+      "not every bird flies",
+      "at least one bird cannot fly"
+    ],
+    "answer": "B",
+    "solution": "'Some cannot fly' directly contradicts 'all can fly', so B is invalid.",
+    "trick": "'Some not' kills 'all'.",
+    "type": "Conclusion",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q15",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "'This diet reduced weight in a study.' Which MOST strengthens the claim that the diet works?",
+    "options": [
+      "the diet is tasty",
+      "it was a small study",
+      "a control group without the diet lost no weight",
+      "participants liked it"
+    ],
+    "answer": "C",
+    "solution": "A control group with no weight loss isolates the diet as the cause.",
+    "trick": "Control group = strongest support.",
+    "type": "Strengthen",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q16",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "'We should build more roads to cut traffic.' The assumption is that:",
+    "options": [
+      "roads are grey",
+      "cars are common",
+      "traffic is worse in winter",
+      "more roads will not simply attract more cars"
+    ],
+    "answer": "D",
+    "solution": "The plan fails if new roads induce more driving; so it assumes they won't.",
+    "trick": "Negate to test necessity.",
+    "type": "Assumption",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q17",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "'Profits rose the year the CEO joined, so the CEO caused it.' Which WEAKENS this?",
+    "options": [
+      "a booming market lifted all firms that year",
+      "the CEO is experienced",
+      "profits are in rupees",
+      "the CEO gave speeches"
+    ],
+    "answer": "A",
+    "solution": "A market-wide boom is an alternative cause for the profit rise.",
+    "trick": "Timing overlap is not proof.",
+    "type": "Weaken",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q18",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "'If it rains, the match is cancelled. It is raining.' Therefore:",
+    "options": [
+      "it will not rain",
+      "the match is cancelled",
+      "the match continues",
+      "cannot say"
+    ],
+    "answer": "B",
+    "solution": "Given the rule and that it is raining, the match is cancelled (modus ponens).",
+    "trick": "If-then + the 'if' true → the 'then'.",
+    "type": "Conclusion",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q19",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "'Everyone I asked likes the app, so everyone likes it.' The flaw is:",
+    "options": [
+      "circular reasoning",
+      "attacking the person",
+      "a small, biased sample",
+      "false dilemma"
+    ],
+    "answer": "C",
+    "solution": "Generalising from a few people you asked is a biased/small sample.",
+    "trick": "Few → all is over-generalisation.",
+    "type": "Flaw",
+    "active": true
+  },
+  {
+    "id": "critical-reasoning-q20",
+    "topic": "critical-reasoning",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "'The bridge is safe because it passed inspection.' The necessary assumption is that:",
+    "options": [
+      "the bridge is old",
+      "inspectors are paid",
+      "the bridge is long",
+      "the inspection reliably detects safety problems"
+    ],
+    "answer": "D",
+    "solution": "Passing inspection proves safety only if the inspection actually detects problems.",
+    "trick": "Negate: if inspection is unreliable, the argument collapses.",
+    "type": "Assumption",
+    "active": true
+  }
+]

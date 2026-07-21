@@ -1,0 +1,402 @@
+[
+  {
+    "id": "data-sufficiency-q1",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "What is the value of x?  (I) x = 10.  (II) x is a positive even number.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "A",
+    "solution": "I alone fixes x = 10. II alone allows 2, 4, 6, … — not unique. So I alone is sufficient.",
+    "trick": "I gives one value; II gives many.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q2",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "What is the value of y?  (I) y is a multiple of 3.  (II) y = 9.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "B",
+    "solution": "II alone fixes y = 9. I alone allows 3, 6, 9, … — not unique. So II alone is sufficient.",
+    "trick": "II gives one value; I gives many.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q3",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "What is the value of x?  (I) x + y = 20.  (II) y = 8.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "C",
+    "solution": "I alone has two unknowns; II alone says nothing about x. Together x = 20 − 8 = 12.",
+    "trick": "Need both to isolate x.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q4",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "What is the value of x?  (I) x > 5.  (II) x < 20.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "D",
+    "solution": "Each gives a range; together 5 < x < 20 still allows many values, so not sufficient.",
+    "trick": "A leftover range = insufficient.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q5",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "What is the area of a square?  (I) Its side is 6 cm.  (II) It is a square.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "A",
+    "solution": "I alone gives area = 6² = 36. II merely restates the shape, adding nothing.",
+    "trick": "Side fixes the area; II is filler.",
+    "type": "Trap: looks like C, actually A",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q6",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "What is Ram's age?  (I) Ram is older than Sita.  (II) Ram is 25 years old.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "B",
+    "solution": "II alone gives 25. I alone only compares him to Sita — not a value.",
+    "trick": "II is a number; I is a comparison.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q7",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "What is the perimeter of a rectangle?  (I) Its length is 10.  (II) Its breadth is 4.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "C",
+    "solution": "Perimeter needs both length and breadth: neither alone works, together P = 2(10+4) = 28.",
+    "trick": "Need both dimensions.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q8",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "What is the value of n?  (I) n is an integer.  (II) n² = 16.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "D",
+    "solution": "II gives n = 4 or −4; I only says integer. Together n is still 4 or −4 — two values, not unique.",
+    "trick": "n² = 16 has two roots.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q9",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Is the number even?  (I) It ends in 0.  (II) It is greater than 100.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "A",
+    "solution": "I alone: ending in 0 means it is even — a definite YES. II alone: could be odd or even.",
+    "trick": "Ends in 0 → definitely even.",
+    "type": "Yes/No question",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q10",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "What is the speed of a car?  (I) It travelled a long way.  (II) It covered 120 km in 2 hours.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "B",
+    "solution": "II alone gives speed = 120 ÷ 2 = 60 km/h. I alone is vague.",
+    "trick": "Distance ÷ time from II.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q11",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "What is the value of x?  (I) 2x + y = 14.  (II) y = 4.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "C",
+    "solution": "I alone has two unknowns; II gives y only. Together 2x + 4 = 14 → x = 5.",
+    "trick": "Substitute y to get x.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q12",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "What is the value of x?  (I) x is a prime number.  (II) x is less than 10.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "D",
+    "solution": "Together, primes below 10 are 2, 3, 5, 7 — several values, so not unique.",
+    "trick": "Multiple primes under 10.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q13",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "What is the cost of one pen?  (I) 5 pens cost ₹50.  (II) The pens are blue.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "A",
+    "solution": "I alone gives 50 ÷ 5 = ₹10 per pen. II (colour) is irrelevant.",
+    "trick": "₹50 / 5 = ₹10.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q14",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "What is the value of n?  (I) n is a two-digit number.  (II) n = 42.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "B",
+    "solution": "II alone fixes n = 42. I alone allows any two-digit number.",
+    "trick": "II is the exact value.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q15",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "What is the value of x?  (I) x = y + 3.  (II) y = 7.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "C",
+    "solution": "I relates x to y; II gives y. Together x = 7 + 3 = 10.",
+    "trick": "Substitute y into I.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q16",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "What is the value of x?  (I) x ≠ 0.  (II) x² > 1.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "D",
+    "solution": "Together, x² > 1 means x > 1 or x < −1 — infinitely many values, not unique.",
+    "trick": "Still a range.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q17",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "How many students are in the class?  (I) There are exactly 30 students.  (II) There are more than 20 students.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "A",
+    "solution": "I alone gives 30. II alone only bounds the number below.",
+    "trick": "I is exact; II is a bound.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q18",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "What is the discount percent?  (I) The original price was high.  (II) An item marked ₹200 sold for ₹150.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "B",
+    "solution": "II alone: discount = 50/200 = 25%. I alone is vague.",
+    "trick": "₹50 off ₹200 = 25%.",
+    "type": "One statement sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q19",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "What is the two-digit number?  (I) Its tens digit is 4.  (II) Its units digit is 7.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "C",
+    "solution": "I alone gives 4_, II alone gives _7; together the number is 47.",
+    "trick": "Both digits → 47.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-q20",
+    "topic": "data-sufficiency",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "What is the value of x?  (I) xy = 12.  (II) x + y = 7.",
+    "options": [
+      "Statement I alone is sufficient",
+      "Statement II alone is sufficient",
+      "Both statements together are needed",
+      "Even both together are not sufficient"
+    ],
+    "answer": "D",
+    "solution": "Together x and y are 3 and 4, but which is x is not fixed — x could be 3 or 4, so not unique.",
+    "trick": "Symmetric in x and y.",
+    "type": "Not sufficient even together",
+    "active": true
+  }
+]

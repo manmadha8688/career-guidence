@@ -1,0 +1,402 @@
+[
+  {
+    "id": "algebra-q1",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "If x = 3, find the value of 2x² − 5x + 4.",
+    "options": [
+      "7",
+      "10",
+      "4",
+      "19"
+    ],
+    "answer": "A",
+    "solution": "2(9) − 5(3) + 4 = 18 − 15 + 4 = 7.",
+    "trick": "Substitute and compute.",
+    "type": "Evaluate an expression",
+    "active": true
+  },
+  {
+    "id": "algebra-q2",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Expand (x + 6)².",
+    "options": [
+      "x²+36",
+      "x²+12x+36",
+      "x²+6x+36",
+      "x²+12x+6"
+    ],
+    "answer": "B",
+    "solution": "(x+6)² = x² + 2(6)x + 36 = x² + 12x + 36.",
+    "trick": "Square ends, double the product.",
+    "type": "Expand with the square identity",
+    "active": true
+  },
+  {
+    "id": "algebra-q3",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Evaluate 51² − 49².",
+    "options": [
+      "100",
+      "2",
+      "200",
+      "400"
+    ],
+    "answer": "C",
+    "solution": "(51+49)(51−49) = 100 × 2 = 200.",
+    "trick": "Difference of squares.",
+    "type": "Difference of squares",
+    "active": true
+  },
+  {
+    "id": "algebra-q4",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "If a + b = 6 and ab = 8, find a² + b².",
+    "options": [
+      "36",
+      "28",
+      "44",
+      "20"
+    ],
+    "answer": "D",
+    "solution": "a²+b² = (a+b)² − 2ab = 36 − 16 = 20.",
+    "trick": "(a+b)² − 2ab.",
+    "type": "a² + b² from sum & product",
+    "active": true
+  },
+  {
+    "id": "algebra-q5",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "If a = 4 and b = 2, find a² − b².",
+    "options": [
+      "12",
+      "14",
+      "8",
+      "20"
+    ],
+    "answer": "A",
+    "solution": "16 − 4 = 12.",
+    "trick": "Or (a+b)(a−b) = 6×2 = 12.",
+    "type": "Difference of squares",
+    "active": true
+  },
+  {
+    "id": "algebra-q6",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "If a + 1/a = 3, find a² + 1/a².",
+    "options": [
+      "9",
+      "7",
+      "11",
+      "5"
+    ],
+    "answer": "B",
+    "solution": "(a+1/a)² = a²+1/a²+2 → 9 = a²+1/a²+2 → a²+1/a² = 7.",
+    "trick": "Square and subtract 2.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q7",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Expand (3x − 2)².",
+    "options": [
+      "9x²+12x+4",
+      "9x²−4",
+      "9x²−12x+4",
+      "3x²−12x+4"
+    ],
+    "answer": "C",
+    "solution": "(3x)² − 2(3x)(2) + 2² = 9x² − 12x + 4.",
+    "trick": "Middle term is −2ab.",
+    "type": "Expand with the square identity",
+    "active": true
+  },
+  {
+    "id": "algebra-q8",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Evaluate 105² − 95².",
+    "options": [
+      "1000",
+      "200",
+      "210",
+      "2000"
+    ],
+    "answer": "D",
+    "solution": "(105+95)(105−95) = 200 × 10 = 2000.",
+    "trick": "Sum × difference.",
+    "type": "Difference of squares",
+    "active": true
+  },
+  {
+    "id": "algebra-q9",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "If a − b = 5 and ab = 6, find a² + b².",
+    "options": [
+      "37",
+      "13",
+      "31",
+      "49"
+    ],
+    "answer": "A",
+    "solution": "a²+b² = (a−b)² + 2ab = 25 + 12 = 37.",
+    "trick": "(a−b)² + 2ab.",
+    "type": "Symmetric expressions",
+    "active": true
+  },
+  {
+    "id": "algebra-q10",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Factorise x³ − 8.",
+    "options": [
+      "(x−2)(x²−2x+4)",
+      "(x−2)(x²+2x+4)",
+      "(x+2)(x²−2x+4)",
+      "(x−2)³"
+    ],
+    "answer": "B",
+    "solution": "a³−b³ = (a−b)(a²+ab+b²) with a=x, b=2: (x−2)(x²+2x+4).",
+    "trick": "Difference of cubes.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q11",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "If a + 1/a = 4, find a³ + 1/a³.",
+    "options": [
+      "64",
+      "76",
+      "52",
+      "48"
+    ],
+    "answer": "C",
+    "solution": "a³+1/a³ = (a+1/a)³ − 3(a+1/a) = 64 − 12 = 52.",
+    "trick": "Cube minus 3 × the sum.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q12",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Simplify (a + b)² − (a − b)².",
+    "options": [
+      "2ab",
+      "2a²+2b²",
+      "0",
+      "4ab"
+    ],
+    "answer": "D",
+    "solution": "(a²+2ab+b²) − (a²−2ab+b²) = 4ab.",
+    "trick": "Only the cross terms survive.",
+    "type": "Symmetric expressions",
+    "active": true
+  },
+  {
+    "id": "algebra-q13",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "If a + b = 10 and a² + b² = 68, find ab.",
+    "options": [
+      "16",
+      "32",
+      "18",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "(a+b)² = a²+b²+2ab → 100 = 68 + 2ab → ab = 16.",
+    "trick": "Rearrange the square identity.",
+    "type": "a² + b² from sum & product",
+    "active": true
+  },
+  {
+    "id": "algebra-q14",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "If a − 1/a = 2, find a² + 1/a².",
+    "options": [
+      "4",
+      "6",
+      "2",
+      "8"
+    ],
+    "answer": "B",
+    "solution": "(a−1/a)² = a²+1/a²−2 → 4 = a²+1/a²−2 → a²+1/a² = 6.",
+    "trick": "Square and add 2 (minus case).",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q15",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "If a − 1/a = 3, find a³ − 1/a³.",
+    "options": [
+      "27",
+      "18",
+      "36",
+      "45"
+    ],
+    "answer": "C",
+    "solution": "a³−1/a³ = (a−1/a)³ + 3(a−1/a) = 27 + 9 = 36.",
+    "trick": "Cube plus 3 × the difference.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q16",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "If a + b + c = 0, find the value of a³ + b³ + c³.",
+    "options": [
+      "0",
+      "abc",
+      "a³b³c³",
+      "3abc"
+    ],
+    "answer": "D",
+    "solution": "The identity a³+b³+c³ − 3abc = (a+b+c)(...). When a+b+c = 0, a³+b³+c³ = 3abc.",
+    "trick": "Sum zero → cubes sum to 3abc.",
+    "type": "Symmetric expressions",
+    "active": true
+  },
+  {
+    "id": "algebra-q17",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "If a + b + c = 9 and ab + bc + ca = 23, find a² + b² + c².",
+    "options": [
+      "35",
+      "58",
+      "23",
+      "46"
+    ],
+    "answer": "A",
+    "solution": "(a+b+c)² = a²+b²+c² + 2(ab+bc+ca) → 81 = x + 46 → x = 35.",
+    "trick": "Square the sum, subtract 2 × pair-sum.",
+    "type": "Symmetric expressions",
+    "active": true
+  },
+  {
+    "id": "algebra-q18",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "If a + 1/a = 3, find a⁴ + 1/a⁴.",
+    "options": [
+      "49",
+      "47",
+      "51",
+      "45"
+    ],
+    "answer": "B",
+    "solution": "a²+1/a² = 9 − 2 = 7. Then a⁴+1/a⁴ = (a²+1/a²)² − 2 = 49 − 2 = 47.",
+    "trick": "Square twice, subtract 2 each time.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q19",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "If x + 1/x = 2, find x¹⁰⁰ + 1/x¹⁰⁰.",
+    "options": [
+      "1",
+      "0",
+      "2",
+      "100"
+    ],
+    "answer": "C",
+    "solution": "x + 1/x = 2 → x² − 2x + 1 = 0 → (x−1)² = 0 → x = 1. So x¹⁰⁰ + 1/x¹⁰⁰ = 1 + 1 = 2.",
+    "trick": "Sum 2 forces x = 1.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  },
+  {
+    "id": "algebra-q20",
+    "topic": "algebra",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "If x² − 3x + 1 = 0, find x³ + 1/x³.",
+    "options": [
+      "27",
+      "36",
+      "21",
+      "18"
+    ],
+    "answer": "D",
+    "solution": "Divide by x: x − 3 + 1/x = 0 → x + 1/x = 3. Then x³+1/x³ = 3³ − 3(3) = 27 − 9 = 18.",
+    "trick": "Get x+1/x first, then cube.",
+    "type": "Cubes and reciprocals",
+    "active": true
+  }
+]

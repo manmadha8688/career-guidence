@@ -1,0 +1,1207 @@
+{
+  "topic": "simplification-approximation",
+  "category": "quantitative",
+  "group": "number-basics",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Evaluate: 2 + 3 × 4.",
+      "options": [
+        "14",
+        "20",
+        "10",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 2 + 12 = 14.",
+      "trick": "Multiplication before addition.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Evaluate: (12 + 0) ÷ 3 + 5.",
+      "options": [
+        "4",
+        "9",
+        "17",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 12/3 = 4. Step 2: +5 = 9.",
+      "trick": "Division before addition.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Find 20% of 173.",
+      "options": [
+        "9",
+        "193",
+        "35",
+        "45"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 20/100 × 173 = 35.",
+      "trick": "Percent = fraction × base.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Approximate 48 to the nearest ten.",
+      "options": [
+        "60",
+        "40",
+        "48",
+        "50"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 8. Step 2: Nearest ten = 50.",
+      "trick": "Round units ≥5 up.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "√50 is approximately:",
+      "options": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 7² = 49, 64 = 64. Step 2: √50 ≈ 7.",
+      "trick": "Nearest perfect square.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Find x if x − 5 = 2 × 3.",
+      "options": [
+        "1",
+        "11",
+        "10",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2×3 = 6. Step 2: x = 6 + 5 = 11.",
+      "trick": "Transpose then solve.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Estimate: 999 ÷ 3 ≈ ?",
+      "options": [
+        "433",
+        "233",
+        "333",
+        "249"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 999/3 = 333 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Evaluate: 1.0 ÷ 0.25.",
+      "options": [
+        "6",
+        "2",
+        "2",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 4.0 = 4.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Evaluate: 3 + 3 × 4.",
+      "options": [
+        "15",
+        "24",
+        "13",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 3 + 12 = 15.",
+      "trick": "Multiplication before addition.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Evaluate: (12 + 2) ÷ 3 + 5.",
+      "options": [
+        "4",
+        "9",
+        "19",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 14/3 = 4. Step 2: +5 = 9.",
+      "trick": "Division before addition.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Find 21% of 181.",
+      "options": [
+        "9",
+        "202",
+        "38",
+        "48"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 21/100 × 181 = 38.",
+      "trick": "Percent = fraction × base.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Approximate 59 to the nearest ten.",
+      "options": [
+        "70",
+        "50",
+        "59",
+        "60"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 9. Step 2: Nearest ten = 60.",
+      "trick": "Round units ≥5 up.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "√70 is approximately:",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 8² = 64, 81 = 81. Step 2: √70 ≈ 8.",
+      "trick": "Nearest perfect square.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Find x if x − 5 = 3 × 3.",
+      "options": [
+        "4",
+        "14",
+        "11",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3×3 = 9. Step 2: x = 9 + 5 = 14.",
+      "trick": "Transpose then solve.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Estimate: 1110 ÷ 3 ≈ ?",
+      "options": [
+        "470",
+        "270",
+        "370",
+        "277"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1110/3 = 370 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Evaluate: 1.5 ÷ 0.25.",
+      "options": [
+        "8",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 6.0 = 6.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Evaluate: 4 + 3 × 4.",
+      "options": [
+        "16",
+        "28",
+        "16",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 4 + 12 = 16.",
+      "trick": "Multiplication before addition.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Evaluate: (12 + 4) ÷ 3 + 5.",
+      "options": [
+        "5",
+        "10",
+        "21",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 16/3 = 5. Step 2: +5 = 10.",
+      "trick": "Division before addition.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Find 22% of 189.",
+      "options": [
+        "9",
+        "211",
+        "42",
+        "52"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 22/100 × 189 = 42.",
+      "trick": "Percent = fraction × base.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Approximate 70 to the nearest ten.",
+      "options": [
+        "80",
+        "60",
+        "70",
+        "70"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 0. Step 2: Nearest ten = 70.",
+      "trick": "Round units ≥5 up.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "√90 is approximately:",
+      "options": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 9² = 81, 100 = 100. Step 2: √90 ≈ 9.",
+      "trick": "Nearest perfect square.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Find x if x − 5 = 4 × 3.",
+      "options": [
+        "7",
+        "17",
+        "12",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 4×3 = 12. Step 2: x = 12 + 5 = 17.",
+      "trick": "Transpose then solve.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Estimate: 1221 ÷ 3 ≈ ?",
+      "options": [
+        "507",
+        "307",
+        "407",
+        "305"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1221/3 = 407 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Evaluate: 2.0 ÷ 0.25.",
+      "options": [
+        "10",
+        "6",
+        "4",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 8.0 = 8.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Evaluate: 5 + 3 × 4.",
+      "options": [
+        "17",
+        "32",
+        "19",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 5 + 12 = 17.",
+      "trick": "Multiplication before addition.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Evaluate: (12 + 6) ÷ 3 + 5.",
+      "options": [
+        "6",
+        "11",
+        "23",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 18/3 = 6. Step 2: +5 = 11.",
+      "trick": "Division before addition.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Find 23% of 197.",
+      "options": [
+        "9",
+        "220",
+        "45",
+        "55"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 23/100 × 197 = 45.",
+      "trick": "Percent = fraction × base.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Approximate 81 to the nearest ten.",
+      "options": [
+        "90",
+        "70",
+        "81",
+        "80"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 1. Step 2: Nearest ten = 80.",
+      "trick": "Round units ≥5 up.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "√110 is approximately:",
+      "options": [
+        "10",
+        "11",
+        "9",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10² = 100, 121 = 121. Step 2: √110 ≈ 10.",
+      "trick": "Nearest perfect square.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Find x if x − 5 = 5 × 3.",
+      "options": [
+        "10",
+        "20",
+        "13",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 5×3 = 15. Step 2: x = 15 + 5 = 20.",
+      "trick": "Transpose then solve.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Estimate: 1332 ÷ 3 ≈ ?",
+      "options": [
+        "544",
+        "344",
+        "444",
+        "333"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1332/3 = 444 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Evaluate: 2.5 ÷ 0.25.",
+      "options": [
+        "12",
+        "8",
+        "5",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 10.0 = 10.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Evaluate: 6 + 3 × 4.",
+      "options": [
+        "18",
+        "36",
+        "22",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 6 + 12 = 18.",
+      "trick": "Multiplication before addition.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Evaluate: (12 + 8) ÷ 3 + 5.",
+      "options": [
+        "6",
+        "11",
+        "25",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 20/3 = 6. Step 2: +5 = 11.",
+      "trick": "Division before addition.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Find 24% of 205.",
+      "options": [
+        "9",
+        "229",
+        "49",
+        "59"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 24/100 × 205 = 49.",
+      "trick": "Percent = fraction × base.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Approximate 92 to the nearest ten.",
+      "options": [
+        "100",
+        "80",
+        "92",
+        "90"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 2. Step 2: Nearest ten = 90.",
+      "trick": "Round units ≥5 up.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "√130 is approximately:",
+      "options": [
+        "11",
+        "12",
+        "10",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 11² = 121, 144 = 144. Step 2: √130 ≈ 11.",
+      "trick": "Nearest perfect square.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Find x if x − 5 = 6 × 3.",
+      "options": [
+        "13",
+        "23",
+        "14",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 6×3 = 18. Step 2: x = 18 + 5 = 23.",
+      "trick": "Transpose then solve.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Estimate: 1443 ÷ 3 ≈ ?",
+      "options": [
+        "581",
+        "381",
+        "481",
+        "360"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1443/3 = 481 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Evaluate: 3.0 ÷ 0.25.",
+      "options": [
+        "14",
+        "10",
+        "6",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 12.0 = 12.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Evaluate: 7 + 3 × 4.",
+      "options": [
+        "19",
+        "40",
+        "25",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 7 + 12 = 19.",
+      "trick": "Multiplication before addition.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Evaluate: (12 + 10) ÷ 3 + 5.",
+      "options": [
+        "7",
+        "12",
+        "27",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 22/3 = 7. Step 2: +5 = 12.",
+      "trick": "Division before addition.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Find 25% of 213.",
+      "options": [
+        "9",
+        "238",
+        "53",
+        "63"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 25/100 × 213 = 53.",
+      "trick": "Percent = fraction × base.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Approximate 103 to the nearest ten.",
+      "options": [
+        "110",
+        "90",
+        "103",
+        "100"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 3. Step 2: Nearest ten = 100.",
+      "trick": "Round units ≥5 up.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "√150 is approximately:",
+      "options": [
+        "12",
+        "13",
+        "11",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 12² = 144, 169 = 169. Step 2: √150 ≈ 12.",
+      "trick": "Nearest perfect square.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Find x if x − 5 = 7 × 3.",
+      "options": [
+        "16",
+        "26",
+        "15",
+        "21"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 7×3 = 21. Step 2: x = 21 + 5 = 26.",
+      "trick": "Transpose then solve.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Estimate: 1554 ÷ 3 ≈ ?",
+      "options": [
+        "618",
+        "418",
+        "518",
+        "388"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1554/3 = 518 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Evaluate: 3.5 ÷ 0.25.",
+      "options": [
+        "16",
+        "12",
+        "7",
+        "14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 14.0 = 14.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Evaluate: 8 + 3 × 4.",
+      "options": [
+        "20",
+        "44",
+        "28",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 8 + 12 = 20.",
+      "trick": "Multiplication before addition.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Evaluate: (12 + 12) ÷ 3 + 5.",
+      "options": [
+        "8",
+        "13",
+        "29",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 24/3 = 8. Step 2: +5 = 13.",
+      "trick": "Division before addition.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Find 26% of 221.",
+      "options": [
+        "8",
+        "247",
+        "57",
+        "67"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 26/100 × 221 = 57.",
+      "trick": "Percent = fraction × base.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Approximate 114 to the nearest ten.",
+      "options": [
+        "120",
+        "100",
+        "114",
+        "110"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 4. Step 2: Nearest ten = 110.",
+      "trick": "Round units ≥5 up.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "√170 is approximately:",
+      "options": [
+        "13",
+        "14",
+        "12",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 13² = 169, 196 = 196. Step 2: √170 ≈ 13.",
+      "trick": "Nearest perfect square.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Find x if x − 5 = 8 × 3.",
+      "options": [
+        "19",
+        "29",
+        "16",
+        "24"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 8×3 = 24. Step 2: x = 24 + 5 = 29.",
+      "trick": "Transpose then solve.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Estimate: 1665 ÷ 3 ≈ ?",
+      "options": [
+        "655",
+        "455",
+        "555",
+        "416"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1665/3 = 555 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Evaluate: 4.0 ÷ 0.25.",
+      "options": [
+        "18",
+        "14",
+        "8",
+        "16"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 16.0 = 16.",
+      "trick": "Multiply by reciprocal.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Evaluate: 9 + 3 × 4.",
+      "options": [
+        "21",
+        "48",
+        "31",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 9 + 12 = 21.",
+      "trick": "Multiplication before addition.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Evaluate: (12 + 14) ÷ 3 + 5.",
+      "options": [
+        "8",
+        "13",
+        "31",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 26/3 = 8. Step 2: +5 = 13.",
+      "trick": "Division before addition.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Find 27% of 229.",
+      "options": [
+        "8",
+        "256",
+        "62",
+        "72"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 27/100 × 229 = 62.",
+      "trick": "Percent = fraction × base.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Approximate 125 to the nearest ten.",
+      "options": [
+        "130",
+        "110",
+        "125",
+        "120"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 5. Step 2: Nearest ten = 120.",
+      "trick": "Round units ≥5 up.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "√190 is approximately:",
+      "options": [
+        "14",
+        "15",
+        "13",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 14² = 196, 225 = 225. Step 2: √190 ≈ 14.",
+      "trick": "Nearest perfect square.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Find x if x − 5 = 9 × 3.",
+      "options": [
+        "22",
+        "32",
+        "17",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 9×3 = 27. Step 2: x = 27 + 5 = 32.",
+      "trick": "Transpose then solve.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Estimate: 1776 ÷ 3 ≈ ?",
+      "options": [
+        "692",
+        "492",
+        "592",
+        "444"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1776/3 = 592 exactly.",
+      "trick": "Divide by 3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Evaluate: 4.5 ÷ 0.25.",
+      "options": [
+        "20",
+        "16",
+        "9",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 18.0 = 18.",
+      "trick": "Multiply by reciprocal.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Evaluate: 10 + 3 × 4.",
+      "options": [
+        "22",
+        "52",
+        "34",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 10 + 12 = 22.",
+      "trick": "Multiplication before addition.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Evaluate: (12 + 16) ÷ 3 + 5.",
+      "options": [
+        "9",
+        "14",
+        "33",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 28/3 = 9. Step 2: +5 = 14.",
+      "trick": "Division before addition.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Find 28% of 237.",
+      "options": [
+        "8",
+        "265",
+        "66",
+        "76"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 28/100 × 237 = 66.",
+      "trick": "Percent = fraction × base.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Approximate 136 to the nearest ten.",
+      "options": [
+        "150",
+        "130",
+        "136",
+        "140"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 6. Step 2: Nearest ten = 140.",
+      "trick": "Round units ≥5 up.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "√210 is approximately:",
+      "options": [
+        "14",
+        "15",
+        "13",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 14² = 196, 225 = 225. Step 2: √210 ≈ 14.",
+      "trick": "Nearest perfect square.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Find x if x − 5 = 10 × 3.",
+      "options": [
+        "25",
+        "35",
+        "18",
+        "30"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10×3 = 30. Step 2: x = 30 + 5 = 35.",
+      "trick": "Transpose then solve.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Estimate: 1887 ÷ 3 ≈ ?",
+      "options": [
+        "729",
+        "529",
+        "629",
+        "471"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1887/3 = 629 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Evaluate: 5.0 ÷ 0.25.",
+      "options": [
+        "22",
+        "18",
+        "10",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 20.0 = 20.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Evaluate: 11 + 3 × 4.",
+      "options": [
+        "23",
+        "56",
+        "37",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3×4 = 12. Step 2: 11 + 12 = 23.",
+      "trick": "Multiplication before addition.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Evaluate: (12 + 18) ÷ 3 + 5.",
+      "options": [
+        "10",
+        "15",
+        "35",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 30/3 = 10. Step 2: +5 = 15.",
+      "trick": "Division before addition.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Find 29% of 245.",
+      "options": [
+        "8",
+        "274",
+        "71",
+        "81"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 29/100 × 245 = 71.",
+      "trick": "Percent = fraction × base.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Approximate 147 to the nearest ten.",
+      "options": [
+        "160",
+        "140",
+        "147",
+        "150"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Look at units digit 7. Step 2: Nearest ten = 150.",
+      "trick": "Round units ≥5 up.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "√230 is approximately:",
+      "options": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 15² = 225, 256 = 256. Step 2: √230 ≈ 15.",
+      "trick": "Nearest perfect square.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Find x if x − 5 = 11 × 3.",
+      "options": [
+        "28",
+        "38",
+        "19",
+        "33"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 11×3 = 33. Step 2: x = 33 + 5 = 38.",
+      "trick": "Transpose then solve.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Estimate: 1998 ÷ 3 ≈ ?",
+      "options": [
+        "766",
+        "566",
+        "666",
+        "499"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1998/3 = 666 exactly.",
+      "trick": "Divide by 3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Evaluate: 5.5 ÷ 0.25.",
+      "options": [
+        "24",
+        "20",
+        "11",
+        "22"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ÷0.25 = ×4. Step 2: 22.0 = 22.",
+      "trick": "Multiply by reciprocal.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

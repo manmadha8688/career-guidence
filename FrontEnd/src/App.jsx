@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react'
 import PageTransitionLoader from './components/loaders/PageTransitionLoader'
-import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation, useNavigationType } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation, useNavigationType, useParams } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import { ConfirmProvider } from './context/ConfirmContext'
@@ -141,12 +141,45 @@ function GlobalFooter() {
   return <SiteFooter />
 }
 
+/** Old /problem-solving/:slug bookmarks → /code-gym/:slug */
+function LegacyCodeGymRedirect() {
+  const { slug } = useParams()
+  return <Navigate to={`/code-gym/${slug}`} replace />
+}
+
+// Per-history-entry scroll positions, keyed by the router location key.
+const scrollPositions = new Map()
+
 function ScrollResetter() {
-  const { pathname } = useLocation()
+  const location = useLocation()
   const navType = useNavigationType()
+  const key = location.key
+
+  // Continuously record the real scroll position for the current entry — but
+  // NEVER while an overlay has the body locked (mobile menus pin the body with
+  // position:fixed, so window.scrollY reads 0 then; recording it would clobber
+  // the true position we need to restore on back-navigation).
   useEffect(() => {
-    if (navType !== 'POP') window.scrollTo(0, 0)
-  }, [pathname, navType])
+    const onScroll = () => {
+      if (document.documentElement.classList.contains('scroll-locked')) return
+      scrollPositions.set(key, window.scrollY)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [key])
+
+  // Forward navigation → top. Back/forward (POP) → restore the saved position.
+  // Desktop already restores correctly via the browser; on mobile the body-lock
+  // zeroes the browser's snapshot, so we re-apply the position we tracked.
+  useEffect(() => {
+    if (navType !== 'POP') {
+      window.scrollTo(0, 0)
+      return
+    }
+    const y = scrollPositions.get(key)
+    if (y != null) requestAnimationFrame(() => window.scrollTo(0, y))
+  }, [key, navType])
+
   return null
 }
 
@@ -318,14 +351,18 @@ const router = createBrowserRouter([
           { path: '/deployment/expo-mobile', element: <ExpoDeployPage /> },
         ],
       },
-      { path: '/problem-solving', element: <ProblemSolvingPage /> },
-      { path: '/problem-solving/start-coding', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
-      { path: '/problem-solving/logic-building', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
-      { path: '/problem-solving/skill-up', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
-      { path: '/problem-solving/crack-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
-      { path: '/problem-solving/build-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
-      { path: '/problem-solving/prove-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
-      { path: '/problem-solving/:id', element: <ProtectedRoute><ProblemDetailPage /></ProtectedRoute> },
+      // Code Gym — authenticated (landing, tracks, problem workspace)
+      { path: '/code-gym', element: <ProtectedRoute><ProblemSolvingPage /></ProtectedRoute> },
+      { path: '/code-gym/start-coding', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/code-gym/logic-building', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/code-gym/skill-up', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/code-gym/crack-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/code-gym/build-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/code-gym/prove-it', element: <ProtectedRoute><TrackPage /></ProtectedRoute> },
+      { path: '/code-gym/:id', element: <ProtectedRoute><ProblemDetailPage /></ProtectedRoute> },
+      // Legacy /problem-solving → /code-gym
+      { path: '/problem-solving', element: <Navigate to="/code-gym" replace /> },
+      { path: '/problem-solving/:slug', element: <LegacyCodeGymRedirect /> },
       { path: '/aptitude', element: <AptitudePage /> },
       { path: '/aptitude/:category', element: <AptitudeCategoryPage /> },
       { path: '/aptitude/:category/:group', element: <AptitudeGroupPage /> },

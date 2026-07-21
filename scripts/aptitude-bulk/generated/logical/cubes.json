@@ -1,0 +1,1207 @@
+{
+  "topic": "cubes",
+  "category": "logical",
+  "group": "visual",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Cube painting"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "A 5×5×5 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "A 3×3×3 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "A 4×4×4 cube is painted on all outer faces then cut into unit cubes. How many unit cubes have exactly 3 faces painted?",
+      "options": [
+        "6",
+        "12",
+        "0",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3-face cubes are corners. Step 2: A cube has 8 corners. Answer: 8.",
+      "trick": "Corners = 8.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

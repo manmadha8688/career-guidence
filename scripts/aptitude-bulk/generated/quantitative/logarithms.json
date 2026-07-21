@@ -1,0 +1,1207 @@
+{
+  "topic": "logarithms",
+  "category": "quantitative",
+  "group": "advanced-math",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "If log₂(x) = 2, x = ?",
+      "options": [
+        "4",
+        "2",
+        "4",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^2 = 4.",
+      "trick": "Convert to exponential.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "log₁₀(1000) + log₁₀(10) = ?",
+      "options": [
+        "4",
+        "4",
+        "30",
+        "1000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3 + 1 = 4.",
+      "trick": "log10 powers of 10.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "log_a(a) = ? (for valid base a > 0, a ≠ 1)",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Any log base a of a equals 1.",
+      "trick": "Identity log_a(a)=1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "log₂(16) × log₄(2) = ?",
+      "options": [
+        "2.0",
+        "2",
+        "8",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 4 × 0.5 = 2.0.",
+      "trick": "Evaluate each log.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "If log(x) = 2 (base 10), x = ?",
+      "options": [
+        "2",
+        "100",
+        "20",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^2 = 100.",
+      "trick": "Antilog.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "If log₂(x) = 3, x = ?",
+      "options": [
+        "8",
+        "3",
+        "6",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^3 = 8.",
+      "trick": "Convert to exponential.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1098,
+      "difficulty": "hard",
+      "question": "If log(x) = 136 (base 10), x = ?",
+      "options": [
+        "136",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1360",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^136 = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1082,
+      "difficulty": "hard",
+      "question": "If log(x) = 134 (base 10), x = ?",
+      "options": [
+        "134",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1340",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^134 = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1066,
+      "difficulty": "hard",
+      "question": "If log(x) = 132 (base 10), x = ?",
+      "options": [
+        "132",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1320",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^132 = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1050,
+      "difficulty": "hard",
+      "question": "If log(x) = 130 (base 10), x = ?",
+      "options": [
+        "130",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1300",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^130 = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "If log(x) = 3 (base 10), x = ?",
+      "options": [
+        "3",
+        "1000",
+        "30",
+        "100"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^3 = 1000.",
+      "trick": "Antilog.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1069,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 133, x = ?",
+      "options": [
+        "10889035741470030830827987437816582766592",
+        "133",
+        "266",
+        "17689"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^133 = 10889035741470030830827987437816582766592.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1053,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 131, x = ?",
+      "options": [
+        "2722258935367507707706996859454145691648",
+        "131",
+        "262",
+        "17161"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^131 = 2722258935367507707706996859454145691648.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "If log₂(x) = 4, x = ?",
+      "options": [
+        "16",
+        "4",
+        "8",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^4 = 16.",
+      "trick": "Convert to exponential.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1106,
+      "difficulty": "hard",
+      "question": "If log(x) = 137 (base 10), x = ?",
+      "options": [
+        "137",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1370",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^137 = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1090,
+      "difficulty": "hard",
+      "question": "If log(x) = 135 (base 10), x = ?",
+      "options": [
+        "135",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1350",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^135 = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1074,
+      "difficulty": "hard",
+      "question": "If log(x) = 133 (base 10), x = ?",
+      "options": [
+        "133",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1330",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^133 = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1058,
+      "difficulty": "hard",
+      "question": "If log(x) = 131 (base 10), x = ?",
+      "options": [
+        "131",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1310",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^131 = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "If log(x) = 4 (base 10), x = ?",
+      "options": [
+        "4",
+        "10000",
+        "40",
+        "1000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^4 = 10000.",
+      "trick": "Antilog.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1077,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 134, x = ?",
+      "options": [
+        "21778071482940061661655974875633165533184",
+        "134",
+        "268",
+        "17956"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^134 = 21778071482940061661655974875633165533184.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1061,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 132, x = ?",
+      "options": [
+        "5444517870735015415413993718908291383296",
+        "132",
+        "264",
+        "17424"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^132 = 5444517870735015415413993718908291383296.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "If log₂(x) = 5, x = ?",
+      "options": [
+        "32",
+        "5",
+        "10",
+        "25"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^5 = 32.",
+      "trick": "Convert to exponential.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1114,
+      "difficulty": "hard",
+      "question": "If log(x) = 138 (base 10), x = ?",
+      "options": [
+        "138",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1380",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^138 = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1116,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1117,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 139, x = ?",
+      "options": [
+        "696898287454081973172991196020261297061888",
+        "139",
+        "278",
+        "19321"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^139 = 696898287454081973172991196020261297061888.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "If log(x) = 5 (base 10), x = ?",
+      "options": [
+        "5",
+        "100000",
+        "50",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^5 = 100000.",
+      "trick": "Antilog.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1085,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 135, x = ?",
+      "options": [
+        "43556142965880123323311949751266331066368",
+        "135",
+        "270",
+        "18225"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^135 = 43556142965880123323311949751266331066368.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1120,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "If log₂(x) = 6, x = ?",
+      "options": [
+        "64",
+        "6",
+        "12",
+        "36"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^6 = 64.",
+      "trick": "Convert to exponential.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1122,
+      "difficulty": "hard",
+      "question": "If log(x) = 139 (base 10), x = ?",
+      "options": [
+        "139",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1390",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^139 = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1123,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1124,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1125,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 140, x = ?",
+      "options": [
+        "1393796574908163946345982392040522594123776",
+        "140",
+        "280",
+        "19600"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^140 = 1393796574908163946345982392040522594123776.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "If log(x) = 6 (base 10), x = ?",
+      "options": [
+        "6",
+        "1000000",
+        "60",
+        "100000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^6 = 1000000.",
+      "trick": "Antilog.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1093,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 136, x = ?",
+      "options": [
+        "87112285931760246646623899502532662132736",
+        "136",
+        "272",
+        "18496"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^136 = 87112285931760246646623899502532662132736.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1128,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 7, x = ?",
+      "options": [
+        "128",
+        "7",
+        "14",
+        "49"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^7 = 128.",
+      "trick": "Convert to exponential.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1130,
+      "difficulty": "hard",
+      "question": "If log(x) = 140 (base 10), x = ?",
+      "options": [
+        "140",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1400",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^140 = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1131,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1132,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1133,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 141, x = ?",
+      "options": [
+        "2787593149816327892691964784081045188247552",
+        "141",
+        "282",
+        "19881"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^141 = 2787593149816327892691964784081045188247552.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "If log(x) = 7 (base 10), x = ?",
+      "options": [
+        "7",
+        "10000000",
+        "70",
+        "1000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^7 = 10000000.",
+      "trick": "Antilog.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1101,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 137, x = ?",
+      "options": [
+        "174224571863520493293247799005065324265472",
+        "137",
+        "274",
+        "18769"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^137 = 174224571863520493293247799005065324265472.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1136,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 8, x = ?",
+      "options": [
+        "256",
+        "8",
+        "16",
+        "64"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^8 = 256.",
+      "trick": "Convert to exponential.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1138,
+      "difficulty": "hard",
+      "question": "If log(x) = 141 (base 10), x = ?",
+      "options": [
+        "141",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1410",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^141 = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1139,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1140,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1141,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 142, x = ?",
+      "options": [
+        "5575186299632655785383929568162090376495104",
+        "142",
+        "284",
+        "20164"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^142 = 5575186299632655785383929568162090376495104.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "If log(x) = 8 (base 10), x = ?",
+      "options": [
+        "8",
+        "100000000",
+        "80",
+        "10000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^8 = 100000000.",
+      "trick": "Antilog.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1109,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 138, x = ?",
+      "options": [
+        "348449143727040986586495598010130648530944",
+        "138",
+        "276",
+        "19044"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^138 = 348449143727040986586495598010130648530944.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1144,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 9, x = ?",
+      "options": [
+        "512",
+        "9",
+        "18",
+        "81"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^9 = 512.",
+      "trick": "Convert to exponential.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1146,
+      "difficulty": "hard",
+      "question": "If log(x) = 142 (base 10), x = ?",
+      "options": [
+        "142",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1420",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^142 = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1147,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1148,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1149,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 143, x = ?",
+      "options": [
+        "11150372599265311570767859136324180752990208",
+        "143",
+        "286",
+        "20449"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^143 = 11150372599265311570767859136324180752990208.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "If log(x) = 9 (base 10), x = ?",
+      "options": [
+        "9",
+        "1000000000",
+        "90",
+        "100000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^9 = 1000000000.",
+      "trick": "Antilog.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1151,
+      "difficulty": "hard",
+      "question": "log_a(a) = ? (for valid base a > 0, a ≠ 1)",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Any log base a of a equals 1.",
+      "trick": "Identity log_a(a)=1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1152,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 10, x = ?",
+      "options": [
+        "1024",
+        "10",
+        "20",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^10 = 1024.",
+      "trick": "Convert to exponential.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1154,
+      "difficulty": "hard",
+      "question": "If log(x) = 143 (base 10), x = ?",
+      "options": [
+        "143",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1430",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^143 = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1155,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1156,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1157,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 144, x = ?",
+      "options": [
+        "22300745198530623141535718272648361505980416",
+        "144",
+        "288",
+        "20736"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^144 = 22300745198530623141535718272648361505980416.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "If log(x) = 10 (base 10), x = ?",
+      "options": [
+        "10",
+        "10000000000",
+        "100",
+        "1000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^10 = 10000000000.",
+      "trick": "Antilog.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1159,
+      "difficulty": "hard",
+      "question": "log_a(a) = ? (for valid base a > 0, a ≠ 1)",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Any log base a of a equals 1.",
+      "trick": "Identity log_a(a)=1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1160,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 11, x = ?",
+      "options": [
+        "2048",
+        "11",
+        "22",
+        "121"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^11 = 2048.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1162,
+      "difficulty": "hard",
+      "question": "If log(x) = 144 (base 10), x = ?",
+      "options": [
+        "144",
+        "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1440",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^144 = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1163,
+      "difficulty": "hard",
+      "question": "log₂(32) + log₂(2) = ?",
+      "options": [
+        "6",
+        "32",
+        "6",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 + 1 = 6.",
+      "trick": "log product rule special.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1164,
+      "difficulty": "hard",
+      "question": "Solve: log₃(x) = 2. x = ?",
+      "options": [
+        "6",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3² = 9.",
+      "trick": "Exponential form.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1165,
+      "difficulty": "hard",
+      "question": "If log₂(x) = 145, x = ?",
+      "options": [
+        "44601490397061246283071436545296723011960832",
+        "145",
+        "290",
+        "21025"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 2^145 = 44601490397061246283071436545296723011960832.",
+      "trick": "Convert to exponential.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "If log(x) = 11 (base 10), x = ?",
+      "options": [
+        "11",
+        "100000000000",
+        "110",
+        "10000000000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10^11 = 100000000000.",
+      "trick": "Antilog.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1167,
+      "difficulty": "hard",
+      "question": "log_a(a) = ? (for valid base a > 0, a ≠ 1)",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Any log base a of a equals 1.",
+      "trick": "Identity log_a(a)=1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1168,
+      "difficulty": "hard",
+      "question": "log₅(1) = ?",
+      "options": [
+        "1",
+        "5",
+        "-1",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: log(1) = 0 for any base.",
+      "trick": "log(1)=0.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

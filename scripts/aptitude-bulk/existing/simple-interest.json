@@ -1,0 +1,402 @@
+[
+  {
+    "id": "simple-interest-q1",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Find the simple interest on ₹6000 at 5% per annum for 2 years.",
+    "options": [
+      "₹600",
+      "₹300",
+      "₹660",
+      "₹1200"
+    ],
+    "answer": "A",
+    "solution": "SI = P×R×T/100 = 6000×5×2/100 = 60000/100 = ₹600.",
+    "trick": "6000×5×2/100 = 600.",
+    "type": "Find the simple interest",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q2",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Find the simple interest on ₹1200 at 10% per annum for 3 years.",
+    "options": [
+      "₹120",
+      "₹360",
+      "₹300",
+      "₹396"
+    ],
+    "answer": "B",
+    "solution": "SI = 1200×10×3/100 = 36000/100 = ₹360.",
+    "trick": "1200×10×3/100 = 360.",
+    "type": "Find the simple interest",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q3",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Find the amount on ₹2000 at 6% per annum simple interest for 2 years.",
+    "options": [
+      "₹2120",
+      "₹2400",
+      "₹2240",
+      "₹2200"
+    ],
+    "answer": "C",
+    "solution": "SI = 2000×6×2/100 = 240. Amount = 2000 + 240 = ₹2240.",
+    "trick": "SI 240, add principal → 2240.",
+    "type": "Find the amount",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q4",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "At what rate will ₹1000 earn ₹200 as simple interest in 4 years?",
+    "options": [
+      "4%",
+      "10%",
+      "2%",
+      "5%"
+    ],
+    "answer": "D",
+    "solution": "R = 100×SI/(P×T) = 100×200/(1000×4) = 20000/4000 = 5%.",
+    "trick": "100×200/(1000×4) = 5%.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q5",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "In how many years will ₹500 earn ₹150 as simple interest at 10% per annum?",
+    "options": [
+      "3 years",
+      "2 years",
+      "5 years",
+      "4 years"
+    ],
+    "answer": "A",
+    "solution": "T = 100×SI/(P×R) = 100×150/(500×10) = 15000/5000 = 3 years.",
+    "trick": "100×150/(500×10) = 3.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q6",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "In how many years will a sum double itself at 20% per annum simple interest?",
+    "options": [
+      "10 years",
+      "5 years",
+      "4 years",
+      "20 years"
+    ],
+    "answer": "B",
+    "solution": "To double, SI = 100% of P. T = 100/R = 100/20 = 5 years.",
+    "trick": "Double → 100/R = 5.",
+    "type": "Doubling / tripling",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q7",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "A sum becomes 6/5 of itself in 2 years at simple interest. Find the rate.",
+    "options": [
+      "20%",
+      "5%",
+      "10%",
+      "6%"
+    ],
+    "answer": "C",
+    "solution": "Interest = 6/5 P − P = P/5 over 2 years. R = 100×(P/5)/(P×2) = 100/10 = 10%.",
+    "trick": "R = 100(k−1)/T = 100(1/5)/2 = 10%.",
+    "type": "Becomes a fraction of itself",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q8",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Find the simple interest on ₹8000 at 7.5% per annum for 2 years 6 months.",
+    "options": [
+      "₹1200",
+      "₹1600",
+      "₹1400",
+      "₹1500"
+    ],
+    "answer": "D",
+    "solution": "T = 2.5 years. SI = 8000×7.5×2.5/100 = 150000/100 = ₹1500.",
+    "trick": "6 months = 0.5 yr, so T = 2.5.",
+    "type": "Find the simple interest",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q9",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A man deposits ₹12000 at 9% per annum simple interest. What amount does he get after 4 years?",
+    "options": [
+      "₹16320",
+      "₹15320",
+      "₹16000",
+      "₹4320"
+    ],
+    "answer": "A",
+    "solution": "SI = 12000×9×4/100 = 4320. Amount = 12000 + 4320 = ₹16320.",
+    "trick": "SI 4320, add principal.",
+    "type": "Find the amount",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q10",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "At what rate per annum will ₹7500 amount to ₹9000 in 4 years at simple interest?",
+    "options": [
+      "6%",
+      "5%",
+      "4%",
+      "7.5%"
+    ],
+    "answer": "B",
+    "solution": "SI = 9000 − 7500 = 1500. R = 100×1500/(7500×4) = 150000/30000 = 5%.",
+    "trick": "Interest 1500 → R = 5%.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q11",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "What sum earns ₹450 as simple interest in 3 years at 5% per annum?",
+    "options": [
+      "₹2700",
+      "₹3300",
+      "₹3000",
+      "₹1500"
+    ],
+    "answer": "C",
+    "solution": "P = 100×SI/(R×T) = 100×450/(5×3) = 45000/15 = ₹3000.",
+    "trick": "100×450/15 = 3000.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q12",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "In how many years will ₹800 become ₹1200 at 10% per annum simple interest?",
+    "options": [
+      "4 years",
+      "6 years",
+      "8 years",
+      "5 years"
+    ],
+    "answer": "D",
+    "solution": "SI = 1200 − 800 = 400. T = 100×400/(800×10) = 40000/8000 = 5 years.",
+    "trick": "Interest 400 → T = 5.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q13",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A sum amounts to ₹2600 in 3 years and ₹3000 in 5 years at simple interest. Find the sum.",
+    "options": [
+      "₹2000",
+      "₹2200",
+      "₹1800",
+      "₹2400"
+    ],
+    "answer": "A",
+    "solution": "Interest for 2 extra years = 3000 − 2600 = 400, so 200/year. Interest for 3 years = 600. Principal = 2600 − 600 = ₹2000.",
+    "trick": "Yearly interest = gap/years = 200.",
+    "type": "Amounts at two different times",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q14",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A sum becomes 7/6 of itself in 2 years at simple interest. Find the rate.",
+    "options": [
+      "6%",
+      "8.33%",
+      "16.67%",
+      "7%"
+    ],
+    "answer": "B",
+    "solution": "Interest = 7/6 P − P = P/6 over 2 years. R = 100×(P/6)/(P×2) = 100/12 = 8.33%.",
+    "trick": "R = 100(1/6)/2 = 8.33%.",
+    "type": "Becomes a fraction of itself",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q15",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "The simple interest on a sum for 4 years at 6% per annum is ₹960. Find the simple interest on the same sum for 3 years at 8% per annum.",
+    "options": [
+      "₹720",
+      "₹1200",
+      "₹960",
+      "₹840"
+    ],
+    "answer": "C",
+    "solution": "P = 100×SI/(R×T) = 100×960/(6×4) = 96000/24 = 4000. New SI = 4000×8×3/100 = ₹960.",
+    "trick": "Find P first, then re-apply the formula.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q16",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A certain sum amounts to ₹1160 in 2 years at 8% per annum simple interest. Find the sum.",
+    "options": [
+      "₹1080",
+      "₹1160",
+      "₹1200",
+      "₹1000"
+    ],
+    "answer": "D",
+    "solution": "A = P(1 + RT/100) = P(1 + 16/100) = 1.16P = 1160 → P = 1160/1.16 = ₹1000.",
+    "trick": "A = P(1 + RT/100); divide out the bracket.",
+    "type": "Find the amount",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q17",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The simple interest on a sum is 1/9 of the principal, and the number of years equals the rate percent per annum. Find the rate.",
+    "options": [
+      "3.33%",
+      "9%",
+      "10%",
+      "1%"
+    ],
+    "answer": "A",
+    "solution": "SI = P/9 and R = T. P/9 = P×R×T/100 = P×R²/100 → R² = 100/9 → R = 10/3 = 3.33%.",
+    "trick": "Set R = T, cancel P, take the root.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q18",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A sum of money doubles itself in 12 years at simple interest. In how many years will it triple?",
+    "options": [
+      "18 years",
+      "24 years",
+      "36 years",
+      "20 years"
+    ],
+    "answer": "B",
+    "solution": "To double, interest = P in 12 years. To triple, interest = 2P, so it needs 2×12 = 24 years.",
+    "trick": "Double needs 1×P, triple needs 2×P of interest → time scales.",
+    "type": "Doubling / tripling",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q19",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A sum was put at simple interest for 3 years. Had it been put at a 2% higher rate, it would have fetched ₹360 more. Find the sum.",
+    "options": [
+      "₹3600",
+      "₹5000",
+      "₹6000",
+      "₹7200"
+    ],
+    "answer": "C",
+    "solution": "Extra interest = P×(extra rate)×T/100 = P×2×3/100 = 6P/100 = 360 → P = 6000.",
+    "trick": "Extra = P·ΔR·T/100; solve for P.",
+    "type": "Find rate, time or principal",
+    "active": true
+  },
+  {
+    "id": "simple-interest-q20",
+    "topic": "simple-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A sum becomes 3 times itself in 20 years at simple interest. In how many years will it become 5 times itself?",
+    "options": [
+      "30 years",
+      "50 years",
+      "35 years",
+      "40 years"
+    ],
+    "answer": "D",
+    "solution": "3 times → interest = 2P in 20 years, so R = 200/20 = 10%. 5 times → interest = 4P → T = 400/10 = 40 years.",
+    "trick": "Interest per year fixed; scale time to the needed multiple.",
+    "type": "Doubling / tripling",
+    "active": true
+  }
+]

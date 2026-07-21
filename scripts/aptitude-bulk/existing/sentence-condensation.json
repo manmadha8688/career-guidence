@@ -1,0 +1,402 @@
+[
+  {
+    "id": "sentence-condensation-q1",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Choose the best condensed form: 'Due to the fact that he was ill, he stayed home.'",
+    "options": [
+      "Because he was ill, he stayed home.",
+      "Due to his illness fact, he stayed.",
+      "He was ill and due to fact stayed.",
+      "He stayed because of the fact of illness."
+    ],
+    "answer": "A",
+    "solution": "'Due to the fact that' condenses to 'Because'.",
+    "trick": "Swap wordy connector.",
+    "type": "Connector swap",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q2",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Choose the best condensed form: 'A person who writes books is respected.'",
+    "options": [
+      "A book person is respected.",
+      "An author is respected.",
+      "A writer of the books is respected.",
+      "One who writes is respected."
+    ],
+    "answer": "B",
+    "solution": "'A person who writes books' condenses to 'An author'.",
+    "trick": "Phrase → one word.",
+    "type": "One-word substitution",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q3",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Choose the best condensed form: 'He returned back the book that he had borrowed.'",
+    "options": [
+      "He returned back the borrowed book.",
+      "He gave back return the book.",
+      "He returned the borrowed book.",
+      "He returned back book borrowed."
+    ],
+    "answer": "C",
+    "solution": "Drop the redundant 'back' and reduce the clause: 'the borrowed book'.",
+    "trick": "Cut 'back'; reduce clause.",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q4",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Choose the best condensed form: 'The boy who was standing there is my brother.'",
+    "options": [
+      "The boy who stand there is brother.",
+      "The standing boy who is there is brother.",
+      "The boy there who was is my brother.",
+      "The boy standing there is my brother."
+    ],
+    "answer": "D",
+    "solution": "Reduce 'who was standing' to 'standing'.",
+    "trick": "Clause → phrase.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q5",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 5,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'In spite of the fact that it was late, they kept on working.'",
+    "options": [
+      "Although it was late, they kept working.",
+      "In spite the late fact they worked.",
+      "Despite of late they kept on work.",
+      "It was late but they kept on working still."
+    ],
+    "answer": "A",
+    "solution": "'In spite of the fact that' → 'Although'; 'kept on working' → 'kept working'.",
+    "trick": "Swap connector; trim 'on'.",
+    "type": "Connector swap",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q6",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'She is a woman who has a lot of courage.'",
+    "options": [
+      "She is a woman full of the courage.",
+      "She is a courageous woman.",
+      "She is a woman who is very courage.",
+      "She has courage as a woman lot."
+    ],
+    "answer": "B",
+    "solution": "'a woman who has a lot of courage' condenses to 'a courageous woman'.",
+    "trick": "Clause → adjective.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q7",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'The man who is old and who is wise gave advice.'",
+    "options": [
+      "The man old and the wise gave advice.",
+      "The man who old wise gave advice.",
+      "The old, wise man gave advice.",
+      "The man of old wise advice gave."
+    ],
+    "answer": "C",
+    "solution": "Reduce both relative clauses to adjectives: 'The old, wise man'.",
+    "trick": "Two clauses → adjectives.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q8",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'He spoke in a manner that was very rude.'",
+    "options": [
+      "He spoke in the rude manner way.",
+      "He spoke a rude speaking manner.",
+      "He spoke with rudeness manner very.",
+      "He spoke very rudely."
+    ],
+    "answer": "D",
+    "solution": "'in a manner that was very rude' condenses to the adverb 'very rudely'.",
+    "trick": "Manner phrase → adverb.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q9",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'It is a fact that is true that honesty pays.'",
+    "options": [
+      "It is true that honesty pays.",
+      "It is a true fact honesty pays.",
+      "It is the fact true honesty pays.",
+      "Honesty pays as a true fact."
+    ],
+    "answer": "A",
+    "solution": "'a fact that is true' is redundant; use 'It is true that honesty pays.'",
+    "trick": "Cut 'fact/true' redundancy.",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q10",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'The reason why he left was because he was bored.'",
+    "options": [
+      "The reason he left is because bored.",
+      "He left because he was bored.",
+      "The reason why bored he left.",
+      "He left the reason being bored why."
+    ],
+    "answer": "B",
+    "solution": "'The reason why ... was because' is redundant; use 'He left because he was bored.'",
+    "trick": "Cut 'reason why ... because'.",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q11",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'They live in a house that is made of glass.'",
+    "options": [
+      "They live in a house glass made.",
+      "They live in a house of the glass.",
+      "They live in a glass house.",
+      "They live in a made glass house that."
+    ],
+    "answer": "C",
+    "solution": "'a house that is made of glass' condenses to 'a glass house'.",
+    "trick": "Clause → compound noun.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q12",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Choose the best condensed form: 'He is a boy who never tells a lie.'",
+    "options": [
+      "He is a boy of no lies never.",
+      "He is a never-lie telling boy.",
+      "He is a boy who is not liar.",
+      "He is a truthful boy."
+    ],
+    "answer": "D",
+    "solution": "'a boy who never tells a lie' condenses to 'a truthful boy'.",
+    "trick": "Clause → adjective.",
+    "type": "One-word substitution",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q13",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'She was tired and so she decided to take some rest.'",
+    "options": [
+      "Being tired, she decided to rest.",
+      "She was tired so rest she took some.",
+      "Tired she was and rested some she.",
+      "She took rest being of the tired."
+    ],
+    "answer": "A",
+    "solution": "Reduce the cause clause to a participle: 'Being tired, she decided to rest.'",
+    "trick": "Cause clause → participle.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q14",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'The old woman was so weak that she could not walk.'",
+    "options": [
+      "The old woman so weak not walk could.",
+      "The old woman was too weak to walk.",
+      "The weak old woman not walk so.",
+      "The old woman could not walk weak so."
+    ],
+    "answer": "B",
+    "solution": "'so weak that she could not walk' condenses to 'too weak to walk'.",
+    "trick": "so...that → too...to.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q15",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'He works hard in order that he may succeed.'",
+    "options": [
+      "He works hard in the order to succeed.",
+      "He works hard so that success order.",
+      "He works hard to succeed.",
+      "He works so hard success order that."
+    ],
+    "answer": "C",
+    "solution": "'in order that he may succeed' condenses to 'to succeed'.",
+    "trick": "Purpose clause → 'to' + verb.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q16",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'The building which is very tall is a hotel.'",
+    "options": [
+      "The building tall which is hotel.",
+      "The building of tall is a hotel.",
+      "The hotel which tall building is.",
+      "The very tall building is a hotel."
+    ],
+    "answer": "D",
+    "solution": "Reduce 'which is very tall' to the adjective 'very tall'.",
+    "trick": "Clause → adjective.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q17",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'At this point in time, we are ready.'",
+    "options": [
+      "Now, we are ready.",
+      "At the point of time ready we.",
+      "We are at time point ready now.",
+      "In this time point we ready are."
+    ],
+    "answer": "A",
+    "solution": "'At this point in time' condenses to 'Now'.",
+    "trick": "Wordy time phrase → 'now'.",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q18",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'He made a promise that he would help.'",
+    "options": [
+      "He made the promising help.",
+      "He promised to help.",
+      "He made a help promise that.",
+      "He gave promise for helping made."
+    ],
+    "answer": "B",
+    "solution": "'made a promise that he would' condenses to the verb 'promised to'.",
+    "trick": "Noun phrase → verb.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q19",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'The results, which were good, pleased everyone.'",
+    "options": [
+      "The results good which pleased all.",
+      "The results of good pleased everyone.",
+      "The good results pleased everyone.",
+      "The pleasing good results everyone."
+    ],
+    "answer": "C",
+    "solution": "Reduce 'which were good' to the adjective 'good'.",
+    "trick": "Clause → adjective.",
+    "type": "Clause reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-condensation-q20",
+    "topic": "sentence-condensation",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Choose the best condensed form: 'She spoke in a way that showed confidence.'",
+    "options": [
+      "She spoke a confidence showing way.",
+      "She spoke with a confident manner way.",
+      "She spoke in confidence showing.",
+      "She spoke confidently."
+    ],
+    "answer": "D",
+    "solution": "'in a way that showed confidence' condenses to the adverb 'confidently'.",
+    "trick": "Manner clause → adverb.",
+    "type": "Clause reduction",
+    "active": true
+  }
+]

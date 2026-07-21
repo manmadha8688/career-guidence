@@ -1,0 +1,402 @@
+[
+  {
+    "id": "sentence-joining-q1",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Join correctly: 'He is poor. He is honest.'",
+    "options": [
+      "Although he is poor, he is honest.",
+      "He is poor so he is honest.",
+      "He is poor because he is honest.",
+      "He is poor and honest but."
+    ],
+    "answer": "A",
+    "solution": "The ideas contrast, so use 'Although'.",
+    "trick": "Contrast → although.",
+    "type": "Contrast",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q2",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Join correctly: 'It was raining. We stayed at home.'",
+    "options": [
+      "We stayed home although it was raining.",
+      "We stayed home because it was raining.",
+      "We stayed home but it was raining.",
+      "It was raining or we stayed home."
+    ],
+    "answer": "B",
+    "solution": "Rain is the reason, so use 'because'.",
+    "trick": "Reason → because.",
+    "type": "Cause–effect",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q3",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Join correctly: 'This is the book. It won the prize.'",
+    "options": [
+      "This is the book who won the prize.",
+      "This is the book and won prize.",
+      "This is the book which won the prize.",
+      "This is the book but won the prize."
+    ],
+    "answer": "C",
+    "solution": "A thing is described with 'which'.",
+    "trick": "Thing → which.",
+    "type": "Relative clause",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q4",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Join correctly: 'He finished his work. He went out.'",
+    "options": [
+      "He finished work although he went out.",
+      "He finished work but went out.",
+      "Because he went out he finished work.",
+      "After he finished his work, he went out."
+    ],
+    "answer": "D",
+    "solution": "One action follows the other, so use 'After'.",
+    "trick": "Sequence → after.",
+    "type": "Time",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q5",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Join correctly: 'Work hard. You will pass.'",
+    "options": [
+      "If you work hard, you will pass.",
+      "You work hard but pass.",
+      "Although work hard you pass.",
+      "Work hard because pass."
+    ],
+    "answer": "A",
+    "solution": "Passing depends on the condition, so use 'If'.",
+    "trick": "Condition → if.",
+    "type": "Condition",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q6",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Join correctly: 'He sings. He dances.'",
+    "options": [
+      "He sings but dances.",
+      "He sings and dances.",
+      "He sings although dances.",
+      "He sings because dances."
+    ],
+    "answer": "B",
+    "solution": "Two added actions, so use 'and'.",
+    "trick": "Addition → and.",
+    "type": "Addition",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q7",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Join correctly: 'The man is my uncle. He called yesterday.'",
+    "options": [
+      "The man which called yesterday is my uncle.",
+      "The man and called is my uncle.",
+      "The man who called yesterday is my uncle.",
+      "The man but called is my uncle."
+    ],
+    "answer": "C",
+    "solution": "A person is described with 'who'.",
+    "trick": "Person → who.",
+    "type": "Relative clause",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q8",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Join correctly: 'She was ill. She attended school.'",
+    "options": [
+      "Because she was ill, she attended school.",
+      "She was ill so she attended school.",
+      "She was ill and attended.",
+      "Although she was ill, she attended school."
+    ],
+    "answer": "D",
+    "solution": "Attending despite illness is a contrast, so use 'Although'.",
+    "trick": "Contrast → although.",
+    "type": "Contrast",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q9",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Join correctly: 'He is intelligent. He is lazy.'",
+    "options": [
+      "He is intelligent but lazy.",
+      "He is intelligent so lazy.",
+      "He is intelligent because lazy.",
+      "He is intelligent if lazy."
+    ],
+    "answer": "A",
+    "solution": "The two traits contrast, so use 'but'.",
+    "trick": "Contrast → but.",
+    "type": "Contrast",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q10",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Join correctly: 'Hurry up. You will miss the train.'",
+    "options": [
+      "If you hurry up, you will miss the train.",
+      "Unless you hurry up, you will miss the train.",
+      "Although you hurry, you miss the train.",
+      "You hurry so you miss the train."
+    ],
+    "answer": "B",
+    "solution": "Missing the train happens without hurrying, so use 'Unless'.",
+    "trick": "Negative condition → unless.",
+    "type": "Condition",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q11",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Join correctly: 'The sun rose. The birds began to sing.'",
+    "options": [
+      "Because the sun rose the birds sing.",
+      "The sun rose but the birds sing.",
+      "When the sun rose, the birds began to sing.",
+      "The sun rose although the birds sing."
+    ],
+    "answer": "C",
+    "solution": "One event at the time of another, so use 'When'.",
+    "trick": "Time link → when.",
+    "type": "Time",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q12",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Join correctly: 'He is very old. He can still run fast.'",
+    "options": [
+      "Because he is old, he runs fast.",
+      "He is old so he runs fast.",
+      "He is old and runs fast.",
+      "Despite being very old, he can still run fast."
+    ],
+    "answer": "D",
+    "solution": "Running fast despite age is a contrast, so use 'Despite'.",
+    "trick": "Contrast → despite + -ing/noun.",
+    "type": "Contrast",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q13",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Join correctly: 'She took an umbrella. It might rain.'",
+    "options": [
+      "She took an umbrella in case it rained.",
+      "She took an umbrella but it rained.",
+      "She took an umbrella so it rained.",
+      "She took an umbrella although it rained."
+    ],
+    "answer": "A",
+    "solution": "Precaution against a possibility → 'in case'.",
+    "trick": "Precaution → in case.",
+    "type": "Condition",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q14",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Join correctly: 'The tea is hot. I cannot drink it.'",
+    "options": [
+      "The tea is hot but I drink it.",
+      "The tea is too hot for me to drink.",
+      "The tea is hot so I drink it.",
+      "Although the tea is hot I drink it."
+    ],
+    "answer": "B",
+    "solution": "Use the 'too ... to' structure for cause-and-inability.",
+    "trick": "too + adjective + to.",
+    "type": "Reduction",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q15",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Join correctly: 'He worked hard. He wanted to win.'",
+    "options": [
+      "He worked hard although he wanted to win.",
+      "He worked hard but wanted to win.",
+      "He worked hard because he wanted to win.",
+      "He worked hard or wanted to win."
+    ],
+    "answer": "C",
+    "solution": "Wanting to win is the reason for working hard → 'because'.",
+    "trick": "Reason → because.",
+    "type": "Cause–effect",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q16",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Join correctly: 'The girl is singing. She is my sister.'",
+    "options": [
+      "The girl which is singing is my sister.",
+      "The girl and singing is my sister.",
+      "The girl singing but my sister.",
+      "The girl who is singing is my sister."
+    ],
+    "answer": "D",
+    "solution": "A person is described with 'who'.",
+    "trick": "Person → who.",
+    "type": "Relative clause",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q17",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Join correctly: 'Turn off the lights. You leave the room.'",
+    "options": [
+      "Turn off the lights when you leave the room.",
+      "Turn off the lights although you leave.",
+      "Turn off the lights because you leave.",
+      "Turn off the lights but you leave."
+    ],
+    "answer": "A",
+    "solution": "The action happens at the time of leaving → 'when'.",
+    "trick": "Time link → when.",
+    "type": "Time",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q18",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Join correctly: 'He was hungry. He ate quickly.'",
+    "options": [
+      "Although he was hungry, he ate quickly.",
+      "Because he was hungry, he ate quickly.",
+      "He was hungry but ate quickly.",
+      "He was hungry or ate quickly."
+    ],
+    "answer": "B",
+    "solution": "Hunger is the reason for eating quickly → 'because'.",
+    "trick": "Reason → because.",
+    "type": "Cause–effect",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q19",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Join correctly: 'This is the house. I was born here.'",
+    "options": [
+      "This is the house which I was born.",
+      "This is the house who I was born.",
+      "This is the house where I was born.",
+      "This is the house but I was born."
+    ],
+    "answer": "C",
+    "solution": "A place is described with 'where'.",
+    "trick": "Place → where.",
+    "type": "Relative clause",
+    "active": true
+  },
+  {
+    "id": "sentence-joining-q20",
+    "topic": "sentence-joining",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Join correctly: 'He apologized. He was still angry.'",
+    "options": [
+      "He apologized because he was still angry.",
+      "He apologized so he was angry.",
+      "He apologized and angry.",
+      "He apologized although he was still angry."
+    ],
+    "answer": "D",
+    "solution": "Apologizing while still angry is a contrast → 'although'.",
+    "trick": "Contrast → although.",
+    "type": "Contrast",
+    "active": true
+  }
+]

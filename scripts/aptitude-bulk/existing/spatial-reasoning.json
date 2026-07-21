@@ -1,0 +1,402 @@
+[
+  {
+    "id": "spatial-reasoning-q1",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "On a standard die, which number is opposite 3?",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "6"
+    ],
+    "answer": "A",
+    "solution": "Opposite faces sum to 7, so 7 − 3 = 4.",
+    "trick": "Opposite = 7 − face.",
+    "type": "Opposite face",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q2",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "On a standard die, which number is opposite 6?",
+    "options": [
+      "2",
+      "1",
+      "5",
+      "3"
+    ],
+    "answer": "B",
+    "solution": "7 − 6 = 1.",
+    "trick": "Opposite = 7 − face.",
+    "type": "Opposite face",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q3",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Opposite faces of a standard die always sum to what?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": "C",
+    "solution": "1-6, 2-5, 3-4 each sum to 7.",
+    "trick": "Sum to 7.",
+    "type": "Die rule",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q4",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "How many pairs of opposite faces does a cube have?",
+    "options": [
+      "6",
+      "4",
+      "2",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "6 faces form 3 opposite pairs.",
+    "trick": "6 faces ÷ 2 = 3 pairs.",
+    "type": "Cube structure",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q5",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Each face of a cube is adjacent to how many other faces?",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "6"
+    ],
+    "answer": "A",
+    "solution": "A face touches all faces except itself and its opposite: 6 − 2 = 4.",
+    "trick": "Adjacent = 4.",
+    "type": "Cube structure",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q6",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "A cube net has faces in a straight row: 1, 2, 3, 4. Which face is opposite 1?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "None"
+    ],
+    "answer": "B",
+    "solution": "In a straight line, a face is opposite the one two steps away: 1 ↔ 3.",
+    "trick": "Skip one in a line.",
+    "type": "Cube net",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q7",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "In the same row 1, 2, 3, 4, which face is opposite 2?",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "2"
+    ],
+    "answer": "C",
+    "solution": "2 ↔ 4 (one face apart in the line).",
+    "trick": "Skip one in a line.",
+    "type": "Cube net",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q8",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "An arrow points north. After a 180° rotation it points?",
+    "options": [
+      "North",
+      "East",
+      "West",
+      "South"
+    ],
+    "answer": "D",
+    "solution": "180° reverses the direction: north → south.",
+    "trick": "180° = reverse.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q9",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A 270° clockwise rotation equals how many degrees counter-clockwise?",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "45°"
+    ],
+    "answer": "A",
+    "solution": "270° CW = 360° − 270° = 90° CCW.",
+    "trick": "270° CW = 90° CCW.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q10",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "On a standard die, which number is opposite 5?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "6"
+    ],
+    "answer": "B",
+    "solution": "7 − 5 = 2.",
+    "trick": "Opposite = 7 − face.",
+    "type": "Opposite face",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q11",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "How many faces does a cube have?",
+    "options": [
+      "4",
+      "8",
+      "6",
+      "12"
+    ],
+    "answer": "C",
+    "solution": "A cube has 6 faces.",
+    "trick": "Cube = 6 faces.",
+    "type": "Cube structure",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q12",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A cube face is adjacent to every face except its...?",
+    "options": [
+      "Nearest face",
+      "Top face",
+      "Front face",
+      "Opposite face"
+    ],
+    "answer": "D",
+    "solution": "The only non-adjacent face is the opposite one.",
+    "trick": "Only opposite is non-adjacent.",
+    "type": "Cube structure",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q13",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "An arrow points north. After rotating 270° clockwise it points?",
+    "options": [
+      "West",
+      "East",
+      "South",
+      "North"
+    ],
+    "answer": "A",
+    "solution": "270° CW = 90° CCW from north = west.",
+    "trick": "270° CW = 90° CCW.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q14",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Two views of a die share top = 1; the front face changes from 2 to 3 as it rotates about the vertical axis. Which face is opposite 2?",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "4"
+    ],
+    "answer": "B",
+    "solution": "With top fixed, 2 and 5 sit on opposite sides across the die (7 − 2 = 5).",
+    "trick": "Fix the top, use 7 − face.",
+    "type": "Two-view die",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q15",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "An arrow points north. After rotating 90° counter-clockwise it points?",
+    "options": [
+      "North",
+      "East",
+      "West",
+      "South"
+    ],
+    "answer": "C",
+    "solution": "90° CCW from north is west.",
+    "trick": "CCW turns left.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q16",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "If 1 is opposite 6 and 2 is opposite 5 on a die, which number is opposite 3?",
+    "options": [
+      "1",
+      "2",
+      "6",
+      "4"
+    ],
+    "answer": "D",
+    "solution": "The remaining pair is 3 and 4 (and 3 + 4 = 7).",
+    "trick": "The last pair sums to 7 too.",
+    "type": "Opposite face",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q17",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A standard die shows top = 1, bottom = 6, front = 2. What is on the back?",
+    "options": [
+      "5",
+      "3",
+      "4",
+      "6"
+    ],
+    "answer": "A",
+    "solution": "Back is opposite front: 7 − 2 = 5.",
+    "trick": "Back = 7 − front.",
+    "type": "Die faces",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q18",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 18,
+    "difficulty": "medium",
+    "question": "A shape rotated a full 360° ends up in what position?",
+    "options": [
+      "Upside down",
+      "In its original position",
+      "Rotated 90°",
+      "Mirrored"
+    ],
+    "answer": "B",
+    "solution": "360° is a full turn, returning the shape to the start.",
+    "trick": "360° = back to start.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q19",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A standard die shows 2 on top and 3 facing front. What is on the bottom?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "C",
+    "solution": "Bottom is opposite top: 7 − 2 = 5.",
+    "trick": "Bottom = 7 − top.",
+    "type": "Die faces",
+    "active": true
+  },
+  {
+    "id": "spatial-reasoning-q20",
+    "topic": "spatial-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A standard die shows 4 on top. What number is on the bottom?",
+    "options": [
+      "6",
+      "5",
+      "2",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "7 − 4 = 3.",
+    "trick": "Bottom = 7 − top.",
+    "type": "Die faces",
+    "active": true
+  }
+]

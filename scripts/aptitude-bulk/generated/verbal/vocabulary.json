@@ -1,0 +1,1207 @@
+{
+  "topic": "vocabulary",
+  "category": "verbal",
+  "group": "vocabulary",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'ABANDON'. (Set 21)",
+      "options": [
+        "desert",
+        "keep",
+        "build",
+        "praise"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'abandon' means leave completely. Step 2: Closest match is 'desert'. Answer: desert.",
+      "trick": "leave completely",
+      "type": "Synonym"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'BENEVOLENT'.",
+      "options": [
+        "kind",
+        "cruel",
+        "lazy",
+        "proud"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'benevolent' means well-meaning. Step 2: Closest match is 'kind'. Answer: kind.",
+      "trick": "well-meaning",
+      "type": "Synonym"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'EPHEMERAL'.",
+      "options": [
+        "short-lived",
+        "eternal",
+        "heavy",
+        "bright"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'ephemeral' means lasting briefly. Step 2: Closest match is 'short-lived'. Answer: short-lived.",
+      "trick": "lasting briefly",
+      "type": "Synonym"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'FRUGAL'.",
+      "options": [
+        "thrifty",
+        "wasteful",
+        "angry",
+        "noisy"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'frugal' means economical. Step 2: Closest match is 'thrifty'. Answer: thrifty.",
+      "trick": "economical",
+      "type": "Synonym"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'HOSTILE'.",
+      "options": [
+        "unfriendly",
+        "warm",
+        "calm",
+        "brave"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'hostile' means opposed. Step 2: Closest match is 'unfriendly'. Answer: unfriendly.",
+      "trick": "opposed",
+      "type": "Synonym"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'LUCID'.",
+      "options": [
+        "clear",
+        "dark",
+        "slow",
+        "weak"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'lucid' means easy to understand. Step 2: Closest match is 'clear'. Answer: clear.",
+      "trick": "easy to understand",
+      "type": "Synonym"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'METICULOUS'.",
+      "options": [
+        "careful",
+        "careless",
+        "quick",
+        "loud"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'meticulous' means very detailed. Step 2: Closest match is 'careful'. Answer: careful.",
+      "trick": "very detailed",
+      "type": "Synonym"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'OBSCURE'.",
+      "options": [
+        "unclear",
+        "famous",
+        "sharp",
+        "legal"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'obscure' means not well known. Step 2: Closest match is 'unclear'. Answer: unclear.",
+      "trick": "not well known",
+      "type": "Synonym"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'PRUDENT'.",
+      "options": [
+        "wise",
+        "foolish",
+        "hasty",
+        "rude"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'prudent' means sensible. Step 2: Closest match is 'wise'. Answer: wise.",
+      "trick": "sensible",
+      "type": "Synonym"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Choose the SYNONYM of 'VERBOSE'.",
+      "options": [
+        "wordy",
+        "brief",
+        "silent",
+        "happy"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'verbose' means using many words. Step 2: Closest match is 'wordy'. Answer: wordy.",
+      "trick": "using many words",
+      "type": "Synonym"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Choose the ANTONYM of 'GENEROUS'. (Set 31)",
+      "options": [
+        "stingy",
+        "kind",
+        "rich",
+        "tall"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'generous' means the opposite of generous. Step 2: Answer: stingy.",
+      "trick": "opposite of generous",
+      "type": "Antonym"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Choose the ANTONYM of 'ANCIENT'. (Set 32)",
+      "options": [
+        "modern",
+        "old",
+        "ruined",
+        "historic"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'ancient' means the opposite of ancient. Step 2: Answer: modern.",
+      "trick": "opposite of ancient",
+      "type": "Antonym"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Choose the ANTONYM of 'HASTY'.",
+      "options": [
+        "slow",
+        "quick",
+        "fast",
+        "rapid"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'hasty' means the opposite of hasty. Step 2: Answer: slow.",
+      "trick": "opposite of hasty",
+      "type": "Antonym"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Choose the ANTONYM of 'MODEST'.",
+      "options": [
+        "arrogant",
+        "shy",
+        "quiet",
+        "simple"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'modest' means the opposite of modest. Step 2: Answer: arrogant.",
+      "trick": "opposite of modest",
+      "type": "Antonym"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Choose the ANTONYM of 'TRANSPARENT'.",
+      "options": [
+        "opaque",
+        "clear",
+        "honest",
+        "open"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'transparent' means the opposite of transparent. Step 2: Answer: opaque.",
+      "trick": "opposite of transparent",
+      "type": "Antonym"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A person who eats too much.'",
+      "options": [
+        "glutton",
+        "misanthrope",
+        "philanthropist",
+        "recluse"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who loves mankind.'",
+      "options": [
+        "philanthropist",
+        "misanthrope",
+        "glutton",
+        "cynic"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'That which cannot be read.'",
+      "options": [
+        "illegible",
+        "ineligible",
+        "immutable",
+        "infallible"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.'",
+      "options": [
+        "extempore",
+        "prologue",
+        "epilogue",
+        "monologue"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.'",
+      "options": [
+        "somnambulist",
+        "insomniac",
+        "optimist",
+        "pessimist"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 41)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "recluse"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 42)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "cynic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 43)",
+      "options": [
+        "ineligible",
+        "illegible",
+        "immutable",
+        "infallible"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 44)",
+      "options": [
+        "prologue",
+        "extempore",
+        "epilogue",
+        "monologue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 45)",
+      "options": [
+        "insomniac",
+        "somnambulist",
+        "optimist",
+        "pessimist"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 46)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "recluse"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 47)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "cynic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 48)",
+      "options": [
+        "ineligible",
+        "illegible",
+        "immutable",
+        "infallible"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 49)",
+      "options": [
+        "prologue",
+        "extempore",
+        "epilogue",
+        "monologue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 50)",
+      "options": [
+        "insomniac",
+        "somnambulist",
+        "optimist",
+        "pessimist"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 51)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "recluse"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 52)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "cynic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 53)",
+      "options": [
+        "ineligible",
+        "illegible",
+        "immutable",
+        "infallible"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 54)",
+      "options": [
+        "prologue",
+        "extempore",
+        "epilogue",
+        "monologue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 55)",
+      "options": [
+        "insomniac",
+        "somnambulist",
+        "optimist",
+        "pessimist"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 56)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "recluse"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 57)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "cynic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 58)",
+      "options": [
+        "ineligible",
+        "illegible",
+        "immutable",
+        "infallible"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 59)",
+      "options": [
+        "prologue",
+        "extempore",
+        "epilogue",
+        "monologue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 60)",
+      "options": [
+        "insomniac",
+        "somnambulist",
+        "optimist",
+        "pessimist"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 61)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "recluse"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 62)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "cynic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 63)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "illegible",
+        "infallible"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 64)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "extempore",
+        "monologue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 65)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "somnambulist",
+        "pessimist"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 66)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "recluse"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 67)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "cynic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 68)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "illegible",
+        "infallible"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 69)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "extempore",
+        "monologue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 70)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "somnambulist",
+        "pessimist"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 71)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "recluse"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 72)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "cynic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 73)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "illegible",
+        "infallible"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 74)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "extempore",
+        "monologue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 75)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "somnambulist",
+        "pessimist"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "One-word substitute"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 76)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "glutton",
+        "recluse"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 77)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "philanthropist",
+        "cynic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 78)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "illegible",
+        "infallible"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 79)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "extempore",
+        "monologue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 80)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "somnambulist",
+        "pessimist"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 81)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "recluse",
+        "glutton"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 82)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "cynic",
+        "philanthropist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 83)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "infallible",
+        "illegible"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 84)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "monologue",
+        "extempore"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 85)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "pessimist",
+        "somnambulist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 86)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "recluse",
+        "glutton"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 87)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "cynic",
+        "philanthropist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 88)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "infallible",
+        "illegible"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 89)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "monologue",
+        "extempore"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 90)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "pessimist",
+        "somnambulist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 91)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "recluse",
+        "glutton"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 92)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "cynic",
+        "philanthropist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 93)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "infallible",
+        "illegible"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 94)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "monologue",
+        "extempore"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 95)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "pessimist",
+        "somnambulist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A person who eats too much.' (Set 96)",
+      "options": [
+        "misanthrope",
+        "philanthropist",
+        "recluse",
+        "glutton"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'glutton'. Step 2: Answer: glutton.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who loves mankind.' (Set 97)",
+      "options": [
+        "misanthrope",
+        "glutton",
+        "cynic",
+        "philanthropist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'philanthropist'. Step 2: Answer: philanthropist.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'That which cannot be read.' (Set 98)",
+      "options": [
+        "ineligible",
+        "immutable",
+        "infallible",
+        "illegible"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'illegible'. Step 2: Answer: illegible.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'A speech made without preparation.' (Set 99)",
+      "options": [
+        "prologue",
+        "epilogue",
+        "monologue",
+        "extempore"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'extempore'. Step 2: Answer: extempore.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Choose the one-word substitute: 'One who walks in sleep.' (Set 100)",
+      "options": [
+        "insomniac",
+        "optimist",
+        "pessimist",
+        "somnambulist"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Definition matches 'somnambulist'. Step 2: Answer: somnambulist.",
+      "trick": "Match definition to word.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

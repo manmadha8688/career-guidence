@@ -1,0 +1,402 @@
+[
+  {
+    "id": "permutation-combination-q1",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "What is 4! (4 factorial)?",
+    "options": [
+      "24",
+      "12",
+      "16",
+      "4"
+    ],
+    "answer": "A",
+    "solution": "4! = 4 × 3 × 2 × 1 = 24.",
+    "trick": "4 × 3 × 2 × 1 = 24.",
+    "type": "Factorial",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q2",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "What is 3! (3 factorial)?",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "1"
+    ],
+    "answer": "B",
+    "solution": "3! = 3 × 2 × 1 = 6.",
+    "trick": "3 × 2 × 1 = 6.",
+    "type": "Factorial",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q3",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "What is 5! (5 factorial)?",
+    "options": [
+      "24",
+      "60",
+      "120",
+      "20"
+    ],
+    "answer": "C",
+    "solution": "5! = 5 × 4 × 3 × 2 × 1 = 120.",
+    "trick": "5 × 4! = 5 × 24 = 120.",
+    "type": "Factorial",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q4",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "What is the value of 0! (zero factorial)?",
+    "options": [
+      "0",
+      "5",
+      "10",
+      "1"
+    ],
+    "answer": "D",
+    "solution": "By convention, 0! = 1.",
+    "trick": "0! = 1 (definition).",
+    "type": "Factorial",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q5",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Evaluate 5P2 (permutations of 2 from 5).",
+    "options": [
+      "20",
+      "10",
+      "25",
+      "15"
+    ],
+    "answer": "A",
+    "solution": "5P2 = 5!/(5−2)! = 5 × 4 = 20.",
+    "trick": "5 × 4 = 20.",
+    "type": "Permutation",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q6",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Evaluate 6C2 (combinations of 2 from 6).",
+    "options": [
+      "30",
+      "15",
+      "12",
+      "20"
+    ],
+    "answer": "B",
+    "solution": "6C2 = (6 × 5)/(2 × 1) = 30/2 = 15.",
+    "trick": "(6 × 5)/2 = 15.",
+    "type": "Combination",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q7",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "What is 7C1?",
+    "options": [
+      "1",
+      "14",
+      "7",
+      "49"
+    ],
+    "answer": "C",
+    "solution": "nC1 = n, so 7C1 = 7.",
+    "trick": "nC1 is just n.",
+    "type": "Combination",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q8",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "A boy has 4 shirts and 3 trousers. How many shirt-trouser combinations can he wear?",
+    "options": [
+      "7",
+      "1",
+      "24",
+      "12"
+    ],
+    "answer": "D",
+    "solution": "By the counting principle, 4 × 3 = 12.",
+    "trick": "Multiply: 4 × 3 = 12.",
+    "type": "Counting principle",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q9",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "In how many ways can gold, silver and bronze medals be given to 6 runners?",
+    "options": [
+      "120",
+      "216",
+      "20",
+      "720"
+    ],
+    "answer": "A",
+    "solution": "Order matters: 6P3 = 6 × 5 × 4 = 120.",
+    "trick": "6 × 5 × 4 = 120.",
+    "type": "Permutation",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q10",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "How many ways can a team of 3 be chosen from 6 players?",
+    "options": [
+      "120",
+      "20",
+      "18",
+      "10"
+    ],
+    "answer": "B",
+    "solution": "Order does not matter: 6C3 = (6 × 5 × 4)/(3 × 2 × 1) = 20.",
+    "trick": "(6·5·4)/6 = 20.",
+    "type": "Combination",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q11",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "How many distinct arrangements are there of the letters of the word 'BOOK'?",
+    "options": [
+      "24",
+      "6",
+      "12",
+      "4"
+    ],
+    "answer": "C",
+    "solution": "4 letters with O repeated twice: 4!/2! = 24/2 = 12.",
+    "trick": "4!/2! = 12.",
+    "type": "Arrangements of a word",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q12",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "In how many ways can 5 people sit around a round table?",
+    "options": [
+      "120",
+      "5",
+      "25",
+      "24"
+    ],
+    "answer": "D",
+    "solution": "Circular arrangements = (n − 1)! = 4! = 24.",
+    "trick": "(5 − 1)! = 24.",
+    "type": "Circular arrangement",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q13",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Evaluate 8C2.",
+    "options": [
+      "28",
+      "16",
+      "56",
+      "64"
+    ],
+    "answer": "A",
+    "solution": "8C2 = (8 × 7)/(2 × 1) = 56/2 = 28.",
+    "trick": "(8 × 7)/2 = 28.",
+    "type": "Combination",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q14",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "How many distinct arrangements are there of the letters of the word 'LEVEL'?",
+    "options": [
+      "60",
+      "30",
+      "120",
+      "15"
+    ],
+    "answer": "B",
+    "solution": "5 letters with L twice and E twice: 5!/(2! × 2!) = 120/4 = 30.",
+    "trick": "5!/(2!2!) = 30.",
+    "type": "Arrangements of a word",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q15",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Evaluate 7C3.",
+    "options": [
+      "21",
+      "70",
+      "35",
+      "42"
+    ],
+    "answer": "C",
+    "solution": "7C3 = (7 × 6 × 5)/(3 × 2 × 1) = 210/6 = 35.",
+    "trick": "(7·6·5)/6 = 35.",
+    "type": "Combination",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q16",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "How many handshakes happen if 10 people each shake hands once with every other person?",
+    "options": [
+      "100",
+      "20",
+      "90",
+      "45"
+    ],
+    "answer": "D",
+    "solution": "Each handshake is a pair, order irrelevant: 10C2 = (10 × 9)/2 = 45.",
+    "trick": "n(n−1)/2 = 45.",
+    "type": "Combination (handshakes)",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q17",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "How many distinct arrangements are there of the letters of the word 'APPLE'?",
+    "options": [
+      "60",
+      "120",
+      "30",
+      "20"
+    ],
+    "answer": "A",
+    "solution": "5 letters with P repeated twice: 5!/2! = 120/2 = 60.",
+    "trick": "5!/2! = 60.",
+    "type": "Arrangements of a word",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q18",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A committee of 3 is to be formed from 9 people. In how many ways can it be done?",
+    "options": [
+      "56",
+      "84",
+      "36",
+      "120"
+    ],
+    "answer": "B",
+    "solution": "Order does not matter: 9C3 = (9 × 8 × 7)/(3 × 2 × 1) = 504/6 = 84.",
+    "trick": "(9·8·7)/6 = 84.",
+    "type": "Combination",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q19",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "How many 4-digit numbers can be formed from the digits 1–5 without repeating any digit?",
+    "options": [
+      "625",
+      "24",
+      "120",
+      "20"
+    ],
+    "answer": "C",
+    "solution": "Order matters and no repeats: 5P4 = 5 × 4 × 3 × 2 = 120.",
+    "trick": "5 × 4 × 3 × 2 = 120.",
+    "type": "Permutation (numbers)",
+    "active": true
+  },
+  {
+    "id": "permutation-combination-q20",
+    "topic": "permutation-combination",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "In how many ways can 4 boys and 3 girls sit in a row so that all 3 girls sit together?",
+    "options": [
+      "5040",
+      "144",
+      "120",
+      "720"
+    ],
+    "answer": "D",
+    "solution": "Treat the 3 girls as one block: arrange 5 units in 5! = 120 ways, and the girls among themselves in 3! = 6 ways, so 120 × 6 = 720.",
+    "trick": "Glue the girls: 5! × 3! = 720.",
+    "type": "Arrangement with a grouped block",
+    "active": true
+  }
+]

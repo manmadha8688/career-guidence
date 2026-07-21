@@ -1,0 +1,402 @@
+[
+  {
+    "id": "vocabulary-q1",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Choose the SYNONYM of 'ABANDON'.",
+    "options": [
+      "desert",
+      "keep",
+      "build",
+      "enjoy"
+    ],
+    "answer": "A",
+    "solution": "'abandon' means to leave or give up completely — closest is 'desert'.",
+    "trick": "Pick the closest meaning.",
+    "type": "Synonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q2",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Choose the ANTONYM of 'GENEROUS'.",
+    "options": [
+      "kind",
+      "stingy",
+      "rich",
+      "tall"
+    ],
+    "answer": "B",
+    "solution": "'generous' = giving freely; its opposite is 'stingy'.",
+    "trick": "Reverse the sense.",
+    "type": "Antonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q3",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Choose the SYNONYM of 'HAPPY'.",
+    "options": [
+      "angry",
+      "tired",
+      "elated",
+      "calm"
+    ],
+    "answer": "C",
+    "solution": "'elated' means very happy — the closest synonym.",
+    "trick": "Match tone and sense.",
+    "type": "Synonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q4",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Choose the ANTONYM of 'ANCIENT'.",
+    "options": [
+      "old",
+      "ruined",
+      "historic",
+      "modern"
+    ],
+    "answer": "D",
+    "solution": "'ancient' = very old; its opposite is 'modern'.",
+    "trick": "Opposite of old = modern.",
+    "type": "Antonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q5",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "One word for 'a person who cannot read or write'.",
+    "options": [
+      "illiterate",
+      "educated",
+      "scholar",
+      "author"
+    ],
+    "answer": "A",
+    "solution": "'il-' (not) + 'literate' = illiterate.",
+    "trick": "Match the prefix 'not'.",
+    "type": "One-word substitution",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q6",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Choose the SYNONYM of 'RAPID'.",
+    "options": [
+      "slow",
+      "swift",
+      "late",
+      "steady"
+    ],
+    "answer": "B",
+    "solution": "'rapid' means fast — closest is 'swift'.",
+    "trick": "Closest in meaning.",
+    "type": "Synonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q7",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Choose the ANTONYM of 'EXPAND'.",
+    "options": [
+      "grow",
+      "widen",
+      "contract",
+      "stretch"
+    ],
+    "answer": "C",
+    "solution": "'expand' = get bigger; its opposite is 'contract'.",
+    "trick": "Reverse the sense.",
+    "type": "Antonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q8",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "One word for 'a doctor who treats animals'.",
+    "options": [
+      "surgeon",
+      "dentist",
+      "chemist",
+      "veterinarian"
+    ],
+    "answer": "D",
+    "solution": "A doctor for animals is a 'veterinarian'.",
+    "trick": "Match the key idea (animals).",
+    "type": "One-word substitution",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q9",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Choose the SYNONYM of 'BRAVE'.",
+    "options": [
+      "courageous",
+      "timid",
+      "weak",
+      "rude"
+    ],
+    "answer": "A",
+    "solution": "'brave' means bold — closest is 'courageous'.",
+    "trick": "Match tone and sense.",
+    "type": "Synonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q10",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Choose the ANTONYM of 'VICTORY'.",
+    "options": [
+      "win",
+      "defeat",
+      "triumph",
+      "success"
+    ],
+    "answer": "B",
+    "solution": "'victory' = winning; its opposite is 'defeat'.",
+    "trick": "The odd, negative option.",
+    "type": "Antonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q11",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "One word for 'that which cannot be believed'.",
+    "options": [
+      "credible",
+      "reliable",
+      "incredible",
+      "probable"
+    ],
+    "answer": "C",
+    "solution": "'in-' (not) + 'credible' (believable) = incredible.",
+    "trick": "Prefix 'in-' = not.",
+    "type": "One-word substitution",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q12",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "In 'The novel was a real page-turner', 'page-turner' means:",
+    "options": [
+      "boring",
+      "short",
+      "old",
+      "very engaging"
+    ],
+    "answer": "D",
+    "solution": "A 'page-turner' is so gripping you keep turning pages — very engaging.",
+    "trick": "Use the positive context.",
+    "type": "Meaning in context",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q13",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Choose the SYNONYM of 'ENORMOUS'.",
+    "options": [
+      "huge",
+      "tiny",
+      "narrow",
+      "mild"
+    ],
+    "answer": "A",
+    "solution": "'enormous' means very large — closest is 'huge'.",
+    "trick": "Closest in size sense.",
+    "type": "Synonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q14",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Choose the ANTONYM of 'ARTIFICIAL'.",
+    "options": [
+      "fake",
+      "natural",
+      "synthetic",
+      "man-made"
+    ],
+    "answer": "B",
+    "solution": "'artificial' = man-made; its opposite is 'natural'.",
+    "trick": "Reject the synonyms (fake/synthetic).",
+    "type": "Antonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q15",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "'BENEVOLENT' most nearly means:",
+    "options": [
+      "harmful",
+      "fast",
+      "kind",
+      "noisy"
+    ],
+    "answer": "C",
+    "solution": "'bene' = good/well, so 'benevolent' means kind/well-wishing.",
+    "trick": "Root 'bene' = good.",
+    "type": "Root/prefix",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q16",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "One word for 'a place where books are kept for reading'.",
+    "options": [
+      "gallery",
+      "museum",
+      "studio",
+      "library"
+    ],
+    "answer": "D",
+    "solution": "A place for books is a 'library'.",
+    "trick": "Match the key idea (books).",
+    "type": "One-word substitution",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q17",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Choose the SYNONYM of 'CONCEAL'.",
+    "options": [
+      "hide",
+      "reveal",
+      "show",
+      "display"
+    ],
+    "answer": "A",
+    "solution": "'conceal' means to hide; the others are opposites.",
+    "trick": "Reject the 'show' group.",
+    "type": "Synonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q18",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Choose the ANTONYM of 'HUMBLE'.",
+    "options": [
+      "modest",
+      "arrogant",
+      "simple",
+      "shy"
+    ],
+    "answer": "B",
+    "solution": "'humble' = modest; its opposite is 'arrogant'.",
+    "trick": "Reject the synonyms (modest/simple).",
+    "type": "Antonym",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q19",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "'MALICE' most nearly means:",
+    "options": [
+      "kindness",
+      "joy",
+      "ill will",
+      "peace"
+    ],
+    "answer": "C",
+    "solution": "'mal' = bad, so 'malice' means ill will / desire to harm.",
+    "trick": "Root 'mal' = bad.",
+    "type": "Root/prefix",
+    "active": true
+  },
+  {
+    "id": "vocabulary-q20",
+    "topic": "vocabulary",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "One word for 'a person who walks in their sleep'.",
+    "options": [
+      "insomniac",
+      "dreamer",
+      "narcoleptic",
+      "somnambulist"
+    ],
+    "answer": "D",
+    "solution": "'somnus' (sleep) + 'ambulare' (walk) = somnambulist (sleepwalker).",
+    "trick": "Roots: sleep + walk.",
+    "type": "One-word substitution",
+    "active": true
+  }
+]

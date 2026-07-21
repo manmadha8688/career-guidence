@@ -1,0 +1,402 @@
+[
+  {
+    "id": "idioms-phrases-q1",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "'A piece of cake' means:",
+    "options": [
+      "very easy",
+      "a dessert",
+      "very costly",
+      "a small piece"
+    ],
+    "answer": "A",
+    "solution": "It is an idiom meaning 'very easy' — not literal cake.",
+    "trick": "Reject the literal option.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q2",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "'Spill the beans' means:",
+    "options": [
+      "cook food",
+      "reveal a secret",
+      "spill water",
+      "waste money"
+    ],
+    "answer": "B",
+    "solution": "It means to reveal a secret.",
+    "trick": "Figurative, not literal.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q3",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "'Under the weather' means:",
+    "options": [
+      "outdoors",
+      "very busy",
+      "unwell",
+      "angry"
+    ],
+    "answer": "C",
+    "solution": "It means feeling unwell.",
+    "trick": "Imagery: weighed down → unwell.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q4",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "'Once in a blue moon' means:",
+    "options": [
+      "every day",
+      "at night",
+      "monthly",
+      "very rarely"
+    ],
+    "answer": "D",
+    "solution": "It means something that happens very rarely.",
+    "trick": "Rare event imagery.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q5",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "'Cost an arm and a leg' means:",
+    "options": [
+      "very expensive",
+      "injured",
+      "cheap",
+      "free"
+    ],
+    "answer": "A",
+    "solution": "It means very expensive.",
+    "trick": "Big 'price' imagery.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q6",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "'Break the ice' means:",
+    "options": [
+      "freeze",
+      "start a conversation",
+      "break glass",
+      "end a fight"
+    ],
+    "answer": "B",
+    "solution": "It means to start a conversation / ease initial tension.",
+    "trick": "Reject the literal 'freeze/break'.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q7",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "'Hit the sack' means:",
+    "options": [
+      "hit a bag",
+      "punch someone",
+      "go to bed",
+      "exercise"
+    ],
+    "answer": "C",
+    "solution": "It means to go to bed / sleep.",
+    "trick": "Sack = bed (old usage).",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q8",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "'Beat about the bush' means:",
+    "options": [
+      "go hiking",
+      "hit plants",
+      "be angry",
+      "avoid the main point"
+    ],
+    "answer": "D",
+    "solution": "It means to avoid coming to the main point.",
+    "trick": "Reject the literal options.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q9",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "'On cloud nine' means:",
+    "options": [
+      "extremely happy",
+      "confused",
+      "very tired",
+      "lost"
+    ],
+    "answer": "A",
+    "solution": "It means extremely happy.",
+    "trick": "Light, high imagery = positive.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q10",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "'Let the cat out of the bag' means:",
+    "options": [
+      "free a cat",
+      "reveal a secret",
+      "buy a pet",
+      "make noise"
+    ],
+    "answer": "B",
+    "solution": "It means to reveal a secret (often accidentally).",
+    "trick": "Same as 'spill the beans'.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q11",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "'A blessing in disguise' means:",
+    "options": [
+      "a curse",
+      "a costume",
+      "a good thing that seemed bad at first",
+      "a gift"
+    ],
+    "answer": "C",
+    "solution": "It means something that appears bad but turns out good.",
+    "trick": "Contrast imagery.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q12",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "'Bite the bullet' means:",
+    "options": [
+      "eat metal",
+      "get hurt",
+      "give up",
+      "face a difficulty bravely"
+    ],
+    "answer": "D",
+    "solution": "It means to face a difficult or painful situation bravely.",
+    "trick": "Reject the literal option.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q13",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "'Burn the midnight oil' means:",
+    "options": [
+      "work late into the night",
+      "waste fuel",
+      "start a fire",
+      "sleep early"
+    ],
+    "answer": "A",
+    "solution": "It means to work or study late into the night.",
+    "trick": "Old lamp imagery = late work.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q14",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "'Cut corners' means:",
+    "options": [
+      "turn sharply",
+      "do something poorly to save time or money",
+      "trim paper",
+      "drive fast"
+    ],
+    "answer": "B",
+    "solution": "It means to do something in the cheapest/easiest way, often sacrificing quality.",
+    "trick": "Reject the literal options.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q15",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "'Once bitten, twice shy' means:",
+    "options": [
+      "afraid of dogs",
+      "bitten twice",
+      "cautious after a bad experience",
+      "very shy"
+    ],
+    "answer": "C",
+    "solution": "It means being cautious after a previous bad experience.",
+    "trick": "Experience → caution.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q16",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "'The ball is in your court' means:",
+    "options": [
+      "play tennis",
+      "lose a game",
+      "catch a ball",
+      "it is your turn to act or decide"
+    ],
+    "answer": "D",
+    "solution": "It means the decision or next action is now up to you.",
+    "trick": "Reject the literal sport options.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q17",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "'Add fuel to the fire' means:",
+    "options": [
+      "make a bad situation worse",
+      "cook food",
+      "light a lamp",
+      "help someone"
+    ],
+    "answer": "A",
+    "solution": "It means to make a bad situation even worse.",
+    "trick": "Fire imagery = worsening.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q18",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "'Call it a day' means:",
+    "options": [
+      "name a day",
+      "stop working for the day",
+      "take a photo",
+      "celebrate"
+    ],
+    "answer": "B",
+    "solution": "It means to stop work for the day.",
+    "trick": "Reject the literal 'name a day'.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q19",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "'To pull someone's leg' means:",
+    "options": [
+      "injure them",
+      "help them",
+      "joke or tease them",
+      "race them"
+    ],
+    "answer": "C",
+    "solution": "It means to tease or joke with someone.",
+    "trick": "Reject the literal 'injure'.",
+    "type": "Meaning",
+    "active": true
+  },
+  {
+    "id": "idioms-phrases-q20",
+    "topic": "idioms-phrases",
+    "category": "verbal",
+    "group": "vocabulary",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "'Turn a blind eye' means:",
+    "options": [
+      "become blind",
+      "wink",
+      "look closely",
+      "ignore or pretend not to notice"
+    ],
+    "answer": "D",
+    "solution": "It means to deliberately ignore something.",
+    "trick": "Reject the literal 'blind' option.",
+    "type": "Meaning",
+    "active": true
+  }
+]

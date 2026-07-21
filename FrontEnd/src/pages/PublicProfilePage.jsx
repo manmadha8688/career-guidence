@@ -169,7 +169,7 @@ export default function PublicProfilePage() {
     <div className="pp-page">
       <header className="pp-topbar">
         <Link to="/" className="pp-brand"><span className="pp-brand__mark">⚔</span> LearnForEarn</Link>
-        <Link to="/" className="pp-topbar__cta">Join free →</Link>
+        <Link to="/" className="pp-topbar__cta">Join →</Link>
       </header>
 
       {loading && (
@@ -546,7 +546,7 @@ export default function PublicProfilePage() {
               <span className="pp-foot__glow" aria-hidden="true" />
               <p className="pp-foot__lead">Your climb starts with one gate.</p>
               <p className="pp-foot__sub">Build the same profile — track XP, earn ranks, ship real projects, and share a card like this.</p>
-              <Link to="/" className="pp-foot__btn"><span>Create your hunter profile — free</span><ChevronRight size={17} /></Link>
+              <Link to="/" className="pp-foot__btn"><span>Create your hunter profile</span><ChevronRight size={17} /></Link>
             </motion.div>
           </div>
         </div>

@@ -209,7 +209,7 @@ export default function LandingExploreSection() {
           >
             Open the Fresher's Guide <ArrowRight size={16} />
           </button>
-          <span className="lp-explore-cta__reassure">Free forever · ~10 min read · built for absolute zero</span>
+          <span className="lp-explore-cta__reassure">~10 min read · built for absolute zero</span>
         </div>
       </div>
     </section>

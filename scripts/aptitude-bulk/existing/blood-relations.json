@@ -1,0 +1,402 @@
+[
+  {
+    "id": "blood-relations-q1",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A is the father of B. How is B related to A?",
+    "options": [
+      "Son or daughter",
+      "Father",
+      "Brother",
+      "Uncle"
+    ],
+    "answer": "A",
+    "solution": "If A is B's father, then B is A's child — son or daughter (gender not specified).",
+    "trick": "Reverse of 'father of' is 'child of'.",
+    "type": "Direct relation",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q2",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "P is the mother of Q, and Q is a girl. How is Q related to P?",
+    "options": [
+      "Son",
+      "Daughter",
+      "Sister",
+      "Mother"
+    ],
+    "answer": "B",
+    "solution": "Q is P's child and Q is female, so Q is P's daughter.",
+    "trick": "Female child = daughter.",
+    "type": "Direct relation",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q3",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A is the brother of B, and B is the sister of C. If A, B, C are siblings, how is A related to C?",
+    "options": [
+      "Father",
+      "Uncle",
+      "Brother",
+      "Cousin"
+    ],
+    "answer": "C",
+    "solution": "A is male and a sibling of C (they share parents), so A is C's brother.",
+    "trick": "Same generation + male = brother.",
+    "type": "Direct relation",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q4",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "X is the son of Y. Y is the son of Z. How is Z related to X?",
+    "options": [
+      "Father",
+      "Uncle",
+      "Brother",
+      "Grandfather/Grandparent"
+    ],
+    "answer": "D",
+    "solution": "X's parent is Y and Y's parent is Z, so Z is two generations above X — grandparent (grandfather, since 'son' chain).",
+    "trick": "Two parent links up = grandparent.",
+    "type": "Two-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q5",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A is the wife of B. How is B related to A?",
+    "options": [
+      "Husband",
+      "Brother",
+      "Son",
+      "Father"
+    ],
+    "answer": "A",
+    "solution": "If A is B's wife, B is A's husband.",
+    "trick": "Spouse link reverses to husband.",
+    "type": "Direct relation",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q6",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "M is the daughter of N. N is the mother of O. How is M related to O (M and O are different people)?",
+    "options": [
+      "Mother",
+      "Sister",
+      "Aunt",
+      "Cousin"
+    ],
+    "answer": "B",
+    "solution": "Both M and O are children of N, so they are siblings; M is female → sister.",
+    "trick": "Same mother = siblings.",
+    "type": "Direct relation",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q7",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "A is the father of B. C is the mother of B. How is C related to A?",
+    "options": [
+      "Sister",
+      "Daughter",
+      "Wife",
+      "Mother"
+    ],
+    "answer": "C",
+    "solution": "A and C are the father and mother of the same child B, so they are husband and wife; C is female → wife.",
+    "trick": "Parents of the same child = spouses.",
+    "type": "Two-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q8",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "P is the brother of Q. Q is the father of R. How is P related to R?",
+    "options": [
+      "Father",
+      "Brother",
+      "Grandfather",
+      "Uncle"
+    ],
+    "answer": "D",
+    "solution": "P is R's father's brother, i.e. R's uncle.",
+    "trick": "Father's brother = uncle.",
+    "type": "Uncle/cousin",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q9",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A is the son of B. C is the sister of A. How is C related to B?",
+    "options": [
+      "Daughter",
+      "Sister",
+      "Niece",
+      "Mother"
+    ],
+    "answer": "A",
+    "solution": "A and C are siblings, both children of B; C is female → B's daughter.",
+    "trick": "Sibling of a child = another child.",
+    "type": "Two-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q10",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Pointing to a boy, Reena said, 'He is the son of my mother.' How is the boy related to Reena?",
+    "options": [
+      "Son",
+      "Brother",
+      "Cousin",
+      "Nephew"
+    ],
+    "answer": "B",
+    "solution": "'Son of my mother' is Reena's brother.",
+    "trick": "Mother's son = brother.",
+    "type": "Pointing",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q11",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A is the mother of B and C. D is the husband of A. How is D related to C?",
+    "options": [
+      "Uncle",
+      "Brother",
+      "Father",
+      "Grandfather"
+    ],
+    "answer": "C",
+    "solution": "A is C's mother; D is A's husband, so D is C's father.",
+    "trick": "Mother's husband = father.",
+    "type": "Two-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q12",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "X is the daughter of Y. Z is the husband of X. How is Y related to Z?",
+    "options": [
+      "Brother",
+      "Father",
+      "Son",
+      "Father-in-law or mother-in-law"
+    ],
+    "answer": "D",
+    "solution": "X is Y's daughter and Z is X's husband, so Y is Z's parent-in-law (father- or mother-in-law).",
+    "trick": "Wife's parent = parent-in-law.",
+    "type": "In-law",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q13",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Pointing to a photo, a man said, 'She is the daughter of my grandfather's only son.' How is she related to the man?",
+    "options": [
+      "Sister",
+      "Daughter",
+      "Aunt",
+      "Cousin"
+    ],
+    "answer": "A",
+    "solution": "Grandfather's only son is the man's father; his daughter is the man's sister.",
+    "trick": "Father's daughter = sister.",
+    "type": "Pointing",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q14",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A is the father of B. B is the mother of C. How is A related to C?",
+    "options": [
+      "Father",
+      "Grandfather",
+      "Uncle",
+      "Brother"
+    ],
+    "answer": "B",
+    "solution": "A is B's father and B is C's parent, so A is C's grandfather.",
+    "trick": "Parent of a parent = grandparent (male → grandfather).",
+    "type": "Two-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q15",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Pointing to a man, a woman said, 'His mother is the only daughter of my mother.' How is the woman related to the man?",
+    "options": [
+      "Sister",
+      "Aunt",
+      "Mother",
+      "Grandmother"
+    ],
+    "answer": "C",
+    "solution": "'Only daughter of my mother' is the woman herself; so the man's mother is the woman → she is his mother.",
+    "trick": "'Only daughter of my mother' = the speaker herself.",
+    "type": "Pointing",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q16",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A + B means A is the mother of B; A − B means A is the brother of B. In P + Q − R, how is P related to R?",
+    "options": [
+      "Sister",
+      "Aunt",
+      "Grandmother",
+      "Mother"
+    ],
+    "answer": "D",
+    "solution": "P is mother of Q, and Q is brother of R, so Q and R are siblings — both children of P; P is R's mother.",
+    "trick": "Mother of one sibling = mother of all.",
+    "type": "Symbol relation",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q17",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A is B's father's sister's husband. How is A related to B?",
+    "options": [
+      "Uncle (aunt's husband)",
+      "Father",
+      "Grandfather",
+      "Brother"
+    ],
+    "answer": "A",
+    "solution": "Father's sister is B's aunt; her husband is B's uncle.",
+    "trick": "Aunt's husband = uncle.",
+    "type": "Multi-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q18",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Pointing to a lady, Ravi said, 'She is the mother of the son of my wife.' How is the lady related to Ravi?",
+    "options": [
+      "Sister",
+      "Wife",
+      "Mother",
+      "Daughter"
+    ],
+    "answer": "B",
+    "solution": "'Son of my wife' is Ravi's son; the son's mother is Ravi's wife.",
+    "trick": "Mother of your son = your wife.",
+    "type": "Pointing",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q19",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A is the son of C. C and D are sisters. E is the mother of D. How is E related to A?",
+    "options": [
+      "Mother",
+      "Aunt",
+      "Grandmother",
+      "Sister"
+    ],
+    "answer": "C",
+    "solution": "C and D are sisters, so E (D's mother) is also C's mother; A is C's son, so E is A's grandmother.",
+    "trick": "Mother of your parent = grandmother.",
+    "type": "Multi-step",
+    "active": true
+  },
+  {
+    "id": "blood-relations-q20",
+    "topic": "blood-relations",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "If P is the brother of Q, R is the mother of Q, S is the father of R, then how is S related to P?",
+    "options": [
+      "Father",
+      "Uncle",
+      "Brother",
+      "Grandfather (maternal)"
+    ],
+    "answer": "D",
+    "solution": "R is Q's (and P's) mother; S is R's father, so S is P's maternal grandfather.",
+    "trick": "Mother's father = maternal grandfather.",
+    "type": "Multi-step",
+    "active": true
+  }
+]

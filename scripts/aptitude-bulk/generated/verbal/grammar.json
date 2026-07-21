@@ -1,0 +1,1207 @@
+{
+  "topic": "grammar",
+  "category": "verbal",
+  "group": "grammar-errors",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Choose the correct article: 'It took us ___ hour to finish.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'hour' starts with a vowel sound (silent h). Step 2: Use 'an'. Answer: an.",
+      "trick": "Sound, not spelling.",
+      "type": "Articles"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Choose the correct article: 'She is ___ European citizen.'",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'European' sounds like 'yoo-ropean' (consonant sound). Step 2: Use 'a'. Answer: a.",
+      "trick": "Consonant 'yoo' sound → a.",
+      "type": "Articles"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Choose the correct article: '___ Sun rises in the east.'",
+      "options": [
+        "The",
+        "A",
+        "An",
+        "No article"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Unique celestial body takes the definite article. Step 2: 'The Sun'. Answer: The.",
+      "trick": "Unique → the.",
+      "type": "Articles"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Choose the correct article: 'He wants to become ___ engineer.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'engineer' begins with vowel sound. Step 2: 'an engineer'. Answer: an.",
+      "trick": "Job with vowel sound → an.",
+      "type": "Articles"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Choose the correct article: 'We visited ___ Taj Mahal last summer.'",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "no article"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Famous unique monument. Step 2: 'the Taj Mahal'. Answer: the.",
+      "trick": "Unique landmark → the.",
+      "type": "Articles"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Choose the correct verb: 'Neither the coach nor the players ___ ready.'",
+      "options": [
+        "are",
+        "is",
+        "was",
+        "has"
+      ],
+      "answer": "A",
+      "solution": "Step 1: With 'neither...nor', verb agrees with nearer subject 'players' (plural). Step 2: 'are'. Answer: are.",
+      "trick": "Verb matches nearer noun.",
+      "type": "Subject–verb agreement"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Choose the correct verb: 'The quality of these products ___ excellent.'",
+      "options": [
+        "is",
+        "are",
+        "were",
+        "have"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Head subject is 'quality' (singular). Step 2: 'is excellent'. Answer: is.",
+      "trick": "Head noun 'quality' is singular.",
+      "type": "Subject–verb agreement"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Choose the correct verb: 'Each of the candidates ___ interviewed.'",
+      "options": [
+        "was",
+        "were",
+        "are",
+        "have"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Each' is singular. Step 2: 'was interviewed'. Answer: was.",
+      "trick": "Each/every → singular verb.",
+      "type": "Subject–verb agreement"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Choose the correct verb: 'A number of students ___ absent today.'",
+      "options": [
+        "are",
+        "is",
+        "was",
+        "has"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'A number of' = many → plural. Step 2: 'are absent'. Answer: are.",
+      "trick": "'A number of' = plural.",
+      "type": "Subject–verb agreement"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Choose the correct verb: 'The number of applicants ___ rising.'",
+      "options": [
+        "is",
+        "are",
+        "were",
+        "have"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'The number of' = one figure → singular. Step 2: 'is rising'. Answer: is.",
+      "trick": "'The number of' = singular.",
+      "type": "Subject–verb agreement"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Choose the correct preposition: 'She is allergic ___ peanuts.'",
+      "options": [
+        "to",
+        "with",
+        "from",
+        "at"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Fixed collocation 'allergic to'. Step 2: Answer: to.",
+      "trick": "allergic TO.",
+      "type": "Prepositions"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Choose the correct preposition: 'He apologized ___ the delay.'",
+      "options": [
+        "for",
+        "about",
+        "to",
+        "on"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'apologize for' something. Step 2: Answer: for.",
+      "trick": "apologize FOR.",
+      "type": "Prepositions"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Choose the correct preposition: 'The report consists ___ three sections.'",
+      "options": [
+        "of",
+        "with",
+        "from",
+        "in"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'consist of' is fixed. Step 2: Answer: of.",
+      "trick": "consist OF.",
+      "type": "Prepositions"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Choose the correct preposition: 'She married ___ a doctor.'",
+      "options": [
+        "— (no preposition; 'married a doctor')",
+        "to",
+        "with",
+        "by"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'marry' takes direct object without 'to'. Step 2: 'married a doctor'. Answer: no extra preposition.",
+      "trick": "marry someone (no 'to').",
+      "type": "Prepositions"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Choose the correct preposition: 'He is capable ___ handling pressure.'",
+      "options": [
+        "of",
+        "to",
+        "for",
+        "in"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'capable of'. Step 2: Answer: of.",
+      "trick": "capable OF.",
+      "type": "Prepositions"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Choose the correct tense: 'By next June, she ___ her degree.'",
+      "options": [
+        "will have completed",
+        "will complete",
+        "has completed",
+        "completes"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Future perfect for action finished before a future point. Step 2: 'will have completed'. Answer: will have completed.",
+      "trick": "By + future time → future perfect.",
+      "type": "Tenses"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Choose the correct tense: 'I ___ here since 2019.'",
+      "options": [
+        "have lived",
+        "am living",
+        "lived",
+        "was living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'since' + point → present perfect. Step 2: 'have lived'. Answer: have lived.",
+      "trick": "since → present perfect.",
+      "type": "Tenses"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Choose the correct tense: 'While I ___ TV, the phone rang.'",
+      "options": [
+        "was watching",
+        "watched",
+        "have watched",
+        "watch"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ongoing past action interrupted → past continuous. Step 2: 'was watching'. Answer: was watching.",
+      "trick": "While + past continuous.",
+      "type": "Tenses"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Choose the correct tense: 'If it rains, we ___ indoors.'",
+      "options": [
+        "will stay",
+        "stayed",
+        "would stay",
+        "stay"
+      ],
+      "answer": "A",
+      "solution": "Step 1: First conditional (real future). Step 2: 'will stay'. Answer: will stay.",
+      "trick": "If + present, will + base.",
+      "type": "Tenses"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Choose the correct tense: 'He said he ___ tired.'",
+      "options": [
+        "was",
+        "is",
+        "has been",
+        "will be"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reported speech backshift. Step 2: 'was tired'. Answer: was.",
+      "trick": "Backshift in reported speech.",
+      "type": "Tenses"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Choose the correct modal: 'You ___ wear a helmet on site (rule).'",
+      "options": [
+        "might",
+        "must",
+        "could",
+        "would"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Obligation/rule → must. Step 2: Answer: must.",
+      "trick": "Rule → must.",
+      "type": "Modals"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Choose the correct modal: 'It ___ rain later; take an umbrella (possibility).'",
+      "options": [
+        "must",
+        "might",
+        "should",
+        "will"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Uncertain possibility → might. Step 2: Answer: might.",
+      "trick": "Possibility → might/may.",
+      "type": "Modals"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Choose the correct modal: 'You ___ smoke here (prohibition).'",
+      "options": [
+        "need not",
+        "must not",
+        "should not",
+        "may not"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Strong prohibition → must not. Step 2: Answer: must not.",
+      "trick": "Prohibition → must not.",
+      "type": "Modals"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Change to passive: 'They will launch the product tomorrow.'",
+      "options": [
+        "The product will launch tomorrow.",
+        "The product will be launched tomorrow.",
+        "The product is launched tomorrow.",
+        "The product was launched tomorrow."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Object becomes subject. Step 2: will be + past participle. Answer: The product will be launched tomorrow.",
+      "trick": "Future passive: will be + V3.",
+      "type": "Voice"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Change to active: 'The letter was written by Ravi.'",
+      "options": [
+        "Ravi was writing the letter.",
+        "Ravi wrote the letter.",
+        "The letter wrote Ravi.",
+        "Ravi has written the letter."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Agent 'by Ravi' becomes subject. Step 2: Simple past active. Answer: Ravi wrote the letter.",
+      "trick": "By-agent → subject.",
+      "type": "Voice"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Fill the correlative: '___ you study hard, ___ you will succeed.'",
+      "options": [
+        "Either ... or",
+        "If ... then",
+        "Neither ... nor",
+        "Not only ... but"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Condition needs If...then. Step 2: Answer: If ... then.",
+      "trick": "Condition → if...then.",
+      "type": "Correlatives"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Fill the correlative: 'She is ___ intelligent ___ hardworking.'",
+      "options": [
+        "either ... or",
+        "both ... and",
+        "neither ... nor",
+        "whether ... or"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Two positive qualities together. Step 2: both ... and. Answer: both ... and.",
+      "trick": "Two positives → both...and.",
+      "type": "Correlatives"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Choose the correct form: 'This is the ___ solution we have.'",
+      "options": [
+        "better",
+        "best",
+        "good",
+        "most good"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Superlative with 'the'. Step 2: 'best'. Answer: best.",
+      "trick": "the + superlative.",
+      "type": "Comparatives"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Choose the correct form: 'Health is ___ than wealth.'",
+      "options": [
+        "important",
+        "more important",
+        "most important",
+        "importanter"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Comparative with 'than'. Step 2: 'more important'. Answer: more important.",
+      "trick": "than → comparative.",
+      "type": "Comparatives"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Choose the correct article: 'He is a student.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'student'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Choose the correct article: 'He is a teacher.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'teacher'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Choose the correct article: 'He is a doctor.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'doctor'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Choose the correct article: 'He is a engineer.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'engineer'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Choose the correct article: 'He is a artist.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'artist'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Choose the correct article: 'He is an honest.'",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'honest'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an MBA.'",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'MBA'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an hour.'",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'hour'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a unicorn.'",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'unicorn'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an one-eyed.'",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'one-eyed'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a student.' (Set 60)",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "no article"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check initial sound of 'student'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a teacher.' (Set 61)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'teacher'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a doctor.' (Set 62)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'doctor'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a engineer.' (Set 63)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'engineer'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a artist.' (Set 64)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'artist'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an honest.' (Set 65)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'honest'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an MBA.' (Set 66)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'MBA'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an hour.' (Set 67)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'hour'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a unicorn.' (Set 68)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'unicorn'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an one-eyed.' (Set 69)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'one-eyed'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a student.' (Set 70)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'student'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a teacher.' (Set 71)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'teacher'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a doctor.' (Set 72)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'doctor'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a engineer.' (Set 73)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'engineer'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a artist.' (Set 74)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'artist'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an honest.' (Set 75)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'honest'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Articles"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an MBA.' (Set 76)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'MBA'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an hour.' (Set 77)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'hour'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a unicorn.' (Set 78)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'unicorn'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an one-eyed.' (Set 79)",
+      "options": [
+        "a",
+        "the",
+        "an",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'one-eyed'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a student.' (Set 80)",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "no article"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check initial sound of 'student'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a teacher.' (Set 81)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'teacher'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a doctor.' (Set 82)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'doctor'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a engineer.' (Set 83)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'engineer'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a artist.' (Set 84)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'artist'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an honest.' (Set 85)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'honest'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an MBA.' (Set 86)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'MBA'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an hour.' (Set 87)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'hour'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a unicorn.' (Set 88)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'unicorn'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an one-eyed.' (Set 89)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'one-eyed'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a student.' (Set 90)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'student'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a teacher.' (Set 91)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'teacher'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a doctor.' (Set 92)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'doctor'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a engineer.' (Set 93)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'engineer'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a artist.' (Set 94)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'artist'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an honest.' (Set 95)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'honest'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an MBA.' (Set 96)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'MBA'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an hour.' (Set 97)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'hour'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a unicorn.' (Set 98)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'unicorn'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is an one-eyed.' (Set 99)",
+      "options": [
+        "a",
+        "the",
+        "no article",
+        "an"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'one-eyed'. Step 2: Use 'an'. Answer: an.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Choose the correct article: 'He is a student.' (Set 100)",
+      "options": [
+        "an",
+        "the",
+        "no article",
+        "a"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check initial sound of 'student'. Step 2: Use 'a'. Answer: a.",
+      "trick": "Article by sound.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

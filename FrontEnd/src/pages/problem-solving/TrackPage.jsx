@@ -2,10 +2,11 @@ import { useState, useEffect, useMemo } from 'react'
 import toast from 'react-hot-toast'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Sun, Moon, Search, X, ChevronRight } from 'lucide-react'
+import { Sun, Moon, Search, X, ChevronRight, CheckCircle2 } from 'lucide-react'
 import MatrixRainLoader from '../../components/loaders/MatrixRainLoader'
 import EnterArenaButton from '../../components/EnterArenaButton'
 import { useTheme } from '../../context/ThemeContext'
+import { useAuth } from '../../context/AuthContext'
 import { getProblems } from '../../api/api'
 import blurOnEnter from '../../utils/blurOnEnter'
 import '../../styles/pages/shared/problem-solving.css'
@@ -54,7 +55,12 @@ export default function TrackPage() {
   const slug     = location.pathname.split('/').filter(Boolean).pop()
   const navigate = useNavigate()
   const { theme, toggleTheme } = useTheme()
+  const { user } = useAuth()
   const light = theme === 'light'
+  const solvedIds = useMemo(
+    () => new Set(Array.isArray(user?.solvedProblemIds) ? user.solvedProblemIds : []),
+    [user]
+  )
 
   const track = SLUG_TO_TRACK[slug]
   const meta  = TRACK_META[track]
@@ -66,7 +72,7 @@ export default function TrackPage() {
   const [topic, setTopic]         = useState('All')
 
   useEffect(() => {
-    if (!track) { navigate('/problem-solving', { replace: true }); return }
+    if (!track) { navigate('/code-gym', { replace: true }); return }
     let alive = true
     let doneTimer
     setLoading(true)
@@ -131,7 +137,7 @@ export default function TrackPage() {
   return (
     <div className="ps-page" style={{ '--track-color': meta.color }}>
       <div className="ps-nav">
-        <button type="button" onClick={() => navigate('/problem-solving')} className="ps-nav__back ps-nav__back--track">
+        <button type="button" onClick={() => navigate('/code-gym')} className="ps-nav__back ps-nav__back--track">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -210,7 +216,8 @@ export default function TrackPage() {
                 <div className="ps-problem-list">
                   {qs.map((q, i) => (
                     <ProblemCard key={q.id} problem={q} index={i}
-                      onClick={() => navigate(`/problem-solving/${q.id}`)} />
+                      solved={solvedIds.has(q.id)}
+                      onClick={() => navigate(`/code-gym/${q.id}`)} />
                   ))}
                 </div>
               </div>
@@ -264,10 +271,10 @@ function FilterSelect({ label, value, onChange, options, accentColor, renderLabe
   )
 }
 
-function ProblemCard({ problem, index, onClick }) {
+function ProblemCard({ problem, index, solved, onClick }) {
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
   return (
-    <div onClick={onClick} className="ps-problem-card" style={{ '--lm-color': lm.color }}>
+    <div onClick={onClick} className={`ps-problem-card${solved ? ' ps-problem-card--solved' : ''}`} style={{ '--lm-color': lm.color }}>
       <div className="ps-problem-card__index">
         {String(index + 1).padStart(2, '0')}
       </div>
@@ -278,6 +285,11 @@ function ProblemCard({ problem, index, onClick }) {
           {(problem.topics || []).slice(0, 3).map(t => <Chip key={t}>{t}</Chip>)}
         </div>
       </div>
+      {solved && (
+        <span className="ps-problem-card__solved" title="Solved">
+          <CheckCircle2 size={22} />
+        </span>
+      )}
       <ChevronRight size={15} className="ps-problem-card__chevron" />
     </div>
   )

@@ -1,0 +1,191 @@
+[
+  {
+    "topic": "number-series",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "number-series: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 23, 'medium': 28, 'hard': 49}"
+  },
+  {
+    "topic": "letter-series",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "letter-series: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 23, 'medium': 28, 'hard': 49}"
+  },
+  {
+    "topic": "figure-series",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "figure-series: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 23, 'medium': 28, 'hard': 49}"
+  },
+  {
+    "topic": "coding-decoding",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "coding-decoding: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 23, 'medium': 28, 'hard': 49}"
+  },
+  {
+    "topic": "analogies",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "analogies: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 23, 'medium': 28, 'hard': 49}"
+  },
+  {
+    "topic": "classification-odd-one-out",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "classification-odd-one-out: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 23, 'medium': 28, 'hard': 49}"
+  },
+  {
+    "topic": "blood-relations",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "blood-relations: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "directions",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "directions: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "linear-seating-arrangement",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "linear-seating-arrangement: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "circular-seating-arrangement",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "circular-seating-arrangement: total=100 answers={'A': 25, 'B': 25, 'C': 26, 'D': 24} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "puzzles",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "puzzles: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "scheduling-assignments",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "scheduling-assignments: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "syllogisms",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "syllogisms: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "statements-conclusions",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "statements-conclusions: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "statements-assumptions",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "statements-assumptions: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "cause-effect-action",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "cause-effect-action: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "ranking-order",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "ranking-order: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 30, 'hard': 49}"
+  },
+  {
+    "topic": "logical-venn-diagrams",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "logical-venn-diagrams: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 29, 'hard': 50}"
+  },
+  {
+    "topic": "decision-making",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "decision-making: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "data-sufficiency-reasoning",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "data-sufficiency-reasoning: total=100 answers={'A': 26, 'B': 24, 'C': 26, 'D': 24} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "cubes",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "cubes: total=100 answers={'C': 25, 'B': 25, 'A': 25, 'D': 25} difficulty={'easy': 21, 'medium': 28, 'hard': 51}"
+  },
+  {
+    "topic": "paper-folding-cutting",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "paper-folding-cutting: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 20, 'medium': 28, 'hard': 52}"
+  },
+  {
+    "topic": "mirror-water-images",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "mirror-water-images: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 20, 'medium': 30, 'hard': 50}"
+  },
+  {
+    "topic": "visual-reasoning",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "visual-reasoning: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 20, 'medium': 27, 'hard': 53}"
+  },
+  {
+    "topic": "spatial-reasoning",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "spatial-reasoning: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 20, 'medium': 29, 'hard': 51}"
+  },
+  {
+    "topic": "clocks",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "clocks: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 20, 'medium': 28, 'hard': 52}"
+  },
+  {
+    "topic": "calendars",
+    "total": 100,
+    "new_uploaded": 80,
+    "status": "ok",
+    "verify": "calendars: total=100 answers={'A': 25, 'B': 25, 'C': 25, 'D': 25} difficulty={'easy': 20, 'medium': 28, 'hard': 52}"
+  }
+]

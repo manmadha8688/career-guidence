@@ -1,0 +1,1207 @@
+{
+  "topic": "successive-percentages",
+  "category": "quantitative",
+  "group": "percentage-commercial",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "₹1000 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1080",
+        "1000",
+        "1010",
+        "1100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1000×1.2 = 1200.0. Step 2: ×0.9 = 1080.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Two successive discounts 10% and 20% on ₹800?",
+      "options": [
+        "770",
+        "576",
+        "560",
+        "770"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 800×0.9×0.8 = 576. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Population 10000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "12000",
+        "12000",
+        "12100",
+        "12000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10000×1.1² = 12100.",
+      "trick": "Compound growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Net effect of +20% then −10%?",
+      "options": [
+        "10%",
+        "30%",
+        "8%",
+        "8%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1.2×0.9 = 1.08. Net = +8%.",
+      "trick": "Product of factors − 1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Salary ₹50000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "52250",
+        "50000",
+        "52500",
+        "55000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 50000×1.1×0.95 = 52250.",
+      "trick": "Sequential % changes.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Price ₹1000: 10% increase then 10% decrease. Final?",
+      "options": [
+        "1000",
+        "990",
+        "1000",
+        "990"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1000×1.10×0.90 = 990.",
+      "trick": "Not zero net change.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Equivalent single discount for 15% and 20% successive?",
+      "options": [
+        "35%",
+        "30%",
+        "32.0%",
+        "35.0%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−15/100)(1−20/100) = 32.0%.",
+      "trick": "Not additive.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "After 20% discount and 10% discount, price is ₹2000. Original?",
+      "options": [
+        "2600",
+        "2500",
+        "2857",
+        "2778"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 2000/(0.8×0.9) = 2778.",
+      "trick": "Reverse successive discounts.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "₹1100 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1188",
+        "1100",
+        "1110",
+        "1210"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1100×1.2 = 1320.0. Step 2: ×0.9 = 1188.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Two successive discounts 10% and 20% on ₹850?",
+      "options": [
+        "820",
+        "612",
+        "595",
+        "820"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 850×0.9×0.8 = 612. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Population 11000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "13000",
+        "13200",
+        "13310",
+        "13000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 11000×1.1² = 13310.",
+      "trick": "Compound growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1049,
+      "difficulty": "hard",
+      "question": "Salary ₹690000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "690000",
+        "724500",
+        "695000",
+        "721050"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 690000×1.1×0.95 = 721050.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Salary ₹55000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "57475",
+        "55000",
+        "57750",
+        "60000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 55000×1.1×0.95 = 57475.",
+      "trick": "Sequential % changes.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1051,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 143% and 20% successive?",
+      "options": [
+        "163%",
+        "134.4%",
+        "158%",
+        "137.4%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−143/100)(1−20/100) = 134.4%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Equivalent single discount for 16% and 20% successive?",
+      "options": [
+        "36%",
+        "31%",
+        "32.8%",
+        "35.8%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−16/100)(1−20/100) = 32.8%.",
+      "trick": "Not additive.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "After 20% discount and 10% discount, price is ₹2200. Original?",
+      "options": [
+        "2860",
+        "2700",
+        "3143",
+        "3056"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 2200/(0.8×0.9) = 3056.",
+      "trick": "Reverse successive discounts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "₹1200 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1296",
+        "1200",
+        "1210",
+        "1320"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1200×1.2 = 1440.0. Step 2: ×0.9 = 1296.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Two successive discounts 10% and 20% on ₹900?",
+      "options": [
+        "870",
+        "648",
+        "630",
+        "870"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 900×0.9×0.8 = 648. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Population 12000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "14000",
+        "14400",
+        "14520",
+        "14000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 12000×1.1² = 14520.",
+      "trick": "Compound growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1057,
+      "difficulty": "hard",
+      "question": "Salary ₹695000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "695000",
+        "729750",
+        "700000",
+        "726275"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 695000×1.1×0.95 = 726275.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Salary ₹60000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "62700",
+        "60000",
+        "63000",
+        "65000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60000×1.1×0.95 = 62700.",
+      "trick": "Sequential % changes.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1059,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 144% and 20% successive?",
+      "options": [
+        "164%",
+        "135.2%",
+        "159%",
+        "138.2%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−144/100)(1−20/100) = 135.2%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Equivalent single discount for 17% and 20% successive?",
+      "options": [
+        "37%",
+        "32%",
+        "33.6%",
+        "36.6%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−17/100)(1−20/100) = 33.6%.",
+      "trick": "Not additive.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "After 20% discount and 10% discount, price is ₹2400. Original?",
+      "options": [
+        "3120",
+        "2900",
+        "3429",
+        "3333"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 2400/(0.8×0.9) = 3333.",
+      "trick": "Reverse successive discounts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "₹1300 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1404",
+        "1300",
+        "1310",
+        "1430"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1300×1.2 = 1560.0. Step 2: ×0.9 = 1404.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Two successive discounts 10% and 20% on ₹950?",
+      "options": [
+        "920",
+        "684",
+        "665",
+        "920"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 950×0.9×0.8 = 684. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Population 13000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "15000",
+        "15600",
+        "15730",
+        "15000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 13000×1.1² = 15730.",
+      "trick": "Compound growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1065,
+      "difficulty": "hard",
+      "question": "Salary ₹700000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "700000",
+        "735000",
+        "705000",
+        "731500"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 700000×1.1×0.95 = 731500.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Salary ₹65000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "67925",
+        "65000",
+        "68250",
+        "70000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 65000×1.1×0.95 = 67925.",
+      "trick": "Sequential % changes.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1067,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 145% and 20% successive?",
+      "options": [
+        "165%",
+        "136.0%",
+        "160%",
+        "139.0%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−145/100)(1−20/100) = 136.0%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Equivalent single discount for 18% and 20% successive?",
+      "options": [
+        "38%",
+        "33%",
+        "34.4%",
+        "37.4%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−18/100)(1−20/100) = 34.4%.",
+      "trick": "Not additive.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "After 20% discount and 10% discount, price is ₹2600. Original?",
+      "options": [
+        "3380",
+        "3100",
+        "3714",
+        "3611"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 2600/(0.8×0.9) = 3611.",
+      "trick": "Reverse successive discounts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "₹1400 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1512",
+        "1400",
+        "1410",
+        "1540"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1400×1.2 = 1680.0. Step 2: ×0.9 = 1512.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Two successive discounts 10% and 20% on ₹1000?",
+      "options": [
+        "970",
+        "720",
+        "700",
+        "970"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1000×0.9×0.8 = 720. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Population 14000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "16000",
+        "16800",
+        "16940",
+        "16000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 14000×1.1² = 16940.",
+      "trick": "Compound growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1073,
+      "difficulty": "hard",
+      "question": "Salary ₹705000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "705000",
+        "740250",
+        "710000",
+        "736725"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 705000×1.1×0.95 = 736725.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Salary ₹70000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "73150",
+        "70000",
+        "73500",
+        "75000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 70000×1.1×0.95 = 73150.",
+      "trick": "Sequential % changes.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1075,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 146% and 20% successive?",
+      "options": [
+        "166%",
+        "136.8%",
+        "161%",
+        "139.8%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−146/100)(1−20/100) = 136.8%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 19% and 20% successive?",
+      "options": [
+        "39%",
+        "34%",
+        "35.2%",
+        "38.2%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−19/100)(1−20/100) = 35.2%.",
+      "trick": "Not additive.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "After 20% discount and 10% discount, price is ₹2800. Original?",
+      "options": [
+        "3640",
+        "3300",
+        "4000",
+        "3889"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 2800/(0.8×0.9) = 3889.",
+      "trick": "Reverse successive discounts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "₹1500 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1620",
+        "1500",
+        "1510",
+        "1650"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1500×1.2 = 1800.0. Step 2: ×0.9 = 1620.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Two successive discounts 10% and 20% on ₹1050?",
+      "options": [
+        "1020",
+        "756",
+        "735",
+        "1020"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1050×0.9×0.8 = 756. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Population 15000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "17000",
+        "18000",
+        "18150",
+        "17000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 15000×1.1² = 18150.",
+      "trick": "Compound growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1081,
+      "difficulty": "hard",
+      "question": "Salary ₹710000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "710000",
+        "745500",
+        "715000",
+        "741950"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 710000×1.1×0.95 = 741950.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Salary ₹75000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "78375",
+        "75000",
+        "78750",
+        "80000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 75000×1.1×0.95 = 78375.",
+      "trick": "Sequential % changes.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1083,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 147% and 20% successive?",
+      "options": [
+        "167%",
+        "137.6%",
+        "162%",
+        "140.6%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−147/100)(1−20/100) = 137.6%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 20% and 20% successive?",
+      "options": [
+        "40%",
+        "35%",
+        "36.0%",
+        "39.0%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−20/100)(1−20/100) = 36.0%.",
+      "trick": "Not additive.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "After 20% discount and 10% discount, price is ₹3000. Original?",
+      "options": [
+        "3900",
+        "3500",
+        "4286",
+        "4167"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 3000/(0.8×0.9) = 4167.",
+      "trick": "Reverse successive discounts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "₹1600 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1728",
+        "1600",
+        "1610",
+        "1760"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1600×1.2 = 1920.0. Step 2: ×0.9 = 1728.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Two successive discounts 10% and 20% on ₹1100?",
+      "options": [
+        "1070",
+        "792",
+        "770",
+        "1070"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1100×0.9×0.8 = 792. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Population 16000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "18000",
+        "19200",
+        "19360",
+        "18000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 16000×1.1² = 19360.",
+      "trick": "Compound growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1089,
+      "difficulty": "hard",
+      "question": "Salary ₹715000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "715000",
+        "750750",
+        "720000",
+        "747175"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 715000×1.1×0.95 = 747175.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Salary ₹80000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "83600",
+        "80000",
+        "84000",
+        "85000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 80000×1.1×0.95 = 83600.",
+      "trick": "Sequential % changes.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1091,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 148% and 20% successive?",
+      "options": [
+        "168%",
+        "138.4%",
+        "163%",
+        "141.4%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−148/100)(1−20/100) = 138.4%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 21% and 20% successive?",
+      "options": [
+        "41%",
+        "36%",
+        "36.8%",
+        "39.8%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−21/100)(1−20/100) = 36.8%.",
+      "trick": "Not additive.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "After 20% discount and 10% discount, price is ₹3200. Original?",
+      "options": [
+        "4160",
+        "3700",
+        "4571",
+        "4444"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 3200/(0.8×0.9) = 4444.",
+      "trick": "Reverse successive discounts.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "₹1700 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1836",
+        "1700",
+        "1710",
+        "1870"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1700×1.2 = 2040.0. Step 2: ×0.9 = 1836.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Two successive discounts 10% and 20% on ₹1150?",
+      "options": [
+        "1120",
+        "828",
+        "805",
+        "1120"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1150×0.9×0.8 = 828. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Population 17000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "19000",
+        "20400",
+        "20570",
+        "19000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 17000×1.1² = 20570.",
+      "trick": "Compound growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1097,
+      "difficulty": "hard",
+      "question": "Salary ₹720000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "720000",
+        "756000",
+        "725000",
+        "752400"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 720000×1.1×0.95 = 752400.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Salary ₹85000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "88825",
+        "85000",
+        "89250",
+        "90000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 85000×1.1×0.95 = 88825.",
+      "trick": "Sequential % changes.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1099,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 149% and 20% successive?",
+      "options": [
+        "169%",
+        "139.2%",
+        "164%",
+        "142.2%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−149/100)(1−20/100) = 139.2%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 22% and 20% successive?",
+      "options": [
+        "42%",
+        "37%",
+        "37.6%",
+        "40.6%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−22/100)(1−20/100) = 37.6%.",
+      "trick": "Not additive.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "After 20% discount and 10% discount, price is ₹3400. Original?",
+      "options": [
+        "4420",
+        "3900",
+        "4857",
+        "4722"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 3400/(0.8×0.9) = 4722.",
+      "trick": "Reverse successive discounts.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "₹1800 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "1944",
+        "1800",
+        "1810",
+        "1980"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1800×1.2 = 2160.0. Step 2: ×0.9 = 1944.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Two successive discounts 10% and 20% on ₹1200?",
+      "options": [
+        "1170",
+        "864",
+        "840",
+        "1170"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1200×0.9×0.8 = 864. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Population 18000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "20000",
+        "21600",
+        "21780",
+        "20000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 18000×1.1² = 21780.",
+      "trick": "Compound growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1105,
+      "difficulty": "hard",
+      "question": "Salary ₹725000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "725000",
+        "761250",
+        "730000",
+        "757625"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 725000×1.1×0.95 = 757625.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Salary ₹90000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "94050",
+        "90000",
+        "94500",
+        "95000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 90000×1.1×0.95 = 94050.",
+      "trick": "Sequential % changes.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1107,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 150% and 20% successive?",
+      "options": [
+        "170%",
+        "140.0%",
+        "165%",
+        "143.0%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−150/100)(1−20/100) = 140.0%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 23% and 20% successive?",
+      "options": [
+        "43%",
+        "38%",
+        "38.4%",
+        "41.4%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−23/100)(1−20/100) = 38.4%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "After 20% discount and 10% discount, price is ₹3600. Original?",
+      "options": [
+        "4680",
+        "4100",
+        "5143",
+        "5000"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 3600/(0.8×0.9) = 5000.",
+      "trick": "Reverse successive discounts.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "₹1900 increases 20%, then decreases 10%. Final value?",
+      "options": [
+        "2052",
+        "1900",
+        "1910",
+        "2090"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1900×1.2 = 2280.0. Step 2: ×0.9 = 2052.",
+      "trick": "Apply sequentially, not net 10%.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Two successive discounts 10% and 20% on ₹1250?",
+      "options": [
+        "1220",
+        "900",
+        "875",
+        "1220"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1250×0.9×0.8 = 900. Equivalent single discount ≈ 28%.",
+      "trick": "Multiply factors.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Population 19000 grows 10% then 10% next year. After 2 years?",
+      "options": [
+        "21000",
+        "22800",
+        "22990",
+        "21000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 19000×1.1² = 22990.",
+      "trick": "Compound growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1113,
+      "difficulty": "hard",
+      "question": "Salary ₹730000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "730000",
+        "766500",
+        "735000",
+        "762850"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 730000×1.1×0.95 = 762850.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Salary ₹95000: 10% hike then 5% cut. New salary?",
+      "options": [
+        "99275",
+        "95000",
+        "99750",
+        "100000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 95000×1.1×0.95 = 99275.",
+      "trick": "Sequential % changes.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 151% and 20% successive?",
+      "options": [
+        "171%",
+        "140.8%",
+        "166%",
+        "143.8%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1−(1−151/100)(1−20/100) = 140.8%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Equivalent single discount for 24% and 20% successive?",
+      "options": [
+        "44%",
+        "39%",
+        "39.2%",
+        "42.2%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 1−(1−24/100)(1−20/100) = 39.2%.",
+      "trick": "Not additive.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "After 20% discount and 10% discount, price is ₹3800. Original?",
+      "options": [
+        "4940",
+        "4300",
+        "5429",
+        "5278"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Original = 3800/(0.8×0.9) = 5278.",
+      "trick": "Reverse successive discounts.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

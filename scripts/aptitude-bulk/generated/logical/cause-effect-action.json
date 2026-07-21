@@ -1,0 +1,1207 @@
+{
+  "topic": "cause-effect-action",
+  "category": "logical",
+  "group": "logical-deduction",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "True",
+        "Uncertain",
+        "False",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Cause-effect"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "True",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "False",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "",
+        "False"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "",
+        "False"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "",
+        "False"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "",
+        "False"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "",
+        "False"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Cause: Student studied regularly. Effect: Student failed the exam. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "True",
+        "",
+        "False"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Contradicts expectation. Answer: False.",
+      "trick": "Contradicts expectation.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Cause: Heavy rainfall flooded streets. Effect: Traffic moved slowly. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Effect follows cause. Answer: True.",
+      "trick": "Effect follows cause.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Cause: Company profits rose. Effect: Share price increased. — Is the effect a valid result of the cause?",
+      "options": [
+        "Uncertain",
+        "False",
+        "",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check causal link. Step 2: Market reaction. Answer: True.",
+      "trick": "Market reaction.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

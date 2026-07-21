@@ -1,0 +1,1207 @@
+{
+  "topic": "syllogisms",
+  "category": "logical",
+  "group": "logical-deduction",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "True",
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All doctors are graduates",
+        "No doctors are graduates"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "All sparrows are fish",
+        "Uncertain"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "True",
+        "Uncertain",
+        "Some cats are not living"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        "Some cats are not living"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        "Some cats are not living"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        "Some cats are not living"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        "Some cats are not living"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        "Some cats are not living"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Syllogism"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "True",
+        "Some cats are not living"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "True",
+        "No doctors are graduates"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "True",
+        "Uncertain"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "Uncertain",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "Uncertain",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "Uncertain",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "Uncertain",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "Uncertain",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Statements: No fish is a bird. Some birds are sparrows. Which conclusion follows?",
+      "options": [
+        "False",
+        "All sparrows are fish",
+        "Uncertain",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some sparrows are not fish' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Statements: All cats are animals. All animals are living. Which conclusion follows?",
+      "options": [
+        "False",
+        "Uncertain",
+        "Some cats are not living",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'All cats are living' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Statements: Some doctors are teachers. All teachers are graduates. Which conclusion follows?",
+      "options": [
+        "False",
+        "All doctors are graduates",
+        "No doctors are graduates",
+        "True"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apply syllogism rules. Step 2: 'Some doctors are graduates' is True. Answer: True.",
+      "trick": "Check valid forms.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

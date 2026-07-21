@@ -14,7 +14,7 @@ const FOOTER_COLUMNS = [
     title: 'Learn',
     links: [
       { label: 'Skills Arena', to: '/skill-arena/dashboard' },
-      { label: 'Code GYM', to: '/problem-solving' },
+      { label: 'Code GYM', to: '/code-gym' },
       { label: 'Aptitude', to: '/aptitude' },
       { label: 'AI Lab', to: '/ai-lab' },
       { label: 'Deploy Guidance', to: '/deployment' },
@@ -67,14 +67,14 @@ export default function SiteFooter() {
           </Link>
 
           <p className="site-footer__mission">
-            A completely free platform that takes Indian graduates from fresher to
+            A platform that takes Indian graduates from fresher to
             hired — career roadmaps, real coding problems, project missions and
             hands-on AI skills.
           </p>
 
           <div className="site-footer__cta-row">
             <Link to="/skill-arena/dashboard" className="site-footer__cta">
-              Start Learning — Free <ArrowUpRight size={15} />
+              Start Learning <ArrowUpRight size={15} />
             </Link>
             
           </div>
@@ -117,7 +117,7 @@ export default function SiteFooter() {
       </section>
 
       <div className="site-footer__bar">
-        <p className="site-footer__copy">© {year} LearnForEarn · Free forever for students</p>
+        <p className="site-footer__copy">© {year} LearnForEarn</p>
         <p className="site-footer__made">
           Built for students, with <Heart size={12} className="site-footer__heart" /> in India
         </p>

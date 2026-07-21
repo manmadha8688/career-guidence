@@ -1,0 +1,1207 @@
+{
+  "topic": "para-jumbles",
+  "category": "verbal",
+  "group": "reading-reasoning",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence?",
+      "options": [
+        "(iii)",
+        "(i)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order?",
+      "options": [
+        "AB",
+        "BA",
+        "either",
+        "neither"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order?",
+      "options": [
+        "QP",
+        "PQ",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order?",
+      "options": [
+        "1-2-3",
+        "2-1-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 25)",
+      "options": [
+        "(iii)",
+        "(i)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 26)",
+      "options": [
+        "AB",
+        "BA",
+        "either",
+        "neither"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 27)",
+      "options": [
+        "QP",
+        "PQ",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 28)",
+      "options": [
+        "1-2-3",
+        "2-1-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 29)",
+      "options": [
+        "(iii)",
+        "(i)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 30)",
+      "options": [
+        "AB",
+        "BA",
+        "either",
+        "neither"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 31)",
+      "options": [
+        "QP",
+        "PQ",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 32)",
+      "options": [
+        "1-2-3",
+        "2-1-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 33)",
+      "options": [
+        "(iii)",
+        "(i)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 34)",
+      "options": [
+        "AB",
+        "BA",
+        "either",
+        "neither"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 35)",
+      "options": [
+        "QP",
+        "PQ",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 36)",
+      "options": [
+        "1-2-3",
+        "2-1-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 37)",
+      "options": [
+        "(iii)",
+        "(i)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 38)",
+      "options": [
+        "AB",
+        "BA",
+        "either",
+        "neither"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 39)",
+      "options": [
+        "QP",
+        "PQ",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 40)",
+      "options": [
+        "1-2-3",
+        "2-1-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 41)",
+      "options": [
+        "(i)",
+        "(iii)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 42)",
+      "options": [
+        "BA",
+        "AB",
+        "either",
+        "neither"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 43)",
+      "options": [
+        "PQ",
+        "QP",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 44)",
+      "options": [
+        "2-1-3",
+        "1-2-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 45)",
+      "options": [
+        "(i)",
+        "(iii)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 46)",
+      "options": [
+        "BA",
+        "AB",
+        "either",
+        "neither"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 47)",
+      "options": [
+        "PQ",
+        "QP",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 48)",
+      "options": [
+        "2-1-3",
+        "1-2-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 49)",
+      "options": [
+        "(i)",
+        "(iii)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 50)",
+      "options": [
+        "BA",
+        "AB",
+        "either",
+        "neither"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 51)",
+      "options": [
+        "PQ",
+        "QP",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 52)",
+      "options": [
+        "2-1-3",
+        "1-2-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 53)",
+      "options": [
+        "(i)",
+        "(iii)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 54)",
+      "options": [
+        "BA",
+        "AB",
+        "either",
+        "neither"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 55)",
+      "options": [
+        "PQ",
+        "QP",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 56)",
+      "options": [
+        "2-1-3",
+        "1-2-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 57)",
+      "options": [
+        "(i)",
+        "(iii)",
+        "(ii)",
+        "none"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 58)",
+      "options": [
+        "BA",
+        "AB",
+        "either",
+        "neither"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 59)",
+      "options": [
+        "PQ",
+        "QP",
+        "P only",
+        "cannot decide"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 60)",
+      "options": [
+        "2-1-3",
+        "1-2-3",
+        "3-1-2",
+        "2-3-1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 61)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "none"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 62)",
+      "options": [
+        "BA",
+        "either",
+        "AB",
+        "neither"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 63)",
+      "options": [
+        "PQ",
+        "P only",
+        "QP",
+        "cannot decide"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 64)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "1-2-3",
+        "2-3-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 65)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "none"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 66)",
+      "options": [
+        "BA",
+        "either",
+        "AB",
+        "neither"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 67)",
+      "options": [
+        "PQ",
+        "P only",
+        "QP",
+        "cannot decide"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 68)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "1-2-3",
+        "2-3-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 69)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "none"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 70)",
+      "options": [
+        "BA",
+        "either",
+        "AB",
+        "neither"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 71)",
+      "options": [
+        "PQ",
+        "P only",
+        "QP",
+        "cannot decide"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 72)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "1-2-3",
+        "2-3-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 73)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "none"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 74)",
+      "options": [
+        "BA",
+        "either",
+        "AB",
+        "neither"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 75)",
+      "options": [
+        "PQ",
+        "P only",
+        "QP",
+        "cannot decide"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Para jumble"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 76)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "1-2-3",
+        "2-3-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 77)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "none"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 78)",
+      "options": [
+        "BA",
+        "either",
+        "AB",
+        "neither"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 79)",
+      "options": [
+        "PQ",
+        "P only",
+        "QP",
+        "cannot decide"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 80)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "1-2-3",
+        "2-3-1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 81)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "none",
+        "(iii)"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 82)",
+      "options": [
+        "BA",
+        "either",
+        "neither",
+        "AB"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 83)",
+      "options": [
+        "PQ",
+        "P only",
+        "cannot decide",
+        "QP"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 84)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "2-3-1",
+        "1-2-3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 85)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "none",
+        "(iii)"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 86)",
+      "options": [
+        "BA",
+        "either",
+        "neither",
+        "AB"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 87)",
+      "options": [
+        "PQ",
+        "P only",
+        "cannot decide",
+        "QP"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 88)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "2-3-1",
+        "1-2-3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 89)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "none",
+        "(iii)"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 90)",
+      "options": [
+        "BA",
+        "either",
+        "neither",
+        "AB"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 91)",
+      "options": [
+        "PQ",
+        "P only",
+        "cannot decide",
+        "QP"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 92)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "2-3-1",
+        "1-2-3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 93)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "none",
+        "(iii)"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 94)",
+      "options": [
+        "BA",
+        "either",
+        "neither",
+        "AB"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 95)",
+      "options": [
+        "PQ",
+        "P only",
+        "cannot decide",
+        "QP"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 96)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "2-3-1",
+        "1-2-3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "(i) 'Therefore, recycling saves energy.' (ii) 'Plastic takes centuries to decompose.' (iii) 'Waste management is a global challenge.' First sentence? (Set 97)",
+      "options": [
+        "(i)",
+        "(ii)",
+        "none",
+        "(iii)"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: (iii).",
+      "trick": "Opener has no 'therefore/this'.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "A: 'Ravi opened the startup.' B: 'It secured funding within a year.' Order? (Set 98)",
+      "options": [
+        "BA",
+        "either",
+        "neither",
+        "AB"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: AB.",
+      "trick": "It → startup in A.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "P: 'However, costs rose sharply.' Q: 'The project began smoothly.' Order? (Set 99)",
+      "options": [
+        "PQ",
+        "P only",
+        "cannot decide",
+        "QP"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: QP.",
+      "trick": "However contrasts smooth start.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "(1) She trained daily. (2) She won the championship. (3) Hard work paid off. Logical order? (Set 100)",
+      "options": [
+        "2-1-3",
+        "3-1-2",
+        "2-3-1",
+        "1-2-3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Find opener / pronoun links / connectors. Step 2: Answer: 1-2-3.",
+      "trick": "Train → win → conclusion.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

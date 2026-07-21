@@ -5,7 +5,7 @@ import {
 
 export const features = [
   { Icon: Swords,   iconD: '#C4B5FD', iconL: '#7C5DBB', label: 'Skills Arena',    status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Career roadmaps that tell you exactly what to learn and in what order. Every concept comes with a plain-English explanation, the technical detail, real code, and a quiz that confirms you actually understood it.', glow: 'rgba(155,110,212,0.15)', activeBorder: 'rgba(155,110,212,0.4)', isLive: true },
-  { Icon: Code2,    iconD: '#0EA5E9', iconL: '#0284C7', label: 'Problem Solving', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Five tracks that take you from your very first line of code to interview-level DSA. Each problem shows the brute-force idea first, then the optimized approach — in C, Python, Java, and C++.', glow: 'rgba(14,165,233,0.1)', activeBorder: 'rgba(14,165,233,0.25)', isLive: true, href: '/problem-solving', cta: 'Start Solving' },
+  { Icon: Code2,    iconD: '#0EA5E9', iconL: '#0284C7', label: 'Problem Solving', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Five tracks that take you from your very first line of code to interview-level DSA. Each problem shows the brute-force idea first, then the optimized approach — in C, Python, Java, and C++.', glow: 'rgba(14,165,233,0.1)', activeBorder: 'rgba(14,165,233,0.25)', isLive: true, href: '/code-gym', cta: 'Start Solving' },
   { Icon: Brain,    iconD: '#A5B4FC', iconL: '#6366F1', label: 'Aptitude',        status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'The round every placement test opens with. Master quantitative, logical reasoning, verbal, and data interpretation — each topic taught twice: a full Learn It walkthrough, then Crack It shortcuts to solve it in seconds.', glow: 'rgba(129,140,248,0.12)', activeBorder: 'rgba(129,140,248,0.35)', isLive: true, href: '/aptitude', cta: 'Train Aptitude' },
   { Icon: Trophy,   iconD: '#FF7F2A', iconL: '#B45309', label: 'Mission Board',   status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Real project briefs you build end to end. Finish one and you walk away with a portfolio piece to show recruiters — not just another tutorial you followed along with.', glow: 'rgba(255,127,42,0.12)', activeBorder: 'rgba(255,127,42,0.35)', isLive: true, href: '/missions', cta: 'Explore Missions' },
   { Icon: Rocket,   iconD: '#9B6ED4', iconL: '#7C5DBB', label: 'Deploy Guidance', status: '', statusColorD: '#4ADE80', statusColorL: '#15803D', statusBg: 'rgba(74,222,128,0.12)', desc: 'Get your project off localhost and onto a live URL. Copy-paste-ready guides for React, Django, Node, FastAPI, Spring Boot, and ML demos — free hosting, database, and env setup included.', glow: 'rgba(155,110,212,0.12)', activeBorder: 'rgba(155,110,212,0.35)', isLive: true, href: '/deployment', cta: 'Open Deploy Guide' },
@@ -21,7 +21,7 @@ export const steps = [
 ]
 
 export const NAV_LINKS = [
-  { label: 'Code GYM',         live: true, href: '/problem-solving' },
+  { label: 'Code GYM',         live: true, href: '/code-gym' },
   { label: 'Aptitude',         live: true, href: '/aptitude' },
   { label: 'Resume',           live: true, href: '/resume' },
   { label: 'Walk-Ins',         live: true, href: '/walk-ins' },
@@ -44,10 +44,10 @@ export const ABOUT_OFFERINGS = [
 ]
 
 export const ABOUT_TRUST = [
-  { value: '100', suffix: '%', label: 'Free forever' },
   { value: 'subjects',        label: 'Subjects' },
   { value: 'concepts',        label: 'Concepts to learn' },
-  { value: '₹0',              label: 'Credit card needed' },
+  { value: 'paths',           label: 'Career paths' },
+  { value: 'India',           label: 'Built for freshers' },
 ]
 
 export const FRESHER_GUIDE_POINTS = [
@@ -77,11 +77,11 @@ export const MISSION_FEATURE_CARDS = [
 ]
 
 export const CODE_GYM_TRACKS = [
-  { icon: '💻', title: 'Start Coding',    color: '#22C55E', href: '/problem-solving/start-coding',    desc: 'Never coded before? Begin here. Step-by-step from Hello World to functions.' },
-  { icon: '🧠', title: 'Logic Building', color: '#F59E0B', href: '/problem-solving/logic-building',  desc: "Can code but can't solve problems? Train your problem-solving mind." },
-  { icon: '⚡', title: 'Skill Up',         color: '#0EA5E9', href: '/problem-solving/skill-up',        desc: 'Arrays, strings, searching — same problem, 4 languages, brute to optimized.' },
-  { icon: '🎯', title: 'Crack It', color: '#9B6ED4', href: '/problem-solving/crack-it', desc: 'Story problems packed with rules — read the situation and code every case correctly.' },
-  { icon: '🔥', title: 'Build It', color: '#F59E0B', href: '/problem-solving/build-it', desc: 'Get it working, then make it faster — optimize under real constraints and explain why.' },
+  { icon: '💻', title: 'Start Coding',    color: '#22C55E', href: '/code-gym/start-coding',    desc: 'Never coded before? Begin here. Step-by-step from Hello World to functions.' },
+  { icon: '🧠', title: 'Logic Building', color: '#F59E0B', href: '/code-gym/logic-building',  desc: "Can code but can't solve problems? Train your problem-solving mind." },
+  { icon: '⚡', title: 'Skill Up',         color: '#0EA5E9', href: '/code-gym/skill-up',        desc: 'Arrays, strings, searching — same problem, 4 languages, brute to optimized.' },
+  { icon: '🎯', title: 'Crack It', color: '#9B6ED4', href: '/code-gym/crack-it', desc: 'Story problems packed with rules — read the situation and code every case correctly.' },
+  { icon: '🔥', title: 'Build It', color: '#F59E0B', href: '/code-gym/build-it', desc: 'Get it working, then make it faster — optimize under real constraints and explain why.' },
 ]
 
 export const AI_LAB_CATEGORIES = [

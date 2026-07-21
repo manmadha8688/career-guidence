@@ -36,7 +36,7 @@ export default function LandingFinalCtaSection() {
           <div className="lp-cta-actions">
             <button type="button" onClick={handleEnter} className="lp-btn-primary lp-cta-pulse lp-btn-primary--cta">
               <Swords size={17} />
-              {user ? 'Continue Learning' : 'Start for Free'}
+              {user ? 'Continue Learning' : 'Get Started'}
             </button>
             {!user && (
               <button

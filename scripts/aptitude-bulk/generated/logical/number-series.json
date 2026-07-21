@@ -1,0 +1,1207 @@
+{
+  "topic": "number-series",
+  "category": "logical",
+  "group": "series-patterns",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Find the next term: 11, 15, 19, 23, 27, ?",
+      "options": [
+        "31",
+        "27",
+        "35",
+        "39"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Differences are constant (+4). Step 2: 27 + 4 = 31. Answer: 31.",
+      "trick": "Add 4 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Find the next term: 3, 6, 12, 24, 48, ?",
+      "options": [
+        "96",
+        "94",
+        "98",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each term × 2. Step 2: 48 × 2 = 96. Answer: 96.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Find the next term: 36, 49, 64, 81, 100, ?",
+      "options": [
+        "121",
+        "120",
+        "122",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Find the next term: 8, 27, 64, 125, 216, ?",
+      "options": [
+        "343",
+        "335",
+        "351",
+        "49"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 7³ = 343. Answer: 343.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Find the next term: 3, 4, 7, 11, 18, 29, ?",
+      "options": [
+        "47",
+        "46",
+        "48",
+        "45"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum of previous two. Step 2: 18 + 29 = 47. Answer: 47.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Find the next term: 11, 13, 15, 17, 19, 21, ?",
+      "options": [
+        "25",
+        "23",
+        "27",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 25. Answer: 25.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21, ?",
+      "options": [
+        "28",
+        "26",
+        "30",
+        "27"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find the next term: 29, 31, 37, 41, 43, ?",
+      "options": [
+        "47",
+        "45",
+        "49",
+        "47"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 43 is 47. Answer: 47.",
+      "trick": "Prime sequence.",
+      "type": "Prime"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Find the next term: 12, 19, 26, 33, 40, ?",
+      "options": [
+        "47",
+        "40",
+        "54",
+        "61"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Differences are constant (+7). Step 2: 40 + 7 = 47. Answer: 47.",
+      "trick": "Add 7 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Find the next term: 2, 4, 8, 16, 32, ?",
+      "options": [
+        "64",
+        "62",
+        "66",
+        "34"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each term × 2. Step 2: 32 × 2 = 64. Answer: 64.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 31)?",
+      "options": [
+        "121",
+        "120",
+        "122",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Find the next term: 64, 125, 216, 343, 512, ?",
+      "options": [
+        "729",
+        "721",
+        "737",
+        "81"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 9³ = 729. Answer: 729.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Find the next term: 2, 4, 6, 10, 16, 26, ?",
+      "options": [
+        "42",
+        "41",
+        "43",
+        "40"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum of previous two. Step 2: 16 + 26 = 42. Answer: 42.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Find the next term: 14, 16, 18, 20, 22, 24, ?",
+      "options": [
+        "28",
+        "26",
+        "30",
+        "27"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 28. Answer: 28.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 35)?",
+      "options": [
+        "28",
+        "26",
+        "30",
+        "27"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Find the next term: 13, 17, 19, 23, 29, ?",
+      "options": [
+        "31",
+        "29",
+        "33",
+        "33"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 29 is 31. Answer: 31.",
+      "trick": "Prime sequence.",
+      "type": "Prime"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Find the next term: 13, 18, 23, 28, 33, ?",
+      "options": [
+        "38",
+        "33",
+        "43",
+        "48"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Differences are constant (+5). Step 2: 33 + 5 = 38. Answer: 38.",
+      "trick": "Add 5 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Find the next term: 4, 8, 16, 32, 64, ?",
+      "options": [
+        "128",
+        "126",
+        "130",
+        "66"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each term × 2. Step 2: 64 × 2 = 128. Answer: 128.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 39)?",
+      "options": [
+        "121",
+        "120",
+        "122",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Find the next term: 27, 64, 125, 216, 343, ?",
+      "options": [
+        "512",
+        "504",
+        "520",
+        "64"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 8³ = 512. Answer: 512.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Find the next term: 4, 4, 8, 12, 20, 32, ?",
+      "options": [
+        "51",
+        "52",
+        "53",
+        "50"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum of previous two. Step 2: 20 + 32 = 52. Answer: 52.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Find the next term: 12, 14, 16, 18, 20, 22, ?",
+      "options": [
+        "24",
+        "26",
+        "28",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 26. Answer: 26.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 43)?",
+      "options": [
+        "26",
+        "28",
+        "30",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Find the next term: 43, 47, 53, 59, 61, ?",
+      "options": [
+        "65",
+        "67",
+        "69",
+        "65"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 61 is 67. Answer: 67.",
+      "trick": "Prime sequence.",
+      "type": "Prime"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Find the next term: 14, 17, 20, 23, 26, ?",
+      "options": [
+        "26",
+        "29",
+        "32",
+        "35"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Differences are constant (+3). Step 2: 26 + 3 = 29. Answer: 29.",
+      "trick": "Add 3 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Find the next term: 3, 6, 12, 24, 48,  (Set 46)?",
+      "options": [
+        "94",
+        "96",
+        "98",
+        "50"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each term × 2. Step 2: 48 × 2 = 96. Answer: 96.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 47)?",
+      "options": [
+        "120",
+        "121",
+        "122",
+        "100"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Find the next term: 8, 27, 64, 125, 216,  (Set 48)?",
+      "options": [
+        "335",
+        "343",
+        "351",
+        "49"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 7³ = 343. Answer: 343.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Find the next term: 3, 4, 7, 11, 18, 29,  (Set 49)?",
+      "options": [
+        "46",
+        "47",
+        "48",
+        "45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum of previous two. Step 2: 18 + 29 = 47. Answer: 47.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Find the next term: 10, 12, 14, 16, 18, 20, ?",
+      "options": [
+        "22",
+        "24",
+        "26",
+        "23"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 24. Answer: 24.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 51)?",
+      "options": [
+        "26",
+        "28",
+        "30",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Find the next term: 29, 31, 37, 41, 43,  (Set 52)?",
+      "options": [
+        "45",
+        "47",
+        "49",
+        "47"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 43 is 47. Answer: 47.",
+      "trick": "Prime sequence.",
+      "type": "Prime"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Find the next term: 15, 21, 27, 33, 39, ?",
+      "options": [
+        "39",
+        "45",
+        "51",
+        "57"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Differences are constant (+6). Step 2: 39 + 6 = 45. Answer: 45.",
+      "trick": "Add 6 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Find the next term: 2, 4, 8, 16, 32,  (Set 54)?",
+      "options": [
+        "62",
+        "64",
+        "66",
+        "34"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each term × 2. Step 2: 32 × 2 = 64. Answer: 64.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 55)?",
+      "options": [
+        "120",
+        "121",
+        "122",
+        "100"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Find the next term: 64, 125, 216, 343, 512,  (Set 56)?",
+      "options": [
+        "721",
+        "729",
+        "737",
+        "81"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 9³ = 729. Answer: 729.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Find the next term: 2, 4, 6, 10, 16, 26,  (Set 57)?",
+      "options": [
+        "41",
+        "42",
+        "43",
+        "40"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum of previous two. Step 2: 16 + 26 = 42. Answer: 42.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Find the next term: 13, 15, 17, 19, 21, 23, ?",
+      "options": [
+        "25",
+        "27",
+        "29",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 27. Answer: 27.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 59)?",
+      "options": [
+        "26",
+        "28",
+        "30",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Find the next term: 13, 17, 19, 23, 29,  (Set 60)?",
+      "options": [
+        "29",
+        "31",
+        "33",
+        "33"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 29 is 31. Answer: 31.",
+      "trick": "Prime sequence.",
+      "type": "Prime"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Find the next term: 16, 20, 24, 28, 32, ?",
+      "options": [
+        "32",
+        "40",
+        "36",
+        "44"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Differences are constant (+4). Step 2: 32 + 4 = 36. Answer: 36.",
+      "trick": "Add 4 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Find the next term: 4, 8, 16, 32, 64,  (Set 62)?",
+      "options": [
+        "126",
+        "130",
+        "128",
+        "66"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each term × 2. Step 2: 64 × 2 = 128. Answer: 128.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 63)?",
+      "options": [
+        "120",
+        "122",
+        "121",
+        "100"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Find the next term: 27, 64, 125, 216, 343,  (Set 64)?",
+      "options": [
+        "504",
+        "520",
+        "512",
+        "64"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 8³ = 512. Answer: 512.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Find the next term: 4, 4, 8, 12, 20, 32,  (Set 65)?",
+      "options": [
+        "51",
+        "53",
+        "52",
+        "50"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum of previous two. Step 2: 20 + 32 = 52. Answer: 52.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Find the next term: 11, 13, 15, 17, 19, 21,  (Set 66)?",
+      "options": [
+        "23",
+        "27",
+        "25",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 25. Answer: 25.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 67)?",
+      "options": [
+        "26",
+        "30",
+        "28",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Find the next term: 43, 47, 53, 59, 61,  (Set 68)?",
+      "options": [
+        "65",
+        "69",
+        "67",
+        "65"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 61 is 67. Answer: 67.",
+      "trick": "Prime sequence.",
+      "type": "Prime"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Find the next term: 17, 24, 31, 38, 45, ?",
+      "options": [
+        "45",
+        "59",
+        "52",
+        "66"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Differences are constant (+7). Step 2: 45 + 7 = 52. Answer: 52.",
+      "trick": "Add 7 each step.",
+      "type": "Arithmetic"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Find the next term: 3, 6, 12, 24, 48,  (Set 70)?",
+      "options": [
+        "94",
+        "98",
+        "96",
+        "50"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each term × 2. Step 2: 48 × 2 = 96. Answer: 96.",
+      "trick": "×2 pattern.",
+      "type": "Geometric"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 71)?",
+      "options": [
+        "120",
+        "122",
+        "121",
+        "100"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Squares"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Find the next term: 8, 27, 64, 125, 216,  (Set 72)?",
+      "options": [
+        "335",
+        "351",
+        "343",
+        "49"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 7³ = 343. Answer: 343.",
+      "trick": "Cube series.",
+      "type": "Cubes"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Find the next term: 3, 4, 7, 11, 18, 29,  (Set 73)?",
+      "options": [
+        "46",
+        "48",
+        "47",
+        "45"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum of previous two. Step 2: 18 + 29 = 47. Answer: 47.",
+      "trick": "Fibonacci-type.",
+      "type": "Fib"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Find the next term: 14, 16, 18, 20, 22, 24,  (Set 74)?",
+      "options": [
+        "26",
+        "30",
+        "28",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 28. Answer: 28.",
+      "trick": "Alternating differences.",
+      "type": "Alt"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 75)?",
+      "options": [
+        "26",
+        "30",
+        "28",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Triangular"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Find the next term: 29, 31, 37, 41, 43,  (Set 76)?",
+      "options": [
+        "45",
+        "49",
+        "47",
+        "47"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 43 is 47. Answer: 47.",
+      "trick": "Prime sequence.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Find the next term: 11, 16, 21, 26, 31, ?",
+      "options": [
+        "31",
+        "41",
+        "36",
+        "46"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Differences are constant (+5). Step 2: 31 + 5 = 36. Answer: 36.",
+      "trick": "Add 5 each step.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Find the next term: 2, 4, 8, 16, 32,  (Set 78)?",
+      "options": [
+        "62",
+        "66",
+        "64",
+        "34"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each term × 2. Step 2: 32 × 2 = 64. Answer: 64.",
+      "trick": "×2 pattern.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 79)?",
+      "options": [
+        "120",
+        "122",
+        "121",
+        "100"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Find the next term: 64, 125, 216, 343, 512,  (Set 80)?",
+      "options": [
+        "721",
+        "737",
+        "729",
+        "81"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 9³ = 729. Answer: 729.",
+      "trick": "Cube series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Find the next term: 2, 4, 6, 10, 16, 26,  (Set 81)?",
+      "options": [
+        "41",
+        "43",
+        "40",
+        "42"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Sum of previous two. Step 2: 16 + 26 = 42. Answer: 42.",
+      "trick": "Fibonacci-type.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Find the next term: 12, 14, 16, 18, 20, 22,  (Set 82)?",
+      "options": [
+        "24",
+        "28",
+        "25",
+        "26"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 26. Answer: 26.",
+      "trick": "Alternating differences.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 83)?",
+      "options": [
+        "26",
+        "30",
+        "27",
+        "28"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Find the next term: 13, 17, 19, 23, 29,  (Set 84)?",
+      "options": [
+        "29",
+        "33",
+        "33",
+        "31"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 29 is 31. Answer: 31.",
+      "trick": "Prime sequence.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Find the next term: 12, 15, 18, 21, 24, ?",
+      "options": [
+        "24",
+        "30",
+        "33",
+        "27"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Differences are constant (+3). Step 2: 24 + 3 = 27. Answer: 27.",
+      "trick": "Add 3 each step.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Find the next term: 4, 8, 16, 32, 64,  (Set 86)?",
+      "options": [
+        "126",
+        "130",
+        "66",
+        "128"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each term × 2. Step 2: 64 × 2 = 128. Answer: 128.",
+      "trick": "×2 pattern.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 87)?",
+      "options": [
+        "120",
+        "122",
+        "100",
+        "121"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Find the next term: 27, 64, 125, 216, 343,  (Set 88)?",
+      "options": [
+        "504",
+        "520",
+        "64",
+        "512"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 8³ = 512. Answer: 512.",
+      "trick": "Cube series.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Find the next term: 4, 4, 8, 12, 20, 32,  (Set 89)?",
+      "options": [
+        "51",
+        "53",
+        "50",
+        "52"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Sum of previous two. Step 2: 20 + 32 = 52. Answer: 52.",
+      "trick": "Fibonacci-type.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Find the next term: 10, 12, 14, 16, 18, 20,  (Set 90)?",
+      "options": [
+        "22",
+        "26",
+        "23",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 24. Answer: 24.",
+      "trick": "Alternating differences.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 91)?",
+      "options": [
+        "26",
+        "30",
+        "27",
+        "28"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find the next term: 43, 47, 53, 59, 61,  (Set 92)?",
+      "options": [
+        "65",
+        "69",
+        "65",
+        "67"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 61 is 67. Answer: 67.",
+      "trick": "Prime sequence.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Find the next term: 13, 19, 25, 31, 37, ?",
+      "options": [
+        "37",
+        "49",
+        "55",
+        "43"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Differences are constant (+6). Step 2: 37 + 6 = 43. Answer: 43.",
+      "trick": "Add 6 each step.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Find the next term: 3, 6, 12, 24, 48,  (Set 94)?",
+      "options": [
+        "94",
+        "98",
+        "50",
+        "96"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each term × 2. Step 2: 48 × 2 = 96. Answer: 96.",
+      "trick": "×2 pattern.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Find the next term: 36, 49, 64, 81, 100,  (Set 95)?",
+      "options": [
+        "120",
+        "122",
+        "100",
+        "121"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Terms are squares: 6², 7², … Step 2: Next is 11² = 121. Answer: 121.",
+      "trick": "Perfect squares.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Find the next term: 8, 27, 64, 125, 216,  (Set 96)?",
+      "options": [
+        "335",
+        "351",
+        "49",
+        "343"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Perfect cubes. Step 2: Next cube is 7³ = 343. Answer: 343.",
+      "trick": "Cube series.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Find the next term: 3, 4, 7, 11, 18, 29,  (Set 97)?",
+      "options": [
+        "46",
+        "48",
+        "45",
+        "47"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Sum of previous two. Step 2: 18 + 29 = 47. Answer: 47.",
+      "trick": "Fibonacci-type.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Find the next term: 13, 15, 17, 19, 21, 23,  (Set 98)?",
+      "options": [
+        "25",
+        "29",
+        "26",
+        "27"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Alternating gaps +2 and +4. Step 2: Continue pattern → 27. Answer: 27.",
+      "trick": "Alternating differences.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Find the next term: 1, 3, 6, 10, 15, 21,  (Set 99)?",
+      "options": [
+        "26",
+        "30",
+        "27",
+        "28"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers T(n)=n(n+1)/2. Step 2: Next = 28. Answer: 28.",
+      "trick": "Triangular series.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Find the next term: 29, 31, 37, 41, 43,  (Set 100)?",
+      "options": [
+        "45",
+        "49",
+        "47",
+        "47"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Consecutive primes. Step 2: Next prime after 43 is 47. Answer: 47.",
+      "trick": "Prime sequence.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

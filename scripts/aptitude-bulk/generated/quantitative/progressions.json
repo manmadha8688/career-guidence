@@ -1,0 +1,1207 @@
+{
+  "topic": "progressions",
+  "category": "quantitative",
+  "group": "algebra-sequences",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "AP: first term 5, common difference 3. 10th term?",
+      "options": [
+        "32",
+        "35",
+        "8",
+        "29"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 32.",
+      "trick": "a + (n−1)d.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Sum of first 8 terms of AP 2, 6, ...?",
+      "options": [
+        "16",
+        "128",
+        "132",
+        "120"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 128.",
+      "trick": "AP sum formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "GP: a=3, r=2. 5th term?",
+      "options": [
+        "96",
+        "5",
+        "48",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ar^4 = 48.",
+      "trick": "ar^(n−1).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Sum of GP 2, 6, ... 5 terms, r=3?",
+      "options": [
+        "10",
+        "40",
+        "486",
+        "80"
+      ],
+      "answer": "D",
+      "solution": "Step 1: S = a(r^5−1)/(r−1) = 80.",
+      "trick": "GP sum finite.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Sum of first 20 natural numbers?",
+      "options": [
+        "210",
+        "400",
+        "380",
+        "230"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 210.",
+      "trick": "Classic formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Which term of AP 10, 15, ... is 100?",
+      "options": [
+        "20",
+        "19",
+        "18",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 100. n = 19.",
+      "trick": "Solve for n.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "GP 81, 27, 9, ... 4th term?",
+      "options": [
+        "27",
+        "3",
+        "2.999999999999999",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 81×(1/3)³ = 2.999999999999999.",
+      "trick": "Multiply by r.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "AP first term 3, last term 21, 7 terms. Common difference?",
+      "options": [
+        "18",
+        "7",
+        "6",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (21−3)/6 = 3.",
+      "trick": "From first and last.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "AP: first term 6, common difference 3. 10th term?",
+      "options": [
+        "33",
+        "36",
+        "9",
+        "30"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 33.",
+      "trick": "a + (n−1)d.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Sum of first 8 terms of AP 2, 7, ...?",
+      "options": [
+        "16",
+        "156",
+        "161",
+        "148"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 156.",
+      "trick": "AP sum formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "GP: a=3, r=3. 5th term?",
+      "options": [
+        "729",
+        "6",
+        "243",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ar^4 = 243.",
+      "trick": "ar^(n−1).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Sum of GP 2, 8, ... 5 terms, r=4?",
+      "options": [
+        "10",
+        "85",
+        "2048",
+        "170"
+      ],
+      "answer": "D",
+      "solution": "Step 1: S = a(r^5−1)/(r−1) = 170.",
+      "trick": "GP sum finite.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Sum of first 21 natural numbers?",
+      "options": [
+        "231",
+        "441",
+        "420",
+        "252"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 231.",
+      "trick": "Classic formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Which term of AP 11, 16, ... is 96?",
+      "options": [
+        "19",
+        "18",
+        "17",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 96. n = 18.",
+      "trick": "Solve for n.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1052,
+      "difficulty": "hard",
+      "question": "AP first term 131, last term 405, 7 terms. Common difference?",
+      "options": [
+        "274",
+        "7",
+        "45",
+        "176"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (405−131)/6 = 45.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "AP first term 4, last term 24, 7 terms. Common difference?",
+      "options": [
+        "20",
+        "7",
+        "7",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (24−4)/6 = 3.",
+      "trick": "From first and last.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "AP: first term 7, common difference 3. 10th term?",
+      "options": [
+        "34",
+        "37",
+        "10",
+        "31"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 34.",
+      "trick": "a + (n−1)d.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Sum of first 8 terms of AP 2, 8, ...?",
+      "options": [
+        "16",
+        "184",
+        "190",
+        "176"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 184.",
+      "trick": "AP sum formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1073,
+      "difficulty": "hard",
+      "question": "Sum of first 151 natural numbers?",
+      "options": [
+        "22801",
+        "22650",
+        "11476",
+        "11627"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 11476.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1057,
+      "difficulty": "hard",
+      "question": "Sum of first 149 natural numbers?",
+      "options": [
+        "22201",
+        "22052",
+        "11324",
+        "11175"
+      ],
+      "answer": "D",
+      "solution": "Step 1: n(n+1)/2 = 11175.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Sum of first 22 natural numbers?",
+      "options": [
+        "253",
+        "484",
+        "462",
+        "275"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 253.",
+      "trick": "Classic formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Which term of AP 12, 17, ... is 97?",
+      "options": [
+        "19",
+        "18",
+        "17",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 97. n = 18.",
+      "trick": "Solve for n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1060,
+      "difficulty": "hard",
+      "question": "AP first term 132, last term 408, 7 terms. Common difference?",
+      "options": [
+        "276",
+        "7",
+        "46",
+        "178"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (408−132)/6 = 46.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "AP first term 5, last term 27, 7 terms. Common difference?",
+      "options": [
+        "22",
+        "7",
+        "8",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (27−5)/6 = 3.",
+      "trick": "From first and last.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "AP: first term 8, common difference 3. 10th term?",
+      "options": [
+        "35",
+        "38",
+        "11",
+        "32"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 35.",
+      "trick": "a + (n−1)d.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Sum of first 8 terms of AP 2, 9, ...?",
+      "options": [
+        "16",
+        "212",
+        "219",
+        "204"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 212.",
+      "trick": "AP sum formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1081,
+      "difficulty": "hard",
+      "question": "Sum of first 152 natural numbers?",
+      "options": [
+        "23104",
+        "22952",
+        "11628",
+        "11780"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 11628.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1065,
+      "difficulty": "hard",
+      "question": "Sum of first 150 natural numbers?",
+      "options": [
+        "22500",
+        "22350",
+        "11475",
+        "11325"
+      ],
+      "answer": "D",
+      "solution": "Step 1: n(n+1)/2 = 11325.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Sum of first 23 natural numbers?",
+      "options": [
+        "276",
+        "529",
+        "506",
+        "299"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 276.",
+      "trick": "Classic formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Which term of AP 13, 18, ... is 98?",
+      "options": [
+        "19",
+        "18",
+        "17",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 98. n = 18.",
+      "trick": "Solve for n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1068,
+      "difficulty": "hard",
+      "question": "AP first term 133, last term 411, 7 terms. Common difference?",
+      "options": [
+        "278",
+        "7",
+        "46",
+        "179"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (411−133)/6 = 46.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "AP first term 6, last term 30, 7 terms. Common difference?",
+      "options": [
+        "24",
+        "7",
+        "10",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (30−6)/6 = 4.",
+      "trick": "From first and last.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "AP: first term 9, common difference 3. 10th term?",
+      "options": [
+        "36",
+        "39",
+        "12",
+        "33"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 36.",
+      "trick": "a + (n−1)d.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Sum of first 8 terms of AP 2, 10, ...?",
+      "options": [
+        "16",
+        "240",
+        "248",
+        "232"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 240.",
+      "trick": "AP sum formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1089,
+      "difficulty": "hard",
+      "question": "Sum of first 153 natural numbers?",
+      "options": [
+        "23409",
+        "23256",
+        "11781",
+        "11934"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 11781.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1090,
+      "difficulty": "hard",
+      "question": "Which term of AP 143, 148, ... is 98?",
+      "options": [
+        "-7",
+        "-9",
+        "5",
+        "-8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: a + (n−1)d = 98. n = -8.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Sum of first 24 natural numbers?",
+      "options": [
+        "300",
+        "576",
+        "552",
+        "324"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 300.",
+      "trick": "Classic formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Which term of AP 14, 19, ... is 99?",
+      "options": [
+        "19",
+        "18",
+        "17",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 99. n = 18.",
+      "trick": "Solve for n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1076,
+      "difficulty": "hard",
+      "question": "AP first term 134, last term 414, 7 terms. Common difference?",
+      "options": [
+        "280",
+        "7",
+        "46",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (414−134)/6 = 46.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "AP first term 7, last term 33, 7 terms. Common difference?",
+      "options": [
+        "26",
+        "7",
+        "11",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (33−7)/6 = 4.",
+      "trick": "From first and last.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "AP: first term 10, common difference 3. 10th term?",
+      "options": [
+        "37",
+        "40",
+        "13",
+        "34"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 37.",
+      "trick": "a + (n−1)d.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Sum of first 8 terms of AP 2, 11, ...?",
+      "options": [
+        "16",
+        "268",
+        "277",
+        "260"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 268.",
+      "trick": "AP sum formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1097,
+      "difficulty": "hard",
+      "question": "Sum of first 154 natural numbers?",
+      "options": [
+        "23716",
+        "23562",
+        "11935",
+        "12089"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 11935.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1098,
+      "difficulty": "hard",
+      "question": "Which term of AP 144, 149, ... is 99?",
+      "options": [
+        "-7",
+        "-9",
+        "5",
+        "-8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: a + (n−1)d = 99. n = -8.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Sum of first 25 natural numbers?",
+      "options": [
+        "325",
+        "625",
+        "600",
+        "350"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 325.",
+      "trick": "Classic formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Which term of AP 15, 20, ... is 100?",
+      "options": [
+        "19",
+        "18",
+        "17",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 100. n = 18.",
+      "trick": "Solve for n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1084,
+      "difficulty": "hard",
+      "question": "AP first term 135, last term 417, 7 terms. Common difference?",
+      "options": [
+        "282",
+        "7",
+        "47",
+        "182"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (417−135)/6 = 47.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "AP first term 8, last term 36, 7 terms. Common difference?",
+      "options": [
+        "28",
+        "7",
+        "12",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (36−8)/6 = 4.",
+      "trick": "From first and last.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "AP: first term 11, common difference 3. 10th term?",
+      "options": [
+        "38",
+        "41",
+        "14",
+        "35"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 38.",
+      "trick": "a + (n−1)d.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Sum of first 8 terms of AP 2, 12, ...?",
+      "options": [
+        "16",
+        "296",
+        "306",
+        "288"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 296.",
+      "trick": "AP sum formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1105,
+      "difficulty": "hard",
+      "question": "Sum of first 155 natural numbers?",
+      "options": [
+        "24025",
+        "23870",
+        "12090",
+        "12245"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 12090.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1106,
+      "difficulty": "hard",
+      "question": "Which term of AP 145, 150, ... is 100?",
+      "options": [
+        "-7",
+        "-9",
+        "5",
+        "-8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: a + (n−1)d = 100. n = -8.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Sum of first 26 natural numbers?",
+      "options": [
+        "351",
+        "676",
+        "650",
+        "377"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 351.",
+      "trick": "Classic formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Which term of AP 16, 21, ... is 96?",
+      "options": [
+        "18",
+        "17",
+        "16",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 96. n = 17.",
+      "trick": "Solve for n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1092,
+      "difficulty": "hard",
+      "question": "AP first term 136, last term 420, 7 terms. Common difference?",
+      "options": [
+        "284",
+        "7",
+        "47",
+        "183"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (420−136)/6 = 47.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "AP first term 9, last term 39, 7 terms. Common difference?",
+      "options": [
+        "30",
+        "7",
+        "14",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (39−9)/6 = 5.",
+      "trick": "From first and last.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "AP: first term 12, common difference 3. 10th term?",
+      "options": [
+        "39",
+        "42",
+        "15",
+        "36"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 39.",
+      "trick": "a + (n−1)d.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Sum of first 8 terms of AP 2, 13, ...?",
+      "options": [
+        "16",
+        "324",
+        "335",
+        "316"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 324.",
+      "trick": "AP sum formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1113,
+      "difficulty": "hard",
+      "question": "Sum of first 156 natural numbers?",
+      "options": [
+        "24336",
+        "24180",
+        "12246",
+        "12402"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 12246.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1114,
+      "difficulty": "hard",
+      "question": "Which term of AP 146, 151, ... is 96?",
+      "options": [
+        "-8",
+        "-10",
+        "5",
+        "-9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: a + (n−1)d = 96. n = -9.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Sum of first 27 natural numbers?",
+      "options": [
+        "378",
+        "729",
+        "702",
+        "405"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 378.",
+      "trick": "Classic formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Which term of AP 17, 22, ... is 97?",
+      "options": [
+        "18",
+        "17",
+        "16",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 97. n = 17.",
+      "trick": "Solve for n.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1100,
+      "difficulty": "hard",
+      "question": "AP first term 137, last term 423, 7 terms. Common difference?",
+      "options": [
+        "286",
+        "7",
+        "47",
+        "184"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (423−137)/6 = 47.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "AP first term 10, last term 42, 7 terms. Common difference?",
+      "options": [
+        "32",
+        "7",
+        "15",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (42−10)/6 = 5.",
+      "trick": "From first and last.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "AP: first term 13, common difference 3. 10th term?",
+      "options": [
+        "40",
+        "43",
+        "16",
+        "37"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 40.",
+      "trick": "a + (n−1)d.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Sum of first 8 terms of AP 2, 14, ...?",
+      "options": [
+        "16",
+        "352",
+        "364",
+        "344"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 352.",
+      "trick": "AP sum formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1121,
+      "difficulty": "hard",
+      "question": "Sum of first 157 natural numbers?",
+      "options": [
+        "24649",
+        "24492",
+        "12403",
+        "12560"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 12403.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1122,
+      "difficulty": "hard",
+      "question": "Which term of AP 147, 152, ... is 97?",
+      "options": [
+        "-8",
+        "-10",
+        "5",
+        "-9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: a + (n−1)d = 97. n = -9.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Sum of first 28 natural numbers?",
+      "options": [
+        "406",
+        "784",
+        "756",
+        "434"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 406.",
+      "trick": "Classic formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Which term of AP 18, 23, ... is 98?",
+      "options": [
+        "18",
+        "17",
+        "16",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 98. n = 17.",
+      "trick": "Solve for n.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1108,
+      "difficulty": "hard",
+      "question": "AP first term 138, last term 426, 7 terms. Common difference?",
+      "options": [
+        "288",
+        "7",
+        "48",
+        "186"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (426−138)/6 = 48.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "AP first term 11, last term 45, 7 terms. Common difference?",
+      "options": [
+        "34",
+        "7",
+        "16",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (45−11)/6 = 5.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "AP: first term 14, common difference 3. 10th term?",
+      "options": [
+        "41",
+        "44",
+        "17",
+        "38"
+      ],
+      "answer": "A",
+      "solution": "Step 1: a + 9d = 41.",
+      "trick": "a + (n−1)d.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Sum of first 8 terms of AP 2, 15, ...?",
+      "options": [
+        "16",
+        "380",
+        "393",
+        "372"
+      ],
+      "answer": "B",
+      "solution": "Step 1: S_n = n/2(2a+(n−1)d) = 380.",
+      "trick": "AP sum formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1129,
+      "difficulty": "hard",
+      "question": "Sum of first 158 natural numbers?",
+      "options": [
+        "24964",
+        "24806",
+        "12561",
+        "12719"
+      ],
+      "answer": "C",
+      "solution": "Step 1: n(n+1)/2 = 12561.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1130,
+      "difficulty": "hard",
+      "question": "Which term of AP 148, 153, ... is 98?",
+      "options": [
+        "-8",
+        "-10",
+        "5",
+        "-9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: a + (n−1)d = 98. n = -9.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Sum of first 29 natural numbers?",
+      "options": [
+        "435",
+        "841",
+        "812",
+        "464"
+      ],
+      "answer": "A",
+      "solution": "Step 1: n(n+1)/2 = 435.",
+      "trick": "Classic formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Which term of AP 19, 24, ... is 99?",
+      "options": [
+        "18",
+        "17",
+        "16",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: a + (n−1)d = 99. n = 17.",
+      "trick": "Solve for n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1116,
+      "difficulty": "hard",
+      "question": "AP first term 139, last term 429, 7 terms. Common difference?",
+      "options": [
+        "290",
+        "7",
+        "48",
+        "187"
+      ],
+      "answer": "C",
+      "solution": "Step 1: d = (429−139)/6 = 48.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "AP first term 12, last term 48, 7 terms. Common difference?",
+      "options": [
+        "36",
+        "7",
+        "18",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: d = (48−12)/6 = 6.",
+      "trick": "From first and last.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

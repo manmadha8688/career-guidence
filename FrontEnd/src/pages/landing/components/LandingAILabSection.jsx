@@ -22,10 +22,10 @@ export default function LandingAILabSection() {
               From ChatGPT and Copilot to LangChain, CrewAI, RAG systems, and local models.
             </p>
             <p className="lp-section-desc--sm">
-              Each tool page includes free video tutorials, concept explanations, and a hands-on project to build. Most tools are completely free to use.
+              Each tool page includes video tutorials, concept explanations, and a hands-on project to build. Most tools are completely free to use.
             </p>
             <button type="button" onClick={() => navigate('/ai-lab')} className="lp-section-cta lp-section-cta--ai">
-              ⚡ Explore AI Lab — Free
+              ⚡ Explore AI Lab
             </button>
           </div>
 

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "passage-recall-q1",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Passage: 'Dr. Rao discovered the plant in 2011.' Who discovered the plant?",
+    "options": [
+      "Dr. Rao",
+      "Dr. Sen",
+      "Dr. Roy",
+      "a student"
+    ],
+    "answer": "A",
+    "solution": "The passage names Dr. Rao as the discoverer.",
+    "trick": "Recall the anchored name.",
+    "type": "Who/what detail",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q2",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Same passage: in which year was the plant discovered?",
+    "options": [
+      "2001",
+      "2011",
+      "2010",
+      "2021"
+    ],
+    "answer": "B",
+    "solution": "The stated year is 2011.",
+    "trick": "Anchor the number while reading.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q3",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Passage: 'The bridge is 1,200 m long and took 3 years.' How long is the bridge?",
+    "options": [
+      "3 m",
+      "3 years",
+      "1,200 m",
+      "2,100 m"
+    ],
+    "answer": "C",
+    "solution": "Length is 1,200 m; 3 years is the build time.",
+    "trick": "Match the number to its label.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q4",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Same passage: how many years did the bridge take?",
+    "options": [
+      "1",
+      "12",
+      "2",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "It took 3 years.",
+    "trick": "Don't confuse with the length.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q5",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Passage: 'He studied, then interned, then was hired.' What did he do first?",
+    "options": [
+      "studied",
+      "interned",
+      "was hired",
+      "resigned"
+    ],
+    "answer": "A",
+    "solution": "The sequence starts with studying.",
+    "trick": "Recall the order.",
+    "type": "Sequence",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q6",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Same passage: what did he do just before being hired?",
+    "options": [
+      "studied",
+      "interned",
+      "retired",
+      "travelled"
+    ],
+    "answer": "B",
+    "solution": "The step before 'hired' is 'interned'.",
+    "trick": "Read the step before the event.",
+    "type": "Sequence",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q7",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Passage: 'A village adopted solar power and cut its bills.' The main point is that the village:",
+    "options": [
+      "built a school",
+      "grew crops",
+      "adopted solar and saved money",
+      "faced floods"
+    ],
+    "answer": "C",
+    "solution": "The gist is solar adoption leading to savings.",
+    "trick": "Hold one gist line.",
+    "type": "Main point",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q8",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Passage: 'Anil, the manager, approved ₹5 lakh.' What was Anil's role?",
+    "options": [
+      "clerk",
+      "peon",
+      "director",
+      "manager"
+    ],
+    "answer": "D",
+    "solution": "Anil is described as the manager.",
+    "trick": "Recall the role beside the name.",
+    "type": "Who/what detail",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q9",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Same passage: how much did Anil approve?",
+    "options": [
+      "₹5 lakh",
+      "₹5,000",
+      "₹50 lakh",
+      "₹5 crore"
+    ],
+    "answer": "A",
+    "solution": "The figure stated is ₹5 lakh.",
+    "trick": "Anchor the exact amount.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q10",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Passage: 'The festival runs Fri to Sun; food is served only on Sat and Sun.' On which day is there NO food?",
+    "options": [
+      "Saturday",
+      "Friday",
+      "Sunday",
+      "Monday"
+    ],
+    "answer": "B",
+    "solution": "Food is only on Sat and Sun, so Friday has none.",
+    "trick": "'Only' excludes the rest.",
+    "type": "Who/what detail",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q11",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Passage: 'Meera won bronze; Sara won gold; Lata won silver.' Who won gold?",
+    "options": [
+      "Meera",
+      "Lata",
+      "Sara",
+      "no one"
+    ],
+    "answer": "C",
+    "solution": "Sara is stated to have won gold.",
+    "trick": "Map each name to its medal.",
+    "type": "Who/what detail",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q12",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Same passage: who won silver?",
+    "options": [
+      "Sara",
+      "Meera",
+      "nobody",
+      "Lata"
+    ],
+    "answer": "D",
+    "solution": "Lata won silver.",
+    "trick": "Keep the name-medal pairs.",
+    "type": "Who/what detail",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q13",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Passage: 'The store opens at 8 and shuts at 10.' What is the opening time?",
+    "options": [
+      "8",
+      "10",
+      "9",
+      "7"
+    ],
+    "answer": "A",
+    "solution": "Opening time is 8.",
+    "trick": "Match number to 'opens'.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q14",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Passage: 'First mix the flour, then add water, then bake.' What is the LAST step?",
+    "options": [
+      "mix flour",
+      "bake",
+      "add water",
+      "cool"
+    ],
+    "answer": "B",
+    "solution": "The final step listed is baking.",
+    "trick": "Read the last item in the sequence.",
+    "type": "Sequence",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q15",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Passage: 'The team has 4 engineers and 2 designers.' How many designers are there?",
+    "options": [
+      "4",
+      "6",
+      "2",
+      "0"
+    ],
+    "answer": "C",
+    "solution": "There are 2 designers.",
+    "trick": "Match number to the right group.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q16",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Same passage: how many members are there in total?",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "6"
+    ],
+    "answer": "D",
+    "solution": "4 engineers + 2 designers = 6 members.",
+    "trick": "Add the two counts.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q17",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Passage: 'Kiran, born in Pune, moved to Delhi in 2015.' Where was Kiran born?",
+    "options": [
+      "Pune",
+      "Delhi",
+      "Mumbai",
+      "Chennai"
+    ],
+    "answer": "A",
+    "solution": "Kiran was born in Pune (Delhi is where he moved).",
+    "trick": "Don't confuse birthplace with destination.",
+    "type": "Who/what detail",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q18",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Same passage: when did Kiran move to Delhi?",
+    "options": [
+      "2005",
+      "2015",
+      "2050",
+      "2010"
+    ],
+    "answer": "B",
+    "solution": "The move happened in 2015.",
+    "trick": "Anchor the year to the event.",
+    "type": "Number/figure",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q19",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Passage: 'The article explains why sleep improves memory and mood.' The main point is that sleep:",
+    "options": [
+      "wastes time",
+      "needs coffee",
+      "benefits memory and mood",
+      "requires exercise"
+    ],
+    "answer": "C",
+    "solution": "The gist is that sleep improves memory and mood.",
+    "trick": "Use the one-line gist.",
+    "type": "Main point",
+    "active": true
+  },
+  {
+    "id": "passage-recall-q20",
+    "topic": "passage-recall",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Passage: 'The rocket reached 400 km carrying 3 satellites.' How many satellites did it carry?",
+    "options": [
+      "400",
+      "4",
+      "30",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "It carried 3 satellites; 400 km is the altitude.",
+    "trick": "Beware the swapped-number trap.",
+    "type": "Number/figure",
+    "active": true
+  }
+]

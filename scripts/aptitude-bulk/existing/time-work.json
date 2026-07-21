@@ -1,0 +1,402 @@
+[
+  {
+    "id": "time-work-q1",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A can do a job in 10 days and B in 15 days. How long will they take working together?",
+    "options": [
+      "6 days",
+      "5 days",
+      "12.5 days",
+      "25 days"
+    ],
+    "answer": "A",
+    "solution": "LCM = 30 units. A = 3/day, B = 2/day, together 5/day. Time = 30/5 = 6 days.",
+    "trick": "ab/(a+b) = 150/25 = 6.",
+    "type": "Working together",
+    "active": true
+  },
+  {
+    "id": "time-work-q2",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A does a work in 20 days and B also in 20 days. How long together?",
+    "options": [
+      "20 days",
+      "10 days",
+      "40 days",
+      "5 days"
+    ],
+    "answer": "B",
+    "solution": "Each does 1/20 per day; together 2/20 = 1/10. Time = 10 days.",
+    "trick": "Equal times → half the time.",
+    "type": "Working together",
+    "active": true
+  },
+  {
+    "id": "time-work-q3",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A and B together finish a job in 6 days. A alone takes 10 days. How long does B alone take?",
+    "options": [
+      "16 days",
+      "4 days",
+      "15 days",
+      "12 days"
+    ],
+    "answer": "C",
+    "solution": "B = 1/6 − 1/10 = (5 − 3)/30 = 2/30 = 1/15. B alone = 15 days.",
+    "trick": "Subtract rates: 1/6 − 1/10.",
+    "type": "Find the missing person's time",
+    "active": true
+  },
+  {
+    "id": "time-work-q4",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A and B each finish a job in the same time and together earn ₹800. Find A's share.",
+    "options": [
+      "₹800",
+      "₹600",
+      "₹200",
+      "₹400"
+    ],
+    "answer": "D",
+    "solution": "Equal efficiency → equal work → equal pay. A = 800/2 = ₹400.",
+    "trick": "Same speed → split evenly.",
+    "type": "Work and wages",
+    "active": true
+  },
+  {
+    "id": "time-work-q5",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A can do a job in 6 days, B in 12 days. They start together but A leaves after 2 days. In how many more days will B finish?",
+    "options": [
+      "6 days",
+      "4 days",
+      "3 days",
+      "8 days"
+    ],
+    "answer": "A",
+    "solution": "Total 12 units. A = 2/day, B = 1/day. In 2 days: (2+1)×2 = 6 done, 6 left. B finishes 6 at 1/day = 6 days.",
+    "trick": "Half done in 2 days, B does the rest.",
+    "type": "Someone leaves partway",
+    "active": true
+  },
+  {
+    "id": "time-work-q6",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A can do a job in 4 days and B in 6 days. Working on alternate days starting with A, when is it finished?",
+    "options": [
+      "5 days",
+      "4⅔ days",
+      "4 days",
+      "5⅓ days"
+    ],
+    "answer": "B",
+    "solution": "Total 12 units. A = 3, B = 2. A pair of days = 5 units; two pairs (4 days) = 10. Remaining 2 on day 5 (A, 3/day) = 2/3 day. Total 4⅔ days.",
+    "trick": "Pair the days, finish leftover at next rate.",
+    "type": "Alternate days",
+    "active": true
+  },
+  {
+    "id": "time-work-q7",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "12 men build a wall in 8 days. How many days will 16 men take?",
+    "options": [
+      "8 days",
+      "10 days",
+      "6 days",
+      "12 days"
+    ],
+    "answer": "C",
+    "solution": "Man-days = 12×8 = 96. 16×D = 96 → D = 6 days.",
+    "trick": "More men → fewer days: 96/16.",
+    "type": "Man-days",
+    "active": true
+  },
+  {
+    "id": "time-work-q8",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A can do a job in 15 days, B in 10 days and C in 30 days. How long together?",
+    "options": [
+      "6 days",
+      "10 days",
+      "55 days",
+      "5 days"
+    ],
+    "answer": "D",
+    "solution": "LCM 30. A = 2, B = 3, C = 1, together 6/day. Time = 30/6 = 5 days.",
+    "trick": "LCM units, add efficiencies.",
+    "type": "Working together",
+    "active": true
+  },
+  {
+    "id": "time-work-q9",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A alone takes 18 days, and A and B together take 6 days. How long does B alone take?",
+    "options": [
+      "9 days",
+      "12 days",
+      "8 days",
+      "10 days"
+    ],
+    "answer": "A",
+    "solution": "B = 1/6 − 1/18 = (3 − 1)/18 = 2/18 = 1/9. B alone = 9 days.",
+    "trick": "1/6 − 1/18 = 1/9.",
+    "type": "Find the missing person's time",
+    "active": true
+  },
+  {
+    "id": "time-work-q10",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A can do a work in 10 days and B in 15 days. They work together and earn ₹1500. Find B's share.",
+    "options": [
+      "₹900",
+      "₹600",
+      "₹750",
+      "₹500"
+    ],
+    "answer": "B",
+    "solution": "Efficiencies 1/10 : 1/15 = 3 : 2. B = 2/5 × 1500 = ₹600.",
+    "trick": "Pay in ratio 3:2, B gets 2 parts.",
+    "type": "Work and wages",
+    "active": true
+  },
+  {
+    "id": "time-work-q11",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A and B can do a job in 8 days together. They work 4 days together, then B leaves and A finishes the rest in 6 more days. How long does A alone take?",
+    "options": [
+      "16 days",
+      "10 days",
+      "12 days",
+      "18 days"
+    ],
+    "answer": "C",
+    "solution": "In 4 days together: 4/8 = 1/2 done. A does the remaining 1/2 in 6 days → A's rate = 1/12. A alone = 12 days.",
+    "trick": "Half left, A does it in 6 → full in 12.",
+    "type": "Someone leaves partway",
+    "active": true
+  },
+  {
+    "id": "time-work-q12",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A can do a job in 20 days and B in 30 days. They start together, and A leaves after 5 days. In how many more days will B finish?",
+    "options": [
+      "15 days",
+      "20 days",
+      "12.5 days",
+      "17.5 days"
+    ],
+    "answer": "D",
+    "solution": "LCM 60. A = 3, B = 2. In 5 days: (3+2)×5 = 25 done, 35 left. B finishes 35 at 2/day = 17.5 days.",
+    "trick": "25 done, 35/2 = 17.5.",
+    "type": "Someone leaves partway",
+    "active": true
+  },
+  {
+    "id": "time-work-q13",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A can do a job in 6 days and B in 8 days. Working alternately starting with A, in how many days is it done?",
+    "options": [
+      "6¾ days",
+      "7 days",
+      "6 days",
+      "7¼ days"
+    ],
+    "answer": "A",
+    "solution": "LCM 24. A = 4, B = 3. A pair = 7 units; 3 pairs (6 days) = 21. Remaining 3 on day 7 (A, 4/day) = 3/4 day. Total 6¾ days.",
+    "trick": "3 pairs then part of A's day.",
+    "type": "Alternate days",
+    "active": true
+  },
+  {
+    "id": "time-work-q14",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "15 men build a wall in 12 days working 8 hours a day. How many days will 18 men take working 10 hours a day?",
+    "options": [
+      "10 days",
+      "8 days",
+      "6 days",
+      "9 days"
+    ],
+    "answer": "B",
+    "solution": "M₁D₁H₁ = M₂D₂H₂: 15×12×8 = 18×D×10 → 1440 = 180D → D = 8 days.",
+    "trick": "Total man-hours constant.",
+    "type": "Man-days",
+    "active": true
+  },
+  {
+    "id": "time-work-q15",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A is twice as efficient as B, and together they finish a job in 8 days. How long does A alone take?",
+    "options": [
+      "16 days",
+      "24 days",
+      "12 days",
+      "18 days"
+    ],
+    "answer": "C",
+    "solution": "Let B = 1, A = 2 units/day; together 3/day for 8 days → total 24 units. A alone = 24/2 = 12 days.",
+    "trick": "Total work = 3×8 = 24; A does 2/day.",
+    "type": "Working together",
+    "active": true
+  },
+  {
+    "id": "time-work-q16",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A and B together can do a job in 10 days, B and C in 15 days, A and C in 12 days. In how many days can all three finish it together?",
+    "options": [
+      "10 days",
+      "12 days",
+      "6 days",
+      "8 days"
+    ],
+    "answer": "D",
+    "solution": "Sum of pairs = 2(A+B+C). 1/10 + 1/15 + 1/12 = (6+4+5)/60 = 15/60 = 1/4 = 2×(all). So all = 1/8 → 8 days.",
+    "trick": "Add the three pair-rates, halve it.",
+    "type": "Working together",
+    "active": true
+  },
+  {
+    "id": "time-work-q17",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A, B and C together finish a job in 4 days and earn ₹3600. A alone takes 12 days and B alone 18 days. Find C's share.",
+    "options": [
+      "₹1600",
+      "₹1200",
+      "₹800",
+      "₹2000"
+    ],
+    "answer": "A",
+    "solution": "LCM 36. All = 36/4 = 9/day. A = 3, B = 2, so C = 9 − 5 = 4. Ratio 3:2:4. C = 4/9 × 3600 = ₹1600.",
+    "trick": "Find C's rate as (all − A − B).",
+    "type": "Work and wages",
+    "active": true
+  },
+  {
+    "id": "time-work-q18",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A can do a job in 24 days. He works for 6 days, then B joins and together they finish in 6 more days. How long does B alone take?",
+    "options": [
+      "16 days",
+      "12 days",
+      "8 days",
+      "18 days"
+    ],
+    "answer": "B",
+    "solution": "A in 6 days does 6/24 = 1/4. Remaining 3/4 done together in 6 days → together rate = 1/8. B = 1/8 − 1/24 = (3 − 1)/24 = 1/12. B alone = 12 days.",
+    "trick": "Together rate 1/8, subtract A's 1/24.",
+    "type": "Find the missing person's time",
+    "active": true
+  },
+  {
+    "id": "time-work-q19",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A can do a job in 9 days and B in 12 days. Working alternately with B starting first, in how many days is the work completed?",
+    "options": [
+      "10 days",
+      "11 days",
+      "10⅓ days",
+      "10⅔ days"
+    ],
+    "answer": "C",
+    "solution": "LCM 36. A = 4, B = 3. Cycle (B then A) = 7 units; 5 cycles (10 days) = 35. Remaining 1 on day 11 (B, 3/day) = 1/3 day. Total 10⅓ days.",
+    "trick": "5 cycles then a sliver of B's day.",
+    "type": "Alternate days",
+    "active": true
+  },
+  {
+    "id": "time-work-q20",
+    "topic": "time-work",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "If 6 men or 8 women can do a job in 24 days, how long will 4 men and 8 women take?",
+    "options": [
+      "12 days",
+      "16 days",
+      "18 days",
+      "14.4 days"
+    ],
+    "answer": "D",
+    "solution": "6 men = 8 women in rate, so 8 women = 6 men. 4 men + 8 women = 4 + 6 = 10 men. Total work = 6 men × 24 = 144 man-days. Time = 144/10 = 14.4 days.",
+    "trick": "Convert women to men, then man-days.",
+    "type": "Man-days",
+    "active": true
+  }
+]

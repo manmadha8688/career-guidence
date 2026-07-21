@@ -1,0 +1,402 @@
+[
+  {
+    "id": "surds-indices-q1",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Simplify 3⁴ × 3² (as a power of 3).",
+    "options": [
+      "3⁶",
+      "3⁸",
+      "9⁶",
+      "3²"
+    ],
+    "answer": "A",
+    "solution": "Same base, so add the exponents: 3^(4+2) = 3⁶.",
+    "trick": "Add exponents: 4 + 2 = 6.",
+    "type": "Simplify using laws of indices",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q2",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Simplify 5⁷ ÷ 5⁴ (as a power of 5).",
+    "options": [
+      "5¹¹",
+      "5³",
+      "5²⁸",
+      "5⁴"
+    ],
+    "answer": "B",
+    "solution": "Same base, so subtract the exponents: 5^(7−4) = 5³.",
+    "trick": "Subtract exponents: 7 − 4 = 3.",
+    "type": "Simplify using laws of indices",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q3",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Evaluate 25^(1/2).",
+    "options": [
+      "12.5",
+      "625",
+      "5",
+      "50"
+    ],
+    "answer": "C",
+    "solution": "The exponent 1/2 means the square root: √25 = 5.",
+    "trick": "^(1/2) = square root = 5.",
+    "type": "Fractional and negative exponents",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q4",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Simplify √48.",
+    "options": [
+      "2√12",
+      "3√4",
+      "16√3",
+      "4√3"
+    ],
+    "answer": "D",
+    "solution": "48 = 16 × 3, and √16 = 4, so √48 = 4√3.",
+    "trick": "Pull out √16 = 4 → 4√3.",
+    "type": "Simplify and add surds",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q5",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Simplify √20 + √5.",
+    "options": [
+      "3√5",
+      "√25",
+      "2√5",
+      "5√5"
+    ],
+    "answer": "A",
+    "solution": "√20 = √(4×5) = 2√5. Then 2√5 + √5 = 3√5.",
+    "trick": "√20 = 2√5; 2√5 + √5 = 3√5.",
+    "type": "Simplify and add surds",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q6",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Solve 2ˣ = 16.",
+    "options": [
+      "8",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": "B",
+    "solution": "Write 16 as 2⁴, so 2ˣ = 2⁴ → x = 4.",
+    "trick": "16 = 2⁴ → x = 4.",
+    "type": "Solve an exponential equation",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q7",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Which is greater, √3 or √2?",
+    "options": [
+      "√2",
+      "They are equal",
+      "√3",
+      "Cannot be determined"
+    ],
+    "answer": "C",
+    "solution": "For square roots, the larger number under the root is larger. Since 3 > 2, √3 > √2.",
+    "trick": "Same root order → bigger inside wins: √3.",
+    "type": "Compare surds",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q8",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Simplify (x² × x³)² (as a power of x).",
+    "options": [
+      "x⁷",
+      "x¹²",
+      "x⁶",
+      "x¹⁰"
+    ],
+    "answer": "D",
+    "solution": "Inside first: x² × x³ = x⁵. Then (x⁵)² = x^(5×2) = x¹⁰.",
+    "trick": "x⁵ then square → x¹⁰.",
+    "type": "Simplify using laws of indices",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q9",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Evaluate 27^(2/3).",
+    "options": [
+      "9",
+      "18",
+      "6",
+      "3"
+    ],
+    "answer": "A",
+    "solution": "The 3 (bottom) is the cube root: ³√27 = 3. The 2 (top) is the power: 3² = 9.",
+    "trick": "(³√27)² = 3² = 9.",
+    "type": "Fractional and negative exponents",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q10",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Evaluate 8^(−2/3).",
+    "options": [
+      "4",
+      "1/4",
+      "1/8",
+      "−4"
+    ],
+    "answer": "B",
+    "solution": "Negative → reciprocal: 1 / 8^(2/3). Then 8^(2/3) = (³√8)² = 2² = 4. So the value is 1/4.",
+    "trick": "1/(³√8)² = 1/4.",
+    "type": "Fractional and negative exponents",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q11",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Simplify √75 − √12.",
+    "options": [
+      "√63",
+      "7√3",
+      "3√3",
+      "2√3"
+    ],
+    "answer": "C",
+    "solution": "√75 = √(25×3) = 5√3 and √12 = √(4×3) = 2√3. Then 5√3 − 2√3 = 3√3.",
+    "trick": "5√3 − 2√3 = 3√3.",
+    "type": "Simplify and add surds",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q12",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Rationalise 1/(√5 + √3).",
+    "options": [
+      "(√5 + √3)/2",
+      "√5 − √3",
+      "(√5 − √3)/8",
+      "(√5 − √3)/2"
+    ],
+    "answer": "D",
+    "solution": "Multiply top and bottom by the conjugate (√5 − √3). Denominator = 5 − 3 = 2, so the result is (√5 − √3)/2.",
+    "trick": "× conjugate; denominator 5 − 3 = 2.",
+    "type": "Rationalise the denominator",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q13",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Solve 5^(2x) = 125.",
+    "options": [
+      "1.5",
+      "3",
+      "2",
+      "2.5"
+    ],
+    "answer": "A",
+    "solution": "125 = 5³, so 5^(2x) = 5³ → 2x = 3 → x = 1.5.",
+    "trick": "2x = 3 → x = 1.5.",
+    "type": "Solve an exponential equation",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q14",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Which is greater: the cube root of 7, or √3?",
+    "options": [
+      "√3",
+      "Cube root of 7",
+      "They are equal",
+      "Cube root of 3"
+    ],
+    "answer": "B",
+    "solution": "Raise both to the LCM power 6: (³√7)⁶ = 7² = 49 and (√3)⁶ = 3³ = 27. Since 49 > 27, the cube root of 7 is greater.",
+    "trick": "49 vs 27 → cube root of 7 wins.",
+    "type": "Compare surds",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q15",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Simplify (a⁻² × a⁵) ÷ a⁻¹ (as a power of a).",
+    "options": [
+      "a²",
+      "a⁶",
+      "a⁴",
+      "a³"
+    ],
+    "answer": "C",
+    "solution": "Add the numerator exponents: −2 + 5 = 3, so a³. Dividing by a⁻¹ subtracts −1, i.e. adds 1: 3 − (−1) = 4. So a⁴.",
+    "trick": "−2 + 5 − (−1) = 4 → a⁴.",
+    "type": "Simplify using laws of indices",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q16",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Evaluate 32^(−2/5).",
+    "options": [
+      "4",
+      "1/2",
+      "1/16",
+      "1/4"
+    ],
+    "answer": "D",
+    "solution": "32 = 2⁵, so 32^(−2/5) = (2⁵)^(−2/5) = 2^(−2) = 1/4.",
+    "trick": "32 = 2⁵ → 2^(−2) = 1/4.",
+    "type": "Fractional and negative exponents",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q17",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Simplify (√5 + √2)².",
+    "options": [
+      "7 + 2√10",
+      "7",
+      "7 + √10",
+      "10 + 2√10"
+    ],
+    "answer": "A",
+    "solution": "Use (a+b)² = a² + 2ab + b²: (√5)² + 2·√5·√2 + (√2)² = 5 + 2√10 + 2 = 7 + 2√10.",
+    "trick": "5 + 2 + 2√10 = 7 + 2√10.",
+    "type": "Simplify and add surds",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q18",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Simplify (√7 + √5)/(√7 − √5).",
+    "options": [
+      "12 + √35",
+      "6 + √35",
+      "6 + 2√35",
+      "6 − √35"
+    ],
+    "answer": "B",
+    "solution": "Multiply top and bottom by the conjugate (√7 + √5). Numerator = (√7 + √5)² = 12 + 2√35; denominator = 7 − 5 = 2. So (12 + 2√35)/2 = 6 + √35.",
+    "trick": "(12 + 2√35)/2 = 6 + √35.",
+    "type": "Rationalise the denominator",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q19",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "If 3ˣ = 9^(x−2), find x.",
+    "options": [
+      "2",
+      "−4",
+      "4",
+      "8"
+    ],
+    "answer": "C",
+    "solution": "Write 9 as 3²: 9^(x−2) = 3^(2(x−2)). So 3ˣ = 3^(2x−4) → x = 2x − 4 → x = 4.",
+    "trick": "x = 2x − 4 → x = 4.",
+    "type": "Solve an exponential equation",
+    "active": true
+  },
+  {
+    "id": "surds-indices-q20",
+    "topic": "surds-indices",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Arrange in ascending order: √2, the cube root of 3, the sixth root of 6.",
+    "options": [
+      "√2 < cube root of 3 < 6th root of 6",
+      "cube root of 3 < √2 < 6th root of 6",
+      "√2 < 6th root of 6 < cube root of 3",
+      "6th root of 6 < √2 < cube root of 3"
+    ],
+    "answer": "D",
+    "solution": "Raise each to the power 6: (√2)⁶ = 2³ = 8, (³√3)⁶ = 3² = 9, (⁶√6)⁶ = 6. Ordering 6 < 8 < 9 gives 6th root of 6 < √2 < cube root of 3.",
+    "trick": "Sixth powers 6 < 8 < 9 give the order.",
+    "type": "Compare surds",
+    "active": true
+  }
+]

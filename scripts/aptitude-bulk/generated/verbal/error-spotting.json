@@ -1,0 +1,1207 @@
+{
+  "topic": "error-spotting",
+  "category": "verbal",
+  "group": "grammar-errors",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Spot the error: 'He don't / know / the answer / (No error)'",
+      "options": [
+        "He don't",
+        "know",
+        "the answer",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'He' needs 'doesn't', not 'don't'. Step 2: Error in part 1. Answer: He don't.",
+      "trick": "He/she/it → doesn't.",
+      "type": "Agreement"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Spot the error: 'She is / senior than / me / (No error)'",
+      "options": [
+        "senior than",
+        "She is",
+        "me",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'senior' takes 'to', not 'than'. Step 2: Error in part 2. Answer: senior than.",
+      "trick": "senior TO.",
+      "type": "Comparison"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Spot the error: 'I have been / living here / since five years / (No error)'",
+      "options": [
+        "since five years",
+        "I have been",
+        "living here",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Duration uses 'for', not 'since'. Step 2: 'for five years'. Answer: since five years.",
+      "trick": "Duration → for.",
+      "type": "Preposition"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Spot the error: 'Each of the girls / have / a book / (No error)'",
+      "options": [
+        "have",
+        "Each of the girls",
+        "a book",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Each' is singular → 'has'. Step 2: Error: have. Answer: have.",
+      "trick": "Each → has.",
+      "type": "Agreement"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Spot the error: 'The furniture / are / expensive / (No error)'",
+      "options": [
+        "are",
+        "The furniture",
+        "expensive",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'furniture' is uncountable singular. Step 2: 'is expensive'. Answer: are.",
+      "trick": "Uncountable → is.",
+      "type": "Agreement"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Spot the error: 'He insisted / to pay / the bill / (No error)'",
+      "options": [
+        "to pay",
+        "He insisted",
+        "the bill",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'insist on' + gerund, not 'insist to'. Step 2: 'insisted on paying'. Answer: to pay.",
+      "trick": "insist ON + -ing.",
+      "type": "Verb pattern"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Spot the error: 'Neither of the / answers are / correct / (No error)'",
+      "options": [
+        "answers are",
+        "Neither of the",
+        "correct",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Neither' is singular → 'is'. Step 2: 'answers is' → 'answer is'. Answer: answers are.",
+      "trick": "Neither → singular.",
+      "type": "Agreement"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Spot the error: 'I prefer / tea than / coffee / (No error)'",
+      "options": [
+        "tea than",
+        "I prefer",
+        "coffee",
+        "No error"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'prefer X to Y'. Step 2: 'tea to coffee'. Answer: tea than.",
+      "trick": "prefer TO.",
+      "type": "Preposition"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)'",
+      "options": [
+        "were",
+        "was",
+        "No error",
+        "One of the boys"
+      ],
+      "answer": "A",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)'",
+      "options": [
+        "more",
+        "smarter",
+        "No error",
+        "She is"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Error identification"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Spot the error: 'He did not / gave / up / (No error)'",
+      "options": [
+        "gave",
+        "give",
+        "No error",
+        "He did not"
+      ],
+      "answer": "A",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Spot the error: 'The team / are / playing well / (No error)'",
+      "options": [
+        "are",
+        "is",
+        "No error",
+        "The team"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Error identification"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)'",
+      "options": [
+        "meet",
+        "meeting",
+        "No error",
+        "I am"
+      ],
+      "answer": "A",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Error identification"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)'",
+      "options": [
+        "less",
+        "fewer",
+        "No error",
+        "He has less"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Error identification"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)'",
+      "options": [
+        "that",
+        "to",
+        "No error",
+        "She told"
+      ],
+      "answer": "A",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Error identification"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)'",
+      "options": [
+        "Enter",
+        "Enter",
+        "No error",
+        "Enter into"
+      ],
+      "answer": "A",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Error identification"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 37)",
+      "options": [
+        "were",
+        "was",
+        "No error",
+        "One of the boys"
+      ],
+      "answer": "A",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 38)",
+      "options": [
+        "more",
+        "smarter",
+        "No error",
+        "She is"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Error identification"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 39)",
+      "options": [
+        "gave",
+        "give",
+        "No error",
+        "He did not"
+      ],
+      "answer": "A",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 40)",
+      "options": [
+        "are",
+        "is",
+        "No error",
+        "The team"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Error identification"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 41)",
+      "options": [
+        "meeting",
+        "meet",
+        "No error",
+        "I am"
+      ],
+      "answer": "B",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Error identification"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 42)",
+      "options": [
+        "fewer",
+        "less",
+        "No error",
+        "He has less"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Error identification"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 43)",
+      "options": [
+        "to",
+        "that",
+        "No error",
+        "She told"
+      ],
+      "answer": "B",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Error identification"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 44)",
+      "options": [
+        "Enter",
+        "Enter",
+        "No error",
+        "Enter into"
+      ],
+      "answer": "B",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Error identification"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 45)",
+      "options": [
+        "was",
+        "were",
+        "No error",
+        "One of the boys"
+      ],
+      "answer": "B",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 46)",
+      "options": [
+        "smarter",
+        "more",
+        "No error",
+        "She is"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Error identification"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 47)",
+      "options": [
+        "give",
+        "gave",
+        "No error",
+        "He did not"
+      ],
+      "answer": "B",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 48)",
+      "options": [
+        "is",
+        "are",
+        "No error",
+        "The team"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Error identification"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 49)",
+      "options": [
+        "meeting",
+        "meet",
+        "No error",
+        "I am"
+      ],
+      "answer": "B",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Error identification"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 50)",
+      "options": [
+        "fewer",
+        "less",
+        "No error",
+        "He has less"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Error identification"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 51)",
+      "options": [
+        "to",
+        "that",
+        "No error",
+        "She told"
+      ],
+      "answer": "B",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Error identification"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 52)",
+      "options": [
+        "Enter",
+        "Enter",
+        "No error",
+        "Enter into"
+      ],
+      "answer": "B",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Error identification"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 53)",
+      "options": [
+        "was",
+        "were",
+        "No error",
+        "One of the boys"
+      ],
+      "answer": "B",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 54)",
+      "options": [
+        "smarter",
+        "more",
+        "No error",
+        "She is"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Error identification"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 55)",
+      "options": [
+        "give",
+        "gave",
+        "No error",
+        "He did not"
+      ],
+      "answer": "B",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 56)",
+      "options": [
+        "is",
+        "are",
+        "No error",
+        "The team"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Error identification"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 57)",
+      "options": [
+        "meeting",
+        "meet",
+        "No error",
+        "I am"
+      ],
+      "answer": "B",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Error identification"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 58)",
+      "options": [
+        "fewer",
+        "less",
+        "No error",
+        "He has less"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Error identification"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 59)",
+      "options": [
+        "to",
+        "that",
+        "No error",
+        "She told"
+      ],
+      "answer": "B",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Error identification"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 60)",
+      "options": [
+        "Enter",
+        "Enter",
+        "No error",
+        "Enter into"
+      ],
+      "answer": "B",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Error identification"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 61)",
+      "options": [
+        "was",
+        "No error",
+        "were",
+        "One of the boys"
+      ],
+      "answer": "C",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 62)",
+      "options": [
+        "smarter",
+        "No error",
+        "more",
+        "She is"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Error identification"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 63)",
+      "options": [
+        "give",
+        "No error",
+        "gave",
+        "He did not"
+      ],
+      "answer": "C",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 64)",
+      "options": [
+        "is",
+        "No error",
+        "are",
+        "The team"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Error identification"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 65)",
+      "options": [
+        "meeting",
+        "No error",
+        "meet",
+        "I am"
+      ],
+      "answer": "C",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Error identification"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 66)",
+      "options": [
+        "fewer",
+        "No error",
+        "less",
+        "He has less"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Error identification"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 67)",
+      "options": [
+        "to",
+        "No error",
+        "that",
+        "She told"
+      ],
+      "answer": "C",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Error identification"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 68)",
+      "options": [
+        "Enter",
+        "No error",
+        "Enter",
+        "Enter into"
+      ],
+      "answer": "C",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Error identification"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 69)",
+      "options": [
+        "was",
+        "No error",
+        "were",
+        "One of the boys"
+      ],
+      "answer": "C",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 70)",
+      "options": [
+        "smarter",
+        "No error",
+        "more",
+        "She is"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Error identification"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 71)",
+      "options": [
+        "give",
+        "No error",
+        "gave",
+        "He did not"
+      ],
+      "answer": "C",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Error identification"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 72)",
+      "options": [
+        "is",
+        "No error",
+        "are",
+        "The team"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Error identification"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 73)",
+      "options": [
+        "meeting",
+        "No error",
+        "meet",
+        "I am"
+      ],
+      "answer": "C",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Error identification"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 74)",
+      "options": [
+        "fewer",
+        "No error",
+        "less",
+        "He has less"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Error identification"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 75)",
+      "options": [
+        "to",
+        "No error",
+        "that",
+        "She told"
+      ],
+      "answer": "C",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Error identification"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 76)",
+      "options": [
+        "Enter",
+        "No error",
+        "Enter",
+        "Enter into"
+      ],
+      "answer": "C",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 77)",
+      "options": [
+        "was",
+        "No error",
+        "were",
+        "One of the boys"
+      ],
+      "answer": "C",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 78)",
+      "options": [
+        "smarter",
+        "No error",
+        "more",
+        "She is"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 79)",
+      "options": [
+        "give",
+        "No error",
+        "gave",
+        "He did not"
+      ],
+      "answer": "C",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 80)",
+      "options": [
+        "is",
+        "No error",
+        "are",
+        "The team"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 81)",
+      "options": [
+        "meeting",
+        "No error",
+        "I am",
+        "meet"
+      ],
+      "answer": "D",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 82)",
+      "options": [
+        "fewer",
+        "No error",
+        "He has less",
+        "less"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 83)",
+      "options": [
+        "to",
+        "No error",
+        "She told",
+        "that"
+      ],
+      "answer": "D",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 84)",
+      "options": [
+        "Enter",
+        "No error",
+        "Enter into",
+        "Enter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 85)",
+      "options": [
+        "was",
+        "No error",
+        "One of the boys",
+        "were"
+      ],
+      "answer": "D",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 86)",
+      "options": [
+        "smarter",
+        "No error",
+        "She is",
+        "more"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 87)",
+      "options": [
+        "give",
+        "No error",
+        "He did not",
+        "gave"
+      ],
+      "answer": "D",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 88)",
+      "options": [
+        "is",
+        "No error",
+        "The team",
+        "are"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 89)",
+      "options": [
+        "meeting",
+        "No error",
+        "I am",
+        "meet"
+      ],
+      "answer": "D",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 90)",
+      "options": [
+        "fewer",
+        "No error",
+        "He has less",
+        "less"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 91)",
+      "options": [
+        "to",
+        "No error",
+        "She told",
+        "that"
+      ],
+      "answer": "D",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 92)",
+      "options": [
+        "Enter",
+        "No error",
+        "Enter into",
+        "Enter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Spot the error: 'One of the boys / were / absent / (No error)' (Set 93)",
+      "options": [
+        "was",
+        "No error",
+        "One of the boys",
+        "were"
+      ],
+      "answer": "D",
+      "solution": "Step 1: One of → singular verb. Step 2: Error in 'were'. Answer: were.",
+      "trick": "One of → singular verb.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She is / more smarter / than him / (No error)' (Set 94)",
+      "options": [
+        "smarter",
+        "No error",
+        "She is",
+        "more"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Double comparative error. Step 2: Error in 'more smarter'. Answer: more.",
+      "trick": "Double comparative error.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He did not / gave / up / (No error)' (Set 95)",
+      "options": [
+        "give",
+        "No error",
+        "He did not",
+        "gave"
+      ],
+      "answer": "D",
+      "solution": "Step 1: did not + base verb. Step 2: Error in 'gave'. Answer: gave.",
+      "trick": "did not + base verb.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Spot the error: 'The team / are / playing well / (No error)' (Set 96)",
+      "options": [
+        "is",
+        "No error",
+        "The team",
+        "are"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Collective as unit → is (AmE). Step 2: Error in 'are'. Answer: are.",
+      "trick": "Collective as unit → is (AmE).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Spot the error: 'I am / looking forward to / meet you / (No error)' (Set 97)",
+      "options": [
+        "meeting",
+        "No error",
+        "I am",
+        "meet"
+      ],
+      "answer": "D",
+      "solution": "Step 1: look forward to + -ing. Step 2: Error in 'meet'. Answer: meet.",
+      "trick": "look forward to + -ing.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Spot the error: 'He has less / friends / than I / (No error)' (Set 98)",
+      "options": [
+        "fewer",
+        "No error",
+        "He has less",
+        "less"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Countable → fewer. Step 2: Error in 'less'. Answer: less.",
+      "trick": "Countable → fewer.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Spot the error: 'She told / that / she was tired / (No error)' (Set 99)",
+      "options": [
+        "to",
+        "No error",
+        "She told",
+        "that"
+      ],
+      "answer": "D",
+      "solution": "Step 1: told + object, no 'that' after told alone. Step 2: Error in 'that'. Answer: that.",
+      "trick": "told + object, no 'that' after told alone.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Spot the error: 'Enter into / the room / quietly / (No error)' (Set 100)",
+      "options": [
+        "Enter",
+        "No error",
+        "Enter into",
+        "Enter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: enter a room (no 'into'). Step 2: Error in 'Enter into'. Answer: Enter.",
+      "trick": "enter a room (no 'into').",
+      "type": "Real-world disguise"
+    }
+  ]
+}

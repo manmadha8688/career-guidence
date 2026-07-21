@@ -297,7 +297,8 @@
 .ab-rank__name { font-family: 'Rajdhani', sans-serif; font-size: 0.76rem; font-weight: 600; color: var(--text-muted); }
 
 /* ── How to level up (HUD cards) ──────────────────────────────────────── */
-.ab-level { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 860px; }
+.ab-level { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; max-width: 1000px; }
+@media (max-width: 860px) { .ab-level { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .ab-level { grid-template-columns: 1fr; } }
 .ab-level__card { --cut: 16px; --hud: var(--lv-accent); height: 100%; }
 .ab-level__in { padding: 1.5rem 1.4rem; height: 100%; }

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "geometry-q1",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "One angle on a straight line is 130°. Find the adjacent angle on the same line.",
+    "options": [
+      "50°",
+      "60°",
+      "40°",
+      "70°"
+    ],
+    "answer": "A",
+    "solution": "Angles on a straight line add to 180°, so the other = 180 − 130 = 50°.",
+    "trick": "180 − 130 = 50.",
+    "type": "Angles on a straight line",
+    "active": true
+  },
+  {
+    "id": "geometry-q2",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Two angles of a triangle are 50° and 60°. Find the third angle.",
+    "options": [
+      "60°",
+      "70°",
+      "80°",
+      "90°"
+    ],
+    "answer": "B",
+    "solution": "The angles of a triangle add to 180°, so the third = 180 − (50 + 60) = 70°.",
+    "trick": "180 − 110 = 70.",
+    "type": "Missing angle in a triangle",
+    "active": true
+  },
+  {
+    "id": "geometry-q3",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Two angles are complementary. If one is 35°, find the other.",
+    "options": [
+      "45°",
+      "65°",
+      "55°",
+      "35°"
+    ],
+    "answer": "C",
+    "solution": "Complementary angles add to 90°, so the other = 90 − 35 = 55°.",
+    "trick": "90 − 35 = 55.",
+    "type": "Complementary angles",
+    "active": true
+  },
+  {
+    "id": "geometry-q4",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Three angles meet at a point and are 120°, 90° and x. Find x.",
+    "options": [
+      "120°",
+      "90°",
+      "100°",
+      "150°"
+    ],
+    "answer": "D",
+    "solution": "Angles around a point add to 360°, so x = 360 − (120 + 90) = 150°.",
+    "trick": "360 − 210 = 150.",
+    "type": "Angles around a point",
+    "active": true
+  },
+  {
+    "id": "geometry-q5",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "In a right-angled triangle one of the other angles is 30°. Find the remaining angle.",
+    "options": [
+      "60°",
+      "30°",
+      "45°",
+      "90°"
+    ],
+    "answer": "A",
+    "solution": "The right angle is 90°, and all three add to 180°, so the last = 180 − 90 − 30 = 60°.",
+    "trick": "90 − 30 = 60 (right triangle).",
+    "type": "Angles in a right triangle",
+    "active": true
+  },
+  {
+    "id": "geometry-q6",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A right-angled triangle has legs 3 cm and 4 cm. Find the hypotenuse.",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "B",
+    "solution": "c² = 3² + 4² = 9 + 16 = 25, so c = 5 (the 3-4-5 triple).",
+    "trick": "3-4-5 triple → 5.",
+    "type": "Pythagoras: find hypotenuse",
+    "active": true
+  },
+  {
+    "id": "geometry-q7",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "The apex angle of an isosceles triangle is 40°. Find each base angle.",
+    "options": [
+      "50°",
+      "60°",
+      "70°",
+      "40°"
+    ],
+    "answer": "C",
+    "solution": "The two base angles are equal and share what is left of 180°: (180 − 40)/2 = 70°.",
+    "trick": "(180 − 40)/2 = 70.",
+    "type": "Isosceles triangle angles",
+    "active": true
+  },
+  {
+    "id": "geometry-q8",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "Three angles of a quadrilateral are 90°, 80° and 100°. Find the fourth.",
+    "options": [
+      "100°",
+      "80°",
+      "70°",
+      "90°"
+    ],
+    "answer": "D",
+    "solution": "The angles of a quadrilateral add to 360°, so the fourth = 360 − (90 + 80 + 100) = 90°.",
+    "trick": "360 − 270 = 90.",
+    "type": "Quadrilateral angle sum",
+    "active": true
+  },
+  {
+    "id": "geometry-q9",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A side of a triangle is extended. The two opposite interior angles are 45° and 75°. Find the exterior angle.",
+    "options": [
+      "120°",
+      "110°",
+      "100°",
+      "130°"
+    ],
+    "answer": "A",
+    "solution": "An exterior angle equals the sum of the two opposite interior angles = 45 + 75 = 120°.",
+    "trick": "45 + 75 = 120.",
+    "type": "Exterior angle of a triangle",
+    "active": true
+  },
+  {
+    "id": "geometry-q10",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Find the sum of the interior angles of a pentagon.",
+    "options": [
+      "360°",
+      "540°",
+      "720°",
+      "450°"
+    ],
+    "answer": "B",
+    "solution": "Interior sum = (n − 2) × 180 = (5 − 2) × 180 = 540°.",
+    "trick": "(5 − 2) × 180 = 540.",
+    "type": "Interior angle sum of a polygon",
+    "active": true
+  },
+  {
+    "id": "geometry-q11",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Find each interior angle of a regular hexagon.",
+    "options": [
+      "100°",
+      "108°",
+      "120°",
+      "135°"
+    ],
+    "answer": "C",
+    "solution": "Each exterior = 360/6 = 60°, so each interior = 180 − 60 = 120°.",
+    "trick": "180 − 360/6 = 120.",
+    "type": "Interior angle of a regular polygon",
+    "active": true
+  },
+  {
+    "id": "geometry-q12",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Each exterior angle of a regular polygon is 40°. How many sides does it have?",
+    "options": [
+      "6",
+      "8",
+      "10",
+      "9"
+    ],
+    "answer": "D",
+    "solution": "Number of sides = 360 ÷ each exterior angle = 360 ÷ 40 = 9.",
+    "trick": "360/40 = 9.",
+    "type": "Find sides from exterior angle",
+    "active": true
+  },
+  {
+    "id": "geometry-q13",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A right-angled triangle has hypotenuse 13 and one leg 5. Find the other leg.",
+    "options": [
+      "12",
+      "11",
+      "10",
+      "9"
+    ],
+    "answer": "A",
+    "solution": "Leg = √(13² − 5²) = √(169 − 25) = √144 = 12 (the 5-12-13 triple).",
+    "trick": "√(169 − 25) = 12.",
+    "type": "Pythagoras: find a leg",
+    "active": true
+  },
+  {
+    "id": "geometry-q14",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Two parallel lines are cut by a transversal. One co-interior (same-side interior) angle is 110°. Find the other co-interior angle.",
+    "options": [
+      "100°",
+      "70°",
+      "110°",
+      "80°"
+    ],
+    "answer": "B",
+    "solution": "Co-interior angles add to 180°, so the other = 180 − 110 = 70°.",
+    "trick": "co-interior add to 180.",
+    "type": "Angles in parallel lines",
+    "active": true
+  },
+  {
+    "id": "geometry-q15",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Two parallel lines are cut by a transversal. One angle is 65°. Find its alternate angle.",
+    "options": [
+      "55°",
+      "75°",
+      "65°",
+      "115°"
+    ],
+    "answer": "C",
+    "solution": "Alternate angles between parallel lines are equal, so it is also 65°.",
+    "trick": "alternate angles are equal.",
+    "type": "Angles in parallel lines",
+    "active": true
+  },
+  {
+    "id": "geometry-q16",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "An arc subtends 35° at the circumference of a circle. What angle does it subtend at the centre?",
+    "options": [
+      "105°",
+      "140°",
+      "35°",
+      "70°"
+    ],
+    "answer": "D",
+    "solution": "The angle at the centre is twice the angle at the circumference on the same arc = 2 × 35 = 70°.",
+    "trick": "centre = 2 × edge.",
+    "type": "Circle: centre vs circumference angle",
+    "active": true
+  },
+  {
+    "id": "geometry-q17",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A triangle is drawn on the diameter of a circle (third vertex on the circle). One of its angles is 55°. Find the smallest angle.",
+    "options": [
+      "35°",
+      "45°",
+      "55°",
+      "25°"
+    ],
+    "answer": "A",
+    "solution": "The angle in a semicircle is 90°. So the third angle = 180 − 90 − 55 = 35°, which is the smallest.",
+    "trick": "semicircle = 90; 180 − 90 − 55 = 35.",
+    "type": "Angle in a semicircle",
+    "active": true
+  },
+  {
+    "id": "geometry-q18",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Find each interior angle of a regular octagon.",
+    "options": [
+      "120°",
+      "135°",
+      "144°",
+      "140°"
+    ],
+    "answer": "B",
+    "solution": "Interior sum = (8 − 2) × 180 = 1080°; each angle = 1080 ÷ 8 = 135°.",
+    "trick": "180 − 360/8 = 135.",
+    "type": "Interior angle of a regular polygon",
+    "active": true
+  },
+  {
+    "id": "geometry-q19",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "The angles of a triangle are in the ratio 2 : 3 : 4. Find the largest angle.",
+    "options": [
+      "60°",
+      "70°",
+      "80°",
+      "90°"
+    ],
+    "answer": "C",
+    "solution": "The parts total 2 + 3 + 4 = 9, and the angles total 180°, so one part = 20°. The largest = 4 × 20 = 80°.",
+    "trick": "180/9 = 20; 4 × 20 = 80.",
+    "type": "Angles in a given ratio",
+    "active": true
+  },
+  {
+    "id": "geometry-q20",
+    "topic": "geometry",
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A 13 m ladder leans against a wall with its foot 5 m from the wall. How high up the wall does it reach?",
+    "options": [
+      "5 m",
+      "9 m",
+      "10 m",
+      "12 m"
+    ],
+    "answer": "D",
+    "solution": "Height = √(13² − 5²) = √(169 − 25) = √144 = 12 m (a 5-12-13 right triangle).",
+    "trick": "√(13² − 5²) = 12.",
+    "type": "Pythagoras word problem",
+    "active": true
+  }
+]

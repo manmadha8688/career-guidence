@@ -1,0 +1,402 @@
+[
+  {
+    "id": "relative-speed-q1",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Two trains 300 km apart move toward each other at 40 and 60 km/h. In how many hours do they meet?",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "2.5"
+    ],
+    "answer": "A",
+    "solution": "Relative speed = 40 + 60 = 100 km/h. Time = 300/100 = 3 hours.",
+    "trick": "Opposite → add, then gap/relative.",
+    "type": "Opposite directions, when they meet",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q2",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A car at 40 km/h is 20 km ahead of a car at 60 km/h moving the same way. How long to catch up?",
+    "options": [
+      "2 hours",
+      "1 hour",
+      "30 minutes",
+      "3 hours"
+    ],
+    "answer": "B",
+    "solution": "Relative speed = 60 − 40 = 20 km/h. Time = 20/20 = 1 hour.",
+    "trick": "Same direction → subtract.",
+    "type": "Same direction, catching up",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q3",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Two people 36 km apart walk toward each other at 4 and 5 km/h. How far does the faster walk before they meet?",
+    "options": [
+      "16 km",
+      "18 km",
+      "20 km",
+      "24 km"
+    ],
+    "answer": "C",
+    "solution": "Relative = 9 km/h, time = 36/9 = 4 hr. Faster covers 5×4 = 20 km.",
+    "trick": "Meet time first, then own distance.",
+    "type": "Distance covered before meeting",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q4",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A thief runs at 8 km/h and a police officer 10 km behind chases at 10 km/h. How long to catch the thief?",
+    "options": [
+      "2 hours",
+      "10 hours",
+      "1 hour",
+      "5 hours"
+    ],
+    "answer": "D",
+    "solution": "Relative speed = 10 − 8 = 2 km/h. Time = 10/2 = 5 hours.",
+    "trick": "Lead ÷ speed gain.",
+    "type": "Head start (thief and police)",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q5",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Two cars start from the same point in opposite directions at 50 and 70 km/h. How far apart after 2 hours?",
+    "options": [
+      "240 km",
+      "120 km",
+      "40 km",
+      "200 km"
+    ],
+    "answer": "A",
+    "solution": "Relative speed = 120 km/h. Distance = 120×2 = 240 km.",
+    "trick": "Gap grows at the sum of speeds.",
+    "type": "Gap after some time",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q6",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Convert 72 km/h into m/s.",
+    "options": [
+      "25 m/s",
+      "20 m/s",
+      "18 m/s",
+      "15 m/s"
+    ],
+    "answer": "B",
+    "solution": "72 × 5/18 = 20 m/s.",
+    "trick": "×5/18 for km/h → m/s.",
+    "type": "Find a missing speed",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q7",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Two trains move toward each other at 45 and 80 km/h. Find their relative speed.",
+    "options": [
+      "35 km/h",
+      "115 km/h",
+      "125 km/h",
+      "100 km/h"
+    ],
+    "answer": "C",
+    "solution": "Opposite directions: 45 + 80 = 125 km/h.",
+    "trick": "Opposite → add.",
+    "type": "Find a missing speed",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q8",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Two trains start at the same time from stations 480 km apart, moving toward each other at 50 and 70 km/h. How far from the first station do they meet?",
+    "options": [
+      "280 km",
+      "240 km",
+      "320 km",
+      "200 km"
+    ],
+    "answer": "D",
+    "solution": "Relative = 120 km/h, time = 480/120 = 4 hr. First covers 50×4 = 200 km.",
+    "trick": "Meet time × first speed.",
+    "type": "Distance covered before meeting",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q9",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A dog chases a cat. The cat runs at 6 m/s and the dog at 10 m/s, starting 40 m behind. How long to catch the cat?",
+    "options": [
+      "10 s",
+      "4 s",
+      "6.7 s",
+      "8 s"
+    ],
+    "answer": "A",
+    "solution": "Relative = 10 − 6 = 4 m/s. Time = 40/4 = 10 s.",
+    "trick": "Lead ÷ speed gain.",
+    "type": "Head start (thief and police)",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q10",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Two friends start together and walk in opposite directions at 3 and 4 km/h. After how long are they 21 km apart?",
+    "options": [
+      "7 hours",
+      "3 hours",
+      "21 hours",
+      "5 hours"
+    ],
+    "answer": "B",
+    "solution": "Relative = 7 km/h. Time = 21/7 = 3 hours.",
+    "trick": "Gap ÷ sum of speeds.",
+    "type": "Gap after some time",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q11",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A train 100 m long moving at 20 m/s overtakes a man running at 5 m/s in the same direction. How long to pass the man?",
+    "options": [
+      "5 s",
+      "4 s",
+      "6⅔ s",
+      "20 s"
+    ],
+    "answer": "C",
+    "solution": "Relative = 20 − 5 = 15 m/s. Time = 100/15 = 6⅔ s.",
+    "trick": "Length ÷ relative speed.",
+    "type": "Same direction, catching up",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q12",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Two cyclists start from the same point at 12 and 18 km/h in the same direction. How far apart after 90 minutes?",
+    "options": [
+      "6 km",
+      "45 km",
+      "18 km",
+      "9 km"
+    ],
+    "answer": "D",
+    "solution": "Relative = 6 km/h, time = 1.5 hr. Gap = 6×1.5 = 9 km.",
+    "trick": "Same direction gap = difference × time.",
+    "type": "Gap after some time",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q13",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Two trains 210 km apart move toward each other and meet in 3 hours. If one moves at 30 km/h, find the other's speed.",
+    "options": [
+      "40 km/h",
+      "35 km/h",
+      "45 km/h",
+      "70 km/h"
+    ],
+    "answer": "A",
+    "solution": "Relative = 210/3 = 70 km/h. Other = 70 − 30 = 40 km/h.",
+    "trick": "Gap/time, then subtract known.",
+    "type": "Find a missing speed",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q14",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Convert 90 km/h to m/s and find the distance covered in 10 seconds.",
+    "options": [
+      "25 m",
+      "250 m",
+      "900 m",
+      "150 m"
+    ],
+    "answer": "B",
+    "solution": "90 × 5/18 = 25 m/s. Distance = 25×10 = 250 m.",
+    "trick": "Convert first, then × time.",
+    "type": "Find a missing speed",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q15",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Two trains start at the same time, one from A to B at 60 km/h and the other from B to A at 90 km/h. They meet after 2 hours. Find the distance AB.",
+    "options": [
+      "150 km",
+      "180 km",
+      "300 km",
+      "250 km"
+    ],
+    "answer": "C",
+    "solution": "Relative = 150 km/h. Distance = 150×2 = 300 km.",
+    "trick": "Sum of speeds × meet time.",
+    "type": "Opposite directions, when they meet",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q16",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A car starts chasing a bus that is 5 km ahead. The bus moves at 40 km/h and the car at 60 km/h. How far will the car travel to catch the bus?",
+    "options": [
+      "5 km",
+      "10 km",
+      "20 km",
+      "15 km"
+    ],
+    "answer": "D",
+    "solution": "Catch time = 5/(60−40) = 0.25 hr. Car covers 60×0.25 = 15 km.",
+    "trick": "Catch time × chaser's speed.",
+    "type": "Same direction, catching up",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q17",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Two trains leave the same station in the same direction at 40 km/h and 60 km/h, the slower leaving 1 hour earlier. How far from the station does the faster overtake the slower?",
+    "options": [
+      "120 km",
+      "80 km",
+      "100 km",
+      "60 km"
+    ],
+    "answer": "A",
+    "solution": "Slower's head start = 40 km. Catch time = 40/(60−40) = 2 hr. Faster covers 60×2 = 120 km.",
+    "trick": "Head start from the earlier departure.",
+    "type": "Head start (thief and police)",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q18",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A police jeep spots a thief 200 m ahead. The thief runs at 5 m/s and the jeep chases at 15 m/s. How far does the thief run before being caught?",
+    "options": [
+      "200 m",
+      "100 m",
+      "300 m",
+      "150 m"
+    ],
+    "answer": "B",
+    "solution": "Catch time = 200/(15−5) = 20 s. Thief runs 5×20 = 100 m.",
+    "trick": "Catch time × thief's speed.",
+    "type": "Head start (thief and police)",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q19",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Two trains run on parallel tracks in opposite directions at 54 km/h and 36 km/h. Convert to m/s and find how far apart they are 5 seconds after passing a common point.",
+    "options": [
+      "90 m",
+      "25 m",
+      "125 m",
+      "450 m"
+    ],
+    "answer": "C",
+    "solution": "54 → 15 m/s, 36 → 10 m/s, relative = 25 m/s. Gap = 25×5 = 125 m.",
+    "trick": "Convert, add, × time.",
+    "type": "Gap after some time",
+    "active": true
+  },
+  {
+    "id": "relative-speed-q20",
+    "topic": "relative-speed",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Two trains of the same speed move toward each other from stations 320 km apart and meet in 2 hours. Find the speed of each train.",
+    "options": [
+      "160 km/h",
+      "40 km/h",
+      "100 km/h",
+      "80 km/h"
+    ],
+    "answer": "D",
+    "solution": "Relative = 320/2 = 160 km/h. Each = 160/2 = 80 km/h.",
+    "trick": "Equal speeds → half the relative.",
+    "type": "Find a missing speed",
+    "active": true
+  }
+]

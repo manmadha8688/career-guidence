@@ -39,6 +39,10 @@ const LEVEL_UP = [
     accent: '#F59E0B', icon: UserCog, title: 'Build your Profile & Resume',
     desc: <>Complete your Hunter profile and create a recruiter-ready resume. Both <em>earn you XP</em> and turn your progress into something you can actually send.</>,
   },
+  {
+    accent: '#0EA5E9', icon: Dumbbell, title: 'Solve in the Code GYM',
+    desc: <>Crack coding problems across the tracks — from your first line of code to interview-level DSA. Every problem you <em>solve for the first time</em> earns XP, once each.</>,
+  },
 ]
 
 const MAP = [

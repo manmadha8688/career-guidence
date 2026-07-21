@@ -1,0 +1,402 @@
+[
+  {
+    "id": "puzzles-q1",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "In a 3-floor building (1 = bottom, 3 = top), C is on the top floor and A is above B. Who is on floor 1?",
+    "options": [
+      "B",
+      "A",
+      "C",
+      "Cannot say"
+    ],
+    "answer": "A",
+    "solution": "C = floor 3; A above B in floors 1,2 → A=2, B=1.",
+    "trick": "Fix the top, then order the rest.",
+    "type": "Floor order",
+    "active": true
+  },
+  {
+    "id": "puzzles-q2",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "In a 4-floor building, P is immediately above Q, and Q is on floor 2. Which floor is P on?",
+    "options": [
+      "Floor 1",
+      "Floor 3",
+      "Floor 4",
+      "Floor 2"
+    ],
+    "answer": "B",
+    "solution": "Immediately above floor 2 is floor 3.",
+    "trick": "Immediately above = +1.",
+    "type": "Immediately above",
+    "active": true
+  },
+  {
+    "id": "puzzles-q3",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Three people A, B, C each like one of red, blue, green. A likes green, B likes blue. What does C like?",
+    "options": [
+      "Green",
+      "Blue",
+      "Red",
+      "Cannot say"
+    ],
+    "answer": "C",
+    "solution": "Green and blue are taken, so C likes the leftover: red.",
+    "trick": "Last option standing.",
+    "type": "Grid elimination",
+    "active": true
+  },
+  {
+    "id": "puzzles-q4",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "In a 5-floor building, R is on floor 1 and S is exactly 3 floors above R. Which floor is S on?",
+    "options": [
+      "Floor 3",
+      "Floor 5",
+      "Floor 2",
+      "Floor 4"
+    ],
+    "answer": "D",
+    "solution": "1 + 3 = floor 4.",
+    "trick": "k apart above → +k.",
+    "type": "k apart",
+    "active": true
+  },
+  {
+    "id": "puzzles-q5",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "In a 3-floor building, X is not on floor 2, and Y is above X. Which floor is X on?",
+    "options": [
+      "Floor 1",
+      "Floor 2",
+      "Floor 3",
+      "Cannot say"
+    ],
+    "answer": "A",
+    "solution": "X ≠ 2; if X=3 there's no room for Y above, so X = floor 1.",
+    "trick": "Someone above rules out the top.",
+    "type": "Two-case branch",
+    "active": true
+  },
+  {
+    "id": "puzzles-q6",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Four boxes stacked (1 bottom, 4 top). The red box is at the bottom and the green box is immediately above red. Which position is green?",
+    "options": [
+      "Position 1",
+      "Position 2",
+      "Position 3",
+      "Position 4"
+    ],
+    "answer": "B",
+    "solution": "Red = 1, immediately above = position 2 = green.",
+    "trick": "Bottom + 1.",
+    "type": "Immediately above",
+    "active": true
+  },
+  {
+    "id": "puzzles-q7",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "In a 5-floor building, A is on floor 5, B is immediately below A, and C is on floor 1. If D is above C but below B, which floor is D on?",
+    "options": [
+      "Floor 5",
+      "Floor 4",
+      "Floor 2 or 3",
+      "Floor 1"
+    ],
+    "answer": "C",
+    "solution": "A=5, B=4, C=1; D is between floor 1 and floor 4 exclusive at the bottom → floor 2 or 3 (E takes the other).",
+    "trick": "Bound D between C and B.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "puzzles-q8",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Three friends live on floors 1, 2, 3. Ravi lives above Sita. Tara lives on floor 2. Who lives on floor 3?",
+    "options": [
+      "Sita",
+      "Tara",
+      "Cannot say",
+      "Ravi"
+    ],
+    "answer": "D",
+    "solution": "Tara=2; Ravi above Sita in floors 1,3 → Ravi=3, Sita=1.",
+    "trick": "Fill the fixed one, order the rest.",
+    "type": "Floor order",
+    "active": true
+  },
+  {
+    "id": "puzzles-q9",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Four people P,Q,R,S like four different sports. P likes cricket. Q doesn't like tennis or hockey. R likes hockey. Which sport does Q like (sports: cricket, tennis, hockey, football)?",
+    "options": [
+      "Football",
+      "Tennis",
+      "Hockey",
+      "Cricket"
+    ],
+    "answer": "A",
+    "solution": "P=cricket, R=hockey; Q ≠ tennis, hockey, and cricket is taken → Q = football.",
+    "trick": "Eliminate across the grid.",
+    "type": "Grid elimination",
+    "active": true
+  },
+  {
+    "id": "puzzles-q10",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "In a 6-floor building, M is on floor 2 and N is exactly 3 floors above M. Which floor is N on?",
+    "options": [
+      "Floor 4",
+      "Floor 5",
+      "Floor 6",
+      "Floor 3"
+    ],
+    "answer": "B",
+    "solution": "2 + 3 = floor 5.",
+    "trick": "+k above.",
+    "type": "k apart",
+    "active": true
+  },
+  {
+    "id": "puzzles-q11",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Five boxes A–E stacked. A is at the top (5). B is immediately below A. C is at the bottom. If D is immediately above C, which position is E?",
+    "options": [
+      "Position 2",
+      "Position 4",
+      "Position 3",
+      "Position 5"
+    ],
+    "answer": "C",
+    "solution": "A=5, B=4, C=1, D=2; E takes the remaining position 3.",
+    "trick": "Fill forced cells, E gets the gap.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "puzzles-q12",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Three houses in a row are painted red, blue, white (left to right positions 1,2,3). The blue house is in the middle. The red house is not on the right. Which position is white?",
+    "options": [
+      "Position 1",
+      "Position 2",
+      "Cannot say",
+      "Position 3"
+    ],
+    "answer": "D",
+    "solution": "Blue=2; red not on right (≠3) → red=1; white=3.",
+    "trick": "Fix middle, eliminate red's forbidden spot.",
+    "type": "Grid elimination",
+    "active": true
+  },
+  {
+    "id": "puzzles-q13",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "In a 4-floor building, exactly 2 floors separate A and B (i.e. their floor numbers differ by 3). If A is on floor 1, which floor is B on?",
+    "options": [
+      "Floor 4",
+      "Floor 3",
+      "Floor 2",
+      "Floor 1"
+    ],
+    "answer": "A",
+    "solution": "Differ by 3, A=1 → B=4.",
+    "trick": "2 floors between → gap 3.",
+    "type": "k apart",
+    "active": true
+  },
+  {
+    "id": "puzzles-q14",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Four people W,X,Y,Z on floors 1–4. W is above X, X is above Y, Y is above Z. Who is on floor 3?",
+    "options": [
+      "Y",
+      "X",
+      "W",
+      "Z"
+    ],
+    "answer": "B",
+    "solution": "Order top→bottom W,X,Y,Z = floors 4,3,2,1, so X = floor 3.",
+    "trick": "Chain of 'above' fixes all.",
+    "type": "Floor order",
+    "active": true
+  },
+  {
+    "id": "puzzles-q15",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Five people on floors 1–5. A is on an even floor above 2. B is immediately below A. C is on the top. If A is not on floor 4, which floor is A on?",
+    "options": [
+      "Floor 4",
+      "Floor 2",
+      "Cannot — reconsider; only even>2 and ≠4 is none, so no valid A",
+      "Floor 6"
+    ],
+    "answer": "C",
+    "solution": "Even floors above 2 are 4 only (within 1–5); excluding 4 leaves no valid floor, so the clues as stated are inconsistent.",
+    "trick": "List allowed values, then apply the exclusion.",
+    "type": "Consistency check",
+    "active": true
+  },
+  {
+    "id": "puzzles-q16",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Six floors. P is on floor 6. Q is 3 floors below P. R is immediately above Q. Which floor is R on?",
+    "options": [
+      "Floor 3",
+      "Floor 5",
+      "Floor 2",
+      "Floor 4"
+    ],
+    "answer": "D",
+    "solution": "P=6, Q=6−3=3, R immediately above Q = floor 4.",
+    "trick": "Compute Q, then +1 for R.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "puzzles-q17",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Four students take four subjects (Maths, Physics, Chem, Bio), one each. Amit doesn't take Maths or Physics. Bina takes Physics. Chetan doesn't take Bio. If Amit doesn't take Chem, what does Amit take?",
+    "options": [
+      "Bio",
+      "Chem",
+      "Maths",
+      "Physics"
+    ],
+    "answer": "A",
+    "solution": "Amit ≠ Maths, Physics, Chem → Amit = Bio.",
+    "trick": "Cross out until one remains.",
+    "type": "Grid elimination",
+    "active": true
+  },
+  {
+    "id": "puzzles-q18",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Five floors. A is exactly 2 floors above B. C is on floor 1. B is above C but not on floor 2. Which floor is A on?",
+    "options": [
+      "Floor 4",
+      "Floor 5",
+      "Floor 3",
+      "Floor 2"
+    ],
+    "answer": "B",
+    "solution": "B above C(1), B ≠ 2, and A=B+2 ≤5 → B=3, A=5.",
+    "trick": "Bound B, then add 2.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "puzzles-q19",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Six boxes stacked 1–6. The heaviest is at the bottom, the lightest at the top. Box X is immediately above the heaviest, box Y is immediately below the lightest. Which positions are X and Y?",
+    "options": [
+      "X=1, Y=6",
+      "X=5, Y=2",
+      "X=2, Y=5",
+      "X=2, Y=6"
+    ],
+    "answer": "C",
+    "solution": "Heaviest=1 → X=2; lightest=6 → Y=5.",
+    "trick": "Anchor extremes, then ±1.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "puzzles-q20",
+    "topic": "puzzles",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Seven floors. A is on floor 7. B is 4 floors below A. C is exactly midway between A and B. Which floor is C on?",
+    "options": [
+      "Floor 4",
+      "Floor 6",
+      "Floor 3",
+      "Floor 5"
+    ],
+    "answer": "D",
+    "solution": "A=7, B=3; midway = (7+3)/2 = floor 5.",
+    "trick": "Midpoint = average of the two.",
+    "type": "Combined clues",
+    "active": true
+  }
+]

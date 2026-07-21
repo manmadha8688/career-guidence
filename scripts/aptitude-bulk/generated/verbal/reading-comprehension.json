@@ -1,0 +1,1207 @@
+{
+  "topic": "reading-comprehension",
+  "category": "verbal",
+  "group": "reading-reasoning",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output?",
+      "options": [
+        "Cloud cover",
+        "Sunlight",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Same passage: When do panels work best?",
+      "options": [
+        "On clear days",
+        "On cloudy days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close?",
+      "options": [
+        "March 31",
+        "April 30",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic?",
+      "options": [
+        "Renewable energy storage",
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed?",
+      "options": [
+        "Mondays",
+        "Sundays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 26)",
+      "options": [
+        "Cloud cover",
+        "Sunlight",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Same passage: When do panels work best? (Set 27)",
+      "options": [
+        "On clear days",
+        "On cloudy days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 28)",
+      "options": [
+        "March 31",
+        "April 30",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 29)",
+      "options": [
+        "Renewable energy storage",
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 30)",
+      "options": [
+        "Mondays",
+        "Sundays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 31)",
+      "options": [
+        "Cloud cover",
+        "Sunlight",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Same passage: When do panels work best? (Set 32)",
+      "options": [
+        "On clear days",
+        "On cloudy days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 33)",
+      "options": [
+        "March 31",
+        "April 30",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 34)",
+      "options": [
+        "Renewable energy storage",
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 35)",
+      "options": [
+        "Mondays",
+        "Sundays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 36)",
+      "options": [
+        "Cloud cover",
+        "Sunlight",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Same passage: When do panels work best? (Set 37)",
+      "options": [
+        "On clear days",
+        "On cloudy days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 38)",
+      "options": [
+        "March 31",
+        "April 30",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 39)",
+      "options": [
+        "Renewable energy storage",
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 40)",
+      "options": [
+        "Mondays",
+        "Sundays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 41)",
+      "options": [
+        "Sunlight",
+        "Cloud cover",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Same passage: When do panels work best? (Set 42)",
+      "options": [
+        "On cloudy days",
+        "On clear days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 43)",
+      "options": [
+        "April 30",
+        "March 31",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 44)",
+      "options": [
+        "Solar cooking",
+        "Renewable energy storage",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 45)",
+      "options": [
+        "Sundays",
+        "Mondays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 46)",
+      "options": [
+        "Sunlight",
+        "Cloud cover",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Same passage: When do panels work best? (Set 47)",
+      "options": [
+        "On cloudy days",
+        "On clear days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 48)",
+      "options": [
+        "April 30",
+        "March 31",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 49)",
+      "options": [
+        "Solar cooking",
+        "Renewable energy storage",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 50)",
+      "options": [
+        "Sundays",
+        "Mondays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 51)",
+      "options": [
+        "Sunlight",
+        "Cloud cover",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Same passage: When do panels work best? (Set 52)",
+      "options": [
+        "On cloudy days",
+        "On clear days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 53)",
+      "options": [
+        "April 30",
+        "March 31",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 54)",
+      "options": [
+        "Solar cooking",
+        "Renewable energy storage",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 55)",
+      "options": [
+        "Sundays",
+        "Mondays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 56)",
+      "options": [
+        "Sunlight",
+        "Cloud cover",
+        "Electricity",
+        "Clear days"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 57)",
+      "options": [
+        "On cloudy days",
+        "On clear days",
+        "At night",
+        "In winter only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 58)",
+      "options": [
+        "April 30",
+        "March 31",
+        "June 1",
+        "December 31"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 59)",
+      "options": [
+        "Solar cooking",
+        "Renewable energy storage",
+        "Oil drilling",
+        "Coal mining"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 60)",
+      "options": [
+        "Sundays",
+        "Mondays",
+        "Tuesdays",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 61)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Cloud cover",
+        "Clear days"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 62)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "On clear days",
+        "In winter only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 63)",
+      "options": [
+        "April 30",
+        "June 1",
+        "March 31",
+        "December 31"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 64)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Renewable energy storage",
+        "Coal mining"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 65)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Mondays",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 66)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Cloud cover",
+        "Clear days"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 67)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "On clear days",
+        "In winter only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 68)",
+      "options": [
+        "April 30",
+        "June 1",
+        "March 31",
+        "December 31"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 69)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Renewable energy storage",
+        "Coal mining"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 70)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Mondays",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 71)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Cloud cover",
+        "Clear days"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Detail"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 72)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "On clear days",
+        "In winter only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Detail"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 73)",
+      "options": [
+        "April 30",
+        "June 1",
+        "March 31",
+        "December 31"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 74)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Renewable energy storage",
+        "Coal mining"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Detail"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 75)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Mondays",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Detail"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 76)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Cloud cover",
+        "Clear days"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 77)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "On clear days",
+        "In winter only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 78)",
+      "options": [
+        "April 30",
+        "June 1",
+        "March 31",
+        "December 31"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 79)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Renewable energy storage",
+        "Coal mining"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 80)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Mondays",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 81)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Clear days",
+        "Cloud cover"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 82)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "In winter only",
+        "On clear days"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 83)",
+      "options": [
+        "April 30",
+        "June 1",
+        "December 31",
+        "March 31"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 84)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining",
+        "Renewable energy storage"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 85)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Every day",
+        "Mondays"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 86)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Clear days",
+        "Cloud cover"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 87)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "In winter only",
+        "On clear days"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 88)",
+      "options": [
+        "April 30",
+        "June 1",
+        "December 31",
+        "March 31"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 89)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining",
+        "Renewable energy storage"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 90)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Every day",
+        "Mondays"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 91)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Clear days",
+        "Cloud cover"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 92)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "In winter only",
+        "On clear days"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 93)",
+      "options": [
+        "April 30",
+        "June 1",
+        "December 31",
+        "March 31"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 94)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining",
+        "Renewable energy storage"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 95)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Every day",
+        "Mondays"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Passage: 'Solar panels convert sunlight into electricity. They work best on clear days. Cloud cover reduces output by up to 80%.' What reduces panel output? (Set 96)",
+      "options": [
+        "Sunlight",
+        "Electricity",
+        "Clear days",
+        "Cloud cover"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Cloud cover'. Answer: Cloud cover.",
+      "trick": "Detail from passage.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Same passage: When do panels work best? (Set 97)",
+      "options": [
+        "On cloudy days",
+        "At night",
+        "In winter only",
+        "On clear days"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'On clear days'. Answer: On clear days.",
+      "trick": "Direct detail.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Passage: 'The internship lasts 12 weeks. Interns receive a stipend of ₹15,000 per month. Applications close on March 31.' When do applications close? (Set 98)",
+      "options": [
+        "April 30",
+        "June 1",
+        "December 31",
+        "March 31"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'March 31'. Answer: March 31.",
+      "trick": "Date stated.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Passage: 'Dr. Mehta published her research in 2022. It focused on renewable energy storage.' What was the research topic? (Set 99)",
+      "options": [
+        "Solar cooking",
+        "Oil drilling",
+        "Coal mining",
+        "Renewable energy storage"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Renewable energy storage'. Answer: Renewable energy storage.",
+      "trick": "Topic stated.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Passage: 'The museum is closed on Mondays. On other days it opens at 10 a.m.' When is it closed? (Set 100)",
+      "options": [
+        "Sundays",
+        "Tuesdays",
+        "Every day",
+        "Mondays"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Locate the relevant line in the passage. Step 2: Answer is 'Mondays'. Answer: Mondays.",
+      "trick": "Explicit closure day.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

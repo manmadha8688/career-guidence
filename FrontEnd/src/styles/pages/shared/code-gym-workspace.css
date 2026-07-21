@@ -1,0 +1,228 @@
+/* Code Gym problem workspace — LeetCode/HackerRank shell on top of coding-platform.css */
+
+/* Full-height, no inner scroll: the whole workspace grows with content and the
+   page scrolls as one, instead of nested scrollbars in the left panel / console. */
+.cg-workspace.cp {
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+.cg-workspace .cp__split { min-height: 0; }
+
+/* Left panel: previous card UI stacked under Description / Guide / Solution tabs.
+   Grows to fit its content — no inner scrollbar. */
+.cg-workspace .cp__left-body.cg-left-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+/* Right panel flows with its content instead of being squeezed into a fixed
+   share of the split height. The editor keeps a workable minimum height while
+   the Test Cases / Results console takes its NATURAL height — so long expected
+   output can never be clipped or spill down over the page footer. */
+.cg-workspace .cp__right { min-height: 0; }
+.cg-workspace .cp__editor {
+  flex: 1 1 auto;
+  min-height: 440px;
+}
+.cg-workspace .cp__console {
+  flex: 0 0 auto;      /* natural height — the fix that stops the overflow */
+  min-height: 0;
+}
+.cg-workspace .cp__console-body {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+.cg-left-stack .ps-card { margin: 0; flex-shrink: 0; }
+.cg-left-stack .ps-problem-title { font-size: 1.25rem; }
+
+.cg-workspace .cp__editorbar {
+  justify-content: flex-start;
+  gap: 0.55rem;
+}
+
+/* LeetCode-style: language on the left, Run / Submit on the right — all on top. */
+.cg-editorbar {
+  justify-content: space-between !important;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.cg-editorbar__left,
+.cg-editorbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* Language selector — subtle accent, custom chevron, soft focus/hover glow. */
+.cg-workspace .cp__lang {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.42rem 1.85rem 0.42rem 0.75rem;
+  border-radius: 9px;
+  background-color: var(--ps-card-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.55rem center;
+  background-size: 0.72rem;
+  border: 1px solid var(--ps-card-border);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+.cg-workspace .cp__lang:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--cp-purple) 55%, var(--ps-card-border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cp-purple) 12%, transparent);
+}
+.cg-workspace .cp__lang:focus-visible {
+  outline: none;
+  border-color: var(--cp-purple);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cp-purple) 20%, transparent);
+}
+.cg-workspace .cp__lang:disabled { opacity: 0.55; cursor: not-allowed; }
+.cg-editorbar .cp__run,
+.cg-editorbar .cp__submit {
+  padding: 0.4rem 1.05rem;
+  font-size: 0.86rem;
+}
+
+/* Submit gate: locked until the sample cases pass on Run. */
+.cp__submit--locked {
+  background: transparent !important;
+  color: var(--ps-muted) !important;
+  border-color: var(--ps-card-border) !important;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.cp-results__unlocked {
+  display: flex; align-items: center; gap: 0.35rem;
+  color: var(--cp-ok);
+  font-size: 0.85rem;
+  margin: 0.6rem 0 0;
+}
+.cp-results__locked {
+  color: var(--ps-muted);
+  font-size: 0.85rem;
+  margin: 0.6rem 0 0;
+}
+
+.cg-reset {
+  display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--ps-card-border);
+  color: var(--ps-muted);
+  cursor: pointer;
+}
+.cg-reset:hover:not(:disabled) { color: var(--ps-accent); border-color: var(--ps-accent); }
+.cg-reset:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.cg-case-chips, .cg-hidden-chips {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.cg-case-chip {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--ps-card-border);
+  background: transparent;
+  color: var(--ps-muted);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.cg-case-chip.is-on {
+  color: var(--cp-purple);
+  border-color: color-mix(in srgb, var(--cp-purple) 45%, transparent);
+  background: var(--cp-purple-dim);
+}
+.cg-case-chip--locked {
+  cursor: default;
+  opacity: 0.85;
+}
+.cg-case-chip.is-pass { color: var(--cp-ok); border-color: color-mix(in srgb, var(--cp-ok) 40%, transparent); }
+.cg-case-chip.is-fail { color: var(--cp-bad); border-color: color-mix(in srgb, var(--cp-bad) 40%, transparent); }
+
+.cg-msg--ok { color: var(--text-secondary) !important; }
+
+.cg-readonly {
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.cg-readonly__card {
+  max-width: 36ch;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+}
+.cg-readonly__card h2 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+}
+.cg-readonly__card p {
+  margin: 0;
+  color: var(--ps-muted);
+  line-height: 1.55;
+}
+
+/* Guest "create account" nudge — subtle banner under an Accepted verdict. */
+.cg-guest-nudge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--ps-accent) 32%, var(--ps-card-border));
+  background: color-mix(in srgb, var(--ps-accent) 8%, var(--ps-card-bg));
+  flex-wrap: wrap;
+}
+.cg-guest-nudge__icon { color: var(--ps-accent); flex-shrink: 0; }
+.cg-guest-nudge__text {
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+.cg-guest-nudge__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--ps-accent);
+  background: var(--ps-accent);
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: filter 0.15s ease;
+}
+.cg-guest-nudge__cta:hover { filter: brightness(1.08); }
+.cg-guest-nudge__close {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  color: var(--ps-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cg-guest-nudge__close:hover { color: var(--text-primary); }

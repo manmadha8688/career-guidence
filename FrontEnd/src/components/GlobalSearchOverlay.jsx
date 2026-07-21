@@ -15,7 +15,7 @@ const GROUPS = [
   { key: 'roadmaps', label: 'Hunter Paths',   link: (i) => `/skill-arena/roadmaps/${i.id}` },
   { key: 'aptitude', label: 'Aptitude',       link: (i) => `/aptitude/${i.category}/${i.group}/${i.topic}` },
   { key: 'missions', label: 'Missions',       link: (i) => `/missions/${i.id}` },
-  { key: 'problems', label: 'Code Gym',       link: (i) => `/problem-solving/${i.id}` },
+  { key: 'problems', label: 'Code Gym',       link: (i) => `/code-gym/${i.id}` },
 ]
 
 /** Fire this from anywhere to open the search overlay. */

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "ages-q1",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A man is 5 times as old as his son. If the son is 8 years old, find the man's age.",
+    "options": [
+      "40",
+      "13",
+      "45",
+      "32"
+    ],
+    "answer": "A",
+    "solution": "Man = 5 × 8 = 40 years.",
+    "trick": "5 × 8 = 40.",
+    "type": "Simple present age",
+    "active": true
+  },
+  {
+    "id": "ages-q2",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "The present age of A is 30. What was his age 8 years ago?",
+    "options": [
+      "38",
+      "22",
+      "24",
+      "23"
+    ],
+    "answer": "B",
+    "solution": "8 years ago: 30 − 8 = 22.",
+    "trick": "30 − 8 = 22.",
+    "type": "Simple present age",
+    "active": true
+  },
+  {
+    "id": "ages-q3",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The ages of two friends are in the ratio 4:5. If the younger is 16, find the elder's age.",
+    "options": [
+      "24",
+      "18",
+      "20",
+      "25"
+    ],
+    "answer": "C",
+    "solution": "4k = 16 → k = 4. Elder = 5k = 20.",
+    "trick": "16/4 × 5 = 20.",
+    "type": "Ratio of ages with a future clue",
+    "active": true
+  },
+  {
+    "id": "ages-q4",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "The sum of the ages of a father and son is 60. If the father is 40, find the son's age.",
+    "options": [
+      "25",
+      "15",
+      "30",
+      "20"
+    ],
+    "answer": "D",
+    "solution": "Son = 60 − 40 = 20.",
+    "trick": "60 − 40 = 20.",
+    "type": "Sum or difference of ages",
+    "active": true
+  },
+  {
+    "id": "ages-q5",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "The difference between the ages of two brothers is 6 years. If the younger is 14, find the elder's age.",
+    "options": [
+      "20",
+      "8",
+      "22",
+      "18"
+    ],
+    "answer": "A",
+    "solution": "Elder = 14 + 6 = 20.",
+    "trick": "14 + 6 = 20.",
+    "type": "Sum or difference of ages",
+    "active": true
+  },
+  {
+    "id": "ages-q6",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Riya is 3 years older than Sana. If Sana is 15, how old is Riya?",
+    "options": [
+      "12",
+      "18",
+      "45",
+      "20"
+    ],
+    "answer": "B",
+    "solution": "Riya = 15 + 3 = 18.",
+    "trick": "15 + 3 = 18.",
+    "type": "One age in terms of another",
+    "active": true
+  },
+  {
+    "id": "ages-q7",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "The average age of 3 children is 12 years. Find the sum of their ages.",
+    "options": [
+      "15",
+      "12",
+      "36",
+      "39"
+    ],
+    "answer": "C",
+    "solution": "Sum = 12 × 3 = 36.",
+    "trick": "12 × 3 = 36.",
+    "type": "Average / family ages",
+    "active": true
+  },
+  {
+    "id": "ages-q8",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A father is 3 times as old as his son. In 10 years he will be twice as old. Find the son's present age.",
+    "options": [
+      "12",
+      "15",
+      "8",
+      "10"
+    ],
+    "answer": "D",
+    "solution": "Son x, father 3x. 3x + 10 = 2(x + 10) → 3x + 10 = 2x + 20 → x = 10.",
+    "trick": "Solve 3x+10 = 2x+20 → x = 10.",
+    "type": "Simple present age",
+    "active": true
+  },
+  {
+    "id": "ages-q9",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "The ages of A and B are in the ratio 5:7. After 6 years the ratio becomes 3:4. Find A's present age.",
+    "options": [
+      "30",
+      "42",
+      "35",
+      "25"
+    ],
+    "answer": "A",
+    "solution": "5k, 7k. (5k+6)/(7k+6) = 3/4 → 20k+24 = 21k+18 → k = 6. A = 5k = 30.",
+    "trick": "k = 6 → A = 30.",
+    "type": "Ratio of ages with a future clue",
+    "active": true
+  },
+  {
+    "id": "ages-q10",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "The present ratio of ages of P and Q is 4:5. Five years ago it was 3:4. Find Q's present age.",
+    "options": [
+      "20",
+      "25",
+      "30",
+      "15"
+    ],
+    "answer": "B",
+    "solution": "4k, 5k. (4k−5)/(5k−5) = 3/4 → 16k−20 = 15k−15 → k = 5. Q = 5k = 25.",
+    "trick": "k = 5 → Q = 25.",
+    "type": "Ratio of ages with a past clue",
+    "active": true
+  },
+  {
+    "id": "ages-q11",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "The sum of the ages of a mother and daughter is 50. Five years ago the mother was 7 times as old as the daughter. Find the daughter's present age.",
+    "options": [
+      "8",
+      "12",
+      "10",
+      "15"
+    ],
+    "answer": "C",
+    "solution": "Daughter x, mother 50 − x. (45 − x) = 7(x − 5) → 45 − x = 7x − 35 → 8x = 80 → x = 10.",
+    "trick": "Solve 45 − x = 7x − 35 → x = 10.",
+    "type": "Sum or difference of ages",
+    "active": true
+  },
+  {
+    "id": "ages-q12",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A is as old as B was 10 years ago. In 5 years A will be 25. Find B's present age.",
+    "options": [
+      "25",
+      "35",
+      "20",
+      "30"
+    ],
+    "answer": "D",
+    "solution": "A now = 25 − 5 = 20. A = B − 10 → B = 30.",
+    "trick": "A = 20 → B = 20 + 10 = 30.",
+    "type": "One age in terms of another",
+    "active": true
+  },
+  {
+    "id": "ages-q13",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "The average age of a family of 4 is 25 years. The two children are 10 and 12, and the parents are of equal age. Find each parent's age.",
+    "options": [
+      "39",
+      "40",
+      "38",
+      "41"
+    ],
+    "answer": "A",
+    "solution": "Total = 100. Children = 22, parents = 78 → each 39.",
+    "trick": "(100 − 22)/2 = 39.",
+    "type": "Average / family ages",
+    "active": true
+  },
+  {
+    "id": "ages-q14",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "The average age of a class of 20 was 16. Two students aged 15 and 17 left. Find the new average of the remaining 18.",
+    "options": [
+      "15.5",
+      "16",
+      "16.5",
+      "17"
+    ],
+    "answer": "B",
+    "solution": "Total = 320. Remove 32 → 288 over 18 → 288/18 = 16.",
+    "trick": "The two who left averaged 16, so the average is unchanged.",
+    "type": "Average / family ages",
+    "active": true
+  },
+  {
+    "id": "ages-q15",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Ten years ago a father was thrice as old as his son. Ten years hence he will be twice as old. Find the son's present age.",
+    "options": [
+      "20",
+      "35",
+      "30",
+      "25"
+    ],
+    "answer": "C",
+    "solution": "Son x, father y. y − 10 = 3(x − 10) → y = 3x − 20. y + 10 = 2(x + 10) → 3x − 20 + 10 = 2x + 20 → x = 30.",
+    "trick": "y = 3x − 20 into second → x = 30.",
+    "type": "Simple present age",
+    "active": true
+  },
+  {
+    "id": "ages-q16",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "The present ratio of ages of A and B is 5:6. Nine years ago it was 4:5. Find the sum of their present ages.",
+    "options": [
+      "90",
+      "108",
+      "81",
+      "99"
+    ],
+    "answer": "D",
+    "solution": "5k, 6k. (5k−9)/(6k−9) = 4/5 → 25k−45 = 24k−36 → k = 9. Ages 45 and 54; sum = 99.",
+    "trick": "k = 9 → 45 + 54 = 99.",
+    "type": "Ratio of ages with a past clue",
+    "active": true
+  },
+  {
+    "id": "ages-q17",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The ratio of the ages of A and B is 3:5. After 9 years the ratio becomes 3:4. Find B's present age.",
+    "options": [
+      "15",
+      "9",
+      "12",
+      "20"
+    ],
+    "answer": "A",
+    "solution": "3k, 5k. (3k+9)/(5k+9) = 3/4 → 12k+36 = 15k+27 → 3k = 9 → k = 3. B = 5k = 15.",
+    "trick": "k = 3 → B = 15.",
+    "type": "Ratio of ages with a future clue",
+    "active": true
+  },
+  {
+    "id": "ages-q18",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "The sum of the present ages of a father and son is 60. Six years ago the father was 5 times as old as the son. Find the son's age after 6 years.",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "18"
+    ],
+    "answer": "B",
+    "solution": "Son x, father 60 − x. (54 − x) = 5(x − 6) → 54 − x = 5x − 30 → 6x = 84 → x = 14. After 6 years: 14 + 6 = 20.",
+    "trick": "Now son 14 → after 6 years 20.",
+    "type": "Sum or difference of ages",
+    "active": true
+  },
+  {
+    "id": "ages-q19",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Ten years ago a mother was 4 times as old as her daughter. Ten years hence she will be twice as old. Find the mother's present age.",
+    "options": [
+      "40",
+      "60",
+      "50",
+      "45"
+    ],
+    "answer": "C",
+    "solution": "Daughter d, mother m. m − 10 = 4(d − 10) → m = 4d − 30. m + 10 = 2(d + 10) → 4d − 30 + 10 = 2d + 20 → 2d = 40 → d = 20. m = 4×20 − 30 = 50.",
+    "trick": "d = 20 → m = 50.",
+    "type": "One age in terms of another",
+    "active": true
+  },
+  {
+    "id": "ages-q20",
+    "topic": "ages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "When a couple married their average age was 23. The marriage was 5 years ago, and now the average age of the husband, wife and their child is 20. Find the child's present age.",
+    "options": [
+      "5 years",
+      "6 years",
+      "3 years",
+      "4 years"
+    ],
+    "answer": "D",
+    "solution": "At marriage couple total = 46. Now couple = 46 + 10 = 56. With child, 3 people average 20 → total 60. Child = 60 − 56 = 4.",
+    "trick": "60 − 56 = 4.",
+    "type": "Average / family ages",
+    "active": true
+  }
+]

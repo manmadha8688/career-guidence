@@ -41,7 +41,7 @@ export default function AppNavbar({ onMenuClick, title = '' }) {
           <>
             <button
               type="button"
-              onClick={() => navigate('/problem-solving')}
+              onClick={() => navigate('/code-gym')}
               className="navbar-quick-btn navbar-quick-btn--coding"
               title="Problem Solving"
               aria-label="Problem Solving"

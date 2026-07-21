@@ -117,7 +117,7 @@ export default function LandingHeroSection() {
           transition={{ delay: 0.34, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="lp-punch-desc"
         >
-          So become that person. A <strong>completely free</strong> platform to
+          So become that person. A platform to
           <strong> learn the skills and earn the job</strong> — career roadmaps, real coding
           problems and hands-on AI projects that take you from fresher to hired.
         </motion.p>
@@ -130,7 +130,7 @@ export default function LandingHeroSection() {
         >
           <button type="button" onClick={handleEnter} className="lp-btn-primary lp-cta-pulse lp-btn-primary--hero">
             <Swords size={17} />
-            {user ? 'Go to Dashboard' : 'Start Learning — Free'}
+            {user ? 'Go to Dashboard' : 'Start Learning'}
           </button>
           {!user && (
             <button

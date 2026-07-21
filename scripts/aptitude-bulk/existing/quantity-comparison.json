@@ -1,0 +1,402 @@
+[
+  {
+    "id": "quantity-comparison-q1",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Compare the quantities.  Quantity A: 5² .  Quantity B: 4² .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "A",
+    "solution": "A = 25, B = 16; 25 > 16, so A is greater.",
+    "trick": "25 > 16.",
+    "type": "Direct numeric comparison",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q2",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Compare the quantities.  Quantity A: 2³ .  Quantity B: 3² .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "B",
+    "solution": "A = 8, B = 9; 8 < 9, so B is greater.",
+    "trick": "8 < 9.",
+    "type": "Direct numeric comparison",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q3",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Compare the quantities.  Quantity A: 1/2 .  Quantity B: 0.5 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "C",
+    "solution": "1/2 = 0.5, so the two are equal.",
+    "trick": "1/2 = 0.5.",
+    "type": "Equal in disguise",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q4",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Compare the quantities (x is any real number).  Quantity A: x .  Quantity B: 2x .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "D",
+    "solution": "If x = 1, B is greater; if x = −1, A is greater (−1 > −2). The winner flips, so it cannot be determined.",
+    "trick": "Sign of x flips the winner.",
+    "type": "Cannot be determined",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q5",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Compare the quantities.  Quantity A: 3/4 .  Quantity B: 5/7 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "A",
+    "solution": "Cross-multiply: 3×7 = 21 and 4×5 = 20; 21 > 20, so 3/4 > 5/7.",
+    "trick": "21 > 20.",
+    "type": "Comparing fractions",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q6",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Compare the quantities.  Quantity A: 2/5 .  Quantity B: 3/7 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "B",
+    "solution": "Cross-multiply: 2×7 = 14 and 5×3 = 15; 14 < 15, so 2/5 < 3/7.",
+    "trick": "14 < 15.",
+    "type": "Comparing fractions",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q7",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Compare the quantities.  Quantity A: 40% of 200 .  Quantity B: 80 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "C",
+    "solution": "40% of 200 = 80, equal to B.",
+    "trick": "0.4 × 200 = 80.",
+    "type": "Equal in disguise",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q8",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "Compare the quantities (x is any real number).  Quantity A: x² .  Quantity B: x .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "D",
+    "solution": "If x = 2, A = 4 > 2; if x = 0.5, A = 0.25 < 0.5. The winner flips, so it cannot be determined.",
+    "trick": "x² vs x flips for fractions.",
+    "type": "Cannot be determined",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q9",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Compare the quantities.  Quantity A: 99 × 101 .  Quantity B: 98 × 102 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "A",
+    "solution": "A = 100² − 1 = 9999; B = 100² − 4 = 9996; A > B.",
+    "trick": "9999 > 9996.",
+    "type": "Smart cancellation",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q10",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Compare the quantities.  Quantity A: 37 × 43 .  Quantity B: 38 × 42 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "B",
+    "solution": "A = 40² − 9 = 1591; B = 40² − 4 = 1596; A < B.",
+    "trick": "1591 < 1596.",
+    "type": "Smart cancellation",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q11",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Compare the quantities.  Quantity A: 25% of 80 .  Quantity B: 1/5 of 100 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "C",
+    "solution": "A = 20 and B = 20, so they are equal.",
+    "trick": "Both equal 20.",
+    "type": "Equal in disguise",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q12",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Compare the quantities (n is any real number).  Quantity A: n .  Quantity B: n² .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "D",
+    "solution": "If n = 3, B is greater; if n = 0.5, A is greater. The winner flips, so it cannot be determined.",
+    "trick": "Depends on n.",
+    "type": "Cannot be determined",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q13",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Compare the quantities.  Quantity A: √16 .  Quantity B: √9 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "A",
+    "solution": "A = 4, B = 3; 4 > 3, so A is greater.",
+    "trick": "4 > 3.",
+    "type": "Direct numeric comparison",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q14",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Compare the quantities.  Quantity A: 1/3 .  Quantity B: 2/5 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "B",
+    "solution": "Cross-multiply: 1×5 = 5 and 3×2 = 6; 5 < 6, so 1/3 < 2/5.",
+    "trick": "5 < 6.",
+    "type": "Comparing fractions",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q15",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Compare the quantities.  Quantity A: 0.75 .  Quantity B: 3/4 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "C",
+    "solution": "3/4 = 0.75, so the two are equal.",
+    "trick": "3/4 = 0.75.",
+    "type": "Equal in disguise",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q16",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "Compare the quantities (x is any real number).  Quantity A: x .  Quantity B: 5 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "D",
+    "solution": "x could be more or less than 5, so the relationship cannot be determined.",
+    "trick": "x is unrestricted.",
+    "type": "Cannot be determined",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q17",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Compare the quantities.  Quantity A: 2⁵ .  Quantity B: 5² .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "A",
+    "solution": "A = 32, B = 25; 32 > 25, so A is greater.",
+    "trick": "32 > 25.",
+    "type": "Direct numeric comparison",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q18",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Compare the quantities.  Quantity A: 99 × 101 .  Quantity B: 100 × 100 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "B",
+    "solution": "A = 100² − 1 = 9999; B = 10000; A < B.",
+    "trick": "9999 < 10000.",
+    "type": "Smart cancellation",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q19",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Compare the quantities.  Quantity A: 1/4 + 1/4 .  Quantity B: 1/2 .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "C",
+    "solution": "1/4 + 1/4 = 1/2, so the two are equal.",
+    "trick": "1/4 + 1/4 = 1/2.",
+    "type": "Equal in disguise",
+    "active": true
+  },
+  {
+    "id": "quantity-comparison-q20",
+    "topic": "quantity-comparison",
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Compare the quantities (a and b are unknown real numbers).  Quantity A: a .  Quantity B: b .",
+    "options": [
+      "Quantity A is greater",
+      "Quantity B is greater",
+      "The two quantities are equal",
+      "Cannot be determined"
+    ],
+    "answer": "D",
+    "solution": "With no information relating a and b, the relationship cannot be determined.",
+    "trick": "No data → cannot decide.",
+    "type": "Cannot be determined",
+    "active": true
+  }
+]

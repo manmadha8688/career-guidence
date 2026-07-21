@@ -1,0 +1,1207 @@
+{
+  "topic": "mirror-water-images",
+  "category": "logical",
+  "group": "visual",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "RETAW",
+        "WATER",
+        "WATER",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "EGAMI",
+        "IMAGE",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "TCELFER",
+        "REFLECT",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "CIGOL",
+        "LOGIC",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "NOSAER",
+        "REASON",
+        "REASON",
+        "reason"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "RORRIM",
+        "MIRROR",
+        "MIRROR",
+        "mirror"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "RETAW",
+        "WATER",
+        "WATER",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "EGAMI",
+        "IMAGE",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "TCELFER",
+        "REFLECT",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "CIGOL",
+        "LOGIC",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "NOSAER",
+        "REASON",
+        "REASON",
+        "reason"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "RORRIM",
+        "MIRROR",
+        "MIRROR",
+        "mirror"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "RETAW",
+        "WATER",
+        "WATER",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "EGAMI",
+        "IMAGE",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "TCELFER",
+        "REFLECT",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "CIGOL",
+        "LOGIC",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "NOSAER",
+        "REASON",
+        "REASON",
+        "reason"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "RORRIM",
+        "MIRROR",
+        "MIRROR",
+        "mirror"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "RETAW",
+        "WATER",
+        "WATER",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "EGAMI",
+        "IMAGE",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "TCELFER",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "CIGOL",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "NOSAER",
+        "REASON",
+        "reason"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "RORRIM",
+        "MIRROR",
+        "mirror"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "RETAW",
+        "WATER",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "EGAMI",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "TCELFER",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "CIGOL",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "NOSAER",
+        "REASON",
+        "reason"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "RORRIM",
+        "MIRROR",
+        "mirror"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "RETAW",
+        "WATER",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "EGAMI",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "TCELFER",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "CIGOL",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "NOSAER",
+        "REASON",
+        "reason"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "RORRIM",
+        "MIRROR",
+        "mirror"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "RETAW",
+        "WATER",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "EGAMI",
+        "IMAGE",
+        "image"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "TCELFER",
+        "REFLECT",
+        "reflect"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "CIGOL",
+        "LOGIC",
+        "logic"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "NOSAER",
+        "reason"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "RORRIM",
+        "mirror"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "RETAW",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "EGAMI",
+        "image"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "REFLECT",
+        "TCELFER",
+        "reflect"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "LOGIC",
+        "CIGOL",
+        "logic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "NOSAER",
+        "reason"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "RORRIM",
+        "mirror"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "RETAW",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "EGAMI",
+        "image"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "REFLECT",
+        "TCELFER",
+        "reflect"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "LOGIC",
+        "CIGOL",
+        "logic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "NOSAER",
+        "reason"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "RORRIM",
+        "mirror"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "RETAW",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Mirror image"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "EGAMI",
+        "image"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "REFLECT",
+        "TCELFER",
+        "reflect"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "LOGIC",
+        "CIGOL",
+        "logic"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "NOSAER",
+        "reason"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "RORRIM",
+        "mirror"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "water",
+        "RETAW"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "image",
+        "EGAMI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "REFLECT",
+        "reflect",
+        "TCELFER"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "LOGIC",
+        "logic",
+        "CIGOL"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "reason",
+        "NOSAER"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "mirror",
+        "RORRIM"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "water",
+        "RETAW"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "image",
+        "EGAMI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "REFLECT",
+        "reflect",
+        "TCELFER"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "LOGIC",
+        "logic",
+        "CIGOL"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "reason",
+        "NOSAER"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "mirror",
+        "RORRIM"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "water",
+        "RETAW"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "image",
+        "EGAMI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REFLECT'?",
+      "options": [
+        "REFLECT",
+        "REFLECT",
+        "reflect",
+        "TCELFER"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REFLECT → TCELFER. Answer: TCELFER.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'LOGIC'?",
+      "options": [
+        "LOGIC",
+        "LOGIC",
+        "logic",
+        "CIGOL"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: LOGIC → CIGOL. Answer: CIGOL.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'REASON'?",
+      "options": [
+        "REASON",
+        "REASON",
+        "reason",
+        "NOSAER"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: REASON → NOSAER. Answer: NOSAER.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'MIRROR'?",
+      "options": [
+        "MIRROR",
+        "MIRROR",
+        "mirror",
+        "RORRIM"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: MIRROR → RORRIM. Answer: RORRIM.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'WATER'?",
+      "options": [
+        "WATER",
+        "WATER",
+        "water",
+        "RETAW"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: WATER → RETAW. Answer: RETAW.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "What is the mirror image (left-right reversal) of the word 'IMAGE'?",
+      "options": [
+        "IMAGE",
+        "IMAGE",
+        "image",
+        "EGAMI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reverse letter order left-to-right. Step 2: IMAGE → EGAMI. Answer: EGAMI.",
+      "trick": "Reverse horizontally.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

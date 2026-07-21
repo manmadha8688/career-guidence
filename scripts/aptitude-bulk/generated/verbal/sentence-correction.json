@@ -1,0 +1,1207 @@
+{
+  "topic": "sentence-correction",
+  "category": "verbal",
+  "group": "grammar-errors",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'He don't like spicy food.'",
+      "options": [
+        "He doesn't like spicy food.",
+        "He don't likes spicy food.",
+        "He not like spicy food.",
+        "He isn't like spicy food."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Third person singular needs 'doesn't'. Step 2: Correct: He doesn't like spicy food.",
+      "trick": "He → doesn't.",
+      "type": "Agreement"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'She is more taller than her sister.'",
+      "options": [
+        "She is taller than her sister.",
+        "She is more tall than her sister.",
+        "She is tallest than her sister.",
+        "She is taller from her sister."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Remove double comparative. Step 2: 'taller than'. Answer: She is taller than her sister.",
+      "trick": "No 'more taller'.",
+      "type": "Comparison"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'I have been knowing her for years.'",
+      "options": [
+        "I have known her for years.",
+        "I am knowing her for years.",
+        "I have been know her for years.",
+        "I know her since years."
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'know' is stative — no continuous. Step 2: present perfect. Answer: I have known her for years.",
+      "trick": "Stative verbs → no -ing.",
+      "type": "Tenses"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'The informations are useful.'",
+      "options": [
+        "The information is useful.",
+        "The informations is useful.",
+        "The information are useful.",
+        "An information are useful."
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'information' uncountable. Step 2: 'The information is'. Answer: The information is useful.",
+      "trick": "information → uncountable.",
+      "type": "Nouns"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'Me and him went to the store.'",
+      "options": [
+        "He and I went to the store.",
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'She suggested to go early.'",
+      "options": [
+        "She suggested going early.",
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'I am agree with you.'",
+      "options": [
+        "I agree with you.",
+        "I am agree with you.",
+        "I am agree with you. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'He is suffering with fever.'",
+      "options": [
+        "He is suffering from fever.",
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'Please revert back to me.'",
+      "options": [
+        "Please revert to me.",
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'The criteria is met.'",
+      "options": [
+        "The criteria are met.",
+        "The criteria is met.",
+        "The criteria is met. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'He is good in English.'",
+      "options": [
+        "He is good at English.",
+        "She is good in English.",
+        "He is good in English. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 32)",
+      "options": [
+        "He and I went to the store.",
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 33)",
+      "options": [
+        "She suggested going early.",
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 34)",
+      "options": [
+        "I agree with you.",
+        "I am agree with you.",
+        "I am agree with you. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 35)",
+      "options": [
+        "He is suffering from fever.",
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 36)",
+      "options": [
+        "Please revert to me.",
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 37)",
+      "options": [
+        "The criteria are met.",
+        "The criteria is met.",
+        "The criteria is met. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'He is good in English.' (Set 38)",
+      "options": [
+        "He is good at English.",
+        "She is good in English.",
+        "He is good in English. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 39)",
+      "options": [
+        "He and I went to the store.",
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 40)",
+      "options": [
+        "She suggested going early.",
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "No correction needed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 41)",
+      "options": [
+        "I am agree with you.",
+        "I agree with you.",
+        "I am agree with you. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 42)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering from fever.",
+        "He is suffering with fever. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 43)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert to me.",
+        "Please revert back to me. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 44)",
+      "options": [
+        "The criteria is met.",
+        "The criteria are met.",
+        "The criteria is met. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'He is good in English.' (Set 45)",
+      "options": [
+        "She is good in English.",
+        "He is good at English.",
+        "He is good in English. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 46)",
+      "options": [
+        "Me and him went to the store.",
+        "He and I went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 47)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested going early.",
+        "She suggested to go early. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 48)",
+      "options": [
+        "I am agree with you.",
+        "I agree with you.",
+        "I am agree with you. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 49)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering from fever.",
+        "He is suffering with fever. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 50)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert to me.",
+        "Please revert back to me. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 51)",
+      "options": [
+        "The criteria is met.",
+        "The criteria are met.",
+        "The criteria is met. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'He is good in English.' (Set 52)",
+      "options": [
+        "She is good in English.",
+        "He is good at English.",
+        "He is good in English. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 53)",
+      "options": [
+        "Me and him went to the store.",
+        "He and I went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 54)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested going early.",
+        "She suggested to go early. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 55)",
+      "options": [
+        "I am agree with you.",
+        "I agree with you.",
+        "I am agree with you. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 56)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering from fever.",
+        "He is suffering with fever. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 57)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert to me.",
+        "Please revert back to me. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 58)",
+      "options": [
+        "The criteria is met.",
+        "The criteria are met.",
+        "The criteria is met. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is good in English.' (Set 59)",
+      "options": [
+        "She is good in English.",
+        "He is good at English.",
+        "He is good in English. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 60)",
+      "options": [
+        "Me and him went to the store.",
+        "He and I went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 61)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "She suggested going early.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 62)",
+      "options": [
+        "I am agree with you.",
+        "I am agree with you. always",
+        "I agree with you.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 63)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "He is suffering from fever.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 64)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "Please revert to me.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 65)",
+      "options": [
+        "The criteria is met.",
+        "The criteria is met. always",
+        "The criteria are met.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is good in English.' (Set 66)",
+      "options": [
+        "She is good in English.",
+        "He is good in English. always",
+        "He is good at English.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 67)",
+      "options": [
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "He and I went to the store.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 68)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "She suggested going early.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 69)",
+      "options": [
+        "I am agree with you.",
+        "I am agree with you. always",
+        "I agree with you.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 70)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "He is suffering from fever.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 71)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "Please revert to me.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 72)",
+      "options": [
+        "The criteria is met.",
+        "The criteria is met. always",
+        "The criteria are met.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is good in English.' (Set 73)",
+      "options": [
+        "She is good in English.",
+        "He is good in English. always",
+        "He is good at English.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 74)",
+      "options": [
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "He and I went to the store.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 75)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "She suggested going early.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Sentence correction"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 76)",
+      "options": [
+        "I am agree with you.",
+        "I am agree with you. always",
+        "I agree with you.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 77)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "He is suffering from fever.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 78)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "Please revert to me.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 79)",
+      "options": [
+        "The criteria is met.",
+        "The criteria is met. always",
+        "The criteria are met.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is good in English.' (Set 80)",
+      "options": [
+        "She is good in English.",
+        "He is good in English. always",
+        "He is good at English.",
+        "No correction needed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 81)",
+      "options": [
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed",
+        "He and I went to the store."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 82)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "No correction needed",
+        "She suggested going early."
+      ],
+      "answer": "D",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 83)",
+      "options": [
+        "I am agree with you.",
+        "I am agree with you. always",
+        "No correction needed",
+        "I agree with you."
+      ],
+      "answer": "D",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 84)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "No correction needed",
+        "He is suffering from fever."
+      ],
+      "answer": "D",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 85)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "No correction needed",
+        "Please revert to me."
+      ],
+      "answer": "D",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 86)",
+      "options": [
+        "The criteria is met.",
+        "The criteria is met. always",
+        "No correction needed",
+        "The criteria are met."
+      ],
+      "answer": "D",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is good in English.' (Set 87)",
+      "options": [
+        "She is good in English.",
+        "He is good in English. always",
+        "No correction needed",
+        "He is good at English."
+      ],
+      "answer": "D",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 88)",
+      "options": [
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed",
+        "He and I went to the store."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 89)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "No correction needed",
+        "She suggested going early."
+      ],
+      "answer": "D",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'I am agree with you.' (Set 90)",
+      "options": [
+        "I am agree with you.",
+        "I am agree with you. always",
+        "No correction needed",
+        "I agree with you."
+      ],
+      "answer": "D",
+      "solution": "Step 1: agree is verb, not 'am agree'. Step 2: 'I agree with you.'. Answer: I agree with you..",
+      "trick": "agree is verb, not 'am agree'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is suffering with fever.' (Set 91)",
+      "options": [
+        "She is suffering with fever.",
+        "He is suffering with fever. always",
+        "No correction needed",
+        "He is suffering from fever."
+      ],
+      "answer": "D",
+      "solution": "Step 1: suffer from. Step 2: 'He is suffering from fever.'. Answer: He is suffering from fever..",
+      "trick": "suffer from.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Please revert back to me.' (Set 92)",
+      "options": [
+        "Please revert back to me.",
+        "Please revert back to me. always",
+        "No correction needed",
+        "Please revert to me."
+      ],
+      "answer": "D",
+      "solution": "Step 1: revert already means 'go back'. Step 2: 'Please revert to me.'. Answer: Please revert to me..",
+      "trick": "revert already means 'go back'.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The criteria is met.' (Set 93)",
+      "options": [
+        "The criteria is met.",
+        "The criteria is met. always",
+        "No correction needed",
+        "The criteria are met."
+      ],
+      "answer": "D",
+      "solution": "Step 1: criteria = plural. Step 2: 'The criteria are met.'. Answer: The criteria are met..",
+      "trick": "criteria = plural.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He is good in English.' (Set 94)",
+      "options": [
+        "She is good in English.",
+        "He is good in English. always",
+        "No correction needed",
+        "He is good at English."
+      ],
+      "answer": "D",
+      "solution": "Step 1: good at a subject. Step 2: 'He is good at English.'. Answer: He is good at English..",
+      "trick": "good at a subject.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'He don't like spicy food.' (Set 95)",
+      "options": [
+        "He don't likes spicy food.",
+        "He not like spicy food.",
+        "He isn't like spicy food.",
+        "He doesn't like spicy food."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Third person singular needs 'doesn't'. Step 2: Correct: He doesn't like spicy food.",
+      "trick": "He → doesn't.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She is more taller than her sister.' (Set 96)",
+      "options": [
+        "She is more tall than her sister.",
+        "She is tallest than her sister.",
+        "She is taller from her sister.",
+        "She is taller than her sister."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Remove double comparative. Step 2: 'taller than'. Answer: She is taller than her sister.",
+      "trick": "No 'more taller'.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'I have been knowing her for years.' (Set 97)",
+      "options": [
+        "I am knowing her for years.",
+        "I have been know her for years.",
+        "I know her since years.",
+        "I have known her for years."
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'know' is stative — no continuous. Step 2: present perfect. Answer: I have known her for years.",
+      "trick": "Stative verbs → no -ing.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'The informations are useful.' (Set 98)",
+      "options": [
+        "The informations is useful.",
+        "The information are useful.",
+        "An information are useful.",
+        "The information is useful."
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'information' uncountable. Step 2: 'The information is'. Answer: The information is useful.",
+      "trick": "information → uncountable.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'Me and him went to the store.' (Set 99)",
+      "options": [
+        "Me and him went to the store.",
+        "Me and him went to the store. always",
+        "No correction needed",
+        "He and I went to the store."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Subject pronouns: He and I. Step 2: 'He and I went to the store.'. Answer: He and I went to the store..",
+      "trick": "Subject pronouns: He and I.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Correct the sentence: 'She suggested to go early.' (Set 100)",
+      "options": [
+        "She suggested to go early.",
+        "She suggested to go early. always",
+        "No correction needed",
+        "She suggested going early."
+      ],
+      "answer": "D",
+      "solution": "Step 1: suggest + -ing. Step 2: 'She suggested going early.'. Answer: She suggested going early..",
+      "trick": "suggest + -ing.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

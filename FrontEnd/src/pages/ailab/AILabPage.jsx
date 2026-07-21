@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense, lazy } from 'react'
+import { useState, useRef, useMemo, useCallback, memo, Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { Search, ChevronRight, Lock } from 'lucide-react'
@@ -90,19 +90,21 @@ export default function AILabPage() {
   const heroSectionStyle = enable3D ? { opacity: heroOpacity, y: heroY } : undefined
   const splineStyle = enable3D ? { scale: splineScale } : undefined
 
-  const filtered = TOOLS.filter(t => {
+  // Memoized so unrelated re-renders (search focus, spline load, primer toggle)
+  // don't rebuild the lists or hand new object refs to the memoized sections.
+  const filtered = useMemo(() => TOOLS.filter(t => {
     const matchCat = activeCategory === 'all' || t.category === activeCategory
     const q = search.toLowerCase()
     return matchCat && (!q || t.name.toLowerCase().includes(q) || t.tagline.toLowerCase().includes(q) || t.tags?.some(g => g.includes(q)))
-  })
-  const grouped = CATEGORIES.filter(c => c.id !== 'all').map(cat => ({
+  }), [activeCategory, search])
+  const grouped = useMemo(() => CATEGORIES.filter(c => c.id !== 'all').map(cat => ({
     ...cat, tools: filtered.filter(t => t.category === cat.id),
-  })).filter(g => g.tools.length > 0)
-  const goToTool = t => {
+  })).filter(g => g.tools.length > 0), [filtered])
+  const goToTool = useCallback(t => {
     const path = `/ai-lab/${t.category}/${t.id}`
     if (!user) { navigate(`/login?redirect=${encodeURIComponent(path)}`); return }
     navigate(path)
-  }
+  }, [user, navigate])
 
   return (
     <div className="ailab-page">
@@ -259,7 +261,7 @@ export default function AILabPage() {
           </motion.div>
 
           <div className="ailab-hero__hud-tr">
-            <motion.div animate={{ opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 3, repeat: Infinity }}>SYS_STATUS: ONLINE</motion.div>
+            <HeroStatusPulse />
             <div>AI_CORE: ACTIVE</div>
             <div>TOOLS: {TOOLS.length} LOADED</div>
           </div>
@@ -318,7 +320,7 @@ export default function AILabPage() {
               </p>
               <div className="ailab-tools__grid">
                 {filtered.map((tool, i) => (
-                  <ToolCard key={tool.id} tool={tool} onClick={() => goToTool(tool)} delay={i * 0.04} />
+                  <ToolCard key={tool.id} tool={tool} onSelect={goToTool} delay={i * 0.04} />
                 ))}
               </div>
               {filtered.length === 0 && (
@@ -340,7 +342,23 @@ export default function AILabPage() {
   )
 }
 
-function CategorySection({ group, gi, onTool }) {
+// Isolated so its in-view state (and the infinite opacity pulse) never re-renders
+// the whole page, and the pulse pauses when the hero scrolls out of view.
+const HeroStatusPulse = memo(function HeroStatusPulse() {
+  const ref = useRef(null)
+  const inView = useInView(ref)
+  return (
+    <motion.div
+      ref={ref}
+      animate={inView ? { opacity: [0.3, 0.8, 0.3] } : { opacity: 0.3 }}
+      transition={{ duration: 3, repeat: Infinity }}
+    >
+      SYS_STATUS: ONLINE
+    </motion.div>
+  )
+})
+
+const CategorySection = memo(function CategorySection({ group, gi, onTool }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const meta = CAT_META[group.id] || { color: '#00D9FF', icon: '⚡', desc: '' }
@@ -414,7 +432,7 @@ function CategorySection({ group, gi, onTool }) {
           <ToolCard
             key={tool.id}
             tool={tool}
-            onClick={() => onTool(tool)}
+            onSelect={onTool}
             delay={isInView ? i * 0.042 : 0}
             visible={isInView}
             catColor={meta.color}
@@ -423,9 +441,9 @@ function CategorySection({ group, gi, onTool }) {
       </div>
     </motion.div>
   )
-}
+})
 
-function ToolCard({ tool, onClick, delay = 0, visible = true, catColor }) {
+const ToolCard = memo(function ToolCard({ tool, onSelect, delay = 0, visible = true, catColor }) {
   const soon = !tool.hasPage
   const accent = tool.color || catColor || '#00D9FF'
 
@@ -436,7 +454,7 @@ function ToolCard({ tool, onClick, delay = 0, visible = true, catColor }) {
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay }}
       whileHover={soon ? {} : { y: -5, scale: 1.025, transition: { duration: 0.18 } }}
       whileTap={soon ? {} : { scale: 0.975 }}
-      onClick={onClick}
+      onClick={() => onSelect(tool)}
       className={`ailab-tool-card${soon ? ' ailab-tool-card--soon' : ''}`}
       style={{ '--accent-color': accent }}
     >
@@ -495,4 +513,4 @@ function ToolCard({ tool, onClick, delay = 0, visible = true, catColor }) {
       </div>
     </motion.div>
   )
-}
+})

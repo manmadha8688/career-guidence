@@ -1,0 +1,1207 @@
+{
+  "topic": "decision-making",
+  "category": "logical",
+  "group": "analytical",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Reject refund",
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Reject refund",
+        "Approve partial refund",
+        "Exchange only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Decision making"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Reject refund",
+        "Exchange only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Policy: Refunds only within 7 days with receipt. Customer bought 10 days ago, has receipt. Decision?",
+      "options": [
+        "Approve full refund",
+        "Approve partial refund",
+        "Exchange only",
+        "Reject refund"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10 days > 7-day window. Step 2: Receipt alone insufficient. Answer: Reject refund.",
+      "trick": "Check all conditions.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

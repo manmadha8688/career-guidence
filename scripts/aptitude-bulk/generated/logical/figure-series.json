@@ -1,0 +1,1207 @@
+{
+  "topic": "figure-series",
+  "category": "logical",
+  "group": "series-patterns",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded square → fully shaded triangle → empty pentagon → half-shaded hexagon → ?",
+      "options": [
+        "fully shaded circle",
+        "half-shaded hexagon",
+        "empty triangle",
+        "half-shaded pentagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded circle. Answer: fully shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded triangle → fully shaded pentagon → empty hexagon → half-shaded circle → ?",
+      "options": [
+        "fully shaded square",
+        "half-shaded circle",
+        "empty pentagon",
+        "half-shaded hexagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded square. Answer: fully shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded pentagon → fully shaded hexagon → empty circle → half-shaded square → ?",
+      "options": [
+        "fully shaded triangle",
+        "half-shaded square",
+        "empty hexagon",
+        "half-shaded circle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded triangle. Answer: fully shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded hexagon → empty circle → half-shaded square → fully shaded triangle → ?",
+      "options": [
+        "empty pentagon",
+        "fully shaded triangle",
+        "half-shaded circle",
+        "fully shaded square"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty pentagon. Answer: empty pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded circle → empty square → half-shaded triangle → fully shaded pentagon → ?",
+      "options": [
+        "empty hexagon",
+        "fully shaded pentagon",
+        "half-shaded square",
+        "fully shaded triangle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty hexagon. Answer: empty hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded square → empty triangle → half-shaded pentagon → fully shaded hexagon → ?",
+      "options": [
+        "empty circle",
+        "fully shaded hexagon",
+        "half-shaded triangle",
+        "fully shaded pentagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty circle. Answer: empty circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty triangle → half-shaded pentagon → fully shaded hexagon → empty circle → ?",
+      "options": [
+        "half-shaded square",
+        "empty circle",
+        "fully shaded pentagon",
+        "empty hexagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded square. Answer: half-shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty pentagon → half-shaded hexagon → fully shaded circle → empty square → ?",
+      "options": [
+        "half-shaded triangle",
+        "empty square",
+        "fully shaded hexagon",
+        "empty circle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded triangle. Answer: half-shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty hexagon → half-shaded circle → fully shaded square → empty triangle → ?",
+      "options": [
+        "half-shaded pentagon",
+        "empty triangle",
+        "fully shaded circle",
+        "empty square"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded pentagon. Answer: half-shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded circle → fully shaded square → empty triangle → half-shaded pentagon → ?",
+      "options": [
+        "fully shaded hexagon",
+        "half-shaded pentagon",
+        "empty square",
+        "half-shaded triangle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded hexagon. Answer: fully shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded square → fully shaded triangle → empty pentagon → half-shaded hexagon → ?",
+      "options": [
+        "fully shaded circle",
+        "half-shaded hexagon",
+        "empty triangle",
+        "half-shaded pentagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded circle. Answer: fully shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded triangle → fully shaded pentagon → empty hexagon → half-shaded circle → ?",
+      "options": [
+        "fully shaded square",
+        "half-shaded circle",
+        "empty pentagon",
+        "half-shaded hexagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded square. Answer: fully shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded pentagon → empty hexagon → half-shaded circle → fully shaded square → ?",
+      "options": [
+        "empty triangle",
+        "fully shaded square",
+        "half-shaded hexagon",
+        "fully shaded circle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty triangle. Answer: empty triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded hexagon → empty circle → half-shaded square → fully shaded triangle → ?",
+      "options": [
+        "empty pentagon",
+        "fully shaded triangle",
+        "half-shaded circle",
+        "fully shaded square"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty pentagon. Answer: empty pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded circle → empty square → half-shaded triangle → fully shaded pentagon → ?",
+      "options": [
+        "empty hexagon",
+        "fully shaded pentagon",
+        "half-shaded square",
+        "fully shaded triangle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty hexagon. Answer: empty hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty square → half-shaded triangle → fully shaded pentagon → empty hexagon → ?",
+      "options": [
+        "half-shaded circle",
+        "empty hexagon",
+        "fully shaded triangle",
+        "empty pentagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded circle. Answer: half-shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty triangle → half-shaded pentagon → fully shaded hexagon → empty circle → ?",
+      "options": [
+        "half-shaded square",
+        "empty circle",
+        "fully shaded pentagon",
+        "empty hexagon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded square. Answer: half-shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty pentagon → half-shaded hexagon → fully shaded circle → empty square → ?",
+      "options": [
+        "half-shaded triangle",
+        "empty square",
+        "fully shaded hexagon",
+        "empty circle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded triangle. Answer: half-shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded hexagon → fully shaded circle → empty square → half-shaded triangle → ?",
+      "options": [
+        "fully shaded pentagon",
+        "half-shaded triangle",
+        "empty circle",
+        "half-shaded square"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded pentagon. Answer: fully shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded circle → fully shaded square → empty triangle → half-shaded pentagon → ?",
+      "options": [
+        "fully shaded hexagon",
+        "half-shaded pentagon",
+        "empty square",
+        "half-shaded triangle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded hexagon. Answer: fully shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded square → fully shaded triangle → empty pentagon → half-shaded hexagon → ?",
+      "options": [
+        "half-shaded hexagon",
+        "fully shaded circle",
+        "empty triangle",
+        "half-shaded pentagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded circle. Answer: fully shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded triangle → empty pentagon → half-shaded hexagon → fully shaded circle → ?",
+      "options": [
+        "fully shaded circle",
+        "empty square",
+        "half-shaded pentagon",
+        "fully shaded hexagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty square. Answer: empty square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded pentagon → empty hexagon → half-shaded circle → fully shaded square → ?",
+      "options": [
+        "fully shaded square",
+        "empty triangle",
+        "half-shaded hexagon",
+        "fully shaded circle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty triangle. Answer: empty triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded hexagon → empty circle → half-shaded square → fully shaded triangle → ?",
+      "options": [
+        "fully shaded triangle",
+        "empty pentagon",
+        "half-shaded circle",
+        "fully shaded square"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty pentagon. Answer: empty pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty circle → half-shaded square → fully shaded triangle → empty pentagon → ?",
+      "options": [
+        "empty pentagon",
+        "half-shaded hexagon",
+        "fully shaded square",
+        "empty triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded hexagon. Answer: half-shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty square → half-shaded triangle → fully shaded pentagon → empty hexagon → ?",
+      "options": [
+        "empty hexagon",
+        "half-shaded circle",
+        "fully shaded triangle",
+        "empty pentagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded circle. Answer: half-shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty triangle → half-shaded pentagon → fully shaded hexagon → empty circle → ?",
+      "options": [
+        "empty circle",
+        "half-shaded square",
+        "fully shaded pentagon",
+        "empty hexagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded square. Answer: half-shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded pentagon → fully shaded hexagon → empty circle → half-shaded square → ?",
+      "options": [
+        "half-shaded square",
+        "fully shaded triangle",
+        "empty hexagon",
+        "half-shaded circle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded triangle. Answer: fully shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded hexagon → fully shaded circle → empty square → half-shaded triangle → ?",
+      "options": [
+        "half-shaded triangle",
+        "fully shaded pentagon",
+        "empty circle",
+        "half-shaded square"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded pentagon. Answer: fully shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded circle → fully shaded square → empty triangle → half-shaded pentagon → ?",
+      "options": [
+        "half-shaded pentagon",
+        "fully shaded hexagon",
+        "empty square",
+        "half-shaded triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded hexagon. Answer: fully shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded square → empty triangle → half-shaded pentagon → fully shaded hexagon → ?",
+      "options": [
+        "fully shaded hexagon",
+        "empty circle",
+        "half-shaded triangle",
+        "fully shaded pentagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty circle. Answer: empty circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded triangle → empty pentagon → half-shaded hexagon → fully shaded circle → ?",
+      "options": [
+        "fully shaded circle",
+        "empty square",
+        "half-shaded pentagon",
+        "fully shaded hexagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty square. Answer: empty square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded pentagon → empty hexagon → half-shaded circle → fully shaded square → ?",
+      "options": [
+        "fully shaded square",
+        "empty triangle",
+        "half-shaded hexagon",
+        "fully shaded circle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty triangle. Answer: empty triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty hexagon → half-shaded circle → fully shaded square → empty triangle → ?",
+      "options": [
+        "empty triangle",
+        "half-shaded pentagon",
+        "fully shaded circle",
+        "empty square"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded pentagon. Answer: half-shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty circle → half-shaded square → fully shaded triangle → empty pentagon → ?",
+      "options": [
+        "empty pentagon",
+        "half-shaded hexagon",
+        "fully shaded square",
+        "empty triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded hexagon. Answer: half-shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty square → half-shaded triangle → fully shaded pentagon → empty hexagon → ?",
+      "options": [
+        "empty hexagon",
+        "half-shaded circle",
+        "fully shaded triangle",
+        "empty pentagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded circle. Answer: half-shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded triangle → fully shaded pentagon → empty hexagon → half-shaded circle → ?",
+      "options": [
+        "half-shaded circle",
+        "fully shaded square",
+        "empty pentagon",
+        "half-shaded hexagon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded square. Answer: fully shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded pentagon → fully shaded hexagon → empty circle → half-shaded square → ?",
+      "options": [
+        "half-shaded square",
+        "fully shaded triangle",
+        "empty hexagon",
+        "half-shaded circle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded triangle. Answer: fully shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded hexagon → fully shaded circle → empty square → half-shaded triangle → ?",
+      "options": [
+        "half-shaded triangle",
+        "fully shaded pentagon",
+        "empty circle",
+        "half-shaded square"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded pentagon. Answer: fully shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded circle → empty square → half-shaded triangle → fully shaded pentagon → ?",
+      "options": [
+        "fully shaded pentagon",
+        "empty hexagon",
+        "half-shaded square",
+        "fully shaded triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty hexagon. Answer: empty hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded square → empty triangle → half-shaded pentagon → fully shaded hexagon → ?",
+      "options": [
+        "fully shaded hexagon",
+        "half-shaded triangle",
+        "empty circle",
+        "fully shaded pentagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty circle. Answer: empty circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded triangle → empty pentagon → half-shaded hexagon → fully shaded circle → ?",
+      "options": [
+        "fully shaded circle",
+        "half-shaded pentagon",
+        "empty square",
+        "fully shaded hexagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty square. Answer: empty square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty pentagon → half-shaded hexagon → fully shaded circle → empty square → ?",
+      "options": [
+        "empty square",
+        "fully shaded hexagon",
+        "half-shaded triangle",
+        "empty circle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded triangle. Answer: half-shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty hexagon → half-shaded circle → fully shaded square → empty triangle → ?",
+      "options": [
+        "empty triangle",
+        "fully shaded circle",
+        "half-shaded pentagon",
+        "empty square"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded pentagon. Answer: half-shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty circle → half-shaded square → fully shaded triangle → empty pentagon → ?",
+      "options": [
+        "empty pentagon",
+        "fully shaded square",
+        "half-shaded hexagon",
+        "empty triangle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded hexagon. Answer: half-shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded square → fully shaded triangle → empty pentagon → half-shaded hexagon → ?",
+      "options": [
+        "half-shaded hexagon",
+        "empty triangle",
+        "fully shaded circle",
+        "half-shaded pentagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded circle. Answer: fully shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded triangle → fully shaded pentagon → empty hexagon → half-shaded circle → ?",
+      "options": [
+        "half-shaded circle",
+        "empty pentagon",
+        "fully shaded square",
+        "half-shaded hexagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded square. Answer: fully shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded pentagon → fully shaded hexagon → empty circle → half-shaded square → ?",
+      "options": [
+        "half-shaded square",
+        "empty hexagon",
+        "fully shaded triangle",
+        "half-shaded circle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded triangle. Answer: fully shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded hexagon → empty circle → half-shaded square → fully shaded triangle → ?",
+      "options": [
+        "fully shaded triangle",
+        "half-shaded circle",
+        "empty pentagon",
+        "fully shaded square"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty pentagon. Answer: empty pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded circle → empty square → half-shaded triangle → fully shaded pentagon → ?",
+      "options": [
+        "fully shaded pentagon",
+        "half-shaded square",
+        "empty hexagon",
+        "fully shaded triangle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty hexagon. Answer: empty hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded square → empty triangle → half-shaded pentagon → fully shaded hexagon → ?",
+      "options": [
+        "fully shaded hexagon",
+        "half-shaded triangle",
+        "empty circle",
+        "fully shaded pentagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty circle. Answer: empty circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty triangle → half-shaded pentagon → fully shaded hexagon → empty circle → ?",
+      "options": [
+        "empty circle",
+        "fully shaded pentagon",
+        "half-shaded square",
+        "empty hexagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded square. Answer: half-shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty pentagon → half-shaded hexagon → fully shaded circle → empty square → ?",
+      "options": [
+        "empty square",
+        "fully shaded hexagon",
+        "half-shaded triangle",
+        "empty circle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded triangle. Answer: half-shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty hexagon → half-shaded circle → fully shaded square → empty triangle → ?",
+      "options": [
+        "empty triangle",
+        "fully shaded circle",
+        "half-shaded pentagon",
+        "empty square"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded pentagon. Answer: half-shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded circle → fully shaded square → empty triangle → half-shaded pentagon → ?",
+      "options": [
+        "half-shaded pentagon",
+        "empty square",
+        "fully shaded hexagon",
+        "half-shaded triangle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded hexagon. Answer: fully shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Figure pattern"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded square → fully shaded triangle → empty pentagon → half-shaded hexagon → ?",
+      "options": [
+        "half-shaded hexagon",
+        "empty triangle",
+        "fully shaded circle",
+        "half-shaded pentagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded circle. Answer: fully shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded triangle → fully shaded pentagon → empty hexagon → half-shaded circle → ?",
+      "options": [
+        "half-shaded circle",
+        "empty pentagon",
+        "fully shaded square",
+        "half-shaded hexagon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded square. Answer: fully shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded pentagon → empty hexagon → half-shaded circle → fully shaded square → ?",
+      "options": [
+        "fully shaded square",
+        "half-shaded hexagon",
+        "empty triangle",
+        "fully shaded circle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty triangle. Answer: empty triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded hexagon → empty circle → half-shaded square → fully shaded triangle → ?",
+      "options": [
+        "fully shaded triangle",
+        "half-shaded circle",
+        "empty pentagon",
+        "fully shaded square"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty pentagon. Answer: empty pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded circle → empty square → half-shaded triangle → fully shaded pentagon → ?",
+      "options": [
+        "fully shaded pentagon",
+        "half-shaded square",
+        "empty hexagon",
+        "fully shaded triangle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty hexagon. Answer: empty hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty square → half-shaded triangle → fully shaded pentagon → empty hexagon → ?",
+      "options": [
+        "empty hexagon",
+        "fully shaded triangle",
+        "empty pentagon",
+        "half-shaded circle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded circle. Answer: half-shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty triangle → half-shaded pentagon → fully shaded hexagon → empty circle → ?",
+      "options": [
+        "empty circle",
+        "fully shaded pentagon",
+        "empty hexagon",
+        "half-shaded square"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded square. Answer: half-shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty pentagon → half-shaded hexagon → fully shaded circle → empty square → ?",
+      "options": [
+        "empty square",
+        "fully shaded hexagon",
+        "empty circle",
+        "half-shaded triangle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded triangle. Answer: half-shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded hexagon → fully shaded circle → empty square → half-shaded triangle → ?",
+      "options": [
+        "half-shaded triangle",
+        "empty circle",
+        "half-shaded square",
+        "fully shaded pentagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded pentagon. Answer: fully shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded circle → fully shaded square → empty triangle → half-shaded pentagon → ?",
+      "options": [
+        "half-shaded pentagon",
+        "empty square",
+        "half-shaded triangle",
+        "fully shaded hexagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded hexagon. Answer: fully shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded square → fully shaded triangle → empty pentagon → half-shaded hexagon → ?",
+      "options": [
+        "half-shaded hexagon",
+        "empty triangle",
+        "half-shaded pentagon",
+        "fully shaded circle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded circle. Answer: fully shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded triangle → empty pentagon → half-shaded hexagon → fully shaded circle → ?",
+      "options": [
+        "fully shaded circle",
+        "half-shaded pentagon",
+        "fully shaded hexagon",
+        "empty square"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty square. Answer: empty square.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded pentagon → empty hexagon → half-shaded circle → fully shaded square → ?",
+      "options": [
+        "fully shaded square",
+        "half-shaded hexagon",
+        "fully shaded circle",
+        "empty triangle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty triangle. Answer: empty triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded hexagon → empty circle → half-shaded square → fully shaded triangle → ?",
+      "options": [
+        "fully shaded triangle",
+        "half-shaded circle",
+        "fully shaded square",
+        "empty pentagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty pentagon. Answer: empty pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty circle → half-shaded square → fully shaded triangle → empty pentagon → ?",
+      "options": [
+        "empty pentagon",
+        "fully shaded square",
+        "empty triangle",
+        "half-shaded hexagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded hexagon. Answer: half-shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty square → half-shaded triangle → fully shaded pentagon → empty hexagon → ?",
+      "options": [
+        "empty hexagon",
+        "fully shaded triangle",
+        "empty pentagon",
+        "half-shaded circle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded circle. Answer: half-shaded circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty triangle → half-shaded pentagon → fully shaded hexagon → empty circle → ?",
+      "options": [
+        "empty circle",
+        "fully shaded pentagon",
+        "empty hexagon",
+        "half-shaded square"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded square. Answer: half-shaded square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded pentagon → fully shaded hexagon → empty circle → half-shaded square → ?",
+      "options": [
+        "half-shaded square",
+        "empty hexagon",
+        "half-shaded circle",
+        "fully shaded triangle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded triangle. Answer: fully shaded triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded hexagon → fully shaded circle → empty square → half-shaded triangle → ?",
+      "options": [
+        "half-shaded triangle",
+        "empty circle",
+        "half-shaded square",
+        "fully shaded pentagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded pentagon. Answer: fully shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: half-shaded circle → fully shaded square → empty triangle → half-shaded pentagon → ?",
+      "options": [
+        "half-shaded pentagon",
+        "empty square",
+        "half-shaded triangle",
+        "fully shaded hexagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is fully shaded hexagon. Answer: fully shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded square → empty triangle → half-shaded pentagon → fully shaded hexagon → ?",
+      "options": [
+        "fully shaded hexagon",
+        "half-shaded triangle",
+        "fully shaded pentagon",
+        "empty circle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty circle. Answer: empty circle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded triangle → empty pentagon → half-shaded hexagon → fully shaded circle → ?",
+      "options": [
+        "fully shaded circle",
+        "half-shaded pentagon",
+        "fully shaded hexagon",
+        "empty square"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty square. Answer: empty square.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: fully shaded pentagon → empty hexagon → half-shaded circle → fully shaded square → ?",
+      "options": [
+        "fully shaded square",
+        "half-shaded hexagon",
+        "fully shaded circle",
+        "empty triangle"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is empty triangle. Answer: empty triangle.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty hexagon → half-shaded circle → fully shaded square → empty triangle → ?",
+      "options": [
+        "empty triangle",
+        "fully shaded circle",
+        "empty square",
+        "half-shaded pentagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded pentagon. Answer: half-shaded pentagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "In a figure series, each step rotates shape type and cycles shading (empty → half → full). Sequence: empty circle → half-shaded square → fully shaded triangle → empty pentagon → ?",
+      "options": [
+        "empty pentagon",
+        "fully shaded square",
+        "empty triangle",
+        "half-shaded hexagon"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Shape cycles ['circle', 'square', 'triangle', 'pentagon', 'hexagon']. Step 2: Shading cycles ['empty', 'half-shaded', 'fully shaded']. Step 3: Next figure is half-shaded hexagon. Answer: half-shaded hexagon.",
+      "trick": "Track shape + shading separately.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

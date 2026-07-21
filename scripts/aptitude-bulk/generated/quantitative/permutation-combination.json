@@ -1,0 +1,1207 @@
+{
+  "topic": "permutation-combination",
+  "category": "quantitative",
+  "group": "advanced-math",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Combinations: choose 2 from 5?",
+      "options": [
+        "10",
+        "20",
+        "25",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(5,2) = 10.",
+      "trick": "nCr formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Arrangements: 2 from 5 in order?",
+      "options": [
+        "10",
+        "20",
+        "10",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(5,2) = 20.",
+      "trick": "nPr formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "How many ways to arrange 4 distinct books?",
+      "options": [
+        "16",
+        "12",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 4! = 24.",
+      "trick": "n! permutations.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Choose committee of 3 from 6 people?",
+      "options": [
+        "120",
+        "6",
+        "25",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(6,3) = 20.",
+      "trick": "Combination.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Binary strings of length 3?",
+      "options": [
+        "8",
+        "3",
+        "6",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2^3 = 8.",
+      "trick": "2^n binary strings.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Team of 2 boys (from 4) and 2 girls (from 3)?",
+      "options": [
+        "35",
+        "18",
+        "12",
+        "21"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(4,2)×C(3,2) = 18.",
+      "trick": "Multiply independent choices.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Ways to select 1 item from 5?",
+      "options": [
+        "4",
+        "120",
+        "5",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 5.",
+      "trick": "nC1 = n.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Value of C(8, 0)?",
+      "options": [
+        "0",
+        "8",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Combinations: choose 2 from 6?",
+      "options": [
+        "15",
+        "30",
+        "36",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(6,2) = 15.",
+      "trick": "nCr formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Arrangements: 2 from 6 in order?",
+      "options": [
+        "15",
+        "30",
+        "12",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(6,2) = 30.",
+      "trick": "nPr formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "How many ways to arrange 5 distinct books?",
+      "options": [
+        "25",
+        "20",
+        "120",
+        "60"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5! = 120.",
+      "trick": "n! permutations.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Choose committee of 3 from 7 people?",
+      "options": [
+        "210",
+        "7",
+        "40",
+        "35"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(7,3) = 35.",
+      "trick": "Combination.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Binary strings of length 4?",
+      "options": [
+        "16",
+        "4",
+        "24",
+        "32"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2^4 = 16.",
+      "trick": "2^n binary strings.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Team of 2 boys (from 5) and 2 girls (from 3)?",
+      "options": [
+        "70",
+        "30",
+        "12",
+        "33"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(5,2)×C(3,2) = 30.",
+      "trick": "Multiply independent choices.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Ways to select 1 item from 6?",
+      "options": [
+        "5",
+        "720",
+        "6",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 6.",
+      "trick": "nC1 = n.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Value of C(9, 0)?",
+      "options": [
+        "0",
+        "9",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Combinations: choose 2 from 7?",
+      "options": [
+        "21",
+        "42",
+        "49",
+        "23"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(7,2) = 21.",
+      "trick": "nCr formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Arrangements: 2 from 7 in order?",
+      "options": [
+        "21",
+        "42",
+        "14",
+        "21"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(7,2) = 42.",
+      "trick": "nPr formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "How many ways to arrange 6 distinct books?",
+      "options": [
+        "36",
+        "30",
+        "720",
+        "360"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6! = 720.",
+      "trick": "n! permutations.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Choose committee of 3 from 8 people?",
+      "options": [
+        "336",
+        "8",
+        "61",
+        "56"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(8,3) = 56.",
+      "trick": "Combination.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Binary strings of length 5?",
+      "options": [
+        "32",
+        "5",
+        "120",
+        "64"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2^5 = 32.",
+      "trick": "2^n binary strings.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Team of 2 boys (from 6) and 2 girls (from 3)?",
+      "options": [
+        "126",
+        "45",
+        "12",
+        "48"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(6,2)×C(3,2) = 45.",
+      "trick": "Multiply independent choices.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Ways to select 1 item from 7?",
+      "options": [
+        "6",
+        "5040",
+        "7",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 7.",
+      "trick": "nC1 = n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Value of C(10, 0)?",
+      "options": [
+        "0",
+        "10",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Combinations: choose 2 from 8?",
+      "options": [
+        "28",
+        "56",
+        "64",
+        "30"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(8,2) = 28.",
+      "trick": "nCr formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Arrangements: 2 from 8 in order?",
+      "options": [
+        "28",
+        "56",
+        "16",
+        "28"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(8,2) = 56.",
+      "trick": "nPr formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1064,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 136 people?",
+      "options": [
+        "2460240",
+        "136",
+        "410045",
+        "410040"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(136,3) = 410040.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Choose committee of 3 from 9 people?",
+      "options": [
+        "504",
+        "9",
+        "89",
+        "84"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(9,3) = 84.",
+      "trick": "Combination.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1066,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 134) and 2 girls (from 3)?",
+      "options": [
+        "14043870",
+        "26733",
+        "12",
+        "26736"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(134,2)×C(3,2) = 26733.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Team of 2 boys (from 7) and 2 girls (from 3)?",
+      "options": [
+        "210",
+        "63",
+        "12",
+        "66"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(7,2)×C(3,2) = 63.",
+      "trick": "Multiply independent choices.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Ways to select 1 item from 8?",
+      "options": [
+        "7",
+        "40320",
+        "8",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 8.",
+      "trick": "nC1 = n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Value of C(11, 0)?",
+      "options": [
+        "0",
+        "11",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Combinations: choose 2 from 9?",
+      "options": [
+        "36",
+        "72",
+        "81",
+        "38"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(9,2) = 36.",
+      "trick": "nCr formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Arrangements: 2 from 9 in order?",
+      "options": [
+        "36",
+        "72",
+        "18",
+        "36"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(9,2) = 72.",
+      "trick": "nPr formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1072,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 137 people?",
+      "options": [
+        "2515320",
+        "137",
+        "419225",
+        "419220"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(137,3) = 419220.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 10 people?",
+      "options": [
+        "720",
+        "10",
+        "125",
+        "120"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(10,3) = 120.",
+      "trick": "Combination.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1074,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 135) and 2 girls (from 3)?",
+      "options": [
+        "14463090",
+        "27135",
+        "12",
+        "27138"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(135,2)×C(3,2) = 27135.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 8) and 2 girls (from 3)?",
+      "options": [
+        "330",
+        "84",
+        "12",
+        "87"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(8,2)×C(3,2) = 84.",
+      "trick": "Multiply independent choices.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Ways to select 1 item from 9?",
+      "options": [
+        "8",
+        "362880",
+        "9",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 9.",
+      "trick": "nC1 = n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Value of C(12, 0)?",
+      "options": [
+        "0",
+        "12",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Combinations: choose 2 from 10?",
+      "options": [
+        "45",
+        "90",
+        "100",
+        "47"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(10,2) = 45.",
+      "trick": "nCr formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Arrangements: 2 from 10 in order?",
+      "options": [
+        "45",
+        "90",
+        "20",
+        "45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(10,2) = 90.",
+      "trick": "nPr formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1080,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 138 people?",
+      "options": [
+        "2571216",
+        "138",
+        "428541",
+        "428536"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(138,3) = 428536.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 11 people?",
+      "options": [
+        "990",
+        "11",
+        "170",
+        "165"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(11,3) = 165.",
+      "trick": "Combination.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1082,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 136) and 2 girls (from 3)?",
+      "options": [
+        "14891626",
+        "27540",
+        "12",
+        "27543"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(136,2)×C(3,2) = 27540.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 9) and 2 girls (from 3)?",
+      "options": [
+        "495",
+        "108",
+        "12",
+        "111"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(9,2)×C(3,2) = 108.",
+      "trick": "Multiply independent choices.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Ways to select 1 item from 10?",
+      "options": [
+        "9",
+        "3628800",
+        "10",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 10.",
+      "trick": "nC1 = n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Value of C(13, 0)?",
+      "options": [
+        "0",
+        "13",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Combinations: choose 2 from 11?",
+      "options": [
+        "55",
+        "110",
+        "121",
+        "57"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(11,2) = 55.",
+      "trick": "nCr formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Arrangements: 2 from 11 in order?",
+      "options": [
+        "55",
+        "110",
+        "22",
+        "55"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(11,2) = 110.",
+      "trick": "nPr formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1088,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 139 people?",
+      "options": [
+        "2627934",
+        "139",
+        "437994",
+        "437989"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(139,3) = 437989.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 12 people?",
+      "options": [
+        "1320",
+        "12",
+        "225",
+        "220"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(12,3) = 220.",
+      "trick": "Combination.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1090,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 137) and 2 girls (from 3)?",
+      "options": [
+        "15329615",
+        "27948",
+        "12",
+        "27951"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(137,2)×C(3,2) = 27948.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 10) and 2 girls (from 3)?",
+      "options": [
+        "715",
+        "135",
+        "12",
+        "138"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(10,2)×C(3,2) = 135.",
+      "trick": "Multiply independent choices.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Ways to select 1 item from 11?",
+      "options": [
+        "10",
+        "39916800",
+        "11",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 11.",
+      "trick": "nC1 = n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Value of C(14, 0)?",
+      "options": [
+        "0",
+        "14",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Combinations: choose 2 from 12?",
+      "options": [
+        "66",
+        "132",
+        "144",
+        "68"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(12,2) = 66.",
+      "trick": "nCr formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Arrangements: 2 from 12 in order?",
+      "options": [
+        "66",
+        "132",
+        "24",
+        "66"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(12,2) = 132.",
+      "trick": "nPr formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1096,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 140 people?",
+      "options": [
+        "2685480",
+        "140",
+        "447585",
+        "447580"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(140,3) = 447580.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 13 people?",
+      "options": [
+        "1716",
+        "13",
+        "291",
+        "286"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(13,3) = 286.",
+      "trick": "Combination.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1098,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 138) and 2 girls (from 3)?",
+      "options": [
+        "15777195",
+        "28359",
+        "12",
+        "28362"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(138,2)×C(3,2) = 28359.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 11) and 2 girls (from 3)?",
+      "options": [
+        "1001",
+        "165",
+        "12",
+        "168"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(11,2)×C(3,2) = 165.",
+      "trick": "Multiply independent choices.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Ways to select 1 item from 12?",
+      "options": [
+        "11",
+        "479001600",
+        "12",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 12.",
+      "trick": "nC1 = n.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Value of C(15, 0)?",
+      "options": [
+        "0",
+        "15",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Combinations: choose 2 from 13?",
+      "options": [
+        "78",
+        "156",
+        "169",
+        "80"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(13,2) = 78.",
+      "trick": "nCr formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Arrangements: 2 from 13 in order?",
+      "options": [
+        "78",
+        "156",
+        "26",
+        "78"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(13,2) = 156.",
+      "trick": "nPr formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1104,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 141 people?",
+      "options": [
+        "2743860",
+        "141",
+        "457315",
+        "457310"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(141,3) = 457310.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 14 people?",
+      "options": [
+        "2184",
+        "14",
+        "369",
+        "364"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(14,3) = 364.",
+      "trick": "Combination.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1106,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 139) and 2 girls (from 3)?",
+      "options": [
+        "16234505",
+        "28773",
+        "12",
+        "28776"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(139,2)×C(3,2) = 28773.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 12) and 2 girls (from 3)?",
+      "options": [
+        "1365",
+        "198",
+        "12",
+        "201"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(12,2)×C(3,2) = 198.",
+      "trick": "Multiply independent choices.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Ways to select 1 item from 13?",
+      "options": [
+        "12",
+        "6227020800",
+        "13",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 13.",
+      "trick": "nC1 = n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Value of C(16, 0)?",
+      "options": [
+        "0",
+        "16",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Combinations: choose 2 from 14?",
+      "options": [
+        "91",
+        "182",
+        "196",
+        "93"
+      ],
+      "answer": "A",
+      "solution": "Step 1: C(14,2) = 91.",
+      "trick": "nCr formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Arrangements: 2 from 14 in order?",
+      "options": [
+        "91",
+        "182",
+        "28",
+        "91"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P(14,2) = 182.",
+      "trick": "nPr formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1112,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 142 people?",
+      "options": [
+        "2803080",
+        "142",
+        "467185",
+        "467180"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(142,3) = 467180.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Choose committee of 3 from 15 people?",
+      "options": [
+        "2730",
+        "15",
+        "460",
+        "455"
+      ],
+      "answer": "D",
+      "solution": "Step 1: C(15,3) = 455.",
+      "trick": "Combination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1114,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 140) and 2 girls (from 3)?",
+      "options": [
+        "16701685",
+        "29190",
+        "12",
+        "29193"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(140,2)×C(3,2) = 29190.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Team of 2 boys (from 13) and 2 girls (from 3)?",
+      "options": [
+        "1820",
+        "234",
+        "12",
+        "237"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C(13,2)×C(3,2) = 234.",
+      "trick": "Multiply independent choices.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Ways to select 1 item from 14?",
+      "options": [
+        "13",
+        "87178291200",
+        "14",
+        "1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: C(n,1) = 14.",
+      "trick": "nC1 = n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Value of C(17, 0)?",
+      "options": [
+        "0",
+        "17",
+        "1",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Choosing none = 1 way.",
+      "trick": "nC0 = 1.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "time-speed-distance-q1",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A car travels at 60 km/h for 3 hours. How far does it go?",
+    "options": [
+      "180 km",
+      "120 km",
+      "20 km",
+      "200 km"
+    ],
+    "answer": "A",
+    "solution": "Distance = Speed × Time = 60 × 3 = 180 km.",
+    "trick": "D = S × T = 60 × 3 = 180.",
+    "type": "Find distance from speed and time",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q2",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A train covers 150 km in 3 hours. What is its speed?",
+    "options": [
+      "40 km/h",
+      "50 km/h",
+      "45 km/h",
+      "60 km/h"
+    ],
+    "answer": "B",
+    "solution": "Speed = Distance ÷ Time = 150 ÷ 3 = 50 km/h.",
+    "trick": "S = D/T = 150/3 = 50.",
+    "type": "Find speed from distance and time",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q3",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "How long does it take to cover 240 km at a speed of 60 km/h?",
+    "options": [
+      "3 h",
+      "5 h",
+      "4 h",
+      "6 h"
+    ],
+    "answer": "C",
+    "solution": "Time = Distance ÷ Speed = 240 ÷ 60 = 4 hours.",
+    "trick": "T = D/S = 240/60 = 4.",
+    "type": "Find time from distance and speed",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q4",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Convert 36 km/h into metres per second.",
+    "options": [
+      "5 m/s",
+      "36 m/s",
+      "12 m/s",
+      "10 m/s"
+    ],
+    "answer": "D",
+    "solution": "To go from km/h to m/s multiply by 5/18: 36 × 5/18 = 10 m/s.",
+    "trick": "×5/18 → 36 × 5/18 = 10.",
+    "type": "Convert km/h to m/s",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q5",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Convert 20 m/s into km/h.",
+    "options": [
+      "72 km/h",
+      "36 km/h",
+      "20 km/h",
+      "100 km/h"
+    ],
+    "answer": "A",
+    "solution": "To go from m/s to km/h multiply by 18/5: 20 × 18/5 = 72 km/h.",
+    "trick": "×18/5 → 20 × 18/5 = 72.",
+    "type": "Convert m/s to km/h",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q6",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A cyclist rides at 60 km/h for 30 minutes. How far does he go?",
+    "options": [
+      "60 km",
+      "30 km",
+      "15 km",
+      "45 km"
+    ],
+    "answer": "B",
+    "solution": "30 minutes = 0.5 hour. Distance = 60 × 0.5 = 30 km. (Time must be in hours when speed is in km/h.)",
+    "trick": "30 min = 0.5 h → 60 × 0.5 = 30.",
+    "type": "Find distance from speed and time",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q7",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "How long does it take to cover 20 km at 40 km/h? (answer in minutes)",
+    "options": [
+      "45 min",
+      "20 min",
+      "30 min",
+      "40 min"
+    ],
+    "answer": "C",
+    "solution": "Time = 20 ÷ 40 = 0.5 hour = 30 minutes.",
+    "trick": "T = 20/40 = 0.5 h = 30 min.",
+    "type": "Find time from distance and speed",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q8",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A man drives to a town at 40 km/h and returns on the same road at 60 km/h. What is his average speed for the whole trip?",
+    "options": [
+      "50 km/h",
+      "52 km/h",
+      "45 km/h",
+      "48 km/h"
+    ],
+    "answer": "D",
+    "solution": "For equal distances, average speed = 2ab/(a+b) = (2 × 40 × 60)/(40 + 60) = 4800/100 = 48 km/h — not the plain average of 50.",
+    "trick": "2ab/(a+b) = 4800/100 = 48.",
+    "type": "Average speed for a there-and-back trip",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q9",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A person goes to a place at 30 km/h and comes back along the same route at 60 km/h. Find the average speed.",
+    "options": [
+      "40 km/h",
+      "45 km/h",
+      "50 km/h",
+      "36 km/h"
+    ],
+    "answer": "A",
+    "solution": "Equal distances → average = 2ab/(a+b) = (2 × 30 × 60)/(30 + 60) = 3600/90 = 40 km/h.",
+    "trick": "2×30×60/90 = 40.",
+    "type": "Average speed for a there-and-back trip",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q10",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A student must reach a place 45 km away in 45 minutes. What speed must he maintain?",
+    "options": [
+      "45 km/h",
+      "60 km/h",
+      "50 km/h",
+      "90 km/h"
+    ],
+    "answer": "B",
+    "solution": "45 minutes = 0.75 hour. Required speed = 45 ÷ 0.75 = 60 km/h.",
+    "trick": "45 ÷ 0.75 = 60.",
+    "type": "Find required speed",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q11",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A car covers a distance in 6 hours at 50 km/h. If it travels the same distance at 60 km/h, how long will it take?",
+    "options": [
+      "4 h",
+      "4.5 h",
+      "5 h",
+      "5.5 h"
+    ],
+    "answer": "C",
+    "solution": "Distance = 50 × 6 = 300 km. New time = 300 ÷ 60 = 5 hours.",
+    "trick": "D = 50×6 = 300; 300/60 = 5 h.",
+    "type": "Same distance, new speed → new time",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q12",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A train runs at 54 km/h. How many metres does it cover in 10 seconds?",
+    "options": [
+      "270 m",
+      "540 m",
+      "90 m",
+      "150 m"
+    ],
+    "answer": "D",
+    "solution": "54 km/h = 54 × 5/18 = 15 m/s. In 10 seconds it covers 15 × 10 = 150 m.",
+    "trick": "54 × 5/18 = 15 m/s; × 10 = 150 m.",
+    "type": "Convert units then find distance",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q13",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "A man travels 100 km at 50 km/h and the next 120 km at 40 km/h. Find the average speed for the whole journey.",
+    "options": [
+      "44 km/h",
+      "45 km/h",
+      "46 km/h",
+      "48 km/h"
+    ],
+    "answer": "A",
+    "solution": "Total distance = 220 km. Total time = 100/50 + 120/40 = 2 + 3 = 5 h. Average speed = 220 ÷ 5 = 44 km/h.",
+    "trick": "220 km in 5 h → 44 km/h.",
+    "type": "Average speed over unequal distances",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q14",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Walking at 5 km/h a man reaches his office 6 minutes late; at 6 km/h he is 2 minutes early. Find the distance to his office.",
+    "options": [
+      "3 km",
+      "4 km",
+      "5 km",
+      "6 km"
+    ],
+    "answer": "B",
+    "solution": "Let the distance be d. Time gap = 6 + 2 = 8 min = 8/60 h. d/5 − d/6 = 8/60 → d(6 − 5)/30 = 8/60 → d/30 = 8/60 → d = 4 km.",
+    "trick": "d/5 − d/6 = 8/60 → d = 4 km.",
+    "type": "Late and early arrival",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q15",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A car covers the first half of a journey at 40 km/h and the second half at 60 km/h. What is the average speed?",
+    "options": [
+      "50 km/h",
+      "45 km/h",
+      "48 km/h",
+      "52 km/h"
+    ],
+    "answer": "C",
+    "solution": "The two halves are equal distances, so average = 2ab/(a+b) = (2 × 40 × 60)/100 = 48 km/h.",
+    "trick": "equal halves → 2×40×60/100 = 48.",
+    "type": "Average speed for equal halves",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q16",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A man covers 90 km. Had he gone 3 km/h faster, he would have taken 1 hour less. Find his original speed.",
+    "options": [
+      "12 km/h",
+      "18 km/h",
+      "20 km/h",
+      "15 km/h"
+    ],
+    "answer": "D",
+    "solution": "Let speed = s. 90/s − 90/(s+3) = 1 → 90 × 3 = s(s+3) → s² + 3s − 270 = 0 → (s − 15)(s + 18) = 0 → s = 15 km/h.",
+    "trick": "90/s − 90/(s+3) = 1 → s = 15.",
+    "type": "Speed change alters time (quadratic)",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q17",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Two runners cover the same distance; their speeds are in the ratio 4 : 5. What is the ratio of the times they take?",
+    "options": [
+      "5 : 4",
+      "4 : 5",
+      "1 : 1",
+      "9 : 1"
+    ],
+    "answer": "A",
+    "solution": "For the same distance, time is inversely proportional to speed. So time ratio = 1/4 : 1/5 = 5 : 4.",
+    "trick": "same distance → time ∝ 1/speed → 5 : 4.",
+    "type": "Speed ratio to time ratio (same distance)",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q18",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A train travels 40 km at 20 km/h and the next 40 km at 30 km/h. Find its average speed for the 80 km.",
+    "options": [
+      "25 km/h",
+      "24 km/h",
+      "26 km/h",
+      "22 km/h"
+    ],
+    "answer": "B",
+    "solution": "Equal distances → average = 2ab/(a+b) = (2 × 20 × 30)/(20 + 30) = 1200/50 = 24 km/h.",
+    "trick": "2×20×30/50 = 24.",
+    "type": "Average speed for equal distances",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q19",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Without stoppages a bus averages 60 km/h; with stoppages it averages 45 km/h. For how many minutes per hour does it stop?",
+    "options": [
+      "10 min",
+      "20 min",
+      "15 min",
+      "12 min"
+    ],
+    "answer": "C",
+    "solution": "Stoppage time per hour = (speed lost ÷ speed without stops) × 60 = (60 − 45)/60 × 60 = 15 minutes.",
+    "trick": "(60 − 45)/60 × 60 = 15 min.",
+    "type": "Stoppage time per hour",
+    "active": true
+  },
+  {
+    "id": "time-speed-distance-q20",
+    "topic": "time-speed-distance",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A journey of 200 km is covered with 60% of the distance at 60 km/h and the rest at 40 km/h. Find the total time taken.",
+    "options": [
+      "3 h",
+      "3.5 h",
+      "5 h",
+      "4 h"
+    ],
+    "answer": "D",
+    "solution": "60% of 200 = 120 km at 60 km/h → 2 h. Remaining 80 km at 40 km/h → 2 h. Total = 2 + 2 = 4 hours.",
+    "trick": "120/60 + 80/40 = 2 + 2 = 4 h.",
+    "type": "Journey split into parts",
+    "active": true
+  }
+]

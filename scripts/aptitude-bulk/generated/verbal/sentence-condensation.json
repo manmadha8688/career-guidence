@@ -1,0 +1,1207 @@
+{
+  "topic": "sentence-condensation",
+  "category": "verbal",
+  "group": "sentence-skills",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.'",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Condense: 'He is so rich that he can buy anything.'",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Condense: 'The reason why he failed is that he did not study.'",
+      "options": [
+        "He failed because he did not study.",
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 24)",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 25)",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 26)",
+      "options": [
+        "He failed because he did not study.",
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 27)",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 28)",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 29)",
+      "options": [
+        "He failed because he did not study.",
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 30)",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 31)",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 32)",
+      "options": [
+        "He failed because he did not study.",
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 33)",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 34)",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 35)",
+      "options": [
+        "He failed because he did not study.",
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 36)",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 37)",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 38)",
+      "options": [
+        "He failed because he did not study.",
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 39)",
+      "options": [
+        "Although he was ill, he attended the lecture.",
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 40)",
+      "options": [
+        "He is rich enough to buy anything.",
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 41)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 42)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 43)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is rich enough to buy anything.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 44)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 45)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 46)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is rich enough to buy anything.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 47)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 48)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 49)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is rich enough to buy anything.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 50)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 51)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 52)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is rich enough to buy anything.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 53)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 54)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 55)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is rich enough to buy anything.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 56)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 57)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 58)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is rich enough to buy anything.",
+        "He is too rich to buy.",
+        "He buys because poor."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 59)",
+      "options": [
+        "He failed although he studied.",
+        "He failed because he did not study.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 60)",
+      "options": [
+        "Because he was ill, he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He was ill, so he attended.",
+        "He attended because illness."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 61)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 62)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 63)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He attended because illness."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 64)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 65)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 66)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He attended because illness."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 67)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 68)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 69)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He attended because illness."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 70)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 71)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 72)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He attended because illness."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 73)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Condensation"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 74)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Condensation"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 75)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He attended because illness."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Condensation"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 76)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 77)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 78)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "Although he was ill, he attended the lecture.",
+        "He attended because illness."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 79)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He is rich enough to buy anything.",
+        "He buys because poor."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 80)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "He failed because he did not study.",
+        "Failure is unrelated to study."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 81)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 82)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 83)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study.",
+        "He failed because he did not study."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 84)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 85)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 86)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study.",
+        "He failed because he did not study."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 87)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 88)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 89)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study.",
+        "He failed because he did not study."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 90)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 91)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 92)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study.",
+        "He failed because he did not study."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 93)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 94)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 95)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study.",
+        "He failed because he did not study."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 96)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 97)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Condense: 'The reason why he failed is that he did not study.' (Set 98)",
+      "options": [
+        "He failed although he studied.",
+        "He did not fail because he studied.",
+        "Failure is unrelated to study.",
+        "He failed because he did not study."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He failed because he did not study.'. Answer: He failed because he did not study..",
+      "trick": "The reason why → because.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Condense: 'In spite of the fact that he was ill, he attended the lecture.' (Set 99)",
+      "options": [
+        "Because he was ill, he attended.",
+        "He was ill, so he attended.",
+        "He attended because illness.",
+        "Although he was ill, he attended the lecture."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'Although he was ill, he attended the lecture.'. Answer: Although he was ill, he attended the lecture..",
+      "trick": "In spite of → although.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Condense: 'He is so rich that he can buy anything.' (Set 100)",
+      "options": [
+        "He is rich but cannot buy.",
+        "He is too rich to buy.",
+        "He buys because poor.",
+        "He is rich enough to buy anything."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Preserve meaning in fewer words. Step 2: 'He is rich enough to buy anything.'. Answer: He is rich enough to buy anything..",
+      "trick": "so...that → enough to.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

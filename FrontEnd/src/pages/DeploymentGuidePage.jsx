@@ -283,6 +283,9 @@ export default function DeploymentGuidePage() {
   const [search, setSearch] = useState('')
   const [activeStation, setActiveStation] = useState('')
   const stationRefs = useRef({})
+  const chipsRef = useRef(null)
+  const chipRefs = useRef({})
+  const jumpLockTimer = useRef(null)
 
   const q = search.trim().toLowerCase()
 
@@ -307,9 +310,46 @@ export default function DeploymentGuidePage() {
     return () => io.disconnect()
   }, [q])
 
+  // Keep the highlighted chip visible in the horizontally-scrolling rail — on
+  // mobile the active station changes as you scroll, but the matching chip can
+  // sit off-screen. Nudge the rail (not the page) so the active chip shows.
+  // Mobile-only: on desktop the whole rail is visible, so no nudging is needed.
+  useEffect(() => {
+    if (!window.matchMedia('(max-width: 720px)').matches) return
+    const el = chipRefs.current[activeStation]
+    const container = chipsRef.current
+    if (!el || !container) return
+    const elLeft = el.offsetLeft
+    const elRight = elLeft + el.offsetWidth
+    const viewLeft = container.scrollLeft
+    const viewRight = viewLeft + container.clientWidth
+    if (elLeft < viewLeft) {
+      container.scrollTo({ left: Math.max(0, elLeft - 16), behavior: 'smooth' })
+    } else if (elRight > viewRight) {
+      container.scrollTo({ left: elRight - container.clientWidth + 16, behavior: 'smooth' })
+    }
+  }, [activeStation])
+
   const jumpTo = (key) => {
-    stationRefs.current[key]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const el = stationRefs.current[key]
+    if (!el) return
+    // Mobile: freeze the navbar's show/hide for the length of the jump so the
+    // animated scroll (and the mid-jump station changes) can't make it flicker.
+    // AutoHideNav ignores scroll while `nav-jump-lock` is set on <html>.
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      const root = document.documentElement
+      root.classList.add('nav-jump-lock')
+      clearTimeout(jumpLockTimer.current)
+      jumpLockTimer.current = setTimeout(() => root.classList.remove('nav-jump-lock'), 800)
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
+
+  // Safety: clear the jump lock + timer if we unmount mid-jump.
+  useEffect(() => () => {
+    clearTimeout(jumpLockTimer.current)
+    document.documentElement.classList.remove('nav-jump-lock')
+  }, [])
 
   // Enter exits the search field, and — only if the user has scrolled past the
   // first result — scrolls up to it so filtered results at the top aren't
@@ -353,11 +393,12 @@ export default function DeploymentGuidePage() {
       <div className="deploy-rail">
         <div className="deploy-rail__inner">
           <span className="deploy-rail__label" aria-hidden="true">Jump to</span>
-          <div className="deploy-rail__chips">
+          <div className="deploy-rail__chips" ref={chipsRef} data-nav-ignore-scroll>
             {STATIONS.map(st => (
               <button
                 key={st.key}
                 type="button"
+                ref={el => { chipRefs.current[st.key] = el }}
                 onClick={() => jumpTo(st.key)}
                 className={`deploy-rail__chip${activeStation === st.key ? ' deploy-rail__chip--active' : ''}`}
                 style={{ '--station-color': st.color }}
@@ -368,6 +409,7 @@ export default function DeploymentGuidePage() {
             ))}
             <button
               type="button"
+              ref={el => { chipRefs.current.platforms = el }}
               onClick={() => jumpTo('platforms')}
               className={`deploy-rail__chip${activeStation === 'platforms' ? ' deploy-rail__chip--active' : ''}`}
               style={{ '--station-color': '#F59E0B' }}

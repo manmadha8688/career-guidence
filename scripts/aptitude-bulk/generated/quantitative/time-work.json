@@ -1,0 +1,1207 @@
+{
+  "topic": "time-work",
+  "category": "quantitative",
+  "group": "work-efficiency",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "A completes work in 12 days. Days for A alone?",
+      "options": [
+        "12",
+        "14",
+        "6",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/12 per day. Time = 12 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "A finishes in 6 days, B in 12 days. Together?",
+      "options": [
+        "18",
+        "4.0",
+        "9",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/6+1/12 = 1/4.0. Together = 4.0 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "A is twice as fast as B. A takes 10 days. Together?",
+      "options": [
+        "10",
+        "20",
+        "6.7",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 20 days. Together = 6.7 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "8 men finish in 15 days. How many days for 10 men?",
+      "options": [
+        "15",
+        "8",
+        "20",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 12 days.",
+      "trick": "Inverse proportion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "A:12d, B:15d, C:20d alone. All together?",
+      "options": [
+        "5.0",
+        "27",
+        "15",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.0 days.",
+      "trick": "Sum of rates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Work takes 20 days. After 5 days, days left?",
+      "options": [
+        "5",
+        "15",
+        "20",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 20 − 5 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "6 men do work in 18 days. 9 men need?",
+      "options": [
+        "18",
+        "9",
+        "12",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 9×D → D = 12.",
+      "trick": "MD = constant.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "A:B efficiency = 3:2. Together finish 30 units in how many days if A does 3/day?",
+      "options": [
+        "10",
+        "15",
+        "10",
+        "6.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: B = 2 units/day. Total 5/day → 6.0 days.",
+      "trick": "Add daily outputs.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "A completes work in 13 days. Days for A alone?",
+      "options": [
+        "13",
+        "15",
+        "6",
+        "26"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/13 per day. Time = 13 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "A finishes in 7 days, B in 13 days. Together?",
+      "options": [
+        "20",
+        "4.5",
+        "10",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/7+1/13 = 1/4.5. Together = 4.5 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "A is twice as fast as B. A takes 11 days. Together?",
+      "options": [
+        "11",
+        "22",
+        "7.3",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 22 days. Together = 7.3 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "9 men finish in 15 days. How many days for 11 men?",
+      "options": [
+        "15",
+        "9",
+        "20",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 12 days.",
+      "trick": "Inverse proportion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "A:12d, B:16d, C:20d alone. All together?",
+      "options": [
+        "5.1",
+        "28",
+        "16",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.1 days.",
+      "trick": "Sum of rates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Work takes 21 days. After 6 days, days left?",
+      "options": [
+        "6",
+        "15",
+        "21",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 21 − 6 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "6 men do work in 18 days. 10 men need?",
+      "options": [
+        "18",
+        "10",
+        "11",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 10×D → D = 11.",
+      "trick": "MD = constant.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "A:B efficiency = 3:3. Together finish 30 units in how many days if A does 3/day?",
+      "options": [
+        "10",
+        "15",
+        "10",
+        "5.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: B = 3 units/day. Total 6/day → 5.0 days.",
+      "trick": "Add daily outputs.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "A completes work in 14 days. Days for A alone?",
+      "options": [
+        "14",
+        "16",
+        "7",
+        "28"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/14 per day. Time = 14 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "A finishes in 8 days, B in 14 days. Together?",
+      "options": [
+        "22",
+        "5.1",
+        "11",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/8+1/14 = 1/5.1. Together = 5.1 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "A is twice as fast as B. A takes 12 days. Together?",
+      "options": [
+        "12",
+        "24",
+        "8.0",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 24 days. Together = 8.0 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "10 men finish in 15 days. How many days for 12 men?",
+      "options": [
+        "15",
+        "10",
+        "20",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 12 days.",
+      "trick": "Inverse proportion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "A:12d, B:17d, C:20d alone. All together?",
+      "options": [
+        "5.2",
+        "29",
+        "16",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.2 days.",
+      "trick": "Sum of rates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Work takes 22 days. After 7 days, days left?",
+      "options": [
+        "7",
+        "15",
+        "22",
+        "29"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 22 − 7 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "6 men do work in 18 days. 11 men need?",
+      "options": [
+        "18",
+        "11",
+        "10",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 11×D → D = 10.",
+      "trick": "MD = constant.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "A:B efficiency = 3:4. Together finish 30 units in how many days if A does 3/day?",
+      "options": [
+        "10",
+        "15",
+        "10",
+        "4.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: B = 4 units/day. Total 7/day → 4.3 days.",
+      "trick": "Add daily outputs.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "A completes work in 15 days. Days for A alone?",
+      "options": [
+        "15",
+        "17",
+        "7",
+        "30"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/15 per day. Time = 15 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "A finishes in 9 days, B in 15 days. Together?",
+      "options": [
+        "24",
+        "5.6",
+        "12",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/9+1/15 = 1/5.6. Together = 5.6 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "A is twice as fast as B. A takes 13 days. Together?",
+      "options": [
+        "13",
+        "26",
+        "8.7",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 26 days. Together = 8.7 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "11 men finish in 15 days. How many days for 13 men?",
+      "options": [
+        "15",
+        "11",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "A:12d, B:18d, C:20d alone. All together?",
+      "options": [
+        "5.3",
+        "30",
+        "16",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.3 days.",
+      "trick": "Sum of rates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Work takes 23 days. After 8 days, days left?",
+      "options": [
+        "8",
+        "15",
+        "23",
+        "31"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 23 − 8 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "6 men do work in 18 days. 12 men need?",
+      "options": [
+        "18",
+        "12",
+        "9",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 12×D → D = 9.",
+      "trick": "MD = constant.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1069,
+      "difficulty": "hard",
+      "question": "A completes work in 143 days. Days for A alone?",
+      "options": [
+        "145",
+        "71",
+        "286",
+        "143"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/143 per day. Time = 143 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "A completes work in 16 days. Days for A alone?",
+      "options": [
+        "16",
+        "18",
+        "8",
+        "32"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/16 per day. Time = 16 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "A finishes in 10 days, B in 16 days. Together?",
+      "options": [
+        "26",
+        "6.2",
+        "13",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/10+1/16 = 1/6.2. Together = 6.2 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "A is twice as fast as B. A takes 14 days. Together?",
+      "options": [
+        "14",
+        "28",
+        "9.3",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 28 days. Together = 9.3 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "12 men finish in 15 days. How many days for 14 men?",
+      "options": [
+        "15",
+        "12",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "A:12d, B:19d, C:20d alone. All together?",
+      "options": [
+        "5.4",
+        "31",
+        "17",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.4 days.",
+      "trick": "Sum of rates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Work takes 24 days. After 9 days, days left?",
+      "options": [
+        "9",
+        "15",
+        "24",
+        "33"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 24 − 9 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "6 men do work in 18 days. 13 men need?",
+      "options": [
+        "18",
+        "13",
+        "8",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 13×D → D = 8.",
+      "trick": "MD = constant.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1077,
+      "difficulty": "hard",
+      "question": "A completes work in 144 days. Days for A alone?",
+      "options": [
+        "146",
+        "72",
+        "288",
+        "144"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/144 per day. Time = 144 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "A completes work in 17 days. Days for A alone?",
+      "options": [
+        "17",
+        "19",
+        "8",
+        "34"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/17 per day. Time = 17 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "A finishes in 11 days, B in 17 days. Together?",
+      "options": [
+        "28",
+        "6.7",
+        "14",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/11+1/17 = 1/6.7. Together = 6.7 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "A is twice as fast as B. A takes 15 days. Together?",
+      "options": [
+        "15",
+        "30",
+        "10.0",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 30 days. Together = 10.0 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "13 men finish in 15 days. How many days for 15 men?",
+      "options": [
+        "15",
+        "13",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "A:12d, B:20d, C:20d alone. All together?",
+      "options": [
+        "5.5",
+        "32",
+        "17",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.5 days.",
+      "trick": "Sum of rates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Work takes 25 days. After 10 days, days left?",
+      "options": [
+        "10",
+        "15",
+        "25",
+        "35"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 25 − 10 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "6 men do work in 18 days. 14 men need?",
+      "options": [
+        "18",
+        "14",
+        "8",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 14×D → D = 8.",
+      "trick": "MD = constant.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1085,
+      "difficulty": "hard",
+      "question": "A completes work in 145 days. Days for A alone?",
+      "options": [
+        "147",
+        "72",
+        "290",
+        "145"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/145 per day. Time = 145 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "A completes work in 18 days. Days for A alone?",
+      "options": [
+        "18",
+        "20",
+        "9",
+        "36"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/18 per day. Time = 18 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "A finishes in 12 days, B in 18 days. Together?",
+      "options": [
+        "30",
+        "7.2",
+        "15",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/12+1/18 = 1/7.2. Together = 7.2 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "A is twice as fast as B. A takes 16 days. Together?",
+      "options": [
+        "16",
+        "32",
+        "10.7",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 32 days. Together = 10.7 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "14 men finish in 15 days. How many days for 16 men?",
+      "options": [
+        "15",
+        "14",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "A:12d, B:21d, C:20d alone. All together?",
+      "options": [
+        "5.5",
+        "33",
+        "17",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.5 days.",
+      "trick": "Sum of rates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Work takes 26 days. After 11 days, days left?",
+      "options": [
+        "11",
+        "15",
+        "26",
+        "37"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 26 − 11 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "6 men do work in 18 days. 15 men need?",
+      "options": [
+        "18",
+        "15",
+        "7",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 15×D → D = 7.",
+      "trick": "MD = constant.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1093,
+      "difficulty": "hard",
+      "question": "A completes work in 146 days. Days for A alone?",
+      "options": [
+        "148",
+        "73",
+        "292",
+        "146"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/146 per day. Time = 146 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "A completes work in 19 days. Days for A alone?",
+      "options": [
+        "19",
+        "21",
+        "9",
+        "38"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/19 per day. Time = 19 days.",
+      "trick": "Time = 1/rate.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "A finishes in 13 days, B in 19 days. Together?",
+      "options": [
+        "32",
+        "7.7",
+        "16",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/13+1/19 = 1/7.7. Together = 7.7 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "A is twice as fast as B. A takes 17 days. Together?",
+      "options": [
+        "17",
+        "34",
+        "11.3",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 34 days. Together = 11.3 days.",
+      "trick": "Efficiency ratio.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "15 men finish in 15 days. How many days for 17 men?",
+      "options": [
+        "15",
+        "15",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "A:12d, B:22d, C:20d alone. All together?",
+      "options": [
+        "5.6",
+        "34",
+        "18",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.6 days.",
+      "trick": "Sum of rates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Work takes 27 days. After 12 days, days left?",
+      "options": [
+        "12",
+        "15",
+        "27",
+        "39"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 27 − 12 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "6 men do work in 18 days. 16 men need?",
+      "options": [
+        "18",
+        "16",
+        "7",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 16×D → D = 7.",
+      "trick": "MD = constant.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1101,
+      "difficulty": "hard",
+      "question": "A completes work in 147 days. Days for A alone?",
+      "options": [
+        "149",
+        "73",
+        "294",
+        "147"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/147 per day. Time = 147 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "A completes work in 20 days. Days for A alone?",
+      "options": [
+        "20",
+        "22",
+        "10",
+        "40"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/20 per day. Time = 20 days.",
+      "trick": "Time = 1/rate.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "A finishes in 14 days, B in 20 days. Together?",
+      "options": [
+        "34",
+        "8.2",
+        "17",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/14+1/20 = 1/8.2. Together = 8.2 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "A is twice as fast as B. A takes 18 days. Together?",
+      "options": [
+        "18",
+        "36",
+        "12.0",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 36 days. Together = 12.0 days.",
+      "trick": "Efficiency ratio.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "16 men finish in 15 days. How many days for 18 men?",
+      "options": [
+        "15",
+        "16",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "A:12d, B:23d, C:20d alone. All together?",
+      "options": [
+        "5.7",
+        "35",
+        "18",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.7 days.",
+      "trick": "Sum of rates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Work takes 28 days. After 13 days, days left?",
+      "options": [
+        "13",
+        "15",
+        "28",
+        "41"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 28 − 13 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "6 men do work in 18 days. 17 men need?",
+      "options": [
+        "18",
+        "17",
+        "6",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 17×D → D = 6.",
+      "trick": "MD = constant.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1109,
+      "difficulty": "hard",
+      "question": "A completes work in 148 days. Days for A alone?",
+      "options": [
+        "150",
+        "74",
+        "296",
+        "148"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/148 per day. Time = 148 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "A completes work in 21 days. Days for A alone?",
+      "options": [
+        "21",
+        "23",
+        "10",
+        "42"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rate = 1/21 per day. Time = 21 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "A finishes in 15 days, B in 21 days. Together?",
+      "options": [
+        "36",
+        "8.8",
+        "18",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/15+1/21 = 1/8.8. Together = 8.8 days.",
+      "trick": "1/T = 1/a + 1/b.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "A is twice as fast as B. A takes 19 days. Together?",
+      "options": [
+        "19",
+        "38",
+        "12.7",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B takes 38 days. Together = 12.7 days.",
+      "trick": "Efficiency ratio.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "17 men finish in 15 days. How many days for 19 men?",
+      "options": [
+        "15",
+        "17",
+        "20",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: M1D1 = M2D2 → 13 days.",
+      "trick": "Inverse proportion.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "A:12d, B:24d, C:20d alone. All together?",
+      "options": [
+        "5.7",
+        "36",
+        "18",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Combined rate → 5.7 days.",
+      "trick": "Sum of rates.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Work takes 29 days. After 14 days, days left?",
+      "options": [
+        "14",
+        "15",
+        "29",
+        "43"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 29 − 14 = 15 days.",
+      "trick": "Remaining work time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "6 men do work in 18 days. 18 men need?",
+      "options": [
+        "18",
+        "18",
+        "6",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6×18 = 18×D → D = 6.",
+      "trick": "MD = constant.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1117,
+      "difficulty": "hard",
+      "question": "A completes work in 149 days. Days for A alone?",
+      "options": [
+        "151",
+        "74",
+        "298",
+        "149"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate = 1/149 per day. Time = 149 days.",
+      "trick": "Time = 1/rate.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

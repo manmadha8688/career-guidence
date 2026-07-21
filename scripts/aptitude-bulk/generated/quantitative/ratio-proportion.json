@@ -1,0 +1,1207 @@
+{
+  "topic": "ratio-proportion",
+  "category": "quantitative",
+  "group": "ratio-mixture",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Divide ₹35 in ratio 3:4.",
+      "options": [
+        "15:20",
+        "3:4",
+        "15",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 7. Step 2: Each part = 35/(7) = 5. Shares: 15, 20.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "If 3:x = 9:27, find x.",
+      "options": [
+        "15",
+        "12",
+        "9",
+        "24"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(27) → cross multiply → x = 12.",
+      "trick": "Cross multiplication.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Two numbers in ratio 2:3 sum to 100. Larger number?",
+      "options": [
+        "40",
+        "50",
+        "60",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 3/(5)×100 = 60.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Mean proportional between 4 and 16?",
+      "options": [
+        "4",
+        "16",
+        "8",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 4×16) = 8.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Class ratio boys:girls = 5:4. 20 students join in same ratio. Boys added?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 5/(9). Step 2: 20×5/(9) = 11.",
+      "trick": "Split by ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "₹400 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "133",
+        "200",
+        "120",
+        "200"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 400 = 200.",
+      "trick": "Part/total parts.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "If (3 + 0):4 = 9:12, is the proportion valid?",
+      "options": [
+        "No",
+        "Cannot say",
+        "Yes",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+0)/4 = 0.750. Answer: Yes.",
+      "trick": "Cross-check equality.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Two cars travel same distance. Speeds 40 km/h and 60 km/h. Time ratio A:B?",
+      "options": [
+        "4:6",
+        "1:1",
+        "10:2",
+        "6:4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 6:4 = 1.50:1 inverted → 4:6 time = 6:4.",
+      "trick": "Time inverse to speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Divide ₹54 in ratio 4:5.",
+      "options": [
+        "24:30",
+        "4:5",
+        "24",
+        "30"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 9. Step 2: Each part = 54/(9) = 6. Shares: 24, 30.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "If 3:x = 9:30, find x.",
+      "options": [
+        "18",
+        "15",
+        "12",
+        "30"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(30) → cross multiply → x = 15.",
+      "trick": "Cross multiplication.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Two numbers in ratio 3:4 sum to 120. Larger number?",
+      "options": [
+        "51",
+        "60",
+        "69",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 4/(7)×120 = 69.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Mean proportional between 5 and 20?",
+      "options": [
+        "5",
+        "20",
+        "9",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 5×20) = 10.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Class ratio boys:girls = 6:5. 20 students join in same ratio. Boys added?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 6/(11). Step 2: 20×6/(11) = 11.",
+      "trick": "Split by ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "₹450 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "150",
+        "225",
+        "135",
+        "225"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 450 = 225.",
+      "trick": "Part/total parts.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "If (3 + 1):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+1)/4 = 1.000. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Two cars travel same distance. Speeds 50 km/h and 70 km/h. Time ratio A:B?",
+      "options": [
+        "5:7",
+        "1:1",
+        "12:2",
+        "7:5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 7:5 = 1.40:1 inverted → 5:7 time = 7:5.",
+      "trick": "Time inverse to speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Divide ₹77 in ratio 5:6.",
+      "options": [
+        "35:42",
+        "5:6",
+        "35",
+        "42"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 11. Step 2: Each part = 77/(11) = 7. Shares: 35, 42.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "If 3:x = 9:33, find x.",
+      "options": [
+        "21",
+        "18",
+        "15",
+        "36"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(33) → cross multiply → x = 18.",
+      "trick": "Cross multiplication.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Two numbers in ratio 4:5 sum to 140. Larger number?",
+      "options": [
+        "62",
+        "70",
+        "78",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 5/(9)×140 = 78.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Mean proportional between 6 and 24?",
+      "options": [
+        "6",
+        "24",
+        "10",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 6×24) = 12.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Class ratio boys:girls = 7:6. 20 students join in same ratio. Boys added?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 7/(13). Step 2: 20×7/(13) = 11.",
+      "trick": "Split by ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "₹500 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "166",
+        "250",
+        "150",
+        "250"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 500 = 250.",
+      "trick": "Part/total parts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "If (3 + 2):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+2)/4 = 1.250. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Two cars travel same distance. Speeds 60 km/h and 80 km/h. Time ratio A:B?",
+      "options": [
+        "6:8",
+        "1:1",
+        "14:2",
+        "8:6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 8:6 = 1.33:1 inverted → 6:8 time = 8:6.",
+      "trick": "Time inverse to speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Divide ₹80 in ratio 3:7.",
+      "options": [
+        "24:56",
+        "3:7",
+        "24",
+        "56"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 10. Step 2: Each part = 80/(10) = 8. Shares: 24, 56.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "If 3:x = 9:36, find x.",
+      "options": [
+        "24",
+        "21",
+        "18",
+        "42"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(36) → cross multiply → x = 21.",
+      "trick": "Cross multiplication.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Two numbers in ratio 5:6 sum to 160. Larger number?",
+      "options": [
+        "73",
+        "80",
+        "87",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 6/(11)×160 = 87.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Mean proportional between 7 and 28?",
+      "options": [
+        "7",
+        "28",
+        "11",
+        "14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 7×28) = 14.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Class ratio boys:girls = 8:7. 20 students join in same ratio. Boys added?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "7"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 8/(15). Step 2: 20×8/(15) = 11.",
+      "trick": "Split by ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "₹550 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "183",
+        "275",
+        "165",
+        "275"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 550 = 275.",
+      "trick": "Part/total parts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "If (3 + 3):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+3)/4 = 1.500. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Two cars travel same distance. Speeds 70 km/h and 90 km/h. Time ratio A:B?",
+      "options": [
+        "7:9",
+        "1:1",
+        "16:2",
+        "9:7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 9:7 = 1.29:1 inverted → 7:9 time = 9:7.",
+      "trick": "Time inverse to speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Divide ₹72 in ratio 4:4.",
+      "options": [
+        "36:36",
+        "4:4",
+        "36",
+        "36"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 8. Step 2: Each part = 72/(8) = 9. Shares: 36, 36.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "If 3:x = 9:39, find x.",
+      "options": [
+        "27",
+        "24",
+        "21",
+        "48"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(39) → cross multiply → x = 24.",
+      "trick": "Cross multiplication.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Two numbers in ratio 6:7 sum to 180. Larger number?",
+      "options": [
+        "83",
+        "90",
+        "97",
+        "13"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 7/(13)×180 = 97.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Mean proportional between 8 and 32?",
+      "options": [
+        "8",
+        "32",
+        "12",
+        "16"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 8×32) = 16.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Class ratio boys:girls = 9:8. 20 students join in same ratio. Boys added?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 9/(17). Step 2: 20×9/(17) = 11.",
+      "trick": "Split by ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "₹600 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "200",
+        "300",
+        "180",
+        "300"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 600 = 300.",
+      "trick": "Part/total parts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "If (3 + 4):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+4)/4 = 1.750. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Two cars travel same distance. Speeds 80 km/h and 100 km/h. Time ratio A:B?",
+      "options": [
+        "8:10",
+        "1:1",
+        "18:2",
+        "10:8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 10:8 = 1.25:1 inverted → 8:10 time = 10:8.",
+      "trick": "Time inverse to speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Divide ₹100 in ratio 5:5.",
+      "options": [
+        "50:50",
+        "5:5",
+        "50",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 10. Step 2: Each part = 100/(10) = 10. Shares: 50, 50.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "If 3:x = 9:42, find x.",
+      "options": [
+        "30",
+        "27",
+        "24",
+        "54"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(42) → cross multiply → x = 27.",
+      "trick": "Cross multiplication.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Two numbers in ratio 7:8 sum to 200. Larger number?",
+      "options": [
+        "93",
+        "100",
+        "107",
+        "15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 8/(15)×200 = 107.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Mean proportional between 9 and 36?",
+      "options": [
+        "9",
+        "36",
+        "13",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 9×36) = 18.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Class ratio boys:girls = 10:9. 20 students join in same ratio. Boys added?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 10/(19). Step 2: 20×10/(19) = 11.",
+      "trick": "Split by ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "₹650 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "216",
+        "325",
+        "195",
+        "325"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 650 = 325.",
+      "trick": "Part/total parts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "If (3 + 5):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+5)/4 = 2.000. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Two cars travel same distance. Speeds 90 km/h and 110 km/h. Time ratio A:B?",
+      "options": [
+        "9:11",
+        "1:1",
+        "20:2",
+        "11:9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 11:9 = 1.22:1 inverted → 9:11 time = 11:9.",
+      "trick": "Time inverse to speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Divide ₹99 in ratio 3:6.",
+      "options": [
+        "33:66",
+        "3:6",
+        "33",
+        "66"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 9. Step 2: Each part = 99/(9) = 11. Shares: 33, 66.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "If 3:x = 9:45, find x.",
+      "options": [
+        "33",
+        "30",
+        "27",
+        "60"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(45) → cross multiply → x = 30.",
+      "trick": "Cross multiplication.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Two numbers in ratio 8:9 sum to 220. Larger number?",
+      "options": [
+        "104",
+        "110",
+        "116",
+        "17"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 9/(17)×220 = 116.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Mean proportional between 10 and 40?",
+      "options": [
+        "10",
+        "40",
+        "14",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 10×40) = 20.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Class ratio boys:girls = 11:10. 20 students join in same ratio. Boys added?",
+      "options": [
+        "10",
+        "10",
+        "10",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 11/(21). Step 2: 20×11/(21) = 10.",
+      "trick": "Split by ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "₹700 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "233",
+        "350",
+        "210",
+        "350"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 700 = 350.",
+      "trick": "Part/total parts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "If (3 + 6):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+6)/4 = 2.250. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Two cars travel same distance. Speeds 100 km/h and 120 km/h. Time ratio A:B?",
+      "options": [
+        "10:12",
+        "1:1",
+        "22:2",
+        "12:10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 12:10 = 1.20:1 inverted → 10:12 time = 12:10.",
+      "trick": "Time inverse to speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Divide ₹132 in ratio 4:7.",
+      "options": [
+        "48:84",
+        "4:7",
+        "48",
+        "84"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 11. Step 2: Each part = 132/(11) = 12. Shares: 48, 84.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "If 3:x = 9:48, find x.",
+      "options": [
+        "36",
+        "33",
+        "30",
+        "66"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(48) → cross multiply → x = 33.",
+      "trick": "Cross multiplication.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Two numbers in ratio 9:10 sum to 240. Larger number?",
+      "options": [
+        "114",
+        "120",
+        "126",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 10/(19)×240 = 126.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Mean proportional between 11 and 44?",
+      "options": [
+        "11",
+        "44",
+        "15",
+        "22"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 11×44) = 22.",
+      "trick": "Mean prop = √(ab).",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Class ratio boys:girls = 12:11. 20 students join in same ratio. Boys added?",
+      "options": [
+        "10",
+        "10",
+        "10",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 12/(23). Step 2: 20×12/(23) = 10.",
+      "trick": "Split by ratio.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "₹750 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "250",
+        "375",
+        "225",
+        "375"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 750 = 375.",
+      "trick": "Part/total parts.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "If (3 + 7):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+7)/4 = 2.500. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Two cars travel same distance. Speeds 110 km/h and 130 km/h. Time ratio A:B?",
+      "options": [
+        "11:13",
+        "1:1",
+        "24:2",
+        "13:11"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 13:11 = 1.18:1 inverted → 11:13 time = 13:11.",
+      "trick": "Time inverse to speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Divide ₹117 in ratio 5:4.",
+      "options": [
+        "65:52",
+        "5:4",
+        "65",
+        "52"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 9. Step 2: Each part = 117/(9) = 13. Shares: 65, 52.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "If 3:x = 9:51, find x.",
+      "options": [
+        "39",
+        "36",
+        "33",
+        "72"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(51) → cross multiply → x = 36.",
+      "trick": "Cross multiplication.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Two numbers in ratio 10:11 sum to 260. Larger number?",
+      "options": [
+        "124",
+        "130",
+        "136",
+        "21"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 11/(21)×260 = 136.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Mean proportional between 12 and 48?",
+      "options": [
+        "12",
+        "48",
+        "16",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 12×48) = 24.",
+      "trick": "Mean prop = √(ab).",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Class ratio boys:girls = 13:12. 20 students join in same ratio. Boys added?",
+      "options": [
+        "10",
+        "10",
+        "10",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 13/(25). Step 2: 20×13/(25) = 10.",
+      "trick": "Split by ratio.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "₹800 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "266",
+        "400",
+        "240",
+        "400"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 800 = 400.",
+      "trick": "Part/total parts.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "If (3 + 8):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+8)/4 = 2.750. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Two cars travel same distance. Speeds 120 km/h and 140 km/h. Time ratio A:B?",
+      "options": [
+        "12:14",
+        "1:1",
+        "26:2",
+        "14:12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 14:12 = 1.17:1 inverted → 12:14 time = 14:12.",
+      "trick": "Time inverse to speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Divide ₹112 in ratio 3:5.",
+      "options": [
+        "42:70",
+        "3:5",
+        "42",
+        "70"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total parts = 8. Step 2: Each part = 112/(8) = 14. Shares: 42, 70.",
+      "trick": "Value = (ratio part/sum)×total.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "If 3:x = 9:54, find x.",
+      "options": [
+        "42",
+        "39",
+        "36",
+        "78"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/x = 9/(54) → cross multiply → x = 39.",
+      "trick": "Cross multiplication.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Two numbers in ratio 11:12 sum to 280. Larger number?",
+      "options": [
+        "134",
+        "140",
+        "146",
+        "23"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Larger = 12/(23)×280 = 146.",
+      "trick": "Larger gets b/(a+b) share.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Mean proportional between 13 and 52?",
+      "options": [
+        "13",
+        "52",
+        "17",
+        "26"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √( 13×52) = 26.",
+      "trick": "Mean prop = √(ab).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Class ratio boys:girls = 14:13. 20 students join in same ratio. Boys added?",
+      "options": [
+        "10",
+        "10",
+        "10",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Boys fraction = 14/(27). Step 2: 20×14/(27) = 10.",
+      "trick": "Split by ratio.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "₹850 divided among A:B:C = 2:3:5. C gets?",
+      "options": [
+        "283",
+        "425",
+        "255",
+        "425"
+      ],
+      "answer": "B",
+      "solution": "Step 1: C share = 5/10 × 850 = 425.",
+      "trick": "Part/total parts.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "If (3 + 9):4 = 9:12, is the proportion valid?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Sometimes"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9/12 = 0.75. (3+9)/4 = 3.000. Answer: No.",
+      "trick": "Cross-check equality.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Two cars travel same distance. Speeds 130 km/h and 150 km/h. Time ratio A:B?",
+      "options": [
+        "13:15",
+        "1:1",
+        "28:2",
+        "15:13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Time ∝ 1/speed. Ratio = 15:13 = 1.15:1 inverted → 13:15 time = 15:13.",
+      "trick": "Time inverse to speed.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "cubes-q1",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A cube of edge 3 is cut into unit cubes. How many small cubes result?",
+    "options": [
+      "9",
+      "18",
+      "27",
+      "36"
+    ],
+    "answer": "C",
+    "solution": "Total = n³ = 3³ = 27.",
+    "trick": "Total pieces = n³.",
+    "type": "Total pieces",
+    "active": true
+  },
+  {
+    "id": "cubes-q2",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A painted cube is cut into unit cubes. How many small cubes have exactly 3 painted faces?",
+    "options": [
+      "6",
+      "8",
+      "12",
+      "4"
+    ],
+    "answer": "B",
+    "solution": "Corner cubes always number 8, regardless of edge length.",
+    "trick": "3-faces = 8 always.",
+    "type": "Three painted faces",
+    "active": true
+  },
+  {
+    "id": "cubes-q3",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A cube of edge 4 is cut into unit cubes. How many small cubes result?",
+    "options": [
+      "64",
+      "56",
+      "72",
+      "48"
+    ],
+    "answer": "A",
+    "solution": "Total = 4³ = 64.",
+    "trick": "n³ = 4×4×4.",
+    "type": "Total pieces",
+    "active": true
+  },
+  {
+    "id": "cubes-q4",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A painted cube of edge 3 is cut into unit cubes. How many have NO painted face?",
+    "options": [
+      "8",
+      "3",
+      "6",
+      "1"
+    ],
+    "answer": "D",
+    "solution": "Inside = (n−2)³ = 1³ = 1.",
+    "trick": "0-faces = (n−2)³.",
+    "type": "No painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q5",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A painted cube of edge 3 is cut. How many small cubes have exactly 2 painted faces?",
+    "options": [
+      "12",
+      "6",
+      "8",
+      "24"
+    ],
+    "answer": "A",
+    "solution": "Edges = 12(n−2) = 12×1 = 12.",
+    "trick": "2-faces = 12(n−2).",
+    "type": "Two painted faces",
+    "active": true
+  },
+  {
+    "id": "cubes-q6",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A painted cube of edge 3 is cut. How many small cubes have exactly 1 painted face?",
+    "options": [
+      "4",
+      "6",
+      "12",
+      "8"
+    ],
+    "answer": "B",
+    "solution": "Faces = 6(n−2)² = 6×1 = 6.",
+    "trick": "1-face = 6(n−2)².",
+    "type": "One painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q7",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 4 is cut. How many small cubes have exactly 2 painted faces?",
+    "options": [
+      "12",
+      "18",
+      "24",
+      "36"
+    ],
+    "answer": "C",
+    "solution": "12(n−2) = 12×2 = 24.",
+    "trick": "2-faces = 12(n−2).",
+    "type": "Two painted faces",
+    "active": true
+  },
+  {
+    "id": "cubes-q8",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 4 is cut. How many small cubes have exactly 1 painted face?",
+    "options": [
+      "6",
+      "12",
+      "18",
+      "24"
+    ],
+    "answer": "D",
+    "solution": "6(n−2)² = 6×4 = 24.",
+    "trick": "1-face = 6(n−2)².",
+    "type": "One painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q9",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 4 is cut. How many small cubes have NO painted face?",
+    "options": [
+      "8",
+      "16",
+      "4",
+      "12"
+    ],
+    "answer": "A",
+    "solution": "(n−2)³ = 2³ = 8.",
+    "trick": "0-faces = (n−2)³.",
+    "type": "No painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q10",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A cube of edge 5 is cut into unit cubes. How many small cubes result?",
+    "options": [
+      "100",
+      "125",
+      "150",
+      "64"
+    ],
+    "answer": "B",
+    "solution": "5³ = 125.",
+    "trick": "n³.",
+    "type": "Total pieces",
+    "active": true
+  },
+  {
+    "id": "cubes-q11",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 5 is cut. How many small cubes have exactly 2 painted faces?",
+    "options": [
+      "24",
+      "30",
+      "36",
+      "48"
+    ],
+    "answer": "C",
+    "solution": "12(n−2) = 12×3 = 36.",
+    "trick": "2-faces = 12(n−2).",
+    "type": "Two painted faces",
+    "active": true
+  },
+  {
+    "id": "cubes-q12",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 5 is cut. How many small cubes have exactly 1 painted face?",
+    "options": [
+      "24",
+      "36",
+      "48",
+      "54"
+    ],
+    "answer": "D",
+    "solution": "6(n−2)² = 6×9 = 54.",
+    "trick": "1-face = 6(n−2)².",
+    "type": "One painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q13",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 5 is cut. How many small cubes have NO painted face?",
+    "options": [
+      "27",
+      "36",
+      "18",
+      "64"
+    ],
+    "answer": "A",
+    "solution": "(n−2)³ = 3³ = 27.",
+    "trick": "0-faces = (n−2)³.",
+    "type": "No painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q14",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A painted cube of edge 5 is cut. How many small cubes have exactly 3 painted faces?",
+    "options": [
+      "6",
+      "8",
+      "12",
+      "20"
+    ],
+    "answer": "B",
+    "solution": "Corner cubes always = 8.",
+    "trick": "3-faces = 8 always.",
+    "type": "Three painted faces",
+    "active": true
+  },
+  {
+    "id": "cubes-q15",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A painted cube of edge 6 is cut. How many small cubes have exactly 1 painted face?",
+    "options": [
+      "64",
+      "80",
+      "96",
+      "120"
+    ],
+    "answer": "C",
+    "solution": "6(n−2)² = 6×16 = 96.",
+    "trick": "1-face = 6(n−2)².",
+    "type": "One painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q16",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A painted cube of edge 6 is cut. How many small cubes have exactly 2 painted faces?",
+    "options": [
+      "24",
+      "36",
+      "40",
+      "48"
+    ],
+    "answer": "D",
+    "solution": "12(n−2) = 12×4 = 48.",
+    "trick": "2-faces = 12(n−2).",
+    "type": "Two painted faces",
+    "active": true
+  },
+  {
+    "id": "cubes-q17",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A painted cube of edge 6 is cut. How many small cubes have NO painted face?",
+    "options": [
+      "64",
+      "36",
+      "27",
+      "125"
+    ],
+    "answer": "A",
+    "solution": "(n−2)³ = 4³ = 64.",
+    "trick": "0-faces = (n−2)³.",
+    "type": "No painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q18",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A painted cube of edge 4 is cut. How many small cubes have AT LEAST one painted face?",
+    "options": [
+      "48",
+      "56",
+      "64",
+      "60"
+    ],
+    "answer": "B",
+    "solution": "Total − hidden = 64 − (n−2)³ = 64 − 8 = 56.",
+    "trick": "At least one = n³ − (n−2)³.",
+    "type": "At least one face",
+    "active": true
+  },
+  {
+    "id": "cubes-q19",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A painted cube of edge 10 is cut. How many small cubes have NO painted face?",
+    "options": [
+      "343",
+      "400",
+      "512",
+      "729"
+    ],
+    "answer": "C",
+    "solution": "(n−2)³ = 8³ = 512.",
+    "trick": "0-faces = (n−2)³.",
+    "type": "No painted face",
+    "active": true
+  },
+  {
+    "id": "cubes-q20",
+    "topic": "cubes",
+    "category": "logical",
+    "group": "visual",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A painted cube of edge 3 is cut. How many small cubes have AT LEAST 2 painted faces?",
+    "options": [
+      "8",
+      "12",
+      "16",
+      "20"
+    ],
+    "answer": "D",
+    "solution": "Corners + edges = 8 + 12(n−2) = 8 + 12 = 20.",
+    "trick": "At least 2 = corners + edges.",
+    "type": "At least two faces",
+    "active": true
+  }
+]

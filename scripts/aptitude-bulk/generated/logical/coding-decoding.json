@@ -1,0 +1,1207 @@
+{
+  "topic": "coding-decoding",
+  "category": "logical",
+  "group": "coding-analogy",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "NQIKE",
+        "MPHJD",
+        "ORJLF",
+        "CIGOL"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "EUDLQ",
+        "DTCKP",
+        "FVEMR",
+        "NIARB"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "UYIWX",
+        "TXHVW",
+        "VZJXY",
+        "TSEUQ"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "XTQAJ",
+        "WSPZI",
+        "YURBK",
+        "EVLOS"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "NBUDI",
+        "MATCH",
+        "OCVEJ",
+        "HCTAM"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "TWNG",
+        "SVMF",
+        "UXOH",
+        "ELUR"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "FRGH",
+        "EQFG",
+        "GSHI",
+        "EDOC"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "KEXI",
+        "JDWH",
+        "LFYJ",
+        "ETAG"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "JCFR",
+        "IBEQ",
+        "KDGS",
+        "MAXE"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "SBOL",
+        "RANK",
+        "TCPM",
+        "KNAR"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "NQIKE",
+        "MPHJD",
+        "ORJLF",
+        "CIGOL"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "EUDLQ",
+        "DTCKP",
+        "FVEMR",
+        "NIARB"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "UYIWX",
+        "TXHVW",
+        "VZJXY",
+        "TSEUQ"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "XTQAJ",
+        "WSPZI",
+        "YURBK",
+        "EVLOS"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "NBUDI",
+        "MATCH",
+        "OCVEJ",
+        "HCTAM"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "TWNG",
+        "SVMF",
+        "UXOH",
+        "ELUR"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "FRGH",
+        "EQFG",
+        "GSHI",
+        "EDOC"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "KEXI",
+        "JDWH",
+        "LFYJ",
+        "ETAG"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "JCFR",
+        "IBEQ",
+        "KDGS",
+        "MAXE"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "SBOL",
+        "RANK",
+        "TCPM",
+        "KNAR"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "MPHJD",
+        "NQIKE",
+        "ORJLF",
+        "CIGOL"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "DTCKP",
+        "EUDLQ",
+        "FVEMR",
+        "NIARB"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "TXHVW",
+        "UYIWX",
+        "VZJXY",
+        "TSEUQ"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "WSPZI",
+        "XTQAJ",
+        "YURBK",
+        "EVLOS"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "MATCH",
+        "NBUDI",
+        "OCVEJ",
+        "HCTAM"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "SVMF",
+        "TWNG",
+        "UXOH",
+        "ELUR"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "EQFG",
+        "FRGH",
+        "GSHI",
+        "EDOC"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "JDWH",
+        "KEXI",
+        "LFYJ",
+        "ETAG"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "IBEQ",
+        "JCFR",
+        "KDGS",
+        "MAXE"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "RANK",
+        "SBOL",
+        "TCPM",
+        "KNAR"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "MPHJD",
+        "NQIKE",
+        "ORJLF",
+        "CIGOL"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "DTCKP",
+        "EUDLQ",
+        "FVEMR",
+        "NIARB"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "TXHVW",
+        "UYIWX",
+        "VZJXY",
+        "TSEUQ"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "WSPZI",
+        "XTQAJ",
+        "YURBK",
+        "EVLOS"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "MATCH",
+        "NBUDI",
+        "OCVEJ",
+        "HCTAM"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "SVMF",
+        "TWNG",
+        "UXOH",
+        "ELUR"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "EQFG",
+        "FRGH",
+        "GSHI",
+        "EDOC"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "JDWH",
+        "KEXI",
+        "LFYJ",
+        "ETAG"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "IBEQ",
+        "JCFR",
+        "KDGS",
+        "MAXE"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "RANK",
+        "SBOL",
+        "TCPM",
+        "KNAR"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "MPHJD",
+        "ORJLF",
+        "NQIKE",
+        "CIGOL"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "DTCKP",
+        "FVEMR",
+        "EUDLQ",
+        "NIARB"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "TXHVW",
+        "VZJXY",
+        "UYIWX",
+        "TSEUQ"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "WSPZI",
+        "YURBK",
+        "XTQAJ",
+        "EVLOS"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "MATCH",
+        "OCVEJ",
+        "NBUDI",
+        "HCTAM"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "SVMF",
+        "UXOH",
+        "TWNG",
+        "ELUR"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "EQFG",
+        "GSHI",
+        "FRGH",
+        "EDOC"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "JDWH",
+        "LFYJ",
+        "KEXI",
+        "ETAG"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "IBEQ",
+        "KDGS",
+        "JCFR",
+        "MAXE"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "RANK",
+        "TCPM",
+        "SBOL",
+        "KNAR"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "MPHJD",
+        "ORJLF",
+        "NQIKE",
+        "CIGOL"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "DTCKP",
+        "FVEMR",
+        "EUDLQ",
+        "NIARB"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "TXHVW",
+        "VZJXY",
+        "UYIWX",
+        "TSEUQ"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "WSPZI",
+        "YURBK",
+        "XTQAJ",
+        "EVLOS"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "MATCH",
+        "OCVEJ",
+        "NBUDI",
+        "HCTAM"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Letter shift code"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "SVMF",
+        "UXOH",
+        "TWNG",
+        "ELUR"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "EQFG",
+        "GSHI",
+        "FRGH",
+        "EDOC"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "JDWH",
+        "LFYJ",
+        "KEXI",
+        "ETAG"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "IBEQ",
+        "KDGS",
+        "JCFR",
+        "MAXE"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "RANK",
+        "TCPM",
+        "SBOL",
+        "KNAR"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "MPHJD",
+        "ORJLF",
+        "CIGOL",
+        "NQIKE"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "DTCKP",
+        "FVEMR",
+        "NIARB",
+        "EUDLQ"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "TXHVW",
+        "VZJXY",
+        "TSEUQ",
+        "UYIWX"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "WSPZI",
+        "YURBK",
+        "EVLOS",
+        "XTQAJ"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "MATCH",
+        "OCVEJ",
+        "HCTAM",
+        "NBUDI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "SVMF",
+        "UXOH",
+        "ELUR",
+        "TWNG"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "EQFG",
+        "GSHI",
+        "EDOC",
+        "FRGH"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "JDWH",
+        "LFYJ",
+        "ETAG",
+        "KEXI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "IBEQ",
+        "KDGS",
+        "MAXE",
+        "JCFR"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "RANK",
+        "TCPM",
+        "KNAR",
+        "SBOL"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "If 'GATE' is coded as 'ICVG' (+2 Caesar shift), what is the code for 'LOGIC'?",
+      "options": [
+        "MPHJD",
+        "ORJLF",
+        "CIGOL",
+        "NQIKE"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to LOGIC → NQIKE. Answer: NQIKE.",
+      "trick": "Shift +2.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "If 'EXAM' is coded as 'HADP' (+3 Caesar shift), what is the code for 'BRAIN'?",
+      "options": [
+        "DTCKP",
+        "FVEMR",
+        "NIARB",
+        "EUDLQ"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to BRAIN → EUDLQ. Answer: EUDLQ.",
+      "trick": "Shift +3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "If 'RANK' is coded as 'VERO' (+4 Caesar shift), what is the code for 'QUEST'?",
+      "options": [
+        "TXHVW",
+        "VZJXY",
+        "TSEUQ",
+        "UYIWX"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to QUEST → UYIWX. Answer: UYIWX.",
+      "trick": "Shift +4.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "If 'LOGIC' is coded as 'QTLNH' (+5 Caesar shift), what is the code for 'SOLVE'?",
+      "options": [
+        "WSPZI",
+        "YURBK",
+        "EVLOS",
+        "XTQAJ"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to SOLVE → XTQAJ. Answer: XTQAJ.",
+      "trick": "Shift +5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "If 'BRAIN' is coded as 'CSBJO' (+1 Caesar shift), what is the code for 'MATCH'?",
+      "options": [
+        "MATCH",
+        "OCVEJ",
+        "HCTAM",
+        "NBUDI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to MATCH → NBUDI. Answer: NBUDI.",
+      "trick": "Shift +1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "If 'QUEST' is coded as 'SWGUV' (+2 Caesar shift), what is the code for 'RULE'?",
+      "options": [
+        "SVMF",
+        "UXOH",
+        "ELUR",
+        "TWNG"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +2. Step 2: Apply to RULE → TWNG. Answer: TWNG.",
+      "trick": "Shift +2.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "If 'SOLVE' is coded as 'VROYH' (+3 Caesar shift), what is the code for 'CODE'?",
+      "options": [
+        "EQFG",
+        "GSHI",
+        "EDOC",
+        "FRGH"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +3. Step 2: Apply to CODE → FRGH. Answer: FRGH.",
+      "trick": "Shift +3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "If 'MATCH' is coded as 'QEXGL' (+4 Caesar shift), what is the code for 'GATE'?",
+      "options": [
+        "JDWH",
+        "LFYJ",
+        "ETAG",
+        "KEXI"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +4. Step 2: Apply to GATE → KEXI. Answer: KEXI.",
+      "trick": "Shift +4.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "If 'RULE' is coded as 'WZQJ' (+5 Caesar shift), what is the code for 'EXAM'?",
+      "options": [
+        "IBEQ",
+        "KDGS",
+        "MAXE",
+        "JCFR"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +5. Step 2: Apply to EXAM → JCFR. Answer: JCFR.",
+      "trick": "Shift +5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "If 'CODE' is coded as 'DPEF' (+1 Caesar shift), what is the code for 'RANK'?",
+      "options": [
+        "RANK",
+        "TCPM",
+        "KNAR",
+        "SBOL"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each letter shifts +1. Step 2: Apply to RANK → SBOL. Answer: SBOL.",
+      "trick": "Shift +1.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

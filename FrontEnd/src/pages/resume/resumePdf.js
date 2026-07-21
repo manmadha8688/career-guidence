@@ -32,6 +32,18 @@ function formatDegree(e = {}) {
   return degree || branch || ''
 }
 
+// Grade display: CGPA is on a 0–10 scale, percentages are higher — so "8.2"
+// becomes "CGPA - 8.2/10" and "82" becomes "Percentage - 82". Values the user
+// already labelled (contain letters, "%", or a "/scale") are left untouched.
+function formatGrade(raw) {
+  if (raw == null) return ''
+  const s = String(raw).trim()
+  if (!s || /[a-zA-Z%/]/.test(s)) return s
+  const num = parseFloat(s)
+  if (Number.isNaN(num)) return s
+  return num <= 10 ? `CGPA - ${s}/10` : `Percentage - ${s}`
+}
+
 export async function buildAndSaveResumePdf(resume, fileNameHint) {
   const jspdf = await import('jspdf')
   const JsPDF = jspdf.jsPDF || jspdf.default
@@ -197,7 +209,7 @@ export async function buildAndSaveResumePdf(resume, fileNameHint) {
     r.education.filter(e => e && (e.degree || e.branch || e.college)).forEach((e, i) => {
       if (i > 0) y += 3
       titleRow(formatDegree(e) || 'Degree', e.years, { bold: false })
-      subRow(e.college, e.cgpa)
+      subRow(e.college, formatGrade(e.cgpa))
     })
   }
 

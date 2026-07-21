@@ -1,0 +1,1207 @@
+{
+  "topic": "compound-interest",
+  "category": "quantitative",
+  "group": "interest-finance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "CI on ₹10000 at 10% for 2 years (annual)?",
+      "options": [
+        "12100",
+        "11000",
+        "12000",
+        "12600"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 12100.",
+      "trick": "CI formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "CI on ₹8000 at 20% for 2 years?",
+      "options": [
+        "3200",
+        "3520",
+        "1600",
+        "3720"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 8000×1.2² = 11520. CI = 3520.",
+      "trick": "CI = A − P.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Difference CI − SI on ₹5000 at 10% for 3 years?",
+      "options": [
+        "1655",
+        "1500",
+        "155",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=1655, SI=1500. Diff=155.",
+      "trick": "CI > SI for n>1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "CI on ₹16000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "4000",
+        "4350",
+        "2000",
+        "4250"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 4250.",
+      "trick": "Split compounding periods.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Amount ₹12100 at 10% CI for 2 years. Principal?",
+      "options": [
+        "10000",
+        "10000",
+        "10000",
+        "6050"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 12100/1.1² = 10000.",
+      "trick": "Reverse CI.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "CI on ₹1000 at 5% for 3 years?",
+      "options": [
+        "150",
+        "158",
+        "150",
+        "168"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 1000(1.05³−1) = 158.",
+      "trick": "Use power formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Population 20000 grows 8% annually. After 2 years?",
+      "options": [
+        "23200",
+        "23200",
+        "23328",
+        "22828"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 20000×1.08² = 23328.",
+      "trick": "CI model for growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "CI on ₹6400 at 25% for 2 years?",
+      "options": [
+        "3200",
+        "3200",
+        "1800",
+        "3600"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 6400×1.25². CI = 3600.",
+      "trick": "Quarter rate 25%.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "CI on ₹11000 at 10% for 2 years (annual)?",
+      "options": [
+        "13310",
+        "12100",
+        "13200",
+        "13810"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 13310.",
+      "trick": "CI formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "CI on ₹8500 at 20% for 2 years?",
+      "options": [
+        "3400",
+        "3740",
+        "1700",
+        "3940"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 8500×1.2² = 12240. CI = 3740.",
+      "trick": "CI = A − P.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Difference CI − SI on ₹5500 at 10% for 3 years?",
+      "options": [
+        "1821",
+        "1650",
+        "171",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=1821, SI=1650. Diff=171.",
+      "trick": "CI > SI for n>1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "CI on ₹17000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "4250",
+        "4616",
+        "2125",
+        "4516"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 4516.",
+      "trick": "Split compounding periods.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Amount ₹12600 at 10% CI for 2 years. Principal?",
+      "options": [
+        "10413",
+        "10500",
+        "10000",
+        "6300"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 12600/1.1² = 10413.",
+      "trick": "Reverse CI.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "CI on ₹1200 at 5% for 3 years?",
+      "options": [
+        "180",
+        "189",
+        "180",
+        "199"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 1200(1.05³−1) = 189.",
+      "trick": "Use power formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Population 22000 grows 8% annually. After 2 years?",
+      "options": [
+        "25520",
+        "25520",
+        "25661",
+        "25161"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 22000×1.08² = 25661.",
+      "trick": "CI model for growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "CI on ₹6800 at 25% for 2 years?",
+      "options": [
+        "3400",
+        "3400",
+        "1912",
+        "3825"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 6800×1.25². CI = 3825.",
+      "trick": "Quarter rate 25%.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "CI on ₹12000 at 10% for 2 years (annual)?",
+      "options": [
+        "14520",
+        "13200",
+        "14400",
+        "15020"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 14520.",
+      "trick": "CI formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "CI on ₹9000 at 20% for 2 years?",
+      "options": [
+        "3600",
+        "3960",
+        "1800",
+        "4160"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 9000×1.2² = 12960. CI = 3960.",
+      "trick": "CI = A − P.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Difference CI − SI on ₹6000 at 10% for 3 years?",
+      "options": [
+        "1986",
+        "1800",
+        "186",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=1986, SI=1800. Diff=186.",
+      "trick": "CI > SI for n>1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "CI on ₹18000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "4500",
+        "4881",
+        "2250",
+        "4781"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 4781.",
+      "trick": "Split compounding periods.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Amount ₹13100 at 10% CI for 2 years. Principal?",
+      "options": [
+        "10826",
+        "11000",
+        "10000",
+        "6550"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 13100/1.1² = 10826.",
+      "trick": "Reverse CI.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "CI on ₹1400 at 5% for 3 years?",
+      "options": [
+        "210",
+        "221",
+        "210",
+        "231"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 1400(1.05³−1) = 221.",
+      "trick": "Use power formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Population 24000 grows 8% annually. After 2 years?",
+      "options": [
+        "27840",
+        "27840",
+        "27994",
+        "27494"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 24000×1.08² = 27994.",
+      "trick": "CI model for growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "CI on ₹7200 at 25% for 2 years?",
+      "options": [
+        "3600",
+        "3600",
+        "2025",
+        "4050"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 7200×1.25². CI = 4050.",
+      "trick": "Quarter rate 25%.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "CI on ₹13000 at 10% for 2 years (annual)?",
+      "options": [
+        "15730",
+        "14300",
+        "15600",
+        "16230"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 15730.",
+      "trick": "CI formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "CI on ₹9500 at 20% for 2 years?",
+      "options": [
+        "3800",
+        "4180",
+        "1900",
+        "4380"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 9500×1.2² = 13680. CI = 4180.",
+      "trick": "CI = A − P.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Difference CI − SI on ₹6500 at 10% for 3 years?",
+      "options": [
+        "2152",
+        "1950",
+        "202",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=2152, SI=1950. Diff=202.",
+      "trick": "CI > SI for n>1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "CI on ₹19000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "4750",
+        "5147",
+        "2375",
+        "5047"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 5047.",
+      "trick": "Split compounding periods.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Amount ₹13600 at 10% CI for 2 years. Principal?",
+      "options": [
+        "11240",
+        "11500",
+        "10000",
+        "6800"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 13600/1.1² = 11240.",
+      "trick": "Reverse CI.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "CI on ₹1600 at 5% for 3 years?",
+      "options": [
+        "240",
+        "252",
+        "240",
+        "262"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 1600(1.05³−1) = 252.",
+      "trick": "Use power formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Population 26000 grows 8% annually. After 2 years?",
+      "options": [
+        "30160",
+        "30160",
+        "30326",
+        "29826"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 26000×1.08² = 30326.",
+      "trick": "CI model for growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "CI on ₹7600 at 25% for 2 years?",
+      "options": [
+        "3800",
+        "3800",
+        "2137",
+        "4275"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 7600×1.25². CI = 4275.",
+      "trick": "Quarter rate 25%.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "CI on ₹14000 at 10% for 2 years (annual)?",
+      "options": [
+        "16940",
+        "15400",
+        "16800",
+        "17440"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 16940.",
+      "trick": "CI formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "CI on ₹10000 at 20% for 2 years?",
+      "options": [
+        "4000",
+        "4400",
+        "2000",
+        "4600"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 10000×1.2² = 14400. CI = 4400.",
+      "trick": "CI = A − P.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Difference CI − SI on ₹7000 at 10% for 3 years?",
+      "options": [
+        "2317",
+        "2100",
+        "217",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=2317, SI=2100. Diff=217.",
+      "trick": "CI > SI for n>1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "CI on ₹20000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "5000",
+        "5412",
+        "2500",
+        "5312"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 5312.",
+      "trick": "Split compounding periods.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Amount ₹14100 at 10% CI for 2 years. Principal?",
+      "options": [
+        "11653",
+        "12000",
+        "10000",
+        "7050"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 14100/1.1² = 11653.",
+      "trick": "Reverse CI.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "CI on ₹1800 at 5% for 3 years?",
+      "options": [
+        "270",
+        "284",
+        "270",
+        "294"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 1800(1.05³−1) = 284.",
+      "trick": "Use power formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Population 28000 grows 8% annually. After 2 years?",
+      "options": [
+        "32480",
+        "32480",
+        "32659",
+        "32159"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 28000×1.08² = 32659.",
+      "trick": "CI model for growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "CI on ₹8000 at 25% for 2 years?",
+      "options": [
+        "4000",
+        "4000",
+        "2250",
+        "4500"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 8000×1.25². CI = 4500.",
+      "trick": "Quarter rate 25%.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "CI on ₹15000 at 10% for 2 years (annual)?",
+      "options": [
+        "18150",
+        "16500",
+        "18000",
+        "18650"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 18150.",
+      "trick": "CI formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "CI on ₹10500 at 20% for 2 years?",
+      "options": [
+        "4200",
+        "4620",
+        "2100",
+        "4820"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 10500×1.2² = 15120. CI = 4620.",
+      "trick": "CI = A − P.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Difference CI − SI on ₹7500 at 10% for 3 years?",
+      "options": [
+        "2483",
+        "2250",
+        "233",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=2483, SI=2250. Diff=233.",
+      "trick": "CI > SI for n>1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "CI on ₹21000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "5250",
+        "5678",
+        "2625",
+        "5578"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 5578.",
+      "trick": "Split compounding periods.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Amount ₹14600 at 10% CI for 2 years. Principal?",
+      "options": [
+        "12066",
+        "12500",
+        "10000",
+        "7300"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 14600/1.1² = 12066.",
+      "trick": "Reverse CI.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "CI on ₹2000 at 5% for 3 years?",
+      "options": [
+        "300",
+        "315",
+        "300",
+        "325"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 2000(1.05³−1) = 315.",
+      "trick": "Use power formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Population 30000 grows 8% annually. After 2 years?",
+      "options": [
+        "34800",
+        "34800",
+        "34992",
+        "34492"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 30000×1.08² = 34992.",
+      "trick": "CI model for growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "CI on ₹8400 at 25% for 2 years?",
+      "options": [
+        "4200",
+        "4200",
+        "2362",
+        "4725"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 8400×1.25². CI = 4725.",
+      "trick": "Quarter rate 25%.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "CI on ₹16000 at 10% for 2 years (annual)?",
+      "options": [
+        "19360",
+        "17600",
+        "19200",
+        "19860"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 19360.",
+      "trick": "CI formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "CI on ₹11000 at 20% for 2 years?",
+      "options": [
+        "4400",
+        "4840",
+        "2200",
+        "5040"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 11000×1.2² = 15840. CI = 4840.",
+      "trick": "CI = A − P.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Difference CI − SI on ₹8000 at 10% for 3 years?",
+      "options": [
+        "2648",
+        "2400",
+        "248",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=2648, SI=2400. Diff=248.",
+      "trick": "CI > SI for n>1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "CI on ₹22000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "5500",
+        "5944",
+        "2750",
+        "5844"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 5844.",
+      "trick": "Split compounding periods.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Amount ₹15100 at 10% CI for 2 years. Principal?",
+      "options": [
+        "12479",
+        "13000",
+        "10000",
+        "7550"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 15100/1.1² = 12479.",
+      "trick": "Reverse CI.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "CI on ₹2200 at 5% for 3 years?",
+      "options": [
+        "330",
+        "347",
+        "330",
+        "357"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 2200(1.05³−1) = 347.",
+      "trick": "Use power formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Population 32000 grows 8% annually. After 2 years?",
+      "options": [
+        "37120",
+        "37120",
+        "37325",
+        "36825"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 32000×1.08² = 37325.",
+      "trick": "CI model for growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "CI on ₹8800 at 25% for 2 years?",
+      "options": [
+        "4400",
+        "4400",
+        "2475",
+        "4950"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 8800×1.25². CI = 4950.",
+      "trick": "Quarter rate 25%.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "CI on ₹17000 at 10% for 2 years (annual)?",
+      "options": [
+        "20570",
+        "18700",
+        "20400",
+        "21070"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 20570.",
+      "trick": "CI formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "CI on ₹11500 at 20% for 2 years?",
+      "options": [
+        "4600",
+        "5060",
+        "2300",
+        "5260"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 11500×1.2² = 16560. CI = 5060.",
+      "trick": "CI = A − P.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Difference CI − SI on ₹8500 at 10% for 3 years?",
+      "options": [
+        "2814",
+        "2550",
+        "264",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=2814, SI=2550. Diff=264.",
+      "trick": "CI > SI for n>1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "CI on ₹23000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "5750",
+        "6209",
+        "2875",
+        "6109"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 6109.",
+      "trick": "Split compounding periods.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Amount ₹15600 at 10% CI for 2 years. Principal?",
+      "options": [
+        "12893",
+        "13500",
+        "10000",
+        "7800"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 15600/1.1² = 12893.",
+      "trick": "Reverse CI.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "CI on ₹2400 at 5% for 3 years?",
+      "options": [
+        "360",
+        "378",
+        "360",
+        "388"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 2400(1.05³−1) = 378.",
+      "trick": "Use power formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Population 34000 grows 8% annually. After 2 years?",
+      "options": [
+        "39440",
+        "39440",
+        "39658",
+        "39158"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 34000×1.08² = 39658.",
+      "trick": "CI model for growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "CI on ₹9200 at 25% for 2 years?",
+      "options": [
+        "4600",
+        "4600",
+        "2587",
+        "5175"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 9200×1.25². CI = 5175.",
+      "trick": "Quarter rate 25%.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "CI on ₹18000 at 10% for 2 years (annual)?",
+      "options": [
+        "21780",
+        "19800",
+        "21600",
+        "22280"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 21780.",
+      "trick": "CI formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "CI on ₹12000 at 20% for 2 years?",
+      "options": [
+        "4800",
+        "5280",
+        "2400",
+        "5480"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 12000×1.2² = 17280. CI = 5280.",
+      "trick": "CI = A − P.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Difference CI − SI on ₹9000 at 10% for 3 years?",
+      "options": [
+        "2979",
+        "2700",
+        "279",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=2979, SI=2700. Diff=279.",
+      "trick": "CI > SI for n>1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "CI on ₹24000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "6000",
+        "6475",
+        "3000",
+        "6375"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 6375.",
+      "trick": "Split compounding periods.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Amount ₹16100 at 10% CI for 2 years. Principal?",
+      "options": [
+        "13306",
+        "14000",
+        "10000",
+        "8050"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 16100/1.1² = 13306.",
+      "trick": "Reverse CI.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "CI on ₹2600 at 5% for 3 years?",
+      "options": [
+        "390",
+        "410",
+        "390",
+        "420"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 2600(1.05³−1) = 410.",
+      "trick": "Use power formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Population 36000 grows 8% annually. After 2 years?",
+      "options": [
+        "41760",
+        "41760",
+        "41990",
+        "41490"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 36000×1.08² = 41990.",
+      "trick": "CI model for growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "CI on ₹9600 at 25% for 2 years?",
+      "options": [
+        "4800",
+        "4800",
+        "2700",
+        "5400"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 9600×1.25². CI = 5400.",
+      "trick": "Quarter rate 25%.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "CI on ₹19000 at 10% for 2 years (annual)?",
+      "options": [
+        "22990",
+        "20900",
+        "22800",
+        "23490"
+      ],
+      "answer": "A",
+      "solution": "Step 1: A = P(1+R/100)^n = 22990.",
+      "trick": "CI formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "CI on ₹12500 at 20% for 2 years?",
+      "options": [
+        "5000",
+        "5500",
+        "2500",
+        "5700"
+      ],
+      "answer": "B",
+      "solution": "Step 1: A = 12500×1.2² = 18000. CI = 5500.",
+      "trick": "CI = A − P.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Difference CI − SI on ₹9500 at 10% for 3 years?",
+      "options": [
+        "3145",
+        "2850",
+        "295",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CI=3145, SI=2850. Diff=295.",
+      "trick": "CI > SI for n>1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "CI on ₹25000 at 25% for 1 year compounded half-yearly?",
+      "options": [
+        "6250",
+        "6741",
+        "3125",
+        "6641"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Half-yearly rate 12.5%. CI ≈ 6641.",
+      "trick": "Split compounding periods.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Amount ₹16600 at 10% CI for 2 years. Principal?",
+      "options": [
+        "13719",
+        "14500",
+        "10000",
+        "8300"
+      ],
+      "answer": "A",
+      "solution": "Step 1: P = 16600/1.1² = 13719.",
+      "trick": "Reverse CI.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "CI on ₹2800 at 5% for 3 years?",
+      "options": [
+        "420",
+        "441",
+        "420",
+        "451"
+      ],
+      "answer": "B",
+      "solution": "Step 1: CI = 2800(1.05³−1) = 441.",
+      "trick": "Use power formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Population 38000 grows 8% annually. After 2 years?",
+      "options": [
+        "44080",
+        "44080",
+        "44323",
+        "43823"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 38000×1.08² = 44323.",
+      "trick": "CI model for growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "CI on ₹10000 at 25% for 2 years?",
+      "options": [
+        "5000",
+        "5000",
+        "2812",
+        "5625"
+      ],
+      "answer": "D",
+      "solution": "Step 1: A = 10000×1.25². CI = 5625.",
+      "trick": "Quarter rate 25%.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

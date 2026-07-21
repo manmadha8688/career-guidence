@@ -286,34 +286,6 @@
   flex-shrink: 0;
 }
 
-.dash-cleared-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  align-items: center;
-}
-
-.dash-cleared-tags__label {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.58rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  margin-right: 0.25rem;
-}
-
-.dash-cleared-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.6rem;
-  color: #4ADE80;
-  background: rgba(74, 222, 128, 0.08);
-  border: 1px solid rgba(74, 222, 128, 0.2);
-  padding: 0.15rem 0.5rem;
-  border-radius: 3px;
-}
-
 .dash-search-wrap--gates { margin-bottom: 0.5rem; }
 .dash-search-wrap--paths { margin-bottom: 0.75rem; }
 

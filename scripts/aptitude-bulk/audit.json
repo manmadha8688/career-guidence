@@ -1,0 +1,362 @@
+[
+  {
+    "category": "quantitative",
+    "group": "number-basics",
+    "groupName": "Number Basics",
+    "topic": "number-system",
+    "topicName": "Number System",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "number-basics",
+    "groupName": "Number Basics",
+    "topic": "lcm-hcf",
+    "topicName": "LCM & HCF",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "number-basics",
+    "groupName": "Number Basics",
+    "topic": "divisibility-rules",
+    "topicName": "Divisibility Rules",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "number-basics",
+    "groupName": "Number Basics",
+    "topic": "decimal-fractions",
+    "topicName": "Decimal Fractions",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "number-basics",
+    "groupName": "Number Basics",
+    "topic": "simplification-approximation",
+    "topicName": "Simplification & Approximation",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "number-basics",
+    "groupName": "Number Basics",
+    "topic": "surds-indices",
+    "topicName": "Surds & Indices",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "groupName": "Percentages & Money Maths",
+    "topic": "percentages",
+    "topicName": "Percentages",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "groupName": "Percentages & Money Maths",
+    "topic": "profit-loss",
+    "topicName": "Profit & Loss",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "groupName": "Percentages & Money Maths",
+    "topic": "discount",
+    "topicName": "Discount",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "groupName": "Percentages & Money Maths",
+    "topic": "successive-percentages",
+    "topicName": "Successive Percentages",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "groupName": "Ratios & Mixtures",
+    "topic": "ratio-proportion",
+    "topicName": "Ratio & Proportion",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "groupName": "Ratios & Mixtures",
+    "topic": "partnership",
+    "topicName": "Partnership",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "groupName": "Ratios & Mixtures",
+    "topic": "mixture-alligation",
+    "topicName": "Mixture & Alligation",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "averages-ages",
+    "groupName": "Averages & Ages",
+    "topic": "averages",
+    "topicName": "Averages",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "averages-ages",
+    "groupName": "Averages & Ages",
+    "topic": "ages",
+    "topicName": "Ages",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "interest-finance",
+    "groupName": "Interest & Growth",
+    "topic": "simple-interest",
+    "topicName": "Simple Interest",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "interest-finance",
+    "groupName": "Interest & Growth",
+    "topic": "compound-interest",
+    "topicName": "Compound Interest",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "interest-finance",
+    "groupName": "Interest & Growth",
+    "topic": "depreciation-growth",
+    "topicName": "Depreciation & Growth",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "groupName": "Time & Work",
+    "topic": "time-work",
+    "topicName": "Time & Work",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "groupName": "Time & Work",
+    "topic": "pipes-cisterns",
+    "topicName": "Pipes & Cisterns",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "speed-distance",
+    "groupName": "Speed, Time & Distance",
+    "topic": "time-speed-distance",
+    "topicName": "Time, Speed & Distance",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "speed-distance",
+    "groupName": "Speed, Time & Distance",
+    "topic": "relative-speed",
+    "topicName": "Relative Speed",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "speed-distance",
+    "groupName": "Speed, Time & Distance",
+    "topic": "train-problems",
+    "topicName": "Train Problems",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "speed-distance",
+    "groupName": "Speed, Time & Distance",
+    "topic": "boats-streams",
+    "topicName": "Boats & Streams",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "speed-distance",
+    "groupName": "Speed, Time & Distance",
+    "topic": "races-circular-tracks",
+    "topicName": "Races & Circular Tracks",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "groupName": "Algebra & Sequences",
+    "topic": "algebra",
+    "topicName": "Algebra Basics",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "groupName": "Algebra & Sequences",
+    "topic": "equations",
+    "topicName": "Equations",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "groupName": "Algebra & Sequences",
+    "topic": "inequalities",
+    "topicName": "Inequalities",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "groupName": "Algebra & Sequences",
+    "topic": "progressions",
+    "topicName": "Progressions (AP & GP)",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "groupName": "Geometry & Mensuration",
+    "topic": "geometry",
+    "topicName": "Geometry",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "groupName": "Geometry & Mensuration",
+    "topic": "coordinate-geometry",
+    "topicName": "Coordinate Geometry",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "geometry-mensuration",
+    "groupName": "Geometry & Mensuration",
+    "topic": "mensuration",
+    "topicName": "Mensuration",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "advanced-math",
+    "groupName": "Advanced Maths",
+    "topic": "logarithms",
+    "topicName": "Logarithms",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "advanced-math",
+    "groupName": "Advanced Maths",
+    "topic": "permutation-combination",
+    "topicName": "Permutation & Combination",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "advanced-math",
+    "groupName": "Advanced Maths",
+    "topic": "probability",
+    "topicName": "Probability",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "advanced-math",
+    "groupName": "Advanced Maths",
+    "topic": "cryptarithmetic",
+    "topicName": "Cryptarithmetic",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "groupName": "Statistics & Decision",
+    "topic": "mean-median-mode",
+    "topicName": "Mean, Median & Mode",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "groupName": "Statistics & Decision",
+    "topic": "variance-standard-deviation",
+    "topicName": "Variance & Standard Deviation",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "groupName": "Statistics & Decision",
+    "topic": "data-sufficiency",
+    "topicName": "Data Sufficiency",
+    "count": 100,
+    "error": ""
+  },
+  {
+    "category": "quantitative",
+    "group": "data-based-quant",
+    "groupName": "Statistics & Decision",
+    "topic": "quantity-comparison",
+    "topicName": "Quantity Comparison",
+    "count": 100,
+    "error": ""
+  }
+]

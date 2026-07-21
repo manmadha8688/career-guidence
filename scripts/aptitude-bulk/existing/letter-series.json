@@ -1,0 +1,402 @@
+[
+  {
+    "id": "letter-series-q1",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Find the next letter: A, C, E, G, ?",
+    "options": [
+      "I",
+      "H",
+      "J",
+      "K"
+    ],
+    "answer": "A",
+    "solution": "Positions 1, 3, 5, 7 (+2 each); next is 9 → I.",
+    "trick": "Skip one letter each time.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q2",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Find the next letter: B, D, F, H, ?",
+    "options": [
+      "I",
+      "J",
+      "K",
+      "L"
+    ],
+    "answer": "B",
+    "solution": "Positions 2, 4, 6, 8 (+2 each); next is 10 → J.",
+    "trick": "Skip one letter each time.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q3",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Find the next letter: A, B, C, D, ?",
+    "options": [
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "answer": "C",
+    "solution": "Consecutive letters (+1 each); next is E.",
+    "trick": "+1 letter.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q4",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Find the next letter: Z, Y, X, W, ?",
+    "options": [
+      "U",
+      "T",
+      "S",
+      "V"
+    ],
+    "answer": "D",
+    "solution": "Going backward by 1: after W comes V.",
+    "trick": "−1 letter (backward).",
+    "type": "Backward series",
+    "active": true
+  },
+  {
+    "id": "letter-series-q5",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find the next letter: A, D, G, J, ?",
+    "options": [
+      "M",
+      "N",
+      "L",
+      "K"
+    ],
+    "answer": "A",
+    "solution": "Positions 1, 4, 7, 10 (+3 each); next is 13 → M.",
+    "trick": "+3 each step.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q6",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Find the next letter: C, F, I, L, ?",
+    "options": [
+      "N",
+      "O",
+      "P",
+      "M"
+    ],
+    "answer": "B",
+    "solution": "Positions 3, 6, 9, 12 (+3 each); next is 15 → O.",
+    "trick": "+3 each step.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q7",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Find the next letter: B, E, H, K, ?",
+    "options": [
+      "L",
+      "M",
+      "N",
+      "O"
+    ],
+    "answer": "C",
+    "solution": "Positions 2, 5, 8, 11 (+3 each); next is 14 → N.",
+    "trick": "+3 each step.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q8",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "Find the next letter: A, C, F, J, ?",
+    "options": [
+      "M",
+      "N",
+      "P",
+      "O"
+    ],
+    "answer": "D",
+    "solution": "Positions 1, 3, 6, 10 with gaps 2, 3, 4; next gap 5 → 15 → O.",
+    "trick": "Growing gap (2,3,4,5).",
+    "type": "Growing step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q9",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Find the next letter: Z, X, V, T, ?",
+    "options": [
+      "R",
+      "S",
+      "Q",
+      "P"
+    ],
+    "answer": "A",
+    "solution": "Positions 26, 24, 22, 20 (−2 each); next is 18 → R.",
+    "trick": "−2 each step.",
+    "type": "Backward series",
+    "active": true
+  },
+  {
+    "id": "letter-series-q10",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Find the next letter: A, B, D, G, ?",
+    "options": [
+      "J",
+      "K",
+      "L",
+      "M"
+    ],
+    "answer": "B",
+    "solution": "Positions 1, 2, 4, 7 with gaps 1, 2, 3; next gap 4 → 11 → K.",
+    "trick": "Growing gap (1,2,3,4).",
+    "type": "Growing step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q11",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Find the next letter: B, D, G, K, ?",
+    "options": [
+      "N",
+      "O",
+      "P",
+      "Q"
+    ],
+    "answer": "C",
+    "solution": "Positions 2, 4, 7, 11 with gaps 2, 3, 4; next gap 5 → 16 → P.",
+    "trick": "Growing gap (2,3,4,5).",
+    "type": "Growing step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q12",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find the next letter: Y, V, S, P, ?",
+    "options": [
+      "N",
+      "O",
+      "L",
+      "M"
+    ],
+    "answer": "D",
+    "solution": "Positions 25, 22, 19, 16 (−3 each); next is 13 → M.",
+    "trick": "−3 each step.",
+    "type": "Backward series",
+    "active": true
+  },
+  {
+    "id": "letter-series-q13",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Find the next letter: A, Z, B, Y, C, ?",
+    "options": [
+      "X",
+      "W",
+      "D",
+      "V"
+    ],
+    "answer": "A",
+    "solution": "Two interleaved series: A, B, C (forward) and Z, Y, ? (backward) → X.",
+    "trick": "Split alternate terms.",
+    "type": "Interleaved series",
+    "active": true
+  },
+  {
+    "id": "letter-series-q14",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Find the next letter: D, H, L, P, ?",
+    "options": [
+      "S",
+      "T",
+      "U",
+      "V"
+    ],
+    "answer": "B",
+    "solution": "Positions 4, 8, 12, 16 (+4 each); next is 20 → T.",
+    "trick": "+4 each step.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q15",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Find the next letter: A, C, E, G, I, ?",
+    "options": [
+      "J",
+      "L",
+      "K",
+      "M"
+    ],
+    "answer": "C",
+    "solution": "Positions 1, 3, 5, 7, 9 (+2 each); next is 11 → K.",
+    "trick": "+2 each step.",
+    "type": "Constant forward step",
+    "active": true
+  },
+  {
+    "id": "letter-series-q16",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "Find the next letter: Z, W, T, Q, ?",
+    "options": [
+      "O",
+      "P",
+      "M",
+      "N"
+    ],
+    "answer": "D",
+    "solution": "Positions 26, 23, 20, 17 (−3 each); next is 14 → N.",
+    "trick": "−3 each step.",
+    "type": "Backward series",
+    "active": true
+  },
+  {
+    "id": "letter-series-q17",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Find the next pair: AZ, BY, CX, ?",
+    "options": [
+      "DW",
+      "DV",
+      "EW",
+      "DX"
+    ],
+    "answer": "A",
+    "solution": "First letters A, B, C, D (+1); second letters Z, Y, X, W (−1) → DW.",
+    "trick": "Left +1, right −1.",
+    "type": "Two-letter pair",
+    "active": true
+  },
+  {
+    "id": "letter-series-q18",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Find the next letter: A, B, D, H, ?",
+    "options": [
+      "O",
+      "P",
+      "Q",
+      "N"
+    ],
+    "answer": "B",
+    "solution": "Positions 1, 2, 4, 8 (×2 each); next is 16 → P.",
+    "trick": "Positions double each step.",
+    "type": "Doubling positions",
+    "active": true
+  },
+  {
+    "id": "letter-series-q19",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Find the next letter: B, C, E, G, K, ?",
+    "options": [
+      "L",
+      "N",
+      "M",
+      "O"
+    ],
+    "answer": "C",
+    "solution": "Positions 2, 3, 5, 7, 11 are primes; the next prime is 13 → M.",
+    "trick": "Prime-position letters.",
+    "type": "Prime-position series",
+    "active": true
+  },
+  {
+    "id": "letter-series-q20",
+    "topic": "letter-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Find the next letter: C, E, I, O, ?",
+    "options": [
+      "U",
+      "V",
+      "X",
+      "W"
+    ],
+    "answer": "D",
+    "solution": "Positions 3, 5, 9, 15 with gaps 2, 4, 6; next gap 8 → 23 → W.",
+    "trick": "Growing even gaps (2,4,6,8).",
+    "type": "Growing step",
+    "active": true
+  }
+]

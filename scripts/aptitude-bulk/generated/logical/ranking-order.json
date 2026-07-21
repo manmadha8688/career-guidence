@@ -1,0 +1,1207 @@
+{
+  "topic": "ranking-order",
+  "category": "logical",
+  "group": "analytical",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Rank from top is 2, from bottom is 7. Total students?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 7 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Rank from top is 3, from bottom is 8. Total students?",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 8 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Rank from top is 4, from bottom is 9. Total students?",
+      "options": [
+        "12",
+        "11",
+        "13",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 9 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Rank from top is 5, from bottom is 2. Total students?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 2 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Rank from top is 6, from bottom is 3. Total students?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 3 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Rank from top is 7, from bottom is 4. Total students?",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 4 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Rank from top is 8, from bottom is 5. Total students?",
+      "options": [
+        "12",
+        "11",
+        "13",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 5 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Rank from top is 9, from bottom is 6. Total students?",
+      "options": [
+        "14",
+        "13",
+        "15",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 6 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Rank from top is 10, from bottom is 7. Total students?",
+      "options": [
+        "16",
+        "15",
+        "17",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 7 − 1 = 16. Answer: 16.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Rank from top is 1, from bottom is 8. Total students?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 8 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Rank from top is 2, from bottom is 9. Total students?",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 9 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Rank from top is 3, from bottom is 2. Total students?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 2 − 1 = 4. Answer: 4.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Rank from top is 4, from bottom is 3. Total students?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 3 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Rank from top is 5, from bottom is 4. Total students?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 4 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Rank from top is 6, from bottom is 5. Total students?",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 5 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Rank from top is 7, from bottom is 6. Total students?",
+      "options": [
+        "12",
+        "11",
+        "13",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 6 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Rank from top is 8, from bottom is 7. Total students?",
+      "options": [
+        "14",
+        "13",
+        "15",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 7 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Rank from top is 9, from bottom is 8. Total students?",
+      "options": [
+        "16",
+        "15",
+        "17",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 8 − 1 = 16. Answer: 16.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Rank from top is 10, from bottom is 9. Total students?",
+      "options": [
+        "18",
+        "17",
+        "19",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 9 − 1 = 18. Answer: 18.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Rank from top is 1, from bottom is 2. Total students?",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 2 − 1 = 2. Answer: 2.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Rank from top is 2, from bottom is 3. Total students?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 3 − 1 = 4. Answer: 4.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Rank from top is 3, from bottom is 4. Total students?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 4 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Rank from top is 4, from bottom is 5. Total students?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 5 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Rank from top is 5, from bottom is 6. Total students?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 6 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Rank from top is 6, from bottom is 7. Total students?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 7 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Rank from top is 7, from bottom is 8. Total students?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 8 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Rank from top is 8, from bottom is 9. Total students?",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 9 − 1 = 16. Answer: 16.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Rank from top is 9, from bottom is 2. Total students?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 2 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Rank from top is 10, from bottom is 3. Total students?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 3 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Rank from top is 1, from bottom is 4. Total students?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 4 − 1 = 4. Answer: 4.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Rank from top is 2, from bottom is 5. Total students?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 5 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Rank from top is 3, from bottom is 6. Total students?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 6 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Rank from top is 4, from bottom is 7. Total students?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 7 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Rank from top is 5, from bottom is 8. Total students?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 8 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Rank from top is 6, from bottom is 9. Total students?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 9 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Rank from top is 7, from bottom is 2. Total students?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 2 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Rank from top is 8, from bottom is 3. Total students?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 3 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Rank from top is 9, from bottom is 4. Total students?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 4 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Rank from top is 10, from bottom is 5. Total students?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 5 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Rank from top is 1, from bottom is 6. Total students?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 6 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Rank from top is 2, from bottom is 7. Total students?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 7 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Rank from top is 3, from bottom is 8. Total students?",
+      "options": [
+        "9",
+        "11",
+        "10",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 8 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Rank from top is 4, from bottom is 9. Total students?",
+      "options": [
+        "11",
+        "13",
+        "12",
+        "14"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 9 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Rank from top is 5, from bottom is 2. Total students?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 2 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Rank from top is 6, from bottom is 3. Total students?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 3 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Rank from top is 7, from bottom is 4. Total students?",
+      "options": [
+        "9",
+        "11",
+        "10",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 4 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Rank from top is 8, from bottom is 5. Total students?",
+      "options": [
+        "11",
+        "13",
+        "12",
+        "14"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 5 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Rank from top is 9, from bottom is 6. Total students?",
+      "options": [
+        "13",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 6 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Rank from top is 10, from bottom is 7. Total students?",
+      "options": [
+        "15",
+        "17",
+        "16",
+        "18"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 7 − 1 = 16. Answer: 16.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Rank from top is 1, from bottom is 8. Total students?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 8 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Rank from top is 2, from bottom is 9. Total students?",
+      "options": [
+        "9",
+        "11",
+        "10",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 9 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Rank from top is 3, from bottom is 2. Total students?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 2 − 1 = 4. Answer: 4.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Rank from top is 4, from bottom is 3. Total students?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 3 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Rank from top is 5, from bottom is 4. Total students?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 4 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Rank from top is 6, from bottom is 5. Total students?",
+      "options": [
+        "9",
+        "11",
+        "10",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 5 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Ranking"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Rank from top is 7, from bottom is 6. Total students?",
+      "options": [
+        "11",
+        "13",
+        "12",
+        "14"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 6 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Rank from top is 8, from bottom is 7. Total students?",
+      "options": [
+        "13",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 7 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Rank from top is 9, from bottom is 8. Total students?",
+      "options": [
+        "15",
+        "17",
+        "16",
+        "18"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 8 − 1 = 16. Answer: 16.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Rank from top is 10, from bottom is 9. Total students?",
+      "options": [
+        "17",
+        "19",
+        "18",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 9 − 1 = 18. Answer: 18.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Rank from top is 1, from bottom is 2. Total students?",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 2 − 1 = 2. Answer: 2.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Rank from top is 2, from bottom is 3. Total students?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 3 − 1 = 4. Answer: 4.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Rank from top is 3, from bottom is 4. Total students?",
+      "options": [
+        "5",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 4 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Rank from top is 4, from bottom is 5. Total students?",
+      "options": [
+        "7",
+        "9",
+        "10",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 5 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Rank from top is 5, from bottom is 6. Total students?",
+      "options": [
+        "9",
+        "11",
+        "12",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 6 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Rank from top is 6, from bottom is 7. Total students?",
+      "options": [
+        "11",
+        "13",
+        "14",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 7 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Rank from top is 7, from bottom is 8. Total students?",
+      "options": [
+        "13",
+        "15",
+        "16",
+        "14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 8 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Rank from top is 8, from bottom is 9. Total students?",
+      "options": [
+        "15",
+        "17",
+        "18",
+        "16"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 9 − 1 = 16. Answer: 16.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Rank from top is 9, from bottom is 2. Total students?",
+      "options": [
+        "9",
+        "11",
+        "12",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 2 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Rank from top is 10, from bottom is 3. Total students?",
+      "options": [
+        "11",
+        "13",
+        "14",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 3 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Rank from top is 1, from bottom is 4. Total students?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 4 − 1 = 4. Answer: 4.",
+      "trick": "Top + bottom − 1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Rank from top is 2, from bottom is 5. Total students?",
+      "options": [
+        "5",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 2 + 5 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Rank from top is 3, from bottom is 6. Total students?",
+      "options": [
+        "7",
+        "9",
+        "10",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 3 + 6 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Rank from top is 4, from bottom is 7. Total students?",
+      "options": [
+        "9",
+        "11",
+        "12",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 4 + 7 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Rank from top is 5, from bottom is 8. Total students?",
+      "options": [
+        "11",
+        "13",
+        "14",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 5 + 8 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Rank from top is 6, from bottom is 9. Total students?",
+      "options": [
+        "13",
+        "15",
+        "16",
+        "14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 6 + 9 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Rank from top is 7, from bottom is 2. Total students?",
+      "options": [
+        "7",
+        "9",
+        "10",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 7 + 2 − 1 = 8. Answer: 8.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Rank from top is 8, from bottom is 3. Total students?",
+      "options": [
+        "9",
+        "11",
+        "12",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 8 + 3 − 1 = 10. Answer: 10.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Rank from top is 9, from bottom is 4. Total students?",
+      "options": [
+        "11",
+        "13",
+        "14",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 9 + 4 − 1 = 12. Answer: 12.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Rank from top is 10, from bottom is 5. Total students?",
+      "options": [
+        "13",
+        "15",
+        "16",
+        "14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 10 + 5 − 1 = 14. Answer: 14.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Rank from top is 1, from bottom is 6. Total students?",
+      "options": [
+        "5",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = top + bottom − 1. Step 2: 1 + 6 − 1 = 6. Answer: 6.",
+      "trick": "Top + bottom − 1.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

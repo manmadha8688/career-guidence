@@ -1,0 +1,1207 @@
+{
+  "topic": "races-circular-tracks",
+  "category": "quantitative",
+  "group": "speed-distance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "A (100 m/min) gives B (80 m/min) 200 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "10",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 200/(20) = 10 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Circular track 400m. A 60 m/min, B 80 m/min same direction. First meeting (min)?",
+      "options": [
+        "6",
+        "20",
+        "5",
+        "20"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 400/(20) = 20 min.",
+      "trick": "Track / rel speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Winner runs 10s per 100m. Loser 12s. Winner's lead per 100m (s)?",
+      "options": [
+        "10",
+        "12",
+        "2",
+        "22"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 12 − 10 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Runner completes 5 laps of 300m track. Distance?",
+      "options": [
+        "305",
+        "300",
+        "500",
+        "1500"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 5×300 = 1500 m.",
+      "trick": "Laps × lap length.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "1000m race: A 8 m/s, B 10 m/s. Winning margin (s)?",
+      "options": [
+        "25.0",
+        "125.0",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1000/8 − 1000/10| = 25.0 s.",
+      "trick": "Time difference.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Runner 5 m/s on 500m circular track. One lap time (s)?",
+      "options": [
+        "5",
+        "100.0",
+        "500",
+        "200.0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 500/5 = 100.0 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "A runs 3 times as fast as B on same track. When A finishes 3 laps, B completes?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Speed ratio 3:1 → B completes 1 lap.",
+      "trick": "Inverse to speed ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "A (72 km/h) chases B (60 km/h) with 600 km lead. Catch time (h)?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "50"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 600/(12) = 50 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "A (105 m/min) gives B (85 m/min) 220 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "11",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 220/(20) = 11 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Circular track 440m. A 60 m/min, B 85 m/min same direction. First meeting (min)?",
+      "options": [
+        "7",
+        "18",
+        "5",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 440/(25) = 18 min.",
+      "trick": "Track / rel speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Winner runs 11s per 100m. Loser 13s. Winner's lead per 100m (s)?",
+      "options": [
+        "11",
+        "13",
+        "2",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 13 − 11 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Runner completes 6 laps of 300m track. Distance?",
+      "options": [
+        "306",
+        "300",
+        "600",
+        "1800"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6×300 = 1800 m.",
+      "trick": "Laps × lap length.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "1100m race: A 8 m/s, B 11 m/s. Winning margin (s)?",
+      "options": [
+        "37.5",
+        "137.5",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1100/8 − 1100/11| = 37.5 s.",
+      "trick": "Time difference.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Runner 6 m/s on 550m circular track. One lap time (s)?",
+      "options": [
+        "6",
+        "91.7",
+        "550",
+        "183.4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 550/6 = 91.7 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1052,
+      "difficulty": "hard",
+      "question": "A (584 km/h) chases B (572 km/h) with 8280 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "690",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8280/(12) = 690 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "A (76 km/h) chases B (64 km/h) with 660 km lead. Catch time (h)?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "55"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 660/(12) = 55 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "A (110 m/min) gives B (90 m/min) 240 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "12",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 240/(20) = 12 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Circular track 480m. A 60 m/min, B 90 m/min same direction. First meeting (min)?",
+      "options": [
+        "8",
+        "16",
+        "5",
+        "30"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 480/(30) = 16 min.",
+      "trick": "Track / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Winner runs 12s per 100m. Loser 14s. Winner's lead per 100m (s)?",
+      "options": [
+        "12",
+        "14",
+        "2",
+        "26"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 14 − 12 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Runner completes 7 laps of 300m track. Distance?",
+      "options": [
+        "307",
+        "300",
+        "700",
+        "2100"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 7×300 = 2100 m.",
+      "trick": "Laps × lap length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "1200m race: A 8 m/s, B 12 m/s. Winning margin (s)?",
+      "options": [
+        "50.0",
+        "150.0",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1200/8 − 1200/12| = 50.0 s.",
+      "trick": "Time difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Runner 7 m/s on 600m circular track. One lap time (s)?",
+      "options": [
+        "7",
+        "85.7",
+        "600",
+        "171.4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 600/7 = 85.7 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1060,
+      "difficulty": "hard",
+      "question": "A (588 km/h) chases B (576 km/h) with 8340 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "695",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8340/(12) = 695 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "A (80 km/h) chases B (68 km/h) with 720 km lead. Catch time (h)?",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "60"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 720/(12) = 60 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "A (115 m/min) gives B (95 m/min) 260 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "13",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 260/(20) = 13 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Circular track 520m. A 60 m/min, B 95 m/min same direction. First meeting (min)?",
+      "options": [
+        "8",
+        "15",
+        "5",
+        "35"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 520/(35) = 15 min.",
+      "trick": "Track / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Winner runs 13s per 100m. Loser 15s. Winner's lead per 100m (s)?",
+      "options": [
+        "13",
+        "15",
+        "2",
+        "28"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 15 − 13 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Runner completes 8 laps of 300m track. Distance?",
+      "options": [
+        "308",
+        "300",
+        "800",
+        "2400"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 8×300 = 2400 m.",
+      "trick": "Laps × lap length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "1300m race: A 8 m/s, B 13 m/s. Winning margin (s)?",
+      "options": [
+        "62.5",
+        "162.5",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1300/8 − 1300/13| = 62.5 s.",
+      "trick": "Time difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Runner 8 m/s on 650m circular track. One lap time (s)?",
+      "options": [
+        "8",
+        "81.2",
+        "650",
+        "162.4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 650/8 = 81.2 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1068,
+      "difficulty": "hard",
+      "question": "A (592 km/h) chases B (580 km/h) with 8400 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "700",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8400/(12) = 700 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "A (84 km/h) chases B (72 km/h) with 780 km lead. Catch time (h)?",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "65"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 780/(12) = 65 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "A (120 m/min) gives B (100 m/min) 280 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "14",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 280/(20) = 14 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Circular track 560m. A 60 m/min, B 100 m/min same direction. First meeting (min)?",
+      "options": [
+        "9",
+        "14",
+        "5",
+        "40"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 560/(40) = 14 min.",
+      "trick": "Track / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Winner runs 14s per 100m. Loser 16s. Winner's lead per 100m (s)?",
+      "options": [
+        "14",
+        "16",
+        "2",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 16 − 14 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Runner completes 9 laps of 300m track. Distance?",
+      "options": [
+        "309",
+        "300",
+        "900",
+        "2700"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 9×300 = 2700 m.",
+      "trick": "Laps × lap length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "1400m race: A 8 m/s, B 14 m/s. Winning margin (s)?",
+      "options": [
+        "75.0",
+        "175.0",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1400/8 − 1400/14| = 75.0 s.",
+      "trick": "Time difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Runner 9 m/s on 700m circular track. One lap time (s)?",
+      "options": [
+        "9",
+        "77.8",
+        "700",
+        "155.6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 700/9 = 77.8 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1076,
+      "difficulty": "hard",
+      "question": "A (596 km/h) chases B (584 km/h) with 8460 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "705",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8460/(12) = 705 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "A (88 km/h) chases B (76 km/h) with 840 km lead. Catch time (h)?",
+      "options": [
+        "9",
+        "11",
+        "12",
+        "70"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 840/(12) = 70 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "A (125 m/min) gives B (105 m/min) 300 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "15",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 300/(20) = 15 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Circular track 600m. A 60 m/min, B 105 m/min same direction. First meeting (min)?",
+      "options": [
+        "10",
+        "13",
+        "5",
+        "45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 600/(45) = 13 min.",
+      "trick": "Track / rel speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Winner runs 15s per 100m. Loser 17s. Winner's lead per 100m (s)?",
+      "options": [
+        "15",
+        "17",
+        "2",
+        "32"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 17 − 15 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Runner completes 10 laps of 300m track. Distance?",
+      "options": [
+        "310",
+        "300",
+        "1000",
+        "3000"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10×300 = 3000 m.",
+      "trick": "Laps × lap length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "1500m race: A 8 m/s, B 15 m/s. Winning margin (s)?",
+      "options": [
+        "87.5",
+        "187.5",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1500/8 − 1500/15| = 87.5 s.",
+      "trick": "Time difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Runner 10 m/s on 750m circular track. One lap time (s)?",
+      "options": [
+        "10",
+        "75.0",
+        "750",
+        "150.0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 750/10 = 75.0 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1084,
+      "difficulty": "hard",
+      "question": "A (600 km/h) chases B (588 km/h) with 8520 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "710",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8520/(12) = 710 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "A (92 km/h) chases B (80 km/h) with 900 km lead. Catch time (h)?",
+      "options": [
+        "9",
+        "11",
+        "12",
+        "75"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 900/(12) = 75 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "A (130 m/min) gives B (110 m/min) 320 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "16",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 320/(20) = 16 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Circular track 640m. A 60 m/min, B 110 m/min same direction. First meeting (min)?",
+      "options": [
+        "10",
+        "13",
+        "5",
+        "50"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 640/(50) = 13 min.",
+      "trick": "Track / rel speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Winner runs 16s per 100m. Loser 18s. Winner's lead per 100m (s)?",
+      "options": [
+        "16",
+        "18",
+        "2",
+        "34"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 18 − 16 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Runner completes 11 laps of 300m track. Distance?",
+      "options": [
+        "311",
+        "300",
+        "1100",
+        "3300"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 11×300 = 3300 m.",
+      "trick": "Laps × lap length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "1600m race: A 8 m/s, B 16 m/s. Winning margin (s)?",
+      "options": [
+        "100.0",
+        "200.0",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1600/8 − 1600/16| = 100.0 s.",
+      "trick": "Time difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Runner 11 m/s on 800m circular track. One lap time (s)?",
+      "options": [
+        "11",
+        "72.7",
+        "800",
+        "145.4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 800/11 = 72.7 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1092,
+      "difficulty": "hard",
+      "question": "A (604 km/h) chases B (592 km/h) with 8580 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "715",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8580/(12) = 715 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "A (96 km/h) chases B (84 km/h) with 960 km lead. Catch time (h)?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "80"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 960/(12) = 80 h.",
+      "trick": "Lead / relative speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "A (135 m/min) gives B (115 m/min) 340 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "17",
+        "2",
+        "2",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 340/(20) = 17 min.",
+      "trick": "Head start / rel speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Circular track 680m. A 60 m/min, B 115 m/min same direction. First meeting (min)?",
+      "options": [
+        "11",
+        "12",
+        "5",
+        "55"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 680/(55) = 12 min.",
+      "trick": "Track / rel speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Winner runs 17s per 100m. Loser 19s. Winner's lead per 100m (s)?",
+      "options": [
+        "17",
+        "19",
+        "2",
+        "36"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 19 − 17 = 2 s.",
+      "trick": "Time difference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Runner completes 12 laps of 300m track. Distance?",
+      "options": [
+        "312",
+        "300",
+        "1200",
+        "3600"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 12×300 = 3600 m.",
+      "trick": "Laps × lap length.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "1700m race: A 8 m/s, B 17 m/s. Winning margin (s)?",
+      "options": [
+        "112.5",
+        "212.5",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1700/8 − 1700/17| = 112.5 s.",
+      "trick": "Time difference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Runner 12 m/s on 850m circular track. One lap time (s)?",
+      "options": [
+        "12",
+        "70.8",
+        "850",
+        "141.6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 850/12 = 70.8 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1100,
+      "difficulty": "hard",
+      "question": "A (608 km/h) chases B (596 km/h) with 8640 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "720",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8640/(12) = 720 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "A (100 km/h) chases B (88 km/h) with 1020 km lead. Catch time (h)?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "85"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1020/(12) = 85 h.",
+      "trick": "Lead / relative speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "A (140 m/min) gives B (120 m/min) 360 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "18",
+        "2",
+        "3",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 360/(20) = 18 min.",
+      "trick": "Head start / rel speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Circular track 720m. A 60 m/min, B 120 m/min same direction. First meeting (min)?",
+      "options": [
+        "12",
+        "12",
+        "6",
+        "60"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 720/(60) = 12 min.",
+      "trick": "Track / rel speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Winner runs 18s per 100m. Loser 20s. Winner's lead per 100m (s)?",
+      "options": [
+        "18",
+        "20",
+        "2",
+        "38"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 20 − 18 = 2 s.",
+      "trick": "Time difference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Runner completes 13 laps of 300m track. Distance?",
+      "options": [
+        "313",
+        "300",
+        "1300",
+        "3900"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 13×300 = 3900 m.",
+      "trick": "Laps × lap length.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "1800m race: A 8 m/s, B 18 m/s. Winning margin (s)?",
+      "options": [
+        "125.0",
+        "225.0",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1800/8 − 1800/18| = 125.0 s.",
+      "trick": "Time difference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Runner 13 m/s on 900m circular track. One lap time (s)?",
+      "options": [
+        "13",
+        "69.2",
+        "900",
+        "138.4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 900/13 = 69.2 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1108,
+      "difficulty": "hard",
+      "question": "A (612 km/h) chases B (600 km/h) with 8700 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "725",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8700/(12) = 725 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "A (104 km/h) chases B (92 km/h) with 1080 km lead. Catch time (h)?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "90"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1080/(12) = 90 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "A (145 m/min) gives B (125 m/min) 380 m head start in 1 km race. A catches B in? (min)",
+      "options": [
+        "19",
+        "2",
+        "3",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rel speed 20. Time = 380/(20) = 19 min.",
+      "trick": "Head start / rel speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Circular track 760m. A 60 m/min, B 125 m/min same direction. First meeting (min)?",
+      "options": [
+        "12",
+        "12",
+        "6",
+        "65"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rel lap = 760/(65) = 12 min.",
+      "trick": "Track / rel speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Winner runs 19s per 100m. Loser 21s. Winner's lead per 100m (s)?",
+      "options": [
+        "19",
+        "21",
+        "2",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 21 − 19 = 2 s.",
+      "trick": "Time difference.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Runner completes 14 laps of 300m track. Distance?",
+      "options": [
+        "314",
+        "300",
+        "1400",
+        "4200"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14×300 = 4200 m.",
+      "trick": "Laps × lap length.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "1900m race: A 8 m/s, B 19 m/s. Winning margin (s)?",
+      "options": [
+        "137.5",
+        "237.5",
+        "100.0",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |1900/8 − 1900/19| = 137.5 s.",
+      "trick": "Time difference.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Runner 14 m/s on 950m circular track. One lap time (s)?",
+      "options": [
+        "14",
+        "67.9",
+        "950",
+        "135.8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 950/14 = 67.9 s.",
+      "trick": "Lap = distance/speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1116,
+      "difficulty": "hard",
+      "question": "A (616 km/h) chases B (604 km/h) with 8760 km lead. Catch time (h)?",
+      "options": [
+        "14",
+        "14",
+        "730",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8760/(12) = 730 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "A (108 km/h) chases B (96 km/h) with 1140 km lead. Catch time (h)?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "95"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1140/(12) = 95 h.",
+      "trick": "Lead / relative speed.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

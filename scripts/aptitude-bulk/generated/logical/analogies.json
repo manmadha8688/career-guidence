@@ -1,0 +1,1207 @@
+{
+  "topic": "analogies",
+  "category": "logical",
+  "group": "coding-analogy",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Cut",
+        "Kennel",
+        "Desert",
+        "Car"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Kennel",
+        "Desert",
+        "Symphony",
+        "Lock"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Desert",
+        "Symphony",
+        "Body",
+        "Plant"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Symphony",
+        "Body",
+        "Account",
+        "Canvas"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Body",
+        "Account",
+        "Bird",
+        "Court"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Account",
+        "Bird",
+        "Marble",
+        "Hospital"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Bird",
+        "Marble",
+        "Stage",
+        "Write"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Marble",
+        "Stage",
+        "School",
+        "Nest"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "Stage",
+        "School",
+        "Cut",
+        "Water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "School",
+        "Cut",
+        "Kennel",
+        "Book"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Cut",
+        "Kennel",
+        "Desert",
+        "Car"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Kennel",
+        "Desert",
+        "Symphony",
+        "Lock"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Desert",
+        "Symphony",
+        "Body",
+        "Plant"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Symphony",
+        "Body",
+        "Account",
+        "Canvas"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Body",
+        "Account",
+        "Bird",
+        "Court"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Account",
+        "Bird",
+        "Marble",
+        "Hospital"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Bird",
+        "Marble",
+        "Stage",
+        "Write"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Marble",
+        "Stage",
+        "School",
+        "Nest"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "Stage",
+        "School",
+        "Cut",
+        "Water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "School",
+        "Cut",
+        "Kennel",
+        "Book"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Kennel",
+        "Cut",
+        "Desert",
+        "Car"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Desert",
+        "Kennel",
+        "Symphony",
+        "Lock"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Symphony",
+        "Desert",
+        "Body",
+        "Plant"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Body",
+        "Symphony",
+        "Account",
+        "Canvas"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Account",
+        "Body",
+        "Bird",
+        "Court"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Bird",
+        "Account",
+        "Marble",
+        "Hospital"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Marble",
+        "Bird",
+        "Stage",
+        "Write"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Stage",
+        "Marble",
+        "School",
+        "Nest"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "School",
+        "Stage",
+        "Cut",
+        "Water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "Cut",
+        "School",
+        "Kennel",
+        "Book"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Kennel",
+        "Cut",
+        "Desert",
+        "Car"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Desert",
+        "Kennel",
+        "Symphony",
+        "Lock"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Symphony",
+        "Desert",
+        "Body",
+        "Plant"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Body",
+        "Symphony",
+        "Account",
+        "Canvas"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Account",
+        "Body",
+        "Bird",
+        "Court"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Bird",
+        "Account",
+        "Marble",
+        "Hospital"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Marble",
+        "Bird",
+        "Stage",
+        "Write"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Stage",
+        "Marble",
+        "School",
+        "Nest"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "School",
+        "Stage",
+        "Cut",
+        "Water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "Cut",
+        "School",
+        "Kennel",
+        "Book"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Kennel",
+        "Desert",
+        "Cut",
+        "Car"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Desert",
+        "Symphony",
+        "Kennel",
+        "Lock"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Symphony",
+        "Body",
+        "Desert",
+        "Plant"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Body",
+        "Account",
+        "Symphony",
+        "Canvas"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Account",
+        "Bird",
+        "Body",
+        "Court"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Bird",
+        "Marble",
+        "Account",
+        "Hospital"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Marble",
+        "Stage",
+        "Bird",
+        "Write"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Stage",
+        "School",
+        "Marble",
+        "Nest"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "School",
+        "Cut",
+        "Stage",
+        "Water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "Cut",
+        "Kennel",
+        "School",
+        "Book"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Kennel",
+        "Desert",
+        "Cut",
+        "Car"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Desert",
+        "Symphony",
+        "Kennel",
+        "Lock"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Symphony",
+        "Body",
+        "Desert",
+        "Plant"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Body",
+        "Account",
+        "Symphony",
+        "Canvas"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Account",
+        "Bird",
+        "Body",
+        "Court"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Word analogy"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Bird",
+        "Marble",
+        "Account",
+        "Hospital"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Marble",
+        "Stage",
+        "Bird",
+        "Write"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Stage",
+        "School",
+        "Marble",
+        "Nest"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "School",
+        "Cut",
+        "Stage",
+        "Water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "Cut",
+        "Kennel",
+        "School",
+        "Book"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Kennel",
+        "Desert",
+        "Car",
+        "Cut"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Desert",
+        "Symphony",
+        "Lock",
+        "Kennel"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Symphony",
+        "Body",
+        "Plant",
+        "Desert"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Body",
+        "Account",
+        "Canvas",
+        "Symphony"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Account",
+        "Bird",
+        "Court",
+        "Body"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Bird",
+        "Marble",
+        "Hospital",
+        "Account"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Marble",
+        "Stage",
+        "Write",
+        "Bird"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Stage",
+        "School",
+        "Nest",
+        "Marble"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "School",
+        "Cut",
+        "Water",
+        "Stage"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "Cut",
+        "Kennel",
+        "Book",
+        "School"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Pen : Write :: Knife : ?",
+      "options": [
+        "Kennel",
+        "Desert",
+        "Car",
+        "Cut"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Pen works at/is related to Write. Step 2: Same relation → Knife : Cut. Answer: Cut.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Bird : Nest :: Dog : ?",
+      "options": [
+        "Desert",
+        "Symphony",
+        "Lock",
+        "Kennel"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Bird works at/is related to Nest. Step 2: Same relation → Dog : Kennel. Answer: Kennel.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Fish : Water :: Camel : ?",
+      "options": [
+        "Symphony",
+        "Body",
+        "Plant",
+        "Desert"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Fish works at/is related to Water. Step 2: Same relation → Camel : Desert. Answer: Desert.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Author : Book :: Composer : ?",
+      "options": [
+        "Body",
+        "Account",
+        "Canvas",
+        "Symphony"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Author works at/is related to Book. Step 2: Same relation → Composer : Symphony. Answer: Symphony.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Engine : Car :: Heart : ?",
+      "options": [
+        "Account",
+        "Bird",
+        "Court",
+        "Body"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Engine works at/is related to Car. Step 2: Same relation → Heart : Body. Answer: Body.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Key : Lock :: Password : ?",
+      "options": [
+        "Bird",
+        "Marble",
+        "Hospital",
+        "Account"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Key works at/is related to Lock. Step 2: Same relation → Password : Account. Answer: Account.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Seed : Plant :: Egg : ?",
+      "options": [
+        "Marble",
+        "Stage",
+        "Write",
+        "Bird"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Seed works at/is related to Plant. Step 2: Same relation → Egg : Bird. Answer: Bird.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Painter : Canvas :: Sculptor : ?",
+      "options": [
+        "Stage",
+        "School",
+        "Nest",
+        "Marble"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Painter works at/is related to Canvas. Step 2: Same relation → Sculptor : Marble. Answer: Marble.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Lawyer : Court :: Actor : ?",
+      "options": [
+        "School",
+        "Cut",
+        "Water",
+        "Stage"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Lawyer works at/is related to Court. Step 2: Same relation → Actor : Stage. Answer: Stage.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "Cut",
+        "Kennel",
+        "Book",
+        "School"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Doctor works at/is related to Hospital. Step 2: Same relation → Teacher : School. Answer: School.",
+      "trick": "Match the relationship.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

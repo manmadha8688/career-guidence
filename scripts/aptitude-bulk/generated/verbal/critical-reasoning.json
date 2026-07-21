@@ -1,0 +1,1207 @@
+{
+  "topic": "critical-reasoning",
+  "category": "verbal",
+  "group": "reading-reasoning",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is:",
+      "options": [
+        "everyone should exercise daily",
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes:",
+      "options": [
+        "no other factor caused the drop",
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Which weakens: 'The new app is popular because it is free'?",
+      "options": [
+        "Paid apps with similar features are equally popular",
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 25)",
+      "options": [
+        "everyone should exercise daily",
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 26)",
+      "options": [
+        "no other factor caused the drop",
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 27)",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 28)",
+      "options": [
+        "Paid apps with similar features are equally popular",
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 29)",
+      "options": [
+        "everyone should exercise daily",
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 30)",
+      "options": [
+        "no other factor caused the drop",
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 31)",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 32)",
+      "options": [
+        "Paid apps with similar features are equally popular",
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 33)",
+      "options": [
+        "everyone should exercise daily",
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 34)",
+      "options": [
+        "no other factor caused the drop",
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 35)",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 36)",
+      "options": [
+        "Paid apps with similar features are equally popular",
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 37)",
+      "options": [
+        "everyone should exercise daily",
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 38)",
+      "options": [
+        "no other factor caused the drop",
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 39)",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 40)",
+      "options": [
+        "Paid apps with similar features are equally popular",
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 41)",
+      "options": [
+        "exercise improves mood",
+        "everyone should exercise daily",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 42)",
+      "options": [
+        "prices never change",
+        "no other factor caused the drop",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 43)",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 44)",
+      "options": [
+        "The app is free",
+        "Paid apps with similar features are equally popular",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 45)",
+      "options": [
+        "exercise improves mood",
+        "everyone should exercise daily",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 46)",
+      "options": [
+        "prices never change",
+        "no other factor caused the drop",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 47)",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 48)",
+      "options": [
+        "The app is free",
+        "Paid apps with similar features are equally popular",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 49)",
+      "options": [
+        "exercise improves mood",
+        "everyone should exercise daily",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 50)",
+      "options": [
+        "prices never change",
+        "no other factor caused the drop",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 51)",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 52)",
+      "options": [
+        "The app is free",
+        "Paid apps with similar features are equally popular",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 53)",
+      "options": [
+        "exercise improves mood",
+        "everyone should exercise daily",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 54)",
+      "options": [
+        "prices never change",
+        "no other factor caused the drop",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 55)",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 56)",
+      "options": [
+        "The app is free",
+        "Paid apps with similar features are equally popular",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 57)",
+      "options": [
+        "exercise improves mood",
+        "everyone should exercise daily",
+        "mood is unimportant",
+        "exercise is harmful"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 58)",
+      "options": [
+        "prices never change",
+        "no other factor caused the drop",
+        "customers enjoy paying more",
+        "sales always rise"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 59)",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe Sam is manager",
+        "Sam is intern"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 60)",
+      "options": [
+        "The app is free",
+        "Paid apps with similar features are equally popular",
+        "Many users exist",
+        "Apps can be downloaded"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 61)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "everyone should exercise daily",
+        "exercise is harmful"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 62)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "no other factor caused the drop",
+        "sales always rise"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 63)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "No",
+        "Sam is intern"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 64)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Paid apps with similar features are equally popular",
+        "Apps can be downloaded"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 65)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "everyone should exercise daily",
+        "exercise is harmful"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 66)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "no other factor caused the drop",
+        "sales always rise"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 67)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "No",
+        "Sam is intern"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 68)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Paid apps with similar features are equally popular",
+        "Apps can be downloaded"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 69)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "everyone should exercise daily",
+        "exercise is harmful"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 70)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "no other factor caused the drop",
+        "sales always rise"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 71)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "No",
+        "Sam is intern"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 72)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Paid apps with similar features are equally popular",
+        "Apps can be downloaded"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 73)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "everyone should exercise daily",
+        "exercise is harmful"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 74)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "no other factor caused the drop",
+        "sales always rise"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 75)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "No",
+        "Sam is intern"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Critical reasoning"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 76)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Paid apps with similar features are equally popular",
+        "Apps can be downloaded"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 77)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "everyone should exercise daily",
+        "exercise is harmful"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 78)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "no other factor caused the drop",
+        "sales always rise"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 79)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "No",
+        "Sam is intern"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 80)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Paid apps with similar features are equally popular",
+        "Apps can be downloaded"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 81)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful",
+        "everyone should exercise daily"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 82)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise",
+        "no other factor caused the drop"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 83)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 84)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded",
+        "Paid apps with similar features are equally popular"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 85)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful",
+        "everyone should exercise daily"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 86)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise",
+        "no other factor caused the drop"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 87)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 88)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded",
+        "Paid apps with similar features are equally popular"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 89)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful",
+        "everyone should exercise daily"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 90)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise",
+        "no other factor caused the drop"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 91)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 92)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded",
+        "Paid apps with similar features are equally popular"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 93)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful",
+        "everyone should exercise daily"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 94)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise",
+        "no other factor caused the drop"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 95)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 96)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded",
+        "Paid apps with similar features are equally popular"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "'Exercise improves mood, so everyone should exercise daily.' The conclusion is: (Set 97)",
+      "options": [
+        "exercise improves mood",
+        "mood is unimportant",
+        "exercise is harmful",
+        "everyone should exercise daily"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: everyone should exercise daily.",
+      "trick": "Conclusion after 'so'.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "'Sales dropped after the price hike, therefore the hike caused the drop.' This assumes: (Set 98)",
+      "options": [
+        "prices never change",
+        "customers enjoy paying more",
+        "sales always rise",
+        "no other factor caused the drop"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: no other factor caused the drop.",
+      "trick": "Assumption: no alternate cause.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "'All interns who completed training were promoted. Sam was promoted.' Can we conclude Sam completed training? (Set 99)",
+      "options": [
+        "Yes",
+        "Maybe Sam is manager",
+        "Sam is intern",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: No.",
+      "trick": "Affirming consequent fallacy.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Which weakens: 'The new app is popular because it is free'? (Set 100)",
+      "options": [
+        "The app is free",
+        "Many users exist",
+        "Apps can be downloaded",
+        "Paid apps with similar features are equally popular"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Identify conclusion/assumption/fallacy. Step 2: Answer: Paid apps with similar features are equally popular.",
+      "trick": "Weakener: popularity not due to free.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

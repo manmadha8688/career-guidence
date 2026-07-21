@@ -1,0 +1,1207 @@
+{
+  "topic": "mensuration",
+  "category": "quantitative",
+  "group": "geometry-mensuration",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Cuboid 10×5×4 cm. Volume?",
+      "options": [
+        "200",
+        "30",
+        "19",
+        "100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10×5×4 = 200 cm³.",
+      "trick": "V = lwh.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Cylinder r=7 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "440.0",
+        "1540.0",
+        "70",
+        "770.0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 1540.0 cm³.",
+      "trick": "πr²h.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Cube edge 6 cm. Volume?",
+      "options": [
+        "216",
+        "36",
+        "216",
+        "18"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6³ = 216 cm³.",
+      "trick": "V = a³.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Sphere radius 3 cm. Volume (π=22/7)?",
+      "options": [
+        "113.14285714285714",
+        "28.285714285714285",
+        "56.55",
+        "113.1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 113.1 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Cylinder r=14, h=5. Total surface area (π=22/7)?",
+      "options": [
+        "1452.0",
+        "616.0",
+        "440.0",
+        "726.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1452.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Cube surface area if volume is 1728 cm³?",
+      "options": [
+        "144",
+        "864",
+        "576",
+        "144"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 12. SA = 6×12² = 864 cm².",
+      "trick": "6a².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Cone circular base radius 10. Base area?",
+      "options": [
+        "62.857142857142854",
+        "10",
+        "314.3",
+        "628.6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 314.3 cm².",
+      "trick": "πr².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Cuboid 20×10×5. Total surface area?",
+      "options": [
+        "1000",
+        "35",
+        "350",
+        "700"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 700 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Cuboid 11×6×4 cm. Volume?",
+      "options": [
+        "264",
+        "34",
+        "21",
+        "132"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 11×6×4 = 264 cm³.",
+      "trick": "V = lwh.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Cylinder r=8 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "502.85714285714283",
+        "2011.4",
+        "80",
+        "1005.7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 2011.4 cm³.",
+      "trick": "πr²h.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Cube edge 7 cm. Volume?",
+      "options": [
+        "294",
+        "49",
+        "343",
+        "21"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 7³ = 343 cm³.",
+      "trick": "V = a³.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Sphere radius 4 cm. Volume (π=22/7)?",
+      "options": [
+        "201.14285714285714",
+        "50.285714285714285",
+        "134.1",
+        "268.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 268.2 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Cylinder r=14, h=6. Total surface area (π=22/7)?",
+      "options": [
+        "1496.0",
+        "616.0",
+        "528.0",
+        "748.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1496.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Cube surface area if volume is 2197 cm³?",
+      "options": [
+        "169",
+        "1014",
+        "676",
+        "169"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 13. SA = 6×13² = 1014 cm².",
+      "trick": "6a².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Cone circular base radius 11. Base area?",
+      "options": [
+        "69.14285714285714",
+        "11",
+        "380.3",
+        "760.6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 380.3 cm².",
+      "trick": "πr².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Cuboid 22×11×5. Total surface area?",
+      "options": [
+        "1210",
+        "38",
+        "407",
+        "814"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 814 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Cuboid 12×7×4 cm. Volume?",
+      "options": [
+        "336",
+        "38",
+        "23",
+        "168"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 12×7×4 = 336 cm³.",
+      "trick": "V = lwh.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Cylinder r=9 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "565.7142857142857",
+        "2545.7",
+        "90",
+        "1272.85"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 2545.7 cm³.",
+      "trick": "πr²h.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Cube edge 8 cm. Volume?",
+      "options": [
+        "384",
+        "64",
+        "512",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8³ = 512 cm³.",
+      "trick": "V = a³.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Sphere radius 5 cm. Volume (π=22/7)?",
+      "options": [
+        "314.2857142857143",
+        "78.57142857142857",
+        "261.9",
+        "523.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 523.8 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Cylinder r=14, h=7. Total surface area (π=22/7)?",
+      "options": [
+        "1540.0",
+        "616.0",
+        "616.0",
+        "770.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1540.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Cube surface area if volume is 2744 cm³?",
+      "options": [
+        "196",
+        "1176",
+        "784",
+        "196"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 14. SA = 6×14² = 1176 cm².",
+      "trick": "6a².",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Cone circular base radius 12. Base area?",
+      "options": [
+        "75.42857142857143",
+        "12",
+        "452.6",
+        "905.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 452.6 cm².",
+      "trick": "πr².",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Cuboid 24×12×5. Total surface area?",
+      "options": [
+        "1440",
+        "41",
+        "468",
+        "936"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 936 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Cuboid 13×8×4 cm. Volume?",
+      "options": [
+        "416",
+        "42",
+        "25",
+        "208"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 13×8×4 = 416 cm³.",
+      "trick": "V = lwh.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Cylinder r=10 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "628.5714285714286",
+        "3142.9",
+        "100",
+        "1571.45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 3142.9 cm³.",
+      "trick": "πr²h.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Cube edge 9 cm. Volume?",
+      "options": [
+        "486",
+        "81",
+        "729",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9³ = 729 cm³.",
+      "trick": "V = a³.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Sphere radius 6 cm. Volume (π=22/7)?",
+      "options": [
+        "452.57142857142856",
+        "113.14285714285714",
+        "452.55",
+        "905.1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 905.1 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Cylinder r=14, h=8. Total surface area (π=22/7)?",
+      "options": [
+        "1584.0",
+        "616.0",
+        "704.0",
+        "792.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1584.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Cube surface area if volume is 3375 cm³?",
+      "options": [
+        "225",
+        "1350",
+        "900",
+        "225"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 15. SA = 6×15² = 1350 cm².",
+      "trick": "6a².",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Cone circular base radius 13. Base area?",
+      "options": [
+        "81.71428571428571",
+        "13",
+        "531.1",
+        "1062.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 531.1 cm².",
+      "trick": "πr².",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Cuboid 26×13×5. Total surface area?",
+      "options": [
+        "1690",
+        "44",
+        "533",
+        "1066"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 1066 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Cuboid 14×9×4 cm. Volume?",
+      "options": [
+        "504",
+        "46",
+        "27",
+        "252"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 14×9×4 = 504 cm³.",
+      "trick": "V = lwh.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Cylinder r=11 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "691.4285714285713",
+        "3802.9",
+        "110",
+        "1901.45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 3802.9 cm³.",
+      "trick": "πr²h.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Cube edge 10 cm. Volume?",
+      "options": [
+        "600",
+        "100",
+        "1000",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10³ = 1000 cm³.",
+      "trick": "V = a³.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Sphere radius 7 cm. Volume (π=22/7)?",
+      "options": [
+        "616.0",
+        "154.0",
+        "718.65",
+        "1437.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 1437.3 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Cylinder r=14, h=9. Total surface area (π=22/7)?",
+      "options": [
+        "1628.0",
+        "616.0",
+        "792.0",
+        "814.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1628.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Cube surface area if volume is 4096 cm³?",
+      "options": [
+        "256",
+        "1536",
+        "1024",
+        "256"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 16. SA = 6×16² = 1536 cm².",
+      "trick": "6a².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Cone circular base radius 14. Base area?",
+      "options": [
+        "88.0",
+        "14",
+        "616.0",
+        "1232.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 616.0 cm².",
+      "trick": "πr².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Cuboid 28×14×5. Total surface area?",
+      "options": [
+        "1960",
+        "47",
+        "602",
+        "1204"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 1204 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Cuboid 15×10×4 cm. Volume?",
+      "options": [
+        "600",
+        "50",
+        "29",
+        "300"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 15×10×4 = 600 cm³.",
+      "trick": "V = lwh.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Cylinder r=12 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "754.2857142857143",
+        "4525.7",
+        "120",
+        "2262.85"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 4525.7 cm³.",
+      "trick": "πr²h.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Cube edge 11 cm. Volume?",
+      "options": [
+        "726",
+        "121",
+        "1331",
+        "33"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 11³ = 1331 cm³.",
+      "trick": "V = a³.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Sphere radius 8 cm. Volume (π=22/7)?",
+      "options": [
+        "804.5714285714286",
+        "201.14285714285714",
+        "1072.75",
+        "2145.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 2145.5 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Cylinder r=14, h=10. Total surface area (π=22/7)?",
+      "options": [
+        "1672.0",
+        "616.0",
+        "880.0",
+        "836.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1672.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Cube surface area if volume is 4913 cm³?",
+      "options": [
+        "289",
+        "1734",
+        "1156",
+        "289"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 17. SA = 6×17² = 1734 cm².",
+      "trick": "6a².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Cone circular base radius 15. Base area?",
+      "options": [
+        "94.28571428571428",
+        "15",
+        "707.1",
+        "1414.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 707.1 cm².",
+      "trick": "πr².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Cuboid 30×15×5. Total surface area?",
+      "options": [
+        "2250",
+        "50",
+        "675",
+        "1350"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 1350 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Cuboid 16×11×4 cm. Volume?",
+      "options": [
+        "704",
+        "54",
+        "31",
+        "352"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 16×11×4 = 704 cm³.",
+      "trick": "V = lwh.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Cylinder r=13 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "817.1428571428571",
+        "5311.4",
+        "130",
+        "2655.7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 5311.4 cm³.",
+      "trick": "πr²h.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Cube edge 12 cm. Volume?",
+      "options": [
+        "864",
+        "144",
+        "1728",
+        "36"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 12³ = 1728 cm³.",
+      "trick": "V = a³.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Sphere radius 9 cm. Volume (π=22/7)?",
+      "options": [
+        "1018.2857142857142",
+        "254.57142857142856",
+        "1527.45",
+        "3054.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 3054.9 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Cylinder r=14, h=11. Total surface area (π=22/7)?",
+      "options": [
+        "1716.0",
+        "616.0",
+        "968.0",
+        "858.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1716.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Cube surface area if volume is 5832 cm³?",
+      "options": [
+        "324",
+        "1944",
+        "1296",
+        "324"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 18. SA = 6×18² = 1944 cm².",
+      "trick": "6a².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Cone circular base radius 16. Base area?",
+      "options": [
+        "100.57142857142857",
+        "16",
+        "804.6",
+        "1609.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 804.6 cm².",
+      "trick": "πr².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Cuboid 32×16×5. Total surface area?",
+      "options": [
+        "2560",
+        "53",
+        "752",
+        "1504"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 1504 cm².",
+      "trick": "TSA cuboid.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Cuboid 17×12×4 cm. Volume?",
+      "options": [
+        "816",
+        "58",
+        "33",
+        "408"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 17×12×4 = 816 cm³.",
+      "trick": "V = lwh.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Cylinder r=14 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "880.0",
+        "6160.0",
+        "140",
+        "3080.0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 6160.0 cm³.",
+      "trick": "πr²h.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Cube edge 13 cm. Volume?",
+      "options": [
+        "1014",
+        "169",
+        "2197",
+        "39"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 13³ = 2197 cm³.",
+      "trick": "V = a³.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Sphere radius 10 cm. Volume (π=22/7)?",
+      "options": [
+        "1257.142857142857",
+        "314.2857142857143",
+        "2095.25",
+        "4190.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 4190.5 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Cylinder r=14, h=12. Total surface area (π=22/7)?",
+      "options": [
+        "1760.0",
+        "616.0",
+        "1056.0",
+        "880.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1760.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Cube surface area if volume is 6859 cm³?",
+      "options": [
+        "361",
+        "2166",
+        "1444",
+        "361"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 19. SA = 6×19² = 2166 cm².",
+      "trick": "6a².",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Cone circular base radius 17. Base area?",
+      "options": [
+        "106.85714285714286",
+        "17",
+        "908.3",
+        "1816.6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 908.3 cm².",
+      "trick": "πr².",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Cuboid 34×17×5. Total surface area?",
+      "options": [
+        "2890",
+        "56",
+        "833",
+        "1666"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 1666 cm².",
+      "trick": "TSA cuboid.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Cuboid 18×13×4 cm. Volume?",
+      "options": [
+        "936",
+        "62",
+        "35",
+        "468"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 18×13×4 = 936 cm³.",
+      "trick": "V = lwh.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Cylinder r=15 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "942.8571428571428",
+        "7071.4",
+        "150",
+        "3535.7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 7071.4 cm³.",
+      "trick": "πr²h.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Cube edge 14 cm. Volume?",
+      "options": [
+        "1176",
+        "196",
+        "2744",
+        "42"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 14³ = 2744 cm³.",
+      "trick": "V = a³.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Sphere radius 11 cm. Volume (π=22/7)?",
+      "options": [
+        "1521.142857142857",
+        "380.2857142857143",
+        "2788.75",
+        "5577.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 5577.5 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Cylinder r=14, h=13. Total surface area (π=22/7)?",
+      "options": [
+        "1804.0",
+        "616.0",
+        "1144.0",
+        "902.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1804.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Cube surface area if volume is 8000 cm³?",
+      "options": [
+        "400",
+        "2400",
+        "1600",
+        "400"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 20. SA = 6×20² = 2400 cm².",
+      "trick": "6a².",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Cone circular base radius 18. Base area?",
+      "options": [
+        "113.14285714285714",
+        "18",
+        "1018.3",
+        "2036.6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 1018.3 cm².",
+      "trick": "πr².",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Cuboid 36×18×5. Total surface area?",
+      "options": [
+        "3240",
+        "59",
+        "918",
+        "1836"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 1836 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Cuboid 19×14×4 cm. Volume?",
+      "options": [
+        "1064",
+        "66",
+        "37",
+        "532"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 19×14×4 = 1064 cm³.",
+      "trick": "V = lwh.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Cylinder r=16 cm, h=10 cm. Volume (π=22/7)?",
+      "options": [
+        "1005.7142857142857",
+        "8045.7",
+        "160",
+        "4022.85"
+      ],
+      "answer": "B",
+      "solution": "Step 1: πr²h = 8045.7 cm³.",
+      "trick": "πr²h.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Cube edge 15 cm. Volume?",
+      "options": [
+        "1350",
+        "225",
+        "3375",
+        "45"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 15³ = 3375 cm³.",
+      "trick": "V = a³.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Sphere radius 12 cm. Volume (π=22/7)?",
+      "options": [
+        "1810.2857142857142",
+        "452.57142857142856",
+        "3620.55",
+        "7241.1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (4/3)πr³ = 7241.1 cm³.",
+      "trick": "(4/3)πr³.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Cylinder r=14, h=14. Total surface area (π=22/7)?",
+      "options": [
+        "1848.0",
+        "616.0",
+        "1232.0",
+        "924.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2πr(h+r) = 1848.0 cm².",
+      "trick": "TSA cylinder.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Cube surface area if volume is 9261 cm³?",
+      "options": [
+        "441",
+        "2646",
+        "1764",
+        "441"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Edge = 21. SA = 6×21² = 2646 cm².",
+      "trick": "6a².",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Cone circular base radius 19. Base area?",
+      "options": [
+        "119.42857142857143",
+        "19",
+        "1134.6",
+        "2269.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: πr² = 1134.6 cm².",
+      "trick": "πr².",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Cuboid 38×19×5. Total surface area?",
+      "options": [
+        "3610",
+        "62",
+        "1007",
+        "2014"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 2(lb+bh+lh) = 2014 cm².",
+      "trick": "TSA cuboid.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

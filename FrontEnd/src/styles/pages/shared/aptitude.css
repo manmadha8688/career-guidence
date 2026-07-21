@@ -618,7 +618,9 @@
   font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.82rem;
   letter-spacing: 0.03em; color: var(--text-secondary);
 }
-.apt-practice-block__bar .apt-practice__toggle-all { margin-top: 0; }
+.apt-practice-block__hint {
+  font-size: 0.82rem; color: var(--text-muted);
+}
 
 /* ── Lesson cards ────────────────────────────────────────────────────────── */
 .apt-lesson { display: flex; flex-direction: column; gap: 1rem; }
@@ -846,8 +848,21 @@
   flex: 1 1 auto; min-width: 130px;
   display: flex; align-items: center; gap: 0.5rem;
   padding: 0.55rem 0.7rem; border-radius: 9px; border: 1px solid var(--border); background: var(--bg-primary);
+  cursor: pointer; text-align: left; font: inherit; color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.apt-q__opt:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--cat-color) 40%, var(--border));
+  background: color-mix(in srgb, var(--cat-color) 5%, var(--bg-primary));
+}
+.apt-q__opt:disabled { cursor: default; }
+.apt-q__opt.is-selected {
+  border-color: color-mix(in srgb, var(--cat-color) 50%, var(--border));
+  background: color-mix(in srgb, var(--cat-color) 10%, var(--bg-primary));
 }
 .apt-q__opt.is-answer { border-color: color-mix(in srgb, #22C55E 55%, transparent); background: color-mix(in srgb, #22C55E 8%, var(--bg-primary)); }
+.apt-q__opt.is-wrong { border-color: color-mix(in srgb, #EF4444 50%, transparent); background: color-mix(in srgb, #EF4444 8%, var(--bg-primary)); }
+.apt-q__opt.is-wrong .apt-q__opt-letter { color: #fff; background: #EF4444; }
 .apt-q__opt-letter {
   flex-shrink: 0; width: 1.4rem; height: 1.4rem; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -869,7 +884,7 @@
   background: color-mix(in srgb, var(--cat-color) 13%, transparent);
   border-color: color-mix(in srgb, var(--cat-color) 38%, var(--border));
 }
-.apt-q__sol { overflow: hidden; }
+.apt-q__sol { overflow: hidden; padding-top: 0.15rem; }
 .apt-q__answer { font-size: 0.9rem !important; margin: 0.85rem 0 0.5rem !important; color: var(--text-primary) !important; }
 .apt-q__answer strong { color: #22C55E; }
 .apt-q__sol-text { font-size: 0.88rem !important; line-height: 1.65 !important; color: var(--text-secondary) !important; margin: 0 !important; }

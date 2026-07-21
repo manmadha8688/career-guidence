@@ -1,0 +1,1207 @@
+{
+  "topic": "word-completion",
+  "category": "verbal",
+  "group": "sentence-skills",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "The prefix/root 'bene-' usually means:",
+      "options": [
+        "good",
+        "bad",
+        "water",
+        "war"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "The prefix/root 'mal-' usually means:",
+      "options": [
+        "bad",
+        "good",
+        "many",
+        "small"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "The prefix/root 'circum-' usually means:",
+      "options": [
+        "around",
+        "inside",
+        "against",
+        "before"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "The prefix/root 'trans-' usually means:",
+      "options": [
+        "across",
+        "under",
+        "after",
+        "against"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "The prefix/root 'auto-' usually means:",
+      "options": [
+        "self",
+        "other",
+        "half",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "The prefix/root 'bene-' usually means: (Set 26)",
+      "options": [
+        "good",
+        "bad",
+        "water",
+        "war"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "The prefix/root 'mal-' usually means: (Set 27)",
+      "options": [
+        "bad",
+        "good",
+        "many",
+        "small"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "The prefix/root 'circum-' usually means: (Set 28)",
+      "options": [
+        "around",
+        "inside",
+        "against",
+        "before"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "The prefix/root 'trans-' usually means: (Set 29)",
+      "options": [
+        "across",
+        "under",
+        "after",
+        "against"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "The prefix/root 'auto-' usually means: (Set 30)",
+      "options": [
+        "self",
+        "other",
+        "half",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "The prefix/root 'bene-' usually means: (Set 31)",
+      "options": [
+        "good",
+        "bad",
+        "water",
+        "war"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "The prefix/root 'mal-' usually means: (Set 32)",
+      "options": [
+        "bad",
+        "good",
+        "many",
+        "small"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "The prefix/root 'circum-' usually means: (Set 33)",
+      "options": [
+        "around",
+        "inside",
+        "against",
+        "before"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "The prefix/root 'trans-' usually means: (Set 34)",
+      "options": [
+        "across",
+        "under",
+        "after",
+        "against"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "The prefix/root 'auto-' usually means: (Set 35)",
+      "options": [
+        "self",
+        "other",
+        "half",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "The prefix/root 'bene-' usually means: (Set 36)",
+      "options": [
+        "good",
+        "bad",
+        "water",
+        "war"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "The prefix/root 'mal-' usually means: (Set 37)",
+      "options": [
+        "bad",
+        "good",
+        "many",
+        "small"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "The prefix/root 'circum-' usually means: (Set 38)",
+      "options": [
+        "around",
+        "inside",
+        "against",
+        "before"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "The prefix/root 'trans-' usually means: (Set 39)",
+      "options": [
+        "across",
+        "under",
+        "after",
+        "against"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "The prefix/root 'auto-' usually means: (Set 40)",
+      "options": [
+        "self",
+        "other",
+        "half",
+        "water"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "The prefix/root 'bene-' usually means: (Set 41)",
+      "options": [
+        "bad",
+        "good",
+        "water",
+        "war"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "The prefix/root 'mal-' usually means: (Set 42)",
+      "options": [
+        "good",
+        "bad",
+        "many",
+        "small"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "The prefix/root 'circum-' usually means: (Set 43)",
+      "options": [
+        "inside",
+        "around",
+        "against",
+        "before"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "The prefix/root 'trans-' usually means: (Set 44)",
+      "options": [
+        "under",
+        "across",
+        "after",
+        "against"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "The prefix/root 'auto-' usually means: (Set 45)",
+      "options": [
+        "other",
+        "self",
+        "half",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "The prefix/root 'bene-' usually means: (Set 46)",
+      "options": [
+        "bad",
+        "good",
+        "water",
+        "war"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "The prefix/root 'mal-' usually means: (Set 47)",
+      "options": [
+        "good",
+        "bad",
+        "many",
+        "small"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "The prefix/root 'circum-' usually means: (Set 48)",
+      "options": [
+        "inside",
+        "around",
+        "against",
+        "before"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "The prefix/root 'trans-' usually means: (Set 49)",
+      "options": [
+        "under",
+        "across",
+        "after",
+        "against"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "The prefix/root 'auto-' usually means: (Set 50)",
+      "options": [
+        "other",
+        "self",
+        "half",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "The prefix/root 'bene-' usually means: (Set 51)",
+      "options": [
+        "bad",
+        "good",
+        "water",
+        "war"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "The prefix/root 'mal-' usually means: (Set 52)",
+      "options": [
+        "good",
+        "bad",
+        "many",
+        "small"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "The prefix/root 'circum-' usually means: (Set 53)",
+      "options": [
+        "inside",
+        "around",
+        "against",
+        "before"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "The prefix/root 'trans-' usually means: (Set 54)",
+      "options": [
+        "under",
+        "across",
+        "after",
+        "against"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "The prefix/root 'auto-' usually means: (Set 55)",
+      "options": [
+        "other",
+        "self",
+        "half",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 56)",
+      "options": [
+        "bad",
+        "good",
+        "water",
+        "war"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 57)",
+      "options": [
+        "good",
+        "bad",
+        "many",
+        "small"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 58)",
+      "options": [
+        "inside",
+        "around",
+        "against",
+        "before"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 59)",
+      "options": [
+        "under",
+        "across",
+        "after",
+        "against"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 60)",
+      "options": [
+        "other",
+        "self",
+        "half",
+        "water"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 61)",
+      "options": [
+        "bad",
+        "water",
+        "good",
+        "war"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 62)",
+      "options": [
+        "good",
+        "many",
+        "bad",
+        "small"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 63)",
+      "options": [
+        "inside",
+        "against",
+        "around",
+        "before"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 64)",
+      "options": [
+        "under",
+        "after",
+        "across",
+        "against"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 65)",
+      "options": [
+        "other",
+        "half",
+        "self",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 66)",
+      "options": [
+        "bad",
+        "water",
+        "good",
+        "war"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 67)",
+      "options": [
+        "good",
+        "many",
+        "bad",
+        "small"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 68)",
+      "options": [
+        "inside",
+        "against",
+        "around",
+        "before"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 69)",
+      "options": [
+        "under",
+        "after",
+        "across",
+        "against"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 70)",
+      "options": [
+        "other",
+        "half",
+        "self",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 71)",
+      "options": [
+        "bad",
+        "water",
+        "good",
+        "war"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Word root"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 72)",
+      "options": [
+        "good",
+        "many",
+        "bad",
+        "small"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Word root"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 73)",
+      "options": [
+        "inside",
+        "against",
+        "around",
+        "before"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Word root"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 74)",
+      "options": [
+        "under",
+        "after",
+        "across",
+        "against"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Word root"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 75)",
+      "options": [
+        "other",
+        "half",
+        "self",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Word root"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 76)",
+      "options": [
+        "bad",
+        "water",
+        "good",
+        "war"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 77)",
+      "options": [
+        "good",
+        "many",
+        "bad",
+        "small"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 78)",
+      "options": [
+        "inside",
+        "against",
+        "around",
+        "before"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 79)",
+      "options": [
+        "under",
+        "after",
+        "across",
+        "against"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 80)",
+      "options": [
+        "other",
+        "half",
+        "self",
+        "water"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 81)",
+      "options": [
+        "bad",
+        "water",
+        "war",
+        "good"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 82)",
+      "options": [
+        "good",
+        "many",
+        "small",
+        "bad"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 83)",
+      "options": [
+        "inside",
+        "against",
+        "before",
+        "around"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 84)",
+      "options": [
+        "under",
+        "after",
+        "against",
+        "across"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 85)",
+      "options": [
+        "other",
+        "half",
+        "water",
+        "self"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 86)",
+      "options": [
+        "bad",
+        "water",
+        "war",
+        "good"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 87)",
+      "options": [
+        "good",
+        "many",
+        "small",
+        "bad"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 88)",
+      "options": [
+        "inside",
+        "against",
+        "before",
+        "around"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 89)",
+      "options": [
+        "under",
+        "after",
+        "against",
+        "across"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 90)",
+      "options": [
+        "other",
+        "half",
+        "water",
+        "self"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 91)",
+      "options": [
+        "bad",
+        "water",
+        "war",
+        "good"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 92)",
+      "options": [
+        "good",
+        "many",
+        "small",
+        "bad"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 93)",
+      "options": [
+        "inside",
+        "against",
+        "before",
+        "around"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 94)",
+      "options": [
+        "under",
+        "after",
+        "against",
+        "across"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 95)",
+      "options": [
+        "other",
+        "half",
+        "water",
+        "self"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "The prefix/root 'bene-' usually means: (Set 96)",
+      "options": [
+        "bad",
+        "water",
+        "war",
+        "good"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'bene' → 'good'. Step 2: Answer: good.",
+      "trick": "benevolent = well-meaning.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "The prefix/root 'mal-' usually means: (Set 97)",
+      "options": [
+        "good",
+        "many",
+        "small",
+        "bad"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'mal' → 'bad'. Step 2: Answer: bad.",
+      "trick": "malpractice = bad practice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "The prefix/root 'circum-' usually means: (Set 98)",
+      "options": [
+        "inside",
+        "against",
+        "before",
+        "around"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'circum' → 'around'. Step 2: Answer: around.",
+      "trick": "circumference.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "The prefix/root 'trans-' usually means: (Set 99)",
+      "options": [
+        "under",
+        "after",
+        "against",
+        "across"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'trans' → 'across'. Step 2: Answer: across.",
+      "trick": "transport.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "The prefix/root 'auto-' usually means: (Set 100)",
+      "options": [
+        "other",
+        "half",
+        "water",
+        "self"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'auto' → 'self'. Step 2: Answer: self.",
+      "trick": "autobiography.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

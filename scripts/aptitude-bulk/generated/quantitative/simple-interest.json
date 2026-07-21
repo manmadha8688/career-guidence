@@ -1,0 +1,1207 @@
+{
+  "topic": "simple-interest",
+  "category": "quantitative",
+  "group": "interest-finance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "SI on ₹5000 at 8% for 2 years?",
+      "options": [
+        "800",
+        "400",
+        "5800",
+        "1600"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 800.",
+      "trick": "SI = PRT/100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "SI ₹1200 at 12% for 2 years. Principal?",
+      "options": [
+        "1200",
+        "5000",
+        "2400",
+        "100"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 5000.",
+      "trick": "P = SI×100/RT.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "₹8000 yields SI ₹1600 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "1600%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "₹10000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "10010",
+        "3000",
+        "16000",
+        "13000"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 3000. Amount = 13000.",
+      "trick": "Amount = P + SI.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹8000 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=640. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "SI on ₹6000 at 12% for 6 months?",
+      "options": [
+        "720",
+        "360",
+        "720",
+        "500"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 360.",
+      "trick": "Convert months to years.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "SI is ₹4000 at 5% for 4 years. Principal?",
+      "options": [
+        "4000",
+        "8000",
+        "20000",
+        "2000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 4000×100/(5×4) = 20000.",
+      "trick": "Reverse SI formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find SI on ₹12000 at 15% for 6 months.",
+      "options": [
+        "1800",
+        "1200",
+        "1800",
+        "900"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 900.",
+      "trick": "Half year time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "SI on ₹5500 at 9% for 2 years?",
+      "options": [
+        "990",
+        "495",
+        "6490",
+        "1980"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 990.",
+      "trick": "SI = PRT/100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "SI ₹1300 at 12% for 2 years. Principal?",
+      "options": [
+        "1300",
+        "5417",
+        "2600",
+        "108"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 5417.",
+      "trick": "P = SI×100/RT.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "₹8400 yields SI ₹1680 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "1680%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "₹11000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "11010",
+        "3300",
+        "17600",
+        "14300"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 3300. Amount = 14300.",
+      "trick": "Amount = P + SI.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹8500 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=680. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "SI on ₹6200 at 12% for 6 months?",
+      "options": [
+        "744",
+        "372",
+        "744",
+        "516"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 372.",
+      "trick": "Convert months to years.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "SI is ₹4500 at 5% for 4 years. Principal?",
+      "options": [
+        "4500",
+        "9000",
+        "22500",
+        "2250"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 4500×100/(5×4) = 22500.",
+      "trick": "Reverse SI formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Find SI on ₹13000 at 15% for 6 months.",
+      "options": [
+        "1950",
+        "1300",
+        "1950",
+        "975"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 975.",
+      "trick": "Half year time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "SI on ₹6000 at 10% for 2 years?",
+      "options": [
+        "1200",
+        "600",
+        "7200",
+        "2400"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 1200.",
+      "trick": "SI = PRT/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "SI ₹1400 at 12% for 2 years. Principal?",
+      "options": [
+        "1400",
+        "5833",
+        "2800",
+        "117"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 5833.",
+      "trick": "P = SI×100/RT.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "₹8800 yields SI ₹1760 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "1760%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "₹12000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "12010",
+        "3600",
+        "19200",
+        "15600"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 3600. Amount = 15600.",
+      "trick": "Amount = P + SI.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹9000 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=720. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "SI on ₹6400 at 12% for 6 months?",
+      "options": [
+        "768",
+        "384",
+        "768",
+        "533"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 384.",
+      "trick": "Convert months to years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "SI is ₹5000 at 5% for 4 years. Principal?",
+      "options": [
+        "5000",
+        "10000",
+        "25000",
+        "2500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 5000×100/(5×4) = 25000.",
+      "trick": "Reverse SI formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Find SI on ₹14000 at 15% for 6 months.",
+      "options": [
+        "2100",
+        "1400",
+        "2100",
+        "1050"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1050.",
+      "trick": "Half year time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "SI on ₹6500 at 11% for 2 years?",
+      "options": [
+        "1430",
+        "715",
+        "7930",
+        "2860"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 1430.",
+      "trick": "SI = PRT/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "SI ₹1500 at 12% for 2 years. Principal?",
+      "options": [
+        "1500",
+        "6250",
+        "3000",
+        "125"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 6250.",
+      "trick": "P = SI×100/RT.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "₹9200 yields SI ₹1840 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "1840%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "₹13000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "13010",
+        "3900",
+        "20800",
+        "16900"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 3900. Amount = 16900.",
+      "trick": "Amount = P + SI.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹9500 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=760. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "SI on ₹6600 at 12% for 6 months?",
+      "options": [
+        "792",
+        "396",
+        "792",
+        "550"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 396.",
+      "trick": "Convert months to years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "SI is ₹5500 at 5% for 4 years. Principal?",
+      "options": [
+        "5500",
+        "11000",
+        "27500",
+        "2750"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 5500×100/(5×4) = 27500.",
+      "trick": "Reverse SI formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Find SI on ₹15000 at 15% for 6 months.",
+      "options": [
+        "2250",
+        "1500",
+        "2250",
+        "1125"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1125.",
+      "trick": "Half year time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "SI on ₹7000 at 12% for 2 years?",
+      "options": [
+        "1680",
+        "840",
+        "8680",
+        "3360"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 1680.",
+      "trick": "SI = PRT/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "SI ₹1600 at 12% for 2 years. Principal?",
+      "options": [
+        "1600",
+        "6667",
+        "3200",
+        "133"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 6667.",
+      "trick": "P = SI×100/RT.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "₹9600 yields SI ₹1920 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "1920%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "₹14000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "14010",
+        "4200",
+        "22400",
+        "18200"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 4200. Amount = 18200.",
+      "trick": "Amount = P + SI.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹10000 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=800. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "SI on ₹6800 at 12% for 6 months?",
+      "options": [
+        "816",
+        "408",
+        "816",
+        "566"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 408.",
+      "trick": "Convert months to years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "SI is ₹6000 at 5% for 4 years. Principal?",
+      "options": [
+        "6000",
+        "12000",
+        "30000",
+        "3000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 6000×100/(5×4) = 30000.",
+      "trick": "Reverse SI formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Find SI on ₹16000 at 15% for 6 months.",
+      "options": [
+        "2400",
+        "1600",
+        "2400",
+        "1200"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1200.",
+      "trick": "Half year time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "SI on ₹7500 at 13% for 2 years?",
+      "options": [
+        "1950",
+        "975",
+        "9450",
+        "3900"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 1950.",
+      "trick": "SI = PRT/100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "SI ₹1700 at 12% for 2 years. Principal?",
+      "options": [
+        "1700",
+        "7083",
+        "3400",
+        "142"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 7083.",
+      "trick": "P = SI×100/RT.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "₹10000 yields SI ₹2000 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "2000%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "₹15000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "15010",
+        "4500",
+        "24000",
+        "19500"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 4500. Amount = 19500.",
+      "trick": "Amount = P + SI.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹10500 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=840. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "SI on ₹7000 at 12% for 6 months?",
+      "options": [
+        "840",
+        "420",
+        "840",
+        "583"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 420.",
+      "trick": "Convert months to years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "SI is ₹6500 at 5% for 4 years. Principal?",
+      "options": [
+        "6500",
+        "13000",
+        "32500",
+        "3250"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 6500×100/(5×4) = 32500.",
+      "trick": "Reverse SI formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Find SI on ₹17000 at 15% for 6 months.",
+      "options": [
+        "2550",
+        "1700",
+        "2550",
+        "1275"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1275.",
+      "trick": "Half year time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "SI on ₹8000 at 14% for 2 years?",
+      "options": [
+        "2240",
+        "1120",
+        "10240",
+        "4480"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 2240.",
+      "trick": "SI = PRT/100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "SI ₹1800 at 12% for 2 years. Principal?",
+      "options": [
+        "1800",
+        "7500",
+        "3600",
+        "150"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 7500.",
+      "trick": "P = SI×100/RT.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "₹10400 yields SI ₹2080 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "2080%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "₹16000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "16010",
+        "4800",
+        "25600",
+        "20800"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 4800. Amount = 20800.",
+      "trick": "Amount = P + SI.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹11000 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=880. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "SI on ₹7200 at 12% for 6 months?",
+      "options": [
+        "864",
+        "432",
+        "864",
+        "600"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 432.",
+      "trick": "Convert months to years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "SI is ₹7000 at 5% for 4 years. Principal?",
+      "options": [
+        "7000",
+        "14000",
+        "35000",
+        "3500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 7000×100/(5×4) = 35000.",
+      "trick": "Reverse SI formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Find SI on ₹18000 at 15% for 6 months.",
+      "options": [
+        "2700",
+        "1800",
+        "2700",
+        "1350"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1350.",
+      "trick": "Half year time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "SI on ₹8500 at 15% for 2 years?",
+      "options": [
+        "2550",
+        "1275",
+        "11050",
+        "5100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 2550.",
+      "trick": "SI = PRT/100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "SI ₹1900 at 12% for 2 years. Principal?",
+      "options": [
+        "1900",
+        "7917",
+        "3800",
+        "158"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 7917.",
+      "trick": "P = SI×100/RT.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "₹10800 yields SI ₹2160 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "2160%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "₹17000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "17010",
+        "5100",
+        "27200",
+        "22100"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 5100. Amount = 22100.",
+      "trick": "Amount = P + SI.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹11500 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=920. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "SI on ₹7400 at 12% for 6 months?",
+      "options": [
+        "888",
+        "444",
+        "888",
+        "616"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 444.",
+      "trick": "Convert months to years.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "SI is ₹7500 at 5% for 4 years. Principal?",
+      "options": [
+        "7500",
+        "15000",
+        "37500",
+        "3750"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 7500×100/(5×4) = 37500.",
+      "trick": "Reverse SI formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Find SI on ₹19000 at 15% for 6 months.",
+      "options": [
+        "2850",
+        "1900",
+        "2850",
+        "1425"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1425.",
+      "trick": "Half year time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "SI on ₹9000 at 16% for 2 years?",
+      "options": [
+        "2880",
+        "1440",
+        "11880",
+        "5760"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 2880.",
+      "trick": "SI = PRT/100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "SI ₹2000 at 12% for 2 years. Principal?",
+      "options": [
+        "2000",
+        "8333",
+        "4000",
+        "167"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 8333.",
+      "trick": "P = SI×100/RT.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "₹11200 yields SI ₹2240 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "2240%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "₹18000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "18010",
+        "5400",
+        "28800",
+        "23400"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 5400. Amount = 23400.",
+      "trick": "Amount = P + SI.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹12000 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=960. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "SI on ₹7600 at 12% for 6 months?",
+      "options": [
+        "912",
+        "456",
+        "912",
+        "633"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 456.",
+      "trick": "Convert months to years.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "SI is ₹8000 at 5% for 4 years. Principal?",
+      "options": [
+        "8000",
+        "16000",
+        "40000",
+        "4000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 8000×100/(5×4) = 40000.",
+      "trick": "Reverse SI formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find SI on ₹20000 at 15% for 6 months.",
+      "options": [
+        "3000",
+        "2000",
+        "3000",
+        "1500"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1500.",
+      "trick": "Half year time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "SI on ₹9500 at 17% for 2 years?",
+      "options": [
+        "3230",
+        "1615",
+        "12730",
+        "6460"
+      ],
+      "answer": "A",
+      "solution": "Step 1: PRT/100 = 3230.",
+      "trick": "SI = PRT/100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "SI ₹2100 at 12% for 2 years. Principal?",
+      "options": [
+        "2100",
+        "8750",
+        "4200",
+        "175"
+      ],
+      "answer": "B",
+      "solution": "Step 1: P = SI×100/(RT) = 8750.",
+      "trick": "P = SI×100/RT.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "₹11600 yields SI ₹2320 in 2 years. Rate %?",
+      "options": [
+        "12%",
+        "2320%",
+        "10%",
+        "10%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: R = SI×100/(PT) = 10%.",
+      "trick": "R = 100×SI/(PT).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "₹19000 at 10% SI for 3 years. Amount?",
+      "options": [
+        "19010",
+        "5700",
+        "30400",
+        "24700"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SI = 5700. Amount = 24700.",
+      "trick": "Amount = P + SI.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Which yields more SI in 1 year: ₹5000 at 10% or ₹12500 at 8%?",
+      "options": [
+        "Second",
+        "First",
+        "Equal",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI1=500, SI2=1000. Second is greater.",
+      "trick": "Compare P×R.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "SI on ₹7800 at 12% for 6 months?",
+      "options": [
+        "936",
+        "468",
+        "936",
+        "650"
+      ],
+      "answer": "B",
+      "solution": "Step 1: T = 6/12 year. SI = 468.",
+      "trick": "Convert months to years.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "SI is ₹8500 at 5% for 4 years. Principal?",
+      "options": [
+        "8500",
+        "17000",
+        "42500",
+        "4250"
+      ],
+      "answer": "C",
+      "solution": "Step 1: P = 8500×100/(5×4) = 42500.",
+      "trick": "Reverse SI formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Find SI on ₹21000 at 15% for 6 months.",
+      "options": [
+        "3150",
+        "2100",
+        "3150",
+        "1575"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6 mo = 0.5 yr. SI = 1575.",
+      "trick": "Half year time.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

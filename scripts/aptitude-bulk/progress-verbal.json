@@ -1,0 +1,578 @@
+[
+  {
+    "topic": "grammar",
+    "timestamp": "2026-07-21T17:51:38.833841+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\grammar.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\grammar.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: grammar (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for grammar\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 20,
+        "medium": 28,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "error-spotting",
+    "timestamp": "2026-07-21T17:53:26.720080+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\error-spotting.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\error-spotting.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: error-spotting (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for error-spotting\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "C": 25,
+        "B": 25,
+        "D": 25,
+        "A": 25
+      },
+      "difficulty": {
+        "easy": 20,
+        "medium": 27,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "sentence-correction",
+    "timestamp": "2026-07-21T17:55:14.515284+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\sentence-correction.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\sentence-correction.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: sentence-correction (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for sentence-correction\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 20,
+        "medium": 27,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "vocabulary",
+    "timestamp": "2026-07-21T17:57:02.347533+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\vocabulary.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\vocabulary.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: vocabulary (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for vocabulary\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 27,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "idioms-phrases",
+    "timestamp": "2026-07-21T17:58:49.550171+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\idioms-phrases.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\idioms-phrases.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: idioms-phrases (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for idioms-phrases\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 27,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "phrasal-verbs",
+    "timestamp": "2026-07-21T18:00:36.091832+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\phrasal-verbs.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\phrasal-verbs.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: phrasal-verbs (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for phrasal-verbs\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 27,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "sentence-completion",
+    "timestamp": "2026-07-21T18:02:23.682670+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\sentence-completion.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\sentence-completion.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: sentence-completion (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for sentence-completion\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 24,
+        "B": 26,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 20,
+        "medium": 29,
+        "hard": 51
+      },
+      "ok": false
+    },
+    "status": "verify_warn"
+  },
+  {
+    "topic": "word-completion",
+    "timestamp": "2026-07-21T18:04:12.744865+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\word-completion.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\word-completion.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: word-completion (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for word-completion\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 27,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "sentence-joining",
+    "timestamp": "2026-07-21T18:05:59.715579+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\sentence-joining.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\sentence-joining.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: sentence-joining (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for sentence-joining\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 20,
+        "medium": 27,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "sentence-condensation",
+    "timestamp": "2026-07-21T18:07:46.874800+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\sentence-condensation.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\sentence-condensation.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: sentence-condensation (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for sentence-condensation\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 19,
+        "medium": 28,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "reading-comprehension",
+    "timestamp": "2026-07-21T18:09:32.973779+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\reading-comprehension.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\reading-comprehension.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: reading-comprehension (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for reading-comprehension\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 27,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "para-jumbles",
+    "timestamp": "2026-07-21T18:11:20.097026+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\para-jumbles.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\para-jumbles.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: para-jumbles (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for para-jumbles\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 26,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "passage-recall",
+    "timestamp": "2026-07-21T18:13:06.267348+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\passage-recall.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\passage-recall.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: passage-recall (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for passage-recall\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 27,
+        "hard": 52
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "critical-reasoning",
+    "timestamp": "2026-07-21T18:14:52.095724+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\critical-reasoning.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\critical-reasoning.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: critical-reasoning (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for critical-reasoning\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 20,
+        "medium": 27,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "formal-informal-sentences",
+    "timestamp": "2026-07-21T18:16:38.851144+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\formal-informal-sentences.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\formal-informal-sentences.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: formal-informal-sentences (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for formal-informal-sentences\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 26,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  },
+  {
+    "topic": "professional-email-writing",
+    "timestamp": "2026-07-21T18:18:26.825468+00:00",
+    "fetch": {
+      "code": 0,
+      "output": "Saved 20 questions to C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\existing\\professional-email-writing.json"
+    },
+    "generate": {
+      "code": 0,
+      "output": "Wrote C:\\manmadha\\Student-project\\scripts\\aptitude-bulk\\generated\\verbal\\professional-email-writing.json (80 questions)"
+    },
+    "dry_run": {
+      "code": 0,
+      "output": "DRY RUN OK: professional-email-writing (80 questions)\nDone. Total uploaded: 0"
+    },
+    "upload": {
+      "code": 0,
+      "output": "Uploaded 80 questions for professional-email-writing\nDone. Total uploaded: 80"
+    },
+    "verify": {
+      "total": 100,
+      "answers": {
+        "A": 25,
+        "B": 25,
+        "C": 25,
+        "D": 25
+      },
+      "difficulty": {
+        "easy": 21,
+        "medium": 26,
+        "hard": 53
+      },
+      "ok": true
+    },
+    "status": "ok"
+  }
+]

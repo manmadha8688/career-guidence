@@ -1,0 +1,402 @@
+[
+  {
+    "id": "error-spotting-q1",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Spot the part with the error: 'One of the students / who came late / were punished / (No error)'.",
+    "options": [
+      "One of the students",
+      "who came late",
+      "were punished",
+      "No error"
+    ],
+    "answer": "C",
+    "solution": "Subject is 'One' (singular), so 'were' should be 'was'.",
+    "trick": "'One of ...' takes a singular verb.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q2",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Spot the part with the error: 'The manager / discussed about / the new policy / (No error)'.",
+    "options": [
+      "The manager",
+      "discussed about",
+      "the new policy",
+      "No error"
+    ],
+    "answer": "B",
+    "solution": "'discuss' takes no preposition; 'discussed about' should be 'discussed'.",
+    "trick": "discuss (no 'about').",
+    "type": "Preposition",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q3",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Spot the part with the error: 'Every boy / must bring / their own book / (No error)'.",
+    "options": [
+      "Every boy",
+      "must bring",
+      "their own book",
+      "No error"
+    ],
+    "answer": "C",
+    "solution": "'Every boy' is singular, so 'their' should be 'his'.",
+    "trick": "every → singular pronoun.",
+    "type": "Pronoun",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q4",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Spot the part with the error: 'He asked me / to return back / the book / (No error)'.",
+    "options": [
+      "He asked me",
+      "to return back",
+      "the book",
+      "No error"
+    ],
+    "answer": "B",
+    "solution": "'return' already means 'give back', so 'back' is redundant.",
+    "trick": "return (drop 'back').",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q5",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Spot the part with the error: 'She has been working / in this office / since 2018 / (No error)'.",
+    "options": [
+      "She has been working",
+      "in this office",
+      "since 2018",
+      "No error"
+    ],
+    "answer": "D",
+    "solution": "Present perfect continuous with 'since 2018' is correct throughout.",
+    "trick": "since + point → present perfect.",
+    "type": "No error",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q6",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'The quality of apples are / not good enough / for export / (No error)'.",
+    "options": [
+      "The quality of apples are",
+      "not good enough",
+      "for export",
+      "No error"
+    ],
+    "answer": "A",
+    "solution": "Subject is 'quality' (singular), so 'are' should be 'is'.",
+    "trick": "Match the head noun 'quality'.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q7",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'He is senior / than me / by five years / (No error)'.",
+    "options": [
+      "He is senior",
+      "than me",
+      "by five years",
+      "No error"
+    ],
+    "answer": "B",
+    "solution": "'senior' takes 'to', not 'than'; use 'senior to me'.",
+    "trick": "senior/junior TO.",
+    "type": "Preposition",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q8",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'I have completed / the project / last week / (No error)'.",
+    "options": [
+      "I have completed",
+      "the project",
+      "last week",
+      "No error"
+    ],
+    "answer": "A",
+    "solution": "With 'last week' (finished time) use simple past: 'I completed', not 'have completed'.",
+    "trick": "Finished time → simple past.",
+    "type": "Tense",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q9",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'The teacher, as well / as the students, / were happy / (No error)'.",
+    "options": [
+      "The teacher, as well",
+      "as the students,",
+      "were happy",
+      "No error"
+    ],
+    "answer": "C",
+    "solution": "With 'as well as', the verb agrees with the first subject 'teacher' (singular) → 'was happy'.",
+    "trick": "'as well as' doesn't change the number.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q10",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'I look forward / to meeting / you soon / (No error)'.",
+    "options": [
+      "I look forward",
+      "to meeting",
+      "you soon",
+      "No error"
+    ],
+    "answer": "D",
+    "solution": "'look forward to + -ing' is correct ('to meeting'), so there is no error.",
+    "trick": "look forward TO meeting.",
+    "type": "No error",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q11",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'Everyone of the boys / has finished / the race / (No error)'.",
+    "options": [
+      "Everyone of the boys",
+      "has finished",
+      "the race",
+      "No error"
+    ],
+    "answer": "A",
+    "solution": "'Everyone of' should be 'Every one of' when followed by 'of the...'.",
+    "trick": "Every one of (two words).",
+    "type": "Word form",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q12",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Spot the part with the error: 'Neither the manager / nor the workers / was present / (No error)'.",
+    "options": [
+      "Neither the manager",
+      "nor the workers",
+      "was present",
+      "No error"
+    ],
+    "answer": "C",
+    "solution": "With 'neither...nor', the verb agrees with the nearer subject 'workers' (plural) → 'were present'.",
+    "trick": "Verb agrees with the nearer subject.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q13",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'My friend and I / discussed about / the plan / (No error)'.",
+    "options": [
+      "My friend and I",
+      "discussed about",
+      "the plan",
+      "No error"
+    ],
+    "answer": "B",
+    "solution": "'discuss' takes no preposition; 'discussed about' should be 'discussed'.",
+    "trick": "discuss (no 'about').",
+    "type": "Preposition",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q14",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'Hardly had he left / when it / started to rain / (No error)'.",
+    "options": [
+      "Hardly had he left",
+      "when it",
+      "started to rain",
+      "No error"
+    ],
+    "answer": "D",
+    "solution": "'Hardly had ... when ...' with correct inversion is right; there is no error.",
+    "trick": "Hardly had + subject + when.",
+    "type": "No error",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q15",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'One of my friend / is coming / to the party / (No error)'.",
+    "options": [
+      "One of my friend",
+      "is coming",
+      "to the party",
+      "No error"
+    ],
+    "answer": "A",
+    "solution": "'One of' must be followed by a plural noun: 'One of my friends'.",
+    "trick": "One of + plural noun.",
+    "type": "Word form",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q16",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'He did not / went to / the office / (No error)'.",
+    "options": [
+      "He did not",
+      "went to",
+      "the office",
+      "No error"
+    ],
+    "answer": "B",
+    "solution": "After 'did not' use the base verb: 'go', not 'went'.",
+    "trick": "did + base verb.",
+    "type": "Tense",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q17",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'The number of / students in the class / are fifty / (No error)'.",
+    "options": [
+      "The number of",
+      "students in the class",
+      "are fifty",
+      "No error"
+    ],
+    "answer": "C",
+    "solution": "'The number of' is singular, so 'are' should be 'is'.",
+    "trick": "'The number of ...' → is.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q18",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'He is not only / intelligent but also / hardworking / (No error)'.",
+    "options": [
+      "He is not only",
+      "intelligent but also",
+      "hardworking",
+      "No error"
+    ],
+    "answer": "D",
+    "solution": "'not only ... but also' correctly joins two parallel adjectives; no error.",
+    "trick": "not only ... but also (parallel).",
+    "type": "No error",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q19",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'The childrens / are playing / in the garden / (No error)'.",
+    "options": [
+      "The childrens",
+      "are playing",
+      "in the garden",
+      "No error"
+    ],
+    "answer": "A",
+    "solution": "'children' is already plural; 'childrens' is incorrect.",
+    "trick": "children (no extra -s).",
+    "type": "Word form",
+    "active": true
+  },
+  {
+    "id": "error-spotting-q20",
+    "topic": "error-spotting",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Spot the part with the error: 'I have been living / here for / ten years / (No error)'.",
+    "options": [
+      "I have been living",
+      "here for",
+      "ten years",
+      "No error"
+    ],
+    "answer": "D",
+    "solution": "Present perfect continuous with 'for ten years' is correct; no error.",
+    "trick": "have been + -ing + for + duration.",
+    "type": "No error",
+    "active": true
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "train-problems-q1",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A train 180 m long runs at 36 km/h. How long to cross a pole?",
+    "options": [
+      "18 s",
+      "10 s",
+      "5 s",
+      "36 s"
+    ],
+    "answer": "A",
+    "solution": "36 km/h = 10 m/s. Time = 180/10 = 18 s.",
+    "trick": "Pole = length ÷ speed.",
+    "type": "Crossing a pole",
+    "active": true
+  },
+  {
+    "id": "train-problems-q2",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A train 100 m long at 72 km/h crosses a signal post. Find the time.",
+    "options": [
+      "2 s",
+      "5 s",
+      "10 s",
+      "7.2 s"
+    ],
+    "answer": "B",
+    "solution": "72 km/h = 20 m/s. Time = 100/20 = 5 s.",
+    "trick": "Length ÷ speed.",
+    "type": "Crossing a pole",
+    "active": true
+  },
+  {
+    "id": "train-problems-q3",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A train 150 m long at 72 km/h crosses a 150 m platform. Find the time.",
+    "options": [
+      "7.5 s",
+      "10 s",
+      "15 s",
+      "20 s"
+    ],
+    "answer": "C",
+    "solution": "20 m/s. Distance = 150 + 150 = 300 m. Time = 300/20 = 15 s.",
+    "trick": "Add platform length.",
+    "type": "Crossing a platform",
+    "active": true
+  },
+  {
+    "id": "train-problems-q4",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A train 120 m long at 36 km/h passes a man standing on a platform. Find the time.",
+    "options": [
+      "10 s",
+      "6 s",
+      "20 s",
+      "12 s"
+    ],
+    "answer": "D",
+    "solution": "10 m/s. Time = 120/10 = 12 s.",
+    "trick": "Standing man = pole.",
+    "type": "Crossing a standing man",
+    "active": true
+  },
+  {
+    "id": "train-problems-q5",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A train 150 m long at 63 km/h crosses a man running at 9 km/h in the opposite direction. Find the time.",
+    "options": [
+      "7.5 s",
+      "8.5 s",
+      "10 s",
+      "6 s"
+    ],
+    "answer": "A",
+    "solution": "Relative = 72 km/h = 20 m/s. Time = 150/20 = 7.5 s.",
+    "trick": "Opposite → add, then length/relative.",
+    "type": "Crossing a moving man",
+    "active": true
+  },
+  {
+    "id": "train-problems-q6",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Two trains 100 m and 150 m long run toward each other at 40 and 50 km/h. Time to cross?",
+    "options": [
+      "5 s",
+      "10 s",
+      "25 s",
+      "12.5 s"
+    ],
+    "answer": "B",
+    "solution": "Relative = 90 km/h = 25 m/s. Distance = 250 m. Time = 250/25 = 10 s.",
+    "trick": "Both lengths ÷ relative speed.",
+    "type": "Two trains, opposite directions",
+    "active": true
+  },
+  {
+    "id": "train-problems-q7",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "A 150 m train at 72 km/h overtakes a 100 m train at 36 km/h on a parallel track. Time to pass?",
+    "options": [
+      "12.5 s",
+      "10 s",
+      "25 s",
+      "15 s"
+    ],
+    "answer": "C",
+    "solution": "Relative = 36 km/h = 10 m/s. Distance = 250 m. Time = 250/10 = 25 s.",
+    "trick": "Same direction → subtract speeds.",
+    "type": "Two trains, same direction",
+    "active": true
+  },
+  {
+    "id": "train-problems-q8",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A train crosses a pole in 9 seconds at 40 m/s. Find its length.",
+    "options": [
+      "40 m",
+      "90 m",
+      "400 m",
+      "360 m"
+    ],
+    "answer": "D",
+    "solution": "Length = speed × time = 40 × 9 = 360 m.",
+    "trick": "L = v × t for a pole.",
+    "type": "Crossing a pole",
+    "active": true
+  },
+  {
+    "id": "train-problems-q9",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A 240 m train at 90 km/h crosses a bridge in 16 seconds. Find the bridge's length.",
+    "options": [
+      "160 m",
+      "400 m",
+      "240 m",
+      "200 m"
+    ],
+    "answer": "A",
+    "solution": "90 km/h = 25 m/s. Total = 25×16 = 400 m. Bridge = 400 − 240 = 160 m.",
+    "trick": "Total distance − train length.",
+    "type": "Crossing a platform",
+    "active": true
+  },
+  {
+    "id": "train-problems-q10",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A train 200 m long passes a standing man in 10 seconds. Find its speed in km/h.",
+    "options": [
+      "20 km/h",
+      "72 km/h",
+      "36 km/h",
+      "54 km/h"
+    ],
+    "answer": "B",
+    "solution": "Speed = 200/10 = 20 m/s = 20 × 18/5 = 72 km/h.",
+    "trick": "m/s → km/h with ×18/5.",
+    "type": "Crossing a standing man",
+    "active": true
+  },
+  {
+    "id": "train-problems-q11",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A 110 m train at 60 km/h crosses a man walking at 6 km/h in the same direction. Find the time.",
+    "options": [
+      "6 s",
+      "7.5 s",
+      "7⅓ s",
+      "10 s"
+    ],
+    "answer": "C",
+    "solution": "Relative = 54 km/h = 15 m/s. Time = 110/15 = 7⅓ s.",
+    "trick": "Same direction → subtract.",
+    "type": "Crossing a moving man",
+    "active": true
+  },
+  {
+    "id": "train-problems-q12",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Two trains 137 m and 163 m long run toward each other at 42 and 48 km/h. Time to cross?",
+    "options": [
+      "10 s",
+      "15 s",
+      "6 s",
+      "12 s"
+    ],
+    "answer": "D",
+    "solution": "Relative = 90 km/h = 25 m/s. Distance = 300 m. Time = 300/25 = 12 s.",
+    "trick": "Sum lengths ÷ sum speeds (in m/s).",
+    "type": "Two trains, opposite directions",
+    "active": true
+  },
+  {
+    "id": "train-problems-q13",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A 250 m train at 90 km/h overtakes a 150 m train at 54 km/h on a parallel track. Time to pass?",
+    "options": [
+      "40 s",
+      "20 s",
+      "25 s",
+      "16 s"
+    ],
+    "answer": "A",
+    "solution": "Relative = 36 km/h = 10 m/s. Distance = 400 m. Time = 400/10 = 40 s.",
+    "trick": "Difference of speeds for overtaking.",
+    "type": "Two trains, same direction",
+    "active": true
+  },
+  {
+    "id": "train-problems-q14",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A train 100 m long at 45 km/h overtakes a 150 m train at 30 km/h moving the same way. Time to fully pass?",
+    "options": [
+      "50 s",
+      "60 s",
+      "40 s",
+      "45 s"
+    ],
+    "answer": "B",
+    "solution": "Relative = 15 km/h = 15×5/18 = 25/6 m/s. Distance = 250 m. Time = 250 ÷ 25/6 = 60 s.",
+    "trick": "Small relative speed → long time.",
+    "type": "Two trains, same direction",
+    "active": true
+  },
+  {
+    "id": "train-problems-q15",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A train crosses a pole in 15 seconds and a 100 m platform in 25 seconds. Find the train's length.",
+    "options": [
+      "100 m",
+      "200 m",
+      "150 m",
+      "250 m"
+    ],
+    "answer": "C",
+    "solution": "L/v = 15, (L+100)/v = 25 → 100/v = 10 → v = 10 m/s. L = 15×10 = 150 m.",
+    "trick": "Subtract the two equations for the platform.",
+    "type": "Crossing a platform",
+    "active": true
+  },
+  {
+    "id": "train-problems-q16",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A train 300 m long crosses a platform in 39 seconds and a signal pole in 18 seconds. Find the platform's length.",
+    "options": [
+      "300 m",
+      "650 m",
+      "390 m",
+      "350 m"
+    ],
+    "answer": "D",
+    "solution": "v = 300/18 = 50/3 m/s. Total = 50/3 × 39 = 650 m. Platform = 650 − 300 = 350 m.",
+    "trick": "Speed from the pole, then platform total.",
+    "type": "Crossing a platform",
+    "active": true
+  },
+  {
+    "id": "train-problems-q17",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A train 125 m long passes a man running at 5 km/h in the same direction as the train in 10 seconds. Find the train's speed.",
+    "options": [
+      "50 km/h",
+      "45 km/h",
+      "40 km/h",
+      "55 km/h"
+    ],
+    "answer": "A",
+    "solution": "Relative = 125/10 = 12.5 m/s = 45 km/h. Train = 45 + 5 = 50 km/h.",
+    "trick": "Relative speed + man's speed.",
+    "type": "Crossing a moving man",
+    "active": true
+  },
+  {
+    "id": "train-problems-q18",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Two trains of length 200 m and 300 m run in opposite directions and cross each other in 20 seconds. If one runs at 40 km/h, find the other's speed.",
+    "options": [
+      "40 km/h",
+      "50 km/h",
+      "45 km/h",
+      "60 km/h"
+    ],
+    "answer": "B",
+    "solution": "Total = 500 m in 20 s → relative = 25 m/s = 90 km/h. Other = 90 − 40 = 50 km/h.",
+    "trick": "Relative speed − known speed.",
+    "type": "Two trains, opposite directions",
+    "active": true
+  },
+  {
+    "id": "train-problems-q19",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Two trains of equal length run on parallel tracks at 46 and 36 km/h. The faster passes the slower in 36 seconds. Find the length of each train.",
+    "options": [
+      "100 m",
+      "25 m",
+      "50 m",
+      "72 m"
+    ],
+    "answer": "C",
+    "solution": "Relative = 10 km/h = 25/9 m/s. Distance = 25/9 × 36 = 100 m = 2L → L = 50 m.",
+    "trick": "Distance covered = both lengths = 2L.",
+    "type": "Two trains, same direction",
+    "active": true
+  },
+  {
+    "id": "train-problems-q20",
+    "topic": "train-problems",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A train overtakes two people walking at 2 and 4 km/h in the same direction, passing them in 9 and 10 seconds respectively. Find the length of the train.",
+    "options": [
+      "45 m",
+      "72 m",
+      "60 m",
+      "50 m"
+    ],
+    "answer": "D",
+    "solution": "L = (v−2)×5/18×9 = (v−4)×5/18×10 → 9(v−2) = 10(v−4) → v = 22 km/h. L = 20×5/18×9 = 50 m.",
+    "trick": "Two crossings give one equation in v.",
+    "type": "Two trains, same direction",
+    "active": true
+  }
+]

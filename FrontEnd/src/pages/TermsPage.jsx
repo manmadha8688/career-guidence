@@ -20,7 +20,7 @@ export default function TermsPage() {
             <Scale className="info-callout__icon" size={22} />
             <p>
               Use it to learn, don't abuse it or other students, don't cheat the ranks, and remember
-              it's a <strong>free educational tool — not a job guarantee.</strong>
+              it's an <strong>educational tool — not a job guarantee.</strong>
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function TermsPage() {
         </div>
         <div className="info-block__content">
           <p>
-            LearnForEarn is a free educational platform offering structured learning content, coding
+            LearnForEarn is an educational platform offering structured learning content, coding
             practice, quizzes, project briefs, career guidance, and a community walk-in job board. It's
             provided as-is and may add, change, or remove features at any time as the platform evolves.
           </p>
@@ -138,11 +138,11 @@ export default function TermsPage() {
         <div className="info-block__head">
           <span className="info-block__num">08</span>
           <h2 className="info-block__title">Limitation of liability</h2>
-          <p className="info-block__desc">Free service, provided as-is.</p>
+          <p className="info-block__desc">Provided as-is.</p>
         </div>
         <div className="info-block__content">
           <p>
-            The platform is provided free of charge and without warranties of any kind. To the maximum
+            The platform is provided without warranties of any kind. To the maximum
             extent permitted by law, LearnForEarn is not liable for indirect damages, data loss, or
             outcomes arising from use of the platform — including decisions made based on walk-in posts
             or career guidance content.

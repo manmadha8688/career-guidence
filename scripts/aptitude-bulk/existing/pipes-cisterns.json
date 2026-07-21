@@ -1,0 +1,402 @@
+[
+  {
+    "id": "pipes-cisterns-q1",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Pipe A fills a tank in 6 hours and pipe B in 12 hours. How long together?",
+    "options": [
+      "4 hours",
+      "9 hours",
+      "18 hours",
+      "6 hours"
+    ],
+    "answer": "A",
+    "solution": "Rate = 1/6 + 1/12 = 3/12 = 1/4. Time = 4 hours.",
+    "trick": "ab/(a+b) = 72/18 = 4.",
+    "type": "Two inlet pipes",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q2",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Two pipes fill a tank in 10 and 15 minutes. How long together?",
+    "options": [
+      "5 minutes",
+      "6 minutes",
+      "12.5 minutes",
+      "25 minutes"
+    ],
+    "answer": "B",
+    "solution": "LCM 30. Rates 3 and 2, together 5/min. Time = 30/5 = 6 minutes.",
+    "trick": "ab/(a+b) = 150/25 = 6.",
+    "type": "Two inlet pipes",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q3",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "An inlet fills a tank in 4 hours and an outlet empties it in 12 hours. Both open — how long to fill?",
+    "options": [
+      "3 hours",
+      "8 hours",
+      "6 hours",
+      "16 hours"
+    ],
+    "answer": "C",
+    "solution": "Net = 1/4 − 1/12 = 2/12 = 1/6. Time = 6 hours.",
+    "trick": "Subtract the outlet rate.",
+    "type": "Inlet plus outlet",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q4",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A pipe fills a tank in 10 hours but with a leak takes 15 hours. How long will the leak take to empty the full tank?",
+    "options": [
+      "25 hours",
+      "5 hours",
+      "150 hours",
+      "30 hours"
+    ],
+    "answer": "D",
+    "solution": "Leak = ab/(b−a) = 10×15/(15−10) = 150/5 = 30 hours.",
+    "trick": "ab/(b−a) with b = with-leak time.",
+    "type": "Leak slows filling",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q5",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Pipe A fills a tank in 4 hours and B in 6 hours, opened alternately for an hour each starting with A. When is it full?",
+    "options": [
+      "4⅔ hours",
+      "5 hours",
+      "4 hours",
+      "5⅓ hours"
+    ],
+    "answer": "A",
+    "solution": "Cap 12. A = 3, B = 2. Cycle = 5; two cycles (4 hr) = 10. Remaining 2 in hour 5 (A, 3/hr) = 2/3 hr. Total 4⅔ hours.",
+    "trick": "Pair the hours, finish leftover.",
+    "type": "Pipes opened by turns",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q6",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Two pipes fill a tank in 20 and 30 minutes. Both open, but the first is closed after 10 minutes. Total time to fill?",
+    "options": [
+      "20 minutes",
+      "15 minutes",
+      "12 minutes",
+      "18 minutes"
+    ],
+    "answer": "B",
+    "solution": "Cap 60. Rates 3, 2. In 10 min both: (3+2)×10 = 50, leaving 10. Second fills 10 at 2/min = 5 min. Total 15 minutes.",
+    "trick": "50 done, second does the rest.",
+    "type": "A pipe closed partway",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q7",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Three pipes, each filling a tank in 30 minutes, are opened together. How long to fill?",
+    "options": [
+      "90 minutes",
+      "30 minutes",
+      "10 minutes",
+      "15 minutes"
+    ],
+    "answer": "C",
+    "solution": "Combined rate = 3 × 1/30 = 1/10. Time = 10 minutes.",
+    "trick": "Same speed, three pipes → time/3.",
+    "type": "Three pipes (inlets and outlet)",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q8",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Pipes A, B and C fill a tank in 10, 15 and 30 hours. How long together?",
+    "options": [
+      "6 hours",
+      "55 hours",
+      "10 hours",
+      "5 hours"
+    ],
+    "answer": "D",
+    "solution": "LCM 30. Rates 3, 2, 1, together 6/hr. Time = 30/6 = 5 hours.",
+    "trick": "LCM capacity, add rates.",
+    "type": "Two inlet pipes",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q9",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Two inlets fill a tank in 6 and 8 hours; an outlet empties it in 12 hours. All open — how long?",
+    "options": [
+      "4.8 hours",
+      "5 hours",
+      "4 hours",
+      "6 hours"
+    ],
+    "answer": "A",
+    "solution": "Net = 1/6 + 1/8 − 1/12. LCD 24: 4 + 3 − 2 = 5/24. Time = 24/5 = 4.8 hours.",
+    "trick": "Add inlets, subtract the outlet.",
+    "type": "Three pipes (inlets and outlet)",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q10",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A pipe fills a tank in 12 hours but with a leak takes 15 hours. How long will the leak take to empty it?",
+    "options": [
+      "45 hours",
+      "60 hours",
+      "27 hours",
+      "3 hours"
+    ],
+    "answer": "B",
+    "solution": "Leak = ab/(b−a) = 12×15/(15−12) = 180/3 = 60 hours.",
+    "trick": "180/3 = 60.",
+    "type": "Leak slows filling",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q11",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Pipe A fills a tank in 6 hours, B in 8 hours, opened alternately for an hour each starting with A. When is it full?",
+    "options": [
+      "7 hours",
+      "6 hours",
+      "6¾ hours",
+      "7¼ hours"
+    ],
+    "answer": "C",
+    "solution": "Cap 24. A = 4, B = 3. Cycle = 7; 3 cycles (6 hr) = 21. Remaining 3 in hour 7 (A, 4/hr) = 3/4 hr. Total 6¾ hours.",
+    "trick": "3 cycles then part of A's hour.",
+    "type": "Pipes opened by turns",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q12",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Two pipes fill a tank in 15 and 20 minutes. Both opened, but the second is closed after 5 minutes. Total time?",
+    "options": [
+      "10 minutes",
+      "12 minutes",
+      "15 minutes",
+      "11.25 minutes"
+    ],
+    "answer": "D",
+    "solution": "Cap 60. Rates 4, 3. In 5 min both: (4+3)×5 = 35, leaving 25. First fills 25 at 4/min = 6.25 min. Total 11.25 minutes.",
+    "trick": "35 done, first does 25/4 more.",
+    "type": "A pipe closed partway",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q13",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A pipe fills a tank in 30 minutes. After the tank is half full, a second identical pipe is opened. How long from the start to fill it?",
+    "options": [
+      "22.5 minutes",
+      "20 minutes",
+      "15 minutes",
+      "25 minutes"
+    ],
+    "answer": "A",
+    "solution": "First fills half in 15 min. Then two pipes (rate 2/30 = 1/15) fill the remaining half: (1/2)/(1/15) = 7.5 min. Total 22.5 minutes.",
+    "trick": "15 min alone + 7.5 min with two pipes.",
+    "type": "A pipe closed partway",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q14",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "An inlet fills a tank in 5 hours and an outlet empties the full tank in 8 hours. The tank is empty and both are opened. How long to fill?",
+    "options": [
+      "13 hours",
+      "13⅓ hours",
+      "3 hours",
+      "40 hours"
+    ],
+    "answer": "B",
+    "solution": "Net = 1/5 − 1/8 = (8 − 5)/40 = 3/40. Time = 40/3 = 13⅓ hours.",
+    "trick": "40/3 = 13⅓.",
+    "type": "Inlet plus outlet",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q15",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Two pipes fill a tank in 20 and 24 minutes. Both are opened for 5 minutes, then the first is turned off. How long more for the second to fill the rest?",
+    "options": [
+      "12 minutes",
+      "15 minutes",
+      "13 minutes",
+      "10 minutes"
+    ],
+    "answer": "C",
+    "solution": "LCM 120. Rates 6, 5. In 5 min both: (6+5)×5 = 55, leaving 65. Second fills 65 at 5/min = 13 minutes.",
+    "trick": "65/5 = 13.",
+    "type": "A pipe closed partway",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q16",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A tank is full. An inlet can fill it in 16 hours and an outlet can empty it in 8 hours. Both are opened. How long to empty the tank?",
+    "options": [
+      "8 hours",
+      "24 hours",
+      "32 hours",
+      "16 hours"
+    ],
+    "answer": "D",
+    "solution": "Net (emptying) = 1/8 − 1/16 = 1/16 per hour. Full tank empties in 16 hours.",
+    "trick": "Outlet stronger → net empties at 1/16.",
+    "type": "Inlet plus outlet",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q17",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A pipe can fill a tank in 20 minutes. Due to a leak at the bottom, it takes 24 minutes. If the tank is full and only the leak is open, how long to empty it?",
+    "options": [
+      "120 minutes",
+      "96 minutes",
+      "4 minutes",
+      "44 minutes"
+    ],
+    "answer": "A",
+    "solution": "Leak = ab/(b−a) = 20×24/(24−20) = 480/4 = 120 minutes.",
+    "trick": "480/4 = 120.",
+    "type": "Leak slows filling",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q18",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Pipe A fills a tank in 10 hours and B empties it in 15 hours. Starting with A, they are opened alternately for one hour each. When is the tank full?",
+    "options": [
+      "56 hours",
+      "55 hours",
+      "45 hours",
+      "30 hours"
+    ],
+    "answer": "B",
+    "solution": "Cap 30. A = +3, B = −2, so each 2-hour cycle nets +1. After 27 cycles (54 hr): 27 units. In hour 55 (A's turn, +3): 27 + 3 = 30 → full. Total 55 hours.",
+    "trick": "Net +1 per cycle; the last A-hour tops it off.",
+    "type": "Pipes opened by turns",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q19",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Two pipes A and B fill a tank in 24 and 32 minutes. Both are opened together; after some time B is closed and the tank is full in 18 minutes total. After how many minutes was B closed?",
+    "options": [
+      "10 minutes",
+      "6 minutes",
+      "8 minutes",
+      "12 minutes"
+    ],
+    "answer": "C",
+    "solution": "LCM 96. A = 4, B = 3. A runs all 18 min: 4×18 = 72. B runs t min: 3t. 72 + 3t = 96 → 3t = 24 → t = 8 minutes.",
+    "trick": "Fill A's part first, solve for B's time.",
+    "type": "A pipe closed partway",
+    "active": true
+  },
+  {
+    "id": "pipes-cisterns-q20",
+    "topic": "pipes-cisterns",
+    "category": "quantitative",
+    "group": "work-efficiency",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Two inlets fill a tank in 12 and 18 hours; an outlet empties it in 36 hours. All three are opened when the tank is empty. How long to fill?",
+    "options": [
+      "12 hours",
+      "8 hours",
+      "6 hours",
+      "9 hours"
+    ],
+    "answer": "D",
+    "solution": "Net = 1/12 + 1/18 − 1/36. LCD 36: 3 + 2 − 1 = 4/36 = 1/9. Time = 9 hours.",
+    "trick": "3 + 2 − 1 = 4 over 36.",
+    "type": "Three pipes (inlets and outlet)",
+    "active": true
+  }
+]

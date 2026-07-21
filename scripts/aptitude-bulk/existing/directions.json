@@ -1,0 +1,402 @@
+[
+  {
+    "id": "directions-q1",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A man faces East and turns right. Which direction does he now face?",
+    "options": [
+      "South",
+      "North",
+      "West",
+      "East"
+    ],
+    "answer": "A",
+    "solution": "Facing East, a right (clockwise) turn points him South.",
+    "trick": "E + right = S.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q2",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Walk 3 km East, then 4 km North. What is the straight-line distance from the start?",
+    "options": [
+      "7 km",
+      "5 km",
+      "1 km",
+      "12 km"
+    ],
+    "answer": "B",
+    "solution": "Legs 3 and 4 give √(3²+4²) = √25 = 5 km (3-4-5 triangle).",
+    "trick": "3-4-5 → 5.",
+    "type": "Straight-line distance",
+    "active": true
+  },
+  {
+    "id": "directions-q3",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A man faces North and turns 180°. Which direction does he face?",
+    "options": [
+      "East",
+      "West",
+      "South",
+      "North"
+    ],
+    "answer": "C",
+    "solution": "A 180° turn from North gives South.",
+    "trick": "180° = opposite direction.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q4",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Walk 6 m North then 6 m South. How far are you from the start?",
+    "options": [
+      "6 m",
+      "12 m",
+      "3 m",
+      "0 m"
+    ],
+    "answer": "D",
+    "solution": "Equal opposite moves cancel: 6 − 6 = 0, back at start.",
+    "trick": "Opposite equal moves cancel.",
+    "type": "Net displacement",
+    "active": true
+  },
+  {
+    "id": "directions-q5",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Facing West, a man turns left. Which direction does he now face?",
+    "options": [
+      "South",
+      "North",
+      "East",
+      "West"
+    ],
+    "answer": "A",
+    "solution": "Facing West, a left (anticlockwise) turn points him South.",
+    "trick": "W + left = S.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q6",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Walk 10 m East then 2 m West. Net displacement?",
+    "options": [
+      "12 m East",
+      "8 m East",
+      "8 m West",
+      "2 m East"
+    ],
+    "answer": "B",
+    "solution": "10 − 2 = 8 m East.",
+    "trick": "Subtract opposite moves.",
+    "type": "Net displacement",
+    "active": true
+  },
+  {
+    "id": "directions-q7",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "A man walks 5 km South, turns left, walks 5 km. Which direction is he facing at the end?",
+    "options": [
+      "West",
+      "North",
+      "East",
+      "South"
+    ],
+    "answer": "C",
+    "solution": "Facing South, a left turn faces him East, and he keeps facing East.",
+    "trick": "S + left = E.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q8",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Walk 8 km East, 6 km North. Straight-line distance from start?",
+    "options": [
+      "14 km",
+      "2 km",
+      "48 km",
+      "10 km"
+    ],
+    "answer": "D",
+    "solution": "√(8²+6²) = √100 = 10 km (6-8-10 triangle).",
+    "trick": "6-8-10 → 10.",
+    "type": "Straight-line distance",
+    "active": true
+  },
+  {
+    "id": "directions-q9",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A man faces North, turns right, then turns right, then turns left. Which direction does he face?",
+    "options": [
+      "East",
+      "South",
+      "West",
+      "North"
+    ],
+    "answer": "A",
+    "solution": "N → right = E → right = S → left = E.",
+    "trick": "Track turn by turn.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q10",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Walk 3 m North, 4 m East, 3 m South. How far and where from start?",
+    "options": [
+      "4 m West",
+      "4 m East",
+      "10 m East",
+      "0 m"
+    ],
+    "answer": "B",
+    "solution": "North and South cancel (3−3=0); net is 4 m East.",
+    "trick": "Cancel N/S, keep E.",
+    "type": "Net displacement",
+    "active": true
+  },
+  {
+    "id": "directions-q11",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "In the early morning, a boy's shadow falls to his right. Which direction is he facing?",
+    "options": [
+      "North",
+      "East",
+      "South",
+      "West"
+    ],
+    "answer": "C",
+    "solution": "Morning sun is in the East, shadow falls West. If West is to his right, he faces South.",
+    "trick": "Morning shadow = West side.",
+    "type": "Shadow",
+    "active": true
+  },
+  {
+    "id": "directions-q12",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Walk 12 km North, 5 km East. Straight-line distance from start?",
+    "options": [
+      "17 km",
+      "7 km",
+      "60 km",
+      "13 km"
+    ],
+    "answer": "D",
+    "solution": "√(12²+5²) = √169 = 13 km (5-12-13 triangle).",
+    "trick": "5-12-13 → 13.",
+    "type": "Straight-line distance",
+    "active": true
+  },
+  {
+    "id": "directions-q13",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A man walks 4 km North, turns right and walks 3 km, turns right and walks 4 km. How far is he from start?",
+    "options": [
+      "3 km",
+      "5 km",
+      "11 km",
+      "0 km"
+    ],
+    "answer": "A",
+    "solution": "The two 4-km moves (North then South) cancel; net is 3 km East.",
+    "trick": "Opposite equal legs cancel.",
+    "type": "Net displacement",
+    "active": true
+  },
+  {
+    "id": "directions-q14",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Facing South, a man turns left twice. Which direction does he face?",
+    "options": [
+      "East",
+      "North",
+      "West",
+      "South"
+    ],
+    "answer": "B",
+    "solution": "Two left turns = 180°; South → North.",
+    "trick": "Two turns same way = 180°.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q15",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Walk 3 km East, 2 km North, 3 km East, 2 km North. Straight-line distance from start?",
+    "options": [
+      "10 km",
+      "6 km",
+      "√52 ≈ 7.2 km",
+      "4 km"
+    ],
+    "answer": "C",
+    "solution": "Net East = 6, net North = 4; distance = √(6²+4²) = √52 ≈ 7.2 km.",
+    "trick": "Sum each axis, then Pythagoras.",
+    "type": "L-shaped path",
+    "active": true
+  },
+  {
+    "id": "directions-q16",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A man starts facing North, turns 90° right, walks, turns 90° right, walks, turns 90° right. Which direction now?",
+    "options": [
+      "East",
+      "South",
+      "North",
+      "West"
+    ],
+    "answer": "D",
+    "solution": "N → E → S → W after three right turns.",
+    "trick": "Three right turns = 270° clockwise.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q17",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "From a point, walk 7 km East, 4 km North, 3 km West, 1 km South. Straight-line distance from start?",
+    "options": [
+      "5 km",
+      "7 km",
+      "3 km",
+      "√41 km"
+    ],
+    "answer": "A",
+    "solution": "Net East = 7−3 = 4; net North = 4−1 = 3; distance = √(4²+3²) = 5 km.",
+    "trick": "Net legs 4 and 3 → 5.",
+    "type": "L-shaped path",
+    "active": true
+  },
+  {
+    "id": "directions-q18",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Two friends start from the same point. One walks 9 km North, the other 12 km East. How far apart are they?",
+    "options": [
+      "21 km",
+      "15 km",
+      "3 km",
+      "108 km"
+    ],
+    "answer": "B",
+    "solution": "Their paths are perpendicular; gap = √(9²+12²) = √225 = 15 km (3-4-5 scaled ×3).",
+    "trick": "9-12-15 = 3×(3-4-5).",
+    "type": "Straight-line distance",
+    "active": true
+  },
+  {
+    "id": "directions-q19",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A man faces East. He turns 45° clockwise, then 90° clockwise. Which direction is he facing?",
+    "options": [
+      "South",
+      "West",
+      "South-West",
+      "South-East"
+    ],
+    "answer": "C",
+    "solution": "East + 45° = South-East; + 90° more = South-West.",
+    "trick": "Add the angles: 135° clockwise from East.",
+    "type": "Final direction",
+    "active": true
+  },
+  {
+    "id": "directions-q20",
+    "topic": "directions",
+    "category": "logical",
+    "group": "relations-directions",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Ravi walks 5 m North, 5 m East, 5 m North, 5 m East. What is his straight-line distance from start?",
+    "options": [
+      "20 m",
+      "10 m",
+      "√50 m",
+      "√200 ≈ 14.1 m"
+    ],
+    "answer": "D",
+    "solution": "Net North = 10, net East = 10; distance = √(10²+10²) = √200 ≈ 14.1 m.",
+    "trick": "Equal legs → side×√2.",
+    "type": "L-shaped path",
+    "active": true
+  }
+]

@@ -1,0 +1,1207 @@
+{
+  "topic": "time-speed-distance",
+  "category": "quantitative",
+  "group": "speed-distance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Distance 120 km at 60 km/h. Time (hours)?",
+      "options": [
+        "2.0",
+        "60",
+        "60",
+        "1.7142857142857142"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 2.0 h.",
+      "trick": "T = D/S.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Speed 45 km/h for 4 hours. Distance?",
+      "options": [
+        "49",
+        "180",
+        "11",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 180 km.",
+      "trick": "D = ST.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "180 km in 3 hours. Speed?",
+      "options": [
+        "177",
+        "30",
+        "60",
+        "70"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 180/3 = 60 km/h.",
+      "trick": "S = D/T.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Go 30 km/h, return 20 km/h. Average speed for equal distance?",
+      "options": [
+        "25",
+        "30",
+        "20",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 24 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Convert 72 km/h to m/s.",
+      "options": [
+        "20.0",
+        "36.0",
+        "360",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 20.0 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Convert 10 m/s to km/h.",
+      "options": [
+        "20",
+        "36",
+        "28",
+        "50"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 36 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "200 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 4.17 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Car 50 km/h from 8 AM to 11 AM. Distance?",
+      "options": [
+        "50",
+        "3",
+        "75",
+        "150"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3 h × 50 = 150 km.",
+      "trick": "Hours × speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Distance 130 km at 60 km/h. Time (hours)?",
+      "options": [
+        "2.2",
+        "70",
+        "60",
+        "1.8571428571428572"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 2.2 h.",
+      "trick": "T = D/S.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Speed 50 km/h for 4 hours. Distance?",
+      "options": [
+        "54",
+        "200",
+        "12",
+        "100"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 200 km.",
+      "trick": "D = ST.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "200 km in 3 hours. Speed?",
+      "options": [
+        "197",
+        "30",
+        "66",
+        "76"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 200/3 = 66 km/h.",
+      "trick": "S = D/T.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Go 35 km/h, return 25 km/h. Average speed for equal distance?",
+      "options": [
+        "30",
+        "35",
+        "25",
+        "29"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 29 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Convert 76 km/h to m/s.",
+      "options": [
+        "21.1",
+        "38.0",
+        "380",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 21.1 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Convert 11 m/s to km/h.",
+      "options": [
+        "22",
+        "40",
+        "29",
+        "55"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 40 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "220 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 4.58 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Car 55 km/h from 8 AM to 12 AM. Distance?",
+      "options": [
+        "55",
+        "4",
+        "110",
+        "220"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 4 h × 55 = 220 km.",
+      "trick": "Hours × speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Distance 140 km at 60 km/h. Time (hours)?",
+      "options": [
+        "2.3",
+        "80",
+        "60",
+        "2.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 2.3 h.",
+      "trick": "T = D/S.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Speed 55 km/h for 4 hours. Distance?",
+      "options": [
+        "59",
+        "220",
+        "13",
+        "110"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 220 km.",
+      "trick": "D = ST.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "220 km in 3 hours. Speed?",
+      "options": [
+        "217",
+        "30",
+        "73",
+        "83"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 220/3 = 73 km/h.",
+      "trick": "S = D/T.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Go 40 km/h, return 30 km/h. Average speed for equal distance?",
+      "options": [
+        "35",
+        "40",
+        "30",
+        "34"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 34 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Convert 80 km/h to m/s.",
+      "options": [
+        "22.2",
+        "40.0",
+        "400",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 22.2 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Convert 12 m/s to km/h.",
+      "options": [
+        "24",
+        "43",
+        "30",
+        "60"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 43 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "240 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 5.00 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Car 60 km/h from 8 AM to 13 AM. Distance?",
+      "options": [
+        "60",
+        "5",
+        "150",
+        "300"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 5 h × 60 = 300 km.",
+      "trick": "Hours × speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Distance 150 km at 60 km/h. Time (hours)?",
+      "options": [
+        "2.5",
+        "90",
+        "60",
+        "2.142857142857143"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 2.5 h.",
+      "trick": "T = D/S.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Speed 60 km/h for 4 hours. Distance?",
+      "options": [
+        "64",
+        "240",
+        "15",
+        "120"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 240 km.",
+      "trick": "D = ST.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "240 km in 3 hours. Speed?",
+      "options": [
+        "237",
+        "30",
+        "80",
+        "90"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 240/3 = 80 km/h.",
+      "trick": "S = D/T.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Go 45 km/h, return 35 km/h. Average speed for equal distance?",
+      "options": [
+        "40",
+        "45",
+        "35",
+        "39"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 39 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Convert 84 km/h to m/s.",
+      "options": [
+        "23.3",
+        "42.0",
+        "420",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 23.3 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Convert 13 m/s to km/h.",
+      "options": [
+        "26",
+        "47",
+        "31",
+        "65"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 47 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "260 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 5.42 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Car 65 km/h from 8 AM to 11 AM. Distance?",
+      "options": [
+        "65",
+        "3",
+        "97",
+        "195"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3 h × 65 = 195 km.",
+      "trick": "Hours × speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Distance 160 km at 60 km/h. Time (hours)?",
+      "options": [
+        "2.7",
+        "100",
+        "60",
+        "2.2857142857142856"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 2.7 h.",
+      "trick": "T = D/S.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Speed 65 km/h for 4 hours. Distance?",
+      "options": [
+        "69",
+        "260",
+        "16",
+        "130"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 260 km.",
+      "trick": "D = ST.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "260 km in 3 hours. Speed?",
+      "options": [
+        "257",
+        "30",
+        "86",
+        "96"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 260/3 = 86 km/h.",
+      "trick": "S = D/T.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Go 50 km/h, return 40 km/h. Average speed for equal distance?",
+      "options": [
+        "45",
+        "50",
+        "40",
+        "44"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 44 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Convert 88 km/h to m/s.",
+      "options": [
+        "24.4",
+        "44.0",
+        "440",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 24.4 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Convert 14 m/s to km/h.",
+      "options": [
+        "28",
+        "50",
+        "32",
+        "70"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 50 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "280 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 5.83 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Car 70 km/h from 8 AM to 12 AM. Distance?",
+      "options": [
+        "70",
+        "4",
+        "140",
+        "280"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 4 h × 70 = 280 km.",
+      "trick": "Hours × speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Distance 170 km at 60 km/h. Time (hours)?",
+      "options": [
+        "2.8",
+        "110",
+        "60",
+        "2.4285714285714284"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 2.8 h.",
+      "trick": "T = D/S.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Speed 70 km/h for 4 hours. Distance?",
+      "options": [
+        "74",
+        "280",
+        "17",
+        "140"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 280 km.",
+      "trick": "D = ST.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "280 km in 3 hours. Speed?",
+      "options": [
+        "277",
+        "30",
+        "93",
+        "103"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 280/3 = 93 km/h.",
+      "trick": "S = D/T.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Go 55 km/h, return 45 km/h. Average speed for equal distance?",
+      "options": [
+        "50",
+        "55",
+        "45",
+        "50"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 50 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Convert 92 km/h to m/s.",
+      "options": [
+        "25.6",
+        "46.0",
+        "460",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 25.6 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Convert 15 m/s to km/h.",
+      "options": [
+        "30",
+        "54",
+        "33",
+        "75"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 54 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "300 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 6.25 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Car 75 km/h from 8 AM to 13 AM. Distance?",
+      "options": [
+        "75",
+        "5",
+        "187",
+        "375"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 5 h × 75 = 375 km.",
+      "trick": "Hours × speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Distance 180 km at 60 km/h. Time (hours)?",
+      "options": [
+        "3.0",
+        "120",
+        "60",
+        "2.5714285714285716"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 3.0 h.",
+      "trick": "T = D/S.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Speed 75 km/h for 4 hours. Distance?",
+      "options": [
+        "79",
+        "300",
+        "18",
+        "150"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 300 km.",
+      "trick": "D = ST.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "300 km in 3 hours. Speed?",
+      "options": [
+        "297",
+        "30",
+        "100",
+        "110"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 300/3 = 100 km/h.",
+      "trick": "S = D/T.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Go 60 km/h, return 50 km/h. Average speed for equal distance?",
+      "options": [
+        "55",
+        "60",
+        "50",
+        "55"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 55 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Convert 96 km/h to m/s.",
+      "options": [
+        "26.7",
+        "48.0",
+        "480",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 26.7 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Convert 16 m/s to km/h.",
+      "options": [
+        "32",
+        "58",
+        "34",
+        "80"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 58 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "320 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 6.67 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Car 80 km/h from 8 AM to 11 AM. Distance?",
+      "options": [
+        "80",
+        "3",
+        "120",
+        "240"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3 h × 80 = 240 km.",
+      "trick": "Hours × speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Distance 190 km at 60 km/h. Time (hours)?",
+      "options": [
+        "3.2",
+        "130",
+        "60",
+        "2.7142857142857144"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 3.2 h.",
+      "trick": "T = D/S.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Speed 80 km/h for 4 hours. Distance?",
+      "options": [
+        "84",
+        "320",
+        "20",
+        "160"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 320 km.",
+      "trick": "D = ST.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "320 km in 3 hours. Speed?",
+      "options": [
+        "317",
+        "30",
+        "106",
+        "116"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 320/3 = 106 km/h.",
+      "trick": "S = D/T.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Go 65 km/h, return 55 km/h. Average speed for equal distance?",
+      "options": [
+        "60",
+        "65",
+        "55",
+        "60"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 60 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Convert 100 km/h to m/s.",
+      "options": [
+        "27.8",
+        "50.0",
+        "500",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 27.8 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Convert 17 m/s to km/h.",
+      "options": [
+        "34",
+        "61",
+        "35",
+        "85"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 61 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "340 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 7.08 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Car 85 km/h from 8 AM to 12 AM. Distance?",
+      "options": [
+        "85",
+        "4",
+        "170",
+        "340"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 4 h × 85 = 340 km.",
+      "trick": "Hours × speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Distance 200 km at 60 km/h. Time (hours)?",
+      "options": [
+        "3.3",
+        "140",
+        "60",
+        "2.857142857142857"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 3.3 h.",
+      "trick": "T = D/S.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Speed 85 km/h for 4 hours. Distance?",
+      "options": [
+        "89",
+        "340",
+        "21",
+        "170"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 340 km.",
+      "trick": "D = ST.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "340 km in 3 hours. Speed?",
+      "options": [
+        "337",
+        "30",
+        "113",
+        "123"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 340/3 = 113 km/h.",
+      "trick": "S = D/T.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Go 70 km/h, return 60 km/h. Average speed for equal distance?",
+      "options": [
+        "65",
+        "70",
+        "60",
+        "65"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 65 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Convert 104 km/h to m/s.",
+      "options": [
+        "28.9",
+        "52.0",
+        "520",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 28.9 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Convert 18 m/s to km/h.",
+      "options": [
+        "36",
+        "65",
+        "36",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 65 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "360 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 7.50 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Car 90 km/h from 8 AM to 13 AM. Distance?",
+      "options": [
+        "90",
+        "5",
+        "225",
+        "450"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 5 h × 90 = 450 km.",
+      "trick": "Hours × speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Distance 210 km at 60 km/h. Time (hours)?",
+      "options": [
+        "3.5",
+        "150",
+        "60",
+        "3.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: T = D/S = 3.5 h.",
+      "trick": "T = D/S.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Speed 90 km/h for 4 hours. Distance?",
+      "options": [
+        "94",
+        "360",
+        "22",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: D = S×T = 360 km.",
+      "trick": "D = ST.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "360 km in 3 hours. Speed?",
+      "options": [
+        "357",
+        "30",
+        "120",
+        "130"
+      ],
+      "answer": "C",
+      "solution": "Step 1: S = 360/3 = 120 km/h.",
+      "trick": "S = D/T.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Go 75 km/h, return 65 km/h. Average speed for equal distance?",
+      "options": [
+        "70",
+        "75",
+        "65",
+        "70"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Harmonic mean = 70 km/h.",
+      "trick": "2ab/(a+b).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Convert 108 km/h to m/s.",
+      "options": [
+        "30.0",
+        "54.0",
+        "540",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: ×5/18 = 30.0 m/s.",
+      "trick": "×5/18 conversion.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Convert 19 m/s to km/h.",
+      "options": [
+        "38",
+        "68",
+        "37",
+        "95"
+      ],
+      "answer": "B",
+      "solution": "Step 1: ×18/5 = 68 km/h.",
+      "trick": "×18/5 conversion.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "380 km: half at 40 km/h, half at 60 km/h. Average speed?",
+      "options": [
+        "50",
+        "60",
+        "48",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total time = 7.92 h. Avg = 48 km/h.",
+      "trick": "Total D / total T.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Car 95 km/h from 8 AM to 11 AM. Distance?",
+      "options": [
+        "95",
+        "3",
+        "142",
+        "285"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 3 h × 95 = 285 km.",
+      "trick": "Hours × speed.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

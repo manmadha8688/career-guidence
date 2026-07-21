@@ -1,0 +1,402 @@
+[
+  {
+    "id": "visual-reasoning-q1",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "In an odd-one-out figure question, which feature is usually quickest to check first?",
+    "options": [
+      "Element count (lines/dots/sides)",
+      "Colour of the paper",
+      "Size of the page",
+      "Font of the label"
+    ],
+    "answer": "A",
+    "solution": "Counting elements often reveals the differing figure immediately.",
+    "trick": "Count first.",
+    "type": "Method",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q2",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Four figures each have 4 sides; one is a triangle. Which is the odd one out?",
+    "options": [
+      "A 4-sided figure",
+      "The triangle",
+      "The largest figure",
+      "The smallest figure"
+    ],
+    "answer": "B",
+    "solution": "The others share 4 sides; the triangle has 3, breaking the rule.",
+    "trick": "Find the count that breaks the pattern.",
+    "type": "Odd one out",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q3",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "An arrow points up, then right, then down (rotating 90° clockwise each step). What comes next?",
+    "options": [
+      "Up",
+      "Right",
+      "Left",
+      "Down"
+    ],
+    "answer": "C",
+    "solution": "Continuing 90° clockwise from down gives left.",
+    "trick": "Apply the fixed rotation.",
+    "type": "Complete the pattern",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q4",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Figures show 1 dot, then 2 dots, then 3 dots. If one dot is added each step, how many dots next?",
+    "options": [
+      "6",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "D",
+    "solution": "1, 2, 3, ... → next is 4.",
+    "trick": "Add the constant.",
+    "type": "Complete the pattern",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q5",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Can a hidden (embedded) figure be found by resizing it?",
+    "options": [
+      "No — it keeps the same size",
+      "Yes, any size works",
+      "Only if doubled",
+      "Only if halved"
+    ],
+    "answer": "A",
+    "solution": "An embedded figure must appear at the same size and orientation.",
+    "trick": "No resizing embedded figures.",
+    "type": "Embedded figure",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q6",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "A square is crossed by both its diagonals. Which simple shape is definitely embedded?",
+    "options": [
+      "A circle",
+      "A triangle",
+      "A pentagon",
+      "A hexagon"
+    ],
+    "answer": "B",
+    "solution": "The diagonals split the square into triangles, so a triangle is embedded.",
+    "trick": "Use only the lines already drawn.",
+    "type": "Embedded figure",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q7",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Odd one out: circle, square, triangle, and a single line segment. Which is odd?",
+    "options": [
+      "Circle",
+      "Square",
+      "The line segment (open figure)",
+      "Triangle"
+    ],
+    "answer": "C",
+    "solution": "The others are closed figures; the line segment is open.",
+    "trick": "Open vs closed is a feature.",
+    "type": "Odd one out",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q8",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A figure rotates 90° counter-clockwise each step: east, then north, then west. What is next?",
+    "options": [
+      "East",
+      "North",
+      "West",
+      "South"
+    ],
+    "answer": "D",
+    "solution": "Continuing 90° CCW from west gives south.",
+    "trick": "Keep the rotation consistent.",
+    "type": "Complete the pattern",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q9",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "The number of dots doubles each step: 1, 2, 4, 8. What is next?",
+    "options": [
+      "16",
+      "10",
+      "12",
+      "14"
+    ],
+    "answer": "A",
+    "solution": "8 × 2 = 16.",
+    "trick": "Spot ×2 growth.",
+    "type": "Complete the pattern",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q10",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Odd one out by symmetry: square, circle, equilateral triangle, scalene triangle.",
+    "options": [
+      "Square",
+      "Scalene triangle",
+      "Circle",
+      "Equilateral triangle"
+    ],
+    "answer": "B",
+    "solution": "The first three have line symmetry; the scalene triangle has none.",
+    "trick": "Check symmetry.",
+    "type": "Odd one out",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q11",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "To count as embedded, a hidden figure must appear with the...?",
+    "options": [
+      "Any orientation",
+      "Larger size",
+      "Same size and orientation",
+      "Different colour"
+    ],
+    "answer": "C",
+    "solution": "Embedded figures match size and orientation exactly.",
+    "trick": "Exact match required.",
+    "type": "Embedded figure",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q12",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Pattern: shaded, unshaded, shaded, unshaded. What comes next?",
+    "options": [
+      "Unshaded",
+      "Half-shaded",
+      "Striped",
+      "Shaded"
+    ],
+    "answer": "D",
+    "solution": "The shading alternates, so the next figure is shaded.",
+    "trick": "Alternating rule.",
+    "type": "Complete the pattern",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q13",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "A triangle has a single line drawn from its apex to the midpoint of its base. How many triangles are in the figure?",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "4"
+    ],
+    "answer": "A",
+    "solution": "Two small triangles plus the original large triangle = 3.",
+    "trick": "Count small + combined.",
+    "type": "Count figures",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q14",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "A shape is rotated 180°, then another 180°. Where is it now?",
+    "options": [
+      "Upside down",
+      "Back to the original position",
+      "Rotated 90°",
+      "Mirrored"
+    ],
+    "answer": "B",
+    "solution": "180° + 180° = 360°, a full turn, so it returns to the start.",
+    "trick": "Two half-turns = full turn.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q15",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Three figures are made of straight lines; one is a circle. Which is the odd one out?",
+    "options": [
+      "Triangle",
+      "Square",
+      "The circle (curved)",
+      "Pentagon"
+    ],
+    "answer": "C",
+    "solution": "The circle is curved while the others are straight-line figures.",
+    "trick": "Curved vs straight.",
+    "type": "Odd one out",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q16",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A series adds 2 dots each step: 2, 4, 6. What comes next?",
+    "options": [
+      "10",
+      "12",
+      "5",
+      "8"
+    ],
+    "answer": "D",
+    "solution": "6 + 2 = 8.",
+    "trick": "Add the constant.",
+    "type": "Complete the pattern",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q17",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Into how many equal triangles do the two diagonals divide a square?",
+    "options": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "The two diagonals cross at the centre, forming 4 equal triangles.",
+    "trick": "Diagonals meet at the centre.",
+    "type": "Count figures",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q18",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "An arrow points north and rotates 45° clockwise each step. After 2 steps it points?",
+    "options": [
+      "North-east",
+      "East",
+      "South",
+      "West"
+    ],
+    "answer": "B",
+    "solution": "2 × 45° = 90° clockwise from north = east.",
+    "trick": "Add the angles, then read direction.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q19",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Four figures are shaded and one is unshaded. Which is the odd one out?",
+    "options": [
+      "A shaded figure",
+      "The largest figure",
+      "The unshaded figure",
+      "The smallest figure"
+    ],
+    "answer": "C",
+    "solution": "Shading is the shared feature; the unshaded figure breaks it.",
+    "trick": "Shading can be the differentiator.",
+    "type": "Odd one out",
+    "active": true
+  },
+  {
+    "id": "visual-reasoning-q20",
+    "topic": "visual-reasoning",
+    "category": "logical",
+    "group": "visual",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Series: triangle (3 sides), square (4 sides), pentagon (5 sides). Which figure comes next?",
+    "options": [
+      "Triangle",
+      "Square",
+      "Circle",
+      "Hexagon (6 sides)"
+    ],
+    "answer": "D",
+    "solution": "The number of sides increases by one each step, so next is a hexagon (6 sides).",
+    "trick": "Count sides: +1 each step.",
+    "type": "Complete the pattern",
+    "active": true
+  }
+]

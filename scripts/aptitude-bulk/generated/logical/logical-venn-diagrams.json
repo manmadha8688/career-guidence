@@ -1,0 +1,1207 @@
+{
+  "topic": "logical-venn-diagrams",
+  "category": "logical",
+  "group": "analytical",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Set A has 26 elements, Set B has 16, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "22",
+        "42",
+        "10",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 26−10 = 16. Only B = 16−10 = 6. Step 2: Sum = 22. Answer: 22.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Set A has 27 elements, Set B has 17, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "22",
+        "44",
+        "11",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 27−11 = 16. Only B = 17−11 = 6. Step 2: Sum = 22. Answer: 22.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Set A has 28 elements, Set B has 18, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "22",
+        "46",
+        "12",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 28−12 = 16. Only B = 18−12 = 6. Step 2: Sum = 22. Answer: 22.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Set A has 29 elements, Set B has 19, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "38",
+        "48",
+        "5",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 29−5 = 24. Only B = 19−5 = 14. Step 2: Sum = 38. Answer: 38.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Set A has 30 elements, Set B has 20, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "38",
+        "50",
+        "6",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 30−6 = 24. Only B = 20−6 = 14. Step 2: Sum = 38. Answer: 38.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Set A has 31 elements, Set B has 21, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "38",
+        "52",
+        "7",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 31−7 = 24. Only B = 21−7 = 14. Step 2: Sum = 38. Answer: 38.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Set A has 32 elements, Set B has 22, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "38",
+        "54",
+        "8",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 32−8 = 24. Only B = 22−8 = 14. Step 2: Sum = 38. Answer: 38.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Set A has 33 elements, Set B has 23, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "38",
+        "56",
+        "9",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 33−9 = 24. Only B = 23−9 = 14. Step 2: Sum = 38. Answer: 38.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Set A has 34 elements, Set B has 24, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "38",
+        "58",
+        "10",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 34−10 = 24. Only B = 24−10 = 14. Step 2: Sum = 38. Answer: 38.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Set A has 20 elements, Set B has 15, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "13",
+        "35",
+        "11",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 20−11 = 9. Only B = 15−11 = 4. Step 2: Sum = 13. Answer: 13.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Set A has 21 elements, Set B has 16, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "13",
+        "37",
+        "12",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 21−12 = 9. Only B = 16−12 = 4. Step 2: Sum = 13. Answer: 13.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Set A has 22 elements, Set B has 17, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "39",
+        "5",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 22−5 = 17. Only B = 17−5 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Set A has 23 elements, Set B has 18, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "41",
+        "6",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 23−6 = 17. Only B = 18−6 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Set A has 24 elements, Set B has 19, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "43",
+        "7",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 24−7 = 17. Only B = 19−7 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Set A has 25 elements, Set B has 20, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "45",
+        "8",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 25−8 = 17. Only B = 20−8 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Set A has 26 elements, Set B has 21, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "47",
+        "9",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 26−9 = 17. Only B = 21−9 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Set A has 27 elements, Set B has 22, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "49",
+        "10",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 27−10 = 17. Only B = 22−10 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Set A has 28 elements, Set B has 23, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "51",
+        "11",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 28−11 = 17. Only B = 23−11 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Set A has 29 elements, Set B has 24, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "29",
+        "53",
+        "12",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 29−12 = 17. Only B = 24−12 = 12. Step 2: Sum = 29. Answer: 29.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Set A has 30 elements, Set B has 15, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "35",
+        "45",
+        "5",
+        "25"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Only A = 30−5 = 25. Only B = 15−5 = 10. Step 2: Sum = 35. Answer: 35.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Set A has 31 elements, Set B has 16, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "47",
+        "35",
+        "6",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 31−6 = 25. Only B = 16−6 = 10. Step 2: Sum = 35. Answer: 35.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Set A has 32 elements, Set B has 17, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "49",
+        "35",
+        "7",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 32−7 = 25. Only B = 17−7 = 10. Step 2: Sum = 35. Answer: 35.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Set A has 33 elements, Set B has 18, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "51",
+        "35",
+        "8",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 33−8 = 25. Only B = 18−8 = 10. Step 2: Sum = 35. Answer: 35.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Set A has 34 elements, Set B has 19, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "53",
+        "35",
+        "9",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 34−9 = 25. Only B = 19−9 = 10. Step 2: Sum = 35. Answer: 35.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Set A has 20 elements, Set B has 20, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "40",
+        "20",
+        "10",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 20−10 = 10. Only B = 20−10 = 10. Step 2: Sum = 20. Answer: 20.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Set A has 21 elements, Set B has 21, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "42",
+        "20",
+        "11",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 21−11 = 10. Only B = 21−11 = 10. Step 2: Sum = 20. Answer: 20.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Set A has 22 elements, Set B has 22, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "44",
+        "20",
+        "12",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 22−12 = 10. Only B = 22−12 = 10. Step 2: Sum = 20. Answer: 20.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Set A has 23 elements, Set B has 23, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "46",
+        "36",
+        "5",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 23−5 = 18. Only B = 23−5 = 18. Step 2: Sum = 36. Answer: 36.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Set A has 24 elements, Set B has 24, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "48",
+        "36",
+        "6",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 24−6 = 18. Only B = 24−6 = 18. Step 2: Sum = 36. Answer: 36.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Set A has 25 elements, Set B has 15, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "40",
+        "26",
+        "7",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 25−7 = 18. Only B = 15−7 = 8. Step 2: Sum = 26. Answer: 26.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Set A has 26 elements, Set B has 16, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "42",
+        "26",
+        "8",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 26−8 = 18. Only B = 16−8 = 8. Step 2: Sum = 26. Answer: 26.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Set A has 27 elements, Set B has 17, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "44",
+        "26",
+        "9",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 27−9 = 18. Only B = 17−9 = 8. Step 2: Sum = 26. Answer: 26.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Set A has 28 elements, Set B has 18, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "46",
+        "26",
+        "10",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 28−10 = 18. Only B = 18−10 = 8. Step 2: Sum = 26. Answer: 26.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Set A has 29 elements, Set B has 19, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "48",
+        "26",
+        "11",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 29−11 = 18. Only B = 19−11 = 8. Step 2: Sum = 26. Answer: 26.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Set A has 30 elements, Set B has 20, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "50",
+        "26",
+        "12",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 30−12 = 18. Only B = 20−12 = 8. Step 2: Sum = 26. Answer: 26.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Set A has 31 elements, Set B has 21, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "52",
+        "42",
+        "5",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 31−5 = 26. Only B = 21−5 = 16. Step 2: Sum = 42. Answer: 42.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Set A has 32 elements, Set B has 22, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "54",
+        "42",
+        "6",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 32−6 = 26. Only B = 22−6 = 16. Step 2: Sum = 42. Answer: 42.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Set A has 33 elements, Set B has 23, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "56",
+        "42",
+        "7",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 33−7 = 26. Only B = 23−7 = 16. Step 2: Sum = 42. Answer: 42.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Set A has 34 elements, Set B has 24, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "58",
+        "42",
+        "8",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 34−8 = 26. Only B = 24−8 = 16. Step 2: Sum = 42. Answer: 42.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Set A has 20 elements, Set B has 15, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "35",
+        "17",
+        "9",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Only A = 20−9 = 11. Only B = 15−9 = 6. Step 2: Sum = 17. Answer: 17.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Set A has 21 elements, Set B has 16, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "37",
+        "10",
+        "17",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 21−10 = 11. Only B = 16−10 = 6. Step 2: Sum = 17. Answer: 17.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Set A has 22 elements, Set B has 17, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "39",
+        "11",
+        "17",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 22−11 = 11. Only B = 17−11 = 6. Step 2: Sum = 17. Answer: 17.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Set A has 23 elements, Set B has 18, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "41",
+        "12",
+        "17",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 23−12 = 11. Only B = 18−12 = 6. Step 2: Sum = 17. Answer: 17.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Set A has 24 elements, Set B has 19, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "43",
+        "5",
+        "33",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 24−5 = 19. Only B = 19−5 = 14. Step 2: Sum = 33. Answer: 33.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Set A has 25 elements, Set B has 20, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "45",
+        "6",
+        "33",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 25−6 = 19. Only B = 20−6 = 14. Step 2: Sum = 33. Answer: 33.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Set A has 26 elements, Set B has 21, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "47",
+        "7",
+        "33",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 26−7 = 19. Only B = 21−7 = 14. Step 2: Sum = 33. Answer: 33.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Set A has 27 elements, Set B has 22, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "49",
+        "8",
+        "33",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 27−8 = 19. Only B = 22−8 = 14. Step 2: Sum = 33. Answer: 33.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Set A has 28 elements, Set B has 23, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "51",
+        "9",
+        "33",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 28−9 = 19. Only B = 23−9 = 14. Step 2: Sum = 33. Answer: 33.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Set A has 29 elements, Set B has 24, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "53",
+        "10",
+        "33",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 29−10 = 19. Only B = 24−10 = 14. Step 2: Sum = 33. Answer: 33.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Set A has 30 elements, Set B has 15, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "45",
+        "11",
+        "23",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 30−11 = 19. Only B = 15−11 = 4. Step 2: Sum = 23. Answer: 23.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Set A has 31 elements, Set B has 16, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "47",
+        "12",
+        "23",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 31−12 = 19. Only B = 16−12 = 4. Step 2: Sum = 23. Answer: 23.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Set A has 32 elements, Set B has 17, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "49",
+        "5",
+        "39",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 32−5 = 27. Only B = 17−5 = 12. Step 2: Sum = 39. Answer: 39.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Set A has 33 elements, Set B has 18, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "51",
+        "6",
+        "39",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 33−6 = 27. Only B = 18−6 = 12. Step 2: Sum = 39. Answer: 39.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Set A has 34 elements, Set B has 19, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "53",
+        "7",
+        "39",
+        "27"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 34−7 = 27. Only B = 19−7 = 12. Step 2: Sum = 39. Answer: 39.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Set A has 20 elements, Set B has 20, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "40",
+        "8",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 20−8 = 12. Only B = 20−8 = 12. Step 2: Sum = 24. Answer: 24.",
+      "trick": "Exclude overlap twice.",
+      "type": "Venn count"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Set A has 21 elements, Set B has 21, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "42",
+        "9",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 21−9 = 12. Only B = 21−9 = 12. Step 2: Sum = 24. Answer: 24.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Set A has 22 elements, Set B has 22, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "44",
+        "10",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 22−10 = 12. Only B = 22−10 = 12. Step 2: Sum = 24. Answer: 24.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Set A has 23 elements, Set B has 23, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "46",
+        "11",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 23−11 = 12. Only B = 23−11 = 12. Step 2: Sum = 24. Answer: 24.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Set A has 24 elements, Set B has 24, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "48",
+        "12",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 24−12 = 12. Only B = 24−12 = 12. Step 2: Sum = 24. Answer: 24.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Set A has 25 elements, Set B has 15, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "40",
+        "5",
+        "30",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Only A = 25−5 = 20. Only B = 15−5 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Set A has 26 elements, Set B has 16, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "42",
+        "6",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 26−6 = 20. Only B = 16−6 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Set A has 27 elements, Set B has 17, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "44",
+        "7",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 27−7 = 20. Only B = 17−7 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Set A has 28 elements, Set B has 18, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "46",
+        "8",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 28−8 = 20. Only B = 18−8 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Set A has 29 elements, Set B has 19, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "48",
+        "9",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 29−9 = 20. Only B = 19−9 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Set A has 30 elements, Set B has 20, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "50",
+        "10",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 30−10 = 20. Only B = 20−10 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Set A has 31 elements, Set B has 21, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "52",
+        "11",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 31−11 = 20. Only B = 21−11 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Set A has 32 elements, Set B has 22, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "54",
+        "12",
+        "20",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 32−12 = 20. Only B = 22−12 = 10. Step 2: Sum = 30. Answer: 30.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Set A has 33 elements, Set B has 23, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "56",
+        "5",
+        "28",
+        "46"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 33−5 = 28. Only B = 23−5 = 18. Step 2: Sum = 46. Answer: 46.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Set A has 34 elements, Set B has 24, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "58",
+        "6",
+        "28",
+        "46"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 34−6 = 28. Only B = 24−6 = 18. Step 2: Sum = 46. Answer: 46.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Set A has 20 elements, Set B has 15, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "35",
+        "7",
+        "13",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 20−7 = 13. Only B = 15−7 = 8. Step 2: Sum = 21. Answer: 21.",
+      "trick": "Exclude overlap twice.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Set A has 21 elements, Set B has 16, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "37",
+        "8",
+        "13",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 21−8 = 13. Only B = 16−8 = 8. Step 2: Sum = 21. Answer: 21.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Set A has 22 elements, Set B has 17, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "39",
+        "9",
+        "13",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 22−9 = 13. Only B = 17−9 = 8. Step 2: Sum = 21. Answer: 21.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Set A has 23 elements, Set B has 18, and 10 are in both. How many in exactly one set?",
+      "options": [
+        "41",
+        "10",
+        "13",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 23−10 = 13. Only B = 18−10 = 8. Step 2: Sum = 21. Answer: 21.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Set A has 24 elements, Set B has 19, and 11 are in both. How many in exactly one set?",
+      "options": [
+        "43",
+        "11",
+        "13",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 24−11 = 13. Only B = 19−11 = 8. Step 2: Sum = 21. Answer: 21.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Set A has 25 elements, Set B has 20, and 12 are in both. How many in exactly one set?",
+      "options": [
+        "45",
+        "12",
+        "13",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 25−12 = 13. Only B = 20−12 = 8. Step 2: Sum = 21. Answer: 21.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Set A has 26 elements, Set B has 21, and 5 are in both. How many in exactly one set?",
+      "options": [
+        "47",
+        "5",
+        "21",
+        "37"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 26−5 = 21. Only B = 21−5 = 16. Step 2: Sum = 37. Answer: 37.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Set A has 27 elements, Set B has 22, and 6 are in both. How many in exactly one set?",
+      "options": [
+        "49",
+        "6",
+        "21",
+        "37"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 27−6 = 21. Only B = 22−6 = 16. Step 2: Sum = 37. Answer: 37.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Set A has 28 elements, Set B has 23, and 7 are in both. How many in exactly one set?",
+      "options": [
+        "51",
+        "7",
+        "21",
+        "37"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 28−7 = 21. Only B = 23−7 = 16. Step 2: Sum = 37. Answer: 37.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Set A has 29 elements, Set B has 24, and 8 are in both. How many in exactly one set?",
+      "options": [
+        "53",
+        "8",
+        "21",
+        "37"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 29−8 = 21. Only B = 24−8 = 16. Step 2: Sum = 37. Answer: 37.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Set A has 30 elements, Set B has 15, and 9 are in both. How many in exactly one set?",
+      "options": [
+        "45",
+        "9",
+        "21",
+        "27"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Only A = 30−9 = 21. Only B = 15−9 = 6. Step 2: Sum = 27. Answer: 27.",
+      "trick": "Exclude overlap twice.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "data-sufficiency-reasoning-q1",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Q: What is Ravi's age? I. Ravi is 25 years old. II. Ravi is older than Sam.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "A",
+    "solution": "I gives the exact age; II only compares. So I alone is sufficient.",
+    "trick": "Exact value beats a comparison.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q2",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Q: Which day is the meeting? I. It is not on Monday. II. It is on Wednesday.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "B",
+    "solution": "II names the exact day; I only rules one out. II alone is sufficient.",
+    "trick": "Exact day fixes it.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q3",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Q: Find two numbers. I. Their sum is 10. II. Their difference is 4.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "C",
+    "solution": "Each alone gives many pairs; together the numbers are 7 and 3.",
+    "trick": "Sum + difference → both needed.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q4",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Q: What is the value of x? I. x is a positive integer. II. x < 10.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient even together"
+    ],
+    "answer": "D",
+    "solution": "Together x ∈ {1,…,9} — still many values, so not sufficient even together.",
+    "trick": "A range is never sufficient.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q5",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Q: Is n an even number? I. n = 13. II. n is greater than 10.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "A",
+    "solution": "I gives a definite 'no' (13 is odd). II ('greater than 10') allows both even and odd, so it is not sufficient. I alone is sufficient.",
+    "trick": "A definite 'no' still answers it.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q6",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Q: How tall is the building? I. It is taller than the 20 m tower. II. It is exactly 35 m tall.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "B",
+    "solution": "II gives the exact height; I only a lower bound. II alone is sufficient.",
+    "trick": "Exact measure > bound.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q7",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Q: What is the two-digit number? I. The sum of its digits is 9. II. The tens digit is twice the units digit.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "C",
+    "solution": "Each alone gives several numbers; together digits satisfy u+2u=9 → u=3, tens=6 → 63.",
+    "trick": "Two conditions pin both digits.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q8",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Q: Is x greater than 0? I. x is a real number. II. x² = 9 (with no sign given).",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient even together"
+    ],
+    "answer": "D",
+    "solution": "x² = 9 gives x = 3 or −3, so its sign is undecided even with I. Not sufficient even together.",
+    "trick": "Two possible values → insufficient.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q9",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Q: On which day does Meena have her exam? I. The exam is exactly two days after Sunday. II. The exam is on a weekday.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "A",
+    "solution": "I fixes the day as Tuesday; II only narrows to weekdays. I alone is sufficient.",
+    "trick": "'Two days after Sunday' = Tuesday.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q10",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Q: What is Sam's rank in class? I. Sam is above average. II. Sam is 5th from the top.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "B",
+    "solution": "II gives the exact rank; I is vague. II alone is sufficient.",
+    "trick": "Exact rank fixes it.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q11",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Q: How old is Priya? I. Five years ago she was 20. II. Her age is a multiple of 5.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "A",
+    "solution": "I gives 20 + 5 = 25; II only says multiple of 5. I alone is sufficient.",
+    "trick": "A time reference fixes the age.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q12",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Q: What are the ages of two brothers? I. Their ages sum to 30. II. The elder is 6 years older.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "C",
+    "solution": "Each alone has many solutions; together ages are 18 and 12.",
+    "trick": "Sum + gap → both needed.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q13",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Q: Is the number divisible by 6? I. The number is 24. II. The number is even.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "A",
+    "solution": "I gives 24 (divisible by 6 → definite yes); II (even) is not enough. I alone is sufficient.",
+    "trick": "Exact number answers divisibility.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q14",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Q: Which city is farthest north? I. City P is north of Q. II. City R is north of P.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "C",
+    "solution": "I: P>Q; II: R>P; together R>P>Q, so R is farthest north.",
+    "trick": "Chain both order clues.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q15",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Q: What is the value of y? I. y is an even number. II. y is a prime number.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "C",
+    "solution": "The only even prime is 2, so together y = 2. Each alone allows many values.",
+    "trick": "Even AND prime → uniquely 2.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q16",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Q: How many students passed? I. 60% of the class passed. II. The class has more than 40 students.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient even together"
+    ],
+    "answer": "D",
+    "solution": "Without the exact class size, 60% cannot give a number; II only bounds it. Not sufficient even together.",
+    "trick": "Percent needs an exact base.",
+    "type": "Not sufficient even together",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q17",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Q: What is the code for 'GO'? I. In the code, each letter shifts +1. II. 'GO' has two letters.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "A",
+    "solution": "I gives the rule (+1): G→H, O→P → 'HP'. II adds nothing. I alone is sufficient.",
+    "trick": "The rule alone decodes it.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q18",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Q: Who sits in the middle of a row of 3? I. A sits to the left of B. II. C sits at the right end.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "C",
+    "solution": "II fixes C at the right; I orders A left of B; together A,B,C = seats 1,2,3, so B is in the middle.",
+    "trick": "Anchor + order → both needed.",
+    "type": "Both together needed",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q19",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Q: Is Q a leap year? I. Q is divisible by 4. II. Q = 1900.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient"
+    ],
+    "answer": "B",
+    "solution": "II gives Q = 1900, a century not divisible by 400 → definite 'not a leap year'. I alone (÷4) is not enough for century years. II alone is sufficient.",
+    "trick": "Exact year settles the leap rule.",
+    "type": "One alone sufficient",
+    "active": true
+  },
+  {
+    "id": "data-sufficiency-reasoning-q20",
+    "topic": "data-sufficiency-reasoning",
+    "category": "logical",
+    "group": "analytical",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Q: What is the speed of the train? I. It covers some distance in 2 hours. II. It travels faster than 40 km/h.",
+    "options": [
+      "I alone is sufficient",
+      "II alone is sufficient",
+      "Both together are needed",
+      "Neither is sufficient even together"
+    ],
+    "answer": "D",
+    "solution": "I gives time but not the distance; II only a bound. Even together the exact speed is undetermined.",
+    "trick": "Need distance AND time for speed.",
+    "type": "Not sufficient even together",
+    "active": true
+  }
+]

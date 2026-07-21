@@ -1,0 +1,1207 @@
+{
+  "topic": "spatial-reasoning",
+  "category": "logical",
+  "group": "visual",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "5",
+        "4",
+        "6",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "5",
+        "4",
+        "6",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "5",
+        "4",
+        "6",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "7",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "7",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Spatial view"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "7",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "9",
+        "8",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "6",
+        "7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "9",
+        "6",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "6",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "6",
+        "7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "9",
+        "6",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "6",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "6",
+        "7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 6 and right shows 7?",
+      "options": [
+        "7",
+        "9",
+        "6",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 8. Answer: 8.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 1 and right shows 2?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 3. Answer: 3.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 2 and right shows 3?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 4. Answer: 4.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 3 and right shows 4?",
+      "options": [
+        "4",
+        "6",
+        "6",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 5. Answer: 5.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 4 and right shows 5?",
+      "options": [
+        "5",
+        "7",
+        "6",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 6. Answer: 6.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Which view shows the top face of a cube if front shows 5 and right shows 6?",
+      "options": [
+        "6",
+        "8",
+        "6",
+        "7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite faces sum to 7 on standard dice. Step 2: Top = 7. Answer: 7.",
+      "trick": "Face-sum 7 rule.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

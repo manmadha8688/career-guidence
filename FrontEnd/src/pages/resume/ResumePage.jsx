@@ -209,7 +209,7 @@ export default function ResumePage() {
   // Guests / logged-out users can build & preview, but saving/sharing/downloading
   // need a real account — send them to register, returning here afterwards.
   const requireAccount = (action) => {
-    toast.error(`Create a free account to ${action} your resume.`)
+    toast.error(`Create an account to ${action} your resume.`)
     navigate('/register?redirect=/resume')
   }
 
@@ -793,7 +793,7 @@ export default function ResumePage() {
                   <p className="rz-gate-note">
                     <Lock size={13} />
                     <span>
-                      <button type="button" className="rz-gate-note__link" onClick={() => navigate('/register?redirect=/resume')}>Create a free account</button>
+                      <button type="button" className="rz-gate-note__link" onClick={() => navigate('/register?redirect=/resume')}>Create an account</button>
                       {' '}to save, share and download your resume.
                     </span>
                   </p>

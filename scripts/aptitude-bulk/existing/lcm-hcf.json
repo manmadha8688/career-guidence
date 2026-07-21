@@ -1,0 +1,402 @@
+[
+  {
+    "id": "lcm-hcf-q1",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "What is the HCF of 12 and 20?",
+    "options": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "12 = 2² × 3 and 20 = 2² × 5. The only shared prime is 2, at its lowest power 2². So HCF = 2² = 4.",
+    "trick": "HCF = common primes at lowest power → 2² = 4.",
+    "type": "Plain HCF and LCM of numbers",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q2",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "What is the LCM of 6 and 8?",
+    "options": [
+      "48",
+      "24",
+      "12",
+      "16"
+    ],
+    "answer": "B",
+    "solution": "6 = 2 × 3 and 8 = 2³. Take each prime at its highest power: 2³ and 3 → LCM = 8 × 3 = 24.",
+    "trick": "LCM = all primes at highest power → 2³ × 3 = 24.",
+    "type": "Plain HCF and LCM of numbers",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q3",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The HCF of two numbers is 4 and their LCM is 48. If one number is 16, what is the other?",
+    "options": [
+      "16",
+      "8",
+      "12",
+      "24"
+    ],
+    "answer": "C",
+    "solution": "For two numbers, HCF × LCM = product of the numbers. So 4 × 48 = 16 × other → 192 = 16 × other → other = 192 ÷ 16 = 12.",
+    "trick": "Other = (HCF × LCM) ÷ known = 192 ÷ 16 = 12.",
+    "type": "Product relation (find the missing value)",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q4",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Two bells ring at intervals of 5 and 10 seconds. If they ring together now, after how many seconds will they ring together again?",
+    "options": [
+      "5",
+      "15",
+      "50",
+      "10"
+    ],
+    "answer": "D",
+    "solution": "They coincide after the LCM of the intervals. LCM(5, 10) = 10, so they ring together again after 10 seconds.",
+    "trick": "Together again = LCM of intervals = 10 s.",
+    "type": "Bells / lights ringing together",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q5",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "What is the side of the largest square tile that can exactly pave a floor measuring 8 m by 12 m?",
+    "options": [
+      "4 m",
+      "2 m",
+      "6 m",
+      "8 m"
+    ],
+    "answer": "A",
+    "solution": "The tile side must divide both 8 and 12 exactly, so take HCF(8, 12). 8 = 2³, 12 = 2² × 3 → HCF = 2² = 4. The largest tile is 4 m × 4 m.",
+    "trick": "Largest tile that fits exactly = HCF = 4 m.",
+    "type": "Real-world HCF and ratio numbers",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q6",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "What is the least number that is exactly divisible by 3, 4 and 5?",
+    "options": [
+      "30",
+      "60",
+      "120",
+      "12"
+    ],
+    "answer": "B",
+    "solution": "The least number divisible by all is their LCM. 3, 4 = 2², 5 share no common factors, so LCM = 2² × 3 × 5 = 60.",
+    "trick": "Least number divisible by all = LCM = 60.",
+    "type": "Least number leaving a common remainder",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q7",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "What is the HCF of 16, 24 and 40?",
+    "options": [
+      "4",
+      "2",
+      "8",
+      "16"
+    ],
+    "answer": "C",
+    "solution": "16 = 2⁴, 24 = 2³ × 3, 40 = 2³ × 5. The only shared prime is 2, at its lowest power 2³. So HCF = 2³ = 8.",
+    "trick": "Common prime 2 at lowest power = 2³ = 8.",
+    "type": "Plain HCF and LCM of numbers",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q8",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "What is the greatest number that divides 25 and 43, leaving a remainder of 1 in each case?",
+    "options": [
+      "3",
+      "12",
+      "2",
+      "6"
+    ],
+    "answer": "D",
+    "solution": "Since remainder 1 is left, the number divides (25 − 1) = 24 and (43 − 1) = 42 exactly. HCF(24, 42): 24 = 2³ × 3, 42 = 2 × 3 × 7 → common = 2 × 3 = 6.",
+    "trick": "Subtract the remainder first, then HCF: HCF(24, 42) = 6.",
+    "type": "Greatest number that divides leaving remainders",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q9",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "What is the least number which, when divided by 5, 6 and 7, leaves a remainder of 2 in each case?",
+    "options": [
+      "212",
+      "210",
+      "207",
+      "215"
+    ],
+    "answer": "A",
+    "solution": "First the divisible part: LCM(5, 6, 7). They share no factors, so LCM = 5 × 6 × 7 = 210. The number is 2 more than a multiple of the LCM, so 210 + 2 = 212.",
+    "trick": "LCM + remainder = 210 + 2 = 212.",
+    "type": "Least number leaving a common remainder",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q10",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "The HCF of two numbers is 12 and their LCM is 72. If one number is 24, what is the other?",
+    "options": [
+      "24",
+      "36",
+      "48",
+      "18"
+    ],
+    "answer": "B",
+    "solution": "HCF × LCM = product of the two numbers → 12 × 72 = 24 × other → 864 = 24 × other → other = 864 ÷ 24 = 36.",
+    "trick": "Other = (12 × 72) ÷ 24 = 36.",
+    "type": "Product relation (find the missing value)",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q11",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "What is the HCF of the fractions 3/4 and 9/10?",
+    "options": [
+      "9/20",
+      "3/40",
+      "3/20",
+      "3/2"
+    ],
+    "answer": "C",
+    "solution": "HCF of fractions = HCF(numerators) ÷ LCM(denominators). HCF(3, 9) = 3 and LCM(4, 10) = 20, so the answer is 3/20.",
+    "trick": "HCF(tops)/LCM(bottoms) = 3/20.",
+    "type": "HCF and LCM of fractions",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q12",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Four traffic lights change at intervals of 4, 6, 8 and 12 minutes. If they change together at 8:00 a.m., at what time will they next change together?",
+    "options": [
+      "8:48 a.m.",
+      "8:12 a.m.",
+      "8:16 a.m.",
+      "8:24 a.m."
+    ],
+    "answer": "D",
+    "solution": "They coincide after the LCM of the intervals. 4 = 2², 6 = 2 × 3, 8 = 2³, 12 = 2² × 3 → LCM = 2³ × 3 = 24 minutes. So the next time is 8:00 + 24 min = 8:24 a.m.",
+    "trick": "LCM(4,6,8,12) = 24 min → 8:24 a.m.",
+    "type": "Bells / lights ringing together",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q13",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Two numbers are in the ratio 3 : 4 and their HCF is 4. What is their LCM?",
+    "options": [
+      "48",
+      "12",
+      "24",
+      "16"
+    ],
+    "answer": "A",
+    "solution": "Numbers in ratio 3 : 4 with HCF 4 are 3 × 4 = 12 and 4 × 4 = 16. Their LCM = 3 × 4 × 4 = 48 (or directly LCM(12, 16) = 48).",
+    "trick": "LCM = product of ratio parts × HCF = 3 × 4 × 4 = 48.",
+    "type": "Real-world HCF and ratio numbers",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q14",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "What is the greatest number that divides 62, 132 and 237, leaving the same remainder in each case?",
+    "options": [
+      "7",
+      "35",
+      "5",
+      "70"
+    ],
+    "answer": "B",
+    "solution": "With an equal (unknown) remainder, take the differences: 132 − 62 = 70, 237 − 132 = 105, 237 − 62 = 175. HCF(70, 105, 175): 70 = 2 × 5 × 7, 105 = 3 × 5 × 7, 175 = 5² × 7 → common = 5 × 7 = 35.",
+    "trick": "Same remainder → HCF of differences = HCF(70, 105, 175) = 35.",
+    "type": "Greatest number that divides leaving remainders",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q15",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "What is the least number which, when divided by 5, 6 and 7, leaves remainders 3, 4 and 5 respectively?",
+    "options": [
+      "212",
+      "210",
+      "208",
+      "205"
+    ],
+    "answer": "C",
+    "solution": "Check the gap between each divisor and its remainder: 5 − 3 = 2, 6 − 4 = 2, 7 − 5 = 2 — a constant gap of 2. So the number is 2 less than a common multiple: LCM(5, 6, 7) − 2 = 210 − 2 = 208.",
+    "trick": "Constant gap (divisor − remainder) = 2 → LCM − gap = 210 − 2 = 208.",
+    "type": "Least number leaving a common remainder",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q16",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "The product of two numbers is 2160 and their HCF is 12. What is their LCM?",
+    "options": [
+      "144",
+      "216",
+      "120",
+      "180"
+    ],
+    "answer": "D",
+    "solution": "For two numbers, HCF × LCM = product of the numbers. So LCM = product ÷ HCF = 2160 ÷ 12 = 180.",
+    "trick": "LCM = product ÷ HCF = 2160 ÷ 12 = 180.",
+    "type": "Product relation (find the missing value)",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q17",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "What is the largest number that divides 1657 and 2037, leaving remainders 6 and 5 respectively?",
+    "options": [
+      "127",
+      "133",
+      "123",
+      "381"
+    ],
+    "answer": "A",
+    "solution": "Subtract each remainder: 1657 − 6 = 1651 and 2037 − 5 = 2032; the required number divides both exactly. HCF(1651, 2032): 2032 − 1651 = 381; 1651 = 381 × 4 + 127; 381 = 127 × 3 + 0 → HCF = 127. (Check: 1651 = 127 × 13, 2032 = 127 × 16.)",
+    "trick": "Remainders given → HCF of (1657−6) and (2037−5) = HCF(1651, 2032) = 127.",
+    "type": "Greatest number that divides leaving remainders",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q18",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "What is the LCM of the fractions 2/3, 8/9 and 16/27?",
+    "options": [
+      "16/27",
+      "16/3",
+      "2/27",
+      "8/3"
+    ],
+    "answer": "B",
+    "solution": "LCM of fractions = LCM(numerators) ÷ HCF(denominators). LCM(2, 8, 16) = 16 and HCF(3, 9, 27) = 3, so the answer is 16/3.",
+    "trick": "LCM(tops)/HCF(bottoms) = 16/3.",
+    "type": "HCF and LCM of fractions",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q19",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "What is the least number which, when divided by 6, 7, 8, 9 and 12, leaves a remainder of 1 each time, but is exactly divisible by 13?",
+    "options": [
+      "4536",
+      "4525",
+      "4537",
+      "5040"
+    ],
+    "answer": "C",
+    "solution": "The 'remainder 1' part means the number is (multiple of LCM) + 1. LCM(6,7,8,9,12): 6 = 2×3, 7, 8 = 2³, 9 = 3², 12 = 2²×3 → LCM = 2³ × 3² × 7 = 504. So the number is 504k + 1. For divisibility by 13: 504 ≡ 10 (mod 13), so 10k + 1 ≡ 0 (mod 13) → 10k ≡ 12 → k ≡ 9 (mod 13). Smallest k = 9 gives 504 × 9 + 1 = 4537 (and 4537 = 13 × 349).",
+    "trick": "Number = 504k + 1; pick the smallest k making it divisible by 13 → k = 9 → 4537.",
+    "type": "Least number leaving a common remainder",
+    "active": true
+  },
+  {
+    "id": "lcm-hcf-q20",
+    "topic": "lcm-hcf",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Three runners finish one lap of a circular track in 12, 15 and 20 minutes respectively. If they start together from the same point, after how long will they all be together at the starting point again?",
+    "options": [
+      "120 minutes",
+      "30 minutes",
+      "45 minutes",
+      "60 minutes"
+    ],
+    "answer": "D",
+    "solution": "Each runner is back at the start after a whole number of their own lap times, so they reunite at the start after the LCM of the lap times. 12 = 2² × 3, 15 = 3 × 5, 20 = 2² × 5 → LCM = 2² × 3 × 5 = 60 minutes.",
+    "trick": "Back at the start together = LCM of lap times = 60 min.",
+    "type": "Bells / lights ringing together",
+    "active": true
+  }
+]

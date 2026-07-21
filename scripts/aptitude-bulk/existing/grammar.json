@@ -1,0 +1,402 @@
+[
+  {
+    "id": "grammar-q1",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Choose the correct article: 'She waited for ___ hour.'",
+    "options": [
+      "an",
+      "a",
+      "the",
+      "no article"
+    ],
+    "answer": "A",
+    "solution": "'hour' begins with a vowel SOUND (silent h), so use 'an'.",
+    "trick": "Article by sound, not spelling.",
+    "type": "Articles",
+    "active": true
+  },
+  {
+    "id": "grammar-q2",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Choose the correct verb: 'He ___ to school every day.'",
+    "options": [
+      "go",
+      "goes",
+      "going",
+      "gone"
+    ],
+    "answer": "B",
+    "solution": "Third-person singular 'He' takes 'goes' in the simple present.",
+    "trick": "He/she/it + verb+s.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q3",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Choose the correct preposition: 'She is good ___ mathematics.'",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "with"
+    ],
+    "answer": "C",
+    "solution": "'good at' is the fixed pairing for skills.",
+    "trick": "good AT a skill.",
+    "type": "Prepositions",
+    "active": true
+  },
+  {
+    "id": "grammar-q4",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Choose the correct article: 'He is ___ university student.'",
+    "options": [
+      "an",
+      "the",
+      "one",
+      "a"
+    ],
+    "answer": "D",
+    "solution": "'university' begins with a 'yoo' (consonant) sound, so use 'a'.",
+    "trick": "Sound rule: 'a university'.",
+    "type": "Articles",
+    "active": true
+  },
+  {
+    "id": "grammar-q5",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Choose the correct verb: 'The children ___ playing in the park.'",
+    "options": [
+      "are",
+      "is",
+      "was",
+      "am"
+    ],
+    "answer": "A",
+    "solution": "'children' is plural, so use 'are'.",
+    "trick": "Plural subject → plural verb.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q6",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Choose the correct verb: 'The list of items ___ very long.'",
+    "options": [
+      "are",
+      "is",
+      "were",
+      "have"
+    ],
+    "answer": "B",
+    "solution": "The subject is 'list' (singular); ignore 'of items'. Use 'is'.",
+    "trick": "Match the head noun, not the nearest.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q7",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Choose the correct form: 'They ___ in Delhi since 2015.'",
+    "options": [
+      "live",
+      "lived",
+      "have lived",
+      "are living"
+    ],
+    "answer": "C",
+    "solution": "'since 2015' links past to present → present perfect 'have lived'.",
+    "trick": "since/for → present perfect.",
+    "type": "Tenses",
+    "active": true
+  },
+  {
+    "id": "grammar-q8",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Choose the correct preposition: 'She is married ___ an engineer.'",
+    "options": [
+      "with",
+      "by",
+      "from",
+      "to"
+    ],
+    "answer": "D",
+    "solution": "'married to' is the standard pairing.",
+    "trick": "married TO.",
+    "type": "Prepositions",
+    "active": true
+  },
+  {
+    "id": "grammar-q9",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Choose the correct word: 'He is taller ___ his brother.'",
+    "options": [
+      "than",
+      "then",
+      "from",
+      "to"
+    ],
+    "answer": "A",
+    "solution": "Comparisons use 'than'; 'then' refers to time.",
+    "trick": "Comparison → 'than'.",
+    "type": "Comparatives",
+    "active": true
+  },
+  {
+    "id": "grammar-q10",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Choose the correct verb: 'Neither of the two answers ___ correct.'",
+    "options": [
+      "are",
+      "is",
+      "were",
+      "have"
+    ],
+    "answer": "B",
+    "solution": "'Neither' is singular, so use 'is'.",
+    "trick": "Neither/either → singular.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q11",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Choose the correct preposition: 'I have been waiting ___ an hour.'",
+    "options": [
+      "since",
+      "from",
+      "for",
+      "by"
+    ],
+    "answer": "C",
+    "solution": "'for' is used with a period of time (an hour); 'since' with a point in time.",
+    "trick": "for + duration, since + point.",
+    "type": "Prepositions",
+    "active": true
+  },
+  {
+    "id": "grammar-q12",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Choose the correct preposition: 'The result will depend ___ your effort.'",
+    "options": [
+      "of",
+      "at",
+      "in",
+      "on"
+    ],
+    "answer": "D",
+    "solution": "'depend on' is the fixed pairing.",
+    "trick": "depend ON.",
+    "type": "Prepositions",
+    "active": true
+  },
+  {
+    "id": "grammar-q13",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Choose the correct verb: 'Each of the boys ___ present.'",
+    "options": [
+      "was",
+      "were",
+      "are",
+      "have"
+    ],
+    "answer": "A",
+    "solution": "'Each' is singular, so use 'was'.",
+    "trick": "Each/every → singular.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q14",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Choose the word for parallel structure: 'She enjoys reading, writing and ___.'",
+    "options": [
+      "to paint",
+      "painting",
+      "paints",
+      "painted"
+    ],
+    "answer": "B",
+    "solution": "The list uses -ing forms, so 'painting' keeps it parallel.",
+    "trick": "Match the form across the list.",
+    "type": "Parallelism",
+    "active": true
+  },
+  {
+    "id": "grammar-q15",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Choose the correct form: 'If I ___ rich, I would travel the world.'",
+    "options": [
+      "am",
+      "was",
+      "were",
+      "be"
+    ],
+    "answer": "C",
+    "solution": "Unreal conditionals use 'were' for all subjects.",
+    "trick": "If I were... (subjunctive).",
+    "type": "Conditionals",
+    "active": true
+  },
+  {
+    "id": "grammar-q16",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Choose the correct form: 'He said that he ___ come the next day.'",
+    "options": [
+      "will",
+      "shall",
+      "can",
+      "would"
+    ],
+    "answer": "D",
+    "solution": "Reported speech back-shifts 'will' to 'would'.",
+    "trick": "will → would in reported speech.",
+    "type": "Reported speech",
+    "active": true
+  },
+  {
+    "id": "grammar-q17",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Choose the correct verb: 'The news ___ good today.'",
+    "options": [
+      "is",
+      "are",
+      "were",
+      "have"
+    ],
+    "answer": "A",
+    "solution": "'news' is an uncountable singular noun, so use 'is'.",
+    "trick": "news/information → singular.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q18",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Choose the correct verb: 'One of my friends ___ a doctor.'",
+    "options": [
+      "are",
+      "is",
+      "were",
+      "have"
+    ],
+    "answer": "B",
+    "solution": "The subject is 'One' (singular), so use 'is'.",
+    "trick": "'One of ...' is singular.",
+    "type": "Subject–verb agreement",
+    "active": true
+  },
+  {
+    "id": "grammar-q19",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Choose the correct word: 'Hardly had I reached the station ___ the train left.'",
+    "options": [
+      "than",
+      "then",
+      "when",
+      "that"
+    ],
+    "answer": "C",
+    "solution": "'Hardly ... when' is the correct correlative pair.",
+    "trick": "Hardly ... when.",
+    "type": "Correlatives",
+    "active": true
+  },
+  {
+    "id": "grammar-q20",
+    "topic": "grammar",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Choose the correct preposition: 'His opinion differs ___ mine.'",
+    "options": [
+      "with",
+      "to",
+      "at",
+      "from"
+    ],
+    "answer": "D",
+    "solution": "'differ from' is used for things; 'differ with' is used for people on an issue.",
+    "trick": "differ FROM (things).",
+    "type": "Prepositions",
+    "active": true
+  }
+]

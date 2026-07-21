@@ -1,0 +1,1207 @@
+{
+  "topic": "professional-email-writing",
+  "category": "verbal",
+  "group": "communication",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Best subject for a job application:",
+      "options": [
+        "Application for Software Engineer – Ref: Campus 2026",
+        "Hi",
+        "Job!!!",
+        "(blank)"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Appropriate sign-off to unknown HR:",
+      "options": [
+        "Sincerely,",
+        "Love,",
+        "Later,",
+        "XOXO"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Best opening when you know the name:",
+      "options": [
+        "Dear Ms. Sharma,",
+        "Hey Sharma!!!",
+        "Yo,",
+        "To whom it may concern,"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "How to attach a resume politely:",
+      "options": [
+        "Please find my resume attached.",
+        "Resume here lol",
+        "Grab my CV",
+        "Attachment!!!"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Follow-up after interview (one week):",
+      "options": [
+        "Thank you for the opportunity to interview on [date].",
+        "Where is my offer???",
+        "Hello???",
+        "You forgot me"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Requesting extension on deadline:",
+      "options": [
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "I won't finish"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Declining a meeting politely:",
+      "options": [
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "No way",
+        "Can't. Busy.",
+        "Skip it"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Email tone for complaint to vendor:",
+      "options": [
+        "Professional and factual",
+        "Aggressive and threatening",
+        "Sarcastic",
+        "All caps anger"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Email writing"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Best subject for a job application: (Set 29)",
+      "options": [
+        "Application for Software Engineer – Ref: Campus 2026",
+        "Hi",
+        "Job!!!",
+        "(blank)"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Appropriate sign-off to unknown HR: (Set 30)",
+      "options": [
+        "Sincerely,",
+        "Love,",
+        "Later,",
+        "XOXO"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Best opening when you know the name: (Set 31)",
+      "options": [
+        "Dear Ms. Sharma,",
+        "Hey Sharma!!!",
+        "Yo,",
+        "To whom it may concern,"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "How to attach a resume politely: (Set 32)",
+      "options": [
+        "Please find my resume attached.",
+        "Resume here lol",
+        "Grab my CV",
+        "Attachment!!!"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Follow-up after interview (one week): (Set 33)",
+      "options": [
+        "Thank you for the opportunity to interview on [date].",
+        "Where is my offer???",
+        "Hello???",
+        "You forgot me"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Requesting extension on deadline: (Set 34)",
+      "options": [
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "I won't finish"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Declining a meeting politely: (Set 35)",
+      "options": [
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "No way",
+        "Can't. Busy.",
+        "Skip it"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Email tone for complaint to vendor: (Set 36)",
+      "options": [
+        "Professional and factual",
+        "Aggressive and threatening",
+        "Sarcastic",
+        "All caps anger"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Email writing"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Best subject for a job application: (Set 37)",
+      "options": [
+        "Application for Software Engineer – Ref: Campus 2026",
+        "Hi",
+        "Job!!!",
+        "(blank)"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Appropriate sign-off to unknown HR: (Set 38)",
+      "options": [
+        "Sincerely,",
+        "Love,",
+        "Later,",
+        "XOXO"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Best opening when you know the name: (Set 39)",
+      "options": [
+        "Dear Ms. Sharma,",
+        "Hey Sharma!!!",
+        "Yo,",
+        "To whom it may concern,"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "How to attach a resume politely: (Set 40)",
+      "options": [
+        "Please find my resume attached.",
+        "Resume here lol",
+        "Grab my CV",
+        "Attachment!!!"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Follow-up after interview (one week): (Set 41)",
+      "options": [
+        "Where is my offer???",
+        "Thank you for the opportunity to interview on [date].",
+        "Hello???",
+        "You forgot me"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Requesting extension on deadline: (Set 42)",
+      "options": [
+        "Give me more time!!!",
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "Deadline is stupid",
+        "I won't finish"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Declining a meeting politely: (Set 43)",
+      "options": [
+        "No way",
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "Can't. Busy.",
+        "Skip it"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Email tone for complaint to vendor: (Set 44)",
+      "options": [
+        "Aggressive and threatening",
+        "Professional and factual",
+        "Sarcastic",
+        "All caps anger"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Email writing"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Best subject for a job application: (Set 45)",
+      "options": [
+        "Hi",
+        "Application for Software Engineer – Ref: Campus 2026",
+        "Job!!!",
+        "(blank)"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Appropriate sign-off to unknown HR: (Set 46)",
+      "options": [
+        "Love,",
+        "Sincerely,",
+        "Later,",
+        "XOXO"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Best opening when you know the name: (Set 47)",
+      "options": [
+        "Hey Sharma!!!",
+        "Dear Ms. Sharma,",
+        "Yo,",
+        "To whom it may concern,"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "How to attach a resume politely: (Set 48)",
+      "options": [
+        "Resume here lol",
+        "Please find my resume attached.",
+        "Grab my CV",
+        "Attachment!!!"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Follow-up after interview (one week): (Set 49)",
+      "options": [
+        "Where is my offer???",
+        "Thank you for the opportunity to interview on [date].",
+        "Hello???",
+        "You forgot me"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Requesting extension on deadline: (Set 50)",
+      "options": [
+        "Give me more time!!!",
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "Deadline is stupid",
+        "I won't finish"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Declining a meeting politely: (Set 51)",
+      "options": [
+        "No way",
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "Can't. Busy.",
+        "Skip it"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Email tone for complaint to vendor: (Set 52)",
+      "options": [
+        "Aggressive and threatening",
+        "Professional and factual",
+        "Sarcastic",
+        "All caps anger"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Email writing"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Best subject for a job application: (Set 53)",
+      "options": [
+        "Hi",
+        "Application for Software Engineer – Ref: Campus 2026",
+        "Job!!!",
+        "(blank)"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Appropriate sign-off to unknown HR: (Set 54)",
+      "options": [
+        "Love,",
+        "Sincerely,",
+        "Later,",
+        "XOXO"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Best opening when you know the name: (Set 55)",
+      "options": [
+        "Hey Sharma!!!",
+        "Dear Ms. Sharma,",
+        "Yo,",
+        "To whom it may concern,"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "How to attach a resume politely: (Set 56)",
+      "options": [
+        "Resume here lol",
+        "Please find my resume attached.",
+        "Grab my CV",
+        "Attachment!!!"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Follow-up after interview (one week): (Set 57)",
+      "options": [
+        "Where is my offer???",
+        "Thank you for the opportunity to interview on [date].",
+        "Hello???",
+        "You forgot me"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Requesting extension on deadline: (Set 58)",
+      "options": [
+        "Give me more time!!!",
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "Deadline is stupid",
+        "I won't finish"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Declining a meeting politely: (Set 59)",
+      "options": [
+        "No way",
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "Can't. Busy.",
+        "Skip it"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Email tone for complaint to vendor: (Set 60)",
+      "options": [
+        "Aggressive and threatening",
+        "Professional and factual",
+        "Sarcastic",
+        "All caps anger"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Email writing"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Best subject for a job application: (Set 61)",
+      "options": [
+        "Hi",
+        "Job!!!",
+        "Application for Software Engineer – Ref: Campus 2026",
+        "(blank)"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Appropriate sign-off to unknown HR: (Set 62)",
+      "options": [
+        "Love,",
+        "Later,",
+        "Sincerely,",
+        "XOXO"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Best opening when you know the name: (Set 63)",
+      "options": [
+        "Hey Sharma!!!",
+        "Yo,",
+        "Dear Ms. Sharma,",
+        "To whom it may concern,"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "How to attach a resume politely: (Set 64)",
+      "options": [
+        "Resume here lol",
+        "Grab my CV",
+        "Please find my resume attached.",
+        "Attachment!!!"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Follow-up after interview (one week): (Set 65)",
+      "options": [
+        "Where is my offer???",
+        "Hello???",
+        "Thank you for the opportunity to interview on [date].",
+        "You forgot me"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Requesting extension on deadline: (Set 66)",
+      "options": [
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "I won't finish"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Declining a meeting politely: (Set 67)",
+      "options": [
+        "No way",
+        "Can't. Busy.",
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "Skip it"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Email tone for complaint to vendor: (Set 68)",
+      "options": [
+        "Aggressive and threatening",
+        "Sarcastic",
+        "Professional and factual",
+        "All caps anger"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Email writing"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Best subject for a job application: (Set 69)",
+      "options": [
+        "Hi",
+        "Job!!!",
+        "Application for Software Engineer – Ref: Campus 2026",
+        "(blank)"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Email writing"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Appropriate sign-off to unknown HR: (Set 70)",
+      "options": [
+        "Love,",
+        "Later,",
+        "Sincerely,",
+        "XOXO"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Email writing"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Best opening when you know the name: (Set 71)",
+      "options": [
+        "Hey Sharma!!!",
+        "Yo,",
+        "Dear Ms. Sharma,",
+        "To whom it may concern,"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Email writing"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "How to attach a resume politely: (Set 72)",
+      "options": [
+        "Resume here lol",
+        "Grab my CV",
+        "Please find my resume attached.",
+        "Attachment!!!"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Email writing"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Follow-up after interview (one week): (Set 73)",
+      "options": [
+        "Where is my offer???",
+        "Hello???",
+        "Thank you for the opportunity to interview on [date].",
+        "You forgot me"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Email writing"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Requesting extension on deadline: (Set 74)",
+      "options": [
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "Could I please have an extension until Friday due to [brief reason]?",
+        "I won't finish"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Email writing"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Declining a meeting politely: (Set 75)",
+      "options": [
+        "No way",
+        "Can't. Busy.",
+        "Thank you for the invite; unfortunately I am unavailable at that time.",
+        "Skip it"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Email writing"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Email tone for complaint to vendor: (Set 76)",
+      "options": [
+        "Aggressive and threatening",
+        "Sarcastic",
+        "Professional and factual",
+        "All caps anger"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Best subject for a job application: (Set 77)",
+      "options": [
+        "Hi",
+        "Job!!!",
+        "Application for Software Engineer – Ref: Campus 2026",
+        "(blank)"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Appropriate sign-off to unknown HR: (Set 78)",
+      "options": [
+        "Love,",
+        "Later,",
+        "Sincerely,",
+        "XOXO"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Best opening when you know the name: (Set 79)",
+      "options": [
+        "Hey Sharma!!!",
+        "Yo,",
+        "Dear Ms. Sharma,",
+        "To whom it may concern,"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "How to attach a resume politely: (Set 80)",
+      "options": [
+        "Resume here lol",
+        "Grab my CV",
+        "Please find my resume attached.",
+        "Attachment!!!"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Follow-up after interview (one week): (Set 81)",
+      "options": [
+        "Where is my offer???",
+        "Hello???",
+        "You forgot me",
+        "Thank you for the opportunity to interview on [date]."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Requesting extension on deadline: (Set 82)",
+      "options": [
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "I won't finish",
+        "Could I please have an extension until Friday due to [brief reason]?"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Declining a meeting politely: (Set 83)",
+      "options": [
+        "No way",
+        "Can't. Busy.",
+        "Skip it",
+        "Thank you for the invite; unfortunately I am unavailable at that time."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Email tone for complaint to vendor: (Set 84)",
+      "options": [
+        "Aggressive and threatening",
+        "Sarcastic",
+        "All caps anger",
+        "Professional and factual"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Best subject for a job application: (Set 85)",
+      "options": [
+        "Hi",
+        "Job!!!",
+        "(blank)",
+        "Application for Software Engineer – Ref: Campus 2026"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Appropriate sign-off to unknown HR: (Set 86)",
+      "options": [
+        "Love,",
+        "Later,",
+        "XOXO",
+        "Sincerely,"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Best opening when you know the name: (Set 87)",
+      "options": [
+        "Hey Sharma!!!",
+        "Yo,",
+        "To whom it may concern,",
+        "Dear Ms. Sharma,"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "How to attach a resume politely: (Set 88)",
+      "options": [
+        "Resume here lol",
+        "Grab my CV",
+        "Attachment!!!",
+        "Please find my resume attached."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Follow-up after interview (one week): (Set 89)",
+      "options": [
+        "Where is my offer???",
+        "Hello???",
+        "You forgot me",
+        "Thank you for the opportunity to interview on [date]."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Requesting extension on deadline: (Set 90)",
+      "options": [
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "I won't finish",
+        "Could I please have an extension until Friday due to [brief reason]?"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Declining a meeting politely: (Set 91)",
+      "options": [
+        "No way",
+        "Can't. Busy.",
+        "Skip it",
+        "Thank you for the invite; unfortunately I am unavailable at that time."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Email tone for complaint to vendor: (Set 92)",
+      "options": [
+        "Aggressive and threatening",
+        "Sarcastic",
+        "All caps anger",
+        "Professional and factual"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Best subject for a job application: (Set 93)",
+      "options": [
+        "Hi",
+        "Job!!!",
+        "(blank)",
+        "Application for Software Engineer – Ref: Campus 2026"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Application for Software Engineer – Ref: Campus 2026.",
+      "trick": "Specific subject.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Appropriate sign-off to unknown HR: (Set 94)",
+      "options": [
+        "Love,",
+        "Later,",
+        "XOXO",
+        "Sincerely,"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Sincerely,.",
+      "trick": "Professional close.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Best opening when you know the name: (Set 95)",
+      "options": [
+        "Hey Sharma!!!",
+        "Yo,",
+        "To whom it may concern,",
+        "Dear Ms. Sharma,"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Dear Ms. Sharma,.",
+      "trick": "Named greeting.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "How to attach a resume politely: (Set 96)",
+      "options": [
+        "Resume here lol",
+        "Grab my CV",
+        "Attachment!!!",
+        "Please find my resume attached."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Please find my resume attached..",
+      "trick": "Standard attachment phrase.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Follow-up after interview (one week): (Set 97)",
+      "options": [
+        "Where is my offer???",
+        "Hello???",
+        "You forgot me",
+        "Thank you for the opportunity to interview on [date]."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the opportunity to interview on [date]..",
+      "trick": "Polite follow-up.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Requesting extension on deadline: (Set 98)",
+      "options": [
+        "Give me more time!!!",
+        "Deadline is stupid",
+        "I won't finish",
+        "Could I please have an extension until Friday due to [brief reason]?"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Could I please have an extension until Friday due to [brief reason]?.",
+      "trick": "Polite extension.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Declining a meeting politely: (Set 99)",
+      "options": [
+        "No way",
+        "Can't. Busy.",
+        "Skip it",
+        "Thank you for the invite; unfortunately I am unavailable at that time."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Thank you for the invite; unfortunately I am unavailable at that time..",
+      "trick": "Polite decline.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Email tone for complaint to vendor: (Set 100)",
+      "options": [
+        "Aggressive and threatening",
+        "Sarcastic",
+        "All caps anger",
+        "Professional and factual"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Professional email etiquette. Step 2: Answer: Professional and factual.",
+      "trick": "Professional complaint.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

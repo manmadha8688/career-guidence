@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { Download, Share2, Check, Loader2, FileWarning, Sparkles } from 'lucide-react'
+import { useParams } from 'react-router-dom'
+import { Download, Share2, Check, Loader2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { getPublicResume } from '../../api/api'
 import ResumeDocument from './ResumeDocument'
+import ResumeNotFoundState from './ResumeNotFoundState'
+import ResumePrivateState from './ResumePrivateState'
 import { buildAndSaveResumePdf } from './resumePdf'
 import '../../styles/pages/resume.css'
 
 export default function SharedResumePage() {
   const { slug } = useParams()
-  const [state, setState] = useState('loading') // loading | ok | error
+  const [state, setState] = useState('loading') // loading | ok | notfound | private
   const [data, setData] = useState(null)
   const [title, setTitle] = useState('')
   const [downloading, setDownloading] = useState(false)
@@ -33,7 +35,14 @@ export default function SharedResumePage() {
         setTitle(res?.title || '')
         setState('ok')
       })
-      .catch(() => { if (active) setState('error') })
+      .catch(err => {
+        if (!active) return
+        // 403 (or an explicit "private" body) → the resume exists but sharing
+        // is off; anything else (404 / gone) → treat as not found.
+        const status = err?.response?.status
+        const isPrivate = status === 403 || err?.response?.data?.error === 'private'
+        setState(isPrivate ? 'private' : 'notfound')
+      })
     return () => { active = false }
   }, [slug])
 
@@ -100,18 +109,8 @@ export default function SharedResumePage() {
     )
   }
 
-  if (state === 'error') {
-    return (
-      <div className="rzs-status">
-        <FileWarning size={30} />
-        <h1>This resume isn’t available</h1>
-        <p>The link may be turned off or no longer exists.</p>
-        <Link to="/resume" className="rz-btn rz-btn--primary rzs-status__cta">
-          <Sparkles size={15} /> Build your own free resume
-        </Link>
-      </div>
-    )
-  }
+  if (state === 'notfound') return <ResumeNotFoundState />
+  if (state === 'private') return <ResumePrivateState />
 
   return (
     <div className="rzs-page">

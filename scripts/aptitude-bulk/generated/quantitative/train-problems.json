@@ -1,0 +1,1207 @@
+{
+  "topic": "train-problems",
+  "category": "quantitative",
+  "group": "speed-distance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Train 150 m long at 54 km/h crosses pole in? (seconds)",
+      "options": [
+        "10",
+        "2",
+        "15",
+        "54"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 15.0. Time = 10 s.",
+      "trick": "Time = length/speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Trains 120m & 180m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "300",
+        "12",
+        "22",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 300 m → 12 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Train 200m at 72 km/h crosses platform 400m. Time (s)?",
+      "options": [
+        "200",
+        "200",
+        "30",
+        "35"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 600 m / speed → 30 s.",
+      "trick": "Platform + train length.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Train 100m passes pole in 20s. Speed km/h?",
+      "options": [
+        "36",
+        "100",
+        "40",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 100/20 m/s → 18 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "240 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "8",
+        "24",
+        "108",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 8 s.",
+      "trick": "Length/speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Train 300m takes 15s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "72",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/15 m/s = 72 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Trains 150m (60 km/h) & 100m (40 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "9",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 9 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Train 200m, platform 300m, speed 54 km/h. Crossing time?",
+      "options": [
+        "200",
+        "300",
+        "54",
+        "33"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 33 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Train 160 m long at 60 km/h crosses pole in? (seconds)",
+      "options": [
+        "10",
+        "2",
+        "15",
+        "60"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 16.7. Time = 10 s.",
+      "trick": "Time = length/speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Trains 120m & 190m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "310",
+        "12",
+        "22",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 310 m → 12 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Train 210m at 72 km/h crosses platform 420m. Time (s)?",
+      "options": [
+        "210",
+        "210",
+        "32",
+        "37"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 630 m / speed → 32 s.",
+      "trick": "Platform + train length.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Train 110m passes pole in 21s. Speed km/h?",
+      "options": [
+        "36",
+        "110",
+        "42",
+        "19"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 110/21 m/s → 19 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "260 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "9",
+        "26",
+        "108",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 9 s.",
+      "trick": "Length/speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Train 300m takes 16s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "68",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/16 m/s = 68 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Trains 150m (60 km/h) & 100m (45 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "9",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 9 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Train 210m, platform 320m, speed 54 km/h. Crossing time?",
+      "options": [
+        "210",
+        "320",
+        "54",
+        "35"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 35 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Train 170 m long at 66 km/h crosses pole in? (seconds)",
+      "options": [
+        "9",
+        "2",
+        "14",
+        "66"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 18.3. Time = 9 s.",
+      "trick": "Time = length/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Trains 120m & 200m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "320",
+        "13",
+        "23",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 320 m → 13 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Train 220m at 72 km/h crosses platform 440m. Time (s)?",
+      "options": [
+        "220",
+        "220",
+        "33",
+        "38"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 660 m / speed → 33 s.",
+      "trick": "Platform + train length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Train 120m passes pole in 22s. Speed km/h?",
+      "options": [
+        "36",
+        "120",
+        "44",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 120/22 m/s → 20 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "280 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "9",
+        "28",
+        "108",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 9 s.",
+      "trick": "Length/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Train 300m takes 17s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "64",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/17 m/s = 64 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Trains 150m (60 km/h) & 100m (50 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "8",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 8 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Train 220m, platform 340m, speed 54 km/h. Crossing time?",
+      "options": [
+        "220",
+        "340",
+        "54",
+        "37"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 37 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Train 180 m long at 72 km/h crosses pole in? (seconds)",
+      "options": [
+        "9",
+        "2",
+        "14",
+        "72"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 20.0. Time = 9 s.",
+      "trick": "Time = length/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Trains 120m & 210m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "330",
+        "13",
+        "23",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 330 m → 13 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Train 230m at 72 km/h crosses platform 460m. Time (s)?",
+      "options": [
+        "230",
+        "230",
+        "34",
+        "39"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 690 m / speed → 34 s.",
+      "trick": "Platform + train length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Train 130m passes pole in 23s. Speed km/h?",
+      "options": [
+        "36",
+        "130",
+        "46",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 130/23 m/s → 20 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "300 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "10",
+        "30",
+        "108",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 10 s.",
+      "trick": "Length/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Train 300m takes 18s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "60",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/18 m/s = 60 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Trains 150m (60 km/h) & 100m (55 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "8",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 8 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Train 230m, platform 360m, speed 54 km/h. Crossing time?",
+      "options": [
+        "230",
+        "360",
+        "54",
+        "39"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 39 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Train 190 m long at 78 km/h crosses pole in? (seconds)",
+      "options": [
+        "9",
+        "2",
+        "14",
+        "78"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 21.7. Time = 9 s.",
+      "trick": "Time = length/speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Trains 120m & 220m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "340",
+        "14",
+        "24",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 340 m → 14 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Train 240m at 72 km/h crosses platform 480m. Time (s)?",
+      "options": [
+        "240",
+        "240",
+        "36",
+        "41"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 720 m / speed → 36 s.",
+      "trick": "Platform + train length.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Train 140m passes pole in 24s. Speed km/h?",
+      "options": [
+        "36",
+        "140",
+        "48",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 140/24 m/s → 21 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "320 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "11",
+        "32",
+        "108",
+        "22"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 11 s.",
+      "trick": "Length/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Train 300m takes 19s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "57",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/19 m/s = 57 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Trains 150m (60 km/h) & 100m (60 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "7",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 7 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Train 240m, platform 380m, speed 54 km/h. Crossing time?",
+      "options": [
+        "240",
+        "380",
+        "54",
+        "41"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 41 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Train 200 m long at 84 km/h crosses pole in? (seconds)",
+      "options": [
+        "9",
+        "2",
+        "14",
+        "84"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 23.3. Time = 9 s.",
+      "trick": "Time = length/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Trains 120m & 230m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "350",
+        "14",
+        "24",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 350 m → 14 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Train 250m at 72 km/h crosses platform 500m. Time (s)?",
+      "options": [
+        "250",
+        "250",
+        "38",
+        "43"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 750 m / speed → 38 s.",
+      "trick": "Platform + train length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Train 150m passes pole in 25s. Speed km/h?",
+      "options": [
+        "36",
+        "150",
+        "50",
+        "22"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 150/25 m/s → 22 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "340 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "11",
+        "34",
+        "108",
+        "22"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 11 s.",
+      "trick": "Length/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Train 300m takes 20s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "54",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/20 m/s = 54 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Trains 150m (60 km/h) & 100m (65 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "7",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 7 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Train 250m, platform 400m, speed 54 km/h. Crossing time?",
+      "options": [
+        "250",
+        "400",
+        "54",
+        "43"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 43 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Train 210 m long at 90 km/h crosses pole in? (seconds)",
+      "options": [
+        "8",
+        "2",
+        "13",
+        "90"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 25.0. Time = 8 s.",
+      "trick": "Time = length/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Trains 120m & 240m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "360",
+        "14",
+        "24",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 360 m → 14 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Train 260m at 72 km/h crosses platform 520m. Time (s)?",
+      "options": [
+        "260",
+        "260",
+        "39",
+        "44"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 780 m / speed → 39 s.",
+      "trick": "Platform + train length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Train 160m passes pole in 26s. Speed km/h?",
+      "options": [
+        "36",
+        "160",
+        "52",
+        "22"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 160/26 m/s → 22 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "360 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "12",
+        "36",
+        "108",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 12 s.",
+      "trick": "Length/speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Train 300m takes 21s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "51",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/21 m/s = 51 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Trains 150m (60 km/h) & 100m (70 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "7",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 7 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Train 260m, platform 420m, speed 54 km/h. Crossing time?",
+      "options": [
+        "260",
+        "420",
+        "54",
+        "45"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 45 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Train 220 m long at 96 km/h crosses pole in? (seconds)",
+      "options": [
+        "8",
+        "2",
+        "13",
+        "96"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 26.7. Time = 8 s.",
+      "trick": "Time = length/speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Trains 120m & 250m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "370",
+        "15",
+        "25",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 370 m → 15 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Train 270m at 72 km/h crosses platform 540m. Time (s)?",
+      "options": [
+        "270",
+        "270",
+        "40",
+        "45"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 810 m / speed → 40 s.",
+      "trick": "Platform + train length.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Train 170m passes pole in 27s. Speed km/h?",
+      "options": [
+        "36",
+        "170",
+        "54",
+        "23"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 170/27 m/s → 23 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "380 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "13",
+        "38",
+        "108",
+        "26"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 13 s.",
+      "trick": "Length/speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Train 300m takes 22s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "49",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/22 m/s = 49 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Trains 150m (60 km/h) & 100m (75 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "7",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 7 s.",
+      "trick": "Opposite relative speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Train 270m, platform 440m, speed 54 km/h. Crossing time?",
+      "options": [
+        "270",
+        "440",
+        "54",
+        "47"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 47 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Train 230 m long at 102 km/h crosses pole in? (seconds)",
+      "options": [
+        "8",
+        "2",
+        "13",
+        "102"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 28.3. Time = 8 s.",
+      "trick": "Time = length/speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Trains 120m & 260m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "380",
+        "15",
+        "25",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 380 m → 15 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Train 280m at 72 km/h crosses platform 560m. Time (s)?",
+      "options": [
+        "280",
+        "280",
+        "42",
+        "47"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 840 m / speed → 42 s.",
+      "trick": "Platform + train length.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Train 180m passes pole in 28s. Speed km/h?",
+      "options": [
+        "36",
+        "180",
+        "56",
+        "23"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 180/28 m/s → 23 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "400 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "13",
+        "40",
+        "108",
+        "26"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 13 s.",
+      "trick": "Length/speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Train 300m takes 23s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "47",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/23 m/s = 47 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Trains 150m (60 km/h) & 100m (80 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "6",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 6 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Train 280m, platform 460m, speed 54 km/h. Crossing time?",
+      "options": [
+        "280",
+        "460",
+        "54",
+        "49"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 49 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Train 240 m long at 108 km/h crosses pole in? (seconds)",
+      "options": [
+        "8",
+        "2",
+        "13",
+        "108"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Speed m/s = 30.0. Time = 8 s.",
+      "trick": "Time = length/speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Trains 120m & 270m at 90 km/h cross each other. Time (s)?",
+      "options": [
+        "390",
+        "16",
+        "26",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Relative crossing length 390 m → 16 s.",
+      "trick": "Sum lengths / rel speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Train 290m at 72 km/h crosses platform 580m. Time (s)?",
+      "options": [
+        "290",
+        "290",
+        "44",
+        "49"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total 870 m / speed → 44 s.",
+      "trick": "Platform + train length.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Train 190m passes pole in 29s. Speed km/h?",
+      "options": [
+        "36",
+        "190",
+        "58",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed = 190/29 m/s → 24 km/h.",
+      "trick": "Speed from time over length.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "420 m train at 108 km/h crosses telegraph post. Seconds?",
+      "options": [
+        "14",
+        "42",
+        "108",
+        "28"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Time = 14 s.",
+      "trick": "Length/speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Train 300m takes 24s to pass man. Speed km/h?",
+      "options": [
+        "60",
+        "45",
+        "72",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 300/24 m/s = 45 km/h.",
+      "trick": "Convert m/s to km/h.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Trains 150m (60 km/h) & 100m (85 km/h) opposite. Crossing time (s)?",
+      "options": [
+        "250",
+        "10",
+        "6",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (150+100) / rel speed = 6 s.",
+      "trick": "Opposite relative speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Train 290m, platform 480m, speed 54 km/h. Crossing time?",
+      "options": [
+        "290",
+        "480",
+        "54",
+        "51"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 51 seconds.",
+      "trick": "Sum length over speed.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

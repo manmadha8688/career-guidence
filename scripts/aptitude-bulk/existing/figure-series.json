@@ -1,0 +1,402 @@
+[
+  {
+    "id": "figure-series-q1",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "An arrow points up, then right, then down (turning 90° clockwise each step). Which way does it point next?",
+    "options": [
+      "Left",
+      "Up",
+      "Right",
+      "Down"
+    ],
+    "answer": "A",
+    "solution": "90° clockwise from down is left.",
+    "trick": "up→right→down→left.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "figure-series-q2",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "The figures contain 1, 2, 3 and 4 dots in order. How many dots are in the next figure?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "answer": "B",
+    "solution": "The count rises by 1: 4 + 1 = 5.",
+    "trick": "+1 dot each step.",
+    "type": "Increasing count",
+    "active": true
+  },
+  {
+    "id": "figure-series-q3",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The shapes go triangle, square, pentagon. What is the next shape?",
+    "options": [
+      "square",
+      "pentagon",
+      "hexagon",
+      "heptagon"
+    ],
+    "answer": "C",
+    "solution": "Sides go 3, 4, 5, so the next has 6 sides — a hexagon.",
+    "trick": "+1 side each step.",
+    "type": "Growing sides",
+    "active": true
+  },
+  {
+    "id": "figure-series-q4",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A figure rotates 90° clockwise each step. After how many steps does it return to its starting position?",
+    "options": [
+      "2",
+      "3",
+      "8",
+      "4"
+    ],
+    "answer": "D",
+    "solution": "360° ÷ 90° = 4 steps to come full circle.",
+    "trick": "360/90 = 4.",
+    "type": "Rotation period",
+    "active": true
+  },
+  {
+    "id": "figure-series-q5",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A shaded corner of a square moves clockwise: top-left, top-right, bottom-right. Where is it next?",
+    "options": [
+      "Bottom-left",
+      "Top-left",
+      "Top-right",
+      "Bottom-right"
+    ],
+    "answer": "A",
+    "solution": "Continuing clockwise after bottom-right gives bottom-left.",
+    "trick": "TL→TR→BR→BL.",
+    "type": "Moving marker",
+    "active": true
+  },
+  {
+    "id": "figure-series-q6",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "The figures alternate circle, square, circle, square. What comes next?",
+    "options": [
+      "square",
+      "circle",
+      "triangle",
+      "pentagon"
+    ],
+    "answer": "B",
+    "solution": "The two shapes alternate, so after square comes circle.",
+    "trick": "Toggle back to circle.",
+    "type": "Alternation",
+    "active": true
+  },
+  {
+    "id": "figure-series-q7",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "The figures contain 2, 4, 6 and 8 lines in order. How many lines are in the next figure?",
+    "options": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "answer": "C",
+    "solution": "The count rises by 2: 8 + 2 = 10.",
+    "trick": "+2 lines each step.",
+    "type": "Increasing count",
+    "active": true
+  },
+  {
+    "id": "figure-series-q8",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "An arrow points right, then down, then left (turning 90° clockwise each step). Which way does it point next?",
+    "options": [
+      "Right",
+      "Down",
+      "Left",
+      "Up"
+    ],
+    "answer": "D",
+    "solution": "90° clockwise from left is up.",
+    "trick": "right→down→left→up.",
+    "type": "Rotation",
+    "active": true
+  },
+  {
+    "id": "figure-series-q9",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "The shapes have 3, 4, 5 and 6 sides in order. What is the next shape?",
+    "options": [
+      "heptagon",
+      "hexagon",
+      "octagon",
+      "pentagon"
+    ],
+    "answer": "A",
+    "solution": "Sides go 3, 4, 5, 6, so the next has 7 sides — a heptagon.",
+    "trick": "+1 side → 7 sides.",
+    "type": "Growing sides",
+    "active": true
+  },
+  {
+    "id": "figure-series-q10",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "The figures contain 1, 2, 4 and 8 dots in order. How many dots are in the next figure?",
+    "options": [
+      "12",
+      "16",
+      "10",
+      "14"
+    ],
+    "answer": "B",
+    "solution": "The count doubles each time: 8 × 2 = 16.",
+    "trick": "×2 dots each step.",
+    "type": "Doubling count",
+    "active": true
+  },
+  {
+    "id": "figure-series-q11",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "An arrow rotates 45° clockwise each step: North, North-East, East. Which direction is next?",
+    "options": [
+      "N",
+      "E",
+      "SE",
+      "S"
+    ],
+    "answer": "C",
+    "solution": "45° clockwise from East is South-East.",
+    "trick": "N→NE→E→SE.",
+    "type": "Rotation (45°)",
+    "active": true
+  },
+  {
+    "id": "figure-series-q12",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A shaded corner moves anticlockwise: top-left, bottom-left, bottom-right. Where is it next?",
+    "options": [
+      "Top-left",
+      "Bottom-left",
+      "Bottom-right",
+      "Top-right"
+    ],
+    "answer": "D",
+    "solution": "Continuing anticlockwise after bottom-right gives top-right.",
+    "trick": "TL→BL→BR→TR.",
+    "type": "Moving marker",
+    "active": true
+  },
+  {
+    "id": "figure-series-q13",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "The figures contain 1, 3, 5 and 7 small squares in order. How many squares are in the next figure?",
+    "options": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ],
+    "answer": "A",
+    "solution": "The count rises by 2 (odd numbers): 7 + 2 = 9.",
+    "trick": "+2 each step.",
+    "type": "Increasing count",
+    "active": true
+  },
+  {
+    "id": "figure-series-q14",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "The figures alternate 1 dot, 2 dots, 1 dot, 2 dots. How many dots are in the next figure?",
+    "options": [
+      "2 dots",
+      "1 dot",
+      "3 dots",
+      "0 dots"
+    ],
+    "answer": "B",
+    "solution": "The count toggles 1, 2, 1, 2, so after 2 comes 1.",
+    "trick": "Toggle back to 1.",
+    "type": "Alternation",
+    "active": true
+  },
+  {
+    "id": "figure-series-q15",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Each step a figure rotates 90° clockwise and gains one dot. It starts with 1 dot. How many dots does it have after one step?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "answer": "C",
+    "solution": "One dot is added per step: 1 + 1 = 2 dots (the rotation does not change the count).",
+    "trick": "+1 dot per step.",
+    "type": "Combined change",
+    "active": true
+  },
+  {
+    "id": "figure-series-q16",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "An arrow rotates 90° anticlockwise each step: up, left, down. Which way does it point next?",
+    "options": [
+      "up",
+      "left",
+      "down",
+      "right"
+    ],
+    "answer": "D",
+    "solution": "90° anticlockwise from down is right.",
+    "trick": "up→left→down→right.",
+    "type": "Rotation (anticlockwise)",
+    "active": true
+  },
+  {
+    "id": "figure-series-q17",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A line rotates 90° clockwise each step, starting pointing up. Which way does it point after 3 steps?",
+    "options": [
+      "left",
+      "right",
+      "up",
+      "down"
+    ],
+    "answer": "A",
+    "solution": "up (start) → right (1) → down (2) → left (3).",
+    "trick": "3 quarter-turns from up = left.",
+    "type": "Rotation (multi-step)",
+    "active": true
+  },
+  {
+    "id": "figure-series-q18",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "The shapes go hexagon, pentagon, square. What is the next shape?",
+    "options": [
+      "square",
+      "triangle",
+      "pentagon",
+      "line"
+    ],
+    "answer": "B",
+    "solution": "Sides go 6, 5, 4, so the next has 3 sides — a triangle.",
+    "trick": "−1 side → 3 sides.",
+    "type": "Shrinking sides",
+    "active": true
+  },
+  {
+    "id": "figure-series-q19",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "The figures contain 1, 4, 9 and 16 dots in order. How many dots are in the next figure?",
+    "options": [
+      "20",
+      "24",
+      "25",
+      "36"
+    ],
+    "answer": "C",
+    "solution": "The counts are perfect squares 1², 2², 3², 4², so next is 5² = 25.",
+    "trick": "Squares → 5² = 25.",
+    "type": "Increasing count (squares)",
+    "active": true
+  },
+  {
+    "id": "figure-series-q20",
+    "topic": "figure-series",
+    "category": "logical",
+    "group": "series-patterns",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A shaded corner of a square moves one step clockwise each figure, starting at top-left. Where is it after 6 steps?",
+    "options": [
+      "Top-left",
+      "Top-right",
+      "Bottom-left",
+      "Bottom-right"
+    ],
+    "answer": "D",
+    "solution": "With 4 corners the position repeats every 4 steps; 6 mod 4 = 2, so from top-left move 2 clockwise: top-right then bottom-right.",
+    "trick": "6 mod 4 = 2 → bottom-right.",
+    "type": "Moving marker (multi-step)",
+    "active": true
+  }
+]

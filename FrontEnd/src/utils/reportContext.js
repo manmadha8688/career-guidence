@@ -4,7 +4,8 @@ export function getReportPageTitle(pathname) {
   if (pathname.startsWith('/skill-arena/quiz')) return 'Quiz'
   if (pathname.startsWith('/skill-arena/roadmaps')) return 'Hunter Path Detail'
   if (pathname.startsWith('/skill-arena')) return 'Skill Arena'
-  if (pathname.startsWith('/problem-solving') && pathname.length > 16) return 'Code GYM — Problem'
+  if (pathname.startsWith('/code-gym/') && !['start-coding','logic-building','skill-up','crack-it','build-it','prove-it'].some(s => pathname === `/code-gym/${s}`)) return 'Code GYM — Problem'
+  if (pathname.startsWith('/code-gym')) return 'Code GYM'
   if (pathname.startsWith('/problem-solving')) return 'Code GYM'
   if (pathname.startsWith('/missions') && pathname.length > 9) return 'Mission Detail'
   if (pathname.startsWith('/missions')) return 'Mission Board'
@@ -40,7 +41,8 @@ export function buildReportContext(pathname, search) {
     ctx.quizRefId = quizMatch[2]
   }
 
-  const problemMatch = pathname.match(/\/problem-solving\/[^/]+\/([^/]+)/)
+  const problemMatch = pathname.match(/\/code-gym\/([a-f0-9]{24})$/i)
+    || pathname.match(/\/problem-solving\/([a-f0-9]{24})$/i)
   if (problemMatch) ctx.problemId = problemMatch[1]
 
   const missionMatch = pathname.match(/\/missions\/([^/]+)/)

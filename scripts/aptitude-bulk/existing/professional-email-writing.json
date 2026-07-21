@@ -1,0 +1,402 @@
+[
+  {
+    "id": "professional-email-writing-q1",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "The first part of a professional email is the:",
+    "options": [
+      "subject line",
+      "signature",
+      "attachment",
+      "closing"
+    ],
+    "answer": "A",
+    "solution": "An email begins with a specific subject line.",
+    "trick": "Subject comes first.",
+    "type": "Structure",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q2",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Best subject line for a leave request?",
+    "options": [
+      "Hi",
+      "Leave request: 12-14 Aug",
+      "URGENT!!!",
+      "(no subject)"
+    ],
+    "answer": "B",
+    "solution": "A short, specific subject names the topic and dates.",
+    "trick": "Specific + short wins.",
+    "type": "Subject line",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q3",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Correct greeting for an unknown official?",
+    "options": [
+      "Hey!",
+      "Yo team",
+      "Dear Sir/Madam,",
+      "Sup,"
+    ],
+    "answer": "C",
+    "solution": "'Dear Sir/Madam,' is the standard formal greeting.",
+    "trick": "Unknown official → Dear Sir/Madam.",
+    "type": "Greeting",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q4",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Polite version of 'Send the report now':",
+    "options": [
+      "Send report now!",
+      "I need report now.",
+      "Report. Now.",
+      "Could you please share the report at your earliest convenience?"
+    ],
+    "answer": "D",
+    "solution": "A polite modal request is professional.",
+    "trick": "Command → 'Could you please…'.",
+    "type": "Tone",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q5",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Correct order of email parts?",
+    "options": [
+      "Subject then Greeting then Body then Sign-off",
+      "Body then Subject then Greeting then Sign-off",
+      "Greeting then Subject then Sign-off then Body",
+      "Sign-off then Body then Greeting then Subject"
+    ],
+    "answer": "A",
+    "solution": "The standard order is Subject, Greeting, Body, Sign-off.",
+    "trick": "Follow the reading order.",
+    "type": "Structure",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q6",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Ideally, how many main purposes should one email have?",
+    "options": [
+      "as many as possible",
+      "one",
+      "at least five",
+      "zero"
+    ],
+    "answer": "B",
+    "solution": "Keep one purpose per email for clarity.",
+    "trick": "One email, one purpose.",
+    "type": "Structure",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q7",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Which is an appropriate formal sign-off?",
+    "options": [
+      "Later!",
+      "xoxo",
+      "Regards, Anita Sharma",
+      "bye"
+    ],
+    "answer": "C",
+    "solution": "'Regards, <name>' is a proper professional sign-off.",
+    "trick": "Close with Regards + your name.",
+    "type": "Sign-off",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q8",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "What is wrong with the subject 'IMPORTANT!!!'?",
+    "options": [
+      "too long",
+      "too polite",
+      "too formal",
+      "vague and shouty (all caps and !!!)"
+    ],
+    "answer": "D",
+    "solution": "It gives no topic and looks unprofessional with caps and exclamation marks.",
+    "trick": "Subjects should be specific, not shouty.",
+    "type": "Subject line",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q9",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Best opening line?",
+    "options": [
+      "I hope you are well. I am writing regarding the invoice.",
+      "OI!",
+      "read this fast",
+      "(no greeting)"
+    ],
+    "answer": "A",
+    "solution": "A courteous opening that states the purpose is professional.",
+    "trick": "Greet, then state your purpose.",
+    "type": "Opening",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q10",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Which line is unprofessional?",
+    "options": [
+      "Thank you for your time.",
+      "K. do it. thx.",
+      "Please find attached the report.",
+      "I look forward to your reply."
+    ],
+    "answer": "B",
+    "solution": "'K. do it. thx.' is abrupt and casual.",
+    "trick": "Avoid text-speak in emails.",
+    "type": "Tone",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q11",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Which is a clear call-to-action?",
+    "options": [
+      "The weather is nice.",
+      "I like emails.",
+      "Could you please confirm by Friday?",
+      "Bye."
+    ],
+    "answer": "C",
+    "solution": "A specific, polite request with a deadline is a good call-to-action.",
+    "trick": "State the ask + a deadline.",
+    "type": "Call to action",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q12",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "If you have two unrelated requests, you should:",
+    "options": [
+      "put both in caps",
+      "skip the subject",
+      "add emojis",
+      "send two focused emails (one purpose each)"
+    ],
+    "answer": "D",
+    "solution": "Separate purposes into separate emails so nothing is missed.",
+    "trick": "One purpose per email.",
+    "type": "Structure",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q13",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Best greeting to a known manager, Mr Rao?",
+    "options": [
+      "Dear Mr Rao,",
+      "Hey Rao!",
+      "Yo boss",
+      "To whom it may concern,"
+    ],
+    "answer": "A",
+    "solution": "Use the person's name formally: 'Dear Mr Rao,'.",
+    "trick": "Known name → Dear Mr/Ms <Name>.",
+    "type": "Greeting",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q14",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Proofreading matters mainly because:",
+    "options": [
+      "it makes emails longer",
+      "errors reduce your credibility",
+      "it adds emojis",
+      "it changes the subject"
+    ],
+    "answer": "B",
+    "solution": "Spelling/grammar errors make you look careless and hurt credibility.",
+    "trick": "Always proofread before sending.",
+    "type": "Tone",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q15",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Best subject for a payment follow-up?",
+    "options": [
+      "Hello",
+      "$$$",
+      "Invoice #482 - payment follow-up",
+      "PAY NOW!!!"
+    ],
+    "answer": "C",
+    "solution": "It names the invoice and the purpose specifically.",
+    "trick": "Name the topic and reference.",
+    "type": "Subject line",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q16",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Which is a good closing courtesy line?",
+    "options": [
+      "Do it fast.",
+      "Whatever.",
+      "No.",
+      "Thank you for your time and assistance."
+    ],
+    "answer": "D",
+    "solution": "A courteous thank-you closes the email professionally.",
+    "trick": "Close with thanks.",
+    "type": "Closing",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q17",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The right tone for a professional email is:",
+    "options": [
+      "polite and formal",
+      "angry",
+      "slangy",
+      "all caps"
+    ],
+    "answer": "A",
+    "solution": "Professional emails should be polite and formal.",
+    "trick": "Courteous and clear.",
+    "type": "Tone",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q18",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "In 'Dear Sir, Please approve leave. Regards.', what is mainly missing?",
+    "options": [
+      "the greeting",
+      "specific dates/details in the body",
+      "the sign-off",
+      "only the subject"
+    ],
+    "answer": "B",
+    "solution": "The body lacks specifics (which dates, reason), so the request is unclear.",
+    "trick": "Give the details the reader needs to act.",
+    "type": "Structure",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q19",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Which is a good, specific subject line?",
+    "options": [
+      "Query",
+      "Hi again",
+      "Meeting reschedule: Tuesday 3 PM",
+      "!!!"
+    ],
+    "answer": "C",
+    "solution": "It states the action and the new time specifically.",
+    "trick": "Specific action + detail.",
+    "type": "Subject line",
+    "active": true
+  },
+  {
+    "id": "professional-email-writing-q20",
+    "topic": "professional-email-writing",
+    "category": "verbal",
+    "group": "communication",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "After writing the email, you should:",
+    "options": [
+      "send without reading",
+      "add many exclamation marks",
+      "remove the greeting",
+      "proofread for spelling and grammar"
+    ],
+    "answer": "D",
+    "solution": "Always proofread before sending to catch errors.",
+    "trick": "Proofread = final step.",
+    "type": "Structure",
+    "active": true
+  }
+]

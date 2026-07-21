@@ -1,0 +1,1207 @@
+{
+  "topic": "lcm-hcf",
+  "category": "quantitative",
+  "group": "number-basics",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Find the HCF of 12 and 18.",
+      "options": [
+        "6",
+        "36",
+        "8",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factors of 12 and 18. Step 2: HCF = 6.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Find the LCM of 15 and 20.",
+      "options": [
+        "35",
+        "60",
+        "30",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 5. Step 2: LCM = (15×20)/HCF = 60.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Find the LCM of 6, 8 and 12.",
+      "options": [
+        "48",
+        "12",
+        "24",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 24.",
+      "trick": "LCM of three numbers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "HCF of 24 and 36 is:",
+      "options": [
+        "6",
+        "12",
+        "24",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF(24,36) = 12.",
+      "trick": "Euclid's algorithm.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Three numbers 12, 16, 20 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "4",
+        "8",
+        "3",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Numbers are 4×3, 4×4, 4×5. Step 2: HCF = 4.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "If LCM of 18 and 24 is 72, find (LCM × HCF) / (18 + 24).",
+      "options": [
+        "18",
+        "10",
+        "24",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM×HCF = 18×24 = 432. Step 2: 432/(42) = 10.",
+      "trick": "LCM×HCF = product.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Three bells ring at intervals of 6, 8 and 10 seconds. After how many seconds do they ring together?",
+      "options": [
+        "40",
+        "120",
+        "120",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: LCM(6,8,10) = 120.",
+      "trick": "Simultaneous = LCM of intervals.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "The greatest number that divides 45 and 60 exactly is:",
+      "options": [
+        "15",
+        "30",
+        "5",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 15.",
+      "trick": "HCF divides both.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Find the least square tile size (cm) to pave a floor 12 cm by 18 cm without cutting.",
+      "options": [
+        "36",
+        "12",
+        "18",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need LCM(12,18) = 36 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 91, the other is 143. Find |a − b|.",
+      "options": [
+        "18",
+        "4",
+        "13",
+        "77"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Numbers are 13×7 and 13×11. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Find the HCF of 15 and 23.",
+      "options": [
+        "345",
+        "3",
+        "1",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Factors of 15 and 23. Step 2: HCF = 1.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Find the LCM of 19 and 26.",
+      "options": [
+        "45",
+        "247",
+        "1",
+        "494"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 1. Step 2: LCM = (19×26)/HCF = 494.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Find the LCM of 7, 9 and 13.",
+      "options": [
+        "819",
+        "63",
+        "409",
+        "1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 819.",
+      "trick": "LCM of three numbers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "HCF of 30 and 44 is:",
+      "options": [
+        "6",
+        "2",
+        "12",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF(30,44) = 2.",
+      "trick": "Euclid's algorithm.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Three numbers 15, 20, 25 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "10",
+        "3",
+        "5",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Numbers are 5×3, 5×4, 5×5. Step 2: HCF = 5.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "If LCM of 20 and 27 is 540, find (LCM × HCF) / (20 + 27).",
+      "options": [
+        "20",
+        "27",
+        "1",
+        "11"
+      ],
+      "answer": "D",
+      "solution": "Step 1: LCM×HCF = 20×27 = 540. Step 2: 540/(47) = 11.",
+      "trick": "LCM×HCF = product.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1054,
+      "difficulty": "hard",
+      "question": "HCF of 642 and 860 is:",
+      "options": [
+        "2",
+        "6",
+        "12",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: HCF(642,860) = 2.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "The greatest number that divides 50 and 65 exactly is:",
+      "options": [
+        "15",
+        "5",
+        "30",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 5.",
+      "trick": "HCF divides both.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Find the least square tile size (cm) to pave a floor 14 cm by 21 cm without cutting.",
+      "options": [
+        "14",
+        "21",
+        "42",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Need LCM(14,21) = 42 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 104, the other is 156. Find |a − b|.",
+      "options": [
+        "20",
+        "13",
+        "24",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Numbers are 13×8 and 13×12. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Find the HCF of 18 and 28.",
+      "options": [
+        "2",
+        "252",
+        "4",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factors of 18 and 28. Step 2: HCF = 2.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Find the LCM of 23 and 32.",
+      "options": [
+        "55",
+        "736",
+        "368",
+        "1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 1. Step 2: LCM = (23×32)/HCF = 736.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Find the LCM of 8, 10 and 14.",
+      "options": [
+        "80",
+        "140",
+        "280",
+        "2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 280.",
+      "trick": "LCM of three numbers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "HCF of 36 and 52 is:",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF(36,52) = 4.",
+      "trick": "Euclid's algorithm.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Three numbers 18, 24, 30 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "6",
+        "12",
+        "3",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Numbers are 6×3, 6×4, 6×5. Step 2: HCF = 6.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "If LCM of 22 and 30 is 330, find (LCM × HCF) / (22 + 30).",
+      "options": [
+        "22",
+        "12",
+        "30",
+        "2"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM×HCF = 22×30 = 660. Step 2: 660/(52) = 12.",
+      "trick": "LCM×HCF = product.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1064,
+      "difficulty": "hard",
+      "question": "HCF of 648 and 868 is:",
+      "options": [
+        "6",
+        "12",
+        "4",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: HCF(648,868) = 4.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "The greatest number that divides 55 and 70 exactly is:",
+      "options": [
+        "15",
+        "30",
+        "5",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 5.",
+      "trick": "HCF divides both.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Find the least square tile size (cm) to pave a floor 16 cm by 24 cm without cutting.",
+      "options": [
+        "48",
+        "16",
+        "24",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need LCM(16,24) = 48 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 117, the other is 169. Find |a − b|.",
+      "options": [
+        "22",
+        "4",
+        "13",
+        "117"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Numbers are 13×9 and 13×13. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Find the HCF of 21 and 33.",
+      "options": [
+        "231",
+        "5",
+        "3",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Factors of 21 and 33. Step 2: HCF = 3.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Find the LCM of 27 and 38.",
+      "options": [
+        "65",
+        "513",
+        "1",
+        "1026"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 1. Step 2: LCM = (27×38)/HCF = 1026.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Find the LCM of 9, 11 and 15.",
+      "options": [
+        "495",
+        "99",
+        "247",
+        "3"
+      ],
+      "answer": "A",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 495.",
+      "trick": "LCM of three numbers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "HCF of 42 and 60 is:",
+      "options": [
+        "6",
+        "6",
+        "12",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF(42,60) = 6.",
+      "trick": "Euclid's algorithm.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Three numbers 21, 28, 35 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "14",
+        "3",
+        "7",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Numbers are 7×3, 7×4, 7×5. Step 2: HCF = 7.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "If LCM of 24 and 33 is 264, find (LCM × HCF) / (24 + 33).",
+      "options": [
+        "24",
+        "33",
+        "3",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: LCM×HCF = 24×33 = 792. Step 2: 792/(57) = 13.",
+      "trick": "LCM×HCF = product.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1074,
+      "difficulty": "hard",
+      "question": "HCF of 654 and 876 is:",
+      "options": [
+        "6",
+        "6",
+        "12",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: HCF(654,876) = 6.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "The greatest number that divides 60 and 75 exactly is:",
+      "options": [
+        "15",
+        "15",
+        "30",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 15.",
+      "trick": "HCF divides both.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Find the least square tile size (cm) to pave a floor 18 cm by 27 cm without cutting.",
+      "options": [
+        "18",
+        "27",
+        "54",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Need LCM(18,27) = 54 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 130, the other is 182. Find |a − b|.",
+      "options": [
+        "24",
+        "13",
+        "70",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Numbers are 13×10 and 13×14. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Find the HCF of 24 and 38.",
+      "options": [
+        "2",
+        "456",
+        "4",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factors of 24 and 38. Step 2: HCF = 2.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Find the LCM of 31 and 44.",
+      "options": [
+        "75",
+        "1364",
+        "682",
+        "1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 1. Step 2: LCM = (31×44)/HCF = 1364.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Find the LCM of 10, 12 and 16.",
+      "options": [
+        "120",
+        "120",
+        "240",
+        "2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 240.",
+      "trick": "LCM of three numbers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "HCF of 48 and 68 is:",
+      "options": [
+        "6",
+        "12",
+        "8",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF(48,68) = 4.",
+      "trick": "Euclid's algorithm.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Three numbers 24, 32, 40 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "8",
+        "16",
+        "3",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Numbers are 8×3, 8×4, 8×5. Step 2: HCF = 8.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "If LCM of 26 and 36 is 468, find (LCM × HCF) / (26 + 36).",
+      "options": [
+        "26",
+        "15",
+        "36",
+        "2"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM×HCF = 26×36 = 936. Step 2: 936/(62) = 15.",
+      "trick": "LCM×HCF = product.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1084,
+      "difficulty": "hard",
+      "question": "HCF of 660 and 884 is:",
+      "options": [
+        "6",
+        "12",
+        "4",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: HCF(660,884) = 4.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "The greatest number that divides 65 and 80 exactly is:",
+      "options": [
+        "15",
+        "30",
+        "5",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 5.",
+      "trick": "HCF divides both.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Find the least square tile size (cm) to pave a floor 20 cm by 30 cm without cutting.",
+      "options": [
+        "60",
+        "20",
+        "30",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need LCM(20,30) = 60 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 143, the other is 195. Find |a − b|.",
+      "options": [
+        "26",
+        "4",
+        "13",
+        "165"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Numbers are 13×11 and 13×15. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Find the HCF of 27 and 43.",
+      "options": [
+        "1161",
+        "3",
+        "1",
+        "13"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Factors of 27 and 43. Step 2: HCF = 1.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Find the LCM of 35 and 50.",
+      "options": [
+        "85",
+        "175",
+        "5",
+        "350"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 5. Step 2: LCM = (35×50)/HCF = 350.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Find the LCM of 11, 13 and 17.",
+      "options": [
+        "2431",
+        "143",
+        "1215",
+        "1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 2431.",
+      "trick": "LCM of three numbers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "HCF of 54 and 76 is:",
+      "options": [
+        "6",
+        "2",
+        "12",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF(54,76) = 2.",
+      "trick": "Euclid's algorithm.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Three numbers 27, 36, 45 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "18",
+        "3",
+        "9",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Numbers are 9×3, 9×4, 9×5. Step 2: HCF = 9.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "If LCM of 28 and 39 is 1092, find (LCM × HCF) / (28 + 39).",
+      "options": [
+        "28",
+        "39",
+        "1",
+        "16"
+      ],
+      "answer": "D",
+      "solution": "Step 1: LCM×HCF = 28×39 = 1092. Step 2: 1092/(67) = 16.",
+      "trick": "LCM×HCF = product.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1094,
+      "difficulty": "hard",
+      "question": "HCF of 666 and 892 is:",
+      "options": [
+        "2",
+        "6",
+        "12",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: HCF(666,892) = 2.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "The greatest number that divides 70 and 85 exactly is:",
+      "options": [
+        "15",
+        "5",
+        "30",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 5.",
+      "trick": "HCF divides both.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Find the least square tile size (cm) to pave a floor 22 cm by 33 cm without cutting.",
+      "options": [
+        "22",
+        "33",
+        "66",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Need LCM(22,33) = 66 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 156, the other is 208. Find |a − b|.",
+      "options": [
+        "28",
+        "13",
+        "48",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Numbers are 13×12 and 13×16. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Find the HCF of 30 and 48.",
+      "options": [
+        "6",
+        "240",
+        "8",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factors of 30 and 48. Step 2: HCF = 6.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Find the LCM of 39 and 56.",
+      "options": [
+        "95",
+        "2184",
+        "1092",
+        "1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 1. Step 2: LCM = (39×56)/HCF = 2184.",
+      "trick": "LCM = ab/HCF.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Find the LCM of 12, 14 and 18.",
+      "options": [
+        "168",
+        "126",
+        "252",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 252.",
+      "trick": "LCM of three numbers.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "HCF of 60 and 84 is:",
+      "options": [
+        "6",
+        "12",
+        "24",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF(60,84) = 12.",
+      "trick": "Euclid's algorithm.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Three numbers 30, 40, 50 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "10",
+        "20",
+        "3",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Numbers are 10×3, 10×4, 10×5. Step 2: HCF = 10.",
+      "trick": "Common multiplier is HCF.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "If LCM of 30 and 42 is 210, find (LCM × HCF) / (30 + 42).",
+      "options": [
+        "30",
+        "17",
+        "42",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM×HCF = 30×42 = 1260. Step 2: 1260/(72) = 17.",
+      "trick": "LCM×HCF = product.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1104,
+      "difficulty": "hard",
+      "question": "HCF of 672 and 900 is:",
+      "options": [
+        "6",
+        "12",
+        "12",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: HCF(672,900) = 12.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "The greatest number that divides 75 and 90 exactly is:",
+      "options": [
+        "15",
+        "30",
+        "5",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 15.",
+      "trick": "HCF divides both.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Find the least square tile size (cm) to pave a floor 24 cm by 36 cm without cutting.",
+      "options": [
+        "72",
+        "24",
+        "36",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need LCM(24,36) = 72 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 169, the other is 221. Find |a − b|.",
+      "options": [
+        "30",
+        "4",
+        "13",
+        "221"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Numbers are 13×13 and 13×17. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Find the HCF of 33 and 53.",
+      "options": [
+        "1749",
+        "3",
+        "1",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Factors of 33 and 53. Step 2: HCF = 1.",
+      "trick": "Use prime factorisation or Euclid.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find the LCM of 43 and 62.",
+      "options": [
+        "105",
+        "1333",
+        "1",
+        "2666"
+      ],
+      "answer": "D",
+      "solution": "Step 1: HCF = 1. Step 2: LCM = (43×62)/HCF = 2666.",
+      "trick": "LCM = ab/HCF.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Find the LCM of 13, 15 and 19.",
+      "options": [
+        "3705",
+        "195",
+        "1852",
+        "1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: LCM stepwise. Step 2: LCM = 3705.",
+      "trick": "LCM of three numbers.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "HCF of 66 and 92 is:",
+      "options": [
+        "6",
+        "2",
+        "12",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF(66,92) = 2.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Three numbers 33, 44, 55 are in ratio 3:4:5. Their HCF is:",
+      "options": [
+        "22",
+        "3",
+        "11",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Numbers are 11×3, 11×4, 11×5. Step 2: HCF = 11.",
+      "trick": "Common multiplier is HCF.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "If LCM of 32 and 45 is 1440, find (LCM × HCF) / (32 + 45).",
+      "options": [
+        "32",
+        "45",
+        "1",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: LCM×HCF = 32×45 = 1440. Step 2: 1440/(77) = 18.",
+      "trick": "LCM×HCF = product.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1114,
+      "difficulty": "hard",
+      "question": "HCF of 678 and 908 is:",
+      "options": [
+        "2",
+        "6",
+        "12",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: HCF(678,908) = 2.",
+      "trick": "Euclid's algorithm.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "The greatest number that divides 80 and 95 exactly is:",
+      "options": [
+        "15",
+        "5",
+        "30",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: HCF = 5.",
+      "trick": "HCF divides both.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Find the least square tile size (cm) to pave a floor 26 cm by 39 cm without cutting.",
+      "options": [
+        "26",
+        "39",
+        "78",
+        "13"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Need LCM(26,39) = 78 cm tile.",
+      "trick": "Square tile = LCM of sides.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "The HCF of two numbers is 13 and their LCM is 455. If one number is 182, the other is 234. Find |a − b|.",
+      "options": [
+        "32",
+        "13",
+        "126",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Numbers are 13×14 and 13×18. Step 2: Difference of co-prime parts = 4.",
+      "trick": "Co-prime parts differ.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

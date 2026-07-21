@@ -1,0 +1,402 @@
+[
+  {
+    "id": "statements-conclusions-q1",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Statement: 'All students must wear ID cards on campus.' Conclusion: Students are expected to carry ID cards on campus.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Data insufficient"
+    ],
+    "answer": "A",
+    "solution": "This is a direct restatement of the rule, so it follows.",
+    "trick": "Restatement follows.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q2",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Statement: 'The company launched a new phone yesterday.' Conclusion: The new phone will be a best-seller.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Both"
+    ],
+    "answer": "B",
+    "solution": "Success is a prediction not supported by the statement.",
+    "trick": "Future prediction ⇒ reject.",
+    "type": "Extra assumption",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q3",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Statement: 'Some employees attended the training.' Conclusion: All employees are interested in training.",
+    "options": [
+      "Follows",
+      "Either",
+      "Does not follow",
+      "Both"
+    ],
+    "answer": "C",
+    "solution": "'Some' does not justify 'all'.",
+    "trick": "Extreme wording ⇒ reject.",
+    "type": "Extreme wording",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q4",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Statement: 'Keep this medicine out of the reach of children.' Conclusion: The medicine may be harmful to children.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "The warning implies a risk to children — a necessary reason for the instruction.",
+    "trick": "Warning implies its purpose.",
+    "type": "Notice implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q5",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Statement: 'Vegetable prices rose sharply this month.' Conclusion: Vegetables are costlier now than earlier this month.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "A direct restatement of the price rise.",
+    "trick": "Paraphrase follows.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q6",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Statement: 'The library will remain open till 10 pm during exams.' Conclusion: The library will be open at 9 pm during exams.",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Open till 10 pm means it is open at 9 pm.",
+    "trick": "Contained-time follows.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q7",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Statement: 'Due to heavy rain, the match was postponed.' Conclusion: Rain can affect outdoor matches.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Follows",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "The statement itself shows rain affecting a match, supporting the general point.",
+    "trick": "Instance supports the mild generalisation.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q8",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Statement: 'The new policy reduced office paper use by 30%.' Conclusion: The office used less paper after the policy.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "A 30% reduction means less paper — a restatement.",
+    "trick": "Reduction = less.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q9",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Statement: 'Only candidates above 18 can vote.' Conclusion: A 16-year-old cannot vote.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "'Only above 18' excludes those under 18, so a 16-year-old cannot vote.",
+    "trick": "'Only' sets a strict boundary.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q10",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Statement: 'Our product is used by many households.' Conclusion: The product is the best in the market.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Both"
+    ],
+    "answer": "B",
+    "solution": "'Many use it' does not prove 'best' — an extreme, unsupported claim.",
+    "trick": "'Best' rarely follows.",
+    "type": "Extreme wording",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q11",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Statement: 'The government increased the health budget this year.' Conclusion: Health services will surely improve.",
+    "options": [
+      "Follows",
+      "Either",
+      "Does not follow",
+      "Both"
+    ],
+    "answer": "C",
+    "solution": "More budget doesn't guarantee improvement; it needs extra assumptions.",
+    "trick": "'Surely improve' overreaches.",
+    "type": "Extra assumption",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q12",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Statement: 'Wear a helmet while riding a two-wheeler.' Conclusion: Helmets can improve rider safety.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "The advice implies helmets aid safety — its necessary purpose.",
+    "trick": "Advice implies its benefit.",
+    "type": "Notice implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q13",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Statement: 'Rahul scored the highest marks in his class.' Conclusion: No one in his class scored more than Rahul.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "Highest means no classmate scored more — a restatement.",
+    "trick": "'Highest' = none above.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q14",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Statement: 'The train was delayed by two hours due to a signal fault.' Conclusion: All trains on that route are always late.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Both"
+    ],
+    "answer": "B",
+    "solution": "One delayed train doesn't imply 'all always late' — extreme generalisation.",
+    "trick": "'Always/all' from one case ⇒ reject.",
+    "type": "Extreme wording",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q15",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Statement: 'The school introduced online classes so that students in remote areas can study.' Conclusions: I. Some students live in remote areas. II. Online classes can reach remote students. Which follows?",
+    "options": [
+      "Only I",
+      "Only II",
+      "Both follow",
+      "Neither"
+    ],
+    "answer": "C",
+    "solution": "The stated purpose assumes remote students exist (I) and that online classes reach them (II); both are supported.",
+    "trick": "Purpose supports both premises.",
+    "type": "Two conclusions",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q16",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Statement: 'Prices of petrol have risen for the third straight month.' Conclusions: I. Petrol is costlier than three months ago. II. Petrol prices will fall next month. Which follows?",
+    "options": [
+      "Only II",
+      "Both",
+      "Neither",
+      "Only I"
+    ],
+    "answer": "D",
+    "solution": "I restates the sustained rise; II is an unsupported future prediction.",
+    "trick": "Past trend ≠ future forecast.",
+    "type": "Two conclusions",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q17",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Statement: 'To reduce accidents, the city lowered the speed limit on highways.' Conclusion: High speed was linked to accidents in the city.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "Lowering speed to cut accidents implies speed was a factor — the reasoning behind the action.",
+    "trick": "The remedy reveals the cause assumed.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q18",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Statement: 'Most of the participants completed the marathon.' Conclusions: I. Some participants did not complete it. II. Every participant completed it. Which follows?",
+    "options": [
+      "Only II",
+      "Only I",
+      "Both",
+      "Neither"
+    ],
+    "answer": "B",
+    "solution": "'Most' means not all, so some did not complete (I); II contradicts 'most'.",
+    "trick": "'Most' implies 'not all'.",
+    "type": "Two conclusions",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q19",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Statement: 'The bakery sells out of bread by noon every day.' Conclusion: Demand for the bakery's bread is high.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Follows",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "Consistently selling out by noon reasonably indicates high demand.",
+    "trick": "Sell-out pattern implies demand.",
+    "type": "Direct implication",
+    "active": true
+  },
+  {
+    "id": "statements-conclusions-q20",
+    "topic": "statements-conclusions",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Statement: 'A notice says: Do not use the lift during a fire; use the stairs.' Conclusions: I. Lifts may be unsafe during a fire. II. Stairs are a safer option during a fire. Which follows?",
+    "options": [
+      "Only I",
+      "Only II",
+      "Neither",
+      "Both follow"
+    ],
+    "answer": "D",
+    "solution": "The instruction implies lifts are unsafe (I) and stairs are the safer alternative (II) during a fire.",
+    "trick": "Safety notice implies both the risk and the alternative.",
+    "type": "Two conclusions",
+    "active": true
+  }
+]

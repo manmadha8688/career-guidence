@@ -1,0 +1,402 @@
+[
+  {
+    "id": "divisibility-rules-q1",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Which of the following numbers is divisible by 3?",
+    "options": [
+      "237",
+      "124",
+      "451",
+      "518"
+    ],
+    "answer": "A",
+    "solution": "For 3, the digit sum must be a multiple of 3. 237 → 2+3+7 = 12, which is 3 × 4. (124 → 7, 451 → 10, 518 → 14, none divisible by 3.)",
+    "trick": "Add the digits: 2+3+7 = 12 → divisible by 3.",
+    "type": "Apply one rule (is N divisible by d?)",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q2",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Which of the following numbers is divisible by 4?",
+    "options": [
+      "1234",
+      "5316",
+      "3418",
+      "2722"
+    ],
+    "answer": "B",
+    "solution": "For 4, look at the last two digits. 5316 → 16, and 16 ÷ 4 = 4. (34, 18 and 22 are not multiples of 4.)",
+    "trick": "Last two digits ÷ 4: 16 ÷ 4 works.",
+    "type": "Apply one rule (is N divisible by d?)",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q3",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Which of the following numbers is NOT divisible by 5?",
+    "options": [
+      "340",
+      "725",
+      "432",
+      "510"
+    ],
+    "answer": "C",
+    "solution": "For 5, the last digit must be 0 or 5. 432 ends in 2, so it is not divisible by 5. (340, 725 and 510 all end in 0 or 5.)",
+    "trick": "Last digit not 0 or 5 → not divisible by 5.",
+    "type": "Apply one rule (is N divisible by d?)",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q4",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Which of the following numbers is divisible by 9?",
+    "options": [
+      "3412",
+      "5123",
+      "7100",
+      "6453"
+    ],
+    "answer": "D",
+    "solution": "For 9, the digit sum must be a multiple of 9. 6453 → 6+4+5+3 = 18 = 9 × 2. (The others give 10, 11 and 8.)",
+    "trick": "Digit sum 18 → divisible by 9.",
+    "type": "Apply one rule (is N divisible by d?)",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q5",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Which of the following numbers is divisible by 10?",
+    "options": [
+      "450",
+      "205",
+      "515",
+      "342"
+    ],
+    "answer": "A",
+    "solution": "A number is divisible by 10 only if its last digit is 0. 450 ends in 0. (205 and 515 end in 5, 342 ends in 2.)",
+    "trick": "Ends in 0 → divisible by 10.",
+    "type": "Apply one rule (is N divisible by d?)",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q6",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "What is the smallest digit that can replace * in 4*1 to make it divisible by 3?",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "0"
+    ],
+    "answer": "B",
+    "solution": "The digit sum is 4 + * + 1 = 5 + *, which must be a multiple of 3. The next multiple of 3 after 5 is 6, so * = 1 (giving 411, sum 6).",
+    "trick": "5 + * = next multiple of 3 = 6 → * = 1.",
+    "type": "Find the missing digit",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q7",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Which of the following numbers is divisible by 11?",
+    "options": [
+      "3456",
+      "1290",
+      "2728",
+      "4321"
+    ],
+    "answer": "C",
+    "solution": "For 11, take (odd-position digits) − (even-position digits) from the right. 2728 → (8 + 7) − (2 + 2) = 15 − 4 = 11, a multiple of 11. (The others give differences 2, 8 and 2.)",
+    "trick": "Alternating sum 15 − 4 = 11 → divisible by 11.",
+    "type": "Divisibility by 11",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q8",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "If the number 34*5 is divisible by 9, what is the value of *?",
+    "options": [
+      "3",
+      "9",
+      "0",
+      "6"
+    ],
+    "answer": "D",
+    "solution": "For 9, the digit sum must be a multiple of 9. Sum = 3 + 4 + * + 5 = 12 + *. The next multiple of 9 is 18, so * = 6 (giving 3465).",
+    "trick": "12 + * = 18 → * = 6.",
+    "type": "Find the missing digit",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q9",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Which of the following numbers is divisible by 12?",
+    "options": [
+      "7920",
+      "5314",
+      "4627",
+      "3395"
+    ],
+    "answer": "A",
+    "solution": "12 = 3 × 4 (coprime), so test both. 7920 → digit sum 18 (÷3 ✓) and last two digits 20 (÷4 ✓) → divisible by 12. (5314 fails ÷4, 4627 is odd, 3395 fails ÷3 and ÷4.)",
+    "trick": "Test 3 and 4: sum 18 and tail 20 both pass.",
+    "type": "Divisibility by a composite number",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q10",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "What is the remainder when 3,749 is divided by 11?",
+    "options": [
+      "2",
+      "9",
+      "0",
+      "5"
+    ],
+    "answer": "B",
+    "solution": "The remainder by 11 equals the alternating digit sum from the right: 9 − 4 + 7 − 3 = 9. Since 0 ≤ 9 < 11, the remainder is 9. (Check: 11 × 340 = 3740, and 3749 − 3740 = 9.)",
+    "trick": "Alternating sum from units: 9 − 4 + 7 − 3 = 9 → remainder 9.",
+    "type": "Remainder via digit-sum / alternating-sum",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q11",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "If the number 6*2 is divisible by 11, what is the value of *?",
+    "options": [
+      "4",
+      "2",
+      "8",
+      "6"
+    ],
+    "answer": "C",
+    "solution": "From the right, the alternating sum is 2 − * + 6 = 8 − *, which must be 0 or a multiple of 11. Setting 8 − * = 0 gives * = 8 (giving 682 = 11 × 62).",
+    "trick": "8 − * = 0 → * = 8.",
+    "type": "Find the missing digit",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q12",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "What is the remainder when 8,237 is divided by 9?",
+    "options": [
+      "0",
+      "4",
+      "9",
+      "2"
+    ],
+    "answer": "D",
+    "solution": "The remainder by 9 equals the digit sum mod 9. 8 + 2 + 3 + 7 = 20 → 2 + 0 = 2. Since 2 < 9, the remainder is 2.",
+    "trick": "Digit sum 20 → 2+0 = 2 → remainder 2.",
+    "type": "Remainder via digit-sum / alternating-sum",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q13",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Which of the following numbers is divisible by 8?",
+    "options": [
+      "13528",
+      "24500",
+      "33612",
+      "41118"
+    ],
+    "answer": "A",
+    "solution": "For 8, look at the last three digits. 13528 → 528, and 528 ÷ 8 = 66. (500, 612 and 118 are not multiples of 8.)",
+    "trick": "Last three digits ÷ 8: 528 ÷ 8 = 66.",
+    "type": "Apply one rule (is N divisible by d?)",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q14",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Which of the following numbers is divisible by 7?",
+    "options": [
+      "1073",
+      "1071",
+      "1074",
+      "1072"
+    ],
+    "answer": "B",
+    "solution": "Use the ÷7 rule (subtract twice the last digit). 1071 → drop 1 → 107 − 2×1 = 105 → drop 5 → 10 − 2×5 = 0, which is divisible by 7. So 1071 = 7 × 153. (The others leave a remainder.)",
+    "trick": "1071 → 105 → 0 (chop by −2×last digit) → divisible by 7.",
+    "type": "Divisibility by 7 or 13",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q15",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "The number 5*2 is divisible by 6. What is the largest possible value of *?",
+    "options": [
+      "2",
+      "5",
+      "8",
+      "6"
+    ],
+    "answer": "C",
+    "solution": "6 = 2 × 3. The number ends in 2, so it is always even (÷2 ✓). For ÷3, the digit sum 5 + * + 2 = 7 + * must be a multiple of 3, so * can be 2, 5 or 8. The largest single digit that works is 8 (giving 582 = 6 × 97).",
+    "trick": "Even already; need 7 + * ÷ 3 → largest * = 8.",
+    "type": "Find the missing digit",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q16",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Is 8,536 divisible by 88?",
+    "options": [
+      "No — it fails the test for 8",
+      "No — it fails the test for 11",
+      "No — it fails both tests",
+      "Yes — it passes both 8 and 11"
+    ],
+    "answer": "D",
+    "solution": "88 = 8 × 11 (coprime). Test 8: last three digits 536, and 536 ÷ 8 = 67 ✓. Test 11: (6 + 5) − (3 + 8) = 11 − 11 = 0 ✓. Both pass, so 8536 is divisible by 88 (8536 = 88 × 97).",
+    "trick": "Split 88 = 8 × 11; 536 ÷ 8 and alternating sum 0 both pass.",
+    "type": "Divisibility by a composite number",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q17",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "For what digit x is the number 9,42,x53 divisible by 11?",
+    "options": [
+      "9",
+      "0",
+      "2",
+      "7"
+    ],
+    "answer": "A",
+    "solution": "Write the digits 9 4 2 x 5 3 and number positions from the right: odd positions (1st,3rd,5th) = 3 + x + 4 = 7 + x; even positions (2nd,4th,6th) = 5 + 2 + 9 = 16. The difference (7 + x) − 16 = x − 9 must be 0 or a multiple of 11, so x = 9 (giving 942953 = 11 × 85723).",
+    "trick": "(7 + x) − 16 = 0 → x = 9.",
+    "type": "Divisibility by 11",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q18",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "What is the remainder when 444444 is divided by 9?",
+    "options": [
+      "0",
+      "6",
+      "3",
+      "4"
+    ],
+    "answer": "B",
+    "solution": "The remainder by 9 equals the digit sum mod 9. There are six 4s: 4 × 6 = 24 → 2 + 4 = 6. Since 6 < 9, the remainder is 6.",
+    "trick": "Digit sum 6 × 4 = 24 → 2+4 = 6 → remainder 6.",
+    "type": "Remainder via digit-sum / alternating-sum",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q19",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Which of the following numbers is divisible by 13?",
+    "options": [
+      "2198",
+      "2195",
+      "2197",
+      "2200"
+    ],
+    "answer": "C",
+    "solution": "Use the ÷13 rule (add 4 × the last digit). 2197 → drop 7 → 219 + 4×7 = 247 → drop 7 → 24 + 4×7 = 52, and 52 ÷ 13 = 4. So 2197 is divisible by 13 (2197 = 13³). (The others leave a remainder.)",
+    "trick": "2197 → 247 → 52 (chop by +4×last digit) → divisible by 13.",
+    "type": "Divisibility by 7 or 13",
+    "active": true
+  },
+  {
+    "id": "divisibility-rules-q20",
+    "topic": "divisibility-rules",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Which of the following numbers is exactly divisible by 7?",
+    "options": [
+      "3585",
+      "3586",
+      "3583",
+      "3584"
+    ],
+    "answer": "D",
+    "solution": "Use the ÷7 rule. 3584 → drop 4 → 358 − 2×4 = 350 → drop 0 → 35 − 0 = 35, and 35 ÷ 7 = 5. So 3584 = 7 × 512. (The others leave a remainder.)",
+    "trick": "3584 → 350 → 35 (chop by −2×last digit) → divisible by 7.",
+    "type": "Divisibility by 7 or 13",
+    "active": true
+  }
+]

@@ -1,22 +1,16 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Zap, CheckCircle2, Eye, EyeOff } from 'lucide-react'
+import { Zap, CheckCircle2 } from 'lucide-react'
 import { DIFFICULTY_META } from './aptitudeData'
 
 const EASE = [0.16, 1, 0.3, 1]
 
-// Shared "Practice It" question set — self-test cards with per-question reveal.
-// Used inline as the topic page's Practice tab AND by the standalone questions
-// route, so the solve experience stays identical everywhere.
+// Shared "Practice It" question set — tap an option to reveal answer + solution.
 export default function AptitudePracticeList({ questions = [], emptyAction = null }) {
-  const [revealed, setRevealed] = useState({})
+  const [picked, setPicked] = useState({})
 
-  const toggle = (id) => setRevealed(r => ({ ...r, [id]: !r[id] }))
-  const revealedCount = Object.values(revealed).filter(Boolean).length
-  const allOpen = questions.length > 0 && revealedCount === questions.length
-  const toggleAll = () => {
-    if (allOpen) setRevealed({})
-    else setRevealed(Object.fromEntries(questions.map((q, i) => [q.id || i, true])))
+  const selectOption = (id, letter) => {
+    setPicked(prev => (prev[id] ? prev : { ...prev, [id]: letter }))
   }
 
   if (questions.length === 0) {
@@ -34,15 +28,14 @@ export default function AptitudePracticeList({ questions = [], emptyAction = nul
     <div className="apt-practice-block">
       <div className="apt-practice-block__bar">
         <span className="apt-practice-block__count">{questions.length} question{questions.length !== 1 ? 's' : ''}</span>
-        <button type="button" className="apt-practice__toggle-all" onClick={toggleAll}>
-          {allOpen ? <><EyeOff size={14} /> Hide all answers</> : <><Eye size={14} /> Reveal all answers</>}
-        </button>
+        <span className="apt-practice-block__hint">Tap an option to check your answer</span>
       </div>
 
       <ol className="apt-q-list">
         {questions.map((q, i) => {
           const id = q.id || i
-          const isOpen = !!revealed[id]
+          const chosen = picked[id]
+          const answered = chosen !== undefined
           const diff = DIFFICULTY_META[q.difficulty] || DIFFICULTY_META.easy
           return (
             <motion.li
@@ -61,23 +54,34 @@ export default function AptitudePracticeList({ questions = [], emptyAction = nul
               <div className="apt-q__options">
                 {(q.options || []).map((opt, oi) => {
                   const letter = String.fromCharCode(65 + oi)
-                  const isAns = isOpen && letter === q.answer
+                  const isCorrect = letter === q.answer
+                  const isChosen = chosen === letter
+                  let optClass = 'apt-q__opt'
+                  if (answered) {
+                    if (isCorrect) optClass += ' is-answer'
+                    else if (isChosen) optClass += ' is-wrong'
+                  } else if (isChosen) {
+                    optClass += ' is-selected'
+                  }
                   return (
-                    <div key={oi} className={`apt-q__opt${isAns ? ' is-answer' : ''}`}>
+                    <button
+                      key={oi}
+                      type="button"
+                      className={optClass}
+                      disabled={answered}
+                      onClick={() => selectOption(id, letter)}
+                      aria-pressed={isChosen}
+                    >
                       <span className="apt-q__opt-letter">{letter}</span>
                       <span className="apt-q__opt-text">{opt}</span>
-                      {isAns && <CheckCircle2 size={15} className="apt-q__opt-tick" />}
-                    </div>
+                      {answered && isCorrect && <CheckCircle2 size={15} className="apt-q__opt-tick" />}
+                    </button>
                   )
                 })}
               </div>
 
-              <button type="button" className="apt-q__reveal" onClick={() => toggle(id)}>
-                {isOpen ? <><EyeOff size={14} /> Hide solution</> : <><Eye size={14} /> Reveal answer &amp; solution</>}
-              </button>
-
               <AnimatePresence initial={false}>
-                {isOpen && (
+                {answered && (
                   <motion.div
                     className="apt-q__sol"
                     initial={{ opacity: 0, height: 0 }}
@@ -85,7 +89,6 @@ export default function AptitudePracticeList({ questions = [], emptyAction = nul
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.25, ease: EASE }}
                   >
-                    <p className="apt-q__answer"><strong>Answer:</strong> {q.answer}</p>
                     {q.solution && <p className="apt-q__sol-text">{q.solution}</p>}
                     {q.trick && (
                       <p className="apt-q__trick"><Zap size={14} /> <span>{q.trick}</span></p>

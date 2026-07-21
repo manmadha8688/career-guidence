@@ -1,0 +1,402 @@
+[
+  {
+    "id": "formal-informal-sentences-q1",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "'Can't make it, gotta run!' is:",
+    "options": [
+      "informal",
+      "formal",
+      "legal",
+      "academic"
+    ],
+    "answer": "A",
+    "solution": "Contractions ('Can't') and slang ('gotta') mark it informal.",
+    "trick": "Contractions + slang = informal.",
+    "type": "Identify register",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q2",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "'I regret that I will be unable to attend.' is:",
+    "options": [
+      "informal",
+      "formal",
+      "slang",
+      "rude"
+    ],
+    "answer": "B",
+    "solution": "Full forms and courteous wording make it formal.",
+    "trick": "No contractions + polite = formal.",
+    "type": "Identify register",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q3",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The formal form of 'don't' is:",
+    "options": [
+      "dont",
+      "do'nt",
+      "do not",
+      "does not"
+    ],
+    "answer": "C",
+    "solution": "'Don't' expands to 'do not'.",
+    "trick": "Expand contractions for formal.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q4",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "The formal word for 'kids' is:",
+    "options": [
+      "kid",
+      "childs",
+      "youngsters",
+      "children"
+    ],
+    "answer": "D",
+    "solution": "'Children' is the correct formal plural.",
+    "trick": "Casual noun → precise noun.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q5",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Best formal version of 'Thanks a lot for the stuff.'",
+    "options": [
+      "Thank you for the materials.",
+      "Thanks for stuff.",
+      "Thx for the items.",
+      "Cheers for that."
+    ],
+    "answer": "A",
+    "solution": "'Thank you' + precise 'materials' makes it formal.",
+    "trick": "Swap every casual marker at once.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q6",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "The formal single verb for 'put off' is:",
+    "options": [
+      "put away",
+      "postpone",
+      "put up",
+      "put on"
+    ],
+    "answer": "B",
+    "solution": "'Put off' (delay) becomes 'postpone'.",
+    "trick": "Phrasal verb → single verb.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q7",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "The formal single verb for 'find out' is:",
+    "options": [
+      "look",
+      "find",
+      "discover",
+      "search out"
+    ],
+    "answer": "C",
+    "solution": "'Find out' becomes 'discover'.",
+    "trick": "Replace phrasal with one word.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q8",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "The correct greeting for an unknown official is:",
+    "options": [
+      "Hey!",
+      "Yo,",
+      "Hi there,",
+      "Dear Sir/Madam,"
+    ],
+    "answer": "D",
+    "solution": "'Dear Sir/Madam,' is the standard formal greeting for an unknown recipient.",
+    "trick": "Unknown + formal → Dear Sir/Madam.",
+    "type": "Choose appropriate",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q9",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Which of these is an informal marker?",
+    "options": [
+      "a contraction like 'I'm'",
+      "passive voice",
+      "a full stop",
+      "a capital letter"
+    ],
+    "answer": "A",
+    "solution": "Contractions are a hallmark of informal writing.",
+    "trick": "Contractions signal informality.",
+    "type": "Identify register",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q10",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Make formal: 'Gimme a reply soon.'",
+    "options": [
+      "Gimme a reply.",
+      "I would appreciate an early reply.",
+      "Reply fast pls.",
+      "Send reply ASAP!"
+    ],
+    "answer": "B",
+    "solution": "A polite, complete sentence with 'would appreciate' is formal.",
+    "trick": "Use polite modals for formal.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q11",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "The formal single verb for 'ask for' is:",
+    "options": [
+      "ask",
+      "beg",
+      "request",
+      "ask out"
+    ],
+    "answer": "C",
+    "solution": "'Ask for' becomes 'request'.",
+    "trick": "Phrasal → single verb.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q12",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Which sentence is the MOST formal?",
+    "options": [
+      "Wanna meet up?",
+      "Let's catch up!",
+      "Meet me, ok?",
+      "Would it be possible to meet?"
+    ],
+    "answer": "D",
+    "solution": "'Would it be possible to meet?' is complete and polite.",
+    "trick": "Polite modal question = formal.",
+    "type": "Choose appropriate",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q13",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Make informal: 'I would be grateful if you could inform me.'",
+    "options": [
+      "Could you let me know?",
+      "Kindly intimate me.",
+      "I require information.",
+      "Inform me forthwith."
+    ],
+    "answer": "A",
+    "solution": "'Could you let me know?' is the natural informal version.",
+    "trick": "Everyday verbs + short = informal.",
+    "type": "Formal to informal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q14",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "The formal single verb for 'go up' is:",
+    "options": [
+      "go high",
+      "increase",
+      "go over",
+      "grow up"
+    ],
+    "answer": "B",
+    "solution": "'Go up' becomes 'increase'.",
+    "trick": "Phrasal → single verb.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q15",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Which sentence is informal?",
+    "options": [
+      "We are unable to attend.",
+      "Please find attached.",
+      "No worries, catch ya later!",
+      "Kindly confirm."
+    ],
+    "answer": "C",
+    "solution": "'No worries, catch ya later!' uses slang and is informal.",
+    "trick": "Spot the slang.",
+    "type": "Identify register",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q16",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "The best formal request is:",
+    "options": [
+      "Send it now.",
+      "I need it now!",
+      "Give me the file.",
+      "Could you please share the file?"
+    ],
+    "answer": "D",
+    "solution": "A polite modal request is the formal choice.",
+    "trick": "'Could you please…' = polite/formal.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q17",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The formal phrase for 'a lot of' is:",
+    "options": [
+      "a great deal of",
+      "loads of",
+      "tons of",
+      "heaps of"
+    ],
+    "answer": "A",
+    "solution": "'A great deal of' is the formal equivalent.",
+    "trick": "Casual quantity words → 'a great deal of'.",
+    "type": "Informal to formal",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q18",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Which is appropriate when texting a friend (informal)?",
+    "options": [
+      "Dear Sir, I write to inform you.",
+      "Hey! Free this weekend?",
+      "I hereby request your presence.",
+      "Kindly revert."
+    ],
+    "answer": "B",
+    "solution": "A friendly, casual line suits a friend.",
+    "trick": "Match register to audience.",
+    "type": "Choose appropriate",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q19",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Which sentence contains slang?",
+    "options": [
+      "Please review the report.",
+      "We appreciate your time.",
+      "This is gonna be lit!",
+      "Regards, Anil."
+    ],
+    "answer": "C",
+    "solution": "'gonna' and 'lit' are slang.",
+    "trick": "Slang = informal red flag.",
+    "type": "Identify register",
+    "active": true
+  },
+  {
+    "id": "formal-informal-sentences-q20",
+    "topic": "formal-informal-sentences",
+    "category": "verbal",
+    "group": "communication",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "The formal replacement for 'help out' is:",
+    "options": [
+      "help up",
+      "helping",
+      "help off",
+      "assist"
+    ],
+    "answer": "D",
+    "solution": "'Help out' becomes 'assist'.",
+    "trick": "Phrasal → single verb.",
+    "type": "Informal to formal",
+    "active": true
+  }
+]

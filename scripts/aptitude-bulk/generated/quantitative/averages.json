@@ -1,0 +1,1207 @@
+{
+  "topic": "averages",
+  "category": "quantitative",
+  "group": "averages-ages",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Average of 10, 12, 14, 16, 18?",
+      "options": [
+        "14",
+        "70",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 70. Step 2: /5 = 14.",
+      "trick": "Sum/count.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Average of 10 numbers is 40. Sum?",
+      "options": [
+        "50",
+        "400",
+        "360",
+        "440"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 40×10 = 400.",
+      "trick": "Sum = avg × n.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "10 numbers avg 50. Add 60. New average?",
+      "options": [
+        "50",
+        "60",
+        "50.9",
+        "55.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (50×10+60)/11 = 50.9.",
+      "trick": "Update sum then divide.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Average of 30 and 50?",
+      "options": [
+        "80",
+        "20",
+        "30",
+        "40.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (30+50)/2 = 40.0.",
+      "trick": "AM of two numbers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Cricket avg 5 after 10 innings (50 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "555",
+        "55",
+        "5",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 50 = 555.",
+      "trick": "Target total − current.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Class: 3 sections avg 50, 2 sections avg 60. Overall average?",
+      "options": [
+        "55",
+        "54",
+        "50",
+        "60"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (150+120)/5 = 54.",
+      "trick": "Weighted average.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "8 numbers average 35. One number 20 removed. New average?",
+      "options": [
+        "35",
+        "20",
+        "37.1",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 280. New sum = 260. /7 = 37.1.",
+      "trick": "Subtract outlier.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Average of first and last of 11 consecutive integers starting 5?",
+      "options": [
+        "5",
+        "25",
+        "11",
+        "15.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 25. Avg first+last = (5+25)/2 = 15.0.",
+      "trick": "AM of AP endpoints.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Average of 11, 13, 15, 17, 19?",
+      "options": [
+        "15",
+        "75",
+        "15",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 75. Step 2: /5 = 15.",
+      "trick": "Sum/count.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Average of 11 numbers is 41. Sum?",
+      "options": [
+        "52",
+        "451",
+        "410",
+        "492"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 41×11 = 451.",
+      "trick": "Sum = avg × n.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "10 numbers avg 51. Add 61. New average?",
+      "options": [
+        "51",
+        "61",
+        "51.9",
+        "56.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (51×10+61)/11 = 51.9.",
+      "trick": "Update sum then divide.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Average of 31 and 51?",
+      "options": [
+        "82",
+        "20",
+        "31",
+        "41.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (31+51)/2 = 41.0.",
+      "trick": "AM of two numbers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Cricket avg 5 after 10 innings (55 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "550",
+        "55",
+        "5",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 55 = 550.",
+      "trick": "Target total − current.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1051,
+      "difficulty": "hard",
+      "question": "136 numbers average 163. One number 148 removed. New average?",
+      "options": [
+        "163",
+        "163.1",
+        "148",
+        "158"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 22168. New sum = 22020. /135 = 163.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "9 numbers average 36. One number 21 removed. New average?",
+      "options": [
+        "36",
+        "21",
+        "37.9",
+        "31"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 324. New sum = 303. /8 = 37.9.",
+      "trick": "Subtract outlier.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Average of first and last of 11 consecutive integers starting 6?",
+      "options": [
+        "6",
+        "27",
+        "11",
+        "16.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 27. Avg first+last = (6+27)/2 = 16.5.",
+      "trick": "AM of AP endpoints.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Average of 12, 14, 16, 18, 20?",
+      "options": [
+        "16",
+        "80",
+        "16",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 80. Step 2: /5 = 16.",
+      "trick": "Sum/count.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Average of 12 numbers is 42. Sum?",
+      "options": [
+        "54",
+        "504",
+        "462",
+        "546"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 42×12 = 504.",
+      "trick": "Sum = avg × n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "10 numbers avg 52. Add 62. New average?",
+      "options": [
+        "52",
+        "62",
+        "52.9",
+        "57.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (52×10+62)/11 = 52.9.",
+      "trick": "Update sum then divide.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Average of 32 and 52?",
+      "options": [
+        "84",
+        "20",
+        "32",
+        "42.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (32+52)/2 = 42.0.",
+      "trick": "AM of two numbers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Cricket avg 6 after 10 innings (60 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "545",
+        "55",
+        "6",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 60 = 545.",
+      "trick": "Target total − current.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1059,
+      "difficulty": "hard",
+      "question": "137 numbers average 164. One number 149 removed. New average?",
+      "options": [
+        "164",
+        "164.1",
+        "149",
+        "159"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 22468. New sum = 22319. /136 = 164.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "10 numbers average 37. One number 22 removed. New average?",
+      "options": [
+        "37",
+        "22",
+        "38.7",
+        "32"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 370. New sum = 348. /9 = 38.7.",
+      "trick": "Subtract outlier.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Average of first and last of 11 consecutive integers starting 7?",
+      "options": [
+        "7",
+        "29",
+        "11",
+        "18.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 29. Avg first+last = (7+29)/2 = 18.0.",
+      "trick": "AM of AP endpoints.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Average of 13, 15, 17, 19, 21?",
+      "options": [
+        "17",
+        "85",
+        "17",
+        "19"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 85. Step 2: /5 = 17.",
+      "trick": "Sum/count.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Average of 13 numbers is 43. Sum?",
+      "options": [
+        "56",
+        "559",
+        "516",
+        "602"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 43×13 = 559.",
+      "trick": "Sum = avg × n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "10 numbers avg 53. Add 63. New average?",
+      "options": [
+        "53",
+        "63",
+        "53.9",
+        "58.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (53×10+63)/11 = 53.9.",
+      "trick": "Update sum then divide.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Average of 33 and 53?",
+      "options": [
+        "86",
+        "20",
+        "33",
+        "43.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (33+53)/2 = 43.0.",
+      "trick": "AM of two numbers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Cricket avg 6 after 10 innings (65 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "540",
+        "55",
+        "6",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 65 = 540.",
+      "trick": "Target total − current.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1067,
+      "difficulty": "hard",
+      "question": "138 numbers average 165. One number 150 removed. New average?",
+      "options": [
+        "165",
+        "165.1",
+        "150",
+        "160"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 22770. New sum = 22620. /137 = 165.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "11 numbers average 38. One number 23 removed. New average?",
+      "options": [
+        "38",
+        "23",
+        "39.5",
+        "33"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 418. New sum = 395. /10 = 39.5.",
+      "trick": "Subtract outlier.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Average of first and last of 11 consecutive integers starting 8?",
+      "options": [
+        "8",
+        "31",
+        "11",
+        "19.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 31. Avg first+last = (8+31)/2 = 19.5.",
+      "trick": "AM of AP endpoints.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Average of 14, 16, 18, 20, 22?",
+      "options": [
+        "18",
+        "90",
+        "18",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 90. Step 2: /5 = 18.",
+      "trick": "Sum/count.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Average of 14 numbers is 44. Sum?",
+      "options": [
+        "58",
+        "616",
+        "572",
+        "660"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 44×14 = 616.",
+      "trick": "Sum = avg × n.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "10 numbers avg 54. Add 64. New average?",
+      "options": [
+        "54",
+        "64",
+        "54.9",
+        "59.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (54×10+64)/11 = 54.9.",
+      "trick": "Update sum then divide.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Average of 34 and 54?",
+      "options": [
+        "88",
+        "20",
+        "34",
+        "44.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (34+54)/2 = 44.0.",
+      "trick": "AM of two numbers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Cricket avg 7 after 10 innings (70 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "535",
+        "55",
+        "7",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 70 = 535.",
+      "trick": "Target total − current.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1075,
+      "difficulty": "hard",
+      "question": "139 numbers average 166. One number 151 removed. New average?",
+      "options": [
+        "166",
+        "166.1",
+        "151",
+        "161"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 23074. New sum = 22923. /138 = 166.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "12 numbers average 39. One number 24 removed. New average?",
+      "options": [
+        "39",
+        "24",
+        "40.4",
+        "34"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 468. New sum = 444. /11 = 40.4.",
+      "trick": "Subtract outlier.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Average of first and last of 11 consecutive integers starting 9?",
+      "options": [
+        "9",
+        "33",
+        "11",
+        "21.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 33. Avg first+last = (9+33)/2 = 21.0.",
+      "trick": "AM of AP endpoints.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Average of 15, 17, 19, 21, 23?",
+      "options": [
+        "19",
+        "95",
+        "19",
+        "21"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 95. Step 2: /5 = 19.",
+      "trick": "Sum/count.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Average of 15 numbers is 45. Sum?",
+      "options": [
+        "60",
+        "675",
+        "630",
+        "720"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 45×15 = 675.",
+      "trick": "Sum = avg × n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "10 numbers avg 55. Add 65. New average?",
+      "options": [
+        "55",
+        "65",
+        "55.9",
+        "60.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (55×10+65)/11 = 55.9.",
+      "trick": "Update sum then divide.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Average of 35 and 55?",
+      "options": [
+        "90",
+        "20",
+        "35",
+        "45.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (35+55)/2 = 45.0.",
+      "trick": "AM of two numbers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Cricket avg 7 after 10 innings (75 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "530",
+        "55",
+        "7",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 75 = 530.",
+      "trick": "Target total − current.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1083,
+      "difficulty": "hard",
+      "question": "140 numbers average 167. One number 152 removed. New average?",
+      "options": [
+        "167",
+        "167.1",
+        "152",
+        "162"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 23380. New sum = 23228. /139 = 167.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "13 numbers average 40. One number 25 removed. New average?",
+      "options": [
+        "40",
+        "25",
+        "41.2",
+        "35"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 520. New sum = 495. /12 = 41.2.",
+      "trick": "Subtract outlier.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Average of first and last of 11 consecutive integers starting 10?",
+      "options": [
+        "10",
+        "35",
+        "11",
+        "22.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 35. Avg first+last = (10+35)/2 = 22.5.",
+      "trick": "AM of AP endpoints.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Average of 16, 18, 20, 22, 24?",
+      "options": [
+        "20",
+        "100",
+        "20",
+        "22"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 100. Step 2: /5 = 20.",
+      "trick": "Sum/count.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Average of 16 numbers is 46. Sum?",
+      "options": [
+        "62",
+        "736",
+        "690",
+        "782"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 46×16 = 736.",
+      "trick": "Sum = avg × n.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "10 numbers avg 56. Add 66. New average?",
+      "options": [
+        "56",
+        "66",
+        "56.9",
+        "61.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (56×10+66)/11 = 56.9.",
+      "trick": "Update sum then divide.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Average of 36 and 56?",
+      "options": [
+        "92",
+        "20",
+        "36",
+        "46.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (36+56)/2 = 46.0.",
+      "trick": "AM of two numbers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Cricket avg 8 after 10 innings (80 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "525",
+        "55",
+        "8",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 80 = 525.",
+      "trick": "Target total − current.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1091,
+      "difficulty": "hard",
+      "question": "141 numbers average 168. One number 153 removed. New average?",
+      "options": [
+        "168",
+        "168.1",
+        "153",
+        "163"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 23688. New sum = 23535. /140 = 168.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "14 numbers average 41. One number 26 removed. New average?",
+      "options": [
+        "41",
+        "26",
+        "42.2",
+        "36"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 574. New sum = 548. /13 = 42.2.",
+      "trick": "Subtract outlier.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Average of first and last of 11 consecutive integers starting 11?",
+      "options": [
+        "11",
+        "37",
+        "11",
+        "24.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 37. Avg first+last = (11+37)/2 = 24.0.",
+      "trick": "AM of AP endpoints.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Average of 17, 19, 21, 23, 25?",
+      "options": [
+        "21",
+        "105",
+        "21",
+        "23"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 105. Step 2: /5 = 21.",
+      "trick": "Sum/count.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Average of 17 numbers is 47. Sum?",
+      "options": [
+        "64",
+        "799",
+        "752",
+        "846"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 47×17 = 799.",
+      "trick": "Sum = avg × n.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "10 numbers avg 57. Add 67. New average?",
+      "options": [
+        "57",
+        "67",
+        "57.9",
+        "62.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (57×10+67)/11 = 57.9.",
+      "trick": "Update sum then divide.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Average of 37 and 57?",
+      "options": [
+        "94",
+        "20",
+        "37",
+        "47.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (37+57)/2 = 47.0.",
+      "trick": "AM of two numbers.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Cricket avg 8 after 10 innings (85 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "520",
+        "55",
+        "8",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 85 = 520.",
+      "trick": "Target total − current.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1099,
+      "difficulty": "hard",
+      "question": "142 numbers average 169. One number 154 removed. New average?",
+      "options": [
+        "169",
+        "169.1",
+        "154",
+        "164"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 23998. New sum = 23844. /141 = 169.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "15 numbers average 42. One number 27 removed. New average?",
+      "options": [
+        "42",
+        "27",
+        "43.1",
+        "37"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 630. New sum = 603. /14 = 43.1.",
+      "trick": "Subtract outlier.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Average of first and last of 11 consecutive integers starting 12?",
+      "options": [
+        "12",
+        "39",
+        "11",
+        "25.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 39. Avg first+last = (12+39)/2 = 25.5.",
+      "trick": "AM of AP endpoints.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Average of 18, 20, 22, 24, 26?",
+      "options": [
+        "22",
+        "110",
+        "22",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 110. Step 2: /5 = 22.",
+      "trick": "Sum/count.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Average of 18 numbers is 48. Sum?",
+      "options": [
+        "66",
+        "864",
+        "816",
+        "912"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 48×18 = 864.",
+      "trick": "Sum = avg × n.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "10 numbers avg 58. Add 68. New average?",
+      "options": [
+        "58",
+        "68",
+        "58.9",
+        "63.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (58×10+68)/11 = 58.9.",
+      "trick": "Update sum then divide.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Average of 38 and 58?",
+      "options": [
+        "96",
+        "20",
+        "38",
+        "48.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (38+58)/2 = 48.0.",
+      "trick": "AM of two numbers.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Cricket avg 9 after 10 innings (90 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "515",
+        "55",
+        "9",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 90 = 515.",
+      "trick": "Target total − current.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1107,
+      "difficulty": "hard",
+      "question": "143 numbers average 170. One number 155 removed. New average?",
+      "options": [
+        "170",
+        "170.1",
+        "155",
+        "165"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 24310. New sum = 24155. /142 = 170.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "16 numbers average 43. One number 28 removed. New average?",
+      "options": [
+        "43",
+        "28",
+        "44.0",
+        "38"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 688. New sum = 660. /15 = 44.0.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Average of first and last of 11 consecutive integers starting 13?",
+      "options": [
+        "13",
+        "41",
+        "11",
+        "27.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 41. Avg first+last = (13+41)/2 = 27.0.",
+      "trick": "AM of AP endpoints.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Average of 19, 21, 23, 25, 27?",
+      "options": [
+        "23",
+        "115",
+        "23",
+        "25"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Sum = 115. Step 2: /5 = 23.",
+      "trick": "Sum/count.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Average of 19 numbers is 49. Sum?",
+      "options": [
+        "68",
+        "931",
+        "882",
+        "980"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 49×19 = 931.",
+      "trick": "Sum = avg × n.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "10 numbers avg 59. Add 69. New average?",
+      "options": [
+        "59",
+        "69",
+        "59.9",
+        "64.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (59×10+69)/11 = 59.9.",
+      "trick": "Update sum then divide.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Average of 39 and 59?",
+      "options": [
+        "98",
+        "20",
+        "39",
+        "49.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (39+59)/2 = 49.0.",
+      "trick": "AM of two numbers.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Cricket avg 9 after 10 innings (95 runs). Runs needed in 11th for avg 55?",
+      "options": [
+        "510",
+        "55",
+        "9",
+        "110"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need 605 total. Step 2: 605 − 95 = 510.",
+      "trick": "Target total − current.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "144 numbers average 171. One number 156 removed. New average?",
+      "options": [
+        "171",
+        "171.1",
+        "156",
+        "166"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Sum = 24624. New sum = 24468. /143 = 171.1.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "17 numbers average 44. One number 29 removed. New average?",
+      "options": [
+        "44",
+        "29",
+        "44.9",
+        "39"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Sum = 748. New sum = 719. /16 = 44.9.",
+      "trick": "Subtract outlier.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Average of first and last of 11 consecutive integers starting 14?",
+      "options": [
+        "14",
+        "43",
+        "11",
+        "28.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last = 43. Avg first+last = (14+43)/2 = 28.5.",
+      "trick": "AM of AP endpoints.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

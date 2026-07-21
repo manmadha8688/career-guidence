@@ -1,0 +1,402 @@
+[
+  {
+    "id": "para-jumbles-q1",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "(i) 'This made them famous.' (ii) 'A band released their first song.' (iii) 'It went viral.' Which should come FIRST?",
+    "options": [
+      "(ii)",
+      "(i)",
+      "(iii)",
+      "none"
+    ],
+    "answer": "A",
+    "solution": "(ii) introduces the topic; (i) 'This' and (iii) 'It' refer back, so they cannot open.",
+    "trick": "Opener has no back-reference words.",
+    "type": "Opening sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q2",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A: 'Sindhu trained hard.' B: 'She won gold.' What is the correct order?",
+    "options": [
+      "BA",
+      "AB",
+      "either",
+      "neither"
+    ],
+    "answer": "B",
+    "solution": "'She' in B refers to Sindhu in A, so the name comes first: AB.",
+    "trick": "Noun before its pronoun.",
+    "type": "Pronoun pairing",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q3",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "P: 'But the plan failed.' Q: 'The team was confident.' Correct order?",
+    "options": [
+      "PQ",
+      "P only",
+      "QP",
+      "cannot decide"
+    ],
+    "answer": "C",
+    "solution": "'But' in P contrasts a positive idea; confidence (Q) comes first, then the failure.",
+    "trick": "'But' follows the opposite idea.",
+    "type": "Connector logic",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q4",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "X: 'Therefore, the road flooded.' Y: 'It rained all night.' Correct order?",
+    "options": [
+      "XY",
+      "X alone",
+      "either",
+      "YX"
+    ],
+    "answer": "D",
+    "solution": "'Therefore' marks a result; the cause (rain, Y) comes before the result (X).",
+    "trick": "Cause before 'therefore' result.",
+    "type": "Connector logic",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q5",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Which sentence can OPEN a paragraph?",
+    "options": [
+      "Deforestation is rising in the region.",
+      "This is why animals fled.",
+      "They then moved north.",
+      "However, it slowed."
+    ],
+    "answer": "A",
+    "solution": "Only the first introduces a topic with no back-reference; the others use This/They/However.",
+    "trick": "Standalone, general = opener.",
+    "type": "Opening sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q6",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Which sentence CANNOT open a paragraph?",
+    "options": [
+      "Solar energy is clean.",
+      "Such steps helped everyone.",
+      "Cities are growing fast.",
+      "Rivers shape the land."
+    ],
+    "answer": "B",
+    "solution": "'Such steps' refers back to steps mentioned earlier, so it cannot be first.",
+    "trick": "'Such/This/These' need a prior sentence.",
+    "type": "Opening sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q7",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Which pair is a 'mandatory pair' (must stay together)?",
+    "options": [
+      "an opening and a closing",
+      "two unrelated facts",
+      "a question and its answer",
+      "none of these"
+    ],
+    "answer": "C",
+    "solution": "A question and its direct answer must be adjacent — a mandatory pair.",
+    "trick": "Q then its A, nothing in between.",
+    "type": "Mandatory pair",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q8",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "In 'He signed it', what must appear BEFORE this sentence?",
+    "options": [
+      "an adjective",
+      "a question",
+      "a conclusion",
+      "a sentence naming the person"
+    ],
+    "answer": "D",
+    "solution": "The pronoun 'He' needs an antecedent — a sentence naming the person.",
+    "trick": "Pronoun needs its noun first.",
+    "type": "Pronoun pairing",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q9",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "(1) 'He studied medicine.' (2) 'Later he opened a clinic.' (3) 'Now he trains interns.' Correct time order?",
+    "options": [
+      "1-2-3",
+      "3-2-1",
+      "2-1-3",
+      "1-3-2"
+    ],
+    "answer": "A",
+    "solution": "'Later' and 'Now' show forward time: studied, then clinic, then trains.",
+    "trick": "Follow the time words.",
+    "type": "Time order",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q10",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A sentence beginning 'Also, it saves money.' should come:",
+    "options": [
+      "first",
+      "after a related point",
+      "at the very start",
+      "before the opener"
+    ],
+    "answer": "B",
+    "solution": "'Also' adds to a previous point, so it follows a related sentence.",
+    "trick": "'Also' = addition, comes after.",
+    "type": "Connector logic",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q11",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Which sentence most likely CLOSES a paragraph?",
+    "options": [
+      "A new policy was proposed.",
+      "The debate began.",
+      "In conclusion, it was adopted.",
+      "Members gathered."
+    ],
+    "answer": "C",
+    "solution": "'In conclusion' signals the closing sentence.",
+    "trick": "'In conclusion/finally' = ending.",
+    "type": "Closing sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q12",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Which sentence should OPEN the paragraph?",
+    "options": [
+      "They agreed to it.",
+      "Hence it passed.",
+      "This vote mattered.",
+      "The council met to vote."
+    ],
+    "answer": "D",
+    "solution": "Only the last introduces the situation; the others reference back (They/Hence/This).",
+    "trick": "Introduce, don't refer back.",
+    "type": "Opening sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q13",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "A: 'The bridge cracked.' B: 'Engineers had warned about it.' 'it' refers to the crack/bridge. Correct order?",
+    "options": [
+      "AB",
+      "BA",
+      "either",
+      "neither"
+    ],
+    "answer": "A",
+    "solution": "'it' in B refers to the crack introduced in A, so A comes first.",
+    "trick": "Reference points backward to A.",
+    "type": "Pronoun pairing",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q14",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "'However, sales dropped.' must follow a sentence about:",
+    "options": [
+      "sales dropping",
+      "sales rising",
+      "the weather",
+      "staff leave"
+    ],
+    "answer": "B",
+    "solution": "'However' flips direction, so the prior sentence must show sales rising.",
+    "trick": "Contrast word needs the opposite before it.",
+    "type": "Connector logic",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q15",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "R: 'The programme began with a pilot in one state.' P: 'It was launched in 2020.' Q: 'By 2023, millions had joined.' S: 'Today it covers the country.' Correct order?",
+    "options": [
+      "P-R-Q-S",
+      "R-Q-P-S",
+      "R-P-Q-S",
+      "P-Q-R-S"
+    ],
+    "answer": "C",
+    "solution": "R opens because it names 'the programme'; the rest use back-references ('It') or time markers that need it first. Then launch (P), 2023 millions (Q), today nationwide (S).",
+    "trick": "Opener names the subject; 'It'/time markers follow.",
+    "type": "Full assembly",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q16",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Which sentence has a back-reference (so it cannot be first)?",
+    "options": [
+      "Farmers grow rice here.",
+      "Rain is plentiful.",
+      "The soil is fertile.",
+      "These conditions help."
+    ],
+    "answer": "D",
+    "solution": "'These conditions' points to conditions named earlier, so it cannot open.",
+    "trick": "'These/Those' need earlier context.",
+    "type": "Opening sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q17",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A: 'The dam burst.' B: 'Villages downstream flooded.' Correct order (cause-effect)?",
+    "options": [
+      "AB",
+      "BA",
+      "either",
+      "neither"
+    ],
+    "answer": "A",
+    "solution": "The dam bursting (cause) comes before the flooding (effect).",
+    "trick": "Cause before effect.",
+    "type": "Mandatory pair",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q18",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Which sentence should OPEN the paragraph?",
+    "options": [
+      "Thus profits grew.",
+      "The firm cut costs sharply.",
+      "It pleased investors.",
+      "They celebrated."
+    ],
+    "answer": "B",
+    "solution": "Only 'The firm cut costs' introduces the action; Thus/It/They refer back.",
+    "trick": "Action sentence opens; results follow.",
+    "type": "Opening sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q19",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "'Finally, the results were announced.' usually appears:",
+    "options": [
+      "as the opener",
+      "second",
+      "near the end",
+      "before the topic sentence"
+    ],
+    "answer": "C",
+    "solution": "'Finally' marks the concluding step, near the end.",
+    "trick": "'Finally' = closing.",
+    "type": "Closing sentence",
+    "active": true
+  },
+  {
+    "id": "para-jumbles-q20",
+    "topic": "para-jumbles",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "P: 'She joined as a trainee.' R: 'Then she led a team.' Q: 'Eventually she became CEO.' S: 'Such a rapid rise was rare in the firm.' Best order?",
+    "options": [
+      "S-P-R-Q",
+      "P-Q-R-S",
+      "S-P-Q-R",
+      "P-R-Q-S"
+    ],
+    "answer": "D",
+    "solution": "S starts with 'Such', a back-reference, so it cannot open. P opens (trainee), then R (led a team), then Q (CEO); S closes by commenting on the rise.",
+    "trick": "Time steps first; a 'Such/This' comment closes.",
+    "type": "Full assembly",
+    "active": true
+  }
+]

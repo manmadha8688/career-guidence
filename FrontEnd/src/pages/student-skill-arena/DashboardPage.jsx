@@ -464,7 +464,6 @@ export default function DashboardPage() {
       const cleared    = sp.filter(s => s.hasBadge)
       const inProgress = sp.filter(s => s.percentage > 0 && !s.hasBadge)
       const totalConceptsDone = summary?.completedConcepts ?? 0
-      const totalConceptsAll  = summary?.totalConcepts ?? 0
       const streak = summary?.streak ?? 0
 
       // Active enrolled roadmaps from allRoadmaps (loaded lazily)
@@ -477,13 +476,13 @@ export default function DashboardPage() {
           {/* ── Hunter overview strip ── */}
           <div className="dash-arena-stats">
             {[
-              { label: 'SKILLS LEARNED', value: totalConceptsDone, suffix: `/ ${totalConceptsAll}`, color: '#9B6ED4' },
-              { label: 'GATES CLOSED',  value: cleared.length,    suffix: `/ ${sp.length}`,        color: '#4ADE80' },
+              { label: 'SKILLS LEARNED', value: totalConceptsDone, color: '#9B6ED4' },
+              { label: 'GATES CLOSED',  value: cleared.length,    color: '#4ADE80' },
               { label: 'DAY STREAK',     value: streak,            suffix: streak === 1 ? 'day' : 'days', color: '#F59E0B' },
             ].map(stat => (
               <div key={stat.label} className="dash-arena-stat" style={{ '--stat-color': stat.color }}>
                 <div className="dash-arena-stat__value">{stat.value}</div>
-                <div className="dash-arena-stat__suffix">{stat.suffix}</div>
+                {stat.suffix && <div className="dash-arena-stat__suffix">{stat.suffix}</div>}
                 <div className="dash-arena-stat__label">{stat.label}</div>
               </div>
             ))}
@@ -556,19 +555,6 @@ export default function DashboardPage() {
                   )
                 })}
               </div>
-            </div>
-          )}
-
-
-          {/* ── Cleared gates summary ── */}
-          {cleared.length > 0 && (
-            <div className="dash-cleared-tags">
-              <span className="dash-cleared-tags__label">CLEARED:</span>
-              {cleared.map(s => (
-                <span key={s.subjectId} className="dash-cleared-tag">
-                  <CheckCircle size={9} /> {s.title}
-                </span>
-              ))}
             </div>
           )}
 

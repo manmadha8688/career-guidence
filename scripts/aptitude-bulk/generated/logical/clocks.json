@@ -1,0 +1,1207 @@
+{
+  "topic": "clocks",
+  "category": "logical",
+  "group": "time-logic",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "At 6:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "67.5",
+        "77",
+        "57",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 247.5| = 67.5°. Answer: 67.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "At 7:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "65",
+        "75",
+        "55",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 275.0| = 65.0°. Answer: 65°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "At 8:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "62.5",
+        "72",
+        "52",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 302.5| = 62.5°. Answer: 62.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "At 9:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "90",
+        "100",
+        "80",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 0.0| = 90.0°. Answer: 90°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "At 10:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "87.5",
+        "97",
+        "77",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 27.5| = 87.5°. Answer: 87.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "At 11:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "85",
+        "95",
+        "75",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 55.0| = 85.0°. Answer: 85°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "At 3:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "7.5",
+        "17",
+        "12.5",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 82.5| = 7.5°. Answer: 7.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "At 4:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "10",
+        "20",
+        "15.0",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 110.0| = 10.0°. Answer: 10°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "At 5:25, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "12.5",
+        "22",
+        "2",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 137.5| = 12.5°. Answer: 12.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "At 6:30, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "15",
+        "25",
+        "5",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 165.0| = 15.0°. Answer: 15°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "At 7:35, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "17.5",
+        "27",
+        "7",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 192.5| = 17.5°. Answer: 17.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "At 8:40, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "20",
+        "30",
+        "10",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 220.0| = 20.0°. Answer: 20°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "At 9:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "22.5",
+        "32",
+        "12",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 247.5| = 22.5°. Answer: 22.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "At 10:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "25",
+        "35",
+        "15",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 275.0| = 25.0°. Answer: 25°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "At 11:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "27.5",
+        "37",
+        "17",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 302.5| = 27.5°. Answer: 27.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "At 3:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "90",
+        "100",
+        "80",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 0.0| = 90.0°. Answer: 90°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "At 4:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "92.5",
+        "102",
+        "82",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 27.5| = 92.5°. Answer: 92.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "At 5:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "95",
+        "105",
+        "85",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 55.0| = 95.0°. Answer: 95°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "At 6:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "97.5",
+        "107",
+        "87",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 82.5| = 97.5°. Answer: 97.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "At 7:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "100",
+        "110",
+        "90",
+        "180"
+      ],
+      "answer": "A",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 110.0| = 100.0°. Answer: 100°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "At 8:25, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "112",
+        "102.5",
+        "92",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 137.5| = 102.5°. Answer: 102.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "At 9:30, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "115",
+        "105",
+        "95",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 165.0| = 105.0°. Answer: 105°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "At 10:35, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "117",
+        "107.5",
+        "97",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 192.5| = 107.5°. Answer: 107.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "At 11:40, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "120",
+        "110",
+        "100",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 220.0| = 110.0°. Answer: 110°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "At 3:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "167",
+        "157.5",
+        "147",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 247.5| = 157.5°. Answer: 157.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "At 4:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "165",
+        "155",
+        "145",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 275.0| = 155.0°. Answer: 155°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "At 5:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "162",
+        "152.5",
+        "142",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 302.5| = 152.5°. Answer: 152.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "At 6:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "190",
+        "180",
+        "170",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 0.0| = 180.0°. Answer: 180°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "At 7:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "187",
+        "177.5",
+        "167",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 27.5| = 177.5°. Answer: 177.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "At 8:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "185",
+        "175",
+        "165",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 55.0| = 175.0°. Answer: 175°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "At 9:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "182",
+        "172.5",
+        "162",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 82.5| = 172.5°. Answer: 172.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "At 10:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "180",
+        "170",
+        "160",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 110.0| = 170.0°. Answer: 170°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "At 11:25, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "177",
+        "167.5",
+        "157",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 137.5| = 167.5°. Answer: 167.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "At 3:30, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "85",
+        "75",
+        "65",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 165.0| = 75.0°. Answer: 75°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "At 4:35, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "82",
+        "72.5",
+        "62",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 192.5| = 72.5°. Answer: 72.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "At 5:40, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "80",
+        "70",
+        "60",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 220.0| = 70.0°. Answer: 70°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "At 6:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "77",
+        "67.5",
+        "57",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 247.5| = 67.5°. Answer: 67.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "At 7:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "75",
+        "65",
+        "55",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 275.0| = 65.0°. Answer: 65°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "At 8:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "72",
+        "62.5",
+        "52",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 302.5| = 62.5°. Answer: 62.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "At 9:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "100",
+        "90",
+        "80",
+        "180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 0.0| = 90.0°. Answer: 90°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "At 10:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "97",
+        "77",
+        "87.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 27.5| = 87.5°. Answer: 87.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "At 11:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "95",
+        "75",
+        "85",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 55.0| = 85.0°. Answer: 85°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "At 3:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "17",
+        "12.5",
+        "7.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 82.5| = 7.5°. Answer: 7.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "At 4:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "20",
+        "15.0",
+        "10",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 110.0| = 10.0°. Answer: 10°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "At 5:25, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "22",
+        "2",
+        "12.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 137.5| = 12.5°. Answer: 12.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "At 6:30, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "25",
+        "5",
+        "15",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 165.0| = 15.0°. Answer: 15°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "At 7:35, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "27",
+        "7",
+        "17.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 192.5| = 17.5°. Answer: 17.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "At 8:40, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "30",
+        "10",
+        "20",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 220.0| = 20.0°. Answer: 20°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "At 9:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "32",
+        "12",
+        "22.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 247.5| = 22.5°. Answer: 22.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "At 10:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "35",
+        "15",
+        "25",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 275.0| = 25.0°. Answer: 25°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "At 11:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "37",
+        "17",
+        "27.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 302.5| = 27.5°. Answer: 27.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "At 3:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "100",
+        "80",
+        "90",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 0.0| = 90.0°. Answer: 90°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "At 4:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "102",
+        "82",
+        "92.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 27.5| = 92.5°. Answer: 92.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "At 5:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "105",
+        "85",
+        "95",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 55.0| = 95.0°. Answer: 95°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "At 6:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "107",
+        "87",
+        "97.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 82.5| = 97.5°. Answer: 97.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Clock angle"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "At 7:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "110",
+        "90",
+        "100",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 110.0| = 100.0°. Answer: 100°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "At 8:25, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "112",
+        "92",
+        "102.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 137.5| = 102.5°. Answer: 102.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "At 9:30, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "115",
+        "95",
+        "105",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 165.0| = 105.0°. Answer: 105°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "At 10:35, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "117",
+        "97",
+        "107.5",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 192.5| = 107.5°. Answer: 107.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "At 11:40, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "120",
+        "100",
+        "110",
+        "180"
+      ],
+      "answer": "C",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 220.0| = 110.0°. Answer: 110°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "At 3:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "167",
+        "147",
+        "180",
+        "157.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 247.5| = 157.5°. Answer: 157.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "At 4:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "165",
+        "145",
+        "180",
+        "155"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 275.0| = 155.0°. Answer: 155°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "At 5:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "162",
+        "142",
+        "180",
+        "152.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 302.5| = 152.5°. Answer: 152.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "At 6:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "190",
+        "170",
+        "180",
+        "180"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 0.0| = 180.0°. Answer: 180°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "At 7:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "187",
+        "167",
+        "180",
+        "177.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 27.5| = 177.5°. Answer: 177.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "At 8:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "185",
+        "165",
+        "180",
+        "175"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 55.0| = 175.0°. Answer: 175°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "At 9:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "182",
+        "162",
+        "180",
+        "172.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 82.5| = 172.5°. Answer: 172.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "At 10:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "180",
+        "160",
+        "180",
+        "170"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 110.0| = 170.0°. Answer: 170°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "At 11:25, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "177",
+        "157",
+        "180",
+        "167.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 137.5| = 167.5°. Answer: 167.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "At 3:30, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "85",
+        "65",
+        "180",
+        "75"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 165.0| = 75.0°. Answer: 75°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "At 4:35, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "82",
+        "62",
+        "180",
+        "72.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 192.5| = 72.5°. Answer: 72.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "At 5:40, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "80",
+        "60",
+        "180",
+        "70"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |150 − 220.0| = 70.0°. Answer: 70°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "At 6:45, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "77",
+        "57",
+        "180",
+        "67.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |180 − 247.5| = 67.5°. Answer: 67.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "At 7:50, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "75",
+        "55",
+        "180",
+        "65"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |210 − 275.0| = 65.0°. Answer: 65°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "At 8:55, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "72",
+        "52",
+        "180",
+        "62.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |240 − 302.5| = 62.5°. Answer: 62.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "At 9:00, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "100",
+        "80",
+        "180",
+        "90"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |270 − 0.0| = 90.0°. Answer: 90°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "At 10:05, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "97",
+        "77",
+        "180",
+        "87.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |300 − 27.5| = 87.5°. Answer: 87.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "At 11:10, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "95",
+        "75",
+        "180",
+        "85"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |330 − 55.0| = 85.0°. Answer: 85°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "At 3:15, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "17",
+        "12.5",
+        "180",
+        "7.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |90 − 82.5| = 7.5°. Answer: 7.5°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "At 4:20, what is the smaller angle (degrees) between hour and minute hands?",
+      "options": [
+        "20",
+        "15.0",
+        "180",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: |30H − 5.5M| = |120 − 110.0| = 10.0°. Answer: 10°.",
+      "trick": "|30H − 5.5M|.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "progressions-q1",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Find the 10th term of the AP 3, 7, 11, ...",
+    "options": [
+      "39",
+      "43",
+      "40",
+      "37"
+    ],
+    "answer": "A",
+    "solution": "a=3, d=4. T₁₀ = 3 + 9×4 = 39.",
+    "trick": "a + (n−1)d.",
+    "type": "AP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q2",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Find the 10th term of the AP 2, 5, 8, ...",
+    "options": [
+      "32",
+      "29",
+      "30",
+      "27"
+    ],
+    "answer": "B",
+    "solution": "a=2, d=3. T₁₀ = 2 + 9×3 = 29.",
+    "trick": "a + (n−1)d.",
+    "type": "AP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q3",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Find the sum of the first 20 terms of the AP 2, 5, 8, ...",
+    "options": [
+      "590",
+      "600",
+      "610",
+      "620"
+    ],
+    "answer": "C",
+    "solution": "S₂₀ = (20/2)[4 + 19×3] = 10×61 = 610.",
+    "trick": "(n/2)[2a+(n−1)d].",
+    "type": "AP sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q4",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Find the 6th term of the GP 2, 6, 18, ...",
+    "options": [
+      "162",
+      "512",
+      "216",
+      "486"
+    ],
+    "answer": "D",
+    "solution": "a=2, r=3. T₆ = 2×3⁵ = 2×243 = 486.",
+    "trick": "a·r^(n−1).",
+    "type": "GP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q5",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find the sum of the first 5 terms of the GP 3, 6, 12, ...",
+    "options": [
+      "93",
+      "96",
+      "90",
+      "45"
+    ],
+    "answer": "A",
+    "solution": "a=3, r=2. S₅ = 3(2⁵−1)/(2−1) = 3×31 = 93.",
+    "trick": "a(rⁿ−1)/(r−1).",
+    "type": "GP finite sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q6",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Find the sum of the infinite GP 8 + 4 + 2 + 1 + ...",
+    "options": [
+      "15",
+      "16",
+      "8",
+      "32"
+    ],
+    "answer": "B",
+    "solution": "a=8, r=½. S∞ = 8/(1−½) = 16.",
+    "trick": "a/(1−r).",
+    "type": "GP infinite sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q7",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Find the sum of the first 100 natural numbers.",
+    "options": [
+      "5000",
+      "10000",
+      "5050",
+      "5100"
+    ],
+    "answer": "C",
+    "solution": "S = (100/2)(1 + 100) = 50×101 = 5050.",
+    "trick": "n(n+1)/2.",
+    "type": "AP sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q8",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "How many terms are there in the AP 5, 8, 11, ..., 50?",
+    "options": [
+      "15",
+      "17",
+      "14",
+      "16"
+    ],
+    "answer": "D",
+    "solution": "50 = 5 + (n−1)3 → 45 = 3(n−1) → n = 16.",
+    "trick": "(last−first)/d + 1.",
+    "type": "Number of terms / word problem",
+    "active": true
+  },
+  {
+    "id": "progressions-q9",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "The 5th term of an AP is 17 and the 9th term is 33. Find the common difference.",
+    "options": [
+      "4",
+      "3",
+      "16",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "T₉ − T₅ = 4d = 33 − 17 = 16 → d = 4.",
+    "trick": "Difference of terms ÷ gap.",
+    "type": "AP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q10",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Find the sum of the infinite GP 9 + 3 + 1 + ...",
+    "options": [
+      "12",
+      "13.5",
+      "18",
+      "27"
+    ],
+    "answer": "B",
+    "solution": "a=9, r=1/3. S∞ = 9/(1−1/3) = 9/(2/3) = 13.5.",
+    "trick": "a/(1−r).",
+    "type": "GP infinite sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q11",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "The 3rd term of a GP is 12 and the 6th term is 96. Find the common ratio.",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "8"
+    ],
+    "answer": "C",
+    "solution": "T₆/T₃ = r³ = 96/12 = 8 → r = 2.",
+    "trick": "Ratio of terms → r^gap.",
+    "type": "GP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q12",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find the sum of all even numbers from 2 to 100.",
+    "options": [
+      "2500",
+      "5050",
+      "2600",
+      "2550"
+    ],
+    "answer": "D",
+    "solution": "AP 2..100, d=2, n=50. Sum = (50/2)(2+100) = 25×102 = 2550.",
+    "trick": "n = 50 even numbers, average × count.",
+    "type": "AP sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q13",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "The first term of an AP is 5 and the sum of the first 10 terms is 185. Find the common difference.",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": "A",
+    "solution": "S₁₀ = (10/2)(10 + 9d) = 5(10 + 9d) = 185 → 10 + 9d = 37 → d = 3.",
+    "trick": "Plug into the sum formula.",
+    "type": "AP sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q14",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "If 2, 6, b are in AP, find b.",
+    "options": [
+      "12",
+      "10",
+      "8",
+      "18"
+    ],
+    "answer": "B",
+    "solution": "Common difference = 6 − 2 = 4, so b = 6 + 4 = 10.",
+    "trick": "Middle term − previous = common difference.",
+    "type": "AP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q15",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "The sum of the first n terms of the AP 2, 5, 8, ... is 155. Find n.",
+    "options": [
+      "11",
+      "9",
+      "10",
+      "12"
+    ],
+    "answer": "C",
+    "solution": "Sₙ = (n/2)(4 + 3(n−1)) = (n/2)(3n+1) = 155 → n(3n+1) = 310 → 3n²+n−310 = 0 → n = 10.",
+    "trick": "Set the sum formula equal and solve.",
+    "type": "AP sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q16",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "In an AP, the 7th term is 34 and the 13th term is 64. Find the 18th term.",
+    "options": [
+      "94",
+      "84",
+      "90",
+      "89"
+    ],
+    "answer": "D",
+    "solution": "d = (64−34)/6 = 5. a = 34 − 6×5 = 4. T₁₈ = 4 + 17×5 = 89.",
+    "trick": "Find d and a from two terms.",
+    "type": "AP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q17",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The sum of three numbers in GP is 21 and their product is 216. Find the numbers.",
+    "options": [
+      "3, 6, 12",
+      "2, 6, 18",
+      "1, 6, 36",
+      "4, 6, 9"
+    ],
+    "answer": "A",
+    "solution": "Take a/r, a, ar. Product = a³ = 216 → a = 6. Sum: 6(1/r + 1 + r) = 21 → r + 1/r = 2.5 → r = 2. Numbers: 3, 6, 12.",
+    "trick": "Middle term = cube root of the product.",
+    "type": "GP nth term",
+    "active": true
+  },
+  {
+    "id": "progressions-q18",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "How many terms of the GP 2, 4, 8, ... add up to 254?",
+    "options": [
+      "8",
+      "7",
+      "6",
+      "127"
+    ],
+    "answer": "B",
+    "solution": "Sₙ = 2(2ⁿ−1)/(2−1) = 2(2ⁿ−1) = 254 → 2ⁿ−1 = 127 → 2ⁿ = 128 → n = 7.",
+    "trick": "Set GP sum equal, solve for the power.",
+    "type": "GP finite sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q19",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "The sum to infinity of a GP is 15 and the first term is 5. Find the common ratio.",
+    "options": [
+      "1/3",
+      "3",
+      "2/3",
+      "1/2"
+    ],
+    "answer": "C",
+    "solution": "a/(1−r) = 15 → 5/(1−r) = 15 → 1−r = 1/3 → r = 2/3.",
+    "trick": "Rearrange a/(1−r).",
+    "type": "GP infinite sum",
+    "active": true
+  },
+  {
+    "id": "progressions-q20",
+    "topic": "progressions",
+    "category": "quantitative",
+    "group": "algebra-sequences",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A ball dropped from 8 m rebounds to half its height on each bounce. Find the total distance travelled before it comes to rest.",
+    "options": [
+      "16 m",
+      "8 m",
+      "32 m",
+      "24 m"
+    ],
+    "answer": "D",
+    "solution": "Initial drop 8. Then up and down each bounce: 2×(4 + 2 + 1 + ...) = 2×(4/(1−½)) = 2×8 = 16. Total = 8 + 16 = 24 m.",
+    "trick": "One-way drop plus twice the rebounding GP.",
+    "type": "GP infinite sum",
+    "active": true
+  }
+]

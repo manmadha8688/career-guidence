@@ -26,8 +26,8 @@ export default function LandingCodeGymSection() {
               Five tracks built for every type of learner — from writing your first print statement to solving questions asked at Amazon and Google.
               Every problem shows brute force to optimized in four languages.
             </p>
-            <button type="button" onClick={() => navigate('/problem-solving')} className="lp-section-cta lp-section-cta--code">
-              💻 Start Solving — Free
+            <button type="button" onClick={() => navigate('/code-gym')} className="lp-section-cta lp-section-cta--code">
+              💻 Start Solving
             </button>
           </div>
 

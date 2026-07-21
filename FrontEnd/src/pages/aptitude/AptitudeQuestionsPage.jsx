@@ -79,8 +79,7 @@ export default function AptitudeQuestionsPage() {
             <span className="apt-practice__badge">Practice · {questions.length} question{questions.length !== 1 ? 's' : ''}</span>
             <h1 className="apt-practice__title">{topic?.displayName || 'Practice'} — test yourself</h1>
             <p className="apt-practice__sub">
-              Solve each one on your own first. The answer stays hidden until you tap
-              <strong> Reveal</strong> — no peeking. These cover every question type on this topic.
+              Solve each one on your own first, then tap an option — the answer and solution appear instantly.
             </p>
           </div>
 

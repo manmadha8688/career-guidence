@@ -1,0 +1,1207 @@
+{
+  "topic": "linear-seating-arrangement",
+  "category": "logical",
+  "group": "arrangements",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Gita",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Harsh",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Farhan",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Gita",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Harsh",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Farhan",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Gita",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Harsh",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Farhan",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Gita",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Harsh",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Farhan",
+        "Amit",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Gita",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Harsh",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Farhan",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Gita",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Harsh",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Farhan",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Gita",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Harsh",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Farhan",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Gita",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Harsh",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Amit",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Diya"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Farhan",
+        "Bela",
+        "Chetan"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Gita",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Harsh",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Amit",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Bela",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Farhan",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Gita",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Harsh",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Amit",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Bela",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Farhan",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Gita",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Harsh",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Amit",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Bela",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Farhan",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Linear seating"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Gita",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Harsh",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Amit",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Bela",
+        "Diya"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Farhan",
+        "Chetan"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Gita"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Harsh"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Diya",
+        "Amit"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Diya",
+        "Bela"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Farhan"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Gita"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Harsh"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Diya",
+        "Amit"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Diya",
+        "Bela"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Farhan"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Gita"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Harsh"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Diya",
+        "Amit"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Diya",
+        "Bela"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Farhan"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Chetan sits immediately left of Diya. Bela is at an end. Who sits at the other end if Diya is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Gita"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Chetan left of Diya. Step 2: Bela at end fixes one side. Step 3: Other end is Gita. Answer: Gita.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Diya sits immediately left of Esha. Chetan is at an end. Who sits at the other end if Esha is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Harsh"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Diya left of Esha. Step 2: Chetan at end fixes one side. Step 3: Other end is Harsh. Answer: Harsh.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Esha sits immediately left of Farhan. Diya is at an end. Who sits at the other end if Farhan is not at an end?",
+      "options": [
+        "Bela",
+        "Chetan",
+        "Diya",
+        "Amit"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Esha left of Farhan. Step 2: Diya at end fixes one side. Step 3: Other end is Amit. Answer: Amit.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Farhan sits immediately left of Gita. Esha is at an end. Who sits at the other end if Gita is not at an end?",
+      "options": [
+        "Amit",
+        "Chetan",
+        "Diya",
+        "Bela"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Farhan left of Gita. Step 2: Esha at end fixes one side. Step 3: Other end is Bela. Answer: Bela.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Six people sit in a row. Bela sits immediately left of Chetan. Amit is at an end. Who sits at the other end if Chetan is not at an end?",
+      "options": [
+        "Amit",
+        "Bela",
+        "Chetan",
+        "Farhan"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Place Bela left of Chetan. Step 2: Amit at end fixes one side. Step 3: Other end is Farhan. Answer: Farhan.",
+      "trick": "Fix anchors first.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

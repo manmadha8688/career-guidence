@@ -138,7 +138,7 @@ function GateCard({ gate, index, onEnter }) {
 
 function GymGates() {
   const navigate = useNavigate()
-  const enter = (key) => navigate(`/problem-solving/${key}`)
+  const enter = (key) => navigate(`/code-gym/${key}`)
 
   return (
     <section className="gym-gates" aria-labelledby="gym-gates-title">

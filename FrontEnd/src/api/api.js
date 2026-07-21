@@ -202,9 +202,37 @@ export const setResumeShare = (id, isPublic)     => api.post(`/resumes/${id}/sha
 // Public — anyone with the link can view a shared resume.
 export const getPublicResume = (slug)            => api.get(`/public/resume/${slug}`)
 
-// ─── PROBLEMS (public) ────────────────────────────────────────
+// ─── CODE RUNNER / JUDGE ──────────────────────────────────────
+// Authenticated + rate limited (10/min). `signal` (AbortController) lets the
+// caller cancel the run when the user navigates away.
+// Plain run — execute code and return stdout/stderr (no test cases).
+export const executeCode = (code, language, signal) =>
+  api.post('/code/execute', { code, language }, { signal })
+// Judge student code against a problem's test cases. payload:
+//   { problemId, language, code, mode: 'run' | 'submit' }
+export const judgeCode = (payload, signal) =>
+  api.post('/code/judge', payload, { signal })
+
+// ─── CODE GYM PROBLEMS (auth required) ────────────────────────
 export const getProblems  = (track) => withCache(`problems:${track||'all'}`, 5*60_000, () => api.get('/problems' + (track ? `?track=${track}` : '')))
 export const getProblem   = (id)    => withCache(`problem:${id}`,            5*60_000, () => api.get(`/problems/${id}`))
+
+// ─── CODING ARENA (LeetCode-style) ────────────────────────────
+// Auth required; run/submit/submissions share the code execution engine
+// mutations that reuse the shared code-execution engine (10/min rate limit).
+export const getCodingProblems = ()   => withCache('codingProblems:all',   5*60_000, () => api.get('/coding-problems'))
+export const getCodingProblem  = (id) => withCache(`codingProblem:${id}`,  5*60_000, () => api.get(`/coding-problems/${id}`))
+// { problemId, language, code } — runs the visible sample cases.
+export const runCode    = (payload, signal) => api.post('/code/run',    payload, { signal })
+// { problemId, language, code } — judges all hidden cases and saves the submission.
+export const submitCode = (payload, signal) => {
+  const p = api.post('/code/submit', payload, { signal })
+  // A submission changes this problem's history — bust its cached list.
+  p.then(() => clearApiCache(`codeSubmissions:${payload.problemId}`)).catch(() => {})
+  return p
+}
+export const getCodeSubmissions = (problemId) =>
+  withCache(`codeSubmissions:${problemId}`, 30_000, () => api.get(`/code/submissions/${problemId}`))
 
 // ─── APTITUDE (public) ────────────────────────────────────────
 const APT_TTL = 10*60_000

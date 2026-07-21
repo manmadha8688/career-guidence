@@ -1,0 +1,1207 @@
+{
+  "topic": "blood-relations",
+  "category": "logical",
+  "group": "relations-directions",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "[Case 21] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Daughter",
+        "Sister",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "[Case 22] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "[Case 23] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Son",
+        "Brother",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "[Case 24] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "Cannot determine without more links",
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "[Case 25] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Grandfather",
+        "Father",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "[Case 26] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Daughter",
+        "Sister",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "[Case 27] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "[Case 28] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Son",
+        "Brother",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "[Case 29] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "Cannot determine without more links",
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "[Case 30] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Grandfather",
+        "Father",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "[Case 31] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Daughter",
+        "Sister",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "[Case 32] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "[Case 33] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Son",
+        "Brother",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "[Case 34] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "Cannot determine without more links",
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "[Case 35] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Grandfather",
+        "Father",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "[Case 36] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Daughter",
+        "Sister",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "[Case 37] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "[Case 38] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Son",
+        "Brother",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "[Case 39] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "Cannot determine without more links",
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "[Case 40] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Grandfather",
+        "Father",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "[Case 41] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Daughter",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "[Case 42] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Father",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "[Case 43] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Son",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "[Case 44] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "Cannot determine without more links",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "[Case 45] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Grandfather",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "[Case 46] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Daughter",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "[Case 47] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Father",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "[Case 48] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Son",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "[Case 49] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "Cannot determine without more links",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "[Case 50] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Grandfather",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "[Case 51] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Daughter",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "[Case 52] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Father",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "[Case 53] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Son",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "[Case 54] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "Cannot determine without more links",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "[Case 55] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Grandfather",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "[Case 56] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Daughter",
+        "Mother",
+        "Niece"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "[Case 57] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Father",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "[Case 58] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Son",
+        "Father",
+        "Nephew"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "[Case 59] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "Cannot determine without more links",
+        "A is father of D",
+        "D is father of A"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "[Case 60] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Grandfather",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "[Case 61] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Daughter",
+        "Niece"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "[Case 62] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Father",
+        "Grandfather"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "[Case 63] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Son",
+        "Nephew"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "[Case 64] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "Cannot determine without more links",
+        "D is father of A"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "[Case 65] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Grandfather",
+        "Brother"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "[Case 66] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Daughter",
+        "Niece"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "[Case 67] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Father",
+        "Grandfather"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "[Case 68] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Son",
+        "Nephew"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "[Case 69] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "Cannot determine without more links",
+        "D is father of A"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "[Case 70] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Grandfather",
+        "Brother"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "[Case 71] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Daughter",
+        "Niece"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "[Case 72] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Father",
+        "Grandfather"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "[Case 73] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Son",
+        "Nephew"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "[Case 74] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "Cannot determine without more links",
+        "D is father of A"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "[Case 75] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Grandfather",
+        "Brother"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Blood relation"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "[Case 76] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Daughter",
+        "Niece"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "[Case 77] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Father",
+        "Grandfather"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "[Case 78] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Son",
+        "Nephew"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "[Case 79] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "Cannot determine without more links",
+        "D is father of A"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "[Case 80] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Grandfather",
+        "Brother"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "[Case 81] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Niece",
+        "Daughter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "[Case 82] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Grandfather",
+        "Father"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "[Case 83] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Nephew",
+        "Son"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "[Case 84] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A",
+        "Cannot determine without more links"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "[Case 85] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "[Case 86] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Niece",
+        "Daughter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "[Case 87] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Grandfather",
+        "Father"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "[Case 88] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Nephew",
+        "Son"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "[Case 89] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A",
+        "Cannot determine without more links"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "[Case 90] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "[Case 91] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Niece",
+        "Daughter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "[Case 92] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Grandfather",
+        "Father"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "[Case 93] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Nephew",
+        "Son"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "[Case 94] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A",
+        "Cannot determine without more links"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "[Case 95] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "[Case 96] P is the sister of Q. Q is the son of R. How is P related to R?",
+      "options": [
+        "Sister",
+        "Mother",
+        "Niece",
+        "Daughter"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Daughter. Answer: Daughter.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "[Case 97] X's mother is Y. Y's husband is Z. How is Z related to X?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Grandfather",
+        "Father"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Father. Answer: Father.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "[Case 98] M is the brother of N. N is the daughter of O. How is M related to O?",
+      "options": [
+        "Brother",
+        "Father",
+        "Nephew",
+        "Son"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Son. Answer: Son.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "[Case 99] If A + B means A is father of B, and B * C means B is sister of C, then A * D means?",
+      "options": [
+        "A is sister of D",
+        "A is father of D",
+        "D is father of A",
+        "Cannot determine without more links"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Cannot determine without more links. Answer: Cannot determine without more links.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "[Case 100] A is the father of B. B is the father of C. How is A related to C?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Draw the family tree from the statement. Step 2: The relation is Grandfather. Answer: Grandfather.",
+      "trick": "Draw a quick tree.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

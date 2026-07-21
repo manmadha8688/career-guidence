@@ -1,0 +1,402 @@
+[
+  {
+    "id": "reading-comprehension-q1",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Passage: 'The public library opens at 9 a.m. on weekdays and 10 a.m. on weekends. It closes at 8 p.m. daily.' When does it open on Saturday?",
+    "options": [
+      "10 a.m.",
+      "9 a.m.",
+      "8 a.m.",
+      "noon"
+    ],
+    "answer": "A",
+    "solution": "Saturday is a weekend, and the passage says weekends open at 10 a.m.",
+    "trick": "Match the day to its category (weekend).",
+    "type": "Detail",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q2",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Same passage: at what time does the library close?",
+    "options": [
+      "6 p.m.",
+      "8 p.m.",
+      "9 p.m.",
+      "7 p.m."
+    ],
+    "answer": "B",
+    "solution": "It states the library 'closes at 8 p.m. daily'.",
+    "trick": "Answer is stated directly — find the line.",
+    "type": "Detail",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q3",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Passage: 'Maya, a marine biologist, discovered a new coral near Goa in 2018.' What is Maya's profession?",
+    "options": [
+      "Chef",
+      "Teacher",
+      "Marine biologist",
+      "Pilot"
+    ],
+    "answer": "C",
+    "solution": "The passage describes Maya as 'a marine biologist'.",
+    "trick": "Look for the role stated beside the name.",
+    "type": "Detail",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q4",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Same passage: where was the coral found?",
+    "options": [
+      "Kochi",
+      "Chennai",
+      "Mumbai",
+      "Goa"
+    ],
+    "answer": "D",
+    "solution": "It says the coral was discovered 'near Goa'.",
+    "trick": "Place name is stated — do not guess.",
+    "type": "Detail",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q5",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "In 'The evidence was solid', the word 'solid' most nearly means:",
+    "options": [
+      "reliable",
+      "heavy",
+      "hollow",
+      "soft"
+    ],
+    "answer": "A",
+    "solution": "Here 'solid' describes evidence, so it means dependable/reliable, not physically hard.",
+    "trick": "Substitute options into the sentence — context decides.",
+    "type": "Vocabulary in context",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q6",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "'Unfortunately, the trip was cancelled.' The author's tone is:",
+    "options": [
+      "happy",
+      "regretful",
+      "angry",
+      "excited"
+    ],
+    "answer": "B",
+    "solution": "'Unfortunately' signals regret about the cancellation.",
+    "trick": "Tone lives in the signal word, not the fact.",
+    "type": "Tone",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q7",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Passage: 'Regular walking improves heart health, mood, and sleep.' The main idea is that walking:",
+    "options": [
+      "is boring",
+      "is costly",
+      "has several health benefits",
+      "causes injury"
+    ],
+    "answer": "C",
+    "solution": "The passage lists multiple benefits, so the main idea is that walking is beneficial to health.",
+    "trick": "Main idea covers all points, not one.",
+    "type": "Main idea",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q8",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "'Ravi took an umbrella before leaving.' We can best infer that:",
+    "options": [
+      "it was sunny",
+      "he lost it",
+      "he dislikes rain",
+      "he expected rain"
+    ],
+    "answer": "D",
+    "solution": "Taking an umbrella is a small logical step to expecting rain.",
+    "trick": "Inference is one step from the text.",
+    "type": "Inference",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q9",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "'Although the film had big stars, it flopped.' We can conclude that:",
+    "options": [
+      "big stars don't guarantee success",
+      "stars guarantee success",
+      "the film was cheap",
+      "it won awards"
+    ],
+    "answer": "A",
+    "solution": "'Although' contrasts stars with the flop, showing stars alone don't ensure success.",
+    "trick": "'Although' flips the expected result.",
+    "type": "Inference",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q10",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Passage: 'The workshop runs three days, with lunch provided only on the first two.' On which day is lunch NOT provided?",
+    "options": [
+      "Day 1",
+      "Day 3",
+      "Day 2",
+      "every day"
+    ],
+    "answer": "B",
+    "solution": "Lunch is on the first two days, so Day 3 has none.",
+    "trick": "'Only the first two' excludes the third.",
+    "type": "Detail",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q11",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "In 'She gave a brief account of the trip', 'account' means:",
+    "options": [
+      "money",
+      "bill",
+      "description",
+      "reason"
+    ],
+    "answer": "C",
+    "solution": "An 'account' of an event is a description or report of it.",
+    "trick": "Context (of the trip) rules out money/bill.",
+    "type": "Vocabulary in context",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q12",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "'The so-called expert gave poor advice.' The author's attitude to the expert is:",
+    "options": [
+      "admiring",
+      "fearful",
+      "neutral",
+      "sceptical"
+    ],
+    "answer": "D",
+    "solution": "'So-called' plus 'poor advice' shows doubt/scepticism.",
+    "trick": "'So-called' signals disbelief.",
+    "type": "Tone",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q13",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Passage: 'Bees pollinate crops, their numbers are falling, and farmers can help by planting flowers.' Best title?",
+    "options": [
+      "Bees: Vital and at Risk",
+      "Honey Production",
+      "How to Farm",
+      "Flower Gardening"
+    ],
+    "answer": "A",
+    "solution": "The title must cover importance + decline + help, i.e. bees are vital and threatened.",
+    "trick": "Title = widest supported idea.",
+    "type": "Main idea",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q14",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "'The streets were wet and people carried umbrellas.' We can infer that:",
+    "options": [
+      "it was hot",
+      "it had rained",
+      "a parade passed",
+      "it was night"
+    ],
+    "answer": "B",
+    "solution": "Wet streets plus umbrellas point to recent rain — the closest inference.",
+    "trick": "Combine the two clues logically.",
+    "type": "Inference",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q15",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Passage: 'Many students find maths difficult.' Which statement is best supported?",
+    "options": [
+      "All students fail maths",
+      "No student likes maths",
+      "Maths is difficult for many students",
+      "Maths is easy"
+    ],
+    "answer": "C",
+    "solution": "Only the option that mirrors 'many' (not 'all'/'no') is supported.",
+    "trick": "Reject extreme words (all/no).",
+    "type": "Inference",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q16",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Passage: 'The train leaves at 6:15 and reaches by 9:45.' The journey time is:",
+    "options": [
+      "3 h",
+      "3 h 15 m",
+      "3 h 45 m",
+      "3 h 30 m"
+    ],
+    "answer": "D",
+    "solution": "From 6:15 to 9:45 is 3 hours 30 minutes.",
+    "trick": "Subtract the times carefully.",
+    "type": "Detail",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q17",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "'Profits rose despite higher costs.' We can infer that:",
+    "options": [
+      "revenue rose enough to offset costs",
+      "costs fell",
+      "the company closed",
+      "prices dropped"
+    ],
+    "answer": "A",
+    "solution": "If profit rose while costs rose, revenue must have increased more than costs.",
+    "trick": "'Despite' means the result held against the obstacle.",
+    "type": "Inference",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q18",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A passage warns about screen time before bed and gives tips to reduce it. Its purpose is:",
+    "options": [
+      "to entertain",
+      "to advise reducing night screen use",
+      "to sell phones",
+      "to review a film"
+    ],
+    "answer": "B",
+    "solution": "A warning plus tips indicates the author's purpose is to advise readers.",
+    "trick": "Purpose = why the author wrote it.",
+    "type": "Purpose",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q19",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "'The manager was candid about the delay.' 'Candid' means:",
+    "options": [
+      "dishonest",
+      "angry",
+      "frank and honest",
+      "confused"
+    ],
+    "answer": "C",
+    "solution": "'Candid' means open and honest.",
+    "trick": "Being candid = telling it straight.",
+    "type": "Vocabulary in context",
+    "active": true
+  },
+  {
+    "id": "reading-comprehension-q20",
+    "topic": "reading-comprehension",
+    "category": "verbal",
+    "group": "reading-reasoning",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "'It is remarkable how quickly she learned.' The tone is:",
+    "options": [
+      "critical",
+      "bored",
+      "doubtful",
+      "admiring"
+    ],
+    "answer": "D",
+    "solution": "'Remarkable' expresses admiration for her speed of learning.",
+    "trick": "Positive adjective = approving tone.",
+    "type": "Tone",
+    "active": true
+  }
+]

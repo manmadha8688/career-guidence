@@ -16,10 +16,12 @@ import { useEffect } from 'react'
 let lockCount = 0
 let savedScrollY = 0
 let savedBody = null
+let savedPath = ''
 
 function applyLock() {
   const body = document.body
   savedScrollY = window.scrollY || document.documentElement.scrollTop || 0
+  savedPath = window.location.pathname
   savedBody = {
     position: body.style.position,
     top: body.style.top,
@@ -53,7 +55,10 @@ function releaseLock() {
   }
   document.documentElement.style.overflow = ''
   document.documentElement.classList.remove('scroll-locked')
-  window.scrollTo(0, savedScrollY)
+  // If the route changed while locked (e.g. tapping a link in the mobile menu),
+  // don't restore the old scroll — the new page must start at the top. Restoring
+  // only matters when the overlay closes on the same page.
+  if (window.location.pathname === savedPath) window.scrollTo(0, savedScrollY)
 }
 
 export default function useBodyLock(enabled = true) {

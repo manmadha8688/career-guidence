@@ -1,0 +1,1207 @@
+{
+  "topic": "equations",
+  "category": "quantitative",
+  "group": "algebra-sequences",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Solve: x + 5 = 12.",
+      "options": [
+        "7",
+        "8",
+        "6",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 7.",
+      "trick": "Transpose constant.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Solve: 2x = 8.",
+      "options": [
+        "8",
+        "4",
+        "6",
+        "2"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 4.",
+      "trick": "Divide by 2.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Solve: x − 2 = 3.",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 5 = 5.",
+      "trick": "Add to both sides.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Solve: x/3 = 2.",
+      "options": [
+        "2",
+        "9",
+        "3",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×2 = 6.",
+      "trick": "Multiply by 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Solve: 2x + 1 = 11.",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 10. x = 5.",
+      "trick": "Linear equation.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "x + y = 7, x − y = -1. Find x.",
+      "options": [
+        "4",
+        "3",
+        "7",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 6. x = 3.",
+      "trick": "Elimination.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Sum of two numbers is 12, difference is 4. Larger number?",
+      "options": [
+        "4",
+        "8",
+        "8",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 8.",
+      "trick": "Simultaneous linear.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Solve: 2x = 10.",
+      "options": [
+        "6",
+        "10",
+        "2",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 10/2 = 5.",
+      "trick": "Divide by coefficient.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Solve: x + 6 = 14.",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 8.",
+      "trick": "Transpose constant.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1030,
+      "difficulty": "hard",
+      "question": "Solve: 2x = 260.",
+      "options": [
+        "260",
+        "130",
+        "132",
+        "65"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 130.",
+      "trick": "Divide by 2.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Solve: x − 2 = 4.",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 6 = 6.",
+      "trick": "Add to both sides.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Solve: x/3 = 7.",
+      "options": [
+        "3",
+        "12",
+        "6",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×3 = 9.",
+      "trick": "Multiply by 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Solve: 2x + 1 = 13.",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 12. x = 6.",
+      "trick": "Linear equation.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "x + y = 9, x − y = -1. Find x.",
+      "options": [
+        "5",
+        "4",
+        "9",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 8. x = 4.",
+      "trick": "Elimination.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Sum of two numbers is 13, difference is 4. Larger number?",
+      "options": [
+        "4",
+        "9",
+        "8",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 8.",
+      "trick": "Simultaneous linear.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Solve: 3x = 13.",
+      "options": [
+        "5.3",
+        "13",
+        "3",
+        "4.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 13/3 = 4.3.",
+      "trick": "Divide by coefficient.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Solve: x + 7 = 16.",
+      "options": [
+        "9",
+        "10",
+        "8",
+        "7"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 9.",
+      "trick": "Transpose constant.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Solve: 2x = 12.",
+      "options": [
+        "12",
+        "6",
+        "8",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 6.",
+      "trick": "Divide by 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Solve: x − 2 = 5.",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 7 = 7.",
+      "trick": "Add to both sides.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Solve: x/3 = 8.",
+      "options": [
+        "4",
+        "15",
+        "9",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×4 = 12.",
+      "trick": "Multiply by 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Solve: 2x + 1 = 15.",
+      "options": [
+        "7",
+        "8",
+        "6",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 14. x = 7.",
+      "trick": "Linear equation.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "x + y = 11, x − y = -1. Find x.",
+      "options": [
+        "6",
+        "5",
+        "11",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 10. x = 5.",
+      "trick": "Elimination.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Sum of two numbers is 14, difference is 4. Larger number?",
+      "options": [
+        "5",
+        "10",
+        "9",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 9.",
+      "trick": "Simultaneous linear.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Solve: 4x = 16.",
+      "options": [
+        "5",
+        "16",
+        "4",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 16/4 = 4.",
+      "trick": "Divide by coefficient.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Solve: x + 8 = 18.",
+      "options": [
+        "10",
+        "11",
+        "9",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 10.",
+      "trick": "Transpose constant.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Solve: 2x = 14.",
+      "options": [
+        "14",
+        "7",
+        "9",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 7.",
+      "trick": "Divide by 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Solve: x − 2 = 6.",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 8 = 8.",
+      "trick": "Add to both sides.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Solve: x/3 = 3.",
+      "options": [
+        "5",
+        "18",
+        "12",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×5 = 15.",
+      "trick": "Multiply by 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Solve: 2x + 1 = 17.",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 16. x = 8.",
+      "trick": "Linear equation.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "x + y = 13, x − y = -1. Find x.",
+      "options": [
+        "7",
+        "6",
+        "13",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 12. x = 6.",
+      "trick": "Elimination.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Sum of two numbers is 15, difference is 4. Larger number?",
+      "options": [
+        "5",
+        "11",
+        "9",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 9.",
+      "trick": "Simultaneous linear.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Solve: 5x = 19.",
+      "options": [
+        "4.8",
+        "19",
+        "5",
+        "3.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 19/5 = 3.8.",
+      "trick": "Divide by coefficient.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Solve: x + 9 = 20.",
+      "options": [
+        "11",
+        "12",
+        "10",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 11.",
+      "trick": "Transpose constant.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Solve: 2x = 16.",
+      "options": [
+        "16",
+        "8",
+        "10",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 8.",
+      "trick": "Divide by 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Solve: x − 2 = 7.",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 9 = 9.",
+      "trick": "Add to both sides.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Solve: x/3 = 10.",
+      "options": [
+        "6",
+        "21",
+        "15",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×6 = 18.",
+      "trick": "Multiply by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Solve: 2x + 1 = 19.",
+      "options": [
+        "9",
+        "10",
+        "8",
+        "19"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 18. x = 9.",
+      "trick": "Linear equation.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "x + y = 15, x − y = -1. Find x.",
+      "options": [
+        "8",
+        "7",
+        "15",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 14. x = 7.",
+      "trick": "Elimination.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Sum of two numbers is 16, difference is 4. Larger number?",
+      "options": [
+        "6",
+        "12",
+        "10",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 10.",
+      "trick": "Simultaneous linear.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Solve: 6x = 22.",
+      "options": [
+        "4.7",
+        "22",
+        "6",
+        "3.7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 22/6 = 3.7.",
+      "trick": "Divide by coefficient.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Solve: x + 10 = 22.",
+      "options": [
+        "12",
+        "13",
+        "11",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 12.",
+      "trick": "Transpose constant.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Solve: 2x = 18.",
+      "options": [
+        "18",
+        "9",
+        "11",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 9.",
+      "trick": "Divide by 2.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Solve: x − 2 = 8.",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 10 = 10.",
+      "trick": "Add to both sides.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Solve: x/3 = 11.",
+      "options": [
+        "7",
+        "24",
+        "18",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×7 = 21.",
+      "trick": "Multiply by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Solve: 2x + 1 = 21.",
+      "options": [
+        "10",
+        "11",
+        "9",
+        "21"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 20. x = 10.",
+      "trick": "Linear equation.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "x + y = 17, x − y = -1. Find x.",
+      "options": [
+        "9",
+        "8",
+        "17",
+        "17"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 16. x = 8.",
+      "trick": "Elimination.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Sum of two numbers is 17, difference is 4. Larger number?",
+      "options": [
+        "6",
+        "13",
+        "10",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 10.",
+      "trick": "Simultaneous linear.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Solve: 7x = 25.",
+      "options": [
+        "4.6",
+        "25",
+        "7",
+        "3.6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 25/7 = 3.6.",
+      "trick": "Divide by coefficient.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Solve: x + 11 = 24.",
+      "options": [
+        "13",
+        "14",
+        "12",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 13.",
+      "trick": "Transpose constant.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Solve: 2x = 20.",
+      "options": [
+        "20",
+        "10",
+        "12",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 10.",
+      "trick": "Divide by 2.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Solve: x − 2 = 9.",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 11 = 11.",
+      "trick": "Add to both sides.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Solve: x/3 = 4.",
+      "options": [
+        "8",
+        "27",
+        "21",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×8 = 24.",
+      "trick": "Multiply by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Solve: 2x + 1 = 23.",
+      "options": [
+        "11",
+        "12",
+        "10",
+        "23"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 22. x = 11.",
+      "trick": "Linear equation.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "x + y = 19, x − y = -1. Find x.",
+      "options": [
+        "10",
+        "9",
+        "19",
+        "19"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 18. x = 9.",
+      "trick": "Elimination.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Sum of two numbers is 18, difference is 4. Larger number?",
+      "options": [
+        "7",
+        "14",
+        "11",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 11.",
+      "trick": "Simultaneous linear.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Solve: 8x = 28.",
+      "options": [
+        "4.5",
+        "28",
+        "8",
+        "3.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 28/8 = 3.5.",
+      "trick": "Divide by coefficient.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Solve: x + 12 = 26.",
+      "options": [
+        "14",
+        "15",
+        "13",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 14.",
+      "trick": "Transpose constant.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Solve: 2x = 22.",
+      "options": [
+        "22",
+        "11",
+        "13",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 11.",
+      "trick": "Divide by 2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Solve: x − 2 = 10.",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 12 = 12.",
+      "trick": "Add to both sides.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Solve: x/3 = 13.",
+      "options": [
+        "9",
+        "30",
+        "24",
+        "27"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×9 = 27.",
+      "trick": "Multiply by 3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Solve: 2x + 1 = 25.",
+      "options": [
+        "12",
+        "13",
+        "11",
+        "25"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 24. x = 12.",
+      "trick": "Linear equation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "x + y = 21, x − y = -1. Find x.",
+      "options": [
+        "11",
+        "10",
+        "21",
+        "21"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 20. x = 10.",
+      "trick": "Elimination.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Sum of two numbers is 19, difference is 4. Larger number?",
+      "options": [
+        "7",
+        "15",
+        "11",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 11.",
+      "trick": "Simultaneous linear.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Solve: 9x = 31.",
+      "options": [
+        "4.4",
+        "31",
+        "9",
+        "3.4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 31/9 = 3.4.",
+      "trick": "Divide by coefficient.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Solve: x + 13 = 28.",
+      "options": [
+        "15",
+        "16",
+        "14",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 15.",
+      "trick": "Transpose constant.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Solve: 2x = 24.",
+      "options": [
+        "24",
+        "12",
+        "14",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 12.",
+      "trick": "Divide by 2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Solve: x − 2 = 11.",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 13 = 13.",
+      "trick": "Add to both sides.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Solve: x/3 = 14.",
+      "options": [
+        "10",
+        "33",
+        "27",
+        "30"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×10 = 30.",
+      "trick": "Multiply by 3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Solve: 2x + 1 = 27.",
+      "options": [
+        "13",
+        "14",
+        "12",
+        "27"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 26. x = 13.",
+      "trick": "Linear equation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "x + y = 23, x − y = -1. Find x.",
+      "options": [
+        "12",
+        "11",
+        "23",
+        "23"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 22. x = 11.",
+      "trick": "Elimination.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Sum of two numbers is 20, difference is 4. Larger number?",
+      "options": [
+        "8",
+        "16",
+        "12",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 12.",
+      "trick": "Simultaneous linear.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Solve: 10x = 34.",
+      "options": [
+        "4.4",
+        "34",
+        "10",
+        "3.4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 34/10 = 3.4.",
+      "trick": "Divide by coefficient.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Solve: x + 14 = 30.",
+      "options": [
+        "16",
+        "17",
+        "15",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 16.",
+      "trick": "Transpose constant.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Solve: 2x = 26.",
+      "options": [
+        "26",
+        "13",
+        "15",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 13.",
+      "trick": "Divide by 2.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Solve: x − 2 = 12.",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 14 = 14.",
+      "trick": "Add to both sides.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Solve: x/3 = 5.",
+      "options": [
+        "11",
+        "36",
+        "30",
+        "33"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 3×11 = 33.",
+      "trick": "Multiply by 3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Solve: 2x + 1 = 29.",
+      "options": [
+        "14",
+        "15",
+        "13",
+        "29"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 2x = 28. x = 14.",
+      "trick": "Linear equation.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "x + y = 25, x − y = -1. Find x.",
+      "options": [
+        "13",
+        "12",
+        "25",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add equations: 2x = 24. x = 12.",
+      "trick": "Elimination.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Sum of two numbers is 21, difference is 4. Larger number?",
+      "options": [
+        "8",
+        "17",
+        "12",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (S+D)/2 = 12.",
+      "trick": "Simultaneous linear.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Solve: 11x = 37.",
+      "options": [
+        "4.4",
+        "37",
+        "11",
+        "3.4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x = 37/11 = 3.4.",
+      "trick": "Divide by coefficient.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

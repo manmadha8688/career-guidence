@@ -1,0 +1,402 @@
+[
+  {
+    "id": "linear-seating-arrangement-q1",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Five people A,B,C,D,E sit in a row (seats 1–5, left to right). C is 2nd from the left. Which seat is C in?",
+    "options": [
+      "Seat 2",
+      "Seat 1",
+      "Seat 3",
+      "Seat 4"
+    ],
+    "answer": "A",
+    "solution": "2nd from the left is simply seat 2.",
+    "trick": "kth from left = seat k.",
+    "type": "Fixed position",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q2",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "In a row of 6 seats (1–6), who is in the 2nd seat from the right?",
+    "options": [
+      "Seat 2",
+      "Seat 5",
+      "Seat 4",
+      "Seat 6"
+    ],
+    "answer": "B",
+    "solution": "kth from right = seat (n−k+1) = 6−2+1 = seat 5.",
+    "trick": "From right: n−k+1.",
+    "type": "End conversion",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q3",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A sits at seat 1 and B sits immediately to A's right (row faces you, left→right = 1→n). Which seat is B?",
+    "options": [
+      "Seat 1",
+      "Seat 3",
+      "Seat 2",
+      "Last seat"
+    ],
+    "answer": "C",
+    "solution": "Immediately to the right of seat 1 is seat 2.",
+    "trick": "Right = higher seat number.",
+    "type": "Immediate neighbour",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q4",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Seven people sit in a row (1–7). Which seat is exactly in the middle?",
+    "options": [
+      "Seat 3",
+      "Seat 5",
+      "Seat 7",
+      "Seat 4"
+    ],
+    "answer": "D",
+    "solution": "Middle of 7 seats is the 4th seat.",
+    "trick": "Middle of odd n = (n+1)/2.",
+    "type": "Fixed position",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q5",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "In a row of 6, exactly 2 people sit between M and N. By how many seats do their positions differ?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "1"
+    ],
+    "answer": "A",
+    "solution": "m people between → seat difference m+1 = 2+1 = 3.",
+    "trick": "'m between' → gap m+1.",
+    "type": "Between count",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q6",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "P is at the left end and Q is at the right end of a row of 4. If R is left of S, who is in seat 2?",
+    "options": [
+      "S",
+      "R",
+      "P",
+      "Q"
+    ],
+    "answer": "B",
+    "solution": "P=1, Q=4; R and S fill seats 2,3 with R left of S, so R=2.",
+    "trick": "Ends fixed, order the middle.",
+    "type": "Ends and middle",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q7",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "In a row of 5, A is 3rd from the left and B is immediately to A's left. Which seat is B?",
+    "options": [
+      "Seat 4",
+      "Seat 1",
+      "Seat 2",
+      "Seat 3"
+    ],
+    "answer": "C",
+    "solution": "A = seat 3; immediately left = seat 2.",
+    "trick": "Left = one lower seat.",
+    "type": "Immediate neighbour",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q8",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Six friends in seats 1–6. X is 2nd from left, and exactly 2 people sit between X and Y (Y to X's right). Which seat is Y?",
+    "options": [
+      "Seat 4",
+      "Seat 6",
+      "Seat 3",
+      "Seat 5"
+    ],
+    "answer": "D",
+    "solution": "X=2; gap 3 to the right → Y = 2+3 = seat 5.",
+    "trick": "2 between → +3 seats.",
+    "type": "Between count",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q9",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Row of 5 (1–5). T is at the right end. S is immediately left of T. R is immediately left of S. Which seat is R?",
+    "options": [
+      "Seat 3",
+      "Seat 2",
+      "Seat 4",
+      "Seat 1"
+    ],
+    "answer": "A",
+    "solution": "T=5, S=4, R=3.",
+    "trick": "Step left from the end.",
+    "type": "Immediate neighbour",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q10",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "In a row of 4 (1–4), A is not at either end and B is to A's immediate left. If A is at seat 2, which seat is B?",
+    "options": [
+      "Seat 3",
+      "Seat 1",
+      "Seat 4",
+      "Seat 2"
+    ],
+    "answer": "B",
+    "solution": "A=2, immediate left = seat 1 = B.",
+    "trick": "Immediate left of 2 is 1.",
+    "type": "Immediate neighbour",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q11",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Five people 1–5. C is exactly in the middle. A is immediately right of C. Which seat is A?",
+    "options": [
+      "Seat 2",
+      "Seat 3",
+      "Seat 4",
+      "Seat 5"
+    ],
+    "answer": "C",
+    "solution": "Middle of 5 = seat 3 (C); immediate right = seat 4 = A.",
+    "trick": "Middle+1 to the right.",
+    "type": "Immediate neighbour",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q12",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Row of 6. P is 2nd from right. Q is 3rd from left. How many seats are between P and Q?",
+    "options": [
+      "2",
+      "0",
+      "3",
+      "1"
+    ],
+    "answer": "D",
+    "solution": "P = 6−2+1 = seat 5; Q = seat 3; between = |5−3|−1 = 1.",
+    "trick": "Between = |diff|−1.",
+    "type": "Between count",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q13",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Four people W,X,Y,Z (seats 1–4). W is left of X, X is left of Y, Y is left of Z. Which seat is Y?",
+    "options": [
+      "Seat 3",
+      "Seat 2",
+      "Seat 4",
+      "Seat 1"
+    ],
+    "answer": "A",
+    "solution": "The chain forces order W,X,Y,Z = seats 1,2,3,4, so Y=3.",
+    "trick": "Full order chain fixes all seats.",
+    "type": "Ordering",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q14",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Row of 5. A is at seat 1. There are exactly 3 people between A and E. Which seat is E?",
+    "options": [
+      "Seat 4",
+      "Seat 5",
+      "Seat 3",
+      "Seat 2"
+    ],
+    "answer": "B",
+    "solution": "3 between → gap 4; A=1 → E = 1+4 = seat 5.",
+    "trick": "3 between → +4.",
+    "type": "Between count",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q15",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Six people 1–6. R is 3rd from left. S is immediately right of R. T is at seat 6. If exactly 1 person sits between S and T, is the arrangement consistent, and which seat is the lone person between them?",
+    "options": [
+      "Seat 4",
+      "Seat 3",
+      "Seat 5",
+      "Inconsistent"
+    ],
+    "answer": "C",
+    "solution": "R=3, S=4, T=6; between S(4) and T(6) is exactly seat 5 — one person. Consistent, that person is in seat 5.",
+    "trick": "Check the gap after placing.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q16",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Row of 7. A is exactly in the middle. B is 2nd to A's right. C is immediately right of B. Which seat is C?",
+    "options": [
+      "Seat 6",
+      "Seat 5",
+      "Seat 4",
+      "Seat 7"
+    ],
+    "answer": "D",
+    "solution": "A=4; 2nd to right = seat 6 (B); C immediately right = seat 7.",
+    "trick": "Middle=4, then step right.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q17",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Five people 1–5. E is not at an end. D is immediately left of E. F is immediately right of E. If D is at seat 2, which seat is F?",
+    "options": [
+      "Seat 4",
+      "Seat 3",
+      "Seat 5",
+      "Seat 1"
+    ],
+    "answer": "A",
+    "solution": "D=2 → E=3 → F=4.",
+    "trick": "Neighbours step by 1.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q18",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Row of 6. There are exactly 4 people between P and Q. If P is left of Q, which seats do they occupy?",
+    "options": [
+      "Seats 2 and 6",
+      "Seats 1 and 6",
+      "Seats 1 and 5",
+      "Seats 2 and 5"
+    ],
+    "answer": "B",
+    "solution": "4 between → gap 5; only 1 and 6 differ by 5 in a 6-row, P left → P=1, Q=6.",
+    "trick": "Gap 5 in 6 seats = the two ends.",
+    "type": "Between count",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q19",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Seven people 1–7. G is 2nd from right. H is 3rd to the left of G. Which seat is H?",
+    "options": [
+      "Seat 2",
+      "Seat 4",
+      "Seat 3",
+      "Seat 1"
+    ],
+    "answer": "C",
+    "solution": "G = 7−2+1 = seat 6; 3rd to the left = 6−3 = seat 3.",
+    "trick": "kth left = seat − k.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "linear-seating-arrangement-q20",
+    "topic": "linear-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Row of 5, all facing North. A is 2nd from left. Exactly 1 person sits between A and B, and B is to A's left. Which seat is B?",
+    "options": [
+      "Seat 4",
+      "Seat 1",
+      "Seat 3",
+      "Seat... none — inconsistent"
+    ],
+    "answer": "D",
+    "solution": "A=2; 1 between to A's left needs seat 2−2 = seat 0, which doesn't exist — so the arrangement as stated is inconsistent.",
+    "trick": "Check that the target seat exists.",
+    "type": "Consistency check",
+    "active": true
+  }
+]

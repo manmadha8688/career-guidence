@@ -20,6 +20,12 @@ const getScrollTop = (target) =>
     ? window.scrollY || document.documentElement.scrollTop || 0
     : target.scrollTop || 0
 
+// Horizontal-only scrollers (e.g. the deployment station chip rail) opt out with
+// `data-nav-ignore-scroll` — their scrollTop stays 0, which would otherwise read
+// as "near top" and re-show the navbar on every horizontal nudge.
+const ignoresNavScroll = (target) =>
+  target instanceof Element && target.closest('[data-nav-ignore-scroll]') !== null
+
 export default function AutoHideNav() {
   const { pathname } = useLocation()
 
@@ -50,6 +56,16 @@ export default function AutoHideNav() {
     }
 
     const onScroll = (e) => {
+      // While an overlay locks the background (useBodyLock adds `scroll-locked`),
+      // the page itself isn't scrolling — only the overlay's inner content is.
+      // Ignore those so the navbar doesn't hide behind an open drawer/modal and
+      // then get stuck hidden after it closes.
+      if (root.classList.contains('scroll-locked')) return
+      // A page can freeze show/hide during a programmatic jump (e.g. the
+      // deployment station rail) so the animated scroll can't flicker the navbar.
+      if (root.classList.contains('nav-jump-lock')) return
+      // Ignore opted-out (horizontal-only) scrollers so they don't toggle the navbar.
+      if (ignoresNavScroll(e.target)) return
       pending = e.target
       if (!ticking) {
         ticking = true

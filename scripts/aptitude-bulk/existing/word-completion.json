@@ -1,0 +1,402 @@
+[
+  {
+    "id": "word-completion-q1",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Complete the word for 'something you read': B _ _ K",
+    "options": [
+      "BOOK",
+      "BANK",
+      "BACK",
+      "BULK"
+    ],
+    "answer": "A",
+    "solution": "The clue 'something you read' gives BOOK (double 'o').",
+    "trick": "Place vowels, match the clue.",
+    "type": "Fill vowels",
+    "active": true
+  },
+  {
+    "id": "word-completion-q2",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Complete the word for 'not happy': _ _ HAPPY",
+    "options": [
+      "REHAPPY",
+      "UNHAPPY",
+      "INHAPPY",
+      "DISHAPPY"
+    ],
+    "answer": "B",
+    "solution": "'un-' means 'not', giving UNHAPPY (the only real word).",
+    "trick": "Prefix 'un-' = not.",
+    "type": "Prefix",
+    "active": true
+  },
+  {
+    "id": "word-completion-q3",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Complete the word for 'a thing done': ACT _ _ N",
+    "options": [
+      "ACTHEN",
+      "ACTUON",
+      "ACTION",
+      "ACTMAN"
+    ],
+    "answer": "C",
+    "solution": "The suffix '-ion' gives ACTION.",
+    "trick": "Suffix '-ion'.",
+    "type": "Suffix",
+    "active": true
+  },
+  {
+    "id": "word-completion-q4",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Complete the word for 'a large boat': _ _ IP",
+    "options": [
+      "CLIP",
+      "TRIP",
+      "GRIP",
+      "SHIP"
+    ],
+    "answer": "D",
+    "solution": "The digraph 'sh' plus the clue gives SHIP.",
+    "trick": "Digraph 'sh' + clue.",
+    "type": "Digraph",
+    "active": true
+  },
+  {
+    "id": "word-completion-q5",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Complete the 5-letter fruit: A _ _ L E",
+    "options": [
+      "APPLE",
+      "ANKLE",
+      "AISLE",
+      "AMPLE"
+    ],
+    "answer": "A",
+    "solution": "The fruit clue gives APPLE (double 'p').",
+    "trick": "Match the clue (fruit).",
+    "type": "Clue + length",
+    "active": true
+  },
+  {
+    "id": "word-completion-q6",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Complete the word for 'one who teaches': TEA _ _ ER",
+    "options": [
+      "TEALDER",
+      "TEACHER",
+      "TEAPPER",
+      "TEAGGER"
+    ],
+    "answer": "B",
+    "solution": "The only valid word is TEACHER (tea + ch + er).",
+    "trick": "Digraph 'ch' + suffix 'er'.",
+    "type": "Suffix",
+    "active": true
+  },
+  {
+    "id": "word-completion-q7",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Complete the word for 'where you live': HO _ _ E",
+    "options": [
+      "HORSE",
+      "HOPPE",
+      "HOUSE",
+      "HOMME"
+    ],
+    "answer": "C",
+    "solution": "The clue 'where you live' gives HOUSE.",
+    "trick": "Use the clue to choose HOUSE over HORSE.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q8",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Complete the word for 'a person you like and trust': FR _ _ ND",
+    "options": [
+      "FREEND",
+      "FROUND",
+      "FRAAND",
+      "FRIEND"
+    ],
+    "answer": "D",
+    "solution": "The only valid word is FRIEND (fr + ie + nd).",
+    "trick": "Vowel pair 'ie'.",
+    "type": "Fill vowels",
+    "active": true
+  },
+  {
+    "id": "word-completion-q9",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Complete the word for 'you drink it': WA _ _ R",
+    "options": [
+      "WATER",
+      "WAFER",
+      "WAGER",
+      "WAVER"
+    ],
+    "answer": "A",
+    "solution": "The clue 'you drink it' gives WATER.",
+    "trick": "Clue picks WATER among valid words.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q10",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Complete the word for 'a place of study': SCH _ _ L",
+    "options": [
+      "SCHOAL",
+      "SCHOOL",
+      "SCHEEL",
+      "SCHUUL"
+    ],
+    "answer": "B",
+    "solution": "The only valid word is SCHOOL (double 'o').",
+    "trick": "Double 'o'.",
+    "type": "Fill vowels",
+    "active": true
+  },
+  {
+    "id": "word-completion-q11",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Complete the word for 'where plants grow': GA _ _ EN",
+    "options": [
+      "GALDEN",
+      "GATTEN",
+      "GARDEN",
+      "GAMMEN"
+    ],
+    "answer": "C",
+    "solution": "The only valid word is GARDEN.",
+    "trick": "Match the clue (plants).",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q12",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Complete the word for 'an animal that climbs trees': MO _ _ EY",
+    "options": [
+      "MONNEY",
+      "MORREY",
+      "MOLLEY",
+      "MONKEY"
+    ],
+    "answer": "D",
+    "solution": "The only valid word is MONKEY.",
+    "trick": "Match the clue (animal).",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q13",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Complete the word for 'to come back': RE _ _ RN",
+    "options": [
+      "RETURN",
+      "REBORN",
+      "REWARN",
+      "REFORM"
+    ],
+    "answer": "A",
+    "solution": "The clue 'to come back' gives RETURN.",
+    "trick": "Clue picks RETURN over REBORN.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q14",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Complete the word for 'used to write': PEN _ _ L",
+    "options": [
+      "PENSAL",
+      "PENCIL",
+      "PENTOL",
+      "PENNUL"
+    ],
+    "answer": "B",
+    "solution": "The only valid word is PENCIL.",
+    "trick": "Match the clue (write).",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q15",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Complete the word for 'one who treats patients': DOC _ _ R",
+    "options": [
+      "DOCKER",
+      "DOCTAR",
+      "DOCTOR",
+      "DOCEER"
+    ],
+    "answer": "C",
+    "solution": "The clue 'treats patients' gives DOCTOR.",
+    "trick": "Clue picks DOCTOR over DOCKER.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q16",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Complete the word for 'an opening in a wall that lets in light': WIN _ _ W",
+    "options": [
+      "WINNOW",
+      "WINSOW",
+      "WINGOW",
+      "WINDOW"
+    ],
+    "answer": "D",
+    "solution": "The clue gives WINDOW (over the word WINNOW).",
+    "trick": "Match the clue.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q17",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Complete the word for 'a place to buy and sell goods': MAR _ _ T",
+    "options": [
+      "MARKET",
+      "MARMOT",
+      "MARGIT",
+      "MARBIT"
+    ],
+    "answer": "A",
+    "solution": "The clue 'buy and sell' gives MARKET (over MARMOT, an animal).",
+    "trick": "Clue picks MARKET.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q18",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Complete the word for 'a structure that crosses a river': BR _ _ GE",
+    "options": [
+      "BRUDGE",
+      "BRIDGE",
+      "BRANGE",
+      "BROOGE"
+    ],
+    "answer": "B",
+    "solution": "The only valid word is BRIDGE.",
+    "trick": "Vowel 'i' + 'dge'.",
+    "type": "Fill vowels",
+    "active": true
+  },
+  {
+    "id": "word-completion-q19",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Complete the word for 'the bloom of a plant': FL _ _ ER",
+    "options": [
+      "FLINER",
+      "FLAMER",
+      "FLOWER",
+      "FLUKER"
+    ],
+    "answer": "C",
+    "solution": "The clue 'bloom of a plant' gives FLOWER.",
+    "trick": "Match the clue.",
+    "type": "Clue",
+    "active": true
+  },
+  {
+    "id": "word-completion-q20",
+    "topic": "word-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Complete the word for 'the early part of the day': MOR _ _ NG",
+    "options": [
+      "MORKING",
+      "MORLING",
+      "MORDING",
+      "MORNING"
+    ],
+    "answer": "D",
+    "solution": "The only valid word is MORNING.",
+    "trick": "Suffix pattern '-ning'.",
+    "type": "Fill vowels",
+    "active": true
+  }
+]

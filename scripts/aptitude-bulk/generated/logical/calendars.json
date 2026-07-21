@@ -1,0 +1,1207 @@
+{
+  "topic": "calendars",
+  "category": "logical",
+  "group": "time-logic",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 30 Sep 2024?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 273 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 13 Oct 2024?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 286 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 26 Oct 2024?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 299 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 08 Nov 2024?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "Monday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 312 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 21 Nov 2024?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 325 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 04 Dec 2024?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 338 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 17 Dec 2024?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 351 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 30 Dec 2024?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 364 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 12 Jan 2025?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 377 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 25 Jan 2025?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 390 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 07 Feb 2025?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "Monday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 403 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 20 Feb 2025?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 416 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 05 Mar 2025?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 429 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 18 Mar 2025?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 442 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "If 01 Jan 2024 was Monday, what day is 31 Mar 2025?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 455 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 13 Apr 2025?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 468 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 26 Apr 2025?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 481 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 09 May 2025?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "Monday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 494 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 22 May 2025?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 507 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 04 Jun 2025?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 520 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 17 Jun 2025?",
+      "options": [
+        "Wednesday",
+        "Tuesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 533 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 30 Jun 2025?",
+      "options": [
+        "Tuesday",
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 546 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 13 Jul 2025?",
+      "options": [
+        "Monday",
+        "Sunday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 559 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 26 Jul 2025?",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Monday",
+        "Tuesday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 572 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 08 Aug 2025?",
+      "options": [
+        "Saturday",
+        "Friday",
+        "Sunday",
+        "Monday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 585 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 21 Aug 2025?",
+      "options": [
+        "Friday",
+        "Thursday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 598 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 03 Sep 2025?",
+      "options": [
+        "Thursday",
+        "Wednesday",
+        "Friday",
+        "Saturday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 611 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 16 Sep 2025?",
+      "options": [
+        "Wednesday",
+        "Tuesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 624 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 29 Sep 2025?",
+      "options": [
+        "Tuesday",
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 637 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 12 Oct 2025?",
+      "options": [
+        "Monday",
+        "Sunday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 650 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 25 Oct 2025?",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Monday",
+        "Tuesday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 663 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 07 Nov 2025?",
+      "options": [
+        "Saturday",
+        "Friday",
+        "Sunday",
+        "Monday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 676 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 20 Nov 2025?",
+      "options": [
+        "Friday",
+        "Thursday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 689 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 03 Dec 2025?",
+      "options": [
+        "Thursday",
+        "Wednesday",
+        "Friday",
+        "Saturday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 702 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "If 01 Jan 2024 was Monday, what day is 16 Dec 2025?",
+      "options": [
+        "Wednesday",
+        "Tuesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 715 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 29 Dec 2025?",
+      "options": [
+        "Tuesday",
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 728 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 11 Jan 2026?",
+      "options": [
+        "Monday",
+        "Sunday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 741 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 24 Jan 2026?",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Monday",
+        "Tuesday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 754 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 06 Feb 2026?",
+      "options": [
+        "Saturday",
+        "Friday",
+        "Sunday",
+        "Monday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 767 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 19 Feb 2026?",
+      "options": [
+        "Friday",
+        "Thursday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 780 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 04 Mar 2026?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 793 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 17 Mar 2026?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Tuesday",
+        "Friday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 806 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 30 Mar 2026?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Monday",
+        "Thursday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 819 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 12 Apr 2026?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Sunday",
+        "Wednesday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 832 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 25 Apr 2026?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Saturday",
+        "Tuesday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 845 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 08 May 2026?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Friday",
+        "Monday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 858 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 21 May 2026?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Thursday",
+        "Sunday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 871 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 03 Jun 2026?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 884 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 16 Jun 2026?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Tuesday",
+        "Friday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 897 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 29 Jun 2026?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Monday",
+        "Thursday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 910 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 12 Jul 2026?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Sunday",
+        "Wednesday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 923 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 25 Jul 2026?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Saturday",
+        "Tuesday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 936 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 07 Aug 2026?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Friday",
+        "Monday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 949 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 20 Aug 2026?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Thursday",
+        "Sunday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 962 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 02 Sep 2026?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 975 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Calendar day"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 15 Sep 2026?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Tuesday",
+        "Friday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 988 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 28 Sep 2026?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Monday",
+        "Thursday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1001 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 11 Oct 2026?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Sunday",
+        "Wednesday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1014 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 24 Oct 2026?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Saturday",
+        "Tuesday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1027 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 06 Nov 2026?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Friday",
+        "Monday"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1040 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 19 Nov 2026?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "Thursday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1053 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 02 Dec 2026?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Wednesday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1066 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 15 Dec 2026?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Tuesday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1079 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 28 Dec 2026?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Monday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1092 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 10 Jan 2027?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Sunday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1105 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 23 Jan 2027?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Saturday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1118 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 05 Feb 2027?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Friday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1131 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 18 Feb 2027?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "Thursday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1144 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 03 Mar 2027?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Wednesday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1157 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 16 Mar 2027?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Tuesday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1170 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 29 Mar 2027?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Monday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1183 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 11 Apr 2027?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Sunday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1196 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 24 Apr 2027?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Saturday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1209 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 07 May 2027?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Friday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1222 days → Friday. Answer: Friday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 20 May 2027?",
+      "options": [
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "Thursday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1235 days → Thursday. Answer: Thursday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 02 Jun 2027?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Wednesday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1248 days → Wednesday. Answer: Wednesday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 15 Jun 2027?",
+      "options": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Tuesday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1261 days → Tuesday. Answer: Tuesday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 28 Jun 2027?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Monday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1274 days → Monday. Answer: Monday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 11 Jul 2027?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Sunday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1287 days → Sunday. Answer: Sunday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "If 01 Jan 2024 was Monday, what day is 24 Jul 2027?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Saturday"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Count days mod 7 from anchor. Step 2: Offset 1300 days → Saturday. Answer: Saturday.",
+      "trick": "Days mod 7.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

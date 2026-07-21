@@ -1,0 +1,402 @@
+[
+  {
+    "id": "paper-folding-cutting-q1",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A square sheet is folded once and a single hole is punched (not on the fold). How many holes appear when unfolded?",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "answer": "A",
+    "solution": "holes = 1 × 2¹ = 2. Each fold mirrors the hole once.",
+    "trick": "holes = cuts × 2^folds.",
+    "type": "One fold",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q2",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A sheet is folded twice and one hole is punched (off the folds). How many holes on unfolding?",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "6"
+    ],
+    "answer": "B",
+    "solution": "1 × 2² = 4.",
+    "trick": "Two folds double twice.",
+    "type": "Two folds",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q3",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A sheet is folded three times and one hole is punched (off the folds). How many holes result?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "16"
+    ],
+    "answer": "C",
+    "solution": "1 × 2³ = 8.",
+    "trick": "Three folds → ×8.",
+    "type": "Three folds",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q4",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Each additional fold does what to the number of holes made by a single punch?",
+    "options": [
+      "Keeps them the same",
+      "Halves them",
+      "Triples them",
+      "Doubles them"
+    ],
+    "answer": "D",
+    "solution": "A fold is a mirror line, so it doubles each hole.",
+    "trick": "Each fold = ×2.",
+    "type": "Doubling rule",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q5",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A sheet is folded once and 2 separate holes are punched (off the fold). How many holes appear when unfolded?",
+    "options": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "2 × 2¹ = 4.",
+    "trick": "cuts × 2^folds.",
+    "type": "Multiple holes",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q6",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "A sheet is folded twice and 2 holes are punched (off the folds). How many holes on unfolding?",
+    "options": [
+      "4",
+      "8",
+      "6",
+      "12"
+    ],
+    "answer": "B",
+    "solution": "2 × 2² = 8.",
+    "trick": "cuts × 2^folds.",
+    "type": "Multiple holes",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q7",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "A sheet is folded three times and 2 holes are punched (off the folds). How many holes result?",
+    "options": [
+      "8",
+      "12",
+      "16",
+      "24"
+    ],
+    "answer": "C",
+    "solution": "2 × 2³ = 16.",
+    "trick": "cuts × 2^folds.",
+    "type": "Multiple holes",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q8",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A sheet is folded once and a half-circle is cut with its straight edge exactly on the fold. What appears when unfolded?",
+    "options": [
+      "Two half circles",
+      "Two full circles",
+      "No hole",
+      "One full circle"
+    ],
+    "answer": "D",
+    "solution": "The cut lies on the mirror line, so the two halves join into one full circle (shared, not doubled).",
+    "trick": "Cut on the crease is shared.",
+    "type": "Cut on the fold",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q9",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A sheet is folded four times and one hole is punched (off the folds). How many holes result?",
+    "options": [
+      "16",
+      "8",
+      "32",
+      "12"
+    ],
+    "answer": "A",
+    "solution": "1 × 2⁴ = 16.",
+    "trick": "cuts × 2^folds.",
+    "type": "Four folds",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q10",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A sheet is folded twice and 3 holes are punched (off the folds). How many holes on unfolding?",
+    "options": [
+      "8",
+      "12",
+      "6",
+      "16"
+    ],
+    "answer": "B",
+    "solution": "3 × 2² = 12.",
+    "trick": "cuts × 2^folds.",
+    "type": "Multiple holes",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q11",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "When unfolding paper, each fold behaves like what?",
+    "options": [
+      "A cut line",
+      "A random line",
+      "A mirror line",
+      "An axis of rotation"
+    ],
+    "answer": "C",
+    "solution": "Each fold reflects the cut across it — it acts as a mirror line.",
+    "trick": "Fold = mirror.",
+    "type": "Concept",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q12",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A sheet is folded once and a semicircular notch is cut on the fold. When opened, the notch forms what?",
+    "options": [
+      "Two shapes",
+      "Half a shape",
+      "No shape",
+      "One complete shape"
+    ],
+    "answer": "D",
+    "solution": "A cut on the crease mirrors to complete one full shape.",
+    "trick": "On-fold cut completes.",
+    "type": "Cut on the fold",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q13",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "A sheet is folded three times and 3 holes are punched (off the folds). How many holes result?",
+    "options": [
+      "24",
+      "16",
+      "12",
+      "32"
+    ],
+    "answer": "A",
+    "solution": "3 × 2³ = 24.",
+    "trick": "cuts × 2^folds.",
+    "type": "Multiple holes",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q14",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "A sheet is folded four times and 2 holes are punched (off the folds). How many holes result?",
+    "options": [
+      "16",
+      "32",
+      "24",
+      "64"
+    ],
+    "answer": "B",
+    "solution": "2 × 2⁴ = 32.",
+    "trick": "cuts × 2^folds.",
+    "type": "Multiple holes",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q15",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A single punched hole produces 16 holes on unfolding. How many times was the sheet folded?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "C",
+    "solution": "2^f = 16 → f = 4.",
+    "trick": "Solve 2^folds = holes.",
+    "type": "Reverse count",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q16",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Two punched holes produce 8 holes on unfolding. How many times was the sheet folded?",
+    "options": [
+      "4",
+      "3",
+      "1",
+      "2"
+    ],
+    "answer": "D",
+    "solution": "2 × 2^f = 8 → 2^f = 4 → f = 2.",
+    "trick": "Divide out the cut count first.",
+    "type": "Reverse count",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q17",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 17,
+    "difficulty": "medium",
+    "question": "When reconstructing the opened sheet, which fold should you undo first?",
+    "options": [
+      "The last fold made",
+      "The first fold made",
+      "Any fold",
+      "The middle fold"
+    ],
+    "answer": "A",
+    "solution": "Unfold in reverse order — undo the last fold first.",
+    "trick": "Reverse the fold order.",
+    "type": "Unfold order",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q18",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A sheet is folded once and a hole is punched exactly on the fold line. How many holes appear when unfolded?",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "0"
+    ],
+    "answer": "B",
+    "solution": "A hole on the crease is shared across the fold — it stays a single hole.",
+    "trick": "On-fold hole is not doubled.",
+    "type": "Cut on the fold",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q19",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A sheet is folded five times and one hole is punched (off the folds). How many holes result?",
+    "options": [
+      "16",
+      "24",
+      "32",
+      "64"
+    ],
+    "answer": "C",
+    "solution": "1 × 2⁵ = 32.",
+    "trick": "cuts × 2^folds.",
+    "type": "Five folds",
+    "active": true
+  },
+  {
+    "id": "paper-folding-cutting-q20",
+    "topic": "paper-folding-cutting",
+    "category": "logical",
+    "group": "visual",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "After two folds and cutting, the opened sheet is symmetric about how many lines (the fold lines)?",
+    "options": [
+      "1",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": "D",
+    "solution": "Two folds create two crease lines, giving symmetry about both.",
+    "trick": "One symmetry line per fold.",
+    "type": "Symmetry",
+    "active": true
+  }
+]

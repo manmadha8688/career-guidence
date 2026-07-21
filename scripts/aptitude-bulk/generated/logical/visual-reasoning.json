@@ -1,0 +1,1207 @@
+{
+  "topic": "visual-reasoning",
+  "category": "logical",
+  "group": "visual",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "15",
+        "12",
+        "14",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "15",
+        "14",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Visual pattern"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Pattern: 1 dot, 3 dots, 6 dots, 10 dots (triangular numbers). Next count?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Triangular numbers 1,3,6,10. Step 2: Next T(5) = 15. Answer: 15.",
+      "trick": "Triangular dots.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

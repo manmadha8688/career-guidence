@@ -1,0 +1,402 @@
+[
+  {
+    "id": "sentence-correction-q1",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the underlined part: 'He has went to the market.'",
+    "options": [
+      "has gone",
+      "had went",
+      "has going",
+      "No correction required"
+    ],
+    "answer": "A",
+    "solution": "Present perfect needs the past participle: 'has gone'.",
+    "trick": "has/have + past participle.",
+    "type": "Verb form",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q2",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the underlined part: 'The quality of the products are excellent.'",
+    "options": [
+      "are excellent",
+      "is excellent",
+      "were excellent",
+      "No correction required"
+    ],
+    "answer": "B",
+    "solution": "Subject 'quality' is singular → 'is excellent'.",
+    "trick": "Match the head noun.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q3",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the underlined part: 'She is intelligent, hardworking and she has creativity.'",
+    "options": [
+      "she is creative",
+      "she had creativity",
+      "creative",
+      "No correction required"
+    ],
+    "answer": "C",
+    "solution": "Parallel structure needs an adjective: 'intelligent, hardworking and creative'.",
+    "trick": "Keep the list parallel.",
+    "type": "Parallelism",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q4",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the underlined part: 'Neither of the answers is correct.'",
+    "options": [
+      "are correct",
+      "were correct",
+      "is corrected",
+      "No correction required"
+    ],
+    "answer": "D",
+    "solution": "'Neither ... is' is correct (singular); the sentence needs no change.",
+    "trick": "Neither → singular verb.",
+    "type": "No correction",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q5",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the underlined part: 'The furnitures are new.'",
+    "options": [
+      "furniture is",
+      "furnitures is",
+      "furniture are",
+      "No correction required"
+    ],
+    "answer": "A",
+    "solution": "'furniture' is uncountable (no plural) and singular → 'furniture is'.",
+    "trick": "furniture = uncountable.",
+    "type": "Word form",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q6",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'In spite of the fact that it rained, we stayed in.'",
+    "options": [
+      "Despite of the fact that",
+      "Although",
+      "In spite the fact that",
+      "No correction required"
+    ],
+    "answer": "B",
+    "solution": "'Although' conveys the same meaning concisely and correctly.",
+    "trick": "Prefer the concise connector.",
+    "type": "Conciseness",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q7",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'He gave me an advice.'",
+    "options": [
+      "an advices",
+      "a advice",
+      "advice",
+      "No correction required"
+    ],
+    "answer": "C",
+    "solution": "'advice' is uncountable, so no article: 'gave me advice'.",
+    "trick": "advice = uncountable.",
+    "type": "Article",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q8",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'She has been working here since 2019.'",
+    "options": [
+      "is working",
+      "has worked",
+      "have been working",
+      "No correction required"
+    ],
+    "answer": "D",
+    "solution": "Present perfect continuous with 'since 2019' is correct; no change needed.",
+    "trick": "since + point → present perfect.",
+    "type": "No correction",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q9",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'She is senior than me.'",
+    "options": [
+      "senior to",
+      "senior than",
+      "more senior than",
+      "No correction required"
+    ],
+    "answer": "A",
+    "solution": "'senior' pairs with 'to': 'senior to me'.",
+    "trick": "senior/junior TO.",
+    "type": "Preposition",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q10",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'Each of the students have submitted their work.'",
+    "options": [
+      "have submitted his",
+      "has submitted his",
+      "has submitted their",
+      "No correction required"
+    ],
+    "answer": "B",
+    "solution": "'Each' is singular → 'has submitted his'.",
+    "trick": "Each → singular verb + pronoun.",
+    "type": "Agreement",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q11",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'She can be able to solve it.'",
+    "options": [
+      "can be able to",
+      "could be able to",
+      "can",
+      "No correction required"
+    ],
+    "answer": "C",
+    "solution": "'can' already means 'be able to'; using both is wrong. Use 'can'.",
+    "trick": "Don't combine 'can' + 'be able to'.",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q12",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Choose the best replacement for the underlined part: 'He is one of the best players who have ever played.'",
+    "options": [
+      "who has",
+      "whom have",
+      "which have",
+      "No correction required"
+    ],
+    "answer": "D",
+    "solution": "'one of the best players who have ...' correctly uses plural 'have'; no change.",
+    "trick": "'one of the ... who + plural verb'.",
+    "type": "No correction",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q13",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'We discussed about the matter.'",
+    "options": [
+      "discussed",
+      "discussed on",
+      "was discussing about",
+      "No correction required"
+    ],
+    "answer": "A",
+    "solution": "'discuss' takes no preposition: 'discussed the matter'.",
+    "trick": "discuss (no 'about').",
+    "type": "Preposition",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q14",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'He prefers tea than coffee.'",
+    "options": [
+      "than",
+      "to",
+      "from",
+      "No correction required"
+    ],
+    "answer": "B",
+    "solution": "'prefer' pairs with 'to': 'prefers tea to coffee'.",
+    "trick": "prefer X TO Y.",
+    "type": "Preposition",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q15",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'He is one of the most brilliant student in the class.'",
+    "options": [
+      "a student",
+      "student",
+      "students",
+      "No correction required"
+    ],
+    "answer": "C",
+    "solution": "'one of the ...' needs a plural noun: 'one of the most brilliant students'.",
+    "trick": "one of the + plural noun.",
+    "type": "Word form",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q16",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'I look forward to meeting you.'",
+    "options": [
+      "to meet",
+      "to met",
+      "for meeting",
+      "No correction required"
+    ],
+    "answer": "D",
+    "solution": "'look forward to + -ing' is correct: 'to meeting'. No change needed.",
+    "trick": "look forward TO + -ing.",
+    "type": "No correction",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q17",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'I have seen him yesterday.'",
+    "options": [
+      "saw",
+      "had seen",
+      "have saw",
+      "No correction required"
+    ],
+    "answer": "A",
+    "solution": "With 'yesterday' (finished time) use simple past: 'saw'.",
+    "trick": "Finished time → simple past.",
+    "type": "Tense",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q18",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'The reason he failed is because he was lazy.'",
+    "options": [
+      "is because",
+      "is that",
+      "was because",
+      "No correction required"
+    ],
+    "answer": "B",
+    "solution": "'The reason ... is because' is redundant; use 'is that'.",
+    "trick": "reason ... is THAT (not because).",
+    "type": "Redundancy",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q19",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'This is the most unique design I have seen.'",
+    "options": [
+      "more unique",
+      "most uniquest",
+      "unique",
+      "No correction required"
+    ],
+    "answer": "C",
+    "solution": "'unique' is absolute and cannot be graded; drop 'most' → 'unique'.",
+    "trick": "unique = no 'more/most'.",
+    "type": "Word form",
+    "active": true
+  },
+  {
+    "id": "sentence-correction-q20",
+    "topic": "sentence-correction",
+    "category": "verbal",
+    "group": "grammar-errors",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Choose the best replacement for the underlined part: 'Hardly had I reached when the train left.'",
+    "options": [
+      "Hardly I had reached",
+      "Hardly I reached",
+      "Hardly did I reached",
+      "No correction required"
+    ],
+    "answer": "D",
+    "solution": "'Hardly had I reached ... when ...' uses correct inversion; no change needed.",
+    "trick": "Hardly had + subject + past participle.",
+    "type": "No correction",
+    "active": true
+  }
+]

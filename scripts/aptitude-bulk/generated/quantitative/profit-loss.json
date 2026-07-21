@@ -1,0 +1,1207 @@
+{
+  "topic": "profit-loss",
+  "category": "quantitative",
+  "group": "percentage-commercial",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "CP=₹400, SP=₹480. Profit %?",
+      "options": [
+        "20%",
+        "80%",
+        "80%",
+        "120%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit = 80. Step 2: 80/400×100 = 20%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "CP ₹500, loss 10%. Find SP.",
+      "options": [
+        "490",
+        "450",
+        "510",
+        "50"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 500×(1−10/100) = 450.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "SP ₹660 at 10% profit. Find CP.",
+      "options": [
+        "650",
+        "594",
+        "600",
+        "720"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 660/1.10 = 600.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "MP ₹1000, discount 15%. SP?",
+      "options": [
+        "985",
+        "150",
+        "1850",
+        "850"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 1000×(1−15/100) = 850.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "CP ₹800. Sold at 25% profit. SP?",
+      "options": [
+        "1000",
+        "825",
+        "200",
+        "925"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 800×1.25 = 1000.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Shopkeeper mixes two items with CP ratio 20:25. Average CP per unit if equal quantities?",
+      "options": [
+        "45",
+        "22.5",
+        "500",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Equal qty → avg CP = (20+25)/2 = 22.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Bought at ₹240, sold at ₹300. Profit %?",
+      "options": [
+        "60%",
+        "125%",
+        "25%",
+        "240%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit 60. Step 2: 25%.",
+      "trick": "Profit on CP.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Sold at 10% loss. CP ₹450. SP?",
+      "options": [
+        "440",
+        "460",
+        "45",
+        "405"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 450×0.9 = 405.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Two articles CP ₹100 and ₹150 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-44.0%",
+        "-110%",
+        "0%",
+        "56%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total CP=250, SP=140. Step 2: -44.0%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Uses false weight 10% more, claims 20% profit. Actual profit %?",
+      "options": [
+        "20%",
+        "32.0%",
+        "30%",
+        "37.0%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Effective gain factor = 1.320. Step 2: Actual profit ≈ 32.0%.",
+      "trick": "False weight inflates SP.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "CP=₹450, SP=₹530. Profit %?",
+      "options": [
+        "80%",
+        "82%",
+        "18%",
+        "118%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit = 80. Step 2: 80/450×100 = 18%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "CP ₹540, loss 11%. Find SP.",
+      "options": [
+        "529",
+        "551",
+        "59",
+        "481"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 540×(1−11/100) = 481.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "SP ₹680 at 10% profit. Find CP.",
+      "options": [
+        "618",
+        "670",
+        "612",
+        "740"
+      ],
+      "answer": "A",
+      "solution": "Step 1: CP = 680/1.10 = 618.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "MP ₹1100, discount 16%. SP?",
+      "options": [
+        "1084",
+        "924",
+        "176",
+        "2024"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1100×(1−16/100) = 924.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "CP ₹850. Sold at 25% profit. SP?",
+      "options": [
+        "875",
+        "212",
+        "1062",
+        "975"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SP = 850×1.25 = 1062.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Shopkeeper mixes two items with CP ratio 21:26. Average CP per unit if equal quantities?",
+      "options": [
+        "47",
+        "546",
+        "5",
+        "23.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Equal qty → avg CP = (21+26)/2 = 23.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Bought at ₹240, sold at ₹310. Profit %?",
+      "options": [
+        "29%",
+        "70%",
+        "129%",
+        "240%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit 70. Step 2: 29%.",
+      "trick": "Profit on CP.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Sold at 10% loss. CP ₹480. SP?",
+      "options": [
+        "470",
+        "432",
+        "490",
+        "48"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 480×0.9 = 432.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Two articles CP ₹100 and ₹160 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-120%",
+        "0%",
+        "-46.2%",
+        "54%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total CP=260, SP=140. Step 2: -46.2%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1057,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1330. Profit %?",
+      "options": [
+        "1090%",
+        "554%",
+        "240%",
+        "454%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Profit 1090. Step 2: 454%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "CP=₹500, SP=₹580. Profit %?",
+      "options": [
+        "16%",
+        "80%",
+        "84%",
+        "116%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit = 80. Step 2: 80/500×100 = 16%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "CP ₹580, loss 12%. Find SP.",
+      "options": [
+        "568",
+        "510",
+        "592",
+        "70"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 580×(1−12/100) = 510.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "SP ₹700 at 10% profit. Find CP.",
+      "options": [
+        "690",
+        "630",
+        "636",
+        "760"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 700/1.10 = 636.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "MP ₹1200, discount 17%. SP?",
+      "options": [
+        "1183",
+        "204",
+        "2196",
+        "996"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 1200×(1−17/100) = 996.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "CP ₹900. Sold at 25% profit. SP?",
+      "options": [
+        "1125",
+        "925",
+        "225",
+        "1025"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 900×1.25 = 1125.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Shopkeeper mixes two items with CP ratio 22:27. Average CP per unit if equal quantities?",
+      "options": [
+        "49",
+        "24.5",
+        "594",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Equal qty → avg CP = (22+27)/2 = 24.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Bought at ₹240, sold at ₹320. Profit %?",
+      "options": [
+        "80%",
+        "133%",
+        "33%",
+        "240%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit 80. Step 2: 33%.",
+      "trick": "Profit on CP.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Sold at 10% loss. CP ₹510. SP?",
+      "options": [
+        "500",
+        "520",
+        "51",
+        "459"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 510×0.9 = 459.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Two articles CP ₹100 and ₹170 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-48.1%",
+        "-130%",
+        "0%",
+        "52%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total CP=270, SP=140. Step 2: -48.1%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1067,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1340. Profit %?",
+      "options": [
+        "1100%",
+        "458%",
+        "558%",
+        "240%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Profit 1100. Step 2: 458%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "CP=₹550, SP=₹630. Profit %?",
+      "options": [
+        "80%",
+        "85%",
+        "15%",
+        "115%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit = 80. Step 2: 80/550×100 = 15%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "CP ₹620, loss 13%. Find SP.",
+      "options": [
+        "607",
+        "633",
+        "81",
+        "539"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 620×(1−13/100) = 539.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "SP ₹720 at 10% profit. Find CP.",
+      "options": [
+        "655",
+        "710",
+        "648",
+        "780"
+      ],
+      "answer": "A",
+      "solution": "Step 1: CP = 720/1.10 = 655.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "MP ₹1300, discount 18%. SP?",
+      "options": [
+        "1282",
+        "1066",
+        "234",
+        "2366"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1300×(1−18/100) = 1066.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "CP ₹950. Sold at 25% profit. SP?",
+      "options": [
+        "975",
+        "238",
+        "1188",
+        "1075"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SP = 950×1.25 = 1188.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Shopkeeper mixes two items with CP ratio 23:28. Average CP per unit if equal quantities?",
+      "options": [
+        "51",
+        "644",
+        "5",
+        "25.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Equal qty → avg CP = (23+28)/2 = 25.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹330. Profit %?",
+      "options": [
+        "38%",
+        "90%",
+        "138%",
+        "240%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit 90. Step 2: 38%.",
+      "trick": "Profit on CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Sold at 10% loss. CP ₹540. SP?",
+      "options": [
+        "530",
+        "486",
+        "550",
+        "54"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 540×0.9 = 486.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Two articles CP ₹100 and ₹180 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-140%",
+        "0%",
+        "-50.0%",
+        "50%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total CP=280, SP=140. Step 2: -50.0%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1077,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1350. Profit %?",
+      "options": [
+        "1110%",
+        "562%",
+        "240%",
+        "462%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Profit 1110. Step 2: 462%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "CP=₹600, SP=₹680. Profit %?",
+      "options": [
+        "13%",
+        "80%",
+        "87%",
+        "113%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit = 80. Step 2: 80/600×100 = 13%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "CP ₹660, loss 14%. Find SP.",
+      "options": [
+        "646",
+        "568",
+        "674",
+        "92"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 660×(1−14/100) = 568.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "SP ₹740 at 10% profit. Find CP.",
+      "options": [
+        "730",
+        "666",
+        "673",
+        "800"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 740/1.10 = 673.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "MP ₹1400, discount 19%. SP?",
+      "options": [
+        "1381",
+        "266",
+        "2534",
+        "1134"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 1400×(1−19/100) = 1134.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "CP ₹1000. Sold at 25% profit. SP?",
+      "options": [
+        "1250",
+        "1025",
+        "250",
+        "1125"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1000×1.25 = 1250.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Shopkeeper mixes two items with CP ratio 24:29. Average CP per unit if equal quantities?",
+      "options": [
+        "53",
+        "26.5",
+        "696",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Equal qty → avg CP = (24+29)/2 = 26.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹340. Profit %?",
+      "options": [
+        "100%",
+        "142%",
+        "42%",
+        "240%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit 100. Step 2: 42%.",
+      "trick": "Profit on CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Sold at 10% loss. CP ₹570. SP?",
+      "options": [
+        "560",
+        "580",
+        "57",
+        "513"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 570×0.9 = 513.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Two articles CP ₹100 and ₹190 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-51.7%",
+        "-150%",
+        "0%",
+        "48%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total CP=290, SP=140. Step 2: -51.7%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1087,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1360. Profit %?",
+      "options": [
+        "1120%",
+        "467%",
+        "567%",
+        "240%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Profit 1120. Step 2: 467%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "CP=₹650, SP=₹730. Profit %?",
+      "options": [
+        "80%",
+        "88%",
+        "12%",
+        "112%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit = 80. Step 2: 80/650×100 = 12%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "CP ₹700, loss 15%. Find SP.",
+      "options": [
+        "685",
+        "715",
+        "105",
+        "595"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 700×(1−15/100) = 595.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "SP ₹760 at 10% profit. Find CP.",
+      "options": [
+        "691",
+        "750",
+        "684",
+        "820"
+      ],
+      "answer": "A",
+      "solution": "Step 1: CP = 760/1.10 = 691.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "MP ₹1500, discount 20%. SP?",
+      "options": [
+        "1480",
+        "1200",
+        "300",
+        "2700"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1500×(1−20/100) = 1200.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "CP ₹1050. Sold at 25% profit. SP?",
+      "options": [
+        "1075",
+        "262",
+        "1312",
+        "1175"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SP = 1050×1.25 = 1312.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Shopkeeper mixes two items with CP ratio 25:30. Average CP per unit if equal quantities?",
+      "options": [
+        "55",
+        "750",
+        "5",
+        "27.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Equal qty → avg CP = (25+30)/2 = 27.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹350. Profit %?",
+      "options": [
+        "46%",
+        "110%",
+        "146%",
+        "240%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit 110. Step 2: 46%.",
+      "trick": "Profit on CP.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Sold at 10% loss. CP ₹600. SP?",
+      "options": [
+        "590",
+        "540",
+        "610",
+        "60"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 600×0.9 = 540.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Two articles CP ₹100 and ₹200 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-160%",
+        "0%",
+        "-53.3%",
+        "47%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total CP=300, SP=140. Step 2: -53.3%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1097,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1370. Profit %?",
+      "options": [
+        "1130%",
+        "571%",
+        "240%",
+        "471%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Profit 1130. Step 2: 471%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "CP=₹700, SP=₹780. Profit %?",
+      "options": [
+        "11%",
+        "80%",
+        "89%",
+        "111%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit = 80. Step 2: 80/700×100 = 11%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "CP ₹740, loss 16%. Find SP.",
+      "options": [
+        "724",
+        "622",
+        "756",
+        "118"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 740×(1−16/100) = 622.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "SP ₹780 at 10% profit. Find CP.",
+      "options": [
+        "770",
+        "702",
+        "709",
+        "840"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 780/1.10 = 709.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "MP ₹1600, discount 21%. SP?",
+      "options": [
+        "1579",
+        "336",
+        "2864",
+        "1264"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 1600×(1−21/100) = 1264.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "CP ₹1100. Sold at 25% profit. SP?",
+      "options": [
+        "1375",
+        "1125",
+        "275",
+        "1225"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1100×1.25 = 1375.",
+      "trick": "SP = CP(1+25%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Shopkeeper mixes two items with CP ratio 26:31. Average CP per unit if equal quantities?",
+      "options": [
+        "57",
+        "28.5",
+        "806",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Equal qty → avg CP = (26+31)/2 = 28.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹360. Profit %?",
+      "options": [
+        "120%",
+        "150%",
+        "50%",
+        "240%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit 120. Step 2: 50%.",
+      "trick": "Profit on CP.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Sold at 10% loss. CP ₹630. SP?",
+      "options": [
+        "620",
+        "640",
+        "63",
+        "567"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 630×0.9 = 567.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Two articles CP ₹100 and ₹210 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-54.8%",
+        "-170%",
+        "0%",
+        "45%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Total CP=310, SP=140. Step 2: -54.8%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1107,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1380. Profit %?",
+      "options": [
+        "1140%",
+        "475%",
+        "575%",
+        "240%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Profit 1140. Step 2: 475%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "CP=₹750, SP=₹830. Profit %?",
+      "options": [
+        "80%",
+        "89%",
+        "11%",
+        "111%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Profit = 80. Step 2: 80/750×100 = 11%.",
+      "trick": "Profit% = profit/CP×100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "CP ₹780, loss 17%. Find SP.",
+      "options": [
+        "763",
+        "797",
+        "133",
+        "647"
+      ],
+      "answer": "D",
+      "solution": "Step 1: SP = 780×(1−17/100) = 647.",
+      "trick": "SP = CP(1 − loss%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "SP ₹800 at 10% profit. Find CP.",
+      "options": [
+        "727",
+        "790",
+        "720",
+        "860"
+      ],
+      "answer": "A",
+      "solution": "Step 1: CP = 800/1.10 = 727.",
+      "trick": "CP = SP/(1+profit%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "MP ₹1700, discount 22%. SP?",
+      "options": [
+        "1678",
+        "1326",
+        "374",
+        "3026"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1700×(1−22/100) = 1326.",
+      "trick": "SP = MP(1 − d%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "CP ₹1150. Sold at 25% profit. SP?",
+      "options": [
+        "1175",
+        "288",
+        "1438",
+        "1275"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SP = 1150×1.25 = 1438.",
+      "trick": "SP = CP(1+25%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Shopkeeper mixes two items with CP ratio 27:32. Average CP per unit if equal quantities?",
+      "options": [
+        "59",
+        "864",
+        "5",
+        "29.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Equal qty → avg CP = (27+32)/2 = 29.5 per ratio unit.",
+      "trick": "Equal weights → arithmetic mean.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹370. Profit %?",
+      "options": [
+        "54%",
+        "130%",
+        "154%",
+        "240%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Profit 130. Step 2: 54%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Sold at 10% loss. CP ₹660. SP?",
+      "options": [
+        "650",
+        "594",
+        "670",
+        "66"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 660×0.9 = 594.",
+      "trick": "Loss 10% → ×0.9.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Two articles CP ₹100 and ₹220 sold together for ₹140. Overall profit/loss %?",
+      "options": [
+        "-180%",
+        "0%",
+        "-56.2%",
+        "44%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Total CP=320, SP=140. Step 2: -56.2%.",
+      "trick": "Combined P/L on total CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1117,
+      "difficulty": "hard",
+      "question": "Bought at ₹240, sold at ₹1390. Profit %?",
+      "options": [
+        "1150%",
+        "579%",
+        "240%",
+        "479%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Profit 1150. Step 2: 479%.",
+      "trick": "Profit on CP.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

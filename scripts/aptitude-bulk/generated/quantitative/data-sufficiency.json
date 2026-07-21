@@ -1,0 +1,1207 @@
+{
+  "topic": "data-sufficiency",
+  "category": "quantitative",
+  "group": "data-based-quant",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1097,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1098,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1099,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1100,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1101,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1102,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1103,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1104,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1105,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1106,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1107,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1108,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1109,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1110,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1111,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1112,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1113,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1114,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1116,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1117,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1118,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1119,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1120,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1121,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1122,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1123,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1124,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1125,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1126,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1127,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1128,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1129,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1130,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1131,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1132,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1133,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1134,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1135,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1136,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1137,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1138,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1139,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1140,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1141,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1142,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1143,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1144,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1145,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1146,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1147,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1148,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1149,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1150,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1151,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1152,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1153,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1154,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1155,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1156,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1157,
+      "difficulty": "hard",
+      "question": "Is triangle right? (1) sides 3,4,5 (2) angle 90°",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: 3-4-5 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1158,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1159,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1160,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1161,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1162,
+      "difficulty": "hard",
+      "question": "Area of rectangle? (1) length 5 (2) width 3",
+      "options": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Both needed for area. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1163,
+      "difficulty": "hard",
+      "question": "Is a > b? (1) a − b = 1 (2) b − a = −1",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Either alone sufficient. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1164,
+      "difficulty": "hard",
+      "question": "Value of x+y? (1) x=3 (2) y=4",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Need both sums. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1165,
+      "difficulty": "hard",
+      "question": "Profit percent? (1) CP 100 (2) SP 120",
+      "options": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Test each statement. Step 2: Need both CP and SP. Answer: C.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1166,
+      "difficulty": "hard",
+      "question": "Is x > 0? (1) x² = 4 (2) x = 2",
+      "options": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Test each statement. Step 2: Both needed: x=±2, need sign. Answer: D.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1167,
+      "difficulty": "hard",
+      "question": "What is n? (1) 2n = 10 (2) n + 1 = 6",
+      "options": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 alone: n=5. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1168,
+      "difficulty": "hard",
+      "question": "Is n even? (1) n divisible by 2 (2) n = 4k",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Test each statement. Step 2: Statement 1 sufficient. Answer: A.",
+      "trick": "Data sufficiency logic.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

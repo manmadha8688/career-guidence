@@ -1,0 +1,402 @@
+[
+  {
+    "id": "profit-loss-q1",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A book bought for ₹200 is sold for ₹250. Find the profit percent.",
+    "options": [
+      "25%",
+      "20%",
+      "50%",
+      "12.5%"
+    ],
+    "answer": "A",
+    "solution": "Profit = 250 − 200 = 50. Profit% = 50/200 × 100 = 25% (on cost price).",
+    "trick": "50/200 = 1/4 = 25%.",
+    "type": "Find profit% or loss%",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q2",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "An item bought for ₹500 is sold for ₹400. Find the loss percent.",
+    "options": [
+      "25%",
+      "20%",
+      "10%",
+      "15%"
+    ],
+    "answer": "B",
+    "solution": "Loss = 500 − 400 = 100. Loss% = 100/500 × 100 = 20% (on cost price).",
+    "trick": "100/500 = 20%.",
+    "type": "Find profit% or loss%",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q3",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The cost price is ₹800 and the profit is 15%. Find the selling price.",
+    "options": [
+      "₹840",
+      "₹960",
+      "₹920",
+      "₹900"
+    ],
+    "answer": "C",
+    "solution": "SP = 800 × (100 + 15)/100 = 800 × 1.15 = ₹920.",
+    "trick": "800 × 1.15 = 920.",
+    "type": "Find SP from CP and profit% (or reverse)",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q4",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "The cost price is ₹600 and there is a loss of 10%. Find the selling price.",
+    "options": [
+      "₹660",
+      "₹560",
+      "₹594",
+      "₹540"
+    ],
+    "answer": "D",
+    "solution": "SP = 600 × (100 − 10)/100 = 600 × 0.9 = ₹540.",
+    "trick": "600 × 0.9 = 540.",
+    "type": "Find SP from CP and profit% (or reverse)",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q5",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A watch is marked at ₹1000 and sold at a 20% discount. Find the selling price.",
+    "options": [
+      "₹800",
+      "₹200",
+      "₹750",
+      "₹820"
+    ],
+    "answer": "A",
+    "solution": "SP = 1000 × (100 − 20)/100 = 1000 × 0.8 = ₹800.",
+    "trick": "1000 × 0.8 = 800.",
+    "type": "Marked price, discount and profit together",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q6",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A dealer uses a 900 g weight for 1 kg while selling at cost price. Find his gain percent.",
+    "options": [
+      "10%",
+      "11.11%",
+      "9%",
+      "12.5%"
+    ],
+    "answer": "B",
+    "solution": "Error = 100 g. Gain% = error/(true − error) × 100 = 100/900 × 100 = 11.11%.",
+    "trick": "100/900 = 11.11%.",
+    "type": "Dishonest dealer / false weight",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q7",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "The cost price of 10 articles equals the selling price of 8 articles. Find the profit percent.",
+    "options": [
+      "20%",
+      "2%",
+      "25%",
+      "80%"
+    ],
+    "answer": "C",
+    "solution": "Gain% = (x − y)/y × 100 with x = 10, y = 8 = 2/8 × 100 = 25%.",
+    "trick": "(10−8)/8 = 25%.",
+    "type": "Cost of x = selling price of y",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q8",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "By selling a fan for ₹1080 a man gains ₹180. Find his profit percent.",
+    "options": [
+      "18%",
+      "16.67%",
+      "25%",
+      "20%"
+    ],
+    "answer": "D",
+    "solution": "CP = 1080 − 180 = 900. Profit% = 180/900 × 100 = 20%.",
+    "trick": "180/900 = 20%.",
+    "type": "Find profit% or loss%",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q9",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "By selling an article for ₹660 a shopkeeper gains 10%. Find the cost price.",
+    "options": [
+      "₹600",
+      "₹594",
+      "₹726",
+      "₹550"
+    ],
+    "answer": "A",
+    "solution": "CP = SP ÷ (100 + 10)/100 = 660 / 1.1 = ₹600.",
+    "trick": "660 / 1.1 = 600.",
+    "type": "Find SP from CP and profit% (or reverse)",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q10",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "An article is sold for ₹450 at a 10% loss. Find its cost price.",
+    "options": [
+      "₹495",
+      "₹500",
+      "₹405",
+      "₹550"
+    ],
+    "answer": "B",
+    "solution": "CP = SP ÷ (100 − 10)/100 = 450 / 0.9 = ₹500.",
+    "trick": "450 / 0.9 = 500.",
+    "type": "Find SP from CP and profit% (or reverse)",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q11",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A shopkeeper marks an item ₹1250 and allows a 20% discount. If it cost him ₹800, find his profit percent.",
+    "options": [
+      "20%",
+      "56%",
+      "25%",
+      "37.5%"
+    ],
+    "answer": "C",
+    "solution": "SP = 1250 × 0.8 = 1000. Profit = 1000 − 800 = 200. Profit% = 200/800 × 100 = 25%.",
+    "trick": "SP 1000, profit 200 on 800 = 25%.",
+    "type": "Marked price, discount and profit together",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q12",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A man sells two watches at ₹990 each, gaining 10% on one and losing 10% on the other. Find his overall result.",
+    "options": [
+      "No profit no loss",
+      "1% gain",
+      "2% loss",
+      "1% loss"
+    ],
+    "answer": "D",
+    "solution": "Same SP with equal ± x% → net loss (x/10)² = (10/10)² = 1% loss.",
+    "trick": "(10/10)² = 1% loss.",
+    "type": "Two articles at the same SP",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q13",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A grocer professes to sell at cost price but uses a weight of 960 g for 1 kg. Find his gain percent (to two decimals).",
+    "options": [
+      "4.17%",
+      "4%",
+      "5%",
+      "4.5%"
+    ],
+    "answer": "A",
+    "solution": "Error = 40 g. Gain% = 40/(1000 − 40) × 100 = 40/960 × 100 = 4.17%.",
+    "trick": "40/960 = 4.17%.",
+    "type": "Dishonest dealer / false weight",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q14",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "If the selling price of 20 articles equals the cost price of 25 articles, find the profit percent.",
+    "options": [
+      "20%",
+      "25%",
+      "5%",
+      "80%"
+    ],
+    "answer": "B",
+    "solution": "CP of 25 = SP of 20, so x = 25, y = 20. Gain% = (25 − 20)/20 × 100 = 25%.",
+    "trick": "(25−20)/20 = 25%.",
+    "type": "Cost of x = selling price of y",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q15",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A man buys 12 apples for ₹100 and sells 10 apples for ₹100. Find his profit or loss percent.",
+    "options": [
+      "20% loss",
+      "16.67% profit",
+      "20% profit",
+      "25% profit"
+    ],
+    "answer": "C",
+    "solution": "CP of one apple = 100/12; SP of one apple = 100/10. Ratio SP/CP = (100/10)/(100/12) = 12/10 = 1.2, so 20% profit.",
+    "trick": "SP/CP = 12/10 → 20% profit.",
+    "type": "Find profit% or loss%",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q16",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A shopkeeper sold an article at a loss of 10%. Had he sold it for ₹90 more, he would have gained 8%. Find the cost price.",
+    "options": [
+      "₹450",
+      "₹540",
+      "₹600",
+      "₹500"
+    ],
+    "answer": "D",
+    "solution": "Let CP = x. Then 0.9x + 90 = 1.08x → 90 = 0.18x → x = ₹500.",
+    "trick": "90 = (8% + 10%) of CP = 0.18·CP → 500.",
+    "type": "Find SP from CP and profit% (or reverse)",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q17",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The marked price of a shirt is ₹1500. Two successive discounts of 20% and 10% are given. Find the selling price.",
+    "options": [
+      "₹1080",
+      "₹1050",
+      "₹1000",
+      "₹1125"
+    ],
+    "answer": "A",
+    "solution": "SP = 1500 × 0.8 × 0.9 = 1500 × 0.72 = ₹1080.",
+    "trick": "×0.8 ×0.9 = ×0.72 → 1080.",
+    "type": "Marked price, discount and profit together",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q18",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A trader sells two items for ₹1200 each; on one he gains 25% and on the other loses 25%. Find his total loss amount.",
+    "options": [
+      "₹0",
+      "₹160",
+      "₹150",
+      "₹200"
+    ],
+    "answer": "B",
+    "solution": "CP1 = 1200/1.25 = 960; CP2 = 1200/0.75 = 1600. Total CP = 2560, total SP = 2400. Loss = ₹160.",
+    "trick": "Net loss % (25/10)² = 6.25% of 2560 = 160.",
+    "type": "Two articles at the same SP",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q19",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A dishonest dealer marks up his goods by 20% and also uses a 900 g weight for 1 kg. Find his net profit percent.",
+    "options": [
+      "32%",
+      "30%",
+      "33.33%",
+      "11.11%"
+    ],
+    "answer": "C",
+    "solution": "He gives 900 g (cost 900) but charges for 1000 g at 20% markup = 1200. Profit = 300 on 900 → 33.33%.",
+    "trick": "1.2 × (1000/900) = 1.333 → 33.33%.",
+    "type": "Dishonest dealer / false weight",
+    "active": true
+  },
+  {
+    "id": "profit-loss-q20",
+    "topic": "profit-loss",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A man sells oranges so that the selling price of 25 oranges equals the cost price of 25 oranges plus the cost price of 5 oranges. Find his gain percent.",
+    "options": [
+      "25%",
+      "16.67%",
+      "5%",
+      "20%"
+    ],
+    "answer": "D",
+    "solution": "Gain on 25 oranges = CP of 5 oranges. Gain% = 5/25 × 100 = 20%.",
+    "trick": "Gain of 5 on 25 = 20%.",
+    "type": "Cost of x = selling price of y",
+    "active": true
+  }
+]

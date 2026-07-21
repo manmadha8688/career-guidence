@@ -1,0 +1,1207 @@
+{
+  "topic": "discount",
+  "category": "quantitative",
+  "group": "percentage-commercial",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Marked price ₹1200, discount 10%. Selling price?",
+      "options": [
+        "1080",
+        "1190",
+        "120",
+        "2280"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1200×(1−10/100) = 1080.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "After 10% discount, SP is ₹810. Marked price?",
+      "options": [
+        "820",
+        "900",
+        "891",
+        "900"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 810/0.90 = 900.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "MP ₹2000, SP ₹1700. Discount %?",
+      "options": [
+        "300%",
+        "85%",
+        "15%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 300. Step 2: 15%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Successive discounts 10% and 5% on ₹1000?",
+      "options": [
+        "850",
+        "850",
+        "950",
+        "855"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1000×0.9×0.95 = 855.",
+      "trick": "Multiply discount factors.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "CP ₹800, MP ₹1000. Discount % if sold at CP?",
+      "options": [
+        "20.0%",
+        "25%",
+        "0%",
+        "25.0%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1000-800)/1000×100 = 20.0%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Laptop marked ₹1500, sold at 12% off. SP?",
+      "options": [
+        "1488",
+        "1320",
+        "180",
+        "1380"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1500×0.88 = 1320.",
+      "trick": "12% off → ×0.88.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "MP gives 25% profit on CP. MP ₹500. CP?",
+      "options": [
+        "475",
+        "375",
+        "400",
+        "450"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 500/1.25 = 400.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "List ₹2400, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "1800",
+        "1900",
+        "2040",
+        "1824"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 2400×0.8. After cash: ×0.95 = 1824.",
+      "trick": "Successive on list.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Marked price ₹1300, discount 11%. Selling price?",
+      "options": [
+        "1157",
+        "1289",
+        "143",
+        "2457"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1300×(1−11/100) = 1157.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "After 10% discount, SP is ₹830. Marked price?",
+      "options": [
+        "840",
+        "922",
+        "913",
+        "920"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 830/0.90 = 922.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "MP ₹2050, SP ₹1740. Discount %?",
+      "options": [
+        "310%",
+        "85%",
+        "15%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 310. Step 2: 15%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Successive discounts 10% and 5% on ₹1100?",
+      "options": [
+        "935",
+        "950",
+        "1045",
+        "940"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1100×0.9×0.95 = 940.",
+      "trick": "Multiply discount factors.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "CP ₹850, MP ₹1050. Discount % if sold at CP?",
+      "options": [
+        "19.0%",
+        "24%",
+        "0%",
+        "24.0%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1050-850)/1050×100 = 19.0%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Laptop marked ₹1600, sold at 12% off. SP?",
+      "options": [
+        "1588",
+        "1408",
+        "192",
+        "1480"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1600×0.88 = 1408.",
+      "trick": "12% off → ×0.88.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "MP gives 25% profit on CP. MP ₹550. CP?",
+      "options": [
+        "525",
+        "412",
+        "440",
+        "490"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 550/1.25 = 440.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "List ₹2600, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "1950",
+        "2100",
+        "2210",
+        "1976"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 2600×0.8. After cash: ×0.95 = 1976.",
+      "trick": "Successive on list.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Marked price ₹1400, discount 12%. Selling price?",
+      "options": [
+        "1232",
+        "1388",
+        "168",
+        "2632"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1400×(1−12/100) = 1232.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "After 10% discount, SP is ₹850. Marked price?",
+      "options": [
+        "860",
+        "944",
+        "935",
+        "940"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 850/0.90 = 944.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "MP ₹2100, SP ₹1780. Discount %?",
+      "options": [
+        "320%",
+        "85%",
+        "15%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 320. Step 2: 15%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Successive discounts 10% and 5% on ₹1200?",
+      "options": [
+        "1020",
+        "1050",
+        "1140",
+        "1026"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1200×0.9×0.95 = 1026.",
+      "trick": "Multiply discount factors.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "CP ₹900, MP ₹1100. Discount % if sold at CP?",
+      "options": [
+        "18.2%",
+        "22%",
+        "0%",
+        "23.2%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1100-900)/1100×100 = 18.2%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Laptop marked ₹1700, sold at 12% off. SP?",
+      "options": [
+        "1688",
+        "1496",
+        "204",
+        "1580"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1700×0.88 = 1496.",
+      "trick": "12% off → ×0.88.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "MP gives 25% profit on CP. MP ₹600. CP?",
+      "options": [
+        "575",
+        "450",
+        "480",
+        "530"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 600/1.25 = 480.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "List ₹2800, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "2100",
+        "2300",
+        "2380",
+        "2128"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 2800×0.8. After cash: ×0.95 = 2128.",
+      "trick": "Successive on list.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Marked price ₹1500, discount 13%. Selling price?",
+      "options": [
+        "1305",
+        "1487",
+        "195",
+        "2805"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1500×(1−13/100) = 1305.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "After 10% discount, SP is ₹870. Marked price?",
+      "options": [
+        "880",
+        "967",
+        "957",
+        "960"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 870/0.90 = 967.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "MP ₹2150, SP ₹1820. Discount %?",
+      "options": [
+        "330%",
+        "85%",
+        "15%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 330. Step 2: 15%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Successive discounts 10% and 5% on ₹1300?",
+      "options": [
+        "1105",
+        "1150",
+        "1235",
+        "1112"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1300×0.9×0.95 = 1112.",
+      "trick": "Multiply discount factors.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "CP ₹950, MP ₹1150. Discount % if sold at CP?",
+      "options": [
+        "17.4%",
+        "21%",
+        "0%",
+        "22.4%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1150-950)/1150×100 = 17.4%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Laptop marked ₹1800, sold at 12% off. SP?",
+      "options": [
+        "1788",
+        "1584",
+        "216",
+        "1680"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1800×0.88 = 1584.",
+      "trick": "12% off → ×0.88.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "MP gives 25% profit on CP. MP ₹650. CP?",
+      "options": [
+        "625",
+        "488",
+        "520",
+        "570"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 650/1.25 = 520.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "List ₹3000, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "2250",
+        "2500",
+        "2550",
+        "2280"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 3000×0.8. After cash: ×0.95 = 2280.",
+      "trick": "Successive on list.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Marked price ₹1600, discount 14%. Selling price?",
+      "options": [
+        "1376",
+        "1586",
+        "224",
+        "2976"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1600×(1−14/100) = 1376.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "After 10% discount, SP is ₹890. Marked price?",
+      "options": [
+        "900",
+        "989",
+        "979",
+        "980"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 890/0.90 = 989.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "MP ₹2200, SP ₹1860. Discount %?",
+      "options": [
+        "340%",
+        "85%",
+        "15%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 340. Step 2: 15%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Successive discounts 10% and 5% on ₹1400?",
+      "options": [
+        "1190",
+        "1250",
+        "1330",
+        "1197"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1400×0.9×0.95 = 1197.",
+      "trick": "Multiply discount factors.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "CP ₹1000, MP ₹1200. Discount % if sold at CP?",
+      "options": [
+        "16.7%",
+        "20%",
+        "0%",
+        "21.7%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1200-1000)/1200×100 = 16.7%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Laptop marked ₹1900, sold at 12% off. SP?",
+      "options": [
+        "1888",
+        "1672",
+        "228",
+        "1780"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 1900×0.88 = 1672.",
+      "trick": "12% off → ×0.88.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "MP gives 25% profit on CP. MP ₹700. CP?",
+      "options": [
+        "675",
+        "525",
+        "560",
+        "610"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 700/1.25 = 560.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "List ₹3200, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "2400",
+        "2700",
+        "2720",
+        "2432"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 3200×0.8. After cash: ×0.95 = 2432.",
+      "trick": "Successive on list.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Marked price ₹1700, discount 15%. Selling price?",
+      "options": [
+        "1445",
+        "1685",
+        "255",
+        "3145"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1700×(1−15/100) = 1445.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "After 10% discount, SP is ₹910. Marked price?",
+      "options": [
+        "920",
+        "1011",
+        "1001",
+        "1000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 910/0.90 = 1011.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "MP ₹2250, SP ₹1900. Discount %?",
+      "options": [
+        "350%",
+        "84%",
+        "16%",
+        "21%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 350. Step 2: 16%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Successive discounts 10% and 5% on ₹1500?",
+      "options": [
+        "1275",
+        "1350",
+        "1425",
+        "1282"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1500×0.9×0.95 = 1282.",
+      "trick": "Multiply discount factors.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "CP ₹1050, MP ₹1250. Discount % if sold at CP?",
+      "options": [
+        "16.0%",
+        "19%",
+        "0%",
+        "21.0%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1250-1050)/1250×100 = 16.0%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Laptop marked ₹2000, sold at 12% off. SP?",
+      "options": [
+        "1988",
+        "1760",
+        "240",
+        "1880"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 2000×0.88 = 1760.",
+      "trick": "12% off → ×0.88.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "MP gives 25% profit on CP. MP ₹750. CP?",
+      "options": [
+        "725",
+        "562",
+        "600",
+        "650"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 750/1.25 = 600.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "List ₹3400, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "2550",
+        "2900",
+        "2890",
+        "2584"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 3400×0.8. After cash: ×0.95 = 2584.",
+      "trick": "Successive on list.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Marked price ₹1800, discount 16%. Selling price?",
+      "options": [
+        "1512",
+        "1784",
+        "288",
+        "3312"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1800×(1−16/100) = 1512.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "After 10% discount, SP is ₹930. Marked price?",
+      "options": [
+        "940",
+        "1033",
+        "1023",
+        "1020"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 930/0.90 = 1033.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "MP ₹2300, SP ₹1940. Discount %?",
+      "options": [
+        "360%",
+        "84%",
+        "16%",
+        "21%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 360. Step 2: 16%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Successive discounts 10% and 5% on ₹1600?",
+      "options": [
+        "1360",
+        "1450",
+        "1520",
+        "1368"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1600×0.9×0.95 = 1368.",
+      "trick": "Multiply discount factors.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "CP ₹1100, MP ₹1300. Discount % if sold at CP?",
+      "options": [
+        "15.4%",
+        "18%",
+        "0%",
+        "20.4%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1300-1100)/1300×100 = 15.4%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Laptop marked ₹2100, sold at 12% off. SP?",
+      "options": [
+        "2088",
+        "1848",
+        "252",
+        "1980"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 2100×0.88 = 1848.",
+      "trick": "12% off → ×0.88.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "MP gives 25% profit on CP. MP ₹800. CP?",
+      "options": [
+        "775",
+        "600",
+        "640",
+        "690"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 800/1.25 = 640.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "List ₹3600, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "2700",
+        "3100",
+        "3060",
+        "2736"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 3600×0.8. After cash: ×0.95 = 2736.",
+      "trick": "Successive on list.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Marked price ₹1900, discount 17%. Selling price?",
+      "options": [
+        "1577",
+        "1883",
+        "323",
+        "3477"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 1900×(1−17/100) = 1577.",
+      "trick": "SP = MP(1−d%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "After 10% discount, SP is ₹950. Marked price?",
+      "options": [
+        "960",
+        "1056",
+        "1045",
+        "1040"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 950/0.90 = 1056.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "MP ₹2350, SP ₹1980. Discount %?",
+      "options": [
+        "370%",
+        "84%",
+        "16%",
+        "21%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 370. Step 2: 16%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Successive discounts 10% and 5% on ₹1700?",
+      "options": [
+        "1445",
+        "1550",
+        "1615",
+        "1454"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1700×0.9×0.95 = 1454.",
+      "trick": "Multiply discount factors.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "CP ₹1150, MP ₹1350. Discount % if sold at CP?",
+      "options": [
+        "14.8%",
+        "17%",
+        "0%",
+        "19.8%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1350-1150)/1350×100 = 14.8%.",
+      "trick": "Discount from MP to CP.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Laptop marked ₹2200, sold at 12% off. SP?",
+      "options": [
+        "2188",
+        "1936",
+        "264",
+        "2080"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 2200×0.88 = 1936.",
+      "trick": "12% off → ×0.88.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "MP gives 25% profit on CP. MP ₹850. CP?",
+      "options": [
+        "825",
+        "638",
+        "680",
+        "730"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 850/1.25 = 680.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "List ₹3800, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "2850",
+        "3300",
+        "3230",
+        "2888"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 3800×0.8. After cash: ×0.95 = 2888.",
+      "trick": "Successive on list.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Marked price ₹2000, discount 18%. Selling price?",
+      "options": [
+        "1640",
+        "1982",
+        "360",
+        "3640"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 2000×(1−18/100) = 1640.",
+      "trick": "SP = MP(1−d%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "After 10% discount, SP is ₹970. Marked price?",
+      "options": [
+        "980",
+        "1078",
+        "1067",
+        "1060"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 970/0.90 = 1078.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "MP ₹2400, SP ₹2020. Discount %?",
+      "options": [
+        "380%",
+        "84%",
+        "16%",
+        "21%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 380. Step 2: 16%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Successive discounts 10% and 5% on ₹1800?",
+      "options": [
+        "1530",
+        "1650",
+        "1710",
+        "1539"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1800×0.9×0.95 = 1539.",
+      "trick": "Multiply discount factors.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "CP ₹1200, MP ₹1400. Discount % if sold at CP?",
+      "options": [
+        "14.3%",
+        "17%",
+        "0%",
+        "19.3%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1400-1200)/1400×100 = 14.3%.",
+      "trick": "Discount from MP to CP.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Laptop marked ₹2300, sold at 12% off. SP?",
+      "options": [
+        "2288",
+        "2024",
+        "276",
+        "2180"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 2300×0.88 = 2024.",
+      "trick": "12% off → ×0.88.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "MP gives 25% profit on CP. MP ₹900. CP?",
+      "options": [
+        "875",
+        "675",
+        "720",
+        "770"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 900/1.25 = 720.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "List ₹4000, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "3000",
+        "3500",
+        "3400",
+        "3040"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 4000×0.8. After cash: ×0.95 = 3040.",
+      "trick": "Successive on list.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Marked price ₹2100, discount 19%. Selling price?",
+      "options": [
+        "1701",
+        "2081",
+        "399",
+        "3801"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SP = 2100×(1−19/100) = 1701.",
+      "trick": "SP = MP(1−d%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "After 10% discount, SP is ₹990. Marked price?",
+      "options": [
+        "1000",
+        "1100",
+        "1089",
+        "1080"
+      ],
+      "answer": "B",
+      "solution": "Step 1: MP = 990/0.90 = 1100.",
+      "trick": "MP = SP/(1−d%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "MP ₹2450, SP ₹2060. Discount %?",
+      "options": [
+        "390%",
+        "84%",
+        "16%",
+        "21%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Discount = 390. Step 2: 16%.",
+      "trick": "d% = (MP−SP)/MP×100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Successive discounts 10% and 5% on ₹1900?",
+      "options": [
+        "1615",
+        "1750",
+        "1805",
+        "1624"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1900×0.9×0.95 = 1624.",
+      "trick": "Multiply discount factors.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "CP ₹1250, MP ₹1450. Discount % if sold at CP?",
+      "options": [
+        "13.8%",
+        "16%",
+        "0%",
+        "18.8%"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Need SP=CP. Discount on MP = (1450-1250)/1450×100 = 13.8%.",
+      "trick": "Discount from MP to CP.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Laptop marked ₹2400, sold at 12% off. SP?",
+      "options": [
+        "2388",
+        "2112",
+        "288",
+        "2280"
+      ],
+      "answer": "B",
+      "solution": "Step 1: SP = 2400×0.88 = 2112.",
+      "trick": "12% off → ×0.88.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "MP gives 25% profit on CP. MP ₹950. CP?",
+      "options": [
+        "925",
+        "712",
+        "760",
+        "810"
+      ],
+      "answer": "C",
+      "solution": "Step 1: CP = 950/1.25 = 760.",
+      "trick": "CP = MP/(1+profit%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "List ₹4200, trade discount 20%, cash discount 5% on balance. Final price?",
+      "options": [
+        "3150",
+        "3700",
+        "3570",
+        "3192"
+      ],
+      "answer": "D",
+      "solution": "Step 1: After trade: 4200×0.8. After cash: ×0.95 = 3192.",
+      "trick": "Successive on list.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

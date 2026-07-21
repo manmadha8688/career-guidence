@@ -1,0 +1,402 @@
+[
+  {
+    "id": "logical-venn-diagrams-q1",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "In a group, 20 like tea, 15 like coffee, and 5 like both. How many like at least one drink?",
+    "options": [
+      "30",
+      "35",
+      "25",
+      "40"
+    ],
+    "answer": "A",
+    "solution": "|A∪B| = 20 + 15 − 5 = 30.",
+    "trick": "A + B − both.",
+    "type": "Two-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q2",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "40 students study Maths, 25 study Physics, and 10 study both. How many study only Maths?",
+    "options": [
+      "25",
+      "30",
+      "35",
+      "20"
+    ],
+    "answer": "B",
+    "solution": "Only Maths = 40 − 10 = 30.",
+    "trick": "|A| − overlap.",
+    "type": "Only-one region",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q3",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "In a class of 50, 30 play cricket, 20 play football, and 10 play both. How many play neither?",
+    "options": [
+      "8",
+      "12",
+      "10",
+      "20"
+    ],
+    "answer": "C",
+    "solution": "At least one = 30 + 20 − 10 = 40; neither = 50 − 40 = 10.",
+    "trick": "total − union.",
+    "type": "Neither",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q4",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "60 read A, 50 read B, 40 read C; A∩B = 20, B∩C = 15, C∩A = 10, all three = 5. How many read at least one?",
+    "options": [
+      "100",
+      "105",
+      "115",
+      "110"
+    ],
+    "answer": "D",
+    "solution": "60+50+40 − 20 − 15 − 10 + 5 = 110.",
+    "trick": "singles − pairs + triple.",
+    "type": "Three-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q5",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Which diagram best fits: Pen, Pencil, Stationery?",
+    "options": [
+      "Pen and Pencil separate, both inside Stationery",
+      "All three overlapping",
+      "Three separate circles",
+      "Pen inside Pencil inside Stationery"
+    ],
+    "answer": "A",
+    "solution": "Pens and pencils are both stationery but distinct, so two separate circles inside one big Stationery circle.",
+    "trick": "Both inside, but separate from each other.",
+    "type": "Best diagram",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q6",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "12 like tea, 8 like coffee, and 3 like both. How many like at least one?",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "15"
+    ],
+    "answer": "B",
+    "solution": "12 + 8 − 3 = 17.",
+    "trick": "A + B − both.",
+    "type": "Two-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q7",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "25 people like item B, and 8 like both A and B. How many like only B?",
+    "options": [
+      "18",
+      "19",
+      "17",
+      "16"
+    ],
+    "answer": "C",
+    "solution": "Only B = 25 − 8 = 17.",
+    "trick": "|B| − overlap.",
+    "type": "Only-one region",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q8",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "In a class of 60, 35 play hockey, 30 play tennis, and 15 play both. How many play neither?",
+    "options": [
+      "12",
+      "8",
+      "11",
+      "10"
+    ],
+    "answer": "D",
+    "solution": "Union = 35 + 30 − 15 = 50; neither = 60 − 50 = 10.",
+    "trick": "total − union.",
+    "type": "Neither",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q9",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Which diagram best fits: Rose, Flower?",
+    "options": [
+      "Rose circle inside Flower",
+      "Two separate circles",
+      "Overlapping circles",
+      "Flower inside Rose"
+    ],
+    "answer": "A",
+    "solution": "All roses are flowers, so the Rose circle sits entirely inside the Flower circle.",
+    "trick": "All X are Y → X inside Y.",
+    "type": "Best diagram",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q10",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Set A has 100 members, set B has 80, and 30 are in both. How many are in A or B?",
+    "options": [
+      "140",
+      "150",
+      "160",
+      "130"
+    ],
+    "answer": "B",
+    "solution": "100 + 80 − 30 = 150.",
+    "trick": "A + B − both.",
+    "type": "Two-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q11",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "In a survey, 70 read a newspaper, 40 read a magazine, and 20 read both. How many read only the newspaper?",
+    "options": [
+      "40",
+      "60",
+      "50",
+      "30"
+    ],
+    "answer": "C",
+    "solution": "Only newspaper = 70 − 20 = 50.",
+    "trick": "|A| − overlap.",
+    "type": "Only-one region",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q12",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "In a class of 90, 50 like only Maths, 25 like only Science, and the rest like both. How many like both?",
+    "options": [
+      "10",
+      "20",
+      "25",
+      "15"
+    ],
+    "answer": "D",
+    "solution": "Both = 90 − 50 − 25 = 15.",
+    "trick": "total − only-A − only-B.",
+    "type": "Only-one region",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q13",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Which diagram best fits: Table, Chair, Furniture?",
+    "options": [
+      "Table and Chair separate, both inside Furniture",
+      "All three overlapping",
+      "Table inside Chair",
+      "Three separate circles"
+    ],
+    "answer": "A",
+    "solution": "Tables and chairs are both furniture but distinct, so two separate circles inside Furniture.",
+    "trick": "Two disjoint inside one.",
+    "type": "Best diagram",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q14",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "In a class of 45, 25 play cricket, 20 play chess, and 8 play both. How many play at least one?",
+    "options": [
+      "36",
+      "37",
+      "38",
+      "35"
+    ],
+    "answer": "B",
+    "solution": "25 + 20 − 8 = 37.",
+    "trick": "A + B − both.",
+    "type": "Two-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q15",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Three sets have 10, 15 and 20 members with no overlaps at all. How many are in their union?",
+    "options": [
+      "40",
+      "50",
+      "45",
+      "35"
+    ],
+    "answer": "C",
+    "solution": "No overlaps → union = 10 + 15 + 20 = 45.",
+    "trick": "Disjoint → just add.",
+    "type": "Three-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q16",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Out of 120 people, 60 like A, 70 like B, and 40 like both. How many like neither?",
+    "options": [
+      "20",
+      "25",
+      "35",
+      "30"
+    ],
+    "answer": "D",
+    "solution": "Union = 60 + 70 − 40 = 90; neither = 120 − 90 = 30.",
+    "trick": "total − union.",
+    "type": "Neither",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q17",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Three subjects each have 40 students; each pair shares 15; all three share 5. How many take at least one subject?",
+    "options": [
+      "80",
+      "85",
+      "75",
+      "90"
+    ],
+    "answer": "A",
+    "solution": "40×3 − 15×3 + 5 = 120 − 45 + 5 = 80.",
+    "trick": "singles − pairs + triple.",
+    "type": "Three-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q18",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A∩B = 20 and all three A∩B∩C = 5. How many are in exactly A and B only (not C)?",
+    "options": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ],
+    "answer": "B",
+    "solution": "A-and-B only = (A∩B) − (A∩B∩C) = 20 − 5 = 15.",
+    "trick": "pair-only = pair − triple.",
+    "type": "Three-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q19",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "In a group, 55 like coffee, 35 like tea, 15 like both, and 10 like neither. What is the total number of people?",
+    "options": [
+      "80",
+      "90",
+      "85",
+      "95"
+    ],
+    "answer": "C",
+    "solution": "Union = 55 + 35 − 15 = 75; total = 75 + 10 = 85.",
+    "trick": "union + neither.",
+    "type": "Two-set count",
+    "active": true
+  },
+  {
+    "id": "logical-venn-diagrams-q20",
+    "topic": "logical-venn-diagrams",
+    "category": "logical",
+    "group": "analytical",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Which diagram best fits: Apple, Fruit, Vegetable?",
+    "options": [
+      "All three overlapping",
+      "Three separate circles",
+      "Apple inside Vegetable",
+      "Apple inside Fruit, Vegetable separate"
+    ],
+    "answer": "D",
+    "solution": "All apples are fruits (apple inside fruit), and vegetables are a separate group.",
+    "trick": "Nested pair + one separate.",
+    "type": "Best diagram",
+    "active": true
+  }
+]

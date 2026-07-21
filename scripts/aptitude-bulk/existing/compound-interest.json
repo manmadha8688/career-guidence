@@ -1,0 +1,402 @@
+[
+  {
+    "id": "compound-interest-q1",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Find the amount on ₹5000 at 10% per annum compound interest for 2 years.",
+    "options": [
+      "₹6050",
+      "₹6000",
+      "₹6100",
+      "₹5500"
+    ],
+    "answer": "A",
+    "solution": "A = 5000(1 + 10/100)² = 5000×1.21 = ₹6050.",
+    "trick": "5000×1.21 = 6050.",
+    "type": "Find CI or amount (annual)",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q2",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Find the compound interest on ₹2000 at 10% per annum for 2 years.",
+    "options": [
+      "₹400",
+      "₹420",
+      "₹441",
+      "₹200"
+    ],
+    "answer": "B",
+    "solution": "A = 2000×1.21 = 2420. CI = 2420 − 2000 = ₹420.",
+    "trick": "2000×1.21 − 2000 = 420.",
+    "type": "Find CI or amount (annual)",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q3",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Find the amount on ₹8000 at 10% per annum compounded half-yearly for 1 year.",
+    "options": [
+      "₹8800",
+      "₹8000",
+      "₹8820",
+      "₹9680"
+    ],
+    "answer": "C",
+    "solution": "Half-yearly rate 5%, 2 periods. A = 8000(1.05)² = 8000×1.1025 = ₹8820.",
+    "trick": "Rate/2, periods×2 → 8000×1.1025.",
+    "type": "Half-yearly / quarterly",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q4",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Find the difference between the compound and simple interest on ₹4000 at 5% per annum for 2 years.",
+    "options": [
+      "₹20",
+      "₹5",
+      "₹40",
+      "₹10"
+    ],
+    "answer": "D",
+    "solution": "For 2 years, CI − SI = P(R/100)² = 4000×(0.05)² = 4000×0.0025 = ₹10.",
+    "trick": "P(R/100)² = 4000×0.0025 = 10.",
+    "type": "Difference between CI and SI",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q5",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A sum of ₹1000 becomes ₹1210 in 2 years at compound interest. Find the rate.",
+    "options": [
+      "10%",
+      "21%",
+      "5%",
+      "11%"
+    ],
+    "answer": "A",
+    "solution": "(1 + R/100)² = 1210/1000 = 1.21 → 1 + R/100 = 1.1 → R = 10%.",
+    "trick": "√1.21 = 1.1 → 10%.",
+    "type": "Find rate or time",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q6",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A sum doubles in 5 years at compound interest. In how many years will it become 4 times itself?",
+    "options": [
+      "20 years",
+      "10 years",
+      "15 years",
+      "8 years"
+    ],
+    "answer": "B",
+    "solution": "4 = 2², and doubling takes 5 years, so 4 times takes 2×5 = 10 years.",
+    "trick": "4× = double twice → 2×5 = 10.",
+    "type": "Becomes a multiple (doubling)",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q7",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Find the amount on ₹5000 for 2 years at 10% in the first year and 20% in the second.",
+    "options": [
+      "₹6500",
+      "₹6300",
+      "₹6600",
+      "₹7000"
+    ],
+    "answer": "C",
+    "solution": "A = 5000×1.1×1.2 = 5000×1.32 = ₹6600.",
+    "trick": "Multiply the factors: 1.1×1.2.",
+    "type": "Different rate each year",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q8",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Find the compound interest on ₹12500 at 8% per annum for 2 years.",
+    "options": [
+      "₹2000",
+      "₹2160",
+      "₹1800",
+      "₹2080"
+    ],
+    "answer": "D",
+    "solution": "A = 12500(1.08)² = 12500×1.1664 = 14580. CI = 14580 − 12500 = ₹2080.",
+    "trick": "1.08² = 1.1664.",
+    "type": "Find CI or amount (annual)",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q9",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Find the compound interest on ₹10000 at 20% per annum compounded half-yearly for 1 year.",
+    "options": [
+      "₹2100",
+      "₹2000",
+      "₹2200",
+      "₹1200"
+    ],
+    "answer": "A",
+    "solution": "Half-yearly rate 10%, 2 periods. A = 10000(1.1)² = 12100. CI = 12100 − 10000 = ₹2100.",
+    "trick": "Rate/2 = 10%, periods 2 → 1.21.",
+    "type": "Half-yearly / quarterly",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q10",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Find the amount on ₹16000 at 20% per annum compounded quarterly for 6 months.",
+    "options": [
+      "₹17600",
+      "₹17640",
+      "₹19360",
+      "₹16800"
+    ],
+    "answer": "B",
+    "solution": "Quarterly rate 5%, 6 months = 2 quarters. A = 16000(1.05)² = 16000×1.1025 = ₹17640.",
+    "trick": "Rate/4 = 5%, periods = 2 quarters.",
+    "type": "Half-yearly / quarterly",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q11",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "The difference between compound and simple interest on a sum at 10% per annum for 2 years is ₹50. Find the sum.",
+    "options": [
+      "₹500",
+      "₹2500",
+      "₹5000",
+      "₹10000"
+    ],
+    "answer": "C",
+    "solution": "CI − SI = P(R/100)² = P×0.01 = 50 → P = ₹5000.",
+    "trick": "P = difference / (R/100)² = 50/0.01.",
+    "type": "Difference between CI and SI",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q12",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "In how many years will ₹6250 amount to ₹7290 at 8% per annum compound interest?",
+    "options": [
+      "3 years",
+      "1 year",
+      "4 years",
+      "2 years"
+    ],
+    "answer": "D",
+    "solution": "7290/6250 = 1.1664 = (1.08)² → n = 2 years.",
+    "trick": "Ratio 1.1664 = 1.08² → 2 years.",
+    "type": "Find rate or time",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q13",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A sum becomes 3 times itself in 3 years at compound interest. In how many years will it become 9 times itself?",
+    "options": [
+      "6 years",
+      "9 years",
+      "12 years",
+      "5 years"
+    ],
+    "answer": "A",
+    "solution": "9 = 3², and tripling takes 3 years, so 9 times takes 2×3 = 6 years.",
+    "trick": "9× = triple twice → 2×3 = 6.",
+    "type": "Becomes a multiple (doubling)",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q14",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Find the compound interest on ₹8000 for 2 years at 5% in the first year and 10% in the second.",
+    "options": [
+      "₹1200",
+      "₹1240",
+      "₹1300",
+      "₹1440"
+    ],
+    "answer": "B",
+    "solution": "A = 8000×1.05×1.10 = 8000×1.155 = 9240. CI = 9240 − 8000 = ₹1240.",
+    "trick": "Multiply the yearly factors, subtract P.",
+    "type": "Different rate each year",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q15",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Find the compound interest on ₹15625 at 12% per annum for 3 years.",
+    "options": [
+      "₹5625",
+      "₹6000",
+      "₹6327",
+      "₹6300"
+    ],
+    "answer": "C",
+    "solution": "A = 15625×1.12³. 15625×1.12 = 17500; ×1.12 = 19600; ×1.12 = 21952. CI = 21952 − 15625 = ₹6327.",
+    "trick": "Multiply by 1.12 three times.",
+    "type": "Find CI or amount (annual)",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q16",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Find the amount on ₹6000 at 10% per annum compounded half-yearly for 1.5 years.",
+    "options": [
+      "₹6900",
+      "₹6945",
+      "₹6600",
+      "₹6945.75"
+    ],
+    "answer": "D",
+    "solution": "Half-yearly rate 5%, 1.5 years = 3 periods. A = 6000(1.05)³ = 6000×1.157625 = ₹6945.75.",
+    "trick": "3 half-year periods → 1.05³.",
+    "type": "Half-yearly / quarterly",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q17",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The difference between compound and simple interest on a sum at 10% per annum for 3 years is ₹31. Find the sum.",
+    "options": [
+      "₹1000",
+      "₹3100",
+      "₹310",
+      "₹10000"
+    ],
+    "answer": "A",
+    "solution": "3-year difference = P(R/100)²(3 + R/100) = P×0.01×3.1 = 0.031P = 31 → P = ₹1000.",
+    "trick": "P = 31 / (0.01×3.1).",
+    "type": "Difference between CI and SI",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q18",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A sum of ₹6000 amounts to ₹6615 in 2 years at compound interest. Find the rate.",
+    "options": [
+      "10%",
+      "5%",
+      "5.25%",
+      "6%"
+    ],
+    "answer": "B",
+    "solution": "6615/6000 = 1.1025 = (1.05)² → 1 + R/100 = 1.05 → R = 5%.",
+    "trick": "√1.1025 = 1.05 → 5%.",
+    "type": "Find rate or time",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q19",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A sum becomes ₹2420 in 2 years and ₹2662 in 3 years at compound interest. Find the sum.",
+    "options": [
+      "₹2200",
+      "₹1800",
+      "₹2000",
+      "₹2420"
+    ],
+    "answer": "C",
+    "solution": "Year 3 / Year 2 = 2662/2420 = 1.10 → rate 10%. Then 2420 = P(1.1)² = 1.21P → P = ₹2000.",
+    "trick": "Consecutive amounts give the factor 1.1.",
+    "type": "Find rate or time",
+    "active": true
+  },
+  {
+    "id": "compound-interest-q20",
+    "topic": "compound-interest",
+    "category": "quantitative",
+    "group": "interest-finance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Find the difference in interest on ₹10000 at 20% per annum for 1 year when compounded yearly versus half-yearly.",
+    "options": [
+      "₹200",
+      "₹121",
+      "₹50",
+      "₹100"
+    ],
+    "answer": "D",
+    "solution": "Yearly: 10000×0.20 = 2000. Half-yearly (10%, 2 periods): 10000×1.21 − 10000 = 2100. Difference = 2100 − 2000 = ₹100.",
+    "trick": "Half-yearly earns the extra P(R/100)² type gap.",
+    "type": "Half-yearly / quarterly",
+    "active": true
+  }
+]

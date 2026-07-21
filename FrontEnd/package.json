@@ -20,12 +20,14 @@
     "generate:assets": "node generate-assets.js"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "@splinetool/react-spline": "^4.1.0",
     "axios": "^1.7.7",
     "framer-motion": "^12.41.0",
     "html2canvas-pro": "^2.2.4",
     "jspdf": "^4.2.1",
     "lucide-react": "^0.447.0",
+    "monaco-editor": "^0.56.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-hot-toast": "^2.4.1",

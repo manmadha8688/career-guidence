@@ -12,6 +12,8 @@ CLAUDE.local.md
 *.key
 secrets.json
 cookies*.txt
+tmp_cookies.txt
+**/credentials.json
 login*.json
 
 # ── Build output ─────────────────────────────────────────────────────

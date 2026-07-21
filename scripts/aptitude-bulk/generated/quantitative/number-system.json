@@ -1,0 +1,1207 @@
+{
+  "topic": "number-system",
+  "category": "quantitative",
+  "group": "number-basics",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "What is the unit digit of 8^41?",
+      "options": [
+        "8",
+        "10",
+        "3",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find the cycle of unit digits for 8. Step 2: Compute 41 mod cycle length. Step 3: The unit digit is 8.",
+      "trick": "Use cyclicity of 8.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "What is the remainder when 62 is divided by 7?",
+      "options": [
+        "7",
+        "6",
+        "5",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 7 × 8 = 56. Step 2: 62 − 56 = 6.",
+      "trick": "62 mod 7 = 6.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "How many factors does 94 have?",
+      "options": [
+        "3",
+        "6",
+        "4",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 94 = 2^1 × 47^1. Step 2: Multiply (power+1) values → 4.",
+      "trick": "Factors = product of (exponent+1).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "How many trailing zeros are in 54!?",
+      "options": [
+        "10",
+        "13",
+        "14",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊54/5⌋ = 10. Step 2: ⌊54/25⌋ = 2. Step 3: Total = 12.",
+      "trick": "Count powers of 5 in n!.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "How many numbers from 1 to 80 are divisible by 4?",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Multiples of 4 up to 80 = ⌊80/4⌋ = 20.",
+      "trick": "⌊80/4⌋.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "What is the sum of all factors of 48?",
+      "options": [
+        "76",
+        "124",
+        "136",
+        "62"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Prime factorise 48. Step 2: Apply sum-of-factors formula. Step 3: Sum = 124.",
+      "trick": "Use σ(n) from prime powers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "A number divided by 8 gives quotient 5 and remainder 2. Find the number.",
+      "options": [
+        "40",
+        "43",
+        "42",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Number = 8 × 5 + 2 = 42.",
+      "trick": "N = dq + r.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find the remainder when 11 × 12 × 13 is divided by 5.",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reduce: 1×2×3 = 6. Step 2: 6 mod 5 = 1.",
+      "trick": "Reduce each factor mod m first.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "How many integers from 1 to 100 are divisible by 3 or 5?",
+      "options": [
+        "47",
+        "53",
+        "45",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: By 3: 33. By 5: 20. Both: 6. Step 2: 33+20−6 = 47.",
+      "trick": "Inclusion–exclusion.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "What is the sum of digits of 1030?",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add digits of 1030. Step 2: Sum = 4.",
+      "trick": "Add each digit.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "What is the remainder when 2^30 is divided by 7?",
+      "options": [
+        "2",
+        "6",
+        "1",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Use Fermat/Euler or cycle of 2 mod 7. Step 2: Remainder = 1.",
+      "trick": "2^k mod 7 cycles.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "How many times does 2 appear as a factor in 20!?",
+      "options": [
+        "10",
+        "20",
+        "17",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊20/2⌋+⌊20/4⌋+⌊20/8⌋+... = 18.",
+      "trick": "Legendre's formula for prime 2.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "How many numbers less than 12 are coprime to 12?",
+      "options": [
+        "4",
+        "3",
+        "10",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Use φ(12) by listing or formula. Step 2: Count = 4.",
+      "trick": "Euler totient φ(12).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "What is the LCM of all integers from 1 to 6?",
+      "options": [
+        "30",
+        "60",
+        "66",
+        "42"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM(1..6) = 60.",
+      "trick": "LCM of 1..k.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Is 100 a perfect square?",
+      "options": [
+        "No",
+        "Cannot say",
+        "Yes",
+        "Both"
+      ],
+      "answer": "C",
+      "solution": "Step 1: √100 ≈ 10. Step 2: 10² = 100. Answer: Yes.",
+      "trick": "Check if sqrt is integer.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "How many odd factors does 126 have?",
+      "options": [
+        "12",
+        "8",
+        "5",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Remove all factors of 2 from 126. Step 2: Count odd factors = 6.",
+      "trick": "Ignore powers of 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "What is the unit digit of 8^68?",
+      "options": [
+        "6",
+        "8",
+        "1",
+        "3"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find the cycle of unit digits for 8. Step 2: Compute 68 mod cycle length. Step 3: The unit digit is 6.",
+      "trick": "Use cyclicity of 8.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "What is the remainder when 95 is divided by 8?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 8 × 11 = 88. Step 2: 95 − 88 = 7.",
+      "trick": "95 mod 8 = 7.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "How many factors does 128 have?",
+      "options": [
+        "7",
+        "10",
+        "8",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 128 = 2^7. Step 2: Multiply (power+1) values → 8.",
+      "trick": "Factors = product of (exponent+1).",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "How many trailing zeros are in 85!?",
+      "options": [
+        "17",
+        "21",
+        "22",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊85/5⌋ = 17. Step 2: ⌊85/25⌋ = 3. Step 3: Total = 20.",
+      "trick": "Count powers of 5 in n!.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "How many numbers from 1 to 100 are divisible by 5?",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Multiples of 5 up to 100 = ⌊100/5⌋ = 20.",
+      "trick": "⌊100/5⌋.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "What is the sum of all factors of 63?",
+      "options": [
+        "41",
+        "104",
+        "116",
+        "52"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Prime factorise 63. Step 2: Apply sum-of-factors formula. Step 3: Sum = 104.",
+      "trick": "Use σ(n) from prime powers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "A number divided by 9 gives quotient 6 and remainder 3. Find the number.",
+      "options": [
+        "54",
+        "58",
+        "57",
+        "54"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Number = 9 × 6 + 3 = 57.",
+      "trick": "N = dq + r.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Find the remainder when 12 × 13 × 14 is divided by 6.",
+      "options": [
+        "3",
+        "1",
+        "5",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reduce: 0×1×2 = 0. Step 2: 0 mod 6 = 0.",
+      "trick": "Reduce each factor mod m first.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "How many integers from 1 to 125 are divisible by 3 or 5?",
+      "options": [
+        "58",
+        "66",
+        "56",
+        "61"
+      ],
+      "answer": "A",
+      "solution": "Step 1: By 3: 41. By 5: 25. Both: 8. Step 2: 41+25−8 = 58.",
+      "trick": "Inclusion–exclusion.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "What is the sum of digits of 1157?",
+      "options": [
+        "15",
+        "14",
+        "13",
+        "17"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add digits of 1157. Step 2: Sum = 14.",
+      "trick": "Add each digit.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "What is the remainder when 3^37 is divided by 7?",
+      "options": [
+        "4",
+        "6",
+        "3",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Use Fermat/Euler or cycle of 3 mod 7. Step 2: Remainder = 3.",
+      "trick": "3^k mod 7 cycles.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "How many times does 2 appear as a factor in 28!?",
+      "options": [
+        "14",
+        "27",
+        "24",
+        "25"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊28/2⌋+⌊28/4⌋+⌊28/8⌋+... = 25.",
+      "trick": "Legendre's formula for prime 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "How many numbers less than 15 are coprime to 15?",
+      "options": [
+        "8",
+        "7",
+        "13",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Use φ(15) by listing or formula. Step 2: Count = 8.",
+      "trick": "Euler totient φ(15).",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "What is the LCM of all integers from 1 to 7?",
+      "options": [
+        "210",
+        "420",
+        "427",
+        "56"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM(1..7) = 420.",
+      "trick": "LCM of 1..k.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Is 123 a perfect square?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Both"
+      ],
+      "answer": "C",
+      "solution": "Step 1: √123 ≈ 11. Step 2: 11² = 121. Answer: No.",
+      "trick": "Check if sqrt is integer.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "How many odd factors does 157 have?",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Remove all factors of 2 from 157. Step 2: Count odd factors = 2.",
+      "trick": "Ignore powers of 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "What is the unit digit of 8^95?",
+      "options": [
+        "2",
+        "4",
+        "7",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find the cycle of unit digits for 8. Step 2: Compute 95 mod cycle length. Step 3: The unit digit is 2.",
+      "trick": "Use cyclicity of 8.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "What is the remainder when 128 is divided by 9?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 9 × 14 = 126. Step 2: 128 − 126 = 2.",
+      "trick": "128 mod 9 = 2.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "How many factors does 156 have?",
+      "options": [
+        "11",
+        "14",
+        "12",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 156 = 2^2 × 3^1 × 13^1. Step 2: Multiply (power+1) values → 12.",
+      "trick": "Factors = product of (exponent+1).",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "How many trailing zeros are in 116!?",
+      "options": [
+        "23",
+        "28",
+        "29",
+        "27"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊116/5⌋ = 23. Step 2: ⌊116/25⌋ = 4. Step 3: Total = 27.",
+      "trick": "Count powers of 5 in n!.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "How many numbers from 1 to 120 are divisible by 6?",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Multiples of 6 up to 120 = ⌊120/6⌋ = 20.",
+      "trick": "⌊120/6⌋.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "What is the sum of all factors of 78?",
+      "options": [
+        "90",
+        "168",
+        "180",
+        "84"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Prime factorise 78. Step 2: Apply sum-of-factors formula. Step 3: Sum = 168.",
+      "trick": "Use σ(n) from prime powers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "A number divided by 10 gives quotient 7 and remainder 4. Find the number.",
+      "options": [
+        "70",
+        "75",
+        "74",
+        "70"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Number = 10 × 7 + 4 = 74.",
+      "trick": "N = dq + r.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Find the remainder when 13 × 14 × 15 is divided by 7.",
+      "options": [
+        "0",
+        "1",
+        "6",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reduce: 6×0×1 = 0. Step 2: 0 mod 7 = 0.",
+      "trick": "Reduce each factor mod m first.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "How many integers from 1 to 150 are divisible by 3 or 5?",
+      "options": [
+        "70",
+        "80",
+        "68",
+        "73"
+      ],
+      "answer": "A",
+      "solution": "Step 1: By 3: 50. By 5: 30. Both: 10. Step 2: 50+30−10 = 70.",
+      "trick": "Inclusion–exclusion.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "What is the sum of digits of 1284?",
+      "options": [
+        "16",
+        "15",
+        "14",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add digits of 1284. Step 2: Sum = 15.",
+      "trick": "Add each digit.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "What is the remainder when 4^44 is divided by 7?",
+      "options": [
+        "3",
+        "6",
+        "2",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Use Fermat/Euler or cycle of 4 mod 7. Step 2: Remainder = 2.",
+      "trick": "4^k mod 7 cycles.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "How many times does 2 appear as a factor in 36!?",
+      "options": [
+        "18",
+        "36",
+        "33",
+        "34"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊36/2⌋+⌊36/4⌋+⌊36/8⌋+... = 34.",
+      "trick": "Legendre's formula for prime 2.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "How many numbers less than 18 are coprime to 18?",
+      "options": [
+        "6",
+        "5",
+        "16",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Use φ(18) by listing or formula. Step 2: Count = 6.",
+      "trick": "Euler totient φ(18).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "What is the LCM of all integers from 1 to 8?",
+      "options": [
+        "420",
+        "840",
+        "848",
+        "72"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM(1..8) = 840.",
+      "trick": "LCM of 1..k.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Is 148 a perfect square?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Both"
+      ],
+      "answer": "C",
+      "solution": "Step 1: √148 ≈ 12. Step 2: 12² = 144. Answer: No.",
+      "trick": "Check if sqrt is integer.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "How many odd factors does 188 have?",
+      "options": [
+        "6",
+        "4",
+        "1",
+        "2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Remove all factors of 2 from 188. Step 2: Count odd factors = 2.",
+      "trick": "Ignore powers of 2.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "What is the unit digit of 3^122?",
+      "options": [
+        "9",
+        "11",
+        "4",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find the cycle of unit digits for 3. Step 2: Compute 122 mod cycle length. Step 3: The unit digit is 9.",
+      "trick": "Use cyclicity of 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "What is the remainder when 161 is divided by 10?",
+      "options": [
+        "2",
+        "1",
+        "0",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 × 16 = 160. Step 2: 161 − 160 = 1.",
+      "trick": "161 mod 10 = 1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "How many factors does 131 have?",
+      "options": [
+        "1",
+        "4",
+        "2",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 131 = 131^1. Step 2: Multiply (power+1) values → 2.",
+      "trick": "Factors = product of (exponent+1).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "How many trailing zeros are in 147!?",
+      "options": [
+        "29",
+        "36",
+        "37",
+        "35"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊147/5⌋ = 29. Step 2: ⌊147/25⌋ = 5. Step 3: Total = 35.",
+      "trick": "Count powers of 5 in n!.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "How many numbers from 1 to 140 are divisible by 7?",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "7"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Multiples of 7 up to 140 = ⌊140/7⌋ = 20.",
+      "trick": "⌊140/7⌋.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "What is the sum of all factors of 89?",
+      "options": [
+        "1",
+        "90",
+        "102",
+        "45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Prime factorise 89. Step 2: Apply sum-of-factors formula. Step 3: Sum = 90.",
+      "trick": "Use σ(n) from prime powers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "A number divided by 11 gives quotient 8 and remainder 5. Find the number.",
+      "options": [
+        "88",
+        "94",
+        "93",
+        "88"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Number = 11 × 8 + 5 = 93.",
+      "trick": "N = dq + r.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Find the remainder when 14 × 15 × 16 is divided by 8.",
+      "options": [
+        "5",
+        "1",
+        "7",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reduce: 6×7×0 = 0. Step 2: 0 mod 8 = 0.",
+      "trick": "Reduce each factor mod m first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "How many integers from 1 to 175 are divisible by 3 or 5?",
+      "options": [
+        "82",
+        "93",
+        "80",
+        "85"
+      ],
+      "answer": "A",
+      "solution": "Step 1: By 3: 58. By 5: 35. Both: 11. Step 2: 58+35−11 = 82.",
+      "trick": "Inclusion–exclusion.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "What is the sum of digits of 1411?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add digits of 1411. Step 2: Sum = 7.",
+      "trick": "Add each digit.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "What is the remainder when 2^51 is divided by 7?",
+      "options": [
+        "2",
+        "6",
+        "1",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Use Fermat/Euler or cycle of 2 mod 7. Step 2: Remainder = 1.",
+      "trick": "2^k mod 7 cycles.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "How many times does 2 appear as a factor in 44!?",
+      "options": [
+        "22",
+        "43",
+        "40",
+        "41"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊44/2⌋+⌊44/4⌋+⌊44/8⌋+... = 41.",
+      "trick": "Legendre's formula for prime 2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "How many numbers less than 21 are coprime to 21?",
+      "options": [
+        "12",
+        "11",
+        "19",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Use φ(21) by listing or formula. Step 2: Count = 12.",
+      "trick": "Euler totient φ(21).",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "What is the LCM of all integers from 1 to 9?",
+      "options": [
+        "1260",
+        "2520",
+        "2529",
+        "90"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM(1..9) = 2520.",
+      "trick": "LCM of 1..k.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Is 175 a perfect square?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Both"
+      ],
+      "answer": "C",
+      "solution": "Step 1: √175 ≈ 13. Step 2: 13² = 169. Answer: No.",
+      "trick": "Check if sqrt is integer.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "How many odd factors does 219 have?",
+      "options": [
+        "4",
+        "6",
+        "3",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Remove all factors of 2 from 219. Step 2: Count odd factors = 4.",
+      "trick": "Ignore powers of 2.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "What is the unit digit of 7^149?",
+      "options": [
+        "7",
+        "9",
+        "2",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Find the cycle of unit digits for 7. Step 2: Compute 149 mod cycle length. Step 3: The unit digit is 7.",
+      "trick": "Use cyclicity of 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "What is the remainder when 194 is divided by 11?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 11 × 17 = 187. Step 2: 194 − 187 = 7.",
+      "trick": "194 mod 11 = 7.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "How many factors does 177 have?",
+      "options": [
+        "3",
+        "6",
+        "4",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 177 = 3^1 × 59^1. Step 2: Multiply (power+1) values → 4.",
+      "trick": "Factors = product of (exponent+1).",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "How many trailing zeros are in 178!?",
+      "options": [
+        "35",
+        "44",
+        "45",
+        "43"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊178/5⌋ = 35. Step 2: ⌊178/25⌋ = 7. Step 3: Total = 43.",
+      "trick": "Count powers of 5 in n!.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "How many numbers from 1 to 160 are divisible by 8?",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Multiples of 8 up to 160 = ⌊160/8⌋ = 20.",
+      "trick": "⌊160/8⌋.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "What is the sum of all factors of 108?",
+      "options": [
+        "172",
+        "280",
+        "292",
+        "140"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Prime factorise 108. Step 2: Apply sum-of-factors formula. Step 3: Sum = 280.",
+      "trick": "Use σ(n) from prime powers.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "A number divided by 12 gives quotient 9 and remainder 2. Find the number.",
+      "options": [
+        "108",
+        "111",
+        "110",
+        "108"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Number = 12 × 9 + 2 = 110.",
+      "trick": "N = dq + r.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find the remainder when 15 × 16 × 17 is divided by 5.",
+      "options": [
+        "3",
+        "1",
+        "4",
+        "0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Reduce: 0×1×2 = 0. Step 2: 0 mod 5 = 0.",
+      "trick": "Reduce each factor mod m first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "How many integers from 1 to 200 are divisible by 3 or 5?",
+      "options": [
+        "93",
+        "106",
+        "91",
+        "96"
+      ],
+      "answer": "A",
+      "solution": "Step 1: By 3: 66. By 5: 40. Both: 13. Step 2: 66+40−13 = 93.",
+      "trick": "Inclusion–exclusion.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "What is the sum of digits of 1538?",
+      "options": [
+        "18",
+        "17",
+        "16",
+        "20"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Add digits of 1538. Step 2: Sum = 17.",
+      "trick": "Add each digit.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "What is the remainder when 3^58 is divided by 7?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Use Fermat/Euler or cycle of 3 mod 7. Step 2: Remainder = 4.",
+      "trick": "3^k mod 7 cycles.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "How many times does 2 appear as a factor in 52!?",
+      "options": [
+        "26",
+        "51",
+        "48",
+        "49"
+      ],
+      "answer": "D",
+      "solution": "Step 1: ⌊52/2⌋+⌊52/4⌋+⌊52/8⌋+... = 49.",
+      "trick": "Legendre's formula for prime 2.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "How many numbers less than 24 are coprime to 24?",
+      "options": [
+        "8",
+        "7",
+        "22",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Use φ(24) by listing or formula. Step 2: Count = 8.",
+      "trick": "Euler totient φ(24).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "What is the LCM of all integers from 1 to 10?",
+      "options": [
+        "1260",
+        "2520",
+        "2530",
+        "110"
+      ],
+      "answer": "B",
+      "solution": "Step 1: LCM(1..10) = 2520.",
+      "trick": "LCM of 1..k.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Is 197 a perfect square?",
+      "options": [
+        "Yes",
+        "Cannot say",
+        "No",
+        "Both"
+      ],
+      "answer": "C",
+      "solution": "Step 1: √197 ≈ 14. Step 2: 14² = 196. Answer: No.",
+      "trick": "Check if sqrt is integer.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "How many odd factors does 250 have?",
+      "options": [
+        "8",
+        "6",
+        "3",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Remove all factors of 2 from 250. Step 2: Count odd factors = 4.",
+      "trick": "Ignore powers of 2.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

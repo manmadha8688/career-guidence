@@ -1,0 +1,1207 @@
+{
+  "topic": "circular-seating-arrangement",
+  "category": "logical",
+  "group": "arrangements",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "E",
+        "F"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Circular seating"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "F"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "8 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (8 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "6 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (6 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is D. Answer: D.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "7 people sit around a circular table facing the center. A is opposite C. B is immediate right of A. Who is immediate left of C?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Opposite means n/2 apart (7 seats). Step 2: Place A, then B to A's right, C opposite A. Step 3: Left of C is B. Answer: B.",
+      "trick": "Draw circle clockwise.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

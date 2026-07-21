@@ -1,0 +1,1207 @@
+{
+  "topic": "scheduling-assignments",
+  "category": "logical",
+  "group": "puzzles",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Fri",
+        "Mon",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Wed",
+        "Tue",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Thu",
+        "Wed",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Fri",
+        "Thu",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Fri",
+        "Mon",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Wed",
+        "Tue",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Thu",
+        "Wed",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Fri",
+        "Thu",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Fri",
+        "Mon",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Wed",
+        "Tue",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Thu",
+        "Wed",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Fri",
+        "Thu",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Fri",
+        "Mon",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Wed",
+        "Tue",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Thu",
+        "Wed",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Fri",
+        "Thu",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "A",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Fri",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Wed",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Thu",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Fri",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Fri",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Wed",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Thu",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Fri",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Fri",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Wed",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Thu",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Fri",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Fri",
+        "Tue",
+        "Tue"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Fri",
+        "Wed",
+        "Wed"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Wed",
+        "Thu",
+        "Thu"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Thu",
+        "Fri",
+        "Fri"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Fri",
+        "Mon",
+        "Mon"
+      ],
+      "answer": "B",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Fri",
+        "Tue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Fri",
+        "Wed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Wed",
+        "Thu"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Thu",
+        "Fri"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Fri",
+        "Mon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Fri",
+        "Tue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Fri",
+        "Wed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Wed",
+        "Thu"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Thu",
+        "Fri"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Fri",
+        "Mon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Fri",
+        "Tue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Fri",
+        "Wed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Wed",
+        "Thu"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Thu",
+        "Fri"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Fri",
+        "Mon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Scheduling"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Fri",
+        "Tue"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Fri",
+        "Wed"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Wed",
+        "Thu"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Thu",
+        "Fri"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Fri",
+        "Mon"
+      ],
+      "answer": "C",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Tue",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Wed",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Thu",
+        "Wed"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Fri",
+        "Thu"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Mon",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Tue",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Wed",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Thu",
+        "Wed"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Fri",
+        "Thu"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Mon",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Tue",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Wed",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Thu",
+        "Wed"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Fri",
+        "Thu"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Mon",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Tue. Earliest day for Y if X takes 2 days starting Thu?",
+      "options": [
+        "Fri",
+        "Tue",
+        "Tue",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Thu. Step 2: Y starts after X, not on Tue. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Wed. Earliest day for Y if X takes 2 days starting Fri?",
+      "options": [
+        "Mon",
+        "Wed",
+        "Wed",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Fri. Step 2: Y starts after X, not on Wed. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Thu. Earliest day for Y if X takes 2 days starting Mon?",
+      "options": [
+        "Tue",
+        "Thu",
+        "Thu",
+        "Wed"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Mon. Step 2: Y starts after X, not on Thu. Answer: Wed.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Fri. Earliest day for Y if X takes 2 days starting Tue?",
+      "options": [
+        "Wed",
+        "Fri",
+        "Fri",
+        "Thu"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Tue. Step 2: Y starts after X, not on Fri. Answer: Thu.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Task X must finish before Task Y. Task Y cannot start on Mon. Earliest day for Y if X takes 2 days starting Wed?",
+      "options": [
+        "Thu",
+        "Mon",
+        "Mon",
+        "Fri"
+      ],
+      "answer": "D",
+      "solution": "Step 1: X runs 2 days from Wed. Step 2: Y starts after X, not on Mon. Answer: Fri.",
+      "trick": "Finish X first.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

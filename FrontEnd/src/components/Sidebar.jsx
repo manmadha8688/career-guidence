@@ -19,7 +19,7 @@ export default function Sidebar({ open, onClose }) {
     { to: '/skill-arena/dashboard',           icon: <LayoutDashboard size={18} />, label: 'Skill Arena' },
     { to: '/skill-arena/dashboard?view=gates', icon: <BookOpen size={18} />,        label: 'Dungeon Gates' },
     { to: '/skill-arena/dashboard?view=paths', icon: <Map size={18} />,             label: 'Hunter Paths' },
-    { to: '/problem-solving',                  icon: <Code2 size={18} />,           label: 'Problem Solving' },
+    { to: '/code-gym',                         icon: <Code2 size={18} />,           label: 'Code Gym' },
     { to: '/aptitude',                         icon: <Brain size={18} />,           label: 'Aptitude' },
     { to: '/missions',                         icon: <Sword size={18} />,           label: 'Missions' },
     { to: '/resume',                           icon: <FileText size={18} />,        label: 'Resume' },
@@ -83,7 +83,7 @@ export default function Sidebar({ open, onClose }) {
                 <span className="sidebar-link-icon"><LayoutDashboard size={18} /></span>
                 Skill Arena
               </NavLink>
-              <NavLink to="/problem-solving" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
+              <NavLink to="/code-gym" className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`} onClick={onClose}>
                 <span className="sidebar-link-icon"><Code2 size={18} /></span>
                 Coding
               </NavLink>

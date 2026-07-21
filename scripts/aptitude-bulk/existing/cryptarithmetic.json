@@ -1,0 +1,402 @@
+[
+  {
+    "id": "cryptarithmetic-q1",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "In a cryptarithmetic puzzle, if the letter A appears twice, the two A's are:",
+    "options": [
+      "the same digit",
+      "different digits",
+      "always 0",
+      "always 1"
+    ],
+    "answer": "A",
+    "solution": "The core rule: the same letter always stands for the same digit throughout the puzzle.",
+    "trick": "Same letter → same digit.",
+    "type": "Basic rule",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q2",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Can a multi-digit number in a cryptarithmetic puzzle begin with the digit 0?",
+    "options": [
+      "Yes",
+      "No",
+      "Only if it is even",
+      "Only the first word"
+    ],
+    "answer": "B",
+    "solution": "A number never starts with a leading zero, so the first letter of any number is 1–9.",
+    "trick": "No leading zero.",
+    "type": "Basic rule",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q3",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "In a single column, A + A = 8. What digit is A?",
+    "options": [
+      "2",
+      "8",
+      "4",
+      "16"
+    ],
+    "answer": "C",
+    "solution": "2A = 8, so A = 4.",
+    "trick": "8 ÷ 2 = 4.",
+    "type": "Column equation",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q4",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "When adding two single digits, what is the largest possible carry to the next column?",
+    "options": [
+      "3",
+      "2",
+      "0",
+      "1"
+    ],
+    "answer": "D",
+    "solution": "The maximum sum is 9 + 9 = 18, which carries only 1.",
+    "trick": "9+9=18 → carry 1.",
+    "type": "Carry logic",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q5",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "In SEND + MORE = MONEY, what must M equal?",
+    "options": [
+      "1",
+      "9",
+      "0",
+      "2"
+    ],
+    "answer": "A",
+    "solution": "Adding two 4-digit numbers gives at most a carry of 1 into the 5th digit, so the leading M = 1.",
+    "trick": "Extra leading digit is always 1.",
+    "type": "Leading digit",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q6",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "In a units column, B + B gives a result ending in B (no carry in). What is B?",
+    "options": [
+      "5",
+      "0",
+      "1",
+      "2"
+    ],
+    "answer": "B",
+    "solution": "2B must end in B, so 2B ≡ B (mod 10) → B ≡ 0 (mod 10) → B = 0.",
+    "trick": "Only 0 doubles to itself.",
+    "type": "Self-ending digit",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q7",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "In a column you compute 9 + 9. What digit is written and what is carried?",
+    "options": [
+      "9 carry 1",
+      "7 carry 2",
+      "8 carry 1",
+      "8 carry 0"
+    ],
+    "answer": "C",
+    "solution": "9 + 9 = 18: write 8, carry 1.",
+    "trick": "18 → write 8, carry 1.",
+    "type": "Carry logic",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q8",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "In the two-digit number 'AB', what values can the leading letter A take?",
+    "options": [
+      "0–9",
+      "0–8",
+      "2–9",
+      "1–9"
+    ],
+    "answer": "D",
+    "solution": "A leading digit cannot be 0, so A ranges over 1–9.",
+    "trick": "Leading digit: 1–9.",
+    "type": "Leading digit",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q9",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "In a column, 7 + 8 with a carry-in of 1 is computed. What is written and carried?",
+    "options": [
+      "6 carry 1",
+      "5 carry 1",
+      "6 carry 0",
+      "16 with no carry"
+    ],
+    "answer": "A",
+    "solution": "7 + 8 + 1 = 16: write 6, carry 1.",
+    "trick": "16 → write 6, carry 1.",
+    "type": "Carry logic",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q10",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A digit A satisfies 3A ending in A (no carry-in). Which values are possible?",
+    "options": [
+      "only 0",
+      "0 or 5",
+      "only 5",
+      "1 or 6"
+    ],
+    "answer": "B",
+    "solution": "3A ≡ A (mod 10) → 2A ≡ 0 (mod 10) → A = 0 or 5.",
+    "trick": "2A divisible by 10 → 0 or 5.",
+    "type": "Self-ending digit",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q11",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "In a single column with no carry, A + B = B. What is A?",
+    "options": [
+      "1",
+      "B",
+      "0",
+      "10"
+    ],
+    "answer": "C",
+    "solution": "Adding A leaves B unchanged only if A = 0.",
+    "trick": "Adds nothing → A = 0.",
+    "type": "Column equation",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q12",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "When two 3-digit numbers are added, the result has at most how many digits?",
+    "options": [
+      "3",
+      "6",
+      "5",
+      "4"
+    ],
+    "answer": "D",
+    "solution": "The largest sum is 999 + 999 = 1998, which has 4 digits.",
+    "trick": "999 + 999 = 1998 → 4 digits.",
+    "type": "Range reasoning",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q13",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "The two-digit number AB added to its reverse BA is always divisible by which number?",
+    "options": [
+      "11",
+      "9",
+      "2",
+      "10"
+    ],
+    "answer": "A",
+    "solution": "AB + BA = (10A + B) + (10B + A) = 11A + 11B = 11(A + B), divisible by 11.",
+    "trick": "AB + BA = 11(A+B).",
+    "type": "Structural property",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q14",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "In SEND + MORE = MONEY, what is the smallest digit the letter O can be?",
+    "options": [
+      "1",
+      "0",
+      "2",
+      "9"
+    ],
+    "answer": "B",
+    "solution": "With M = 1, the next column S + M (plus carry) produces O, which can be 0.",
+    "trick": "O can be 0 (it is not a leading digit here).",
+    "type": "Leading vs inner digit",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q15",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "How many distinct digits are available to assign to the letters in a cryptarithmetic puzzle?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "26"
+    ],
+    "answer": "C",
+    "solution": "Digits 0 through 9 give exactly 10 distinct values.",
+    "trick": "Digits 0–9 → 10 values.",
+    "type": "Basic rule",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q16",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "A puzzle uses 11 different letters. Can it have a valid solution?",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "Only for additions",
+      "No"
+    ],
+    "answer": "D",
+    "solution": "There are only 10 digits, so 11 distinct letters cannot all get different digits.",
+    "trick": "11 letters > 10 digits → impossible.",
+    "type": "Pigeonhole reasoning",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q17",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "In a column, A + A produces a two-digit result (there is a carry). What is the smallest value A can be?",
+    "options": [
+      "5",
+      "3",
+      "6",
+      "9"
+    ],
+    "answer": "A",
+    "solution": "A carry needs 2A ≥ 10, i.e. A ≥ 5, so the smallest is A = 5.",
+    "trick": "2A ≥ 10 → A ≥ 5.",
+    "type": "Carry threshold",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q18",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "In TWO + TWO = FOUR, what must F equal?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "9"
+    ],
+    "answer": "B",
+    "solution": "Adding two 3-digit numbers gives a 4-digit result only through a carry of 1, so F = 1.",
+    "trick": "Extra leading digit → 1.",
+    "type": "Leading digit",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q19",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "If 3 × ON = GO where GO is a two-digit number, what is the largest value ON can take?",
+    "options": [
+      "99",
+      "66",
+      "33",
+      "30"
+    ],
+    "answer": "C",
+    "solution": "For 3 × ON to stay two-digit, 3 × ON ≤ 99, so ON ≤ 33.",
+    "trick": "3 × ON ≤ 99 → ON ≤ 33.",
+    "type": "Range reasoning",
+    "active": true
+  },
+  {
+    "id": "cryptarithmetic-q20",
+    "topic": "cryptarithmetic",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "The carry into any column when adding two numbers is at most 1 because two single digits sum to at most:",
+    "options": [
+      "9",
+      "10",
+      "19",
+      "18"
+    ],
+    "answer": "D",
+    "solution": "9 + 9 = 18, so the tens digit (the carry) can only be 1.",
+    "trick": "9 + 9 = 18 → carry 1.",
+    "type": "Carry logic",
+    "active": true
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "analogies-q1",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Hot : Cold :: Up : ?",
+    "options": [
+      "Down",
+      "High",
+      "Top",
+      "Over"
+    ],
+    "answer": "A",
+    "solution": "Hot and Cold are opposites; the opposite of Up is Down.",
+    "trick": "Antonym pair.",
+    "type": "Synonym / antonym",
+    "active": true
+  },
+  {
+    "id": "analogies-q2",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Wheel : Car :: Petal : ?",
+    "options": [
+      "Leaf",
+      "Flower",
+      "Root",
+      "Stem"
+    ],
+    "answer": "B",
+    "solution": "A wheel is part of a car; a petal is part of a flower.",
+    "trick": "Part-to-whole.",
+    "type": "Part to whole",
+    "active": true
+  },
+  {
+    "id": "analogies-q3",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Teacher : School :: Doctor : ?",
+    "options": [
+      "Clinic",
+      "Medicine",
+      "Hospital",
+      "Patient"
+    ],
+    "answer": "C",
+    "solution": "A teacher works in a school; a doctor works in a hospital.",
+    "trick": "Worker-to-place.",
+    "type": "Worker and place",
+    "active": true
+  },
+  {
+    "id": "analogies-q4",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Pen : Write :: Knife : ?",
+    "options": [
+      "Sharp",
+      "Kitchen",
+      "Blade",
+      "Cut"
+    ],
+    "answer": "D",
+    "solution": "A pen is used to write; a knife is used to cut.",
+    "trick": "Object-to-use.",
+    "type": "Object and use",
+    "active": true
+  },
+  {
+    "id": "analogies-q5",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Day : Night :: Big : ?",
+    "options": [
+      "Small",
+      "Large",
+      "Huge",
+      "Tall"
+    ],
+    "answer": "A",
+    "solution": "Day and Night are opposites; the opposite of Big is Small.",
+    "trick": "Antonym pair.",
+    "type": "Synonym / antonym",
+    "active": true
+  },
+  {
+    "id": "analogies-q6",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Cow : Calf :: Dog : ?",
+    "options": [
+      "Kitten",
+      "Puppy",
+      "Cub",
+      "Foal"
+    ],
+    "answer": "B",
+    "solution": "A calf is the young of a cow; a puppy is the young of a dog.",
+    "trick": "Adult-to-young.",
+    "type": "Adult and young",
+    "active": true
+  },
+  {
+    "id": "analogies-q7",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "King : Queen :: Man : ?",
+    "options": [
+      "Boy",
+      "Girl",
+      "Woman",
+      "Lady"
+    ],
+    "answer": "C",
+    "solution": "King (male) pairs with Queen (female); Man (male) pairs with Woman (female).",
+    "trick": "Male-to-female.",
+    "type": "Gender pair",
+    "active": true
+  },
+  {
+    "id": "analogies-q8",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "Fish : Water :: Bird : ?",
+    "options": [
+      "Nest",
+      "Tree",
+      "Wing",
+      "Sky"
+    ],
+    "answer": "D",
+    "solution": "A fish lives/moves in water; a bird lives/moves in the sky.",
+    "trick": "Creature-to-habitat.",
+    "type": "Creature and habitat",
+    "active": true
+  },
+  {
+    "id": "analogies-q9",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "2 : 8 :: 3 : ?",
+    "options": [
+      "27",
+      "9",
+      "12",
+      "6"
+    ],
+    "answer": "A",
+    "solution": "8 = 2³, so the link is 'cube'; 3³ = 27.",
+    "trick": "Cube the number.",
+    "type": "Number relationship",
+    "active": true
+  },
+  {
+    "id": "analogies-q10",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Finger : Hand :: Toe : ?",
+    "options": [
+      "Leg",
+      "Foot",
+      "Nail",
+      "Knee"
+    ],
+    "answer": "B",
+    "solution": "A finger is part of a hand; a toe is part of a foot.",
+    "trick": "Part-to-whole.",
+    "type": "Part to whole",
+    "active": true
+  },
+  {
+    "id": "analogies-q11",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Author : Book :: Composer : ?",
+    "options": [
+      "Piano",
+      "Song",
+      "Music",
+      "Stage"
+    ],
+    "answer": "C",
+    "solution": "An author creates a book; a composer creates music.",
+    "trick": "Creator-to-creation.",
+    "type": "Creator and creation",
+    "active": true
+  },
+  {
+    "id": "analogies-q12",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Hammer : Nail :: Axe : ?",
+    "options": [
+      "Cut",
+      "Metal",
+      "Sharp",
+      "Wood"
+    ],
+    "answer": "D",
+    "solution": "A hammer acts on a nail; an axe acts on wood.",
+    "trick": "Tool-to-object.",
+    "type": "Tool and object",
+    "active": true
+  },
+  {
+    "id": "analogies-q13",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "3 : 9 :: 4 : ?",
+    "options": [
+      "16",
+      "12",
+      "8",
+      "20"
+    ],
+    "answer": "A",
+    "solution": "9 = 3², so the link is 'square'; 4² = 16.",
+    "trick": "Square the number.",
+    "type": "Number relationship",
+    "active": true
+  },
+  {
+    "id": "analogies-q14",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Bee : Hive :: Bird : ?",
+    "options": [
+      "Cage",
+      "Nest",
+      "Tree",
+      "Egg"
+    ],
+    "answer": "B",
+    "solution": "A bee lives in a hive; a bird lives in a nest.",
+    "trick": "Creature-to-home.",
+    "type": "Creature and home",
+    "active": true
+  },
+  {
+    "id": "analogies-q15",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Doctor : Patient :: Lawyer : ?",
+    "options": [
+      "Court",
+      "Judge",
+      "Client",
+      "Law"
+    ],
+    "answer": "C",
+    "solution": "A doctor serves a patient; a lawyer serves a client.",
+    "trick": "Professional-to-served-person.",
+    "type": "Professional and client",
+    "active": true
+  },
+  {
+    "id": "analogies-q16",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "Thermometer : Temperature :: Barometer : ?",
+    "options": [
+      "Heat",
+      "Weather",
+      "Height",
+      "Pressure"
+    ],
+    "answer": "D",
+    "solution": "A thermometer measures temperature; a barometer measures pressure.",
+    "trick": "Instrument-to-quantity.",
+    "type": "Instrument and quantity",
+    "active": true
+  },
+  {
+    "id": "analogies-q17",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "AC : EG :: IK : ?",
+    "options": [
+      "MO",
+      "MN",
+      "LN",
+      "NP"
+    ],
+    "answer": "A",
+    "solution": "Each pair is two letters +2 apart, and the pairs step +4: AC, EG, IK, MO.",
+    "trick": "Letters +2 within, pairs +4.",
+    "type": "Letter relationship",
+    "active": true
+  },
+  {
+    "id": "analogies-q18",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "5 : 24 :: 6 : ?",
+    "options": [
+      "34",
+      "35",
+      "30",
+      "37"
+    ],
+    "answer": "B",
+    "solution": "24 = 5² − 1, so the link is n² − 1; 6² − 1 = 35.",
+    "trick": "Square minus 1.",
+    "type": "Number relationship",
+    "active": true
+  },
+  {
+    "id": "analogies-q19",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Hunger : Food :: Thirst : ?",
+    "options": [
+      "Drink",
+      "Cup",
+      "Water",
+      "Rain"
+    ],
+    "answer": "C",
+    "solution": "Hunger is relieved by food; thirst is relieved by water.",
+    "trick": "Need-to-remedy.",
+    "type": "Need and remedy",
+    "active": true
+  },
+  {
+    "id": "analogies-q20",
+    "topic": "analogies",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "7 : 49 :: 8 : ?",
+    "options": [
+      "60",
+      "72",
+      "81",
+      "64"
+    ],
+    "answer": "D",
+    "solution": "49 = 7², so the link is 'square'; 8² = 64.",
+    "trick": "Square the number.",
+    "type": "Number relationship",
+    "active": true
+  }
+]

@@ -284,6 +284,9 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  /* Own GPU layer so the hero's ambient FX composite in isolation and don't
+     repaint alongside the rest of the page while scrolling. */
+  transform: translateZ(0);
 }
 
 .ailab-hero__grid {
@@ -431,6 +434,8 @@
   width: 58%;
   height: 100%;
   z-index: 5;
+  /* Scroll-linked scale parallax runs on this element — hint the compositor. */
+  will-change: transform;
 }
 
 .ailab-hero__spline.ailab-spline-loaded {
@@ -639,6 +644,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 0.875rem;
+  contain: layout;
 }
 
 .ailab-tools__empty {
@@ -754,6 +760,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(262px, 100%), 1fr));
   gap: 0.75rem;
+  contain: layout;
 }
 
 /* Tool card */
@@ -765,9 +772,16 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(14px);
+  /* The card bg is 80–93% opaque over a solid page background, so backdrop-filter
+     blurred a uniform colour (no visible effect) while costing a live blur
+     composite per card on every scroll frame — removing it is pixel-identical.
+     content-visibility skips rendering off-screen cards for a faster first paint
+     and smoother scroll; `auto` intrinsic size stores the real height after the
+     first render so nothing shifts. */
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition: border-color 0.2s, box-shadow 0.2s;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 180px;
 }
 
 [data-theme="light"] .ailab-tool-card {

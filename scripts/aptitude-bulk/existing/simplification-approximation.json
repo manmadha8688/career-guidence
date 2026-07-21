@@ -1,0 +1,402 @@
+[
+  {
+    "id": "simplification-approximation-q1",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Evaluate 8 + 12 ÷ 4 × 2.",
+    "options": [
+      "14",
+      "10",
+      "16",
+      "11"
+    ],
+    "answer": "A",
+    "solution": "Do ÷ and × from the left first: 12 ÷ 4 = 3, then 3 × 2 = 6. Now add: 8 + 6 = 14.",
+    "trick": "÷ and × before +: 8 + 6 = 14.",
+    "type": "BODMAS evaluation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q2",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Evaluate (15 − 3) ÷ 4 + 7.",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "9"
+    ],
+    "answer": "B",
+    "solution": "Brackets first: 15 − 3 = 12. Then ÷: 12 ÷ 4 = 3. Then +: 3 + 7 = 10.",
+    "trick": "Bracket → ÷ → +: 12 ÷ 4 + 7 = 10.",
+    "type": "BODMAS evaluation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q3",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Find 3/5 of 150.",
+    "options": [
+      "75",
+      "45",
+      "90",
+      "50"
+    ],
+    "answer": "C",
+    "solution": "'Of' means multiply: 3/5 × 150 = 3 × 30 = 90.",
+    "trick": "150 ÷ 5 = 30, × 3 = 90.",
+    "type": "'of' and fraction of a quantity",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q4",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Find the approximate value of 3987 ÷ 40.",
+    "options": [
+      "80",
+      "120",
+      "90",
+      "100"
+    ],
+    "answer": "D",
+    "solution": "Round 3987 ≈ 4000, so 4000 ÷ 40 = 100.",
+    "trick": "≈ 4000 ÷ 40 = 100.",
+    "type": "Approximation by rounding",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q5",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find the approximate value of 29.8 + 40.2 + 9.9.",
+    "options": [
+      "80",
+      "70",
+      "90",
+      "75"
+    ],
+    "answer": "A",
+    "solution": "Round each: 30 + 40 + 10 = 80.",
+    "trick": "≈ 30 + 40 + 10 = 80.",
+    "type": "Approximation by rounding",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q6",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Find the approximate value of √99 + √4.",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "11"
+    ],
+    "answer": "B",
+    "solution": "√99 ≈ √100 = 10 and √4 = 2, so 10 + 2 = 12.",
+    "trick": "√99 ≈ 10, +2 → 12.",
+    "type": "Root and power approximation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q7",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "If ? + 25 = 60, find ?.",
+    "options": [
+      "25",
+      "85",
+      "35",
+      "30"
+    ],
+    "answer": "C",
+    "solution": "Subtract 25 from both sides: ? = 60 − 25 = 35.",
+    "trick": "60 − 25 = 35.",
+    "type": "Find the missing number",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q8",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Evaluate 48 ÷ 6 + 5 × 3 − 4.",
+    "options": [
+      "21",
+      "15",
+      "23",
+      "19"
+    ],
+    "answer": "D",
+    "solution": "Do ÷ and × first: 48 ÷ 6 = 8 and 5 × 3 = 15. Then + and −: 8 + 15 − 4 = 19.",
+    "trick": "8 + 15 − 4 = 19.",
+    "type": "BODMAS evaluation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q9",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Evaluate 1/2 of 48 ÷ 4 + 6.",
+    "options": [
+      "12",
+      "9",
+      "18",
+      "10"
+    ],
+    "answer": "A",
+    "solution": "'Of' first: 1/2 of 48 = 24. Then ÷: 24 ÷ 4 = 6. Then +: 6 + 6 = 12.",
+    "trick": "24 ÷ 4 + 6 = 12.",
+    "type": "'of' and fraction of a quantity",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q10",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Find 2/3 of 90 − 1/4 of 60.",
+    "options": [
+      "30",
+      "45",
+      "50",
+      "75"
+    ],
+    "answer": "B",
+    "solution": "Resolve each 'of': 2/3 of 90 = 60 and 1/4 of 60 = 15. Then subtract: 60 − 15 = 45.",
+    "trick": "60 − 15 = 45.",
+    "type": "'of' and fraction of a quantity",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q11",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Find the approximate value of 5998 ÷ 29.9 + 14.8.",
+    "options": [
+      "185",
+      "220",
+      "215",
+      "200"
+    ],
+    "answer": "C",
+    "solution": "Round: 6000 ÷ 30 = 200, then + 15 = 215.",
+    "trick": "6000 ÷ 30 + 15 = 215.",
+    "type": "Approximation by rounding",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q12",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find the approximate value of √255 × √80.",
+    "options": [
+      "150",
+      "120",
+      "160",
+      "144"
+    ],
+    "answer": "D",
+    "solution": "√255 ≈ √256 = 16 and √80 ≈ √81 = 9, so 16 × 9 = 144.",
+    "trick": "16 × 9 = 144.",
+    "type": "Root and power approximation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q13",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "If 8 × ? − 12 = 52, find ?.",
+    "options": [
+      "8",
+      "6",
+      "9",
+      "5"
+    ],
+    "answer": "A",
+    "solution": "Add 12: 8 × ? = 64. Divide by 8: ? = 8.",
+    "trick": "64 ÷ 8 = 8.",
+    "type": "Find the missing number",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q14",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Simplify 2 + 1/(2 + 1/2).",
+    "options": [
+      "5/2",
+      "12/5",
+      "7/2",
+      "9/5"
+    ],
+    "answer": "B",
+    "solution": "Innermost first: 2 + 1/2 = 5/2. Then 1 ÷ (5/2) = 2/5. Finally 2 + 2/5 = 12/5.",
+    "trick": "1/(5/2) = 2/5; 2 + 2/5 = 12/5.",
+    "type": "Complex / continued fraction",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q15",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Evaluate 60 ÷ [ 5 + { 3 × (4 − 2) } − 1 ].",
+    "options": [
+      "10",
+      "5",
+      "6",
+      "12"
+    ],
+    "answer": "C",
+    "solution": "Innermost bracket: 4 − 2 = 2. Then { 3 × 2 } = 6. Then [ 5 + 6 − 1 ] = 10. Finally 60 ÷ 10 = 6.",
+    "trick": "Bracket reduces to 10 → 60 ÷ 10 = 6.",
+    "type": "BODMAS evaluation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q16",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Find the approximate value of 24.95% of 1601 + 49.8% of 402.",
+    "options": [
+      "550",
+      "650",
+      "500",
+      "600"
+    ],
+    "answer": "D",
+    "solution": "24.95% ≈ 1/4 and 49.8% ≈ 1/2. So 1/4 × 1600 + 1/2 × 400 = 400 + 200 = 600.",
+    "trick": "1/4 of 1600 + 1/2 of 400 = 400 + 200 = 600.",
+    "type": "Approximation by rounding",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q17",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Find the approximate value of (39.9% of 250) + √168 − 14.95.",
+    "options": [
+      "98",
+      "108",
+      "88",
+      "100"
+    ],
+    "answer": "A",
+    "solution": "39.9% ≈ 40% = 0.4, so 0.4 × 250 = 100. √168 ≈ √169 = 13. Then 100 + 13 − 15 = 98.",
+    "trick": "100 + 13 − 15 = 98.",
+    "type": "Root and power approximation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q18",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Find the approximate value of √1444 + √3599.",
+    "options": [
+      "96",
+      "98",
+      "100",
+      "102"
+    ],
+    "answer": "B",
+    "solution": "√1444 = 38 exactly (38² = 1444), and √3599 ≈ √3600 = 60. So 38 + 60 = 98.",
+    "trick": "38 + 60 = 98.",
+    "type": "Root and power approximation",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q19",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "If 2/3 of ? = 48, find ?.",
+    "options": [
+      "32",
+      "64",
+      "72",
+      "96"
+    ],
+    "answer": "C",
+    "solution": "2/3 × ? = 48, so ? = 48 × 3/2 = 72.",
+    "trick": "48 × 3/2 = 72.",
+    "type": "Find the missing number",
+    "active": true
+  },
+  {
+    "id": "simplification-approximation-q20",
+    "topic": "simplification-approximation",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Simplify 1/(1 + 1/(1 + 1/3)).",
+    "options": [
+      "7/4",
+      "3/7",
+      "4/3",
+      "4/7"
+    ],
+    "answer": "D",
+    "solution": "Innermost: 1 + 1/3 = 4/3. Then 1 ÷ (4/3) = 3/4, so the middle is 1 + 3/4 = 7/4. Finally 1 ÷ (7/4) = 4/7.",
+    "trick": "Work inside-out: 4/3 → 7/4 → 4/7.",
+    "type": "Complex / continued fraction",
+    "active": true
+  }
+]

@@ -58,7 +58,7 @@ const ResumeDocument = forwardRef(function ResumeDocument({ resume }, ref) {
               </div>
               <div className="rz-doc__edu-row">
                 <span className="rz-doc__edu-college">{e.college}</span>
-                {e.cgpa && <span className="rz-doc__edu-year">{e.cgpa}</span>}
+                {e.cgpa && <span className="rz-doc__edu-year">{formatGrade(e.cgpa)}</span>}
               </div>
             </div>
           ))}
@@ -161,6 +161,18 @@ export function formatDegree(e = {}) {
   const branch = (e.branch || '').trim()
   if (degree && branch) return `${degree} in ${branch}`
   return degree || branch || ''
+}
+
+// Grade display: CGPA is on a 0–10 scale, percentages are higher — so "8.2"
+// becomes "CGPA - 8.2/10" and "82" becomes "Percentage - 82". Values already
+// labelled by the user (contain letters, "%", or a "/scale") are left as-is.
+export function formatGrade(raw) {
+  if (raw == null) return ''
+  const s = String(raw).trim()
+  if (!s || /[a-zA-Z%/]/.test(s)) return s
+  const num = parseFloat(s)
+  if (Number.isNaN(num)) return s
+  return num <= 10 ? `CGPA - ${s}/10` : `Percentage - ${s}`
 }
 
 function cleanUrl(url) {

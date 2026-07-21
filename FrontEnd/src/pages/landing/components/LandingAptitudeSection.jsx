@@ -28,7 +28,7 @@ export default function LandingAptitudeSection() {
               onClick={() => navigate('/aptitude')}
               className="lp-section-cta lp-section-cta--aptitude"
             >
-              🧠 Train Aptitude — Free
+              🧠 Train Aptitude
             </button>
           </div>
 

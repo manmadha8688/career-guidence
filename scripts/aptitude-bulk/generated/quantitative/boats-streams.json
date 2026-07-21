@@ -1,0 +1,1207 @@
+{
+  "topic": "boats-streams",
+  "category": "quantitative",
+  "group": "speed-distance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Downstream 12 km/h, upstream 8 km/h. Speed in still water?",
+      "options": [
+        "10.0",
+        "4",
+        "12",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (12+8)/2 = 10.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Downstream 15, upstream 9. Stream speed?",
+      "options": [
+        "24",
+        "3.0",
+        "15",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (15−9)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Boat 10 km/h in still, stream 2 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10+2 = 12 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Boat 8 km/h, stream 2 km/h. 30 km downstream time (h)?",
+      "options": [
+        "3.75",
+        "15.0",
+        "10",
+        "3.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 10. Time = 3.0 h.",
+      "trick": "D / downstream speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Round trip 48 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "10.0",
+        "4.0",
+        "6.0",
+        "4.8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 48/12+48/8 = 10.0 h.",
+      "trick": "Sum of leg times.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Swimmer 5 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "2",
+        "8",
+        "5",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 8 km/h.",
+      "trick": "Add stream.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Boat 15 km/h upstream against 3 km/h stream. 60 km time?",
+      "options": [
+        "4.0",
+        "20.0",
+        "5.0",
+        "15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 12 km/h → 5.0 h.",
+      "trick": "Subtract stream.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "30 km downstream in 3h, upstream in 5h. Boat speed in still water?",
+      "options": [
+        "10.0",
+        "6.0",
+        "3.75",
+        "8.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=10.0, Up=6.0. Boat=(10.0+6.0)/2=8.0 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Downstream 13 km/h, upstream 9 km/h. Speed in still water?",
+      "options": [
+        "11.0",
+        "4",
+        "13",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (13+9)/2 = 11.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Downstream 16, upstream 10. Stream speed?",
+      "options": [
+        "26",
+        "3.0",
+        "16",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (16−10)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Boat 11 km/h in still, stream 3 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "11",
+        "14",
+        "3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 11+3 = 14 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Boat 9 km/h, stream 2 km/h. 35 km downstream time (h)?",
+      "options": [
+        "3.888888888888889",
+        "17.5",
+        "11",
+        "3.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 11. Time = 3.2 h.",
+      "trick": "D / downstream speed.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Round trip 52 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "10.8",
+        "4.333333333333333",
+        "6.5",
+        "5.2"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 52/12+52/8 = 10.8 h.",
+      "trick": "Sum of leg times.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Swimmer 6 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "3",
+        "9",
+        "6",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 9 km/h.",
+      "trick": "Add stream.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Boat 16 km/h upstream against 3 km/h stream. 70 km time?",
+      "options": [
+        "4.375",
+        "23.333333333333332",
+        "5.4",
+        "16"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 13 km/h → 5.4 h.",
+      "trick": "Subtract stream.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "35 km downstream in 4h, upstream in 6h. Boat speed in still water?",
+      "options": [
+        "8.75",
+        "5.833333333333333",
+        "3.5",
+        "7.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=8.75, Up=5.833333333333333. Boat=(8.75+5.833333333333333)/2=7.291666666666666 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Downstream 14 km/h, upstream 10 km/h. Speed in still water?",
+      "options": [
+        "12.0",
+        "4",
+        "14",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (14+10)/2 = 12.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Downstream 17, upstream 11. Stream speed?",
+      "options": [
+        "28",
+        "3.0",
+        "17",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (17−11)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Boat 12 km/h in still, stream 4 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 12+4 = 16 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Boat 10 km/h, stream 2 km/h. 40 km downstream time (h)?",
+      "options": [
+        "4.0",
+        "20.0",
+        "12",
+        "3.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 12. Time = 3.3 h.",
+      "trick": "D / downstream speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Round trip 56 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "11.7",
+        "4.666666666666667",
+        "7.0",
+        "5.6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 56/12+56/8 = 11.7 h.",
+      "trick": "Sum of leg times.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Swimmer 7 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "4",
+        "10",
+        "7",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10 km/h.",
+      "trick": "Add stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Boat 17 km/h upstream against 3 km/h stream. 80 km time?",
+      "options": [
+        "4.705882352941177",
+        "26.666666666666668",
+        "5.7",
+        "17"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 14 km/h → 5.7 h.",
+      "trick": "Subtract stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "40 km downstream in 5h, upstream in 7h. Boat speed in still water?",
+      "options": [
+        "8.0",
+        "5.714285714285714",
+        "3.3333333333333335",
+        "6.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=8.0, Up=5.714285714285714. Boat=(8.0+5.714285714285714)/2=6.857142857142858 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Downstream 15 km/h, upstream 11 km/h. Speed in still water?",
+      "options": [
+        "13.0",
+        "4",
+        "15",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (15+11)/2 = 13.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Downstream 18, upstream 12. Stream speed?",
+      "options": [
+        "30",
+        "3.0",
+        "18",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (18−12)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Boat 13 km/h in still, stream 5 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "13",
+        "18",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 13+5 = 18 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Boat 11 km/h, stream 2 km/h. 45 km downstream time (h)?",
+      "options": [
+        "4.090909090909091",
+        "22.5",
+        "13",
+        "3.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 13. Time = 3.5 h.",
+      "trick": "D / downstream speed.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Round trip 60 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "12.5",
+        "5.0",
+        "7.5",
+        "6.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60/12+60/8 = 12.5 h.",
+      "trick": "Sum of leg times.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Swimmer 8 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "5",
+        "11",
+        "8",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 11 km/h.",
+      "trick": "Add stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Boat 18 km/h upstream against 3 km/h stream. 90 km time?",
+      "options": [
+        "5.0",
+        "30.0",
+        "6.0",
+        "18"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 15 km/h → 6.0 h.",
+      "trick": "Subtract stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "45 km downstream in 3h, upstream in 8h. Boat speed in still water?",
+      "options": [
+        "15.0",
+        "5.625",
+        "4.090909090909091",
+        "10.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=15.0, Up=5.625. Boat=(15.0+5.625)/2=10.3125 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Downstream 16 km/h, upstream 12 km/h. Speed in still water?",
+      "options": [
+        "14.0",
+        "4",
+        "16",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (16+12)/2 = 14.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Downstream 19, upstream 13. Stream speed?",
+      "options": [
+        "32",
+        "3.0",
+        "19",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (19−13)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Boat 14 km/h in still, stream 6 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "14",
+        "20",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 14+6 = 20 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Boat 12 km/h, stream 2 km/h. 50 km downstream time (h)?",
+      "options": [
+        "4.166666666666667",
+        "25.0",
+        "14",
+        "3.6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 14. Time = 3.6 h.",
+      "trick": "D / downstream speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Round trip 64 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "13.3",
+        "5.333333333333333",
+        "8.0",
+        "6.4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 64/12+64/8 = 13.3 h.",
+      "trick": "Sum of leg times.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Swimmer 9 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "6",
+        "12",
+        "9",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 12 km/h.",
+      "trick": "Add stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Boat 19 km/h upstream against 3 km/h stream. 100 km time?",
+      "options": [
+        "5.2631578947368425",
+        "33.333333333333336",
+        "6.2",
+        "19"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 16 km/h → 6.2 h.",
+      "trick": "Subtract stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "50 km downstream in 4h, upstream in 5h. Boat speed in still water?",
+      "options": [
+        "12.5",
+        "10.0",
+        "5.555555555555555",
+        "11.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=12.5, Up=10.0. Boat=(12.5+10.0)/2=11.25 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Downstream 17 km/h, upstream 13 km/h. Speed in still water?",
+      "options": [
+        "15.0",
+        "4",
+        "17",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (17+13)/2 = 15.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Downstream 20, upstream 14. Stream speed?",
+      "options": [
+        "34",
+        "3.0",
+        "20",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (20−14)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Boat 15 km/h in still, stream 7 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "15",
+        "22",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 15+7 = 22 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Boat 13 km/h, stream 2 km/h. 55 km downstream time (h)?",
+      "options": [
+        "4.230769230769231",
+        "27.5",
+        "15",
+        "3.7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 15. Time = 3.7 h.",
+      "trick": "D / downstream speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Round trip 68 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "14.2",
+        "5.666666666666667",
+        "8.5",
+        "6.8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 68/12+68/8 = 14.2 h.",
+      "trick": "Sum of leg times.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Swimmer 10 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "7",
+        "13",
+        "10",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 13 km/h.",
+      "trick": "Add stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Boat 20 km/h upstream against 3 km/h stream. 110 km time?",
+      "options": [
+        "5.5",
+        "36.666666666666664",
+        "6.5",
+        "20"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 17 km/h → 6.5 h.",
+      "trick": "Subtract stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "55 km downstream in 5h, upstream in 6h. Boat speed in still water?",
+      "options": [
+        "11.0",
+        "9.166666666666666",
+        "5.0",
+        "10.1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=11.0, Up=9.166666666666666. Boat=(11.0+9.166666666666666)/2=10.083333333333332 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Downstream 18 km/h, upstream 14 km/h. Speed in still water?",
+      "options": [
+        "16.0",
+        "4",
+        "18",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (18+14)/2 = 16.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Downstream 21, upstream 15. Stream speed?",
+      "options": [
+        "36",
+        "3.0",
+        "21",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (21−15)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Boat 16 km/h in still, stream 8 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "16",
+        "24",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 16+8 = 24 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Boat 14 km/h, stream 2 km/h. 60 km downstream time (h)?",
+      "options": [
+        "4.285714285714286",
+        "30.0",
+        "16",
+        "3.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 16. Time = 3.8 h.",
+      "trick": "D / downstream speed.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Round trip 72 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "15.0",
+        "6.0",
+        "9.0",
+        "7.2"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 72/12+72/8 = 15.0 h.",
+      "trick": "Sum of leg times.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Swimmer 11 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "14",
+        "11",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 14 km/h.",
+      "trick": "Add stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Boat 21 km/h upstream against 3 km/h stream. 120 km time?",
+      "options": [
+        "5.714285714285714",
+        "40.0",
+        "6.7",
+        "21"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 18 km/h → 6.7 h.",
+      "trick": "Subtract stream.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "60 km downstream in 3h, upstream in 7h. Boat speed in still water?",
+      "options": [
+        "20.0",
+        "8.571428571428571",
+        "6.0",
+        "14.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=20.0, Up=8.571428571428571. Boat=(20.0+8.571428571428571)/2=14.285714285714285 km/h.",
+      "trick": "From leg speeds.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Downstream 19 km/h, upstream 15 km/h. Speed in still water?",
+      "options": [
+        "17.0",
+        "4",
+        "19",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (19+15)/2 = 17.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Downstream 22, upstream 16. Stream speed?",
+      "options": [
+        "38",
+        "3.0",
+        "22",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (22−16)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Boat 17 km/h in still, stream 9 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "17",
+        "26",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 17+9 = 26 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Boat 15 km/h, stream 2 km/h. 65 km downstream time (h)?",
+      "options": [
+        "4.333333333333333",
+        "32.5",
+        "17",
+        "3.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 17. Time = 3.8 h.",
+      "trick": "D / downstream speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Round trip 76 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "15.8",
+        "6.333333333333333",
+        "9.5",
+        "7.6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 76/12+76/8 = 15.8 h.",
+      "trick": "Sum of leg times.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Swimmer 12 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "9",
+        "15",
+        "12",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 15 km/h.",
+      "trick": "Add stream.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Boat 22 km/h upstream against 3 km/h stream. 130 km time?",
+      "options": [
+        "5.909090909090909",
+        "43.333333333333336",
+        "6.8",
+        "22"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 19 km/h → 6.8 h.",
+      "trick": "Subtract stream.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "65 km downstream in 4h, upstream in 8h. Boat speed in still water?",
+      "options": [
+        "16.25",
+        "8.125",
+        "5.416666666666667",
+        "12.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=16.25, Up=8.125. Boat=(16.25+8.125)/2=12.1875 km/h.",
+      "trick": "From leg speeds.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Downstream 20 km/h, upstream 16 km/h. Speed in still water?",
+      "options": [
+        "18.0",
+        "4",
+        "20",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (20+16)/2 = 18.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Downstream 23, upstream 17. Stream speed?",
+      "options": [
+        "40",
+        "3.0",
+        "23",
+        "17"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (23−17)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Boat 18 km/h in still, stream 10 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "18",
+        "28",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 18+10 = 28 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Boat 16 km/h, stream 2 km/h. 70 km downstream time (h)?",
+      "options": [
+        "4.375",
+        "35.0",
+        "18",
+        "3.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 18. Time = 3.9 h.",
+      "trick": "D / downstream speed.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Round trip 80 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "16.7",
+        "6.666666666666667",
+        "10.0",
+        "8.0"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 80/12+80/8 = 16.7 h.",
+      "trick": "Sum of leg times.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Swimmer 13 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "10",
+        "16",
+        "13",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 16 km/h.",
+      "trick": "Add stream.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Boat 23 km/h upstream against 3 km/h stream. 140 km time?",
+      "options": [
+        "6.086956521739131",
+        "46.666666666666664",
+        "7.0",
+        "23"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 20 km/h → 7.0 h.",
+      "trick": "Subtract stream.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "70 km downstream in 5h, upstream in 5h. Boat speed in still water?",
+      "options": [
+        "14.0",
+        "14.0",
+        "7.0",
+        "14.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=14.0, Up=14.0. Boat=(14.0+14.0)/2=14.0 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Downstream 21 km/h, upstream 17 km/h. Speed in still water?",
+      "options": [
+        "19.0",
+        "4",
+        "21",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: (21+17)/2 = 19.0 km/h.",
+      "trick": "Boat = avg of up/down.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Downstream 24, upstream 18. Stream speed?",
+      "options": [
+        "42",
+        "3.0",
+        "24",
+        "18"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (24−18)/2 = 3.0 km/h.",
+      "trick": "Stream = half difference.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Boat 19 km/h in still, stream 11 km/h. Downstream speed?",
+      "options": [
+        "8",
+        "19",
+        "30",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 19+11 = 30 km/h.",
+      "trick": "Down = boat + stream.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Boat 17 km/h, stream 2 km/h. 75 km downstream time (h)?",
+      "options": [
+        "4.411764705882353",
+        "37.5",
+        "19",
+        "3.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Speed 19. Time = 3.9 h.",
+      "trick": "D / downstream speed.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Round trip 84 km: down 12 km/h, up 8 km/h. Total time?",
+      "options": [
+        "17.5",
+        "7.0",
+        "10.5",
+        "8.4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 84/12+84/8 = 17.5 h.",
+      "trick": "Sum of leg times.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Swimmer 14 km/h in still, river 3 km/h. Downstream speed?",
+      "options": [
+        "11",
+        "17",
+        "14",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 17 km/h.",
+      "trick": "Add stream.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Boat 24 km/h upstream against 3 km/h stream. 150 km time?",
+      "options": [
+        "6.25",
+        "50.0",
+        "7.1",
+        "24"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Upstream 21 km/h → 7.1 h.",
+      "trick": "Subtract stream.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "75 km downstream in 3h, upstream in 6h. Boat speed in still water?",
+      "options": [
+        "25.0",
+        "12.5",
+        "8.333333333333334",
+        "18.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Down=25.0, Up=12.5. Boat=(25.0+12.5)/2=18.75 km/h.",
+      "trick": "From leg speeds.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

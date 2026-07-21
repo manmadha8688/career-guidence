@@ -1,0 +1,1207 @@
+{
+  "topic": "classification-odd-one-out",
+  "category": "logical",
+  "group": "coding-analogy",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Paragraph",
+        "Addition",
+        "Subtraction",
+        "Multiplication"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "India",
+        "Delhi",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Grass",
+        "Rose",
+        "Lily",
+        "Tulip"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Carrot",
+        "Apple",
+        "Mango",
+        "Banana"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Cube",
+        "Square",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "Week",
+        "January",
+        "March",
+        "April"
+      ],
+      "answer": "A",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Wood",
+        "Copper",
+        "Iron",
+        "Gold"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Table",
+        "Dog",
+        "Cat",
+        "Lion"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Odd one out"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Paragraph",
+        "Addition",
+        "Subtraction",
+        "Multiplication"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "India",
+        "Delhi",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Grass",
+        "Rose",
+        "Lily",
+        "Tulip"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Carrot",
+        "Apple",
+        "Mango",
+        "Banana"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Cube",
+        "Square",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "Week",
+        "January",
+        "March",
+        "April"
+      ],
+      "answer": "A",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Wood",
+        "Copper",
+        "Iron",
+        "Gold"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Table",
+        "Dog",
+        "Cat",
+        "Lion"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Odd one out"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Paragraph",
+        "Addition",
+        "Subtraction",
+        "Multiplication"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "India",
+        "Delhi",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Grass",
+        "Rose",
+        "Lily",
+        "Tulip"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Carrot",
+        "Apple",
+        "Mango",
+        "Banana"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Cube",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "Week",
+        "March",
+        "April"
+      ],
+      "answer": "B",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Wood",
+        "Iron",
+        "Gold"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Table",
+        "Cat",
+        "Lion"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Odd one out"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Paragraph",
+        "Subtraction",
+        "Multiplication"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "India",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Grass",
+        "Lily",
+        "Tulip"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Carrot",
+        "Mango",
+        "Banana"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Cube",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "Week",
+        "March",
+        "April"
+      ],
+      "answer": "B",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Wood",
+        "Iron",
+        "Gold"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Table",
+        "Cat",
+        "Lion"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Odd one out"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Paragraph",
+        "Subtraction",
+        "Multiplication"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "India",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Grass",
+        "Lily",
+        "Tulip"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Carrot",
+        "Mango",
+        "Banana"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Cube",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "Week",
+        "March",
+        "April"
+      ],
+      "answer": "B",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Wood",
+        "Iron",
+        "Gold"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Table",
+        "Cat",
+        "Lion"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Odd one out"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Subtraction",
+        "Paragraph",
+        "Multiplication"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "India",
+        "Kolkata"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Lily",
+        "Grass",
+        "Tulip"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Mango",
+        "Carrot",
+        "Banana"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Circle",
+        "Cube",
+        "Triangle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "March",
+        "Week",
+        "April"
+      ],
+      "answer": "C",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Iron",
+        "Wood",
+        "Gold"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Cat",
+        "Table",
+        "Lion"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Odd one out"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Subtraction",
+        "Paragraph",
+        "Multiplication"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Odd one out"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "India",
+        "Kolkata"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Odd one out"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Lily",
+        "Grass",
+        "Tulip"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Odd one out"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Mango",
+        "Carrot",
+        "Banana"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Odd one out"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Circle",
+        "Cube",
+        "Triangle"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Odd one out"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "March",
+        "Week",
+        "April"
+      ],
+      "answer": "C",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Odd one out"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Iron",
+        "Wood",
+        "Gold"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Odd one out"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Cat",
+        "Table",
+        "Lion"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Subtraction",
+        "Paragraph",
+        "Multiplication"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "India",
+        "Kolkata"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Lily",
+        "Grass",
+        "Tulip"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Mango",
+        "Carrot",
+        "Banana"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Cube"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "March",
+        "April",
+        "Week"
+      ],
+      "answer": "D",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Iron",
+        "Gold",
+        "Wood"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Cat",
+        "Lion",
+        "Table"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Subtraction",
+        "Multiplication",
+        "Paragraph"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "Kolkata",
+        "India"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Lily",
+        "Tulip",
+        "Grass"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Mango",
+        "Banana",
+        "Carrot"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Cube"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "March",
+        "April",
+        "Week"
+      ],
+      "answer": "D",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Iron",
+        "Gold",
+        "Wood"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Cat",
+        "Lion",
+        "Table"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Addition, Subtraction, Multiplication, Paragraph",
+      "options": [
+        "Addition",
+        "Subtraction",
+        "Multiplication",
+        "Paragraph"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Addition, Subtraction, Multiplication share a category. Step 2: Paragraph differs (Math ops vs language). Answer: Paragraph.",
+      "trick": "Math ops vs language",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Delhi, Mumbai, Kolkata, India",
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "Kolkata",
+        "India"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Delhi, Mumbai, Kolkata share a category. Step 2: India differs (Cities vs country). Answer: India.",
+      "trick": "Cities vs country",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Rose, Lily, Tulip, Grass",
+      "options": [
+        "Rose",
+        "Lily",
+        "Tulip",
+        "Grass"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rose, Lily, Tulip share a category. Step 2: Grass differs (Flowers vs grass). Answer: Grass.",
+      "trick": "Flowers vs grass",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Apple, Mango, Banana, Carrot",
+      "options": [
+        "Apple",
+        "Mango",
+        "Banana",
+        "Carrot"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Apple, Mango, Banana share a category. Step 2: Carrot differs (Fruits vs vegetable). Answer: Carrot.",
+      "trick": "Fruits vs vegetable",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Square, Circle, Triangle, Cube",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Cube"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Square, Circle, Triangle share a category. Step 2: Cube differs (2D vs 3D shape). Answer: Cube.",
+      "trick": "2D vs 3D shape",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Find the odd one out: January, March, April, Week",
+      "options": [
+        "January",
+        "March",
+        "April",
+        "Week"
+      ],
+      "answer": "D",
+      "solution": "Step 1: January, March, April share a category. Step 2: Week differs (Months vs week). Answer: Week.",
+      "trick": "Months vs week",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Copper, Iron, Gold, Wood",
+      "options": [
+        "Copper",
+        "Iron",
+        "Gold",
+        "Wood"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Copper, Iron, Gold share a category. Step 2: Wood differs (Metals vs non-metal). Answer: Wood.",
+      "trick": "Metals vs non-metal",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Find the odd one out: Dog, Cat, Lion, Table",
+      "options": [
+        "Dog",
+        "Cat",
+        "Lion",
+        "Table"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Dog, Cat, Lion share a category. Step 2: Table differs (Animals vs furniture). Answer: Table.",
+      "trick": "Animals vs furniture",
+      "type": "Real-world disguise"
+    }
+  ]
+}

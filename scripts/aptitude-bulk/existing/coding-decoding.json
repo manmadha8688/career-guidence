@@ -1,0 +1,402 @@
+[
+  {
+    "id": "coding-decoding-q1",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "If CAT is coded as DBU, how is DOG coded?",
+    "options": [
+      "EPH",
+      "EPI",
+      "FPH",
+      "EOG"
+    ],
+    "answer": "A",
+    "solution": "The rule is +1 (C→D, A→B, T→U). Apply to DOG: D→E, O→P, G→H → EPH.",
+    "trick": "Shift each letter +1.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q2",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "If BOOK is coded as KOOB, how is DESK coded?",
+    "options": [
+      "DSEK",
+      "KSED",
+      "KESD",
+      "DKSE"
+    ],
+    "answer": "B",
+    "solution": "The rule is reversal (BOOK → KOOB). Reverse DESK → KSED.",
+    "trick": "Write the word backwards.",
+    "type": "Reversal",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q3",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "If letters shift by +2 (CAT → ECV), how is DOG coded?",
+    "options": [
+      "FPI",
+      "EQI",
+      "FQI",
+      "FQH"
+    ],
+    "answer": "C",
+    "solution": "Apply +2 to DOG: D→F, O→Q, G→I → FQI.",
+    "trick": "Shift each letter +2.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q4",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "If the code reverses the word, how is WORD coded?",
+    "options": [
+      "WROD",
+      "ROWD",
+      "WORD",
+      "DROW"
+    ],
+    "answer": "D",
+    "solution": "Reverse WORD → DROW.",
+    "trick": "Backwards spelling.",
+    "type": "Reversal",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q5",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "If letters shift by +1, how is MAN coded?",
+    "options": [
+      "NBO",
+      "NAO",
+      "MBO",
+      "OBN"
+    ],
+    "answer": "A",
+    "solution": "M→N, A→B, N→O → NBO.",
+    "trick": "Shift each letter +1.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q6",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "If each letter is replaced by its mirror (A↔Z, B↔Y, …), how is AB coded?",
+    "options": [
+      "YZ",
+      "ZY",
+      "AZ",
+      "BY"
+    ],
+    "answer": "B",
+    "solution": "A→Z and B→Y (positions add to 27) → ZY.",
+    "trick": "Mirror: letter + mirror = 27.",
+    "type": "Mirror letters",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q7",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "If letters shift by +3, how is CAT coded?",
+    "options": [
+      "EDW",
+      "FDV",
+      "FDW",
+      "GDW"
+    ],
+    "answer": "C",
+    "solution": "C→F, A→D, T→W → FDW.",
+    "trick": "Shift each letter +3.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q8",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "If letters shift by −1 (backward), how is DOG coded?",
+    "options": [
+      "ENH",
+      "DPF",
+      "CMF",
+      "CNF"
+    ],
+    "answer": "D",
+    "solution": "D→C, O→N, G→F → CNF.",
+    "trick": "Shift each letter −1.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q9",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "If A = 1, B = 2, … Z = 26, what is the number code for CAB?",
+    "options": [
+      "3, 1, 2",
+      "1, 2, 3",
+      "2, 1, 3",
+      "3, 2, 1"
+    ],
+    "answer": "A",
+    "solution": "C = 3, A = 1, B = 2 → 3, 1, 2.",
+    "trick": "Use position values.",
+    "type": "Number coding",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q10",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "If 'sun rises east' = 'pa ta na' and 'east is red' = 'na la sa', what is the code for 'east'?",
+    "options": [
+      "ta",
+      "na",
+      "la",
+      "sa"
+    ],
+    "answer": "B",
+    "solution": "'east' is common to both sentences and 'na' is the common code word, so east = na.",
+    "trick": "Match the shared word.",
+    "type": "Word substitution",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q11",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "If letters shift by +2, how is HELLO coded?",
+    "options": [
+      "JGNMQ",
+      "IGNNQ",
+      "JGNNQ",
+      "JGMMQ"
+    ],
+    "answer": "C",
+    "solution": "H→J, E→G, L→N, L→N, O→Q → JGNNQ.",
+    "trick": "Shift each letter +2.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q12",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "If the code reverses the word, how is INDIA coded?",
+    "options": [
+      "AIDIN",
+      "IANDI",
+      "AINDI",
+      "AIDNI"
+    ],
+    "answer": "D",
+    "solution": "Reverse INDIA → AIDNI.",
+    "trick": "Backwards spelling.",
+    "type": "Reversal",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q13",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "If letters shift by +1, how is TEACHER coded?",
+    "options": [
+      "UFBDIFS",
+      "UFBCIFS",
+      "UGBDIFS",
+      "UFBDIGS"
+    ],
+    "answer": "A",
+    "solution": "T→U, E→F, A→B, C→D, H→I, E→F, R→S → UFBDIFS.",
+    "trick": "Shift each letter +1.",
+    "type": "Constant letter shift",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q14",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "If each letter is replaced by its mirror (A↔Z, B↔Y, …), how is CAT coded?",
+    "options": [
+      "XAG",
+      "XZG",
+      "XZH",
+      "YZG"
+    ],
+    "answer": "B",
+    "solution": "C(3)→X(24), A(1)→Z(26), T(20)→G(7) → XZG.",
+    "trick": "27 − position gives the mirror.",
+    "type": "Mirror letters",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q15",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "If A = 1 … Z = 26, what is the SUM of the letter values of CAT?",
+    "options": [
+      "23",
+      "25",
+      "24",
+      "20"
+    ],
+    "answer": "C",
+    "solution": "C + A + T = 3 + 1 + 20 = 24.",
+    "trick": "Add the position values.",
+    "type": "Number coding (sum)",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q16",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "If 'good morning' = 'ma pa' and 'good night' = 'ma sa', what is the code for 'good'?",
+    "options": [
+      "pa",
+      "sa",
+      "na",
+      "ma"
+    ],
+    "answer": "D",
+    "solution": "'good' is common to both sentences and 'ma' is the common code word, so good = ma.",
+    "trick": "Match the shared word.",
+    "type": "Word substitution",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q17",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "If letters shift by +4 (wrapping past Z back to A), how is WORD coded?",
+    "options": [
+      "ASVH",
+      "ASWH",
+      "BSVH",
+      "ATVH"
+    ],
+    "answer": "A",
+    "solution": "W(23)+4 = 27 → wraps to A; O→S, R→V, D→H → ASVH.",
+    "trick": "After Z, wrap to A.",
+    "type": "Shift with wrap",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q18",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "If the rule is 'reverse the word, then shift each letter +1', how is CAT coded?",
+    "options": [
+      "TBD",
+      "UBD",
+      "UBC",
+      "VBD"
+    ],
+    "answer": "B",
+    "solution": "Reverse CAT → TAC; then +1: T→U, A→B, C→D → UBD.",
+    "trick": "Reverse first, then +1.",
+    "type": "Combined rule",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q19",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "If each letter is replaced by its mirror (A↔Z, …), how is DOG coded?",
+    "options": [
+      "WLS",
+      "XLT",
+      "WLT",
+      "WKT"
+    ],
+    "answer": "C",
+    "solution": "D(4)→W(23), O(15)→L(12), G(7)→T(20) → WLT.",
+    "trick": "27 − position gives the mirror.",
+    "type": "Mirror letters",
+    "active": true
+  },
+  {
+    "id": "coding-decoding-q20",
+    "topic": "coding-decoding",
+    "category": "logical",
+    "group": "coding-analogy",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "If A = 1 … Z = 26, what is the number code for the word FACE?",
+    "options": [
+      "6, 1, 3, 4",
+      "5, 1, 3, 5",
+      "6, 2, 3, 5",
+      "6, 1, 3, 5"
+    ],
+    "answer": "D",
+    "solution": "F = 6, A = 1, C = 3, E = 5 → 6, 1, 3, 5.",
+    "trick": "Use position values.",
+    "type": "Number coding",
+    "active": true
+  }
+]

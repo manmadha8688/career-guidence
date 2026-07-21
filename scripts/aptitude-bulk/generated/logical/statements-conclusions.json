@@ -1,0 +1,1207 @@
+{
+  "topic": "statements-conclusions",
+  "category": "logical",
+  "group": "logical-deduction",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only II",
+        "Neither",
+        "Only I",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only II",
+        "Neither",
+        "Only I",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only II",
+        "Neither",
+        "Only I",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only II",
+        "Neither",
+        "Only I",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only II",
+        "Neither",
+        "Only I",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only II",
+        "Neither",
+        "Only I",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Both I and II",
+        "Neither",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Only I",
+        "Neither",
+        "Only II",
+        ""
+      ],
+      "answer": "A",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Both I and II",
+        "Only I",
+        "Only II"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Both I and II",
+        "Only II"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Both I and II",
+        "Only II"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Both I and II",
+        "Only II"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Both I and II",
+        "Only II"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Both I and II",
+        "Only II"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Statement-conclusion"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Both I and II",
+        "Only II"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "Only I",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        ""
+      ],
+      "answer": "C",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "",
+        "Only II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "",
+        "Only II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "",
+        "Only II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "",
+        "Only II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "",
+        "Only II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "",
+        "Only II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only II. Answer: Only II.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only I",
+        "Only II",
+        "Both I and II"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Both I and II. Answer: Both I and II.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Statement: Only students who submit assignments on time may sit the exam. Conclusion I: Ravi did not sit the exam → Ravi did not submit on time. Conclusion II: Ravi submitted on time → Ravi sat the exam. Which follows?",
+      "options": [
+        "Neither",
+        "Only II",
+        "",
+        "Only I"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 'Only P → Q' means Q requires P. Step 2: Contrapositive and direct valid → Only I. Answer: Only I.",
+      "trick": "Only P → Q logic.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

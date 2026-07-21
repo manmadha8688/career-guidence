@@ -1,0 +1,1207 @@
+{
+  "topic": "ages",
+  "category": "quantitative",
+  "group": "averages-ages",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Father:son = 5:3. Age diff 16. Son's age?",
+      "options": [
+        "24",
+        "40",
+        "16",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(2) = 8. Son = 24.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Person age 25. Age after 5 years?",
+      "options": [
+        "25",
+        "30",
+        "5",
+        "20"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 25 + 5 = 30.",
+      "trick": "Add years.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "A is 30, B is 20. Ratio of ages after 10 years?",
+      "options": [
+        "30:20",
+        "50:10",
+        "40:30",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (40):(30) = 40:30.",
+      "trick": "Add same years to both.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Father 40, son 10. When father was son's age, ratio of their ages then?",
+      "options": [
+        "40:10",
+        "1:1",
+        "30:0",
+        "10:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 30 years ago. Father 10, son -20. Ratio 10:-20.",
+      "trick": "Go back difference years.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Two brothers ages ratio 2:1, sum 60. Younger?",
+      "options": [
+        "20",
+        "30",
+        "60",
+        "40"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 60 = 20.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Mother 32, daughter 8. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "4",
+        "8",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 4 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Product of ages of two children is 90. One is 30. Other?",
+      "options": [
+        "30",
+        "90",
+        "3",
+        "33"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 90/30 = 3.",
+      "trick": "Divide product.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Average age of 4 people is 30. New person 40 joins. New average?",
+      "options": [
+        "30",
+        "40",
+        "35",
+        "32"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (30×4+40)/5 = 32.",
+      "trick": "Weighted average ages.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Father:son = 6:4. Age diff 16. Son's age?",
+      "options": [
+        "32",
+        "48",
+        "16",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(2) = 8. Son = 32.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Person age 27. Age after 6 years?",
+      "options": [
+        "27",
+        "33",
+        "6",
+        "21"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 27 + 6 = 33.",
+      "trick": "Add years.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "A is 31, B is 21. Ratio of ages after 10 years?",
+      "options": [
+        "31:21",
+        "52:10",
+        "41:31",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (41):(31) = 41:31.",
+      "trick": "Add same years to both.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Father 42, son 11. When father was son's age, ratio of their ages then?",
+      "options": [
+        "42:11",
+        "1:1",
+        "31:0",
+        "11:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 31 years ago. Father 11, son -20. Ratio 11:-20.",
+      "trick": "Go back difference years.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Two brothers ages ratio 2:1, sum 65. Younger?",
+      "options": [
+        "22",
+        "32",
+        "65",
+        "44"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 65 = 22.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Mother 33, daughter 9. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "3",
+        "9",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 3 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Product of ages of two children is 93. One is 31. Other?",
+      "options": [
+        "31",
+        "93",
+        "3",
+        "34"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 93/31 = 3.",
+      "trick": "Divide product.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Average age of 4 people is 31. New person 41 joins. New average?",
+      "options": [
+        "31",
+        "41",
+        "36",
+        "33"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (31×4+41)/5 = 33.",
+      "trick": "Weighted average ages.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Father:son = 7:5. Age diff 16. Son's age?",
+      "options": [
+        "40",
+        "56",
+        "16",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(2) = 8. Son = 40.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Person age 29. Age after 7 years?",
+      "options": [
+        "29",
+        "36",
+        "7",
+        "22"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 29 + 7 = 36.",
+      "trick": "Add years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "A is 32, B is 22. Ratio of ages after 10 years?",
+      "options": [
+        "32:22",
+        "54:10",
+        "42:32",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (42):(32) = 42:32.",
+      "trick": "Add same years to both.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Father 44, son 12. When father was son's age, ratio of their ages then?",
+      "options": [
+        "44:12",
+        "1:1",
+        "32:0",
+        "12:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 32 years ago. Father 12, son -20. Ratio 12:-20.",
+      "trick": "Go back difference years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Two brothers ages ratio 2:1, sum 70. Younger?",
+      "options": [
+        "23",
+        "35",
+        "70",
+        "46"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 70 = 23.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Mother 34, daughter 10. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "2",
+        "10",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 2 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Product of ages of two children is 96. One is 32. Other?",
+      "options": [
+        "32",
+        "96",
+        "3",
+        "35"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 96/32 = 3.",
+      "trick": "Divide product.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Average age of 4 people is 32. New person 42 joins. New average?",
+      "options": [
+        "32",
+        "42",
+        "37",
+        "34"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (32×4+42)/5 = 34.",
+      "trick": "Weighted average ages.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Father:son = 8:3. Age diff 16. Son's age?",
+      "options": [
+        "10",
+        "26",
+        "16",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(5) = 3. Son = 10.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Person age 31. Age after 8 years?",
+      "options": [
+        "31",
+        "39",
+        "8",
+        "23"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 31 + 8 = 39.",
+      "trick": "Add years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "A is 33, B is 23. Ratio of ages after 10 years?",
+      "options": [
+        "33:23",
+        "56:10",
+        "43:33",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (43):(33) = 43:33.",
+      "trick": "Add same years to both.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Father 46, son 13. When father was son's age, ratio of their ages then?",
+      "options": [
+        "46:13",
+        "1:1",
+        "33:0",
+        "13:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 33 years ago. Father 13, son -20. Ratio 13:-20.",
+      "trick": "Go back difference years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Two brothers ages ratio 2:1, sum 75. Younger?",
+      "options": [
+        "25",
+        "37",
+        "75",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 75 = 25.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Mother 35, daughter 11. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "1",
+        "11",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 1 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Product of ages of two children is 99. One is 33. Other?",
+      "options": [
+        "33",
+        "99",
+        "3",
+        "36"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 99/33 = 3.",
+      "trick": "Divide product.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Average age of 4 people is 33. New person 43 joins. New average?",
+      "options": [
+        "33",
+        "43",
+        "38",
+        "35"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (33×4+43)/5 = 35.",
+      "trick": "Weighted average ages.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Father:son = 5:4. Age diff 16. Son's age?",
+      "options": [
+        "64",
+        "80",
+        "16",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(1) = 16. Son = 64.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Person age 33. Age after 9 years?",
+      "options": [
+        "33",
+        "42",
+        "9",
+        "24"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 33 + 9 = 42.",
+      "trick": "Add years.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "A is 34, B is 24. Ratio of ages after 10 years?",
+      "options": [
+        "34:24",
+        "58:10",
+        "44:34",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (44):(34) = 44:34.",
+      "trick": "Add same years to both.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Father 48, son 14. When father was son's age, ratio of their ages then?",
+      "options": [
+        "48:14",
+        "1:1",
+        "34:0",
+        "14:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 34 years ago. Father 14, son -20. Ratio 14:-20.",
+      "trick": "Go back difference years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Two brothers ages ratio 2:1, sum 80. Younger?",
+      "options": [
+        "27",
+        "40",
+        "80",
+        "54"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 80 = 27.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Mother 36, daughter 12. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "9",
+        "12",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 9 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Product of ages of two children is 102. One is 34. Other?",
+      "options": [
+        "34",
+        "102",
+        "3",
+        "37"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 102/34 = 3.",
+      "trick": "Divide product.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Average age of 4 people is 34. New person 44 joins. New average?",
+      "options": [
+        "34",
+        "44",
+        "39",
+        "36"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (34×4+44)/5 = 36.",
+      "trick": "Weighted average ages.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Father:son = 6:5. Age diff 16. Son's age?",
+      "options": [
+        "80",
+        "96",
+        "16",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(1) = 16. Son = 80.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Person age 35. Age after 10 years?",
+      "options": [
+        "35",
+        "45",
+        "10",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 35 + 10 = 45.",
+      "trick": "Add years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "A is 35, B is 25. Ratio of ages after 10 years?",
+      "options": [
+        "35:25",
+        "60:10",
+        "45:35",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (45):(35) = 45:35.",
+      "trick": "Add same years to both.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Father 50, son 15. When father was son's age, ratio of their ages then?",
+      "options": [
+        "50:15",
+        "1:1",
+        "35:0",
+        "15:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 35 years ago. Father 15, son -20. Ratio 15:-20.",
+      "trick": "Go back difference years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Two brothers ages ratio 2:1, sum 85. Younger?",
+      "options": [
+        "28",
+        "42",
+        "85",
+        "56"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 85 = 28.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Mother 37, daughter 13. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "10",
+        "13",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 10 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Product of ages of two children is 105. One is 35. Other?",
+      "options": [
+        "35",
+        "105",
+        "3",
+        "38"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 105/35 = 3.",
+      "trick": "Divide product.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Average age of 4 people is 35. New person 45 joins. New average?",
+      "options": [
+        "35",
+        "45",
+        "40",
+        "37"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (35×4+45)/5 = 37.",
+      "trick": "Weighted average ages.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Father:son = 7:3. Age diff 16. Son's age?",
+      "options": [
+        "12",
+        "28",
+        "16",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(4) = 4. Son = 12.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Person age 37. Age after 11 years?",
+      "options": [
+        "37",
+        "48",
+        "11",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 37 + 11 = 48.",
+      "trick": "Add years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "A is 36, B is 26. Ratio of ages after 10 years?",
+      "options": [
+        "36:26",
+        "62:10",
+        "46:36",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (46):(36) = 46:36.",
+      "trick": "Add same years to both.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Father 52, son 16. When father was son's age, ratio of their ages then?",
+      "options": [
+        "52:16",
+        "1:1",
+        "36:0",
+        "16:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 36 years ago. Father 16, son -20. Ratio 16:-20.",
+      "trick": "Go back difference years.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Two brothers ages ratio 2:1, sum 90. Younger?",
+      "options": [
+        "30",
+        "45",
+        "90",
+        "60"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 90 = 30.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Mother 38, daughter 14. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "11",
+        "14",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 11 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Product of ages of two children is 108. One is 36. Other?",
+      "options": [
+        "36",
+        "108",
+        "3",
+        "39"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 108/36 = 3.",
+      "trick": "Divide product.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Average age of 4 people is 36. New person 46 joins. New average?",
+      "options": [
+        "36",
+        "46",
+        "41",
+        "38"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (36×4+46)/5 = 38.",
+      "trick": "Weighted average ages.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Father:son = 8:4. Age diff 16. Son's age?",
+      "options": [
+        "16",
+        "32",
+        "16",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(4) = 4. Son = 16.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Person age 39. Age after 12 years?",
+      "options": [
+        "39",
+        "51",
+        "12",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 39 + 12 = 51.",
+      "trick": "Add years.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "A is 37, B is 27. Ratio of ages after 10 years?",
+      "options": [
+        "37:27",
+        "64:10",
+        "47:37",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (47):(37) = 47:37.",
+      "trick": "Add same years to both.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Father 54, son 17. When father was son's age, ratio of their ages then?",
+      "options": [
+        "54:17",
+        "1:1",
+        "37:0",
+        "17:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 37 years ago. Father 17, son -20. Ratio 17:-20.",
+      "trick": "Go back difference years.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Two brothers ages ratio 2:1, sum 95. Younger?",
+      "options": [
+        "32",
+        "47",
+        "95",
+        "64"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 95 = 32.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Mother 39, daughter 15. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "12",
+        "15",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 12 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Product of ages of two children is 111. One is 37. Other?",
+      "options": [
+        "37",
+        "111",
+        "3",
+        "40"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 111/37 = 3.",
+      "trick": "Divide product.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Average age of 4 people is 37. New person 47 joins. New average?",
+      "options": [
+        "37",
+        "47",
+        "42",
+        "39"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (37×4+47)/5 = 39.",
+      "trick": "Weighted average ages.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1102,
+      "difficulty": "hard",
+      "question": "Person age 295. Age after 140 years?",
+      "options": [
+        "435",
+        "295",
+        "140",
+        "155"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 295 + 140 = 435.",
+      "trick": "Add years.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Person age 41. Age after 13 years?",
+      "options": [
+        "41",
+        "54",
+        "13",
+        "28"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 41 + 13 = 54.",
+      "trick": "Add years.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "A is 38, B is 28. Ratio of ages after 10 years?",
+      "options": [
+        "38:28",
+        "66:10",
+        "48:38",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (48):(38) = 48:38.",
+      "trick": "Add same years to both.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Father 56, son 18. When father was son's age, ratio of their ages then?",
+      "options": [
+        "56:18",
+        "1:1",
+        "38:0",
+        "18:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 38 years ago. Father 18, son -20. Ratio 18:-20.",
+      "trick": "Go back difference years.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Two brothers ages ratio 2:1, sum 100. Younger?",
+      "options": [
+        "33",
+        "50",
+        "100",
+        "66"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 100 = 33.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Mother 40, daughter 16. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "13",
+        "16",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 13 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Product of ages of two children is 114. One is 38. Other?",
+      "options": [
+        "38",
+        "114",
+        "3",
+        "41"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 114/38 = 3.",
+      "trick": "Divide product.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Average age of 4 people is 38. New person 48 joins. New average?",
+      "options": [
+        "38",
+        "48",
+        "43",
+        "40"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (38×4+48)/5 = 40.",
+      "trick": "Weighted average ages.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Father:son = 6:3. Age diff 16. Son's age?",
+      "options": [
+        "16",
+        "32",
+        "16",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1 part = 16/(3) = 5. Son = 16.",
+      "trick": "Difference = (m-n) parts.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Person age 43. Age after 14 years?",
+      "options": [
+        "43",
+        "57",
+        "14",
+        "29"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 43 + 14 = 57.",
+      "trick": "Add years.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "A is 39, B is 29. Ratio of ages after 10 years?",
+      "options": [
+        "39:29",
+        "68:10",
+        "49:39",
+        "1:1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (49):(39) = 49:39.",
+      "trick": "Add same years to both.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Father 58, son 19. When father was son's age, ratio of their ages then?",
+      "options": [
+        "58:19",
+        "1:1",
+        "39:0",
+        "19:-20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: That was 39 years ago. Father 19, son -20. Ratio 19:-20.",
+      "trick": "Go back difference years.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Two brothers ages ratio 2:1, sum 105. Younger?",
+      "options": [
+        "35",
+        "52",
+        "105",
+        "70"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Younger = 1/3 × 105 = 35.",
+      "trick": "Younger = sum/(ratio+1).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Mother 41, daughter 17. How many years ago was mother thrice as old as daughter?",
+      "options": [
+        "24",
+        "14",
+        "17",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Solve m−x = 3(d−x). x = 14 years ago.",
+      "trick": "Set up equation in x.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Product of ages of two children is 117. One is 39. Other?",
+      "options": [
+        "39",
+        "117",
+        "3",
+        "42"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Other = 117/39 = 3.",
+      "trick": "Divide product.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Average age of 4 people is 39. New person 49 joins. New average?",
+      "options": [
+        "39",
+        "49",
+        "44",
+        "41"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (39×4+49)/5 = 41.",
+      "trick": "Weighted average ages.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

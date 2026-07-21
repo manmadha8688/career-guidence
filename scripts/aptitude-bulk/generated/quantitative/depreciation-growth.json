@@ -1,0 +1,1207 @@
+{
+  "topic": "depreciation-growth",
+  "category": "quantitative",
+  "group": "interest-finance",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Machine ₹50000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "40500",
+        "48000",
+        "40000",
+        "40000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 50000×0.9^2 = 40500.",
+      "trick": "Multiply retention factor.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Investment ₹10000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "14000",
+        "14400",
+        "14000",
+        "20000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 10000×1.2^2 = 14400.",
+      "trick": "Compound growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Town population 80000 declines 5% in a year. New population?",
+      "options": [
+        "79995",
+        "75000",
+        "76000",
+        "72000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 80000×0.95 = 76000.",
+      "trick": "Depreciation model.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Asset ₹20000 depreciates 10% yearly for 3 years. Value?",
+      "options": [
+        "14000",
+        "14000",
+        "10000",
+        "14580"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 20000×0.9^3 = 14580.",
+      "trick": "Repeated depreciation.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Revenue ₹1000 grows 15% next quarter. New revenue?",
+      "options": [
+        "1150",
+        "1015",
+        "2000",
+        "1150"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1000×1.15 = 1150.",
+      "trick": "Single period growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Car ₹600000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "420000",
+        "433500",
+        "420000",
+        "300000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 600000×0.85² = 433500.",
+      "trick": "Two-year depreciation.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Value grows from ₹10000 to ₹12100 in 2 years. Approx annual growth %?",
+      "options": [
+        "21%",
+        "10%",
+        "10%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ 10%.",
+      "trick": "CAGR formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Salary ₹40000 rises 8% annually. After 3 years?",
+      "options": [
+        "49600",
+        "49600",
+        "80000",
+        "50388"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 40000×1.08³ = 50388.",
+      "trick": "Compound salary growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Machine ₹55000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "44550",
+        "53000",
+        "44000",
+        "45000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 55000×0.9^2 = 44550.",
+      "trick": "Multiply retention factor.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Investment ₹11000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "15400",
+        "15840",
+        "15400",
+        "22000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 11000×1.2^2 = 15840.",
+      "trick": "Compound growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Town population 85000 declines 5% in a year. New population?",
+      "options": [
+        "84995",
+        "80000",
+        "80750",
+        "76500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 85000×0.95 = 80750.",
+      "trick": "Depreciation model.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1049,
+      "difficulty": "hard",
+      "question": "Revenue ₹13800 grows 15% next quarter. New revenue?",
+      "options": [
+        "13815",
+        "27600",
+        "13950",
+        "15870"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 13800×1.15 = 15870.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Revenue ₹1100 grows 15% next quarter. New revenue?",
+      "options": [
+        "1265",
+        "1115",
+        "2200",
+        "1250"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1100×1.15 = 1265.",
+      "trick": "Single period growth.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Car ₹650000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "455000",
+        "469625",
+        "455000",
+        "325000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 650000×0.85² = 469625.",
+      "trick": "Two-year depreciation.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Value grows from ₹11000 to ₹12200 in 2 years. Approx annual growth %?",
+      "options": [
+        "11%",
+        "10%",
+        "5%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ 5%.",
+      "trick": "CAGR formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Salary ₹44000 rises 8% annually. After 3 years?",
+      "options": [
+        "54560",
+        "54560",
+        "88000",
+        "55427"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 44000×1.08³ = 55427.",
+      "trick": "Compound salary growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Machine ₹60000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "48600",
+        "58000",
+        "48000",
+        "50000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60000×0.9^2 = 48600.",
+      "trick": "Multiply retention factor.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Investment ₹12000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "16800",
+        "17280",
+        "16800",
+        "24000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 12000×1.2^2 = 17280.",
+      "trick": "Compound growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Town population 90000 declines 5% in a year. New population?",
+      "options": [
+        "89995",
+        "85000",
+        "85500",
+        "81000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 90000×0.95 = 85500.",
+      "trick": "Depreciation model.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1057,
+      "difficulty": "hard",
+      "question": "Revenue ₹13900 grows 15% next quarter. New revenue?",
+      "options": [
+        "13915",
+        "27800",
+        "14050",
+        "15985"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 13900×1.15 = 15985.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Revenue ₹1200 grows 15% next quarter. New revenue?",
+      "options": [
+        "1380",
+        "1215",
+        "2400",
+        "1350"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1200×1.15 = 1380.",
+      "trick": "Single period growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Car ₹700000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "490000",
+        "505750",
+        "490000",
+        "350000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 700000×0.85² = 505750.",
+      "trick": "Two-year depreciation.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Value grows from ₹12000 to ₹12300 in 2 years. Approx annual growth %?",
+      "options": [
+        "2%",
+        "10%",
+        "1%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ 1%.",
+      "trick": "CAGR formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Salary ₹48000 rises 8% annually. After 3 years?",
+      "options": [
+        "59520",
+        "59520",
+        "96000",
+        "60466"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 48000×1.08³ = 60466.",
+      "trick": "Compound salary growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Machine ₹65000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "52650",
+        "63000",
+        "52000",
+        "55000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 65000×0.9^2 = 52650.",
+      "trick": "Multiply retention factor.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Investment ₹13000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "18200",
+        "18720",
+        "18200",
+        "26000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 13000×1.2^2 = 18720.",
+      "trick": "Compound growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Town population 95000 declines 5% in a year. New population?",
+      "options": [
+        "94995",
+        "90000",
+        "90250",
+        "85500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 95000×0.95 = 90250.",
+      "trick": "Depreciation model.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1065,
+      "difficulty": "hard",
+      "question": "Revenue ₹14000 grows 15% next quarter. New revenue?",
+      "options": [
+        "14015",
+        "28000",
+        "14150",
+        "16100"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14000×1.15 = 16100.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Revenue ₹1300 grows 15% next quarter. New revenue?",
+      "options": [
+        "1495",
+        "1315",
+        "2600",
+        "1450"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1300×1.15 = 1495.",
+      "trick": "Single period growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Car ₹750000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "525000",
+        "541875",
+        "525000",
+        "375000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 750000×0.85² = 541875.",
+      "trick": "Two-year depreciation.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Value grows from ₹13000 to ₹12400 in 2 years. Approx annual growth %?",
+      "options": [
+        "-5%",
+        "10%",
+        "-2%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -2%.",
+      "trick": "CAGR formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Salary ₹52000 rises 8% annually. After 3 years?",
+      "options": [
+        "64480",
+        "64480",
+        "104000",
+        "65505"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 52000×1.08³ = 65505.",
+      "trick": "Compound salary growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Machine ₹70000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "56700",
+        "68000",
+        "56000",
+        "60000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 70000×0.9^2 = 56700.",
+      "trick": "Multiply retention factor.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Investment ₹14000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "19600",
+        "20160",
+        "19600",
+        "28000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 14000×1.2^2 = 20160.",
+      "trick": "Compound growth.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Town population 100000 declines 5% in a year. New population?",
+      "options": [
+        "99995",
+        "95000",
+        "95000",
+        "90000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 100000×0.95 = 95000.",
+      "trick": "Depreciation model.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1073,
+      "difficulty": "hard",
+      "question": "Revenue ₹14100 grows 15% next quarter. New revenue?",
+      "options": [
+        "14115",
+        "28200",
+        "14250",
+        "16215"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14100×1.15 = 16215.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Revenue ₹1400 grows 15% next quarter. New revenue?",
+      "options": [
+        "1610",
+        "1415",
+        "2800",
+        "1550"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1400×1.15 = 1610.",
+      "trick": "Single period growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Car ₹800000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "560000",
+        "578000",
+        "560000",
+        "400000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 800000×0.85² = 578000.",
+      "trick": "Two-year depreciation.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Value grows from ₹14000 to ₹12500 in 2 years. Approx annual growth %?",
+      "options": [
+        "-11%",
+        "10%",
+        "-6%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -6%.",
+      "trick": "CAGR formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Salary ₹56000 rises 8% annually. After 3 years?",
+      "options": [
+        "69440",
+        "69440",
+        "112000",
+        "70544"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 56000×1.08³ = 70544.",
+      "trick": "Compound salary growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Machine ₹75000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "60750",
+        "73000",
+        "60000",
+        "65000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 75000×0.9^2 = 60750.",
+      "trick": "Multiply retention factor.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Investment ₹15000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "21000",
+        "21600",
+        "21000",
+        "30000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 15000×1.2^2 = 21600.",
+      "trick": "Compound growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Town population 105000 declines 5% in a year. New population?",
+      "options": [
+        "104995",
+        "100000",
+        "99750",
+        "94500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 105000×0.95 = 99750.",
+      "trick": "Depreciation model.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1081,
+      "difficulty": "hard",
+      "question": "Revenue ₹14200 grows 15% next quarter. New revenue?",
+      "options": [
+        "14215",
+        "28400",
+        "14350",
+        "16330"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14200×1.15 = 16330.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Revenue ₹1500 grows 15% next quarter. New revenue?",
+      "options": [
+        "1725",
+        "1515",
+        "3000",
+        "1650"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1500×1.15 = 1725.",
+      "trick": "Single period growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Car ₹850000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "595000",
+        "614125",
+        "595000",
+        "425000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 850000×0.85² = 614125.",
+      "trick": "Two-year depreciation.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Value grows from ₹15000 to ₹12600 in 2 years. Approx annual growth %?",
+      "options": [
+        "-16%",
+        "10%",
+        "-8%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -8%.",
+      "trick": "CAGR formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Salary ₹60000 rises 8% annually. After 3 years?",
+      "options": [
+        "74400",
+        "74400",
+        "120000",
+        "75583"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 60000×1.08³ = 75583.",
+      "trick": "Compound salary growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Machine ₹80000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "64800",
+        "78000",
+        "64000",
+        "70000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 80000×0.9^2 = 64800.",
+      "trick": "Multiply retention factor.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Investment ₹16000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "22400",
+        "23040",
+        "22400",
+        "32000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 16000×1.2^2 = 23040.",
+      "trick": "Compound growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Town population 110000 declines 5% in a year. New population?",
+      "options": [
+        "109995",
+        "105000",
+        "104500",
+        "99000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 110000×0.95 = 104500.",
+      "trick": "Depreciation model.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1089,
+      "difficulty": "hard",
+      "question": "Revenue ₹14300 grows 15% next quarter. New revenue?",
+      "options": [
+        "14315",
+        "28600",
+        "14450",
+        "16445"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14300×1.15 = 16445.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Revenue ₹1600 grows 15% next quarter. New revenue?",
+      "options": [
+        "1840",
+        "1615",
+        "3200",
+        "1750"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1600×1.15 = 1840.",
+      "trick": "Single period growth.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Car ₹900000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "630000",
+        "650250",
+        "630000",
+        "450000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 900000×0.85² = 650250.",
+      "trick": "Two-year depreciation.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Value grows from ₹16000 to ₹12700 in 2 years. Approx annual growth %?",
+      "options": [
+        "-21%",
+        "10%",
+        "-11%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -11%.",
+      "trick": "CAGR formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Salary ₹64000 rises 8% annually. After 3 years?",
+      "options": [
+        "79360",
+        "79360",
+        "128000",
+        "80622"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 64000×1.08³ = 80622.",
+      "trick": "Compound salary growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Machine ₹85000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "68850",
+        "83000",
+        "68000",
+        "75000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 85000×0.9^2 = 68850.",
+      "trick": "Multiply retention factor.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Investment ₹17000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "23800",
+        "24480",
+        "23800",
+        "34000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 17000×1.2^2 = 24480.",
+      "trick": "Compound growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Town population 115000 declines 5% in a year. New population?",
+      "options": [
+        "114995",
+        "110000",
+        "109250",
+        "103500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 115000×0.95 = 109250.",
+      "trick": "Depreciation model.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1097,
+      "difficulty": "hard",
+      "question": "Revenue ₹14400 grows 15% next quarter. New revenue?",
+      "options": [
+        "14415",
+        "28800",
+        "14550",
+        "16560"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14400×1.15 = 16560.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Revenue ₹1700 grows 15% next quarter. New revenue?",
+      "options": [
+        "1955",
+        "1715",
+        "3400",
+        "1850"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1700×1.15 = 1955.",
+      "trick": "Single period growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Car ₹950000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "665000",
+        "686375",
+        "665000",
+        "475000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 950000×0.85² = 686375.",
+      "trick": "Two-year depreciation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Value grows from ₹17000 to ₹12800 in 2 years. Approx annual growth %?",
+      "options": [
+        "-25%",
+        "10%",
+        "-13%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -13%.",
+      "trick": "CAGR formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Salary ₹68000 rises 8% annually. After 3 years?",
+      "options": [
+        "84320",
+        "84320",
+        "136000",
+        "85660"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 68000×1.08³ = 85660.",
+      "trick": "Compound salary growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Machine ₹90000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "72900",
+        "88000",
+        "72000",
+        "80000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 90000×0.9^2 = 72900.",
+      "trick": "Multiply retention factor.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Investment ₹18000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "25200",
+        "25920",
+        "25200",
+        "36000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 18000×1.2^2 = 25920.",
+      "trick": "Compound growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Town population 120000 declines 5% in a year. New population?",
+      "options": [
+        "119995",
+        "115000",
+        "114000",
+        "108000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 120000×0.95 = 114000.",
+      "trick": "Depreciation model.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1105,
+      "difficulty": "hard",
+      "question": "Revenue ₹14500 grows 15% next quarter. New revenue?",
+      "options": [
+        "14515",
+        "29000",
+        "14650",
+        "16675"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14500×1.15 = 16675.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Revenue ₹1800 grows 15% next quarter. New revenue?",
+      "options": [
+        "2070",
+        "1815",
+        "3600",
+        "1950"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1800×1.15 = 2070.",
+      "trick": "Single period growth.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Car ₹1000000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "700000",
+        "722500",
+        "700000",
+        "500000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1000000×0.85² = 722500.",
+      "trick": "Two-year depreciation.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Value grows from ₹18000 to ₹12900 in 2 years. Approx annual growth %?",
+      "options": [
+        "-28%",
+        "10%",
+        "-15%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -15%.",
+      "trick": "CAGR formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Salary ₹72000 rises 8% annually. After 3 years?",
+      "options": [
+        "89280",
+        "89280",
+        "144000",
+        "90699"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 72000×1.08³ = 90699.",
+      "trick": "Compound salary growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Machine ₹95000 depreciates 10% annually. Value after 2 years?",
+      "options": [
+        "76950",
+        "93000",
+        "76000",
+        "85000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 95000×0.9^2 = 76950.",
+      "trick": "Multiply retention factor.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Investment ₹19000 grows 20% p.a. Value after 2 years?",
+      "options": [
+        "26600",
+        "27360",
+        "26600",
+        "38000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 19000×1.2^2 = 27360.",
+      "trick": "Compound growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Town population 125000 declines 5% in a year. New population?",
+      "options": [
+        "124995",
+        "120000",
+        "118750",
+        "112500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 125000×0.95 = 118750.",
+      "trick": "Depreciation model.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1113,
+      "difficulty": "hard",
+      "question": "Revenue ₹14600 grows 15% next quarter. New revenue?",
+      "options": [
+        "14615",
+        "29200",
+        "14750",
+        "16790"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14600×1.15 = 16790.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Revenue ₹1900 grows 15% next quarter. New revenue?",
+      "options": [
+        "2185",
+        "1915",
+        "3800",
+        "2050"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 1900×1.15 = 2185.",
+      "trick": "Single period growth.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Car ₹1050000 depreciates 15% per year. Value after 2 years?",
+      "options": [
+        "735000",
+        "758625",
+        "735000",
+        "525000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1050000×0.85² = 758625.",
+      "trick": "Two-year depreciation.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Value grows from ₹19000 to ₹13000 in 2 years. Approx annual growth %?",
+      "options": [
+        "-32%",
+        "10%",
+        "-17%",
+        "20%"
+      ],
+      "answer": "C",
+      "solution": "Step 1: (Final/Initial)^(1/2)−1 ≈ -17%.",
+      "trick": "CAGR formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Salary ₹76000 rises 8% annually. After 3 years?",
+      "options": [
+        "94240",
+        "94240",
+        "152000",
+        "95738"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 76000×1.08³ = 95738.",
+      "trick": "Compound salary growth.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

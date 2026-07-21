@@ -1,0 +1,402 @@
+[
+  {
+    "id": "mixture-alligation-q1",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "In what ratio should rice at ₹20/kg be mixed with rice at ₹30/kg to get a blend at ₹24/kg?",
+    "options": [
+      "3:2",
+      "2:3",
+      "1:2",
+      "3:1"
+    ],
+    "answer": "A",
+    "solution": "Cheaper:dearer = (30 − 24):(24 − 20) = 6:4 = 3:2.",
+    "trick": "See-saw 6:4 = 3:2.",
+    "type": "Alligation ratio",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q2",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "In what ratio must water (₹0) be mixed with milk at ₹40/L so the mixture costs ₹32/L?",
+    "options": [
+      "4:1",
+      "1:4",
+      "1:5",
+      "2:5"
+    ],
+    "answer": "B",
+    "solution": "Water:milk = (40 − 32):(32 − 0) = 8:32 = 1:4.",
+    "trick": "8:32 = 1:4.",
+    "type": "Alligation ratio",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q3",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "4 kg of sugar at ₹30/kg is mixed with 6 kg at ₹40/kg. Find the price of the mixture per kg.",
+    "options": [
+      "₹35",
+      "₹34",
+      "₹36",
+      "₹38"
+    ],
+    "answer": "C",
+    "solution": "Total value = 120 + 240 = 360 for 10 kg → 360/10 = ₹36/kg.",
+    "trick": "360/10 = 36.",
+    "type": "Mean value of a mixture",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q4",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A 30-litre mixture has milk and water in the ratio 2:1. Find the quantity of milk.",
+    "options": [
+      "10 L",
+      "15 L",
+      "22 L",
+      "20 L"
+    ],
+    "answer": "D",
+    "solution": "Milk fraction = 2/3. Milk = 2/3 × 30 = 20 L.",
+    "trick": "2/3 of 30 = 20.",
+    "type": "Milk & water (add water)",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q5",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A vessel has 24 litres of milk. 6 litres are removed and replaced with water. Find the milk remaining.",
+    "options": [
+      "18 L",
+      "6 L",
+      "20 L",
+      "12 L"
+    ],
+    "answer": "A",
+    "solution": "Milk left = 24 × (1 − 6/24) = 24 × 18/24 = 18 L.",
+    "trick": "24 − 6 = 18 (one round).",
+    "type": "Repeated replacement",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q6",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Two equal glasses of milk-water, one in ratio 3:1 and the other 1:1, are mixed. Find the milk fraction of the result.",
+    "options": [
+      "1/2",
+      "5/8",
+      "3/4",
+      "2/3"
+    ],
+    "answer": "B",
+    "solution": "Milk fractions 3/4 and 1/2; equal volumes → (3/4 + 1/2)/2 = (5/4)/2 = 5/8.",
+    "trick": "Average 3/4 and 1/2 → 5/8.",
+    "type": "Combine two mixtures",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q7",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "A grocer mixes 10 kg at ₹18/kg with 10 kg at ₹22/kg and sells at ₹24/kg. Find his profit percent.",
+    "options": [
+      "10%",
+      "25%",
+      "20%",
+      "15%"
+    ],
+    "answer": "C",
+    "solution": "Blend cost = (180 + 220)/20 = ₹20/kg. Profit% = (24 − 20)/20 × 100 = 20%.",
+    "trick": "Cost 20, SP 24 → 20%.",
+    "type": "Profit by mixing",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q8",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "How many kg of ₹42/kg tea must be mixed with 30 kg of ₹32/kg tea so the blend is worth ₹36/kg?",
+    "options": [
+      "15 kg",
+      "25 kg",
+      "18 kg",
+      "20 kg"
+    ],
+    "answer": "D",
+    "solution": "Cheaper:dearer = (42 − 36):(36 − 32) = 6:4 = 3:2. Cheaper 30 kg = 3 parts → 1 part = 10; dearer = 2 parts = 20 kg.",
+    "trick": "30 is 3 parts → dearer 2 parts = 20.",
+    "type": "Alligation ratio",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q9",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "3 kg at ₹80, 2 kg at ₹100 and 5 kg at ₹120 are mixed. Find the mean price per kg.",
+    "options": [
+      "₹104",
+      "₹100",
+      "₹110",
+      "₹96"
+    ],
+    "answer": "A",
+    "solution": "Total value = 240 + 200 + 600 = 1040 for 10 kg → ₹104/kg.",
+    "trick": "1040/10 = 104.",
+    "type": "Mean value of a mixture",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q10",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A 60-litre mixture has milk and water in the ratio 7:3. How much water must be added to make it 3:2?",
+    "options": [
+      "6 L",
+      "10 L",
+      "12 L",
+      "8 L"
+    ],
+    "answer": "B",
+    "solution": "Milk = 42, water = 18. Keeping milk 42, for 3:2 water must be 28, so add 28 − 18 = 10 L.",
+    "trick": "Milk fixed 42 → water 18→28, add 10.",
+    "type": "Milk & water (add water)",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q11",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "From 45 litres of pure milk, 9 litres are drawn out and replaced with water; this is repeated once more. Find the milk left.",
+    "options": [
+      "27 L",
+      "30 L",
+      "28.8 L",
+      "32.4 L"
+    ],
+    "answer": "C",
+    "solution": "Milk = 45 × (1 − 9/45)² = 45 × (4/5)² = 45 × 16/25 = 28.8 L.",
+    "trick": "45 × (4/5)² = 28.8.",
+    "type": "Repeated replacement",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q12",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A cask holds 32 litres of wine. 8 litres are removed and replaced with water twice. Find the final ratio of wine to water.",
+    "options": [
+      "3:1",
+      "7:9",
+      "1:1",
+      "9:7"
+    ],
+    "answer": "D",
+    "solution": "Wine = 32 × (24/32)² = 32 × (3/4)² = 32 × 9/16 = 18 L. Water = 32 − 18 = 14 L. Ratio = 18:14 = 9:7.",
+    "trick": "Wine 18, water 14 → 9:7.",
+    "type": "Repeated replacement",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q13",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Vessel A (milk:water 3:2) and vessel B (milk:water 7:3) are mixed in equal volumes. Find the milk:water ratio of the result.",
+    "options": [
+      "13:7",
+      "1:1",
+      "7:13",
+      "2:3"
+    ],
+    "answer": "A",
+    "solution": "Milk fractions 3/5 and 7/10; equal volumes → (3/5 + 7/10)/2 = (13/10)/2 = 13/20. Milk:water = 13:7.",
+    "trick": "Average 6/10 and 7/10 → 13/20 → 13:7.",
+    "type": "Combine two mixtures",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q14",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A milkman mixes 5 litres of water (free) with 20 litres of milk costing ₹40/L and sells the mixture at ₹40/L. Find his profit percent.",
+    "options": [
+      "20%",
+      "25%",
+      "33.33%",
+      "5%"
+    ],
+    "answer": "B",
+    "solution": "Cost = 20×40 = 800 for 25 L. SP = 25×40 = 1000. Profit% = 200/800 × 100 = 25%.",
+    "trick": "Extra 5 L free of 20 paid = 25%.",
+    "type": "Profit by mixing",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q15",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "By mixing two oils in the ratio 3:2 (cheaper:dearer), a shopkeeper gets a blend worth ₹48/L. If the cheaper oil costs ₹40/L, find the price of the dearer oil.",
+    "options": [
+      "₹56",
+      "₹64",
+      "₹60",
+      "₹52"
+    ],
+    "answer": "C",
+    "solution": "cheaper:dearer = (D − 48):(48 − 40) = 3:2 → (D − 48)/8 = 3/2 → D − 48 = 12 → D = ₹60.",
+    "trick": "(D−48)/8 = 3/2 → D = 60.",
+    "type": "Alligation ratio",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q16",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "In what ratio must pulses costing ₹15/kg and ₹20/kg be mixed so that selling the blend at ₹21/kg gives a 20% profit?",
+    "options": [
+      "2:1",
+      "1:2",
+      "3:2",
+      "1:1"
+    ],
+    "answer": "D",
+    "solution": "Blend cost = 21/1.2 = ₹17.5. Alligation: (20 − 17.5):(17.5 − 15) = 2.5:2.5 = 1:1.",
+    "trick": "Cost 17.5 is the midpoint → 1:1.",
+    "type": "Mean value of a mixture",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q17",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A 50-litre mixture has milk and water in the ratio 4:1. Half the mixture is replaced with water. Find the new milk:water ratio.",
+    "options": [
+      "2:3",
+      "4:1",
+      "3:2",
+      "1:2"
+    ],
+    "answer": "A",
+    "solution": "Milk = 40, water = 10. Removing 25 L (half) removes 20 milk + 5 water, leaving 20 milk, 5 water. Add 25 L water → water = 30. Ratio 20:30 = 2:3.",
+    "trick": "Milk halves to 20; water 30 → 2:3.",
+    "type": "Milk & water (add water)",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q18",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "From 40 litres of milk, x litres are removed and replaced with water twice; 25.6 litres of milk remain. Find x.",
+    "options": [
+      "6 L",
+      "8 L",
+      "10 L",
+      "4 L"
+    ],
+    "answer": "B",
+    "solution": "40(1 − x/40)² = 25.6 → (1 − x/40)² = 0.64 → 1 − x/40 = 0.8 → x/40 = 0.2 → x = 8.",
+    "trick": "√0.64 = 0.8 → x = 8.",
+    "type": "Repeated replacement",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q19",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Three equal-volume vessels contain milk and water in ratios 1:2, 3:2 and 2:3. All are poured into one vessel. Find the milk:water ratio.",
+    "options": [
+      "5:4",
+      "1:1",
+      "4:5",
+      "2:3"
+    ],
+    "answer": "C",
+    "solution": "Milk fractions 1/3, 3/5, 2/5. Sum = 1/3 + 3/5 + 2/5 = 1/3 + 1 = 4/3 out of 3 volumes. Milk fraction = (4/3)/3 = 4/9. Milk:water = 4:5.",
+    "trick": "Milk sum 4/3 of 3 → 4/9 → 4:5.",
+    "type": "Combine two mixtures",
+    "active": true
+  },
+  {
+    "id": "mixture-alligation-q20",
+    "topic": "mixture-alligation",
+    "category": "quantitative",
+    "group": "ratio-mixture",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "A dishonest milkman adds water to milk and sells the mixture at the cost price of pure milk, making a 25% profit. Find the ratio of water to milk.",
+    "options": [
+      "1:5",
+      "1:3",
+      "4:1",
+      "1:4"
+    ],
+    "answer": "D",
+    "solution": "Selling the mixture at pure-milk price means gain% = (water/milk) × 100. 25 = (water/milk) × 100 → water:milk = 1:4.",
+    "trick": "Gain% = water/milk → 25% = 1:4.",
+    "type": "Profit by mixing",
+    "active": true
+  }
+]

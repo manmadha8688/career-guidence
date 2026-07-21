@@ -1,0 +1,1207 @@
+{
+  "topic": "passage-recall",
+  "category": "verbal",
+  "group": "reading-reasoning",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2?",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Same: On which day was the keynote?",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in?",
+      "options": [
+        "24 hours before flight",
+        "12 hours",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 24)",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Same: On which day was the keynote? (Set 25)",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 26)",
+      "options": [
+        "24 hours before flight",
+        "12 hours",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 27)",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Same: On which day was the keynote? (Set 28)",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 29)",
+      "options": [
+        "24 hours before flight",
+        "12 hours",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 30)",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Same: On which day was the keynote? (Set 31)",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 32)",
+      "options": [
+        "24 hours before flight",
+        "12 hours",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 33)",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Same: On which day was the keynote? (Set 34)",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 35)",
+      "options": [
+        "24 hours before flight",
+        "12 hours",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 36)",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 37)",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 38)",
+      "options": [
+        "24 hours before flight",
+        "12 hours",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 39)",
+      "options": [
+        "Cloud",
+        "AI",
+        "Security",
+        "All three"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 40)",
+      "options": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 41)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 42)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 43)",
+      "options": [
+        "Day 2",
+        "Day 1",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 44)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 45)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 46)",
+      "options": [
+        "Day 2",
+        "Day 1",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 47)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 48)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 49)",
+      "options": [
+        "Day 2",
+        "Day 1",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 50)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 51)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 52)",
+      "options": [
+        "Day 2",
+        "Day 1",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 53)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 54)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Same: On which day was the keynote? (Set 55)",
+      "options": [
+        "Day 2",
+        "Day 1",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 56)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 57)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 58)",
+      "options": [
+        "Day 2",
+        "Day 1",
+        "Day 3",
+        "Every day"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 59)",
+      "options": [
+        "12 hours",
+        "24 hours before flight",
+        "48 hours",
+        "At airport only"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 60)",
+      "options": [
+        "AI",
+        "Cloud",
+        "Security",
+        "All three"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 61)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 62)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 63)",
+      "options": [
+        "AI",
+        "Security",
+        "Cloud",
+        "All three"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 64)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 65)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 66)",
+      "options": [
+        "AI",
+        "Security",
+        "Cloud",
+        "All three"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 67)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 68)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 69)",
+      "options": [
+        "AI",
+        "Security",
+        "Cloud",
+        "All three"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 70)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 71)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 72)",
+      "options": [
+        "AI",
+        "Security",
+        "Cloud",
+        "All three"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 73)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 74)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 75)",
+      "options": [
+        "AI",
+        "Security",
+        "Cloud",
+        "All three"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Passage recall"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 76)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 77)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 78)",
+      "options": [
+        "AI",
+        "Security",
+        "Cloud",
+        "All three"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 79)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Day 1",
+        "Every day"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 80)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "24 hours before flight",
+        "At airport only"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 81)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 82)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 83)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "At airport only",
+        "24 hours before flight"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 84)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 85)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 86)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "At airport only",
+        "24 hours before flight"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 87)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 88)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 89)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "At airport only",
+        "24 hours before flight"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 90)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 91)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 92)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "At airport only",
+        "24 hours before flight"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 93)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 94)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 95)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "At airport only",
+        "24 hours before flight"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 96)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 97)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Read: 'Pack items: passport, tickets, adapter, medicines. Check-in opens 24 hours before flight.' How early can you check in? (Set 98)",
+      "options": [
+        "12 hours",
+        "48 hours",
+        "At airport only",
+        "24 hours before flight"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: 24 hours before flight.",
+      "trick": "Numeric recall.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Read: 'The conference had 3 tracks: AI, Cloud, and Security. Day 1 covered AI; Day 2 Cloud; Day 3 Security. Keynote was on Day 1.' Which track was on Day 2? (Set 99)",
+      "options": [
+        "AI",
+        "Security",
+        "All three",
+        "Cloud"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Cloud.",
+      "trick": "Recall schedule.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Same: On which day was the keynote? (Set 100)",
+      "options": [
+        "Day 2",
+        "Day 3",
+        "Every day",
+        "Day 1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Re-read the stated fact. Step 2: Answer: Day 1.",
+      "trick": "Keynote timing.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

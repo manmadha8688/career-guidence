@@ -1,0 +1,402 @@
+[
+  {
+    "id": "logarithms-q1",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Find log₂ 8.",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "A log is the exponent: 2³ = 8, so log₂ 8 = 3.",
+    "trick": "2 to what power = 8? → 3.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q2",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Find log₁₀ 1000.",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ],
+    "answer": "B",
+    "solution": "10³ = 1000, so log₁₀ 1000 = 3.",
+    "trick": "Count the zeros: 1000 → 3.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q3",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Find log₅ 25.",
+    "options": [
+      "5",
+      "2.5",
+      "2",
+      "3"
+    ],
+    "answer": "C",
+    "solution": "5² = 25, so log₅ 25 = 2.",
+    "trick": "5 to the power 2 = 25.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q4",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Find log₃ 27.",
+    "options": [
+      "9",
+      "4",
+      "2",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "3³ = 27, so log₃ 27 = 3.",
+    "trick": "3 cubed = 27.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q5",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find log₇ 1.",
+    "options": [
+      "0",
+      "1",
+      "7",
+      "−1"
+    ],
+    "answer": "A",
+    "solution": "Any base to the power 0 is 1, so logₙ 1 = 0 for every base.",
+    "trick": "log of 1 is always 0.",
+    "type": "Anchor value",
+    "active": true
+  },
+  {
+    "id": "logarithms-q6",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Find log₆ 6.",
+    "options": [
+      "6",
+      "1",
+      "0",
+      "36"
+    ],
+    "answer": "B",
+    "solution": "6¹ = 6, so logₙ b = 1: log₆ 6 = 1.",
+    "trick": "log of the base itself = 1.",
+    "type": "Anchor value",
+    "active": true
+  },
+  {
+    "id": "logarithms-q7",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "Find log₂ 16.",
+    "options": [
+      "3",
+      "5",
+      "4",
+      "8"
+    ],
+    "answer": "C",
+    "solution": "2⁴ = 16, so log₂ 16 = 4.",
+    "trick": "2,4,8,16 → 4th power.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q8",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 8,
+    "difficulty": "easy",
+    "question": "Find log₁₀ 1.",
+    "options": [
+      "1",
+      "10",
+      "0.1",
+      "0"
+    ],
+    "answer": "D",
+    "solution": "10⁰ = 1, so log₁₀ 1 = 0.",
+    "trick": "log of 1 is always 0.",
+    "type": "Anchor value",
+    "active": true
+  },
+  {
+    "id": "logarithms-q9",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Find log₂ 32.",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "8"
+    ],
+    "answer": "A",
+    "solution": "2⁵ = 32, so log₂ 32 = 5.",
+    "trick": "2⁵ = 32.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q10",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "If log 2 = 0.301 and log 3 = 0.477, find log 6.",
+    "options": [
+      "0.176",
+      "0.778",
+      "1.778",
+      "0.143"
+    ],
+    "answer": "B",
+    "solution": "log 6 = log(2 × 3) = log 2 + log 3 = 0.301 + 0.477 = 0.778.",
+    "trick": "Product inside → add the logs.",
+    "type": "Product rule",
+    "active": true
+  },
+  {
+    "id": "logarithms-q11",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "If log 2 = 0.301, find log 8.",
+    "options": [
+      "0.301",
+      "0.602",
+      "0.903",
+      "1.204"
+    ],
+    "answer": "C",
+    "solution": "log 8 = log 2³ = 3 log 2 = 3 × 0.301 = 0.903.",
+    "trick": "Power comes to the front: 3 × 0.301.",
+    "type": "Power rule",
+    "active": true
+  },
+  {
+    "id": "logarithms-q12",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find log₄ 64.",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "3"
+    ],
+    "answer": "D",
+    "solution": "4³ = 64, so log₄ 64 = 3.",
+    "trick": "4³ = 64.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q13",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Find log₉ 3.",
+    "options": [
+      "1/2",
+      "2",
+      "1/3",
+      "3"
+    ],
+    "answer": "A",
+    "solution": "9^(1/2) = 3, so log₉ 3 = 1/2.",
+    "trick": "3 is the square root of 9 → power 1/2.",
+    "type": "Fractional exponent",
+    "active": true
+  },
+  {
+    "id": "logarithms-q14",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Find log₂ (1/8).",
+    "options": [
+      "3",
+      "−3",
+      "−2",
+      "1/3"
+    ],
+    "answer": "B",
+    "solution": "1/8 = 2⁻³, so log₂ (1/8) = −3.",
+    "trick": "Reciprocal → negative exponent.",
+    "type": "Negative exponent",
+    "active": true
+  },
+  {
+    "id": "logarithms-q15",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "Find log₈ 16.",
+    "options": [
+      "2",
+      "3/4",
+      "4/3",
+      "2/3"
+    ],
+    "answer": "C",
+    "solution": "Write both as powers of 2: log₈ 16 = log 2⁴ / log 2³ = 4/3.",
+    "trick": "Change of base to 2: exponents 4 over 3.",
+    "type": "Change of base",
+    "active": true
+  },
+  {
+    "id": "logarithms-q16",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 16,
+    "difficulty": "medium",
+    "question": "Solve log₃ x = 4.",
+    "options": [
+      "27",
+      "9",
+      "64",
+      "81"
+    ],
+    "answer": "D",
+    "solution": "logₙ x = y means x = bʸ, so x = 3⁴ = 81.",
+    "trick": "Flip it: x = 3⁴ = 81.",
+    "type": "Solve a log equation",
+    "active": true
+  },
+  {
+    "id": "logarithms-q17",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "If log 2 = 0.301 and log 3 = 0.477, find log 12.",
+    "options": [
+      "1.079",
+      "0.778",
+      "0.954",
+      "1.176"
+    ],
+    "answer": "A",
+    "solution": "12 = 2² × 3, so log 12 = 2 log 2 + log 3 = 0.602 + 0.477 = 1.079.",
+    "trick": "12 = 4 × 3 → 2 log2 + log3.",
+    "type": "Combined product and power rule",
+    "active": true
+  },
+  {
+    "id": "logarithms-q18",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Find log₅ 125.",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "4"
+    ],
+    "answer": "B",
+    "solution": "5³ = 125, so log₅ 125 = 3.",
+    "trick": "5³ = 125.",
+    "type": "Evaluate a simple log",
+    "active": true
+  },
+  {
+    "id": "logarithms-q19",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Solve log₂ x = 6.",
+    "options": [
+      "16",
+      "32",
+      "64",
+      "128"
+    ],
+    "answer": "C",
+    "solution": "x = 2⁶ = 64.",
+    "trick": "2⁶ = 64.",
+    "type": "Solve a log equation",
+    "active": true
+  },
+  {
+    "id": "logarithms-q20",
+    "topic": "logarithms",
+    "category": "quantitative",
+    "group": "advanced-math",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Given log 2 = 0.301, how many digits are there in 2¹⁰?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "4"
+    ],
+    "answer": "D",
+    "solution": "log(2¹⁰) = 10 × 0.301 = 3.01. Number of digits = integer part + 1 = 3 + 1 = 4 (indeed 2¹⁰ = 1024).",
+    "trick": "Digits = floor(log N) + 1 = 3 + 1 = 4.",
+    "type": "Digit-count using logs",
+    "active": true
+  }
+]

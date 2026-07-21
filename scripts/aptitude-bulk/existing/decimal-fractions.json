@@ -1,0 +1,402 @@
+[
+  {
+    "id": "decimal-fractions-q1",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "What is 0.6 written as a fraction in lowest terms?",
+    "options": [
+      "3/5",
+      "6/10",
+      "2/3",
+      "1/6"
+    ],
+    "answer": "A",
+    "solution": "0.6 has one decimal place, so it is 6/10. Dividing top and bottom by 2 gives 3/5. (6/10 is the trap for stopping before simplifying.)",
+    "trick": "6/10 → divide by 2 → 3/5.",
+    "type": "Convert between fraction and decimal",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q2",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Convert 3/4 to a decimal.",
+    "options": [
+      "0.34",
+      "0.75",
+      "0.43",
+      "0.7"
+    ],
+    "answer": "B",
+    "solution": "3/4 means 3 ÷ 4. 3.00 ÷ 4 = 0.75.",
+    "trick": "3 ÷ 4 = 0.75.",
+    "type": "Convert between fraction and decimal",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q3",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "What is 0.3 × 0.3?",
+    "options": [
+      "0.9",
+      "0.6",
+      "0.09",
+      "0.009"
+    ],
+    "answer": "C",
+    "solution": "Multiply the digits: 3 × 3 = 9. Total decimal places = 1 + 1 = 2, so the answer is 0.09.",
+    "trick": "3×3 = 9, place 2 decimals → 0.09.",
+    "type": "Multiplying and dividing decimals",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q4",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "What is 0.05 × 0.4?",
+    "options": [
+      "0.2",
+      "0.002",
+      "0.20",
+      "0.02"
+    ],
+    "answer": "D",
+    "solution": "Multiply the digits: 5 × 4 = 20. Total decimal places = 2 + 1 = 3, so 20 becomes 0.020 = 0.02.",
+    "trick": "5×4 = 20, place 3 decimals → 0.020 = 0.02.",
+    "type": "Multiplying and dividing decimals",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q5",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Which of the following is the largest?",
+    "options": [
+      "0.77",
+      "0.7",
+      "0.707",
+      "0.077"
+    ],
+    "answer": "A",
+    "solution": "Pad to equal length: 0.700, 0.770, 0.707, 0.077. Comparing from the left, 0.770 is the largest.",
+    "trick": "Pad and compare left → 0.77 wins.",
+    "type": "Comparing and ordering",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q6",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Which of the following fractions gives a terminating decimal?",
+    "options": [
+      "1/3",
+      "1/8",
+      "1/6",
+      "1/7"
+    ],
+    "answer": "B",
+    "solution": "A fraction terminates only if its denominator has just 2s and 5s. 8 = 2³ → terminates (0.125). The others contain 3 or 7, so they recur.",
+    "trick": "Denominator 8 = 2³ (only 2s) → terminates.",
+    "type": "Terminating or recurring?",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q7",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "0.25 is equal to which fraction?",
+    "options": [
+      "1/5",
+      "2/5",
+      "1/4",
+      "1/2"
+    ],
+    "answer": "C",
+    "solution": "0.25 has two decimal places → 25/100. Divide top and bottom by 25 to get 1/4.",
+    "trick": "25/100 = 1/4.",
+    "type": "Convert between fraction and decimal",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q8",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Express 0.375 as a fraction in lowest terms.",
+    "options": [
+      "3/4",
+      "5/8",
+      "37/100",
+      "3/8"
+    ],
+    "answer": "D",
+    "solution": "0.375 has three decimal places → 375/1000. Dividing top and bottom by 125 gives 3/8.",
+    "trick": "375/1000 ÷ 125 = 3/8.",
+    "type": "Convert between fraction and decimal",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q9",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Convert the recurring decimal 0.181818… to a fraction in lowest terms.",
+    "options": [
+      "2/11",
+      "18/99",
+      "9/50",
+      "1/6"
+    ],
+    "answer": "A",
+    "solution": "The repeating block '18' has 2 digits, so it is 18/99. Dividing top and bottom by 9 gives 2/11. (18/99 is the trap for not simplifying.)",
+    "trick": "18/99 → divide by 9 → 2/11.",
+    "type": "Recurring decimal to fraction",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q10",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "What is 0.2 × 0.2 × 0.2?",
+    "options": [
+      "0.08",
+      "0.008",
+      "0.06",
+      "0.6"
+    ],
+    "answer": "B",
+    "solution": "Multiply the digits: 2 × 2 × 2 = 8. Total decimal places = 1 + 1 + 1 = 3, so 8 becomes 0.008.",
+    "trick": "2×2×2 = 8, place 3 decimals → 0.008.",
+    "type": "Multiplying and dividing decimals",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q11",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Which of the following is the smallest: 2/5, 0.45, 3/8, 0.4?",
+    "options": [
+      "2/5",
+      "0.45",
+      "3/8",
+      "0.4"
+    ],
+    "answer": "C",
+    "solution": "Convert to decimals: 2/5 = 0.400, 0.45 = 0.450, 3/8 = 0.375, 0.4 = 0.400. The smallest is 0.375 = 3/8.",
+    "trick": "3/8 = 0.375, the lowest of the four.",
+    "type": "Comparing and ordering",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q12",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find the value of 0.75 × 0.75 + 2 × 0.75 × 0.25 + 0.25 × 0.25.",
+    "options": [
+      "0.5",
+      "0.75",
+      "1.5",
+      "1"
+    ],
+    "answer": "D",
+    "solution": "This matches a² + 2ab + b² = (a + b)² with a = 0.75, b = 0.25. So it equals (0.75 + 0.25)² = 1² = 1.",
+    "trick": "(a + b)² with a+b = 1 → 1.",
+    "type": "Simplifying a decimal expression",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q13",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Which of the following gives a recurring (non-terminating) decimal?",
+    "options": [
+      "5/12",
+      "7/20",
+      "9/16",
+      "11/50"
+    ],
+    "answer": "A",
+    "solution": "Factor each denominator: 20 = 2²×5, 16 = 2⁴, 50 = 2×5² — all only 2s and 5s, so they terminate. 12 = 2²×3 contains a 3, so 5/12 recurs.",
+    "trick": "Denominator 12 has a 3 → recurs.",
+    "type": "Terminating or recurring?",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q14",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "What is 4.8 ÷ 0.6?",
+    "options": [
+      "0.8",
+      "8",
+      "80",
+      "0.08"
+    ],
+    "answer": "B",
+    "solution": "Shift the point one place in both numbers to make the divisor whole: 48 ÷ 6 = 8.",
+    "trick": "Shift both → 48 ÷ 6 = 8.",
+    "type": "Multiplying and dividing decimals",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q15",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "What is the value of 0.1 × 0.01 × 0.001?",
+    "options": [
+      "0.0001",
+      "0.001",
+      "0.000001",
+      "0.00001"
+    ],
+    "answer": "C",
+    "solution": "Multiply the digits: 1 × 1 × 1 = 1. Total decimal places = 1 + 2 + 3 = 6, so the answer is 0.000001.",
+    "trick": "Add places 1+2+3 = 6 → 0.000001.",
+    "type": "Multiplying and dividing decimals",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q16",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Convert 0.1666… (0.1 with 6 recurring) to a fraction in lowest terms.",
+    "options": [
+      "16/99",
+      "1/60",
+      "5/9",
+      "1/6"
+    ],
+    "answer": "D",
+    "solution": "This is a mixed recurring decimal: one non-recurring digit (1) and one recurring digit (6). Value = (16 − 1) / 90 = 15/90 = 1/6. (One 9 for the recurring digit, one 0 for the non-recurring digit.)",
+    "trick": "(16 − 1)/90 = 15/90 = 1/6.",
+    "type": "Recurring decimal to fraction",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q17",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Express 2.3545454… (2.3 with '54' recurring) as a fraction in lowest terms.",
+    "options": [
+      "259/110",
+      "351/990",
+      "233/99",
+      "117/50"
+    ],
+    "answer": "A",
+    "solution": "Take the decimal part 0.3545454…: one non-recurring digit (3) and a recurring block '54'. It equals (354 − 3)/990 = 351/990 = 39/110. Add the whole number 2: 2 + 39/110 = (220 + 39)/110 = 259/110.",
+    "trick": "0.3‾54 = (354−3)/990 = 39/110; add 2 → 259/110.",
+    "type": "Recurring decimal to fraction",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q18",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Arrange 0.6, 0.66, 0.606 and 0.066 in descending order. Which number comes SECOND?",
+    "options": [
+      "0.66",
+      "0.606",
+      "0.6",
+      "0.066"
+    ],
+    "answer": "B",
+    "solution": "Pad to equal length: 0.600, 0.660, 0.606, 0.066. Descending order is 0.660, 0.606, 0.600, 0.066. The second largest is 0.606.",
+    "trick": "Order: 0.66 > 0.606 > 0.6 > 0.066 → second is 0.606.",
+    "type": "Comparing and ordering",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q19",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Simplify (0.73 × 0.73 − 0.27 × 0.27) ÷ (0.73 − 0.27).",
+    "options": [
+      "0.46",
+      "0.73",
+      "1",
+      "0.5"
+    ],
+    "answer": "C",
+    "solution": "The numerator is a² − b² = (a + b)(a − b) with a = 0.73, b = 0.27. Dividing by (a − b) leaves a + b = 0.73 + 0.27 = 1.",
+    "trick": "(a²−b²)/(a−b) = a + b = 1.",
+    "type": "Simplifying a decimal expression",
+    "active": true
+  },
+  {
+    "id": "decimal-fractions-q20",
+    "topic": "decimal-fractions",
+    "category": "quantitative",
+    "group": "number-basics",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Which of the following fractions gives a terminating decimal?",
+    "options": [
+      "13/150",
+      "7/30",
+      "11/60",
+      "17/40"
+    ],
+    "answer": "D",
+    "solution": "Factor each reduced denominator: 150 = 2×3×5², 30 = 2×3×5, 60 = 2²×3×5 — each contains a 3, so they recur. Only 40 = 2³×5 has just 2s and 5s, so 17/40 terminates (0.425).",
+    "trick": "Only 40 = 2³×5 avoids the factor 3 → 17/40 terminates.",
+    "type": "Terminating or recurring?",
+    "active": true
+  }
+]

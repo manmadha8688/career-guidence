@@ -1,0 +1,402 @@
+[
+  {
+    "id": "syllogisms-q1",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Statements: All apples are fruits. All fruits are food. Conclusion: All apples are food.",
+    "options": [
+      "Conclusion follows",
+      "Does not follow",
+      "Either follows",
+      "Data insufficient"
+    ],
+    "answer": "A",
+    "solution": "Apple ⊆ Fruit ⊆ Food, so All apples are food.",
+    "trick": "Two 'All' statements chain.",
+    "type": "Chaining All",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q2",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Statements: No cat is a dog. Conclusion: No dog is a cat.",
+    "options": [
+      "Does not follow",
+      "Conclusion follows",
+      "Either follows",
+      "Data insufficient"
+    ],
+    "answer": "B",
+    "solution": "'No A is B' is reversible, so 'No dog is a cat' follows.",
+    "trick": "'No' reverses.",
+    "type": "No (reversible)",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q3",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Statements: Some pens are red. Conclusion: Some red (things) are pens.",
+    "options": [
+      "Does not follow",
+      "Neither",
+      "Conclusion follows",
+      "Only converse of 'All'"
+    ],
+    "answer": "C",
+    "solution": "'Some A are B' is reversible → 'Some B are A' follows.",
+    "trick": "'Some' reverses.",
+    "type": "Some (reversible)",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q4",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Statements: All roses are flowers. Some flowers are red. Conclusion: Some roses are red.",
+    "options": [
+      "Follows",
+      "Either follows",
+      "Both follow",
+      "Does not follow"
+    ],
+    "answer": "D",
+    "solution": "The red flowers need not be roses, so it does not follow.",
+    "trick": "Overlap may avoid the rose region.",
+    "type": "Some (reversible)",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q5",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Statements: All A are B. Conclusion: All B are A.",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Both follow"
+    ],
+    "answer": "A",
+    "solution": "'All' is NOT reversible; B may extend beyond A.",
+    "trick": "'All' does not reverse.",
+    "type": "All (not reversible)",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q6",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Statements: All dogs are animals. All animals need water. Conclusion: All dogs need water.",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Dog ⊆ Animal ⊆ (need water), so all dogs need water.",
+    "trick": "Chain the universals.",
+    "type": "Chaining All",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q7",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Statements: Some A are B. All B are C. Conclusions: I. Some A are C. II. All A are C. Which follows?",
+    "options": [
+      "Only II follows",
+      "Both follow",
+      "Only I follows",
+      "Neither follows"
+    ],
+    "answer": "C",
+    "solution": "The A that are B are also C, so Some A are C (I). Not all A need be C.",
+    "trick": "Some+All gives 'some', not 'all'.",
+    "type": "Either-or",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q8",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Statements: No book is a pen. All pens are blue. Conclusion: Some blue (things) are not books.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "Pens are blue and no pen is a book, so those blue pens are non-books → some blue are not books.",
+    "trick": "Blue pens are non-books.",
+    "type": "Combined",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q9",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Statements: Some cats are white. Some white (things) are soft. Conclusion: Some cats are soft.",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Both follow",
+      "Either"
+    ],
+    "answer": "A",
+    "solution": "Two 'Some' statements never give a definite conclusion.",
+    "trick": "Two 'Some' don't chain.",
+    "type": "Two Some (trap)",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q10",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Statements: All teachers are learned. Some learned are wise. Conclusions: I. Some teachers are wise. II. All wise are teachers. Which follows?",
+    "options": [
+      "Only I",
+      "Neither follows",
+      "Only II",
+      "Both"
+    ],
+    "answer": "B",
+    "solution": "The wise-learned need not be teachers (I fails); II is clearly not implied. Neither follows.",
+    "trick": "Some+All from the wrong end gives nothing.",
+    "type": "Neither",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q11",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Statements: All P are Q. No Q is R. Conclusion: No P is R.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Follows",
+      "Insufficient"
+    ],
+    "answer": "C",
+    "solution": "P is inside Q and Q is separate from R, so P is separate from R.",
+    "trick": "Inside a set that avoids R → avoids R.",
+    "type": "Combined",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q12",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Statements: Some A are B. No B is C. Conclusion: Some A are not C.",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "The A that are B cannot be C (No B is C), so those A are not C.",
+    "trick": "A∩B lies outside C.",
+    "type": "Combined",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q13",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Statements: All X are Y. Conclusions: I. Some Y are X. II. Some X are Y. Which follows?",
+    "options": [
+      "Both follow",
+      "Only I",
+      "Only II",
+      "Neither"
+    ],
+    "answer": "A",
+    "solution": "All X are Y implies some X are Y (II) and by reversal some Y are X (I). Both follow.",
+    "trick": "'All' implies 'some' both ways here.",
+    "type": "Immediate inference",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q14",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Statements: No A is B. Conclusions: I. Some A are not B. II. Some B are not A. Which follows?",
+    "options": [
+      "Only I",
+      "Both follow",
+      "Only II",
+      "Neither"
+    ],
+    "answer": "B",
+    "solution": "If no A is B, then every A is not B (so some A are not B) and every B is not A. Both follow (assuming A and B exist).",
+    "trick": "'No' implies 'some…not' both ways.",
+    "type": "Immediate inference",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q15",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Statements: Some A are B. Some B are C. All C are D. Conclusion: Some A are D.",
+    "options": [
+      "Follows",
+      "Either",
+      "Does not follow",
+      "Both"
+    ],
+    "answer": "C",
+    "solution": "The chain breaks at two 'Some' links; A need not connect to C or D.",
+    "trick": "Two 'Some' still don't chain, even with a later 'All'.",
+    "type": "Two Some (trap)",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q16",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Statements: All A are B. Some B are C. Conclusions: I. Some A are C. II. Some C are not A. Which is the 'either-or' pair status?",
+    "options": [
+      "Both follow",
+      "Only I",
+      "Only II",
+      "Neither definitely follows"
+    ],
+    "answer": "D",
+    "solution": "The C that overlap B may or may not be in A, so neither I nor II is guaranteed.",
+    "trick": "Overlap position is free → neither forced.",
+    "type": "Neither",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q17",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Statements: All singers are artists. No artist is a robot. Conclusion: No singer is a robot.",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "Singers ⊆ artists, and artists exclude robots, so singers exclude robots.",
+    "trick": "Subset of a robot-free set is robot-free.",
+    "type": "Combined",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q18",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Statements: Some A are B. All A are C. Conclusion: Some C are B.",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "The A that are B are also C, so those C are B → Some C are B.",
+    "trick": "A∩B sits inside C too.",
+    "type": "Combined",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q19",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Statements: All A are B. All C are B. Conclusion: Some A are C.",
+    "options": [
+      "Follows",
+      "Either",
+      "Does not follow",
+      "Both"
+    ],
+    "answer": "C",
+    "solution": "A and C both sit inside B but need not overlap each other.",
+    "trick": "Common superset doesn't force overlap.",
+    "type": "Neither",
+    "active": true
+  },
+  {
+    "id": "syllogisms-q20",
+    "topic": "syllogisms",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Statements: Some A are B. Conclusions: I. Some A are not B. II. All A are B. Regarding these two, which is correct?",
+    "options": [
+      "Only I",
+      "Only II",
+      "Both",
+      "Neither necessarily follows"
+    ],
+    "answer": "D",
+    "solution": "'Some A are B' allows either all A to be B or some A not B; neither I nor II is forced.",
+    "trick": "'Some' doesn't decide the rest of A.",
+    "type": "Neither",
+    "active": true
+  }
+]

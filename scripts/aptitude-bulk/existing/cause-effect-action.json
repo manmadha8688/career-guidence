@@ -1,0 +1,402 @@
+[
+  {
+    "id": "cause-effect-action-q1",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Event A: It rained heavily last night. Event B: The roads are waterlogged this morning. Relationship?",
+    "options": [
+      "A is the cause, B is the effect",
+      "B is the cause, A is the effect",
+      "Independent events",
+      "Both effects of a common cause"
+    ],
+    "answer": "A",
+    "solution": "The rain came first and produced the waterlogging.",
+    "trick": "Cause precedes effect.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q2",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Statement: 'There is a severe water shortage in the city.' Action: Authorities should regulate supply and promote saving. Should it follow?",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "The action directly and practically addresses the shortage.",
+    "trick": "Relevant + practical ⇒ follows.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q3",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Statement: 'A few students failed the test.' Action: Expel all failing students from the college. Should it follow?",
+    "options": [
+      "Follows",
+      "Either",
+      "Does not follow",
+      "Both"
+    ],
+    "answer": "C",
+    "solution": "Expulsion is extreme and does not help students improve.",
+    "trick": "Extreme action ⇒ reject.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q4",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Event A: The stock market rose today. Event B: A new film released today. Relationship?",
+    "options": [
+      "A causes B",
+      "B causes A",
+      "Common cause",
+      "Independent events"
+    ],
+    "answer": "D",
+    "solution": "There is no causal link between the two — coincidental timing.",
+    "trick": "Different domains ⇒ independent.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q5",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Event A: Many students were absent. Event B: Many teachers were absent. Same day. Relationship?",
+    "options": [
+      "Both effects of a common cause",
+      "A causes B",
+      "B causes A",
+      "Independent"
+    ],
+    "answer": "A",
+    "solution": "Neither directly causes the other; a common reason (e.g. a bandh) explains both.",
+    "trick": "Shared root ⇒ common cause.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q6",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Statement: 'Many people fall ill from contaminated water in the area.' Action: The water supply should be tested and purified. Should it follow?",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Testing and purifying directly tackles the contaminated water — practical and relevant.",
+    "trick": "Directly solves the problem.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q7",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Event A: The government reduced fuel taxes. Event B: Fuel prices dropped. Relationship?",
+    "options": [
+      "B is the cause, A is the effect",
+      "Independent",
+      "A is the cause, B is the effect",
+      "Common cause"
+    ],
+    "answer": "C",
+    "solution": "Cutting taxes came first and led to lower prices.",
+    "trick": "Policy precedes the price change.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q8",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Statement: 'Road accidents have increased at a junction due to poor lighting.' Action: Install proper street lights at the junction. Should it follow?",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "Better lighting addresses the stated cause — relevant and feasible.",
+    "trick": "Fix the stated cause.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q9",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Event A: A factory released waste into the river. Event B: Fish in the river died. Relationship?",
+    "options": [
+      "A is the cause, B is the effect",
+      "B is the cause, A is the effect",
+      "Independent",
+      "Common cause"
+    ],
+    "answer": "A",
+    "solution": "The waste release preceded and caused the fish deaths.",
+    "trick": "Pollution → death of fish.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q10",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Statement: 'Students complain the syllabus is too outdated.' Action: Review and update the syllabus. Should it follow?",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Updating the syllabus directly addresses the complaint — sensible.",
+    "trick": "Address the actual complaint.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q11",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Statement: 'Two students were caught cheating in an exam.' Action: Cancel the entire batch's results. Should it follow?",
+    "options": [
+      "Follows",
+      "Either",
+      "Does not follow",
+      "Both"
+    ],
+    "answer": "C",
+    "solution": "Punishing the whole batch for two cheats is disproportionate.",
+    "trick": "Collective punishment ⇒ reject.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q12",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Event A: The temperature dropped sharply. Event B: Sales of woollen clothes rose. Relationship?",
+    "options": [
+      "B is the cause, A is the effect",
+      "Independent",
+      "Common cause",
+      "A is the cause, B is the effect"
+    ],
+    "answer": "D",
+    "solution": "The cold weather drove up woollen sales.",
+    "trick": "Weather → related purchases.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q13",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Statement: 'A building's fire alarm is not working.' Action: Repair the fire alarm immediately. Should it follow?",
+    "options": [
+      "Follows",
+      "Does not follow",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "A",
+    "solution": "A safety device must be repaired at once — relevant and urgent.",
+    "trick": "Safety fault ⇒ fix now.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q14",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Event A: A popular actor endorsed a brand. Event B: The brand's sales increased. Relationship?",
+    "options": [
+      "B is the cause, A is the effect",
+      "A is the cause, B is the effect",
+      "Independent",
+      "Common cause"
+    ],
+    "answer": "B",
+    "solution": "The endorsement came first and boosted sales.",
+    "trick": "Endorsement → sales.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q15",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Event A: A region had a bumper crop this year. Event B: Crop prices in that region fell. Relationship?",
+    "options": [
+      "B is the cause, A is the effect",
+      "Independent",
+      "A is the cause, B is the effect",
+      "Common cause"
+    ],
+    "answer": "C",
+    "solution": "The oversupply from the bumper crop pushed prices down.",
+    "trick": "Higher supply → lower price.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q16",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Statement: 'Frequent power cuts are disrupting a town's small businesses.' Action: Improve the power infrastructure and ensure a stable supply. Should it follow?",
+    "options": [
+      "Does not follow",
+      "Either",
+      "Insufficient",
+      "Follows"
+    ],
+    "answer": "D",
+    "solution": "Fixing the power supply addresses the root problem — practical and relevant.",
+    "trick": "Tackle the root cause.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q17",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Event A: A city banned old diesel vehicles. Event B: Air quality in the city improved. Relationship?",
+    "options": [
+      "A is the cause, B is the effect",
+      "B is the cause, A is the effect",
+      "Independent",
+      "Common cause"
+    ],
+    "answer": "A",
+    "solution": "Removing polluting vehicles led to cleaner air.",
+    "trick": "Policy → environmental effect.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q18",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Statement: 'A shopkeeper reports repeated thefts at night.' Action: Install CCTV cameras and improve security. Should it follow?",
+    "options": [
+      "Does not follow",
+      "Follows",
+      "Either",
+      "Insufficient"
+    ],
+    "answer": "B",
+    "solution": "Security measures directly counter the thefts — sensible and feasible.",
+    "trick": "Security problem ⇒ security fix.",
+    "type": "Course of action",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q19",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Event A: Sales of umbrellas rose. Event B: Sales of raincoats rose. Both this week. Relationship?",
+    "options": [
+      "A causes B",
+      "B causes A",
+      "Both effects of a common cause",
+      "Independent"
+    ],
+    "answer": "C",
+    "solution": "Neither causes the other; heavy rain (a common cause) raised both.",
+    "trick": "Shared driver ⇒ common cause.",
+    "type": "Cause & effect",
+    "active": true
+  },
+  {
+    "id": "cause-effect-action-q20",
+    "topic": "cause-effect-action",
+    "category": "logical",
+    "group": "logical-deduction",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Statement: 'A hostel reports that students are not getting nutritious food.' Action: Ban all students from eating outside the hostel. Should it follow?",
+    "options": [
+      "Follows",
+      "Either",
+      "Both",
+      "Does not follow"
+    ],
+    "answer": "D",
+    "solution": "Banning outside food ignores the real problem (poor hostel food) and is impractical/harsh; improving the hostel menu would be the sensible action.",
+    "trick": "Doesn't address the real cause ⇒ reject.",
+    "type": "Course of action",
+    "active": true
+  }
+]

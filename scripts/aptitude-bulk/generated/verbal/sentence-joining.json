@@ -1,0 +1,1207 @@
+{
+  "topic": "sentence-joining",
+  "category": "verbal",
+  "group": "sentence-skills",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Join: 'It was late.' + 'We went home.' Best option?",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option?",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option?",
+      "options": [
+        "Although he was tired, he continued working.",
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 24)",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 25)",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 26)",
+      "options": [
+        "Although he was tired, he continued working.",
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 27)",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 28)",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 29)",
+      "options": [
+        "Although he was tired, he continued working.",
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 30)",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 31)",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 32)",
+      "options": [
+        "Although he was tired, he continued working.",
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 33)",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 34)",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 35)",
+      "options": [
+        "Although he was tired, he continued working.",
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 36)",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 37)",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 38)",
+      "options": [
+        "Although he was tired, he continued working.",
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 39)",
+      "options": [
+        "As it was late, we went home.",
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 40)",
+      "options": [
+        "She studied hard, so she passed.",
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "A",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 41)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 42)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 43)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 44)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 45)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 46)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 47)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 48)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 49)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 50)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 51)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 52)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 53)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 54)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 55)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 56)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 57)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 58)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 59)",
+      "options": [
+        "He was tired, so he continued working.",
+        "Although he was tired, he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working."
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 60)",
+      "options": [
+        "It was late, so we went home.",
+        "As it was late, we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 61)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 62)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 63)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "As it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 64)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 65)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 66)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "As it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 67)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 68)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 69)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "As it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 70)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 71)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 72)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "As it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 73)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 74)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 75)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "As it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Sentence combining"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 76)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 77)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 78)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "As it was late, we went home.",
+        "All are acceptable"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 79)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, so she passed.",
+        "She studied hard, for she passed."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 80)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "Although he was tired, he continued working.",
+        "He was tired, he continued working."
+      ],
+      "answer": "C",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 81)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 82)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 83)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working.",
+        "Although he was tired, he continued working."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 84)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 85)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 86)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working.",
+        "Although he was tired, he continued working."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 87)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 88)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 89)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working.",
+        "Although he was tired, he continued working."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 90)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 91)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 92)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working.",
+        "Although he was tired, he continued working."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 93)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 94)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 95)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working.",
+        "Although he was tired, he continued working."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 96)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 97)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Join: 'He was tired.' + 'He continued working.' Best option? (Set 98)",
+      "options": [
+        "He was tired, so he continued working.",
+        "He was tired, therefore he stopped.",
+        "He was tired, he continued working.",
+        "Although he was tired, he continued working."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'Although he was tired, he continued working.'. Answer: Although he was tired, he continued working..",
+      "trick": "Contrast → although.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Join: 'It was late.' + 'We went home.' Best option? (Set 99)",
+      "options": [
+        "It was late, so we went home.",
+        "Because it was late, we went home.",
+        "All are acceptable",
+        "As it was late, we went home."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'As it was late, we went home.'. Answer: As it was late, we went home..",
+      "trick": "Time reason link.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Join: 'She studied hard.' + 'She passed.' Best option? (Set 100)",
+      "options": [
+        "She studied hard but she passed.",
+        "She studied hard, yet she passed.",
+        "She studied hard, for she passed.",
+        "She studied hard, so she passed."
+      ],
+      "answer": "D",
+      "solution": "Step 1: Check logical connector. Step 2: 'She studied hard, so she passed.'. Answer: She studied hard, so she passed..",
+      "trick": "Result → so.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

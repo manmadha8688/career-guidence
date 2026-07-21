@@ -1,0 +1,402 @@
+[
+  {
+    "id": "percentages-q1",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "What is 20% of 150?",
+    "options": [
+      "30",
+      "25",
+      "20",
+      "35"
+    ],
+    "answer": "A",
+    "solution": "20% = 1/5, so 20% of 150 = 150 ÷ 5 = 30.",
+    "trick": "20% = 1/5 → 150/5 = 30.",
+    "type": "Find x% of a number",
+    "active": true
+  },
+  {
+    "id": "percentages-q2",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Find 25% of 240.",
+    "options": [
+      "48",
+      "72",
+      "60",
+      "54"
+    ],
+    "answer": "C",
+    "solution": "25% = 1/4, so 25% of 240 = 240 ÷ 4 = 60.",
+    "trick": "25% = 1/4 → 240/4 = 60.",
+    "type": "Find x% of a number",
+    "active": true
+  },
+  {
+    "id": "percentages-q3",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "45 is what percent of 60?",
+    "options": [
+      "70%",
+      "75%",
+      "80%",
+      "60%"
+    ],
+    "answer": "B",
+    "solution": "Percentage = (Part ÷ Whole) × 100 = (45 ÷ 60) × 100 = 75%. (45/60 cancels to 3/4.)",
+    "trick": "45/60 = 3/4 = 75%.",
+    "type": "What percent one number is of another",
+    "active": true
+  },
+  {
+    "id": "percentages-q4",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Express 3/8 as a percentage.",
+    "options": [
+      "40%",
+      "30%",
+      "62.5%",
+      "37.5%"
+    ],
+    "answer": "D",
+    "solution": "3/8 = 0.375, and 0.375 × 100 = 37.5%.",
+    "trick": "3/8 = 0.375 = 37.5%.",
+    "type": "Convert a fraction to a percentage",
+    "active": true
+  },
+  {
+    "id": "percentages-q5",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find 12.5% of 320.",
+    "options": [
+      "40",
+      "32",
+      "45",
+      "36"
+    ],
+    "answer": "A",
+    "solution": "12.5% = 1/8, so 12.5% of 320 = 320 ÷ 8 = 40.",
+    "trick": "12.5% = 1/8 → 320/8 = 40.",
+    "type": "Find x% of a number",
+    "active": true
+  },
+  {
+    "id": "percentages-q6",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A salary of ₹20000 is increased by 10%. What is the new salary?",
+    "options": [
+      "₹21000",
+      "₹20100",
+      "₹22000",
+      "₹22200"
+    ],
+    "answer": "C",
+    "solution": "New value = 20000 × (100 + 10)/100 = 20000 × 1.1 = ₹22000.",
+    "trick": "20000 × 1.1 = 22000.",
+    "type": "Percentage increase or decrease of a value",
+    "active": true
+  },
+  {
+    "id": "percentages-q7",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "A price of ₹500 falls by 20%. What is the new price?",
+    "options": [
+      "₹480",
+      "₹400",
+      "₹450",
+      "₹380"
+    ],
+    "answer": "B",
+    "solution": "New value = 500 × (100 − 20)/100 = 500 × 0.8 = ₹400.",
+    "trick": "500 × 0.8 = 400.",
+    "type": "Percentage increase or decrease of a value",
+    "active": true
+  },
+  {
+    "id": "percentages-q8",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A number increases from 40 to 50. Find the percentage increase.",
+    "options": [
+      "20%",
+      "10%",
+      "2.5%",
+      "25%"
+    ],
+    "answer": "D",
+    "solution": "Change % = (New − Old) ÷ Old × 100 = (50 − 40) ÷ 40 × 100 = 10/40 × 100 = 25%. Always divide by the OLD value.",
+    "trick": "10/40 = 25% (divide by the old value).",
+    "type": "Percentage change (increase or decrease)",
+    "active": true
+  },
+  {
+    "id": "percentages-q9",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A price drops from ₹250 to ₹200. Find the percentage decrease.",
+    "options": [
+      "20%",
+      "25%",
+      "50%",
+      "40%"
+    ],
+    "answer": "A",
+    "solution": "Change % = (250 − 200) ÷ 250 × 100 = 50/250 × 100 = 20%. Divide by the old value 250, not the new one.",
+    "trick": "50/250 = 20% (divide by the old value).",
+    "type": "Percentage change (increase or decrease)",
+    "active": true
+  },
+  {
+    "id": "percentages-q10",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "30% of a number is 90. Find the number.",
+    "options": [
+      "270",
+      "330",
+      "300",
+      "3000"
+    ],
+    "answer": "C",
+    "solution": "If 30% of N = 90, then N = 90 ÷ (30/100) = 90 ÷ 0.30 = 300.",
+    "trick": "90 ÷ 0.30 = 300.",
+    "type": "Find the number from a given percentage",
+    "active": true
+  },
+  {
+    "id": "percentages-q11",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Find 16% of 25.",
+    "options": [
+      "6",
+      "4",
+      "8",
+      "5"
+    ],
+    "answer": "B",
+    "solution": "Use x% of y = y% of x: 16% of 25 = 25% of 16 = 16 ÷ 4 = 4.",
+    "trick": "16% of 25 = 25% of 16 = 16/4 = 4.",
+    "type": "x% of y = y% of x flip",
+    "active": true
+  },
+  {
+    "id": "percentages-q12",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "The pass mark is 40% of 500. A student scores 150 marks. By how much does he fail?",
+    "options": [
+      "Fails by 40",
+      "Passes by 10",
+      "Fails by 60",
+      "Fails by 50"
+    ],
+    "answer": "D",
+    "solution": "Pass mark = 40% of 500 = 200. The student scored 150, so he falls short by 200 − 150 = 50 marks.",
+    "trick": "40% of 500 = 200; 200 − 150 = 50 short.",
+    "type": "Exam marks / passing percentage",
+    "active": true
+  },
+  {
+    "id": "percentages-q13",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A quantity is increased by 10% and then by 20%. Find the net percentage increase.",
+    "options": [
+      "32%",
+      "30%",
+      "33%",
+      "28%"
+    ],
+    "answer": "A",
+    "solution": "Net % for two changes = a + b + (a × b)/100 = 10 + 20 + (10 × 20)/100 = 30 + 2 = 32%.",
+    "trick": "a + b + ab/100 = 10 + 20 + 2 = 32%.",
+    "type": "Successive percentage changes",
+    "active": true
+  },
+  {
+    "id": "percentages-q14",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A number is increased by 20% and then decreased by 20%. What is the net change?",
+    "options": [
+      "No change",
+      "4% increase",
+      "4% decrease",
+      "2% decrease"
+    ],
+    "answer": "C",
+    "solution": "Net % = a + b + ab/100 with a = +20, b = −20 = 20 − 20 + (20 × −20)/100 = −4%, i.e. a 4% decrease.",
+    "trick": "+20, −20 → 20 − 20 − 400/100 = −4%.",
+    "type": "Successive percentage changes",
+    "active": true
+  },
+  {
+    "id": "percentages-q15",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 15,
+    "difficulty": "medium",
+    "question": "The price of sugar rises by 25%. By what percent must a family cut its consumption so that its expenditure stays the same?",
+    "options": [
+      "25%",
+      "20%",
+      "15%",
+      "33.3%"
+    ],
+    "answer": "B",
+    "solution": "Required cut = rise ÷ (100 + rise) × 100 = 25 ÷ 125 × 100 = 20%. (Expenditure = price × consumption, so the two percentages must cancel.)",
+    "trick": "cut = r/(100 + r) = 25/125 = 20%.",
+    "type": "Price rise vs consumption cut",
+    "active": true
+  },
+  {
+    "id": "percentages-q16",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A shop raises the price of an ₹800 bag by 25%, then gives a 20% discount on the new price. What is the final price?",
+    "options": [
+      "₹820",
+      "₹760",
+      "₹780",
+      "₹800"
+    ],
+    "answer": "D",
+    "solution": "Net % = a + b + ab/100 with a = +25, b = −20 = 25 − 20 + (25 × −20)/100 = 25 − 20 − 5 = 0%. So the price is unchanged at ₹800.",
+    "trick": "net % = 25 − 20 − 5 = 0 → ₹800.",
+    "type": "Successive percentage changes",
+    "active": true
+  },
+  {
+    "id": "percentages-q17",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A town's population is 10000 and grows 10% every year. What is the population after 2 years?",
+    "options": [
+      "12100",
+      "12000",
+      "11000",
+      "12200"
+    ],
+    "answer": "A",
+    "solution": "Repeated growth compounds: 10000 × 1.1 × 1.1 = 10000 × 1.21 = 12100.",
+    "trick": "10000 × 1.1² = 12100.",
+    "type": "Repeated (compound) percentage growth",
+    "active": true
+  },
+  {
+    "id": "percentages-q18",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "After a 20% increase a salary becomes ₹36000. What was the original salary?",
+    "options": [
+      "₹28800",
+      "₹32000",
+      "₹30000",
+      "₹30600"
+    ],
+    "answer": "C",
+    "solution": "Original = New ÷ (100 + 20)/100 = 36000 ÷ 1.2 = ₹30000. Do not subtract 20% of 36000 — divide instead.",
+    "trick": "36000 ÷ 1.2 = 30000.",
+    "type": "Reverse a percentage change (find original)",
+    "active": true
+  },
+  {
+    "id": "percentages-q19",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "In an election between two candidates, the winner got 60% of the votes and won by 900 votes. Find the total number of votes.",
+    "options": [
+      "4000",
+      "4500",
+      "5000",
+      "3600"
+    ],
+    "answer": "B",
+    "solution": "Winner 60%, loser 40%, so the margin is 60 − 40 = 20% of the total. 20% of total = 900 → total = 900 ÷ 0.20 = 4500.",
+    "trick": "margin = 20% of total = 900 → total = 4500.",
+    "type": "Election / vote percentage",
+    "active": true
+  },
+  {
+    "id": "percentages-q20",
+    "topic": "percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Two successive discounts of 20% and 10% are equal to a single discount of what percent?",
+    "options": [
+      "30%",
+      "26%",
+      "25%",
+      "28%"
+    ],
+    "answer": "D",
+    "solution": "Treat the discounts as −20% then −10%: net % = a + b + ab/100 = −20 − 10 + (−20 × −10)/100 = −30 + 2 = −28%, i.e. a single discount of 28%.",
+    "trick": "20 + 10 − (200/100) = 28%.",
+    "type": "Successive discounts as a single discount",
+    "active": true
+  }
+]

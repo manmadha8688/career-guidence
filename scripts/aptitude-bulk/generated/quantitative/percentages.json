@@ -1,0 +1,1207 @@
+{
+  "topic": "percentages",
+  "category": "quantitative",
+  "group": "percentage-commercial",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "What is 15% of 242?",
+      "options": [
+        "36",
+        "16",
+        "257",
+        "41"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 15/100 × 242 = 36.",
+      "trick": "15% = 15/100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "A value increases from 400 to 460. Find the percentage increase.",
+      "options": [
+        "20%",
+        "15%",
+        "10%",
+        "60%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Increase = 60. Step 2: (60/400)×100 = 15%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Decrease 800 by 20%. What is the result?",
+      "options": [
+        "780",
+        "820",
+        "640",
+        "160"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 20% of 800 = 160. Step 2: 800 − ... = 640.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "In a class, 25 students passed and 75 failed. What percent passed?",
+      "options": [
+        "75%",
+        "25%",
+        "75%",
+        "25%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = 100. Step 2: 25/100×100 = 25%.",
+      "trick": "Part/whole × 100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "After 20% discount, price is ₹100. Find original price.",
+      "options": [
+        "125",
+        "120",
+        "120",
+        "500"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 100/0.8 = 125.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Population 5000 grows 10% in a year. New population?",
+      "options": [
+        "5010",
+        "5500",
+        "500",
+        "5600"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 5000 × (1 + 10/100) = 5500.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Price after 20% increase is ₹240. Find original.",
+      "options": [
+        "192",
+        "220",
+        "200",
+        "250"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Original × 1.2 = 240. Step 2: Original = 200.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "A salary rises from ₹30000 to ₹40000. Percent increase?",
+      "options": [
+        "10%",
+        "133.3%",
+        "30%",
+        "33.3%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (40−30)/30×100 = 33.3%.",
+      "trick": "Change/original.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Simple interest on ₹1000 at 8% for 2 years?",
+      "options": [
+        "160",
+        "80",
+        "320",
+        "1160"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI = PRT/100 = 160.",
+      "trick": "SI = PRT/100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Express 3/4 as a percentage.",
+      "options": [
+        "3%",
+        "75.0%",
+        "4%",
+        "7%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/4 × 100 = 75.0%.",
+      "trick": "Fraction × 100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "What is 16% of 262?",
+      "options": [
+        "16",
+        "278",
+        "42",
+        "47"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 16/100 × 262 = 42.",
+      "trick": "16% = 16/100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "A value increases from 450 to 510. Find the percentage increase.",
+      "options": [
+        "18%",
+        "8%",
+        "60%",
+        "13%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Increase = 60. Step 2: (60/450)×100 = 13%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Decrease 900 by 21%. What is the result?",
+      "options": [
+        "711",
+        "879",
+        "921",
+        "189"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 21% of 900 = 189. Step 2: 900 − ... = 711.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "In a class, 26 students passed and 74 failed. What percent passed?",
+      "options": [
+        "74%",
+        "26%",
+        "26%",
+        "74%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = 100. Step 2: 26/100×100 = 26%.",
+      "trick": "Part/whole × 100.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "After 20% discount, price is ₹120. Find original price.",
+      "options": [
+        "144",
+        "140",
+        "150",
+        "600"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 120/0.8 = 150.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Population 6000 grows 11% in a year. New population?",
+      "options": [
+        "6011",
+        "660",
+        "6760",
+        "6660"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6000 × (1 + 11/100) = 6660.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Price after 20% increase is ₹270. Find original.",
+      "options": [
+        "225",
+        "216",
+        "250",
+        "275"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Original × 1.2 = 270. Step 2: Original = 225.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "A salary rises from ₹31000 to ₹41000. Percent increase?",
+      "options": [
+        "10%",
+        "32.3%",
+        "132.3%",
+        "31%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (41−31)/31×100 = 32.3%.",
+      "trick": "Change/original.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Simple interest on ₹1500 at 9% for 2 years?",
+      "options": [
+        "135",
+        "540",
+        "270",
+        "1770"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SI = PRT/100 = 270.",
+      "trick": "SI = PRT/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Express 4/5 as a percentage.",
+      "options": [
+        "4%",
+        "5%",
+        "9%",
+        "80.0%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 4/5 × 100 = 80.0%.",
+      "trick": "Fraction × 100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "What is 17% of 282?",
+      "options": [
+        "48",
+        "17",
+        "299",
+        "53"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 17/100 × 282 = 48.",
+      "trick": "17% = 17/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "A value increases from 500 to 560. Find the percentage increase.",
+      "options": [
+        "17%",
+        "12%",
+        "7%",
+        "60%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Increase = 60. Step 2: (60/500)×100 = 12%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Decrease 1000 by 22%. What is the result?",
+      "options": [
+        "978",
+        "1022",
+        "780",
+        "220"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 22% of 1000 = 220. Step 2: 1000 − ... = 780.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "In a class, 27 students passed and 73 failed. What percent passed?",
+      "options": [
+        "73%",
+        "27%",
+        "73%",
+        "27%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = 100. Step 2: 27/100×100 = 27%.",
+      "trick": "Part/whole × 100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "After 20% discount, price is ₹140. Find original price.",
+      "options": [
+        "175",
+        "168",
+        "160",
+        "700"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 140/0.8 = 175.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Population 7000 grows 12% in a year. New population?",
+      "options": [
+        "7012",
+        "7840",
+        "840",
+        "7940"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 7000 × (1 + 12/100) = 7840.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Price after 20% increase is ₹300. Find original.",
+      "options": [
+        "240",
+        "280",
+        "250",
+        "300"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Original × 1.2 = 300. Step 2: Original = 250.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "A salary rises from ₹32000 to ₹42000. Percent increase?",
+      "options": [
+        "10%",
+        "131.2%",
+        "32%",
+        "31.2%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (42−32)/32×100 = 31.2%.",
+      "trick": "Change/original.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Simple interest on ₹2000 at 10% for 2 years?",
+      "options": [
+        "400",
+        "200",
+        "800",
+        "2400"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI = PRT/100 = 400.",
+      "trick": "SI = PRT/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Express 5/6 as a percentage.",
+      "options": [
+        "5%",
+        "83.3%",
+        "6%",
+        "11%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 5/6 × 100 = 83.3%.",
+      "trick": "Fraction × 100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "What is 18% of 302?",
+      "options": [
+        "17",
+        "320",
+        "54",
+        "59"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 18/100 × 302 = 54.",
+      "trick": "18% = 18/100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "A value increases from 550 to 610. Find the percentage increase.",
+      "options": [
+        "16%",
+        "6%",
+        "60%",
+        "11%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Increase = 60. Step 2: (60/550)×100 = 11%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Decrease 1100 by 23%. What is the result?",
+      "options": [
+        "847",
+        "1077",
+        "1123",
+        "253"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 23% of 1100 = 253. Step 2: 1100 − ... = 847.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "In a class, 28 students passed and 72 failed. What percent passed?",
+      "options": [
+        "72%",
+        "28%",
+        "28%",
+        "72%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = 100. Step 2: 28/100×100 = 28%.",
+      "trick": "Part/whole × 100.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "After 20% discount, price is ₹160. Find original price.",
+      "options": [
+        "192",
+        "180",
+        "200",
+        "800"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 160/0.8 = 200.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Population 8000 grows 13% in a year. New population?",
+      "options": [
+        "8013",
+        "1040",
+        "9140",
+        "9040"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 8000 × (1 + 13/100) = 9040.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Price after 20% increase is ₹330. Find original.",
+      "options": [
+        "275",
+        "264",
+        "310",
+        "325"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Original × 1.2 = 330. Step 2: Original = 275.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "A salary rises from ₹33000 to ₹43000. Percent increase?",
+      "options": [
+        "10%",
+        "30.3%",
+        "130.3%",
+        "33%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (43−33)/33×100 = 30.3%.",
+      "trick": "Change/original.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Simple interest on ₹2500 at 11% for 2 years?",
+      "options": [
+        "275",
+        "1100",
+        "550",
+        "3050"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SI = PRT/100 = 550.",
+      "trick": "SI = PRT/100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Express 6/4 as a percentage.",
+      "options": [
+        "6%",
+        "4%",
+        "10%",
+        "150.0%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6/4 × 100 = 150.0%.",
+      "trick": "Fraction × 100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "What is 19% of 322?",
+      "options": [
+        "61",
+        "17",
+        "341",
+        "66"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 19/100 × 322 = 61.",
+      "trick": "19% = 19/100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "A value increases from 600 to 660. Find the percentage increase.",
+      "options": [
+        "15%",
+        "10%",
+        "5%",
+        "60%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Increase = 60. Step 2: (60/600)×100 = 10%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Decrease 1200 by 24%. What is the result?",
+      "options": [
+        "1176",
+        "1224",
+        "912",
+        "288"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 24% of 1200 = 288. Step 2: 1200 − ... = 912.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "In a class, 29 students passed and 71 failed. What percent passed?",
+      "options": [
+        "71%",
+        "29%",
+        "71%",
+        "29%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = 100. Step 2: 29/100×100 = 29%.",
+      "trick": "Part/whole × 100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "After 20% discount, price is ₹180. Find original price.",
+      "options": [
+        "225",
+        "216",
+        "200",
+        "900"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 180/0.8 = 225.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Population 9000 grows 14% in a year. New population?",
+      "options": [
+        "9014",
+        "10260",
+        "1260",
+        "10360"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 9000 × (1 + 14/100) = 10260.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Price after 20% increase is ₹360. Find original.",
+      "options": [
+        "288",
+        "340",
+        "300",
+        "350"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Original × 1.2 = 360. Step 2: Original = 300.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "A salary rises from ₹34000 to ₹44000. Percent increase?",
+      "options": [
+        "10%",
+        "129.4%",
+        "34%",
+        "29.4%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (44−34)/34×100 = 29.4%.",
+      "trick": "Change/original.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Simple interest on ₹3000 at 12% for 2 years?",
+      "options": [
+        "720",
+        "360",
+        "1440",
+        "3720"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI = PRT/100 = 720.",
+      "trick": "SI = PRT/100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Express 3/5 as a percentage.",
+      "options": [
+        "3%",
+        "60.0%",
+        "5%",
+        "8%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 3/5 × 100 = 60.0%.",
+      "trick": "Fraction × 100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "What is 20% of 342?",
+      "options": [
+        "17",
+        "362",
+        "68",
+        "73"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 20/100 × 342 = 68.",
+      "trick": "20% = 20/100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "A value increases from 650 to 710. Find the percentage increase.",
+      "options": [
+        "14%",
+        "4%",
+        "60%",
+        "9%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Increase = 60. Step 2: (60/650)×100 = 9%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Decrease 1300 by 25%. What is the result?",
+      "options": [
+        "975",
+        "1275",
+        "1325",
+        "325"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 25% of 1300 = 325. Step 2: 1300 − ... = 975.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "In a class, 30 students passed and 70 failed. What percent passed?",
+      "options": [
+        "70%",
+        "30%",
+        "30%",
+        "70%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = 100. Step 2: 30/100×100 = 30%.",
+      "trick": "Part/whole × 100.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "After 20% discount, price is ₹200. Find original price.",
+      "options": [
+        "240",
+        "220",
+        "250",
+        "1000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 200/0.8 = 250.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Population 10000 grows 15% in a year. New population?",
+      "options": [
+        "10015",
+        "1500",
+        "11600",
+        "11500"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10000 × (1 + 15/100) = 11500.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Price after 20% increase is ₹390. Find original.",
+      "options": [
+        "325",
+        "312",
+        "370",
+        "375"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Original × 1.2 = 390. Step 2: Original = 325.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "A salary rises from ₹35000 to ₹45000. Percent increase?",
+      "options": [
+        "10%",
+        "28.6%",
+        "128.6%",
+        "35%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (45−35)/35×100 = 28.6%.",
+      "trick": "Change/original.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Simple interest on ₹3500 at 13% for 2 years?",
+      "options": [
+        "455",
+        "1820",
+        "910",
+        "4410"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SI = PRT/100 = 910.",
+      "trick": "SI = PRT/100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Express 4/6 as a percentage.",
+      "options": [
+        "4%",
+        "6%",
+        "10%",
+        "66.7%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 4/6 × 100 = 66.7%.",
+      "trick": "Fraction × 100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "What is 21% of 362?",
+      "options": [
+        "76",
+        "17",
+        "383",
+        "81"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 21/100 × 362 = 76.",
+      "trick": "21% = 21/100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "A value increases from 700 to 760. Find the percentage increase.",
+      "options": [
+        "14%",
+        "9%",
+        "4%",
+        "60%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Increase = 60. Step 2: (60/700)×100 = 9%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Decrease 1400 by 26%. What is the result?",
+      "options": [
+        "1374",
+        "1426",
+        "1036",
+        "364"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 26% of 1400 = 364. Step 2: 1400 − ... = 1036.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "In a class, 31 students passed and 69 failed. What percent passed?",
+      "options": [
+        "69%",
+        "31%",
+        "69%",
+        "31%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Total = 100. Step 2: 31/100×100 = 31%.",
+      "trick": "Part/whole × 100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "After 20% discount, price is ₹220. Find original price.",
+      "options": [
+        "275",
+        "264",
+        "240",
+        "1100"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 220/0.8 = 275.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Population 11000 grows 16% in a year. New population?",
+      "options": [
+        "11016",
+        "12760",
+        "1760",
+        "12860"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 11000 × (1 + 16/100) = 12760.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Price after 20% increase is ₹420. Find original.",
+      "options": [
+        "336",
+        "400",
+        "350",
+        "400"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Original × 1.2 = 420. Step 2: Original = 350.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "A salary rises from ₹36000 to ₹46000. Percent increase?",
+      "options": [
+        "10%",
+        "127.8%",
+        "36%",
+        "27.8%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (46−36)/36×100 = 27.8%.",
+      "trick": "Change/original.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Simple interest on ₹4000 at 14% for 2 years?",
+      "options": [
+        "1120",
+        "560",
+        "2240",
+        "5120"
+      ],
+      "answer": "A",
+      "solution": "Step 1: SI = PRT/100 = 1120.",
+      "trick": "SI = PRT/100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Express 5/4 as a percentage.",
+      "options": [
+        "5%",
+        "125.0%",
+        "4%",
+        "9%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 5/4 × 100 = 125.0%.",
+      "trick": "Fraction × 100.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "What is 22% of 382?",
+      "options": [
+        "17",
+        "404",
+        "84",
+        "89"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 22/100 × 382 = 84.",
+      "trick": "22% = 22/100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "A value increases from 750 to 810. Find the percentage increase.",
+      "options": [
+        "13%",
+        "3%",
+        "60%",
+        "8%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Increase = 60. Step 2: (60/750)×100 = 8%.",
+      "trick": "Inc% = change/original×100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Decrease 1500 by 27%. What is the result?",
+      "options": [
+        "1095",
+        "1473",
+        "1527",
+        "405"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 27% of 1500 = 405. Step 2: 1500 − ... = 1095.",
+      "trick": "New = old × (1 − p/100).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "In a class, 32 students passed and 68 failed. What percent passed?",
+      "options": [
+        "68%",
+        "32%",
+        "32%",
+        "68%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Total = 100. Step 2: 32/100×100 = 32%.",
+      "trick": "Part/whole × 100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "After 20% discount, price is ₹240. Find original price.",
+      "options": [
+        "288",
+        "260",
+        "300",
+        "1200"
+      ],
+      "answer": "C",
+      "solution": "Step 1: x = 80% of original. Step 2: Original = 240/0.8 = 300.",
+      "trick": "Divide by (1 − discount%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Population 12000 grows 17% in a year. New population?",
+      "options": [
+        "12017",
+        "2040",
+        "14140",
+        "14040"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 12000 × (1 + 17/100) = 14040.",
+      "trick": "Growth: multiply by (1+p/100).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Price after 20% increase is ₹450. Find original.",
+      "options": [
+        "375",
+        "360",
+        "430",
+        "425"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Original × 1.2 = 450. Step 2: Original = 375.",
+      "trick": "Divide by (1 + inc%).",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "A salary rises from ₹37000 to ₹47000. Percent increase?",
+      "options": [
+        "10%",
+        "27.0%",
+        "127.0%",
+        "37%"
+      ],
+      "answer": "B",
+      "solution": "Step 1: (47−37)/37×100 = 27.0%.",
+      "trick": "Change/original.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Simple interest on ₹4500 at 15% for 2 years?",
+      "options": [
+        "675",
+        "2700",
+        "1350",
+        "5850"
+      ],
+      "answer": "C",
+      "solution": "Step 1: SI = PRT/100 = 1350.",
+      "trick": "SI = PRT/100.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Express 6/5 as a percentage.",
+      "options": [
+        "6%",
+        "5%",
+        "11%",
+        "120.0%"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 6/5 × 100 = 120.0%.",
+      "trick": "Fraction × 100.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

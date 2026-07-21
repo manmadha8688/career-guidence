@@ -1,0 +1,402 @@
+[
+  {
+    "id": "boats-streams-q1",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A boat's speed in still water is 10 km/h and the stream 2 km/h. Find the downstream speed.",
+    "options": [
+      "12 km/h",
+      "8 km/h",
+      "10 km/h",
+      "5 km/h"
+    ],
+    "answer": "A",
+    "solution": "Downstream = b + s = 10 + 2 = 12 km/h.",
+    "trick": "Down = boat + stream.",
+    "type": "Find downstream / upstream speed",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q2",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A boat's still-water speed is 15 km/h and the stream 5 km/h. Find the upstream speed.",
+    "options": [
+      "20 km/h",
+      "10 km/h",
+      "15 km/h",
+      "5 km/h"
+    ],
+    "answer": "B",
+    "solution": "Upstream = b − s = 15 − 5 = 10 km/h.",
+    "trick": "Up = boat − stream.",
+    "type": "Find downstream / upstream speed",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q3",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A boat goes downstream at 15 km/h and upstream at 9 km/h. Find the boat's still-water speed.",
+    "options": [
+      "3 km/h",
+      "6 km/h",
+      "12 km/h",
+      "9 km/h"
+    ],
+    "answer": "C",
+    "solution": "b = (15 + 9)/2 = 12 km/h.",
+    "trick": "Boat = average of the two.",
+    "type": "Find boat & stream speed",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q4",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Downstream 14 km/h, upstream 10 km/h. Find the stream's speed.",
+    "options": [
+      "4 km/h",
+      "12 km/h",
+      "24 km/h",
+      "2 km/h"
+    ],
+    "answer": "D",
+    "solution": "s = (14 − 10)/2 = 2 km/h.",
+    "trick": "Stream = half the difference.",
+    "type": "Find boat & stream speed",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q5",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A boat's still-water speed is 8 km/h and the stream 2 km/h. How long to go 30 km upstream?",
+    "options": [
+      "5 hr",
+      "3 hr",
+      "6 hr",
+      "4 hr"
+    ],
+    "answer": "A",
+    "solution": "Upstream = 6 km/h. Time = 30/6 = 5 hr.",
+    "trick": "Distance ÷ (b − s).",
+    "type": "Time for a one-way trip",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q6",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "A boat's still-water speed is 12 km/h and the stream 3 km/h. How long for 45 km downstream?",
+    "options": [
+      "5 hr",
+      "3 hr",
+      "4 hr",
+      "15 hr"
+    ],
+    "answer": "B",
+    "solution": "Downstream = 15 km/h. Time = 45/15 = 3 hr.",
+    "trick": "Distance ÷ (b + s).",
+    "type": "Time for a one-way trip",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q7",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "A boat covers 12 km downstream in 1 hour and returns in 1.5 hours. Find the stream's speed.",
+    "options": [
+      "4 km/h",
+      "10 km/h",
+      "2 km/h",
+      "1 km/h"
+    ],
+    "answer": "C",
+    "solution": "Down = 12, up = 12/1.5 = 8. s = (12 − 8)/2 = 2 km/h.",
+    "trick": "Speeds from times, then half-difference.",
+    "type": "Find stream from times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q8",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "A boat rows to a place 24 km away and back. Still water 10 km/h, stream 2 km/h. Total time?",
+    "options": [
+      "4.8 hr",
+      "6 hr",
+      "4 hr",
+      "5 hr"
+    ],
+    "answer": "D",
+    "solution": "Down = 12, up = 8. Time = 24/12 + 24/8 = 2 + 3 = 5 hr.",
+    "trick": "Add the two leg times.",
+    "type": "Round trip",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q9",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A boat's downstream speed is 20 km/h and upstream 12 km/h. Find the boat and stream speeds.",
+    "options": [
+      "16 & 4",
+      "12 & 8",
+      "8 & 4",
+      "16 & 8"
+    ],
+    "answer": "A",
+    "solution": "b = (20 + 12)/2 = 16, s = (20 − 12)/2 = 4 km/h.",
+    "trick": "Average and half-difference.",
+    "type": "Find boat & stream speed",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q10",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A man rows at 6 km/h in still water. In a river flowing at 2 km/h, how long to row 16 km downstream?",
+    "options": [
+      "4 hr",
+      "2 hr",
+      "2.67 hr",
+      "3 hr"
+    ],
+    "answer": "B",
+    "solution": "Downstream = 8 km/h. Time = 16/8 = 2 hr.",
+    "trick": "Distance ÷ (b + s).",
+    "type": "Time for a one-way trip",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q11",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "A man rows upstream in twice the time he takes downstream over the same distance. If the stream is 3 km/h, find the boat's speed.",
+    "options": [
+      "6 km/h",
+      "12 km/h",
+      "9 km/h",
+      "3 km/h"
+    ],
+    "answer": "C",
+    "solution": "Speed up = ½ speed down → 2(b−3) = b+3 → b = 9 km/h.",
+    "trick": "Time ratio 2:1 → speed ratio 1:2.",
+    "type": "Ratio of times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q12",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "A boat goes 20 km downstream in 2 hours and 12 km upstream in 3 hours. Find the boat's still-water speed.",
+    "options": [
+      "3 km/h",
+      "6 km/h",
+      "8 km/h",
+      "7 km/h"
+    ],
+    "answer": "D",
+    "solution": "Down = 10, up = 4. b = (10 + 4)/2 = 7 km/h.",
+    "trick": "Speeds from times, then average.",
+    "type": "Find stream from times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q13",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A boat's still-water speed is 15 km/h and the stream 5 km/h. It goes 30 km downstream and back. Total time?",
+    "options": [
+      "4.5 hr",
+      "4 hr",
+      "5 hr",
+      "6 hr"
+    ],
+    "answer": "A",
+    "solution": "Down = 20, up = 10. Time = 30/20 + 30/10 = 1.5 + 3 = 4.5 hr.",
+    "trick": "Add the two legs.",
+    "type": "Round trip",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q14",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "A boat covers a distance downstream at 18 km/h and returns upstream at 12 km/h. If the one-way distance is 90 km, find the time downstream.",
+    "options": [
+      "7.5 hr",
+      "5 hr",
+      "6 hr",
+      "10 hr"
+    ],
+    "answer": "B",
+    "solution": "Downstream time = 90/18 = 5 hr.",
+    "trick": "Distance ÷ downstream speed.",
+    "type": "Time for a one-way trip",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q15",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A boat takes 3 times as long to go upstream as downstream over the same distance. If the boat's still-water speed is 12 km/h, find the stream's speed.",
+    "options": [
+      "4 km/h",
+      "8 km/h",
+      "6 km/h",
+      "3 km/h"
+    ],
+    "answer": "C",
+    "solution": "Down speed = 3 × up speed → (b+s) = 3(b−s) → 4s = 2b → s = b/2 = 6 km/h.",
+    "trick": "Time 3:1 → speed 1:3.",
+    "type": "Ratio of times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q16",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A man rows to a place 48 km away and back in 14 hours. He rows 4 km downstream in the same time as 3 km upstream. Find the stream's speed.",
+    "options": [
+      "2 km/h",
+      "1.5 km/h",
+      "0.5 km/h",
+      "1 km/h"
+    ],
+    "answer": "D",
+    "solution": "Down:up = 4:3. Let down = 4k, up = 3k. 48/4k + 48/3k = 14 → 28/k = 14 → k = 2. Down = 8, up = 6, s = (8−6)/2 = 1 km/h.",
+    "trick": "Speed ratio from equal-time distances.",
+    "type": "Find stream from times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q17",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A boat's downstream speed is 1.5 times its upstream speed. If the boat's still-water speed is 15 km/h, find the stream's speed.",
+    "options": [
+      "3 km/h",
+      "5 km/h",
+      "7.5 km/h",
+      "2 km/h"
+    ],
+    "answer": "A",
+    "solution": "(b+s) = 1.5(b−s) → b+s = 1.5b − 1.5s → 2.5s = 0.5b → s = b/5 = 3 km/h.",
+    "trick": "Set the down = 1.5 × up equation.",
+    "type": "Ratio of times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q18",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "A man rows 9 km/h in still water and finds it takes thrice as long to row up as to row down the river. Find the river's speed.",
+    "options": [
+      "3 km/h",
+      "4.5 km/h",
+      "6 km/h",
+      "9 km/h"
+    ],
+    "answer": "B",
+    "solution": "(b+s) = 3(b−s) → 4s = 2b → s = b/2 = 4.5 km/h.",
+    "trick": "Time 3:1 → down = 3 × up speed.",
+    "type": "Ratio of times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q19",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "A boat goes 30 km upstream and 44 km downstream in 10 hours; it also goes 40 km upstream and 55 km downstream in 13 hours. Find the boat's still-water speed.",
+    "options": [
+      "5 km/h",
+      "11 km/h",
+      "8 km/h",
+      "6 km/h"
+    ],
+    "answer": "C",
+    "solution": "Let 1/up = x, 1/down = y. 30x+44y=10, 40x+55y=13. Solving: y=1/11 (down=11), x=1/5 (up=5). b = (11+5)/2 = 8 km/h.",
+    "trick": "Two equations in 1/up and 1/down.",
+    "type": "Find stream from times",
+    "active": true
+  },
+  {
+    "id": "boats-streams-q20",
+    "topic": "boats-streams",
+    "category": "quantitative",
+    "group": "speed-distance",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "In a stream running at 2 km/h, a motorboat goes 10 km upstream and back to the start in 55 minutes. Find the boat's still-water speed.",
+    "options": [
+      "20 km/h",
+      "12 km/h",
+      "18 km/h",
+      "22 km/h"
+    ],
+    "answer": "D",
+    "solution": "10/(b−2) + 10/(b+2) = 55/60. 20b/(b²−4) = 11/12 → 11b² − 240b − 44 = 0 → b = 22 km/h.",
+    "trick": "Round-trip time equation, solve the quadratic.",
+    "type": "Round trip",
+    "active": true
+  }
+]

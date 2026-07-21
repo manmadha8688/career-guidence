@@ -1,0 +1,402 @@
+[
+  {
+    "id": "averages-q1",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Find the average of 12, 18, 24 and 30.",
+    "options": [
+      "21",
+      "24",
+      "20",
+      "22"
+    ],
+    "answer": "A",
+    "solution": "Sum = 84, count = 4, average = 84/4 = 21.",
+    "trick": "84/4 = 21.",
+    "type": "Basic average / missing value",
+    "active": true
+  },
+  {
+    "id": "averages-q2",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "The average of 6 numbers is 15. Find their sum.",
+    "options": [
+      "21",
+      "90",
+      "75",
+      "96"
+    ],
+    "answer": "B",
+    "solution": "Sum = average × count = 15 × 6 = 90.",
+    "trick": "15 × 6 = 90.",
+    "type": "Basic average / missing value",
+    "active": true
+  },
+  {
+    "id": "averages-q3",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The average age of 4 members is 20 years. A fifth member aged 30 joins. Find the new average.",
+    "options": [
+      "25",
+      "24",
+      "22",
+      "21"
+    ],
+    "answer": "C",
+    "solution": "Old total = 80. New total = 110 over 5 → 110/5 = 22.",
+    "trick": "(80+30)/5 = 22.",
+    "type": "A member joins or leaves",
+    "active": true
+  },
+  {
+    "id": "averages-q4",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "The average weight of 6 boys increases by 1 kg when a boy weighing 40 kg is replaced. Find the new boy's weight.",
+    "options": [
+      "41 kg",
+      "45 kg",
+      "48 kg",
+      "46 kg"
+    ],
+    "answer": "D",
+    "solution": "Total increase = 6 × 1 = 6 kg. New boy = 40 + 6 = 46 kg.",
+    "trick": "40 + 6×1 = 46.",
+    "type": "Replacement",
+    "active": true
+  },
+  {
+    "id": "averages-q5",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Find the average of the first 7 natural numbers.",
+    "options": [
+      "4",
+      "3.5",
+      "4.5",
+      "7"
+    ],
+    "answer": "A",
+    "solution": "1 to 7 are evenly spaced: average = (1 + 7)/2 = 4.",
+    "trick": "Midpoint of 1 and 7 = 4.",
+    "type": "Consecutive numbers",
+    "active": true
+  },
+  {
+    "id": "averages-q6",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "10 boys average 50 marks and 10 girls average 60 marks. Find the overall average.",
+    "options": [
+      "50",
+      "55",
+      "60",
+      "56"
+    ],
+    "answer": "B",
+    "solution": "Equal group sizes, so the average is (50 + 60)/2 = 55.",
+    "trick": "Equal groups → simple midpoint 55.",
+    "type": "Weighted average",
+    "active": true
+  },
+  {
+    "id": "averages-q7",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "The average of 5 numbers is 20. If one number 15 was wrongly taken as 5, find the correct average.",
+    "options": [
+      "20",
+      "18",
+      "22",
+      "24"
+    ],
+    "answer": "C",
+    "solution": "The value was 10 too low, so the total rises by 10: (100 + 10)/5 = 22.",
+    "trick": "+10 to total → 110/5 = 22.",
+    "type": "Correcting a wrong value",
+    "active": true
+  },
+  {
+    "id": "averages-q8",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "The average of five consecutive numbers is 30. Find the largest.",
+    "options": [
+      "34",
+      "30",
+      "33",
+      "32"
+    ],
+    "answer": "D",
+    "solution": "The middle number is 30, so the numbers are 28, 29, 30, 31, 32. The largest is 32.",
+    "trick": "Middle 30 → largest 30 + 2 = 32.",
+    "type": "Consecutive numbers",
+    "active": true
+  },
+  {
+    "id": "averages-q9",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "The average age of 30 students is 12 years. Including the teacher, the average increases by 1. Find the teacher's age.",
+    "options": [
+      "43",
+      "42",
+      "13",
+      "45"
+    ],
+    "answer": "A",
+    "solution": "Students total = 360. With teacher, 31 people average 13 → total 403. Teacher = 403 − 360 = 43.",
+    "trick": "13×31 − 12×30 = 43.",
+    "type": "A member joins or leaves",
+    "active": true
+  },
+  {
+    "id": "averages-q10",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "The average of 11 results is 50. The average of the first 6 is 49 and of the last 6 is 52. Find the sixth result.",
+    "options": [
+      "48",
+      "56",
+      "50",
+      "54"
+    ],
+    "answer": "B",
+    "solution": "First 6 = 294, last 6 = 312, all 11 = 550. Sixth (counted twice) = 294 + 312 − 550 = 56.",
+    "trick": "294 + 312 − 550 = 56.",
+    "type": "A member joins or leaves",
+    "active": true
+  },
+  {
+    "id": "averages-q11",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "The average weight of 8 people increases by 2.5 kg when a new person replaces one weighing 65 kg. Find the new person's weight.",
+    "options": [
+      "75 kg",
+      "90 kg",
+      "85 kg",
+      "67.5 kg"
+    ],
+    "answer": "C",
+    "solution": "Total increase = 8 × 2.5 = 20. New person = 65 + 20 = 85 kg.",
+    "trick": "65 + 8×2.5 = 85.",
+    "type": "Replacement",
+    "active": true
+  },
+  {
+    "id": "averages-q12",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Find the average of all even numbers from 2 to 40.",
+    "options": [
+      "20",
+      "22",
+      "19",
+      "21"
+    ],
+    "answer": "D",
+    "solution": "The evens 2 to 40 are evenly spaced: average = (2 + 40)/2 = 21.",
+    "trick": "(2 + 40)/2 = 21.",
+    "type": "Consecutive numbers",
+    "active": true
+  },
+  {
+    "id": "averages-q13",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "A class of 40 has an average score of 65. If 25 students average 70, find the average of the remaining 15 (to two decimals).",
+    "options": [
+      "56.67",
+      "60",
+      "55",
+      "57.5"
+    ],
+    "answer": "A",
+    "solution": "Total = 2600. 25 students = 1750. Remaining 15 = 850 → 850/15 = 56.67.",
+    "trick": "(2600 − 1750)/15 = 56.67.",
+    "type": "Weighted average",
+    "active": true
+  },
+  {
+    "id": "averages-q14",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "The average of 10 numbers is 40. Later a number 45 was found to have been read as 25. Find the correct average.",
+    "options": [
+      "38",
+      "42",
+      "44",
+      "40"
+    ],
+    "answer": "B",
+    "solution": "The value was 20 too low, so the total rises by 20: (400 + 20)/10 = 42.",
+    "trick": "+20 to total → 420/10 = 42.",
+    "type": "Correcting a wrong value",
+    "active": true
+  },
+  {
+    "id": "averages-q15",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "The average of 50 numbers is 38. If two numbers 45 and 55 are discarded, find the average of the remaining 48.",
+    "options": [
+      "38",
+      "36",
+      "37.5",
+      "37"
+    ],
+    "answer": "C",
+    "solution": "Total = 1900. Remove 100 → 1800 over 48 → 1800/48 = 37.5.",
+    "trick": "(1900 − 100)/48 = 37.5.",
+    "type": "Basic average / missing value",
+    "active": true
+  },
+  {
+    "id": "averages-q16",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "The average age of a husband and wife 5 years ago was 25. Today the average age of the husband, wife and their child is 22. Find the child's age.",
+    "options": [
+      "5 years",
+      "8 years",
+      "4 years",
+      "6 years"
+    ],
+    "answer": "D",
+    "solution": "Couple 5 years ago = 50; today couple = 50 + 10 = 60. With child, 3 people average 22 → total 66. Child = 66 − 60 = 6.",
+    "trick": "66 − 60 = 6.",
+    "type": "A member joins or leaves",
+    "active": true
+  },
+  {
+    "id": "averages-q17",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "The average age of 40 students is 16. When 10 new students of average age 15 join and 5 students of average age 20 leave, find the new average (to two decimals).",
+    "options": [
+      "15.33",
+      "16",
+      "15",
+      "15.5"
+    ],
+    "answer": "A",
+    "solution": "Total = 640; +150 = 790; −100 = 690. Count = 45. Average = 690/45 = 15.33.",
+    "trick": "690/45 = 15.33.",
+    "type": "Replacement",
+    "active": true
+  },
+  {
+    "id": "averages-q18",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "The average of 7 consecutive odd numbers is 27. Find the sum of the largest and smallest.",
+    "options": [
+      "48",
+      "54",
+      "60",
+      "52"
+    ],
+    "answer": "B",
+    "solution": "Middle = 27. Numbers 21, 23, 25, 27, 29, 31, 33. Largest + smallest = 33 + 21 = 54.",
+    "trick": "For any symmetric set, first + last = 2 × middle = 54.",
+    "type": "Consecutive numbers",
+    "active": true
+  },
+  {
+    "id": "averages-q19",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "The average salary of all workers is ₹8000. 12 officers average ₹15000 and the rest average ₹6000. Find the total number of workers.",
+    "options": [
+      "42",
+      "48",
+      "54",
+      "60"
+    ],
+    "answer": "C",
+    "solution": "Let others = x. (12×15000 + 6000x)/(12 + x) = 8000 → 180000 + 6000x = 96000 + 8000x → 84000 = 2000x → x = 42. Total = 54.",
+    "trick": "84000/2000 = 42, +12 = 54.",
+    "type": "Weighted average",
+    "active": true
+  },
+  {
+    "id": "averages-q20",
+    "topic": "averages",
+    "category": "quantitative",
+    "group": "averages-ages",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "The average of 100 numbers is 46. Two numbers 16 and 43 were misread as 61 and 34. Find the correct average.",
+    "options": [
+      "46.36",
+      "45",
+      "46",
+      "45.64"
+    ],
+    "answer": "D",
+    "solution": "Misread sum = 95, correct = 59, so the total was 36 too high. Correct total = 4600 − 36 = 4564 → 45.64.",
+    "trick": "−36 to total → 4564/100 = 45.64.",
+    "type": "Correcting a wrong value",
+    "active": true
+  }
+]

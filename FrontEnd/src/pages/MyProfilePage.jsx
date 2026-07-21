@@ -885,7 +885,7 @@ export default function MyProfilePage() {
         <div className="mpx-shell">
           <div className="mpx-guest">
             Guest accounts can’t be customised.<br />
-            <Link to="/register" className="mpx-guest__link">Create a free account</Link> to unlock your profile and shareable card.
+            <Link to="/register" className="mpx-guest__link">Create an account</Link> to unlock your profile and shareable card.
           </div>
         </div>
       </div>

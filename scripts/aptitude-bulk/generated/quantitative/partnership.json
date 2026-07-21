@@ -1,0 +1,1207 @@
+{
+  "topic": "partnership",
+  "category": "quantitative",
+  "group": "ratio-mixture",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "A invests ₹5000, B ₹3000. Profit ₹4000. A's share?",
+      "options": [
+        "2500",
+        "1500",
+        "2000",
+        "5000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 5000:3000. Step 2: A gets 5000/(8000)×4000 = 2500.",
+      "trick": "Profit ∝ capital.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "A: ₹10000 for 12 months, B: ₹15000 for 6 months. Profit ₹7700. A's share?",
+      "options": [
+        "3300",
+        "4400",
+        "3850",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:90000. Step 2: A share = 4400.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Partners capital ratio 2:3:5. Profit ₹9000. B's share?",
+      "options": [
+        "3000",
+        "6300",
+        "2700",
+        "4500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 9000 = 2700.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 8 months. Ratio of cap×time if A stays 4 mo, B 8 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:8",
+        "4:8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:8. A share of profit uses 4/(4+8).",
+      "trick": "Cap×time ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹12000. Largest share?",
+      "options": [
+        "7200",
+        "3000",
+        "1800",
+        "4000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 12000 = 7200.",
+      "trick": "Apply percentage shares.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "A ₹8000 for 12 mo, B ₹6000 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "1867",
+        "3733",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:48000. A = 3733.",
+      "trick": "Cap×months.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹60000. B's share?",
+      "options": [
+        "30000",
+        "40000",
+        "20000",
+        "20000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 60000 = 20000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Five equal partners earn ₹10000. Each gets?",
+      "options": [
+        "2500",
+        "1666",
+        "3333",
+        "2000"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 10000/5 = 2000.",
+      "trick": "Equal split.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "A invests ₹5500, B ₹3300. Profit ₹4200. A's share?",
+      "options": [
+        "2625",
+        "1575",
+        "2100",
+        "5500"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 5500:3300. Step 2: A gets 5500/(8800)×4200 = 2625.",
+      "trick": "Profit ∝ capital.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "A: ₹10000 for 12 months, B: ₹16000 for 7 months. Profit ₹7800. A's share?",
+      "options": [
+        "3766",
+        "4034",
+        "3900",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:112000. Step 2: A share = 4034.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Partners capital ratio 2:3:5. Profit ₹9500. B's share?",
+      "options": [
+        "3166",
+        "6650",
+        "2850",
+        "4750"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 9500 = 2850.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 9 months. Ratio of cap×time if A stays 4 mo, B 9 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:9",
+        "4:9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:9. A share of profit uses 4/(4+9).",
+      "trick": "Cap×time ratio.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹13000. Largest share?",
+      "options": [
+        "7800",
+        "3250",
+        "1950",
+        "4333"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 13000 = 7800.",
+      "trick": "Apply percentage shares.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "A ₹8000 for 12 mo, B ₹6500 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "1968",
+        "3632",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:52000. A = 3632.",
+      "trick": "Cap×months.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹66000. B's share?",
+      "options": [
+        "33000",
+        "44000",
+        "22000",
+        "22000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 66000 = 22000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Five equal partners earn ₹11000. Each gets?",
+      "options": [
+        "2750",
+        "1833",
+        "3666",
+        "2200"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 11000/5 = 2200.",
+      "trick": "Equal split.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "A invests ₹6000, B ₹3600. Profit ₹4400. A's share?",
+      "options": [
+        "2750",
+        "1650",
+        "2200",
+        "6000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 6000:3600. Step 2: A gets 6000/(9600)×4400 = 2750.",
+      "trick": "Profit ∝ capital.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "A: ₹10000 for 12 months, B: ₹17000 for 8 months. Profit ₹7900. A's share?",
+      "options": [
+        "4197",
+        "3703",
+        "3950",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:136000. Step 2: A share = 3703.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Partners capital ratio 2:3:5. Profit ₹10000. B's share?",
+      "options": [
+        "3333",
+        "7000",
+        "3000",
+        "5000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 10000 = 3000.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 10 months. Ratio of cap×time if A stays 4 mo, B 10 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:10",
+        "4:10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:10. A share of profit uses 4/(4+10).",
+      "trick": "Cap×time ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹14000. Largest share?",
+      "options": [
+        "8400",
+        "3500",
+        "2100",
+        "4666"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 14000 = 8400.",
+      "trick": "Apply percentage shares.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "A ₹8000 for 12 mo, B ₹7000 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2063",
+        "3537",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:56000. A = 3537.",
+      "trick": "Cap×months.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹72000. B's share?",
+      "options": [
+        "36000",
+        "48000",
+        "24000",
+        "24000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 72000 = 24000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Five equal partners earn ₹12000. Each gets?",
+      "options": [
+        "3000",
+        "2000",
+        "4000",
+        "2400"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 12000/5 = 2400.",
+      "trick": "Equal split.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "A invests ₹6500, B ₹3900. Profit ₹4600. A's share?",
+      "options": [
+        "2875",
+        "1725",
+        "2300",
+        "6500"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 6500:3900. Step 2: A gets 6500/(10400)×4600 = 2875.",
+      "trick": "Profit ∝ capital.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "A: ₹10000 for 12 months, B: ₹18000 for 9 months. Profit ₹8000. A's share?",
+      "options": [
+        "4596",
+        "3404",
+        "4000",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:162000. Step 2: A share = 3404.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Partners capital ratio 2:3:5. Profit ₹10500. B's share?",
+      "options": [
+        "3500",
+        "7350",
+        "3150",
+        "5250"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 10500 = 3150.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 11 months. Ratio of cap×time if A stays 4 mo, B 11 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:11",
+        "4:11"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:11. A share of profit uses 4/(4+11).",
+      "trick": "Cap×time ratio.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹15000. Largest share?",
+      "options": [
+        "9000",
+        "3750",
+        "2250",
+        "5000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 15000 = 9000.",
+      "trick": "Apply percentage shares.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "A ₹8000 for 12 mo, B ₹7500 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2154",
+        "3446",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:60000. A = 3446.",
+      "trick": "Cap×months.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹78000. B's share?",
+      "options": [
+        "39000",
+        "52000",
+        "26000",
+        "26000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 78000 = 26000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Five equal partners earn ₹13000. Each gets?",
+      "options": [
+        "3250",
+        "2166",
+        "4333",
+        "2600"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 13000/5 = 2600.",
+      "trick": "Equal split.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "A invests ₹7000, B ₹4200. Profit ₹4800. A's share?",
+      "options": [
+        "3000",
+        "1800",
+        "2400",
+        "7000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 7000:4200. Step 2: A gets 7000/(11200)×4800 = 3000.",
+      "trick": "Profit ∝ capital.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "A: ₹10000 for 12 months, B: ₹19000 for 10 months. Profit ₹8100. A's share?",
+      "options": [
+        "4965",
+        "3135",
+        "4050",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:190000. Step 2: A share = 3135.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Partners capital ratio 2:3:5. Profit ₹11000. B's share?",
+      "options": [
+        "3666",
+        "7700",
+        "3300",
+        "5500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 11000 = 3300.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 12 months. Ratio of cap×time if A stays 4 mo, B 12 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:12",
+        "4:12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:12. A share of profit uses 4/(4+12).",
+      "trick": "Cap×time ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹16000. Largest share?",
+      "options": [
+        "9600",
+        "4000",
+        "2400",
+        "5333"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 16000 = 9600.",
+      "trick": "Apply percentage shares.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "A ₹8000 for 12 mo, B ₹8000 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2240",
+        "3360",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:64000. A = 3360.",
+      "trick": "Cap×months.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹84000. B's share?",
+      "options": [
+        "42000",
+        "56000",
+        "28000",
+        "28000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 84000 = 28000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Five equal partners earn ₹14000. Each gets?",
+      "options": [
+        "3500",
+        "2333",
+        "4666",
+        "2800"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 14000/5 = 2800.",
+      "trick": "Equal split.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "A invests ₹7500, B ₹4500. Profit ₹5000. A's share?",
+      "options": [
+        "3125",
+        "1875",
+        "2500",
+        "7500"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 7500:4500. Step 2: A gets 7500/(12000)×5000 = 3125.",
+      "trick": "Profit ∝ capital.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "A: ₹10000 for 12 months, B: ₹20000 for 11 months. Profit ₹8200. A's share?",
+      "options": [
+        "5306",
+        "2894",
+        "4100",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:220000. Step 2: A share = 2894.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Partners capital ratio 2:3:5. Profit ₹11500. B's share?",
+      "options": [
+        "3833",
+        "8050",
+        "3450",
+        "5750"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 11500 = 3450.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 13 months. Ratio of cap×time if A stays 4 mo, B 13 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:13",
+        "4:13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:13. A share of profit uses 4/(4+13).",
+      "trick": "Cap×time ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹17000. Largest share?",
+      "options": [
+        "10200",
+        "4250",
+        "2550",
+        "5666"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 17000 = 10200.",
+      "trick": "Apply percentage shares.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "A ₹8000 for 12 mo, B ₹8500 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2322",
+        "3278",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:68000. A = 3278.",
+      "trick": "Cap×months.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹90000. B's share?",
+      "options": [
+        "45000",
+        "60000",
+        "30000",
+        "30000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 90000 = 30000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Five equal partners earn ₹15000. Each gets?",
+      "options": [
+        "3750",
+        "2500",
+        "5000",
+        "3000"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 15000/5 = 3000.",
+      "trick": "Equal split.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "A invests ₹8000, B ₹4800. Profit ₹5200. A's share?",
+      "options": [
+        "3250",
+        "1950",
+        "2600",
+        "8000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 8000:4800. Step 2: A gets 8000/(12800)×5200 = 3250.",
+      "trick": "Profit ∝ capital.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "A: ₹10000 for 12 months, B: ₹21000 for 12 months. Profit ₹8300. A's share?",
+      "options": [
+        "5623",
+        "2677",
+        "4150",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:252000. Step 2: A share = 2677.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Partners capital ratio 2:3:5. Profit ₹12000. B's share?",
+      "options": [
+        "4000",
+        "8400",
+        "3600",
+        "6000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 12000 = 3600.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 14 months. Ratio of cap×time if A stays 4 mo, B 14 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:14",
+        "4:14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:14. A share of profit uses 4/(4+14).",
+      "trick": "Cap×time ratio.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹18000. Largest share?",
+      "options": [
+        "10800",
+        "4500",
+        "2700",
+        "6000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 18000 = 10800.",
+      "trick": "Apply percentage shares.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "A ₹8000 for 12 mo, B ₹9000 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2400",
+        "3200",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:72000. A = 3200.",
+      "trick": "Cap×months.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹96000. B's share?",
+      "options": [
+        "48000",
+        "64000",
+        "32000",
+        "32000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 96000 = 32000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Five equal partners earn ₹16000. Each gets?",
+      "options": [
+        "4000",
+        "2666",
+        "5333",
+        "3200"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 16000/5 = 3200.",
+      "trick": "Equal split.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "A invests ₹8500, B ₹5100. Profit ₹5400. A's share?",
+      "options": [
+        "3375",
+        "2025",
+        "2700",
+        "8500"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 8500:5100. Step 2: A gets 8500/(13600)×5400 = 3375.",
+      "trick": "Profit ∝ capital.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "A: ₹10000 for 12 months, B: ₹22000 for 13 months. Profit ₹8400. A's share?",
+      "options": [
+        "5917",
+        "2483",
+        "4200",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:286000. Step 2: A share = 2483.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Partners capital ratio 2:3:5. Profit ₹12500. B's share?",
+      "options": [
+        "4166",
+        "8750",
+        "3750",
+        "6250"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 12500 = 3750.",
+      "trick": "Share = ratio part/sum.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 15 months. Ratio of cap×time if A stays 4 mo, B 15 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:15",
+        "4:15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:15. A share of profit uses 4/(4+15).",
+      "trick": "Cap×time ratio.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹19000. Largest share?",
+      "options": [
+        "11400",
+        "4750",
+        "2850",
+        "6333"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 19000 = 11400.",
+      "trick": "Apply percentage shares.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "A ₹8000 for 12 mo, B ₹9500 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2474",
+        "3126",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:76000. A = 3126.",
+      "trick": "Cap×months.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹102000. B's share?",
+      "options": [
+        "51000",
+        "68000",
+        "34000",
+        "34000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 102000 = 34000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Five equal partners earn ₹17000. Each gets?",
+      "options": [
+        "4250",
+        "2833",
+        "5666",
+        "3400"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 17000/5 = 3400.",
+      "trick": "Equal split.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "A invests ₹9000, B ₹5400. Profit ₹5600. A's share?",
+      "options": [
+        "3500",
+        "2100",
+        "2800",
+        "9000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 9000:5400. Step 2: A gets 9000/(14400)×5600 = 3500.",
+      "trick": "Profit ∝ capital.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "A: ₹10000 for 12 months, B: ₹23000 for 14 months. Profit ₹8500. A's share?",
+      "options": [
+        "6192",
+        "2308",
+        "4250",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:322000. Step 2: A share = 2308.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Partners capital ratio 2:3:5. Profit ₹13000. B's share?",
+      "options": [
+        "4333",
+        "9100",
+        "3900",
+        "6500"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 13000 = 3900.",
+      "trick": "Share = ratio part/sum.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 16 months. Ratio of cap×time if A stays 4 mo, B 16 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:16",
+        "4:16"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:16. A share of profit uses 4/(4+16).",
+      "trick": "Cap×time ratio.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹20000. Largest share?",
+      "options": [
+        "12000",
+        "5000",
+        "3000",
+        "6666"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 20000 = 12000.",
+      "trick": "Apply percentage shares.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "A ₹8000 for 12 mo, B ₹10000 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2545",
+        "3055",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:80000. A = 3055.",
+      "trick": "Cap×months.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹108000. B's share?",
+      "options": [
+        "54000",
+        "72000",
+        "36000",
+        "36000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 108000 = 36000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Five equal partners earn ₹18000. Each gets?",
+      "options": [
+        "4500",
+        "3000",
+        "6000",
+        "3600"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 18000/5 = 3600.",
+      "trick": "Equal split.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "A invests ₹9500, B ₹5700. Profit ₹5800. A's share?",
+      "options": [
+        "3625",
+        "2175",
+        "2900",
+        "9500"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Ratio 9500:5700. Step 2: A gets 9500/(15200)×5800 = 3625.",
+      "trick": "Profit ∝ capital.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "A: ₹10000 for 12 months, B: ₹24000 for 15 months. Profit ₹8600. A's share?",
+      "options": [
+        "6450",
+        "2150",
+        "4300",
+        "10000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Cap×time ratio 120000:360000. Step 2: A share = 2150.",
+      "trick": "Profit ∝ capital×time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Partners capital ratio 2:3:5. Profit ₹13500. B's share?",
+      "options": [
+        "4500",
+        "9450",
+        "4050",
+        "6750"
+      ],
+      "answer": "C",
+      "solution": "Step 1: B = 3/10 × 13500 = 4050.",
+      "trick": "Share = ratio part/sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "A and B start equal capital. A leaves after 4 months, B after 17 months. Ratio of cap×time if A stays 4 mo, B 17 mo with same initial?",
+      "options": [
+        "1:2",
+        "4:8",
+        "1:17",
+        "4:17"
+      ],
+      "answer": "D",
+      "solution": "Step 1: If equal C, ratio = 4:17. A share of profit uses 4/(4+17).",
+      "trick": "Cap×time ratio.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Three partners share 60%, 25%, 15%. Total profit ₹21000. Largest share?",
+      "options": [
+        "12600",
+        "5250",
+        "3150",
+        "7000"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 60% of 21000 = 12600.",
+      "trick": "Apply percentage shares.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "A ₹8000 for 12 mo, B ₹10500 for 8 mo. Profit ₹5600. A?",
+      "options": [
+        "2613",
+        "2987",
+        "2800",
+        "8000"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Ratio 96000:84000. A = 2987.",
+      "trick": "Cap×months.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Equal capital. A: 8 months, B: 4 months. Annual profit ₹114000. B's share?",
+      "options": [
+        "57000",
+        "76000",
+        "38000",
+        "38000"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Time ratio 8:4 = 2:1... B has 4 mo → B = 4/12 × 114000 = 38000.",
+      "trick": "Share ∝ months if cap equal.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Five equal partners earn ₹19000. Each gets?",
+      "options": [
+        "4750",
+        "3166",
+        "6333",
+        "3800"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 19000/5 = 3800.",
+      "trick": "Equal split.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

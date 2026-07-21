@@ -1,0 +1,402 @@
+[
+  {
+    "id": "clocks-q1",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "What is the angle between the hands of a clock at 3:00?",
+    "options": [
+      "90°",
+      "180°",
+      "60°",
+      "120°"
+    ],
+    "answer": "A",
+    "solution": "|30H − 5.5M| = |30×3 − 0| = 90°.",
+    "trick": "Angle = |30H − 5.5M|.",
+    "type": "Angle at o'clock",
+    "active": true
+  },
+  {
+    "id": "clocks-q2",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "What is the angle between the hands of a clock at 6:00?",
+    "options": [
+      "90°",
+      "180°",
+      "150°",
+      "120°"
+    ],
+    "answer": "B",
+    "solution": "|30×6 − 0| = 180°. The hands point opposite.",
+    "trick": "6:00 = straight line.",
+    "type": "Straight line",
+    "active": true
+  },
+  {
+    "id": "clocks-q3",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "The minute hand moves how many degrees per minute?",
+    "options": [
+      "0.5°",
+      "1°",
+      "6°",
+      "12°"
+    ],
+    "answer": "C",
+    "solution": "360° ÷ 60 min = 6° per minute.",
+    "trick": "Minute hand = 6°/min.",
+    "type": "Hand speed",
+    "active": true
+  },
+  {
+    "id": "clocks-q4",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "The hour hand moves how many degrees per hour?",
+    "options": [
+      "6°",
+      "15°",
+      "60°",
+      "30°"
+    ],
+    "answer": "D",
+    "solution": "360° ÷ 12 hours = 30° per hour.",
+    "trick": "Hour hand = 30°/hour.",
+    "type": "Hand speed",
+    "active": true
+  },
+  {
+    "id": "clocks-q5",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "What is the angle between the hands of a clock at 9:00?",
+    "options": [
+      "90°",
+      "180°",
+      "45°",
+      "120°"
+    ],
+    "answer": "A",
+    "solution": "|30×9 − 0| = 270°; the smaller angle is 360 − 270 = 90°.",
+    "trick": "Take the smaller angle.",
+    "type": "Angle at o'clock",
+    "active": true
+  },
+  {
+    "id": "clocks-q6",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "What is the angle between the hands of a clock at 3:30?",
+    "options": [
+      "90°",
+      "75°",
+      "60°",
+      "82.5°"
+    ],
+    "answer": "B",
+    "solution": "|30×3 − 5.5×30| = |90 − 165| = 75°.",
+    "trick": "Angle = |30H − 5.5M|.",
+    "type": "Angle at H:M",
+    "active": true
+  },
+  {
+    "id": "clocks-q7",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "What is the angle between the hands of a clock at 2:00?",
+    "options": [
+      "30°",
+      "45°",
+      "60°",
+      "90°"
+    ],
+    "answer": "C",
+    "solution": "|30×2 − 0| = 60°.",
+    "trick": "30° per hour gap.",
+    "type": "Angle at o'clock",
+    "active": true
+  },
+  {
+    "id": "clocks-q8",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "The hour hand moves how many degrees per minute?",
+    "options": [
+      "6°",
+      "1°",
+      "5.5°",
+      "0.5°"
+    ],
+    "answer": "D",
+    "solution": "30° per hour ÷ 60 = 0.5° per minute.",
+    "trick": "Hour hand = 0.5°/min.",
+    "type": "Hand speed",
+    "active": true
+  },
+  {
+    "id": "clocks-q9",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "How many times do the hands of a clock overlap in 12 hours?",
+    "options": [
+      "11",
+      "12",
+      "22",
+      "24"
+    ],
+    "answer": "A",
+    "solution": "The hands coincide 11 times every 12 hours (every 720/11 minutes).",
+    "trick": "Overlaps = 11 per 12 h.",
+    "type": "Overlaps",
+    "active": true
+  },
+  {
+    "id": "clocks-q10",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "How many times do the hands of a clock overlap in 24 hours?",
+    "options": [
+      "11",
+      "22",
+      "24",
+      "23"
+    ],
+    "answer": "B",
+    "solution": "11 per 12 hours × 2 = 22.",
+    "trick": "Double the 12-hour count.",
+    "type": "Overlaps",
+    "active": true
+  },
+  {
+    "id": "clocks-q11",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "How many times are the hands of a clock at right angles (90°) in 12 hours?",
+    "options": [
+      "11",
+      "44",
+      "22",
+      "24"
+    ],
+    "answer": "C",
+    "solution": "The hands make 90° twice each hour on average, giving 22 times per 12 hours.",
+    "trick": "Right angles = 22 per 12 h.",
+    "type": "Right angles",
+    "active": true
+  },
+  {
+    "id": "clocks-q12",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "What is the angle between the hands of a clock at 12:00?",
+    "options": [
+      "90°",
+      "180°",
+      "30°",
+      "0°"
+    ],
+    "answer": "D",
+    "solution": "Both hands point at 12, so the angle is 0°.",
+    "trick": "12:00 = hands together.",
+    "type": "Angle at o'clock",
+    "active": true
+  },
+  {
+    "id": "clocks-q13",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "What is the angle between the hands of a clock at 4:00?",
+    "options": [
+      "120°",
+      "90°",
+      "150°",
+      "60°"
+    ],
+    "answer": "A",
+    "solution": "|30×4 − 0| = 120°.",
+    "trick": "30° × hours apart.",
+    "type": "Angle at o'clock",
+    "active": true
+  },
+  {
+    "id": "clocks-q14",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 14,
+    "difficulty": "hard",
+    "question": "What is the angle between the hands of a clock at 4:20?",
+    "options": [
+      "20°",
+      "10°",
+      "0°",
+      "30°"
+    ],
+    "answer": "B",
+    "solution": "|30×4 − 5.5×20| = |120 − 110| = 10°.",
+    "trick": "Angle = |30H − 5.5M|.",
+    "type": "Angle at H:M",
+    "active": true
+  },
+  {
+    "id": "clocks-q15",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "What is the angle between the hands of a clock at 2:30?",
+    "options": [
+      "120°",
+      "95°",
+      "105°",
+      "75°"
+    ],
+    "answer": "C",
+    "solution": "|30×2 − 5.5×30| = |60 − 165| = 105°.",
+    "trick": "Angle = |30H − 5.5M|.",
+    "type": "Angle at H:M",
+    "active": true
+  },
+  {
+    "id": "clocks-q16",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A clock gains 5 minutes every hour. How much does it gain in 12 hours?",
+    "options": [
+      "30 min",
+      "45 min",
+      "50 min",
+      "60 min"
+    ],
+    "answer": "D",
+    "solution": "5 min/hour × 12 = 60 minutes.",
+    "trick": "Scale the drift by time.",
+    "type": "Fast/slow clock",
+    "active": true
+  },
+  {
+    "id": "clocks-q17",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "How many times are the hands of a clock opposite (180°) in 12 hours?",
+    "options": [
+      "11",
+      "22",
+      "12",
+      "6"
+    ],
+    "answer": "A",
+    "solution": "The hands point opposite 11 times every 12 hours.",
+    "trick": "Opposite = 11 per 12 h.",
+    "type": "Opposite",
+    "active": true
+  },
+  {
+    "id": "clocks-q18",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "What is the angle between the hands of a clock at 5:15?",
+    "options": [
+      "75°",
+      "67.5°",
+      "82.5°",
+      "60°"
+    ],
+    "answer": "B",
+    "solution": "|30×5 − 5.5×15| = |150 − 82.5| = 67.5°.",
+    "trick": "Angle = |30H − 5.5M|.",
+    "type": "Angle at H:M",
+    "active": true
+  },
+  {
+    "id": "clocks-q19",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "What is the angle between the hands of a clock at 10:10?",
+    "options": [
+      "105°",
+      "110°",
+      "115°",
+      "120°"
+    ],
+    "answer": "C",
+    "solution": "|30×10 − 5.5×10| = |300 − 55| = 245°; smaller angle = 360 − 245 = 115°.",
+    "trick": "Subtract from 360 if over 180.",
+    "type": "Angle at H:M",
+    "active": true
+  },
+  {
+    "id": "clocks-q20",
+    "topic": "clocks",
+    "category": "logical",
+    "group": "time-logic",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "The minute hand gains on the hour hand by how many degrees per minute?",
+    "options": [
+      "6°",
+      "0.5°",
+      "11°",
+      "5.5°"
+    ],
+    "answer": "D",
+    "solution": "6° − 0.5° = 5.5° per minute.",
+    "trick": "Relative gain = 5.5°/min.",
+    "type": "Relative speed",
+    "active": true
+  }
+]

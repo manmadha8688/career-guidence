@@ -1,0 +1,402 @@
+[
+  {
+    "id": "mirror-water-images-q1",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A mirror image is which kind of flip?",
+    "options": [
+      "Left–right (horizontal) flip",
+      "Top–bottom flip",
+      "No flip",
+      "Diagonal flip"
+    ],
+    "answer": "A",
+    "solution": "A side mirror reflects the figure left to right.",
+    "trick": "Mirror = side flip.",
+    "type": "Concept",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q2",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A water image is which kind of flip?",
+    "options": [
+      "Left–right flip",
+      "Top–bottom (vertical) flip",
+      "No flip",
+      "Diagonal flip"
+    ],
+    "answer": "B",
+    "solution": "Water reflects the figure top to bottom.",
+    "trick": "Water = down flip.",
+    "type": "Concept",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q3",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Does a mirror reverse the order of letters in a word?",
+    "options": [
+      "No",
+      "Only sometimes",
+      "Yes",
+      "Only for vowels"
+    ],
+    "answer": "C",
+    "solution": "A side mirror reverses reading direction, so the letter order flips.",
+    "trick": "Mirror reverses order.",
+    "type": "Word order",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q4",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Is the letter 'A' unchanged in its mirror image?",
+    "options": [
+      "No",
+      "Only in water",
+      "Never",
+      "Yes"
+    ],
+    "answer": "D",
+    "solution": "'A' is symmetric about a vertical line, so its mirror image looks the same.",
+    "trick": "Vertical-symmetry letters survive a mirror.",
+    "type": "Symmetric letters",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q5",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Which of these letters looks the same in a mirror?",
+    "options": [
+      "F",
+      "G",
+      "H",
+      "J"
+    ],
+    "answer": "C",
+    "solution": "'H' is symmetric about a vertical line; F, G, J are not.",
+    "trick": "Check vertical symmetry.",
+    "type": "Symmetric letters",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q6",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Which digit looks the same in a mirror?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "8"
+    ],
+    "answer": "D",
+    "solution": "'8' is vertically symmetric; 2, 3, 5 are not.",
+    "trick": "0, 1, 8 survive a mirror.",
+    "type": "Symmetric digits",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q7",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "The mirror image of the lowercase 'b' looks like which letter?",
+    "options": [
+      "d",
+      "p",
+      "q",
+      "b"
+    ],
+    "answer": "A",
+    "solution": "A left–right flip of 'b' gives 'd'.",
+    "trick": "Mirror flips b↔d.",
+    "type": "Letter reflection",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q8",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "The water image of the lowercase 'b' looks like which letter?",
+    "options": [
+      "d",
+      "p",
+      "q",
+      "b"
+    ],
+    "answer": "B",
+    "solution": "A top–bottom flip of 'b' gives 'p'.",
+    "trick": "Water flips b↔p.",
+    "type": "Letter reflection",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q9",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Which letter is unchanged in its water image?",
+    "options": [
+      "B",
+      "A",
+      "F",
+      "G"
+    ],
+    "answer": "A",
+    "solution": "'B' is symmetric about a horizontal line; A, F, G are not.",
+    "trick": "Horizontal-symmetry set: B C D E H I K O X.",
+    "type": "Symmetric letters",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q10",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "In the mirror image of the word 'CAT', the letters appear in which order?",
+    "options": [
+      "Same: C, A, T",
+      "Reversed: T, A, C",
+      "A, C, T",
+      "C, T, A"
+    ],
+    "answer": "B",
+    "solution": "A mirror reverses the sequence, so it reads T, A, C.",
+    "trick": "Mirror reverses order.",
+    "type": "Word order",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q11",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Does a water image keep the letter order the same?",
+    "options": [
+      "No",
+      "Only for capitals",
+      "Yes",
+      "Only for 3-letter words"
+    ],
+    "answer": "C",
+    "solution": "Water flips each letter top–bottom but keeps the order.",
+    "trick": "Water keeps order; mirror reverses it.",
+    "type": "Word order",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q12",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Which letter looks the same in BOTH a mirror and a water image?",
+    "options": [
+      "A",
+      "B",
+      "E",
+      "H"
+    ],
+    "answer": "D",
+    "solution": "'H' is symmetric about both vertical and horizontal axes. A is only vertical, B and E only horizontal.",
+    "trick": "H sits in both symmetry sets.",
+    "type": "Double symmetry",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q13",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 13,
+    "difficulty": "hard",
+    "question": "Which digit looks the same in its water image?",
+    "options": [
+      "2",
+      "5",
+      "4",
+      "8"
+    ],
+    "answer": "D",
+    "solution": "'8' is symmetric about a horizontal line; 2, 5, 4 are not.",
+    "trick": "0, 1, 3, 8 survive water.",
+    "type": "Symmetric digits",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q14",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "How does the word 'MOM' appear in a mirror?",
+    "options": [
+      "Exactly the same (MOM)",
+      "Reversed to a different word",
+      "Upside down",
+      "Unreadable"
+    ],
+    "answer": "A",
+    "solution": "M and O are vertically symmetric and MOM is a palindrome, so it reads the same.",
+    "trick": "Symmetric palindrome = unchanged.",
+    "type": "Word reflection",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q15",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Which word reads the same in a mirror image?",
+    "options": [
+      "CAT",
+      "MUM",
+      "DOG",
+      "PEN"
+    ],
+    "answer": "B",
+    "solution": "M and U are vertically symmetric and MUM is a palindrome, so its mirror image is identical.",
+    "trick": "Need symmetric letters + palindrome.",
+    "type": "Word reflection",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q16",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Which letter is unchanged in its water image?",
+    "options": [
+      "F",
+      "J",
+      "E",
+      "G"
+    ],
+    "answer": "C",
+    "solution": "'E' is symmetric about a horizontal line; F, J, G are not.",
+    "trick": "Horizontal-symmetry set includes E.",
+    "type": "Symmetric letters",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q17",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 17,
+    "difficulty": "medium",
+    "question": "A mirror image is a reflection about which line?",
+    "options": [
+      "A vertical line",
+      "A horizontal line",
+      "A diagonal line",
+      "No line"
+    ],
+    "answer": "A",
+    "solution": "A side mirror reflects about a vertical axis.",
+    "trick": "Mirror ↔ vertical axis.",
+    "type": "Concept",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q18",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 18,
+    "difficulty": "medium",
+    "question": "A water image is a reflection about which line?",
+    "options": [
+      "A vertical line",
+      "A horizontal line",
+      "A diagonal line",
+      "No line"
+    ],
+    "answer": "B",
+    "solution": "Water reflects about a horizontal axis.",
+    "trick": "Water ↔ horizontal axis.",
+    "type": "Concept",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q19",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "The mirror image of the lowercase 'p' looks like which letter?",
+    "options": [
+      "b",
+      "d",
+      "q",
+      "p"
+    ],
+    "answer": "C",
+    "solution": "A left–right flip of 'p' gives 'q'.",
+    "trick": "Mirror flips p↔q.",
+    "type": "Letter reflection",
+    "active": true
+  },
+  {
+    "id": "mirror-water-images-q20",
+    "topic": "mirror-water-images",
+    "category": "logical",
+    "group": "visual",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Which of these letters is NOT the same in a mirror image?",
+    "options": [
+      "A",
+      "M",
+      "T",
+      "R"
+    ],
+    "answer": "D",
+    "solution": "A, M, T are vertically symmetric; 'R' is not, so it changes in a mirror.",
+    "trick": "R lacks vertical symmetry.",
+    "type": "Symmetric letters",
+    "active": true
+  }
+]

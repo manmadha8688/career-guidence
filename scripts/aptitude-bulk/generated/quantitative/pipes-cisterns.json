@@ -1,0 +1,1207 @@
+{
+  "topic": "pipes-cisterns",
+  "category": "quantitative",
+  "group": "work-efficiency",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Pipe fills tank in 10 h, drain empties in 15 h. Both open, fill time?",
+      "options": [
+        "30.0",
+        "25",
+        "10",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/10−1/15. Time = 30.0 h.",
+      "trick": "Net inflow rate.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Two pipes fill in 6 h and 8 h. Together?",
+      "options": [
+        "14",
+        "3.4",
+        "8",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/6+1/8 → 3.4 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Pipe fills tank in 12 h. Half tank?",
+      "options": [
+        "12",
+        "24",
+        "6.0",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 6.0 h.",
+      "trick": "Half work, half time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Inlets 20h & 30h, outlet 60h. All open?",
+      "options": [
+        "50",
+        "60",
+        "30",
+        "15.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 15.0 h to fill.",
+      "trick": "In minus out.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Tank 100 L, pipe 5 L/min. Minutes to fill?",
+      "options": [
+        "20",
+        "5",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/5 = 20 min.",
+      "trick": "Volume/rate.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Tap fills in 8 h, leak empties in 24 h. Effective fill?",
+      "options": [
+        "32",
+        "12.0",
+        "8",
+        "24"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 12.0 h.",
+      "trick": "Fill minus leak.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Pipe A: 12 min, B: 18 min. Together fill?",
+      "options": [
+        "30",
+        "15",
+        "7",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 7 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Pipe fills in 6 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "6",
+        "0.17",
+        "0.33"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/6 × 2 h = 0.33.",
+      "trick": "Rate × time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Pipe fills tank in 11 h, drain empties in 16 h. Both open, fill time?",
+      "options": [
+        "35.2",
+        "27",
+        "11",
+        "16"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/11−1/16. Time = 35.2 h.",
+      "trick": "Net inflow rate.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Two pipes fill in 7 h and 9 h. Together?",
+      "options": [
+        "16",
+        "3.9",
+        "9",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/7+1/9 → 3.9 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Pipe fills tank in 13 h. Half tank?",
+      "options": [
+        "13",
+        "26",
+        "6.5",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 6.5 h.",
+      "trick": "Half work, half time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Inlets 20h & 31h, outlet 60h. All open?",
+      "options": [
+        "51",
+        "60",
+        "30",
+        "15.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 15.2 h to fill.",
+      "trick": "In minus out.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Tank 100 L, pipe 6 L/min. Minutes to fill?",
+      "options": [
+        "17",
+        "6",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/6 = 17 min.",
+      "trick": "Volume/rate.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Tap fills in 9 h, leak empties in 25 h. Effective fill?",
+      "options": [
+        "34",
+        "14.1",
+        "9",
+        "25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 14.1 h.",
+      "trick": "Fill minus leak.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Pipe A: 12 min, B: 19 min. Together fill?",
+      "options": [
+        "31",
+        "15",
+        "7",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 7 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Pipe fills in 7 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "7",
+        "0.14",
+        "0.29"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/7 × 2 h = 0.29.",
+      "trick": "Rate × time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Pipe fills tank in 12 h, drain empties in 17 h. Both open, fill time?",
+      "options": [
+        "40.8",
+        "29",
+        "12",
+        "17"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/12−1/17. Time = 40.8 h.",
+      "trick": "Net inflow rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Two pipes fill in 8 h and 10 h. Together?",
+      "options": [
+        "18",
+        "4.4",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/8+1/10 → 4.4 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Pipe fills tank in 14 h. Half tank?",
+      "options": [
+        "14",
+        "28",
+        "7.0",
+        "4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 7.0 h.",
+      "trick": "Half work, half time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Inlets 20h & 32h, outlet 60h. All open?",
+      "options": [
+        "52",
+        "60",
+        "30",
+        "15.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 15.5 h to fill.",
+      "trick": "In minus out.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Tank 100 L, pipe 7 L/min. Minutes to fill?",
+      "options": [
+        "14",
+        "7",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/7 = 14 min.",
+      "trick": "Volume/rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Tap fills in 10 h, leak empties in 26 h. Effective fill?",
+      "options": [
+        "36",
+        "16.2",
+        "10",
+        "26"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 16.2 h.",
+      "trick": "Fill minus leak.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Pipe A: 12 min, B: 20 min. Together fill?",
+      "options": [
+        "32",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Pipe fills in 8 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "8",
+        "0.12",
+        "0.25"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/8 × 2 h = 0.25.",
+      "trick": "Rate × time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Pipe fills tank in 13 h, drain empties in 18 h. Both open, fill time?",
+      "options": [
+        "46.8",
+        "31",
+        "13",
+        "18"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/13−1/18. Time = 46.8 h.",
+      "trick": "Net inflow rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Two pipes fill in 9 h and 11 h. Together?",
+      "options": [
+        "20",
+        "5.0",
+        "11",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/9+1/11 → 5.0 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Pipe fills tank in 15 h. Half tank?",
+      "options": [
+        "15",
+        "30",
+        "7.5",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 7.5 h.",
+      "trick": "Half work, half time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Inlets 20h & 33h, outlet 60h. All open?",
+      "options": [
+        "53",
+        "60",
+        "30",
+        "15.7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 15.7 h to fill.",
+      "trick": "In minus out.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Tank 100 L, pipe 8 L/min. Minutes to fill?",
+      "options": [
+        "12",
+        "8",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/8 = 12 min.",
+      "trick": "Volume/rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Tap fills in 11 h, leak empties in 27 h. Effective fill?",
+      "options": [
+        "38",
+        "18.6",
+        "11",
+        "27"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 18.6 h.",
+      "trick": "Fill minus leak.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Pipe A: 12 min, B: 21 min. Together fill?",
+      "options": [
+        "33",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Pipe fills in 9 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "9",
+        "0.11",
+        "0.22"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/9 × 2 h = 0.22.",
+      "trick": "Rate × time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Pipe fills tank in 14 h, drain empties in 19 h. Both open, fill time?",
+      "options": [
+        "53.2",
+        "33",
+        "14",
+        "19"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/14−1/19. Time = 53.2 h.",
+      "trick": "Net inflow rate.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Two pipes fill in 10 h and 12 h. Together?",
+      "options": [
+        "22",
+        "5.5",
+        "12",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/10+1/12 → 5.5 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Pipe fills tank in 16 h. Half tank?",
+      "options": [
+        "16",
+        "32",
+        "8.0",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 8.0 h.",
+      "trick": "Half work, half time.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Inlets 20h & 34h, outlet 60h. All open?",
+      "options": [
+        "54",
+        "60",
+        "30",
+        "15.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 15.9 h to fill.",
+      "trick": "In minus out.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Tank 100 L, pipe 9 L/min. Minutes to fill?",
+      "options": [
+        "11",
+        "9",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/9 = 11 min.",
+      "trick": "Volume/rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Tap fills in 12 h, leak empties in 28 h. Effective fill?",
+      "options": [
+        "40",
+        "21.0",
+        "12",
+        "28"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 21.0 h.",
+      "trick": "Fill minus leak.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Pipe A: 12 min, B: 22 min. Together fill?",
+      "options": [
+        "34",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Pipe fills in 10 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "10",
+        "0.1",
+        "0.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/10 × 2 h = 0.2.",
+      "trick": "Rate × time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 15 h, drain empties in 20 h. Both open, fill time?",
+      "options": [
+        "60.0",
+        "35",
+        "15",
+        "20"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/15−1/20. Time = 60.0 h.",
+      "trick": "Net inflow rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Two pipes fill in 11 h and 13 h. Together?",
+      "options": [
+        "24",
+        "6.0",
+        "13",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/11+1/13 → 6.0 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 17 h. Half tank?",
+      "options": [
+        "17",
+        "34",
+        "8.5",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 8.5 h.",
+      "trick": "Half work, half time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Inlets 20h & 35h, outlet 60h. All open?",
+      "options": [
+        "55",
+        "60",
+        "30",
+        "16.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 16.2 h to fill.",
+      "trick": "In minus out.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Tank 100 L, pipe 10 L/min. Minutes to fill?",
+      "options": [
+        "10",
+        "10",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/10 = 10 min.",
+      "trick": "Volume/rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Tap fills in 13 h, leak empties in 29 h. Effective fill?",
+      "options": [
+        "42",
+        "23.6",
+        "13",
+        "29"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 23.6 h.",
+      "trick": "Fill minus leak.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Pipe A: 12 min, B: 23 min. Together fill?",
+      "options": [
+        "35",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Pipe fills in 11 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "11",
+        "0.09",
+        "0.18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/11 × 2 h = 0.18.",
+      "trick": "Rate × time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 16 h, drain empties in 21 h. Both open, fill time?",
+      "options": [
+        "67.2",
+        "37",
+        "16",
+        "21"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/16−1/21. Time = 67.2 h.",
+      "trick": "Net inflow rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Two pipes fill in 12 h and 14 h. Together?",
+      "options": [
+        "26",
+        "6.5",
+        "14",
+        "12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/12+1/14 → 6.5 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 18 h. Half tank?",
+      "options": [
+        "18",
+        "36",
+        "9.0",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 9.0 h.",
+      "trick": "Half work, half time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Inlets 20h & 36h, outlet 60h. All open?",
+      "options": [
+        "56",
+        "60",
+        "30",
+        "16.4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 16.4 h to fill.",
+      "trick": "In minus out.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Tank 100 L, pipe 11 L/min. Minutes to fill?",
+      "options": [
+        "9",
+        "11",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/11 = 9 min.",
+      "trick": "Volume/rate.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Tap fills in 14 h, leak empties in 30 h. Effective fill?",
+      "options": [
+        "44",
+        "26.3",
+        "14",
+        "30"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 26.3 h.",
+      "trick": "Fill minus leak.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Pipe A: 12 min, B: 24 min. Together fill?",
+      "options": [
+        "36",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Pipe fills in 12 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "12",
+        "0.08",
+        "0.17"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/12 × 2 h = 0.17.",
+      "trick": "Rate × time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 17 h, drain empties in 22 h. Both open, fill time?",
+      "options": [
+        "74.8",
+        "39",
+        "17",
+        "22"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/17−1/22. Time = 74.8 h.",
+      "trick": "Net inflow rate.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Two pipes fill in 13 h and 15 h. Together?",
+      "options": [
+        "28",
+        "7.0",
+        "15",
+        "13"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/13+1/15 → 7.0 h.",
+      "trick": "Parallel fill rates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 19 h. Half tank?",
+      "options": [
+        "19",
+        "38",
+        "9.5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 9.5 h.",
+      "trick": "Half work, half time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Inlets 20h & 37h, outlet 60h. All open?",
+      "options": [
+        "57",
+        "60",
+        "30",
+        "16.6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 16.6 h to fill.",
+      "trick": "In minus out.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Tank 100 L, pipe 12 L/min. Minutes to fill?",
+      "options": [
+        "8",
+        "12",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/12 = 8 min.",
+      "trick": "Volume/rate.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Tap fills in 15 h, leak empties in 31 h. Effective fill?",
+      "options": [
+        "46",
+        "29.1",
+        "15",
+        "31"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 29.1 h.",
+      "trick": "Fill minus leak.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Pipe A: 12 min, B: 25 min. Together fill?",
+      "options": [
+        "37",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Pipe fills in 13 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "13",
+        "0.08",
+        "0.15"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/13 × 2 h = 0.15.",
+      "trick": "Rate × time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 18 h, drain empties in 23 h. Both open, fill time?",
+      "options": [
+        "82.8",
+        "41",
+        "18",
+        "23"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/18−1/23. Time = 82.8 h.",
+      "trick": "Net inflow rate.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Two pipes fill in 14 h and 16 h. Together?",
+      "options": [
+        "30",
+        "7.5",
+        "16",
+        "14"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/14+1/16 → 7.5 h.",
+      "trick": "Parallel fill rates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 20 h. Half tank?",
+      "options": [
+        "20",
+        "40",
+        "10.0",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 10.0 h.",
+      "trick": "Half work, half time.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Inlets 20h & 38h, outlet 60h. All open?",
+      "options": [
+        "58",
+        "60",
+        "30",
+        "16.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 16.8 h to fill.",
+      "trick": "In minus out.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Tank 100 L, pipe 13 L/min. Minutes to fill?",
+      "options": [
+        "8",
+        "13",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/13 = 8 min.",
+      "trick": "Volume/rate.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Tap fills in 16 h, leak empties in 32 h. Effective fill?",
+      "options": [
+        "48",
+        "32.0",
+        "16",
+        "32"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 32.0 h.",
+      "trick": "Fill minus leak.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Pipe A: 12 min, B: 26 min. Together fill?",
+      "options": [
+        "38",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Pipe fills in 14 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "14",
+        "0.07",
+        "0.14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/14 × 2 h = 0.14.",
+      "trick": "Rate × time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 19 h, drain empties in 24 h. Both open, fill time?",
+      "options": [
+        "91.2",
+        "43",
+        "19",
+        "24"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Net rate 1/19−1/24. Time = 91.2 h.",
+      "trick": "Net inflow rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Two pipes fill in 15 h and 17 h. Together?",
+      "options": [
+        "32",
+        "8.0",
+        "17",
+        "15"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1/15+1/17 → 8.0 h.",
+      "trick": "Parallel fill rates.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Pipe fills tank in 21 h. Half tank?",
+      "options": [
+        "21",
+        "42",
+        "10.5",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Half time = 10.5 h.",
+      "trick": "Half work, half time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Inlets 20h & 39h, outlet 60h. All open?",
+      "options": [
+        "59",
+        "60",
+        "30",
+        "17.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Net rate → 17.0 h to fill.",
+      "trick": "In minus out.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Tank 100 L, pipe 14 L/min. Minutes to fill?",
+      "options": [
+        "7",
+        "14",
+        "100",
+        "50"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 100/14 = 7 min.",
+      "trick": "Volume/rate.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Tap fills in 17 h, leak empties in 33 h. Effective fill?",
+      "options": [
+        "50",
+        "35.1",
+        "17",
+        "33"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Net = 35.1 h.",
+      "trick": "Fill minus leak.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Pipe A: 12 min, B: 27 min. Together fill?",
+      "options": [
+        "39",
+        "15",
+        "8",
+        "30"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 minutes.",
+      "trick": "Harmonic mean time.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Pipe fills in 15 h. What fraction filled in 2 h?",
+      "options": [
+        "2",
+        "15",
+        "0.07",
+        "0.13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Rate 1/15 × 2 h = 0.13.",
+      "trick": "Rate × time.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

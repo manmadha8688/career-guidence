@@ -27,11 +27,12 @@ const LANG_LABELS = { python: 'Python', java: 'Java', c: 'C', cpp: 'C++' }
 const VARIANTS = ['brute', 'normal', 'optimized']
 const VARIANT_LABELS = { brute: 'Brute Force', normal: 'Cleaner Way', optimized: 'Optimal' }
 const VARIANT_COLORS = { brute: '#F59E0B', normal: '#60A5FA', optimized: '#4ADE80' }
-const MODAL_TABS = ['Basic', 'Content', 'Learning', 'Solutions']
+const MODAL_TABS = ['Basic', 'Content', 'Learning', 'Solutions', 'Judge']
 const LEVEL_COLORS = { BEGINNER: '#4ADE80', INTERMEDIATE: '#F59E0B', ADVANCED: '#C084FC' }
 
 const emptyVariant = () => ({ logic: '', timeComplexity: 'O(n)', spaceComplexity: 'O(1)', code: { c: '', python: '', java: '', cpp: '' } })
 const emptyExample = () => ({ input: '', output: '', explanation: '' })
+const emptyTest = () => ({ input: '', expectedOutput: '', sample: true })
 const emptyForm = () => ({
   track: 'START_CODING', topics: '', category: '', level: 'BEGINNER',
   title: '', description: '', inputFormat: '', outputFormat: '',
@@ -39,6 +40,7 @@ const emptyForm = () => ({
   examples: [emptyExample(), emptyExample()],
   hints: '', approach: '', whatYouLearn: '',
   solutions: { brute: emptyVariant(), normal: emptyVariant(), optimized: emptyVariant() },
+  testCases: [],
   explanation: '', tip: '', orderIndex: 0,
 })
 
@@ -72,6 +74,9 @@ function ProblemModal({ problem, onClose, onSave }) {
         normal:    problem.solutions?.normal    || emptyVariant(),
         optimized: problem.solutions?.optimized || emptyVariant(),
       },
+      testCases: (problem.testCases || []).map(t => ({
+        input: t.input || '', expectedOutput: t.expectedOutput || '', sample: !!t.sample,
+      })),
       explanation: problem.explanation || '',
       tip: problem.tip || '',
       orderIndex: problem.orderIndex || 0,
@@ -105,6 +110,11 @@ function ProblemModal({ problem, onClose, onSave }) {
       }
     }))
 
+  const setTest = (i, field, val) =>
+    setForm(f => ({ ...f, testCases: f.testCases.map((t, idx) => idx === i ? { ...t, [field]: val } : t) }))
+  const addTest = () => setForm(f => ({ ...f, testCases: [...f.testCases, emptyTest()] }))
+  const removeTest = (i) => setForm(f => ({ ...f, testCases: f.testCases.filter((_, idx) => idx !== i) }))
+
   const handleSubmit = async e => {
     e.preventDefault()
     if (!form.title.trim()) { toast.error('Title is required'); return }
@@ -123,6 +133,9 @@ function ProblemModal({ problem, onClose, onSave }) {
         whatYouLearn: textToList(form.whatYouLearn),
         examples:     form.examples.filter(e => e.input.trim() || e.output.trim() || e.explanation.trim()),
         solutions,
+        testCases:    form.testCases
+          .filter(t => t.input.trim() || t.expectedOutput.trim())
+          .map(t => ({ input: t.input, expectedOutput: t.expectedOutput, sample: !!t.sample })),
         orderIndex:   parseInt(form.orderIndex) || 0,
       }
       problem ? await updateProblemQ(problem.id, payload) : await createProblem(payload)
@@ -341,6 +354,49 @@ function ProblemModal({ problem, onClose, onSave }) {
                   placeholder={`${LANG_LABELS[activeLang]} code for the ${VARIANT_LABELS[activeVariant]} solution...`}
                 />
               </div>
+            </>
+          )}
+
+          {activeTab === 'Judge' && (
+            <>
+              <SectionLabel>Test Cases</SectionLabel>
+              <p className="form-label" style={{ opacity: 0.75, lineHeight: 1.5, marginBottom: '0.75rem' }}>
+                Add test cases to turn this into a write-and-run problem with an in-page code editor.
+                Each case sends <strong>Input</strong> to the program via stdin; its printed output is
+                compared (trimmed) to <strong>Expected</strong>. Tick a few as <strong>Sample</strong>
+                (visible to students, used by Run) and leave the rest hidden (used by Submit).
+              </p>
+
+              {form.testCases.map((t, i) => (
+                <div key={i} className="admin-example-card">
+                  <div className="admin-example-card__head">
+                    <span className="admin-example-card__title">Test {i + 1}</span>
+                    <label className="form-label" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', margin: 0, cursor: 'pointer' }}>
+                      <input type="checkbox" checked={t.sample} onChange={e => setTest(i, 'sample', e.target.checked)} />
+                      Sample (visible)
+                    </label>
+                    <button type="button" className="btn btn-ghost btn-sm" onClick={() => removeTest(i)} aria-label={`Remove test case ${i + 1}`}>
+                      <Trash2 size={13} />
+                    </button>
+                  </div>
+                  <div className="grid-2">
+                    <div className="form-group">
+                      <label className="form-label">Input (stdin)</label>
+                      <textarea className="form-input admin-textarea-mono" rows={3} value={t.input} onChange={e => setTest(i, 'input', e.target.value)} />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Expected Output</label>
+                      <textarea className="form-input admin-textarea-mono" rows={3} value={t.expectedOutput} onChange={e => setTest(i, 'expectedOutput', e.target.value)} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {form.testCases.length === 0 && (
+                <p className="form-label" style={{ opacity: 0.6 }}>No test cases yet — this problem stays read-and-learn until you add some.</p>
+              )}
+              <button type="button" className="btn btn-ghost btn-sm admin-add-example-btn" onClick={addTest}>
+                <Plus size={13} /> Add Test Case
+              </button>
             </>
           )}
 

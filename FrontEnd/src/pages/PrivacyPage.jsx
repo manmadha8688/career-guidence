@@ -45,7 +45,7 @@ export default function PrivacyPage() {
             <li><strong>Guest sessions</strong> — a random device identifier so guest progress survives between visits. No personal details.</li>
             <li><strong>Content you submit</strong> — walk-in posts, feedback, and issue reports.</li>
           </ul>
-          <p>We do <strong>not</strong> collect payment details (the platform is free), precise location, or your contacts.</p>
+          <p>We do <strong>not</strong> collect payment details, precise location, or your contacts.</p>
         </div>
       </div>
 

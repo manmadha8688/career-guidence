@@ -1,0 +1,1207 @@
+{
+  "topic": "divisibility-rules",
+  "category": "quantitative",
+  "group": "number-basics",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Is 12361 divisible by 2?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 1. Step 2: Odd → No.",
+      "trick": "Check last digit.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Is 1296 divisible by 3?",
+      "options": [
+        "No",
+        "Yes",
+        "Only if even",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 18. Step 2: 18 mod 3 = 0. Answer: Yes.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Is 1263 divisible by 5?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 3. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Is 123480 divisible by 9?",
+      "options": [
+        "No",
+        "Maybe",
+        "Cannot say",
+        "Yes"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 18. Step 2: 18 mod 9 = 0. Answer: Yes.",
+      "trick": "Digit sum mod 9.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Is 1259 divisible by 11?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Alternating sum = -5. Step 2: -5 mod 11 = 6. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Is 1236 divisible by 4?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Last two digits 36. Step 2: 36 mod 4 = 0. Answer: Yes.",
+      "trick": "Last 2 digits mod 4.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Is 2027 divisible by 8?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last three digits 27. Step 2: 27 mod 8 = 3. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find the smallest 4-digit number divisible by 12.",
+      "options": [
+        "1020",
+        "996",
+        "996",
+        "1008"
+      ],
+      "answer": "D",
+      "solution": "Step 1: 1000 mod 12 = 4. Step 2: Next multiple = 1008.",
+      "trick": "Round up to multiple of 12.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "What is the remainder when 432 is divided by 6?",
+      "options": [
+        "0",
+        "0",
+        "1",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 432 = 6×72 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "A number has prime factorisation 2×3×5×7. How many divisors does it have?",
+      "options": [
+        "8",
+        "16",
+        "12",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 16 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Is 12482 divisible by 2?",
+      "options": [
+        "No",
+        "Maybe",
+        "Yes",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 2. Step 2: Even → Yes.",
+      "trick": "Check last digit.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Is 1363 divisible by 3?",
+      "options": [
+        "Yes",
+        "Only if even",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 13. Step 2: 13 mod 3 = 1. Answer: No.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Is 1328 divisible by 5?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 8. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Is 124491 divisible by 9?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 21. Step 2: 21 mod 9 = 3. Answer: No.",
+      "trick": "Digit sum mod 9.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Is 1346 divisible by 11?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Alternating sum = -4. Step 2: -4 mod 11 = 7. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Is 1436 divisible by 4?",
+      "options": [
+        "No",
+        "Maybe",
+        "Cannot say",
+        "Yes"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last two digits 36. Step 2: 36 mod 4 = 0. Answer: Yes.",
+      "trick": "Last 2 digits mod 4.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Is 2287 divisible by 8?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last three digits 287. Step 2: 287 mod 8 = 7. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1055,
+      "difficulty": "hard",
+      "question": "Is 10220 divisible by 11?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating sum = 1. Step 2: 1 mod 11 = 1. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "What is the remainder when 468 is divided by 6?",
+      "options": [
+        "0",
+        "1",
+        "0",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 468 = 6×78 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "A number has prime factorisation 2×3×5×8. How many divisors does it have?",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 20 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Is 12603 divisible by 2?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 3. Step 2: Odd → No.",
+      "trick": "Check last digit.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Is 1430 divisible by 3?",
+      "options": [
+        "Yes",
+        "No",
+        "Only if even",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 8. Step 2: 8 mod 3 = 2. Answer: No.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Is 1393 divisible by 5?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 3. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Is 125502 divisible by 9?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 15. Step 2: 15 mod 9 = 6. Answer: No.",
+      "trick": "Digit sum mod 9.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Is 1433 divisible by 11?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Alternating sum = -3. Step 2: -3 mod 11 = 8. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Is 1636 divisible by 4?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Last two digits 36. Step 2: 36 mod 4 = 0. Answer: Yes.",
+      "trick": "Last 2 digits mod 4.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Is 2547 divisible by 8?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last three digits 547. Step 2: 547 mod 8 = 3. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1065,
+      "difficulty": "hard",
+      "question": "Is 10307 divisible by 11?",
+      "options": [
+        "No",
+        "Maybe",
+        "Cannot say",
+        "Yes"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Alternating sum = 11. Step 2: 11 mod 11 = 0. Answer: Yes.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "What is the remainder when 504 is divided by 6?",
+      "options": [
+        "0",
+        "0",
+        "1",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 504 = 6×84 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "A number has prime factorisation 2×3×5×9. How many divisors does it have?",
+      "options": [
+        "8",
+        "16",
+        "12",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 16 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Is 12724 divisible by 2?",
+      "options": [
+        "No",
+        "Maybe",
+        "Yes",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 4. Step 2: Even → Yes.",
+      "trick": "Check last digit.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Is 1497 divisible by 3?",
+      "options": [
+        "No",
+        "Only if even",
+        "Cannot say",
+        "Yes"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 21. Step 2: 21 mod 3 = 0. Answer: Yes.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Is 1458 divisible by 5?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 8. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Is 126513 divisible by 9?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 18. Step 2: 18 mod 9 = 0. Answer: Yes.",
+      "trick": "Digit sum mod 9.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Is 1520 divisible by 11?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Alternating sum = -2. Step 2: -2 mod 11 = 9. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Is 1836 divisible by 4?",
+      "options": [
+        "No",
+        "Maybe",
+        "Cannot say",
+        "Yes"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last two digits 36. Step 2: 36 mod 4 = 0. Answer: Yes.",
+      "trick": "Last 2 digits mod 4.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Is 2807 divisible by 8?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last three digits 807. Step 2: 807 mod 8 = 7. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1075,
+      "difficulty": "hard",
+      "question": "Is 10394 divisible by 11?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating sum = -1. Step 2: -1 mod 11 = 10. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "What is the remainder when 540 is divided by 6?",
+      "options": [
+        "0",
+        "1",
+        "0",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 540 = 6×90 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "A number has prime factorisation 2×3×5×10. How many divisors does it have?",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 18 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Is 12845 divisible by 2?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 5. Step 2: Odd → No.",
+      "trick": "Check last digit.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Is 1564 divisible by 3?",
+      "options": [
+        "Yes",
+        "No",
+        "Only if even",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 16. Step 2: 16 mod 3 = 1. Answer: No.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Is 1523 divisible by 5?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 3. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Is 127524 divisible by 9?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 21. Step 2: 21 mod 9 = 3. Answer: No.",
+      "trick": "Digit sum mod 9.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Is 1607 divisible by 11?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Alternating sum = -12. Step 2: -12 mod 11 = 10. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1083,
+      "difficulty": "hard",
+      "question": "Is 8153 divisible by 5?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Last digit 3. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Is 3067 divisible by 8?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last three digits 67. Step 2: 67 mod 8 = 3. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1085,
+      "difficulty": "hard",
+      "question": "Is 10481 divisible by 11?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Alternating sum = -2. Step 2: -2 mod 11 = 9. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "What is the remainder when 576 is divided by 6?",
+      "options": [
+        "0",
+        "0",
+        "1",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 576 = 6×96 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "A number has prime factorisation 2×3×5×11. How many divisors does it have?",
+      "options": [
+        "8",
+        "16",
+        "12",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 16 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Is 12966 divisible by 2?",
+      "options": [
+        "No",
+        "Maybe",
+        "Yes",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 6. Step 2: Even → Yes.",
+      "trick": "Check last digit.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Is 1631 divisible by 3?",
+      "options": [
+        "Yes",
+        "Only if even",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 11. Step 2: 11 mod 3 = 2. Answer: No.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Is 1588 divisible by 5?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 8. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Is 128535 divisible by 9?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 24. Step 2: 24 mod 9 = 6. Answer: No.",
+      "trick": "Digit sum mod 9.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Is 1694 divisible by 11?",
+      "options": [
+        "No",
+        "Maybe",
+        "Yes",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Alternating sum = 0. Step 2: 0 mod 11 = 0. Answer: Yes.",
+      "trick": "11-rule: alt sum.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1093,
+      "difficulty": "hard",
+      "question": "Is 8218 divisible by 5?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last digit 8. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Is 3327 divisible by 8?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last three digits 327. Step 2: 327 mod 8 = 7. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1095,
+      "difficulty": "hard",
+      "question": "Is 10568 divisible by 11?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating sum = 8. Step 2: 8 mod 11 = 8. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "What is the remainder when 612 is divided by 6?",
+      "options": [
+        "0",
+        "1",
+        "0",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 612 = 6×102 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "A number has prime factorisation 2×3×5×12. How many divisors does it have?",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 24 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Is 13087 divisible by 2?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 7. Step 2: Odd → No.",
+      "trick": "Check last digit.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Is 1698 divisible by 3?",
+      "options": [
+        "No",
+        "Yes",
+        "Only if even",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 24. Step 2: 24 mod 3 = 0. Answer: Yes.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Is 1653 divisible by 5?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 3. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Is 129546 divisible by 9?",
+      "options": [
+        "No",
+        "Maybe",
+        "Cannot say",
+        "Yes"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 27. Step 2: 27 mod 9 = 0. Answer: Yes.",
+      "trick": "Digit sum mod 9.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Is 1781 divisible by 11?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Alternating sum = 1. Step 2: 1 mod 11 = 1. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1103,
+      "difficulty": "hard",
+      "question": "Is 8283 divisible by 5?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Last digit 3. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Is 3587 divisible by 8?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last three digits 587. Step 2: 587 mod 8 = 3. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1105,
+      "difficulty": "hard",
+      "question": "Is 10655 divisible by 11?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Alternating sum = 7. Step 2: 7 mod 11 = 7. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "What is the remainder when 648 is divided by 6?",
+      "options": [
+        "0",
+        "0",
+        "1",
+        "5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 648 = 6×108 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "A number has prime factorisation 2×3×5×13. How many divisors does it have?",
+      "options": [
+        "8",
+        "16",
+        "12",
+        "16"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 16 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Is 13208 divisible by 2?",
+      "options": [
+        "No",
+        "Maybe",
+        "Yes",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Last digit 8. Step 2: Even → Yes.",
+      "trick": "Check last digit.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Is 1765 divisible by 3?",
+      "options": [
+        "Yes",
+        "Only if even",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Digit sum = 19. Step 2: 19 mod 3 = 1. Answer: No.",
+      "trick": "Digit sum divisible by 3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Is 1718 divisible by 5?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last digit 8. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Is 130557 divisible by 9?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Digit sum = 21. Step 2: 21 mod 9 = 3. Answer: No.",
+      "trick": "Digit sum mod 9.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Is 1868 divisible by 11?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "No",
+        "Cannot say"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Alternating sum = -9. Step 2: -9 mod 11 = 2. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1113,
+      "difficulty": "hard",
+      "question": "Is 8348 divisible by 5?",
+      "options": [
+        "Yes",
+        "Maybe",
+        "Cannot say",
+        "No"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Last digit 8. Divisible by 5 → No.",
+      "trick": "Ends in 0 or 5.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Is 3847 divisible by 8?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Last three digits 847. Step 2: 847 mod 8 = 7. Answer: No.",
+      "trick": "Last 3 digits mod 8.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "Is 10742 divisible by 11?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Cannot say"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Alternating sum = 6. Step 2: 6 mod 11 = 6. Answer: No.",
+      "trick": "11-rule: alt sum.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "What is the remainder when 684 is divided by 6?",
+      "options": [
+        "0",
+        "1",
+        "0",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 684 = 6×114 + 0. Remainder = 0.",
+      "trick": "Check divisibility by 2 and 3.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "A number has prime factorisation 2×3×5×14. How many divisors does it have?",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "24"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Each prime power is 1. Step 2: (1+1)^4 = 24 divisors.",
+      "trick": "Product of (exp+1).",
+      "type": "Real-world disguise"
+    }
+  ]
+}

@@ -1,0 +1,1207 @@
+{
+  "topic": "decimal-fractions",
+  "category": "quantitative",
+  "group": "number-basics",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Convert 3/8 to a decimal (3 decimal places).",
+      "options": [
+        "0.375",
+        "0.385",
+        "0.365",
+        "0.3333333333333333"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 3 ÷ 8 = 0.3750. Step 2: Rounded = 0.375.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Calculate 1.25 × 0.5.",
+      "options": [
+        "1.75",
+        "0.62",
+        "2.5",
+        "6.25"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.25 × 0.5 = 0.62.",
+      "trick": "Multiply decimals.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Calculate 2.4 ÷ 0.6.",
+      "options": [
+        "1.4",
+        "3.0",
+        "4.0",
+        "1.8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 2.4/0.6 = 4.0.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Which is largest: 0.774, 0.724, 0.794, 0.674?",
+      "options": [
+        "0.774",
+        "0.724",
+        "0.674",
+        "0.794"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.794.",
+      "trick": "Align decimal points.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Is 1/4 a terminating decimal?",
+      "options": [
+        "Terminating",
+        "Non-terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 4. Step 2: Only 2 and 5 → Terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Express 0.3̅ as a fraction in lowest terms.",
+      "options": [
+        "3/10",
+        "1/3",
+        "3/90",
+        "1/3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 0.3̅ → 10x - x = 3 → x = 3/9 = 1/3.",
+      "trick": "Standard recurring trick.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Simplify: 0.2 × 3 + 0.05 × 27.",
+      "options": [
+        "2.05",
+        "1.8499999999999999",
+        "1.95",
+        "3.9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×3 = 0.6000000000000001. Step 2: + 1.35 = 1.95.",
+      "trick": "BODMAS on decimals.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Find the average of 1.5 and 2.5.",
+      "options": [
+        "4.0",
+        "3.75",
+        "1.0",
+        "2.0"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (1.5+2.5)/2 = 2.0.",
+      "trick": "Average of two decimals.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Convert 4/9 to a decimal (3 decimal places).",
+      "options": [
+        "0.444",
+        "0.454",
+        "0.434",
+        "0.4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 4 ÷ 9 = 0.4444. Step 2: Rounded = 0.444.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Calculate 1.35 × 0.55.",
+      "options": [
+        "1.9",
+        "0.74",
+        "2.45",
+        "7.43"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.35 × 0.55 = 0.74.",
+      "trick": "Multiply decimals.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Calculate 2.6 ÷ 0.6.",
+      "options": [
+        "1.6",
+        "3.2",
+        "4.3",
+        "2.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 2.6/0.6 = 4.3.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Which is largest: 0.157, 0.107, 0.177, 0.057?",
+      "options": [
+        "0.157",
+        "0.107",
+        "0.057",
+        "0.177"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.177.",
+      "trick": "Align decimal points.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Is 1/6 a terminating decimal?",
+      "options": [
+        "Non-terminating",
+        "Terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 6. Step 2: Only 2 and 5 → Non-terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Express 0.4̅ as a fraction in lowest terms.",
+      "options": [
+        "4/10",
+        "4/9",
+        "4/90",
+        "1/4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 0.4̅ → 10x - x = 4 → x = 4/9 = 4/9.",
+      "trick": "Standard recurring trick.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Simplify: 0.2 × 4 + 0.05 × 35.",
+      "options": [
+        "2.65",
+        "2.4499999999999997",
+        "2.55",
+        "5.1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×4 = 0.8. Step 2: + 1.75 = 2.55.",
+      "trick": "BODMAS on decimals.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Find the average of 1.6 and 2.6.",
+      "options": [
+        "4.2",
+        "4.16",
+        "1.0",
+        "2.1"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (1.6+2.6)/2 = 2.1.",
+      "trick": "Average of two decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Convert 5/10 to a decimal (3 decimal places).",
+      "options": [
+        "0.5",
+        "0.51",
+        "0.49",
+        "0.45454545454545453"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 5 ÷ 10 = 0.5000. Step 2: Rounded = 0.5.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Calculate 1.45 × 0.6.",
+      "options": [
+        "2.05",
+        "0.87",
+        "2.42",
+        "8.7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.45 × 0.6 = 0.87.",
+      "trick": "Multiply decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Calculate 2.8 ÷ 0.6.",
+      "options": [
+        "1.7",
+        "3.4",
+        "4.7",
+        "2.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 2.8/0.6 = 4.7.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Which is largest: 0.665, 0.615, 0.685, 0.565?",
+      "options": [
+        "0.665",
+        "0.615",
+        "0.565",
+        "0.685"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.685.",
+      "trick": "Align decimal points.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Is 1/8 a terminating decimal?",
+      "options": [
+        "Terminating",
+        "Non-terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 8. Step 2: Only 2 and 5 → Terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Express 0.5̅ as a fraction in lowest terms.",
+      "options": [
+        "5/10",
+        "5/9",
+        "5/90",
+        "1/5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x = 0.5̅ → 10x - x = 5 → x = 5/9 = 5/9.",
+      "trick": "Standard recurring trick.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Simplify: 0.2 × 5 + 0.05 × 43.",
+      "options": [
+        "3.25",
+        "3.05",
+        "3.15",
+        "6.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×5 = 1.0. Step 2: + 2.15 = 3.15.",
+      "trick": "BODMAS on decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Find the average of 1.7 and 2.7.",
+      "options": [
+        "4.4",
+        "4.59",
+        "1.0",
+        "2.2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (1.7+2.7)/2 = 2.2.",
+      "trick": "Average of two decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Convert 6/11 to a decimal (3 decimal places).",
+      "options": [
+        "0.545",
+        "0.555",
+        "0.535",
+        "0.5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 6 ÷ 11 = 0.5455. Step 2: Rounded = 0.545.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Calculate 1.55 × 0.65.",
+      "options": [
+        "2.2",
+        "1.01",
+        "2.38",
+        "10.08"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.55 × 0.65 = 1.01.",
+      "trick": "Multiply decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Calculate 3.0 ÷ 0.6.",
+      "options": [
+        "1.8",
+        "3.6",
+        "5.0",
+        "2.4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 3.0/0.6 = 5.0.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Which is largest: 0.923, 0.873, 0.943, 0.823?",
+      "options": [
+        "0.923",
+        "0.873",
+        "0.823",
+        "0.943"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.943.",
+      "trick": "Align decimal points.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Is 1/10 a terminating decimal?",
+      "options": [
+        "Terminating",
+        "Non-terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 10. Step 2: Only 2 and 5 → Terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Standard application"
+    },
+    {
+      "order": 1067,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 133 + 0.05 × 1067.",
+      "options": [
+        "80.05",
+        "79.95",
+        "79.85000000000001",
+        "159.9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×133 = 26.6. Step 2: + 53.35 = 79.95.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Simplify: 0.2 × 6 + 0.05 × 51.",
+      "options": [
+        "3.85",
+        "3.65",
+        "3.75",
+        "7.5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×6 = 1.2000000000000002. Step 2: + 2.5500000000000003 = 3.75.",
+      "trick": "BODMAS on decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Find the average of 1.8 and 2.8.",
+      "options": [
+        "4.6",
+        "5.04",
+        "1.0",
+        "2.3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (1.8+2.8)/2 = 2.3.",
+      "trick": "Average of two decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Convert 7/12 to a decimal (3 decimal places).",
+      "options": [
+        "0.583",
+        "0.593",
+        "0.573",
+        "0.5384615384615384"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 7 ÷ 12 = 0.5833. Step 2: Rounded = 0.583.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Calculate 1.65 × 0.7.",
+      "options": [
+        "2.35",
+        "1.15",
+        "2.36",
+        "11.55"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.65 × 0.7 = 1.15.",
+      "trick": "Multiply decimals.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Calculate 3.2 ÷ 0.6.",
+      "options": [
+        "1.9",
+        "3.8",
+        "5.3",
+        "2.6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 3.2/0.6 = 5.3.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Which is largest: 0.389, 0.339, 0.409, 0.289?",
+      "options": [
+        "0.389",
+        "0.339",
+        "0.289",
+        "0.409"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.409.",
+      "trick": "Align decimal points.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Is 1/12 a terminating decimal?",
+      "options": [
+        "Non-terminating",
+        "Terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 12. Step 2: Only 2 and 5 → Non-terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1075,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 134 + 0.05 × 1075.",
+      "options": [
+        "80.64999999999999",
+        "80.55",
+        "80.45",
+        "161.1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×134 = 26.8. Step 2: + 53.75 = 80.55.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 7 + 0.05 × 59.",
+      "options": [
+        "4.449999999999999",
+        "4.25",
+        "4.35",
+        "8.7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×7 = 1.4000000000000001. Step 2: + 2.95 = 4.35.",
+      "trick": "BODMAS on decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Find the average of 1.9 and 2.9.",
+      "options": [
+        "4.8",
+        "5.51",
+        "1.0",
+        "2.4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (1.9+2.9)/2 = 2.4.",
+      "trick": "Average of two decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Convert 8/13 to a decimal (3 decimal places).",
+      "options": [
+        "0.615",
+        "0.625",
+        "0.605",
+        "0.5714285714285714"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 8 ÷ 13 = 0.6154. Step 2: Rounded = 0.615.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Calculate 1.75 × 0.75.",
+      "options": [
+        "2.5",
+        "1.31",
+        "2.33",
+        "13.12"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.75 × 0.75 = 1.31.",
+      "trick": "Multiply decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Calculate 3.4 ÷ 0.6.",
+      "options": [
+        "2.0",
+        "4.0",
+        "5.7",
+        "2.8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 3.4/0.6 = 5.7.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Which is largest: 0.731, 0.681, 0.751, 0.631?",
+      "options": [
+        "0.731",
+        "0.681",
+        "0.631",
+        "0.751"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.751.",
+      "trick": "Align decimal points.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Is 1/14 a terminating decimal?",
+      "options": [
+        "Non-terminating",
+        "Terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 14. Step 2: Only 2 and 5 → Non-terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1083,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 135 + 0.05 × 1083.",
+      "options": [
+        "81.25",
+        "81.15",
+        "81.05000000000001",
+        "162.3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×135 = 27.0. Step 2: + 54.150000000000006 = 81.15.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 8 + 0.05 × 67.",
+      "options": [
+        "5.05",
+        "4.8500000000000005",
+        "4.95",
+        "9.9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×8 = 1.6. Step 2: + 3.35 = 4.95.",
+      "trick": "BODMAS on decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Find the average of 2.0 and 3.0.",
+      "options": [
+        "5.0",
+        "6.0",
+        "1.0",
+        "2.5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (2.0+3.0)/2 = 2.5.",
+      "trick": "Average of two decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Convert 9/14 to a decimal (3 decimal places).",
+      "options": [
+        "0.643",
+        "0.653",
+        "0.633",
+        "0.6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 9 ÷ 14 = 0.6429. Step 2: Rounded = 0.643.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Calculate 1.85 × 0.8.",
+      "options": [
+        "2.65",
+        "1.48",
+        "2.31",
+        "14.8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.85 × 0.8 = 1.48.",
+      "trick": "Multiply decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Calculate 3.6 ÷ 0.6.",
+      "options": [
+        "2.2",
+        "4.2",
+        "6.0",
+        "3.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 3.6/0.6 = 6.0.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Which is largest: 0.822, 0.772, 0.842, 0.722?",
+      "options": [
+        "0.822",
+        "0.772",
+        "0.722",
+        "0.842"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.842.",
+      "trick": "Align decimal points.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Is 1/16 a terminating decimal?",
+      "options": [
+        "Terminating",
+        "Non-terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 16. Step 2: Only 2 and 5 → Terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 1091,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 136 + 0.05 × 1091.",
+      "options": [
+        "81.85",
+        "81.75",
+        "81.65",
+        "163.5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×136 = 27.200000000000003. Step 2: + 54.550000000000004 = 81.75.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 9 + 0.05 × 75.",
+      "options": [
+        "5.6499999999999995",
+        "5.45",
+        "5.55",
+        "11.1"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×9 = 1.8. Step 2: + 3.75 = 5.55.",
+      "trick": "BODMAS on decimals.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Find the average of 2.1 and 3.1.",
+      "options": [
+        "5.2",
+        "6.51",
+        "1.0",
+        "2.6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (2.1+3.1)/2 = 2.6.",
+      "trick": "Average of two decimals.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Convert 10/15 to a decimal (3 decimal places).",
+      "options": [
+        "0.667",
+        "0.677",
+        "0.657",
+        "0.625"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 10 ÷ 15 = 0.6667. Step 2: Rounded = 0.667.",
+      "trick": "Divide numerator by denominator.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Calculate 1.9500000000000002 × 0.8500000000000001.",
+      "options": [
+        "2.8",
+        "1.66",
+        "2.29",
+        "16.58"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 1.9500000000000002 × 0.8500000000000001 = 1.66.",
+      "trick": "Multiply decimals.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Calculate 3.8 ÷ 0.6.",
+      "options": [
+        "2.3",
+        "4.4",
+        "6.3",
+        "3.2"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 3.8/0.6 = 6.3.",
+      "trick": "Divide by making divisor whole.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Which is largest: 0.205, 0.155, 0.225, 0.105?",
+      "options": [
+        "0.205",
+        "0.155",
+        "0.105",
+        "0.225"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.225.",
+      "trick": "Align decimal points.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Is 1/18 a terminating decimal?",
+      "options": [
+        "Non-terminating",
+        "Terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 18. Step 2: Only 2 and 5 → Non-terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1099,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 137 + 0.05 × 1099.",
+      "options": [
+        "82.44999999999999",
+        "82.35",
+        "82.25",
+        "164.7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×137 = 27.400000000000002. Step 2: + 54.95 = 82.35.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 10 + 0.05 × 83.",
+      "options": [
+        "6.25",
+        "6.050000000000001",
+        "6.15",
+        "12.3"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×10 = 2.0. Step 2: + 4.15 = 6.15.",
+      "trick": "BODMAS on decimals.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Find the average of 2.2 and 3.2.",
+      "options": [
+        "5.4",
+        "7.04",
+        "1.0",
+        "2.7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (2.2+3.2)/2 = 2.7.",
+      "trick": "Average of two decimals.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Convert 11/16 to a decimal (3 decimal places).",
+      "options": [
+        "0.688",
+        "0.698",
+        "0.678",
+        "0.6470588235294118"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 11 ÷ 16 = 0.6875. Step 2: Rounded = 0.688.",
+      "trick": "Divide numerator by denominator.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Calculate 2.05 × 0.9.",
+      "options": [
+        "2.95",
+        "1.84",
+        "2.28",
+        "18.45"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2.05 × 0.9 = 1.84.",
+      "trick": "Multiply decimals.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Calculate 4.0 ÷ 0.6.",
+      "options": [
+        "2.4",
+        "4.6",
+        "6.7",
+        "3.4"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 4.0/0.6 = 6.7.",
+      "trick": "Divide by making divisor whole.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Which is largest: 0.713, 0.663, 0.733, 0.613?",
+      "options": [
+        "0.713",
+        "0.663",
+        "0.613",
+        "0.733"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.733.",
+      "trick": "Align decimal points.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Is 1/20 a terminating decimal?",
+      "options": [
+        "Terminating",
+        "Non-terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 20. Step 2: Only 2 and 5 → Terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "CAT level"
+    },
+    {
+      "order": 1107,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 138 + 0.05 × 1107.",
+      "options": [
+        "83.05",
+        "82.95",
+        "82.85000000000001",
+        "165.9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×138 = 27.6. Step 2: + 55.35 = 82.95.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 11 + 0.05 × 91.",
+      "options": [
+        "6.85",
+        "6.65",
+        "6.75",
+        "13.5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×11 = 2.2. Step 2: + 4.55 = 6.75.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Find the average of 2.3 and 3.3.",
+      "options": [
+        "5.6",
+        "7.59",
+        "1.0",
+        "2.8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (2.3+3.3)/2 = 2.8.",
+      "trick": "Average of two decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Convert 12/17 to a decimal (3 decimal places).",
+      "options": [
+        "0.706",
+        "0.716",
+        "0.696",
+        "0.6666666666666666"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 12 ÷ 17 = 0.7059. Step 2: Rounded = 0.706.",
+      "trick": "Divide numerator by denominator.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Calculate 2.15 × 0.95.",
+      "options": [
+        "3.1",
+        "2.04",
+        "2.26",
+        "20.43"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 2.15 × 0.95 = 2.04.",
+      "trick": "Multiply decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Calculate 4.2 ÷ 0.6.",
+      "options": [
+        "2.5",
+        "4.8",
+        "7.0",
+        "3.6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Shift decimal: 4.2/0.6 = 7.0.",
+      "trick": "Divide by making divisor whole.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Which is largest: 0.971, 0.921, 0.991, 0.871?",
+      "options": [
+        "0.971",
+        "0.921",
+        "0.871",
+        "0.991"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Compare decimals place by place. Largest = 0.991.",
+      "trick": "Align decimal points.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Is 1/22 a terminating decimal?",
+      "options": [
+        "Non-terminating",
+        "Terminating",
+        "Cannot say",
+        "Both"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Factorise 22. Step 2: Only 2 and 5 → Non-terminating.",
+      "trick": "Denominator primes 2,5 only.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 139 + 0.05 × 1115.",
+      "options": [
+        "83.64999999999999",
+        "83.55",
+        "83.45",
+        "167.1"
+      ],
+      "answer": "B",
+      "solution": "Step 1: 0.2×139 = 27.8. Step 2: + 55.75 = 83.55.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Simplify: 0.2 × 12 + 0.05 × 99.",
+      "options": [
+        "7.449999999999999",
+        "7.25",
+        "7.35",
+        "14.7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 0.2×12 = 2.4000000000000004. Step 2: + 4.95 = 7.35.",
+      "trick": "BODMAS on decimals.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Find the average of 2.4 and 3.4.",
+      "options": [
+        "5.8",
+        "8.16",
+        "1.0",
+        "2.9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: (2.4+3.4)/2 = 2.9.",
+      "trick": "Average of two decimals.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

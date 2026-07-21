@@ -97,6 +97,17 @@ html.nav-hidden .deploy-rail {
   background: color-mix(in srgb, var(--station-color) 8%, transparent);
 }
 
+/* Touch devices keep a tapped chip's :hover tint "stuck" until you tap
+   elsewhere, so a previously-tapped chip would look highlighted alongside the
+   real scroll-spy active one. Drop the hover tint on non-active chips where
+   there's no true hover (touch/mobile). The active chip keeps its highlight. */
+@media (hover: none) {
+  .deploy-rail__chip:not(.deploy-rail__chip--active):hover {
+    color: var(--text-muted);
+    background: none;
+  }
+}
+
 .deploy-rail__chip--active {
   background: color-mix(in srgb, var(--station-color) 14%, transparent);
   color: var(--text-primary);
@@ -588,6 +599,13 @@ html.nav-hidden .deploy-rail {
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
+
+/* The global navbar is 60px tall on mobile (not the 64px desktop height), so pin
+   the sticky rail flush under it — otherwise a 4px strip of page content shows
+   through between the navbar and the chip rail. */
+@media (max-width: 768px) {
+  .deploy-rail { top: 60px; }
+}
 
 @media (max-width: 1000px) {
   .deploy-station__grid { grid-template-columns: repeat(2, 1fr); }

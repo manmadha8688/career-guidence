@@ -1,0 +1,402 @@
+[
+  {
+    "id": "scheduling-assignments-q1",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Three tasks are done on Mon, Tue, Wed (one each). Task P is not on Monday and not on Tuesday. Which day is P?",
+    "options": [
+      "Wednesday",
+      "Monday",
+      "Tuesday",
+      "Cannot say"
+    ],
+    "answer": "A",
+    "solution": "P ≠ Mon, Tue → only Wednesday left.",
+    "trick": "Cross out forbidden days.",
+    "type": "Negative clue",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q2",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A's meeting is the day after B's. If B's meeting is on Tuesday, when is A's?",
+    "options": [
+      "Monday",
+      "Wednesday",
+      "Thursday",
+      "Tuesday"
+    ],
+    "answer": "B",
+    "solution": "Day after Tuesday is Wednesday.",
+    "trick": "'Day after' = +1.",
+    "type": "Day after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q3",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Three events X, Y, Z happen on three consecutive days, with X before Y and Y before Z. Which event is on the first day?",
+    "options": [
+      "Y",
+      "Z",
+      "X",
+      "Cannot say"
+    ],
+    "answer": "C",
+    "solution": "X < Y < Z, so X is first.",
+    "trick": "Chain of 'before'.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q4",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Anil, Bina, Charu each take one of Mon, Tue, Wed. Anil is on Tuesday and Bina is not on Monday. Which day is Charu?",
+    "options": [
+      "Tuesday",
+      "Wednesday",
+      "Cannot say",
+      "Monday"
+    ],
+    "answer": "D",
+    "solution": "Anil=Tue; Bina ≠ Mon, ≠ Tue → Bina=Wed; Charu = Monday.",
+    "trick": "One-to-one elimination.",
+    "type": "One-to-one matching",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q5",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "A talk is scheduled before Wednesday but not on Monday (days Mon–Wed). Which day is it?",
+    "options": [
+      "Tuesday",
+      "Monday",
+      "Wednesday",
+      "Cannot say"
+    ],
+    "answer": "A",
+    "solution": "Before Wed = Mon or Tue; not Monday → Tuesday.",
+    "trick": "Combine 'before' with the negative.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q6",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Two exams are on consecutive days. One is on Thursday and the other is earlier. Which day is the other exam?",
+    "options": [
+      "Friday",
+      "Wednesday",
+      "Tuesday",
+      "Monday"
+    ],
+    "answer": "B",
+    "solution": "Consecutive and earlier than Thursday → Wednesday.",
+    "trick": "Consecutive = differ by 1 day.",
+    "type": "Consecutive",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q7",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Four tasks A,B,C,D on Mon–Thu (one each). A is on Monday, D is on Thursday, and B is before C. Which day is B on?",
+    "options": [
+      "Wednesday",
+      "Monday",
+      "Tuesday",
+      "Thursday"
+    ],
+    "answer": "C",
+    "solution": "A=Mon, D=Thu; B and C fill Tue,Wed with B before C → B=Tue.",
+    "trick": "Fix ends, order the middle.",
+    "type": "One-to-one matching",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q8",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Five lectures Mon–Fri. Physics is the day after Maths. Maths is on Wednesday. Which day is Physics?",
+    "options": [
+      "Tuesday",
+      "Friday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "answer": "D",
+    "solution": "Day after Wednesday is Thursday.",
+    "trick": "+1 day.",
+    "type": "Day after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q9",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Three people are assigned to three shifts (morning, afternoon, night). Raj is not on night. Sam is on afternoon. Which shift is Tina on if Raj is not on afternoon either?",
+    "options": [
+      "Night",
+      "Morning",
+      "Afternoon",
+      "Cannot say"
+    ],
+    "answer": "A",
+    "solution": "Sam=afternoon; Raj ≠ night, ≠ afternoon → Raj=morning; Tina=night.",
+    "trick": "Eliminate to the last slot.",
+    "type": "One-to-one matching",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q10",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Four events W,X,Y,Z on four consecutive days. W is 2 days before Y. Y is on Thursday. Which day is W?",
+    "options": [
+      "Wednesday",
+      "Tuesday",
+      "Monday",
+      "Friday"
+    ],
+    "answer": "B",
+    "solution": "Y=Thu, W is 2 days before → Tuesday.",
+    "trick": "'k days before' = −k.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q11",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Five workshops Mon–Fri. Art is not on Mon or Fri. Music is on Monday. Dance is the day after Art. If Art is on Wednesday, which day is Dance?",
+    "options": [
+      "Tuesday",
+      "Friday",
+      "Thursday",
+      "Wednesday"
+    ],
+    "answer": "C",
+    "solution": "Art=Wed → Dance = day after = Thursday.",
+    "trick": "+1 from Art.",
+    "type": "Day after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q12",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Three matches on Fri, Sat, Sun (one each). The India match is not on Friday. The Australia match is on Sunday. Which day is the England match if it is not on Sunday?",
+    "options": [
+      "Saturday",
+      "Sunday",
+      "Cannot say",
+      "Friday"
+    ],
+    "answer": "D",
+    "solution": "Australia=Sun; India ≠ Fri → India=Sat; England = Friday.",
+    "trick": "One-to-one elimination.",
+    "type": "One-to-one matching",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q13",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Four tasks on Mon–Thu. Task R is immediately before task S. Task S is on Wednesday. Which day is R?",
+    "options": [
+      "Tuesday",
+      "Monday",
+      "Thursday",
+      "Wednesday"
+    ],
+    "answer": "A",
+    "solution": "Immediately before Wednesday is Tuesday.",
+    "trick": "'Immediately before' = −1.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q14",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Five people take five days Mon–Fri (one each). Ann is on Friday. Ben is 2 days before Ann. Which day is Ben?",
+    "options": [
+      "Thursday",
+      "Wednesday",
+      "Tuesday",
+      "Monday"
+    ],
+    "answer": "B",
+    "solution": "Ann=Fri; 2 days before = Wednesday.",
+    "trick": "−2 days.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q15",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Four talks A,B,C,D on Mon–Thu. A is on Monday. B and C are on consecutive days, both after A. D is on Thursday. Which two days do B and C occupy?",
+    "options": [
+      "Monday and Tuesday",
+      "Wednesday and Thursday",
+      "Tuesday and Wednesday",
+      "Tuesday and Thursday"
+    ],
+    "answer": "C",
+    "solution": "A=Mon, D=Thu; only Tue,Wed remain and they are consecutive → B,C on Tue & Wed.",
+    "trick": "Ends fixed, consecutive pair in the gap.",
+    "type": "Consecutive",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q16",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Five meetings Mon–Fri. HR is 2 days after IT. IT is on Monday. Which day is HR?",
+    "options": [
+      "Thursday",
+      "Friday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "answer": "D",
+    "solution": "IT=Mon; HR = IT + 2 days = Wednesday.",
+    "trick": "'k days after' = +k.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q17",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Four people take Mon–Thu (one each). Priya is before Quasim. Quasim is before Ravi. Sana is on Thursday. Which day is Priya?",
+    "options": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "answer": "A",
+    "solution": "Sana=Thu; Priya<Quasim<Ravi fill Mon,Tue,Wed in order → Priya=Mon.",
+    "trick": "Chain of 'before' after fixing Sana.",
+    "type": "One-to-one matching",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q18",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Six seminars Mon–Sat. Bio is the day after Chem. Chem is 2 days after Physics. Physics is on Monday. Which day is Bio?",
+    "options": [
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Tuesday"
+    ],
+    "answer": "B",
+    "solution": "Physics=Mon; Chem=Mon+2=Wed; Bio=Chem+1=Thursday.",
+    "trick": "Apply the +2 then +1 chain.",
+    "type": "Day after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q19",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Five tasks Mon–Fri (one each). Task V is not on Mon or Tue. Task W is immediately before V. Task X is on Friday. If V is on Wednesday, which day is W?",
+    "options": [
+      "Monday",
+      "Thursday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "answer": "C",
+    "solution": "V=Wed; W immediately before = Tuesday.",
+    "trick": "−1 from V.",
+    "type": "Before/after",
+    "active": true
+  },
+  {
+    "id": "scheduling-assignments-q20",
+    "topic": "scheduling-assignments",
+    "category": "logical",
+    "group": "puzzles",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Four friends are assigned Mon–Thu (one each). A is 3 days before D. B is the day after A. Which day is B on?",
+    "options": [
+      "Wednesday",
+      "Monday",
+      "Thursday",
+      "Tuesday"
+    ],
+    "answer": "D",
+    "solution": "A is 3 days before D → A=Mon, D=Thu; B=A+1=Tuesday.",
+    "trick": "3-day gap forces the ends, then +1.",
+    "type": "Day after",
+    "active": true
+  }
+]

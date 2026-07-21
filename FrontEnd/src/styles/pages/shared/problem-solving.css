@@ -867,7 +867,6 @@
 .ps-problem-card {
   background: var(--ps-card-bg);
   border: 1px solid var(--ps-card-border);
-  border-left: 3px solid var(--lm-color);
   border-radius: 8px;
   padding: 0.875rem 1rem;
   cursor: pointer;
@@ -1239,6 +1238,25 @@
   background: rgba(239, 68, 68, 0.12);
   color: #EF4444;
   border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.ps-badge--solved {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: color-mix(in srgb, #22C55E 12%, transparent);
+  color: #22C55E;
+  border: 1px solid color-mix(in srgb, #22C55E 30%, transparent);
+}
+
+/* Solved marker on a track-list problem card. */
+.ps-problem-card__solved {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #22C55E;
+  flex-shrink: 0;
+  margin-left: 0.15rem;
 }
 
 .ps-learn-list {

@@ -78,7 +78,7 @@ export const SECTION_NOT_FOUND = {
       { year: '???',    icon: '💥', label: 'YOU ARE HERE', current: true },
     ],
     traveler: '💻',
-    primaryBtn: { label: '💻 RETURN TO CODE GYM', path: '/problem-solving' },
+    primaryBtn: { label: '💻 RETURN TO CODE GYM', path: '/code-gym' },
     secondaryBtn: { label: '← last rep', back: true },
   },
 

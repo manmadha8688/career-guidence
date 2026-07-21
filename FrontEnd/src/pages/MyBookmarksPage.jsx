@@ -11,7 +11,7 @@ const TYPE_META = {
   SUBJECT: { label: 'Dungeon Gates (Subjects)', link: (id) => `/skill-arena/dashboard?view=gates&subject=${id}`, fallbackIcon: '📚' },
   ROADMAP: { label: 'Hunter Paths (Roadmaps)',  link: (id) => `/skill-arena/roadmaps/${id}`,                     fallbackIcon: '🗺️' },
   MISSION: { label: 'Missions',                 link: (id) => `/missions/${id}`,                                 fallbackIcon: '🎯' },
-  PROBLEM: { label: 'Code Gym Problems',        link: (id) => `/problem-solving/${id}`,                          fallbackIcon: '💻' },
+  PROBLEM: { label: 'Code Gym Problems',        link: (id) => `/code-gym/${id}`,                                  fallbackIcon: '💻' },
   AITOOL:  { label: 'AI Tools',                 link: (id) => `/ai-lab/${id}`,                                   fallbackIcon: '🤖' },
   GUIDE:   { label: 'Deployment Guides',        link: (id) => id,                                                fallbackIcon: '🚀' },
   APTITUDE:{ label: 'Aptitude',                 link: (id) => id,                                                fallbackIcon: '🧠' },

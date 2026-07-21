@@ -8,6 +8,7 @@ export default function LandingAboutSection() {
   const resolveTrust = (value) => {
     if (value === 'subjects') return { text: platformStats.subjects, target: /^\d+$/.test(platformStats.subjects) ? platformStats.subjects : null, suffix: '' }
     if (value === 'concepts') return { text: platformStats.concepts, target: platformStats.concepts.replace('+', ''), suffix: '+' }
+    if (value === 'paths') return { text: platformStats.paths, target: /^\d+$/.test(platformStats.paths) ? platformStats.paths : null, suffix: '' }
     return { text: value, target: /^\d+$/.test(value) ? value : null }
   }
 
@@ -17,13 +18,13 @@ export default function LandingAboutSection() {
         <div className="lp-section-header lp-reveal">
           <p className="lp-section-eyebrow">What is LearnForEarn?</p>
           <h2 className="lp-grad-text lp-section-title lp-section-title--lg">
-            A free training ground that turns freshers into hired developers.
+            A training ground that turns freshers into hired developers.
           </h2>
           <p className="lp-section-desc lp-about-lead">
-            LearnForEarn is a completely free platform for students and graduates in India who
+            LearnForEarn is a platform for students and graduates in India who
             want a tech job but don't know where to start. Everything you need to go from
             <strong> "zero idea"</strong> to <strong>"I got the offer"</strong> — learn, practice,
-            build and get noticed. No fees, no credit card, ever.
+            build and get noticed.
           </p>
         </div>
 

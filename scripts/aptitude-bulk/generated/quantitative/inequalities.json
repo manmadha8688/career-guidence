@@ -1,0 +1,1207 @@
+{
+  "topic": "inequalities",
+  "category": "quantitative",
+  "group": "algebra-sequences",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Solve: x > 3. Smallest integer x?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 3. Smallest integer = 4.",
+      "trick": "Strict inequality.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Solve: 2x < 7. Largest integer x?",
+      "options": [
+        "4",
+        "3",
+        "3",
+        "2"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 3.5. Largest int = 3.",
+      "trick": "Divide, keep strict.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "How many integers satisfy 2 < x < 8?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 3 to 7 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "x + 3 ≥ 7. Smallest integer x?",
+      "options": [
+        "7",
+        "3",
+        "10",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 4. Smallest = 4.",
+      "trick": "Non-strict ≥.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Which satisfies both x > 0 and x < 5?",
+      "options": [
+        "3",
+        "0",
+        "5",
+        "-1"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 5. 3 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Solve: −x > 2. x?",
+      "options": [
+        "2",
+        "-3",
+        "-2",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -2. Example integer x = -3.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Solve: x − 4 ≥ 0 and 9 − x ≥ 0 combined?",
+      "options": [
+        "9",
+        "13",
+        "4",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 4 ≤ x ≤ 9.",
+      "trick": "Compound inequality.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "|x − 5| < 1. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Solve: x > 4. Smallest integer x?",
+      "options": [
+        "5",
+        "4",
+        "6",
+        "7"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 4. Smallest integer = 5.",
+      "trick": "Strict inequality.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Solve: 2x < 9. Largest integer x?",
+      "options": [
+        "5",
+        "4",
+        "4",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 4.5. Largest int = 4.",
+      "trick": "Divide, keep strict.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "How many integers satisfy 3 < x < 9?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 4 to 8 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "x + 3 ≥ 8. Smallest integer x?",
+      "options": [
+        "8",
+        "4",
+        "11",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 5. Smallest = 5.",
+      "trick": "Non-strict ≥.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Which satisfies both x > 0 and x < 6?",
+      "options": [
+        "4",
+        "0",
+        "6",
+        "-2"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 6. 4 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Solve: −x > 3. x?",
+      "options": [
+        "3",
+        "-4",
+        "-3",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -3. Example integer x = -4.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Solve: x − 5 ≥ 0 and 10 − x ≥ 0 combined?",
+      "options": [
+        "10",
+        "15",
+        "5",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 5 ≤ x ≤ 10.",
+      "trick": "Compound inequality.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "|x − 5| < 2. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Solve: x > 5. Smallest integer x?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 5. Smallest integer = 6.",
+      "trick": "Strict inequality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Solve: 2x < 11. Largest integer x?",
+      "options": [
+        "6",
+        "5",
+        "5",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 5.5. Largest int = 5.",
+      "trick": "Divide, keep strict.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "How many integers satisfy 4 < x < 10?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 5 to 9 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "x + 3 ≥ 9. Smallest integer x?",
+      "options": [
+        "9",
+        "5",
+        "12",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 6. Smallest = 6.",
+      "trick": "Non-strict ≥.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Which satisfies both x > 0 and x < 7?",
+      "options": [
+        "5",
+        "0",
+        "7",
+        "-3"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 7. 5 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Solve: −x > 4. x?",
+      "options": [
+        "4",
+        "-5",
+        "-4",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -4. Example integer x = -5.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Solve: x − 6 ≥ 0 and 11 − x ≥ 0 combined?",
+      "options": [
+        "11",
+        "17",
+        "6",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 6 ≤ x ≤ 11.",
+      "trick": "Compound inequality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "|x − 5| < 3. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Solve: x > 6. Smallest integer x?",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 6. Smallest integer = 7.",
+      "trick": "Strict inequality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Solve: 2x < 13. Largest integer x?",
+      "options": [
+        "7",
+        "6",
+        "6",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 6.5. Largest int = 6.",
+      "trick": "Divide, keep strict.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "How many integers satisfy 5 < x < 11?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 6 to 10 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "x + 3 ≥ 10. Smallest integer x?",
+      "options": [
+        "10",
+        "6",
+        "13",
+        "7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 7. Smallest = 7.",
+      "trick": "Non-strict ≥.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Which satisfies both x > 0 and x < 8?",
+      "options": [
+        "3",
+        "0",
+        "8",
+        "-4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 8. 3 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Solve: −x > 5. x?",
+      "options": [
+        "5",
+        "-6",
+        "-5",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -5. Example integer x = -6.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Solve: x − 7 ≥ 0 and 12 − x ≥ 0 combined?",
+      "options": [
+        "12",
+        "19",
+        "7",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 7 ≤ x ≤ 12.",
+      "trick": "Compound inequality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "|x − 5| < 4. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Solve: x > 7. Smallest integer x?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 7. Smallest integer = 8.",
+      "trick": "Strict inequality.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Solve: 2x < 15. Largest integer x?",
+      "options": [
+        "8",
+        "7",
+        "7",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 7.5. Largest int = 7.",
+      "trick": "Divide, keep strict.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "How many integers satisfy 6 < x < 12?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 7 to 11 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "x + 3 ≥ 11. Smallest integer x?",
+      "options": [
+        "11",
+        "7",
+        "14",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 8. Smallest = 8.",
+      "trick": "Non-strict ≥.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Which satisfies both x > 0 and x < 9?",
+      "options": [
+        "4",
+        "0",
+        "9",
+        "-5"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 9. 4 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Solve: −x > 6. x?",
+      "options": [
+        "6",
+        "-7",
+        "-6",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -6. Example integer x = -7.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Solve: x − 8 ≥ 0 and 13 − x ≥ 0 combined?",
+      "options": [
+        "13",
+        "21",
+        "8",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 8 ≤ x ≤ 13.",
+      "trick": "Compound inequality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "|x − 5| < 5. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Solve: x > 8. Smallest integer x?",
+      "options": [
+        "9",
+        "8",
+        "10",
+        "11"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 8. Smallest integer = 9.",
+      "trick": "Strict inequality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Solve: 2x < 17. Largest integer x?",
+      "options": [
+        "9",
+        "8",
+        "8",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 8.5. Largest int = 8.",
+      "trick": "Divide, keep strict.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "How many integers satisfy 7 < x < 13?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 8 to 12 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "x + 3 ≥ 12. Smallest integer x?",
+      "options": [
+        "12",
+        "8",
+        "15",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 9. Smallest = 9.",
+      "trick": "Non-strict ≥.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Which satisfies both x > 0 and x < 10?",
+      "options": [
+        "5",
+        "0",
+        "10",
+        "-6"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 10. 5 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Solve: −x > 7. x?",
+      "options": [
+        "7",
+        "-8",
+        "-7",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -7. Example integer x = -8.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Solve: x − 9 ≥ 0 and 14 − x ≥ 0 combined?",
+      "options": [
+        "14",
+        "23",
+        "9",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 9 ≤ x ≤ 14.",
+      "trick": "Compound inequality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "|x − 5| < 6. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Solve: x > 9. Smallest integer x?",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 9. Smallest integer = 10.",
+      "trick": "Strict inequality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Solve: 2x < 19. Largest integer x?",
+      "options": [
+        "10",
+        "9",
+        "9",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 9.5. Largest int = 9.",
+      "trick": "Divide, keep strict.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "How many integers satisfy 8 < x < 14?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 9 to 13 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "x + 3 ≥ 13. Smallest integer x?",
+      "options": [
+        "13",
+        "9",
+        "16",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 10. Smallest = 10.",
+      "trick": "Non-strict ≥.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Which satisfies both x > 0 and x < 11?",
+      "options": [
+        "3",
+        "0",
+        "11",
+        "-7"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 11. 3 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Solve: −x > 8. x?",
+      "options": [
+        "8",
+        "-9",
+        "-8",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -8. Example integer x = -9.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Solve: x − 10 ≥ 0 and 15 − x ≥ 0 combined?",
+      "options": [
+        "15",
+        "25",
+        "10",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 10 ≤ x ≤ 15.",
+      "trick": "Compound inequality.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "|x − 5| < 7. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Solve: x > 10. Smallest integer x?",
+      "options": [
+        "11",
+        "10",
+        "12",
+        "13"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 10. Smallest integer = 11.",
+      "trick": "Strict inequality.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Solve: 2x < 21. Largest integer x?",
+      "options": [
+        "11",
+        "10",
+        "10",
+        "9"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 10.5. Largest int = 10.",
+      "trick": "Divide, keep strict.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "How many integers satisfy 9 < x < 15?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 10 to 14 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "x + 3 ≥ 14. Smallest integer x?",
+      "options": [
+        "14",
+        "10",
+        "17",
+        "11"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 11. Smallest = 11.",
+      "trick": "Non-strict ≥.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Which satisfies both x > 0 and x < 12?",
+      "options": [
+        "4",
+        "0",
+        "12",
+        "-8"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 12. 4 works.",
+      "trick": "Intersection of conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Solve: −x > 9. x?",
+      "options": [
+        "9",
+        "-10",
+        "-9",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -9. Example integer x = -10.",
+      "trick": "Flip sign when ×−1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Solve: x − 11 ≥ 0 and 16 − x ≥ 0 combined?",
+      "options": [
+        "16",
+        "27",
+        "11",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 11 ≤ x ≤ 16.",
+      "trick": "Compound inequality.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "|x − 5| < 8. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Solve: x > 11. Smallest integer x?",
+      "options": [
+        "12",
+        "11",
+        "13",
+        "14"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 11. Smallest integer = 12.",
+      "trick": "Strict inequality.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Solve: 2x < 23. Largest integer x?",
+      "options": [
+        "12",
+        "11",
+        "11",
+        "10"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 11.5. Largest int = 11.",
+      "trick": "Divide, keep strict.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "How many integers satisfy 10 < x < 16?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 11 to 15 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "x + 3 ≥ 15. Smallest integer x?",
+      "options": [
+        "15",
+        "11",
+        "18",
+        "12"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 12. Smallest = 12.",
+      "trick": "Non-strict ≥.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Which satisfies both x > 0 and x < 13?",
+      "options": [
+        "5",
+        "0",
+        "13",
+        "-9"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 13. 5 works.",
+      "trick": "Intersection of conditions.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Solve: −x > 10. x?",
+      "options": [
+        "10",
+        "-11",
+        "-10",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -10. Example integer x = -11.",
+      "trick": "Flip sign when ×−1.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Solve: x − 12 ≥ 0 and 17 − x ≥ 0 combined?",
+      "options": [
+        "17",
+        "29",
+        "12",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 12 ≤ x ≤ 17.",
+      "trick": "Compound inequality.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "|x − 5| < 9. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Solve: x > 12. Smallest integer x?",
+      "options": [
+        "13",
+        "12",
+        "14",
+        "15"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x > 12. Smallest integer = 13.",
+      "trick": "Strict inequality.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Solve: 2x < 25. Largest integer x?",
+      "options": [
+        "13",
+        "12",
+        "12",
+        "11"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < 12.5. Largest int = 12.",
+      "trick": "Divide, keep strict.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "How many integers satisfy 11 < x < 17?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Integers 12 to 16 → 5 values.",
+      "trick": "Count interior integers.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "x + 3 ≥ 16. Smallest integer x?",
+      "options": [
+        "16",
+        "12",
+        "19",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: x ≥ 13. Smallest = 13.",
+      "trick": "Non-strict ≥.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Which satisfies both x > 0 and x < 14?",
+      "options": [
+        "3",
+        "0",
+        "14",
+        "-10"
+      ],
+      "answer": "A",
+      "solution": "Step 1: 0 < x < 14. 3 works.",
+      "trick": "Intersection of conditions.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Solve: −x > 11. x?",
+      "options": [
+        "11",
+        "-12",
+        "-11",
+        "0"
+      ],
+      "answer": "B",
+      "solution": "Step 1: x < -11. Example integer x = -12.",
+      "trick": "Flip sign when ×−1.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Solve: x − 13 ≥ 0 and 18 − x ≥ 0 combined?",
+      "options": [
+        "18",
+        "31",
+        "13",
+        "5"
+      ],
+      "answer": "C",
+      "solution": "Step 1: 13 ≤ x ≤ 18.",
+      "trick": "Compound inequality.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "|x − 5| < 10. If simplified to −2 < x < 8, find width?",
+      "options": [
+        "8",
+        "5",
+        "2",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Distance from 5 less than half-width → width 10.",
+      "trick": "Absolute value as interval.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

@@ -1,0 +1,1207 @@
+{
+  "topic": "sentence-completion",
+  "category": "verbal",
+  "group": "sentence-skills",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.'",
+      "options": [
+        "proceeded",
+        "cancelled",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.'",
+      "options": [
+        "unanimous",
+        "divided",
+        "hasty",
+        "silent"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.'",
+      "options": [
+        "diplomatic",
+        "rude",
+        "careless",
+        "hostile"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.'",
+      "options": [
+        "validated",
+        "destroyed",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.'",
+      "options": [
+        "likely",
+        "unlikely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 26)",
+      "options": [
+        "proceeded",
+        "cancelled",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 27)",
+      "options": [
+        "unanimous",
+        "divided",
+        "hasty",
+        "silent"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 28)",
+      "options": [
+        "diplomatic",
+        "rude",
+        "careless",
+        "hostile"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 29)",
+      "options": [
+        "validated",
+        "destroyed",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 30)",
+      "options": [
+        "likely",
+        "unlikely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 31)",
+      "options": [
+        "proceeded",
+        "cancelled",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 32)",
+      "options": [
+        "unanimous",
+        "divided",
+        "hasty",
+        "silent"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 33)",
+      "options": [
+        "diplomatic",
+        "rude",
+        "careless",
+        "hostile"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 34)",
+      "options": [
+        "validated",
+        "destroyed",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 35)",
+      "options": [
+        "likely",
+        "unlikely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 36)",
+      "options": [
+        "proceeded",
+        "cancelled",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 37)",
+      "options": [
+        "unanimous",
+        "divided",
+        "hasty",
+        "silent"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 38)",
+      "options": [
+        "diplomatic",
+        "rude",
+        "careless",
+        "hostile"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 39)",
+      "options": [
+        "validated",
+        "destroyed",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 40)",
+      "options": [
+        "likely",
+        "unlikely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 41)",
+      "options": [
+        "cancelled",
+        "proceeded",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 42)",
+      "options": [
+        "divided",
+        "unanimous",
+        "hasty",
+        "silent"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 43)",
+      "options": [
+        "rude",
+        "diplomatic",
+        "careless",
+        "hostile"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 44)",
+      "options": [
+        "destroyed",
+        "validated",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 45)",
+      "options": [
+        "unlikely",
+        "likely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 46)",
+      "options": [
+        "cancelled",
+        "proceeded",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 47)",
+      "options": [
+        "divided",
+        "unanimous",
+        "hasty",
+        "silent"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 48)",
+      "options": [
+        "rude",
+        "diplomatic",
+        "careless",
+        "hostile"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 49)",
+      "options": [
+        "destroyed",
+        "validated",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 50)",
+      "options": [
+        "unlikely",
+        "likely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 51)",
+      "options": [
+        "cancelled",
+        "proceeded",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 52)",
+      "options": [
+        "divided",
+        "unanimous",
+        "hasty",
+        "silent"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 53)",
+      "options": [
+        "rude",
+        "diplomatic",
+        "careless",
+        "hostile"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 54)",
+      "options": [
+        "destroyed",
+        "validated",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 55)",
+      "options": [
+        "unlikely",
+        "likely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 56)",
+      "options": [
+        "cancelled",
+        "proceeded",
+        "postponed forever",
+        "forgot"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 57)",
+      "options": [
+        "divided",
+        "unanimous",
+        "hasty",
+        "silent"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 58)",
+      "options": [
+        "rude",
+        "diplomatic",
+        "careless",
+        "hostile"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 59)",
+      "options": [
+        "destroyed",
+        "validated",
+        "ignored",
+        "fabricated"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 60)",
+      "options": [
+        "unlikely",
+        "likely",
+        "certain not",
+        "immune"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 61)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "proceeded",
+        "forgot"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 62)",
+      "options": [
+        "divided",
+        "hasty",
+        "unanimous",
+        "silent"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 63)",
+      "options": [
+        "rude",
+        "careless",
+        "diplomatic",
+        "hostile"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 64)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "validated",
+        "fabricated"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 65)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "likely",
+        "immune"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 66)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "proceeded",
+        "forgot"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 67)",
+      "options": [
+        "divided",
+        "hasty",
+        "unanimous",
+        "silent"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 68)",
+      "options": [
+        "rude",
+        "careless",
+        "diplomatic",
+        "hostile"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 69)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "validated",
+        "fabricated"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 70)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "likely",
+        "immune"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 71)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "proceeded",
+        "forgot"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Context completion"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 72)",
+      "options": [
+        "divided",
+        "hasty",
+        "unanimous",
+        "silent"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Context completion"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 73)",
+      "options": [
+        "rude",
+        "careless",
+        "diplomatic",
+        "hostile"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Context completion"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 74)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "validated",
+        "fabricated"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Context completion"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 75)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "likely",
+        "immune"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Context completion"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 76)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "proceeded",
+        "forgot"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 77)",
+      "options": [
+        "divided",
+        "hasty",
+        "unanimous",
+        "silent"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 78)",
+      "options": [
+        "rude",
+        "careless",
+        "diplomatic",
+        "hostile"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 79)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "validated",
+        "fabricated"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 80)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "likely",
+        "immune"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 81)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "forgot",
+        "proceeded"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 82)",
+      "options": [
+        "divided",
+        "hasty",
+        "silent",
+        "unanimous"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 83)",
+      "options": [
+        "rude",
+        "careless",
+        "hostile",
+        "diplomatic"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 84)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "fabricated",
+        "validated"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 85)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "immune",
+        "likely"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 86)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "forgot",
+        "proceeded"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 87)",
+      "options": [
+        "divided",
+        "hasty",
+        "silent",
+        "unanimous"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 88)",
+      "options": [
+        "rude",
+        "careless",
+        "hostile",
+        "diplomatic"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 89)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "fabricated",
+        "validated"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 90)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "immune",
+        "likely"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 91)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "forgot",
+        "proceeded"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 92)",
+      "options": [
+        "divided",
+        "hasty",
+        "silent",
+        "unanimous"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 93)",
+      "options": [
+        "rude",
+        "careless",
+        "hostile",
+        "diplomatic"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 94)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "fabricated",
+        "validated"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 95)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "immune",
+        "likely"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 96)",
+      "options": [
+        "cancelled",
+        "postponed forever",
+        "forgot",
+        "proceeded"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+      "trick": "Despite rain → continued.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 97)",
+      "options": [
+        "divided",
+        "hasty",
+        "silent",
+        "unanimous"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+      "trick": "Strong evidence → agreement.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 98)",
+      "options": [
+        "rude",
+        "careless",
+        "hostile",
+        "diplomatic"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+      "trick": "Calming → tactful.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 99)",
+      "options": [
+        "destroyed",
+        "ignored",
+        "fabricated",
+        "validated"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+      "trick": "Data supports theory.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 100)",
+      "options": [
+        "unlikely",
+        "certain not",
+        "immune",
+        "likely"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+      "trick": "Likely outcome.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

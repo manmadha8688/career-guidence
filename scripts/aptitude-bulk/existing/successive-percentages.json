@@ -1,0 +1,402 @@
+[
+  {
+    "id": "successive-percentages-q1",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "A price increases by 10% and then by 20%. Find the net percentage increase.",
+    "options": [
+      "32%",
+      "30%",
+      "22%",
+      "33%"
+    ],
+    "answer": "A",
+    "solution": "Net% = 10 + 20 + (10×20)/100 = 30 + 2 = 32%.",
+    "trick": "10 + 20 + 2 = 32%.",
+    "type": "Two successive changes",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q2",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "A salary rises 25% and then rises another 20%. Find the total percentage rise.",
+    "options": [
+      "45%",
+      "50%",
+      "55%",
+      "44%"
+    ],
+    "answer": "B",
+    "solution": "Net% = 25 + 20 + (25×20)/100 = 45 + 5 = 50%.",
+    "trick": "25 + 20 + 5 = 50%.",
+    "type": "Two successive changes",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q3",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "A number is increased 10% then decreased 10%. Find the net change.",
+    "options": [
+      "No change",
+      "1% increase",
+      "1% decrease",
+      "2% decrease"
+    ],
+    "answer": "C",
+    "solution": "Same up-down x% → −x²/100 = −(10²)/100 = −1%, a 1% decrease.",
+    "trick": "±10% → 1% loss.",
+    "type": "Rise then fall by the same %",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q4",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "A ₹10000 investment grows 10% each year. Find its value after 2 years.",
+    "options": [
+      "₹12000",
+      "₹11000",
+      "₹12200",
+      "₹12100"
+    ],
+    "answer": "D",
+    "solution": "10000 × 1.1 × 1.1 = 10000 × 1.21 = ₹12100.",
+    "trick": "×1.21 → 12100.",
+    "type": "Value over years",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q5",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "After a 20% increase, a price becomes ₹600. Find the original price.",
+    "options": [
+      "₹500",
+      "₹480",
+      "₹550",
+      "₹520"
+    ],
+    "answer": "A",
+    "solution": "Original = 600 / 1.2 = ₹500.",
+    "trick": "600 / 1.2 = 500.",
+    "type": "Find the original",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q6",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "The side of a square is increased by 10%. Find the percentage increase in its area.",
+    "options": [
+      "20%",
+      "21%",
+      "100%",
+      "10%"
+    ],
+    "answer": "B",
+    "solution": "Both dimensions rise 10%: net = 10 + 10 + (10×10)/100 = 21%.",
+    "trick": "10 + 10 + 1 = 21%.",
+    "type": "Effect on area / expenditure",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q7",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 7,
+    "difficulty": "easy",
+    "question": "A price is reduced by 20%. By what percent must it be increased to restore the original?",
+    "options": [
+      "20%",
+      "22%",
+      "25%",
+      "30%"
+    ],
+    "answer": "C",
+    "solution": "Restoring rise = x/(100 − x) × 100 = 20/80 × 100 = 25%.",
+    "trick": "20/80 = 25%.",
+    "type": "Restore the original",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q8",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "The price of sugar rises 25% but a family cuts consumption 10%. Find the percentage change in expenditure.",
+    "options": [
+      "15% increase",
+      "12.5% decrease",
+      "10% increase",
+      "12.5% increase"
+    ],
+    "answer": "D",
+    "solution": "Expenditure = price × quantity: 25 + (−10) + (25×−10)/100 = 25 − 10 − 2.5 = +12.5%.",
+    "trick": "25 − 10 − 2.5 = 12.5%.",
+    "type": "Effect on area / expenditure",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q9",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "A number is increased by 40% and then decreased by 40%. Find the net change.",
+    "options": [
+      "16% decrease",
+      "No change",
+      "16% increase",
+      "20% decrease"
+    ],
+    "answer": "A",
+    "solution": "Same up-down x% → −x²/100 = −(40²)/100 = −16%.",
+    "trick": "±40% → 16% loss.",
+    "type": "Rise then fall by the same %",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q10",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "A machine worth ₹50000 depreciates 10% in the first year and 20% in the second. Find its value after 2 years.",
+    "options": [
+      "₹35000",
+      "₹36000",
+      "₹40000",
+      "₹34000"
+    ],
+    "answer": "B",
+    "solution": "50000 × 0.9 × 0.8 = 50000 × 0.72 = ₹36000.",
+    "trick": "×0.9 ×0.8 = ×0.72 → 36000.",
+    "type": "Value over years",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q11",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "After two successive increases of 10% and 20%, a value becomes ₹1320. Find the original value.",
+    "options": [
+      "₹1100",
+      "₹1200",
+      "₹1000",
+      "₹1050"
+    ],
+    "answer": "C",
+    "solution": "Factor = 1.1 × 1.2 = 1.32. Original = 1320 / 1.32 = ₹1000.",
+    "trick": "1320 / 1.32 = 1000.",
+    "type": "Find the original",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q12",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "The length of a rectangle increases 30% and its breadth decreases 20%. Find the percentage change in area.",
+    "options": [
+      "10% increase",
+      "4% decrease",
+      "6% increase",
+      "4% increase"
+    ],
+    "answer": "D",
+    "solution": "Net% = 30 + (−20) + (30×−20)/100 = 30 − 20 − 6 = +4%.",
+    "trick": "30 − 20 − 6 = 4%.",
+    "type": "Effect on area / expenditure",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q13",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Both the length and breadth of a rectangle are reduced by 10%. Find the percentage change in area.",
+    "options": [
+      "19% decrease",
+      "20% decrease",
+      "18% decrease",
+      "10% decrease"
+    ],
+    "answer": "A",
+    "solution": "Net% = −10 + (−10) + (−10×−10)/100 = −20 + 1 = −19%.",
+    "trick": "−10 − 10 + 1 = −19%.",
+    "type": "Effect on area / expenditure",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q14",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "The salary of an employee is increased by 20%. By what percent must it be decreased to bring it back to the original?",
+    "options": [
+      "20%",
+      "16.67%",
+      "25%",
+      "18%"
+    ],
+    "answer": "B",
+    "solution": "Restoring fall = x/(100 + x) × 100 = 20/120 × 100 = 16.67%.",
+    "trick": "20/120 = 16.67%.",
+    "type": "Restore the original",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q15",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "A price rises 10%, then rises 20%, then falls 25%. Find the net percentage change.",
+    "options": [
+      "5% increase",
+      "1% increase",
+      "1% decrease",
+      "No change"
+    ],
+    "answer": "C",
+    "solution": "Factor = 1.1 × 1.2 × 0.75 = 0.99, so a 1% decrease.",
+    "trick": "1.1 × 1.2 × 0.75 = 0.99 → −1%.",
+    "type": "Two successive changes",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q16",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "A man's salary is increased by 20% and then decreased by 20%. If his final salary is ₹19200, find his original salary.",
+    "options": [
+      "₹19200",
+      "₹24000",
+      "₹19000",
+      "₹20000"
+    ],
+    "answer": "D",
+    "solution": "Final factor = 1.2 × 0.8 = 0.96. Original = 19200 / 0.96 = ₹20000.",
+    "trick": "19200 / 0.96 = 20000.",
+    "type": "Rise then fall by the same %",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q17",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "A population grows 10% each year and is 13310 after 3 years. Find the population at the start.",
+    "options": [
+      "10000",
+      "11000",
+      "12000",
+      "9000"
+    ],
+    "answer": "A",
+    "solution": "Factor = 1.1³ = 1.331. Start = 13310 / 1.331 = 10000.",
+    "trick": "13310 / 1.331 = 10000.",
+    "type": "Value over years",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q18",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "After an increase of 25% followed by a decrease of 20%, a number remains ₹4000. Find the original number.",
+    "options": [
+      "₹4200",
+      "₹4000",
+      "₹3800",
+      "₹5000"
+    ],
+    "answer": "B",
+    "solution": "Factor = 1.25 × 0.8 = 1.0, so the value is unchanged: the original is also ₹4000.",
+    "trick": "1.25 × 0.8 = 1 → unchanged.",
+    "type": "Find the original",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q19",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "If the radius of a circle is increased by 20%, find the percentage increase in its area.",
+    "options": [
+      "40%",
+      "20%",
+      "44%",
+      "21%"
+    ],
+    "answer": "C",
+    "solution": "Area ∝ radius², so factor = 1.2² = 1.44, a 44% increase. (Equivalent to 20 + 20 + 4.)",
+    "trick": "1.2² = 1.44 → 44%.",
+    "type": "Effect on area / expenditure",
+    "active": true
+  },
+  {
+    "id": "successive-percentages-q20",
+    "topic": "successive-percentages",
+    "category": "quantitative",
+    "group": "percentage-commercial",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "The price of petrol increases by 25%. By what percent should a driver reduce consumption so that expenditure stays unchanged?",
+    "options": [
+      "25%",
+      "33.33%",
+      "16.67%",
+      "20%"
+    ],
+    "answer": "D",
+    "solution": "Reduce by x/(100 + x) × 100 = 25/125 × 100 = 20%.",
+    "trick": "25/125 = 20%.",
+    "type": "Restore the original",
+    "active": true
+  }
+]

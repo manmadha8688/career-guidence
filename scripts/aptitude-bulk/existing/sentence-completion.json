@@ -1,0 +1,2002 @@
+[
+  {
+    "id": "sentence-completion-q1",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Fill the blank: 'She was very tired, so she ___ early.'",
+    "options": [
+      "slept",
+      "woke",
+      "ran",
+      "ate"
+    ],
+    "answer": "A",
+    "solution": "'so' continues the idea; being tired leads to sleeping early.",
+    "trick": "'so' → same tone (result).",
+    "type": "Continuation",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q2",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Fill the blank: 'He is rich but ___.'",
+    "options": [
+      "wealthy",
+      "unhappy",
+      "successful",
+      "famous"
+    ],
+    "answer": "B",
+    "solution": "'but' flips the positive 'rich' to a contrasting idea → 'unhappy'.",
+    "trick": "'but' → opposite tone.",
+    "type": "Contrast",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q3",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Fill the blank: 'The scientist made an important ___ that changed medicine.'",
+    "options": [
+      "mistake",
+      "noise",
+      "discovery",
+      "delay"
+    ],
+    "answer": "C",
+    "solution": "A positive achievement that 'changed medicine' → 'discovery'.",
+    "trick": "Match the positive context.",
+    "type": "Vocabulary fit",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q4",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Fill the blank: 'The children were ___ in the garden.'",
+    "options": [
+      "play",
+      "plays",
+      "played",
+      "playing"
+    ],
+    "answer": "D",
+    "solution": "'were ___' needs the -ing form → 'playing'.",
+    "trick": "were + verb-ing.",
+    "type": "Grammar fit",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q5",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Fill the blank: '___ it rained heavily, the match was cancelled.'",
+    "options": [
+      "Although",
+      "Because",
+      "So",
+      "If"
+    ],
+    "answer": "B",
+    "solution": "Heavy rain causing a cancellation is cause and effect, so 'Because' fits. 'Although' would need a surprising result (e.g. 'the match was still held').",
+    "trick": "Cause and effect → Because.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q6",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 6,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'He studied hard; ___, he passed the exam.'",
+    "options": [
+      "however",
+      "therefore",
+      "although",
+      "despite"
+    ],
+    "answer": "B",
+    "solution": "Hard study leads to passing (cause–effect) → 'therefore'.",
+    "trick": "Cause–effect → therefore.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q7",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'She is not only intelligent ___ hardworking.'",
+    "options": [
+      "and",
+      "or",
+      "but also",
+      "because"
+    ],
+    "answer": "C",
+    "solution": "'not only ... but also' is the correct correlative pair.",
+    "trick": "not only ... but also.",
+    "type": "Correlative",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q8",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'The weather was cold, ___ we stayed indoors.'",
+    "options": [
+      "but",
+      "although",
+      "however",
+      "so"
+    ],
+    "answer": "D",
+    "solution": "Cold weather causing staying in is a result → 'so'.",
+    "trick": "Result → so.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q9",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'He ran fast, ___ he missed the bus.'",
+    "options": [
+      "but",
+      "so",
+      "because",
+      "and"
+    ],
+    "answer": "A",
+    "solution": "Running fast yet missing the bus is a contrast → 'but'.",
+    "trick": "Unexpected result → but.",
+    "type": "Contrast",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q10",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'Please be quiet ___ the baby is sleeping.'",
+    "options": [
+      "but",
+      "because",
+      "although",
+      "or"
+    ],
+    "answer": "B",
+    "solution": "The reason to be quiet is the sleeping baby → 'because'.",
+    "trick": "Reason → because.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q11",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'The book was ___; I couldn't put it down.'",
+    "options": [
+      "boring",
+      "dull",
+      "fascinating",
+      "short"
+    ],
+    "answer": "C",
+    "solution": "'couldn't put it down' signals a very engaging book → 'fascinating'.",
+    "trick": "Use the positive clue.",
+    "type": "Vocabulary fit",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q12",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'They worked hard ___ they could finish on time.'",
+    "options": [
+      "although",
+      "but",
+      "despite",
+      "so that"
+    ],
+    "answer": "D",
+    "solution": "Purpose (finishing on time) → 'so that'.",
+    "trick": "Purpose → so that.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q13",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'Despite ___ hard, he failed.'",
+    "options": [
+      "working",
+      "work",
+      "works",
+      "worked"
+    ],
+    "answer": "A",
+    "solution": "'Despite' is followed by a gerund → 'working'.",
+    "trick": "Despite + verb-ing.",
+    "type": "Grammar fit",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q14",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Fill the blank: 'The road was slippery, ___ she drove carefully.'",
+    "options": [
+      "but",
+      "so",
+      "although",
+      "because"
+    ],
+    "answer": "B",
+    "solution": "Slippery road causing careful driving is a result → 'so'.",
+    "trick": "Result → so.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q15",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Fill the blank: 'He is ___ than his brother.'",
+    "options": [
+      "tall",
+      "tallest",
+      "taller",
+      "more tall"
+    ],
+    "answer": "C",
+    "solution": "Comparison with 'than' needs the comparative → 'taller'.",
+    "trick": "Comparative + than.",
+    "type": "Grammar fit",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q16",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Fill the blank: 'I will call you ___ I reach home.'",
+    "options": [
+      "although",
+      "despite",
+      "because",
+      "when"
+    ],
+    "answer": "D",
+    "solution": "The call happens at the time of reaching home → 'when'.",
+    "trick": "Time link → when.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q17",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Fill the blank: 'The medicine was ___, so he recovered quickly.'",
+    "options": [
+      "effective",
+      "useless",
+      "harmful",
+      "expired"
+    ],
+    "answer": "A",
+    "solution": "Quick recovery implies the medicine worked → 'effective'.",
+    "trick": "'so recovered' → positive word.",
+    "type": "Vocabulary fit",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q18",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Fill the blank: 'She spoke softly ___ no one could hear her.'",
+    "options": [
+      "because",
+      "so that",
+      "although",
+      "but"
+    ],
+    "answer": "B",
+    "solution": "Result of speaking softly → 'so that no one could hear'.",
+    "trick": "Result/purpose → so that.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q19",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Fill the blank: 'He is honest, ___ everyone trusts him.'",
+    "options": [
+      "but",
+      "although",
+      "so",
+      "despite"
+    ],
+    "answer": "C",
+    "solution": "Honesty leads to trust (result) → 'so'.",
+    "trick": "Result → so.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "sentence-completion-q20",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Fill the blank: 'We reached late ___ the traffic jam.'",
+    "options": [
+      "although",
+      "despite",
+      "but",
+      "because of"
+    ],
+    "answer": "D",
+    "solution": "The jam is the reason (followed by a noun) → 'because of'.",
+    "trick": "'because of' + noun.",
+    "type": "Connector",
+    "active": true
+  },
+  {
+    "id": "6a5fb431e9ef5d6127cfe94f",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 21,
+    "difficulty": "easy",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.'",
+    "options": [
+      "proceeded",
+      "cancelled",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb433e9ef5d6127cfe954",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 22,
+    "difficulty": "easy",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.'",
+    "options": [
+      "unanimous",
+      "divided",
+      "hasty",
+      "silent"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb434e9ef5d6127cfe957",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 23,
+    "difficulty": "easy",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.'",
+    "options": [
+      "diplomatic",
+      "rude",
+      "careless",
+      "hostile"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb435e9ef5d6127cfe95a",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 24,
+    "difficulty": "easy",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.'",
+    "options": [
+      "validated",
+      "destroyed",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb437e9ef5d6127cfe95e",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 25,
+    "difficulty": "easy",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.'",
+    "options": [
+      "likely",
+      "unlikely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb438e9ef5d6127cfe962",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 26,
+    "difficulty": "easy",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 26)",
+    "options": [
+      "proceeded",
+      "cancelled",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb439e9ef5d6127cfe965",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 27,
+    "difficulty": "easy",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 27)",
+    "options": [
+      "unanimous",
+      "divided",
+      "hasty",
+      "silent"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb43be9ef5d6127cfe969",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 28,
+    "difficulty": "easy",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 28)",
+    "options": [
+      "diplomatic",
+      "rude",
+      "careless",
+      "hostile"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb43ce9ef5d6127cfe96d",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 29,
+    "difficulty": "easy",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 29)",
+    "options": [
+      "validated",
+      "destroyed",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb43de9ef5d6127cfe970",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 30,
+    "difficulty": "easy",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 30)",
+    "options": [
+      "likely",
+      "unlikely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb43fe9ef5d6127cfe974",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 31,
+    "difficulty": "easy",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 31)",
+    "options": [
+      "proceeded",
+      "cancelled",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb440e9ef5d6127cfe977",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 32,
+    "difficulty": "easy",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 32)",
+    "options": [
+      "unanimous",
+      "divided",
+      "hasty",
+      "silent"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb441e9ef5d6127cfe97c",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 33,
+    "difficulty": "easy",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 33)",
+    "options": [
+      "diplomatic",
+      "rude",
+      "careless",
+      "hostile"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb443e9ef5d6127cfe97f",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 34,
+    "difficulty": "easy",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 34)",
+    "options": [
+      "validated",
+      "destroyed",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb444e9ef5d6127cfe982",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 35,
+    "difficulty": "easy",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 35)",
+    "options": [
+      "likely",
+      "unlikely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb445e9ef5d6127cfe985",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 36,
+    "difficulty": "medium",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 36)",
+    "options": [
+      "proceeded",
+      "cancelled",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb447e9ef5d6127cfe987",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 37,
+    "difficulty": "medium",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 37)",
+    "options": [
+      "unanimous",
+      "divided",
+      "hasty",
+      "silent"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb448e9ef5d6127cfe98b",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 38,
+    "difficulty": "medium",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 38)",
+    "options": [
+      "diplomatic",
+      "rude",
+      "careless",
+      "hostile"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb44ae9ef5d6127cfe98e",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 39,
+    "difficulty": "medium",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 39)",
+    "options": [
+      "validated",
+      "destroyed",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb44be9ef5d6127cfe992",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 40,
+    "difficulty": "medium",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 40)",
+    "options": [
+      "likely",
+      "unlikely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "A",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb44ce9ef5d6127cfe996",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 41,
+    "difficulty": "medium",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 41)",
+    "options": [
+      "cancelled",
+      "proceeded",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb44ee9ef5d6127cfe999",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 42,
+    "difficulty": "medium",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 42)",
+    "options": [
+      "divided",
+      "unanimous",
+      "hasty",
+      "silent"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb44fe9ef5d6127cfe99d",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 43,
+    "difficulty": "medium",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 43)",
+    "options": [
+      "rude",
+      "diplomatic",
+      "careless",
+      "hostile"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb450e9ef5d6127cfe9a0",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 44,
+    "difficulty": "medium",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 44)",
+    "options": [
+      "destroyed",
+      "validated",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb452e9ef5d6127cfe9a4",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 45,
+    "difficulty": "medium",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 45)",
+    "options": [
+      "unlikely",
+      "likely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb453e9ef5d6127cfe9a6",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 46,
+    "difficulty": "medium",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 46)",
+    "options": [
+      "cancelled",
+      "proceeded",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb454e9ef5d6127cfe9aa",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 47,
+    "difficulty": "medium",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 47)",
+    "options": [
+      "divided",
+      "unanimous",
+      "hasty",
+      "silent"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb456e9ef5d6127cfe9ad",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 48,
+    "difficulty": "medium",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 48)",
+    "options": [
+      "rude",
+      "diplomatic",
+      "careless",
+      "hostile"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb457e9ef5d6127cfe9b2",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 49,
+    "difficulty": "medium",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 49)",
+    "options": [
+      "destroyed",
+      "validated",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb458e9ef5d6127cfe9b5",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 50,
+    "difficulty": "medium",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 50)",
+    "options": [
+      "unlikely",
+      "likely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb459e9ef5d6127cfe9b9",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 51,
+    "difficulty": "medium",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 51)",
+    "options": [
+      "cancelled",
+      "proceeded",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb45be9ef5d6127cfe9bc",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 52,
+    "difficulty": "medium",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 52)",
+    "options": [
+      "divided",
+      "unanimous",
+      "hasty",
+      "silent"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb45ce9ef5d6127cfe9c1",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 53,
+    "difficulty": "medium",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 53)",
+    "options": [
+      "rude",
+      "diplomatic",
+      "careless",
+      "hostile"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb45de9ef5d6127cfe9c5",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 54,
+    "difficulty": "medium",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 54)",
+    "options": [
+      "destroyed",
+      "validated",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb45fe9ef5d6127cfe9c8",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 55,
+    "difficulty": "medium",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 55)",
+    "options": [
+      "unlikely",
+      "likely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb460e9ef5d6127cfe9cc",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 56,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 56)",
+    "options": [
+      "cancelled",
+      "proceeded",
+      "postponed forever",
+      "forgot"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb461e9ef5d6127cfe9d0",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 57,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 57)",
+    "options": [
+      "divided",
+      "unanimous",
+      "hasty",
+      "silent"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb463e9ef5d6127cfe9d4",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 58,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 58)",
+    "options": [
+      "rude",
+      "diplomatic",
+      "careless",
+      "hostile"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb464e9ef5d6127cfe9d8",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 59,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 59)",
+    "options": [
+      "destroyed",
+      "validated",
+      "ignored",
+      "fabricated"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb465e9ef5d6127cfe9db",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 60,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 60)",
+    "options": [
+      "unlikely",
+      "likely",
+      "certain not",
+      "immune"
+    ],
+    "answer": "B",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb467e9ef5d6127cfe9e0",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 61,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 61)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "proceeded",
+      "forgot"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb468e9ef5d6127cfe9e3",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 62,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 62)",
+    "options": [
+      "divided",
+      "hasty",
+      "unanimous",
+      "silent"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb46ae9ef5d6127cfe9e7",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 63,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 63)",
+    "options": [
+      "rude",
+      "careless",
+      "diplomatic",
+      "hostile"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb46be9ef5d6127cfe9eb",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 64,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 64)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "validated",
+      "fabricated"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb46ce9ef5d6127cfe9ef",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 65,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 65)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "likely",
+      "immune"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb46de9ef5d6127cfe9f3",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 66,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 66)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "proceeded",
+      "forgot"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb46fe9ef5d6127cfe9f6",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 67,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 67)",
+    "options": [
+      "divided",
+      "hasty",
+      "unanimous",
+      "silent"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb470e9ef5d6127cfe9fa",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 68,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 68)",
+    "options": [
+      "rude",
+      "careless",
+      "diplomatic",
+      "hostile"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb471e9ef5d6127cfe9fe",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 69,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 69)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "validated",
+      "fabricated"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb473e9ef5d6127cfea02",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 70,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 70)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "likely",
+      "immune"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb474e9ef5d6127cfea05",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 71,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 71)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "proceeded",
+      "forgot"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb475e9ef5d6127cfea08",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 72,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 72)",
+    "options": [
+      "divided",
+      "hasty",
+      "unanimous",
+      "silent"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb477e9ef5d6127cfea0c",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 73,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 73)",
+    "options": [
+      "rude",
+      "careless",
+      "diplomatic",
+      "hostile"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb478e9ef5d6127cfea10",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 74,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 74)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "validated",
+      "fabricated"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb479e9ef5d6127cfea14",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 75,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 75)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "likely",
+      "immune"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Context completion",
+    "active": true
+  },
+  {
+    "id": "6a5fb47be9ef5d6127cfea17",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 76,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 76)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "proceeded",
+      "forgot"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb47ce9ef5d6127cfea1a",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 77,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 77)",
+    "options": [
+      "divided",
+      "hasty",
+      "unanimous",
+      "silent"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb47de9ef5d6127cfea1e",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 78,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 78)",
+    "options": [
+      "rude",
+      "careless",
+      "diplomatic",
+      "hostile"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb47fe9ef5d6127cfea23",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 79,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 79)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "validated",
+      "fabricated"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb480e9ef5d6127cfea26",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 80,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 80)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "likely",
+      "immune"
+    ],
+    "answer": "C",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb481e9ef5d6127cfea2a",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 81,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 81)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "forgot",
+      "proceeded"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb483e9ef5d6127cfea2d",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 82,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 82)",
+    "options": [
+      "divided",
+      "hasty",
+      "silent",
+      "unanimous"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb484e9ef5d6127cfea31",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 83,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 83)",
+    "options": [
+      "rude",
+      "careless",
+      "hostile",
+      "diplomatic"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb485e9ef5d6127cfea35",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 84,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 84)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "fabricated",
+      "validated"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb486e9ef5d6127cfea39",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 85,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 85)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "immune",
+      "likely"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb488e9ef5d6127cfea3d",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 86,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 86)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "forgot",
+      "proceeded"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb489e9ef5d6127cfea40",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 87,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 87)",
+    "options": [
+      "divided",
+      "hasty",
+      "silent",
+      "unanimous"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb48ae9ef5d6127cfea44",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 88,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 88)",
+    "options": [
+      "rude",
+      "careless",
+      "hostile",
+      "diplomatic"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb48ce9ef5d6127cfea48",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 89,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 89)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "fabricated",
+      "validated"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb48de9ef5d6127cfea4b",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 90,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 90)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "immune",
+      "likely"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "CAT level",
+    "active": true
+  },
+  {
+    "id": "6a5fb48ee9ef5d6127cfea4f",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 91,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 91)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "forgot",
+      "proceeded"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb490e9ef5d6127cfea52",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 92,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 92)",
+    "options": [
+      "divided",
+      "hasty",
+      "silent",
+      "unanimous"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb491e9ef5d6127cfea56",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 93,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 93)",
+    "options": [
+      "rude",
+      "careless",
+      "hostile",
+      "diplomatic"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb492e9ef5d6127cfea5a",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 94,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 94)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "fabricated",
+      "validated"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb493e9ef5d6127cfea5e",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 95,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 95)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "immune",
+      "likely"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb495e9ef5d6127cfea61",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 96,
+    "difficulty": "hard",
+    "question": "Complete: 'Although it was raining, the match ___ as scheduled.' (Set 96)",
+    "options": [
+      "cancelled",
+      "postponed forever",
+      "forgot",
+      "proceeded"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'proceeded'. Step 2: Answer: proceeded.",
+    "trick": "Despite rain → continued.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb496e9ef5d6127cfea65",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 97,
+    "difficulty": "hard",
+    "question": "Complete: 'The evidence was so strong that the jury reached a ___ verdict.' (Set 97)",
+    "options": [
+      "divided",
+      "hasty",
+      "silent",
+      "unanimous"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'unanimous'. Step 2: Answer: unanimous.",
+    "trick": "Strong evidence → agreement.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb497e9ef5d6127cfea6a",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 98,
+    "difficulty": "hard",
+    "question": "Complete: 'Her ___ attitude helped her calm the angry customer.' (Set 98)",
+    "options": [
+      "rude",
+      "careless",
+      "hostile",
+      "diplomatic"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'diplomatic'. Step 2: Answer: diplomatic.",
+    "trick": "Calming → tactful.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb499e9ef5d6127cfea6c",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 99,
+    "difficulty": "hard",
+    "question": "Complete: 'The scientist's theory was ___ by new experimental data.' (Set 99)",
+    "options": [
+      "destroyed",
+      "ignored",
+      "fabricated",
+      "validated"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'validated'. Step 2: Answer: validated.",
+    "trick": "Data supports theory.",
+    "type": "Real-world disguise",
+    "active": true
+  },
+  {
+    "id": "6a5fb49ae9ef5d6127cfea6e",
+    "topic": "sentence-completion",
+    "category": "verbal",
+    "group": "sentence-skills",
+    "order": 100,
+    "difficulty": "hard",
+    "question": "Complete: 'Without proper funding, the project is ___ to fail.' (Set 100)",
+    "options": [
+      "unlikely",
+      "certain not",
+      "immune",
+      "likely"
+    ],
+    "answer": "D",
+    "solution": "Step 1: Context/clause logic → 'likely'. Step 2: Answer: likely.",
+    "trick": "Likely outcome.",
+    "type": "Real-world disguise",
+    "active": true
+  }
+]

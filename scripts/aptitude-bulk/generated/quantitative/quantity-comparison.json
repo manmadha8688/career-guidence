@@ -1,0 +1,1207 @@
+{
+  "topic": "quantity-comparison",
+  "category": "quantitative",
+  "group": "data-based-quant",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "Equal",
+        "Cannot determine",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "Equal",
+        "A",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 1097,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1098,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1099,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1100,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1101,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1102,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1103,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1104,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1105,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "B",
+        "A",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1106,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1107,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1108,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "Equal",
+        "Cannot determine",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1109,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1110,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1111,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1112,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "Equal",
+        "Cannot determine",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1113,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1114,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1115,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "Equal",
+        "A",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1116,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1117,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "B",
+        "A",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1118,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1119,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1120,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1121,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1122,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "A",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1123,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1124,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1125,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1126,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1127,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1128,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1129,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1130,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1131,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1132,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "Equal",
+        "Cannot determine",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1133,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "B",
+        "A",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1134,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1135,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1136,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "Equal",
+        "Cannot determine",
+        "A"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1137,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1138,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1139,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1140,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1141,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1142,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1143,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "Equal",
+        "A",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1144,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1145,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1146,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1147,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1148,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "Equal",
+        "Cannot determine",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1149,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1150,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "B",
+        "A",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1151,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1152,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1153,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "B",
+        "A",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1154,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1155,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1156,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1157,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: area circle r=1 (π)\nQuantity B: 3",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: π > 3. Answer: A.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1158,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1159,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1160,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "Equal",
+        "Cannot determine",
+        "B"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1161,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1162,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 2³\nQuantity B: 3²",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1163,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: perimeter of square side 5\nQuantity B: 20",
+      "options": [
+        "A",
+        "B",
+        "Equal",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 20. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1164,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 1/2 + 1/3\nQuantity B: 5/6",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 5/6. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1165,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 7!\nQuantity B: 5040",
+      "options": [
+        "Equal",
+        "A",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "A",
+      "solution": "Step 1: Evaluate A and B. Step 2: 7! = 5040. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1166,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 3/4 of 80\nQuantity B: 60",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 60. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1167,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: √64\nQuantity B: 9",
+      "options": [
+        "A",
+        "Equal",
+        "B",
+        "Cannot determine"
+      ],
+      "answer": "C",
+      "solution": "Step 1: Evaluate A and B. Step 2: 8 < 9. Answer: B.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 1168,
+      "difficulty": "hard",
+      "question": "Compare:\nQuantity A: 15% of 200\nQuantity B: 25% of 120",
+      "options": [
+        "A",
+        "B",
+        "Cannot determine",
+        "Equal"
+      ],
+      "answer": "D",
+      "solution": "Step 1: Evaluate A and B. Step 2: Both 30. Answer: Equal.",
+      "trick": "Quantity comparison.",
+      "type": "Real-world disguise"
+    }
+  ]
+}

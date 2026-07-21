@@ -1,0 +1,402 @@
+[
+  {
+    "id": "circular-seating-arrangement-q1",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "People sit around a table facing the centre. In this setup, a person's LEFT points in which rotational direction (top-down view)?",
+    "options": [
+      "Clockwise",
+      "Anticlockwise",
+      "Towards the centre",
+      "Away from the centre"
+    ],
+    "answer": "A",
+    "solution": "Facing the centre, a person's left is clockwise in the top-down view.",
+    "trick": "Centre-facing: left = clockwise.",
+    "type": "Facing rule",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q2",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "People sit around a table facing OUTWARD. A person's left points in which rotational direction?",
+    "options": [
+      "Clockwise",
+      "Anticlockwise",
+      "Towards centre",
+      "Random"
+    ],
+    "answer": "B",
+    "solution": "Facing outward reverses it: left = anticlockwise.",
+    "trick": "Outward: left = anticlockwise.",
+    "type": "Facing rule",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q3",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "8 people sit around a table (seats 1–8). Who sits directly opposite seat 1?",
+    "options": [
+      "Seat 4",
+      "Seat 8",
+      "Seat 5",
+      "Seat 6"
+    ],
+    "answer": "C",
+    "solution": "Opposite = seat + n/2 = 1 + 4 = seat 5.",
+    "trick": "Opposite = +n/2.",
+    "type": "Opposite seat",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q4",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Why do we fix one person at a reference seat in a circular arrangement?",
+    "options": [
+      "To count faster",
+      "It is optional decoration",
+      "To make it a row",
+      "To remove rotational ambiguity"
+    ],
+    "answer": "D",
+    "solution": "A circle has rotational symmetry; anchoring one person makes positions definite.",
+    "trick": "Anchor = break rotation.",
+    "type": "Method",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q5",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "6 people around a table, seats numbered 1–6 clockwise. Moving clockwise from seat 6, which seat comes next?",
+    "options": [
+      "Seat 1",
+      "Seat 5",
+      "Seat 7",
+      "Seat 2"
+    ],
+    "answer": "A",
+    "solution": "The table loops, so after seat 6 you return to seat 1.",
+    "trick": "Wrap-around: after n comes 1.",
+    "type": "Wrap-around",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q6",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "10 people around a table (1–10). Who is directly opposite seat 3?",
+    "options": [
+      "Seat 7",
+      "Seat 8",
+      "Seat 9",
+      "Seat 6"
+    ],
+    "answer": "B",
+    "solution": "Opposite = 3 + n/2 = 3 + 5 = seat 8.",
+    "trick": "+n/2 = +5.",
+    "type": "Opposite seat",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q7",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "6 people seats 1–6 clockwise, facing centre (so right = anticlockwise). Who is 2nd to the right of seat 1?",
+    "options": [
+      "Seat 3",
+      "Seat 2",
+      "Seat 5",
+      "Seat 6"
+    ],
+    "answer": "C",
+    "solution": "Right = anticlockwise: seat 1 → 6 → 5, so 2nd right = seat 5.",
+    "trick": "Centre-facing right = anticlockwise; wrap.",
+    "type": "kth to the right",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q8",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "5 people around a table facing centre. B is to the immediate left of A. Since left = clockwise, B is on which side of A?",
+    "options": [
+      "Anticlockwise-adjacent",
+      "Opposite",
+      "Two seats away",
+      "Clockwise-adjacent"
+    ],
+    "answer": "D",
+    "solution": "Immediate left (centre-facing) = the next seat clockwise from A.",
+    "trick": "Left = clockwise-adjacent.",
+    "type": "Immediate neighbour",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q9",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "People face OUTWARD, seats 1–5 clockwise. Who is to the immediate left of seat 1?",
+    "options": [
+      "Seat 5",
+      "Seat 2",
+      "Seat 3",
+      "Seat 4"
+    ],
+    "answer": "A",
+    "solution": "Outward: left = anticlockwise; from seat 1 anticlockwise = seat 5.",
+    "trick": "Outward left = anticlockwise-adjacent.",
+    "type": "Facing rule",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q10",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "8 people seats 1–8 clockwise, facing centre (left = clockwise). Who is 3rd to the left of seat 2?",
+    "options": [
+      "Seat 7",
+      "Seat 5",
+      "Seat 4",
+      "Seat 6"
+    ],
+    "answer": "B",
+    "solution": "Left = clockwise: seat 2 → 3 → 4 → 5, so 3rd left = seat 5.",
+    "trick": "Centre-facing left = clockwise steps.",
+    "type": "kth to the right",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q11",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "6 people facing centre. P is opposite Q. If P is at seat 2, which seat is Q?",
+    "options": [
+      "Seat 4",
+      "Seat 6",
+      "Seat 5",
+      "Seat 3"
+    ],
+    "answer": "C",
+    "solution": "Opposite = 2 + 6/2 = 2 + 3 = seat 5.",
+    "trick": "+n/2 = +3.",
+    "type": "Opposite seat",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q12",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "5 people around a table facing centre, seats 1–5 clockwise. Who is 2nd to the left of seat 4? (left = clockwise)",
+    "options": [
+      "Seat 2",
+      "Seat 6",
+      "Seat 3",
+      "Seat 1"
+    ],
+    "answer": "D",
+    "solution": "Clockwise from 4: → 5 → 1, so 2nd left = seat 1 (wrapping past 5).",
+    "trick": "Wrap past the last seat.",
+    "type": "Wrap-around",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q13",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "4 people W,X,Y,Z face centre (seats 1–4 clockwise). W at seat 1, Y opposite W, X immediate left (clockwise) of W. Which seat is Z?",
+    "options": [
+      "Seat 4",
+      "Seat 2",
+      "Seat 3",
+      "Seat 1"
+    ],
+    "answer": "A",
+    "solution": "W=1, Y = 1+2 = seat 3, X = clockwise-adjacent = seat 2, so Z = seat 4.",
+    "trick": "Anchor + opposite + neighbour → last seat.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q14",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "In a circular arrangement, if everyone faces the centre and A's right neighbour is B, then from B's own perspective, A is on B's…?",
+    "options": [
+      "Right",
+      "Left",
+      "Opposite",
+      "Cannot say"
+    ],
+    "answer": "B",
+    "solution": "If B is to A's right (anticlockwise), then A is clockwise from B = B's left.",
+    "trick": "Neighbour relations reverse between the two people.",
+    "type": "Perspective",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q15",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "7 people around a table facing centre (left = clockwise), seats 1–7 clockwise. Who is 4th to the left of seat 6?",
+    "options": [
+      "Seat 2",
+      "Seat 4",
+      "Seat 3",
+      "Seat 5"
+    ],
+    "answer": "C",
+    "solution": "Clockwise from 6: 7,1,2,3 → 4th left = seat 3 (wrapping).",
+    "trick": "Count clockwise, wrap past 7.",
+    "type": "kth to the right",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q16",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "8 people face centre (seats 1–8 clockwise). A is opposite B; C is 3rd to the right of A (right = anticlockwise). If A is at seat 1, which seat is C?",
+    "options": [
+      "Seat 5",
+      "Seat 4",
+      "Seat 7",
+      "Seat 6"
+    ],
+    "answer": "D",
+    "solution": "Right = anticlockwise from seat 1: 8,7,6 → 3rd right = seat 6.",
+    "trick": "Anticlockwise count, wrap past 1.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q17",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "6 people around a table. 3 face the centre and 3 face outward (alternating). For an outward-facing person, 'right' points which way?",
+    "options": [
+      "Clockwise",
+      "Anticlockwise",
+      "Towards centre",
+      "Same as centre-facers"
+    ],
+    "answer": "A",
+    "solution": "Outward facing reverses directions: right = clockwise (opposite of centre-facing right).",
+    "trick": "Outward right = clockwise.",
+    "type": "Mixed facing",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q18",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "10 people face centre (seats 1–10 clockwise, left = clockwise). Who is 6th to the left of seat 4?",
+    "options": [
+      "Seat 9",
+      "Seat 10",
+      "Seat 1",
+      "Seat 8"
+    ],
+    "answer": "B",
+    "solution": "Clockwise from 4: 5,6,7,8,9,10 → 6th left = seat 10.",
+    "trick": "6 clockwise steps from 4.",
+    "type": "kth to the right",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q19",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "8 people face centre. P is 2nd to the right of Q; R is opposite P. If Q is at seat 1 (right = anticlockwise), which seat is R?",
+    "options": [
+      "Seat 7",
+      "Seat 4",
+      "Seat 3",
+      "Seat 5"
+    ],
+    "answer": "C",
+    "solution": "Right = anticlockwise from Q(1): 8,7 → P = seat 7; R opposite P = 7 − 4 = seat 3 (7+4=11→ wraps to 3).",
+    "trick": "Opposite = ±n/2, then wrap.",
+    "type": "Combined clues",
+    "active": true
+  },
+  {
+    "id": "circular-seating-arrangement-q20",
+    "topic": "circular-seating-arrangement",
+    "category": "logical",
+    "group": "arrangements",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "5 people sit around a table facing centre. A is immediately left of B, and C is immediately left of A (left = clockwise). Going clockwise starting at C, what is the order of these three?",
+    "options": [
+      "B, A, C",
+      "A, B, C",
+      "C, B, A",
+      "C, A, B"
+    ],
+    "answer": "C",
+    "solution": "Left = clockwise, so 'X is immediately left of Y' means going clockwise from Y the next person is X. 'A left of B' gives B then A; 'C left of A' gives A then C. So the clockwise run is B, A, C. Reading clockwise starting at C: C, B, A.",
+    "trick": "'X left of Y' (left=clockwise) means clockwise Y then X — chain them.",
+    "type": "Ordering",
+    "active": true
+  }
+]

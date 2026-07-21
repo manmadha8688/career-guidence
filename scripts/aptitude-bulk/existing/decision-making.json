@@ -1,0 +1,402 @@
+[
+  {
+    "id": "decision-making-q1",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 1,
+    "difficulty": "easy",
+    "question": "Rule: Select a candidate only if they are a graduate AND aged 21–30. Candidate: graduate, aged 24. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Director",
+      "Data inadequate"
+    ],
+    "answer": "A",
+    "solution": "Both conditions pass, so the candidate is selected.",
+    "trick": "All AND conditions met → select.",
+    "type": "All conditions met",
+    "active": true
+  },
+  {
+    "id": "decision-making-q2",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 2,
+    "difficulty": "easy",
+    "question": "Rule: Select only if graduate AND aged 21–30 (no exceptions). Candidate: graduate, aged 19. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Director",
+      "Data inadequate"
+    ],
+    "answer": "B",
+    "solution": "Age 19 is below 21 and there is no exception, so reject.",
+    "trick": "Must-have fails, no exception → reject.",
+    "type": "One condition fails",
+    "active": true
+  },
+  {
+    "id": "decision-making-q3",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 3,
+    "difficulty": "easy",
+    "question": "Rule: Select if graduate AND aged 21–30; but if under 21 with a test score above 90%, refer to the Director. Candidate: graduate, aged 20, score 94%. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Director",
+      "Data inadequate"
+    ],
+    "answer": "C",
+    "solution": "Age fails, but the 'under 21 and >90%' exception matches → refer to the Director.",
+    "trick": "Matched exception → follow its redirect.",
+    "type": "Exception applies",
+    "active": true
+  },
+  {
+    "id": "decision-making-q4",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 4,
+    "difficulty": "easy",
+    "question": "Rule: Select if graduate AND aged 21–30. Candidate: graduate, age not stated. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Director",
+      "Data inadequate"
+    ],
+    "answer": "D",
+    "solution": "Age is required but missing, so the data is inadequate.",
+    "trick": "Required field missing → data inadequate.",
+    "type": "Data inadequate",
+    "active": true
+  },
+  {
+    "id": "decision-making-q5",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 5,
+    "difficulty": "easy",
+    "question": "Rule: Select if graduate AND passed the interview. Candidate: graduate, passed interview. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Manager",
+      "Data inadequate"
+    ],
+    "answer": "A",
+    "solution": "Both conditions are satisfied → selected.",
+    "trick": "All conditions pass → select.",
+    "type": "All conditions met",
+    "active": true
+  },
+  {
+    "id": "decision-making-q6",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 6,
+    "difficulty": "easy",
+    "question": "Rule: Select if graduate AND passed the interview (no exceptions). Candidate: not a graduate, passed interview. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Manager",
+      "Data inadequate"
+    ],
+    "answer": "B",
+    "solution": "Not a graduate — a must-have fails with no exception → reject.",
+    "trick": "Missing must-have → reject.",
+    "type": "One condition fails",
+    "active": true
+  },
+  {
+    "id": "decision-making-q7",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 7,
+    "difficulty": "medium",
+    "question": "Rule: Select if graduate AND passed interview; but if the interview is failed while having 5+ years experience, refer to the Manager. Candidate: graduate, failed interview, 6 years experience. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Manager",
+      "Data inadequate"
+    ],
+    "answer": "C",
+    "solution": "Interview failed but the '5+ years experience' exception matches → refer to the Manager.",
+    "trick": "Exception redirects, not selects.",
+    "type": "Exception applies",
+    "active": true
+  },
+  {
+    "id": "decision-making-q8",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 8,
+    "difficulty": "medium",
+    "question": "Rule: Select if graduate AND aged 21–30 AND passed interview. Candidate: graduate, aged 26, interview result not mentioned. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Manager",
+      "Data inadequate"
+    ],
+    "answer": "D",
+    "solution": "The interview result is a required condition but is missing → data inadequate.",
+    "trick": "Needed value absent → inadequate.",
+    "type": "Data inadequate",
+    "active": true
+  },
+  {
+    "id": "decision-making-q9",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 9,
+    "difficulty": "medium",
+    "question": "Rule: Select if graduate AND aged 21–30 AND passed interview. Candidate: graduate, aged 27, passed interview. Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Director",
+      "Data inadequate"
+    ],
+    "answer": "A",
+    "solution": "All three conditions pass → selected.",
+    "trick": "All AND conditions met.",
+    "type": "All conditions met",
+    "active": true
+  },
+  {
+    "id": "decision-making-q10",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 10,
+    "difficulty": "medium",
+    "question": "Rule: Select if graduate AND aged 21–30 AND passed interview. Candidate: graduate, aged 33, passed interview (no exceptions). Decision?",
+    "options": [
+      "Selected",
+      "Rejected",
+      "Refer to Director",
+      "Data inadequate"
+    ],
+    "answer": "B",
+    "solution": "Age 33 exceeds the range and there is no exception → reject.",
+    "trick": "Out-of-range must-have → reject.",
+    "type": "One condition fails",
+    "active": true
+  },
+  {
+    "id": "decision-making-q11",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 11,
+    "difficulty": "medium",
+    "question": "Rule: Approve a loan if income ≥ 50k AND credit score ≥ 700; but if income is below 50k while the applicant owns property worth 20 lakh+, refer to the Branch Head. Applicant: income 40k, property worth 25 lakh. Decision?",
+    "options": [
+      "Approve",
+      "Reject",
+      "Refer to Branch Head",
+      "Data inadequate"
+    ],
+    "answer": "C",
+    "solution": "Income fails but the property exception matches → refer to the Branch Head.",
+    "trick": "Matched exception → redirect.",
+    "type": "Exception applies",
+    "active": true
+  },
+  {
+    "id": "decision-making-q12",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 12,
+    "difficulty": "medium",
+    "question": "Rule: Approve a loan if income ≥ 50k AND credit score ≥ 700. Applicant: income 60k, credit score not provided. Decision?",
+    "options": [
+      "Approve",
+      "Reject",
+      "Refer to Branch Head",
+      "Data inadequate"
+    ],
+    "answer": "D",
+    "solution": "Credit score is required but missing → data inadequate.",
+    "trick": "Missing required field → inadequate.",
+    "type": "Data inadequate",
+    "active": true
+  },
+  {
+    "id": "decision-making-q13",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 13,
+    "difficulty": "medium",
+    "question": "Rule: Approve admission if the student scored ≥ 60% AND passed the entrance test. Student: 72%, passed the test. Decision?",
+    "options": [
+      "Approve admission",
+      "Reject",
+      "Refer to Dean",
+      "Data inadequate"
+    ],
+    "answer": "A",
+    "solution": "Both conditions are satisfied → approve.",
+    "trick": "All pass → approve.",
+    "type": "All conditions met",
+    "active": true
+  },
+  {
+    "id": "decision-making-q14",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 14,
+    "difficulty": "medium",
+    "question": "Rule: Approve admission if ≥ 60% AND passed the entrance test (no exceptions). Student: 55%, passed the test. Decision?",
+    "options": [
+      "Approve admission",
+      "Reject",
+      "Refer to Dean",
+      "Data inadequate"
+    ],
+    "answer": "B",
+    "solution": "55% is below 60% with no exception → reject.",
+    "trick": "Below threshold → reject.",
+    "type": "One condition fails",
+    "active": true
+  },
+  {
+    "id": "decision-making-q15",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 15,
+    "difficulty": "hard",
+    "question": "Rule: Approve if ≥ 60% AND passed the test; but if between 55–60% with a national-level achievement, refer to the Dean. Student: 58%, passed the test, national medal. Decision?",
+    "options": [
+      "Approve admission",
+      "Reject",
+      "Refer to Dean",
+      "Data inadequate"
+    ],
+    "answer": "C",
+    "solution": "Marks just below cutoff but the '55–60% with national achievement' exception matches → refer to the Dean.",
+    "trick": "Exception band matched → redirect.",
+    "type": "Exception applies",
+    "active": true
+  },
+  {
+    "id": "decision-making-q16",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 16,
+    "difficulty": "hard",
+    "question": "Rule: Approve if ≥ 60% AND passed the test. Student: 65%, test result not mentioned. Decision?",
+    "options": [
+      "Approve admission",
+      "Reject",
+      "Refer to Dean",
+      "Data inadequate"
+    ],
+    "answer": "D",
+    "solution": "The test result is required but missing → data inadequate.",
+    "trick": "Required value absent → inadequate.",
+    "type": "Data inadequate",
+    "active": true
+  },
+  {
+    "id": "decision-making-q17",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 17,
+    "difficulty": "hard",
+    "question": "Rule: Promote an employee if rating ≥ 4 AND 3+ years in role. Employee: rating 5, 4 years in role. Decision?",
+    "options": [
+      "Promote",
+      "Do not promote",
+      "Refer to HR",
+      "Data inadequate"
+    ],
+    "answer": "A",
+    "solution": "Both conditions pass → promote.",
+    "trick": "All conditions met → promote.",
+    "type": "All conditions met",
+    "active": true
+  },
+  {
+    "id": "decision-making-q18",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 18,
+    "difficulty": "hard",
+    "question": "Rule: Promote if rating ≥ 4 AND 3+ years in role (no exceptions). Employee: rating 3, 5 years in role. Decision?",
+    "options": [
+      "Promote",
+      "Do not promote",
+      "Refer to HR",
+      "Data inadequate"
+    ],
+    "answer": "B",
+    "solution": "Rating 3 is below 4 with no exception → do not promote.",
+    "trick": "Rating shortfall → reject.",
+    "type": "One condition fails",
+    "active": true
+  },
+  {
+    "id": "decision-making-q19",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 19,
+    "difficulty": "hard",
+    "question": "Rule: Promote if rating ≥ 4 AND 3+ years in role; but if rating ≥ 4 with only 2 years in role, refer to HR. Employee: rating 4, 2 years in role. Decision?",
+    "options": [
+      "Promote",
+      "Do not promote",
+      "Refer to HR",
+      "Data inadequate"
+    ],
+    "answer": "C",
+    "solution": "Tenure falls short, but the 'rating ≥ 4 with 2 years' exception matches → refer to HR.",
+    "trick": "Matched exception → redirect.",
+    "type": "Exception applies",
+    "active": true
+  },
+  {
+    "id": "decision-making-q20",
+    "topic": "decision-making",
+    "category": "logical",
+    "group": "analytical",
+    "order": 20,
+    "difficulty": "hard",
+    "question": "Rule: Promote if rating ≥ 4 AND 3+ years in role. Employee: 4 years in role, rating not recorded. Decision?",
+    "options": [
+      "Promote",
+      "Do not promote",
+      "Refer to HR",
+      "Data inadequate"
+    ],
+    "answer": "D",
+    "solution": "Rating is a required condition but is missing → data inadequate.",
+    "trick": "Missing required field → inadequate.",
+    "type": "Data inadequate",
+    "active": true
+  }
+]

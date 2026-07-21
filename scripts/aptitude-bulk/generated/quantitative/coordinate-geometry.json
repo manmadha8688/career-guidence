@@ -1,0 +1,1207 @@
+{
+  "topic": "coordinate-geometry",
+  "category": "quantitative",
+  "group": "geometry-mensuration",
+  "questions": [
+    {
+      "order": 21,
+      "difficulty": "easy",
+      "question": "Distance between (1,2) and (4,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((4-1)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 22,
+      "difficulty": "easy",
+      "question": "Distance between (2,3) and (8,3)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 23,
+      "difficulty": "easy",
+      "question": "Midpoint of (1,1) and (5,7)?",
+      "options": [
+        "4.0",
+        "6",
+        "3.0",
+        "4.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((1+5)/2, (1+7)/2) = (3.0, 4.0). x-coord = 3.0.",
+      "trick": "Average coordinates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 24,
+      "difficulty": "easy",
+      "question": "Slope of line through (0,0) and (3,6)?",
+      "options": [
+        "3",
+        "3",
+        "6",
+        "2"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 6/3 = 2.",
+      "trick": "rise/run.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 25,
+      "difficulty": "easy",
+      "question": "Point (3,4) distance from origin squared?",
+      "options": [
+        "25",
+        "7",
+        "1",
+        "26"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 25.",
+      "trick": "Origin distance².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 26,
+      "difficulty": "easy",
+      "question": "x-intercept of line x + y = 5?",
+      "options": [
+        "4",
+        "5",
+        "0",
+        "2"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 5.",
+      "trick": "Set y=0.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 27,
+      "difficulty": "easy",
+      "question": "Triangle with vertices (0,0), (12,0), (0,3) has area 6. Base on x-axis?",
+      "options": [
+        "6",
+        "3",
+        "12",
+        "6"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 6 → base = 12.",
+      "trick": "Area from coordinates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 28,
+      "difficulty": "easy",
+      "question": "Length of segment from origin to (6,8)?",
+      "options": [
+        "14",
+        "8",
+        "11",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(6²+8²) = 10.",
+      "trick": "Pythagoras.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 29,
+      "difficulty": "easy",
+      "question": "Distance between (2,2) and (5,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((5-2)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 30,
+      "difficulty": "easy",
+      "question": "Distance between (2,4) and (8,4)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 31,
+      "difficulty": "easy",
+      "question": "Midpoint of (2,1) and (6,7)?",
+      "options": [
+        "4.0",
+        "8",
+        "4.0",
+        "5.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((2+6)/2, (1+7)/2) = (4.0, 4.0). x-coord = 4.0.",
+      "trick": "Average coordinates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 32,
+      "difficulty": "easy",
+      "question": "Slope of line through (0,0) and (3,9)?",
+      "options": [
+        "4",
+        "3",
+        "9",
+        "3"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 9/3 = 3.",
+      "trick": "rise/run.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 33,
+      "difficulty": "easy",
+      "question": "Point (4,5) distance from origin squared?",
+      "options": [
+        "41",
+        "9",
+        "1",
+        "42"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 41.",
+      "trick": "Origin distance².",
+      "type": "Basic computation"
+    },
+    {
+      "order": 34,
+      "difficulty": "easy",
+      "question": "x-intercept of line x + y = 6?",
+      "options": [
+        "5",
+        "6",
+        "0",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 6.",
+      "trick": "Set y=0.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 35,
+      "difficulty": "easy",
+      "question": "Triangle with vertices (0,0), (14,0), (0,3) has area 7. Base on x-axis?",
+      "options": [
+        "7",
+        "3",
+        "14",
+        "7"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 7 → base = 14.",
+      "trick": "Area from coordinates.",
+      "type": "Basic computation"
+    },
+    {
+      "order": 36,
+      "difficulty": "medium",
+      "question": "Length of segment from origin to (7,9)?",
+      "options": [
+        "16",
+        "9",
+        "12",
+        "11"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(7²+9²) = 11.",
+      "trick": "Pythagoras.",
+      "type": "Standard application"
+    },
+    {
+      "order": 37,
+      "difficulty": "medium",
+      "question": "Distance between (3,2) and (6,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((6-3)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 38,
+      "difficulty": "medium",
+      "question": "Distance between (2,5) and (8,5)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Standard application"
+    },
+    {
+      "order": 39,
+      "difficulty": "medium",
+      "question": "Midpoint of (3,1) and (7,7)?",
+      "options": [
+        "4.0",
+        "10",
+        "5.0",
+        "6.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((3+7)/2, (1+7)/2) = (5.0, 4.0). x-coord = 5.0.",
+      "trick": "Average coordinates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 40,
+      "difficulty": "medium",
+      "question": "Slope of line through (0,0) and (3,12)?",
+      "options": [
+        "5",
+        "3",
+        "12",
+        "4"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 12/3 = 4.",
+      "trick": "rise/run.",
+      "type": "Standard application"
+    },
+    {
+      "order": 41,
+      "difficulty": "medium",
+      "question": "Point (5,6) distance from origin squared?",
+      "options": [
+        "61",
+        "11",
+        "1",
+        "62"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 61.",
+      "trick": "Origin distance².",
+      "type": "Standard application"
+    },
+    {
+      "order": 42,
+      "difficulty": "medium",
+      "question": "x-intercept of line x + y = 7?",
+      "options": [
+        "6",
+        "7",
+        "0",
+        "3"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 7.",
+      "trick": "Set y=0.",
+      "type": "Standard application"
+    },
+    {
+      "order": 43,
+      "difficulty": "medium",
+      "question": "Triangle with vertices (0,0), (16,0), (0,3) has area 8. Base on x-axis?",
+      "options": [
+        "8",
+        "3",
+        "16",
+        "8"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 8 → base = 16.",
+      "trick": "Area from coordinates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 44,
+      "difficulty": "medium",
+      "question": "Length of segment from origin to (8,10)?",
+      "options": [
+        "18",
+        "10",
+        "14",
+        "13"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(8²+10²) = 13.",
+      "trick": "Pythagoras.",
+      "type": "Standard application"
+    },
+    {
+      "order": 45,
+      "difficulty": "medium",
+      "question": "Distance between (4,2) and (7,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((7-4)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 46,
+      "difficulty": "medium",
+      "question": "Distance between (2,6) and (8,6)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Standard application"
+    },
+    {
+      "order": 47,
+      "difficulty": "medium",
+      "question": "Midpoint of (4,1) and (8,7)?",
+      "options": [
+        "4.0",
+        "12",
+        "6.0",
+        "7.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((4+8)/2, (1+7)/2) = (6.0, 4.0). x-coord = 6.0.",
+      "trick": "Average coordinates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 48,
+      "difficulty": "medium",
+      "question": "Slope of line through (0,0) and (3,15)?",
+      "options": [
+        "6",
+        "3",
+        "15",
+        "5"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 15/3 = 5.",
+      "trick": "rise/run.",
+      "type": "Standard application"
+    },
+    {
+      "order": 49,
+      "difficulty": "medium",
+      "question": "Point (6,7) distance from origin squared?",
+      "options": [
+        "85",
+        "13",
+        "1",
+        "86"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 85.",
+      "trick": "Origin distance².",
+      "type": "Standard application"
+    },
+    {
+      "order": 50,
+      "difficulty": "medium",
+      "question": "x-intercept of line x + y = 8?",
+      "options": [
+        "7",
+        "8",
+        "0",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 8.",
+      "trick": "Set y=0.",
+      "type": "Standard application"
+    },
+    {
+      "order": 51,
+      "difficulty": "medium",
+      "question": "Triangle with vertices (0,0), (18,0), (0,3) has area 9. Base on x-axis?",
+      "options": [
+        "9",
+        "3",
+        "18",
+        "9"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 9 → base = 18.",
+      "trick": "Area from coordinates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 52,
+      "difficulty": "medium",
+      "question": "Length of segment from origin to (9,11)?",
+      "options": [
+        "20",
+        "11",
+        "15",
+        "14"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(9²+11²) = 14.",
+      "trick": "Pythagoras.",
+      "type": "Standard application"
+    },
+    {
+      "order": 53,
+      "difficulty": "medium",
+      "question": "Distance between (5,2) and (8,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((8-5)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Standard application"
+    },
+    {
+      "order": 54,
+      "difficulty": "medium",
+      "question": "Distance between (2,7) and (8,7)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Standard application"
+    },
+    {
+      "order": 55,
+      "difficulty": "medium",
+      "question": "Midpoint of (5,1) and (9,7)?",
+      "options": [
+        "4.0",
+        "14",
+        "7.0",
+        "8.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((5+9)/2, (1+7)/2) = (7.0, 4.0). x-coord = 7.0.",
+      "trick": "Average coordinates.",
+      "type": "Standard application"
+    },
+    {
+      "order": 56,
+      "difficulty": "hard",
+      "question": "Slope of line through (0,0) and (3,18)?",
+      "options": [
+        "7",
+        "3",
+        "18",
+        "6"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 18/3 = 6.",
+      "trick": "rise/run.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 57,
+      "difficulty": "hard",
+      "question": "Point (7,8) distance from origin squared?",
+      "options": [
+        "113",
+        "15",
+        "1",
+        "114"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 113.",
+      "trick": "Origin distance².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 58,
+      "difficulty": "hard",
+      "question": "x-intercept of line x + y = 9?",
+      "options": [
+        "8",
+        "9",
+        "0",
+        "4"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 9.",
+      "trick": "Set y=0.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 59,
+      "difficulty": "hard",
+      "question": "Triangle with vertices (0,0), (20,0), (0,3) has area 10. Base on x-axis?",
+      "options": [
+        "10",
+        "3",
+        "20",
+        "10"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 10 → base = 20.",
+      "trick": "Area from coordinates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 60,
+      "difficulty": "hard",
+      "question": "Length of segment from origin to (10,12)?",
+      "options": [
+        "22",
+        "12",
+        "17",
+        "16"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(10²+12²) = 16.",
+      "trick": "Pythagoras.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 61,
+      "difficulty": "hard",
+      "question": "Distance between (6,2) and (9,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((9-6)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 62,
+      "difficulty": "hard",
+      "question": "Distance between (2,8) and (8,8)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 63,
+      "difficulty": "hard",
+      "question": "Midpoint of (6,1) and (10,7)?",
+      "options": [
+        "4.0",
+        "16",
+        "8.0",
+        "9.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((6+10)/2, (1+7)/2) = (8.0, 4.0). x-coord = 8.0.",
+      "trick": "Average coordinates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 64,
+      "difficulty": "hard",
+      "question": "Slope of line through (0,0) and (3,21)?",
+      "options": [
+        "8",
+        "3",
+        "21",
+        "7"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 21/3 = 7.",
+      "trick": "rise/run.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 65,
+      "difficulty": "hard",
+      "question": "Point (8,9) distance from origin squared?",
+      "options": [
+        "145",
+        "17",
+        "1",
+        "146"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 145.",
+      "trick": "Origin distance².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 66,
+      "difficulty": "hard",
+      "question": "x-intercept of line x + y = 10?",
+      "options": [
+        "9",
+        "10",
+        "0",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 10.",
+      "trick": "Set y=0.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 67,
+      "difficulty": "hard",
+      "question": "Triangle with vertices (0,0), (22,0), (0,3) has area 11. Base on x-axis?",
+      "options": [
+        "11",
+        "3",
+        "22",
+        "11"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 11 → base = 22.",
+      "trick": "Area from coordinates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 68,
+      "difficulty": "hard",
+      "question": "Length of segment from origin to (11,13)?",
+      "options": [
+        "24",
+        "13",
+        "18",
+        "17"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(11²+13²) = 17.",
+      "trick": "Pythagoras.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 69,
+      "difficulty": "hard",
+      "question": "Distance between (7,2) and (10,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((10-7)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 70,
+      "difficulty": "hard",
+      "question": "Distance between (2,9) and (8,9)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 71,
+      "difficulty": "hard",
+      "question": "Midpoint of (7,1) and (11,7)?",
+      "options": [
+        "4.0",
+        "18",
+        "9.0",
+        "10.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((7+11)/2, (1+7)/2) = (9.0, 4.0). x-coord = 9.0.",
+      "trick": "Average coordinates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 72,
+      "difficulty": "hard",
+      "question": "Slope of line through (0,0) and (3,24)?",
+      "options": [
+        "9",
+        "3",
+        "24",
+        "8"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 24/3 = 8.",
+      "trick": "rise/run.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 73,
+      "difficulty": "hard",
+      "question": "Point (9,10) distance from origin squared?",
+      "options": [
+        "181",
+        "19",
+        "1",
+        "182"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 181.",
+      "trick": "Origin distance².",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 74,
+      "difficulty": "hard",
+      "question": "x-intercept of line x + y = 11?",
+      "options": [
+        "10",
+        "11",
+        "0",
+        "5"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 11.",
+      "trick": "Set y=0.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 75,
+      "difficulty": "hard",
+      "question": "Triangle with vertices (0,0), (24,0), (0,3) has area 12. Base on x-axis?",
+      "options": [
+        "12",
+        "3",
+        "24",
+        "12"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 12 → base = 24.",
+      "trick": "Area from coordinates.",
+      "type": "Multi-step problem"
+    },
+    {
+      "order": 76,
+      "difficulty": "hard",
+      "question": "Length of segment from origin to (12,14)?",
+      "options": [
+        "26",
+        "14",
+        "19",
+        "18"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(12²+14²) = 18.",
+      "trick": "Pythagoras.",
+      "type": "CAT level"
+    },
+    {
+      "order": 77,
+      "difficulty": "hard",
+      "question": "Distance between (8,2) and (11,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((11-8)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 78,
+      "difficulty": "hard",
+      "question": "Distance between (2,10) and (8,10)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "CAT level"
+    },
+    {
+      "order": 79,
+      "difficulty": "hard",
+      "question": "Midpoint of (8,1) and (12,7)?",
+      "options": [
+        "4.0",
+        "20",
+        "10.0",
+        "11.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((8+12)/2, (1+7)/2) = (10.0, 4.0). x-coord = 10.0.",
+      "trick": "Average coordinates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 80,
+      "difficulty": "hard",
+      "question": "Slope of line through (0,0) and (3,27)?",
+      "options": [
+        "10",
+        "3",
+        "27",
+        "9"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 27/3 = 9.",
+      "trick": "rise/run.",
+      "type": "CAT level"
+    },
+    {
+      "order": 81,
+      "difficulty": "hard",
+      "question": "Point (10,11) distance from origin squared?",
+      "options": [
+        "221",
+        "21",
+        "1",
+        "222"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 221.",
+      "trick": "Origin distance².",
+      "type": "CAT level"
+    },
+    {
+      "order": 82,
+      "difficulty": "hard",
+      "question": "x-intercept of line x + y = 12?",
+      "options": [
+        "11",
+        "12",
+        "0",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 12.",
+      "trick": "Set y=0.",
+      "type": "CAT level"
+    },
+    {
+      "order": 83,
+      "difficulty": "hard",
+      "question": "Triangle with vertices (0,0), (26,0), (0,3) has area 13. Base on x-axis?",
+      "options": [
+        "13",
+        "3",
+        "26",
+        "13"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 13 → base = 26.",
+      "trick": "Area from coordinates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 84,
+      "difficulty": "hard",
+      "question": "Length of segment from origin to (13,15)?",
+      "options": [
+        "28",
+        "15",
+        "21",
+        "20"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(13²+15²) = 20.",
+      "trick": "Pythagoras.",
+      "type": "CAT level"
+    },
+    {
+      "order": 85,
+      "difficulty": "hard",
+      "question": "Distance between (9,2) and (12,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((12-9)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "CAT level"
+    },
+    {
+      "order": 86,
+      "difficulty": "hard",
+      "question": "Distance between (2,11) and (8,11)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "CAT level"
+    },
+    {
+      "order": 87,
+      "difficulty": "hard",
+      "question": "Midpoint of (9,1) and (13,7)?",
+      "options": [
+        "4.0",
+        "22",
+        "11.0",
+        "12.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((9+13)/2, (1+7)/2) = (11.0, 4.0). x-coord = 11.0.",
+      "trick": "Average coordinates.",
+      "type": "CAT level"
+    },
+    {
+      "order": 88,
+      "difficulty": "hard",
+      "question": "Slope of line through (0,0) and (3,30)?",
+      "options": [
+        "11",
+        "3",
+        "30",
+        "10"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 30/3 = 10.",
+      "trick": "rise/run.",
+      "type": "CAT level"
+    },
+    {
+      "order": 89,
+      "difficulty": "hard",
+      "question": "Point (11,12) distance from origin squared?",
+      "options": [
+        "265",
+        "23",
+        "1",
+        "266"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 265.",
+      "trick": "Origin distance².",
+      "type": "CAT level"
+    },
+    {
+      "order": 90,
+      "difficulty": "hard",
+      "question": "x-intercept of line x + y = 13?",
+      "options": [
+        "12",
+        "13",
+        "0",
+        "6"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 13.",
+      "trick": "Set y=0.",
+      "type": "CAT level"
+    },
+    {
+      "order": 91,
+      "difficulty": "hard",
+      "question": "Triangle with vertices (0,0), (28,0), (0,3) has area 14. Base on x-axis?",
+      "options": [
+        "14",
+        "3",
+        "28",
+        "14"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 14 → base = 28.",
+      "trick": "Area from coordinates.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 92,
+      "difficulty": "hard",
+      "question": "Length of segment from origin to (14,16)?",
+      "options": [
+        "30",
+        "16",
+        "22",
+        "21"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(14²+16²) = 21.",
+      "trick": "Pythagoras.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 93,
+      "difficulty": "hard",
+      "question": "Distance between (10,2) and (13,6)?",
+      "options": [
+        "5.0",
+        "7",
+        "3",
+        "4"
+      ],
+      "answer": "A",
+      "solution": "Step 1: √((13-10)²+(6-2)²) = 5.0.",
+      "trick": "Distance formula.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 94,
+      "difficulty": "hard",
+      "question": "Distance between (2,12) and (8,12)?",
+      "options": [
+        "0",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "B",
+      "solution": "Step 1: Horizontal → |8-2| = 6.",
+      "trick": "Same y → horizontal dist.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 95,
+      "difficulty": "hard",
+      "question": "Midpoint of (10,1) and (14,7)?",
+      "options": [
+        "4.0",
+        "24",
+        "12.0",
+        "13.0"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ((10+14)/2, (1+7)/2) = (12.0, 4.0). x-coord = 12.0.",
+      "trick": "Average coordinates.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 96,
+      "difficulty": "hard",
+      "question": "Slope of line through (0,0) and (3,33)?",
+      "options": [
+        "12",
+        "3",
+        "33",
+        "11"
+      ],
+      "answer": "D",
+      "solution": "Step 1: m = 33/3 = 11.",
+      "trick": "rise/run.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 97,
+      "difficulty": "hard",
+      "question": "Point (12,13) distance from origin squared?",
+      "options": [
+        "313",
+        "25",
+        "1",
+        "314"
+      ],
+      "answer": "A",
+      "solution": "Step 1: x²+y² = 313.",
+      "trick": "Origin distance².",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 98,
+      "difficulty": "hard",
+      "question": "x-intercept of line x + y = 14?",
+      "options": [
+        "13",
+        "14",
+        "0",
+        "7"
+      ],
+      "answer": "B",
+      "solution": "Step 1: y=0 → x = 14.",
+      "trick": "Set y=0.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 99,
+      "difficulty": "hard",
+      "question": "Triangle with vertices (0,0), (30,0), (0,3) has area 15. Base on x-axis?",
+      "options": [
+        "15",
+        "3",
+        "30",
+        "15"
+      ],
+      "answer": "C",
+      "solution": "Step 1: ½×base×3 = 15 → base = 30.",
+      "trick": "Area from coordinates.",
+      "type": "Real-world disguise"
+    },
+    {
+      "order": 100,
+      "difficulty": "hard",
+      "question": "Length of segment from origin to (15,17)?",
+      "options": [
+        "32",
+        "17",
+        "24",
+        "23"
+      ],
+      "answer": "D",
+      "solution": "Step 1: √(15²+17²) = 23.",
+      "trick": "Pythagoras.",
+      "type": "Real-world disguise"
+    }
+  ]
+}
