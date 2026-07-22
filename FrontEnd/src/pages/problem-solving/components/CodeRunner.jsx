@@ -120,25 +120,26 @@ export default function CodeRunner({ problemId, problem, light }) {
       if (mode === 'submit') {
         ;({ data } = await judgeCode({ problemId, language: lang, code, mode: 'submit' }, controller.signal))
         setSubmitResult(data)
-        // First all-pass Submit awards XP once — celebrate and refresh XP/rank + solved state.
-        if (data?.firstSolve && data?.xpEarned > 0) {
-          toast.success(`Problem solved! +${data.xpEarned} XP`, { icon: '🏆' })
+        // Full-pass Submit → refresh AuthContext so track list "Solved" badges update.
+        if (data?.solved) {
           window.dispatchEvent(new Event('sl:refresh'))
-          // Crossed a rank threshold — a gold, slightly larger toast just after the XP one.
-          if (data?.rankUp && data?.newRank) {
-            setTimeout(() => {
-              toast(`Rank Up! You are now rank ${data.newRank}`, {
-                icon: '⬆️',
-                duration: 4000,
-                style: {
-                  background: '#1c1606',
-                  color: '#FBBF24',
-                  border: '1px solid #F59E0B',
-                  fontSize: '1.05rem',
-                  fontWeight: 700,
-                },
-              })
-            }, 1500)
+          if (data?.firstSolve && data?.xpEarned > 0) {
+            toast.success(`Problem solved! +${data.xpEarned} XP`, { icon: '🏆' })
+            if (data?.rankUp && data?.newRank) {
+              setTimeout(() => {
+                toast(`Rank Up! You are now rank ${data.newRank}`, {
+                  icon: '⬆️',
+                  duration: 4000,
+                  style: {
+                    background: '#1c1606',
+                    color: '#FBBF24',
+                    border: '1px solid #F59E0B',
+                    fontSize: '1.05rem',
+                    fontWeight: 700,
+                  },
+                })
+              }, 1500)
+            }
           }
         }
       } else if (hasSamples) {

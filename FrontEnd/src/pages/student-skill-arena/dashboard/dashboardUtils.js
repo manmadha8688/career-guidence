@@ -7,7 +7,7 @@ export const NAV_ITEMS = [
 
 export const DAILY_QUESTS = [
   { id: 'q1', label: 'Complete 1 concept', xp: 50 },
-  { id: 'q2', label: 'Study for 20 min',   xp: 30 },
+  { id: 'q2', label: 'Study for 45 min',   xp: 30 },
 ]
 
 // Re-exported from the shared source so existing importers of this module are unaffected.

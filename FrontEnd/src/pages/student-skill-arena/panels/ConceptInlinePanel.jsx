@@ -10,6 +10,7 @@ import LivePreview from './LivePreview'
 import SectionNotFoundPanel from '../../../components/SectionNotFoundPanel'
 import CooldownTimer from '../../../components/CooldownTimer'
 import { isMongoId } from '../../../utils/mongoId'
+import { QUIZ_XP } from '../../../utils/quizXp'
 
 const TRICKY_META = {
   OUTPUT:     { label: 'PREDICT THE OUTPUT', cls: 'is-output' },
@@ -299,19 +300,19 @@ export default function ConceptInlinePanel({ conceptId, navList, onClose, startQ
               <div className="dash-concept-quiz-prompt__title">
                 {attempted ? 'Trial Not Cleared Yet' : 'Ready for Gate Trial?'}
               </div>
-              <div className="dash-concept-quiz-prompt__desc">10 trials · Need 8/10 to master</div>
+              <div className="dash-concept-quiz-prompt__desc">
+                10 trials · Pass 8/10 · {QUIZ_XP.concept.base}–{QUIZ_XP.concept.base + 2 * QUIZ_XP.concept.perPoint} XP
+              </div>
 
               {inCooldown ? (
-                <>
-                  <button className="btn btn-primary w-full dash-concept-quiz-prompt__btn" disabled>
-                    <Clock size={14} /> Trial Cooling Down
-                  </button>
-                  <CooldownTimer
-                    until={quizStatus.nextRetryAt}
-                    onDone={liftCooldown}
-                    className="dash-concept-quiz-cooldown"
-                  />
-                </>
+                <CooldownTimer
+                  until={quizStatus.nextRetryAt}
+                  onDone={liftCooldown}
+                  asButton
+                  prefix="Try again in"
+                  iconSize={14}
+                  buttonClassName="btn btn-primary w-full dash-concept-quiz-prompt__btn dash-concept-quiz-prompt__btn--cooldown"
+                />
               ) : (
                 <button className="btn btn-primary w-full dash-concept-quiz-prompt__btn"
                   onClick={() => startQuiz('concept', conceptId, concept?.title ?? 'Skill Trial', null)}>

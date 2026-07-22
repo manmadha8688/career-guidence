@@ -61,8 +61,18 @@ export default function OpenRouterPage() {
             { name: 'Price comparison table', desc: 'Side-by-side pricing for all 500+ models. Sort by price to find the cheapest capable model for your task. Filter by free-only to see what costs nothing. Prices update in real time as providers change their rates.' },
             { name: 'Context window filter', desc: 'Filter models by context window size — 8K, 32K, 128K, 1M tokens. Critical when working with large documents or long code files. Some models like Qwen3 Coder offer 1M context even on the free tier.' },
             { name: 'Speed benchmarks', desc: 'Tokens per second (throughput) and time-to-first-token (latency) for each model. For chatbot applications, time-to-first-token matters more than throughput. OpenRouter shows both metrics across providers.' },
-            { name: 'Model arena / rankings', desc: 'openrouter.ai/rankings shows model performance rankings across categories: coding, reasoning, math, creative writing. Based on actual usage patterns rather than just benchmark scores. Useful for picking the right model per task type.' },
+            { name: 'Model arena / rankings', desc: 'openrouter.ai/rankings shows model and app performance from real usage — coding, reasoning, agents. The Apps tab (#apps) lists top coding agents (Hermes, Kilo Code, OpenClaw, Claude Code). Use it to pick tools worth learning, not just benchmark hype.' },
           ]} />
+        </Block>
+        <Block title="Live app rankings for students" titleColor="#F97316">
+          <InfoBox color={color}>OpenRouter publishes rankings from actual token traffic — not sponsored lists. The Apps leaderboard shows which AI coding clients developers route real work through. Top entries consistently include agent extensions (Kilo Code, Cline, Roo Code), terminal agents (Claude Code), and orchestration tools (Hermes Agent, OpenClaw). If you are choosing what to learn next, start from that list and cross-check free tiers in this AI Lab.</InfoBox>
+          <p className="tool-layout-block__para" style={{ marginBottom: '0.875rem' }}>
+            Bookmark{' '}
+            <a href="https://openrouter.ai/rankings#apps" target="_blank" rel="noopener noreferrer">
+              openrouter.ai/rankings#apps
+            </a>
+            {' '}and skim it once a month — models and apps shift quickly, but agent workflows stay at the top because that is where production usage lives.
+          </p>
         </Block>
         <Block>
           <SubHead label="OpenRouter vs direct provider APIs" color={color} />

@@ -12,6 +12,7 @@ import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
 import '../../styles/pages/dashboard/index.css'
+import '../../styles/pages/dashboard/roadmap-detail-page.css'
 
 const RANK_COLORS = {
   S: { color: '#EF4444', bg: '#EF444412' },

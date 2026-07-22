@@ -8,8 +8,10 @@ import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import { getApiError } from '../../utils/apiError'
 import { isMongoId } from '../../utils/mongoId'
+import { stashQuizReview } from '../../utils/quizReviewOnce'
 import toast from 'react-hot-toast'
 import '../../styles/pages/dashboard/index.css'
+import '../../styles/pages/dashboard/quiz-page.css'
 
 const QUIZ_TYPES = { concept: startConceptQuiz, subject: startSubjectQuiz, roadmap: startRoadmapQuiz }
 
@@ -77,7 +79,11 @@ export default function QuizPage() {
         questionIds: quiz.questions.map(q => q.id),
         answers: currentAnswers || answers,
       })
-      navigate(`/skill-arena/quiz/result/${res.data.attemptId}?type=${type}&refId=${refId}`, { replace: true })
+      stashQuizReview(res.data.attemptId, res.data)
+      navigate(`/skill-arena/quiz/result/${res.data.attemptId}?type=${type}&refId=${refId}`, {
+        replace: true,
+        state: { result: res.data },
+      })
     } catch (err) {
       toast.error(getApiError(err, 'We could not submit this trial. Please try again.'))
       setSubmitting(false)

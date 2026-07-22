@@ -171,6 +171,11 @@
   cursor: pointer;
 }
 
+.dash-no-path--loading {
+  cursor: default;
+  opacity: 0.72;
+}
+
 .dash-no-path__label {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.65rem;

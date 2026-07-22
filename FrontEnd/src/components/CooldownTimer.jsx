@@ -14,7 +14,15 @@ function format(ms) {
   return `${s}s`
 }
 
-export default function CooldownTimer({ until, onDone, prefix = 'Next attempt in', className = '' }) {
+export default function CooldownTimer({
+  until,
+  onDone,
+  prefix = 'Next attempt in',
+  className = '',
+  asButton = false,
+  buttonClassName = '',
+  iconSize = 12,
+}) {
   const target = until ? new Date(until).getTime() : 0
   const [remaining, setRemaining] = useState(() => target - Date.now())
 
@@ -35,9 +43,20 @@ export default function CooldownTimer({ until, onDone, prefix = 'Next attempt in
 
   if (!target || remaining <= 0) return null
 
+  const timeLabel = format(remaining)
+
+  if (asButton) {
+    return (
+      <button type="button" disabled className={`cooldown-btn ${buttonClassName}`.trim()}>
+        <Clock size={iconSize} aria-hidden="true" />
+        <span>{prefix} <strong>{timeLabel}</strong></span>
+      </button>
+    )
+  }
+
   return (
     <span className={`cooldown-timer ${className}`}>
-      <Clock size={12} /> {prefix} <strong>{format(remaining)}</strong>
+      <Clock size={iconSize} /> {prefix} <strong>{timeLabel}</strong>
     </span>
   )
 }

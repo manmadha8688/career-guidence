@@ -6,4 +6,4 @@
 // ─────────────────────────────────────────────
 export const LOADERS_ON    = true
 export const TEST_DELAY_MS = 0     // panels/sections: instant
-export const PAGE_MIN_MS   = 900   // full-page: just enough to see the loader
+export const PAGE_MIN_MS   = 0     // full-page: show content as soon as data arrives

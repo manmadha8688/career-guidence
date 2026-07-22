@@ -309,6 +309,18 @@
   color: #9B6ED4;
 }
 
+.dash-quiz-result-summary-note {
+  margin: 1.25rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
 .dash-quiz-result-actions {
   display: flex;
   gap: 0.75rem;

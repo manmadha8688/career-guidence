@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
-import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
+import { useParams, useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { CheckCircle, XCircle, ArrowLeft, RotateCcw, Trophy, Zap } from 'lucide-react'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
 import { getAttemptResult } from '../../api/api'
@@ -9,7 +9,10 @@ import { getRank } from '../../utils/slRank'
 import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
+import { peekQuizReview, asQuizSummary } from '../../utils/quizReviewOnce'
+import { QUIZ_XP } from '../../utils/quizXp'
 import '../../styles/pages/dashboard/index.css'
+import '../../styles/pages/dashboard/quiz-result-page.css'
 
 const LETTERS = ['A', 'B', 'C', 'D']
 
@@ -26,12 +29,14 @@ function formatRetry(dateStr) {
 export default function QuizResultPage() {
   const { attemptId }    = useParams()
   const [searchParams]   = useSearchParams()
+  const location         = useLocation()
   const quizType         = searchParams.get('type')
   const refId            = searchParams.get('refId')
   const navigate         = useNavigate()
   const { user }         = useAuth()
   const [result, setResult]   = useState(null)
   const [loading, setLoading] = useState(true)
+  const [hasLiveReview, setHasLiveReview] = useState(false)
   const [showAll, setShowAll] = useState(false)
 
   const xp       = user?.xp ?? 0
@@ -41,21 +46,28 @@ export default function QuizResultPage() {
   useEffect(() => {
     let active = true
     let doneTimer
+
+    const live = location.state?.result ?? peekQuizReview(attemptId)
+    if (live?.results?.length) {
+      setResult(live)
+      setHasLiveReview(true)
+      setLoading(false)
+      if (live.passed) {
+        window.dispatchEvent(new CustomEvent('sl:refresh'))
+      }
+      return () => { active = false; clearTimeout(doneTimer) }
+    }
+
     getAttemptResult(attemptId)
       .then(r => {
         if (!active) return
-        setResult(r.data)
-        // On any pass, tell the dashboard/navbar to re-fetch fresh data (XP, badges,
-        // certificates, and the server-driven daily quests — the "complete a concept"
-        // quest reconciles from /progress/quests, no client-side bookkeeping needed).
-        if (r.data.passed) {
-          window.dispatchEvent(new CustomEvent('sl:refresh'))
-        }
+        setResult(asQuizSummary(r.data))
+        setHasLiveReview(false)
       })
       .catch(err => { if (active) { toast.error(getApiError(err, 'We could not load this result. Please try again.')); navigate(-1) } })
       .finally(() => { if (active) doneTimer = setTimeout(() => setLoading(false), PAGE_MIN_MS) })
     return () => { active = false; clearTimeout(doneTimer) }
-  }, [attemptId])
+  }, [attemptId, location.state, navigate])
 
   // ─── Loading ───────────────────────────────────────────
   if (loading) return <SystemAwakeningLoader subtitle="LOADING RESULTS" />
@@ -64,8 +76,11 @@ export default function QuizResultPage() {
 
   const pct        = Math.round((result.score / result.total) * 100)
   const retryIn    = formatRetry(result.nextRetryAt)
-  const wrongCount = result.results?.filter(r => !r.correct).length || 0
-  const displayed  = showAll ? result.results : result.results?.slice(0, 5)
+  const hasReview  = hasLiveReview && (result.results?.length ?? 0) > 0
+  const wrongCount = hasReview
+    ? result.results.filter(r => !r.correct).length
+    : Math.max(0, result.total - result.score)
+  const displayed  = hasReview ? (showAll ? result.results : result.results.slice(0, 5)) : []
 
   const PASS_COLOR = '#4ADE80'
   const FAIL_COLOR = '#EF4444'
@@ -124,7 +139,7 @@ export default function QuizResultPage() {
             <div className="dash-quiz-result-stats">
               <span>{pct}% ACCURACY</span>
               <span>·</span>
-              <span>{result.results?.filter(r => r.correct).length} CORRECT</span>
+              <span>{result.score} CORRECT</span>
               <span>·</span>
               <span>{wrongCount} WRONG</span>
             </div>
@@ -137,7 +152,7 @@ export default function QuizResultPage() {
                 </div>
                 {result.dailyBonusEarned && (
                   <div className="dash-quiz-result-bonus">
-                    ⭐ DAILY BONUS +50 XP — First skill today!
+                    ⭐ DAILY BONUS +{QUIZ_XP.concept.dailyBonus} XP — First skill today!
                   </div>
                 )}
               </div>
@@ -169,14 +184,15 @@ export default function QuizResultPage() {
             </div>
           )}
 
-          {/* Answer review */}
+          {/* Answer review — only immediately after submit (not stored in DB) */}
+          {hasReview ? (
           <div>
             <div className="dash-quiz-result-review-header">
               <div className="dash-quiz-result-review-title">
                 Trial Review
                 {wrongCount > 0 && <span className="dash-quiz-result-review-wrong">({wrongCount} wrong)</span>}
               </div>
-              {result.results?.length > 5 && (
+              {result.results.length > 5 && (
                 <button
                   onClick={() => setShowAll(s => !s)}
                   className="dash-quiz-result-toggle"
@@ -187,7 +203,7 @@ export default function QuizResultPage() {
             </div>
 
             <div className="dash-quiz-result-review-list">
-              {displayed?.map((r) => (
+              {displayed.map((r) => (
                 <div
                   key={r.questionId}
                   className={`dash-quiz-result-review-item ${r.correct ? 'is-correct' : 'is-wrong'}`}
@@ -226,6 +242,11 @@ export default function QuizResultPage() {
               ))}
             </div>
           </div>
+          ) : (
+            <p className="dash-quiz-result-summary-note">
+              Score saved to your history. Question-by-question review is only available right after you finish a trial.
+            </p>
+          )}
 
           {/* Action buttons */}
           <div className="dash-quiz-result-actions">

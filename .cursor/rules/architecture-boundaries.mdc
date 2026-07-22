@@ -25,4 +25,4 @@ Full detail: `.claude/rules/architecture-boundaries.md` (+ `frontend.md`, `backe
 
 ## API contract
 - Paths: `/api/{resource}[/{id}[/{action}]]`, `/api/admin/*`, `/api/auth/*`.
-- Errors always `{ "error": "message" }`. XP = score × 10; first concept of day = +50. Ranks E/D/C/B/A/S.
+- Errors always `{ "error": "message" }`. Quiz XP: skill 50 base at 8/10 (+10/extra), gate 150 at 19/25 (+8), path 300 at 35/50 (+5, +25 Job Ready); +50 daily first skill. Ranks E/D/C/B/A/S.

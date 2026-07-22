@@ -7,6 +7,7 @@ import {
   ChevronRight, Rocket, Code2, Rows3, FileText, Zap, Sparkles, Link2,
 } from 'lucide-react'
 import { getPublicProfile } from '../api/api'
+import { RANK_LADDER } from '../constants/ranks'
 import { getRank } from '../utils/slRank'
 import { safeExternalUrl } from '../utils/safeExternalUrl'
 import '../styles/pages/shared/public-profile.css'
@@ -20,14 +21,6 @@ const PROFILE_LINKS = [
 ]
 
 const RANK_TITLE = { E: 'Awakened', D: 'Rising', C: 'Elite', B: 'Ace', A: 'Master', S: 'Monarch' }
-const RANK_LADDER = [
-  { label: 'E', min: 0 },
-  { label: 'D', min: 500 },
-  { label: 'C', min: 1500 },
-  { label: 'B', min: 3000 },
-  { label: 'A', min: 6000 },
-  { label: 'S', min: 10000 },
-]
 
 function initials(name = '') {
   return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() || '').join('') || '?'
@@ -324,13 +317,13 @@ export default function PublicProfilePage() {
               </div>
               <div className="pp-ladder__row">
                 <span className="pp-ladder__track" />
-                <span className="pp-ladder__fill" style={{ width: `${(RANK_LADDER.findIndex(r => r.label === rank.label) / (RANK_LADDER.length - 1)) * 100}%` }} />
+                <span className="pp-ladder__fill" style={{ width: `${(RANK_LADDER.findIndex(r => r.letter === rank.label) / (RANK_LADDER.length - 1)) * 100}%` }} />
                 {RANK_LADDER.map((r) => {
                   const earned = xp >= r.min
-                  const current = r.label === rank.label
+                  const current = r.letter === rank.label
                   return (
-                    <span key={r.label} className={`pp-ladder__node${earned ? ' is-earned' : ''}${current ? ' is-current' : ''}`}>
-                      {r.label}
+                    <span key={r.letter} className={`pp-ladder__node${earned ? ' is-earned' : ''}${current ? ' is-current' : ''}`}>
+                      {r.letter}
                     </span>
                   )
                 })}

@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo, useRef, memo } from 'react'
+import { useState, useEffect, useMemo, useRef, memo, lazy, Suspense } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { TEST_DELAY_MS, PAGE_MIN_MS } from '../../components/loaders/_config'
+import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import useBackClose from '../../hooks/useBackClose'
 import SystemAwakeningLoader from '../../components/loaders/SystemAwakeningLoader'
@@ -8,7 +8,7 @@ import DungeonPortalLoader from '../../components/loaders/DungeonPortalLoader'
 import { CheckCircle, Search, Trophy, Info, Menu, Sun, Moon } from 'lucide-react'
 import {
   getProgressSummary, getRoadmap, getBulkSubjectStatus,
-  getSubjects, getRoadmaps,
+  getSubjects, getRoadmaps, getDashboardBootstrap,
   getHunterStats, clearApiCache, getQuests, studyPing, getQuizHistory, getCertificates,
 } from '../../api/api'
 import { badgeMeta } from '../../utils/badgeMeta'
@@ -27,11 +27,11 @@ import {
 import '../../styles/pages/dashboard/index.css'
 import '../../styles/pages/shared/certificates.css'
 
-// ─── Extracted panel components ───────────────────────────
-import ConceptInlinePanel  from './panels/ConceptInlinePanel'
-import RoadmapPanel        from './panels/RoadmapPanel'
-import SubjectPanel        from './panels/SubjectPanel'
-import HunterProfileDrawer from './panels/HunterProfileDrawer'
+// Heavy panels — lazy so default arena view ships a smaller initial chunk.
+const ConceptInlinePanel  = lazy(() => import('./panels/ConceptInlinePanel'))
+const RoadmapPanel        = lazy(() => import('./panels/RoadmapPanel'))
+const SubjectPanel        = lazy(() => import('./panels/SubjectPanel'))
+const HunterProfileDrawer = lazy(() => import('./panels/HunterProfileDrawer'))
 // ─── Extracted modal components ────────────────────────────
 import AboutRoadmapModal   from './modals/AboutRoadmapModal'
 import AboutGateModal      from './modals/AboutGateModal'
@@ -42,7 +42,12 @@ import MobileStatsPopup    from './mobile/MobileStatsPopup'
 import MobileQuestsPopup   from './mobile/MobileQuestsPopup'
 import MobileNavDrawer     from './mobile/MobileNavDrawer'
 
-const HIST_TYPE_LABEL = { CONCEPT: 'Skill Trial', SUBJECT: 'Gate Test', ROADMAP: 'Path Exam' }
+const HIST_TYPE_LABEL = {
+  CONCEPT: 'Skill Trial',
+  SUBJECT: 'Gate Test',
+  ROADMAP: 'Path Exam',
+  APTITUDE_MOCK: 'Aptitude Mock',
+}
 function fmtHistDate(iso) {
   if (!iso) return ''
   const d = new Date(iso)
@@ -53,6 +58,7 @@ const HIST_FILTERS = [
   { id: 'CONCEPT', label: 'Skill Trials' },
   { id: 'SUBJECT', label: 'Gate Tests' },
   { id: 'ROADMAP', label: 'Path Exams' },
+  { id: 'APTITUDE_MOCK', label: 'Aptitude Mocks' },
 ]
 
 // Hoisted to module scope + memoized so it is a STABLE component type: previously
@@ -194,7 +200,29 @@ export default function DashboardPage() {
   useEffect(() => () => { pendingTimersRef.current.forEach(clearTimeout); pendingTimersRef.current = [] }, [])
 
   // Auto-hide navbar on page scroll (reappears when scrolling up).
+  // Paused while subject / path / concept panels are open — locks AutoHideNav too
+  // (panel inner scroll was still toggling html.nav-hidden via App-level listener).
   useEffect(() => {
+    const root = document.documentElement
+    const sidePanelOpen = Boolean(selectedSubjectId || selectedRoadmapId || selectedConceptId)
+
+    const resetNav = () => {
+      navHiddenRef.current = false
+      lastScrollY.current = window.scrollY
+      root.classList.remove('nav-hidden')
+    }
+
+    if (sidePanelOpen) root.classList.add('dash-panel-lock')
+    else root.classList.remove('dash-panel-lock')
+
+    if (loading || sidePanelOpen) {
+      resetNav()
+      return () => {
+        root.classList.remove('dash-panel-lock')
+        resetNav()
+      }
+    }
+
     const onScroll = () => {
       const y = window.scrollY
       const last = lastScrollY.current
@@ -204,48 +232,72 @@ export default function DashboardPage() {
       else if (y < last - 6) nav = false
       if (nav !== navHiddenRef.current) {
         navHiddenRef.current = nav
-        document.documentElement.classList.toggle('nav-hidden', nav)
+        root.classList.toggle('nav-hidden', nav)
       }
       lastScrollY.current = y
     }
 
-    navHiddenRef.current = false
-    lastScrollY.current = 0
-    document.documentElement.classList.remove('nav-hidden')
+    resetNav()
 
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', onScroll)
-      document.documentElement.classList.remove('nav-hidden')
+      root.classList.remove('dash-panel-lock')
+      resetNav()
     }
-  }, [loading, activeView, selectedConceptId])
+  }, [loading, activeView, selectedSubjectId, selectedRoadmapId, selectedConceptId])
 
   useEffect(() => {
     let active = true
-    const timers = []
-    getProgressSummary()
-      .then(s => {
-        if (!active) return
-        setSummary(s.data)
+    const applyBootstrap = (data) => {
+      if (!active || !data) return
+      setSummary(data.progressSummary)
+      setQuestData(data.quests)
+      setRecentHistory(data.quizHistory || [])
+      setAllRoadmaps(data.roadmaps || [])
+      pendingTimersRef.current.push(setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS))
+      setLoading(false)
+    }
+    const fallbackIndividual = () => {
+      getProgressSummary()
+        .then(s => { if (active) setSummary(s.data) })
+        .catch(err => { if (active) toast.error(getApiError(err, 'We could not load your progress. Please refresh.')) })
+        .finally(() => { if (active) setLoading(false) })
+      getQuests()
+        .then(r => { if (active) setQuestData(r.data) })
+        .catch(err => logApiError('quests', err))
+      getQuizHistory(5)
+        .then(r => { if (active) setRecentHistory(r.data || []) })
+        .catch(err => logApiError('quiz-history', err))
+      getRoadmaps()
+        .then(r => {
+          if (!active) return
+          setAllRoadmaps(r.data)
+          pendingTimersRef.current.push(setTimeout(() => setPathsLoaded(true), TEST_DELAY_MS))
+        })
+        .catch(err => {
+          logApiError('roadmaps-paths', err)
+          if (active) setPathsLoaded(true)
+        })
+    }
+    getDashboardBootstrap()
+      .then(r => applyBootstrap(r.data))
+      .catch(err => {
+        logApiError('dashboard-bootstrap', err)
+        if (active) fallbackIndividual()
       })
-      .catch(err => { if (active) toast.error(getApiError(err, 'We could not load your progress. Please refresh.')) })
-      .finally(() => {
-        timers.push(setTimeout(() => { if (active) setLoading(false) }, PAGE_MIN_MS))
-      })
+    return () => { active = false }
+  }, [])
+
+  // Hunter stats (roadmap badge metadata) — only needed on the Badges tab.
+  useEffect(() => {
+    if (activeView !== 'badges') return
+    let active = true
     getHunterStats()
       .then(r => { if (active) setHunterStats(r.data) })
       .catch(err => logApiError('hunter-stats', err))
-    getQuests()
-      .then(r => { if (active) setQuestData(r.data) })
-      .catch(err => logApiError('quests', err))
-    getQuizHistory(5)
-      .then(r => { if (active) setRecentHistory(r.data || []) })
-      .catch(err => logApiError('quiz-history', err))
-    return () => {
-      active = false
-      timers.forEach(clearTimeout)
-    }
-  }, [])
+    return () => { active = false }
+  }, [activeView])
 
   // Full attempt history — loaded lazily the first time the History view is opened.
   useEffect(() => {
@@ -270,7 +322,7 @@ export default function DashboardPage() {
   // Re-fetch everything when a concept is cleared (dispatched from QuizResultPage)
   useEffect(() => {
     const refresh = () => {
-      clearApiCache('progressSummary', 'hunterStats', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*', 'certificates', 'quizHistory:*')
+      clearApiCache('progressSummary', 'hunterStats', 'quests', 'subjects', 'subject:*', 'concept:*', 'quizStatus:*', 'roadmapStatus:*', 'certificates', 'quizHistory:*', 'dashboardBootstrap')
       getProgressSummary().then(s => {
         setSummary(s.data)
       }).catch(err => logApiError('progress-refresh', err))
@@ -328,11 +380,11 @@ export default function DashboardPage() {
 
 
   // Study-time quest: ping the server periodically while the arena is open. The server
-  // measures REAL elapsed time between pings (capped per ping), so the 30-minute quest
+  // measures REAL elapsed time between pings (capped per ping), so the 45-minute quest
   // survives reloads, counts across sessions/devices, and awards real XP exactly once —
   // unlike the old client-only 20-min timer that reset on every remount and gave no XP.
   useEffect(() => {
-    if (questData?.studyDone) return  // already earned today — stop pinging
+    if (loading || questData?.studyDone) return  // wait for shell; stop when study quest done
     let cancelled = false
     // First ping establishes the server-side baseline (lastPingAt); no time credited yet.
     studyPing().then(r => { if (!cancelled) setQuestData(r.data) }).catch(() => {})
@@ -343,7 +395,7 @@ export default function DashboardPage() {
         .catch(() => {})
     }, 60_000)
     return () => { cancelled = true; clearInterval(t) }
-  }, [questData?.studyDone])
+  }, [loading, questData?.studyDone])
 
   const loadGates = () => {
     if (gatesLoaded) return
@@ -374,9 +426,6 @@ export default function DashboardPage() {
       setPathsLoaded(true)
     })
   }
-
-  // Load roadmaps eagerly so Skill Arena can show active path
-  useEffect(() => { loadPaths() }, []) // eslint-disable-line
 
   const switchView = (view) => {
     setActiveView(view)
@@ -489,7 +538,11 @@ export default function DashboardPage() {
           </div>
 
           {/* ── Active hunter path ── */}
-          {activePath ? (
+          {!pathsLoaded ? (
+            <div className="dash-no-path dash-no-path--loading" aria-busy="true">
+              <div className="dash-no-path__label">LOADING PATH…</div>
+            </div>
+          ) : activePath ? (
             <div
               className="dash-active-path"
               style={{ '--path-color': activePath.color, '--progress-pct': `${activePath.overallPercentage ?? 0}%` }}
@@ -895,8 +948,10 @@ export default function DashboardPage() {
 
       {/* ══ HUNTER PROFILE DRAWER (desktop + mobile Hunter Profile button) ══ */}
       {avatarOpen && (
-        <HunterProfileDrawer user={user} rank={rank} level={level} xp={xp}
-          onClose={() => setAvatarOpen(false)} onLogout={logout} />
+        <Suspense fallback={null}>
+          <HunterProfileDrawer user={user} rank={rank} level={level} xp={xp}
+            onClose={() => setAvatarOpen(false)} onLogout={logout} />
+        </Suspense>
       )}
 
       {/* ══ MOBILE: avatar action sheet ══ */}
@@ -1029,14 +1084,16 @@ export default function DashboardPage() {
               startQuiz={startQuiz}
             />
             <div className="sl-panel dash-panel-scroll">
-              <ConceptInlinePanel
-                conceptId={selectedConceptId}
-                navList={conceptNavList}
-                onClose={handleConceptClose}
-                navigate={navigate}
-                startQuiz={startQuiz}
-                subjectTitle={subjects.find(s => s.id === selectedSubjectId)?.title || ''}
-              />
+              <Suspense fallback={<DungeonPortalLoader panel height={280} />}>
+                <ConceptInlinePanel
+                  conceptId={selectedConceptId}
+                  navList={conceptNavList}
+                  onClose={handleConceptClose}
+                  navigate={navigate}
+                  startQuiz={startQuiz}
+                  subjectTitle={subjects.find(s => s.id === selectedSubjectId)?.title || ''}
+                />
+              </Suspense>
             </div>
           </div>
         ) : (
@@ -1185,18 +1242,21 @@ export default function DashboardPage() {
 
       {/* ══ ROADMAP PANEL: right overlay on path card click ══ */}
       {selectedRoadmapId && !selectedSubjectId && !selectedConceptId && (
-        <RoadmapPanel
-          roadmapId={selectedRoadmapId}
-          onClose={closeRoadmapPanel}
-          onGateClick={openSubjectPanel}
-          navigate={navigate}
-          startQuiz={startQuiz}
-        />
+        <Suspense fallback={<DungeonPortalLoader panel height={320} />}>
+          <RoadmapPanel
+            roadmapId={selectedRoadmapId}
+            onClose={closeRoadmapPanel}
+            onGateClick={openSubjectPanel}
+            navigate={navigate}
+            startQuiz={startQuiz}
+          />
+        </Suspense>
       )}
 
       {/* ══ SUBJECT PANEL: right overlay when gate clicked (closes roadmap panel) ══ */}
       {selectedSubjectId && !selectedConceptId && (
-        <SubjectPanel
+        <Suspense fallback={<DungeonPortalLoader panel height={320} />}>
+          <SubjectPanel
           key={`${selectedSubjectId}-${panelRefreshKey}`}
           mode="overlay"
           subjectId={selectedSubjectId}
@@ -1206,6 +1266,7 @@ export default function DashboardPage() {
           navigate={navigate}
           startQuiz={startQuiz}
         />
+        </Suspense>
       )}
 
       {/* ══ ABOUT GATE MODAL ══ */}

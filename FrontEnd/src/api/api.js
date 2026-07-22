@@ -95,12 +95,22 @@ export const getConcept       = (id)        => withCache(`concept:${id}`,     2*
 // ─── PROGRESS ────────────────────────────────
 export const getProgressSummary = ()        => withCache('progressSummary',   60_000,   () => api.get('/progress/summary'))
 export const getHunterStats     = ()        => withCache('hunterStats',        60_000,   () => api.get('/progress/hunter-stats'))
+export const getDashboardBootstrap = ()     => withCache('dashboardBootstrap', 30_000,   () => api.get('/dashboard/bootstrap').then(res => {
+  const store = _read()
+  const ts = Date.now()
+  if (res.data?.progressSummary) store.progressSummary = { data: res.data.progressSummary, ts }
+  if (res.data?.quests) store.quests = { data: res.data.quests, ts }
+  if (res.data?.roadmaps) store.roadmaps = { data: res.data.roadmaps, ts }
+  if (res.data?.quizHistory) store['quizHistory:5'] = { data: res.data.quizHistory, ts }
+  _write(store)
+  return res
+}))
 
 // ─── DAILY QUESTS ────────────────────────────
 // Server-authoritative daily quests. Not cached: the state changes with each study
 // ping and must reflect the concept-quest sync immediately.
-export const getQuests   = ()  => api.get('/progress/quests')
-export const studyPing   = ()  => api.post('/progress/study-ping')
+export const getQuests   = ()  => withCache('quests', 60_000, () => api.get('/progress/quests'))
+export const studyPing   = ()  => api.post('/progress/study-ping').then(r => { clearApiCache('quests'); return r })
 
 // ─── CERTIFICATES ────────────────────────────
 export const getCertificates   = ()      => withCache('certificates', 60_000, () => api.get('/certificates'))
@@ -113,9 +123,9 @@ export const getRoadmap         = (id)      => withCache(`roadmap:${id}`,     5*
 // Enroll / pause / resume change the enrolled-roadmap list AND the user's
 // progress-derived views (progress summary + hunter stats "active path" strip),
 // so evict those user caches too — mirrors the submitQuiz eviction pattern below.
-export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'progressSummary', 'hunterStats'); return r })
-export const pauseRoadmap       = (id)      => api.post(`/roadmaps/${id}/pause`)  .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'progressSummary', 'hunterStats'); return r })
-export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'progressSummary', 'hunterStats'); return r })
+export const enrollRoadmap      = (id)      => api.post(`/roadmaps/${id}/enroll`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'progressSummary', 'hunterStats', 'dashboardBootstrap'); return r })
+export const pauseRoadmap       = (id)      => api.post(`/roadmaps/${id}/pause`)  .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'progressSummary', 'hunterStats', 'dashboardBootstrap'); return r })
+export const resumeRoadmap      = (id)      => api.post(`/roadmaps/${id}/resume`) .then(r => { clearApiCache(`roadmap:${id}`, 'roadmaps', 'progressSummary', 'hunterStats', 'dashboardBootstrap'); return r })
 
 // ─── ADMIN ───────────────────────────────────
 export const getAdminStats      = ()        => withCache('adminStats', 2*60_000, () => api.get('/admin/stats'))
@@ -241,6 +251,13 @@ export const getAptitudeGroups     = (category)  => withCache(`aptitudeGroups:${
 export const getAptitudeTopics     = (group)     => withCache(`aptitudeTopics:${group}`,     APT_TTL, () => api.get(`/aptitude/topics/${group}`))
 export const getAptitudeTopic      = (topicId)   => withCache(`aptitudeTopic:${topicId}`,    APT_TTL, () => api.get(`/aptitude/topic/${topicId}`))
 export const getAptitudeQuestions  = (topicId)   => withCache(`aptitudeQuestions:${topicId}`, APT_TTL, () => api.get(`/aptitude/questions/${topicId}`))
+export const getAptitudeMockPaper  = ()          => api.get('/aptitude/mock/paper')
+export const getAptitudeMockStatus = ()          => withCache('aptitudeMockStatus', 30_000, () => api.get('/aptitude/mock/status'))
+export const getAptitudeMockHistory = (limit = 10) => withCache(`aptitudeMockHistory:${limit}`, 30_000, () => api.get(`/aptitude/mock/history?limit=${limit}`))
+export const submitAptitudeMock    = (payload)  => api.post('/aptitude/mock/submit', payload).then(r => {
+  clearApiCache('progressSummary', 'hunterStats', 'quizHistory:*', 'dashboardBootstrap', 'aptitudeMockStatus', 'aptitudeMockHistory:*')
+  return r
+})
 
 // Synchronous cache read — returns the cached value (or undefined if absent/stale).
 // Lets a page seed its initial state from cache so a revisit renders instantly

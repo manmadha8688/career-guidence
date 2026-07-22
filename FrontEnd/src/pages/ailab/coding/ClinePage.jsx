@@ -104,8 +104,8 @@ export default function ClinePage() {
         Always use Plan mode for any non-trivial task. The most common mistake with agentic AI tools is jumping straight to Act mode on a complex change. Spending 2 minutes reviewing Cline's plan catches 80% of direction errors before a single file is touched. Treat Plan mode like a whiteboard session — get the architecture right first, then let it build. And always read the full plan, not just the first step.
       </ProTip>
       <PageNavRow
-        prev={{ path: '/ai-lab/coding/amazon-q', label: 'Amazon Q' }}
-        next={{ path: '/ai-lab/coding/codeium', label: 'Codeium' }}
+        prev={{ path: '/ai-lab/coding/codeium', label: 'Codeium' }}
+        next={{ path: '/ai-lab/coding/kilo-code', label: 'Kilo Code' }}
       />
     </ToolPageShell>
   )

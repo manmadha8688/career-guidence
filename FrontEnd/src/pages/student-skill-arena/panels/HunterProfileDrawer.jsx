@@ -4,6 +4,7 @@ import useModalA11y from '../../../hooks/useModalA11y'
 import { RANK_LADDER } from '../../../constants/ranks'
 import { isGuest } from '../../../utils/auth'
 import RegisterCTA from '../../../components/RegisterCTA'
+import { CONCEPT_XP_RANGE, QUIZ_XP } from '../../../utils/quizXp'
 import '../../../styles/pages/shared/certificates.css'
 
 // Plain-language glossary for the 3 core themed words a newcomer meets first.
@@ -33,13 +34,13 @@ const QUICK_WORDS = [
 const HOW_IT_WORKS = [
   { num: '01', color: '#9B6ED4', title: 'Pick a Hunter Path (career roadmap)', desc: 'Open the HUNTER PATH tab and choose a roadmap for the job you want — Java Full Stack, MERN, Python, or Frontend. It lays out the subjects to learn, in the right order.' },
   { num: '02', color: '#60A5FA', title: 'Enter a Dungeon Gate (subject)', desc: 'Open the DUNGEON GATE tab. Each gate is one subject (HTML, CSS, JavaScript…). Go in and learn its skills one by one, at your own pace.' },
-  { num: '03', color: '#F59E0B', title: 'Clear skills & earn XP', desc: 'Read each skill, then pass its quiz (8 out of 10 to clear). You earn XP for every skill — the first one each day gives a +50 bonus.' },
+  { num: '03', color: '#F59E0B', title: 'Clear skills & earn XP', desc: `Read each skill, then pass its quiz (8 out of 10 to clear). Earn ${QUIZ_XP.concept.base}–${QUIZ_XP.concept.base + 2 * QUIZ_XP.concept.perPoint} XP per skill — the first one each day gives a +${QUIZ_XP.concept.dailyBonus} bonus.` },
 ]
 
 const XP_TIPS = [
-  'First concept of the day gives +50 bonus XP',
-  'Each quiz earns score × 10 XP (max 100 per concept)',
-  'Clear all concepts in a gate to unlock the subject badge',
+  `First skill cleared today gives +${QUIZ_XP.concept.dailyBonus} bonus XP`,
+  `Skill trial: ${CONCEPT_XP_RANGE} (8 pass → ${QUIZ_XP.concept.base}, +${QUIZ_XP.concept.perPoint} per extra correct)`,
+  'Clear all skills in a gate to unlock the gate final test and badge',
   'Enroll a Hunter Path to track your full career progress',
 ]
 

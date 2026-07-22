@@ -137,9 +137,14 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
               </div>
             ) : pct >= 100 ? (
               subjectCooldown ? (
-                <div className="dash-gate-cooldown-row">
-                  <CooldownTimer until={quizStatus.nextRetryAt} onDone={liftSubjectCooldown} />
-                </div>
+                <CooldownTimer
+                  until={quizStatus.nextRetryAt}
+                  onDone={liftSubjectCooldown}
+                  asButton
+                  prefix="Retry final test in"
+                  iconSize={13}
+                  buttonClassName="dash-gate-test-btn dash-gate-test-btn--cooldown"
+                />
               ) : (
                 <button className="dash-gate-test-btn"
                   onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>
@@ -160,12 +165,14 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
               </div>
             ) : pct >= 100 ? (
               subjectCooldown ? (
-                <div className="dash-gate-cooldown-row">
-                  <div className="dash-gate-cooldown-row__text">
-                    Final test not cleared · last {quizStatus.lastScore}/{quizStatus.lastTotal}
-                  </div>
-                  <CooldownTimer until={quizStatus.nextRetryAt} onDone={liftSubjectCooldown} />
-                </div>
+                <CooldownTimer
+                  until={quizStatus.nextRetryAt}
+                  onDone={liftSubjectCooldown}
+                  asButton
+                  prefix="Retry final test in"
+                  iconSize={14}
+                  buttonClassName="dash-gate-test-btn dash-gate-test-btn--cooldown w-full"
+                />
               ) : (
                 <button className="dash-gate-test-btn"
                   onClick={() => startQuiz('subject', subjectId, subject?.title ?? 'Gate Assessment', subject?.icon)}>

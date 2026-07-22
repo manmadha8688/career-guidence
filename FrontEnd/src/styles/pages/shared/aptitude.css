@@ -1275,3 +1275,506 @@
   .di-intro { font-size: 0.96rem; }
   .di-tblock--tips, .di-tblock--traps, .di-tblock--worked { padding: 1rem; }
 }
+
+/* ── Core mock hub — gate + history side by side ─────────────────────────── */
+.apt-mock-hub {
+  margin-top: 1.35rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.apt-mock-gate {
+  height: 100%;
+  min-height: 220px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.35rem 1.4rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, #F59E0B 35%, var(--border));
+  background: linear-gradient(135deg, color-mix(in srgb, #F59E0B 8%, var(--bg-secondary)), var(--bg-secondary));
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.apt-mock-gate:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, #F59E0B 55%, var(--border));
+  box-shadow: 0 12px 32px color-mix(in srgb, #F59E0B 12%, transparent);
+}
+.apt-mock-gate__badge {
+  align-self: flex-start;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F59E0B;
+  border: 1px solid color-mix(in srgb, #F59E0B 40%, transparent);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+.apt-mock-gate__icon { color: #F59E0B; }
+.apt-mock-gate__title { font-family: 'Orbitron', sans-serif; font-size: 1.15rem; margin: 0; }
+.apt-mock-gate__desc { margin: 0; color: var(--text-secondary); line-height: 1.65; }
+.apt-mock-gate__meta { font-family: 'Share Tech Mono', monospace; font-size: 0.68rem; color: var(--text-secondary); }
+.apt-mock-gate__cta {
+  margin-top: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  color: #F59E0B;
+}
+
+/* ── Mock instructions modal extras ──────────────────────────────────────── */
+.apt-mock-modal__sections {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+.apt-mock-modal__section {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--sec-color) 30%, var(--border));
+  background: color-mix(in srgb, var(--sec-color) 6%, var(--bg-secondary));
+}
+.apt-mock-modal__section-label { font-weight: 600; }
+.apt-mock-modal__section-meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--sec-color);
+}
+
+/* ── Mock exam page ──────────────────────────────────────────────────────── */
+.apt-mock-exam__header { flex-wrap: wrap; gap: 0.5rem; }
+.apt-mock-exam__timers { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.apt-mock-exam__timer-block { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
+.apt-mock-exam__timer-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+.apt-mock-exam__section-label { color: var(--sec-color); }
+.apt-mock-exam__actions { flex-wrap: wrap; gap: 0.45rem; }
+.apt-mock-exam__finish-btn {
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #F59E0B;
+  color: #111;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.apt-mock-exam__finish-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.apt-mock-exam__finish-early {
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+/* ── Mock result page ────────────────────────────────────────────────────── */
+.apt-mock-result { --mock-accent: #F59E0B; }
+.apt-mock-result__inner { max-width: 720px; margin: 0 auto; }
+.apt-mock-result__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.apt-mock-result__card {
+  border: 1px solid color-mix(in srgb, var(--card-accent) 35%, var(--border));
+  border-radius: 14px;
+  background: linear-gradient(165deg, color-mix(in srgb, var(--card-accent) 6%, var(--bg-secondary)), var(--bg-secondary));
+  overflow: hidden;
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--card-accent) 8%, transparent);
+}
+.apt-mock-result__card-top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  padding: 1.35rem 1.35rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.apt-mock-result__ring {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: conic-gradient(var(--ring-color) var(--ring-pct), color-mix(in srgb, var(--ring-color) 12%, var(--bg-primary)) 0);
+  position: relative;
+}
+.apt-mock-result__ring::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+}
+.apt-mock-result__ring-num,
+.apt-mock-result__ring-label {
+  position: relative;
+  z-index: 1;
+}
+.apt-mock-result__ring-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ring-color);
+  line-height: 1.1;
+}
+.apt-mock-result__ring-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.apt-mock-result__summary { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
+.apt-mock-result__verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  color: var(--card-accent);
+}
+.apt-mock-result__score-line { display: flex; align-items: baseline; gap: 0.35rem; }
+.apt-mock-result__score-big {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+}
+.apt-mock-result__score-of { color: var(--text-secondary); font-size: 0.95rem; }
+.apt-mock-result__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.apt-mock-result__chip {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--bg-primary) 50%, transparent);
+}
+.apt-mock-result__chip--warn {
+  border-color: color-mix(in srgb, #F59E0B 40%, var(--border));
+  color: #F59E0B;
+}
+.apt-mock-result__xp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  width: fit-content;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: #F59E0B;
+  background: color-mix(in srgb, #F59E0B 12%, transparent);
+  border: 1px solid color-mix(in srgb, #F59E0B 30%, transparent);
+}
+.apt-mock-result__hint {
+  margin: 0.15rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.apt-mock-result__review-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.65rem;
+}
+.apt-mock-result__sec-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+.apt-mock-result__sec-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding: 0.65rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--sec-color) 30%, var(--border));
+  background: color-mix(in srgb, var(--sec-color) 6%, var(--bg-primary));
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+.apt-mock-result__sec-tab:hover {
+  border-color: color-mix(in srgb, var(--sec-color) 50%, var(--border));
+  background: color-mix(in srgb, var(--sec-color) 10%, var(--bg-primary));
+}
+.apt-mock-result__sec-tab.is-open {
+  border-color: var(--sec-color);
+  background: color-mix(in srgb, var(--sec-color) 14%, var(--bg-primary));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--sec-color) 25%, transparent);
+}
+.apt-mock-result__sec-tab-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.apt-mock-result__sec-tab-name {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--sec-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.apt-mock-result__sec-tab-score {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--text-secondary);
+}
+.apt-mock-result__sec-tab-chev {
+  flex-shrink: 0;
+  color: var(--sec-color);
+  transition: transform 0.2s ease;
+}
+.apt-mock-result__sec-tab-chev.is-open { transform: rotate(180deg); }
+.apt-mock-result__saved-note { margin-top: 0.25rem; }
+.apt-mock-result__sections {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+.apt-mock-result__review {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid color-mix(in srgb, var(--sec-color) 25%, var(--border));
+}
+.apt-mock-result__actions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+}
+.apt-mock-result__back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.apt-mock-result__back-btn:hover {
+  border-color: color-mix(in srgb, var(--mock-accent) 40%, var(--border));
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--mock-accent) 6%, var(--bg-secondary));
+}
+.apt-mock-result__retry-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--mock-accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--mock-accent) 12%, transparent);
+  color: var(--mock-accent);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.apt-mock-result__retry-btn:hover { background: color-mix(in srgb, var(--mock-accent) 18%, transparent); }
+.apt-mock-result__retry-btn--wait {
+  opacity: 0.85;
+  cursor: not-allowed;
+  width: 100%;
+  max-width: 280px;
+}
+
+.apt-mock-gate.is-cooldown { opacity: 0.92; }
+.apt-mock-gate__cta--wait { margin-top: 0.15rem; }
+.apt-mock-gate__cooldown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, #F59E0B 35%, var(--border));
+  background: color-mix(in srgb, #F59E0B 10%, transparent);
+  color: #F59E0B;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  cursor: not-allowed;
+}
+
+/* ── Mock history (aptitude hub — right column) ──────────────────────────── */
+.apt-mock-history {
+  margin-top: 0;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-secondary) 90%, transparent);
+}
+.apt-mock-history__head { margin-bottom: 0.75rem; flex-shrink: 0; }
+.apt-mock-history__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #F59E0B;
+}
+.apt-mock-history__title {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+}
+.apt-mock-history__sub {
+  margin: 0.35rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+.apt-mock-history__list {
+  display: grid;
+  gap: 0.45rem;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  max-height: 240px;
+  padding-right: 0.15rem;
+}
+.apt-mock-history__empty {
+  flex: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 1.5rem 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+.apt-mock-history__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: inherit;
+  text-align: left;
+}
+.apt-mock-history__score {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.apt-mock-history__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+}
+.apt-mock-history__dot.is-pass { background: #4ADE80; box-shadow: 0 0 8px color-mix(in srgb, #4ADE80 50%, transparent); }
+.apt-mock-history__dot.is-fail { background: #EF4444; }
+.apt-mock-history__date {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  min-width: 0;
+}
+.apt-mock-history__badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.apt-mock-history__badge.is-pass { color: #4ADE80; border-color: color-mix(in srgb, #4ADE80 35%, var(--border)); }
+.apt-mock-history__badge.is-fail { color: #EF4444; border-color: color-mix(in srgb, #EF4444 35%, var(--border)); }
+.apt-mock-history__xp {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: #F59E0B;
+}
+
+.apt-mock-result__hero { text-align: center; }
+.apt-mock-result__note { color: var(--text-secondary); margin: 0.75rem 0 0; }
+.apt-mock-result__item {
+  padding: 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+.apt-mock-result__item.is-correct { border-color: color-mix(in srgb, #22C55E 40%, var(--border)); }
+.apt-mock-result__item.is-wrong { border-color: color-mix(in srgb, #EF4444 40%, var(--border)); }
+.apt-mock-result__item-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; font-weight: 700; }
+.apt-mock-result__icon--ok { color: #22C55E; }
+.apt-mock-result__icon--bad { color: #EF4444; }
+.apt-mock-result__q { margin: 0 0 0.55rem; line-height: 1.55; }
+.apt-mock-result__opts { display: grid; gap: 0.35rem; margin-bottom: 0.55rem; }
+.apt-mock-result__opt { padding: 0.35rem 0.5rem; border-radius: 6px; font-size: 0.92rem; }
+.apt-mock-result__opt.is-answer { background: color-mix(in srgb, #22C55E 15%, transparent); }
+.apt-mock-result__opt.is-chosen:not(.is-answer) { background: color-mix(in srgb, #EF4444 12%, transparent); }
+.apt-mock-result__sol { margin: 0; color: var(--text-secondary); line-height: 1.55; }
+.apt-mock-result__trick { display: flex; align-items: flex-start; gap: 0.35rem; margin: 0.45rem 0 0; color: #F59E0B; font-size: 0.9rem; }
+
+@media (max-width: 900px) {
+  .apt-mock-hub { grid-template-columns: 1fr; }
+  .apt-mock-gate,
+  .apt-mock-history { min-height: 0; }
+  .apt-mock-history__list { max-height: none; }
+}
+
+@media (max-width: 768px) {
+  .apt-mock-exam__timers { width: 100%; justify-content: flex-end; }
+  .apt-mock-result__sec-tabs { grid-template-columns: 1fr; }
+  .apt-mock-history__row {
+    grid-template-columns: auto 1fr auto auto;
+  }
+  .apt-mock-history__xp { display: none; }
+}

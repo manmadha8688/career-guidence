@@ -1,11 +1,17 @@
 import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react'
-import { getMe, clearUserCache } from '../api/api'
+import { getMe, clearUserCache, getDashboardBootstrap } from '../api/api'
 import { logApiError } from '../utils/devLog'
 import { clearBrowserSessionPreservingPrefs } from '../utils/browserSession'
 import api from '../api/api'
 import LoadingOverlay from '../components/LoadingOverlay'
 
 const AuthContext = createContext(null)
+
+/** Fire-and-forget Skill Arena bootstrap so the dashboard hits warm caches (no UI change). */
+function prefetchSkillArenaData(role) {
+  if (role === 'GUEST') return
+  getDashboardBootstrap().catch(err => logApiError('auth-prefetch-bootstrap', err))
+}
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
@@ -25,6 +31,8 @@ export function AuthProvider({ children }) {
       setLoading(false)
       return
     }
+    // Overlap /me with Skill Arena prefetch — same cookie, independent round-trips.
+    prefetchSkillArenaData(null)
     getMe()
       .then(res => setUser(res.data))
       .catch(() => {
@@ -54,6 +62,7 @@ export function AuthProvider({ children }) {
     try {
       const res = await getMe()
       setUser(res.data)
+      prefetchSkillArenaData(res.data?.role)
     } catch (err) {
       logApiError('auth-login-hydrate', err)
     }

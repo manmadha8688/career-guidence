@@ -1,5 +1,7 @@
 // ── Rank lookup from XP (used by Navbar/QuizPage which don't have summary) ──
 
+import { RANK_LADDER } from '../constants/ranks'
+
 const isLight = () => document.documentElement.getAttribute('data-theme') === 'light'
 
 const DARK = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
@@ -8,12 +10,26 @@ const rc = () => isLight() ? LIGHT : DARK
 
 export const getRank = (xp = 0) => {
   const r = rc()
-  if (xp >= 10000) return { label: 'S', cls: 'rank-s', color: r.S, next: null,  min: 10000, progress: 100 }
-  if (xp >= 6000)  return { label: 'A', cls: 'rank-a', color: r.A, next: 10000, min: 6000,  progress: Math.round((xp - 6000)  / 4000 * 100) }
-  if (xp >= 3000)  return { label: 'B', cls: 'rank-b', color: r.B, next: 6000,  min: 3000,  progress: Math.round((xp - 3000)  / 3000 * 100) }
-  if (xp >= 1500)  return { label: 'C', cls: 'rank-c', color: r.C, next: 3000,  min: 1500,  progress: Math.round((xp - 1500)  / 1500 * 100) }
-  if (xp >= 500)   return { label: 'D', cls: 'rank-d', color: r.D, next: 1500,  min: 500,   progress: Math.round((xp - 500)   / 1000 * 100) }
-  return               { label: 'E', cls: 'rank-e', color: r.E, next: 500,   min: 0,     progress: Math.round(xp / 500 * 100) }
+  let current = RANK_LADDER[0]
+  for (let i = RANK_LADDER.length - 1; i >= 0; i--) {
+    if (xp >= RANK_LADDER[i].min) {
+      current = RANK_LADDER[i]
+      break
+    }
+  }
+  const idx = RANK_LADDER.findIndex((e) => e.letter === current.letter)
+  const next = RANK_LADDER[idx + 1] ?? null
+  const progress = next
+    ? Math.round((xp - current.min) / (next.min - current.min) * 100)
+    : 100
+  return {
+    label: current.letter,
+    cls: current.cls,
+    color: r[current.letter],
+    next: next?.min ?? null,
+    min: current.min,
+    progress,
+  }
 }
 
 export const getGateRank = (pct, hasContent) => {

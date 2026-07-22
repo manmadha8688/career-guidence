@@ -69,6 +69,7 @@ export default function ProblemDetailPage() {
   const [lang, setLang] = useState('python')
   const [variant, setVariant] = useState(null)
   const [revealedHints, setRevealedHints] = useState(0)
+  const [solutionRevealed, setSolutionRevealed] = useState(false)
 
   useEffect(() => {
     let active = true
@@ -76,6 +77,7 @@ export default function ProblemDetailPage() {
     setLoading(true)
     setNotFound(false)
     setRevealedHints(0)
+    setSolutionRevealed(false)
     setLeftTab('description')
     getProblem(id)
       .then(r => { if (active) setProblem(r.data) })
@@ -312,6 +314,25 @@ export default function ProblemDetailPage() {
 
             {leftTab === 'editorial' && (
               <>
+                {!solutionRevealed ? (
+                  <div className="ps-card ps-card--compact">
+                    <SectionLabel label="Solution" accentColor="#9B6ED4" />
+                    <div className="ps-solution-gate">
+                      <Lightbulb size={20} className="ps-solution-gate__icon" aria-hidden />
+                      <p className="ps-solution-gate__text">
+                        Try it yourself before seeing the solution.
+                      </p>
+                      <button
+                        type="button"
+                        className="ps-solution-gate__btn"
+                        onClick={() => setSolutionRevealed(true)}
+                      >
+                        Show solution
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
                 {availableVariants.length > 0 && (
                   <div className="ps-card ps-card--compact">
                     <SectionLabel label="Solution" accentColor="#9B6ED4" />
@@ -396,6 +417,8 @@ export default function ProblemDetailPage() {
                     <SectionLabel label="Tip" accentColor="#F59E0B" />
                     <p className="ps-accordion-text">{problem.tip}</p>
                   </div>
+                )}
+                  </>
                 )}
               </>
             )}

@@ -2,13 +2,24 @@ import { useState, useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, BookOpen, Zap, Filter, Repeat, Timer, Layers } from 'lucide-react'
+import { ChevronRight, BookOpen, Zap, Filter, Repeat, Timer, Layers, ClipboardList, History } from 'lucide-react'
 import Navbar from '../../components/navbars/Navbar'
-import { getAptitudeCategories } from '../../api/api'
+import CooldownTimer from '../../components/CooldownTimer'
+import { getAptitudeCategories, getAptitudeMockHistory, getAptitudeMockStatus } from '../../api/api'
+import { useAuth } from '../../context/AuthContext'
 import { APTITUDE_CATEGORIES } from './aptitudeData'
+import { MOCK_SECTIONS, MOCK_TOTAL_QUESTIONS, MOCK_RETRY_MINUTES } from './aptitudeMockConfig'
+import AptitudeMockInstructionsModal from './AptitudeMockInstructionsModal'
 import '../../styles/pages/shared/aptitude.css'
+import '../../styles/pages/dashboard/index.css'
 
 const EASE = [0.16, 1, 0.3, 1]
+
+function fmtMockDate(iso) {
+  if (!iso) return '—'
+  const d = new Date(iso)
+  return isNaN(d) ? '—' : d.toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+}
 
 // A taste of what each round throws at you — shown as a preview so the console reads
 // visually, not as a wall of text.
@@ -106,7 +117,11 @@ function AptitudeConsole() {
 
 export default function AptitudePage() {
   const navigate = useNavigate()
+  const { user } = useAuth()
   const [counts, setCounts] = useState({})
+  const [mockOpen, setMockOpen] = useState(false)
+  const [mockStatus, setMockStatus] = useState(null)
+  const [mockHistory, setMockHistory] = useState([])
 
   useEffect(() => {
     let alive = true
@@ -120,6 +135,53 @@ export default function AptitudePage() {
       .catch(() => { if (alive) { toast.error('Could not load aptitude sections. Please try again.'); setCounts({}) } })
     return () => { alive = false }
   }, [])
+
+  useEffect(() => {
+    if (!user) {
+      setMockStatus(null)
+      setMockHistory([])
+      return
+    }
+    let alive = true
+    Promise.all([getAptitudeMockStatus(), getAptitudeMockHistory(4)])
+      .then(([statusRes, histRes]) => {
+        if (!alive) return
+        setMockStatus(statusRes.data)
+        setMockHistory(histRes.data || [])
+      })
+      .catch(() => { /* guest or offline — mock card still visible */ })
+    return () => { alive = false }
+  }, [user])
+
+  const openMock = () => {
+    if (!user) {
+      toast.error('Sign in to take the core aptitude mock.')
+      navigate('/login')
+      return
+    }
+    if (mockStatus && !mockStatus.canRetry) {
+      toast.error(`Wait ${MOCK_RETRY_MINUTES} minutes between mock attempts.`)
+      return
+    }
+    setMockOpen(true)
+  }
+
+  const reloadMockMeta = () => {
+    if (!user) return
+    Promise.all([getAptitudeMockStatus(), getAptitudeMockHistory(4)])
+      .then(([statusRes, histRes]) => {
+        setMockStatus(statusRes.data)
+        setMockHistory(histRes.data || [])
+      })
+      .catch(() => {})
+  }
+
+  useEffect(() => {
+    if (!user) return
+    const onRefresh = () => reloadMockMeta()
+    window.addEventListener('sl:refresh', onRefresh)
+    return () => window.removeEventListener('sl:refresh', onRefresh)
+  }, [user])
 
   return (
     <div className="apt-page">
@@ -234,6 +296,79 @@ export default function AptitudePage() {
             </motion.button>
           ))}
         </div>
+
+        <motion.div
+          className="apt-mock-hub"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55, ease: EASE }}
+          aria-label="Core aptitude mock"
+        >
+          <button
+            type="button"
+            className={`apt-mock-gate${mockStatus && !mockStatus.canRetry ? ' is-cooldown' : ''}`}
+            onClick={openMock}
+          >
+            <span className="apt-mock-gate__badge">Full mock</span>
+            <span className="apt-mock-gate__icon" aria-hidden="true"><ClipboardList size={28} /></span>
+            <h3 className="apt-mock-gate__title">Core Aptitude Mock</h3>
+            <p className="apt-mock-gate__desc">
+              {MOCK_TOTAL_QUESTIONS} questions · 65 minutes · timed Quant, Logical &amp; Verbal sections.
+            </p>
+            <span className="apt-mock-gate__meta">
+              {MOCK_SECTIONS.map(s => `${s.questionCount} ${s.icon}`).join(' · ')}
+            </span>
+            {user && mockStatus && !mockStatus.canRetry ? (
+              <span className="apt-mock-gate__cta apt-mock-gate__cta--wait">
+                <CooldownTimer
+                  until={mockStatus.nextRetryAt}
+                  onDone={reloadMockMeta}
+                  prefix="Retry in"
+                  asButton
+                  buttonClassName="apt-mock-gate__cooldown-btn"
+                />
+              </span>
+            ) : (
+              <span className="apt-mock-gate__cta">
+                Start mock <ChevronRight size={16} />
+              </span>
+            )}
+          </button>
+
+          <div className="apt-mock-history">
+            <div className="apt-mock-history__head">
+              <div className="apt-mock-history__title-row">
+                <History size={18} aria-hidden="true" />
+                <h3 className="apt-mock-history__title">Mock history</h3>
+              </div>
+              <p className="apt-mock-history__sub">
+                {user ? 'Last 4 attempts' : 'Sign in to track mock attempts and scores.'}
+              </p>
+            </div>
+            {!user ? (
+              <div className="apt-mock-history__empty">Log in to see your mock history here.</div>
+            ) : mockHistory.length === 0 ? (
+              <div className="apt-mock-history__empty">No attempts yet. Finish a mock to see it here.</div>
+            ) : (
+              <div className="apt-mock-history__list">
+                {mockHistory.slice(0, 4).map(row => (
+                  <div key={row.id} className="apt-mock-history__row">
+                    <span className={`apt-mock-history__dot${row.passed ? ' is-pass' : ' is-fail'}`} />
+                    <span className="apt-mock-history__date">{fmtMockDate(row.takenAt)}</span>
+                    <span className="apt-mock-history__score">{row.score}/{row.total}</span>
+                    <span className={`apt-mock-history__badge${row.passed ? ' is-pass' : ' is-fail'}`}>
+                      {row.passed ? 'PASS' : 'FAIL'}
+                    </span>
+                    {row.xpEarned > 0 && (
+                      <span className="apt-mock-history__xp">+{row.xpEarned} XP</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </motion.div>
       </section>
 
       {/* ── Motivation — the practical loop + why it pays off ───────── */}
@@ -342,6 +477,16 @@ export default function AptitudePage() {
           })}
         </div>
       </section>
+
+      {mockOpen && (
+        <AptitudeMockInstructionsModal
+          onClose={() => setMockOpen(false)}
+          onConfirm={() => {
+            setMockOpen(false)
+            navigate('/aptitude/mock')
+          }}
+        />
+      )}
     </div>
   )
 }

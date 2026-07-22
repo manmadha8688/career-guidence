@@ -6,6 +6,7 @@ import ScrollToTop from '../../components/ScrollToTop'
 import Navbar from '../../components/navbars/Navbar'
 import BookmarkButton from '../../components/BookmarkButton'
 import { CATEGORIES, TOOLS } from './aiLabData'
+import { sortToolsByUsefulness, sortToolsForCategory } from './aiLabPreviewOrder'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
 import blurOnEnter from '../../utils/blurOnEnter'
 import '../../styles/pages/shared/ailab.css'
@@ -14,6 +15,9 @@ import '../../styles/pages/shared/ailab-mobile.css'
 const Spline = lazy(() => import('@splinetool/react-spline'))
 
 const SPLINE_ROBOT = 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode'
+
+const PREVIEW_COUNT = 4
+const FULL_PREVIEW_CATEGORIES = new Set(['foundations'])
 
 const TAG_META = {
   trending:    { label: '🔥 Trending',   bg: 'rgba(249,115,22,0.15)',  color: '#F97316' },
@@ -62,6 +66,7 @@ const CAT_META = {
   creative:    { color: '#F472B6', icon: '🎨', desc: 'Generate images, videos and presentations with AI' },
   voice:       { color: '#FBBF24', icon: '🎤', desc: 'Convert speech to text and text to realistic voice' },
   career:      { color: '#34D399', icon: '📄', desc: 'Build your resume, notes and communication with AI' },
+  media:       { color: '#FB7185', icon: '🎬', desc: 'Generate video and music for projects and portfolios' },
 }
 
 export default function AILabPage() {
@@ -92,13 +97,17 @@ export default function AILabPage() {
 
   // Memoized so unrelated re-renders (search focus, spline load, primer toggle)
   // don't rebuild the lists or hand new object refs to the memoized sections.
-  const filtered = useMemo(() => TOOLS.filter(t => {
-    const matchCat = activeCategory === 'all' || t.category === activeCategory
+  const filtered = useMemo(() => {
     const q = search.toLowerCase()
-    return matchCat && (!q || t.name.toLowerCase().includes(q) || t.tagline.toLowerCase().includes(q) || t.tags?.some(g => g.includes(q)))
-  }), [activeCategory, search])
+    const list = TOOLS.filter(t => {
+      const matchCat = activeCategory === 'all' || t.category === activeCategory
+      return matchCat && (!q || t.name.toLowerCase().includes(q) || t.tagline.toLowerCase().includes(q) || t.tags?.some(g => g.includes(q)))
+    })
+    return sortToolsByUsefulness(list, activeCategory, CATEGORIES)
+  }, [activeCategory, search])
   const grouped = useMemo(() => CATEGORIES.filter(c => c.id !== 'all').map(cat => ({
-    ...cat, tools: filtered.filter(t => t.category === cat.id),
+    ...cat,
+    tools: sortToolsForCategory(filtered.filter(t => t.category === cat.id), cat.id),
   })).filter(g => g.tools.length > 0), [filtered])
   const goToTool = useCallback(t => {
     const path = `/ai-lab/${t.category}/${t.id}`
@@ -361,7 +370,13 @@ const HeroStatusPulse = memo(function HeroStatusPulse() {
 const CategorySection = memo(function CategorySection({ group, gi, onTool }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
+  const [expanded, setExpanded] = useState(false)
   const meta = CAT_META[group.id] || { color: '#00D9FF', icon: '⚡', desc: '' }
+  const showAllByDefault = FULL_PREVIEW_CATEGORIES.has(group.id)
+  const hasMore = group.tools.length > PREVIEW_COUNT
+  const isPreview = !showAllByDefault && hasMore && !expanded
+  const sortedTools = useMemo(() => sortToolsForCategory(group.tools, group.id), [group.tools, group.id])
+  const visibleTools = isPreview ? sortedTools.slice(0, PREVIEW_COUNT) : sortedTools
 
   return (
     <motion.div
@@ -425,10 +440,22 @@ const CategorySection = memo(function CategorySection({ group, gi, onTool }) {
             className="ailab-category__line"
           />
         )}
+
+        {!showAllByDefault && hasMore && (
+          <button
+            type="button"
+            className="ailab-category__view-all"
+            style={{ '--cat-color': meta.color }}
+            onClick={() => setExpanded(e => !e)}
+          >
+            {expanded ? 'Show less' : `View all (${group.tools.length})`}
+            <ChevronRight size={13} className={expanded ? 'ailab-category__view-all-chev is-flipped' : 'ailab-category__view-all-chev'} />
+          </button>
+        )}
       </motion.div>
 
-      <div className="ailab-category__grid">
-        {group.tools.map((tool, i) => (
+      <div className={`ailab-category__grid${isPreview ? ' ailab-category__grid--preview' : ''}`}>
+        {visibleTools.map((tool, i) => (
           <ToolCard
             key={tool.id}
             tool={tool}

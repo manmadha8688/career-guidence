@@ -763,6 +763,42 @@
   contain: layout;
 }
 
+.ailab-category__grid--preview {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ailab-category__view-all {
+  flex-shrink: 0;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--cat-color) 35%, transparent);
+  background: color-mix(in srgb, var(--cat-color) 8%, transparent);
+  color: var(--cat-color);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ailab-category__view-all:hover {
+  background: color-mix(in srgb, var(--cat-color) 14%, transparent);
+  border-color: color-mix(in srgb, var(--cat-color) 50%, transparent);
+}
+
+.ailab-category__view-all-chev {
+  transition: transform 0.2s;
+}
+
+.ailab-category__view-all-chev.is-flipped {
+  transform: rotate(90deg);
+}
+
 /* Tool card */
 .ailab-tool-card {
   background: var(--ailab-card-bg);
@@ -1485,6 +1521,7 @@
   .ailab-hero__content { width: 60%; padding-right: 1.25rem; }
   .ailab-hero__spline { width: 48%; opacity: 0.8; }
   .ailab-hero__desc { max-width: 340px; }
+  .ailab-category__grid--preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Phones */
@@ -1535,6 +1572,8 @@
   /* Single-column card grids */
   .ailab-tools__grid,
   .ailab-category__grid { grid-template-columns: 1fr; }
+
+  .ailab-category__grid--preview { grid-template-columns: 1fr; }
 
   .ailab-tools__filters { padding: 2rem 1rem 1.5rem; }
   .ailab-tools__grid-wrap { padding: 0 1rem 4.5rem; }

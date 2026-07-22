@@ -133,7 +133,7 @@ export default function AmazonQPage() {
         The highest-value use of Amazon Q for a student learning AWS is not code completion — it is using /dev to build complete working infrastructure and then reading what it generated. AWS CDK and CloudFormation have hundreds of resource types with complex property structures. Having Q generate a working stack and then exploring the code is the fastest way to learn AWS services. Treat each generated CDK file as a live tutorial written specifically for what you asked to build.
       </ProTip>
       <PageNavRow
-        prev={{ path: '/ai-lab/coding/codeium', label: 'Codeium' }}
+        prev={{ path: '/ai-lab/coding/roo-code', label: 'Roo Code' }}
         next={{ path: '/ai-lab', label: 'AI Lab' }}
       />
     </ToolPageShell>

@@ -61,6 +61,8 @@ export default function AutoHideNav() {
       // Ignore those so the navbar doesn't hide behind an open drawer/modal and
       // then get stuck hidden after it closes.
       if (root.classList.contains('scroll-locked')) return
+      // Skill Arena subject / path / concept panels — keep navbar pinned while open.
+      if (root.classList.contains('dash-panel-lock')) return
       // A page can freeze show/hide during a programmatic jump (e.g. the
       // deployment station rail) so the animated scroll can't flicker the navbar.
       if (root.classList.contains('nav-jump-lock')) return

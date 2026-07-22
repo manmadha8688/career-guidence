@@ -59,7 +59,7 @@ export default function TrackPage() {
   const light = theme === 'light'
   const solvedIds = useMemo(
     () => new Set(Array.isArray(user?.solvedProblemIds) ? user.solvedProblemIds : []),
-    [user]
+    [user],
   )
 
   const track = SLUG_TO_TRACK[slug]
@@ -126,6 +126,11 @@ export default function TrackPage() {
     })
     return [...map.entries()]
   }, [filtered])
+
+  const solvedInTrack = useMemo(
+    () => questions.filter(q => !!q.isSolved || solvedIds.has(q.id)).length,
+    [questions, solvedIds],
+  )
 
   if (!meta) return null
 
@@ -194,7 +199,12 @@ export default function TrackPage() {
           </div>
 
           <div className="ps-result-wrap">
-            <ResultCount count={filtered.length} filters={activeFilters || null} />
+            <ResultCount
+              count={filtered.length}
+              solved={solvedInTrack}
+              total={questions.length}
+              filters={activeFilters || null}
+            />
           </div>
 
           {track === 'START_CODING' && (
@@ -216,7 +226,7 @@ export default function TrackPage() {
                 <div className="ps-problem-list">
                   {qs.map((q, i) => (
                     <ProblemCard key={q.id} problem={q} index={i}
-                      solved={solvedIds.has(q.id)}
+                      solved={!!q.isSolved || solvedIds.has(q.id)}
                       onClick={() => navigate(`/code-gym/${q.id}`)} />
                   ))}
                 </div>
@@ -311,9 +321,11 @@ function Empty() {
   return <div className="ps-empty">NO PROBLEMS FOUND</div>
 }
 
-function ResultCount({ count, filters }) {
+function ResultCount({ count, solved = 0, total = 0, filters }) {
   return (
     <div className="ps-result-count">
+      <span className="ps-result-count__solved">{solved}/{total} SOLVED</span>
+      <span className="ps-result-count__sep">·</span>
       {count} PROBLEM{count !== 1 ? 'S' : ''}
       {filters && <span className="ps-result-count__filters"> · {filters}</span>}
     </div>

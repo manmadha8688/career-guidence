@@ -94,6 +94,8 @@ const AptitudeCategoryPage     = lazy(() => import('./pages/aptitude/AptitudeCat
 const AptitudeGroupPage        = lazy(() => import('./pages/aptitude/AptitudeGroupPage'))
 const AptitudeTopicPage        = lazy(() => import('./pages/aptitude/AptitudeTopicPage'))
 const AptitudeQuestionsPage    = lazy(() => import('./pages/aptitude/AptitudeQuestionsPage'))
+const AptitudeMockExamPage     = lazy(() => import('./pages/aptitude/AptitudeMockExamPage'))
+const AptitudeMockResultPage   = lazy(() => import('./pages/aptitude/AptitudeMockResultPage'))
 
 const DashboardPage            = lazy(() => import('./pages/student-skill-arena/DashboardPage'))
 const RoadmapDetailPage        = lazy(() => import('./pages/student-skill-arena/RoadmapDetailPage'))
@@ -237,6 +239,7 @@ const TOAST_OPTIONS = { duration: 3000 }
 // visitors never pay for it.
 function usePrefetchRoutes(hasSession) {
   useEffect(() => {
+    if (!hasSession) return
     const run = () => {
       import('./pages/landing')
       import('./pages/auth/LoginForm')
@@ -244,21 +247,22 @@ function usePrefetchRoutes(hasSession) {
       import('./pages/MissionsPage')
       import('./pages/JobsPage')
       import('./pages/problem-solving/ProblemSolvingPage')
-      if (hasSession) import('./pages/student-skill-arena/DashboardPage')
+      import('./pages/student-skill-arena/DashboardPage')
       import('./pages/FresherInstructionsPage')
       import('./pages/CareerGuidancePage')
     }
     if ('requestIdleCallback' in window) {
       requestIdleCallback(run)
     } else {
-      setTimeout(run, 800)
+      setTimeout(run, 200)
     }
   }, [hasSession])
 }
 
 function AppShell() {
   const { isAuthenticated } = useAuth()
-  usePrefetchRoutes(isAuthenticated)
+  const hasSession = typeof localStorage !== 'undefined' && !!localStorage.getItem('has_session')
+  usePrefetchRoutes(hasSession || isAuthenticated)
   useEffect(() => { sessionStorage.removeItem('sl_chunk_reloaded') }, [])
   return (
     <>
@@ -364,6 +368,8 @@ const router = createBrowserRouter([
       { path: '/problem-solving', element: <Navigate to="/code-gym" replace /> },
       { path: '/problem-solving/:slug', element: <LegacyCodeGymRedirect /> },
       { path: '/aptitude', element: <AptitudePage /> },
+      { path: '/aptitude/mock', element: <ProtectedRoute><AptitudeMockExamPage /></ProtectedRoute> },
+      { path: '/aptitude/mock/result/:attemptId', element: <ProtectedRoute><AptitudeMockResultPage /></ProtectedRoute> },
       { path: '/aptitude/:category', element: <AptitudeCategoryPage /> },
       { path: '/aptitude/:category/:group', element: <AptitudeGroupPage /> },
       { path: '/aptitude/:category/:group/:topicId', element: <ProtectedRoute><AptitudeTopicPage /></ProtectedRoute> },
