@@ -6,15 +6,18 @@
 
     <!-- ============ PRIMARY SEO ============ -->
     <title>LearnForEarn — Free Coding Practice, Career Roadmaps & Fresher Jobs</title>
-    <meta name="description" content="LearnForEarn is a free platform to learn in-demand tech skills and earn jobs through real coding challenges, guided career roadmaps, and hands-on AI projects — built for students and freshers in India." />
-    <meta name="keywords" content="free coding practice, DSA practice, learn programming free, placement preparation, aptitude preparation, quantitative aptitude, logical reasoning, verbal ability, data interpretation, aptitude shortcuts, fresher jobs India, walk-in drives, AI tools for students, AI projects, career roadmap, coding challenges, coding problems with solutions, project ideas for students, deployment guides, interview preparation, learn Python, learn Java, learn React, coding for beginners" />
+    <meta name="description" content="Free learning platform for students and freshers in India. Career roadmaps, coding practice, placement aptitude, AI tools, free deployment guides, project missions, and walk-in job drives — go from beginner to hired." />
+    <meta name="keywords" content="LearnForEarn, free coding practice, DSA practice, placement preparation, aptitude preparation, fresher jobs India, walk-in drives, AI tools for students, career roadmap, free deployment guides, interview preparation, learn Python, learn Java, learn React" />
     <meta name="author" content="LearnForEarn" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="language" content="English" />
     <meta http-equiv="content-language" content="en-IN" />
     <link rel="canonical" href="https://learnforearn.in/" />
+    <link rel="alternate" hreflang="en-IN" href="https://learnforearn.in/" />
+    <link rel="alternate" hreflang="x-default" href="https://learnforearn.in/" />
 
-    <!-- ============ FAVICONS / PWA ICONS ============ -->
+    <!-- ============ FAVICONS / PWA ============ -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -22,7 +25,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- ============ PWA / MOBILE / PERFORMANCE META ============ -->
+    <!-- ============ PWA / MOBILE ============ -->
     <meta name="theme-color" content="#1E0A3C" />
     <meta name="color-scheme" content="dark light" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -32,56 +35,80 @@
     <meta name="application-name" content="LearnForEarn" />
     <meta name="format-detection" content="telephone=no" />
 
-    <!-- ============ OPEN GRAPH (Facebook, WhatsApp, LinkedIn, Discord, Slack) ============ -->
+    <!-- ============ OPEN GRAPH ============ -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="LearnForEarn" />
-    <meta property="og:title" content="LearnForEarn — Learn Tech Skills & Earn Jobs, 100% Free" />
-    <meta property="og:description" content="Free platform to learn tech skills and earn jobs through real coding challenges, career roadmaps, and hands-on AI projects. Built for students & freshers in India." />
+    <meta property="og:title" content="LearnForEarn — Free Coding Practice, Career Roadmaps & Fresher Jobs" />
+    <meta property="og:description" content="Free platform for Indian students & freshers — coding practice, aptitude, AI tools, deployment guides, projects, and walk-in jobs." />
     <meta property="og:url" content="https://learnforearn.in/" />
     <meta property="og:image" content="https://learnforearn.in/og-image.png" />
     <meta property="og:image:secure_url" content="https://learnforearn.in/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="LearnForEarn — learn tech skills and earn jobs" />
+    <meta property="og:image:alt" content="LearnForEarn — free coding practice and career roadmaps for students" />
     <meta property="og:locale" content="en_IN" />
 
-    <!-- ============ TWITTER / X CARD ============ -->
+    <!-- ============ TWITTER / X ============ -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="LearnForEarn — Learn Tech Skills & Earn Jobs, 100% Free" />
-    <meta name="twitter:description" content="Free platform to learn tech skills and earn jobs through real coding challenges, career roadmaps, and hands-on AI projects. For students & freshers in India." />
+    <meta name="twitter:title" content="LearnForEarn — Free Coding Practice, Career Roadmaps & Fresher Jobs" />
+    <meta name="twitter:description" content="Free platform for Indian students & freshers — coding, aptitude, AI tools, deploy guides, and walk-in jobs." />
     <meta name="twitter:image" content="https://learnforearn.in/og-image.png" />
-    <meta name="twitter:image:alt" content="LearnForEarn — learn tech skills and earn jobs" />
+    <meta name="twitter:image:alt" content="LearnForEarn — free coding practice and career roadmaps for students" />
 
-    <!-- ============ STRUCTURED DATA (JSON-LD) ============ -->
+    <!-- ============ STRUCTURED DATA ============ -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
+        "@id": "https://learnforearn.in/#organization",
         "name": "LearnForEarn",
-        "alternateName": "ARISE",
+        "alternateName": ["ARISE", "Learn For Earn"],
         "url": "https://learnforearn.in/",
-        "logo": "https://learnforearn.in/icon-512.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://learnforearn.in/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
         "image": "https://learnforearn.in/og-image.png",
-        "description": "Free platform to learn tech skills and earn jobs through real coding challenges, career roadmaps, and hands-on AI projects — for students and freshers in India.",
+        "description": "Free learning platform for students and freshers in India — career roadmaps, coding practice, aptitude, AI tools, deployment guides, and walk-in job drives.",
         "email": "hello@learnforearn.in",
-        "areaServed": "IN"
+        "areaServed": { "@type": "Country", "name": "India" },
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "student"
+        },
+        "sameAs": []
       }
     </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://learnforearn.in/#website",
         "name": "LearnForEarn",
+        "alternateName": "ARISE",
         "url": "https://learnforearn.in/",
-        "description": "Free platform to learn tech skills and earn jobs through real coding challenges and AI projects.",
+        "description": "Free coding practice, career roadmaps, aptitude, AI tools, and fresher jobs for students in India.",
         "inLanguage": "en-IN",
-        "publisher": { "@type": "Organization", "name": "LearnForEarn" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://learnforearn.in/ai-lab?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "publisher": { "@id": "https://learnforearn.in/#organization" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "LearnForEarn learning areas",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "AI Lab", "url": "https://learnforearn.in/ai-lab" },
+          { "@type": "ListItem", "position": 2, "name": "Deployment Guides", "url": "https://learnforearn.in/deployment" },
+          { "@type": "ListItem", "position": 3, "name": "Aptitude", "url": "https://learnforearn.in/aptitude" },
+          { "@type": "ListItem", "position": 4, "name": "Project Missions", "url": "https://learnforearn.in/missions" },
+          { "@type": "ListItem", "position": 5, "name": "Walk-In Jobs", "url": "https://learnforearn.in/walk-ins" },
+          { "@type": "ListItem", "position": 6, "name": "Fresher Guide", "url": "https://learnforearn.in/fresher-instructions" },
+          { "@type": "ListItem", "position": 7, "name": "Resume Builder", "url": "https://learnforearn.in/resume" }
+        ]
       }
     </script>
 
@@ -89,7 +116,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    </noscript>
     <script>
       (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
     </script>

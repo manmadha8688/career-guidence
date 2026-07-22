@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import { getRank } from '../../utils/slRank'
-import { openGlobalSearch } from '../GlobalSearchOverlay'
+import { openGlobalSearch } from '../globalSearchBus'
 
 /** Skill Arena top bar (used by AppLayout): sidebar toggle + XP/rank + hunter avatar. */
 export default function AppNavbar({ onMenuClick, title = '' }) {

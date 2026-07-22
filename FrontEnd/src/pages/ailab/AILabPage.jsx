@@ -92,8 +92,14 @@ export default function AILabPage() {
   const heroY = useTransform(scrollY, [0, 500], [0, -80])
   const splineScale = useTransform(scrollY, [0, 400], [1, 1.1])
   // Skip scroll-linked parallax on touch/small screens to keep scrolling smooth.
-  const heroSectionStyle = enable3D ? { opacity: heroOpacity, y: heroY } : undefined
-  const splineStyle = enable3D ? { scale: splineScale } : undefined
+  // Memoized so the same style object ref is reused across re-renders (the MotionValues
+  // are per-component and stable, so this can't be a module-scope constant).
+  const heroSectionStyle = useMemo(
+    () => (enable3D ? { opacity: heroOpacity, y: heroY } : undefined),
+    [enable3D, heroOpacity, heroY])
+  const splineStyle = useMemo(
+    () => (enable3D ? { scale: splineScale } : undefined),
+    [enable3D, splineScale])
 
   // Memoized so unrelated re-renders (search focus, spline load, primer toggle)
   // don't rebuild the lists or hand new object refs to the memoized sections.

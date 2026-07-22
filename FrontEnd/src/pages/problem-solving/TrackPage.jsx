@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, memo } from 'react'
 import toast from 'react-hot-toast'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -8,6 +8,7 @@ import EnterArenaButton from '../../components/EnterArenaButton'
 import { useTheme } from '../../context/ThemeContext'
 import { useAuth } from '../../context/AuthContext'
 import { getProblems } from '../../api/api'
+import { TRACK_META } from '../../constants/codeGymTracks'
 import blurOnEnter from '../../utils/blurOnEnter'
 import '../../styles/pages/shared/problem-solving.css'
 import '../../styles/pages/shared/problem-solving-mobile.css'
@@ -23,15 +24,6 @@ const SLUG_TO_TRACK = {
 
 // One place for track identity. Colors match the gate cards on the Code Gym page.
 // Only Prove It (the final S-rank gate) uses red — everything else stays muted.
-const TRACK_META = {
-  START_CODING:    { title: 'Start Coding',   rank: 'E', color: '#9CA3AF' },
-  LOGIC_BUILDING:  { title: 'Logic Building', rank: 'D', color: '#4ADE80' },
-  SKILL_UP:        { title: 'Skill Up',       rank: 'C', color: '#60A5FA' },
-  CRACK_IT:        { title: 'Crack It',       rank: 'B', color: '#9B6ED4' },
-  BUILD_IT:        { title: 'Build It',       rank: 'A', color: '#F59E0B' },
-  PROVE_IT:        { title: 'Prove It',       rank: 'S', color: '#EF4444' },
-}
-
 const LEVEL_META = {
   BEGINNER:     { label: 'Beginner',     color: '#4ADE80' },
   INTERMEDIATE: { label: 'Intermediate', color: '#F59E0B' },
@@ -281,7 +273,7 @@ function FilterSelect({ label, value, onChange, options, accentColor, renderLabe
   )
 }
 
-function ProblemCard({ problem, index, solved, onClick }) {
+const ProblemCard = memo(function ProblemCard({ problem, index, solved, onClick }) {
   const lm = LEVEL_META[problem.level] || LEVEL_META.BEGINNER
   return (
     <div onClick={onClick} className={`ps-problem-card${solved ? ' ps-problem-card--solved' : ''}`} style={{ '--lm-color': lm.color }}>
@@ -303,9 +295,9 @@ function ProblemCard({ problem, index, solved, onClick }) {
       <ChevronRight size={15} className="ps-problem-card__chevron" />
     </div>
   )
-}
+})
 
-function Chip({ color, children }) {
+const Chip = memo(function Chip({ color, children }) {
   const hex = color?.startsWith('#')
   return (
     <span
@@ -315,7 +307,7 @@ function Chip({ color, children }) {
       {children}
     </span>
   )
-}
+})
 
 function Empty() {
   return <div className="ps-empty">NO PROBLEMS FOUND</div>

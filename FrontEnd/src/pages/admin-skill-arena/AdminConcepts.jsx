@@ -13,8 +13,7 @@ import { getAdminSubjects, getAdminConcepts, createConcept, updateConcept, delet
 import toast from 'react-hot-toast'
 import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
-
-const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
+import { RANK_COLORS_DARK as RANK_COLORS } from '../../constants/ranks'
 
 function SearchableSelect({ items, value, onChange, placeholder = 'Select…' }) {
   const [open, setOpen] = useState(false)
@@ -366,7 +365,9 @@ export default function AdminConcepts() {
       .finally(() => setTimeout(() => setLoading(false), TEST_DELAY_MS))
   }
 
-  const filtered = concepts.filter(c => c.title.toLowerCase().includes(search.toLowerCase()))
+  const filtered = useMemo(() =>
+    concepts.filter(c => c.title.toLowerCase().includes(search.toLowerCase())),
+    [concepts, search])
 
   const filteredIds = useMemo(() => filtered.map(c => c.id), [filtered])
   const selection = useAdminSelection(filteredIds)

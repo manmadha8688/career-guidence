@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { CheckCircle, XCircle, ArrowLeft, RotateCcw, Trophy, Zap } from 'lucide-react'
@@ -69,6 +69,22 @@ export default function QuizResultPage() {
     return () => { active = false; clearTimeout(doneTimer) }
   }, [attemptId, location.state, navigate])
 
+  // Memoized so the review slice / wrong-count aren't rebuilt on every showAll toggle
+  // or unrelated re-render. Placed before the early returns to satisfy the Rules of
+  // Hooks; the values are byte-identical to the previous inline expressions.
+  const wrongCount = useMemo(() => {
+    if (!result) return 0
+    const reviewable = hasLiveReview && (result.results?.length ?? 0) > 0
+    return reviewable
+      ? result.results.filter(r => !r.correct).length
+      : Math.max(0, result.total - result.score)
+  }, [result, hasLiveReview])
+  const displayed = useMemo(() => {
+    if (!result) return []
+    const reviewable = hasLiveReview && (result.results?.length ?? 0) > 0
+    return reviewable ? (showAll ? result.results : result.results.slice(0, 5)) : []
+  }, [result, hasLiveReview, showAll])
+
   // ─── Loading ───────────────────────────────────────────
   if (loading) return <SystemAwakeningLoader subtitle="LOADING RESULTS" />
 
@@ -77,10 +93,6 @@ export default function QuizResultPage() {
   const pct        = Math.round((result.score / result.total) * 100)
   const retryIn    = formatRetry(result.nextRetryAt)
   const hasReview  = hasLiveReview && (result.results?.length ?? 0) > 0
-  const wrongCount = hasReview
-    ? result.results.filter(r => !r.correct).length
-    : Math.max(0, result.total - result.score)
-  const displayed  = hasReview ? (showAll ? result.results : result.results.slice(0, 5)) : []
 
   const PASS_COLOR = '#4ADE80'
   const FAIL_COLOR = '#EF4444'

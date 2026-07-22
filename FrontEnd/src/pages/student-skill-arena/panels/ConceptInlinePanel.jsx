@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, memo } from 'react'
 import { TEST_DELAY_MS } from '../../../components/loaders/_config'
 import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader'
 import { getConcept, getQuizStatus } from '../../../api/api'
@@ -18,7 +18,7 @@ const TRICKY_META = {
   REAL_WORLD: { label: 'REAL-WORLD',         cls: 'is-real' },
 }
 
-function TrickyProblemCard({ tp, num }) {
+const TrickyProblemCard = memo(function TrickyProblemCard({ tp, num }) {
   const [revealed, setRevealed] = useState(false)
   const meta = TRICKY_META[tp.type] || TRICKY_META.GOTCHA
   return (
@@ -49,7 +49,7 @@ function TrickyProblemCard({ tp, num }) {
       )}
     </div>
   )
-}
+})
 
 export default function ConceptInlinePanel({ conceptId, navList, onClose, startQuiz, subjectTitle = '' }) {
   const subjectType = /css/i.test(subjectTitle) ? 'css'

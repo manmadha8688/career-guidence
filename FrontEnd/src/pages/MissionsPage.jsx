@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Search, X, SlidersHorizontal, ChevronDown, Check, Github, Globe, ExternalLink, Plus } from 'lucide-react'
@@ -102,28 +102,28 @@ export default function MissionsPage() {
     return () => { alive = false }
   }, [user])
 
-  const subjectOptions = [...new Set(
+  const subjectOptions = useMemo(() => [...new Set(
     missions.filter(m => m.category === 'SUBJECT_PRACTICE').flatMap(m => m.subjectTitles || [])
-  )].sort()
-  const roleOptions = [...new Set(
+  )].sort(), [missions])
+  const roleOptions = useMemo(() => [...new Set(
     missions.filter(m => m.category === 'ROLE_BASED').flatMap(m => m.targetRoles || [])
-  )].sort()
+  )].sort(), [missions])
 
   const handleCategoryChange = (val) => {
     setCategory(val)
     setSubFilter('')
   }
 
-  const byCategoryAndSearch = missions.filter(m => {
+  const byCategoryAndSearch = useMemo(() => missions.filter(m => {
     if (category === 'subject')
       return m.category === 'SUBJECT_PRACTICE' && (!subFilter || m.subjectTitles?.includes(subFilter))
     if (category === 'academic')    return m.category === 'ACADEMIC'
     if (category === 'role_based')
       return m.category === 'ROLE_BASED' && (!subFilter || m.targetRoles?.includes(subFilter))
     return true
-  })
+  }), [missions, category, subFilter])
 
-  const filtered = filter.trim() === ''
+  const filtered = useMemo(() => (filter.trim() === ''
     ? byCategoryAndSearch
     : byCategoryAndSearch.filter(m => {
         const q = filter.toLowerCase()
@@ -133,7 +133,7 @@ export default function MissionsPage() {
           m.techStack?.some(t => t.toLowerCase().includes(q)) ||
           m.rank?.toLowerCase().includes(q)
         )
-      })
+      })), [byCategoryAndSearch, filter])
 
   const chipOptions = category === 'subject' ? subjectOptions : category === 'role_based' ? roleOptions : []
 

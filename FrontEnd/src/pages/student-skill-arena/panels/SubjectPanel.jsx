@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { TEST_DELAY_MS } from '../../../components/loaders/_config'
 import DungeonPortalLoader from '../../../components/loaders/DungeonPortalLoader'
 import ProgressBar from '../../../components/ProgressBar'
@@ -10,8 +10,7 @@ import CooldownTimer from '../../../components/CooldownTimer'
 import { isMongoId } from '../../../utils/mongoId'
 import blurOnEnter from '../../../utils/blurOnEnter'
 import useBodyLock from '../../../hooks/useBodyLock'
-
-const RANK_COLORS = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
+import { RANK_COLORS_DARK as RANK_COLORS } from '../../../constants/ranks'
 
 export default function SubjectPanel({ subjectId, onClose, onSkillClick, selectedConceptId, navigate, startQuiz, mode = 'overlay' }) {
   const [subject, setSubject]       = useState(null)
@@ -24,10 +23,10 @@ export default function SubjectPanel({ subjectId, onClose, onSkillClick, selecte
   // On mobile the overlay covers the whole screen — freeze the dashboard behind
   // it so the background can't scroll. On desktop it's a side drawer (left flow
   // stays usable), so we leave scrolling alone there.
-  const [isMobile] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches,
+  const isMobile = useRef(
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches,
   )
-  useBodyLock(!isGrid && isMobile)
+  useBodyLock(!isGrid && isMobile.current)
 
   useEffect(() => {
     setLoading(true)

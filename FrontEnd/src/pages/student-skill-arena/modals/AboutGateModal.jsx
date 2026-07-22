@@ -1,10 +1,10 @@
 import { X } from 'lucide-react'
 import useBodyLock from '../../../hooks/useBodyLock'
 import useModalA11y from '../../../hooks/useModalA11y'
+import { RANK_COLORS_DARK } from '../../../constants/ranks'
 
 export default function AboutGateModal({ subject, onClose }) {
-  const RANK_COLOR = { S:'#EF4444', A:'#F59E0B', B:'#9B6ED4', C:'#60A5FA', D:'#4ADE80', E:'#888888' }
-  const rc = RANK_COLOR[subject?.rank] || '#888888'
+  const rc = RANK_COLORS_DARK[subject?.rank] || '#888888'
 
   useBodyLock()
   const modalRef = useModalA11y(onClose)

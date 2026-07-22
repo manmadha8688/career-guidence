@@ -15,9 +15,9 @@ import { getApiError } from '../../utils/apiError'
 import useBodyLock from '../../hooks/useBodyLock'
 import SectionLabel from '../../components/admin/SectionLabel'
 import { listToText, textToList } from '../../components/admin/adminFormUtils'
+import { RANK_COLORS_DARK as RANK_COLORS } from '../../constants/ranks'
 
 const RANKS = ['E', 'D', 'C', 'B', 'A', 'S']
-const RANK_COLORS = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced', 'Expert']
 
 function SubjectModal({ subject, onClose, onSave }) {
@@ -196,10 +196,10 @@ export default function AdminSubjects() {
 
   useEffect(() => { load() }, [])
 
-  const filtered = subjects.filter(s =>
+  const filtered = useMemo(() => subjects.filter(s =>
     s.title.toLowerCase().includes(search.toLowerCase()) ||
     (s.description || '').toLowerCase().includes(search.toLowerCase())
-  )
+  ), [subjects, search])
 
   const filteredIds = useMemo(() => filtered.map(s => s.id), [filtered])
   const selection = useAdminSelection(filteredIds)

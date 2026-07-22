@@ -12,9 +12,12 @@ import FeedbackNudge from './components/FeedbackNudge'
 import ScrollToTop from './components/ScrollToTop'
 import ReportButton from './components/ReportButton'
 import AutoHideNav from './components/AutoHideNav'
-import GlobalSearchOverlay from './components/GlobalSearchOverlay'
 import SiteFooter from './components/SiteFooter'
 import { resolveSeo } from './utils/documentTitle'
+
+// Global search overlay: lazy so its portal + client search catalog (AI-lab/deploy
+// data) load only when a user first opens search, not in the entry/navbar chunk.
+const GlobalSearchOverlay      = lazy(() => import('./components/GlobalSearchOverlay'))
 
 // ── Page components — lazy loaded ─────────────────────────────────────────────
 // Each route loads its chunk only when first visited; subsequent visits use cache
@@ -188,11 +191,52 @@ function ScrollResetter() {
 // Keeps title + description + canonical + Open Graph + robots in sync on every
 // client-side navigation. In an SPA the static index.html only describes the
 // landing page, so we mutate the DOM head per route for search + social crawlers.
+const OG_IMAGE = 'https://learnforearn.in/og-image.png'
+const SEO_LD_ID = 'lfe-route-jsonld'
+
 function setMeta(selector, attr, value, create) {
   let el = document.head.querySelector(selector)
   if (!el && create) { el = create(); document.head.appendChild(el) }
   if (el) el.setAttribute(attr, value)
   return el
+}
+
+function setRouteJsonLd(pathname, title, description, canonical, noindex) {
+  let el = document.getElementById(SEO_LD_ID)
+  if (noindex) {
+    el?.remove()
+    return
+  }
+  const crumbs = [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://learnforearn.in/' }]
+  if (pathname !== '/') {
+    const label = title.replace(/\s*·\s*LearnForEarn\s*$/i, '').trim() || pathname
+    crumbs.push({ '@type': 'ListItem', position: 2, name: label, item: canonical })
+  }
+  const data = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: title,
+        description,
+        isPartOf: { '@id': 'https://learnforearn.in/#website' },
+        inLanguage: 'en-IN',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: crumbs,
+      },
+    ],
+  }
+  if (!el) {
+    el = document.createElement('script')
+    el.id = SEO_LD_ID
+    el.type = 'application/ld+json'
+    document.head.appendChild(el)
+  }
+  el.textContent = JSON.stringify(data)
 }
 
 function Seo() {
@@ -217,14 +261,24 @@ function Seo() {
       () => { const m = document.createElement('meta'); m.setAttribute('property', 'og:description'); return m })
     setMeta('meta[property="og:url"]', 'content', canonical,
       () => { const m = document.createElement('meta'); m.setAttribute('property', 'og:url'); return m })
+    setMeta('meta[property="og:image"]', 'content', OG_IMAGE,
+      () => { const m = document.createElement('meta'); m.setAttribute('property', 'og:image'); return m })
+
     setMeta('meta[name="twitter:title"]', 'content', title,
       () => Object.assign(document.createElement('meta'), { name: 'twitter:title' }))
     setMeta('meta[name="twitter:description"]', 'content', description,
       () => Object.assign(document.createElement('meta'), { name: 'twitter:description' }))
+    setMeta('meta[name="twitter:image"]', 'content', OG_IMAGE,
+      () => Object.assign(document.createElement('meta'), { name: 'twitter:image' }))
 
-    // Private/authenticated routes should never be indexed even if a bot runs JS.
-    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, nofollow' : 'index, follow',
+    // Private/authenticated routes: noindex even if a bot executes JS.
+    setMeta('meta[name="robots"]', 'content',
+      noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
       () => Object.assign(document.createElement('meta'), { name: 'robots' }))
+
+    setRouteJsonLd(pathname, title, description, canonical, noindex)
   }, [pathname])
   return null
 }
@@ -273,7 +327,9 @@ function AppShell() {
       <ScrollToTop />
       <AutoHideNav />
       <GlobalReportButton />
-      <GlobalSearchOverlay />
+      <Suspense fallback={null}>
+        <GlobalSearchOverlay />
+      </Suspense>
       <Suspense fallback={<PageTransitionLoader />}>
         <Outlet />
       </Suspense>

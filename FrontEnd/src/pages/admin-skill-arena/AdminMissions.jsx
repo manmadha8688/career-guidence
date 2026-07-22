@@ -249,16 +249,18 @@ export default function AdminMissions() {
 
   useEffect(() => { load() }, [])
 
-  const q = search.toLowerCase().trim()
-  const filtered = q === ''
-    ? missions
-    : missions.filter(m =>
-        m.title?.toLowerCase().includes(q) ||
-        m.missionBrief?.toLowerCase().includes(q) ||
-        m.subjectTitles?.some(s => s.toLowerCase().includes(q)) ||
-        m.techStack?.some(t => t.toLowerCase().includes(q)) ||
-        m.rank?.toLowerCase().includes(q)
-      )
+  const filtered = useMemo(() => {
+    const q = search.toLowerCase().trim()
+    return q === ''
+      ? missions
+      : missions.filter(m =>
+          m.title?.toLowerCase().includes(q) ||
+          m.missionBrief?.toLowerCase().includes(q) ||
+          m.subjectTitles?.some(s => s.toLowerCase().includes(q)) ||
+          m.techStack?.some(t => t.toLowerCase().includes(q)) ||
+          m.rank?.toLowerCase().includes(q)
+        )
+  }, [missions, search])
 
   const filteredIds = useMemo(() => filtered.map(m => m.id), [filtered])
   const selection = useAdminSelection(filteredIds)

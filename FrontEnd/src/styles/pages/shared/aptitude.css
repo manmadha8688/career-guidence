@@ -1771,10 +1771,36 @@
 }
 
 @media (max-width: 768px) {
-  .apt-mock-exam__timers { width: 100%; justify-content: flex-end; }
+  /* Mock exam header: let it grow instead of overlapping inside the fixed 52px
+     bar. Progress bar drops to its own full-width row; back button + timers/
+     avatar share the top row. Scoped to .apt-mock-exam — desktop and the
+     regular quiz header are untouched. */
+  .apt-mock-exam .dash-quiz-header {
+    height: auto;
+    min-height: 52px;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+  }
+  .apt-mock-exam .dash-quiz-progress-wrap {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .apt-mock-exam .dash-quiz-header-right { margin-left: auto; }
+  .apt-mock-exam__timers { flex-wrap: nowrap; gap: 0.5rem; }
   .apt-mock-result__sec-tabs { grid-template-columns: 1fr; }
   .apt-mock-history__row {
     grid-template-columns: auto 1fr auto auto;
   }
   .apt-mock-history__xp { display: none; }
+}
+
+@media (max-width: 380px) {
+  /* Ultra-narrow phones: tighten the timer/rank cluster so it never overflows
+     the top row next to the back button. */
+  .apt-mock-exam .dash-quiz-header { padding-left: 0.85rem; padding-right: 0.85rem; }
+  .apt-mock-exam .dash-quiz-header-right { gap: 0.4rem; }
+  .apt-mock-exam__timers { gap: 0.4rem; }
+  .apt-mock-exam .dash-quiz-timer { font-size: 0.8rem; min-width: 44px; }
 }

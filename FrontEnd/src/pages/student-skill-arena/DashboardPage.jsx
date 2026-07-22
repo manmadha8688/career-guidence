@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, memo, lazy, Suspense } from 'react'
+import { useState, useEffect, useMemo, useCallback, useRef, memo, lazy, Suspense } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import { useNavigate, useSearchParams } from 'react-router-dom'
@@ -10,6 +10,7 @@ import {
   getProgressSummary, getRoadmap, getBulkSubjectStatus,
   getSubjects, getRoadmaps, getDashboardBootstrap,
   getHunterStats, clearApiCache, getQuests, studyPing, getQuizHistory, getCertificates,
+  peekApiCache,
 } from '../../api/api'
 import { badgeMeta } from '../../utils/badgeMeta'
 import { subjectBadgeTitle } from '../../utils/subjectBadgeTitle'
@@ -74,15 +75,16 @@ const GateCard = memo(function GateCard({ s, pOvr, quizStatuses, summaryBadgeMap
   const sealed    = p === 0
   const enabled   = s.totalConcepts > 0
   const gateColor = gr.color
+  const gateStyle = useMemo(() => ({
+    '--gate-color': gateColor,
+    '--gate-bar-bg': gateClosed ? gateColor : `${gateColor}88`,
+    '--gate-status-color': gateClosed ? gateColor : sealed ? '#0cbd09' : `${gateColor}BB`,
+    '--progress-pct': `${p}%`,
+  }), [gateColor, gateClosed, sealed, p])
   return (
     <div
       className={`sl-gate-card dash-gate-card ${enabled ? 'is-enabled' : 'is-disabled'}`}
-      style={{
-        '--gate-color': gateColor,
-        '--gate-bar-bg': gateClosed ? gateColor : `${gateColor}88`,
-        '--gate-status-color': gateClosed ? gateColor : sealed ? '#0cbd09' : `${gateColor}BB`,
-        '--progress-pct': `${p}%`,
-      }}
+      style={gateStyle}
       onClick={() => enabled && openSubjectPanel(s.id)}>
       {/* Top row: title left, rank + about right */}
       <div className="dash-gate-card__top">
@@ -130,8 +132,13 @@ export default function DashboardPage() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
 
-  const [summary, setSummary]         = useState(null)
-  const [loading, setLoading]         = useState(true)
+  // Seed initial state from a warm bootstrap cache (same 30s TTL the bootstrap uses) so a
+  // quick remount (e.g. dashboard → quiz → back) paints content immediately instead of the
+  // full-screen loader. The bootstrap effect below still runs and refreshes to identical data.
+  const bootSeed = useMemo(() => peekApiCache('dashboardBootstrap', 30_000), [])
+
+  const [summary, setSummary]         = useState(bootSeed?.progressSummary ?? null)
+  const [loading, setLoading]         = useState(!bootSeed)
 
   const [activeView, setActiveView]   = useState(() => searchParams.get('view') || 'arena')
   const [selectedSubjectId, setSelectedSubjectId] = useState(() => searchParams.get('subject') || null)
@@ -142,8 +149,8 @@ export default function DashboardPage() {
   // Daily-quest state now comes from the server (survives reloads, syncs across devices,
   // and awards real XP). Shape: { quests:[{id,label,xp,done,progressSeconds?,targetSeconds?}],
   // doneCount, totalCount, earnedXp, studySeconds, studyTargetSeconds, studyDone, conceptDone }.
-  const [questData, setQuestData]     = useState(null)
-  const [recentHistory, setRecentHistory] = useState([])
+  const [questData, setQuestData]     = useState(bootSeed?.quests ?? null)
+  const [recentHistory, setRecentHistory] = useState(bootSeed?.quizHistory ?? [])
   const [historyItems, setHistoryItems]   = useState([])
   const [historyLoaded, setHistoryLoaded] = useState(false)
   const [historyFilter, setHistoryFilter] = useState('ALL')
@@ -174,13 +181,15 @@ export default function DashboardPage() {
     }
   }
 
-  const startQuiz = (type, refId, title, icon) =>
-    setQuizIntent({ type, refId, title, icon: icon ?? null })
-  const confirmQuiz = () => {
+  // useCallback so memoized GateCards don't remount when this handler is passed down.
+  const startQuiz = useCallback((type, refId, title, icon) =>
+    setQuizIntent({ type, refId, title, icon: icon ?? null }), [])
+  // useCallback so the memoized InstructionsModal doesn't re-render every parent tick.
+  const confirmQuiz = useCallback(() => {
     if (!quizIntent) return
     navigate(`/skill-arena/quiz/${quizIntent.type}/${quizIntent.refId}`)
     setQuizIntent(null)
-  }
+  }, [quizIntent, navigate])
   const [panelRefreshKey, setPanelRefreshKey] = useState(0)
 
   const [subjects, setSubjects]       = useState([])
@@ -188,7 +197,7 @@ export default function DashboardPage() {
   const [gatesLoaded, setGatesLoaded] = useState(false)
   const [gateSearch, setGateSearch]   = useState('')
 
-  const [allRoadmaps, setAllRoadmaps] = useState([])
+  const [allRoadmaps, setAllRoadmaps] = useState(bootSeed?.roadmaps ?? [])
   const [pathsLoaded, setPathsLoaded] = useState(false)
   const [pathSearch, setPathSearch]   = useState('')
 
@@ -305,7 +314,9 @@ export default function DashboardPage() {
     let active = true
     getQuizHistory(0)
       .then(r => { if (active) { setHistoryItems(r.data || []); setHistoryLoaded(true) } })
-      .catch(err => logApiError('quiz-history-full', err))
+      // On failure, still resolve the loaded flag so the History tab shows its empty
+      // state instead of spinning forever (matches the Certificates tab's behavior).
+      .catch(err => { logApiError('quiz-history-full', err); if (active) setHistoryLoaded(true) })
     return () => { active = false }
   }, [activeView, historyLoaded])
 
@@ -362,24 +373,28 @@ export default function DashboardPage() {
   // so Back walks concept → subject → arena (each drill-in pushed a history entry via
   // setSearchParams). Clearing when a param is absent is what lets Back close the panels.
   useEffect(() => {
+    let active = true
     const view    = searchParams.get('view') || 'arena'
     const subject = searchParams.get('subject')
     const concept = searchParams.get('concept')
 
-    setSelectedSubjectId(subject || null)
-    setSelectedConceptId(concept || null)
-    if (!concept) setConceptNavList([])
+    if (active) {
+      setSelectedSubjectId(subject || null)
+      setSelectedConceptId(concept || null)
+      if (!concept) setConceptNavList([])
 
-    if (concept) setActiveView('gates')
-    else if (['gates', 'paths', 'badges', 'history', 'certificates'].includes(view)) setActiveView(view)
-    else setActiveView('arena')
+      if (concept) setActiveView('gates')
+      else if (['gates', 'paths', 'badges', 'history', 'certificates'].includes(view)) setActiveView(view)
+      else setActiveView('arena')
+    }
 
     if (view === 'gates' || subject || concept) loadGates()
     if (view === 'paths') loadPaths()
+    return () => { active = false }
   }, [searchParams]) // eslint-disable-line
 
 
-  // Study-time quest: ping the server periodically while the arena is open. The server
+  // Study-time quest: ping the server every 5 min while the arena is open. The server
   // measures REAL elapsed time between pings (capped per ping), so the 45-minute quest
   // survives reloads, counts across sessions/devices, and awards real XP exactly once —
   // unlike the old client-only 20-min timer that reset on every remount and gave no XP.
@@ -393,7 +408,7 @@ export default function DashboardPage() {
       studyPing()
         .then(r => { if (!cancelled) setQuestData(r.data) })
         .catch(() => {})
-    }, 60_000)
+    }, 5 * 60_000)
     return () => { cancelled = true; clearInterval(t) }
   }, [loading, questData?.studyDone])
 
@@ -437,12 +452,15 @@ export default function DashboardPage() {
     if (view === 'paths') loadPaths()
   }
 
-  const openSubjectPanel = (id) => {
+  // useCallback so memoized GateCards keep a stable onClick and don't re-render on
+  // unrelated state changes (quest ticks, search keystrokes). Identity only changes
+  // when the active view changes — rare and correct.
+  const openSubjectPanel = useCallback((id) => {
     setSelectedSubjectId(id)
     setSelectedConceptId(null); setConceptNavList([])
     const params = activeView === 'arena' ? {} : { view: activeView }
     setSearchParams({ ...params, subject: id })
-  }
+  }, [activeView, setSearchParams])
 
   const closeSubjectPanel = () => {
     setSelectedSubjectId(null); setSelectedConceptId(null); setConceptNavList([])
@@ -481,7 +499,7 @@ export default function DashboardPage() {
   }
 
   const xp             = summary?.xp    ?? user?.xp    ?? 0
-  const rank           = getRank(xp)
+  const rank           = useMemo(() => getRank(xp), [xp])
   const level          = summary?.level ?? user?.level ?? 1
   const stats          = useMemo(() => computeStats(summary?.subjectProgress), [summary])
   const initials       = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -498,25 +516,98 @@ export default function DashboardPage() {
     return m
   }, [summary])
 
-  const filteredSubjects = subjects.filter(s =>
-    s.title.toLowerCase().includes(gateSearch.toLowerCase())
-  )
+  const filteredSubjects = useMemo(() =>
+    subjects.filter(s =>
+      s.title.toLowerCase().includes(gateSearch.toLowerCase())
+    ), [subjects, gateSearch])
 
-  const filteredRoadmaps = allRoadmaps.filter(r =>
-    r.title.toLowerCase().includes(pathSearch.toLowerCase()) ||
-    (r.roleTarget || '').toLowerCase().includes(pathSearch.toLowerCase())
-  )
+  const filteredRoadmaps = useMemo(() =>
+    allRoadmaps.filter(r =>
+      r.title.toLowerCase().includes(pathSearch.toLowerCase()) ||
+      (r.roleTarget || '').toLowerCase().includes(pathSearch.toLowerCase())
+    ), [allRoadmaps, pathSearch])
+
+  // ── Memoized view slices ──────────────────────────────────────────────────
+  // Hoisted out of renderMiddle so they don't recompute on every quest tick /
+  // keystroke re-render. Output + ordering are byte-identical to the inline versions.
+  const cleared = useMemo(
+    () => (summary?.subjectProgress ?? []).filter(s => s.hasBadge), [summary])
+  const inProgress = useMemo(
+    () => (summary?.subjectProgress ?? []).filter(s => s.percentage > 0 && !s.hasBadge), [summary])
+  const enrolledPaths = useMemo(
+    () => allRoadmaps.filter(r => r.enrolled && !r.paused), [allRoadmaps])
+
+  const allBadges = useMemo(() => {
+    const subjectBadges = (summary?.subjectProgress ?? []).map(s => ({
+      key: `s-${s.subjectId}`,
+      earned: s.hasBadge,
+      color: s.color || '#9B6ED4',
+      icon: s.icon || '📚',
+      title: subjectBadgeTitle(s.title),
+      subtitle: s.title,
+      kind: 'Subject Mastery',
+    }))
+    const earnedR = new Map((hunterStats?.roadmapBadges ?? []).map(b => [b.roadmapId, b]))
+    const roadmapBadges = allRoadmaps.map(r => {
+      const eb = earnedR.get(r.id)
+      return {
+        key: `r-${r.id}`,
+        earned: !!eb,
+        color: r.color || '#9B6ED4',
+        icon: r.icon || '🗺️',
+        title: eb ? badgeMeta(eb.badge).label : (r.roleTarget || r.title),
+        subtitle: r.title,
+        kind: 'Career Path',
+      }
+    })
+    return [...roadmapBadges, ...subjectBadges].sort((a, b) => (b.earned ? 1 : 0) - (a.earned ? 1 : 0))
+  }, [summary, hunterStats, allRoadmaps])
+
+  const allCerts = useMemo(() => {
+    const bySubject = new Map()
+    const byRoadmap = new Map()
+    certs.forEach(c => {
+      if (c.type === 'SUBJECT') bySubject.set(c.refId, c)
+      else if (c.type === 'ROADMAP') byRoadmap.set(c.refId, c)
+    })
+    const subjectCerts = (summary?.subjectProgress ?? []).map(s => {
+      const c = bySubject.get(s.subjectId)
+      return {
+        key: `s-${s.subjectId}`, earned: !!c, certId: c?.id, code: c?.code,
+        color: c?.color || s.color || '#9B6ED4', icon: c?.icon || s.icon || '📚',
+        title: s.title, kind: 'Subject Mastery',
+      }
+    })
+    const roadmapCerts = allRoadmaps.map(r => {
+      const c = byRoadmap.get(r.id)
+      return {
+        key: `r-${r.id}`, earned: !!c, certId: c?.id, code: c?.code,
+        color: c?.color || r.color || '#7C3AED', icon: c?.icon || r.icon || '🗺️',
+        title: c?.credentialTitle || r.roleTarget || r.title, kind: 'Career Path',
+      }
+    })
+    return [...roadmapCerts, ...subjectCerts].sort((a, b) => (b.earned ? 1 : 0) - (a.earned ? 1 : 0))
+  }, [certs, summary, allRoadmaps])
+
+  const filteredHistory = useMemo(
+    () => historyFilter === 'ALL' ? historyItems : historyItems.filter(i => i.type === historyFilter),
+    [historyFilter, historyItems])
+
+  // Counts / arena strip hoisted out of renderMiddle (a plain function — hooks can't live
+  // there) so each .filter().length runs only when its source list changes. Output is
+  // identical to the previous inline expressions.
+  const badgesEarnedCount  = useMemo(() => allBadges.filter(b => b.earned).length, [allBadges])
+  const certsEarnedCount   = useMemo(() => allCerts.filter(c => c.earned).length, [allCerts])
+  const historyPassedCount = useMemo(() => historyItems.filter(i => i.passed).length, [historyItems])
+  const arenaStatCards = useMemo(() => [
+    { label: 'SKILLS LEARNED', value: summary?.completedConcepts ?? 0, color: '#9B6ED4' },
+    { label: 'GATES CLOSED',  value: cleared.length,    color: '#4ADE80' },
+    { label: 'DAY STREAK',     value: summary?.streak ?? 0, suffix: (summary?.streak ?? 0) === 1 ? 'day' : 'days', color: '#F59E0B' },
+  ], [summary, cleared])
 
   const renderMiddle = () => {
     if (activeView === 'arena') {
-      const sp = summary?.subjectProgress ?? []
-      const cleared    = sp.filter(s => s.hasBadge)
-      const inProgress = sp.filter(s => s.percentage > 0 && !s.hasBadge)
-      const totalConceptsDone = summary?.completedConcepts ?? 0
-      const streak = summary?.streak ?? 0
-
       // Active enrolled roadmaps from allRoadmaps (loaded lazily)
-      const enrolledPaths = allRoadmaps.filter(r => r.enrolled && !r.paused)
       const activePath    = enrolledPaths[0] ?? null
 
       return (
@@ -524,11 +615,7 @@ export default function DashboardPage() {
 
           {/* ── Hunter overview strip ── */}
           <div className="dash-arena-stats">
-            {[
-              { label: 'SKILLS LEARNED', value: totalConceptsDone, color: '#9B6ED4' },
-              { label: 'GATES CLOSED',  value: cleared.length,    color: '#4ADE80' },
-              { label: 'DAY STREAK',     value: streak,            suffix: streak === 1 ? 'day' : 'days', color: '#F59E0B' },
-            ].map(stat => (
+            {arenaStatCards.map(stat => (
               <div key={stat.label} className="dash-arena-stat" style={{ '--stat-color': stat.color }}>
                 <div className="dash-arena-stat__value">{stat.value}</div>
                 {stat.suffix && <div className="dash-arena-stat__suffix">{stat.suffix}</div>}
@@ -751,32 +838,8 @@ export default function DashboardPage() {
     }
 
     if (activeView === 'badges') {
-      // Subject badges — every gate is a badge slot; earned ones light up.
-      const subjectBadges = (summary?.subjectProgress ?? []).map(s => ({
-        key: `s-${s.subjectId}`,
-        earned: s.hasBadge,
-        color: s.color || '#9B6ED4',
-        icon: s.icon || '📚',
-        title: subjectBadgeTitle(s.title),
-        subtitle: s.title,
-        kind: 'Subject Mastery',
-      }))
-      // Roadmap badges — every path is a badge slot; earned = path final cleared.
-      const earnedR = new Map((hunterStats?.roadmapBadges ?? []).map(b => [b.roadmapId, b]))
-      const roadmapBadges = allRoadmaps.map(r => {
-        const eb = earnedR.get(r.id)
-        return {
-          key: `r-${r.id}`,
-          earned: !!eb,
-          color: r.color || '#9B6ED4',
-          icon: r.icon || '🗺️',
-          title: eb ? badgeMeta(eb.badge).label : (r.roleTarget || r.title),
-          subtitle: r.title,
-          kind: 'Career Path',
-        }
-      })
-      const all = [...roadmapBadges, ...subjectBadges].sort((a, b) => (b.earned ? 1 : 0) - (a.earned ? 1 : 0))
-      const earnedCount = all.filter(b => b.earned).length
+      const all = allBadges
+      const earnedCount = badgesEarnedCount
       return (
         <>
           <div className="sl-panel-title">Your Badges</div>
@@ -812,30 +875,8 @@ export default function DashboardPage() {
     }
 
     if (activeView === 'certificates') {
-      const bySubject = new Map()
-      const byRoadmap = new Map()
-      certs.forEach(c => {
-        if (c.type === 'SUBJECT') bySubject.set(c.refId, c)
-        else if (c.type === 'ROADMAP') byRoadmap.set(c.refId, c)
-      })
-      const subjectCerts = (summary?.subjectProgress ?? []).map(s => {
-        const c = bySubject.get(s.subjectId)
-        return {
-          key: `s-${s.subjectId}`, earned: !!c, certId: c?.id, code: c?.code,
-          color: c?.color || s.color || '#9B6ED4', icon: c?.icon || s.icon || '📚',
-          title: s.title, kind: 'Subject Mastery',
-        }
-      })
-      const roadmapCerts = allRoadmaps.map(r => {
-        const c = byRoadmap.get(r.id)
-        return {
-          key: `r-${r.id}`, earned: !!c, certId: c?.id, code: c?.code,
-          color: c?.color || r.color || '#7C3AED', icon: c?.icon || r.icon || '🗺️',
-          title: c?.credentialTitle || r.roleTarget || r.title, kind: 'Career Path',
-        }
-      })
-      const all = [...roadmapCerts, ...subjectCerts].sort((a, b) => (b.earned ? 1 : 0) - (a.earned ? 1 : 0))
-      const earnedCount = all.filter(c => c.earned).length
+      const all = allCerts
+      const earnedCount = certsEarnedCount
       const openCert = (id) => window.open(`/skill-arena/certificates/${id}`, '_blank', 'noopener')
       return (
         <>
@@ -879,10 +920,8 @@ export default function DashboardPage() {
     }
 
     if (activeView === 'history') {
-      const filtered = historyFilter === 'ALL'
-        ? historyItems
-        : historyItems.filter(i => i.type === historyFilter)
-      const passed = historyItems.filter(i => i.passed).length
+      const filtered = filteredHistory
+      const passed = historyPassedCount
       return (
         <>
           <div className="sl-panel-title">Test &amp; Trial History</div>
@@ -948,7 +987,11 @@ export default function DashboardPage() {
 
       {/* ══ HUNTER PROFILE DRAWER (desktop + mobile Hunter Profile button) ══ */}
       {avatarOpen && (
-        <Suspense fallback={null}>
+        <Suspense fallback={
+          <div className="dash-drawer-loading" role="status" aria-busy="true">
+            <DungeonPortalLoader panel height={120} />
+          </div>
+        }>
           <HunterProfileDrawer user={user} rank={rank} level={level} xp={xp}
             onClose={() => setAvatarOpen(false)} onLogout={logout} />
         </Suspense>

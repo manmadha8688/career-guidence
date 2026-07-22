@@ -1,5 +1,25 @@
 /* HunterProfileDrawer */
 
+/* Lazy-load fallback shown while the drawer chunk downloads. Mirrors the drawer's
+   fixed position, width, background and slide-in so the real drawer mounting in its
+   place causes no jump or flash. */
+.dash-drawer-loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 92vw);
+  height: 100dvh;
+  background: #090E1C;
+  border-left: 1px solid rgba(155, 110, 212, 0.22);
+  z-index: 301;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideInRight 0.22s ease;
+  box-shadow: -12px 0 48px rgba(0, 0, 0, 0.6);
+}
+
 .dash-hunter-drawer {
   position: fixed;
   top: 0;

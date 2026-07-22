@@ -243,6 +243,9 @@ function SubjectsPanel({ roadmap, onClose }) {
 
   const assigned = new Set(rsubs.map(rs => rs.subject?.id))
   const available = allSubs.filter(s => !assigned.has(s.id))
+  // Copy before sorting — sorting rsubs in place mutates state during render (a React
+  // violation). Memoized so the sort only re-runs when the subject list changes.
+  const sortedRsubs = useMemo(() => [...rsubs].sort((a, b) => a.orderIndex - b.orderIndex), [rsubs])
 
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
@@ -264,7 +267,7 @@ function SubjectsPanel({ roadmap, onClose }) {
               </div>
             </div>
             <div className="admin-col-stack">
-              {rsubs.sort((a, b) => a.orderIndex - b.orderIndex).map(rs => (
+              {sortedRsubs.map(rs => (
                 <div key={rs.id} className="admin-list-card">
                   {editingId === rs.subject?.id ? (
                     <input
@@ -321,10 +324,10 @@ export default function AdminRoadmaps() {
 
   useEffect(() => { load() }, [])
 
-  const filtered = roadmaps.filter(r =>
+  const filtered = useMemo(() => roadmaps.filter(r =>
     r.title.toLowerCase().includes(search.toLowerCase()) ||
     (r.roleTarget || '').toLowerCase().includes(search.toLowerCase())
-  )
+  ), [roadmaps, search])
 
   const filteredIds = useMemo(() => filtered.map(r => r.id), [filtered])
   const selection = useAdminSelection(filteredIds)

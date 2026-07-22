@@ -197,13 +197,13 @@ export default function AdminWalkIns() {
 
   useEffect(() => { load(0) }, [])
 
-  const filtered = walkIns.filter(w =>
+  const filtered = useMemo(() => walkIns.filter(w =>
     !search ||
     w.companyName?.toLowerCase().includes(search.toLowerCase()) ||
     w.role?.toLowerCase().includes(search.toLowerCase()) ||
     w.city?.toLowerCase().includes(search.toLowerCase()) ||
     w.postedBy?.toLowerCase().includes(search.toLowerCase())
-  )
+  ), [walkIns, search])
 
   const filteredIds = useMemo(() => filtered.map(w => w.id), [filtered])
   const selection = useAdminSelection(filteredIds)

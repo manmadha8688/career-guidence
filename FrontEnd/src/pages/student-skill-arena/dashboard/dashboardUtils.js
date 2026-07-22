@@ -5,11 +5,7 @@ export const NAV_ITEMS = [
   { label: 'MISSIONS',     sub: 'Build Projects',  view: 'missions', href: '/missions' },
 ]
 
-export const DAILY_QUESTS = [
-  { id: 'q1', label: 'Complete 1 concept', xp: 50 },
-  { id: 'q2', label: 'Study for 45 min',   xp: 30 },
-]
-
+import { RANK_COLORS_DARK, RANK_COLORS_LIGHT } from '../../../constants/ranks'
 // Re-exported from the shared source so existing importers of this module are unaffected.
 export { RANK_LADDER } from '../../../constants/ranks'
 
@@ -20,9 +16,7 @@ export const STAT_DEFS = [
   { key: 'PER', label: 'PERCEPTION',   domain: 'Problem Solving', color: '#F59E0B', lightColor: '#B45309', hint: 'APIs · Security · Algorithms',  match: t => /security|jwt|rest|api|design|algorithm|boot|express/.test(t) },
 ]
 
-const _SR_D = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
-const _SR_L = { S: '#DC2626', A: '#B45309', B: '#7C5DBB', C: '#1D4ED8', D: '#15803D', E: '#6B7FA3' }
-const _sr = () => document.documentElement.getAttribute('data-theme') === 'light' ? _SR_L : _SR_D
+const _sr = () => document.documentElement.getAttribute('data-theme') === 'light' ? RANK_COLORS_LIGHT : RANK_COLORS_DARK
 
 export const statRank = (pct) => {
   const r = _sr()
@@ -72,17 +66,3 @@ export const computeStats = (sp = []) =>
     return { ...def, pct, totalDone, totalAll, cleared, inProgress, next, sRank, statColor }
   })
 
-const questKey = (userId) => `sl_quests_${userId}`
-
-export const loadQuestState = (userId) => {
-  try {
-    const s = localStorage.getItem(questKey(userId))
-    if (!s) return {}
-    const { date, state } = JSON.parse(s)
-    if (date !== new Date().toDateString()) return {}
-    return state
-  } catch { return {} }
-}
-
-export const saveQuestState = (state, userId) =>
-  localStorage.setItem(questKey(userId), JSON.stringify({ date: new Date().toDateString(), state }))

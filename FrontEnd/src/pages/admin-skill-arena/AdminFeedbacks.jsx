@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { TEST_DELAY_MS } from '../../components/loaders/_config'
 import RadarLoader from '../../components/loaders/RadarLoader'
 import { MessageSquare, Star, ThumbsUp, ThumbsDown, RefreshCw } from 'lucide-react'
@@ -59,11 +59,11 @@ export default function AdminFeedbacks() {
   useEffect(() => { load() }, [])
 
   const FILTERS = ['All', 'Bug', 'Suggestion', 'Content', 'Other', 'No Category']
-  const filtered = feedbacks.filter(f => {
+  const filtered = useMemo(() => feedbacks.filter(f => {
     if (filter === 'All')         return true
     if (filter === 'No Category') return !f.category
     return f.category === filter
-  })
+  }), [feedbacks, filter])
 
   return (
     <AppLayout title="User Feedback">

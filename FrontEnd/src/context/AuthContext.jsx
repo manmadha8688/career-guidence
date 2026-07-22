@@ -31,15 +31,17 @@ export function AuthProvider({ children }) {
       setLoading(false)
       return
     }
+    let active = true
     // Overlap /me with Skill Arena prefetch — same cookie, independent round-trips.
     prefetchSkillArenaData(null)
     getMe()
-      .then(res => setUser(res.data))
+      .then(res => { if (active) setUser(res.data) })
       .catch(() => {
         localStorage.removeItem('has_session')
-        setUser(null)
+        if (active) setUser(null)
       })
-      .finally(() => setLoading(false))
+      .finally(() => { if (active) setLoading(false) })
+    return () => { active = false }
   }, [])
 
   // Listen for sl:refresh — re-fetch /me to get latest xp/level/rank

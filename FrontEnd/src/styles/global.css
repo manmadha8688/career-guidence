@@ -3511,9 +3511,9 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
 /* ── Top Navbar ── */
 .sl-dash-nav {
   height: 56px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 1.5rem;
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);
@@ -3531,13 +3531,18 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
   color: #B48AE8;
   flex-shrink: 0;
   cursor: pointer;
-  justify-self: start;
+  position: relative;
+  z-index: 1;
 }
+/* Slightly left of dead-center — between ARISE and theme controls */
 .sl-dash-nav-links {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-self: center;
+  position: absolute;
+  left: 42%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 .sl-nav-link {
   background: none;
@@ -3581,7 +3586,9 @@ body { font-family: 'Rajdhani', 'Inter', -apple-system, sans-serif; font-size: 1
   align-items: center;
   gap: 0.875rem;
   flex-shrink: 0;
-  justify-self: end;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
 }
 .sl-nav-xp { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .sl-nav-xp-label {

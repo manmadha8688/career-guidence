@@ -29,6 +29,7 @@
 
 - [Technical Feedback](feedback_technical.md) — sessionStorage cache, Redis getLong, JSX strings, CSP/COOP
 - [Auth Feedback](feedback_auth.md) — bot beats, OAuth, guest, local admin accounts
+- [SEO Feedback](feedback_seo.md) — sitemap = public hubs only; protected pages noindex; never list login-gated URLs
 
 ---
 

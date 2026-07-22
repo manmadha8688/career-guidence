@@ -14,7 +14,9 @@ export function AuthFormProvider({ children }) {
   const [formProgress, setFormProgress] = useState(0)
   const [companionEvent, setCompanionEvent] = useState(null)
   const [companionVisible, setCompanionVisible] = useState(false)
-  const [lastActivity, setLastActivity] = useState(() => Date.now())
+  // Activity timestamp is never rendered (only passed to useLoginBotStory, which ignores
+  // it) — a ref keeps it available without re-creating the context value on every touch.
+  const lastActivity = useRef(Date.now())
 
   const hideTimerRef = useRef(null)
   const safetyTimerRef = useRef(null)
@@ -104,7 +106,7 @@ export function AuthFormProvider({ children }) {
   }, [clearBeatTimers])
 
   const touchActivity = useCallback(() => {
-    setLastActivity(Date.now())
+    lastActivity.current = Date.now()
   }, [])
 
   const resetCompanion = useCallback(() => {
@@ -113,7 +115,7 @@ export function AuthFormProvider({ children }) {
     activeBeatRef.current = null
     setCompanionEvent(null)
     setCompanionVisible(false)
-    setLastActivity(Date.now())
+    lastActivity.current = Date.now()
   }, [clearBeatTimers])
 
   useEffect(() => () => clearBeatTimers(), [clearBeatTimers])
@@ -130,7 +132,7 @@ export function AuthFormProvider({ children }) {
     emitCompanionEvent,
     dismissCompanion,
     armLastLineTimer,
-    lastActivity,
+    lastActivity: lastActivity.current,
     touchActivity,
     resetCompanion,
   }), [
@@ -142,7 +144,6 @@ export function AuthFormProvider({ children }) {
     emitCompanionEvent,
     dismissCompanion,
     armLastLineTimer,
-    lastActivity,
     touchActivity,
     resetCompanion,
   ])

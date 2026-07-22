@@ -1,24 +1,37 @@
-# LearnForEarn (ARISE) — robots policy
+# LearnForEarn (ARISE) — https://learnforearn.in
+# Only list public hubs in sitemap.xml. Login-gated detail URLs must stay Disallow.
+
 User-agent: *
 Allow: /
 
-# Private / authenticated areas — not useful to index
+# Auth & account
 Disallow: /login
 Disallow: /register
 Disallow: /forgot-password
-Disallow: /skill-arena/
-Disallow: /admin-skill-arena/
-Disallow: /loader-demo
 Disallow: /bookmarks
 Disallow: /myprofile
 
-# Login-gated detail pages (hubs below stay crawlable). Trailing slash means the
-# hub itself (/deployment, /problem-solving, /ai-lab, /missions) is still allowed,
-# only the protected sub-pages are blocked. Remove a line here if that section is
-# ever made public so it can be indexed again.
-Disallow: /deployment/
-Disallow: /problem-solving/
+# Private product areas
+Disallow: /skill-arena/
+Disallow: /admin-skill-arena/
+Disallow: /loader-demo
+Disallow: /code-gym
+Disallow: /code-gym/
+Disallow: /aptitude/mock
+Disallow: /aptitude/mock/
+
+# Login-gated detail trees (hubs without trailing slash stay Allow):
+# /ai-lab, /deployment, /missions, /aptitude — crawlable hubs
+# /ai-lab/*, /deployment/*, /missions/* — require login
 Disallow: /ai-lab/
+Disallow: /deployment/
 Disallow: /missions/
+Disallow: /problem-solving
+Disallow: /problem-solving/
+
+# User-generated / utility (crawl if linked; keep out of sitemap)
+Disallow: /r/
+Disallow: /certificate/
+Disallow: /verify/
 
 Sitemap: https://learnforearn.in/sitemap.xml

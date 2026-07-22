@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { CheckCircle, XCircle, Home, Search, Loader2 } from 'lucide-react'
@@ -16,15 +16,18 @@ export default function CertificateVerifyPage() {
   const [result, setResult]   = useState(null)   // null until a check has run
   const [loading, setLoading] = useState(false)
   const [checked, setChecked] = useState(false)
+  // Guards against a resolved verify updating state after the page unmounts.
+  const mountedRef = useRef(true)
+  useEffect(() => () => { mountedRef.current = false }, [])
 
   const runVerify = (raw) => {
     const c = (raw || '').trim().toUpperCase()
     if (!c) return
     setLoading(true)
     verifyCertificate(c)
-      .then(r => setResult(r.data))
-      .catch(() => setResult({ valid: false }))
-      .finally(() => { setLoading(false); setChecked(true) })
+      .then(r => { if (mountedRef.current) setResult(r.data) })
+      .catch(() => { if (mountedRef.current) setResult({ valid: false }) })
+      .finally(() => { if (mountedRef.current) { setLoading(false); setChecked(true) } })
   }
 
   // If a code was passed in the URL (a shared verification link), check it immediately.

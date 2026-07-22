@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
@@ -22,6 +22,7 @@ import { isGuest } from '../utils/auth'
 import { disconnectGitHubConfirmOptions, removeProfileLinkConfirmOptions } from '../utils/confirmRemoveLink'
 import { useConfirm } from '../context/ConfirmContext'
 import { getRank } from '../utils/slRank'
+import { getInitials as initials } from '../utils/initials'
 import Navbar from '../components/navbars/Navbar'
 import LinkVerifyModal from '../components/LinkVerifyModal'
 import GitHubConnectModal from '../components/GitHubConnectModal'
@@ -81,9 +82,6 @@ const EMPTY_FORM = {
   education: { ...EMPTY_EDU }, publicProfile: true, featuredResumeId: '',
 }
 
-function initials(name = '') {
-  return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() || '').join('') || '?'
-}
 function fmtMonthYear(iso) {
   if (!iso) return '—'
   try { return new Date(iso).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) }
@@ -125,6 +123,35 @@ function normEmail(v) {
   return (v || '').trim().toLowerCase()
 }
 
+// Isolated so the 1s cooldown countdown re-renders ONLY this button, not the
+// entire MyProfilePage. Driven by a `cooldownUntil` timestamp (changes only when
+// an OTP is sent), so the parent no longer ticks every second. Output identical to
+// the previous inline button.
+const ContactOtpButton = memo(function ContactOtpButton({ sending, sent, cooldownUntil, disabledExtra, onClick }) {
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => {
+    if (!cooldownUntil || cooldownUntil <= Date.now()) return
+    setNow(Date.now())
+    const t = setInterval(() => {
+      const n = Date.now()
+      setNow(n)
+      if (n >= cooldownUntil) clearInterval(t)
+    }, 1000)
+    return () => clearInterval(t)
+  }, [cooldownUntil])
+  const remaining = cooldownUntil ? Math.max(0, Math.ceil((cooldownUntil - now) / 1000)) : 0
+  return (
+    <button
+      type="button"
+      className="mpx-btn-otp"
+      onClick={onClick}
+      disabled={sending || remaining > 0 || disabledExtra}
+    >
+      {sending ? '…' : sent && remaining > 0 ? `${remaining}s` : sent ? 'Resend' : 'Verify'}
+    </button>
+  )
+})
+
 export default function MyProfilePage() {
   const { user, loading } = useAuth()
   const { theme } = useTheme()
@@ -155,7 +182,7 @@ export default function MyProfilePage() {
   const [verifiedContactEmail, setVerifiedContactEmail] = useState('')
   const [sendingContactOtp, setSendingContactOtp] = useState(false)
   const [verifyingContactOtp, setVerifyingContactOtp] = useState(false)
-  const [contactOtpCooldown, setContactOtpCooldown] = useState(0)
+  const [contactOtpCooldownUntil, setContactOtpCooldownUntil] = useState(0)
   const [contactEmailError, setContactEmailError] = useState('')
   const [savedContactEmail, setSavedContactEmail] = useState('')
   const [linkVerifyResults, setLinkVerifyResults] = useState(null)
@@ -167,7 +194,6 @@ export default function MyProfilePage() {
   const pendingLinkKeyRef = useRef(null)
   const leaveGuardRef = useRef({ notifyDeferredLeave: () => {}, completePendingLeave: () => {} })
   const saveAllBeforeLeaveRef = useRef(async () => true)
-  const contactOtpCooldownRef = useRef(null)
   const socialLinksRef = useRef(null)
 
   useEffect(() => {
@@ -204,20 +230,8 @@ export default function MyProfilePage() {
     initializedRef.current = true
   }, [user])
 
-  useEffect(() => () => clearInterval(contactOtpCooldownRef.current), [])
-
   const startContactOtpCooldown = useCallback((seconds) => {
-    clearInterval(contactOtpCooldownRef.current)
-    setContactOtpCooldown(seconds)
-    contactOtpCooldownRef.current = setInterval(() => {
-      setContactOtpCooldown(s => {
-        if (s <= 1) {
-          clearInterval(contactOtpCooldownRef.current)
-          return 0
-        }
-        return s - 1
-      })
-    }, 1000)
+    setContactOtpCooldownUntil(Date.now() + seconds * 1000)
   }, [])
 
   const resetContactOtp = useCallback(() => {
@@ -227,7 +241,8 @@ export default function MyProfilePage() {
     setContactEmailError('')
   }, [])
 
-  const handleSendContactOtp = async () => {
+  // useCallback so the memoized ContactOtpButton doesn't re-render on every parent tick.
+  const handleSendContactOtp = useCallback(async () => {
     if (emailState(form.publicEmail) !== 'valid') {
       toast.error('Please enter a valid contact email first.')
       return
@@ -253,7 +268,7 @@ export default function MyProfilePage() {
     } finally {
       if (mountedRef.current) setSendingContactOtp(false)
     }
-  }
+  }, [form.publicEmail, startContactOtpCooldown])
 
   const handleVerifyContactOtp = useCallback(async (code = contactOtp) => {
     if (code.length !== 6 || emailState(form.publicEmail) !== 'valid') return
@@ -357,7 +372,9 @@ export default function MyProfilePage() {
   const xp = user?.xp || 0
   const rank = useMemo(() => getRank(xp), [xp, theme]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const isPersonalDirty = personalBaseline != null && personalSnapshot(form) !== personalBaseline
+  const isPersonalDirty = useMemo(
+    () => personalBaseline != null && personalSnapshot(form) !== personalBaseline,
+    [form, personalBaseline])
   const linkedinTrim = form.linkedinUrl.trim()
   const portfolioTrim = form.portfolioUrl.trim()
   const canSaveLinkedin = !savingLinkedin && !savingPortfolio
@@ -1062,14 +1079,13 @@ export default function MyProfilePage() {
                       </span>
                     </div>
                     {emailState(form.publicEmail) === 'valid' && !contactEmailVerified && (
-                      <button
-                        type="button"
-                        className="mpx-btn-otp"
+                      <ContactOtpButton
+                        sending={sendingContactOtp}
+                        sent={contactOtpSent}
+                        cooldownUntil={contactOtpCooldownUntil}
+                        disabledExtra={contactEmailIsLogin}
                         onClick={handleSendContactOtp}
-                        disabled={sendingContactOtp || contactOtpCooldown > 0 || contactEmailIsLogin}
-                      >
-                        {sendingContactOtp ? '…' : contactOtpSent && contactOtpCooldown > 0 ? `${contactOtpCooldown}s` : contactOtpSent ? 'Resend' : 'Verify'}
-                      </button>
+                      />
                     )}
                     {emailState(form.publicEmail) === 'valid' && contactEmailVerified && (
                       <span className="mpx-verified-badge"><ShieldCheck size={15} /> OK</span>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import toast from 'react-hot-toast'
@@ -7,8 +7,6 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { getAptitudeMockPaper, submitAptitudeMock } from '../../api/api'
 import { getApiError } from '../../utils/apiError'
 import { stashQuizReview } from '../../utils/quizReviewOnce'
-import { useAuth } from '../../context/AuthContext'
-import { getRank } from '../../utils/slRank'
 import '../../styles/pages/dashboard/index.css'
 import '../../styles/pages/dashboard/quiz-page.css'
 import '../../styles/pages/shared/aptitude.css'
@@ -29,9 +27,79 @@ function timerColor(secs, total) {
   return '#9B6ED4'
 }
 
+// The two header timers tick every second. Everything below the header (question
+// card, options, nav dots, actions) is identical between ticks, so it lives in this
+// memoized child — a 1s timer tick re-renders only the small header readouts, not
+// this whole subtree. Output is byte-identical to the previous inline markup.
+const ExamBody = memo(function ExamBody({
+  q, current, chosen, questions, answers, sectionIdx,
+  isLastQuestion, isLastSection, submitting,
+  onSelect, onPrev, onNext, onAdvance, onJump,
+}) {
+  return (
+    <div className="dash-quiz-body">
+      <div className="dash-quiz-inner">
+        <div className="dash-quiz-question-card">
+          <div className="dash-quiz-question-label">Q {current + 1} · SECTION {sectionIdx + 1}/3</div>
+          <div className="dash-quiz-question-text">{q.question}</div>
+        </div>
+
+        <div className="dash-quiz-options">
+          {(q.options || []).map((opt, i) => {
+            const letter = LETTERS[i]
+            const isSelected = chosen === letter
+            return (
+              <div
+                key={i}
+                role="button"
+                tabIndex={0}
+                onClick={() => onSelect(letter)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(letter) }
+                }}
+                className={`dash-quiz-option${isSelected ? ' is-selected' : ''}`}
+              >
+                <div className="dash-quiz-option__letter">{letter}</div>
+                <span className="dash-quiz-option__text">{opt}</span>
+                {isSelected && <div className="dash-quiz-option__dot" />}
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="dash-quiz-nav">
+          <div className="dash-quiz-dots">
+            {questions.map((qn, i) => (
+              <button
+                key={qn.id}
+                type="button"
+                onClick={() => onJump(i)}
+                className={`dash-quiz-dot${i === current ? ' is-current' : ''}${answers[qn.id] ? ' is-answered' : ''}`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+
+          <div className="dash-quiz-actions apt-mock-exam__actions">
+            <button type="button" onClick={onPrev} disabled={current === 0} className="dash-quiz-prev-btn">← PREV</button>
+
+            {!isLastQuestion ? (
+              <button type="button" onClick={onNext} className="dash-quiz-next-btn">NEXT →</button>
+            ) : (
+              <button type="button" onClick={onAdvance} disabled={submitting} className="apt-mock-exam__finish-btn">
+                {isLastSection ? (submitting ? 'SUBMITTING…' : 'SUBMIT MOCK') : 'FINISH SECTION →'}
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+})
+
 export default function AptitudeMockExamPage() {
   const navigate = useNavigate()
-  const { user } = useAuth()
   const submittingRef = useRef(false)
   const sectionAdvancingRef = useRef(false)
 
@@ -45,10 +113,6 @@ export default function AptitudeMockExamPage() {
   const [sectionLeft, setSectionLeft] = useState(null)
   const [overallTotal, setOverallTotal] = useState(null)
   const [sectionTotal, setSectionTotal] = useState(null)
-
-  const xp = user?.xp ?? 0
-  const rank = getRank(xp)
-  const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 
   const section = paper?.sections?.[sectionIdx]
   const questions = section?.questions || []
@@ -139,13 +203,13 @@ export default function AptitudeMockExamPage() {
     return () => clearTimeout(t)
   }, [sectionLeft, advanceSection])
 
-  const selectAnswer = letter => {
+  const selectAnswer = useCallback(letter => {
     if (!q) return
     setAnswers(prev => ({ ...prev, [q.id]: letter }))
-  }
+  }, [q])
 
-  const prev = () => current > 0 && setCurrent(c => c - 1)
-  const next = () => current < questions.length - 1 && setCurrent(c => c + 1)
+  const prev = useCallback(() => setCurrent(c => (c > 0 ? c - 1 : c)), [])
+  const next = useCallback(() => setCurrent(c => (c < questions.length - 1 ? c + 1 : c)), [questions.length])
 
   if (loading) return <SystemAwakeningLoader subtitle="LOADING MOCK" />
 
@@ -197,77 +261,25 @@ export default function AptitudeMockExamPage() {
             <span className="apt-mock-exam__timer-label">OVERALL</span>
             <div className="dash-quiz-timer" style={{ '--timer-color': overallColor }}>{formatTime(overallLeft)}</div>
           </div>
-          <span className={`rank-badge ${rank.cls} dash-quiz-rank-badge`}>{rank.label}</span>
-          <div className="dash-avatar dash-avatar--sm" style={{ '--avatar-bg': user?.avatarColor || '#9B6ED4', '--rank-color': rank.color }}>
-            {initials}
-          </div>
         </div>
       </header>
 
-      <div className="dash-quiz-body">
-        <div className="dash-quiz-inner">
-          <div className="dash-quiz-question-card">
-            <div className="dash-quiz-question-label">Q {current + 1} · SECTION {sectionIdx + 1}/3</div>
-            <div className="dash-quiz-question-text">{q.question}</div>
-          </div>
-
-          <div className="dash-quiz-options">
-            {(q.options || []).map((opt, i) => {
-              const letter = LETTERS[i]
-              const isSelected = chosen === letter
-              return (
-                <div
-                  key={i}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => selectAnswer(letter)}
-                  onKeyDown={e => {
-                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectAnswer(letter) }
-                  }}
-                  className={`dash-quiz-option${isSelected ? ' is-selected' : ''}`}
-                >
-                  <div className="dash-quiz-option__letter">{letter}</div>
-                  <span className="dash-quiz-option__text">{opt}</span>
-                  {isSelected && <div className="dash-quiz-option__dot" />}
-                </div>
-              )
-            })}
-          </div>
-
-          <div className="dash-quiz-nav">
-            <div className="dash-quiz-dots">
-              {questions.map((qn, i) => (
-                <button
-                  key={qn.id}
-                  type="button"
-                  onClick={() => setCurrent(i)}
-                  className={`dash-quiz-dot${i === current ? ' is-current' : ''}${answers[qn.id] ? ' is-answered' : ''}`}
-                >
-                  {i + 1}
-                </button>
-              ))}
-            </div>
-
-            <div className="dash-quiz-actions apt-mock-exam__actions">
-              <button type="button" onClick={prev} disabled={current === 0} className="dash-quiz-prev-btn">← PREV</button>
-
-              {!isLastQuestion ? (
-                <button type="button" onClick={next} className="dash-quiz-next-btn">NEXT →</button>
-              ) : (
-                <button type="button" onClick={advanceSection} disabled={submitting} className="apt-mock-exam__finish-btn">
-                  {isLastSection ? (submitting ? 'SUBMITTING…' : 'SUBMIT MOCK') : 'FINISH SECTION →'}
-                </button>
-              )}
-
-              {!isLastQuestion && (
-                <button type="button" onClick={advanceSection} disabled={submitting} className="apt-mock-exam__finish-early">
-                  {isLastSection ? 'Submit early' : 'Finish section early'}
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ExamBody
+        q={q}
+        current={current}
+        chosen={chosen}
+        questions={questions}
+        answers={answers}
+        sectionIdx={sectionIdx}
+        isLastQuestion={isLastQuestion}
+        isLastSection={isLastSection}
+        submitting={submitting}
+        onSelect={selectAnswer}
+        onPrev={prev}
+        onNext={next}
+        onAdvance={advanceSection}
+        onJump={setCurrent}
+      />
     </div>
   )
 }

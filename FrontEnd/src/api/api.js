@@ -50,6 +50,15 @@ function withCache(key, ttlMs, fn) {
   return p
 }
 
+// Synchronous, read-only peek at a cached entry (ignores inflight/network). Returns the
+// cached data when present and still within ttlMs, else null. Lets pages seed initial
+// state from a warm cache to avoid a loader flash on remount — the network request still
+// runs and refreshes state as usual, so the eventual value is identical.
+export function peekApiCache(key, ttlMs = Infinity) {
+  const hit = _read()[key]
+  return hit && Date.now() - hit.ts < ttlMs ? hit.data : null
+}
+
 export function clearApiCache(...keys) {
   if (!keys.length) { sessionStorage.removeItem(CACHE_NS); return }
   const store = _read()
@@ -177,7 +186,13 @@ export const getAttemptResult  = (attemptId)       => api.get(`/quiz/attempt/${a
 // Full attempt history (newest first). limit=0 → all. Short TTL so new attempts show fast.
 export const getQuizHistory    = (limit = 0)       => withCache(`quizHistory:${limit}`, 30_000, () => api.get(`/quiz/history?limit=${limit}`))
 export const getQuizStatus          = (type, refId) => withCache(`quizStatus:${type}:${refId}`, 2*60_000, () => api.get(`/quiz/${type}/${refId}/status`))
-export const getBulkSubjectStatus   = (ids)         => withCache(`quizStatus:bulk:${ids.join(',')}`, 2*60_000, () => api.get(`/quiz/subjects/bulk-status?ids=${ids.join(',')}`))
+export const getBulkSubjectStatus   = (ids)         => {
+  // Normalize id order so the same logical set of subjects hits ONE cache entry /
+  // inflight promise regardless of array order. The response is a { id: status } map,
+  // so ordering never affects the result — only cache-hit rate.
+  const sorted = [...ids].sort()
+  return withCache(`quizStatus:bulk:${sorted.join(',')}`, 2*60_000, () => api.get(`/quiz/subjects/bulk-status?ids=${sorted.join(',')}`))
+}
 export const getRoadmapStatus  = (roadmapId)       => withCache(`roadmapStatus:${roadmapId}`, 2*60_000, () => api.get(`/quiz/roadmap/${roadmapId}/status`))
 
 // ─── FEEDBACK ─────────────────────────────────────────

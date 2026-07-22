@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate, useLocation, useParams } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, XCircle, Zap, RotateCcw, ChevronDown } from 'lucide-react'
 import toast from 'react-hot-toast'
@@ -7,8 +7,6 @@ import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import CooldownTimer from '../../components/CooldownTimer'
 import { getAttemptResult, getAptitudeMockStatus } from '../../api/api'
 import { getApiError } from '../../utils/apiError'
-import { useAuth } from '../../context/AuthContext'
-import { getRank } from '../../utils/slRank'
 import { peekQuizReview } from '../../utils/quizReviewOnce'
 import { asMockSummary, mockHasLiveReview } from '../../utils/aptitudeMockReviewOnce'
 import '../../styles/pages/dashboard/index.css'
@@ -30,16 +28,11 @@ export default function AptitudeMockResultPage() {
   const { attemptId } = useParams()
   const navigate = useNavigate()
   const location = useLocation()
-  const { user } = useAuth()
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(true)
   const [hasLiveReview, setHasLiveReview] = useState(false)
   const [reviewSection, setReviewSection] = useState('')
   const [mockStatus, setMockStatus] = useState(null)
-
-  const xp = user?.xp ?? 0
-  const rank = getRank(xp)
-  const initials = user?.fullName?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 
   useEffect(() => {
     let active = true
@@ -83,14 +76,21 @@ export default function AptitudeMockResultPage() {
     return () => { active = false }
   }, [attemptId])
 
+  // Memoized so the per-section wrong-count reduce isn't recomputed on every unrelated
+  // re-render (e.g. expanding a review section). Placed before the early returns to satisfy
+  // the Rules of Hooks; the value is identical to the previous inline expression.
+  const wrongCount = useMemo(() => {
+    if (!result) return 0
+    return hasLiveReview
+      ? (result.sections || []).reduce((n, s) => n + (s.items || []).filter(i => !i.correct).length, 0)
+      : Math.max(0, result.total - result.correct)
+  }, [result, hasLiveReview])
+
   if (loading) return <SystemAwakeningLoader subtitle="LOADING RESULTS" />
   if (!result) return null
 
   const pct = result.percentage ?? Math.round((result.correct / result.total) * 100)
   const accentColor = result.passed ? PASS_COLOR : FAIL_COLOR
-  const wrongCount = hasLiveReview
-    ? (result.sections || []).reduce((n, s) => n + (s.items || []).filter(i => !i.correct).length, 0)
-    : Math.max(0, result.total - result.correct)
   const showRetry = mockStatus ? mockStatus.canRetry : canRetryNow(result.nextRetryAt)
   const retryUntil = mockStatus?.nextRetryAt ?? result.nextRetryAt
   const sectionRows = result.sections || []
@@ -108,12 +108,6 @@ export default function AptitudeMockResultPage() {
           <span className="dash-quiz-result-status">
             [ MOCK ] {result.passed ? 'MOCK PASSED ✓' : 'MOCK FAILED ✗'}
           </span>
-        </div>
-        <div className="dash-quiz-result-header-right">
-          <span className={`rank-badge ${rank.cls} dash-quiz-result-rank-badge`}>{rank.label}</span>
-          <div className="dash-avatar dash-avatar--md" style={{ '--avatar-bg': user?.avatarColor || '#9B6ED4', '--rank-color': rank.color }}>
-            {initials}
-          </div>
         </div>
       </header>
 

@@ -1,27 +1,30 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import { Search, X, CornerDownLeft, SearchX } from 'lucide-react'
 import { globalSearch } from '../api/api'
 import { useAuth } from '../context/AuthContext'
+import { searchStudentCatalog } from '../utils/studentSearchCatalog'
 import useBodyLock from '../hooks/useBodyLock'
 import useBackClose from '../hooks/useBackClose'
 
 const MIN_LEN = 2
 
 const GROUPS = [
-  { key: 'subjects', label: 'Dungeon Gates',  link: (i) => `/skill-arena/dashboard?view=gates&subject=${i.id}` },
-  { key: 'concepts', label: 'Concepts',       link: (i) => `/skill-arena/dashboard?view=gates&subject=${i.subjectId}&concept=${i.id}` },
-  { key: 'roadmaps', label: 'Hunter Paths',   link: (i) => `/skill-arena/roadmaps/${i.id}` },
-  { key: 'aptitude', label: 'Aptitude',       link: (i) => `/aptitude/${i.category}/${i.group}/${i.topic}` },
-  { key: 'missions', label: 'Missions',       link: (i) => `/missions/${i.id}` },
-  { key: 'problems', label: 'Code Gym',       link: (i) => `/code-gym/${i.id}` },
+  { key: 'pages', label: 'Pages', link: (i) => i.path },
+  { key: 'subjects', label: 'Dungeon Gates', link: (i) => `/skill-arena/dashboard?view=gates&subject=${i.id}` },
+  { key: 'concepts', label: 'Concepts', link: (i) => `/skill-arena/dashboard?view=gates&subject=${i.subjectId}&concept=${i.id}` },
+  { key: 'roadmaps', label: 'Hunter Paths', link: (i) => `/skill-arena/roadmaps/${i.id}` },
+  { key: 'aptitude', label: 'Aptitude', link: (i) => `/aptitude/${i.category}/${i.group}/${i.topic}` },
+  { key: 'tracks', label: 'Code Gym Tracks', link: (i) => `/code-gym/${i.id}` },
+  { key: 'problems', label: 'Code Gym', link: (i) => `/code-gym/${i.id}` },
+  { key: 'missions', label: 'Missions', link: (i) => `/missions/${i.id}` },
+  { key: 'ailab', label: 'AI Lab', link: (i) => `/ai-lab/${i.category}/${i.id}` },
+  { key: 'deployment', label: 'Deploy Guides', link: (i) => i.path },
 ]
 
-/** Fire this from anywhere to open the search overlay. */
-export function openGlobalSearch() {
-  window.dispatchEvent(new Event('open-search'))
-}
+// `openGlobalSearch` lives in ./globalSearchBus (dependency-free) so navbars can
+// trigger search without importing this heavy overlay.
 
 export default function GlobalSearchOverlay() {
   const navigate = useNavigate()
@@ -70,28 +73,38 @@ export default function GlobalSearchOverlay() {
   useBodyLock(open && isMobile)
   useBackClose(open, close)
 
-  // Debounced instant search on every keystroke
+  // Debounced search: student catalog (instant) + Mongo content (API)
   useEffect(() => {
     if (!open) return
     const q = query.trim()
     if (q.length < MIN_LEN) { setResults(null); setLoading(false); return }
 
     let active = true
+    const local = searchStudentCatalog(q)
+    setResults(local)
+    setActiveIdx(0)
     setLoading(true)
     const t = setTimeout(() => {
       globalSearch(q)
-        .then(r => { if (active) { setResults(r.data.results); setActiveIdx(0) } })
-        .catch(() => { if (active) setResults(null) })
+        .then((r) => {
+          if (!active) return
+          setResults({ ...(r.data.results || {}), ...local })
+        })
+        .catch(() => { /* keep local catalog results */ })
         .finally(() => { if (active) setLoading(false) })
     }, 220)
     return () => { active = false; clearTimeout(t) }
   }, [query, open])
 
-  // Flatten results for keyboard navigation
-  const flat = []
-  if (results) {
-    GROUPS.forEach(g => (results[g.key] || []).forEach(item => flat.push({ ...item, _link: g.link(item) })))
-  }
+  // Flatten results for keyboard navigation (memoized so it isn't rebuilt on every
+  // keystroke / activeIdx change — only when the result set actually changes).
+  const flat = useMemo(() => {
+    const arr = []
+    if (results) {
+      GROUPS.forEach(g => (results[g.key] || []).forEach(item => arr.push({ ...item, _link: g.link(item) })))
+    }
+    return arr
+  }, [results])
 
   const goTo = useCallback((link) => { close(); navigate(link) }, [close, navigate])
 
@@ -119,7 +132,7 @@ export default function GlobalSearchOverlay() {
           <input
             ref={inputRef}
             className="gs-input"
-            placeholder="Search subjects, roadmaps, missions, problems…"
+            placeholder="Search gates, AI tools, deploy guides, aptitude, jobs…"
             value={query}
             onChange={e => setQuery(e.target.value)}
             onKeyDown={onKeyDown}
@@ -135,12 +148,12 @@ export default function GlobalSearchOverlay() {
 
           {!query && (
             <div className="gs-empty">
-              Start typing to search across the platform.
+              Search learning content, AI tools, deploy guides, and career pages.
               <div className="gs-kbd-hint"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open · <kbd>esc</kbd> to close</div>
             </div>
           )}
 
-          {loading && <div className="gs-empty">Searching…</div>}
+          {loading && totalCount === 0 && <div className="gs-empty">Searching…</div>}
 
           {showEmpty && (
             <div className="gs-empty">
@@ -149,7 +162,7 @@ export default function GlobalSearchOverlay() {
             </div>
           )}
 
-          {!loading && results && totalCount > 0 && GROUPS.map(group => {
+          {results && totalCount > 0 && GROUPS.map(group => {
             const items = results[group.key] || []
             if (!items.length) return null
             return (

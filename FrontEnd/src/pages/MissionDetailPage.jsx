@@ -173,29 +173,34 @@ export default function MissionDetailPage() {
   }, [id])
 
   useEffect(() => {
+    let active = true
     if (!isMongoId(id)) {
       setNotFound(true)
-      setTimeout(() => setLoading(false), PAGE_MIN_MS)
-      return
+      setTimeout(() => { if (active) setLoading(false) }, PAGE_MIN_MS)
+      return () => { active = false }
     }
     getMission(id)
-      .then(r => setMission(r.data))
-      .catch(() => setNotFound(true))
-      .finally(() => setTimeout(() => setLoading(false), PAGE_MIN_MS))
+      .then(r => { if (active) setMission(r.data) })
+      .catch(() => { if (active) setNotFound(true) })
+      .finally(() => setTimeout(() => { if (active) setLoading(false) }, PAGE_MIN_MS))
+    return () => { active = false }
   }, [id])
 
   useEffect(() => {
     if (!isMongoId(id)) return
+    let active = true
     setSubLoading(true)
     getMissionSubmission(id)
       .then(r => {
+        if (!active) return
         const s = r.data
         setSubmission(s)
         setRepoUrl(s?.repoUrl || '')
         setDeployUrl(s?.deployUrl || '')
       })
       .catch(() => {})
-      .finally(() => setSubLoading(false))
+      .finally(() => { if (active) setSubLoading(false) })
+    return () => { active = false }
   }, [id])
 
   // Deep-link from the mission board's "Add repo / demo" button: once the page content

@@ -17,7 +17,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:assets": "node generate-assets.js"
+    "generate:assets": "node generate-assets.js",
+    "generate:webp": "node scripts/generate-webp.mjs"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",

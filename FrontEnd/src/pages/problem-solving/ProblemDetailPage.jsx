@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
 import { PAGE_MIN_MS } from '../../components/loaders/_config'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import {
@@ -10,8 +10,12 @@ import SectionNotFoundPage from '../../components/SectionNotFoundPage'
 import { useTheme } from '../../context/ThemeContext'
 import { useAuth } from '../../context/AuthContext'
 import { getProblem } from '../../api/api'
+import { TRACK_META } from '../../constants/codeGymTracks'
 import BookmarkButton from '../../components/BookmarkButton'
-import CodeRunner from './components/CodeRunner'
+// Monaco is heavy (~MBs). Lazy so it splits into its own chunk and only downloads
+// when an editor-backed problem actually renders the runner — read-only problems
+// and the initial page shell never pay for it.
+const CodeRunner = lazy(() => import('./components/CodeRunner'))
 import '../../styles/pages/coding-platform.css'
 import '../../styles/pages/shared/problem-solving.css'
 import '../../styles/pages/shared/code-gym-workspace.css'
@@ -33,15 +37,6 @@ const LEVEL_META = {
   BEGINNER:     { label: 'Beginner',     color: '#4ADE80' },
   INTERMEDIATE: { label: 'Intermediate', color: '#F59E0B' },
   ADVANCED:     { label: 'Advanced',     color: '#C084FC' },
-}
-
-const TRACK_META = {
-  START_CODING:    { label: 'Start Coding',   color: '#9CA3AF' },
-  LOGIC_BUILDING:  { label: 'Logic Building', color: '#4ADE80' },
-  SKILL_UP:        { label: 'Skill Up',       color: '#60A5FA' },
-  CRACK_IT:        { label: 'Crack It',       color: '#9B6ED4' },
-  BUILD_IT:        { label: 'Build It',       color: '#F59E0B' },
-  PROVE_IT:        { label: 'Prove It',       color: '#EF4444' },
 }
 
 const ALGO_TRACKS = ['START_CODING', 'LOGIC_BUILDING', 'SKILL_UP']
@@ -426,7 +421,13 @@ export default function ProblemDetailPage() {
         </section>
 
         {showEditor ? (
-          <CodeRunner problemId={id} problem={problem} light={light} />
+          <Suspense fallback={
+            <section className="cp__right" aria-busy="true">
+              <GlitchBreachLoader accentColor="#8b7fd4" label="LOADING EDITOR" />
+            </section>
+          }>
+            <CodeRunner problemId={id} problem={problem} light={light} />
+          </Suspense>
         ) : (
           <section className="cp__right cg-readonly">
             <div className="cg-readonly__card">

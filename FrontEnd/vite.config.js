@@ -30,6 +30,12 @@ export default defineConfig({
           if (/[\\/]node_modules[\\/]framer-motion[\\/]/.test(id)) {
             return 'framer-motion'
           }
+          // Monaco editor + its React wrapper are large and only used inside the Code Gym
+          // runner (already lazy-imported). Isolate into one long-cached chunk so it never
+          // lands in the main entry and stays cached across deploys.
+          if (/[\\/]node_modules[\\/](monaco-editor|@monaco-editor)[\\/]/.test(id)) {
+            return 'monaco'
+          }
         },
       },
     },

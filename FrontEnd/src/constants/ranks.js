@@ -8,3 +8,9 @@ export const RANK_LADDER = [
   { letter: 'A', label: 'A-RANK', cls: 'rank-a', color: '#F59E0B', bg: '#F59E0B15', min: 16000 },
   { letter: 'S', label: 'S-RANK', cls: 'rank-s', color: '#EF4444', bg: '#EF444415', min: 30000 },
 ]
+
+// Letter → hex maps for the rank badge accent, split by theme. These exact
+// values were duplicated across slRank, dashboardUtils, several admin pages,
+// SubjectPanel and AboutGateModal — centralized here without changing any value.
+export const RANK_COLORS_DARK  = { S: '#EF4444', A: '#F59E0B', B: '#9B6ED4', C: '#60A5FA', D: '#4ADE80', E: '#888888' }
+export const RANK_COLORS_LIGHT = { S: '#DC2626', A: '#B45309', B: '#7C5DBB', C: '#1D4ED8', D: '#15803D', E: '#6B7FA3' }

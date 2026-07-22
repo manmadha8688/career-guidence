@@ -68,17 +68,20 @@ export default function LandingHeroSection() {
             </Suspense>
           </>
         ) : (
-          <img
-            src="/hero-robot.png"
-            alt=""
-            aria-hidden="true"
-            draggable="false"
-            loading="eager"
-            decoding="async"
-            width="480"
-            height="720"
-            className="lp-hero-robot__img"
-          />
+          <picture>
+            <source srcSet="/hero-robot.webp" type="image/webp" />
+            <img
+              src="/hero-robot.png"
+              alt=""
+              aria-hidden="true"
+              draggable="false"
+              loading="eager"
+              decoding="async"
+              width="480"
+              height="720"
+              className="lp-hero-robot__img"
+            />
+          </picture>
         )}
       </motion.div>
 

@@ -449,12 +449,12 @@ export default function AdminProblems() {
 
   useEffect(() => { load() }, [])
 
-  const filtered = problems.filter(p => {
+  const filtered = useMemo(() => problems.filter(p => {
     const matchTrack = trackFilter === 'ALL' || p.track === trackFilter
     const q = search.toLowerCase()
     const matchSearch = !q || p.title?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q)
     return matchTrack && matchSearch
-  })
+  }), [problems, trackFilter, search])
 
   const filteredIds = useMemo(() => filtered.map(p => p.id), [filtered])
   const selection = useAdminSelection(filteredIds)

@@ -9,6 +9,7 @@ import {
 import { getPublicProfile } from '../api/api'
 import { RANK_LADDER } from '../constants/ranks'
 import { getRank } from '../utils/slRank'
+import { getInitials as initials } from '../utils/initials'
 import { safeExternalUrl } from '../utils/safeExternalUrl'
 import '../styles/pages/shared/public-profile.css'
 
@@ -22,9 +23,6 @@ const PROFILE_LINKS = [
 
 const RANK_TITLE = { E: 'Awakened', D: 'Rising', C: 'Elite', B: 'Ace', A: 'Master', S: 'Monarch' }
 
-function initials(name = '') {
-  return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() || '').join('') || '?'
-}
 function formatDate(iso) {
   if (!iso) return null
   try { return new Date(iso).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) }
